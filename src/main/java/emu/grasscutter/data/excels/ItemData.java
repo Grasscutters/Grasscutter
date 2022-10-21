@@ -2,6 +2,7 @@ package emu.grasscutter.data.excels;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
@@ -133,6 +134,7 @@ public class ItemData extends GameResource {
             this.itemUseActions = this.itemUse.stream()
                                     .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
                                     .map(ItemUseAction::fromItemUseData)
+                                    .filter(Objects::nonNull)
                                     .toList();
         }
     }

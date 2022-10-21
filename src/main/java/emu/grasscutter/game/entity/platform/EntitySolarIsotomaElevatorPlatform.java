@@ -89,16 +89,7 @@ public class EntitySolarIsotomaElevatorPlatform extends EntityPlatform {
             Grasscutter.getLogger().warn("Why gadget owner doesn't exist?");
         }
 
-        for (var entry : getFightProperties().int2FloatEntrySet()) {
-            if (entry.getIntKey() == 0) {
-                continue;
-            }
-            var fightProp = FightPropPairOuterClass.FightPropPair.newBuilder()
-                .setPropType(entry.getIntKey())
-                .setPropValue(entry.getFloatValue())
-                .build();
-            info.addFightPropList(fightProp);
-        }
+        this.addAllFightPropsToEntityInfo(info);
 
         info.setLifeState(1)
             .setGadget(gadget)

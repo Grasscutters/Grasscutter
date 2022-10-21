@@ -467,37 +467,31 @@ public class Avatar {
         }
 
         // Set stuff
-        for (Int2IntOpenHashMap.Entry e : setMap.int2IntEntrySet()) {
-            ReliquarySetData setData = GameData.getReliquarySetDataMap().get(e.getIntKey());
-            if (setData == null) {
-                continue;
-            }
+        setMap.forEach((setId, amount) -> {
+            ReliquarySetData setData = GameData.getReliquarySetDataMap().get((int) setId);
+            if (setData == null) return;
 
             // Calculate how many items are from the set
-            int amount = e.getIntValue();
-
             // Add affix data from set bonus
-            for (int setIndex = 0; setIndex < setData.getSetNeedNum().length; setIndex++) {
-                if (amount >= setData.getSetNeedNum()[setIndex]) {
-                    int affixId = (setData.getEquipAffixId() * 10) + setIndex;
+            val setNeedNum = setData.getSetNeedNum();
+            for (int setIndex = 0; setIndex < setNeedNum.length; setIndex++) {
+                if (amount < setNeedNum[setIndex]) break;
 
-                    EquipAffixData affix = GameData.getEquipAffixDataMap().get(affixId);
-                    if (affix == null) {
-                        continue;
-                    }
-
-                    // Add properties from this affix to our avatar
-                    for (FightPropData prop : affix.getAddProps()) {
-                        this.addFightProperty(prop.getProp(), prop.getValue());
-                    }
-
-                    // Add any skill strings from this affix
-                    this.addToExtraAbilityEmbryos(affix.getOpenConfig(), true);
-                } else {
-                    break;
+                int affixId = (setData.getEquipAffixId() * 10) + setIndex;
+                EquipAffixData affix = GameData.getEquipAffixDataMap().get(affixId);
+                if (affix == null) {
+                    continue;
                 }
+
+                // Add properties from this affix to our avatar
+                for (FightPropData prop : affix.getAddProps()) {
+                    this.addFightProperty(prop.getProp(), prop.getValue());
+                }
+
+                // Add any skill strings from this affix
+                this.addToExtraAbilityEmbryos(affix.getOpenConfig(), true);
             }
-        }
+        });
 
         // Weapon
         GameItem weapon = this.getWeapon();

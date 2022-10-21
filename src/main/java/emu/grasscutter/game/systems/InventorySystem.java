@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import emu.grasscutter.Grasscutter;
@@ -36,6 +35,7 @@ import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -634,7 +634,7 @@ public class InventorySystem extends BaseGameSystem {
         Map<Integer, Float> oldPropMap = avatar.getFightProperties();
         if (oldLevel != level) {
             // Deep copy if level has changed
-            oldPropMap = avatar.getFightProperties().int2FloatEntrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+            oldPropMap = new Int2FloatArrayMap(avatar.getFightProperties());
         }
 
         // Done
@@ -696,7 +696,8 @@ public class InventorySystem extends BaseGameSystem {
 
     public void destroyMaterial(Player player, List<MaterialInfo> list) {
         // Return materials
-        Int2IntOpenHashMap returnMaterialMap = new Int2IntOpenHashMap();
+        val returnMaterialMap = new Int2IntOpenHashMap();
+        val inventory = player.getInventory();
 
         for (MaterialInfo info : list) {
             // Sanity check
@@ -704,28 +705,27 @@ public class InventorySystem extends BaseGameSystem {
                 continue;
             }
 
-            GameItem item = player.getInventory().getItemByGuid(info.getGuid());
+            GameItem item = inventory.getItemByGuid(info.getGuid());
             if (item == null || !item.isDestroyable()) {
                 continue;
             }
 
             // Remove
             int removeAmount = Math.min(info.getCount(), item.getCount());
-            player.getInventory().removeItem(item, removeAmount);
+            inventory.removeItem(item, removeAmount);
 
             // Delete material return items
-            if (item.getItemData().getDestroyReturnMaterial().length > 0) {
-                for (int i = 0; i < item.getItemData().getDestroyReturnMaterial().length; i++) {
-                    returnMaterialMap.addTo(item.getItemData().getDestroyReturnMaterial()[i], item.getItemData().getDestroyReturnMaterialCount()[i]);
+            val data = item.getItemData();
+            if (data.getDestroyReturnMaterial().length > 0) {
+                for (int i = 0; i < data.getDestroyReturnMaterial().length; i++) {
+                    returnMaterialMap.addTo(data.getDestroyReturnMaterial()[i], data.getDestroyReturnMaterialCount()[i]);
                 }
             }
         }
 
         // Give back items
         if (returnMaterialMap.size() > 0) {
-            for (Int2IntMap.Entry e : returnMaterialMap.int2IntEntrySet()) {
-                player.getInventory().addItem(new GameItem(e.getIntKey(), e.getIntValue()));
-            }
+            returnMaterialMap.forEach((id, count) -> inventory.addItem(new GameItem(id, count)));
         }
 
         // Packets
@@ -798,18 +798,38 @@ public class InventorySystem extends BaseGameSystem {
                 .reduce(false, (a,b) -> a || b);  // Don't short-circuit!!!
     }
 
-    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int itemId) {
-        ItemData itemData = GameData.getItemDataMap().get(itemId);
-        if ((itemData == null) || (itemData.getMaterialType() != MaterialType.MATERIAL_AVATAR)) {
+    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int id) {
+        // Try to accept itemId OR avatarId
+        int avatarId = 0;
+        if (GameData.getAvatarDataMap().containsKey(id)) {
+            avatarId = id;
+        } else {
+            avatarId = Optional.ofNullable(GameData.getItemDataMap().get(id))
+                .map(itemData -> itemData.getItemUseActions())
+                .flatMap(actions ->
+                    actions.stream()
+                        .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_GAIN_AVATAR)
+                        .map(action -> ((emu.grasscutter.game.props.ItemUseAction.ItemUseGainAvatar) action).getI())
+                        .findFirst())
+                .orElse(0);
+        }
+
+        if (avatarId == 0)
             return -2;  // Not an Avatar
-        }
-        Avatar avatar = player.getAvatars().getAvatarById((itemId % 1000) + 10000000);
-        if (avatar == null) {
+
+        Avatar avatar = player.getAvatars().getAvatarById(avatarId);
+        if (avatar == null)
             return -1;  // Doesn't have
-        }
+
         // Constellation
         int constLevel = avatar.getCoreProudSkillLevel();
-        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId + 100);
+        val avatarData = avatar.getSkillDepot();
+        if (avatarData == null) {
+            Grasscutter.getLogger().error("Attempted to check constellation level for UID"+player.getUid()+"'s avatar "+avatarId+" but avatar has no skillDepot!");
+            return 0;
+        }
+        int constItemId = avatarData.getTalentCostItemId();
+        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
         constLevel += Optional.ofNullable(constItem).map(GameItem::getCount).orElse(0);
         return constLevel;
     }

@@ -14,6 +14,7 @@ import emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompo
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq;
 import emu.grasscutter.server.packet.send.PackageTakeCompoundOutputRsp;
+import emu.grasscutter.server.packet.send.PacketCompoundDataNotify;
 import emu.grasscutter.server.packet.send.PacketGetCompoundDataRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCompoundMaterialRsp;
 import emu.grasscutter.utils.Utils;
@@ -33,18 +34,16 @@ public class CookingCompoundManager extends BasePlayerManager {
     public static void initialize() {
         defaultUnlockedCompounds = new HashSet<>();
         compoundGroups = new HashMap<>();
-        for (var compound : GameData.getCompoundDataMap().values()) {
+        GameData.getCompoundDataMap().forEach((id, compound) -> {
             if (compound.isDefaultUnlocked()) {
-                defaultUnlockedCompounds.add(compound.getId());
+                defaultUnlockedCompounds.add(id);
             }
-            if (!compoundGroups.containsKey(compound.getGroupId())) {
-                compoundGroups.put(compound.getGroupId(), new HashSet<>());
-            }
-            compoundGroups.get(compound.getGroupId()).add(compound.getId());
-        }
+            compoundGroups.computeIfAbsent(compound.getGroupId(), gid -> new HashSet<>()).add(id);
+        });
         //TODO:Because we haven't implemented fishing feature,unlock all compounds related to fish.Besides,it should be bound to player rather than manager.
         unlocked = new HashSet<>(defaultUnlockedCompounds);
-        unlocked.addAll(compoundGroups.get(3));
+        if (compoundGroups.containsKey(3))  // Avoid NPE from Resources error
+            unlocked.addAll(compoundGroups.get(3));
     }
 
     private synchronized List<CompoundQueueData> getCompoundQueueData() {
@@ -128,5 +127,9 @@ public class CookingCompoundManager extends BasePlayerManager {
         } else {
             player.sendPacket(new PackageTakeCompoundOutputRsp(null, Retcode.RET_COMPOUND_NOT_FINISH_VALUE));
         }
+    }
+
+    public void onPlayerLogin() {
+        player.sendPacket(new PacketCompoundDataNotify(unlocked,getCompoundQueueData()));
     }
 }
