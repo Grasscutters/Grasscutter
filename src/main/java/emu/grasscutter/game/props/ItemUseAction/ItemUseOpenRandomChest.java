@@ -16,10 +16,13 @@ public class ItemUseOpenRandomChest extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {  // cash shop material bundles
-        var rewardItems = params.player.getServer().getShopSystem().getShopChestData(this.i).stream().map(GameItem::new).toList();
+        var data = params.player.getServer().getShopSystem().getShopChestData(this.i);
+        if (data == null)
+            return false;
+        var rewardItems = data.stream().map(GameItem::new).toList();
         if (!rewardItems.isEmpty()) {
             params.player.getInventory().addItems(rewardItems, ActionReason.Shop);
         }
-        return false;
+        return true;
     }
 }
