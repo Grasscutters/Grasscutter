@@ -167,9 +167,11 @@ public final class FileUtils {
         }
     }
 
+    @Deprecated  // No current uses of this anyway
     public static String getFilenameWithoutPath(String fileName) {
-        if (fileName.indexOf(".") > 0) {
-           return fileName.substring(0, fileName.lastIndexOf("."));
+        int i = fileName.lastIndexOf(".");
+        if (i > 0) {
+           return fileName.substring(0, i);
         } else {
            return fileName;
         }
