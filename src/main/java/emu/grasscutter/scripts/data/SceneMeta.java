@@ -60,7 +60,7 @@ public class SceneMeta {
 
             }
 
-            this.blocks = blocks.stream().collect(Collectors.toMap(b -> b.id, b -> b));
+            this.blocks = blocks.stream().collect(Collectors.toMap(b -> b.id, b -> b, (a, b) -> a));
             this.sceneBlockIndex = SceneIndexManager.buildIndex(2, blocks, SceneBlock::toRectangle);
 
         } catch (ScriptException exception) {

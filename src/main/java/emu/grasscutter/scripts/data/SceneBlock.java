@@ -62,7 +62,7 @@ public class SceneBlock {
 
             // Set groups
             this.groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
-                    .collect(Collectors.toMap(x -> x.id, y -> y));
+                    .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
 
             this.groups.values().forEach(g -> g.block_id = this.id);
             this.sceneGroupIndex = SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());

@@ -96,20 +96,20 @@ public class SceneGroup {
 
             // Set
             this.monsters = ScriptLoader.getSerializer().toList(SceneMonster.class, this.bindings.get("monsters")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y));
+                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.monsters.values().forEach(m -> m.group = this);
 
             this.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, this.bindings.get("gadgets")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y));
+                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.gadgets.values().forEach(m -> m.group = this);
 
             this.triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, this.bindings.get("triggers")).stream()
-                    .collect(Collectors.toMap(x -> x.name, y -> y));
+                    .collect(Collectors.toMap(x -> x.name, y -> y, (a, b) -> a));
             this.triggers.values().forEach(t -> t.currentGroup = this);
 
             this.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, this.bindings.get("suites"));
             this.regions = ScriptLoader.getSerializer().toList(SceneRegion.class, this.bindings.get("regions")).stream()
-                .collect(Collectors.toMap(x -> x.config_id, y -> y));
+                .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.regions.values().forEach(m -> m.group = this);
 
             this.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, this.bindings.get("init_config"));
