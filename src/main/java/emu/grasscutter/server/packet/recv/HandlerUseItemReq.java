@@ -15,7 +15,7 @@ public class HandlerUseItemReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         UseItemReq req = UseItemReq.parseFrom(payload);
 
-        GameItem useItem = session.getServer().getInventorySystem().useItem(session.getPlayer(), req.getTargetGuid(), req.getGuid(), req.getCount(), req.getOptionIdx());
+        GameItem useItem = session.getServer().getInventorySystem().useItem(session.getPlayer(), req.getTargetGuid(), req.getGuid(), req.getCount(), req.getOptionIdx(), req.getIsEnterMpDungeonTeam());
         if (useItem != null) {
             session.send(new PacketUseItemRsp(req.getTargetGuid(), useItem));
         } else {

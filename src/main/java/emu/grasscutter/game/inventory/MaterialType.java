@@ -46,7 +46,9 @@ public enum MaterialType {
     MATERIAL_SPICE_FOOD (37),
     MATERIAL_ACTIVITY_ROBOT (38),
     MATERIAL_ACTIVITY_GEAR (39),
-    MATERIAL_ACTIVITY_JIGSAW (40);
+    MATERIAL_ACTIVITY_JIGSAW (40),
+    MATERIAL_ARANARA (41),
+    MATERIAL_DESHRET_MANUAL (46);
 
     private final int value;
     private static final Int2ObjectMap<MaterialType> map = new Int2ObjectOpenHashMap<>();

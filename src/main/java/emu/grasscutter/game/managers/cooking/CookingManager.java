@@ -1,7 +1,6 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.managers.cooking;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,7 +12,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
 import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
@@ -46,22 +44,13 @@ public class CookingManager extends BasePlayerManager {
     /********************
      * Unlocking for recipies.
      ********************/
-    public synchronized boolean unlockRecipe(GameItem recipeItem) {
-        // Make sure this is actually a cooking recipe.
-        if (recipeItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_COOK_RECIPE) {
-            return false;
+    public boolean unlockRecipe(int id) {
+        if (this.player.getUnlockedRecipies().containsKey(id)) {
+            return false;  // Recipe already unlocked
         }
-
-        // Determine the recipe we should unlock.
-        int recipeId = Integer.parseInt(recipeItem.getItemData().getItemUse().get(0).getUseParam()[0]);
-
-        // Remove the item from the player's inventory.
-        // We need to do this here, before sending CookRecipeDataNotify, or the the UI won't correctly update.
-        player.getInventory().removeItem(recipeItem, 1);
-
         // Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-        this.player.getUnlockedRecipies().put(recipeId, 0);
-        this.player.sendPacket(new PacketCookRecipeDataNotify(recipeId));
+        this.player.getUnlockedRecipies().put(id, 0);
+        this.player.sendPacket(new PacketCookRecipeDataNotify(id));
 
         return true;
     }
@@ -174,25 +163,20 @@ public class CookingManager extends BasePlayerManager {
         }
     }
 
-    public void sendCookDataNofity() {
-        // Default unlocked recipies to player if they don't have them yet.
+    public void sendCookDataNotify() {
+        // Default unlocked recipes to player if they don't have them yet.
         this.addDefaultUnlocked();
 
-        // Get unlocked recipies.
-        var unlockedRecipies = this.player.getUnlockedRecipies();
+        // Get unlocked recipes.
+        var unlockedRecipes = this.player.getUnlockedRecipies();
 
         // Construct CookRecipeData protos.
         List<CookRecipeDataOuterClass.CookRecipeData> data = new ArrayList<>();
-        for (var recipe : unlockedRecipies.entrySet()) {
-            int recipeId = recipe.getKey();
-            int proficiency = recipe.getValue();
-
-            CookRecipeDataOuterClass.CookRecipeData proto = CookRecipeDataOuterClass.CookRecipeData.newBuilder()
+        unlockedRecipes.forEach((recipeId, proficiency) ->
+            data.add(CookRecipeDataOuterClass.CookRecipeData.newBuilder()
                 .setRecipeId(recipeId)
                 .setProficiency(proficiency)
-                .build();
-            data.add(proto);
-        }
+                .build()));
 
         // Send packet.
         this.player.sendPacket(new PacketCookDataNotify(data));

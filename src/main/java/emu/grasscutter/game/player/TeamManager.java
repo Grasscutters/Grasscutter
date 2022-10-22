@@ -568,10 +568,7 @@ public class TeamManager extends BasePlayerDataManager {
                     return false;
                 }
 
-                entity.setFightProperty(
-                    FightProperty.FIGHT_PROP_CUR_HP,
-                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f
-                );
+                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
                 this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
                 return true;

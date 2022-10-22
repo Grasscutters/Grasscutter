@@ -1,38 +1,26 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import lombok.Getter;
 
 @ResourceType(name = {"AnimalCodexExcelConfigData.json"})
 public class CodexAnimalData extends GameResource {
     private int Id;
-    private String type;
-    private int describeId;
-    private int sortOrder;
-    private CodexAnimalUnlockCondition OCCLHPBCDGL;
+    @Getter private String type;
+    @Getter private int describeId;
+    @Getter private int sortOrder;
+    @SerializedName(value="countType", alternate={"OCCLHPBCDGL"})
+    @Getter private CountType countType;
 
     @Override
     public int getId() {
         return Id;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public int getDescribeId() {
-        return describeId;
-    }
-
-    public int getSortOrder() {
-        return sortOrder;
-    }
-
-    public CodexAnimalUnlockCondition getUnlockCondition() {
-        return OCCLHPBCDGL;
-    }
-
-    public enum CodexAnimalUnlockCondition {
+    public enum CountType {
         CODEX_COUNT_TYPE_KILL,
         CODEX_COUNT_TYPE_CAPTURE
     }

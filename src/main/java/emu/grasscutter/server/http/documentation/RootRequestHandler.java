@@ -1,29 +1,28 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.utils.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 
-import java.io.File;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.nio.file.Files;
 
 final class RootRequestHandler implements DocumentationHandler {
 
     private final String template;
 
     public RootRequestHandler() {
-        final File templateFile = new File(Utils.toFilePath(DATA("documentation/index.html")));
-        if (templateFile.exists()) {
-            template = new String(FileUtils.read(templateFile), StandardCharsets.UTF_8);
-        } else {
-            Grasscutter.getLogger().warn("File does not exist: " + templateFile);
-            template = null;
+        var templatePath = FileUtils.getDataPath("documentation/index.html");
+        String t = null;
+        try {
+            t = Files.readString(templatePath);
+        } catch (IOException ignored) {
+            Grasscutter.getLogger().warn("File does not exist: " + templatePath);
         }
+        this.template = t;
     }
 
     @Override

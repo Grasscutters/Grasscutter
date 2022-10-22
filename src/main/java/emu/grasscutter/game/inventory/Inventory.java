@@ -1,25 +1,16 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
-import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.AvatarCostumeData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.AvatarFlycloakData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
@@ -31,6 +22,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -137,26 +135,30 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.addItems(items, null);
     }
 
+
     public void addItems(Collection<GameItem> items, ActionReason reason) {
-        List<GameItem> changedItems = new LinkedList<>();
-
-        for (GameItem item : items) {
-            GameItem result = putItem(item);
-
+        List<GameItem> changedItems = new ArrayList<>();
+        for (var item : items) {
+            if (item.getItemId() == 0) continue;
+            GameItem result = null;
+            try {
+                // putItem might throws exception
+                // ignore that exception and continue
+                result = putItem(item);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             if (result != null) {
                 getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
                 changedItems.add(result);
             }
         }
-
         if (changedItems.size() == 0) {
             return;
         }
-
         if (reason != null) {
             getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
         }
-
         getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
     }
 
@@ -174,7 +176,12 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
     private synchronized GameItem putItem(GameItem item) {
         // Dont add items that dont have a valid item definition.
-        if (item.getItemData() == null) {
+        var data = item.getItemData();
+        if (data == null) return null;
+
+        if (data.isUseOnGain()) {
+            var params = new UseItemParams(this.player, data.getUseTarget());
+            this.player.getServer().getInventorySystem().useItemDirect(data, params);
             return null;
         }
 
@@ -202,38 +209,11 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                 return item;
             default:
                 switch (item.getItemData().getMaterialType()) {
-                    case MATERIAL_ADSORBATE:
-                        this.player.getEnergyManager().handlePickupElemBall(item);
-                        return null;
                     case MATERIAL_AVATAR:
-                        // Get avatar id
-                        int avatarId = (item.getItemId() % 1000) + 10000000;
-                        // Dont let people give themselves extra main characters
-                        if (avatarId == GameConstants.MAIN_CHARACTER_MALE || avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
-                            return null;
-                        }
-                        // Add avatar
-                        AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
-                        if (avatarData != null && !this.player.getAvatars().hasAvatar(avatarId)) {
-                            this.player.addAvatar(new Avatar(avatarData));
-                        }
-                        return null;
                     case MATERIAL_FLYCLOAK:
-                        AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(item.getItemId());
-                        if (flycloakData != null && !this.player.getFlyCloakList().contains(item.getItemId())) {
-                            this.player.addFlycloak(item.getItemId());
-                        }
-                        return null;
                     case MATERIAL_COSTUME:
-                        AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
-                        if (costumeData != null && !this.player.getCostumeList().contains(costumeData.getId())) {
-                            this.player.addCostume(costumeData.getId());
-                        }
-                        return null;
                     case MATERIAL_NAMECARD:
-                        if (!this.player.getNameCardList().contains(item.getItemId())) {
-                            this.player.addNameCard(item.getItemId());
-                        }
+                        Grasscutter.getLogger().warn("Attempted to add a "+item.getItemData().getMaterialType().name()+" to inventory, but item definition lacks isUseOnGain. This indicates a Resources error.");
                         return null;
                     default:
                         if (tab == null) {
@@ -391,6 +371,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                 return false;
         // All costs are satisfied, now remove them all
         costItems.forEach(cost -> this.payVirtualItem(cost.getId(), cost.getCount() * quantity));
+        //TODO:handle the reason(need to send certain package)
         return true;
     }
 

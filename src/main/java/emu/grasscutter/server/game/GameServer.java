@@ -13,7 +13,8 @@ import emu.grasscutter.game.dungeons.DungeonSystem;
 import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionSystem;
 import emu.grasscutter.game.gacha.GachaSystem;
-import emu.grasscutter.game.managers.CookingManager;
+import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
+import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
@@ -95,6 +96,7 @@ public final class GameServer extends KcpServer {
         EnergyManager.initialize();
         StaminaManager.initialize();
         CookingManager.initialize();
+        CookingCompoundManager.initialize();
         CombineManger.initialize();
 
         // Game Server base

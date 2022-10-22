@@ -2,6 +2,7 @@ package emu.grasscutter.data.excels;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
@@ -9,7 +10,9 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseTarget;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
@@ -46,8 +49,10 @@ public class ItemData extends GameResource {
     private int[] satiationParams;
 
     // Usable item
-    private ItemUseTarget useTarget;
+    private ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
     private List<ItemUseData> itemUse;
+    private List<ItemUseAction> itemUseActions;
+    private boolean useOnGain = false;
 
     // Relic
     private int mainPropDepotId;
@@ -75,7 +80,8 @@ public class ItemData extends GameResource {
     private int comfort;
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
-    @SerializedName(value="OHIANNAEEAK", alternate={"DANFGGLKLNO", "JFDLJGDFIGL"})
+
+    @SerializedName(value="roomSceneId", alternate={"DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK"})
     private int roomSceneId;
 
     // Custom
@@ -123,7 +129,16 @@ public class ItemData extends GameResource {
 
         // Prevent material type from being null
         this.materialType = this.materialType == null ? MaterialType.MATERIAL_NONE : this.materialType;
+
+        if (this.itemUse != null && !this.itemUse.isEmpty()) {
+            this.itemUseActions = this.itemUse.stream()
+                                    .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
+                                    .map(ItemUseAction::fromItemUseData)
+                                    .filter(Objects::nonNull)
+                                    .toList();
+        }
     }
+
 
     @Getter
     public static class WeaponProperty {

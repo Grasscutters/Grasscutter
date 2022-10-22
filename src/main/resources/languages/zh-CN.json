@@ -292,7 +292,7 @@
       "description": "停止服务器"
     },
     "talent": {
-      "lower_16": "无效的天赋等级，天赋等级应在 1-15 之间。",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "修改技能 %s - \"%s\" 至 %s。",
       "id_desc": "技能 %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "无效的技能ID。",
