@@ -778,7 +778,7 @@ public class InventorySystem extends BaseGameSystem {
         }
 
         int[] satiationParams = itemData.getSatiationParams();
-        if (satiationParams != null && target.isPresent()) {
+        if (satiationParams != null && satiationParams.length > 0 && target.isPresent()) {
             // Invoke and call player use food event.
             var event = new PlayerUseFoodEvent(params.player, itemData, params.targetAvatar.getAsEntity()); event.call();
             if (event.isCanceled()) return false;
