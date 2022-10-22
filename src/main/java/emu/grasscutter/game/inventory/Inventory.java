@@ -140,7 +140,14 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         List<GameItem> changedItems = new ArrayList<>();
         for (var item : items) {
             if (item.getItemId() == 0) continue;
-            GameItem result = putItem(item);
+            GameItem result = null;
+            try {
+                // putItem might throws exception
+                // ignore that exception and continue
+                result = putItem(item);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             if (result != null) {
                 getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
                 changedItems.add(result);
