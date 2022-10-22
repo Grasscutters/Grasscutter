@@ -264,6 +264,7 @@
       "fail": "設定命座失敗。",
       "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
       "success": "%s的命之座已設定為成%s。",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "設定當前角色的命之座。"
     },
     "setFetterLevel": {

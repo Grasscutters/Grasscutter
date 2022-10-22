@@ -264,6 +264,7 @@
       "fail": "Error al establecer la constelación.",
       "failed_success": "Las constelaciones de %s han sido establecidas a %s. Por favor reinicia el escenario para ver los cambios.",
       "success": "Las constelaciones de %s han sido establecidas a %s.",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "Establece el nivel de constelación para tu personaje actual"
     },
     "setFetterLevel": {

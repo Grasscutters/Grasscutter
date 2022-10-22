@@ -264,6 +264,7 @@
       "fail": "🇺🇸Failed to set constellation.",
       "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
       "success": "🇺🇸Constellations for %s have been set to %s.",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "🇺🇸Sets constellation level for your current active character"
     },
     "setFetterLevel": {
