@@ -809,12 +809,14 @@ public class Avatar {
         if (level < 0) {  // Special case for resetConst to remove inactive depots too
             this.talentIdList.clear();
             this.recalcStats();
+            this.save();
             return;
         }
         this.talentIdList.removeAll(this.getTalentIdList());  // Only remove constellations from active depot
         for (int i = 0; i < level; i++)
             this.unlockConstellation(true);
         this.recalcStats();
+        this.save();
     }
 
     public boolean sendSkillExtraChargeMap() {
