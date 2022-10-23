@@ -110,9 +110,7 @@ public class GameHome {
             this.unlockedHomeBgmList = new HashSet<>();
         }
 
-        var set = getDefaultUnlockedHomeBgmIds();
-        if (!this.unlockedHomeBgmList.containsAll(set)) {
-            this.unlockedHomeBgmList.addAll(set);
+        if (this.unlockedHomeBgmList.addAll(getDefaultUnlockedHomeBgmIds())) {
             save();
         }
 
