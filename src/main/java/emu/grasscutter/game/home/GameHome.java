@@ -11,6 +11,7 @@ import emu.grasscutter.data.excels.HomeWorldLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
@@ -57,6 +59,7 @@ public class GameHome {
                 .ownerUid(uid)
                 .level(1)
                 .sceneMap(new ConcurrentHashMap<>())
+                .unlockedHomeBgmList(new HashSet<>())
                 .build();
     }
 
@@ -93,7 +96,7 @@ public class GameHome {
     }
 
     public boolean addUnlockedHomeBgm(int homeBgmId) {
-        if (getUnlockedHomeBgmList().add(homeBgmId)) return false;
+        if (!getUnlockedHomeBgmList().add(homeBgmId)) return false;
 
         var player = this.getPlayer();
         player.sendPacket(new PacketUnlockHomeBgmNotify(homeBgmId));
@@ -102,20 +105,22 @@ public class GameHome {
         return true;
     }
 
-    public Set<Integer> getUnlockedHomeBgmListInfo() {
+    public Set<Integer> getUnlockedHomeBgmList() {
         if (this.unlockedHomeBgmList == null) {
             this.unlockedHomeBgmList = new HashSet<>();
-            addAllDefaultUnlockedBgmIds(this.unlockedHomeBgmList);
+        }
+
+        if (this.unlockedHomeBgmList.addAll(getDefaultUnlockedHomeBgmIds())) {
             save();
         }
 
         return this.unlockedHomeBgmList;
     }
 
-    private void addAllDefaultUnlockedBgmIds(Set<Integer> list) {
-        GameData.getHomeWorldBgmDataMap().forEach((id, data) -> {
-            if (data.isDefaultUnlock())
-                list.add(id);
-        });
+    private Set<Integer> getDefaultUnlockedHomeBgmIds() {
+        return GameData.getHomeWorldBgmDataMap().int2ObjectEntrySet().stream()
+            .filter(e -> e.getValue().isDefaultUnlock())
+            .map(Int2ObjectMap.Entry::getIntKey)
+            .collect(Collectors.toUnmodifiableSet());
     }
 }
