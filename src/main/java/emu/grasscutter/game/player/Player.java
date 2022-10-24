@@ -94,6 +94,7 @@ public class Player {
 
     @Getter private String nickname;
     @Getter private String signature;
+    @Getter private Map<String, List<String>> commandAliases = new HashMap<>();
     @Getter private int headImage;
     @Getter private int nameCardId = 210001;
     @Getter private Position position;
