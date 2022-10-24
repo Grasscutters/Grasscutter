@@ -15,10 +15,7 @@ import java.util.List;
 @Command(
     label = "setConst",
     aliases = {"setconstellation"},
-    usage = {
-        "<constellation level>",
-        "<constellation level> all"
-    },
+    usage = {"<constellation level> [all]"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
 public final class SetConstCommand implements CommandHandler {
