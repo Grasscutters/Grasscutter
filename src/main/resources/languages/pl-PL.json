@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "Serwer gry został uruchomiony na \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Serwer gry został uruchomiony na porcie %s.",
       "connect": "Klient połączył się z %s.",
       "disconnect": "Klient rozłączył się z %s.",
@@ -9,7 +9,7 @@
       "command_error": "Błąd komendy: "
     },
     "dispatch": {
-      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] Serwer Dispatch został uruchomiony na \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Serwer Dispatch został uruchomiony na porcie %s.",
       "request": "[Dispatch] Żądanie klienta %s (metoda %s): %s",
       "keystore": {
@@ -292,9 +292,9 @@
       "description": "Zatrzymaj serwer."
     },
     "talent": {
-      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
-      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
-      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "out_of_range": "Nieprawidłowy poziom talentu. Poziom powinien mieścić się w zakresie 1-15.",
+      "set_id": "Ustawiono talent %s - \"%s\" to %s.",
+      "id_desc": "Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Błędne ID umiejętności.",
       "invalid_level": "Błędny poziom talentu.",
       "normal_attack_id": "ID podstawowego ataku: %s.",
@@ -363,7 +363,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -379,24 +379,24 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "Nie udało się utworzyć lokalizacji z pluginami: ",
+    "unable_to_load": "Nie udało się załadować pluginów.",
+    "invalid_config": "Plugin %s ma nieprawidłową konfigurację.",
+    "invalid_main_class": "Plugin %s ma nieprawidłową główną klasę.",
+    "missing_config": "Pluginowi %s brakuje poprawnego pliku konfiguracji.",
+    "failed_to_load_plugin": "Niepowodzenie w załadowaniu pluginu: %s",
+    "failed_to_load": "Niepowodzenie w załadowaniu pluginu.",
+    "failed_to_load_dependencies": "Niepowodzenie w załadowaniu pluginu z zależnościami.",
+    "loading_plugin": "Ładowanie pluginu: %s",
+    "failed_add_id": "Niepowodzenie w dodawaniu identyfikatora pluginu: %s",
+    "enabling_plugin": "Włączanie pluginu: %s",
+    "enabling_failed": "Nie udało się załączyć pluginu: %s",
+    "disabling_plugin": "Wyłączanie pluginu: %s",
+    "disabling_failed": "Nie udało się wyłączyć pluginu: %s"
   }
 }
