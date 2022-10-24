@@ -264,6 +264,7 @@
       "fail": "Nie udało się ustawić konstelacji.",
       "failed_success": "Konstelacje dla %s zostały ustawione na %s. Proszę przeładować scenę aby zobaczyć zmiany.",
       "success": "Konstelacje dla %s zostały ustawione na %s.",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "Ustawia poziom konstelacji dla aktywnej postaci"
     },
     "setFetterLevel": {

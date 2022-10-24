@@ -264,6 +264,7 @@
       "fail": "星座の設定に失敗しました。",
       "failed_success": "%s の星座は %s に設定されました。 シーンをリロードして変更を確認してください。",
       "success": "%s の星座は %s に設定されました。",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "現在アクティブなキャラクターの星座レベルを設定します"
     },
     "setFetterLevel": {
