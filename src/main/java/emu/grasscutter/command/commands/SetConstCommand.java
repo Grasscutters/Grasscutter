@@ -17,7 +17,7 @@ import java.util.List;
     aliases = {"setconstellation"},
     usage = {
         "<constellation level>",
-        "all <constellation level>"
+        "<constellation level> all"
     },
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
@@ -28,42 +28,30 @@ public final class SetConstCommand implements CommandHandler {
             sendUsageMessage(sender);
             return;
         }
-
-        if (args.get(0).equalsIgnoreCase("all")) {
-            if (args.size() < 2) {
-                sendUsageMessage(sender);
-                return;
-            }
-            try {
-                int constLevel = Integer.parseInt(args.get(1));
-                if (constLevel < -1 || constLevel > 6) {
-                    CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error");
-                    return;
-                }
-                this.setAllConstellation(targetPlayer, constLevel);
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.successall", constLevel);
-            } catch (NumberFormatException ignored) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
-            }
-            return;
-        }
-
         try {
             int constLevel = Integer.parseInt(args.get(0));
+            // Check if level is out of range
             if (constLevel < -1 || constLevel > 6) {
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error");
                 return;
             }
-
-            EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-            if (entity == null) return;
-            Avatar avatar = entity.getAvatar();
-
-            this.setConstellation(targetPlayer, avatar, constLevel);
-
-            CommandHandler.sendTranslatedMessage(sender, "commands.setConst.success", avatar.getAvatarData().getName(), constLevel);
+            // If it's either empty or anything else other than "all" just do normal setConstellation
+            if (args.size() == 1) {
+                EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
+                if (entity == null) return;
+                Avatar avatar = entity.getAvatar();
+                this.setConstellation(targetPlayer, avatar, constLevel);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.success", avatar.getAvatarData().getName(), constLevel);
+                return;
+            }
+            // Check if there's an additional argument which is "all", if it does then go setAllConstellation
+            if (args.size() > 1 && args.get(1).equalsIgnoreCase("all")) {
+                this.setAllConstellation(targetPlayer, constLevel);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.successall", constLevel);
+            }
+            else sendUsageMessage(sender);
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setConst.fail");
+            CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
         }
     }
 
