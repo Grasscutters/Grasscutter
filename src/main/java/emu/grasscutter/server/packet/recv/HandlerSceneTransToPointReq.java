@@ -18,8 +18,7 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
         SceneTransToPointReq req = SceneTransToPointReq.parseFrom(payload);
         var player = session.getPlayer();
 
-        String code = req.getSceneId() + "_" + req.getPointId();
-        ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
+        ScenePointEntry scenePointEntry = GameData.getScenePointEntryById(req.getSceneId(), req.getPointId());
 
         if (scenePointEntry != null) {
             if (player.getWorld().transferPlayerToScene(player, req.getSceneId(), TeleportType.WAYPOINT, scenePointEntry.getPointData().getTranPos().clone())) {

@@ -25,6 +25,7 @@ public class HomeSceneItem {
     Position bornPos;
     Position bornRot;
     Position djinnPos;
+    int homeBgmId;
     HomeFurnitureItem mainHouse;
     int tmpVersion;
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
@@ -41,10 +42,10 @@ public class HomeSceneItem {
                 .build();
     }
 
-    public void update(HomeSceneArrangementInfo arrangementInfo){
-        for(var blockItem : arrangementInfo.getBlockArrangementInfoListList()){
+    public void update(HomeSceneArrangementInfo arrangementInfo) {
+        for (var blockItem : arrangementInfo.getBlockArrangementInfoListList()) {
             var block = this.blockItems.get(blockItem.getBlockId());
-            if(block == null){
+            if (block == null) {
                 Grasscutter.getLogger().warn("Could not found the Home Block {}", blockItem.getBlockId());
                 continue;
             }
@@ -55,24 +56,25 @@ public class HomeSceneItem {
         this.bornPos = new Position(arrangementInfo.getBornPos());
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
+        this.homeBgmId = arrangementInfo.getUnk2700BJHAMKKECEI();
         this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 
-    public int getRoomSceneId(){
-        if(mainHouse == null || mainHouse.getAsItem() == null){
+    public int getRoomSceneId() {
+        if (mainHouse == null || mainHouse.getAsItem() == null) {
             return 0;
         }
         return mainHouse.getAsItem().getRoomSceneId();
     }
 
-    public int calComfort(){
+    public int calComfort() {
         return this.blockItems.values().stream()
                 .mapToInt(HomeBlockItem::calComfort)
                 .sum();
     }
 
-    public HomeSceneArrangementInfo toProto(){
+    public HomeSceneArrangementInfo toProto() {
         var proto = HomeSceneArrangementInfo.newBuilder();
         blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
 
@@ -82,9 +84,10 @@ public class HomeSceneItem {
                 .setDjinnPos(djinnPos.toProto())
                 .setIsSetBornPos(true)
                 .setSceneId(sceneId)
+                .setUnk2700BJHAMKKECEI(homeBgmId)
                 .setTmpVersion(tmpVersion);
 
-        if(mainHouse != null){
+        if (mainHouse != null) {
             proto.setMainHouse(mainHouse.toProto());
         }
         return proto.build();

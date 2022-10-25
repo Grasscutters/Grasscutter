@@ -1,14 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.Map.Entry;
-
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify;
-import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
 public class PacketAvatarDataNotify extends BasePacket {
 
@@ -21,21 +17,14 @@ public class PacketAvatarDataNotify extends BasePacket {
                 .addAllOwnedFlycloakList(player.getFlyCloakList())
                 .addAllOwnedCostumeList(player.getCostumeList());
 
-        for (Avatar avatar : player.getAvatars()) {
-            proto.addAvatarList(avatar.toProto());
-        }
+        player.getAvatars().forEach(avatar -> proto.addAvatarList(avatar.toProto()));
 
-        // Add the id list for custom teams.
-        for (int id : player.getTeamManager().getTeams().keySet()) {
-            if (id > 4) {
+        player.getTeamManager().getTeams().forEach((id, teamInfo) -> {
+            proto.putAvatarTeamMap(id, teamInfo.toProto(player));
+            if (id > 4) {  // Add the id list for custom teams.
                 proto.addCustomTeamIds(id);
             }
-        }
-
-        for (Entry<Integer, TeamInfo> entry : player.getTeamManager().getTeams().entrySet()) {
-            TeamInfo teamInfo = entry.getValue();
-            proto.putAvatarTeamMap(entry.getKey(), teamInfo.toProto(player));
-        }
+        });
 
         // Set main character
         Avatar mainCharacter = player.getAvatars().getAvatarById(player.getMainCharacterId());

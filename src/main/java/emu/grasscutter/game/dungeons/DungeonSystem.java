@@ -107,8 +107,6 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public void updateDailyDungeons() {
-        for (ScenePointEntry entry : GameData.getScenePointEntries().values()) {
-            entry.getPointData().updateDailyDungeon();
-        }
+        GameData.getScenePointEntries().forEach((id, entry) -> entry.getPointData().updateDailyDungeon());
     }
 }

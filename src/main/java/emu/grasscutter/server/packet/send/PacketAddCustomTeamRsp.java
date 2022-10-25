@@ -12,7 +12,7 @@ public class PacketAddCustomTeamRsp extends BasePacket {
         AddCustomTeamRsp proto = AddCustomTeamRsp.newBuilder()
             .setRetcode(retcode.getNumber())
             .build();
-    
+
         this.setData(proto);
     }
 

@@ -207,8 +207,8 @@
       "description": "Accorde ou retire une permission a un utilisateur"
     },
     "position": {
-      "success": "Coordonées: %s, %s, %s\nID de la scène: %s",
-      "description": "Obtenir vos coordonnées"
+      "success": "Coordonées: %s, %s, %s\nRotatifs：%s, %s, %s\nID de la scène: %s",
+      "description": "Obtient des informations de position et de rotation"
     },
     "quest": {
       "added": "Quête %s ajoutée.",
@@ -264,6 +264,7 @@
       "fail": "🇺🇸Failed to set constellation.",
       "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
       "success": "🇺🇸Constellations for %s have been set to %s.",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "🇺🇸Sets constellation level for your current active character"
     },
     "setFetterLevel": {
@@ -292,7 +293,7 @@
       "description": "Arrête le serveur"
     },
     "talent": {
-      "lower_16": "Niveau de talent invalide. Le niveau doit être inférieur a 16.",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
       "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "ID de talent invalide.",
@@ -382,5 +383,21 @@
       "handbook": "Manuel GM",
       "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
+  },
+  "plugin": {
+    "directory_failed": "🇺🇸Failed to create plugins directory: ",
+    "unable_to_load": "🇺🇸Unable to load plugin.",
+    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
+    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
+    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
+    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
+    "failed_to_load": "🇺🇸Failed to load a plugin.",
+    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
+    "loading_plugin": "🇺🇸Loading plugin: %s",
+    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
+    "enabling_plugin": "🇺🇸Enabling plugin: %s",
+    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
+    "disabling_plugin": "🇺🇸Disabling plugin: %s",
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
   }
 }

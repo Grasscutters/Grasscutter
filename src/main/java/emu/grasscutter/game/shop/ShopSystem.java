@@ -3,6 +3,7 @@ package emu.grasscutter.game.shop;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
@@ -14,10 +15,11 @@ import static emu.grasscutter.config.Configuration.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ShopSystem extends BaseGameSystem {
     private final Int2ObjectMap<List<ShopInfo>> shopData;
-    private final List<ShopChestTable> shopChestData;
+    private final Int2ObjectMap<List<ItemParamData>> shopChestData;
 
     private static final int REFRESH_HOUR = 4; // In GMT+8 server
     private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
@@ -25,7 +27,7 @@ public class ShopSystem extends BaseGameSystem {
     public ShopSystem(GameServer server) {
         super(server);
         this.shopData = new Int2ObjectOpenHashMap<>();
-        this.shopChestData = new ArrayList<>();
+        this.shopChestData = new Int2ObjectOpenHashMap<>();
         this.load();
     }
 
@@ -33,8 +35,8 @@ public class ShopSystem extends BaseGameSystem {
         return shopData;
     }
 
-    public List<ShopChestTable> getShopChestData() {
-        return shopChestData;
+    public List<ItemParamData> getShopChestData(int chestId) {
+        return this.shopChestData.get(chestId);
     }
 
     public static int getShopNextRefreshTime(ShopInfo shopInfo) {
@@ -76,15 +78,22 @@ public class ShopSystem extends BaseGameSystem {
     }
 
     private void loadShopChest() {
-        getShopChestData().clear();
+        shopChestData.clear();
         try {
-            List<ShopChestTable> shopChestTableList = DataLoader.loadList("ShopChest.json", ShopChestTable.class);
-            if (shopChestTableList.size() > 0) {
-                getShopChestData().addAll(shopChestTableList);
-                Grasscutter.getLogger().debug("ShopChest data successfully loaded.");
-            } else {
-                Grasscutter.getLogger().error("Unable to load ShopChest data. ShopChest data size is 0.");
-            }
+            Map<Integer, String> chestMap = DataLoader.loadMap("ShopChest.v2.json", Integer.class, String.class);
+            chestMap.forEach((chestId, itemStr) -> {
+                if (itemStr.isEmpty()) return;
+                var entries = itemStr.split(",");
+                var list = new ArrayList<ItemParamData>(entries.length);
+                for (var entry : entries) {
+                    var idAndCount = entry.split(":");
+                    int id = Integer.parseInt(idAndCount[0]);
+                    int count = Integer.parseInt(idAndCount[1]);
+                    list.add(new ItemParamData(id, count));
+                }
+                this.shopChestData.put((int) chestId, list);
+            });
+            Grasscutter.getLogger().debug("Loaded " + chestMap.size() + " ShopChest entries.");
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load ShopChest data.", e);
         }

@@ -6,7 +6,7 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
 public final class GameConstants {
-    public static String VERSION = "3.0.0";
+    public static String VERSION = "3.1.0";
 
     public static final int DEFAULT_TEAMS = 4;
     public static final int MAX_TEAMS = 10;
@@ -14,7 +14,7 @@ public final class GameConstants {
     public static final int MAIN_CHARACTER_FEMALE = 10000007;
     public static final Position START_POSITION = new Position(2747, 194, -1719);
 
-    public static final int MAX_FRIENDS = 45;
+    public static final int MAX_FRIENDS = 60;
     public static final int MAX_FRIEND_REQUESTS = 50;
 
     public static final int SERVER_CONSOLE_UID = 99; // The UID of the server console's "player".

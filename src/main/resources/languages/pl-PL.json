@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "Serwer gry został uruchomiony na \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Serwer gry został uruchomiony na porcie %s.",
       "connect": "Klient połączył się z %s.",
       "disconnect": "Klient rozłączył się z %s.",
@@ -9,7 +9,7 @@
       "command_error": "Błąd komendy: "
     },
     "dispatch": {
-      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] Serwer Dispatch został uruchomiony na \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Serwer Dispatch został uruchomiony na porcie %s.",
       "request": "[Dispatch] Żądanie klienta %s (metoda %s): %s",
       "keystore": {
@@ -207,8 +207,8 @@
       "description": "Dodaj lub usuń uprawnienia podanego gracza."
     },
     "position": {
-      "success": "Koordynaty: (%s, %s, %s).\nID sceny: %s.",
-      "description": "Pokaż gdzie znajduje się dany gracz."
+      "success": "Koordynaty: (%s, %s, %s).\nKrążyć：%s, %s, %s\nID sceny: %s.",
+      "description": "Pobiera informacje o pozycji i obrocie"
     },
     "quest": {
       "added": "Zadanie %s zostało dodane.",
@@ -264,6 +264,7 @@
       "fail": "Nie udało się ustawić konstelacji.",
       "failed_success": "Konstelacje dla %s zostały ustawione na %s. Proszę przeładować scenę aby zobaczyć zmiany.",
       "success": "Konstelacje dla %s zostały ustawione na %s.",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "Ustawia poziom konstelacji dla aktywnej postaci"
     },
     "setFetterLevel": {
@@ -292,9 +293,9 @@
       "description": "Zatrzymaj serwer."
     },
     "talent": {
-      "lower_16": "Błędny poziom talentu. Poziom ten powinien być mniejszy niż 16.",
-      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
-      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "out_of_range": "Nieprawidłowy poziom talentu. Poziom powinien mieścić się w zakresie 1-15.",
+      "set_id": "Ustawiono talent %s - \"%s\" to %s.",
+      "id_desc": "Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Błędne ID umiejętności.",
       "invalid_level": "Błędny poziom talentu.",
       "normal_attack_id": "ID podstawowego ataku: %s.",
@@ -363,7 +364,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -379,8 +380,24 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
+  },
+  "plugin": {
+    "directory_failed": "Nie udało się utworzyć lokalizacji z pluginami: ",
+    "unable_to_load": "Nie udało się załadować pluginów.",
+    "invalid_config": "Plugin %s ma nieprawidłową konfigurację.",
+    "invalid_main_class": "Plugin %s ma nieprawidłową główną klasę.",
+    "missing_config": "Pluginowi %s brakuje poprawnego pliku konfiguracji.",
+    "failed_to_load_plugin": "Niepowodzenie w załadowaniu pluginu: %s",
+    "failed_to_load": "Niepowodzenie w załadowaniu pluginu.",
+    "failed_to_load_dependencies": "Niepowodzenie w załadowaniu pluginu z zależnościami.",
+    "loading_plugin": "Ładowanie pluginu: %s",
+    "failed_add_id": "Niepowodzenie w dodawaniu identyfikatora pluginu: %s",
+    "enabling_plugin": "Włączanie pluginu: %s",
+    "enabling_failed": "Nie udało się załączyć pluginu: %s",
+    "disabling_plugin": "Wyłączanie pluginu: %s",
+    "disabling_failed": "Nie udało się wyłączyć pluginu: %s"
   }
 }

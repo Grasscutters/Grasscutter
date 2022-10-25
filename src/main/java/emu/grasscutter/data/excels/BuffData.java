@@ -13,6 +13,8 @@ public class BuffData extends GameResource {
     private float time;
     private boolean isPersistent;
     private ServerBuffType serverBuffType;
+    private String abilityName;
+    private String modifierName;
 
     @Override
     public int getId() {

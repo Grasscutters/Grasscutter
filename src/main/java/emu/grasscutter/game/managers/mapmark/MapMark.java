@@ -15,11 +15,11 @@ public class MapMark {
     private int monsterId;
     private MapMarkFromType mapMarkFromType;
     private int questId;
-    
+
     @Deprecated // Morhpia
     public MapMark() {
-    	this.mapMarkPointType = MapMarkPointType.MAP_MARK_POINT_TYPE_MONSTER;
-    	this.mapMarkFromType = MapMarkFromType.MAP_MARK_FROM_TYPE_MONSTER;
+        this.mapMarkPointType = MapMarkPointType.MAP_MARK_POINT_TYPE_MONSTER;
+        this.mapMarkFromType = MapMarkFromType.MAP_MARK_FROM_TYPE_MONSTER;
     }
 
     public MapMark(MapMarkPoint mapMarkPoint) {
@@ -35,27 +35,27 @@ public class MapMark {
     public int getSceneId() {
         return this.sceneId;
     }
-    
+
     public String getName() {
         return this.name;
     }
-    
+
     public Position getPosition() {
         return this.position;
     }
-    
+
     public MapMarkPointType getMapMarkPointType() {
         return this.mapMarkPointType;
     }
-    
+
     public int getMonsterId() {
         return this.monsterId;
     }
-    
+
     public MapMarkFromType getMapMarkFromType() {
         return this.mapMarkFromType;
     }
-    
+
     public int getQuestId() {
         return this.questId;
     }

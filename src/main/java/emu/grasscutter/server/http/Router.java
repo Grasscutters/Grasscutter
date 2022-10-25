@@ -13,7 +13,7 @@ public interface Router {
      * @param javalin A Javalin instance.
      */
     void applyRoutes(Javalin javalin);
-    
+
     /**
      * Applies this handler to all endpoint types
      * @param javalin A Javalin instance.
