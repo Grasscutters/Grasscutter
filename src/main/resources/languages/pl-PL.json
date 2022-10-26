@@ -295,7 +295,7 @@
     "talent": {
       "out_of_range": "Nieprawidłowy poziom talentu. Poziom powinien mieścić się w zakresie 1-15.",
       "set_id": "Ustawiono talent %s - \"%s\" to %s.",
-      "id_desc": "Talent %s - \"%s\" - \"%s\"",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Błędne ID umiejętności.",
       "invalid_level": "Błędny poziom talentu.",
       "normal_attack_id": "ID podstawowego ataku: %s.",
@@ -364,7 +364,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -380,7 +380,7 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
   },
