@@ -1,5 +1,6 @@
 package emu.grasscutter.config;
 
+import ch.qos.logback.classic.Level;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
@@ -101,6 +102,7 @@ public class ConfigContainer {
         public Game game = new Game();
 
         public Dispatch dispatch = new Dispatch();
+        public DebugMode debugMode = new DebugMode();
     }
 
     public static class Language {
@@ -150,6 +152,10 @@ public class ConfigContainer {
         public int kcpInterval = 20;
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.NONE;
+        /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
+        public Boolean isShowPacketPayload = false;
+        /* Show annoying loop packets or no */
+        public Boolean isShowLoopPackets = false;
 
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
@@ -163,7 +169,31 @@ public class ConfigContainer {
 
         public String defaultName = "Grasscutter";
 
+        /* Controls whether http requests should be logged in console or not */
         public ServerDebugMode logRequests = ServerDebugMode.NONE;
+    }
+
+    /* Debug options container, used when jar launch argument is -debug | -debugall and override default values
+    *  (see StartupArguments.enableDebug) */
+    public static class DebugMode {
+        /* Log level of the main server code (works only with -debug arg) */
+        public Level serverLoggerLevel = Level.DEBUG;
+
+        /* Log level of the third-party services (works only with -debug arg):
+           javalin, quartz, reflections, jetty, mongodb.driver*/
+        public Level servicesLoggersLevel = Level.INFO;
+
+        /* Controls whether packets should be logged in console or not */
+        public ServerDebugMode logPackets = ServerDebugMode.ALL;
+
+        /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
+        public Boolean isShowPacketPayload = false;
+
+        /* Show annoying loop packets or no */
+        public Boolean isShowLoopPackets = false;
+
+        /* Controls whether http requests should be logged in console or not */
+        public ServerDebugMode logRequests = ServerDebugMode.ALL;
     }
 
     public static class Encryption {
