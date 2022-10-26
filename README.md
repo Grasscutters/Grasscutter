@@ -37,13 +37,13 @@
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) or [build the server by yourself](#building).
+   - Download from [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) or [actions](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) or [build the server by yourself](#building).
 2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
 
 ### Connecting with the client
 
-½. Create an account using [server console command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
+½. Create an account in the server console using this [command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#:~:text=account%20%3Ccreate|delete%3E%20%3Cusername%3E%20[UID]).
 
 1. Redirect traffic: (choose one only)
     - mitmdump: `mitmdump -s proxy.py -k`
@@ -58,7 +58,6 @@
              certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
              ```
 
-
     - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt HTTPS traffic` in (Tools -> Options -> HTTPS) and change the default port in (Tools -> Options -> Connections) to anything other than `8888`, load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript) (copy and paste the script in the `FiddlerScript` tab) and click the `Save Script` button.
 
     - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
@@ -67,7 +66,7 @@
 
 - For mitmproxy: After setting up the network proxy and installing the certificate, check http://mitm.it/ if traffic is passing through mitmproxy.
 
-**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up `JAVA_HOME` enviroment and configure the `start_config.cmd` file.**
+**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up `JAVA_HOME` environment and configure the `start_config.cmd` file.**
 
 ### Building
 
@@ -102,7 +101,6 @@ You can find the output jar in the root of the project folder.
 
 # Quick Troubleshooting
 
-* If compiling wasn't successful, please check your JDK installation (Make sure its JDK 17 or higher and validated JDK's bin PATH variable)
-* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
-  Fiddler make sure it running on another port except 8888
+* If compiling wasn't successful, please check your JDK installation (Make sure its JDK 17 or higher and validated JDK's bin PATH variable).
+* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*. If you're using Fiddler, change the default port to anything other than 8888.
 * Startup sequence: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game
