@@ -146,6 +146,9 @@ public class ConfigContainer {
         public boolean enableScriptInBigWorld = false;
         public boolean enableConsole = true;
 
+        /* Which banners to use, ordinary as in the main anime game or absolutely all */
+        public boolean bannersGod = false;
+
         /* Kcp internal work interval (milliseconds) */
         public int kcpInterval = 20;
         /* Controls whether packets should be logged in console or not */

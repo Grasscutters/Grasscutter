@@ -43,6 +43,10 @@ public class GachaSystem extends BaseGameSystem {
     private final Int2ObjectMap<GachaBanner> gachaBanners;
     private WatchService watchService;
 
+    private String bannersFile;
+    private final String bannersOrdinaryFile = "Banners.json";
+    private final String bannersGodFile = "BannersGod.json";
+
     private static final int starglitterId = 221;
     private static final int stardustId = 222;
     private int[] fallbackItems4Pool2Default = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
@@ -50,6 +54,8 @@ public class GachaSystem extends BaseGameSystem {
 
     public GachaSystem(GameServer server) {
         super(server);
+        // Switch banners to God banners file
+        bannersFile = GAME_INFO.bannersGod ? bannersGodFile : bannersOrdinaryFile;
         this.gachaBanners = new Int2ObjectOpenHashMap<>();
         this.load();
         this.startWatcher(server);
@@ -68,9 +74,12 @@ public class GachaSystem extends BaseGameSystem {
     }
 
     public synchronized void load() {
+        // Switch banners to God banners file (hot override if config.json reloaded)
+        bannersFile = GAME_INFO.bannersGod ? bannersGodFile : bannersOrdinaryFile;
+
         getGachaBanners().clear();
         try {
-            List<GachaBanner> banners = DataLoader.loadList("Banners.json", GachaBanner.class);
+            List<GachaBanner> banners = DataLoader.loadList(bannersFile, GachaBanner.class);
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
                     getGachaBanners().put(banner.getScheduleId(), banner);
@@ -384,15 +393,15 @@ public class GachaSystem extends BaseGameSystem {
 
                 for (WatchEvent<?> event : watchKey.pollEvents()) {
                     final Path changed = (Path) event.context();
-                    if (changed.endsWith("Banners.json")) {
-                        Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
+                    if (changed.endsWith(bannersFile)) {
+                        Grasscutter.getLogger().info("Change detected with " + bannersFile + ". Reloading gacha config");
                         this.load();
                     }
                 }
 
                 boolean valid = watchKey.reset();
                 if (!valid) {
-                    Grasscutter.getLogger().error("Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
+                    Grasscutter.getLogger().error("Unable to reset Gacha Manager Watch Key. Auto-reload of " + bannersFile + " will no longer work.");
                     return;
                 }
             } catch (Exception e) {
