@@ -9,10 +9,10 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "quest", 
-         aliases = {"q"}, 
-         usage = {"(add|finish) [<questId>]"}, 
-         permission = "player.quest", 
+@Command(label = "quest",
+         aliases = {"q"},
+         usage = {"(add|finish) [<questId>]"},
+         permission = "player.quest",
          permissionTargeted = "player.quest.others")
 public final class QuestCommand implements CommandHandler {
 
