@@ -76,7 +76,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         mailBuilder.mail.mailContent.title = welcomeMail.title;
         mailBuilder.mail.mailContent.sender = welcomeMail.sender;
         // Please credit Grasscutter if changing something here. We don't condone commercial use of the project.
-        mailBuilder.mail.mailContent.content = welcomeMail.content + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
+        mailBuilder.mail.mailContent.content = welcomeMail.content + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Grasscutters/Grasscutter\"/>";
         mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
         mailBuilder.mail.importance = 1;
         player.sendMail(mailBuilder.mail);

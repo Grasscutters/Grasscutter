@@ -63,7 +63,7 @@
 
     - Fiddler Classic : Fiddler Classic을 실행한 후, Setting에서 `Decrypt https traffic` 옵션을 켜고, Tools -> Options -> Connections에 있는 기본 포트를 `8888`을 제외한 다른 포트로 지정합니다. 그리고 [이 스크립트](https://github.lunatic.moe/fiddlerscript)를 불러옵니다.
 
-    - [호스트 파일](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+    - [호스트 파일](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
 
 2. 네트워크 프록시를 `127.0.0.1:8080` 로 설정하거나 지정한 프록시 포트로 설정합니다.
 
