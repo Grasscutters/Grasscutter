@@ -194,8 +194,7 @@ public final class JsonUtils {
             fields.stream().filter(Objects::nonNull).forEach(field -> fieldDefaults.put(field, field.isAccessible()));  // This method is deprecated because it doesn't do what people think it does. It happens to do exactly what we want it to.
 
             fields.stream().filter(Objects::nonNull).forEach(field -> field.setAccessible(true));  // This method is deprecated because it doesn't do what people think it does. It happens to do exactly what we want it to.
-            val output = new ArrayList<T>();
-            fileReader.lines().forEach(line -> {
+            val output = fileReader.lines().parallel().map(line -> {
                 T obj = null;
                 try {
                     obj = constructor.newInstance();
@@ -211,8 +210,8 @@ public final class JsonUtils {
                     Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName()+" : "+e);
                     Grasscutter.getLogger().warn("Line was: "+line);
                 }
-                output.add(obj);
-            });
+                return obj;
+            }).toList();
 
             fieldDefaults.forEach((field, b) -> field.setAccessible(b));
 
