@@ -144,8 +144,7 @@ public final class JsonUtils {
         type2Int.put(double.class, 5);
         type2Int.put(boolean.class, 6);
     }
-    private static void setField(Field field, Object obj, String value, boolean isAccessible) throws Exception {
-        field.setAccessible(true);  // For whatever reason, setting it outside this scope doesn't work
+    private static void setField(Field field, Object obj, String value) throws Exception {
         val type = field.getGenericType();
         // switch (type2Int.getOrDefault(type.getTypeName(), 0)) {
         switch (type2Int.getOrDefault(type, 0)) {
@@ -170,7 +169,6 @@ public final class JsonUtils {
                 }
             }
         }
-        // field.setAccessible(isAccessible);  // Might not be needed due to the scoping
     }
 
     public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
@@ -191,9 +189,11 @@ public final class JsonUtils {
             val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
             val columns = headerNames.size();
             val fields = headerNames.stream().map(fieldMap::get).toList();
+
             val fieldDefaults = new Object2BooleanArrayMap<Field>();
             fields.stream().filter(Objects::nonNull).forEach(field -> fieldDefaults.put(field, field.isAccessible()));  // This method is deprecated because it doesn't do what people think it does. It happens to do exactly what we want it to.
 
+            fields.stream().filter(Objects::nonNull).forEach(field -> field.setAccessible(true));  // This method is deprecated because it doesn't do what people think it does. It happens to do exactly what we want it to.
             val output = new ArrayList<T>();
             fileReader.lines().forEach(line -> {
                 T obj = null;
@@ -205,7 +205,7 @@ public final class JsonUtils {
                         val field = fields.get(i);
                         String token = tokens.get(i);
                         if (field != null && !token.isEmpty())
-                            setField(field, obj, token, fieldDefaults.getBoolean(field));
+                            setField(field, obj, token);
                     }
                 } catch (Exception e) {
                     Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName()+" : "+e);
@@ -213,6 +213,8 @@ public final class JsonUtils {
                 }
                 output.add(obj);
             });
+
+            fieldDefaults.forEach((field, b) -> field.setAccessible(b));
 
             return output;
         }
