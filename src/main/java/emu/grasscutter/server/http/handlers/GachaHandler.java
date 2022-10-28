@@ -15,7 +15,6 @@ import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
 import lombok.Getter;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -42,13 +41,6 @@ public final class GachaHandler implements Router {
     }
 
     private static void gachaRecords(Context ctx) {
-        File recordsTemplate = FileUtils.getDataPath("gacha/records.html").toFile();
-        if (!recordsTemplate.exists()) {
-            Grasscutter.getLogger().warn("File does not exist: " + recordsTemplate);
-            ctx.status(500);
-            return;
-        }
-
         String sessionKey = ctx.queryParam("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
         if (account == null) {
@@ -70,7 +62,7 @@ public final class GachaHandler implements Router {
         String records = DatabaseHelper.getGachaRecords(player.getUid(), page, gachaType).toString();
         long maxPage = DatabaseHelper.getGachaRecordsMaxPage(player.getUid(), page, gachaType);
 
-        String template = new String(FileUtils.read(recordsTemplate), StandardCharsets.UTF_8)
+        String template = new String(FileUtils.read(FileUtils.getDataPath("gacha/records.html")), StandardCharsets.UTF_8)
             .replace("{{REPLACE_RECORDS}}", records)
             .replace("{{REPLACE_MAXPAGE}}", String.valueOf(maxPage))
             .replace("{{TITLE}}", translate(player, "gacha.records.title"))
