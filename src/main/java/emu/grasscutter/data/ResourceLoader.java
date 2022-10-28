@@ -103,7 +103,7 @@ public class ResourceLoader {
             try {
                 loadFromResource(resourceDefinition, type, map, doReload);
             } catch (Exception e) {
-                Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e.getLocalizedMessage());
+                Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
             }
         }
     }
@@ -121,7 +121,8 @@ public class ResourceLoader {
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
-        List<T> list = JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c);
+        // List<T> list = JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c);
+        List<T> list = JsonUtils.loadTsvToList(getResourcePath("ExcelBinOutput/" + fileName.replace(".json", ".tsv")), c);
 
         for (T o : list) {
             GameResource res = (GameResource) o;

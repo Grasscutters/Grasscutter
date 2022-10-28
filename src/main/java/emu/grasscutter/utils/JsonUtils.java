@@ -4,21 +4,30 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.utils.JsonAdapters.*;
+import static emu.grasscutter.utils.Utils.nonRegexSplit;
 import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
+import lombok.val;
 
 public final class JsonUtils {
     static final Gson gson = new GsonBuilder()
@@ -100,6 +109,74 @@ public final class JsonUtils {
             return gson.fromJson(jsonData, classType);
         } catch (Exception ignored) {
             return null;
+        }
+    }
+
+    private static void setField(Field field, Object obj, String value, boolean isAccessible) throws Exception {
+        field.setAccessible(true);  // For whatever reason, setting it outside this scope doesn't work
+        val type = field.getGenericType();
+        switch (type.getTypeName()) {
+            case "java.lang.String" -> field.set(obj, value);
+            case "java.lang.Integer", "int" -> field.setInt(obj, Integer.parseInt(value));
+            case "java.lang.Long", "long" -> field.setLong(obj, Long.parseLong(value));
+            case "java.lang.Float", "float" -> field.setFloat(obj, Float.parseFloat(value));
+            case "java.lang.Double", "double" -> field.setDouble(obj, Double.parseDouble(value));
+            case "java.lang.Boolean", "boolean" -> field.setBoolean(obj, Boolean.parseBoolean(value));
+            default -> {
+                try {
+                    val v = gson.fromJson(value, type);
+                    if (v != null)
+                        field.set(obj, v);
+                } catch (Exception e) {
+                    Grasscutter.getLogger().error("Gson error on deserializing '"+value+"' - ", e.getMessage());
+                }
+            }
+        }
+        field.setAccessible(isAccessible);  // Might not be needed due to the scoping
+    }
+
+    public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
+        val constructor = classType.getDeclaredConstructor();
+        val fieldMap = new HashMap<String, Field>();
+        for (Field field : classType.getDeclaredFields()) {
+            val a = field.getDeclaredAnnotation(SerializedName.class);
+            if (a != null) {
+                fieldMap.put(a.value(), field);
+                for (val alt : a.alternate()) {
+                    fieldMap.put(alt, field);
+                }
+            } else {
+                fieldMap.put(field.getName(), field);
+            }
+        }
+        try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+            val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
+            val columns = headerNames.size();
+            val fields = headerNames.stream().map(fieldMap::get).toList();
+            val fieldDefaults = new Object2BooleanArrayMap<Field>();
+            fields.stream().filter(Objects::nonNull).forEach(field -> fieldDefaults.put(field, field.isAccessible()));  // This method is deprecated because it doesn't do what people think it does. It happens to do exactly what we want it to.
+
+            val output = new ArrayList<T>();
+            fileReader.lines().forEach(line -> {
+                T obj = null;
+                try {
+                    obj = constructor.newInstance();
+                    val tokens = nonRegexSplit(line, '\t');
+                    val m = Math.min(tokens.size(), columns);
+                    for (int i = 0; i < m; i++) {
+                        val field = fields.get(i);
+                        String token = tokens.get(i);
+                        if (field != null && !token.isEmpty())
+                            setField(field, obj, token, fieldDefaults.getBoolean(field));
+                    }
+                } catch (Exception e) {
+                    Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName()+" : "+e);
+                    Grasscutter.getLogger().warn("Line was: "+line);
+                }
+                output.add(obj);
+            });
+
+            return output;
         }
     }
 }
