@@ -73,12 +73,13 @@ public final class AnnouncementsHandler implements Router {
     }
 
     private static void getPageResources(Context ctx) {
-        // Re-Process the path - remove the first slash and prevent directory traversal
+        // Re-process the path - remove the first slash and prevent directory traversal
+        // (the first slash will act as root path when resolving local path)
         String[] path = ctx.path().split("/");
-        StringJoiner stringJoiner=new StringJoiner("/");
+        StringJoiner stringJoiner = new StringJoiner("/");
         for (String pathName : path) {
             // Filter the illegal payload to prevent directory traversal
-            if(!pathName.isEmpty() && !pathName.equals("..") && !pathName.contains("\\")) {
+            if (!pathName.isEmpty() && !pathName.equals("..") && !pathName.contains("\\")) {
                 stringJoiner.add(pathName);
             }
         }
