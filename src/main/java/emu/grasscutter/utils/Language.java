@@ -356,6 +356,7 @@ public final class Language {
             );
     }
 
+    @SuppressWarnings("unchecked")
     private static Int2ObjectMap<TextStrings> loadTextMapsCache() throws Exception {
         try (ObjectInputStream file = new ObjectInputStream(new BufferedInputStream(Files.newInputStream(TEXTMAP_CACHE_PATH), 0x100000))) {
             final int fileVersion = file.readInt();
