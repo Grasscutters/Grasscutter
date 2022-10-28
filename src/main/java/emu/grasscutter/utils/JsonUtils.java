@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,6 +28,9 @@ import emu.grasscutter.utils.JsonAdapters.*;
 import static emu.grasscutter.utils.Utils.nonRegexSplit;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
+import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.val;
 
 public final class JsonUtils {
@@ -112,27 +116,61 @@ public final class JsonUtils {
         }
     }
 
+    // private static Object2IntMap<String> type2Int;
+    private static Object2IntMap<Type> type2Int;
+    static {
+        type2Int = new Object2IntOpenHashMap<>();
+        // type2Int = new Object2IntArrayMap<>();
+        // type2Int.put("java.lang.String", 1);
+        // type2Int.put("java.lang.Integer", 2);
+        // type2Int.put("java.lang.Long", 3);
+        // type2Int.put("java.lang.Float", 4);
+        // type2Int.put("java.lang.Double", 5);
+        // type2Int.put("java.lang.Boolean", 6);
+        // type2Int.put("int", 2);
+        // type2Int.put("long", 3);
+        // type2Int.put("float", 4);
+        // type2Int.put("double", 5);
+        // type2Int.put("boolean", 6);
+        type2Int.put(String.class, 1);
+        type2Int.put(Integer.class, 2);
+        type2Int.put(Long.class, 3);
+        type2Int.put(Float.class, 4);
+        type2Int.put(Double.class, 5);
+        type2Int.put(Boolean.class, 6);
+        type2Int.put(int.class, 2);
+        type2Int.put(long.class, 3);
+        type2Int.put(float.class, 4);
+        type2Int.put(double.class, 5);
+        type2Int.put(boolean.class, 6);
+    }
     private static void setField(Field field, Object obj, String value, boolean isAccessible) throws Exception {
         field.setAccessible(true);  // For whatever reason, setting it outside this scope doesn't work
         val type = field.getGenericType();
-        switch (type.getTypeName()) {
-            case "java.lang.String" -> field.set(obj, value);
-            case "java.lang.Integer", "int" -> field.setInt(obj, Integer.parseInt(value));
-            case "java.lang.Long", "long" -> field.setLong(obj, Long.parseLong(value));
-            case "java.lang.Float", "float" -> field.setFloat(obj, Float.parseFloat(value));
-            case "java.lang.Double", "double" -> field.setDouble(obj, Double.parseDouble(value));
-            case "java.lang.Boolean", "boolean" -> field.setBoolean(obj, Boolean.parseBoolean(value));
+        // switch (type2Int.getOrDefault(type.getTypeName(), 0)) {
+        switch (type2Int.getOrDefault(type, 0)) {
+            case 1 -> field.set(obj, value);
+            case 2 -> field.set(obj, Integer.parseInt(value));
+            case 3 -> field.set(obj, Long.parseLong(value));
+            case 4 -> field.set(obj, Float.parseFloat(value));
+            case 5 -> field.set(obj, Double.parseDouble(value));
+            case 6 -> field.set(obj, Boolean.parseBoolean(value));
+            // case 2 -> field.setInt(obj, Integer.parseInt(value));
+            // case 3 -> field.setLong(obj, Long.parseLong(value));
+            // case 4 -> field.setFloat(obj, Float.parseFloat(value));
+            // case 5 -> field.setDouble(obj, Double.parseDouble(value));
+            // case 6 -> field.setBoolean(obj, Boolean.parseBoolean(value));
             default -> {
                 try {
                     val v = gson.fromJson(value, type);
                     if (v != null)
                         field.set(obj, v);
                 } catch (Exception e) {
-                    Grasscutter.getLogger().error("Gson error on deserializing '"+value+"' - ", e.getMessage());
+                    Grasscutter.getLogger().error("Gson error on deserializing '"+value+"' to "+type+" - "+e.getMessage());
                 }
             }
         }
-        field.setAccessible(isAccessible);  // Might not be needed due to the scoping
+        // field.setAccessible(isAccessible);  // Might not be needed due to the scoping
     }
 
     public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {

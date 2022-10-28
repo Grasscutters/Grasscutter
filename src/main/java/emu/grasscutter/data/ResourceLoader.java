@@ -86,6 +86,7 @@ public class ResourceLoader {
     }
 
     public static void loadResources(boolean doReload) {
+        long startTime = System.nanoTime();
         for (Class<?> resourceDefinition : getResourceDefClasses()) {
             ResourceType type = resourceDefinition.getAnnotation(ResourceType.class);
 
@@ -106,6 +107,9 @@ public class ResourceLoader {
                 Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
             }
         }
+        long endTime = System.nanoTime();
+        long ns = (endTime - startTime);  //divide by 1000000 to get milliseconds.
+        System.out.println("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
     }
 
     @SuppressWarnings("rawtypes")
