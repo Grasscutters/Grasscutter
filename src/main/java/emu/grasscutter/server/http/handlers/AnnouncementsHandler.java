@@ -14,7 +14,7 @@ import static emu.grasscutter.config.Configuration.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
-import java.util.StringJoiner
+import java.util.StringJoiner;
 
 /**
  * Handles requests related to the announcements page.
