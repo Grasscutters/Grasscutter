@@ -99,7 +99,7 @@ public class GameServerPacketHandler {
         }
 
         // Log unhandled packets
-        if (GAME_INFO.logPackets == ServerDebugMode.MISSING) {
+        if (GAME_INFO.logPackets == ServerDebugMode.MISSING || GAME_INFO.logPackets == ServerDebugMode.ALL) {
             Grasscutter.getLogger().info("Unhandled packet (" + opcode + "): " + emu.grasscutter.net.packet.PacketOpcodesUtils.getOpcodeName(opcode));
         }
     }
