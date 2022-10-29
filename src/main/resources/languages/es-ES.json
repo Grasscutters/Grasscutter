@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "Servidor del juego iniciado en \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Servidor del juego iniciado en el puerto %s",
       "connect": "Cliente conectado desde %s",
       "disconnect": "Cliente desconectado desde %s",
@@ -9,7 +9,7 @@
       "command_error": "Comando de error:"
     },
     "dispatch": {
-      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] Servidor de envio iniciado en \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] El servidor de envío se inició en el puerto %s",
       "request": "[Dispatch] Petición %s %s del cliente: %s",
       "keystore": {
@@ -293,9 +293,9 @@
       "description": "Detiene el servidor"
     },
     "talent": {
-      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
-      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
-      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "out_of_range": "Nivel de talento inválido. El nivel debe estar en un rango de 1-15.",
+      "set_id": "Establecer talento %s - \"%s\" a %s.",
+      "id_desc": "Talento %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "ID de habilidad inválido.",
       "invalid_level": "Nivel de talento inválido.",
       "normal_attack_id": "ID del ataque normal %s.",
@@ -364,40 +364,40 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "🇺🇸Id",
+      "header_id": "Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "🇺🇸Avatar",
+      "header_avatar": "Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "Error al crear directorio de plugins: ",
+    "unable_to_load": "No se puede cargar el plugin.",
+    "invalid_config": "El plugin %s tiene un archivo de configuración inválido.",
+    "invalid_main_class": "El plugin %s tiene una clase principal inválida.",
+    "missing_config": "El plugin %s no tiene un archivo de configuración válido.",
+    "failed_to_load_plugin": "Error al cargar el plugin: %s",
+    "failed_to_load": "Error al cargar un plugin.",
+    "failed_to_load_dependencies": "Error al cargar plugins con dependencias.",
+    "loading_plugin": "Cargando plugin: %s",
+    "failed_add_id": "Error al añadir identificador de plugin: %s",
+    "enabling_plugin": "Activando plugin: %s",
+    "enabling_failed": "Error al activar el plugin: %s",
+    "disabling_plugin": "Desactivando el plugin: %s",
+    "disabling_failed": "Error al desactivar el plugin: %s"
   }
 }
