@@ -58,7 +58,7 @@ public final class SetConstCommand implements CommandHandler {
 
         // force player to reload scene when necessary
         if (constLevel < currentConstLevel) {
-            this.reloadScene(player);
+            player.reloadScene();
         }
 
         // ensure that all changes are visible to the player
@@ -74,16 +74,8 @@ public final class SetConstCommand implements CommandHandler {
                 avatar.recalcStats(true);
                 avatar.save();
         });
-        // Just reload scene once, shorter than having to check for each constLevel < currentConstLevel
-        this.reloadScene(player);
-    }
 
-    private void reloadScene(Player player) {
-        World world = player.getWorld();
-        Scene scene = player.getScene();
-        Position pos = player.getPosition();
-        world.transferPlayerToScene(player, 1, pos);
-        world.transferPlayerToScene(player, scene.getId(), pos);
-        scene.broadcastPacket(new PacketSceneEntityAppearNotify(player));
+        // Just reload scene once, shorter than having to check for each constLevel < currentConstLevel
+        player.reloadScene();
     }
 }

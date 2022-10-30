@@ -1342,4 +1342,13 @@ public class Player {
         }
     }
 
+    public void reloadScene() {
+        World world = this.getWorld();
+        Scene scene = this.getScene();
+        Position pos = this.getPosition();
+
+        world.transferPlayerToScene(this, 1, pos);
+        world.transferPlayerToScene(this, scene.getId(), pos);
+        scene.broadcastPacket(new PacketSceneEntityAppearNotify(this));
+    }
 }
