@@ -155,8 +155,12 @@ public final class DatabaseHelper {
         DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("id", target.getId())).delete();
     }
 
-    public static Stream<Player> getAllPlayers() {
-        return DatabaseManager.getGameDatastore().find(Player.class).stream();
+    public static <T> Stream<T> getByGameClass(Class<T> classType) {
+        return DatabaseManager.getGameDatastore().find(classType).stream();
+    }
+
+    public static List<Player> getAllPlayers() {
+        return DatabaseManager.getGameDatastore().find(Player.class).stream().toList();
     }
 
     public static Player getPlayerByUid(int id) {
