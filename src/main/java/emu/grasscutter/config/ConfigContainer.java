@@ -93,6 +93,7 @@ public class ConfigContainer {
     }
 
     public static class Server {
+        public String apiKey;
         public Set<Integer> debugWhitelist = Set.of();
         public Set<Integer> debugBlacklist = Set.of();
         public ServerRunMode runMode = ServerRunMode.HYBRID;
