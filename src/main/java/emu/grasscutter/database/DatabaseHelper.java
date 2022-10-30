@@ -159,6 +159,7 @@ public final class DatabaseHelper {
         return DatabaseManager.getGameDatastore().find(classType).stream();
     }
 
+    @Deprecated(forRemoval = true)
     public static List<Player> getAllPlayers() {
         return DatabaseManager.getGameDatastore().find(Player.class).stream().toList();
     }
