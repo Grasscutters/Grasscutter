@@ -9,6 +9,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -78,9 +79,10 @@ public final class SendMailCommand implements CommandHandler {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
                                 CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_done", mailBuilder.recipient));
                             } else {
-                                for (Player player : DatabaseHelper.getAllPlayers()) {
-                                    Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mailBuilder.mail);
-                                }
+                                DatabaseHelper.getByGameClass(Player.class).forEach(player -> {
+                                    var onlinePlayer = Grasscutter.getGameServer().getPlayerByUid(player.getUid(), false);
+                                    Objects.requireNonNullElse(onlinePlayer, player).sendMail(mailBuilder.mail);
+                                });
                                 CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_all_done"));
                             }
                             mailBeingConstructed.remove(senderId);
