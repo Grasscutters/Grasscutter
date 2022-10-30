@@ -23,6 +23,7 @@ import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
+import emu.grasscutter.server.webapi.HsManWebApi;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonUtils;
@@ -156,6 +157,7 @@ public final class Grasscutter {
             System.exit(1);
         }
 
+        HsManWebApi.Init();
         // Enable all plugins.
         pluginManager.enablePlugins();
 
