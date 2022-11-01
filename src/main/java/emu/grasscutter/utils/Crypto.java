@@ -36,14 +36,23 @@ public final class Crypto {
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
+            var CNRelOldSign = KeyFactory.getInstance("RSA")
+                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/CNRel_Pub_old.der")));
+
+            var OSRelOldSign = KeyFactory.getInstance("RSA")
+                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSRel_Pub_old.der")));
+
             var CNRelSign = KeyFactory.getInstance("RSA")
                 .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/CNRel_Pub.der")));
 
             var OSRelSign = KeyFactory.getInstance("RSA")
                 .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSRel_Pub.der")));
 
-            EncryptionKeys.put(2, CNRelSign);
-            EncryptionKeys.put(3, OSRelSign);
+            EncryptionKeys.put(2, CNRelOldSign);
+            EncryptionKeys.put(3, OSRelOldSign);
+            EncryptionKeys.put(4, CNRelSign);
+            EncryptionKeys.put(5, OSRelSign);
+
         }
         catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
