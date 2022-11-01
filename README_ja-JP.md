@@ -44,7 +44,7 @@
 
 ### クライアントとの接続
 
-½. [このコマンド](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting)をサーバーコンソールから使用してアカウントを作成してください｡
+½. [このコマンド](https://github.com/Grasscutters/Grasscutter/wiki/Commands#commands-for-server-admins)をサーバーコンソールから使用してアカウントを作成してください｡
 
 1. 通信内容をリダイレクトする: (どちらか一つを選択してください)
     - mitmdump: `mitmdump -s proxy.py -k`
