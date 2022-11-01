@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -36,14 +38,19 @@ public final class Crypto {
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
-            var CNRelSign = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/CNRel_Pub.der")));
+            for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
+                if (path.toString().endsWith("_Pub.der")) {
+                    var id = Integer.valueOf(path.toString()
+                        .split("game_keys")[1]
+                        .split("_Pub.der")[0]
+                        .replaceFirst("(\\\\|/)", ""));
 
-            var OSRelSign = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSRel_Pub.der")));
+                    var key = KeyFactory.getInstance("RSA")
+                        .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
 
-            EncryptionKeys.put(2, CNRelSign);
-            EncryptionKeys.put(3, OSRelSign);
+                    EncryptionKeys.put(id, key);
+                }
+            }
         }
         catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
