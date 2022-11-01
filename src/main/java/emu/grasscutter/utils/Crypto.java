@@ -10,6 +10,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 import emu.grasscutter.Grasscutter;
 
@@ -38,17 +39,19 @@ public final class Crypto {
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
+            Pattern pattern = Pattern.compile("([0-9]*)_Pub\\.der");
             for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
                 if (path.toString().endsWith("_Pub.der")) {
-                    var id = Integer.valueOf(path.toString()
-                        .split("game_keys")[1]
-                        .split("_Pub.der")[0]
-                        .replaceFirst("(\\\\|/)", ""));
 
-                    var key = KeyFactory.getInstance("RSA")
-                        .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+                    var m = pattern.matcher(path.getFileName().toString());
 
-                    EncryptionKeys.put(id, key);
+                    if (m.matches())
+                    {
+                        var key = KeyFactory.getInstance("RSA")
+                            .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+
+                        EncryptionKeys.put(Integer.valueOf(m.group(1)), key);
+                    }
                 }
             }
         }
