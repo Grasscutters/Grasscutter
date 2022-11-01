@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -8,6 +10,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 import emu.grasscutter.Grasscutter;
 
@@ -36,14 +39,21 @@ public final class Crypto {
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
-            var CNRelSign = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/CNRel_Pub.der")));
+            Pattern pattern = Pattern.compile("([0-9]*)_Pub\\.der");
+            for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
+                if (path.toString().endsWith("_Pub.der")) {
 
-            var OSRelSign = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSRel_Pub.der")));
+                    var m = pattern.matcher(path.getFileName().toString());
 
-            EncryptionKeys.put(2, CNRelSign);
-            EncryptionKeys.put(3, OSRelSign);
+                    if (m.matches())
+                    {
+                        var key = KeyFactory.getInstance("RSA")
+                            .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+
+                        EncryptionKeys.put(Integer.valueOf(m.group(1)), key);
+                    }
+                }
+            }
         }
         catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
