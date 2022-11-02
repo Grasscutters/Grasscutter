@@ -20,4 +20,4 @@ jobs:
     steps:
       - uses: superbrothers/close-pull-request@v3
         with:
-          comment: "This PR has been closed for modifying protected files. See `CONTIBUTING.md` for more information."
+          comment: "This PR has been closed for modifying protected files. See `CONTRIBUTING.md` for more information."

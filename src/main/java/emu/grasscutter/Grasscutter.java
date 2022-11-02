@@ -48,27 +48,27 @@ import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
 public final class Grasscutter {
-    private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
+    @Getter private static final Logger logger = (Logger) LoggerFactory.getLogger(Grasscutter.class);
     private static LineReader consoleLineReader = null;
 
-    private static Language language;
+    @Getter @Setter private static Language language;
 
     public static final File configFile = new File("./config.json");
     @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
 
-    private static int day; // Current day of week.
+    @Getter private static int currentDayOfWeek;
     @Getter @Setter private static String preferredLanguage;
 
-    private static HttpServer httpServer;
-    private static GameServer gameServer;
-    private static PluginManager pluginManager;
+    @Getter private static HttpServer httpServer;
+    @Getter private static GameServer gameServer;
+    @Getter private static PluginManager pluginManager;
     @Getter private static CommandMap commandMap;
 
-    private static AuthenticationSystem authenticationSystem;
-    private static PermissionHandler permissionHandler;
+    @Getter @Setter private static AuthenticationSystem authenticationSystem;
+    @Getter @Setter private static PermissionHandler permissionHandler;
 
     public static final Reflections reflector = new Reflections("emu.grasscutter");
-    public static ConfigContainer config;
+    @Getter public static ConfigContainer config;
 
     static {
         // Declare logback configuration.
@@ -230,28 +230,12 @@ public final class Grasscutter {
      * Getters for the various server components.
      */
 
-    public static ConfigContainer getConfig() {
-        return config;
-    }
-
-    public static Language getLanguage() {
-        return language;
-    }
-
-    public static void setLanguage(Language language) {
-        Grasscutter.language = language;
-    }
-
     public static Language getLanguage(String langCode) {
         return Language.getLanguage(langCode);
     }
 
     public static ServerRunMode getRunMode() {
         return Grasscutter.runModeOverride != null ? Grasscutter.runModeOverride : SERVER.runMode;
-    }
-
-    public static Logger getLogger() {
-        return log;
     }
 
     public static LineReader getConsole() {
@@ -274,38 +258,14 @@ public final class Grasscutter {
         return consoleLineReader;
     }
 
-    public static HttpServer getHttpServer() {
-        return httpServer;
-    }
-
-    public static GameServer getGameServer() {
-        return gameServer;
-    }
-
-    public static PluginManager getPluginManager() {
-        return pluginManager;
-    }
-
-    public static AuthenticationSystem getAuthenticationSystem() {
-        return authenticationSystem;
-    }
-
-    public static PermissionHandler getPermissionHandler() {
-        return permissionHandler;
-    }
-
-    public static int getCurrentDayOfWeek() {
-        return day;
-    }
-
     /*
      * Utility methods.
      */
 
     public static void updateDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
-        day = calendar.get(Calendar.DAY_OF_WEEK);
-        Grasscutter.getLogger().debug("Set day of week to "+day);
+        Grasscutter.currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        Grasscutter.getLogger().debug("Set day of week to "+currentDayOfWeek);
     }
 
     public static void startConsole() {
@@ -344,24 +304,6 @@ public final class Grasscutter {
                 Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
             }
         }
-    }
-
-    /**
-     * Sets the authentication system for the server.
-     *
-     * @param authenticationSystem The authentication system to use.
-     */
-    public static void setAuthenticationSystem(AuthenticationSystem authenticationSystem) {
-        Grasscutter.authenticationSystem = authenticationSystem;
-    }
-
-    /**
-     * Sets the permission handler for the server.
-     *
-     * @param permissionHandler The permission handler to use.
-     */
-    public static void setPermissionHandler(PermissionHandler permissionHandler) {
-        Grasscutter.permissionHandler = permissionHandler;
     }
 
     /*

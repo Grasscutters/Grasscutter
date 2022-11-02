@@ -27,7 +27,8 @@ public class PacketOpcodesUtils {
         PacketOpcodes.PingRsp,
         PacketOpcodes.WorldPlayerRTTNotify,
         PacketOpcodes.UnionCmdNotify,
-        PacketOpcodes.QueryPathReq
+        PacketOpcodes.QueryPathReq,
+        PacketOpcodes.QueryPathRsp
     );
 
     static {

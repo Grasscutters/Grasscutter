@@ -66,7 +66,7 @@ certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
 
 
 
-   -עריכת [קובץ הHosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+   -עריכת [קובץ הHosts](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
 
 2. תשנו את שרת בproxy שלכם ל`127.0.0.1:8080`
 

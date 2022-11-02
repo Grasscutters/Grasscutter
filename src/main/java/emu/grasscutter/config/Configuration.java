@@ -38,6 +38,7 @@ public final class Configuration extends ConfigContainer {
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
+    public static final DebugMode DEBUG_MODE_INFO = config.server.debugMode;
 
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;

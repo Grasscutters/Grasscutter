@@ -316,7 +316,7 @@ public class Player {
 
     public Account getAccount() {
         if (this.account == null)
-            this.account = DatabaseHelper.getAccountById(Integer.toString(this.id));
+            this.account = DatabaseHelper.getAccountById(this.accountId);
         return this.account;
     }
 
