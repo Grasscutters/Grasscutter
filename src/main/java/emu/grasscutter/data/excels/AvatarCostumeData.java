@@ -7,7 +7,7 @@ import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "AvatarCostumeExcelConfigData.json")
 public class AvatarCostumeData extends GameResource {
-    @SerializedName(value = "skinId", alternate = "costumeId")
+    @SerializedName(value = "skinId", alternate = {"HPECGIGEJKG", "costumeId"})
     private int skinId;
     private int itemId;
     private int characterId;
