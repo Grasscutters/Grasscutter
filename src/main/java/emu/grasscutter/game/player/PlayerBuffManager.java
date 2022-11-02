@@ -2,9 +2,12 @@ package emu.grasscutter.game.player;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.BuffData;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType;
 import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
 import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
@@ -14,6 +17,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.val;
 
 @Getter(AccessLevel.PRIVATE)
 public class PlayerBuffManager extends BasePlayerManager {
@@ -74,9 +78,49 @@ public class PlayerBuffManager extends BasePlayerManager {
      * @return True if a buff was added
      */
     public synchronized boolean addBuff(int buffId, float duration) {
+        return addBuff(buffId, duration, null);
+    }
+
+    /**
+     * Adds a server buff to the player.
+     * @param buffId Server buff id
+     * @param duration Duration of the buff in seconds. Set to 0 for an infinite buff.
+     * @param target Target avatar
+     * @return True if a buff was added
+     */
+    public synchronized boolean addBuff(int buffId, float duration, Avatar target) {
         // Get buff excel data
         BuffData buffData = GameData.getBuffDataMap().get(buffId);
         if (buffData == null) return false;
+
+        boolean success = false;
+
+        // Perform onAdded actions
+        success |= Optional.ofNullable(GameData.getAbilityData(buffData.getAbilityName()))
+            .map(data -> data.modifiers.get(buffData.getModifierName()))
+            .map(modifier -> modifier.onAdded)
+            .map(onAdded -> {
+                System.out.println("onAdded exists");
+                boolean s = false;
+                for (var a: onAdded) {
+                    switch (a.type) {
+                        case HealHP:
+                            System.out.println("Attempting heal");
+                            if (target == null) break;
+                            float maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+                            float amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
+                            target.getAsEntity().heal(amount);
+                            s = true;
+                            System.out.printf("Healed {}", amount);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                return s;
+            })
+            .orElse(false);
+        System.out.println("Oh no");
 
         // Set duration
         if (duration < 0f) {
@@ -85,7 +129,7 @@ public class PlayerBuffManager extends BasePlayerManager {
 
         // Dont add buff if duration is equal or less than 0
         if (duration <= 0) {
-            return false;
+            return success;
         }
 
         // Clear previous buff if it exists

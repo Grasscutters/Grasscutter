@@ -207,8 +207,8 @@
       "description": "Grants or removes a permission for a user"
     },
     "position": {
-      "success": "Coordinates: %s, %s, %s\nScene ID: %s",
-      "description": "Get coordinates"
+      "success": "Coordinates: %s, %s, %s\nRotation：%s, %s, %s\nScene ID: %s",
+      "description": "Gets position and rotation information"
     },
     "quest": {
       "added": "Quest %s added.",
@@ -264,6 +264,7 @@
       "fail": "Failed to set constellation.",
       "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
       "success": "Constellations for %s have been set to %s.",
+      "successall": "Constellations for all characters have been set to %s.",
       "description": "Sets constellation level for your current active character"
     },
     "setFetterLevel": {
@@ -292,7 +293,7 @@
       "description": "Stops the server"
     },
     "talent": {
-      "lower_16": "Invalid talent level. Level should be lower than 16.",
+      "out_of_range": "Invalid talent level. Level should be in range of 1-15.",
       "set_id": "Set talent %s - \"%s\" to %s.",
       "id_desc": "Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Invalid skill ID.",

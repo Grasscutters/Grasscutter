@@ -207,8 +207,8 @@
       "description": "ユーザーの権限を付与または削除します"
     },
     "position": {
-      "success": "座標: %s、%s、%s\nシーンID: %s",
-      "description": "座標を取得する"
+      "success": "座標：%s、%s、%s\n回転：%s、%s、%s\nシーンID: %s",
+      "description": "位置と回転情報を取得します"
     },
     "quest": {
       "added": "クエスト %s が追加されました。",
@@ -264,6 +264,7 @@
       "fail": "星座の設定に失敗しました。",
       "failed_success": "%s の星座は %s に設定されました。 シーンをリロードして変更を確認してください。",
       "success": "%s の星座は %s に設定されました。",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "現在アクティブなキャラクターの星座レベルを設定します"
     },
     "setFetterLevel": {
@@ -292,7 +293,7 @@
       "description": "サーバーを停止中"
     },
     "talent": {
-      "lower_16": "天賦レベルが無効です｡ レベルは16未満である必要があります｡",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "%s - の天賦\"%s\" を %s に設定しました",
       "id_desc": "天賦 %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "スキル ID が無効です。",

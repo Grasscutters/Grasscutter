@@ -1,8 +1,9 @@
 package emu.grasscutter.config;
 
-import java.util.Locale;
+import emu.grasscutter.utils.FileUtils;
 
-import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.util.Locale;
 
 import static emu.grasscutter.Grasscutter.config;
 
@@ -26,7 +27,6 @@ public final class Configuration extends ConfigContainer {
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     public static final String DOCUMENT_LANGUAGE = config.language.document;
     private static final String DATA_FOLDER = config.folderStructure.data;
-    private static final String RESOURCES_FOLDER = config.folderStructure.resources;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
     private static final String PACKETS_FOLDER = config.folderStructure.packets;
@@ -38,6 +38,7 @@ public final class Configuration extends ConfigContainer {
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
+    public static final DebugMode DEBUG_MODE_INFO = config.server.debugMode;
 
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
@@ -49,32 +50,43 @@ public final class Configuration extends ConfigContainer {
     /*
      * Utilities
      */
+    @Deprecated(forRemoval = true)
     public static String DATA() {
         return DATA_FOLDER;
     }
 
+    @Deprecated(forRemoval = true)
     public static String DATA(String path) {
-        return Paths.get(DATA_FOLDER, path).toString();
+        return Path.of(DATA_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
+    public static Path getResourcePath(String path) {
+        return FileUtils.getResourcePath(path);
+    }
+
+    @Deprecated(forRemoval = true)
     public static String RESOURCE(String path) {
-        return Paths.get(RESOURCES_FOLDER, path).toString();
+        return FileUtils.getResourcePath(path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String PLUGIN() {
         return PLUGINS_FOLDER;
     }
 
     public static String PLUGIN(String path) {
-        return Paths.get(PLUGINS_FOLDER, path).toString();
+        return Path.of(PLUGINS_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String SCRIPT(String path) {
-        return Paths.get(SCRIPTS_FOLDER, path).toString();
+        return Path.of(SCRIPTS_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String PACKET(String path) {
-        return Paths.get(PACKETS_FOLDER, path).toString();
+        return Path.of(PACKETS_FOLDER, path).toString();
     }
 
     /**

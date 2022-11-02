@@ -5,7 +5,6 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
@@ -15,6 +14,7 @@ import static emu.grasscutter.config.Configuration.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 /**
  * Handles requests related to the announcements page.
@@ -73,8 +73,18 @@ public final class AnnouncementsHandler implements Router {
     }
 
     private static void getPageResources(Context ctx) {
-        try (InputStream filestream = DataLoader.load(ctx.path())) {
-            String possibleFilename = Utils.toFilePath(DATA(ctx.path()));
+        // Re-process the path - remove the first slash and prevent directory traversal
+        // (the first slash will act as root path when resolving local path)
+        String[] path = ctx.path().split("/");
+        StringJoiner stringJoiner = new StringJoiner("/");
+        for (String pathName : path) {
+            // Filter the illegal payload to prevent directory traversal
+            if (!pathName.isEmpty() && !pathName.equals("..") && !pathName.contains("\\")) {
+                stringJoiner.add(pathName);
+            }
+        }
+        try (InputStream filestream = DataLoader.load(stringJoiner.toString())) {
+            String possibleFilename = ctx.path();
 
             ContentType fromExtension = ContentType.getContentTypeByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
             ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);

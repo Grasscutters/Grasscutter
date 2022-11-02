@@ -54,7 +54,7 @@ public class QuestSystem extends BaseGameSystem {
                 return;
             }
 
-            map.put(opcode.value().getValue(), handlerClass.newInstance());
+            map.put(opcode.value().getValue(), handlerClass.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
             e.printStackTrace();
         }

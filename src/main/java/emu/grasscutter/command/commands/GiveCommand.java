@@ -1,11 +1,11 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
@@ -16,37 +16,27 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.SparseSet;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import java.util.regex.Matcher;
+import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
+
+import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
     label = "give",
     aliases = {"g", "item", "giveitem"},
     usage = {
-        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>]",
+        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]",
         "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."},
     permission = "player.give",
     permissionTargeted = "player.give.others",
     threading = true)
 public final class GiveCommand implements CommandHandler {
-    private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
-    private static Pattern refineRegex = Pattern.compile("r(\\d+)");
-    private static Pattern constellationRegex = Pattern.compile("c(\\d+)");
-    private static Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
-
-    private static int matchIntOrNeg(Pattern pattern, String arg) {
-        Matcher match = pattern.matcher(arg);
-        if (match.find()) {
-            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
-        }
-        return -1;
-    }
-
-    private static enum GiveAllType {
+    private enum GiveAllType {
         NONE,
         ALL,
         WEAPONS,
@@ -54,48 +44,33 @@ public final class GiveCommand implements CommandHandler {
         AVATARS
     }
 
+    private static final Map<Pattern, BiConsumer<GiveItemParameters, Integer>> intCommandHandlers = Map.ofEntries(
+        Map.entry(lvlRegex, GiveItemParameters::setLvl),
+        Map.entry(refineRegex, GiveItemParameters::setRefinement),
+        Map.entry(amountRegex, GiveItemParameters::setAmount),
+        Map.entry(constellationRegex, GiveItemParameters::setConstellation),
+        Map.entry(skillLevelRegex, GiveItemParameters::setSkillLevel)
+    );
+
     private static class GiveItemParameters {
         public int id;
-        public int lvl = 0;
-        public int amount = 1;
-        public int refinement = 1;
-        public int constellation = -1;
+        @Setter public int lvl = 0;
+        @Setter public int amount = 1;
+        @Setter public int refinement = 1;
+        @Setter public int constellation = -1;
+        @Setter public int skillLevel = 1;
         public int mainPropId = -1;
         public List<Integer> appendPropIdList;
         public ItemData data;
         public AvatarData avatarData;
         public GiveAllType giveAllType = GiveAllType.NONE;
-    };
+    }
 
     private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
         GiveItemParameters param = new GiveItemParameters();
 
         // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
-        for (int i = args.size() - 1; i >= 0; i--) {  // Reverse iteration as we are deleting elements
-            String arg = args.get(i).toLowerCase();
-            boolean deleteArg = false;
-            int argNum;
-            // Note that a single argument can actually match all of these, e.g. "lv90r5x100"
-            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
-                param.lvl = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
-                param.refinement = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(constellationRegex, arg)) != -1) {
-                param.constellation = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
-                param.amount = argNum;
-                deleteArg = true;
-            }
-            if (deleteArg) {
-                args.remove(i);
-            }
-        }
+        parseIntParameters(args, param, intCommandHandlers);
 
         // At this point, first remaining argument MUST be itemId/avatarId
         if (args.size() < 1) {
@@ -240,30 +215,28 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private static Avatar makeAvatar(GiveItemParameters param) {
-        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation);
+        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation, param.skillLevel);
     }
 
-    private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation) {
+    private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation, int skillLevel) {
         Avatar avatar = new Avatar(avatarData);
         avatar.setLevel(level);
         avatar.setPromoteLevel(promoteLevel);
+        avatar.getSkillDepot().getSkillsAndEnergySkill().forEach(id -> avatar.setSkillLevel(id, skillLevel));
         avatar.forceConstellationLevel(constellation);
-        avatar.recalcStats();
+        avatar.recalcStats(true);
+        avatar.save();
         return avatar;
     }
 
     private static void giveAllAvatars(Player player, GiveItemParameters param) {
         int promoteLevel = Avatar.getMinPromoteLevel(param.lvl);
-        if (param.constellation < 0) {
-            param.constellation = 6;
-        }
+        if (param.constellation < 0 || param.constellation > 6) param.constellation = 6; // constellation's default is -1 so if no parameters set for constellations it'll automatically be 6
         for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
-            // Exclude test avatars
             int id = avatarData.getId();
-            if (id < 10000002 || id >= 11000000) continue;
-
+            if (id < 10000002 || id >= 11000000) continue; // Exclude test avatars
             // Don't try to add each avatar to the current team
-            player.addAvatar(makeAvatar(avatarData, param.lvl, promoteLevel, param.constellation), false);
+            player.addAvatar(makeAvatar(avatarData, param.lvl, promoteLevel, param.constellation, param.skillLevel), false);
         }
     }
 
@@ -400,7 +373,7 @@ public final class GiveCommand implements CommandHandler {
             for (int i = 0; i < n; i++) {
                 param.appendPropIdList.add(appendPropId);
             }
-        };
+        }
     }
 
     private static void addItemsChunked(Player player, List<GameItem> items, int packetSize) {

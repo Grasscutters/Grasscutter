@@ -1,11 +1,16 @@
 package emu.grasscutter.utils;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 
 import emu.grasscutter.Grasscutter;
 
@@ -19,9 +24,9 @@ public final class Crypto {
     public static long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");
     public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 
-    public static PublicKey CUR_OS_ENCRYPT_KEY;
-    public static PublicKey CUR_CN_ENCRYPT_KEY;
     public static PrivateKey CUR_SIGNING_KEY;
+
+    public static Map<Integer, PublicKey> EncryptionKeys = new HashMap<>();
 
     public static void loadKeys() {
         DISPATCH_KEY = FileUtils.readResource("/keys/dispatchKey.bin");
@@ -31,15 +36,24 @@ public final class Crypto {
         ENCRYPT_SEED_BUFFER = FileUtils.readResource("/keys/secretKeyBuffer.bin");
 
         try {
-            //These should be loaded from ChannelConfig_whatever.json
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
-            CUR_OS_ENCRYPT_KEY = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSCB_Pub.der")));
+            Pattern pattern = Pattern.compile("([0-9]*)_Pub\\.der");
+            for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
+                if (path.toString().endsWith("_Pub.der")) {
 
-            CUR_CN_ENCRYPT_KEY = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSCN_Pub.der")));
+                    var m = pattern.matcher(path.getFileName().toString());
+
+                    if (m.matches())
+                    {
+                        var key = KeyFactory.getInstance("RSA")
+                            .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+
+                        EncryptionKeys.put(Integer.valueOf(m.group(1)), key);
+                    }
+                }
+            }
         }
         catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);

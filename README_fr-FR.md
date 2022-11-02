@@ -63,7 +63,7 @@
 
     - Fiddler Classic: Exécutez Fiddler Classic, Activez `Decrypt https traffic` dans les paramètres et changez le port par défaut ici (Tools -> Options -> Connections) à autre chose que `8888`, et chargez [ce script](https://github.lunatic.moe/fiddlerscript).
 
-    - [Fichier hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+    - [Fichier hosts](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
 
 2. Définissez le proxy du réseau comme `127.0.0.1:8080` ou le port du proxy que vous avez spécifié.
 

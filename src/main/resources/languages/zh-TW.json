@@ -207,8 +207,8 @@
       "description": "指派或移除指定玩家的權限。"
     },
     "position": {
-      "success": "座標：%s, %s, %s\n場景ID：%s",
-      "description": "獲取目前所在位置的座標。"
+      "success": "坐標：%s, %s, %s\n旋轉：%s, %s, %s\n場景ID：%s",
+      "description": "獲取所在坐標和旋轉信息"
     },
     "quest": {
       "added": "已添加任務 %s",
@@ -264,6 +264,7 @@
       "fail": "設定命座失敗。",
       "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
       "success": "%s的命之座已設定為成%s。",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "設定當前角色的命之座。"
     },
     "setFetterLevel": {
@@ -292,7 +293,7 @@
       "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
-      "lower_16": "無效的天賦等級，技能等級應低於 16。",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
       "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "無效的技能ID。",

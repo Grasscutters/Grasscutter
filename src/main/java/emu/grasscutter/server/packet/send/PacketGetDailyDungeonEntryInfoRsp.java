@@ -18,7 +18,7 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 
         var resp= GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
 
-        for (var info :  GameData.getDungeonEntryDatatMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
+        for (var info :  GameData.getDungeonEntryDataMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
             resp.addDailyDungeonInfoList(info);
 
         this.setData(resp.build());

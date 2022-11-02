@@ -181,7 +181,7 @@
     },
     "killall": {
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
-      "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
+      "kill_monsters_in_scene": "已杀死 %s 个怪物。 [场景ID: %s ]",
       "description": "杀死所有怪物"
     },
     "killCharacter": {
@@ -207,8 +207,8 @@
       "description": "添加或移除指定玩家的权限"
     },
     "position": {
-      "success": "坐标：%s, %s, %s\n场景ID：%s",
-      "description": "获取所在位置"
+      "success": "坐标：%s, %s, %s\n旋转：%s, %s, %s\n场景ID：%s",
+      "description": "获取所在位置和旋转信息"
     },
     "quest": {
       "added": "已添加任务 %s。",
@@ -264,6 +264,7 @@
       "fail": "命之座等级设置失败。",
       "failed_success": "命之座 %s 已设置为 %s。",
       "success": "命之座 %s 已设置为 %s。",
+      "successall": "🇺🇸Constellations for all characters have been set to %s.",
       "description": "为当前活跃角色设置命座等级"
     },
     "setFetterLevel": {
@@ -292,7 +293,7 @@
       "description": "停止服务器"
     },
     "talent": {
-      "lower_16": "无效的天赋等级，天赋等级应在 1-15 之间。",
+      "out_of_range": "无效的天赋等级。天赋等级必须在 1-15 之间。",
       "set_id": "修改技能 %s - \"%s\" 至 %s。",
       "id_desc": "技能 %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "无效的技能ID。",
@@ -330,7 +331,7 @@
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
       "status": "当前天气ID 为 %s，气候类型为 %s。",
-      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+      "description": "更改天气ID和气候类型。\n\t天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
       "success": "成功封禁玩家。",
@@ -384,19 +385,19 @@
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "无法创建插件目录：",
+    "unable_to_load": "无法加载插件。",
+    "invalid_config": "插件：%s 的配置文件无效。",
+    "invalid_main_class": "插件：%s 的主类无效。",
+    "missing_config": "插件：%s 缺少有效的配置文件。",
+    "failed_to_load_plugin": "无法加载插件：%s",
+    "failed_to_load": "无法加载插件。",
+    "failed_to_load_dependencies": "无法加载插件依赖。",
+    "loading_plugin": "正在加载插件：%s",
+    "failed_add_id": "无法添加插件标识符：%s",
+    "enabling_plugin": "启用插件：%s",
+    "enabling_failed": "无法启用插件：%s",
+    "disabling_plugin": "正在禁用插件：%s",
+    "disabling_failed": "无法禁用插件：%s"
   }
 }

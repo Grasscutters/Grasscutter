@@ -13,7 +13,7 @@ public class GachaBanner {
     @Getter private int gachaType;
     @Getter private int scheduleId;
     @Getter private String prefabPath;
-    @Getter private String previewPrefabPath;
+    private String previewPrefabPath;
     @Getter private String titlePath;
     private int costItemId = 0;
     private int costItemAmount = 1;
@@ -46,6 +46,12 @@ public class GachaBanner {
     private int eventChance = -1;
     private int costItem = 0;
     @Getter private int wishMaxProgress = 2;
+
+    public String getPreviewPrefabPath() {
+        if (this.previewPrefabPath != null && !this.previewPrefabPath.isEmpty())
+            return this.previewPrefabPath;
+        return "UI_Tab_" + this.prefabPath;
+    }
 
     public ItemParamData getCost(int numRolls) {
         return switch (numRolls) {

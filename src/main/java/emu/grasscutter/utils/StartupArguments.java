@@ -4,12 +4,14 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
-import io.javalin.core.util.JavalinLogger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.function.Function;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /**
  * A parser for start-up arguments.
@@ -28,6 +30,10 @@ public final class StartupArguments {
         "-debug", StartupArguments::enableDebug,
         "-lang", parameter -> {
             Grasscutter.setPreferredLanguage(parameter); return false;
+        },"-game", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY); return false;
+        },"-dispatch", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY); return false;
         },
 
         // Aliases.
@@ -75,13 +81,20 @@ public final class StartupArguments {
      * @return False to continue execution.
      */
     private static boolean enableDebug(String parameter) {
-        // Get the level by parameter.
-        var loggerLevel = parameter != null && parameter.equals("all")
-            ? Level.DEBUG : Level.INFO;
+        if (parameter != null && parameter.equals("all")) {
+            // Override default debug configs
+            GAME_INFO.isShowLoopPackets = DEBUG_MODE_INFO.isShowLoopPackets;
+            GAME_INFO.isShowPacketPayload = DEBUG_MODE_INFO.isShowPacketPayload;
+            GAME_INFO.logPackets = DEBUG_MODE_INFO.logPackets;
+            DISPATCH_INFO.logRequests = DEBUG_MODE_INFO.logRequests;
+        }
 
-        // Set the logger to debug.
-        Grasscutter.getLogger().setLevel(Level.DEBUG);
+        // Set the main logger to debug.
+        Grasscutter.getLogger().setLevel(DEBUG_MODE_INFO.serverLoggerLevel);
         Grasscutter.getLogger().debug("The logger is now running in debug mode.");
+
+        // Log level to other third-party services
+        Level loggerLevel = DEBUG_MODE_INFO.servicesLoggersLevel;
 
         // Change loggers to debug.
         ((Logger) LoggerFactory.getLogger("io.javalin"))
