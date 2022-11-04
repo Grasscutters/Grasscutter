@@ -743,6 +743,7 @@ public class InventorySystem extends BaseGameSystem {
         if (itemData == null) return null;
 
         var params = new UseItemParams(player, itemData.getUseTarget(), target, count, optionId, isEnterMpDungeonTeam);
+        params.usedItemId = item.getItemId();
         if (useItemDirect(itemData, params)) {
             player.getInventory().removeItem(item, count);
             var actions = itemData.getItemUseActions();

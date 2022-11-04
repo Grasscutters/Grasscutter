@@ -181,6 +181,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
         if (data.isUseOnGain()) {
             var params = new UseItemParams(this.player, data.getUseTarget());
+            params.usedItemId = data.getId();
             this.player.getServer().getInventorySystem().useItemDirect(data, params);
             return null;
         }
