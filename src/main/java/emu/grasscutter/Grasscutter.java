@@ -293,8 +293,8 @@ public final class Grasscutter {
                 Grasscutter.getLogger().info("EOF detected.");
                 continue;
             } catch (IOError e) {
-                Grasscutter.getLogger().error("An IO error occurred.", e);
-                continue;
+                Grasscutter.getLogger().error("An IO error occurred while trying to read from console.", e);
+                return;
             }
 
             isLastInterrupted = false;
