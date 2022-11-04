@@ -15,8 +15,7 @@
 		"rateUpItems5": [],
 		"rateUpItems4": [1034]
 	},
-  {
-    "comment": "Standard",
+	{
 		"comment": "Standard",
 		"gachaType": 200,
 		"scheduleId": 893,
@@ -30,44 +29,39 @@
 		"fallbackItems4Pool1": [1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064],
 		"weights5": [[1,75], [73,150], [90,10000]]
 	},
-  {
-    "comment": "Character Event Banner 1",
+	{
+		"comment": "Character Event Banner 1",
 		"gachaType": 301,
 		"scheduleId": 903,
 		"bannerType": "EVENT",
 		"prefabPath": "GachaShowPanel_A103",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A103",
-		"titlePath": "UI_GACHA_SHOW_PANEL_A081_TITLE",	
-		"costItem": 223,
+		"titlePath": "UI_GACHA_SHOW_PANEL_A081_TITLE",
+		"costItemId": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9998,
-		"maxItemType": 1,
-		"weights5":[[1,75],[73,150],[90,10000]],
-		"eventChance5": 100,
-		"softPity": 1,
-		"hardPity": 1,				
 		"rateUpItems1": [1073],
 		"rateUpItems2": [1073]
+		"fallbackItems5Pool2": [],
+		"weights5":[[1,75],[73,150],[90,10000]],
 	},
 	{
-    "comment": "Character Event Banner 1",
+		"comment": "Weapon Event Banner",
 		"gachaType": 302,
 		"scheduleId": 913,
 		"bannerType": "WEAPON",
 		"prefabPath": "GachaShowPanel_A105",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A105",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A099_TITLE",
 		"costItemId": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
-		"sortId": 9997,				
-		"weights5":[[1,10000],[73,10000],[90,10000]],
-		"eventChance4": 0,
-		"eventChance5": 100,
-		"softPity": 1,
-		"hardPity": 1,				
-		"rateUpItems5": [14511,15509],
+		"sortId": 9997,
 		"rateUpItems4": [14511]
+		"rateUpItems5": [14511,15509],
+		"fallbackItems5Pool1": [],
+		"weights4": [[1,600], [7,600], [8,6600], [10,12600]],
+		"weights5":[[1,10000],[73,10000],[90,10000]],
+		"eventChance4": 75,
+		"eventChance5": 75
 	}
 ]
