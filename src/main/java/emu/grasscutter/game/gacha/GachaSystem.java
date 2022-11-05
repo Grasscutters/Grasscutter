@@ -73,6 +73,7 @@ public class GachaSystem extends BaseGameSystem {
             List<GachaBanner> banners = DataLoader.loadList("Banners.json", GachaBanner.class);
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
+                    banner.onLoad();
                     getGachaBanners().put(banner.getScheduleId(), banner);
                 }
                 Grasscutter.getLogger().debug("Banners successfully loaded.");
