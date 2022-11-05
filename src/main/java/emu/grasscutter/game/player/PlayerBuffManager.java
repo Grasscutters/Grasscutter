@@ -130,9 +130,7 @@ public class PlayerBuffManager extends BasePlayerManager {
         }
 
         // Clear previous buff if it exists
-        if (this.hasBuff(buffData.getGroupId())) {
-            this.removeBuff(buffData.getGroupId());
-        }
+        this.removeBuff(buffData.getGroupId());
 
         // Create and store buff
         PlayerBuff buff = new PlayerBuff(getNextBuffUid(), buffData, duration);
@@ -150,7 +148,7 @@ public class PlayerBuffManager extends BasePlayerManager {
      * @return True if a buff was remove
      */
     public synchronized boolean removeBuff(int buffGroupId) {
-        PlayerBuff buff = this.buffs.get(buffGroupId);
+        PlayerBuff buff = this.buffs.remove(buffGroupId);
 
         if (buff != null) {
             getPlayer().sendPacket(
