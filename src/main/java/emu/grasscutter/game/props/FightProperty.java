@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 import static java.util.Map.entry;
 
@@ -12,6 +13,7 @@ import java.util.stream.Stream;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 public enum FightProperty {
 	FIGHT_PROP_NONE(0),
@@ -195,8 +197,37 @@ public enum FightProperty {
         FIGHT_PROP_BASE_HP, FIGHT_PROP_HP, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK, FIGHT_PROP_BASE_DEFENSE,
         FIGHT_PROP_DEFENSE, FIGHT_PROP_HEALED_ADD, FIGHT_PROP_CUR_FIRE_ENERGY, FIGHT_PROP_CUR_ELEC_ENERGY,
         FIGHT_PROP_CUR_WATER_ENERGY, FIGHT_PROP_CUR_GRASS_ENERGY, FIGHT_PROP_CUR_WIND_ENERGY, FIGHT_PROP_CUR_ICE_ENERGY,
-        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE); 
-    
+        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE);
+
+    @Getter
+    public static class CompoundProperty {
+        private FightProperty result;
+        private FightProperty base;
+        private FightProperty percent;
+        private FightProperty flat;
+
+        public CompoundProperty(FightProperty result, FightProperty base, FightProperty percent, FightProperty flat) {
+            this.result = result;
+            this.base = base;
+            this.percent = percent;
+            this.flat = flat;
+        }
+    }
+
+    private static Map<FightProperty, CompoundProperty> compoundProperties = Map.ofEntries(
+        entry(FIGHT_PROP_MAX_HP, new CompoundProperty(FIGHT_PROP_MAX_HP, FIGHT_PROP_BASE_HP, FIGHT_PROP_HP_PERCENT, FIGHT_PROP_HP)),
+        entry(FIGHT_PROP_CUR_ATTACK, new CompoundProperty(FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK_PERCENT, FIGHT_PROP_ATTACK)),
+        entry(FIGHT_PROP_CUR_DEFENSE, new CompoundProperty(FIGHT_PROP_CUR_DEFENSE, FIGHT_PROP_BASE_DEFENSE, FIGHT_PROP_DEFENSE_PERCENT, FIGHT_PROP_DEFENSE))
+    );
+
+    public static CompoundProperty getCompoundProperty(FightProperty result) {
+        return compoundProperties.get(result);
+    }
+
+    public static void forEachCompoundProperty(Consumer<CompoundProperty> consumer) {
+        compoundProperties.values().forEach(consumer);
+    }
+
     public static boolean isPercentage(FightProperty prop) {
         return !flatProps.contains(prop);
     }
