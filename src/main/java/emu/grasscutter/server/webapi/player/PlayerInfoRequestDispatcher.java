@@ -52,6 +52,13 @@ public class PlayerInfoRequestDispatcher implements RequestDispatcher {
 
     @Override
     public ArgumentParser getArgumentParser() {
+
+        ArgumentInfo playerIdArgument = new ArgumentInfo("data", "object");
+        playerIdArgument.setDescription(Language.translate("webapi.player.args.player_id"));
+
+        ArgumentInfo playerNameArgument = new ArgumentInfo("data", "object");
+        playerNameArgument.setDescription(Language.translate("webapi.player.args.player_name"));
+
         ArgumentInfo attrArgument = new ArgumentInfo("attr", "string");
         attrArgument.setDescription(Language.translate("webapi.player.args.attr"));
 
@@ -59,9 +66,9 @@ public class PlayerInfoRequestDispatcher implements RequestDispatcher {
         opArgument.setDescription(Language.translate("webapi.player.args.op"));
 
         ArgumentInfo dataArgument = new ArgumentInfo("data", "object");
-        opArgument.setDescription(Language.translate("webapi.player.args.data"));
+        dataArgument.setDescription(Language.translate("webapi.player.args.data"));
 
-        return new ArgumentParser(attrArgument, opArgument, dataArgument);
+        return new ArgumentParser(playerIdArgument, playerNameArgument, attrArgument, opArgument, dataArgument);
 
     }
 

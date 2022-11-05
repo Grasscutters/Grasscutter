@@ -89,7 +89,9 @@
       "args": {
         "attr": "The attribute to operate",
         "op": "The operation to do. get, set, add, setHelp and addHelp are available currently",
-        "data": "Data needed by op"
+        "data": "Data needed by op",
+        "player_id": "Player id",
+        "player_name": "Player name"
       },
       "commands":{
         "pos": {
@@ -98,13 +100,13 @@
             "y": "y coordinate. Value can only be ~ when the argument is a string",
             "z": "z coordinate. Value can only be ~ when the argument is a string",
             "sceneId": "Scene ID. Value can only be ~ when the argument is a string"
+          },
+          "god_mode": {
+            "args": {
+              "enabled": "Turn on god mode or not"
+            }
           }
 
-        },
-        "god_mode": {
-          "args": {
-            "enabled": "Turn on god mode or not"
-          }
         }
       }
     },

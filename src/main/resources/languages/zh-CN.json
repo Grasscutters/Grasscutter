@@ -83,7 +83,9 @@
       "op_failed": "对属性\"%s\"的%s操作失败",
       "op_set": "设置",
       "op_get": "获取",
-      "op_add": "增加"
+      "op_add": "增加",
+      "player_id": "玩家Id",
+      "player_name": "玩家名"
     },
     "player": {
       "args": {
@@ -98,12 +100,11 @@
             "y": "y坐标。当参数类型为string时，值只能为~",
             "z": "z坐标。当参数类型为string时，值只能为~",
             "sceneId": "场景Id。当参数类型为string时，值只能为~"
-          }
-
-        },
-        "godMode": {
-          "args": {
-            "enabled": "是否开启无敌"
+          },
+          "god_mode": {
+            "args": {
+              "enabled": "是否开启无敌"
+            }
           }
         }
       }

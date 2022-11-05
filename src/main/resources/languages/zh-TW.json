@@ -83,7 +83,9 @@
       "op_failed": "對屬性\"%s\"的%s操作失敗",
       "op_set": "設置",
       "op_get": "獲取",
-      "op_add": "增加"
+      "op_add": "增加",
+      "player_id": "玩家Id",
+      "player_name": "玩家名"
     },
     "player": {
       "args": {
@@ -98,11 +100,11 @@
             "y": "y坐標。儅參數的類型是string时，值只能是~",
             "z": "z坐標。儅參數的類型是string时，值只能为~",
             "sceneId": "場景Id。儅參數的類型是string時，值只能是~"
-          }
-        },
-        "godMode": {
-          "args": {
-            "enabled": "是否開啓無敵"
+          },
+          "god_mode": {
+            "args": {
+              "enabled": "是否開啓無敵"
+            }
           }
         }
       }
