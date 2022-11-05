@@ -10,21 +10,19 @@ import io.javalin.http.Context;
 
 
 @RequestRoute(routes = "player")
-public class PlayerCommandHandler implements CommandRequestHandler
-{
+public class PlayerCommandHandler implements CommandRequestHandler {
     @Override
-    public void invoke(CommandRequestData data, Context context)
-    {
-        if(data.getPlayer() == null && data.getTargetPlayer() == null)
-        {
-            ResponseBuilder.buildPlayerNotFound("No player specified or player not found.").send(context);
+    public void invoke(CommandRequestData data, Context context) {
+        if(data.getExecutor() == null && data.getTarget() == null) {
+            ResponseBuilder.buildPlayerNotFound().send(context);
             return;
         }
 
-        var handler = PlayerCommandHandlerPool.getInstance().get(data.getCommand());
-        if(handler == null)
-        {
-            ResponseBuilder.buildNoCommand(String.format("Command %s not found.", data.getCommand())).send(context);
+        String command = data.getData().get("command").toString();
+        var handler = PlayerCommandHandlerPool.getInstance().get(command);
+
+        if(handler == null) {
+            ResponseBuilder.buildNoPlayerCommand().send(context);
             return;
         }
 
@@ -32,21 +30,17 @@ public class PlayerCommandHandler implements CommandRequestHandler
     }
 
     @Override
-    public ArgumentParser getArgumentParser()
-    {
-        ArgumentParser parser = new ArgumentParser();
-        ArgumentInfo playerIdArgInfo = new ArgumentInfo("playerId", "int");
-        playerIdArgInfo.setDescription("执行者的Uid");
-        ArgumentInfo playerNameArgInfo = new ArgumentInfo("playerName", "string");
-        playerNameArgInfo.setDescription("执行者的名字");
-        ArgumentInfo targetPlayerIdArgInfo = new ArgumentInfo("targetPlayerId", "int");
-        targetPlayerIdArgInfo.setDescription("目标玩家的Uid");
-        ArgumentInfo targetPlayerNameArgInfo = new ArgumentInfo("targetPlayerName", "string");
-        targetPlayerNameArgInfo.setDescription("目标玩家的名字");
-        parser.addArgument(playerIdArgInfo);
-        parser.addArgument(playerNameArgInfo);
-        parser.addArgument(targetPlayerIdArgInfo);
-        parser.addArgument(targetPlayerNameArgInfo);
-        return parser;
+    public ArgumentParser getArgumentParser() {
+
+        ArgumentInfo playerIdArgInfo = new ArgumentInfo("executorId", "int");
+        playerIdArgInfo.setDescription("webapi.command.args.executor_id");
+        ArgumentInfo playerNameArgInfo = new ArgumentInfo("executorName", "string");
+        playerNameArgInfo.setDescription("webapi.command.args.executor_name");
+        ArgumentInfo targetPlayerIdArgInfo = new ArgumentInfo("targetId", "int");
+        targetPlayerIdArgInfo.setDescription("webapi.command.args.target_id");
+        ArgumentInfo targetPlayerNameArgInfo = new ArgumentInfo("targetName", "string");
+        targetPlayerNameArgInfo.setDescription("webapi.command.args.target_name");
+
+        return new ArgumentParser(playerIdArgInfo, playerNameArgInfo, targetPlayerIdArgInfo, targetPlayerNameArgInfo);
     }
 }

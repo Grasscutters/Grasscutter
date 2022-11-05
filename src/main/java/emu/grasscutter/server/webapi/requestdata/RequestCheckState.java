@@ -1,7 +1,6 @@
 package emu.grasscutter.server.webapi.requestdata;
 
-public enum RequestCheckState
-{
+public enum RequestCheckState {
     INVALID_TOKEN,
     INVALID_ARGUMENT,
     REQUEST_TYPE_MISSING,

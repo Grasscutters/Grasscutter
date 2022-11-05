@@ -67,6 +67,49 @@
       }
     }
   },
+  "webapi": {
+    "tips": {
+      "no_command_type": "Command type not exists",
+      "no_player": "Specified player not exists",
+      "server_error": "Server error",
+      "no_attr": "Attribute \"%s\" not exists",
+      "no_op": "Operation \"%s\" not exists",
+      "no_command": "Command \"%s\" not exists",
+      "not_support_op": "Attribute \"%s\" doesn't support operation \"%s\"",
+      "argument_missing": "Argument missing",
+      "invalid_argument": "Invalid argument",
+      "command_success": "Command executed successfully",
+      "op_success": "Operation \"%s\" on attribute \"%s\" success",
+      "op_failed": "Operation \"%s\" on attribute %s failed",
+      "op_set": "set",
+      "op_get": "get",
+      "op_add": "add"
+    },
+    "player": {
+      "args": {
+        "attr": "The attribute to operate",
+        "op": "The operation to do. get, set, add, setHelp and addHelp are available currently",
+        "data": "Data needed by op"
+      },
+      "commands":{
+        "pos": {
+          "args": {
+            "x": "x coordinate. Value can only be ~ when the argument is a string",
+            "y": "y coordinate. Value can only be ~ when the argument is a string",
+            "z": "z coordinate. Value can only be ~ when the argument is a string",
+            "sceneId": "Scene ID. Value can only be ~ when the argument is a string"
+          }
+
+        },
+        "god_mode": {
+          "args": {
+            "enabled": "Turn on god mode or not"
+          }
+        }
+      }
+    }
+  },
+
   "commands": {
     "generic": {
       "not_specified": "No command specified.",

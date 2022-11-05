@@ -6,8 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.config.Configuration;
 import org.jetbrains.annotations.NotNull;
 
-public class RequestJson
-{
+public class RequestJson {
     @SerializedName("type")
     String requestType;
 
@@ -15,30 +14,25 @@ public class RequestJson
 
     JsonObject data;
 
-    public String getRequestType()
-    {
+    public String getRequestType() {
         return requestType;
     }
 
-    public String getToken()
-    {
+    public String getToken() {
         return token;
     }
 
-    public JsonObject getData()
-    {
+    public JsonObject getData() {
         return data;
     }
 
-    public <T> T getDataAs(@NotNull  Class<T> clazz)
-    {
+    public <T> T getDataAs(@NotNull  Class<T> clazz) {
         Gson g = new Gson();
         String json = g.toJson(data);
         return g.fromJson(json, clazz);
     }
 
-    public RequestCheckState checkRequest()
-    {
+    public RequestCheckState checkRequest() {
         var storedToken = Configuration.SERVER.apiKey;
         if(requestType == null)
         {

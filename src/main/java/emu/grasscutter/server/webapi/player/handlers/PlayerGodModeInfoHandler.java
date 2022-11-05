@@ -7,104 +7,82 @@ import emu.grasscutter.server.webapi.arguments.ArgumentParser;
 import emu.grasscutter.server.webapi.player.handlers.interfaces.PlayerInfoRequestHandler;
 import emu.grasscutter.server.webapi.requestdata.PlayerInfoRequestData;
 import emu.grasscutter.server.webapi.response.ResponseBuilder;
+import emu.grasscutter.utils.Language;
 import io.javalin.http.Context;
 
-@RequestRoute(routes = "godmode")
-public class PlayerGodModeInfoHandler implements PlayerInfoRequestHandler
-{
+@RequestRoute(routes = "godMode")
+public class PlayerGodModeInfoHandler implements PlayerInfoRequestHandler {
     @Override
-    public void getAttribute(PlayerInfoRequestData requestData, Context context)
-    {
-        try
-        {
+    public void getAttribute(PlayerInfoRequestData requestData, Context context) {
+        try {
             JsonObject data = new JsonObject();
             data.addProperty("enabled", requestData.getPlayer().inGodmode());
-            ResponseBuilder.buildOperationSuccess("get", "godmode", data).send(context);
+            ResponseBuilder.buildOperationSuccess("get", "godMode", data).send(context);
         }
-        catch(Exception e)
-        {
-            ResponseBuilder.buildOperationFailed("get", "godmode", null).send(context);
+        catch(Exception e) {
+            ResponseBuilder.buildOperationFailed("get", "godMode", null).send(context);
         }
 
     }
 
     @Override
-    public void setAttribute(PlayerInfoRequestData requestData, Context context)
-    {
-        try
-        {
+    public void setAttribute(PlayerInfoRequestData requestData, Context context) {
+        try {
             var argParser = getSetArgumentParser();
-            var args = argParser.parse(requestData.getRequestJson().getData());
+            var args = argParser.parseJson(requestData.getData());
 
             JsonObject data = new JsonObject();
             data.addProperty("oldValue", requestData.getPlayer().inGodmode());
 
-            if(argParser.isDefaultValue("enabled"))
-            {
-                data.addProperty("value", requestData.getPlayer().inGodmode());
-                ResponseBuilder.buildOperationSuccess("set", "godmode", data).send(context);
-                return;
-            }
-            boolean enabled = Boolean.parseBoolean(args.get("enabled"));
+            boolean enabled = args.get("enabled").getAsBoolean();
             requestData.getPlayer().setGodmode(enabled);
             data.addProperty("value", requestData.getPlayer().inGodmode());
-            ResponseBuilder.buildOperationSuccess("set", "godmode", data).send(context);
+            ResponseBuilder.buildOperationSuccess("set", "godMode", data).send(context);
         }
-        catch(Exception e)
-        {
-            ResponseBuilder.buildOperationFailed("set", "godmode", null).send(context);
+        catch(Exception e) {
+            ResponseBuilder.buildOperationFailed("set", "godMode", null).send(context);
         }
     }
 
     @Override
-    public void addAttribute(PlayerInfoRequestData requestData, Context context)
-    {
+    public void addAttribute(PlayerInfoRequestData requestData, Context context) {
     }
 
     @Override
-    public boolean canGet()
-    {
+    public boolean canGet() {
         return true;
     }
 
     @Override
-    public boolean canSet()
-    {
+    public boolean canSet() {
         return true;
     }
 
     @Override
-    public boolean canAdd()
-    {
+    public boolean canAdd() {
         return false;
     }
 
     @Override
-    public ArgumentParser getGetArgumentParser()
-    {
+    public ArgumentParser getGetArgumentParser() {
         return new ArgumentParser();
     }
 
     @Override
-    public ArgumentParser getSetArgumentParser()
-    {
-        ArgumentParser parser = new ArgumentParser();
+    public ArgumentParser getSetArgumentParser() {
         ArgumentInfo enabledArgInfo = new ArgumentInfo("enabled", "bool");
-        enabledArgInfo.setDescription("是否开启无敌");
-        enabledArgInfo.setDefaultValue("~");
-        parser.addArgument(enabledArgInfo);
-        return parser;
+        enabledArgInfo.setDescription(Language.translate("webapi.player.commands.god_mode.args.enabled"));
+        enabledArgInfo.setDefaultValue("false");
+        return new ArgumentParser(enabledArgInfo);
     }
 
     @Override
-    public ArgumentParser getAddArgumentParser()
-    {
+    public ArgumentParser getAddArgumentParser() {
         return null;
     }
 
     @Override
-    public boolean noTarget()
-    {
+    public boolean noTarget() {
         return false;
     }
 }

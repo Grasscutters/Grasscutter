@@ -13,35 +13,28 @@ import java.util.List;
 
 
 @RequestRoute(routes = "commands")
-public class MultipleCommandsHandler implements CommandRequestHandler
-{
+public class MultipleCommandsHandler implements CommandRequestHandler {
 
     @Override
-    public void invoke(CommandRequestData data, Context context)
-    {
-        if(!data.getData().containsKey("commands"))
-        {
+    public void invoke(CommandRequestData data, Context context) {
+        if(!data.getData().containsKey("commands")) {
             ResponseBuilder.buildArgumentMissing("Argument is missing", getArgumentParser());
         }
 
         var commands = data.getData().get("commands");
-        if(commands instanceof List<?>)
-        {
-            for(var cmdObj : (List<?>)commands)
-            {
-                if(cmdObj instanceof String command)
-                {
-                    CommandMap.getInstance().invoke(data.getPlayer(), data.getTargetPlayer(), command);
+        if(commands instanceof List<?>) {
+            for(var cmdObj : (List<?>)commands) {
+                if(cmdObj instanceof String command) {
+                    CommandMap.getInstance().invoke(data.getExecutor(), data.getTarget(), command);
                 }
             }
         }
     }
 
     @Override
-    public ArgumentParser getArgumentParser()
-    {
+    public ArgumentParser getArgumentParser() {
         ArgumentParser parser = new ArgumentParser();
-        ArgumentInfo commandsArgInfo = new ArgumentInfo("commands", "JsonArray of string");
+        ArgumentInfo commandsArgInfo = new ArgumentInfo("commands", "string[]");
         commandsArgInfo.setDescription("要执行的命令");
         parser.addArgument(commandsArgInfo);
         return parser;

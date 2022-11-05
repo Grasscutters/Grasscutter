@@ -4,23 +4,18 @@ import emu.grasscutter.server.webapi.player.handlers.interfaces.PlayerInfoReques
 
 import java.util.ArrayList;
 
-public class PlayerInfoHandlerTools
-{
-    public static String[] getAvailableOperations(PlayerInfoRequestHandler handler)
-    {
+public class PlayerInfoHandlerTools {
+    public static String[] getAvailableOperations(PlayerInfoRequestHandler handler) {
         ArrayList<String> availableOperations = new ArrayList<>();
-        if(handler.canGet())
-        {
+        if(handler.canGet()) {
             availableOperations.add("get");
         }
 
-        if(handler.canSet())
-        {
+        if(handler.canSet()) {
             availableOperations.add("set");
         }
 
-        if(handler.canAdd())
-        {
+        if(handler.canAdd()) {
             availableOperations.add("add");
         }
 

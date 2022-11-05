@@ -9,26 +9,25 @@ import emu.grasscutter.server.webapi.arguments.ArgumentParser;
 import emu.grasscutter.server.webapi.player.handlers.interfaces.PlayerInfoRequestHandler;
 import emu.grasscutter.server.webapi.requestdata.PlayerInfoRequestData;
 import emu.grasscutter.server.webapi.response.ResponseBuilder;
+import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Position;
 import io.javalin.http.Context;
 
 
 @RequestRoute(routes = "pos,position")
-public class PositionInfoRequestHandler implements PlayerInfoRequestHandler
-{
+public class PositionInfoRequestHandler implements PlayerInfoRequestHandler {
+
+
     @Override
-    public void getAttribute(PlayerInfoRequestData requestData, Context context)
-    {
+    public void getAttribute(PlayerInfoRequestData requestData, Context context) {
         Player p = requestData.getPlayer();
-        if(p == null)
-        {
+        if(p == null) {
             ResponseBuilder.buildNormalError("Player not found", null).send(context);
             return;
         }
 
         var pos = p.getPosition();
-        if(pos == null)
-        {
+        if(pos == null) {
             ResponseBuilder.buildOperationSuccess("get", "pos", null).send(context);
         }
 
@@ -36,75 +35,52 @@ public class PositionInfoRequestHandler implements PlayerInfoRequestHandler
     }
 
     @Override
-    public void setAttribute(PlayerInfoRequestData requestData, Context context)
-    {
-        var args = getSetArgumentParser().parse(requestData.getData());
-        if(args == null || (!args.containsKey("x") && !args.containsKey("y") && !args.containsKey("z")))
-        {
+    public void setAttribute(PlayerInfoRequestData requestData, Context context) {
+        var setArgParser = getSetArgumentParser();
+        var args = setArgParser.parseJson(requestData.getData());
+        if(args == null || (!args.containsKey("x") && !args.containsKey("y") && !args.containsKey("z"))) {
             ResponseBuilder.buildArgumentMissing("Ignoring unused arguments is allowed.", getGetArgumentParser()).send(context);
             return;
         }
         var player = requestData.getPlayer();
         var playerPos = player.getPosition();
-        float x = playerPos.getX(), y = playerPos.getY(), z = playerPos.getZ();
-        int sceneId = player.getSceneId();
-        if(args.containsKey("x"))
-        {
-            x = Float.parseFloat(args.get("x"));
-        }
+        float x, y, z;
+        int sceneId;
 
-        if(args.containsKey("y"))
-        {
-            y = Float.parseFloat(args.get("y"));
-        }
+        x = args.get("x").withDefault(playerPos.getX()).valueOrDefault().getAsFloat();
 
-        if(args.containsKey("z"))
-        {
-            z = Float.parseFloat(args.get("z"));
-        }
+        y = args.get("y").withDefault(playerPos.getY()).valueOrDefault().getAsFloat();
 
-        if(args.containsKey("sceneId"))
-        {
-            sceneId = (int)Float.parseFloat(args.get("sceneId"));
-        }
+        z = args.get("z").withDefault(playerPos.getZ()).valueOrDefault().getAsFloat();
+
+        sceneId = args.get("sceneId").withDefault(player.getSceneId()).valueOrDefault().getAsInt();
+
 
         sendPositionJson(context, player, playerPos, x, y, z, sceneId);
 
     }
 
     @Override
-    public void addAttribute(PlayerInfoRequestData requestData, Context context)
-    {
-        var argParser = getAddArgumentParser();
-        var args = argParser.parse(requestData.getData());
-        if(args == null)
-        {
+    public void addAttribute(PlayerInfoRequestData requestData, Context context) {
+
+        var addArgumentParser = getAddArgumentParser();
+        var args = addArgumentParser.parseJson(requestData.getData());
+        if(args == null) {
             ResponseBuilder.buildArgumentMissing("Ignoring unused arguments is allowed.", getAddArgumentParser()).send(context);
             return;
         }
+
         var player = requestData.getPlayer();
         var playerPos = player.getPosition();
         double x = playerPos.getX(), y = playerPos.getY(), z = playerPos.getZ();
-        int sceneId = player.getSceneId();
-        if(!argParser.isDefaultValue("x"))
-        {
-            x += Float.parseFloat(args.get("x"));
-        }
+        int sceneId;
+        x += args.get("x").withDefault(0).valueOrDefault().getAsFloat();
 
-        if(!argParser.isDefaultValue("y"))
-        {
-            y += Float.parseFloat(args.get("y"));
-        }
+        y += args.get("y").withDefault(0).valueOrDefault().getAsFloat();
 
-        if(!argParser.isDefaultValue("z"))
-        {
-            z += Float.parseFloat(args.get("z"));
-        }
+        z += args.get("z").withDefault(0).valueOrDefault().getAsFloat();
 
-        if(!argParser.isDefaultValue("sceneId"))
-        {
-            sceneId = Integer.parseInt(args.get("sceneId"));
-        }
+        sceneId = args.get("sceneId").withDefault(player.getSceneId()).valueOrDefault().getAsInt();
 
         sendPositionJson(context, player, playerPos, x, y, z, sceneId);
     }
@@ -128,65 +104,55 @@ public class PositionInfoRequestHandler implements PlayerInfoRequestHandler
     }
 
     @Override
-    public boolean canGet()
-    {
+    public boolean canGet() {
         return true;
     }
 
     @Override
-    public boolean canSet()
-    {
+    public boolean canSet() {
         return true;
     }
 
     @Override
-    public boolean canAdd()
-    {
+    public boolean canAdd() {
         return true;
     }
 
     @Override
-    public ArgumentParser getGetArgumentParser()
-    {
+    public ArgumentParser getGetArgumentParser() {
         return null;
     }
 
     @Override
-    public ArgumentParser getSetArgumentParser()
-    {
-        ArgumentParser parser = new ArgumentParser();
-        ArgumentInfo xArgInfo = new ArgumentInfo("x", "float");
-        xArgInfo.setDescription("x");
+    public ArgumentParser getSetArgumentParser() {
+        ArgumentInfo xArgInfo = new ArgumentInfo("x", "float|string");
+
+        xArgInfo.setDescription(Language.translate("webapi.player.commands.pos.args.x"));
         xArgInfo.setDefaultValue("~");
 
-        ArgumentInfo yArgInfo = new ArgumentInfo("y", "float");
-        yArgInfo.setDescription("y");
+        ArgumentInfo yArgInfo = new ArgumentInfo("y", "float|string");
+        yArgInfo.setDescription(Language.translate("webapi.player.commands.pos.args.y"));
         yArgInfo.setDefaultValue("~");
 
-        ArgumentInfo zArgInfo = new ArgumentInfo("z", "float");
-        zArgInfo.setDescription("z");
+        ArgumentInfo zArgInfo = new ArgumentInfo("z", "float|string");
+        zArgInfo.setDescription(Language.translate("webapi.player.commands.pos.args.z"));
         zArgInfo.setDefaultValue("~");
 
-        ArgumentInfo sceneIdArgInfo = new ArgumentInfo("sceneId", "int");
-        sceneIdArgInfo.setDescription("场景Id");
+        ArgumentInfo sceneIdArgInfo = new ArgumentInfo("sceneId", "int|string");
+        sceneIdArgInfo.setDescription(Language.translate("webapi.player.commands.pos.args.sceneId"));
         sceneIdArgInfo.setDefaultValue("~");
 
-        parser.addArgument(xArgInfo);
-        parser.addArgument(yArgInfo);
-        parser.addArgument(zArgInfo);
-        parser.addArgument(sceneIdArgInfo);
-        return parser;
+
+        return new ArgumentParser(xArgInfo, yArgInfo, zArgInfo, sceneIdArgInfo);
     }
 
     @Override
-    public ArgumentParser getAddArgumentParser()
-    {
+    public ArgumentParser getAddArgumentParser() {
         return getSetArgumentParser();
     }
 
     @Override
-    public boolean noTarget()
-    {
+    public boolean noTarget() {
         return false;
     }
 }

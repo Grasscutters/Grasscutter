@@ -16,51 +16,43 @@ import emu.grasscutter.server.webapi.player.handlers.PositionInfoRequestHandler;
 import emu.grasscutter.server.webapi.player.handlers.interfaces.PlayerInfoRequestHandlerPool;
 
 public class HsManWebApi {
-    private HsManWebApi()
-    {
+    private HsManWebApi() {
     }
 
-    static void initApiDispatcher()
-    {
+    static void initApiDispatcher() {
         var mgr = DispatcherPool.getInstance();
         mgr.register(PlayerInfoRequestDispatcher.class);
         mgr.register(CommandDispatcher.class);
     }
 
-    static void initPlayerInfoRequestHandler()
-    {
+    static void initPlayerInfoRequestHandler() {
         var mgr = PlayerInfoRequestHandlerPool.getInstance();
         mgr.register(PositionInfoRequestHandler.class);
         mgr.register(PlayerGodModeInfoHandler.class);
         mgr.register(PlayerListRequestHandler.class);
     }
 
-    static void initCommandsHandlers()
-    {
+    static void initCommandsHandlers() {
         var mgr = CommandRequestHandlerPool.getInstance();
         mgr.register(PlayerCommandHandler.class);
         mgr.register(GrasscutterCommandHandler.class);
         mgr.register(MultipleCommandsHandler.class);
     }
 
-    static void initPlayerCommand()
-    {
+    static void initPlayerCommand() {
         var mgr = PlayerCommandHandlerPool.getInstance();
         mgr.register(RechargeMoonCardCommand.class);
     }
 
-    static void initRouter()
-    {
+    static void initRouter() {
         Grasscutter.getHttpServer().addRouter(WebApiRouter.class);
     }
 
-    public static void Init()
-    {
+    public static void Init() {
         initRouter();
         initApiDispatcher();
         initCommandsHandlers();
         initPlayerInfoRequestHandler();
         initPlayerCommand();
-
     }
 }

@@ -4,23 +4,18 @@ import emu.grasscutter.server.webapi.annotations.RequestRoute;
 
 import java.util.HashMap;
 
-public class GenericObjectPool<T>
-{
-    protected GenericObjectPool()
-    {
+public class GenericObjectPool<T> {
+    protected GenericObjectPool() {
     }
     HashMap<String, T> handlerHashMap = new HashMap<>();
 
-    public boolean register(Class<? extends T> clazz)
-    {
-        if(clazz.isInterface())
-        {
+    public boolean register(Class<? extends T> clazz) {
+        if(clazz.isInterface()) {
             return false;
         }
 
         var annotation = clazz.getAnnotation(RequestRoute.class);
-        if(annotation == null)
-        {
+        if(annotation == null) {
             return false;
         }
 
@@ -32,37 +27,31 @@ public class GenericObjectPool<T>
         }
 
         String[] routes = annotation.routes().split(",");
-        for (var r : routes)
-        {
+        for (var r : routes) {
             handlerHashMap.put(r, ins);
         }
         return true;
     }
 
-    public boolean registry(T handler)
-    {
+    public boolean registry(T handler) {
         var clazz = handler.getClass();
         var annotation = clazz.getAnnotation(RequestRoute.class);
-        if(annotation == null)
-        {
+        if(annotation == null) {
             return false;
         }
 
         String[] routes = annotation.routes().split(",");
-        for (var r : routes)
-        {
+        for (var r : routes) {
             handlerHashMap.put(r, handler);
         }
         return true;
     }
 
-    public T get(String route)
-    {
+    public T get(String route) {
         return handlerHashMap.get(route);
     }
 
-    public String[] getRoutes()
-    {
+    public String[] getRoutes() {
         return handlerHashMap.keySet().toArray(new String[0]);
     }
 }

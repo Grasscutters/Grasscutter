@@ -4,8 +4,7 @@ import emu.grasscutter.server.webapi.arguments.ArgumentParser;
 import emu.grasscutter.server.webapi.requestdata.PlayerInfoRequestData;
 import io.javalin.http.Context;
 
-public interface PlayerInfoRequestHandler
-{
+public interface PlayerInfoRequestHandler {
     void getAttribute(PlayerInfoRequestData requestData, Context context);
     void setAttribute(PlayerInfoRequestData requestData, Context context);
     void addAttribute(PlayerInfoRequestData requestData, Context context);

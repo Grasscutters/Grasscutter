@@ -67,6 +67,59 @@
       }
     }
   },
+  "webapi": {
+    "tips": {
+      "no_command_type": "命令类型不存在",
+      "no_player": "指定的玩家不存在",
+      "server_error": "服务器错误",
+      "no_attr": "属性\"%s\"不存在",
+      "no_op": "操作\"%s\"不存在",
+      "no_command": "命令\"%s\"不存在",
+      "not_support_op": "属性\"%s\"不支持操作\"%s\"",
+      "argument_missing": "缺少参数",
+      "invalid_argument": "参数无效",
+      "command_success": "命令执行成功",
+      "op_success": "成功的%s了属性\"%s\"的值",
+      "op_failed": "对属性\"%s\"的%s操作失败",
+      "op_set": "设置",
+      "op_get": "获取",
+      "op_add": "增加"
+    },
+    "player": {
+      "args": {
+        "attr": "要操作的属性",
+        "op": "要进行的操作，目前有get, set，add和setHelp，addHelp五种",
+        "data": "op所需的数据"
+      },
+      "commands":{
+        "pos": {
+          "args": {
+            "x": "x坐标。当参数类型为string时，值只能为~",
+            "y": "y坐标。当参数类型为string时，值只能为~",
+            "z": "z坐标。当参数类型为string时，值只能为~",
+            "sceneId": "场景Id。当参数类型为string时，值只能为~"
+          }
+
+        },
+        "godMode": {
+          "args": {
+            "enabled": "是否开启无敌"
+          }
+        }
+      }
+    },
+    "command": {
+      "args": {
+        "command_type": "要执行命令的类型",
+        "target_id": "目标玩家Id，与targetName互斥，同时指定优先选择Id",
+        "target_name": "目标玩家名，与targetId互斥，同时指定优先选择Id",
+        "executor_id": "执行者Id，与executorName互斥，同时指定优先选择Id",
+        "executor_name": "执行者的名字，与executorId互斥，同时指定优先选择Id",
+        "data": "执行命令所需要的数据"
+      }
+    }
+  }
+  ,
   "commands": {
     "generic": {
       "not_specified": "未指定命令。",

@@ -67,6 +67,47 @@
       }
     }
   },
+  "webapi": {
+    "tips": {
+      "no_command_type": "指令類型不存在",
+      "no_player": "指定的玩家不存在",
+      "server_error": "伺服器錯誤",
+      "no_attr": "屬性\"%s\"不存在",
+      "no_op": "操作\"%s\"不存在",
+      "no_command": "指令\"%s\"不存在",
+      "not_support_op": "屬性\"%s\"不支持操作\"%s\"",
+      "argument_missing": "缺少參數",
+      "invalid_argument": "參數無效",
+      "command_success": "指令執行成功",
+      "op_success": "成功的%s了屬性\"%s\"的值",
+      "op_failed": "對屬性\"%s\"的%s操作失敗",
+      "op_set": "設置",
+      "op_get": "獲取",
+      "op_add": "增加"
+    },
+    "player": {
+      "args": {
+        "attr": "要操作的屬性",
+        "op": "要進行的操作，現在有get, set，add和setHelp，addHelp五种",
+        "data": "op需要的數據"
+      },
+      "commands": {
+        "pos": {
+          "args": {
+            "x": "x坐標。儅參數的類型是string時，值只能是~",
+            "y": "y坐標。儅參數的類型是string时，值只能是~",
+            "z": "z坐標。儅參數的類型是string时，值只能为~",
+            "sceneId": "場景Id。儅參數的類型是string時，值只能是~"
+          }
+        },
+        "godMode": {
+          "args": {
+            "enabled": "是否開啓無敵"
+          }
+        }
+      }
+    }
+  },
   "commands": {
     "generic": {
       "not_specified": "沒有指定指令。",

@@ -4,8 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.game.player.Player;
 
-public class PlayerInfoRequestData
-{
+public class PlayerInfoRequestData {
     int playerId = -1;
     String playerName;
 
@@ -18,46 +17,37 @@ public class PlayerInfoRequestData
     JsonObject data;
     RequestJson requestJson;
 
-    public RequestJson getRequestJson()
-    {
+    public RequestJson getRequestJson() {
         return requestJson;
     }
 
-    public void setRequestJson(RequestJson requestJson)
-    {
-        if(this.requestJson == null && requestJson != null)
-        {
+    public void setRequestJson(RequestJson requestJson) {
+        if(this.requestJson == null && requestJson != null) {
             this.requestJson = requestJson;
         }
     }
 
-    public int getPlayerId()
-    {
+    public int getPlayerId() {
         return playerId;
     }
 
-    public String getPlayerName()
-    {
+    public String getPlayerName() {
         return playerName;
     }
 
-    public String getOperation()
-    {
+    public String getOperation() {
         return operation;
     }
 
-    public String getAttribute()
-    {
+    public String getAttribute() {
         return attribute;
     }
 
-    public JsonObject getData()
-    {
+    public JsonObject getData() {
         return data;
     }
 
-    public Player getPlayer()
-    {
+    public Player getPlayer() {
         return CommandRequestData.tryGetPlayer(playerId, playerName);
     }
 

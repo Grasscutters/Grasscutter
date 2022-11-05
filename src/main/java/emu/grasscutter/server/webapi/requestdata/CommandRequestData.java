@@ -9,65 +9,53 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 
-public class CommandRequestData
-{
+public class CommandRequestData {
     @SerializedName("type")
     String commandType;
 
-    @SerializedName(value = "command", alternate = {"cmd"})
-    String command;
+    int executorId;
 
-    int playerId;
+    String executorName;
 
-    String playerName;
+    int targetId;
 
-    int targetPlayerId;
-
-    String targetPlayerName;
+    String targetName;
 
     HashMap<?,?> data;
 
     RequestJson requestJson;
 
-    public RequestJson getRequestJson()
-    {
+    public RequestJson getRequestJson() {
         return requestJson;
     }
 
-    public void setRequestJson(RequestJson requestJson)
-    {
-        if(this.requestJson == null && requestJson != null)
-        {
+    public void setRequestJson(RequestJson requestJson) {
+        if(this.requestJson == null && requestJson != null) {
             this.requestJson = requestJson;
         }
     }
 
-    public Player getPlayer()
-    {
-        return tryGetPlayer(playerId, playerName);
+
+    public Player getExecutor() {
+        return tryGetPlayer(executorId, executorName);
     }
 
-    public Player getTargetPlayer()
-    {
-        return tryGetPlayer(targetPlayerId, targetPlayerName);
+    public Player getTarget() {
+        return tryGetPlayer(targetId, targetName);
     }
 
     @Nullable
     static Player tryGetPlayer(int targetPlayerId, String targetPlayerName) {
         PlayerFindResult findResult;
-        if(targetPlayerId != -1)
-        {
+        if(targetPlayerId != -1) {
             findResult = PlayerFinder.getInstance().findPlayerById(targetPlayerId);
-            if(findResult.foundPlayer())
-            {
+            if(findResult.foundPlayer()) {
                 return findResult.getFirstPlayer();
             }
         }
-        else if(targetPlayerName != null)
-        {
+        else if(targetPlayerName != null) {
             findResult = PlayerFinder.getInstance().findPlayerByName(targetPlayerName);
-            if(findResult.foundPlayer())
-            {
+            if(findResult.foundPlayer()) {
                 return findResult.getFirstPlayer();
             }
         }
@@ -75,18 +63,11 @@ public class CommandRequestData
         return null;
     }
 
-    public String getCommand()
-    {
-        return command;
-    }
-
-    public String getCommandType()
-    {
+    public String getCommandType() {
         return commandType;
     }
 
-    public HashMap<?, ?> getData()
-    {
+    public HashMap<?, ?> getData() {
         return data;
     }
 }
