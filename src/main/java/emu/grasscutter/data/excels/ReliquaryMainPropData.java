@@ -1,31 +1,20 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
+import lombok.Getter;
 
 @ResourceType(name = "ReliquaryMainPropExcelConfigData.json")
+@Getter
 public class ReliquaryMainPropData extends GameResource {
-	private int id;
-	
-	private int propDepotId;
-	private FightProperty propType;
-	private int weight;
-	
-	@Override
-	public int getId() {
-		return id;
-	}
-	
-	public int getPropDepotId() {
-		return propDepotId;
-	}
-	
-	public int getWeight() {
-		return weight;
-	}
+    @Getter(onMethod = @__(@Override))
+    private int id;
 
-	public FightProperty getFightProp() {
-		return propType;
-	}
+    private int propDepotId;
+    @SerializedName("propType")
+    private FightProperty fightProp;
+    private int weight;
 }

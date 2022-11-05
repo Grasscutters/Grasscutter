@@ -44,6 +44,7 @@ public class AvatarData extends GameResource {
     private float criticalHurt;
 
     private List<PropGrowCurve> propGrowCurves;
+    @Getter(onMethod = @__(@Override))
     private int id;
 
     // Transient
@@ -59,11 +60,6 @@ public class AvatarData extends GameResource {
     @Getter private List<Integer> fetters;
     @Getter private int nameCardRewardId;
     @Getter private int nameCardId;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
 
     public float getBaseHp(int level) {
         try {

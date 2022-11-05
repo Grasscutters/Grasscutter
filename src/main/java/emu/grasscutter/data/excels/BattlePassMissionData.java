@@ -9,27 +9,20 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus;
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
 @ResourceType(name = {"BattlePassMissionExcelConfigData.json"})
 @Getter
 public class BattlePassMissionData extends GameResource {
-    private int addPoint;
+    @Getter(onMethod = @__(@Override))
     private int id;
+    private int addPoint;
     private int scheduleId;
     private int progress;
     private TriggerConfig triggerConfig;
     private BattlePassMissionRefreshType refreshType;
     
     private transient Set<Integer> mainParams;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
     
     public WatcherTriggerType getTriggerType() {
 		return this.getTriggerConfig().getTriggerType();

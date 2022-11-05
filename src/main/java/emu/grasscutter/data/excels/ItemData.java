@@ -25,6 +25,7 @@ import lombok.Getter;
 @Getter
 public class ItemData extends GameResource {
     // Main
+    @Getter(onMethod = @__(@Override))
     private int id;
     private int stackLimit = 1;
     private int maxUseCount;
@@ -86,11 +87,6 @@ public class ItemData extends GameResource {
 
     // Custom
     private transient IntSet addPropLevelSet;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
 
     public WeaponProperty[] getWeaponProperties() {
         return this.weaponProp;

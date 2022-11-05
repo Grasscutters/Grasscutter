@@ -9,21 +9,15 @@ import emu.grasscutter.data.common.ItemParamData;
 import lombok.Getter;
 
 @ResourceType(name = {"CookRecipeExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
+@Getter
 public class CookRecipeData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
 
-    @Getter private int rankLevel;
-    @Getter boolean isDefaultUnlocked;
-    @Getter int maxProficiency;
+    private int rankLevel;
+    private boolean isDefaultUnlocked;
+    private int maxProficiency;
 
-    @Getter List<ItemParamData> qualityOutputVec;
-    @Getter List<ItemParamData> inputVec;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-    @Override
-    public void onLoad() {
-    }
+    private List<ItemParamData> qualityOutputVec;
+    private List<ItemParamData> inputVec;
 }

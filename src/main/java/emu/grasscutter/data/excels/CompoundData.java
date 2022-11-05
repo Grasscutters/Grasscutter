@@ -8,19 +8,15 @@ import lombok.Getter;
 import java.util.List;
 
 @ResourceType(name = {"CompoundExcelConfigData.json"},loadPriority = ResourceType.LoadPriority.LOW)
+@Getter
 public class CompoundData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
-
-    @Override
-    public int getId() {return this.id;}
-    @Getter private int groupId;
-    @Getter private int rankLevel;
-    @Getter private boolean isDefaultUnlocked;
-    @Getter private int costTime;
-    @Getter private int queueSize;
-    @Getter private List<ItemParamData> inputVec;
-    @Getter private List<ItemParamData> outputVec;
-
-    @Override
-    public void onLoad(){}
+    private int groupId;
+    private int rankLevel;
+    private boolean isDefaultUnlocked;
+    private int costTime;
+    private int queueSize;
+    private List<ItemParamData> inputVec;
+    private List<ItemParamData> outputVec;
 }
