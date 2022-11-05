@@ -56,7 +56,7 @@ public class MonsterData extends GameResource {
     private List<PropGrowCurve> propGrowCurves;
     private long nameTextMapHash;
     private int campID;
-    
+
     // Transient
     private int weaponId;
     private MonsterDescribeData describeData;
@@ -78,23 +78,23 @@ public class MonsterData extends GameResource {
         };
     }
 
-	@Override
-	public void onLoad() {
-		this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-		
-		for (int id : this.equips) {
-			if (id == 0) {
-				continue;
-			}
-			GadgetData gadget = GameData.getGadgetDataMap().get(id);
-			if (gadget == null) {
-				continue;
-			}
-			if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
-				this.weaponId = id;
-			}
-		}
-	}
+    @Override
+    public void onLoad() {
+        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
+
+        for (int id : this.equips) {
+            if (id == 0) {
+                continue;
+            }
+            GadgetData gadget = GameData.getGadgetDataMap().get(id);
+            if (gadget == null) {
+                continue;
+            }
+            if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
+                this.weaponId = id;
+            }
+        }
+    }
 
     @Getter
     public class HpDrops {

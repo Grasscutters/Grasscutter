@@ -14,7 +14,7 @@ public final class TaskMap {
     private final Map<String, Task> annotations = new HashMap<>();
     private final Map<String, TaskHandler> afterReset = new HashMap<>();
     private final SchedulerFactory schedulerFactory = new StdSchedulerFactory();
-    
+
     public TaskMap() {
         this(false);
     }
@@ -113,12 +113,12 @@ public final class TaskMap {
                         .newJob(task.getClass())
                         .withIdentity(taskName)
                         .build();
-            
+
             Trigger convTrigger = TriggerBuilder.newTrigger()
                         .withIdentity(annotation.triggerName())
                         .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
                         .build();
-            
+
             scheduler.scheduleJob(job, convTrigger);
 
             if (annotation.executeImmediately()) {
