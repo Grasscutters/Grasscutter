@@ -133,7 +133,7 @@ public final class TaskMap {
     }
 
     public List<TaskHandler> getHandlersAsList() {
-        return new LinkedList<>(this.tasks.values());
+        return new ArrayList<>(this.tasks.values());
     }
 
     public HashMap<String, TaskHandler> getHandlers() {
