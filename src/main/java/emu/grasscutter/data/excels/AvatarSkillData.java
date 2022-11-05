@@ -7,26 +7,18 @@ import emu.grasscutter.game.props.ElementType;
 import lombok.Getter;
 
 @ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
+@Getter
 public class AvatarSkillData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
-    @Getter private float cdTime;
-    @Getter private int costElemVal;
-    @Getter private int maxChargeNum;
-    @Getter private int triggerID;
-    @Getter private boolean isAttackCameraLock;
-    @Getter private int proudSkillGroupId;
-    @Getter private ElementType costElemType;
-    @Getter private long nameTextMapHash;
-    @Getter private long descTextMapHash;
-    @Getter private String abilityName;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    @Override
-    public void onLoad() {
-
-    }
+    private float cdTime;
+    private int costElemVal;
+    private int maxChargeNum;
+    private int triggerID;
+    private boolean isAttackCameraLock;
+    private int proudSkillGroupId;
+    private ElementType costElemType;
+    private long nameTextMapHash;
+    private long descTextMapHash;
+    private String abilityName;
 }

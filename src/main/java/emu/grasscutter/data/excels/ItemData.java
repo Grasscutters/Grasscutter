@@ -25,6 +25,7 @@ import lombok.Getter;
 @Getter
 public class ItemData extends GameResource {
     // Main
+    @Getter(onMethod = @__(@Override))
     private int id;
     private int stackLimit = 1;
     private int maxUseCount;
@@ -81,16 +82,11 @@ public class ItemData extends GameResource {
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
 
-    @SerializedName(value="roomSceneId", alternate={"DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK"})
+    @SerializedName(value="roomSceneId", alternate={"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK"})
     private int roomSceneId;
 
     // Custom
     private transient IntSet addPropLevelSet;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
 
     public WeaponProperty[] getWeaponProperties() {
         return this.weaponProp;

@@ -29,9 +29,4 @@ public class HomeWorldLevelData extends GameResource {
     public int getId() {
         return level;
     }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-    }
 }

@@ -89,7 +89,7 @@ public final class CommandMap {
     }
 
     public List<Command> getAnnotationsAsList() {
-        return new LinkedList<>(this.annotations.values());
+        return new ArrayList<>(this.annotations.values());
     }
 
     public Map<String, Command> getAnnotations() {
@@ -102,7 +102,7 @@ public final class CommandMap {
      * @return All command handlers as a list.
      */
     public List<CommandHandler> getHandlersAsList() {
-        return new LinkedList<>(this.commands.values());
+        return new ArrayList<>(this.commands.values());
     }
 
     public Map<String, CommandHandler> getHandlers() {
@@ -234,8 +234,8 @@ public final class CommandMap {
 
         // Parse message.
         String[] split = rawMessage.split(" ");
-        List<String> args = new LinkedList<>(Arrays.asList(split));
-        String label = args.remove(0).toLowerCase();
+        String label = split[0].toLowerCase();
+        List<String> args = new ArrayList<>(Arrays.asList(split).subList(1, split.length));
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
 
         // Check for special cases - currently only target command.

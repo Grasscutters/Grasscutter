@@ -12,7 +12,6 @@ import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncState
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
-import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -36,10 +35,8 @@ import java.util.List;
 public class EntityVehicle extends EntityBaseGadget {
 
     @Getter private final Player owner;
-    private final Int2FloatMap fightProp;
-
-    private final Position pos;
-    private final Position rot;
+    @Getter(onMethod = @__(@Override))
+    private final Int2FloatMap fightProperties;
 
     @Getter private final int pointId;
     @Getter private final int gadgetId;
@@ -49,12 +46,10 @@ public class EntityVehicle extends EntityBaseGadget {
     @Nullable @Getter private ConfigGadget configGadget;
 
     public EntityVehicle(Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
-        super(scene);
+        super(scene, pos, rot);
         this.owner = player;
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
-        this.fightProp = new Int2FloatOpenHashMap();
-        this.pos = new Position(pos);
-        this.rot = new Position(rot);
+        this.fightProperties = new Int2FloatOpenHashMap();
         this.gadgetId = gadgetId;
         this.pointId = pointId;
         this.curStamina = 240; // might be in configGadget.GCALKECLLLP.JBAKBEFIMBN.ANBMPHPOALP
@@ -72,19 +67,6 @@ public class EntityVehicle extends EntityBaseGadget {
         super.fillFightProps(configGadget);
         this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
         this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
-    }
-
-    @Override
-    public Int2FloatMap getFightProperties() {
-        return fightProp;
-    }
-
-    @Override
-    public Position getPosition() { return this.pos; }
-
-    @Override
-    public Position getRotation() {
-        return this.rot;
     }
 
     @Override

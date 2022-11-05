@@ -33,21 +33,18 @@ public class CommandHelpers {
     }
 
     public static <T> List<String> parseIntParameters(List<String> args, @Nonnull T params, Map<Pattern, BiConsumer<T, Integer>> map) {
-        for (int i = args.size() - 1; i >= 0; i--) {
-            String arg = args.get(i).toLowerCase();
+        args.removeIf(arg -> {
+            var argL = arg.toLowerCase();
             boolean deleteArg = false;
-            int argNum;
             for (var entry : map.entrySet()) {
-                if ((argNum = matchIntOrNeg(entry.getKey(), arg)) != -1) {
+                int argNum = matchIntOrNeg(entry.getKey(), argL);
+                if (argNum != -1) {
                     entry.getValue().accept(params, argNum);
                     deleteArg = true;
-                    break;
                 }
             }
-            if (deleteArg) {
-                args.remove(i);
-            }
-        }
+            return deleteArg;
+        });
         return args;
     }
 }
