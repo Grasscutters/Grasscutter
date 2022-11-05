@@ -106,6 +106,16 @@
           }
         }
       }
+    },
+    "command": {
+      "args": {
+        "command_type": "要執行的指令類型",
+        "target_id": "目標玩家Id，與targetName互斥，同時指定優先選擇Id",
+        "target_name": "目標玩家名，与targetId互斥，同時指定優先選擇Id",
+        "executor_id": "執行者Id，与executorName互斥，，同時指定優先選擇Id",
+        "executor_name": "執行者的名字，与executorId互斥，，同時指定優先選擇Id",
+        "data": "執行命令需要的數據"
+      }
     }
   },
   "commands": {

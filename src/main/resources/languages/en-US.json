@@ -107,6 +107,16 @@
           }
         }
       }
+    },
+    "command": {
+      "args": {
+        "command_type": "Command type",
+        "target_id": "Target player Id, incompatible with targetName, targetId will be used when both are specified",
+        "target_name": "Target player name, incompatible with targetId, targetId will be used when both are specified",
+        "executor_id": "Executor Id, incompatible with ExecutorName, executorId will be used when both are specified",
+        "executor_name": "Executor name, incompatible with ExecutorId, executorId will be used when both are specified",
+        "data": "Data needed by processor"
+      }
     }
   },
 
