@@ -3,6 +3,7 @@ package emu.grasscutter.game.player;
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
@@ -84,6 +85,8 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
@@ -1343,4 +1346,39 @@ public class Player {
         }
     }
 
+    public boolean setAlias(String alias, String commandInputString) {
+        String filtered = commandInputString.replaceAll("[^a-zA-Z0-9; ]", "");
+        List<String> commandInput = Stream.of(filtered.split(";")).map(String::trim).collect(Collectors.toList());
+        this.getCommandAliases().put(alias, commandInput);
+        this.save();
+        return true;
+    }
+
+    public boolean getAliasDescription(Player player, String alias) {
+        if (!this.getCommandAliases().containsKey(alias)) return false;
+        CommandHandler.sendMessage(player, alias + " = " + player.getCommandAliases().get(alias));
+        return true;
+    }
+
+    public boolean clearAlias(String alias) {
+        if (!this.getCommandAliases().containsKey(alias)) return false;
+        this.getCommandAliases().keySet().remove(alias);
+        this.save();
+        return true;
+    }
+
+    public boolean listAlias(Player player) {
+        if (this.getCommandAliases() == null || this.getCommandAliases().isEmpty()) return false;
+        for (String i : this.getCommandAliases().keySet()) CommandHandler.sendMessage(player,  i + " = " + this.getCommandAliases().get(i));
+        return true;
+    }
+
+    public void clearAllAlias() {
+        this.getCommandAliases().clear();
+        this.save();
+    }
+
+    public List<String> getAlias(String alias) {
+        return this.getCommandAliases().get(alias);
+    }
 }

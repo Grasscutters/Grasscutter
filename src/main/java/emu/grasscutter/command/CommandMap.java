@@ -216,7 +216,27 @@ public final class CommandMap {
      * @param player     The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
+
+    // Still hacky patchy, will clean it up on upcoming commits
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
+        // Parse message
+        String[] split = rawMessage.split(" ");
+        List<String> args = new LinkedList<>(Arrays.asList(split));
+        String alias = args.get(0).toLowerCase();
+        if (player != null) {
+            List<String> commands = player.getAlias(alias);
+            if (commands != null) {
+                CommandHandler.sendMessage(player, "Custom alias used: " + alias);
+                for (String i : commands) invoke_raw(player, targetPlayer, i);
+            } else {
+                invoke_raw(player, targetPlayer, rawMessage);
+            }
+        } else {
+            invoke_raw(player, targetPlayer, rawMessage);
+        }
+    }
+
+    public void invoke_raw(Player player, Player targetPlayer, String rawMessage) {
         // The console outputs in-game command. [{Account Username} (Player UID: {Player Uid})]
         if (SERVER.logCommands) {
             if (player != null) {

@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.game.managers.AliasManager;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -66,22 +65,22 @@ public final class AliasCommand implements CommandHandler {
         }
     }
     private void setAlias(Player sender, Player player, String alias, String commandInputString) {
-        if (AliasManager.setAlias(player, alias, commandInputString)) CommandHandler.sendMessage(sender, "Alias set.");
+        if (player.setAlias(alias, commandInputString)) CommandHandler.sendMessage(sender, "Alias set.");
         else CommandHandler.sendMessage(sender, "Failed to set alias.");
     }
 
     private void infoAlias(Player sender, Player player, String alias) {
-        if (!AliasManager.getAliasDescription(player, alias)) CommandHandler.sendMessage(sender, "No alias found.");
+        if (!player.getAliasDescription(player, alias)) CommandHandler.sendMessage(sender, "No alias found.");
     }
     private void clearAlias(Player sender, Player player, String alias) {
-        if (!AliasManager.clearAlias(player, alias)) CommandHandler.sendMessage(sender, "No alias found.");
+        if (!player.clearAlias(alias)) CommandHandler.sendMessage(sender, "No alias found.");
         else CommandHandler.sendMessage(sender, "Alias cleared.");
     }
     private void listAlias(Player sender, Player player) {
-        if (!AliasManager.listAlias(player)) CommandHandler.sendMessage(sender,"No alias found.");
+        if (!player.listAlias(player)) CommandHandler.sendMessage(sender,"No alias found.");
     }
     private void clearAllAlias(Player sender, Player player) {
-        AliasManager.clearAllAlias(player);
+        player.clearAllAlias();
         CommandHandler.sendMessage(sender, "All existing aliases has been cleared.");
     }
 }
