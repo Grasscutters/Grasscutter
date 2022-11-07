@@ -7,35 +7,18 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 @ResourceType(name = "ReliquaryLevelExcelConfigData.json")
 public class ReliquaryLevelData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
     private Int2FloatMap propMap;
 
-    private int rank;
-    private int level;
-    private int exp;
+    @Getter private int rank;
+    @Getter private int level;
+    @Getter private int exp;
     private List<RelicLevelProperty> addProps;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    public int getRank() {
-        return rank;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getExp() {
-        return exp;
-    }
 
     public float getPropValue(FightProperty prop) {
         return getPropValue(prop.getId());
@@ -54,16 +37,9 @@ public class ReliquaryLevelData extends GameResource {
         }
     }
 
+    @Getter
     public class RelicLevelProperty {
         private String propType;
         private float value;
-
-        public String getPropType() {
-            return propType;
-        }
-
-        public float getValue() {
-            return value;
-        }
     }
 }

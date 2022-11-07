@@ -7,11 +7,9 @@
 
 **Atensyon:** Ang mga kontributor ay laging welcome sa proyektong ito. Bago mag-bigay ng kontribusyon, basahin muna ng mabuti ang [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md). 
 
-<b>(Basahin ha, hindi titingin lang)</b>
+## Ang mga kasalukuyang features
 
-## Ang mga current features
-
-* Login system
+* Logging in
 * Combat
 * Friends list
 * Teleportation
@@ -22,62 +20,61 @@
 
 ## Quick setup guide
 
-**Atensyon:** Kung di mo talaga kaya o hindi mo maintindihan ang wiki, maaari kang sumali sa aming server [Discord](https://discord.gg/T5vZU6UyeG).
+**Atensyon:** Para sa mga nangangailangan ng suporta, maaari kang sumali sa aming server [Discord](https://discord.gg/T5vZU6UyeG).
 
 ### Ang mga kailangan
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 
-  **Atensyon:** Kung gusto mo lang **paganahin** ang server, then **jre** is pwede naman.
+  **Atensyon:** Kung gusto mo lang **paganahin** ang server, pwede naman ang **jre**.
 
 * [MongoDB](https://www.mongodb.com/try/download/community) (recommended 4.0+)
 
-* Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
+* Proxy Daemon: [mitmproxy](https://mitmproxy.org/) (mitmdump, recommended), [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe), etc.
 
 ### Running
 
-**Atensyon:** Kung nag-update ka galing sa old version, paki-delete ang `config.json` para mag-regenerate ulit.
+**Atensyon:** Kung nag-update ka galing sa lumang version, paki-delete ang `config.json` para mag-regenerate ulit.
 
 1. Get `grasscutter.jar`
-   - Download ka from [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
-   - [Build mo ung jar by yourself](#Building)
-2. Gawa ka ng `resources` folder sa directory kung nasaan ang grasscutter.jar at ilagay ang `BinOutput` at `ExcelBinOutput` sa loob ng resources folder *(Check mo ang [wiki](https://github.com/Grasscutters/Grasscutter/wiki) para malaman mo san mo makukuha yan)*
-3. Paandarin ang Grasscutter gamit ang command na `java -jar grasscutter.jar`. **Make sure na gumagana ang mongodb (Google mo nalang kung pano mo malalaman)** 
+   - I-download mo sa [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) o sa [actions](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) o [bumuo ng iyong sariling server](#building).
+2. Gawa ka ng `resources` folder sa directory kung nasaan ang grasscutter.jar at ilagay ang `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders sa loob ng resources folder *(Tingnan mo ang [wiki](https://github.com/Grasscutters/Grasscutter/wiki) para malaman mo kung saan mo makukuha yan)*
+3. Paandarin ang Grasscutter gamit ang command na `java -jar grasscutter.jar`. **Siguraduhin mo na ang mongodb service ay naka-open din.** 
 
 ### Connecting with the client
 
-½. Create ka ng account gamit ang [server console command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
+½. Gumawa ng account sa server console gamit ang [command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#:~:text=account%20%3Ccreate|delete%3E%20%3Cusername%3E%20[UID]) na ito.
 
-1. Redirect traffic: (choose one)
+1. Redirect traffic: (pumili lang dapat ng isa)
     - mitmdump: `mitmdump -s proxy.py -k`
 
-      Trust CA certificate:
+        - Trust CA certificate:
 
-      ​	**Note:** Usually ang CA certificate ay nakalagay sa `%USERPROFILE%\ .mitmproxy`, o pwede mo naman i-download from `http://mitm.it`
+          - Ang CA certificate ay nasa `%USERPROFILE%\.mitmproxy`, i-double click ang `mitmproxy-ca-cert.cer` para ma-[install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) o...
 
-      ​	Double click para ma-[install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
+          - Via command line *(kailangan ng administration privileges)*
 
-      - Gamit ang command line (cmd.exe)
+             ```shell
+             certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
+             ```
 
-        ```shell
-        certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
-        ```
+    - Fiddler Classic: Paadarin ang Fiddler Classic, turn on mo yung `Decrypt https traffic` sa (Tools -> Options -> HTTPS) at baguhin mo ang default port na nakalagay (Tools -> Options -> Connections) sa anumang numero maliban sa `8888`, i-load ang [script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript) na ito (copy and paste ang script sa `FiddlerScript` tab) at i-click ang `Save Script` button.
 
-    - Fiddler Classic: Paadarin ang Fiddler Classic, tsaka turn on mo yung `Decrypt https traffic` sa settings at baguhin mo yung default port na nakalagay (Tools -> Options -> Connections) to anything other than `8888`, at saka mo i-load [itong script](https://github.lunatic.moe/fiddlerscript).
-
-    - [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+    - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
 2. Set mo ung proxy sa `127.0.0.1:8080` or dun sa proxy port na iyong inilagay.
 
-**pwede mo rin gamitin ang `start.cmd` to start the servers and proxy daemons automatically, pero kailagan mong i-setup ang JAVA_HOME enviroment**
+- Para sa mitmproxy: Pagkatapos mong i-setup ang network proxy at sa pag-install ng certificate, tingnan mo sa http://mitm.it/ kung ang traffic ay dumadaan sa mitmproxy.
+
+**Pwede mo rin gamitin ang `start.cmd` to start the servers and proxy daemons automatically, pero kailagan mong i-setup ang JAVA_HOME environment at i-configure ang `start_config.cmd` file.**
 
 ### Building
 
-Ang Grasscutter ay gumagamit ng gradle for depedencies at building.
+Ang Grasscutter ay gumagamit ng Gradle para sa depedencies at building.
 
 **Mga kailangan:**
 
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 - [Git](https://git-scm.com/downloads)
 
 ##### Windows
@@ -98,17 +95,12 @@ chmod +x gradlew
 ./gradlew jar # Compile jar
 ```
 
-Pag-katapos mong i-compile, check mo yung [project](https://github.com/grasscutters/grasscutter) directory at saka makikita mo ung jar na kinompile mo. Usually pag-dev version, ang dapat nakalagay jan ay `grasscutter-<version>-dev.jar`. Bulag ka pag-hindi mo pa yan nakita.
+Pag-katapos mong i-compile, check mo yung project directory at makikita mo yung jar na kinompile mo. Usually pag-dev version, ang dapat nakalagay diyan ay `grasscutter-<version>-dev.jar`.
 
-### Atensyon: ang mga server commands ay nasa [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
+### Ang mga server commands ay nasa [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands) na!
 
 # Quick Troubleshooting
 
-* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable). Pag-hindi mo pa rin na-compile o hindi mo ma-gets, isa lang masasabi ko sayo, may skill issue+reading issue ka. 
-* Hindi ako maka-connect, ayaw mag-login, 4206, etc... - `Usually proxy may kasalanan nyan`, ito ung pinaka-malalang skill issue na pwede mong makuha, sa lahat ng problems sa gc. Kung ayaw mo nyan, basahin mo ito. 
-
-Kung <b>Fiddler user</b> ka, paki-sigurado na naka-set ung port sa kahit ano except sa `8888`. (8888 port is for hoyoverse spider logs, in case na hindi mo alam)
-* Startup sequence: MongoDB > Grasscutter > Proxy daemon o Proxy service (mitmdump, fiddler, etc.) 
-
-<b> KUNG HINDI MO TALAGA MAINTINDIHAN, LUMAYAS KA NA DITO......... 
-PUTANG INA MO, TAGLISH NA NGA YAN. TAS HINDI MO PA MA-GETS LMAO</b>
+* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable). 
+* Hindi ako maka-connect, ayaw mag-login, 4206, etc... - Mostly ang proxy setup mo ang may kasalanan niyan, kung gamit mo ay Fiddler, paki-sigurado na naka-set ung port sa kahit ano except sa 8888.
+* Ang pagkakasunud-sunod: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game

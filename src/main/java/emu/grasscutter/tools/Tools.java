@@ -232,10 +232,14 @@ public final class Tools {
     public static void createGachaMappings(Path location) throws IOException {
         ResourceLoader.loadResources();
         List<String> jsons = createGachaMappingJsons();
+        var usedLocales = new HashSet<String>();
         StringBuilder sb = new StringBuilder("mappings = {\n");
         for (int i = 0; i < Language.TextStrings.NUM_LANGUAGES; i++) {
-            sb.append("\t\"%s\": ".formatted(Language.TextStrings.ARR_GC_LANGUAGES[i].toLowerCase()));  // TODO: change the templates to not use lowercased locale codes
-            sb.append(jsons.get(i).replace("\n", "\n\t") + ",\n");
+            String locale = Language.TextStrings.ARR_GC_LANGUAGES[i].toLowerCase();  // TODO: change the templates to not use lowercased locale codes
+            if (usedLocales.add(locale)) {  // Some locales fallback to en-us, we don't want to redefine en-us with vietnamese strings
+                sb.append("\t\"%s\": ".formatted(locale));
+                sb.append(jsons.get(i).replace("\n", "\n\t") + ",\n");
+            }
         }
         sb.setLength(sb.length() - 2);  // Delete trailing ",\n"
         sb.append("\n}");

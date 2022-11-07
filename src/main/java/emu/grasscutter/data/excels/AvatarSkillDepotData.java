@@ -18,31 +18,27 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
+@Getter
 public class AvatarSkillDepotData extends GameResource {
-
+    @Getter(onMethod = @__(@Override))
     private int id;
-    @Getter private int energySkill;
-    @Getter private int attackModeSkill;
+    private int energySkill;
+    private int attackModeSkill;
 
-    @Getter private List<Integer> skills;
-    @Getter private List<Integer> subSkills;
-    @Getter private List<String> extraAbilities;
-    @Getter private List<Integer> talents;
-    @Getter private List<InherentProudSkillOpens> inherentProudSkillOpens;
+    private List<Integer> skills;
+    private List<Integer> subSkills;
+    private List<String> extraAbilities;
+    private List<Integer> talents;
+    private List<InherentProudSkillOpens> inherentProudSkillOpens;
 
-    @Getter private String talentStarName;
-    @Getter private String skillDepotAbilityGroup;
+    private String talentStarName;
+    private String skillDepotAbilityGroup;
 
     // Transient
-    @Getter private AvatarSkillData energySkillData;
-    @Getter private ElementType elementType;
-    @Getter private IntList abilities;
-    @Getter private int talentCostItemId;
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
+    private AvatarSkillData energySkillData;
+    private ElementType elementType;
+    private IntList abilities;
+    private int talentCostItemId;
 
     public void setAbilities(AbilityEmbryoEntry info) {
         this.abilities = new IntArrayList(info.getAbilities().length);
@@ -77,9 +73,10 @@ public class AvatarSkillDepotData extends GameResource {
             .ifPresent(itemId -> this.talentCostItemId = itemId);
     }
 
+    @Getter
     public static class InherentProudSkillOpens {
-        @Getter private int proudSkillGroupId;
-        @Getter private int needAvatarPromoteLevel;
+        private int proudSkillGroupId;
+        private int needAvatarPromoteLevel;
     }
 
     public IntStream getSkillsAndEnergySkill() {

@@ -16,7 +16,7 @@ public class ItemUseGainFlycloak extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-		if (GameData.getAvatarFlycloakDataMap().containsKey(this.i)) {
+        if (GameData.getAvatarFlycloakDataMap().containsKey(this.i)) {
             params.player.addFlycloak(this.i);
         }
         return true;

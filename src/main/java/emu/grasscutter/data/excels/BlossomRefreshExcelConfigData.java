@@ -7,40 +7,39 @@ import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
 
 @ResourceType(name = "BlossomRefreshExcelConfigData.json")
+@Getter
 public class BlossomRefreshExcelConfigData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
     // Map details
-    @Getter private long nameTextMapHash;
-    @Getter private long descTextMapHash;
-    @Getter private String icon;
-    @Getter private String clientShowType;  // BLOSSOM_SHOWTYPE_CHALLENGE, BLOSSOM_SHOWTYPE_NPCTALK
+    private long nameTextMapHash;
+    private long descTextMapHash;
+    private String icon;
+    private String clientShowType;  // BLOSSOM_SHOWTYPE_CHALLENGE, BLOSSOM_SHOWTYPE_NPCTALK
 
     // Refresh details
-    @Getter private String refreshType;  // Leyline blossoms, magical ore outcrops
-    @Getter private int refreshCount;  // Number of entries to spawn at refresh (1 for each leyline type for each city, 4 for magical ore for each city)
-    @Getter private String refreshTime;  // Server time-of-day to refresh at
-    @Getter private RefreshCond[] refreshCondVec;  // AR requirements etc.
+    private String refreshType;  // Leyline blossoms, magical ore outcrops
+    private int refreshCount;  // Number of entries to spawn at refresh (1 for each leyline type for each city, 4 for magical ore for each city)
+    private String refreshTime;  // Server time-of-day to refresh at
+    private RefreshCond[] refreshCondVec;  // AR requirements etc.
 
-    @Getter private int cityId;
-    @Getter private int blossomChestId;  // 1 for mora, 2 for exp
-    @Getter private Drop[] dropVec;
+    private int cityId;
+    private int blossomChestId;  // 1 for mora, 2 for exp
+    private Drop[] dropVec;
 
     // Unknown details
     // @Getter private int reviseLevel;
     // @Getter private int campUpdateNeedCount;  // Always 1 if specified
 
-    @Override
-    public int getId() {
-        return id;
-    }
-
+    @Getter
     public static class Drop {
-        @Getter int dropId;
-        @Getter int previewReward;
+        int dropId;
+        int previewReward;
     }
 
+    @Getter
     public static class RefreshCond {
-        @Getter String type;
-        @Getter List<Integer> param;
+        String type;
+        List<Integer> param;
     }
 }

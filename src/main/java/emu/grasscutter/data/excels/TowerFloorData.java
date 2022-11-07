@@ -2,10 +2,11 @@ package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import lombok.Getter;
 
 @ResourceType(name = "TowerFloorExcelConfigData.json")
+@Getter
 public class TowerFloorData extends GameResource {
-
     private int floorId;
     private int floorIndex;
     private int levelGroupId;
@@ -16,34 +17,5 @@ public class TowerFloorData extends GameResource {
     @Override
     public int getId() {
         return this.floorId;
-    }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-    }
-
-    public int getFloorId() {
-        return floorId;
-    }
-
-    public int getFloorIndex() {
-        return floorIndex;
-    }
-
-    public int getLevelGroupId() {
-        return levelGroupId;
-    }
-
-    public int getOverrideMonsterLevel() {
-        return overrideMonsterLevel;
-    }
-
-    public int getTeamNum() {
-        return teamNum;
-    }
-
-    public int getFloorLevelConfigId() {
-        return floorLevelConfigId;
     }
 }

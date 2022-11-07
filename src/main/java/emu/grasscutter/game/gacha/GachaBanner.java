@@ -2,6 +2,7 @@ package emu.grasscutter.game.gacha;
 
 import static emu.grasscutter.config.Configuration.*;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
@@ -39,13 +40,40 @@ public class GachaBanner {
     private int eventChance4 = 50; // Chance to win a featured event item
     private int eventChance5 = 50; // Chance to win a featured event item
     @Getter private BannerType bannerType = BannerType.STANDARD;
-
-    // Kinda wanna deprecate these but they're in people's configs
-    private int[] rateUpItems1 = {};
-    private int[] rateUpItems2 = {};
-    private int eventChance = -1;
-    private int costItem = 0;
     @Getter private int wishMaxProgress = 2;
+
+    // Deprecated fields that were tolerated in early May 2022 but have apparently still being circulating in new custom configs
+    // For now, throw up big scary errors on load telling people that they will be banned outright in a future version
+    @Deprecated private int[] rateUpItems1 = {};
+    @Deprecated private int[] rateUpItems2 = {};
+    @Deprecated private int eventChance = -1;
+    @Deprecated private int costItem = 0;
+    @Deprecated private int softPity = -1;
+    @Deprecated private int hardPity = -1;
+    @Deprecated private int minItemType = -1;
+    @Deprecated private int maxItemType = -1;
+
+    private static void warnDeprecated(String name, String replacement) {
+        Grasscutter.getLogger().error("Deprecated field found in Banners.json: "+name+" was replaced back in early May 2022, use "+replacement+" instead. If you do not remove this key from your config, it will refuse to load in a future Grasscutter version.");
+    }
+    public void onLoad() {
+        if (eventChance != -1)
+            warnDeprecated("eventChance", "eventChance4 & eventChance5");
+        if (costItem != 0)
+            warnDeprecated("costItem", "costItemId");
+        if (softPity != -1)
+            warnDeprecated("softPity", "weights5");
+        if (hardPity != -1)
+            warnDeprecated("hardPity", "weights5");
+        if (minItemType != -1)
+            warnDeprecated("minItemType", "fallbackItems[4,5]Pool[1,2]");
+        if (maxItemType != -1)
+            warnDeprecated("maxItemType", "fallbackItems[4,5]Pool[1,2]");
+        if (rateUpItems1.length > 0)
+            warnDeprecated("rateUpItems1", "rateUpItems5");
+        if (rateUpItems2.length > 0)
+            warnDeprecated("rateUpItems2", "rateUpItems4");
+    }
 
     public String getPreviewPrefabPath() {
         if (this.previewPrefabPath != null && !this.previewPrefabPath.isEmpty())

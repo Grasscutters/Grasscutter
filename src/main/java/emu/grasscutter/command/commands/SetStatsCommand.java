@@ -67,9 +67,10 @@ public final class SetStatsCommand implements CommandHandler {
 
         // Compatibility aliases
         this.stats.put("mhp", this.stats.get("maxhp"));
-        this.stats.put("hp", new Stat(FightProperty.FIGHT_PROP_CUR_HP));  // Overrides FIGHT_PROP_HP
-        this.stats.put("atk", new Stat(FightProperty.FIGHT_PROP_CUR_ATTACK));  // Overrides FIGHT_PROP_ATTACK
-        this.stats.put("atkb", new Stat(FightProperty.FIGHT_PROP_BASE_ATTACK));  // This doesn't seem to get used to recalculate ATK, so it's only useful for stuff like Bennett's buff.
+        this.stats.put("hp", this.stats.get("_cur_hp"));  // Overrides FIGHT_PROP_HP
+        this.stats.put("atk", this.stats.get("_cur_attack"));  // Overrides FIGHT_PROP_ATTACK
+        this.stats.put("def", this.stats.get("_cur_defense"));  // Overrides FIGHT_PROP_DEFENSE
+        this.stats.put("atkb", this.stats.get("_base_attack"));  // This doesn't seem to get used to recalculate ATK, so it's only useful for stuff like Bennett's buff.
         this.stats.put("eanemo", this.stats.get("anemo%"));
         this.stats.put("ecryo", this.stats.get("cryo%"));
         this.stats.put("edendro", this.stats.get("dendro%"));

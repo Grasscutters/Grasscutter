@@ -1,6 +1,7 @@
 package emu.grasscutter.database;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.mongodb.client.result.DeleteResult;
 
@@ -154,6 +155,11 @@ public final class DatabaseHelper {
         DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("id", target.getId())).delete();
     }
 
+    public static <T> Stream<T> getByGameClass(Class<T> classType) {
+        return DatabaseManager.getGameDatastore().find(classType).stream();
+    }
+
+    @Deprecated(forRemoval = true)
     public static List<Player> getAllPlayers() {
         return DatabaseManager.getGameDatastore().find(Player.class).stream().toList();
     }

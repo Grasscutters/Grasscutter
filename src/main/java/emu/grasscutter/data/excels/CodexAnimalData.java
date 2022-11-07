@@ -7,18 +7,15 @@ import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
 
 @ResourceType(name = {"AnimalCodexExcelConfigData.json"})
+@Getter
 public class CodexAnimalData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int Id;
-    @Getter private String type;
-    @Getter private int describeId;
-    @Getter private int sortOrder;
+    private String type;
+    private int describeId;
+    private int sortOrder;
     @SerializedName(value="countType", alternate={"OCCLHPBCDGL"})
-    @Getter private CountType countType;
-
-    @Override
-    public int getId() {
-        return Id;
-    }
+    private CountType countType;
 
     public enum CountType {
         CODEX_COUNT_TYPE_KILL,

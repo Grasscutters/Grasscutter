@@ -22,9 +22,4 @@ public class CityData extends GameResource {
     public int getId() {
         return this.cityId;
     }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-    }
 }
