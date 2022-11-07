@@ -4,6 +4,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"MaterialCodexExcelConfigData.json"})
 public class CodexMaterialData extends GameResource {
     private int Id;

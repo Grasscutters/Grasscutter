@@ -14,6 +14,8 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.MonsterType;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter
 public class MonsterData extends GameResource {

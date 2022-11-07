@@ -3,6 +3,8 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "WeaponLevelExcelConfigData.json")
 public class WeaponLevelData extends GameResource {
 	private int level;

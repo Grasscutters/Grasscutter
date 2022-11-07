@@ -4,6 +4,8 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "NpcExcelConfigData.json")
 @Getter
 public class NpcData extends GameResource {

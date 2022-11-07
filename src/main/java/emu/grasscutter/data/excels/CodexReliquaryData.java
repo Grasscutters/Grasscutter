@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.ints.IntCollection;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"ReliquaryCodexExcelConfigData.json"})
 public class CodexReliquaryData extends GameResource {
     @Getter private int Id;

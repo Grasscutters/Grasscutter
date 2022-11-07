@@ -7,6 +7,8 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.OpenCondData;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"FetterInfoExcelConfigData.json", "FettersExcelConfigData.json", "FetterStoryExcelConfigData.json", "PhotographExpressionExcelConfigData.json", "PhotographPosenameExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
 public class FetterData extends GameResource {
     private int avatarId;

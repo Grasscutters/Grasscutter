@@ -9,6 +9,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "DailyDungeonConfigData.json")
 public class DailyDungeonData extends GameResource {
     @Getter(onMethod = @__(@Override))
@@ -22,11 +24,7 @@ public class DailyDungeonData extends GameResource {
     private int[] sunday;
 
     private static final int[] empty = new int[0];
-    private final Int2ObjectMap<int[]> map;
-
-    public DailyDungeonData() {
-        this.map = new Int2ObjectOpenHashMap<>();
-    }
+    private final Int2ObjectMap<int[]> map = new Int2ObjectOpenHashMap<>();
 
     public int[] getDungeonsByDay(int day) {
         return map.getOrDefault(day, empty);

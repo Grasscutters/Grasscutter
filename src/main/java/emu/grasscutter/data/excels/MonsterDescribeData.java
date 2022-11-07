@@ -5,6 +5,8 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "MonsterDescribeExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
 public class MonsterDescribeData extends GameResource {

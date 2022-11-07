@@ -8,6 +8,8 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "OpenStateConfigData.json", loadPriority = ResourceType.LoadPriority.HIGHEST)
 public class OpenStateData extends GameResource {
     @Getter(onMethod = @__(@Override))

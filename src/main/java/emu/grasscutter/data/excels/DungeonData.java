@@ -5,6 +5,8 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "DungeonExcelConfigData.json")
 public class DungeonData extends GameResource {
     @Getter(onMethod = @__(@Override))

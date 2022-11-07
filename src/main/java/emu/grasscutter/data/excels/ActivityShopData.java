@@ -7,6 +7,8 @@ import lombok.Getter;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "ActivityShopOverallExcelConfigData.json")
 public class ActivityShopData extends GameResource {
     @Getter

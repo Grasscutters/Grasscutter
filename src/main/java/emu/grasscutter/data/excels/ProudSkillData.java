@@ -10,6 +10,8 @@ import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {
     private int proudSkillId;

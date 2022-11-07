@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "BattlePassRewardExcelConfigData.json")
 @Getter
 public class BattlePassRewardData extends GameResource {

@@ -8,6 +8,8 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"ForgeExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
 @Getter
 public class ForgeData extends GameResource {

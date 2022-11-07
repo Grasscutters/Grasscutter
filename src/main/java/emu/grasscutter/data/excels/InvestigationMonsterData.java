@@ -9,6 +9,8 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "InvestigationMonsterConfigData.json", loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)

@@ -7,6 +7,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ResourceType(name = {"HomeWorldBgmExcelConfigData.json"})

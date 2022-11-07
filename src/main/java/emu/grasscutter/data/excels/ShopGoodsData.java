@@ -8,6 +8,8 @@ import emu.grasscutter.game.shop.ShopInfo;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "ShopGoodsExcelConfigData.json")
 public class ShopGoodsData extends GameResource {
     private int goodsId;

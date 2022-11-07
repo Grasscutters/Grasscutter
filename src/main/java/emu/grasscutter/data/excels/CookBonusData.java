@@ -7,6 +7,8 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"CookBonusExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
 public class CookBonusData extends GameResource {
     private int avatarId;

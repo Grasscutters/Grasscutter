@@ -5,6 +5,8 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "EquipAffixExcelConfigData.json")
 public class EquipAffixData extends GameResource {
 

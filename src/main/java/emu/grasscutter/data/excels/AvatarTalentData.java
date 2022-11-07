@@ -6,6 +6,8 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.FightPropData;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "AvatarTalentExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 public class AvatarTalentData extends GameResource {
 	private int talentId;

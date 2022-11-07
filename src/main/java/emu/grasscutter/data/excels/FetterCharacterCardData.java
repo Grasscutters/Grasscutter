@@ -4,6 +4,8 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "FetterCharacterCardExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 public class FetterCharacterCardData extends GameResource {
     private int avatarId;

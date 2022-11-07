@@ -9,6 +9,8 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "CityConfigData.json", loadPriority = ResourceType.LoadPriority.HIGH)
 @Getter
 @Setter

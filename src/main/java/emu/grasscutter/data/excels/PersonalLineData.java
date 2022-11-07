@@ -9,6 +9,8 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = "PersonalLineExcelConfigData.json")
 @Getter
 @Setter  // TODO: remove setters next API break

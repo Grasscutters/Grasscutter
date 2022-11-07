@@ -17,6 +17,8 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
 
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 @ResourceType(name = {"MaterialExcelConfigData.json",
         "WeaponExcelConfigData.json",
         "ReliquaryExcelConfigData.json",
