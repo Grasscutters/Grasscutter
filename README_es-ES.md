@@ -67,7 +67,7 @@
 
 2. Establece el proxy de red a `127.0.0.1:8080` o el puerto de proxy que pusiste.
 
-**también puedes usar `start.cmd` para iniciar el servidor y el servicio de proxy automáticamente, pero tienes que configurar el entorno JAVA_HOME**
+**También puedes usar `start.cmd` para iniciar el servidor y el servicio de proxy automáticamente, pero tienes que configurar el entorno JAVA_HOME**
 
 ### Construcción
 
