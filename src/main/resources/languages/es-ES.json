@@ -6,7 +6,7 @@
       "connect": "Cliente conectado desde %s",
       "disconnect": "Cliente desconectado desde %s",
       "game_update_error": "Ha ocurrido un error durante la actualización del juego.",
-      "command_error": "Comando de error:"
+      "command_error": "Error de comando:"
     },
     "dispatch": {
       "address_bind": "[Dispatch] Servidor de envio iniciado en \u001b[1m\u001b[33m%s:%s\u001b[0m",
@@ -19,10 +19,10 @@
         "default_password": "[Dispatch] La contraseña por defecto del keystore se cargó correctamente. Por favor, considera establecer la contraseña a 123456 en config.json."
       },
       "authentication": {
-        "default_unable_to_verify": "[Authentication] Algo invocó el método verifyUser que no está disponible en el manejador de autentificación por defecto."
+        "default_unable_to_verify": "[Authentication] Algo llamado método de verifyUser que no está disponible en el controlador de autenticación por defecto."
       },
-      "no_commands_error": "No se soporta el uso de comandos en modo de solo envío.",
-      "unhandled_request_error": "[Dispatch] Petición potencialmente no manejada %s : %s.",
+      "no_commands_error": "No se soporta el uso de comandos en dispatch solo envío.",
+      "unhandled_request_error": "[Dispatch] Posible solicitud %s no gestionada: %s.",
       "account": {
         "login_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión.",
         "login_success": "[Dispatch] El cliente %s inició sesión como %s.",
@@ -74,7 +74,7 @@
       "permission_error": "No tienes permiso para ejecutar este comando.",
       "console_execute_error": "Este comando solo puede ser ejecutado desde la consola.",
       "player_execute_error": "Ejecuta este comando desde el juego.",
-      "command_exist_error": "Ningún comando encontrado.",
+      "command_exist_error": "Comando no encontrado.",
       "no_usage_specified": "No se ha especificado el uso",
       "no_description_specified": "No se ha especificado la descripción",
       "set_to": "Se ha establecido %s a %s.",
@@ -96,7 +96,7 @@
       }
     },
     "execution": {
-      "usage_prefix": "Uso: ",
+      "usage_prefix": "Usa: ",
       "player_exist_error": "Jugador no encontrado.",
       "player_offline_error": "El jugador no está activo.",
       "item_player_exist_error": "Objeto o UID inválido.",
@@ -106,9 +106,9 @@
       "set_target": "Los siguientes comandos irán solo a @%s por defecto.",
       "set_target_online": "@%s está activo. Algunos comandos pueden requerir un usuario inactivo.",
       "set_target_offline": "@%s está inactivo. Algunos comandos pueden requerir un usuario activo.",
-      "need_target": "Este comando requiere un UID objetivo. Añade un argumento <@UID> o fija un objetivo persistente con /target @UID.",
-      "need_target_online": "Este comando requiere un UID objetivo activo, pero el objetivo actual está inactivo. Añade un argumento <@UID> diferente o fija un objetivo persistente con /target @UID.",
-      "need_target_offline": "Este comando requiere un UID objetivo inactivo, pero el objetivo actual está activo. Añade un argumento <@UID> diferente o fija un objetivo persistente con /target @UID."
+      "need_target": "Este comando requiere un UID fijado. Añade un argumento <@UID> o fija un objetivo persistente con /target @UID.",
+      "need_target_online": "Este comando requiere un UID fijado activo, pero el objetivo actual está inactivo. Añade un argumento <@UID> diferente o fija un objetivo persistente con /target @UID.",
+      "need_target_offline": "Este comando requiere un UID fijado inactivo, pero el objetivo actual está activo. Añade un argumento <@UID> diferente o fija un objetivo persistente con /target @UID."
     },
     "status": {
       "enabled": "Activado",
@@ -122,11 +122,11 @@
       "create": "Cuenta creada con UID %s.",
       "delete": "Cuenta borrada.",
       "no_account": "Cuenta no encontrada.",
-      "description": "Modifica las cuentas de usuario"
+      "description": "Modifica las cuentas de usuarios"
     },
     "announce": {
       "send_success": "Se envió el anuncio correctamente, puedes revocarlo con /a revoke %s.",
-      "refresh_success": "Se refrescó el archivo de configuración de anuncio correctamente. [Total %s]",
+      "refresh_success": "Se actualizó el archivo de configuración de anuncio correctamente. [Total %s]",
       "revoke_done": "Intentando revocar el anuncio %s.",
       "not_found": "No se pudo encontrar el anuncio %s.",
       "description": "Envía un anuncio a todos los jugadores activos, o gestiona anuncios del server"
@@ -142,8 +142,8 @@
       "description": "Elimina objetos desbloqueados no equipados, incluyendo objetos de rareza dorada, de tu inventario"
     },
     "coop": {
-      "success": "Invocado %s al mundo de %s.",
-      "description": "Fuerza a alguien a ser invocado al mundo de otro. Si no se establece un objetivo, te envía a ti al modo cooperativo."
+      "success": "%s se ha unido al mundo de %s.",
+      "description": "Fuerza a alguien a unirse al mundo de otro. Si no se establece un objetivo, te envía a ti al modo cooperativo."
     },
     "enter_dungeon": {
       "changed": "Cambiado a la mazmorra %s.",
@@ -152,7 +152,7 @@
       "description": "Te introduce en una mazmorra"
     },
     "give": {
-      "usage_relic": "Uso: give <artifactID> [mainPropID] [<appendPropID>[,<veces>]]... [lv<nivel 0-20>]",
+      "usage_relic": "Usa: give <artifactID> [mainPropID] [<appendPropID>[,<veces>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Este artifactID pertenece a un rango de la lista negra, puede que no sea el que buscas.",
       "given": "Dado %s de %s a %s.",
       "given_with_level_and_refinement": "Dado %s con nivel %s, refinamiento %s %s veces a %s.",
@@ -177,7 +177,7 @@
     "kick": {
       "player_kick_player": "El jugador [%s:%s] ha echado al jugador [%s:%s]",
       "server_kick_player": "Echando al jugador [%s:%s]...",
-      "description": "Echa al jugador específico del servidor (WIP)"
+      "description": "Echa a un jugador en específico del servidor (WIP)"
     },
     "killall": {
       "scene_not_found_in_player_world": "Escenario no encontrado en el mundo del jugador.",
@@ -229,10 +229,10 @@
     },
     "resetShopLimit": {
       "success": "Reinicio completado.",
-      "description": "Reinicia el tiempo de refrescado de la tienda del jugador objetivo"
+      "description": "Reinicia el tiempo de la tienda del jugador fijado"
     },
     "sendMail": {
-      "give_usage": "Uso: give <player> <itemID|itemName> [cantidad] [nivel] [refinamiento]",
+      "give_usage": "Usa: give <player> <itemID|itemName> [cantidad] [nivel] [refinamiento]",
       "user_not_exist": "El usuario con ID '%s' No existe.",
       "start_composition": "Empezando la construcción del correo.\nPor favor usa '/sendmail <título>' para continuar.\nPuedes usar '/sendmail stop' en cualquier momento.",
       "templates": "Las plantillas de correos se implementarán pronto...",
@@ -264,17 +264,17 @@
       "fail": "Error al establecer la constelación.",
       "failed_success": "Las constelaciones de %s han sido establecidas a %s. Por favor reinicia el escenario para ver los cambios.",
       "success": "Las constelaciones de %s han sido establecidas a %s.",
-      "successall": "🇺🇸Constellations for all characters have been set to %s.",
-      "description": "Establece el nivel de constelación para tu personaje actual"
+      "successall": "Las constelaciones de todos los personajes han sido establecidas a %s.",
+      "description": "Establece el nivel de constelación para tu personaje actual."
     },
     "setFetterLevel": {
       "range_error": "El nivel de amistad debe estar entre 0 y 10.",
       "success": "Nivel de amistad establecido a %s.",
       "level_error": "Nivel de amistad inválido.",
-      "description": "Establece tu nivel de amistad para tu personaje actual"
+      "description": "Establece tu nivel de amistad para tu personaje actual."
     },
     "setProp": {
-      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abusmo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
+      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abismo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
       "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
@@ -315,10 +315,10 @@
       "failed_parse_avatar_id": "Error al usar el ID del avatar: %s",
       "avatar_already_in_team": "El avatar ya está en el equipo.",
       "avatar_not_found": "Avatar %d no encontrado.",
-      "description": "Modifica tu equipo a mano."
+      "description": "Modifica tu equipo manualmente."
     },
     "teleportAll": {
-      "success": "Invocados todos los jugadores a tu localización.",
+      "success": "Invoca a todos los jugadores a tu localización.",
       "error": "Solo puedes usar este comando en modo MP.",
       "description": "Teletransporta a todos los jugadores en tu mundo a tu localización"
     },
@@ -337,11 +337,11 @@
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "invalid_time": "No se puede establecer la marca de tiempo.",
-      "description": "Beta a un jugador"
+      "description": "Bannea a un jugador"
     },
     "unlockall": {
-      "success": "Desfijados todos los estados abiertos para %s.",
-      "description": "Desfija todos los estados abiertos para un jugador."
+      "success": "Desbloqueada todas las estadísticas y estados para %s.",
+      "description": "Desbloquea todas las estadísticas y estados para un jugador."
     },
     "unban": {
       "success": "Exitoso.",
@@ -364,23 +364,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "🇺🇸Id",
+      "header_id": "Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "🇺🇸Avatar",
+      "header_avatar": "Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   },
