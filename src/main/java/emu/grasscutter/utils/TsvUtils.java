@@ -77,13 +77,10 @@ public class TsvUtils {
         return null;
     }
 
-    public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
-        return loadTsvsToListsConstructor(classType, filename).get(0);
-    }
-
     private static Map<String, Pair<Field, Function<String, Object>>> getClassFieldMap(Class<?> classType) {
         val fieldMap = new HashMap<String, Pair<Field, Function<String, Object>>>();
         for (Field field : classType.getDeclaredFields()) {
+            field.setAccessible(true);  // Yes, we don't bother setting this back. No, it doesn't matter for this project.
             val type = field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
             val fieldPair = Pair.of(field, getFieldParser(type));
 
@@ -98,6 +95,10 @@ public class TsvUtils {
             }
         }
         return fieldMap;
+    }
+
+    public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
+        return loadTsvsToListsSetField(classType, filename).get(0);
     }
 
     public static <T> List<List<T>> loadTsvsToListsSetField(Class<T> classType, Path... filenames) throws Exception {
@@ -141,6 +142,8 @@ public class TsvUtils {
         }).toList();
     }
 
+    // Sadly, this is a little bit slower than the SetField version.
+    // I've left it in as an example of an optimization attempt that didn't work out, over the current reflection version.
     public static <T> List<List<T>> loadTsvsToListsConstructor(Class<T> classType, Path... filenames) throws Exception {
         val pair = getAllArgsConstructor(classType);
         if (pair == null) {
