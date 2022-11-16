@@ -11,7 +11,9 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.TsvUtils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
@@ -112,12 +114,20 @@ public class ResourceLoader {
         System.out.println("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
     }
 
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
         if (!loadedResources.contains(c.getSimpleName()) || doReload) {
-            for (String name : type.name()) {
-                loadFromResource(c, name, map);
-            }
+            // for (String name : type.name()) {
+            //     loadFromResource(c, name, map);
+            // }
+            Path[] paths = Stream.of(type.name()).map(FileUtils::getExcelPath).toArray(Path[]::new);
+            // TsvUtils.loadTsvsToListsConstructor(c, paths).forEach(l -> l.forEach(o -> {
+            TsvUtils.loadTsvsToListsSetField(c, paths).forEach(l -> l.forEach(o -> {
+                GameResource res = (GameResource) o;
+                res.onLoad();
+                map.put(res.getId(), res);
+            }));
+
             loadedResources.add(c.getSimpleName());
             Grasscutter.getLogger().debug("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
         }
@@ -125,8 +135,7 @@ public class ResourceLoader {
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
-        // List<T> list = JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c);
-        List<T> list = JsonUtils.loadTsvToList(getResourcePath("ExcelBinOutput/" + fileName.replace(".json", ".tsv")), c);
+        List<T> list = JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c);
 
         for (T o : list) {
             GameResource res = (GameResource) o;
