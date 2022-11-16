@@ -5,8 +5,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "AvatarCostumeExcelConfigData.json")
 public class AvatarCostumeData extends GameResource {
     @SerializedName(value = "skinId", alternate = "costumeId")

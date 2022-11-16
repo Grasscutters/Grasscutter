@@ -11,8 +11,6 @@ import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = {"BattlePassMissionExcelConfigData.json"})
 @Getter
 public class BattlePassMissionData extends GameResource {

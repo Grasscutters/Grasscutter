@@ -10,8 +10,6 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.common.ItemParamStringData;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "RewardPreviewExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class RewardPreviewData extends GameResource {
     @Getter(onMethod = @__(@Override))

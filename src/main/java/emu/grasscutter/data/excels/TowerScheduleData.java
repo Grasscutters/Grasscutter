@@ -5,8 +5,6 @@ import emu.grasscutter.data.ResourceType;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "TowerScheduleExcelConfigData.json")
 public class TowerScheduleData extends GameResource {
     private int scheduleId;

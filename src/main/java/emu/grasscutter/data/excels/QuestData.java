@@ -14,8 +14,6 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "QuestExcelConfigData.json")
 @Getter
 @ToString

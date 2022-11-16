@@ -17,8 +17,6 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
 public class AvatarSkillDepotData extends GameResource {

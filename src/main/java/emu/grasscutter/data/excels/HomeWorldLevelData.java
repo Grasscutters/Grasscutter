@@ -8,8 +8,6 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ResourceType(name = {"HomeworldLevelExcelConfigData.json"})

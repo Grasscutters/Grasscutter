@@ -10,8 +10,6 @@ import lombok.experimental.FieldDefaults;
 import java.util.List;
 import java.util.Objects;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "NewActivityExcelConfigData.json", loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)

@@ -7,8 +7,6 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "ReliquaryMainPropExcelConfigData.json")
 @Getter
 public class ReliquaryMainPropData extends GameResource {

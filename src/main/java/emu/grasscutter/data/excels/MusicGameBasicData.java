@@ -6,8 +6,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "MusicGameBasicConfigData.json")
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)

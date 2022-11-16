@@ -5,8 +5,6 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.ClimateType;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "WeatherExcelConfigData.json")
 public class WeatherData extends GameResource {
     @Getter private int areaID;

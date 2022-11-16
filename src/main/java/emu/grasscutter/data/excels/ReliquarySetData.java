@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "ReliquarySetExcelConfigData.json")
 public class ReliquarySetData extends GameResource {
     private int setId;

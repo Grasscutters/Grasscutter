@@ -10,8 +10,6 @@ import lombok.experimental.FieldDefaults;
 import java.util.HashMap;
 import java.util.Map;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "ChapterExcelConfigData.json")
 @Getter
 @Setter  // TODO: remove on next API break

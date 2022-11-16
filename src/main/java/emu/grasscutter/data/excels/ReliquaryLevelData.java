@@ -9,8 +9,6 @@ import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "ReliquaryLevelExcelConfigData.json")
 public class ReliquaryLevelData extends GameResource {
     @Getter(onMethod = @__(@Override))

@@ -5,8 +5,6 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.ServerBuffType;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "BuffExcelConfigData.json")
 @Getter
 public class BuffData extends GameResource {

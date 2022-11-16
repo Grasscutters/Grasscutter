@@ -7,8 +7,6 @@ import emu.grasscutter.data.common.ItemParamData;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "CombineExcelConfigData.json")
 public class CombineData extends GameResource {
 

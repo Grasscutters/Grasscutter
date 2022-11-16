@@ -5,8 +5,6 @@ import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
 import lombok.Setter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "DungeonEntryExcelConfigData.json")
 @Getter
 @Setter  // TODO: remove this next API break

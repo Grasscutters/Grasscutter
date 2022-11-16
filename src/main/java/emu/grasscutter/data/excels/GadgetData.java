@@ -5,8 +5,6 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.EntityType;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "GadgetExcelConfigData.json")
 @Getter
 public class GadgetData extends GameResource {

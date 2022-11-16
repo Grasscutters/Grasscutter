@@ -8,8 +8,6 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
 import lombok.Getter;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = {"CookRecipeExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
 @Getter
 public class CookRecipeData extends GameResource {

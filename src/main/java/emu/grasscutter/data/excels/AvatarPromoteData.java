@@ -6,8 +6,6 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
-import lombok.AllArgsConstructor;
-@AllArgsConstructor
 @ResourceType(name = "AvatarPromoteExcelConfigData.json")
 public class AvatarPromoteData extends GameResource {
 	
