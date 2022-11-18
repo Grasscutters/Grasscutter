@@ -7,8 +7,10 @@ import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.managers.blossom.BlossomManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -16,7 +18,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
+import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass;
@@ -50,7 +52,7 @@ public class Scene {
 
     @Getter @Setter private int autoCloseTime;
     @Getter private int time;
-    private long startTime;
+    private final long startTime;
 
     @Getter private SceneScriptManager scriptManager;
     @Getter @Setter private WorldChallenge challenge;
@@ -327,7 +329,7 @@ public class Scene {
 
         // Reward drop
         if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            getWorld().getServer().getDropSystem().callDrop((EntityMonster) target);
+            getWorld().getServer().getDropSystemLegacy().callDrop((EntityMonster) target);
         }
 
         // Remove entity from world
@@ -390,8 +392,7 @@ public class Scene {
     public synchronized void checkSpawns() {
         Set<SpawnDataEntry.GridBlockId> loadedGridBlocks = new HashSet<>();
         for (Player player : this.getPlayers()) {
-            for (SpawnDataEntry.GridBlockId block : SpawnDataEntry.GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPosition()))
-                loadedGridBlocks.add(block);
+            Collections.addAll(loadedGridBlocks, GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPosition()));
         }
         if (this.loadedGridBlocks.containsAll(loadedGridBlocks)) {  // Don't recalculate static spawns if nothing has changed
             return;
@@ -700,18 +701,48 @@ public class Scene {
         if (itemData.isEquip()) {
             float range = (1.5f + (.05f * amount));
             for (int i = 0; i < amount; i++) {
-                Position pos = bornForm.getPosition().nearby2d(range).addZ(.9f);  // Why Z?
+                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);  // Why Z?
                 EntityItem entity = new EntityItem(this, null, itemData, pos, 1);
                 addEntity(entity);
             }
         } else {
-            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addZ(.9f), amount);  // Why Z?
+            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addY(1.5f), amount);  // Why Z?
             addEntity(entity);
         }
     }
+
+    public void addDropEntity(GameItem item, GameEntity bornForm, Player player, boolean share) {
+        //TODO:optimize EntityItem.java. Maybe we should make other players can't see the ItemEntity.
+        ItemData itemData = GameData.getItemDataMap().get(item.getItemId());
+        if (itemData == null) return;
+        if (itemData.isEquip()) {
+            float range = (1.5f + (.05f * item.getCount()));
+            for (int j = 0; j < item.getCount(); j++) {
+                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);  //TODO
+                EntityItem entity = new EntityItem(this, player, itemData, pos, item.getCount(), share);
+                addEntity(entity);
+            }
+        } else {
+            EntityItem entity = new EntityItem(this, player, itemData, bornForm.getPosition().clone().addY(1.5f), item.getCount(), share);  //TODO:improve
+            addEntity(entity);
+        }
+
+    }
+
+    /**
+     * @param share If false,only the player can see the items but others can't.If true,all players will see.
+     */
+    public void addDropEntities(List<GameItem> items, GameEntity bornForm, Player player, boolean share) {
+        //TODO:optimize EntityItem.java. Maybe we should make other players can't see the ItemEntity.
+        for (var i : items) {
+            addDropEntity(i, bornForm, player, share);
+        }
+    }
+
     public void loadNpcForPlayerEnter(Player player) {
         this.npcBornEntrySet.addAll(loadNpcForPlayer(player));
     }
+
     private List<SceneNpcBornEntry> loadNpcForPlayer(Player player) {
         var pos = player.getPosition();
         var data = GameData.getSceneNpcBornData().get(getId());
