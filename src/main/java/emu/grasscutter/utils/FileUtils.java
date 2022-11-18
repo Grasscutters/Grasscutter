@@ -112,7 +112,7 @@ public final class FileUtils {
     }
 
     public static Path getExcelPath(String fileName) {
-        return RESOURCES_PATH.resolve("ExcelBinOutput/" + fileName.replace(".json", ".tsv"));
+        return RESOURCES_PATH.resolve("ExcelBinOutput/" + fileName.replace(".json", ".tsj"));
     }
 
     public static Path getScriptPath(String path) {

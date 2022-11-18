@@ -66,6 +66,11 @@ public class TsvUtils {
         };
     }
 
+    private static Function<String, Object> getFieldParser(Field field) {
+        val type = field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
+        return getFieldParser(type);
+    }
+
     @SuppressWarnings("unchecked")
     private static <T> Pair<Constructor<T>, String[]> getAllArgsConstructor(Class<T> classType) {
         for (var c : classType.getDeclaredConstructors()) {
@@ -77,30 +82,52 @@ public class TsvUtils {
         return null;
     }
 
-    private static Map<String, Pair<Field, Function<String, Object>>> getClassFieldMap(Class<?> classType) {
-        val fieldMap = new HashMap<String, Pair<Field, Function<String, Object>>>();
+    // A helper object that contains a Field and the function to parse a String to create the value for the Field.
+    private static class FieldParser {
+        public final Field field;
+        public final Function<String, Object> parser;
+
+        FieldParser(Field field) {
+            this.field = field;
+            this.parser = getFieldParser(field);
+        }
+
+        public void parse(Object obj, String token) throws IllegalAccessException {
+            this.field.set(obj, this.parser.apply(token));
+        }
+    }
+
+    private static Map<String, FieldParser> makeClassFieldMap(Class<?> classType) {
+        val fieldMap = new HashMap<String, FieldParser>();
         for (Field field : classType.getDeclaredFields()) {
             field.setAccessible(true);  // Yes, we don't bother setting this back. No, it doesn't matter for this project.
-            val type = field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
-            val fieldPair = Pair.of(field, getFieldParser(type));
+            val fieldParser = new FieldParser(field);
 
             val a = field.getDeclaredAnnotation(SerializedName.class);
             if (a == null) {  // No annotation, use raw field name
-                fieldMap.put(field.getName(), fieldPair);
+                fieldMap.put(field.getName(), fieldParser);
             } else {  // Handle SerializedNames and alternatives
-                fieldMap.put(a.value(), fieldPair);
+                fieldMap.put(a.value(), fieldParser);
                 for (val alt : a.alternate()) {
-                    fieldMap.put(alt, fieldPair);
+                    fieldMap.put(alt, fieldParser);
                 }
             }
         }
         return fieldMap;
     }
 
+    private static Map<Class<?>, Map<String, FieldParser>> cachedClassFieldMaps = new HashMap<>();
+    private static synchronized Map<String, FieldParser> getClassFieldMap(Class<?> classType) {
+        return cachedClassFieldMaps.computeIfAbsent(classType, TsvUtils::makeClassFieldMap);
+    }
+
     public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
         return loadTsvsToListsSetField(classType, filename).get(0);
     }
 
+    // Flat tab-separated value tables.
+    // Arrays are represented as arrayName.0, arrayName.1, etc. columns.
+    // Maps/POJOs are represented as objName.fieldOneName, objName.fieldTwoName, etc. columns.
     public static <T> List<List<T>> loadTsvsToListsSetField(Class<T> classType, Path... filenames) throws Exception {
         val fieldMap = getClassFieldMap(classType);
         val constructor = classType.getDeclaredConstructor();
@@ -108,7 +135,7 @@ public class TsvUtils {
             try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
                 val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
                 val columns = headerNames.size();
-                val fieldPairs = headerNames.stream().map(name -> fieldMap.get(name)).toList();
+                val fieldParsers = headerNames.stream().map(name -> fieldMap.get(name)).toList();
 
                 return fileReader.lines().parallel().map(line -> {
                     val tokens = nonRegexSplit(line, '\t');
@@ -117,12 +144,55 @@ public class TsvUtils {
                     try {
                         T obj = constructor.newInstance();
                         for (t = 0; t < m; t++) {
-                            val fieldPair = fieldPairs.get(t);
-                            if (fieldPair == null) continue;
+                            val fieldParser = fieldParsers.get(t);
+                            if (fieldParser == null) continue;
 
                             String token = tokens.get(t);
                             if (!token.isEmpty()) {
-                                fieldPair.left().set(obj, fieldPair.right().apply(token));
+                                fieldParser.parse(obj, token);
+                            }
+                        }
+                        return obj;
+                    } catch (Exception e) {
+                        Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
+                        Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
+                        Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
+                        Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
+                        Grasscutter.getLogger().warn("Stacktrace is: ", e);
+                        return null;
+                    }
+                }).toList();
+            } catch (IOException e) {
+                Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+                return null;
+            }
+        }).toList();
+    }
+
+    // This uses a hybrid format where columns can hold JSON-encoded values.
+    // I'll term it TSJ (tab-separated JSON) for now, it has convenient properties.
+    public static <T> List<List<T>> loadTsjsToListsSetField(Class<T> classType, Path... filenames) throws Exception {
+        val fieldMap = getClassFieldMap(classType);
+        val constructor = classType.getDeclaredConstructor();
+        return Stream.of(filenames).parallel().map(filename -> {
+            try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+                val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
+                val columns = headerNames.size();
+                val fieldParsers = headerNames.stream().map(name -> fieldMap.get(name)).toList();
+
+                return fileReader.lines().parallel().map(line -> {
+                    val tokens = nonRegexSplit(line, '\t');
+                    val m = Math.min(tokens.size(), columns);
+                    int t = 0;
+                    try {
+                        T obj = constructor.newInstance();
+                        for (t = 0; t < m; t++) {
+                            val fieldParser = fieldParsers.get(t);
+                            if (fieldParser == null) continue;
+
+                            String token = tokens.get(t);
+                            if (!token.isEmpty()) {
+                                fieldParser.parse(obj, token);
                             }
                         }
                         return obj;
@@ -143,8 +213,8 @@ public class TsvUtils {
     }
 
     // Sadly, this is a little bit slower than the SetField version.
-    // I've left it in as an example of an optimization attempt that didn't work out, over the current reflection version.
-    public static <T> List<List<T>> loadTsvsToListsConstructor(Class<T> classType, Path... filenames) throws Exception {
+    // I've left it in as an example of an optimization attempt that didn't work out, since the naive reflection version will tempt people to try things like this.
+    public static <T> List<List<T>> loadTsjsToListsConstructor(Class<T> classType, Path... filenames) throws Exception {
         val pair = getAllArgsConstructor(classType);
         if (pair == null) {
             Grasscutter.getLogger().error("No AllArgsContructor found for class: "+classType);
