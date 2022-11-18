@@ -162,12 +162,14 @@ public class ResourceLoader {
         val simpleName = c.getSimpleName();
         // Grasscutter.getLogger().warn("Loading " + simpleName + "s.");
         if (!loadedResources.contains(c.getSimpleName()) || doReload) {
-            Path[] paths = Stream.of(type.name()).map(FileUtils::getExcelPath).toArray(Path[]::new);
-            TsvUtils.loadTsjsToListsSetField(c, paths).forEach(l -> l.forEach(o -> {
-                GameResource res = (GameResource) o;
-                res.onLoad();
-                map.put(res.getId(), res);
-            }));
+            Stream.of(type.name())
+                .map(FileUtils::getExcelPath)
+                .forEach(path ->
+                    TsvUtils.loadTsjToListSetField(c, path).forEach(o -> {
+                        GameResource res = (GameResource) o;
+                        res.onLoad();
+                        map.put(res.getId(), res);
+                    }));
 
             loadedResources.add(simpleName);
             // Grasscutter.getLogger().debug("Loaded " + map.size() + " " + simpleName + "s.");

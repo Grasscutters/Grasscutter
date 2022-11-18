@@ -3,14 +3,17 @@ package emu.grasscutter.utils;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -52,7 +55,6 @@ public class TsvUtils {
             default -> null;
         };
     }
-
     private static Function<String, Object> getFieldParser(Type type) {
         if (type == null) return value -> value;
         return switch (type2Int.getOrDefault(type, 0)) {
@@ -66,9 +68,9 @@ public class TsvUtils {
         };
     }
 
-    private static Function<String, Object> getFieldParser(Field field) {
-        val type = field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
-        return getFieldParser(type);
+    private static Map<Type, Function<String, Object>> cachedFieldParsers = new HashMap<>();
+    private static synchronized Function<String, Object> getFieldParserCached(Type type) {
+        return cachedFieldParsers.computeIfAbsent(type, TsvUtils::getFieldParser);
     }
 
     @SuppressWarnings("unchecked")
@@ -85,11 +87,13 @@ public class TsvUtils {
     // A helper object that contains a Field and the function to parse a String to create the value for the Field.
     private static class FieldParser {
         public final Field field;
+        public final ParameterizedType type;
         public final Function<String, Object> parser;
 
         FieldParser(Field field) {
             this.field = field;
-            this.parser = getFieldParser(field);
+            this.type = (ParameterizedType) field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
+            this.parser = getFieldParserCached(this.type);
         }
 
         public void parse(Object obj, String token) throws IllegalAccessException {
@@ -121,95 +125,142 @@ public class TsvUtils {
         return cachedClassFieldMaps.computeIfAbsent(classType, TsvUtils::makeClassFieldMap);
     }
 
-    public static <T> List<T> loadTsvToList(Path filename, Class<T> classType) throws Exception {
-        return loadTsvsToListsSetField(classType, filename).get(0);
+    private static class StringTree {
+        public final Map<String, StringTree> children = new TreeMap<>();
+
+        public void addPath(String path) {
+            if (path.isEmpty()) return;
+
+            val firstDot = path.indexOf('.');
+            val fieldPath = (firstDot < 0) ? path : path.substring(0, firstDot);
+            val remainder = (firstDot < 0) ? "" : path.substring(firstDot);
+            this.children.computeIfAbsent(fieldPath, k -> new StringTree()).addPath(remainder);
+            // this.children.computeIfAbsent(fieldPath, k -> new StringTree(this.fieldMap.get(fieldPath).type)).addPath(path.substring(firstDot));
+        }
+    }
+
+    private static class FieldTree {
+        public final Map<String, FieldTree> children = new TreeMap<>();
+        public final ParameterizedType type;
+        public final ParameterizedType componentType;  // If this node is an Array or List
+        public final Map<String, FieldParser> fieldMap;
+        // public Object obj;
+
+        FieldTree(ParameterizedType type, StringTree stringTree) {
+            this.type = type;
+            val cls = type.getClass();
+            this.fieldMap = getClassFieldMap(cls);
+            if (cls.isArray()) {  // Array
+                this.componentType = (ParameterizedType) cls.getComponentType().getGenericSuperclass();
+            } else if (Collection.class.isAssignableFrom(cls)) {  // List etc.
+                this.componentType = (ParameterizedType) type.getActualTypeArguments()[0];
+            } else {
+                this.componentType = null;
+            }
+            if (this.componentType == null) {
+                stringTree.children.forEach((idx, tree) -> this.children.put(idx, new FieldTree(this.componentType, tree)));
+            } else {
+                stringTree.children.forEach((key, tree) -> this.children.put(key, new FieldTree(this.fieldMap.get(key).type, tree)));
+            }
+        }
     }
 
     // Flat tab-separated value tables.
     // Arrays are represented as arrayName.0, arrayName.1, etc. columns.
     // Maps/POJOs are represented as objName.fieldOneName, objName.fieldTwoName, etc. columns.
-    public static <T> List<List<T>> loadTsvsToListsSetField(Class<T> classType, Path... filenames) throws Exception {
-        val fieldMap = getClassFieldMap(classType);
-        val constructor = classType.getDeclaredConstructor();
-        return Stream.of(filenames).parallel().map(filename -> {
-            try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
-                val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
-                val columns = headerNames.size();
-                val fieldParsers = headerNames.stream().map(name -> fieldMap.get(name)).toList();
+    public static <T> List<T> loadTsvToListSetField(Class<T> classType, Path filename) {
+        try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+            val fieldMap = getClassFieldMap(classType);
+            val constructor = classType.getDeclaredConstructor();
 
-                return fileReader.lines().parallel().map(line -> {
-                    val tokens = nonRegexSplit(line, '\t');
-                    val m = Math.min(tokens.size(), columns);
-                    int t = 0;
-                    try {
-                        T obj = constructor.newInstance();
-                        for (t = 0; t < m; t++) {
-                            val fieldParser = fieldParsers.get(t);
-                            if (fieldParser == null) continue;
+            val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
+            val columns = headerNames.size();
+            // If we just crawled through all fields to expand potential subobjects, we might hit recursive data structure explosions (e.g. if something has a Player object)
+            // So we'll only crawl through objects referenced by the header columns
+            val stringTree = new StringTree();
+            headerNames.forEach(stringTree::addPath);
+            val fieldTree = new FieldTree((ParameterizedType) classType.getGenericSuperclass(), stringTree);
+            // val subObjects = new HashMap<String, Type>();
 
-                            String token = tokens.get(t);
-                            if (!token.isEmpty()) {
-                                fieldParser.parse(obj, token);
-                            }
+            val fieldParsers = headerNames.stream().map(fieldMap::get).toList();
+
+            return fileReader.lines().parallel().map(line -> {
+                val tokens = nonRegexSplit(line, '\t');
+                val m = Math.min(tokens.size(), columns);
+                int t = 0;
+                try {
+                    T obj = constructor.newInstance();
+                    for (t = 0; t < m; t++) {
+                        val fieldParser = fieldParsers.get(t);
+                        if (fieldParser == null) continue;
+
+                        String token = tokens.get(t);
+                        if (!token.isEmpty()) {
+                            fieldParser.parse(obj, token);
                         }
-                        return obj;
-                    } catch (Exception e) {
-                        Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
-                        Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
-                        Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
-                        Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
-                        Grasscutter.getLogger().warn("Stacktrace is: ", e);
-                        return null;
                     }
-                }).toList();
-            } catch (IOException e) {
-                Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
-                return null;
-            }
-        }).toList();
+                    return obj;
+                } catch (Exception e) {
+                    Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
+                    Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
+                    Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
+                    Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
+                    Grasscutter.getLogger().warn("Stacktrace is: ", e);
+                    return null;
+                }
+            }).toList();
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+            return null;
+        } catch (NoSuchMethodException e) {
+            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Class is missing NoArgsConstructor");
+            return null;
+        }
     }
 
     // This uses a hybrid format where columns can hold JSON-encoded values.
     // I'll term it TSJ (tab-separated JSON) for now, it has convenient properties.
-    public static <T> List<List<T>> loadTsjsToListsSetField(Class<T> classType, Path... filenames) throws Exception {
-        val fieldMap = getClassFieldMap(classType);
-        val constructor = classType.getDeclaredConstructor();
-        return Stream.of(filenames).parallel().map(filename -> {
-            try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
-                val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
-                val columns = headerNames.size();
-                val fieldParsers = headerNames.stream().map(name -> fieldMap.get(name)).toList();
+    public static <T> List<T> loadTsjToListSetField(Class<T> classType, Path filename) {
+        try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+            val fieldMap = getClassFieldMap(classType);
+            val constructor = classType.getDeclaredConstructor();
 
-                return fileReader.lines().parallel().map(line -> {
-                    val tokens = nonRegexSplit(line, '\t');
-                    val m = Math.min(tokens.size(), columns);
-                    int t = 0;
-                    try {
-                        T obj = constructor.newInstance();
-                        for (t = 0; t < m; t++) {
-                            val fieldParser = fieldParsers.get(t);
-                            if (fieldParser == null) continue;
+            val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
+            val columns = headerNames.size();
+            val fieldParsers = headerNames.stream().map(fieldMap::get).toList();
 
-                            String token = tokens.get(t);
-                            if (!token.isEmpty()) {
-                                fieldParser.parse(obj, token);
-                            }
+            return fileReader.lines().parallel().map(line -> {
+                val tokens = nonRegexSplit(line, '\t');
+                val m = Math.min(tokens.size(), columns);
+                int t = 0;
+                try {
+                    T obj = constructor.newInstance();
+                    for (t = 0; t < m; t++) {
+                        val fieldParser = fieldParsers.get(t);
+                        if (fieldParser == null) continue;
+
+                        String token = tokens.get(t);
+                        if (!token.isEmpty()) {
+                            fieldParser.parse(obj, token);
                         }
-                        return obj;
-                    } catch (Exception e) {
-                        Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
-                        Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
-                        Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
-                        Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
-                        Grasscutter.getLogger().warn("Stacktrace is: ", e);
-                        return null;
                     }
-                }).toList();
-            } catch (IOException e) {
-                Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
-                return null;
-            }
-        }).toList();
+                    return obj;
+                } catch (Exception e) {
+                    Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
+                    Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
+                    Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
+                    Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
+                    Grasscutter.getLogger().warn("Stacktrace is: ", e);
+                    return null;
+                }
+            }).toList();
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+            return null;
+        } catch (NoSuchMethodException e) {
+            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Class is missing NoArgsConstructor");
+            return null;
+        }
     }
 
     // Sadly, this is a little bit slower than the SetField version.
