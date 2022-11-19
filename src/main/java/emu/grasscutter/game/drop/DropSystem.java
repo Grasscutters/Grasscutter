@@ -142,58 +142,36 @@ public class DropSystem extends BaseGameSystem {
     /**
      * @param share Whether other players in the scene could see the drop items.
      */
-    private void dropItem(int itemId, int amount, ActionReason reason, Player player, GameEntity bornFrom, boolean share) {
-        DropMaterialData drop = GameData.getDropMaterialDataMap().get(itemId);
-        if (GameData.getItemDataMap().get(itemId).getItemType() == ItemType.ITEM_VIRTUAL || (drop != null && drop.isAutoPick())) {
-            if (share) {
-                for (var p : player.getScene().getPlayers()) {
-                    p.sendPacket(new PacketDropHintNotify(itemId, bornFrom.getPosition().toProto()));
-                }
-            } else {
-                player.sendPacket(new PacketDropHintNotify(itemId, bornFrom.getPosition().toProto()));
-            }
+    private void dropItem(GameItem item, ActionReason reason, Player player, GameEntity bornFrom, boolean share) {
+        DropMaterialData drop = GameData.getDropMaterialDataMap().get(item.getItemId());
+        if ((drop != null && drop.isAutoPick()) || item.getItemId() == 102) {
+            giveItem(item, reason, player, share);
         } else {
             //TODO:solve share problem
-            player.getScene().addDropEntity(new GameItem(itemId, amount), bornFrom, player, share);
+            player.getScene().addDropEntity(item, bornFrom, player, share);
         }
     }
 
     private void dropItems(List<GameItem> items, ActionReason reason, GameEntity bornFrom, Player player, boolean share) {
         for (var i : items) {
-            DropMaterialData drop = GameData.getDropMaterialDataMap().get(i.getItemId());
-            if (i.getItemData().getItemType() == ItemType.ITEM_VIRTUAL || (drop != null && drop.isAutoPick())) {
-                giveItem(i,reason,player,share);
-            }
+            dropItem(i,reason,player,bornFrom,share);
         }
-        //TODO:solve share problem
-        player.getScene().addDropEntities(items, bornFrom, player, share);
     }
 
     private void giveItem(GameItem item, ActionReason reason, Player player, boolean share) {
         if (share) {
             for (var p : player.getScene().getPlayers()) {
-                p.sendPacket(new PacketDropHintNotify(item.getItemId(), player.getPosition().toProto()));
                 p.getInventory().addItem(item, reason);
+                p.sendPacket(new PacketDropHintNotify(item.getItemId(), player.getPosition().toProto()));
             }
         } else {
-            player.sendPacket(new PacketDropHintNotify(item.getItemId(), player.getPosition().toProto()));
             player.getInventory().addItem(item, reason);
+            player.sendPacket(new PacketDropHintNotify(item.getItemId(), player.getPosition().toProto()));
         }
     }
 
     private void giveItems(List<GameItem> items, ActionReason reason, Player player, boolean share) {
-        for (var i : items) {
-            DropMaterialData drop = GameData.getDropMaterialDataMap().get(i.getItemId());
-            if (i.getItemData().getItemType() == ItemType.ITEM_VIRTUAL || (drop != null && drop.isAutoPick())) {
-                if (share) {
-                    for (var p : player.getScene().getPlayers()) {
-                        p.sendPacket(new PacketDropHintNotify(i.getItemId(), player.getPosition().toProto()));
-                    }
-                } else {
-                    player.sendPacket(new PacketDropHintNotify(i.getItemId(), player.getPosition().toProto()));
-                }
-            }
-        }
+        //don't know whether we need PacketDropHintNotify.
         if (share) {
             for (var p : player.getScene().getPlayers()) {
                 p.getInventory().addItems(items, reason);

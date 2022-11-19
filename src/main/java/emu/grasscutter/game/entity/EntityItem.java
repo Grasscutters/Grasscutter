@@ -22,6 +22,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.packet.send.PacketDropHintNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
@@ -66,6 +67,7 @@ public class EntityItem extends EntityBaseGadget {
     @Override
     public void onInteract(Player player, GadgetInteractReq interactReq) {
         // check drop owner to avoid someone picked up item in others' world
+        //TODO:improve it
         if (!this.isShare()) {
             int dropOwner = (int) (this.getGuid() >> 32);
             if (dropOwner != player.getUid()) {
@@ -79,6 +81,7 @@ public class EntityItem extends EntityBaseGadget {
         // Add to inventory
         boolean success = player.getInventory().addItem(item, ActionReason.SubfieldDrop);
         if (success) {
+            player.sendPacket(new PacketDropHintNotify(item.getItemId(),getPosition().toProto()));
             if (!this.isShare()) { // not shared drop
                 player.sendPacket(new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
             } else {

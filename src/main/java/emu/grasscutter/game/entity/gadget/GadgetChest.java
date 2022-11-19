@@ -15,6 +15,7 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
+import emu.grasscutter.server.packet.send.PacketWorldChestOpenNotify;
 
 public class GadgetChest extends GadgetContent {
 
@@ -43,6 +44,7 @@ public class GadgetChest extends GadgetContent {
             if (status) {
                 getGadget().updateState(ScriptGadgetState.ChestOpened);
                 player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST,InterOpType.INTER_OP_TYPE_FINISH));
+                player.sendPacket(new PacketWorldChestOpenNotify(getGadget().getGroupId(), player.getSceneId(), chest.config_id));
                 return chest.isOneoff;
             }
             //if failed,fallback to legacy drop system.
