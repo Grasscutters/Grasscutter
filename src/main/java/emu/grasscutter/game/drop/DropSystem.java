@@ -8,12 +8,13 @@ import emu.grasscutter.data.excels.DropMaterialData;
 import emu.grasscutter.data.excels.DropTableData;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.scripts.data.SceneBossChest;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDropHintNotify;
+import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 import java.util.*;
@@ -42,14 +43,8 @@ public class DropSystem extends BaseGameSystem {
 
     }
 
-    public boolean handleChestDrop(int chestDropId, int dropCount, GameEntity bornFrom) {
-        Grasscutter.getLogger().info("ChestDrop:chest_drop_id={},drop_count={}", chestDropId, dropCount);
-        return processDrop(chestDropId, dropCount, ActionReason.OpenChest, bornFrom, bornFrom.getWorld().getHost(), false);
-    }
-
-    public boolean handleChestDrop(String dropTag, int level, GameEntity bornFrom) {
-        Grasscutter.getLogger().info("ChestDrop:drop_tag={},level={}", dropTag, level);
-        if (!chestReward.containsKey(dropTag)) return false;
+    private int queryDropData(String dropTag, int level) {
+        if (!chestReward.containsKey(dropTag)) return 0;
         var rewardList = chestReward.get(dropTag);
         ChestDropData dropData = null;
         int minLevel = 0;
@@ -59,25 +54,44 @@ public class DropSystem extends BaseGameSystem {
                 dropData = i;
             }
         }
-        if (dropData == null) return false;
-        return processDrop(dropData.getDropId(), dropData.getDropCount(), ActionReason.OpenChest, bornFrom, bornFrom.getWorld().getHost(), false);
+        if (dropData == null) return 0;
+        return dropData.getDropId();
     }
 
-    private boolean processDrop(int dropId, int count, ActionReason reason, GameEntity bornFrom, Player player, boolean share) {
-        if (!dropTable.containsKey(dropId)) return false;
-        var dropData = dropTable.get(dropId);
-        if (dropData.getNodeType() != 1) return false;
+    public boolean handleChestDrop(int chestDropId, int dropCount, GameEntity bornFrom) {
+        Grasscutter.getLogger().info("ChestDrop:chest_drop_id={},drop_count={}", chestDropId, dropCount);
+        if (!dropTable.containsKey(chestDropId)) return false;
+        var dropData = dropTable.get(chestDropId);
         List<GameItem> items = new ArrayList<>();
-        processSubDrop(dropData, count, items);
+        processDrop(dropData, dropCount, items);
         if (dropData.isFallToGround()) {
-            dropItems(items, reason, bornFrom, player, share);
+            dropItems(items, ActionReason.OpenChest, bornFrom, bornFrom.getWorld().getHost(), false);
         } else {
-            giveItems(items, reason, player, share);
+            bornFrom.getWorld().getHost().getInventory().addItems(items, ActionReason.OpenChest);
         }
         return true;
     }
 
-    private void processSubDrop(DropTableData dropData, int count, List<GameItem> items) {
+    public boolean handleChestDrop(String dropTag, int level, GameEntity bornFrom) {
+        Grasscutter.getLogger().info("ChestDrop:drop_tag={},level={}", dropTag, level);
+        int dropId = queryDropData(dropTag, level);
+        if (dropId == 0) return false;
+        return handleChestDrop(dropId, 1, bornFrom);
+    }
+
+    public boolean handleBossChestDrop(String dropTag, int level, SceneBossChest bossChest, Player player) {
+        int dropId = queryDropData(dropTag, level);
+        if (!dropTable.containsKey(dropId)) return false;
+        var dropData = dropTable.get(dropId);
+        List<GameItem> items = new ArrayList<>();
+        processDrop(dropData, 1, items);
+        //TODO:test if there still need some packets.
+        player.getInventory().addItems(items, ActionReason.OpenWorldBossChest);
+        player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(items));
+        return true;
+    }
+
+    private void processDrop(DropTableData dropData, int count, List<GameItem> items) {
         //TODO:Not clear on the meaning of some fields,like "dropLevel".Will ignore them.
         //TODO:solve drop limits,like everydayLimit.
 
@@ -98,10 +112,12 @@ public class DropSystem extends BaseGameSystem {
                 if (weight < sum) {
                     //win the item
                     int amount = calculateDropAmount(i) * count;
-                    if (dropTable.containsKey(id)) {
-                        processSubDrop(dropTable.get(id), amount, items);
-                    } else {
-                        items.add(new GameItem(id, amount));
+                    if (amount > 0) {
+                        if (dropTable.containsKey(id)) {
+                            processDrop(dropTable.get(id), amount, items);
+                        } else {
+                            items.add(new GameItem(id, amount));
+                        }
                     }
                     break;
                 }
@@ -112,10 +128,12 @@ public class DropSystem extends BaseGameSystem {
                 if (id == 0) continue;
                 if (rand.nextInt(10000) < i.getWeight()) {
                     int amount = calculateDropAmount(i) * count;
-                    if (dropTable.containsKey(id)) {
-                        processSubDrop(dropTable.get(id), amount, items);
-                    } else {
-                        items.add(new GameItem(id, amount));
+                    if (amount > 0) {
+                        if (dropTable.containsKey(id)) {
+                            processDrop(dropTable.get(id), amount, items);
+                        } else {
+                            items.add(new GameItem(id, amount));
+                        }
                     }
                 }
             }
