@@ -35,7 +35,7 @@ public class DeforestationManager extends BasePlayerManager {
         ColliderTypeToWoodItemID.put(9,101309);
         ColliderTypeToWoodItemID.put(10,101310);
         ColliderTypeToWoodItemID.put(11,101311);
-        ColliderTypeToWoodItemID.put(12,101312);        
+        ColliderTypeToWoodItemID.put(12,101312);
         ColliderTypeToWoodItemID.put(13,101313);
         ColliderTypeToWoodItemID.put(14,101314);
         ColliderTypeToWoodItemID.put(15,101315);
