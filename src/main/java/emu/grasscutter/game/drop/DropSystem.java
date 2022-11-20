@@ -10,7 +10,6 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.scripts.data.SceneBossChest;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDropHintNotify;
@@ -23,6 +22,8 @@ public class DropSystem extends BaseGameSystem {
     private final Int2ObjectMap<DropTableData> dropTable;
     private final Map<String, List<ChestDropData>> chestReward;
     private final Random rand;
+    //TODO:don't know how to determine boss level.Have to hard-code the data from wiki.
+    private final int[] bossLevel = {36, 37, 41, 50, 62, 72, 83, 91, 93};
 
     public DropSystem(GameServer server) {
         super(server);
@@ -79,8 +80,8 @@ public class DropSystem extends BaseGameSystem {
         return handleChestDrop(dropId, 1, bornFrom);
     }
 
-    public boolean handleBossChestDrop(String dropTag, int level, SceneBossChest bossChest, Player player) {
-        int dropId = queryDropData(dropTag, level);
+    public boolean handleBossChestDrop(String dropTag, Player player) {
+        int dropId = queryDropData(dropTag, bossLevel[player.getWorldLevel()]);
         if (!dropTable.containsKey(dropId)) return false;
         var dropData = dropTable.get(dropId);
         List<GameItem> items = new ArrayList<>();
@@ -94,7 +95,10 @@ public class DropSystem extends BaseGameSystem {
     private void processDrop(DropTableData dropData, int count, List<GameItem> items) {
         //TODO:Not clear on the meaning of some fields,like "dropLevel".Will ignore them.
         //TODO:solve drop limits,like everydayLimit.
-
+        if (count > 1) {
+            for (int i = 0; i < count; i++) processDrop(dropData, 1, items);
+            return;
+        }
         if (dropData.getRandomType() == 0) {
             int weightSum = 0;
             for (var i : dropData.getDropVec()) {
@@ -147,10 +151,8 @@ public class DropSystem extends BaseGameSystem {
             amount = rand.nextInt(Integer.parseInt(ranges[0]), Integer.parseInt(ranges[1]) + 1);
         } else if (i.getCountRange().contains(".")) {
             double expectAmount = Double.parseDouble(i.getCountRange());
-            int chance = (int) expectAmount + 1;
-            for (int k = 0; k < chance; k++) {
-                if (rand.nextDouble() < expectAmount / chance) amount++;
-            }
+            amount = (int) expectAmount;
+            if (rand.nextDouble() < expectAmount - amount) amount++;
         } else {
             amount = Integer.parseInt(i.getCountRange());
         }

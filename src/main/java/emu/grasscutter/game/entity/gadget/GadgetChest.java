@@ -1,8 +1,6 @@
 package emu.grasscutter.game.entity.gadget;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.WorldLevelData;
 import emu.grasscutter.game.drop.DropSystem;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
@@ -42,12 +40,9 @@ public class GadgetChest extends GadgetContent {
                     player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_START));
                     return false;
                 }
-                //TODO:check for take_num.(some boss rewards can only be claimed once a week.)
+                //TODO:check for take_num.(some boss rewards can only be claimed once a week.). Handle boss respawn.
                 //TODO:should return Retcode.RET_RESIN_NOT_ENOUGH ?
-                //not sure whether the level calculation is correct.
-                WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(player.getWorldLevel());
-                int level = worldLevelData.getMonsterLevel() + player.getLevel() - worldLevelData.getId() + chest.level;
-                if (player.getResinManager().useResin(chest.boss_chest.resin) && dropSystem.handleBossChestDrop(chest.drop_tag, level, chest.boss_chest, player)) {
+                if (player.getResinManager().useResin(chest.boss_chest.resin) && dropSystem.handleBossChestDrop(chest.drop_tag, player)) {
                     getGadget().updateState(ScriptGadgetState.ChestOpened);
                     player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_FINISH));
                     //TODO:need world chest notify?
