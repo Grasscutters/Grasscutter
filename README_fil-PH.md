@@ -101,6 +101,6 @@ Pag-katapos mong i-compile, check mo yung project directory at makikita mo yung 
 
 # Quick Troubleshooting
 
-* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable).
+* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable). 
 * Hindi ako maka-connect, ayaw mag-login, 4206, etc... - Mostly ang proxy setup mo ang may kasalanan niyan, kung gamit mo ay Fiddler, paki-sigurado na naka-set ung port sa kahit ano except sa 8888.
 * Ang pagkakasunud-sunod: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game
