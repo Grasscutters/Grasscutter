@@ -1,5 +1,6 @@
 package emu.grasscutter.game.drop;
 
+@Deprecated
 public class DropData {
     private int minWeight;
     private int maxWeight;

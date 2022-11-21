@@ -329,7 +329,8 @@ public class Scene {
 
         // Reward drop
         if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            getWorld().getServer().getDropSystemLegacy().callDrop((EntityMonster) target);
+            if (!getWorld().getServer().getDropSystem().handleMonsterDrop((EntityMonster) target))
+                getWorld().getServer().getDropSystemLegacy().callDrop((EntityMonster) target);
         }
 
         // Remove entity from world
@@ -701,12 +702,12 @@ public class Scene {
         if (itemData.isEquip()) {
             float range = (1.5f + (.05f * amount));
             for (int i = 0; i < amount; i++) {
-                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);  // Why Z?
+                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);
                 EntityItem entity = new EntityItem(this, null, itemData, pos, 1);
                 addEntity(entity);
             }
         } else {
-            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addY(1.5f), amount);  // Why Z?
+            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addY(1.5f), amount);
             addEntity(entity);
         }
     }
@@ -718,12 +719,12 @@ public class Scene {
         if (itemData.isEquip()) {
             float range = (1.5f + (.05f * item.getCount()));
             for (int j = 0; j < item.getCount(); j++) {
-                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);  //TODO
+                Position pos = bornForm.getPosition().nearby2d(range).addY(1.5f);
                 EntityItem entity = new EntityItem(this, player, itemData, pos, item.getCount(), share);
                 addEntity(entity);
             }
         } else {
-            EntityItem entity = new EntityItem(this, player, itemData, bornForm.getPosition().clone().addY(1.5f), item.getCount(), share);  //TODO:improve
+            EntityItem entity = new EntityItem(this, player, itemData, bornForm.getPosition().clone().addY(1.5f), item.getCount(), share);
             addEntity(entity);
         }
 
