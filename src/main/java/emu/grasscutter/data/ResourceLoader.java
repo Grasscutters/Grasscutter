@@ -114,7 +114,7 @@ public class ResourceLoader {
         getResourceDefClassesPrioritySets().forEach(classes -> {
             // Grasscutter.getLogger().error("Loading resources: " + classes);
             classes.stream()
-                .parallel().unordered()
+                // .parallel().unordered()
                 .forEach(c -> {
                     val type = c.getAnnotation(ResourceType.class);
                     if (type == null) return;
@@ -165,7 +165,7 @@ public class ResourceLoader {
             Stream.of(type.name())
                 .map(FileUtils::getExcelPath)
                 .forEach(path ->
-                    TsvUtils.loadTsjToListSetField(c, path).forEach(o -> {
+                    TsvUtils.loadTsvToListSetField(c, path).forEach(o -> {
                         GameResource res = (GameResource) o;
                         res.onLoad();
                         map.put(res.getId(), res);

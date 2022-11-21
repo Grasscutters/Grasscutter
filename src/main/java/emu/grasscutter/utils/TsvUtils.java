@@ -8,92 +8,154 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import com.google.gson.annotations.SerializedName;
 
 import emu.grasscutter.Grasscutter;
 import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.val;
 
 import static emu.grasscutter.utils.Utils.nonRegexSplit;
 
 public class TsvUtils {
-    private static final Object2IntMap<Type> type2Int = new Object2IntOpenHashMap<>();
-    static {
-        type2Int.put(String.class, 1);
-        type2Int.put(Integer.class, 2);
-        type2Int.put(int.class, 2);
-        type2Int.put(Long.class, 3);
-        type2Int.put(long.class, 3);
-        type2Int.put(Float.class, 4);
-        type2Int.put(float.class, 4);
-        type2Int.put(Double.class, 5);
-        type2Int.put(double.class, 5);
-        type2Int.put(Boolean.class, 6);
-        type2Int.put(boolean.class, 6);
-    }
+    private static final Map<Type, Object> defaultValues = Map.ofEntries(
+        // Map.entry(String.class, null),  // builder hates null values
+        Map.entry(Integer.class, 0),
+        Map.entry(int.class, 0),
+        Map.entry(Long.class, 0L),
+        Map.entry(long.class, 0L),
+        Map.entry(Float.class, 0f),
+        Map.entry(float.class, 0f),
+        Map.entry(Double.class, 0d),
+        Map.entry(double.class, 0d),
+        Map.entry(Boolean.class, false),
+        Map.entry(boolean.class, false)
+    );
+    private static final Set<Type> primitiveTypes = Set.of(String.class, Integer.class, int.class, Long.class, long.class, Float.class, float.class, Double.class, double.class, Boolean.class, boolean.class);
 
-    private static Object getDefaultValue(Type type) {
-        return switch (type2Int.getOrDefault(type, 0)) {
-            case 2 -> 0;
-            case 3 -> 0L;
-            case 4 -> 0f;
-            case 5 -> 0d;
-            case 6 -> false;
-            default -> null;
-        };
-    }
-    private static Function<String, Object> getFieldParser(Type type) {
-        if (type == null) return value -> value;
-        return switch (type2Int.getOrDefault(type, 0)) {
-            case 1 -> value -> value;
-            case 2 -> value -> (int) Double.parseDouble(value);  //Integer.parseInt(value);
-            case 3 -> value -> (long) Double.parseDouble(value);  //Long.parseLong(value);
-            case 4 -> Float::parseFloat;
-            case 5 -> Double::parseDouble;
-            case 6 -> Boolean::parseBoolean;
-            default -> value -> JsonUtils.decode(value, type);
-        };
-    }
-
-    private static Map<Type, Function<String, Object>> cachedFieldParsers = new HashMap<>();
-    private static synchronized Function<String, Object> getFieldParserCached(Type type) {
-        return cachedFieldParsers.computeIfAbsent(type, TsvUtils::getFieldParser);
-    }
+    private static final Function<String, Object> parseString = value -> value;
+    private static final Function<String, Object> parseInt = value -> (int) Double.parseDouble(value);  //Integer::parseInt;
+    private static final Function<String, Object> parseLong = value -> (long) Double.parseDouble(value);  //Long::parseLong;
+    private static Map<Type, Function<String, Object>> primitiveTypeParsers = Map.ofEntries(
+        Map.entry(String.class, parseString),
+        Map.entry(Integer.class, parseInt),
+        Map.entry(int.class, parseInt),
+        Map.entry(Long.class, parseLong),
+        Map.entry(long.class, parseLong),
+        Map.entry(Float.class, Float::parseFloat),
+        Map.entry(float.class, Float::parseFloat),
+        Map.entry(Double.class, Double::parseDouble),
+        Map.entry(double.class, Double::parseDouble),
+        Map.entry(Boolean.class, Boolean::parseBoolean),
+        Map.entry(boolean.class, Boolean::parseBoolean)
+    );
+    private static final Map<Type, Function<String, Object>> typeParsers = new HashMap<>(primitiveTypeParsers);
 
     @SuppressWarnings("unchecked")
-    private static <T> Pair<Constructor<T>, String[]> getAllArgsConstructor(Class<T> classType) {
-        for (var c : classType.getDeclaredConstructors()) {
-            val consParameters = (java.beans.ConstructorProperties) c.getAnnotation(java.beans.ConstructorProperties.class);
-            if (consParameters != null) {
-                return Pair.of((Constructor<T>) c, consParameters.value());
-            }
+    private static <T> T parsePrimitive(Class<T> type, String string) {
+        if (string == null) return (T) defaultValues.get(type);
+        return (T) primitiveTypeParsers.get(type).apply(string);
+    }
+    @SuppressWarnings("unchecked")
+    private static <T> T parseEnum(Class<T> enumType, String string) {
+        if (string == null) return null;
+        return (T) getEnumTypeParser(enumType).apply(string);
+    }
+
+    private static final Map<Class<?>, Function<String, Object>> enumTypeParsers = new HashMap<>();
+    private static Function<String, Object> makeEnumTypeParser(Class<?> enumClass) {
+        if (!enumClass.isEnum()) {
+            System.out.println("Called makeEnumTypeParser with non-enum enumClass "+enumClass);
+            return null;
         }
-        return null;
+
+        Field id = null;
+        System.out.println("Looking for enum value field");
+        for (Field f : enumClass.getDeclaredFields()) {
+            id = switch (f.getName()) {
+                case "value", "id" -> f;
+                default -> null;
+            };
+            if (id != null) break;
+        }
+        if (id == null) {
+            System.out.println("Not found");
+            return null;
+        }
+        System.out.println("Enum value field found - " + id.getName());
+
+        val map = new HashMap<String, Object>();
+        boolean acc = id.isAccessible();
+        id.setAccessible(true);
+        try {
+            for (val constant : enumClass.getEnumConstants()) {
+                map.put(constant.toString(), constant);
+                map.put(String.valueOf(id.getInt(constant)), constant);
+            }
+        } catch (IllegalAccessException e) {
+            System.out.println("Failed to access enum id field.");
+            return null;
+        }
+        id.setAccessible(acc);
+
+        return map::get;
+    }
+    private static synchronized Function<String, Object> getEnumTypeParser(Class<?> enumType) {
+        if (enumType == null) {
+            System.out.println("Called getEnumTypeParser with null enumType");
+            return null;
+        }
+        return enumTypeParsers.computeIfAbsent(enumType, TsvUtils::makeEnumTypeParser);
+    }
+
+    private static synchronized Function<String, Object> getTypeParser(Type type) {
+        if (type == null) return parseString;
+        return typeParsers.computeIfAbsent(type, t -> value -> JsonUtils.decode(value, t));
+    }
+
+    private static Type class2Type(Class<?> classType) {
+        return (Type) classType.getGenericSuperclass();
+    }
+    private static Class<?> type2Class(Type type) {
+        if (type instanceof Class) {
+            return (Class<?>) type;
+        } else {
+            return type.getClass();  // Probably incorrect
+        }
     }
 
     // A helper object that contains a Field and the function to parse a String to create the value for the Field.
     private static class FieldParser {
         public final Field field;
-        public final ParameterizedType type;
+        public final Type type;
+        public final Class<?> classType;
         public final Function<String, Object> parser;
 
         FieldParser(Field field) {
             this.field = field;
-            this.type = (ParameterizedType) field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
-            this.parser = getFieldParserCached(this.type);
+            this.type = field.getGenericType();  // returns specialized type info e.g. java.util.List<java.lang.Integer>
+            this.classType = field.getType();
+            this.parser = getTypeParser(this.type);
+        }
+
+        public Object parse(String token) {
+            return this.parser.apply(token);
         }
 
         public void parse(Object obj, String token) throws IllegalAccessException {
@@ -133,35 +195,123 @@ public class TsvUtils {
 
             val firstDot = path.indexOf('.');
             val fieldPath = (firstDot < 0) ? path : path.substring(0, firstDot);
-            val remainder = (firstDot < 0) ? "" : path.substring(firstDot);
+            val remainder = (firstDot < 0) ? "" : path.substring(firstDot+1);
             this.children.computeIfAbsent(fieldPath, k -> new StringTree()).addPath(remainder);
-            // this.children.computeIfAbsent(fieldPath, k -> new StringTree(this.fieldMap.get(fieldPath).type)).addPath(path.substring(firstDot));
         }
     }
 
-    private static class FieldTree {
-        public final Map<String, FieldTree> children = new TreeMap<>();
-        public final ParameterizedType type;
-        public final ParameterizedType componentType;  // If this node is an Array or List
-        public final Map<String, FieldParser> fieldMap;
-        // public Object obj;
+    @SuppressWarnings("unchecked")
+    private static class StringValueTree {
+        public final Map<String, StringValueTree> children = new TreeMap<>();
+        public String value;
 
-        FieldTree(ParameterizedType type, StringTree stringTree) {
-            this.type = type;
-            val cls = type.getClass();
-            this.fieldMap = getClassFieldMap(cls);
-            if (cls.isArray()) {  // Array
-                this.componentType = (ParameterizedType) cls.getComponentType().getGenericSuperclass();
-            } else if (Collection.class.isAssignableFrom(cls)) {  // List etc.
-                this.componentType = (ParameterizedType) type.getActualTypeArguments()[0];
-            } else {
-                this.componentType = null;
+        public StringValueTree(StringTree from) {
+            from.children.forEach((k,v) -> children.put(k, new StringValueTree(v)));
+        }
+
+        public void setValue(String path, String value) {
+            if (path.isEmpty()) {
+                this.value = value;
+                return;
             }
-            if (this.componentType == null) {
-                stringTree.children.forEach((idx, tree) -> this.children.put(idx, new FieldTree(this.componentType, tree)));
-            } else {
-                stringTree.children.forEach((key, tree) -> this.children.put(key, new FieldTree(this.fieldMap.get(key).type, tree)));
+
+            val firstDot = path.indexOf('.');
+            val fieldPath = (firstDot < 0) ? path : path.substring(0, firstDot);
+            val remainder = (firstDot < 0) ? "" : path.substring(firstDot+1);
+            this.children.get(fieldPath).setValue(remainder, value);
+        }
+
+        public JsonElement toJson() {
+            // Determine if this is an object, an array, or a value
+            if (this.value != null) {  // 
+                return new JsonPrimitive(this.value);
             }
+            // Somewhat hacky, assume all arrays will have dense keys starting at 0.
+            if (this.children.containsKey("0")) {
+                val arr = new JsonArray(children.size());
+                children.forEach((k,v) -> arr.add(v.toJson()));
+                return arr;
+            } else if (this.children.isEmpty()) {
+                return JsonNull.INSTANCE;
+            } else {
+                val obj = new JsonObject();
+                children.forEach((k,v) -> {
+                    val j = v.toJson();
+                    if (j != JsonNull.INSTANCE)
+                        obj.add(k, v.toJson());
+                });
+                return obj;
+            }
+        }
+
+        public <T> T toClass(Class<T> classType, Type type) {
+            if (type == null)
+                type = class2Type(classType);
+
+            if (primitiveTypeParsers.containsKey(classType)) {
+                return parsePrimitive(classType, this.value);
+            } else if (classType.isEnum()) {
+                return parseEnum(classType, this.value);
+            } else if (classType.isArray()) {
+                return (T) this.toList(classType.getComponentType(), null).toArray();
+            } else if (List.class.isAssignableFrom(classType)) {
+                // if (type instanceof ParameterizedType)
+                val elementType = ((ParameterizedType) type).getActualTypeArguments()[0];
+                return (T) this.toList(type2Class(elementType), elementType);
+            } else if (Map.class.isAssignableFrom(classType)) {
+                // if (type instanceof ParameterizedType)
+                val keyType = ((ParameterizedType) type).getActualTypeArguments()[0];
+                val valueType = ((ParameterizedType) type).getActualTypeArguments()[1];
+                return (T) this.toMap(type2Class(keyType), type2Class(valueType), valueType);
+            } else {
+                return this.toObj(classType, type);
+            }
+        }
+
+        private <T> T toObj(Class<T> objClass, Type objType) {
+            try {
+                val obj = objClass.getDeclaredConstructor().newInstance();
+                val fieldMap = getClassFieldMap(objClass);
+                this.children.forEach((name, tree) -> {
+                    val field = fieldMap.get(name);
+                    if (field == null) return;
+                    try {
+                        if (primitiveTypes.contains(field.type)) {
+                            if ((tree.value != null) && !tree.value.isEmpty())
+                                field.parse(obj, tree.value);
+                        } else {
+                            field.field.set(obj, tree.toClass(field.classType, field.type));
+                        }
+                    } catch (IllegalAccessException e) {
+                        System.out.println("IllegalAccessException while setting field "+name+" ("+field.classType+")"+" for class "+objClass);
+                    } catch (Exception e) {
+                        // System.out.println("Exception while setting field "+name+" for class "+objClass+" - "+e);
+                        Grasscutter.getLogger().error("Exception while setting field "+name+" ("+field.classType+")"+" for class "+objClass+" - ",e);
+                    }
+                });
+                return obj;
+            } catch (Exception e) {
+                // System.out.println("Exception while creating object of class "+objClass+" - "+e);
+                Grasscutter.getLogger().error("Exception while creating object of class "+objClass+" - ",e);
+                return null;
+            }
+        }
+
+        private <E> List<E> toList(Class<E> valueClass, Type valueType) {
+            val list = new ArrayList<E>();
+            // All of these assume dense array keys. The TreeMap pre-sorts for us, so these will be in order.
+            this.children.forEach((idx, tree) -> list.add(tree.toClass(valueClass, valueType)));
+            return list;
+        }
+
+        private <K,V> Map<K,V> toMap(Class<K> keyClass, Class<V> valueClass, Type valueType) {
+            val map = new HashMap<K,V>();
+            val keyParser = getTypeParser(keyClass);
+            this.children.forEach((key, tree) -> {
+                if ((key != null) && !key.isEmpty())
+                    map.put((K) keyParser.apply(key), tree.toClass(valueClass, valueType));
+            });
+            return map;
         }
     }
 
@@ -170,8 +320,8 @@ public class TsvUtils {
     // Maps/POJOs are represented as objName.fieldOneName, objName.fieldTwoName, etc. columns.
     public static <T> List<T> loadTsvToListSetField(Class<T> classType, Path filename) {
         try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
-            val fieldMap = getClassFieldMap(classType);
-            val constructor = classType.getDeclaredConstructor();
+            // val fieldMap = getClassFieldMap(classType);
+            // val constructor = classType.getDeclaredConstructor();
 
             val headerNames = nonRegexSplit(fileReader.readLine(), '\t');
             val columns = headerNames.size();
@@ -179,41 +329,40 @@ public class TsvUtils {
             // So we'll only crawl through objects referenced by the header columns
             val stringTree = new StringTree();
             headerNames.forEach(stringTree::addPath);
-            val fieldTree = new FieldTree((ParameterizedType) classType.getGenericSuperclass(), stringTree);
-            // val subObjects = new HashMap<String, Type>();
 
-            val fieldParsers = headerNames.stream().map(fieldMap::get).toList();
-
-            return fileReader.lines().parallel().map(line -> {
+            // return fileReader.lines().parallel().map(line -> {
+            return fileReader.lines().map(line -> {
+                // System.out.println("Processing line of "+filename+" - "+line);
                 val tokens = nonRegexSplit(line, '\t');
                 val m = Math.min(tokens.size(), columns);
                 int t = 0;
+                StringValueTree tree = new StringValueTree(stringTree);
                 try {
-                    T obj = constructor.newInstance();
                     for (t = 0; t < m; t++) {
-                        val fieldParser = fieldParsers.get(t);
-                        if (fieldParser == null) continue;
-
                         String token = tokens.get(t);
                         if (!token.isEmpty()) {
-                            fieldParser.parse(obj, token);
+                            tree.setValue(headerNames.get(t), token);
                         }
                     }
-                    return obj;
+                    // return JsonUtils.decode(tree.toJson(), classType);
+                    return tree.toClass(classType, null);
                 } catch (Exception e) {
                     Grasscutter.getLogger().warn("Error deserializing an instance of class "+classType.getCanonicalName());
                     Grasscutter.getLogger().warn("At token #"+t+" of #"+m);
                     Grasscutter.getLogger().warn("Header names are: "+headerNames.toString());
                     Grasscutter.getLogger().warn("Tokens are: "+tokens.toString());
                     Grasscutter.getLogger().warn("Stacktrace is: ", e);
+                    // System.out.println("Error deserializing an instance of class "+classType.getCanonicalName());
+                    // System.out.println("At token #"+t+" of #"+m);
+                    // System.out.println("Header names are: "+headerNames.toString());
+                    // System.out.println("Tokens are: "+tokens.toString());
+                    // System.out.println("Json is: "+tree.toJson().toString());
+                    // System.out.println("Stacktrace is: "+ e);
                     return null;
                 }
             }).toList();
-        } catch (IOException e) {
+        } catch (Exception e) {
             Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
-            return null;
-        } catch (NoSuchMethodException e) {
-            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Class is missing NoArgsConstructor");
             return null;
         }
     }
@@ -263,8 +412,24 @@ public class TsvUtils {
         }
     }
 
+
+
+    // -----------------------------------------------------------------
+    // Everything below here is for the AllArgsConstructor TSJ parser
+    // -----------------------------------------------------------------
     // Sadly, this is a little bit slower than the SetField version.
     // I've left it in as an example of an optimization attempt that didn't work out, since the naive reflection version will tempt people to try things like this.
+    @SuppressWarnings("unchecked")
+    private static <T> Pair<Constructor<T>, String[]> getAllArgsConstructor(Class<T> classType) {
+        for (var c : classType.getDeclaredConstructors()) {
+            val consParameters = (java.beans.ConstructorProperties) c.getAnnotation(java.beans.ConstructorProperties.class);
+            if (consParameters != null) {
+                return Pair.of((Constructor<T>) c, consParameters.value());
+            }
+        }
+        return null;
+    }
+
     public static <T> List<List<T>> loadTsjsToListsConstructor(Class<T> classType, Path... filenames) throws Exception {
         val pair = getAllArgsConstructor(classType);
         if (pair == null) {
@@ -295,11 +460,11 @@ public class TsvUtils {
                 }
             }
         }
-        val argParsers = Stream.of(argTypes).map(TsvUtils::getFieldParser).toList();
+        val argParsers = Stream.of(argTypes).map(TsvUtils::getTypeParser).toList();
 
         val defaultArgs = new Object[numArgs];
         for (int i = 0; i < numArgs; i++) {
-            defaultArgs[i] = getDefaultValue(argTypes[i]);
+            defaultArgs[i] = defaultValues.get(argTypes[i]);
         }
 
         return Stream.of(filenames).parallel().map(filename -> {
