@@ -280,8 +280,8 @@
       "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
       "locked_to": "%s verrouillé à %s.",
       "locked_for_to": "%s de %s verrouillé à %s.",
-      "unlocked": "🇺🇸%s déverrouillé.",
-      "unlocked_for": "🇺🇸%s de %s déverrouillé."
+      "unlocked": "%s déverrouillé.",
+      "unlocked_for": "%s de %s déverrouillé."
     },
     "spawn": {
       "success": " %s %s sont apparu.",
@@ -341,7 +341,7 @@
     },
     "unlockall": {
       "success": "Toutes les open states ont été débloqués pour %s.",
-      "description": "🇺Débloque toutes les open states d'un joueur"
+      "description": "Débloque toutes les open states d'un joueur"
     },
     "unban": {
       "success": "Succès.",
