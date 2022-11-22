@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "Serveur de jeu démarré a l'adresse \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Serveur de jeu démarré sur le port %s",
       "connect": "Client connecté depuis %s",
       "disconnect": "Client déconnecté depuis %s",
@@ -9,7 +9,7 @@
       "command_error": "Erreur de commande:"
     },
     "dispatch": {
-      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] Serveur de répartition  \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Serveur de répartition démarré sur le port %s",
       "request": "[Dispatch] Le client %s %s demande : %s",
       "keystore": {
@@ -248,7 +248,7 @@
       "send": "%s %s (niveau %s) ont été ajouté au message.\nContinuez d'ajouter plus d'objets ou utilisez '/sendmail finish' pour envoyer le message.",
       "invalid_arguments_please_use": "Arguments invalides.\n Veuillez utiliser '/sendmail %s'",
       "title": "<titre>",
-      "message": "🇺🇸<message>",
+      "message": "< message >",
       "sender": "<expéditeur>",
       "arguments": "<itemID|itemName|finish> [quantité] [niveau]",
       "error": "ERREUR: Stade de construction invalide : %s. Vérifiez la console pour la pile d'appels.",
@@ -259,13 +259,13 @@
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
     "setConst": {
-      "range_error": "🇺🇸Constellation level must be between 0 and 6.",
-      "level_error": "🇺🇸Invalid constellation level.",
-      "fail": "🇺🇸Failed to set constellation.",
-      "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
-      "success": "🇺🇸Constellations for %s have been set to %s.",
-      "successall": "🇺🇸Constellations for all characters have been set to %s.",
-      "description": "🇺🇸Sets constellation level for your current active character"
+      "range_error": "Le niveau de constellation doit être compris entre 1 et 6.",
+      "level_error": "Niveau de constellation invalide",
+      "fail": "Impossible de définir le niveau de constellation",
+      "failed_success": "Les constellations de %s ont été défini à %s. Veuillez recharger la scène pour voir les changements",
+      "success": "Les constellations de %s ont été défini à %s.",
+      "successall": "Les constellations de tous vos personnages ont été défini à %s.",
+      "description": "Définit le niveau de constellation du personnage actif"
     },
     "setFetterLevel": {
       "range_error": "Le niveau d'affinité doit être compris entre 0 et 10.",
@@ -278,10 +278,10 @@
     },
     "setStats": {
       "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-      "locked_to": "🇺🇸%s locked to %s.",
-      "locked_for_to": "🇺🇸%s for %s locked to %s.",
-      "unlocked": "🇺🇸%s unlocked.",
-      "unlocked_for": "🇺🇸%s for %s unlocked."
+      "locked_to": "%s verrouillé à %s.",
+      "locked_for_to": "%s de %s verrouillé à %s.",
+      "unlocked": "%s déverrouillé.",
+      "unlocked_for": "%s de %s déverrouillé."
     },
     "spawn": {
       "success": " %s %s sont apparu.",
@@ -293,9 +293,9 @@
       "description": "Arrête le serveur"
     },
     "talent": {
-      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
-      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
-      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "out_of_range": "Niveau de talent invalide. Le niveau doit être compris entre 1-15.",
+      "set_id": "Talent %s - \"%s\" défini à %s.",
+      "id_desc": "Talent %s : \"%s\" - \"%s\"",
       "invalid_skill_id": "ID de talent invalide.",
       "invalid_level": "Niveau de talent invalide.",
       "normal_attack_id": "ID de l'attaque normale ID %s.",
@@ -340,8 +340,8 @@
       "description": "Bannis un joueur"
     },
     "unlockall": {
-      "success": "🇺🇸Unlocked all open states for %s.",
-      "description": "🇺🇸Unlocks all open states for a player."
+      "success": "Toutes les open states ont été débloqués pour %s.",
+      "description": "Débloque toutes les open states d'un joueur"
     },
     "unban": {
       "success": "Succès.",
@@ -358,7 +358,7 @@
     },
     "records": {
       "title": "Historique de voeux",
-      "date": "🇺🇸Date",
+      "date": "Date.",
       "item": "Objet"
     }
   },
@@ -366,38 +366,38 @@
     "handbook": {
       "title": "Manuel GM",
       "title_commands": "Commandes",
-      "title_avatars": "🇺🇸Avatars",
+      "title_avatars": "Avatars.",
       "title_items": "Objets",
       "title_scenes": "Scènes",
       "title_monsters": "Monstres",
-      "header_id": "🇺🇸Id",
+      "header_id": "Identifiant",
       "header_command": "Commande",
-      "header_description": "🇺🇸Description",
-      "header_avatar": "🇺🇸Avatar",
+      "header_description": "Description.",
+      "header_avatar": "Avatar.",
       "header_item": "Objet",
       "header_scene": "Scène",
       "header_monster": "Monstre"
     },
     "index": {
-      "title": "🇺🇸Documentation",
+      "title": "Documentation",
       "handbook": "Manuel GM",
-      "gacha_mapping": "🇺🇸Gacha mapping JSON"
+      "gacha_mapping": "Gacha mapping JSON"
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "Impossible de créer le dossier plugins: ",
+    "unable_to_load": "Impossible de charger les plugins.",
+    "invalid_config": "Le plugin %s a un fichier de configuration invalide.",
+    "invalid_main_class": "Le plugin %s a une classe principale invalide.",
+    "missing_config": "Le plugin %s manque d'une configuration valide.",
+    "failed_to_load_plugin": "Impossible de charger le plugin %s",
+    "failed_to_load": "Impossible de charger un plugin.",
+    "failed_to_load_dependencies": "Impossible de charger les plugins avec une ou des dépendances.",
+    "loading_plugin": "Chargement du plugin %s",
+    "failed_add_id": "Impossible d'ajouter l'identifiant du plugin %s",
+    "enabling_plugin": "Activation du plugin %s",
+    "enabling_failed": "Impossible d'activer le plugin %s",
+    "disabling_plugin": "Désactivation du plugin %s",
+    "disabling_failed": "Impossible de désactiver le plugin %s"
   }
 }
