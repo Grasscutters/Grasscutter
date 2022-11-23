@@ -37,6 +37,8 @@ import lombok.val;
 
 import static emu.grasscutter.utils.Utils.nonRegexSplit;
 
+// Throughout this file, commented System.out.println debug log calls are left in.
+// This is because the default logger will deadlock when operating on parallel streams.
 public class TsvUtils {
     private static final Map<Type, Object> defaultValues = Map.ofEntries(
         // Map.entry(String.class, null),  // builder hates null values
@@ -399,6 +401,7 @@ public class TsvUtils {
     // Flat tab-separated value tables.
     // Arrays are represented as arrayName.0, arrayName.1, etc. columns.
     // Maps/POJOs are represented as objName.fieldOneName, objName.fieldTwoName, etc. columns.
+    // This is currently about 25x as slow as TSJ and Gson parsers, likely due to the tree spam.
     public static <T> List<T> loadTsvToListSetField(Class<T> classType, Path filename) {
         try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
             // val fieldMap = getClassFieldMap(classType);

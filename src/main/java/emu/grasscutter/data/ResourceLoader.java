@@ -14,6 +14,7 @@ import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.TsvUtils;
+import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
@@ -25,6 +26,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -110,9 +112,9 @@ public class ResourceLoader {
 
     public static void loadResources(boolean doReload) {
         long startTime = System.nanoTime();
+        val errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();  // Logger in a parallel stream will deadlock
 
         getResourceDefClassesPrioritySets().forEach(classes -> {
-            // Grasscutter.getLogger().error("Loading resources: " + classes);
             classes.stream()
                 .parallel().unordered()
                 .forEach(c -> {
@@ -123,29 +125,43 @@ public class ResourceLoader {
                     if (map == null) return;
 
                     try {
-                        loadFromResourceTsv(c, type, map, doReload);
+                        loadFromResource(c, type, map, doReload);
                     } catch (Exception e) {
-                        Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
+                        errors.add(Pair.of(Arrays.toString(type.name()), e));
                     }
                 });
         });
+        errors.forEach(pair -> Grasscutter.getLogger().error("Error loading resource file: " + pair.left(), pair.right()));
         long endTime = System.nanoTime();
         long ns = (endTime - startTime);  //divide by 1000000 to get milliseconds.
-        Grasscutter.getLogger().info("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
+        Grasscutter.getLogger().debug("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
     }
 
     @SuppressWarnings("rawtypes")
     protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
         val simpleName = c.getSimpleName();
-        // Grasscutter.getLogger().warn("Loading " + simpleName + "s.");
         if (doReload || !loadedResources.contains(simpleName)) {
             for (String name : type.name()) {
-                loadFromResource(c, name, map);
+                loadFromResource(c, FileUtils.getExcelPath(name), map);
             }
-
             loadedResources.add(simpleName);
-            // Grasscutter.getLogger().info("Loaded " + map.size() + " " + simpleName + "s.");
         }
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected static <T> void loadFromResource(Class<T> c, Path filename, Int2ObjectMap map) throws Exception {
+        val results = switch (FileUtils.getFileExtension(filename)) {
+            case "json" -> JsonUtils.loadToList(filename, c);
+            case "tsj" -> TsvUtils.loadTsjToListSetField(c, filename);
+            case "tsv" -> TsvUtils.loadTsvToListSetField(c, filename);
+            default -> null;
+        };
+        if (results == null) return;
+        results.forEach(o -> {
+            GameResource res = (GameResource) o;
+            res.onLoad();
+            map.put(res.getId(), res);
+        });
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -155,25 +171,6 @@ public class ResourceLoader {
             res.onLoad();
             map.put(res.getId(), res);
         });
-    }
-
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static void loadFromResourceTsv(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
-        val simpleName = c.getSimpleName();
-        // Grasscutter.getLogger().warn("Loading " + simpleName + "s.");
-        if (!loadedResources.contains(c.getSimpleName()) || doReload) {
-            Stream.of(type.name())
-                .map(FileUtils::getExcelPath)
-                .forEach(path ->
-                    TsvUtils.loadTsvToListSetField(c, path).forEach(o -> {
-                        GameResource res = (GameResource) o;
-                        res.onLoad();
-                        map.put(res.getId(), res);
-                    }));
-
-            loadedResources.add(simpleName);
-            // Grasscutter.getLogger().debug("Loaded " + map.size() + " " + simpleName + "s.");
-        }
     }
 
     public class ScenePointConfig {  // Sadly this doesn't work as a local class in loadScenePoints()
