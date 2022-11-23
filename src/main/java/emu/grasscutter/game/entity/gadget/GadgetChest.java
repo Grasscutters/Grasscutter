@@ -64,7 +64,7 @@ public class GadgetChest extends GadgetContent {
                     getGadget().updateState(ScriptGadgetState.ChestOpened);
                     player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_FINISH));
                     player.sendPacket(new PacketWorldChestOpenNotify(getGadget().getGroupId(), player.getSceneId(), chest.config_id));
-                    return chest.isOneoff;
+                    return true;
                 }
                 //if failed,fallback to legacy drop system.
             }
