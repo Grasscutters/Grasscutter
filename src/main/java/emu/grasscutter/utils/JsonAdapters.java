@@ -71,37 +71,32 @@ public class JsonAdapters {
     static class EnumTypeAdapterFactory implements TypeAdapterFactory {
         @SuppressWarnings("unchecked")
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            Class<T> rawType = (Class<T>) type.getRawType();
-            if (!rawType.isEnum()) return null;
-
-            Field id = null;
-            // System.out.println("Looking for enum value field");
-            for (Field f : rawType.getDeclaredFields()) {
-                id = switch (f.getName()) {
-                    case "value", "id" -> f;
-                    default -> null;
-                };
-                if (id != null) break;
-            }
-            if (id == null) {
-                // System.out.println("Not found");
-                return null;
-            }
-            // System.out.println("Enum value field found - " + id.getName());
-
+            Class<T> enumClass = (Class<T>) type.getRawType();
+            if (!enumClass.isEnum()) return null;
+            
+            // Make mappings of (string) names to enum constants
             val map = new HashMap<String, T>();
-            boolean acc = id.isAccessible();
-            id.setAccessible(true);
-            try {
-                for (T constant : rawType.getEnumConstants()) {
-                    map.put(constant.toString(), constant);
-                    map.put(String.valueOf(id.getInt(constant)), constant);
+            val enumConstants = enumClass.getEnumConstants();
+            for (val constant : enumConstants)
+                map.put(constant.toString(), constant);
+
+            // If the enum also has a numeric value, map those to the constants too
+            // System.out.println("Looking for enum value field");
+            for (Field f : enumClass.getDeclaredFields()) {
+                if (switch (f.getName()) {case "value", "id" -> true; default -> false;}) {
+                    // System.out.println("Enum value field found - " + f.getName());
+                    boolean acc = f.isAccessible();
+                    f.setAccessible(true);
+                    try {
+                        for (val constant : enumConstants)
+                            map.put(String.valueOf(f.getInt(constant)), constant);
+                    } catch (IllegalAccessException e) {
+                        // System.out.println("Failed to access enum id field.");
+                    }
+                    f.setAccessible(acc);
+                    break;
                 }
-            } catch (IllegalAccessException e) {
-                // System.out.println("Failed to access enum id field.");
-                return null;
             }
-            id.setAccessible(acc);
 
             return new TypeAdapter<T>() {
                 public T read(JsonReader reader) throws IOException {
