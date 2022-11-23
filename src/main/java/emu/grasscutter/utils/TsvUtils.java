@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.IntStream;
@@ -28,6 +30,8 @@ import com.google.gson.annotations.SerializedName;
 
 import emu.grasscutter.Grasscutter;
 import it.unimi.dsi.fastutil.Pair;
+import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import lombok.val;
 
@@ -69,56 +73,65 @@ public class TsvUtils {
 
     @SuppressWarnings("unchecked")
     private static <T> T parsePrimitive(Class<T> type, String string) {
-        if (string == null) return (T) defaultValues.get(type);
+        if (string == null || string.isEmpty()) return (T) defaultValues.get(type);
         return (T) primitiveTypeParsers.get(type).apply(string);
+    }
+    // This is more expensive than parsing as the correct types, but it is more tolerant of mismatched data like ints with .0
+    private static double parseNumber(String string) {
+        if (string == null || string.isEmpty()) return 0d;
+        return Double.parseDouble(string);
     }
     @SuppressWarnings("unchecked")
     private static <T> T parseEnum(Class<T> enumType, String string) {
-        if (string == null) return null;
+        if (string == null || string.isEmpty()) return null;
         return (T) getEnumTypeParser(enumType).apply(string);
     }
 
+    // This is idiotic. I hate it. I'll have to look into how Gson beats the JVM into submission over classes where reflection magically fails to find the NoArgsConstructor later.
+    public static <T> T newObj(Class<T> objClass) {
+        try {
+            return objClass.getDeclaredConstructor().newInstance();
+        } catch (Exception ignored) {
+            return JsonUtils.decode("{}", objClass);
+        }
+    }
+
     private static final Map<Class<?>, Function<String, Object>> enumTypeParsers = new HashMap<>();
+    @SuppressWarnings("deprecated")  // Field::isAccessible is deprecated because it doesn't do what people think it does. It does what we want it to, however.
     private static Function<String, Object> makeEnumTypeParser(Class<?> enumClass) {
         if (!enumClass.isEnum()) {
-            System.out.println("Called makeEnumTypeParser with non-enum enumClass "+enumClass);
+            // System.out.println("Called makeEnumTypeParser with non-enum enumClass "+enumClass);
             return null;
         }
 
-        Field id = null;
-        System.out.println("Looking for enum value field");
-        for (Field f : enumClass.getDeclaredFields()) {
-            id = switch (f.getName()) {
-                case "value", "id" -> f;
-                default -> null;
-            };
-            if (id != null) break;
-        }
-        if (id == null) {
-            System.out.println("Not found");
-            return null;
-        }
-        System.out.println("Enum value field found - " + id.getName());
-
+        // Make mappings of (string) names to enum constants
         val map = new HashMap<String, Object>();
-        boolean acc = id.isAccessible();
-        id.setAccessible(true);
-        try {
-            for (val constant : enumClass.getEnumConstants()) {
-                map.put(constant.toString(), constant);
-                map.put(String.valueOf(id.getInt(constant)), constant);
-            }
-        } catch (IllegalAccessException e) {
-            System.out.println("Failed to access enum id field.");
-            return null;
-        }
-        id.setAccessible(acc);
+        val enumConstants = enumClass.getEnumConstants();
+        for (val constant : enumConstants)
+            map.put(constant.toString(), constant);
 
+        // If the enum also has a numeric value, map those to the constants too
+        // System.out.println("Looking for enum value field");
+        for (Field f : enumClass.getDeclaredFields()) {
+            if (switch (f.getName()) {case "value", "id" -> true; default -> false;}) {
+                // System.out.println("Enum value field found - " + f.getName());
+                boolean acc = f.isAccessible();
+                f.setAccessible(true);
+                try {
+                    for (val constant : enumConstants)
+                        map.put(String.valueOf(f.getInt(constant)), constant);
+                } catch (IllegalAccessException e) {
+                    // System.out.println("Failed to access enum id field.");
+                }
+                f.setAccessible(acc);
+                break;
+            }
+        }
         return map::get;
     }
     private static synchronized Function<String, Object> getEnumTypeParser(Class<?> enumType) {
         if (enumType == null) {
-            System.out.println("Called getEnumTypeParser with null enumType");
+            // System.out.println("Called getEnumTypeParser with null enumType");
             return null;
         }
         return enumTypeParsers.computeIfAbsent(enumType, TsvUtils::makeEnumTypeParser);
@@ -135,6 +148,8 @@ public class TsvUtils {
     private static Class<?> type2Class(Type type) {
         if (type instanceof Class) {
             return (Class<?>) type;
+        } else if (type instanceof ParameterizedType) {
+            return (Class<?>) ((ParameterizedType) type).getRawType();
         } else {
             return type.getClass();  // Probably incorrect
         }
@@ -202,11 +217,18 @@ public class TsvUtils {
 
     @SuppressWarnings("unchecked")
     private static class StringValueTree {
-        public final Map<String, StringValueTree> children = new TreeMap<>();
+        public final SortedMap<String, StringValueTree> children = new TreeMap<>();
+        public final Int2ObjectSortedMap<StringValueTree> arrayChildren = new Int2ObjectRBTreeMap<>();
         public String value;
 
         public StringValueTree(StringTree from) {
-            from.children.forEach((k,v) -> children.put(k, new StringValueTree(v)));
+            from.children.forEach((k,v) -> {
+                try {
+                    this.arrayChildren.put(Integer.parseInt(k), new StringValueTree(v));
+                } catch (NumberFormatException e) {
+                    this.children.put(k, new StringValueTree(v));
+                }
+            });
         }
 
         public void setValue(String path, String value) {
@@ -218,7 +240,11 @@ public class TsvUtils {
             val firstDot = path.indexOf('.');
             val fieldPath = (firstDot < 0) ? path : path.substring(0, firstDot);
             val remainder = (firstDot < 0) ? "" : path.substring(firstDot+1);
-            this.children.get(fieldPath).setValue(remainder, value);
+            try {
+                this.arrayChildren.get(Integer.parseInt(fieldPath)).setValue(remainder, value);
+            } catch (NumberFormatException e) {
+                this.children.get(fieldPath).setValue(remainder, value);
+            }
         }
 
         public JsonElement toJson() {
@@ -226,10 +252,9 @@ public class TsvUtils {
             if (this.value != null) {  // 
                 return new JsonPrimitive(this.value);
             }
-            // Somewhat hacky, assume all arrays will have dense keys starting at 0.
-            if (this.children.containsKey("0")) {
-                val arr = new JsonArray(children.size());
-                children.forEach((k,v) -> arr.add(v.toJson()));
+            if (!this.arrayChildren.isEmpty()) {
+                val arr = new JsonArray(this.arrayChildren.lastIntKey()+1);
+                arrayChildren.forEach((k,v) -> arr.set(k, v.toJson()));
                 return arr;
             } else if (this.children.isEmpty()) {
                 return JsonNull.INSTANCE;
@@ -245,6 +270,7 @@ public class TsvUtils {
         }
 
         public <T> T toClass(Class<T> classType, Type type) {
+            // System.out.println("toClass called with Class: "+classType+" \tType: "+type);
             if (type == null)
                 type = class2Type(classType);
 
@@ -253,12 +279,13 @@ public class TsvUtils {
             } else if (classType.isEnum()) {
                 return parseEnum(classType, this.value);
             } else if (classType.isArray()) {
-                return (T) this.toList(classType.getComponentType(), null).toArray();
+                return this.toArray(classType);
             } else if (List.class.isAssignableFrom(classType)) {
                 // if (type instanceof ParameterizedType)
                 val elementType = ((ParameterizedType) type).getActualTypeArguments()[0];
                 return (T) this.toList(type2Class(elementType), elementType);
             } else if (Map.class.isAssignableFrom(classType)) {
+                // System.out.println("Class: "+classType+" \tClassTypeParams: "+Arrays.toString(classType.getTypeParameters())+" \tType: "+type+" \tTypeArguments: "+Arrays.toString(((ParameterizedType) type).getActualTypeArguments()));
                 // if (type instanceof ParameterizedType)
                 val keyType = ((ParameterizedType) type).getActualTypeArguments()[0];
                 val valueType = ((ParameterizedType) type).getActualTypeArguments()[1];
@@ -270,7 +297,8 @@ public class TsvUtils {
 
         private <T> T toObj(Class<T> objClass, Type objType) {
             try {
-                val obj = objClass.getDeclaredConstructor().newInstance();
+                // val obj = objClass.getDeclaredConstructor().newInstance();
+                val obj = newObj(objClass);
                 val fieldMap = getClassFieldMap(objClass);
                 this.children.forEach((name, tree) -> {
                     val field = fieldMap.get(name);
@@ -280,10 +308,11 @@ public class TsvUtils {
                             if ((tree.value != null) && !tree.value.isEmpty())
                                 field.parse(obj, tree.value);
                         } else {
-                            field.field.set(obj, tree.toClass(field.classType, field.type));
+                            val value = tree.toClass(field.classType, field.type);
+                            // System.out.println("Setting field "+name+" to "+value);
+                            field.field.set(obj, value);
+                            // field.field.set(obj, tree.toClass(field.classType, field.type));
                         }
-                    } catch (IllegalAccessException e) {
-                        System.out.println("IllegalAccessException while setting field "+name+" ("+field.classType+")"+" for class "+objClass);
                     } catch (Exception e) {
                         // System.out.println("Exception while setting field "+name+" for class "+objClass+" - "+e);
                         Grasscutter.getLogger().error("Exception while setting field "+name+" ("+field.classType+")"+" for class "+objClass+" - ",e);
@@ -297,10 +326,62 @@ public class TsvUtils {
             }
         }
 
+        public <T> T toArray(Class<T> classType) {
+            // Primitives don't play so nice with generics, so we handle all of them individually.
+            val containedClass = classType.getComponentType();
+            // val arraySize = this.arrayChildren.size();  // Assume dense 0-indexed
+            val arraySize = this.arrayChildren.lastIntKey()+1;  // Could be sparse!
+            // System.out.println("toArray called with Class: "+classType+" \tContains: "+containedClass+" \tof size: "+arraySize);
+            if (containedClass == int.class) {
+                val output = new int[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (int) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == long.class) {
+                val output = new long[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (long) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == float.class) {
+                val output = new float[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (float) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == double.class) {
+                val output = new double[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (double) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == byte.class) {
+                val output = new byte[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (byte) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == char.class) {
+                val output = new char[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (char) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == short.class) {
+                val output = new short[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> output[idx] = (short) parseNumber(tree.value));
+                return (T) output;
+            } else if (containedClass == boolean.class) {
+                val output = new boolean[arraySize];
+                this.arrayChildren.forEach((idx, tree) -> {
+                    val value = ((tree.value == null) || tree.value.isEmpty()) ? false : Boolean.parseBoolean(tree.value);
+                    output[idx] = value;
+                });
+                return (T) output;
+            } else {
+                val output = Array.newInstance(containedClass, arraySize);
+                this.arrayChildren.forEach((idx, tree) -> ((Object[]) output)[idx] = tree.toClass(containedClass, null));
+                return (T) output;
+            }
+        }
+
         private <E> List<E> toList(Class<E> valueClass, Type valueType) {
-            val list = new ArrayList<E>();
-            // All of these assume dense array keys. The TreeMap pre-sorts for us, so these will be in order.
-            this.children.forEach((idx, tree) -> list.add(tree.toClass(valueClass, valueType)));
+            val arraySize = this.arrayChildren.lastIntKey()+1;  // Could be sparse!
+            // System.out.println("toList called with valueClass: "+valueClass+" \tvalueType: "+valueType+" \tof size: "+arraySize);
+            val list = new ArrayList<E>(arraySize);
+            // Safe sparse version
+            for (int i = 0; i < arraySize; i++)
+                list.add(null);
+            this.arrayChildren.forEach((idx, tree) -> list.set(idx, tree.toClass(valueClass, valueType)));
             return list;
         }
 
@@ -330,8 +411,8 @@ public class TsvUtils {
             val stringTree = new StringTree();
             headerNames.forEach(stringTree::addPath);
 
-            // return fileReader.lines().parallel().map(line -> {
-            return fileReader.lines().map(line -> {
+            return fileReader.lines().parallel().map(line -> {
+            // return fileReader.lines().map(line -> {
                 // System.out.println("Processing line of "+filename+" - "+line);
                 val tokens = nonRegexSplit(line, '\t');
                 val m = Math.min(tokens.size(), columns);

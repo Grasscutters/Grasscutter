@@ -114,7 +114,7 @@ public class ResourceLoader {
         getResourceDefClassesPrioritySets().forEach(classes -> {
             // Grasscutter.getLogger().error("Loading resources: " + classes);
             classes.stream()
-                // .parallel().unordered()
+                .parallel().unordered()
                 .forEach(c -> {
                     val type = c.getAnnotation(ResourceType.class);
                     if (type == null) return;
@@ -131,7 +131,7 @@ public class ResourceLoader {
         });
         long endTime = System.nanoTime();
         long ns = (endTime - startTime);  //divide by 1000000 to get milliseconds.
-        System.out.println("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
+        Grasscutter.getLogger().info("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
     }
 
     @SuppressWarnings("rawtypes")

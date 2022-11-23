@@ -21,7 +21,7 @@ public class ActivityWatcherData extends GameResource {
 
     @Override
     public void onLoad() {
-        triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> !x.isBlank()).toList();
+        triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> (x != null) && !x.isBlank()).toList();
         triggerConfig.watcherTriggerType = WatcherTriggerType.getTypeByName(triggerConfig.triggerType);
     }
 

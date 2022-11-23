@@ -14,7 +14,7 @@ public class ItemUseAddItem extends ItemUseInt {
         super(useParam);
         try {
             this.count = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
     }
 
     @Override
