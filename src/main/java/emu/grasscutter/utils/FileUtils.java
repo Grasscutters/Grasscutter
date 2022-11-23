@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
+import lombok.val;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,6 +112,24 @@ public final class FileUtils {
         return RESOURCES_PATH.resolve(path);
     }
 
+    public static Path getExcelPath(String filename) {
+        return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
+    }
+
+    // Gets path of a resource.
+    // If multiple formats of it exist, priority is TSJ > JSON > TSV
+    // If none exist, return the TSJ path, in case it wants to create a file
+    public static Path getTsjJsonTsv(Path root, String filename) {
+        val name = getFilenameWithoutExtension(filename);
+        val tsj = root.resolve(name + ".tsj");
+        if (Files.exists(tsj)) return tsj;
+        val json = root.resolve(name + ".json");
+        if (Files.exists(json)) return json;
+        val tsv = root.resolve(name + ".tsv");
+        if (Files.exists(tsv)) return tsv;
+        return tsj;
+    }
+
     public static Path getScriptPath(String path) {
         return SCRIPTS_PATH.resolve(path);
     }
@@ -167,14 +186,19 @@ public final class FileUtils {
         }
     }
 
-    @Deprecated  // No current uses of this anyway
-    public static String getFilenameWithoutPath(String fileName) {
-        int i = fileName.lastIndexOf(".");
-        if (i > 0) {
-           return fileName.substring(0, i);
-        } else {
-           return fileName;
-        }
+    @Deprecated  // Misnamed legacy function
+    public static String getFilenameWithoutPath(String filename) {
+        return getFilenameWithoutExtension(filename);
+    }
+    public static String getFilenameWithoutExtension(String filename) {
+        int i = filename.lastIndexOf(".");
+        return (i < 0) ? filename : filename.substring(0, i);
+    }
+
+    public static String getFileExtension(Path path) {
+        val filename = path.toString();
+        int i = filename.lastIndexOf(".");
+        return (i < 0) ? "" : filename.substring(i+1);
     }
 
     public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {

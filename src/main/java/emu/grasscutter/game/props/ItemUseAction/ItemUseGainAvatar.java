@@ -19,10 +19,10 @@ public class ItemUseGainAvatar extends ItemUseInt {
         super(useParam);
         try {
             this.level = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
         try {
             this.constellation = Integer.parseInt(useParam[2]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
     }
 
     @Override

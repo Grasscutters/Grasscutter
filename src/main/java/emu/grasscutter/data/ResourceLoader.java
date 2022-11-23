@@ -11,7 +11,10 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.TsvUtils;
+import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
@@ -23,6 +26,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
@@ -32,8 +37,9 @@ import static emu.grasscutter.utils.Language.translate;
 
 public class ResourceLoader {
 
-    private static final List<String> loadedResources = new ArrayList<>();
+    private static final Set<String> loadedResources = new CopyOnWriteArraySet<>();
 
+    // Get a list of all resource classes, sorted by loadPriority
     public static List<Class<?>> getResourceDefClasses() {
         Reflections reflections = new Reflections(ResourceLoader.class.getPackage().getName());
         Set<?> classes = reflections.getSubTypesOf(GameResource.class);
@@ -49,6 +55,25 @@ public class ResourceLoader {
         classList.sort((a, b) -> b.getAnnotation(ResourceType.class).loadPriority().value() - a.getAnnotation(ResourceType.class).loadPriority().value());
 
         return classList;
+    }
+
+    // Get a list containing sets of all resource classes, sorted by loadPriority
+    protected static List<Set<Class<?>>> getResourceDefClassesPrioritySets() {
+        val reflections = new Reflections(ResourceLoader.class.getPackage().getName());
+        val classes = reflections.getSubTypesOf(GameResource.class);
+        val priorities = ResourceType.LoadPriority.getInOrder();
+        Grasscutter.getLogger().debug("Priorities are "+priorities);
+        val map = new LinkedHashMap<ResourceType.LoadPriority, Set<Class<?>>>(priorities.size());
+        priorities.forEach(p -> map.put(p, new HashSet<>()));
+
+        classes.forEach(c -> {
+            // val c = (Class<?>) o;
+            val annotation = c.getAnnotation(ResourceType.class);
+            if (annotation != null) {
+                map.get(annotation.loadPriority()).add(c);
+            }
+        });
+        return List.copyOf(map.values());
     }
 
     private static boolean loadedAll = false;
@@ -86,48 +111,66 @@ public class ResourceLoader {
     }
 
     public static void loadResources(boolean doReload) {
-        for (Class<?> resourceDefinition : getResourceDefClasses()) {
-            ResourceType type = resourceDefinition.getAnnotation(ResourceType.class);
+        long startTime = System.nanoTime();
+        val errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();  // Logger in a parallel stream will deadlock
 
-            if (type == null) {
-                continue;
-            }
+        getResourceDefClassesPrioritySets().forEach(classes -> {
+            classes.stream()
+                .parallel().unordered()
+                .forEach(c -> {
+                    val type = c.getAnnotation(ResourceType.class);
+                    if (type == null) return;
 
-            @SuppressWarnings("rawtypes")
-            Int2ObjectMap map = GameData.getMapByResourceDef(resourceDefinition);
+                    val map = GameData.getMapByResourceDef(c);
+                    if (map == null) return;
 
-            if (map == null) {
-                continue;
-            }
-
-            try {
-                loadFromResource(resourceDefinition, type, map, doReload);
-            } catch (Exception e) {
-                Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e.getLocalizedMessage());
-            }
-        }
+                    try {
+                        loadFromResource(c, type, map, doReload);
+                    } catch (Exception e) {
+                        errors.add(Pair.of(Arrays.toString(type.name()), e));
+                    }
+                });
+        });
+        errors.forEach(pair -> Grasscutter.getLogger().error("Error loading resource file: " + pair.left(), pair.right()));
+        long endTime = System.nanoTime();
+        long ns = (endTime - startTime);  //divide by 1000000 to get milliseconds.
+        Grasscutter.getLogger().debug("Loading resources took "+ns+"ns == "+ns/1000000+"ms");
     }
 
     @SuppressWarnings("rawtypes")
     protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
-        if (!loadedResources.contains(c.getSimpleName()) || doReload) {
+        val simpleName = c.getSimpleName();
+        if (doReload || !loadedResources.contains(simpleName)) {
             for (String name : type.name()) {
-                loadFromResource(c, name, map);
+                loadFromResource(c, FileUtils.getExcelPath(name), map);
             }
-            loadedResources.add(c.getSimpleName());
-            Grasscutter.getLogger().debug("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
+            loadedResources.add(simpleName);
         }
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
-        List<T> list = JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c);
-
-        for (T o : list) {
+    protected static <T> void loadFromResource(Class<T> c, Path filename, Int2ObjectMap map) throws Exception {
+        val results = switch (FileUtils.getFileExtension(filename)) {
+            case "json" -> JsonUtils.loadToList(filename, c);
+            case "tsj" -> TsvUtils.loadTsjToListSetField(c, filename);
+            case "tsv" -> TsvUtils.loadTsvToListSetField(c, filename);
+            default -> null;
+        };
+        if (results == null) return;
+        results.forEach(o -> {
             GameResource res = (GameResource) o;
             res.onLoad();
             map.put(res.getId(), res);
-        }
+        });
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
+        JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c).forEach(o -> {
+            GameResource res = (GameResource) o;
+            res.onLoad();
+            map.put(res.getId(), res);
+        });
     }
 
     public class ScenePointConfig {  // Sadly this doesn't work as a local class in loadScenePoints()
