@@ -9,6 +9,7 @@ import emu.grasscutter.data.excels.DropTableData;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.scripts.data.SceneMonster;
@@ -101,7 +102,6 @@ public class DropSystem extends BaseGameSystem {
     }
 
     public boolean handleChestDrop(int chestDropId, int dropCount, GameEntity bornFrom) {
-        Grasscutter.getLogger().info("ChestDrop:chest_drop_id={},drop_count={}", chestDropId, dropCount);
         if (!dropTable.containsKey(chestDropId)) return false;
         var dropData = dropTable.get(chestDropId);
         List<GameItem> items = new ArrayList<>();
@@ -115,7 +115,6 @@ public class DropSystem extends BaseGameSystem {
     }
 
     public boolean handleChestDrop(String dropTag, int level, GameEntity bornFrom) {
-        Grasscutter.getLogger().info("ChestDrop:drop_tag={},level={}", dropTag, level);
         int dropId = queryDropData(dropTag, level, chestReward);
         if (dropId == 0) return false;
         return handleChestDrop(dropId, 1, bornFrom);
@@ -127,7 +126,6 @@ public class DropSystem extends BaseGameSystem {
         var dropData = dropTable.get(dropId);
         List<GameItem> items = new ArrayList<>();
         processDrop(dropData, 1, items);
-        //TODO:test if there still need some packets.
         player.getInventory().addItems(items, ActionReason.OpenWorldBossChest);
         player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(items));
         return true;
@@ -157,12 +155,19 @@ public class DropSystem extends BaseGameSystem {
                 if (weight < sum) {
                     //win the item
                     int amount = calculateDropAmount(i) * count;
-                    if (amount > 0) {
-                        if (dropTable.containsKey(id)) {
-                            processDrop(dropTable.get(id), amount, items);
-                        } else {
-                            items.add(new GameItem(id, amount));
+                    if (amount <= 0) break;
+                    if (dropTable.containsKey(id)) {
+                        processDrop(dropTable.get(id), amount, items);
+                    } else {
+                        boolean flag = true;
+                        for (var j : items) {
+                            if (j.getItemId() == id) {
+                                j.setCount(j.getCount() + amount);
+                                flag = false;
+                                break;
+                            }
                         }
+                        if (flag) items.add(new GameItem(id, amount));
                     }
                     break;
                 }
@@ -173,12 +178,19 @@ public class DropSystem extends BaseGameSystem {
                 if (id == 0) continue;
                 if (rand.nextInt(10000) < i.getWeight()) {
                     int amount = calculateDropAmount(i) * count;
-                    if (amount > 0) {
-                        if (dropTable.containsKey(id)) {
-                            processDrop(dropTable.get(id), amount, items);
-                        } else {
-                            items.add(new GameItem(id, amount));
+                    if (amount <= 0) continue;
+                    if (dropTable.containsKey(id)) {
+                        processDrop(dropTable.get(id), amount, items);
+                    } else {
+                        boolean flag = true;
+                        for (var j : items) {
+                            if (j.getItemId() == id) {
+                                j.setCount(j.getCount() + amount);
+                                flag = false;
+                                break;
+                            }
                         }
+                        if (flag) items.add(new GameItem(id, amount));
                     }
                 }
             }
@@ -205,7 +217,7 @@ public class DropSystem extends BaseGameSystem {
      */
     private void dropItem(GameItem item, ActionReason reason, Player player, GameEntity bornFrom, boolean share) {
         DropMaterialData drop = GameData.getDropMaterialDataMap().get(item.getItemId());
-        if ((drop != null && drop.isAutoPick()) || item.getItemId() == 101 || item.getItemId() == 102) {
+        if ((drop != null && drop.isAutoPick()) || (item.getItemData().getItemType() == ItemType.ITEM_VIRTUAL && item.getItemData().getGadgetId() == 0)) {
             giveItem(item, reason, player, share);
         } else {
             //TODO:solve share problem

@@ -329,8 +329,10 @@ public class Scene {
 
         // Reward drop
         if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            if (!getWorld().getServer().getDropSystem().handleMonsterDrop((EntityMonster) target))
+            if (!getWorld().getServer().getDropSystem().handleMonsterDrop((EntityMonster) target)) {
+                Grasscutter.getLogger().warn("Can not solve monster drop: drop_id = {} , drop_tag = {}.Fallback to legacy drop system.", ((EntityMonster) target).getMetaMonster().drop_id, ((EntityMonster) target).getMetaMonster().drop_tag);
                 getWorld().getServer().getDropSystemLegacy().callDrop((EntityMonster) target);
+            }
         }
 
         // Remove entity from world
@@ -730,15 +732,6 @@ public class Scene {
 
     }
 
-    /**
-     * @param share If false,only the player can see the items but others can't.If true,all players will see.
-     */
-    public void addDropEntities(List<GameItem> items, GameEntity bornForm, Player player, boolean share) {
-        //TODO:optimize EntityItem.java. Maybe we should make other players can't see the ItemEntity.
-        for (var i : items) {
-            addDropEntity(i, bornForm, player, share);
-        }
-    }
 
     public void loadNpcForPlayerEnter(Player player) {
         this.npcBornEntrySet.addAll(loadNpcForPlayer(player));

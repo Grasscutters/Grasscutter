@@ -5,6 +5,7 @@ import emu.grasscutter.game.drop.DropSystem;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BossChestInfoOuterClass.BossChestInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
@@ -30,7 +31,6 @@ public class GadgetChest extends GadgetContent {
         //If bigWorldScript enabled,use new drop system.
         if (Grasscutter.getConfig().server.game.enableScriptInBigWorld) {
             SceneGadget chest = getGadget().getMetaGadget();
-            Grasscutter.getLogger().info("OpenChest:chest_drop_id={},drop_tag={}", chest.chest_drop_id, chest.drop_tag);
             DropSystem dropSystem = player.getServer().getDropSystem();
             if (chest.boss_chest != null && chest.drop_tag != null) {
                 //Boss chest drop
@@ -43,9 +43,10 @@ public class GadgetChest extends GadgetContent {
                 //TODO:check for take_num.(some boss rewards can only be claimed once a week.). Handle boss respawn.
                 //TODO:should return Retcode.RET_RESIN_NOT_ENOUGH ?
                 if (player.getResinManager().useResin(chest.boss_chest.resin) && dropSystem.handleBossChestDrop(chest.drop_tag, player)) {
+                    //Is it correct?
+                    player.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_WORLD_BOSS_REWARD,chest.boss_chest.monster_config_id,1);
                     getGadget().updateState(ScriptGadgetState.ChestOpened);
                     player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_FINISH));
-                    //TODO:need world chest notify?
                     return true;
                 }
                 //if failed,fallback to legacy drop system.
@@ -67,7 +68,7 @@ public class GadgetChest extends GadgetContent {
                 }
                 //if failed,fallback to legacy drop system.
             }
-            Grasscutter.getLogger().warn("Can not solve chest drop:chest_drop_id={},drop_tag={}.Fallback to legacy drop system.", chest.chest_drop_id, chest.drop_tag);
+            Grasscutter.getLogger().warn("Can not solve chest drop: chest_drop_id = {} , drop_tag = {}.Fallback to legacy drop system.", chest.chest_drop_id, chest.drop_tag);
         }
 
         //Legacy chest drop system
