@@ -74,7 +74,11 @@ public class GachaSystem extends BaseGameSystem {
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
                     banner.onLoad();
-                    getGachaBanners().put(banner.getScheduleId(), banner);
+                    if (banner.isDeprecated()) {
+                        Grasscutter.getLogger().error("A Banner has not been loaded because it contains one or more deprecated fields. Remove the fields mentioned above and reload.");
+                    } else {
+                        getGachaBanners().put(banner.getScheduleId(), banner);
+                    }
                 }
                 Grasscutter.getLogger().debug("Banners successfully loaded.");
             } else {

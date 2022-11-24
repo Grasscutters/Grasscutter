@@ -14,7 +14,7 @@ public class GachaBanner {
     @Getter private int gachaType;
     @Getter private int scheduleId;
     @Getter private String prefabPath;
-    private String previewPrefabPath;
+    @Getter private String previewPrefabPath;
     @Getter private String titlePath;
     private int costItemId = 0;
     private int costItemAmount = 1;
@@ -24,8 +24,8 @@ public class GachaBanner {
     @Getter private int endTime;
     @Getter private int sortId;
     @Getter private int gachaTimesLimit = Integer.MAX_VALUE;
-    private int[] rateUpItems4 = {};
-    private int[] rateUpItems5 = {};
+    @Getter private int[] rateUpItems4 = {};
+    @Getter private int[] rateUpItems5 = {};
     @Getter private int[] fallbackItems3 = {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
     @Getter private int[] fallbackItems4Pool1 = {1014, 1020, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1059, 1064, 1065, 1067, 1068, 1072};
     @Getter private int[] fallbackItems4Pool2 = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
@@ -52,9 +52,11 @@ public class GachaBanner {
     @Deprecated private int hardPity = -1;
     @Deprecated private int minItemType = -1;
     @Deprecated private int maxItemType = -1;
+    @Getter private boolean deprecated = false;
 
-    private static void warnDeprecated(String name, String replacement) {
-        Grasscutter.getLogger().error("Deprecated field found in Banners.json: "+name+" was replaced back in early May 2022, use "+replacement+" instead. If you do not remove this key from your config, it will refuse to load in a future Grasscutter version.");
+    private void warnDeprecated(String name, String replacement) {
+        Grasscutter.getLogger().error("Deprecated field found in Banners config: "+name+" was replaced back in early May 2022, use "+replacement+" instead. You MUST remove this field from your config.");
+        this.deprecated = true;
     }
     public void onLoad() {
         if (eventChance != -1)
@@ -73,30 +75,24 @@ public class GachaBanner {
             warnDeprecated("rateUpItems1", "rateUpItems5");
         if (rateUpItems2.length > 0)
             warnDeprecated("rateUpItems2", "rateUpItems4");
-    }
-
-    public String getPreviewPrefabPath() {
-        if (this.previewPrefabPath != null && !this.previewPrefabPath.isEmpty())
-            return this.previewPrefabPath;
-        return "UI_Tab_" + this.prefabPath;
+        if (this.previewPrefabPath != null && this.previewPrefabPath.equals("UI_Tab_" + this.prefabPath))
+            Grasscutter.getLogger().error("Redundant field found in Banners config: previewPrefabPath does not need to be specified if it is identical to prefabPath prefixed with \"UI_Tab_\".");
+        if (this.previewPrefabPath == null || this.previewPrefabPath.isEmpty())
+            this.previewPrefabPath = "UI_Tab_" + this.prefabPath;
+        if (this.costItemId10 == 0)
+            this.costItemId10 = this.costItemId;
     }
 
     public ItemParamData getCost(int numRolls) {
         return switch (numRolls) {
-            case 10 -> new ItemParamData((costItemId10 > 0) ? costItemId10 : getCostItem(), costItemAmount10);
-            default -> new ItemParamData(getCostItem(), costItemAmount * numRolls);
+            case 10 -> new ItemParamData(costItemId10, costItemAmount10);
+            default -> new ItemParamData(costItemId, costItemAmount * numRolls);
         };
     }
 
+    @Deprecated
     public int getCostItem() {
-        return (costItem > 0) ? costItem : costItemId;
-    }
-
-    public int[] getRateUpItems4() {
-        return (rateUpItems2.length > 0) ? rateUpItems2 : rateUpItems4;
-    }
-    public int[] getRateUpItems5() {
-        return (rateUpItems1.length > 0) ? rateUpItems1 : rateUpItems5;
+        return costItemId;
     }
 
     public boolean hasEpitomized() {
@@ -120,7 +116,7 @@ public class GachaBanner {
     public int getEventChance(int rarity) {
         return switch (rarity) {
             case 4 -> eventChance4;
-            default -> (eventChance > -1) ? eventChance : eventChance5;
+            default -> eventChance5;
         };
     }
 
@@ -138,8 +134,6 @@ public class GachaBanner {
                         + "/gacha/details?s=" + sessionKey + "&scheduleId=" + scheduleId;
 
         // Grasscutter.getLogger().info("record = " + record);
-        ItemParamData costItem1 = this.getCost(1);
-        ItemParamData costItem10 = this.getCost(10);
         PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(this);
         int leftGachaTimes = switch (gachaTimesLimit) {
             case Integer.MAX_VALUE -> Integer.MAX_VALUE;
@@ -150,10 +144,10 @@ public class GachaBanner {
                 .setScheduleId(this.getScheduleId())
                 .setBeginTime(this.getBeginTime())
                 .setEndTime(this.getEndTime())
-                .setCostItemId(costItem1.getId())
-                .setCostItemNum(costItem1.getCount())
-                .setTenCostItemId(costItem10.getId())
-                .setTenCostItemNum(costItem10.getCount())
+                .setCostItemId(this.costItemId)
+                .setCostItemNum(this.costItemAmount)
+                .setTenCostItemId(this.costItemId10)
+                .setTenCostItemNum(this.costItemAmount10)
                 .setGachaPrefabPath(this.getPrefabPath())
                 .setGachaPreviewPrefabPath(this.getPreviewPrefabPath())
                 .setGachaProbUrl(details)
