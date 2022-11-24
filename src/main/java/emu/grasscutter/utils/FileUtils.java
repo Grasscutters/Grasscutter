@@ -8,7 +8,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -129,7 +132,9 @@ public final class FileUtils {
     }
 
     public static Path getExcelPath(String filename) {
-        return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
+        Path p = getTsjJsonTsv(RESOURCES_PATH.resolve("Server"), filename);
+        if (Files.exists(p)) return p;
+        else return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
     }
 
     // Gets path of a resource.
