@@ -5,6 +5,8 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.TsvUtils;
+import lombok.val;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -86,6 +88,17 @@ public class DataLoader {
         try (InputStreamReader reader = loadReader(resourcePath)) {
             return JsonUtils.loadToMap(reader, keyType, valueType);
         }
+    }
+
+    public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType) throws IOException {
+        val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
+        Grasscutter.getLogger().info("Loading data table from: "+path);
+        return switch (FileUtils.getFileExtension(path)) {
+            case "json" -> JsonUtils.loadToList(path, classType);
+            case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);
+            case "tsv" -> TsvUtils.loadTsvToListSetField(path, classType);
+            default -> null;
+        };
     }
 
     public static void checkAllFiles() {

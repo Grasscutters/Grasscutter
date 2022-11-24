@@ -70,7 +70,7 @@ public class GachaSystem extends BaseGameSystem {
     public synchronized void load() {
         getGachaBanners().clear();
         try {
-            List<GachaBanner> banners = DataLoader.loadList("Banners.json", GachaBanner.class);
+            List<GachaBanner> banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
                     banner.onLoad();

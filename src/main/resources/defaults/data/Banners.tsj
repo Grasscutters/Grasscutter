@@ -1,0 +1,6 @@
+comment	gachaType	scheduleId	bannerType	prefabPath	titlePath	costItemId	beginTime	endTime	sortId	rateUpItems5	rateUpItems4	weights5	weights4	fallbackItems5Pool2	fallbackItems5Pool1	fallbackItems4Pool1	eventChance4	eventChance5	costItemAmount10	gachaTimesLimit
+Beginner's Banner. Do not change for no reason.	100	803	EVENT	GachaShowPanel_A016	UI_GACHA_SHOW_PANEL_A016_TITLE	224		1924992000	9999		[1034]								8	20
+Standard	200	893	STANDARD	GachaShowPanel_A022	UI_GACHA_SHOW_PANEL_A022_TITLE	224		1924992000	1000			[[1, 75], [73, 150], [90, 10000]]				[1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1059, 1064, 1065, 1067, 1068, 1072]
+Character Event Banner 1	301	903	EVENT	GachaShowPanel_A106	UI_GACHA_SHOW_PANEL_A071_TITLE	223		1924992000	9998	[1058]	[1050, 1059, 1074]	[[1, 80], [73, 80], [90, 10000]]		[]
+Character Event Banner 2	400	923	EVENT	GachaShowPanel_A107	UI_GACHA_SHOW_PANEL_A037_TITLE	223		1924992000	9998	[1033]	[1050, 1059, 1074]	[[1, 80], [73, 80], [90, 10000]]		[]
+Weapon Event Banner	302	913	WEAPON	GachaShowPanel_A108	UI_GACHA_SHOW_PANEL_A021_TITLE	223		1924992000	9997	[14509, 15507]	[11401, 12402, 13401, 14401, 15402]	[[1, 100], [62, 100], [73, 7800], [80, 10000]]	[[1, 600], [7, 600], [8, 6600], [10, 12600]]		[]		75	75

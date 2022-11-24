@@ -402,7 +402,7 @@ public class TsvUtils {
     // Arrays are represented as arrayName.0, arrayName.1, etc. columns.
     // Maps/POJOs are represented as objName.fieldOneName, objName.fieldTwoName, etc. columns.
     // This is currently about 25x as slow as TSJ and Gson parsers, likely due to the tree spam.
-    public static <T> List<T> loadTsvToListSetField(Class<T> classType, Path filename) {
+    public static <T> List<T> loadTsvToListSetField(Path filename, Class<T> classType) {
         try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
             // val fieldMap = getClassFieldMap(classType);
             // val constructor = classType.getDeclaredConstructor();
@@ -453,7 +453,7 @@ public class TsvUtils {
 
     // This uses a hybrid format where columns can hold JSON-encoded values.
     // I'll term it TSJ (tab-separated JSON) for now, it has convenient properties.
-    public static <T> List<T> loadTsjToListSetField(Class<T> classType, Path filename) {
+    public static <T> List<T> loadTsjToListSetField(Path filename, Class<T> classType) {
         try (val fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
             val fieldMap = getClassFieldMap(classType);
             val constructor = classType.getDeclaredConstructor();

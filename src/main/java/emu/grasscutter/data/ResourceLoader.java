@@ -152,8 +152,8 @@ public class ResourceLoader {
     protected static <T> void loadFromResource(Class<T> c, Path filename, Int2ObjectMap map) throws Exception {
         val results = switch (FileUtils.getFileExtension(filename)) {
             case "json" -> JsonUtils.loadToList(filename, c);
-            case "tsj" -> TsvUtils.loadTsjToListSetField(c, filename);
-            case "tsv" -> TsvUtils.loadTsvToListSetField(c, filename);
+            case "tsj" -> TsvUtils.loadTsjToListSetField(filename, c);
+            case "tsv" -> TsvUtils.loadTsvToListSetField(filename, c);
             default -> null;
         };
         if (results == null) return;

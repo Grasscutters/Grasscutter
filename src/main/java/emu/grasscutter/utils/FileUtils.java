@@ -88,6 +88,19 @@ public final class FileUtils {
             : Path.of(scripts);
     };
 
+    private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
+    private static final Path[] DATA_PATHS = {DATA_USER_PATH, DATA_DEFAULT_PATH};
+    public static Path getDataPathTsjJsonTsv(String filename) {
+        val name = getFilenameWithoutExtension(filename);
+        for (val data_path : DATA_PATHS) {
+            for (val ext : TSJ_JSON_TSV) {
+                val path = data_path.resolve(name + "." + ext);
+                if (Files.exists(path)) return path;
+            }
+        }
+        return DATA_USER_PATH.resolve(name + ".tsj");  // Maybe they want to write to a new file
+    }
+
     public static Path getDataPath(String path) {
         Path userPath = DATA_USER_PATH.resolve(path);
         if (Files.exists(userPath)) return userPath;
@@ -121,13 +134,11 @@ public final class FileUtils {
     // If none exist, return the TSJ path, in case it wants to create a file
     public static Path getTsjJsonTsv(Path root, String filename) {
         val name = getFilenameWithoutExtension(filename);
-        val tsj = root.resolve(name + ".tsj");
-        if (Files.exists(tsj)) return tsj;
-        val json = root.resolve(name + ".json");
-        if (Files.exists(json)) return json;
-        val tsv = root.resolve(name + ".tsv");
-        if (Files.exists(tsv)) return tsv;
-        return tsj;
+        for (val ext : TSJ_JSON_TSV) {
+            val path = root.resolve(name + "." + ext);
+            if (Files.exists(path)) return path;
+        }
+        return root.resolve(name + ".tsj");
     }
 
     public static Path getScriptPath(String path) {
