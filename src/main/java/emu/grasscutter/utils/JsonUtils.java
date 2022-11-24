@@ -27,6 +27,7 @@ public final class JsonUtils {
         .setPrettyPrinting()
         .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
         .registerTypeAdapter(IntList.class, new IntListAdapter())
+        .registerTypeAdapter(Position.class, new PositionAdapter())
         .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
         .create();
 

@@ -10,9 +10,11 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import emu.grasscutter.data.common.DynamicFloat;
+import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.val;
@@ -65,7 +67,54 @@ public class JsonAdapters {
         }
 
         @Override
-        public void write(JsonWriter writer, IntList i) {};
+        public void write(JsonWriter writer, IntList l) throws IOException {
+            writer.beginArray();
+            for (val i : l)  // .forEach() doesn't appreciate exceptions
+                writer.value(i);
+            writer.endArray();
+        };
+    }
+
+    static class PositionAdapter extends TypeAdapter<Position> {
+        @Override
+        public Position read(JsonReader reader) throws IOException {
+            switch (reader.peek()) {
+                case BEGIN_ARRAY:  // "pos": [x,y,z]
+                    reader.beginArray();
+                    val array = new FloatArrayList(3);
+                    while (reader.hasNext())
+                        array.add(reader.nextInt());
+                    reader.endArray();
+                    return new Position(array);
+                case BEGIN_OBJECT:  // "pos": {"x": x, "y": y, "z": z}
+                    float x = 0f;
+                    float y = 0f;
+                    float z = 0f;
+                    reader.beginObject();
+                    for (var next = reader.peek(); next != JsonToken.END_OBJECT; next = reader.peek()) {
+                        val name = reader.nextName();
+                        switch (name) {
+                            case "x", "X", "_x" -> x = (float) reader.nextDouble();
+                            case "y", "Y", "_y" -> y = (float) reader.nextDouble();
+                            case "z", "Z", "_z" -> z = (float) reader.nextDouble();
+                            default -> throw new IOException("Invalid field in Position definition - " + name);
+                        }
+                    }
+                    reader.endObject();
+                    return new Position(x, y, z);
+                default:
+                    throw new IOException("Invalid Position definition - " + reader.peek().name());
+            }
+        }
+
+        @Override
+        public void write(JsonWriter writer, Position i) throws IOException {
+            writer.beginArray();
+            writer.value(i.getX());
+            writer.value(i.getY());
+            writer.value(i.getZ());
+            writer.endArray();
+        };
     }
 
     static class EnumTypeAdapterFactory implements TypeAdapterFactory {
@@ -109,7 +158,9 @@ public class JsonAdapters {
                             throw new IOException("Invalid Enum definition - " + reader.peek().name());
                     }
                 }
-                public void write(JsonWriter writer, T value) {}
+                public void write(JsonWriter writer, T value) throws IOException {
+                    writer.value(value.toString());
+                }
             };
         }
     }
