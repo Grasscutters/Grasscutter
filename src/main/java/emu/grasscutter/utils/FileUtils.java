@@ -91,6 +91,9 @@ public final class FileUtils {
     private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
     private static final Path[] DATA_PATHS = {DATA_USER_PATH, DATA_DEFAULT_PATH};
     public static Path getDataPathTsjJsonTsv(String filename) {
+        return getDataPathTsjJsonTsv(filename, true);
+    }
+    public static Path getDataPathTsjJsonTsv(String filename, boolean fallback) {
         val name = getFilenameWithoutExtension(filename);
         for (val data_path : DATA_PATHS) {
             for (val ext : TSJ_JSON_TSV) {
@@ -98,7 +101,7 @@ public final class FileUtils {
                 if (Files.exists(path)) return path;
             }
         }
-        return DATA_USER_PATH.resolve(name + ".tsj");  // Maybe they want to write to a new file
+        return fallback ? DATA_USER_PATH.resolve(name + ".tsj") : null;  // Maybe they want to write to a new file
     }
 
     public static Path getDataPath(String path) {
