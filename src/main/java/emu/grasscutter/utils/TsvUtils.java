@@ -8,6 +8,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -446,7 +447,7 @@ public class TsvUtils {
                 }
             }).toList();
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+            Grasscutter.getLogger().error("Error loading file '"+filename+"' - Stacktrace is: ", e);
             return null;
         }
     }
@@ -487,11 +488,14 @@ public class TsvUtils {
                     return null;
                 }
             }).toList();
+        } catch (NoSuchFileException e) {
+            Grasscutter.getLogger().error("Error loading file '"+filename+"' - File does not exist. You are missing resources. Note that this file may exist in JSON, TSV, or TSJ format, any of which are suitable.");
+            return null;
         } catch (IOException e) {
-            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+            Grasscutter.getLogger().error("Error loading file '"+filename+"' - Stacktrace is: ", e);
             return null;
         } catch (NoSuchMethodException e) {
-            Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Class is missing NoArgsConstructor");
+            Grasscutter.getLogger().error("Error loading file '"+filename+"' - Class is missing NoArgsConstructor");
             return null;
         }
     }
@@ -588,7 +592,7 @@ public class TsvUtils {
                     }
                 }).toList();
             } catch (IOException e) {
-                Grasscutter.getLogger().error("Error loading TSV file '"+filename+"' - Stacktrace is: ", e);
+                Grasscutter.getLogger().error("Error loading file '"+filename+"' - Stacktrace is: ", e);
                 return null;
             }
         }).toList();
