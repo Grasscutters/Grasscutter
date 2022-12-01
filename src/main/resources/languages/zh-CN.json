@@ -264,7 +264,7 @@
       "fail": "命之座等级设置失败。",
       "failed_success": "命之座 %s 已设置为 %s。",
       "success": "命之座 %s 已设置为 %s。",
-      "successall": "🇺🇸Constellations for all characters have been set to %s.",
+      "successall": "所有角色的命之座已设置为 %s。",
       "description": "为当前活跃角色设置命座等级"
     },
     "setFetterLevel": {
