@@ -14,7 +14,7 @@
 * Daftar teman
 * Teleportasi
 * Sistem gacha
-* Co-op *sebahagian* berfungsi
+* Co-op *sebagian* berfungsi
 * Memunculkan monster melalui konsol
 * Fitur inventaris (menerima item/karakter, meng-upgrade item/karakter, dll)
 
@@ -53,9 +53,9 @@
 
       ​**Catatan:** Sertifikat CA biasanya disimpan di `%USERPROFILE%\ .mitmproxy`, atau anda dapat download dari  `http://mitm.it`
 
-      ​	klik dua kali untuk [menginstall](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
+      ​	klik dua kali untuk [menginstall](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) ataupun juga
 
-      - Via command line
+      - melalui command line
 
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
@@ -103,6 +103,6 @@ Anda bisa menemukan output jar di root folder proyek.
 # Quick Troubleshooting
 
 * Jika kompilasi tidak berhasil, periksa instalasi JDK Anda (JDK 17 dan validasi variabel bin PATH JDK)
-* Klien saya tidak terhubung, tidak login, 4206, dll... - Sebagian besar pengaturan daemon proxy Anda adalah *masalahnya*, jika menggunakan
+* Klien saya tidak terhubung, tidak login, 4206, dan lain-lain - Sebagian besar pengaturan daemon proxy Anda adalah *masalahnya*, jika menggunakan
 Fiddler pastikan berjalan pada port lain kecuali 8888
 * Urutan startup: MongoDB > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game
