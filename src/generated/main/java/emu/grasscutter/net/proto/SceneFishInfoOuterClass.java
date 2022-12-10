@@ -52,10 +52,10 @@ public final class SceneFishInfoOuterClass {
     int getFishPoolGadgetId();
 
     /**
-     * <code>uint32 Unk2700_HIPFHKFMBBE = 5;</code>
-     * @return The unk2700HIPFHKFMBBE.
+     * <code>uint32 last_shock_time = 5;</code>
+     * @return The lastShockTime.
      */
-    int getUnk2700HIPFHKFMBBE();
+    int getLastShockTime();
   }
   /**
    * Protobuf type {@code SceneFishInfo}
@@ -132,7 +132,7 @@ public final class SceneFishInfoOuterClass {
             }
             case 40: {
 
-              unk2700HIPFHKFMBBE_ = input.readUInt32();
+              lastShockTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -226,15 +226,15 @@ public final class SceneFishInfoOuterClass {
       return fishPoolGadgetId_;
     }
 
-    public static final int UNK2700_HIPFHKFMBBE_FIELD_NUMBER = 5;
-    private int unk2700HIPFHKFMBBE_;
+    public static final int LAST_SHOCK_TIME_FIELD_NUMBER = 5;
+    private int lastShockTime_;
     /**
-     * <code>uint32 Unk2700_HIPFHKFMBBE = 5;</code>
-     * @return The unk2700HIPFHKFMBBE.
+     * <code>uint32 last_shock_time = 5;</code>
+     * @return The lastShockTime.
      */
     @java.lang.Override
-    public int getUnk2700HIPFHKFMBBE() {
-      return unk2700HIPFHKFMBBE_;
+    public int getLastShockTime() {
+      return lastShockTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -263,8 +263,8 @@ public final class SceneFishInfoOuterClass {
       if (fishPoolGadgetId_ != 0) {
         output.writeUInt32(4, fishPoolGadgetId_);
       }
-      if (unk2700HIPFHKFMBBE_ != 0) {
-        output.writeUInt32(5, unk2700HIPFHKFMBBE_);
+      if (lastShockTime_ != 0) {
+        output.writeUInt32(5, lastShockTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -291,9 +291,9 @@ public final class SceneFishInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, fishPoolGadgetId_);
       }
-      if (unk2700HIPFHKFMBBE_ != 0) {
+      if (lastShockTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, unk2700HIPFHKFMBBE_);
+          .computeUInt32Size(5, lastShockTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -321,8 +321,8 @@ public final class SceneFishInfoOuterClass {
       }
       if (getFishPoolGadgetId()
           != other.getFishPoolGadgetId()) return false;
-      if (getUnk2700HIPFHKFMBBE()
-          != other.getUnk2700HIPFHKFMBBE()) return false;
+      if (getLastShockTime()
+          != other.getLastShockTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -344,8 +344,8 @@ public final class SceneFishInfoOuterClass {
       }
       hash = (37 * hash) + FISH_POOL_GADGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFishPoolGadgetId();
-      hash = (37 * hash) + UNK2700_HIPFHKFMBBE_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk2700HIPFHKFMBBE();
+      hash = (37 * hash) + LAST_SHOCK_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastShockTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -491,7 +491,7 @@ public final class SceneFishInfoOuterClass {
         }
         fishPoolGadgetId_ = 0;
 
-        unk2700HIPFHKFMBBE_ = 0;
+        lastShockTime_ = 0;
 
         return this;
       }
@@ -527,7 +527,7 @@ public final class SceneFishInfoOuterClass {
           result.fishPoolPos_ = fishPoolPosBuilder_.build();
         }
         result.fishPoolGadgetId_ = fishPoolGadgetId_;
-        result.unk2700HIPFHKFMBBE_ = unk2700HIPFHKFMBBE_;
+        result.lastShockTime_ = lastShockTime_;
         onBuilt();
         return result;
       }
@@ -588,8 +588,8 @@ public final class SceneFishInfoOuterClass {
         if (other.getFishPoolGadgetId() != 0) {
           setFishPoolGadgetId(other.getFishPoolGadgetId());
         }
-        if (other.getUnk2700HIPFHKFMBBE() != 0) {
-          setUnk2700HIPFHKFMBBE(other.getUnk2700HIPFHKFMBBE());
+        if (other.getLastShockTime() != 0) {
+          setLastShockTime(other.getLastShockTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -832,33 +832,33 @@ public final class SceneFishInfoOuterClass {
         return this;
       }
 
-      private int unk2700HIPFHKFMBBE_ ;
+      private int lastShockTime_ ;
       /**
-       * <code>uint32 Unk2700_HIPFHKFMBBE = 5;</code>
-       * @return The unk2700HIPFHKFMBBE.
+       * <code>uint32 last_shock_time = 5;</code>
+       * @return The lastShockTime.
        */
       @java.lang.Override
-      public int getUnk2700HIPFHKFMBBE() {
-        return unk2700HIPFHKFMBBE_;
+      public int getLastShockTime() {
+        return lastShockTime_;
       }
       /**
-       * <code>uint32 Unk2700_HIPFHKFMBBE = 5;</code>
-       * @param value The unk2700HIPFHKFMBBE to set.
+       * <code>uint32 last_shock_time = 5;</code>
+       * @param value The lastShockTime to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700HIPFHKFMBBE(int value) {
+      public Builder setLastShockTime(int value) {
         
-        unk2700HIPFHKFMBBE_ = value;
+        lastShockTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk2700_HIPFHKFMBBE = 5;</code>
+       * <code>uint32 last_shock_time = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700HIPFHKFMBBE() {
+      public Builder clearLastShockTime() {
         
-        unk2700HIPFHKFMBBE_ = 0;
+        lastShockTime_ = 0;
         onChanged();
         return this;
       }
@@ -929,12 +929,12 @@ public final class SceneFishInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023SceneFishInfo.proto\032\014Vector.proto\"\227\001\n\r" +
+      "\n\023SceneFishInfo.proto\032\014Vector.proto\"\223\001\n\r" +
       "SceneFishInfo\022\017\n\007fish_id\030\001 \001(\r\022\033\n\023fish_p" +
       "ool_entity_id\030\002 \001(\r\022\036\n\rfish_pool_pos\030\003 \001" +
       "(\0132\007.Vector\022\033\n\023fish_pool_gadget_id\030\004 \001(\r" +
-      "\022\033\n\023Unk2700_HIPFHKFMBBE\030\005 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\022\027\n\017last_shock_time\030\005 \001(\rB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -946,7 +946,7 @@ public final class SceneFishInfoOuterClass {
     internal_static_SceneFishInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneFishInfo_descriptor,
-        new java.lang.String[] { "FishId", "FishPoolEntityId", "FishPoolPos", "FishPoolGadgetId", "Unk2700HIPFHKFMBBE", });
+        new java.lang.String[] { "FishId", "FishPoolEntityId", "FishPoolPos", "FishPoolGadgetId", "LastShockTime", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

@@ -19,7 +19,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -32,10 +32,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4290
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4298;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UseWidgetCreateGadgetRsp}
@@ -82,14 +85,14 @@ public final class UseWidgetCreateGadgetRspOuterClass {
             case 0:
               done = true;
               break;
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
             case 96: {
 
               materialId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -124,10 +127,10 @@ public final class UseWidgetCreateGadgetRspOuterClass {
               emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp.class, emu.grasscutter.net.proto.UseWidgetCreateGadgetRspOuterClass.UseWidgetCreateGadgetRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -160,11 +163,11 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
+      }
       if (materialId_ != 0) {
         output.writeUInt32(12, materialId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +178,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
+      }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, materialId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +317,13 @@ public final class UseWidgetCreateGadgetRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4290
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4298;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UseWidgetCreateGadgetRsp}
@@ -474,7 +480,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,7 +488,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -493,7 +499,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -601,7 +607,7 @@ public final class UseWidgetCreateGadgetRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036UseWidgetCreateGadgetRsp.proto\"@\n\030UseW" +
-      "idgetCreateGadgetRsp\022\017\n\007retcode\030\017 \001(\005\022\023\n" +
+      "idgetCreateGadgetRsp\022\017\n\007retcode\030\n \001(\005\022\023\n" +
       "\013material_id\030\014 \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };

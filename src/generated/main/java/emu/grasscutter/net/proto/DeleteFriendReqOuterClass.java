@@ -19,17 +19,21 @@ public final class DeleteFriendReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 13;</code>
+     * <code>uint32 target_uid = 6;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4031
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4027;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code DeleteFriendReq}
@@ -76,7 +80,7 @@ public final class DeleteFriendReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -113,10 +117,10 @@ public final class DeleteFriendReqOuterClass {
               emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.class, emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 13;
+    public static final int TARGET_UID_FIELD_NUMBER = 6;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 13;</code>
+     * <code>uint32 target_uid = 6;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -139,7 +143,7 @@ public final class DeleteFriendReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(13, targetUid_);
+        output.writeUInt32(6, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +156,7 @@ public final class DeleteFriendReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, targetUid_);
+          .computeUInt32Size(6, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +285,14 @@ public final class DeleteFriendReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4031
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4027;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code DeleteFriendReq}
@@ -435,7 +443,7 @@ public final class DeleteFriendReqOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -443,7 +451,7 @@ public final class DeleteFriendReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -454,7 +462,7 @@ public final class DeleteFriendReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 13;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -531,7 +539,7 @@ public final class DeleteFriendReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025DeleteFriendReq.proto\"%\n\017DeleteFriendR" +
-      "eq\022\022\n\ntarget_uid\030\r \001(\rB\033\n\031emu.grasscutte" +
+      "eq\022\022\n\ntarget_uid\030\006 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

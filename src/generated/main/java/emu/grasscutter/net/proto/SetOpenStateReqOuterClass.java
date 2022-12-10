@@ -19,23 +19,27 @@ public final class SetOpenStateReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 key = 12;</code>
+     * <code>uint32 key = 10;</code>
      * @return The key.
      */
     int getKey();
 
     /**
-     * <code>uint32 value = 5;</code>
+     * <code>uint32 value = 12;</code>
      * @return The value.
      */
     int getValue();
   }
   /**
    * <pre>
-   * CmdId: 165
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 189;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SetOpenStateReq}
@@ -82,14 +86,14 @@ public final class SetOpenStateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 80: {
 
-              value_ = input.readUInt32();
+              key_ = input.readUInt32();
               break;
             }
             case 96: {
 
-              key_ = input.readUInt32();
+              value_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,10 +128,10 @@ public final class SetOpenStateReqOuterClass {
               emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.class, emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.Builder.class);
     }
 
-    public static final int KEY_FIELD_NUMBER = 12;
+    public static final int KEY_FIELD_NUMBER = 10;
     private int key_;
     /**
-     * <code>uint32 key = 12;</code>
+     * <code>uint32 key = 10;</code>
      * @return The key.
      */
     @java.lang.Override
@@ -135,10 +139,10 @@ public final class SetOpenStateReqOuterClass {
       return key_;
     }
 
-    public static final int VALUE_FIELD_NUMBER = 5;
+    public static final int VALUE_FIELD_NUMBER = 12;
     private int value_;
     /**
-     * <code>uint32 value = 5;</code>
+     * <code>uint32 value = 12;</code>
      * @return The value.
      */
     @java.lang.Override
@@ -160,11 +164,11 @@ public final class SetOpenStateReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0) {
-        output.writeUInt32(5, value_);
-      }
       if (key_ != 0) {
-        output.writeUInt32(12, key_);
+        output.writeUInt32(10, key_);
+      }
+      if (value_ != 0) {
+        output.writeUInt32(12, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +179,13 @@ public final class SetOpenStateReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, value_);
-      }
       if (key_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, key_);
+          .computeUInt32Size(10, key_);
+      }
+      if (value_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +318,14 @@ public final class SetOpenStateReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 165
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 189;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SetOpenStateReq}
@@ -474,7 +482,7 @@ public final class SetOpenStateReqOuterClass {
 
       private int key_ ;
       /**
-       * <code>uint32 key = 12;</code>
+       * <code>uint32 key = 10;</code>
        * @return The key.
        */
       @java.lang.Override
@@ -482,7 +490,7 @@ public final class SetOpenStateReqOuterClass {
         return key_;
       }
       /**
-       * <code>uint32 key = 12;</code>
+       * <code>uint32 key = 10;</code>
        * @param value The key to set.
        * @return This builder for chaining.
        */
@@ -493,7 +501,7 @@ public final class SetOpenStateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 key = 12;</code>
+       * <code>uint32 key = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearKey() {
@@ -505,7 +513,7 @@ public final class SetOpenStateReqOuterClass {
 
       private int value_ ;
       /**
-       * <code>uint32 value = 5;</code>
+       * <code>uint32 value = 12;</code>
        * @return The value.
        */
       @java.lang.Override
@@ -513,7 +521,7 @@ public final class SetOpenStateReqOuterClass {
         return value_;
       }
       /**
-       * <code>uint32 value = 5;</code>
+       * <code>uint32 value = 12;</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
@@ -524,7 +532,7 @@ public final class SetOpenStateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 value = 5;</code>
+       * <code>uint32 value = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
@@ -601,7 +609,7 @@ public final class SetOpenStateReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025SetOpenStateReq.proto\"-\n\017SetOpenStateR" +
-      "eq\022\013\n\003key\030\014 \001(\r\022\r\n\005value\030\005 \001(\rB\033\n\031emu.gr" +
+      "eq\022\013\n\003key\030\n \001(\r\022\r\n\005value\030\014 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

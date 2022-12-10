@@ -19,29 +19,32 @@ public final class ChangeGameTimeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 extra_days = 5;</code>
+     * <code>uint32 extra_days = 2;</code>
      * @return The extraDays.
      */
     int getExtraDays();
 
     /**
-     * <code>uint32 cur_game_time = 14;</code>
+     * <code>uint32 cur_game_time = 8;</code>
      * @return The curGameTime.
      */
     int getCurGameTime();
   }
   /**
    * <pre>
-   * CmdId: 199
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 157;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code ChangeGameTimeRsp}
@@ -88,19 +91,19 @@ public final class ChangeGameTimeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               extraDays_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              retcode_ = input.readInt32();
+              curGameTime_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
-              curGameTime_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -135,10 +138,10 @@ public final class ChangeGameTimeRspOuterClass {
               emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.class, emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -146,10 +149,10 @@ public final class ChangeGameTimeRspOuterClass {
       return retcode_;
     }
 
-    public static final int EXTRA_DAYS_FIELD_NUMBER = 5;
+    public static final int EXTRA_DAYS_FIELD_NUMBER = 2;
     private int extraDays_;
     /**
-     * <code>uint32 extra_days = 5;</code>
+     * <code>uint32 extra_days = 2;</code>
      * @return The extraDays.
      */
     @java.lang.Override
@@ -157,10 +160,10 @@ public final class ChangeGameTimeRspOuterClass {
       return extraDays_;
     }
 
-    public static final int CUR_GAME_TIME_FIELD_NUMBER = 14;
+    public static final int CUR_GAME_TIME_FIELD_NUMBER = 8;
     private int curGameTime_;
     /**
-     * <code>uint32 cur_game_time = 14;</code>
+     * <code>uint32 cur_game_time = 8;</code>
      * @return The curGameTime.
      */
     @java.lang.Override
@@ -183,13 +186,13 @@ public final class ChangeGameTimeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (extraDays_ != 0) {
-        output.writeUInt32(5, extraDays_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeUInt32(2, extraDays_);
       }
       if (curGameTime_ != 0) {
-        output.writeUInt32(14, curGameTime_);
+        output.writeUInt32(8, curGameTime_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -202,15 +205,15 @@ public final class ChangeGameTimeRspOuterClass {
       size = 0;
       if (extraDays_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, extraDays_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeUInt32Size(2, extraDays_);
       }
       if (curGameTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, curGameTime_);
+          .computeUInt32Size(8, curGameTime_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,10 +350,13 @@ public final class ChangeGameTimeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 199
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 157;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code ChangeGameTimeRsp}
@@ -513,7 +519,7 @@ public final class ChangeGameTimeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -521,7 +527,7 @@ public final class ChangeGameTimeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -532,7 +538,7 @@ public final class ChangeGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -544,7 +550,7 @@ public final class ChangeGameTimeRspOuterClass {
 
       private int extraDays_ ;
       /**
-       * <code>uint32 extra_days = 5;</code>
+       * <code>uint32 extra_days = 2;</code>
        * @return The extraDays.
        */
       @java.lang.Override
@@ -552,7 +558,7 @@ public final class ChangeGameTimeRspOuterClass {
         return extraDays_;
       }
       /**
-       * <code>uint32 extra_days = 5;</code>
+       * <code>uint32 extra_days = 2;</code>
        * @param value The extraDays to set.
        * @return This builder for chaining.
        */
@@ -563,7 +569,7 @@ public final class ChangeGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 extra_days = 5;</code>
+       * <code>uint32 extra_days = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearExtraDays() {
@@ -575,7 +581,7 @@ public final class ChangeGameTimeRspOuterClass {
 
       private int curGameTime_ ;
       /**
-       * <code>uint32 cur_game_time = 14;</code>
+       * <code>uint32 cur_game_time = 8;</code>
        * @return The curGameTime.
        */
       @java.lang.Override
@@ -583,7 +589,7 @@ public final class ChangeGameTimeRspOuterClass {
         return curGameTime_;
       }
       /**
-       * <code>uint32 cur_game_time = 14;</code>
+       * <code>uint32 cur_game_time = 8;</code>
        * @param value The curGameTime to set.
        * @return This builder for chaining.
        */
@@ -594,7 +600,7 @@ public final class ChangeGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_game_time = 14;</code>
+       * <code>uint32 cur_game_time = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurGameTime() {
@@ -671,8 +677,8 @@ public final class ChangeGameTimeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ChangeGameTimeRsp.proto\"O\n\021ChangeGameT" +
-      "imeRsp\022\017\n\007retcode\030\010 \001(\005\022\022\n\nextra_days\030\005 " +
-      "\001(\r\022\025\n\rcur_game_time\030\016 \001(\rB\033\n\031emu.grassc" +
+      "imeRsp\022\017\n\007retcode\030\n \001(\005\022\022\n\nextra_days\030\002 " +
+      "\001(\r\022\025\n\rcur_game_time\030\010 \001(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

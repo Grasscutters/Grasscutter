@@ -19,17 +19,20 @@ public final class HomeBlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 end_time = 3;</code>
+     * <code>uint32 end_time = 10;</code>
      * @return The endTime.
      */
     int getEndTime();
   }
   /**
    * <pre>
-   * CmdId: 4543
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4679;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code HomeBlockNotify}
@@ -76,7 +79,7 @@ public final class HomeBlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 80: {
 
               endTime_ = input.readUInt32();
               break;
@@ -113,10 +116,10 @@ public final class HomeBlockNotifyOuterClass {
               emu.grasscutter.net.proto.HomeBlockNotifyOuterClass.HomeBlockNotify.class, emu.grasscutter.net.proto.HomeBlockNotifyOuterClass.HomeBlockNotify.Builder.class);
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 3;
+    public static final int END_TIME_FIELD_NUMBER = 10;
     private int endTime_;
     /**
-     * <code>uint32 end_time = 3;</code>
+     * <code>uint32 end_time = 10;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -139,7 +142,7 @@ public final class HomeBlockNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (endTime_ != 0) {
-        output.writeUInt32(3, endTime_);
+        output.writeUInt32(10, endTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +155,7 @@ public final class HomeBlockNotifyOuterClass {
       size = 0;
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, endTime_);
+          .computeUInt32Size(10, endTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +284,13 @@ public final class HomeBlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4543
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4679;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code HomeBlockNotify}
@@ -435,7 +441,7 @@ public final class HomeBlockNotifyOuterClass {
 
       private int endTime_ ;
       /**
-       * <code>uint32 end_time = 3;</code>
+       * <code>uint32 end_time = 10;</code>
        * @return The endTime.
        */
       @java.lang.Override
@@ -443,7 +449,7 @@ public final class HomeBlockNotifyOuterClass {
         return endTime_;
       }
       /**
-       * <code>uint32 end_time = 3;</code>
+       * <code>uint32 end_time = 10;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
        */
@@ -454,7 +460,7 @@ public final class HomeBlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 end_time = 3;</code>
+       * <code>uint32 end_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -531,7 +537,7 @@ public final class HomeBlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025HomeBlockNotify.proto\"#\n\017HomeBlockNoti" +
-      "fy\022\020\n\010end_time\030\003 \001(\rB\033\n\031emu.grasscutter." +
+      "fy\022\020\n\010end_time\030\n \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

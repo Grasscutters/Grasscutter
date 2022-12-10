@@ -19,45 +19,48 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
-     * @return A list containing the delQuestIdList.
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+     * @return A list containing the unk3300MGBDKFMBGBO.
      */
-    java.util.List<java.lang.Integer> getDelQuestIdListList();
+    java.util.List<java.lang.Integer> getUnk3300MGBDKFMBGBOList();
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
-     * @return The count of delQuestIdList.
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+     * @return The count of unk3300MGBDKFMBGBO.
      */
-    int getDelQuestIdListCount();
+    int getUnk3300MGBDKFMBGBOCount();
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
      * @param index The index of the element to return.
-     * @return The delQuestIdList at the given index.
+     * @return The unk3300MGBDKFMBGBO at the given index.
      */
-    int getDelQuestIdList(int index);
+    int getUnk3300MGBDKFMBGBO(int index);
 
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
-     * @return A list containing the addQuestIdList.
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+     * @return A list containing the unk3300HIEMKEJOFPO.
      */
-    java.util.List<java.lang.Integer> getAddQuestIdListList();
+    java.util.List<java.lang.Integer> getUnk3300HIEMKEJOFPOList();
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
-     * @return The count of addQuestIdList.
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+     * @return The count of unk3300HIEMKEJOFPO.
      */
-    int getAddQuestIdListCount();
+    int getUnk3300HIEMKEJOFPOCount();
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
      * @param index The index of the element to return.
-     * @return The addQuestIdList at the given index.
+     * @return The unk3300HIEMKEJOFPO at the given index.
      */
-    int getAddQuestIdList(int index);
+    int getUnk3300HIEMKEJOFPO(int index);
   }
   /**
    * <pre>
-   * CmdId: 406
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 410;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code ServerCondMeetQuestListUpdateNotify}
@@ -72,8 +75,8 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       super(builder);
     }
     private ServerCondMeetQuestListUpdateNotify() {
-      delQuestIdList_ = emptyIntList();
-      addQuestIdList_ = emptyIntList();
+      unk3300MGBDKFMBGBO_ = emptyIntList();
+      unk3300HIEMKEJOFPO_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -107,44 +110,44 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                delQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300HIEMKEJOFPO_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
-              delQuestIdList_.addInt(input.readUInt32());
+              unk3300HIEMKEJOFPO_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                delQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300HIEMKEJOFPO_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                delQuestIdList_.addInt(input.readUInt32());
+                unk3300HIEMKEJOFPO_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                addQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300MGBDKFMBGBO_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
-              addQuestIdList_.addInt(input.readUInt32());
+              unk3300MGBDKFMBGBO_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                addQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                unk3300MGBDKFMBGBO_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                addQuestIdList_.addInt(input.readUInt32());
+                unk3300MGBDKFMBGBO_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -164,11 +167,11 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          delQuestIdList_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          addQuestIdList_.makeImmutable(); // C
+          unk3300HIEMKEJOFPO_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3300MGBDKFMBGBO_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -187,61 +190,61 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify.class, emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify.Builder.class);
     }
 
-    public static final int DEL_QUEST_ID_LIST_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.IntList delQuestIdList_;
+    public static final int UNK3300_MGBDKFMBGBO_FIELD_NUMBER = 10;
+    private com.google.protobuf.Internal.IntList unk3300MGBDKFMBGBO_;
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
-     * @return A list containing the delQuestIdList.
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+     * @return A list containing the unk3300MGBDKFMBGBO.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getDelQuestIdListList() {
-      return delQuestIdList_;
+        getUnk3300MGBDKFMBGBOList() {
+      return unk3300MGBDKFMBGBO_;
     }
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
-     * @return The count of delQuestIdList.
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+     * @return The count of unk3300MGBDKFMBGBO.
      */
-    public int getDelQuestIdListCount() {
-      return delQuestIdList_.size();
+    public int getUnk3300MGBDKFMBGBOCount() {
+      return unk3300MGBDKFMBGBO_.size();
     }
     /**
-     * <code>repeated uint32 del_quest_id_list = 1;</code>
+     * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
      * @param index The index of the element to return.
-     * @return The delQuestIdList at the given index.
+     * @return The unk3300MGBDKFMBGBO at the given index.
      */
-    public int getDelQuestIdList(int index) {
-      return delQuestIdList_.getInt(index);
+    public int getUnk3300MGBDKFMBGBO(int index) {
+      return unk3300MGBDKFMBGBO_.getInt(index);
     }
-    private int delQuestIdListMemoizedSerializedSize = -1;
+    private int unk3300MGBDKFMBGBOMemoizedSerializedSize = -1;
 
-    public static final int ADD_QUEST_ID_LIST_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList addQuestIdList_;
+    public static final int UNK3300_HIEMKEJOFPO_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.IntList unk3300HIEMKEJOFPO_;
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
-     * @return A list containing the addQuestIdList.
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+     * @return A list containing the unk3300HIEMKEJOFPO.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getAddQuestIdListList() {
-      return addQuestIdList_;
+        getUnk3300HIEMKEJOFPOList() {
+      return unk3300HIEMKEJOFPO_;
     }
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
-     * @return The count of addQuestIdList.
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+     * @return The count of unk3300HIEMKEJOFPO.
      */
-    public int getAddQuestIdListCount() {
-      return addQuestIdList_.size();
+    public int getUnk3300HIEMKEJOFPOCount() {
+      return unk3300HIEMKEJOFPO_.size();
     }
     /**
-     * <code>repeated uint32 add_quest_id_list = 12;</code>
+     * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
      * @param index The index of the element to return.
-     * @return The addQuestIdList at the given index.
+     * @return The unk3300HIEMKEJOFPO at the given index.
      */
-    public int getAddQuestIdList(int index) {
-      return addQuestIdList_.getInt(index);
+    public int getUnk3300HIEMKEJOFPO(int index) {
+      return unk3300HIEMKEJOFPO_.getInt(index);
     }
-    private int addQuestIdListMemoizedSerializedSize = -1;
+    private int unk3300HIEMKEJOFPOMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -258,19 +261,19 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getDelQuestIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
-        output.writeUInt32NoTag(delQuestIdListMemoizedSerializedSize);
+      if (getUnk3300HIEMKEJOFPOList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(unk3300HIEMKEJOFPOMemoizedSerializedSize);
       }
-      for (int i = 0; i < delQuestIdList_.size(); i++) {
-        output.writeUInt32NoTag(delQuestIdList_.getInt(i));
+      for (int i = 0; i < unk3300HIEMKEJOFPO_.size(); i++) {
+        output.writeUInt32NoTag(unk3300HIEMKEJOFPO_.getInt(i));
       }
-      if (getAddQuestIdListList().size() > 0) {
-        output.writeUInt32NoTag(98);
-        output.writeUInt32NoTag(addQuestIdListMemoizedSerializedSize);
+      if (getUnk3300MGBDKFMBGBOList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(unk3300MGBDKFMBGBOMemoizedSerializedSize);
       }
-      for (int i = 0; i < addQuestIdList_.size(); i++) {
-        output.writeUInt32NoTag(addQuestIdList_.getInt(i));
+      for (int i = 0; i < unk3300MGBDKFMBGBO_.size(); i++) {
+        output.writeUInt32NoTag(unk3300MGBDKFMBGBO_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -283,31 +286,31 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < delQuestIdList_.size(); i++) {
+        for (int i = 0; i < unk3300HIEMKEJOFPO_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(delQuestIdList_.getInt(i));
+            .computeUInt32SizeNoTag(unk3300HIEMKEJOFPO_.getInt(i));
         }
         size += dataSize;
-        if (!getDelQuestIdListList().isEmpty()) {
+        if (!getUnk3300HIEMKEJOFPOList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        delQuestIdListMemoizedSerializedSize = dataSize;
+        unk3300HIEMKEJOFPOMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < addQuestIdList_.size(); i++) {
+        for (int i = 0; i < unk3300MGBDKFMBGBO_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(addQuestIdList_.getInt(i));
+            .computeUInt32SizeNoTag(unk3300MGBDKFMBGBO_.getInt(i));
         }
         size += dataSize;
-        if (!getAddQuestIdListList().isEmpty()) {
+        if (!getUnk3300MGBDKFMBGBOList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        addQuestIdListMemoizedSerializedSize = dataSize;
+        unk3300MGBDKFMBGBOMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -324,10 +327,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify other = (emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify) obj;
 
-      if (!getDelQuestIdListList()
-          .equals(other.getDelQuestIdListList())) return false;
-      if (!getAddQuestIdListList()
-          .equals(other.getAddQuestIdListList())) return false;
+      if (!getUnk3300MGBDKFMBGBOList()
+          .equals(other.getUnk3300MGBDKFMBGBOList())) return false;
+      if (!getUnk3300HIEMKEJOFPOList()
+          .equals(other.getUnk3300HIEMKEJOFPOList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -339,13 +342,13 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getDelQuestIdListCount() > 0) {
-        hash = (37 * hash) + DEL_QUEST_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getDelQuestIdListList().hashCode();
+      if (getUnk3300MGBDKFMBGBOCount() > 0) {
+        hash = (37 * hash) + UNK3300_MGBDKFMBGBO_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3300MGBDKFMBGBOList().hashCode();
       }
-      if (getAddQuestIdListCount() > 0) {
-        hash = (37 * hash) + ADD_QUEST_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getAddQuestIdListList().hashCode();
+      if (getUnk3300HIEMKEJOFPOCount() > 0) {
+        hash = (37 * hash) + UNK3300_HIEMKEJOFPO_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3300HIEMKEJOFPOList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -444,10 +447,13 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 406
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 410;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code ServerCondMeetQuestListUpdateNotify}
@@ -487,9 +493,9 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        delQuestIdList_ = emptyIntList();
+        unk3300MGBDKFMBGBO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        addQuestIdList_ = emptyIntList();
+        unk3300HIEMKEJOFPO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -519,15 +525,15 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify result = new emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          delQuestIdList_.makeImmutable();
+          unk3300MGBDKFMBGBO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.delQuestIdList_ = delQuestIdList_;
+        result.unk3300MGBDKFMBGBO_ = unk3300MGBDKFMBGBO_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          addQuestIdList_.makeImmutable();
+          unk3300HIEMKEJOFPO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.addQuestIdList_ = addQuestIdList_;
+        result.unk3300HIEMKEJOFPO_ = unk3300HIEMKEJOFPO_;
         onBuilt();
         return result;
       }
@@ -576,23 +582,23 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify other) {
         if (other == emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify.getDefaultInstance()) return this;
-        if (!other.delQuestIdList_.isEmpty()) {
-          if (delQuestIdList_.isEmpty()) {
-            delQuestIdList_ = other.delQuestIdList_;
+        if (!other.unk3300MGBDKFMBGBO_.isEmpty()) {
+          if (unk3300MGBDKFMBGBO_.isEmpty()) {
+            unk3300MGBDKFMBGBO_ = other.unk3300MGBDKFMBGBO_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureDelQuestIdListIsMutable();
-            delQuestIdList_.addAll(other.delQuestIdList_);
+            ensureUnk3300MGBDKFMBGBOIsMutable();
+            unk3300MGBDKFMBGBO_.addAll(other.unk3300MGBDKFMBGBO_);
           }
           onChanged();
         }
-        if (!other.addQuestIdList_.isEmpty()) {
-          if (addQuestIdList_.isEmpty()) {
-            addQuestIdList_ = other.addQuestIdList_;
+        if (!other.unk3300HIEMKEJOFPO_.isEmpty()) {
+          if (unk3300HIEMKEJOFPO_.isEmpty()) {
+            unk3300HIEMKEJOFPO_ = other.unk3300HIEMKEJOFPO_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureAddQuestIdListIsMutable();
-            addQuestIdList_.addAll(other.addQuestIdList_);
+            ensureUnk3300HIEMKEJOFPOIsMutable();
+            unk3300HIEMKEJOFPO_.addAll(other.unk3300HIEMKEJOFPO_);
           }
           onChanged();
         }
@@ -626,159 +632,159 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList delQuestIdList_ = emptyIntList();
-      private void ensureDelQuestIdListIsMutable() {
+      private com.google.protobuf.Internal.IntList unk3300MGBDKFMBGBO_ = emptyIntList();
+      private void ensureUnk3300MGBDKFMBGBOIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          delQuestIdList_ = mutableCopy(delQuestIdList_);
+          unk3300MGBDKFMBGBO_ = mutableCopy(unk3300MGBDKFMBGBO_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
-       * @return A list containing the delQuestIdList.
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+       * @return A list containing the unk3300MGBDKFMBGBO.
        */
       public java.util.List<java.lang.Integer>
-          getDelQuestIdListList() {
+          getUnk3300MGBDKFMBGBOList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(delQuestIdList_) : delQuestIdList_;
+                 java.util.Collections.unmodifiableList(unk3300MGBDKFMBGBO_) : unk3300MGBDKFMBGBO_;
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
-       * @return The count of delQuestIdList.
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+       * @return The count of unk3300MGBDKFMBGBO.
        */
-      public int getDelQuestIdListCount() {
-        return delQuestIdList_.size();
+      public int getUnk3300MGBDKFMBGBOCount() {
+        return unk3300MGBDKFMBGBO_.size();
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
        * @param index The index of the element to return.
-       * @return The delQuestIdList at the given index.
+       * @return The unk3300MGBDKFMBGBO at the given index.
        */
-      public int getDelQuestIdList(int index) {
-        return delQuestIdList_.getInt(index);
+      public int getUnk3300MGBDKFMBGBO(int index) {
+        return unk3300MGBDKFMBGBO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
        * @param index The index to set the value at.
-       * @param value The delQuestIdList to set.
+       * @param value The unk3300MGBDKFMBGBO to set.
        * @return This builder for chaining.
        */
-      public Builder setDelQuestIdList(
+      public Builder setUnk3300MGBDKFMBGBO(
           int index, int value) {
-        ensureDelQuestIdListIsMutable();
-        delQuestIdList_.setInt(index, value);
+        ensureUnk3300MGBDKFMBGBOIsMutable();
+        unk3300MGBDKFMBGBO_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
-       * @param value The delQuestIdList to add.
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+       * @param value The unk3300MGBDKFMBGBO to add.
        * @return This builder for chaining.
        */
-      public Builder addDelQuestIdList(int value) {
-        ensureDelQuestIdListIsMutable();
-        delQuestIdList_.addInt(value);
+      public Builder addUnk3300MGBDKFMBGBO(int value) {
+        ensureUnk3300MGBDKFMBGBOIsMutable();
+        unk3300MGBDKFMBGBO_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
-       * @param values The delQuestIdList to add.
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
+       * @param values The unk3300MGBDKFMBGBO to add.
        * @return This builder for chaining.
        */
-      public Builder addAllDelQuestIdList(
+      public Builder addAllUnk3300MGBDKFMBGBO(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureDelQuestIdListIsMutable();
+        ensureUnk3300MGBDKFMBGBOIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, delQuestIdList_);
+            values, unk3300MGBDKFMBGBO_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 del_quest_id_list = 1;</code>
+       * <code>repeated uint32 Unk3300_MGBDKFMBGBO = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDelQuestIdList() {
-        delQuestIdList_ = emptyIntList();
+      public Builder clearUnk3300MGBDKFMBGBO() {
+        unk3300MGBDKFMBGBO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList addQuestIdList_ = emptyIntList();
-      private void ensureAddQuestIdListIsMutable() {
+      private com.google.protobuf.Internal.IntList unk3300HIEMKEJOFPO_ = emptyIntList();
+      private void ensureUnk3300HIEMKEJOFPOIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          addQuestIdList_ = mutableCopy(addQuestIdList_);
+          unk3300HIEMKEJOFPO_ = mutableCopy(unk3300HIEMKEJOFPO_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
-       * @return A list containing the addQuestIdList.
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+       * @return A list containing the unk3300HIEMKEJOFPO.
        */
       public java.util.List<java.lang.Integer>
-          getAddQuestIdListList() {
+          getUnk3300HIEMKEJOFPOList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(addQuestIdList_) : addQuestIdList_;
+                 java.util.Collections.unmodifiableList(unk3300HIEMKEJOFPO_) : unk3300HIEMKEJOFPO_;
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
-       * @return The count of addQuestIdList.
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+       * @return The count of unk3300HIEMKEJOFPO.
        */
-      public int getAddQuestIdListCount() {
-        return addQuestIdList_.size();
+      public int getUnk3300HIEMKEJOFPOCount() {
+        return unk3300HIEMKEJOFPO_.size();
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
        * @param index The index of the element to return.
-       * @return The addQuestIdList at the given index.
+       * @return The unk3300HIEMKEJOFPO at the given index.
        */
-      public int getAddQuestIdList(int index) {
-        return addQuestIdList_.getInt(index);
+      public int getUnk3300HIEMKEJOFPO(int index) {
+        return unk3300HIEMKEJOFPO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
        * @param index The index to set the value at.
-       * @param value The addQuestIdList to set.
+       * @param value The unk3300HIEMKEJOFPO to set.
        * @return This builder for chaining.
        */
-      public Builder setAddQuestIdList(
+      public Builder setUnk3300HIEMKEJOFPO(
           int index, int value) {
-        ensureAddQuestIdListIsMutable();
-        addQuestIdList_.setInt(index, value);
+        ensureUnk3300HIEMKEJOFPOIsMutable();
+        unk3300HIEMKEJOFPO_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
-       * @param value The addQuestIdList to add.
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+       * @param value The unk3300HIEMKEJOFPO to add.
        * @return This builder for chaining.
        */
-      public Builder addAddQuestIdList(int value) {
-        ensureAddQuestIdListIsMutable();
-        addQuestIdList_.addInt(value);
+      public Builder addUnk3300HIEMKEJOFPO(int value) {
+        ensureUnk3300HIEMKEJOFPOIsMutable();
+        unk3300HIEMKEJOFPO_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
-       * @param values The addQuestIdList to add.
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
+       * @param values The unk3300HIEMKEJOFPO to add.
        * @return This builder for chaining.
        */
-      public Builder addAllAddQuestIdList(
+      public Builder addAllUnk3300HIEMKEJOFPO(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureAddQuestIdListIsMutable();
+        ensureUnk3300HIEMKEJOFPOIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, addQuestIdList_);
+            values, unk3300HIEMKEJOFPO_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 add_quest_id_list = 12;</code>
+       * <code>repeated uint32 Unk3300_HIEMKEJOFPO = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAddQuestIdList() {
-        addQuestIdList_ = emptyIntList();
+      public Builder clearUnk3300HIEMKEJOFPO() {
+        unk3300HIEMKEJOFPO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -851,10 +857,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)ServerCondMeetQuestListUpdateNotify.pr" +
-      "oto\"[\n#ServerCondMeetQuestListUpdateNoti" +
-      "fy\022\031\n\021del_quest_id_list\030\001 \003(\r\022\031\n\021add_que" +
-      "st_id_list\030\014 \003(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "oto\"_\n#ServerCondMeetQuestListUpdateNoti" +
+      "fy\022\033\n\023Unk3300_MGBDKFMBGBO\030\n \003(\r\022\033\n\023Unk33" +
+      "00_HIEMKEJOFPO\030\004 \003(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -865,7 +871,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     internal_static_ServerCondMeetQuestListUpdateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerCondMeetQuestListUpdateNotify_descriptor,
-        new java.lang.String[] { "DelQuestIdList", "AddQuestIdList", });
+        new java.lang.String[] { "Unk3300MGBDKFMBGBO", "Unk3300HIEMKEJOFPO", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

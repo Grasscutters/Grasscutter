@@ -436,7 +436,7 @@ public final class AbilityScalarValueEntryOuterClass {
       if (key_ != null) {
         output.writeMessage(1, getKey());
       }
-      if (valueType_ != emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType.ABILITY_SCALAR_TYPE_UNKNOW.getNumber()) {
+      if (valueType_ != emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType.ABILITY_SCALAR_TYPE_UNKNOWN.getNumber()) {
         output.writeEnum(2, valueType_);
       }
       if (valueCase_ == 3) {
@@ -467,7 +467,7 @@ public final class AbilityScalarValueEntryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getKey());
       }
-      if (valueType_ != emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType.ABILITY_SCALAR_TYPE_UNKNOW.getNumber()) {
+      if (valueType_ != emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType.ABILITY_SCALAR_TYPE_UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, valueType_);
       }

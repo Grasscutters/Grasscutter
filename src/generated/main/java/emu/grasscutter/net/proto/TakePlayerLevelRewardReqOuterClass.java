@@ -19,17 +19,21 @@ public final class TakePlayerLevelRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 3;</code>
+     * <code>uint32 level = 15;</code>
      * @return The level.
      */
     int getLevel();
   }
   /**
    * <pre>
-   * CmdId: 129
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 120;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code TakePlayerLevelRewardReq}
@@ -76,7 +80,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 120: {
 
               level_ = input.readUInt32();
               break;
@@ -113,10 +117,10 @@ public final class TakePlayerLevelRewardReqOuterClass {
               emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq.class, emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 3;
+    public static final int LEVEL_FIELD_NUMBER = 15;
     private int level_;
     /**
-     * <code>uint32 level = 3;</code>
+     * <code>uint32 level = 15;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -139,7 +143,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (level_ != 0) {
-        output.writeUInt32(3, level_);
+        output.writeUInt32(15, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +156,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, level_);
+          .computeUInt32Size(15, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +285,14 @@ public final class TakePlayerLevelRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 129
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 120;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code TakePlayerLevelRewardReq}
@@ -435,7 +443,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
 
       private int level_ ;
       /**
-       * <code>uint32 level = 3;</code>
+       * <code>uint32 level = 15;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -443,7 +451,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 3;</code>
+       * <code>uint32 level = 15;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -454,7 +462,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 3;</code>
+       * <code>uint32 level = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -531,7 +539,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036TakePlayerLevelRewardReq.proto\")\n\030Take" +
-      "PlayerLevelRewardReq\022\r\n\005level\030\003 \001(\rB\033\n\031e" +
+      "PlayerLevelRewardReq\022\r\n\005level\030\017 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

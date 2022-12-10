@@ -64,21 +64,21 @@ public final class PlatformTypeOuterClass {
      */
     PLATFORM_TYPE_CLOUD_TV(10),
     /**
-     * <code>PLATFORM_TYPE_Unk2700_IBBEKBJLMAJ = 11;</code>
+     * <code>PLATFORM_TYPE_CLOUD_MAC = 11;</code>
      */
-    PLATFORM_TYPE_Unk2700_IBBEKBJLMAJ(11),
+    PLATFORM_TYPE_CLOUD_MAC(11),
     /**
-     * <code>PLATFORM_TYPE_Unk2700_BCEICMDNIIG = 12;</code>
+     * <code>PLATFORM_TYPE_CLOUD_PC = 12;</code>
      */
-    PLATFORM_TYPE_Unk2700_BCEICMDNIIG(12),
+    PLATFORM_TYPE_CLOUD_PC(12),
     /**
-     * <code>PLATFORM_TYPE_Unk2800_EFNGHFNPMKM = 13;</code>
+     * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE = 13;</code>
      */
-    PLATFORM_TYPE_Unk2800_EFNGHFNPMKM(13),
+    PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE(13),
     /**
-     * <code>PLATFORM_TYPE_Unk2800_FNFHGPABLFB = 14;</code>
+     * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC = 14;</code>
      */
-    PLATFORM_TYPE_Unk2800_FNFHGPABLFB(14),
+    PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -127,21 +127,21 @@ public final class PlatformTypeOuterClass {
      */
     public static final int PLATFORM_TYPE_CLOUD_TV_VALUE = 10;
     /**
-     * <code>PLATFORM_TYPE_Unk2700_IBBEKBJLMAJ = 11;</code>
+     * <code>PLATFORM_TYPE_CLOUD_MAC = 11;</code>
      */
-    public static final int PLATFORM_TYPE_Unk2700_IBBEKBJLMAJ_VALUE = 11;
+    public static final int PLATFORM_TYPE_CLOUD_MAC_VALUE = 11;
     /**
-     * <code>PLATFORM_TYPE_Unk2700_BCEICMDNIIG = 12;</code>
+     * <code>PLATFORM_TYPE_CLOUD_PC = 12;</code>
      */
-    public static final int PLATFORM_TYPE_Unk2700_BCEICMDNIIG_VALUE = 12;
+    public static final int PLATFORM_TYPE_CLOUD_PC_VALUE = 12;
     /**
-     * <code>PLATFORM_TYPE_Unk2800_EFNGHFNPMKM = 13;</code>
+     * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE = 13;</code>
      */
-    public static final int PLATFORM_TYPE_Unk2800_EFNGHFNPMKM_VALUE = 13;
+    public static final int PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE_VALUE = 13;
     /**
-     * <code>PLATFORM_TYPE_Unk2800_FNFHGPABLFB = 14;</code>
+     * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC = 14;</code>
      */
-    public static final int PLATFORM_TYPE_Unk2800_FNFHGPABLFB_VALUE = 14;
+    public static final int PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC_VALUE = 14;
 
 
     public final int getNumber() {
@@ -179,10 +179,10 @@ public final class PlatformTypeOuterClass {
         case 8: return PLATFORM_TYPE_PS5;
         case 9: return PLATFORM_TYPE_CLOUD_WEB;
         case 10: return PLATFORM_TYPE_CLOUD_TV;
-        case 11: return PLATFORM_TYPE_Unk2700_IBBEKBJLMAJ;
-        case 12: return PLATFORM_TYPE_Unk2700_BCEICMDNIIG;
-        case 13: return PLATFORM_TYPE_Unk2800_EFNGHFNPMKM;
-        case 14: return PLATFORM_TYPE_Unk2800_FNFHGPABLFB;
+        case 11: return PLATFORM_TYPE_CLOUD_MAC;
+        case 12: return PLATFORM_TYPE_CLOUD_PC;
+        case 13: return PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE;
+        case 14: return PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC;
         default: return null;
       }
     }
@@ -248,7 +248,7 @@ public final class PlatformTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022PlatformType.proto*\313\003\n\014PlatformType\022\030\n" +
+      "\n\022PlatformType.proto*\274\003\n\014PlatformType\022\030\n" +
       "\024PLATFORM_TYPE_EDITOR\020\000\022\025\n\021PLATFORM_TYPE" +
       "_IOS\020\001\022\031\n\025PLATFORM_TYPE_ANDROID\020\002\022\024\n\020PLA" +
       "TFORM_TYPE_PC\020\003\022\025\n\021PLATFORM_TYPE_PS4\020\004\022\030" +
@@ -256,11 +256,11 @@ public final class PlatformTypeOuterClass {
       "E_CLOUD_ANDROID\020\006\022\033\n\027PLATFORM_TYPE_CLOUD" +
       "_IOS\020\007\022\025\n\021PLATFORM_TYPE_PS5\020\010\022\033\n\027PLATFOR" +
       "M_TYPE_CLOUD_WEB\020\t\022\032\n\026PLATFORM_TYPE_CLOU" +
-      "D_TV\020\n\022%\n!PLATFORM_TYPE_Unk2700_IBBEKBJL" +
-      "MAJ\020\013\022%\n!PLATFORM_TYPE_Unk2700_BCEICMDNI" +
-      "IG\020\014\022%\n!PLATFORM_TYPE_Unk2800_EFNGHFNPMK" +
-      "M\020\r\022%\n!PLATFORM_TYPE_Unk2800_FNFHGPABLFB" +
-      "\020\016B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "D_TV\020\n\022\033\n\027PLATFORM_TYPE_CLOUD_MAC\020\013\022\032\n\026P" +
+      "LATFORM_TYPE_CLOUD_PC\020\014\022*\n&PLATFORM_TYPE" +
+      "_CLOUD_THIRD_PARTY_MOBILE\020\r\022&\n\"PLATFORM_" +
+      "TYPE_CLOUD_THIRD_PARTY_PC\020\016B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

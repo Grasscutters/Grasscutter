@@ -19,16 +19,20 @@ public final class CompoundUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 compound_id = 3;</code>
+     * <code>uint32 compound_id = 7;</code>
      * @return The compoundId.
      */
     int getCompoundId();
   }
   /**
    * <pre>
-   * CmdId: 128
-   * EnetChannelId: 0
-   * EnetIsReliable: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 106;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code CompoundUnlockNotify}
@@ -75,7 +79,7 @@ public final class CompoundUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
 
               compoundId_ = input.readUInt32();
               break;
@@ -112,10 +116,10 @@ public final class CompoundUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.CompoundUnlockNotifyOuterClass.CompoundUnlockNotify.class, emu.grasscutter.net.proto.CompoundUnlockNotifyOuterClass.CompoundUnlockNotify.Builder.class);
     }
 
-    public static final int COMPOUND_ID_FIELD_NUMBER = 3;
+    public static final int COMPOUND_ID_FIELD_NUMBER = 7;
     private int compoundId_;
     /**
-     * <code>uint32 compound_id = 3;</code>
+     * <code>uint32 compound_id = 7;</code>
      * @return The compoundId.
      */
     @java.lang.Override
@@ -138,7 +142,7 @@ public final class CompoundUnlockNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (compoundId_ != 0) {
-        output.writeUInt32(3, compoundId_);
+        output.writeUInt32(7, compoundId_);
       }
       unknownFields.writeTo(output);
     }
@@ -151,7 +155,7 @@ public final class CompoundUnlockNotifyOuterClass {
       size = 0;
       if (compoundId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, compoundId_);
+          .computeUInt32Size(7, compoundId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,9 +284,13 @@ public final class CompoundUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 128
-     * EnetChannelId: 0
-     * EnetIsReliable: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 106;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code CompoundUnlockNotify}
@@ -433,7 +441,7 @@ public final class CompoundUnlockNotifyOuterClass {
 
       private int compoundId_ ;
       /**
-       * <code>uint32 compound_id = 3;</code>
+       * <code>uint32 compound_id = 7;</code>
        * @return The compoundId.
        */
       @java.lang.Override
@@ -441,7 +449,7 @@ public final class CompoundUnlockNotifyOuterClass {
         return compoundId_;
       }
       /**
-       * <code>uint32 compound_id = 3;</code>
+       * <code>uint32 compound_id = 7;</code>
        * @param value The compoundId to set.
        * @return This builder for chaining.
        */
@@ -452,7 +460,7 @@ public final class CompoundUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 compound_id = 3;</code>
+       * <code>uint32 compound_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
@@ -529,7 +537,7 @@ public final class CompoundUnlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032CompoundUnlockNotify.proto\"+\n\024Compound" +
-      "UnlockNotify\022\023\n\013compound_id\030\003 \001(\rB\033\n\031emu" +
+      "UnlockNotify\022\023\n\013compound_id\030\007 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

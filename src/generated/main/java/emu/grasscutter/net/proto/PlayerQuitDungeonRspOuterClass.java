@@ -19,23 +19,26 @@ public final class PlayerQuitDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 point_id = 11;</code>
+     * <code>uint32 point_id = 10;</code>
      * @return The pointId.
      */
     int getPointId();
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 921
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 943;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code PlayerQuitDungeonRsp}
@@ -82,12 +85,12 @@ public final class PlayerQuitDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
               pointId_ = input.readUInt32();
               break;
@@ -124,10 +127,10 @@ public final class PlayerQuitDungeonRspOuterClass {
               emu.grasscutter.net.proto.PlayerQuitDungeonRspOuterClass.PlayerQuitDungeonRsp.class, emu.grasscutter.net.proto.PlayerQuitDungeonRspOuterClass.PlayerQuitDungeonRsp.Builder.class);
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 11;
+    public static final int POINT_ID_FIELD_NUMBER = 10;
     private int pointId_;
     /**
-     * <code>uint32 point_id = 11;</code>
+     * <code>uint32 point_id = 10;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -135,10 +138,10 @@ public final class PlayerQuitDungeonRspOuterClass {
       return pointId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -161,10 +164,10 @@ public final class PlayerQuitDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (pointId_ != 0) {
-        output.writeUInt32(11, pointId_);
+        output.writeUInt32(10, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -177,11 +180,11 @@ public final class PlayerQuitDungeonRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, pointId_);
+          .computeUInt32Size(10, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +317,13 @@ public final class PlayerQuitDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 921
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 943;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code PlayerQuitDungeonRsp}
@@ -474,7 +480,7 @@ public final class PlayerQuitDungeonRspOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 point_id = 11;</code>
+       * <code>uint32 point_id = 10;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -482,7 +488,7 @@ public final class PlayerQuitDungeonRspOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 point_id = 11;</code>
+       * <code>uint32 point_id = 10;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -493,7 +499,7 @@ public final class PlayerQuitDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 point_id = 11;</code>
+       * <code>uint32 point_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -505,7 +511,7 @@ public final class PlayerQuitDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -513,7 +519,7 @@ public final class PlayerQuitDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -524,7 +530,7 @@ public final class PlayerQuitDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -601,8 +607,8 @@ public final class PlayerQuitDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032PlayerQuitDungeonRsp.proto\"9\n\024PlayerQu" +
-      "itDungeonRsp\022\020\n\010point_id\030\013 \001(\r\022\017\n\007retcod" +
-      "e\030\007 \001(\005B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "itDungeonRsp\022\020\n\010point_id\030\n \001(\r\022\017\n\007retcod" +
+      "e\030\006 \001(\005B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

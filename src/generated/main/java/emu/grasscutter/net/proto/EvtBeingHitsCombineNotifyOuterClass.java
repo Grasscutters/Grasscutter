@@ -19,46 +19,50 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ForwardType forward_type = 11;</code>
-     * @return The enum numeric value on the wire for forwardType.
-     */
-    int getForwardTypeValue();
-    /**
-     * <code>.ForwardType forward_type = 11;</code>
-     * @return The forwardType.
-     */
-    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
-
-    /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> 
         getEvtBeingHitInfoListList();
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo getEvtBeingHitInfoList(int index);
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     int getEvtBeingHitInfoListCount();
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> 
         getEvtBeingHitInfoListOrBuilderList();
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getEvtBeingHitInfoListOrBuilder(
         int index);
+
+    /**
+     * <code>.ForwardType forward_type = 7;</code>
+     * @return The enum numeric value on the wire for forwardType.
+     */
+    int getForwardTypeValue();
+    /**
+     * <code>.ForwardType forward_type = 7;</code>
+     * @return The forwardType.
+     */
+    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
   }
   /**
    * <pre>
-   * CmdId: 346
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 364;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code EvtBeingHitsCombineNotify}
@@ -73,8 +77,8 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       super(builder);
     }
     private EvtBeingHitsCombineNotify() {
-      forwardType_ = 0;
       evtBeingHitInfoList_ = java.util.Collections.emptyList();
+      forwardType_ = 0;
     }
 
     @java.lang.Override
@@ -108,19 +112,19 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 56: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 evtBeingHitInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               evtBeingHitInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
               break;
             }
             default: {
@@ -158,36 +162,17 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
               emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify.class, emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify.Builder.class);
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 11;
-    private int forwardType_;
-    /**
-     * <code>.ForwardType forward_type = 11;</code>
-     * @return The enum numeric value on the wire for forwardType.
-     */
-    @java.lang.Override public int getForwardTypeValue() {
-      return forwardType_;
-    }
-    /**
-     * <code>.ForwardType forward_type = 11;</code>
-     * @return The forwardType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-    }
-
-    public static final int EVT_BEING_HIT_INFO_LIST_FIELD_NUMBER = 7;
+    public static final int EVT_BEING_HIT_INFO_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> evtBeingHitInfoList_;
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> getEvtBeingHitInfoListList() {
       return evtBeingHitInfoList_;
     }
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> 
@@ -195,26 +180,45 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       return evtBeingHitInfoList_;
     }
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     @java.lang.Override
     public int getEvtBeingHitInfoListCount() {
       return evtBeingHitInfoList_.size();
     }
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo getEvtBeingHitInfoList(int index) {
       return evtBeingHitInfoList_.get(index);
     }
     /**
-     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+     * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getEvtBeingHitInfoListOrBuilder(
         int index) {
       return evtBeingHitInfoList_.get(index);
+    }
+
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 7;
+    private int forwardType_;
+    /**
+     * <code>.ForwardType forward_type = 7;</code>
+     * @return The enum numeric value on the wire for forwardType.
+     */
+    @java.lang.Override public int getForwardTypeValue() {
+      return forwardType_;
+    }
+    /**
+     * <code>.ForwardType forward_type = 7;</code>
+     * @return The forwardType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,11 +235,11 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < evtBeingHitInfoList_.size(); i++) {
-        output.writeMessage(7, evtBeingHitInfoList_.get(i));
-      }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(11, forwardType_);
+        output.writeEnum(7, forwardType_);
+      }
+      for (int i = 0; i < evtBeingHitInfoList_.size(); i++) {
+        output.writeMessage(9, evtBeingHitInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -246,13 +250,13 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < evtBeingHitInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, evtBeingHitInfoList_.get(i));
-      }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, forwardType_);
+          .computeEnumSize(7, forwardType_);
+      }
+      for (int i = 0; i < evtBeingHitInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, evtBeingHitInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -269,9 +273,9 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify other = (emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify) obj;
 
-      if (forwardType_ != other.forwardType_) return false;
       if (!getEvtBeingHitInfoListList()
           .equals(other.getEvtBeingHitInfoListList())) return false;
+      if (forwardType_ != other.forwardType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -283,12 +287,12 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + forwardType_;
       if (getEvtBeingHitInfoListCount() > 0) {
         hash = (37 * hash) + EVT_BEING_HIT_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEvtBeingHitInfoListList().hashCode();
       }
+      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + forwardType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -386,10 +390,14 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 346
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 364;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code EvtBeingHitsCombineNotify}
@@ -430,14 +438,14 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        forwardType_ = 0;
-
         if (evtBeingHitInfoListBuilder_ == null) {
           evtBeingHitInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           evtBeingHitInfoListBuilder_.clear();
         }
+        forwardType_ = 0;
+
         return this;
       }
 
@@ -465,7 +473,6 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       public emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify buildPartial() {
         emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify result = new emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify(this);
         int from_bitField0_ = bitField0_;
-        result.forwardType_ = forwardType_;
         if (evtBeingHitInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             evtBeingHitInfoList_ = java.util.Collections.unmodifiableList(evtBeingHitInfoList_);
@@ -475,6 +482,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         } else {
           result.evtBeingHitInfoList_ = evtBeingHitInfoListBuilder_.build();
         }
+        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
       }
@@ -523,9 +531,6 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify other) {
         if (other == emu.grasscutter.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify.getDefaultInstance()) return this;
-        if (other.forwardType_ != 0) {
-          setForwardTypeValue(other.getForwardTypeValue());
-        }
         if (evtBeingHitInfoListBuilder_ == null) {
           if (!other.evtBeingHitInfoList_.isEmpty()) {
             if (evtBeingHitInfoList_.isEmpty()) {
@@ -551,6 +556,9 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
               evtBeingHitInfoListBuilder_.addAllMessages(other.evtBeingHitInfoList_);
             }
           }
+        }
+        if (other.forwardType_ != 0) {
+          setForwardTypeValue(other.getForwardTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -582,60 +590,6 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int forwardType_ = 0;
-      /**
-       * <code>.ForwardType forward_type = 11;</code>
-       * @return The enum numeric value on the wire for forwardType.
-       */
-      @java.lang.Override public int getForwardTypeValue() {
-        return forwardType_;
-      }
-      /**
-       * <code>.ForwardType forward_type = 11;</code>
-       * @param value The enum numeric value on the wire for forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardTypeValue(int value) {
-        
-        forwardType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 11;</code>
-       * @return The forwardType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ForwardType forward_type = 11;</code>
-       * @param value The forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        forwardType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForwardType() {
-        
-        forwardType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> evtBeingHitInfoList_ =
         java.util.Collections.emptyList();
       private void ensureEvtBeingHitInfoListIsMutable() {
@@ -649,7 +603,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
           emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> evtBeingHitInfoListBuilder_;
 
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> getEvtBeingHitInfoListList() {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -659,7 +613,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public int getEvtBeingHitInfoListCount() {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -669,7 +623,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo getEvtBeingHitInfoList(int index) {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -679,7 +633,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder setEvtBeingHitInfoList(
           int index, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo value) {
@@ -696,7 +650,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder setEvtBeingHitInfoList(
           int index, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder builderForValue) {
@@ -710,7 +664,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder addEvtBeingHitInfoList(emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo value) {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -726,7 +680,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder addEvtBeingHitInfoList(
           int index, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo value) {
@@ -743,7 +697,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder addEvtBeingHitInfoList(
           emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder builderForValue) {
@@ -757,7 +711,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder addEvtBeingHitInfoList(
           int index, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder builderForValue) {
@@ -771,7 +725,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder addAllEvtBeingHitInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> values) {
@@ -786,7 +740,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder clearEvtBeingHitInfoList() {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -799,7 +753,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public Builder removeEvtBeingHitInfoList(int index) {
         if (evtBeingHitInfoListBuilder_ == null) {
@@ -812,14 +766,14 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder getEvtBeingHitInfoListBuilder(
           int index) {
         return getEvtBeingHitInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getEvtBeingHitInfoListOrBuilder(
           int index) {
@@ -829,7 +783,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> 
            getEvtBeingHitInfoListOrBuilderList() {
@@ -840,14 +794,14 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder addEvtBeingHitInfoListBuilder() {
         return getEvtBeingHitInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder addEvtBeingHitInfoListBuilder(
           int index) {
@@ -855,7 +809,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
             index, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 7;</code>
+       * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder> 
            getEvtBeingHitInfoListBuilderList() {
@@ -874,6 +828,60 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
           evtBeingHitInfoList_ = null;
         }
         return evtBeingHitInfoListBuilder_;
+      }
+
+      private int forwardType_ = 0;
+      /**
+       * <code>.ForwardType forward_type = 7;</code>
+       * @return The enum numeric value on the wire for forwardType.
+       */
+      @java.lang.Override public int getForwardTypeValue() {
+        return forwardType_;
+      }
+      /**
+       * <code>.ForwardType forward_type = 7;</code>
+       * @param value The enum numeric value on the wire for forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardTypeValue(int value) {
+        
+        forwardType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 7;</code>
+       * @return The forwardType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ForwardType forward_type = 7;</code>
+       * @param value The forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        forwardType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForwardType() {
+        
+        forwardType_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -944,9 +952,9 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037EvtBeingHitsCombineNotify.proto\032\025EvtBe" +
       "ingHitInfo.proto\032\021ForwardType.proto\"r\n\031E" +
-      "vtBeingHitsCombineNotify\022\"\n\014forward_type" +
-      "\030\013 \001(\0162\014.ForwardType\0221\n\027evt_being_hit_in" +
-      "fo_list\030\007 \003(\0132\020.EvtBeingHitInfoB\033\n\031emu.g" +
+      "vtBeingHitsCombineNotify\0221\n\027evt_being_hi" +
+      "t_info_list\030\t \003(\0132\020.EvtBeingHitInfo\022\"\n\014f" +
+      "orward_type\030\007 \001(\0162\014.ForwardTypeB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -960,7 +968,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     internal_static_EvtBeingHitsCombineNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBeingHitsCombineNotify_descriptor,
-        new java.lang.String[] { "ForwardType", "EvtBeingHitInfoList", });
+        new java.lang.String[] { "EvtBeingHitInfoList", "ForwardType", });
     emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
   }

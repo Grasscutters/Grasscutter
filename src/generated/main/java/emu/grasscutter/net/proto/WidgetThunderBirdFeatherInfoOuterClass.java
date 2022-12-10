@@ -19,17 +19,17 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @return A list containing the entityIdList.
      */
     java.util.List<java.lang.Integer> getEntityIdListList();
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @return The count of entityIdList.
      */
     int getEntityIdListCount();
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @param index The index of the element to return.
      * @return The entityIdList at the given index.
      */
@@ -82,7 +82,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +90,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
               entityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +138,10 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
               emu.grasscutter.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo.class, emu.grasscutter.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo.Builder.class);
     }
 
-    public static final int ENTITY_ID_LIST_FIELD_NUMBER = 4;
+    public static final int ENTITY_ID_LIST_FIELD_NUMBER = 9;
     private com.google.protobuf.Internal.IntList entityIdList_;
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @return A list containing the entityIdList.
      */
     @java.lang.Override
@@ -150,14 +150,14 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
       return entityIdList_;
     }
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @return The count of entityIdList.
      */
     public int getEntityIdListCount() {
       return entityIdList_.size();
     }
     /**
-     * <code>repeated uint32 entity_id_list = 4;</code>
+     * <code>repeated uint32 entity_id_list = 9;</code>
      * @param index The index of the element to return.
      * @return The entityIdList at the given index.
      */
@@ -182,7 +182,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getEntityIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(entityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < entityIdList_.size(); i++) {
@@ -506,7 +506,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @return A list containing the entityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +515,14 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
                  java.util.Collections.unmodifiableList(entityIdList_) : entityIdList_;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @return The count of entityIdList.
        */
       public int getEntityIdListCount() {
         return entityIdList_.size();
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @param index The index of the element to return.
        * @return The entityIdList at the given index.
        */
@@ -530,7 +530,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
         return entityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @param index The index to set the value at.
        * @param value The entityIdList to set.
        * @return This builder for chaining.
@@ -543,7 +543,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @param value The entityIdList to add.
        * @return This builder for chaining.
        */
@@ -554,7 +554,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @param values The entityIdList to add.
        * @return This builder for chaining.
        */
@@ -567,7 +567,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 4;</code>
+       * <code>repeated uint32 entity_id_list = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityIdList() {
@@ -645,7 +645,7 @@ public final class WidgetThunderBirdFeatherInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"WidgetThunderBirdFeatherInfo.proto\"6\n\034" +
       "WidgetThunderBirdFeatherInfo\022\026\n\016entity_i" +
-      "d_list\030\004 \003(\rB\033\n\031emu.grasscutter.net.prot" +
+      "d_list\030\t \003(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

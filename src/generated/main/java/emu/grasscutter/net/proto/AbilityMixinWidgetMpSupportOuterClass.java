@@ -19,7 +19,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_entity_id = 9;</code>
+     * <code>uint32 target_entity_id = 2;</code>
      * @return The targetEntityId.
      */
     int getTargetEntityId();
@@ -69,7 +69,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 16: {
 
               targetEntityId_ = input.readUInt32();
               break;
@@ -106,10 +106,10 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
               emu.grasscutter.net.proto.AbilityMixinWidgetMpSupportOuterClass.AbilityMixinWidgetMpSupport.class, emu.grasscutter.net.proto.AbilityMixinWidgetMpSupportOuterClass.AbilityMixinWidgetMpSupport.Builder.class);
     }
 
-    public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 9;
+    public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 2;
     private int targetEntityId_;
     /**
-     * <code>uint32 target_entity_id = 9;</code>
+     * <code>uint32 target_entity_id = 2;</code>
      * @return The targetEntityId.
      */
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetEntityId_ != 0) {
-        output.writeUInt32(9, targetEntityId_);
+        output.writeUInt32(2, targetEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +145,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
       size = 0;
       if (targetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, targetEntityId_);
+          .computeUInt32Size(2, targetEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -421,7 +421,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
 
       private int targetEntityId_ ;
       /**
-       * <code>uint32 target_entity_id = 9;</code>
+       * <code>uint32 target_entity_id = 2;</code>
        * @return The targetEntityId.
        */
       @java.lang.Override
@@ -429,7 +429,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
         return targetEntityId_;
       }
       /**
-       * <code>uint32 target_entity_id = 9;</code>
+       * <code>uint32 target_entity_id = 2;</code>
        * @param value The targetEntityId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +440,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_entity_id = 9;</code>
+       * <code>uint32 target_entity_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
@@ -518,7 +518,7 @@ public final class AbilityMixinWidgetMpSupportOuterClass {
     java.lang.String[] descriptorData = {
       "\n!AbilityMixinWidgetMpSupport.proto\"7\n\033A" +
       "bilityMixinWidgetMpSupport\022\030\n\020target_ent" +
-      "ity_id\030\t \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "ity_id\030\002 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,17 +19,21 @@ public final class UseWidgetRetractGadgetReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 4286
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4275;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UseWidgetRetractGadgetReq}
@@ -76,7 +80,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 104: {
 
               entityId_ = input.readUInt32();
               break;
@@ -113,10 +117,10 @@ public final class UseWidgetRetractGadgetReqOuterClass {
               emu.grasscutter.net.proto.UseWidgetRetractGadgetReqOuterClass.UseWidgetRetractGadgetReq.class, emu.grasscutter.net.proto.UseWidgetRetractGadgetReqOuterClass.UseWidgetRetractGadgetReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 13;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -139,7 +143,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(13, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +156,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(13, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +285,14 @@ public final class UseWidgetRetractGadgetReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4286
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4275;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UseWidgetRetractGadgetReq}
@@ -435,7 +443,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -443,7 +451,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -454,7 +462,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -531,7 +539,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037UseWidgetRetractGadgetReq.proto\".\n\031Use" +
-      "WidgetRetractGadgetReq\022\021\n\tentity_id\030\003 \001(" +
+      "WidgetRetractGadgetReq\022\021\n\tentity_id\030\r \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

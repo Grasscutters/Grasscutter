@@ -19,7 +19,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 2;</code>
+     * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
      */
     int getSceneId();
@@ -50,10 +50,13 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3333
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 3393;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SyncScenePlayTeamEntityNotify}
@@ -102,11 +105,6 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo>();
@@ -114,6 +112,11 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
               }
               entityInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+
+              sceneId_ = input.readUInt32();
               break;
             }
             default: {
@@ -151,10 +154,10 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
               emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.class, emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    public static final int SCENE_ID_FIELD_NUMBER = 7;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 2;</code>
+     * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -216,11 +219,11 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(2, sceneId_);
-      }
       for (int i = 0; i < entityInfoList_.size(); i++) {
         output.writeMessage(3, entityInfoList_.get(i));
+      }
+      if (sceneId_ != 0) {
+        output.writeUInt32(7, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,13 +234,13 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, sceneId_);
-      }
       for (int i = 0; i < entityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, entityInfoList_.get(i));
+      }
+      if (sceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -372,10 +375,13 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3333
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 3393;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SyncScenePlayTeamEntityNotify}
@@ -570,7 +576,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 2;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -578,7 +584,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 2;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -589,7 +595,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 2;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -907,7 +913,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n#SyncScenePlayTeamEntityNotify.proto\032\030P" +
       "layTeamEntityInfo.proto\"`\n\035SyncScenePlay" +
-      "TeamEntityNotify\022\020\n\010scene_id\030\002 \001(\r\022-\n\020en" +
+      "TeamEntityNotify\022\020\n\010scene_id\030\007 \001(\r\022-\n\020en" +
       "tity_info_list\030\003 \003(\0132\023.PlayTeamEntityInf" +
       "oB\033\n\031emu.grasscutter.net.protob\006proto3"
     };

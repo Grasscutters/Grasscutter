@@ -19,23 +19,26 @@ public final class HostPlayerNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 host_peer_id = 13;</code>
+     * <code>uint32 host_peer_id = 12;</code>
      * @return The hostPeerId.
      */
     int getHostPeerId();
 
     /**
-     * <code>uint32 host_uid = 10;</code>
+     * <code>uint32 host_uid = 14;</code>
      * @return The hostUid.
      */
     int getHostUid();
   }
   /**
    * <pre>
-   * CmdId: 312
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 356;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code HostPlayerNotify}
@@ -82,14 +85,14 @@ public final class HostPlayerNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
-
-              hostUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 96: {
 
               hostPeerId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              hostUid_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,10 +127,10 @@ public final class HostPlayerNotifyOuterClass {
               emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify.class, emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify.Builder.class);
     }
 
-    public static final int HOST_PEER_ID_FIELD_NUMBER = 13;
+    public static final int HOST_PEER_ID_FIELD_NUMBER = 12;
     private int hostPeerId_;
     /**
-     * <code>uint32 host_peer_id = 13;</code>
+     * <code>uint32 host_peer_id = 12;</code>
      * @return The hostPeerId.
      */
     @java.lang.Override
@@ -135,10 +138,10 @@ public final class HostPlayerNotifyOuterClass {
       return hostPeerId_;
     }
 
-    public static final int HOST_UID_FIELD_NUMBER = 10;
+    public static final int HOST_UID_FIELD_NUMBER = 14;
     private int hostUid_;
     /**
-     * <code>uint32 host_uid = 10;</code>
+     * <code>uint32 host_uid = 14;</code>
      * @return The hostUid.
      */
     @java.lang.Override
@@ -160,11 +163,11 @@ public final class HostPlayerNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hostUid_ != 0) {
-        output.writeUInt32(10, hostUid_);
-      }
       if (hostPeerId_ != 0) {
-        output.writeUInt32(13, hostPeerId_);
+        output.writeUInt32(12, hostPeerId_);
+      }
+      if (hostUid_ != 0) {
+        output.writeUInt32(14, hostUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +178,13 @@ public final class HostPlayerNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hostUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, hostUid_);
-      }
       if (hostPeerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, hostPeerId_);
+          .computeUInt32Size(12, hostPeerId_);
+      }
+      if (hostUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, hostUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +317,13 @@ public final class HostPlayerNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 312
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 356;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code HostPlayerNotify}
@@ -474,7 +480,7 @@ public final class HostPlayerNotifyOuterClass {
 
       private int hostPeerId_ ;
       /**
-       * <code>uint32 host_peer_id = 13;</code>
+       * <code>uint32 host_peer_id = 12;</code>
        * @return The hostPeerId.
        */
       @java.lang.Override
@@ -482,7 +488,7 @@ public final class HostPlayerNotifyOuterClass {
         return hostPeerId_;
       }
       /**
-       * <code>uint32 host_peer_id = 13;</code>
+       * <code>uint32 host_peer_id = 12;</code>
        * @param value The hostPeerId to set.
        * @return This builder for chaining.
        */
@@ -493,7 +499,7 @@ public final class HostPlayerNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 host_peer_id = 13;</code>
+       * <code>uint32 host_peer_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearHostPeerId() {
@@ -505,7 +511,7 @@ public final class HostPlayerNotifyOuterClass {
 
       private int hostUid_ ;
       /**
-       * <code>uint32 host_uid = 10;</code>
+       * <code>uint32 host_uid = 14;</code>
        * @return The hostUid.
        */
       @java.lang.Override
@@ -513,7 +519,7 @@ public final class HostPlayerNotifyOuterClass {
         return hostUid_;
       }
       /**
-       * <code>uint32 host_uid = 10;</code>
+       * <code>uint32 host_uid = 14;</code>
        * @param value The hostUid to set.
        * @return This builder for chaining.
        */
@@ -524,7 +530,7 @@ public final class HostPlayerNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 host_uid = 10;</code>
+       * <code>uint32 host_uid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearHostUid() {
@@ -601,7 +607,7 @@ public final class HostPlayerNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026HostPlayerNotify.proto\":\n\020HostPlayerNo" +
-      "tify\022\024\n\014host_peer_id\030\r \001(\r\022\020\n\010host_uid\030\n" +
+      "tify\022\024\n\014host_peer_id\030\014 \001(\r\022\020\n\010host_uid\030\016" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

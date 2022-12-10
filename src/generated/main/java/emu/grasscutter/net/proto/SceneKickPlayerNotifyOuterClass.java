@@ -19,23 +19,27 @@ public final class SceneKickPlayerNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>uint32 target_uid = 13;</code>
      * @return The targetUid.
      */
     int getTargetUid();
 
     /**
-     * <code>uint32 kicker_uid = 9;</code>
+     * <code>uint32 kicker_uid = 12;</code>
      * @return The kickerUid.
      */
     int getKickerUid();
   }
   /**
    * <pre>
-   * CmdId: 211
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 201;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SceneKickPlayerNotify}
@@ -82,14 +86,14 @@ public final class SceneKickPlayerNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 96: {
 
               kickerUid_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              targetUid_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,10 +128,10 @@ public final class SceneKickPlayerNotifyOuterClass {
               emu.grasscutter.net.proto.SceneKickPlayerNotifyOuterClass.SceneKickPlayerNotify.class, emu.grasscutter.net.proto.SceneKickPlayerNotifyOuterClass.SceneKickPlayerNotify.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 8;
+    public static final int TARGET_UID_FIELD_NUMBER = 13;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>uint32 target_uid = 13;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -135,10 +139,10 @@ public final class SceneKickPlayerNotifyOuterClass {
       return targetUid_;
     }
 
-    public static final int KICKER_UID_FIELD_NUMBER = 9;
+    public static final int KICKER_UID_FIELD_NUMBER = 12;
     private int kickerUid_;
     /**
-     * <code>uint32 kicker_uid = 9;</code>
+     * <code>uint32 kicker_uid = 12;</code>
      * @return The kickerUid.
      */
     @java.lang.Override
@@ -160,11 +164,11 @@ public final class SceneKickPlayerNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (targetUid_ != 0) {
-        output.writeUInt32(8, targetUid_);
-      }
       if (kickerUid_ != 0) {
-        output.writeUInt32(9, kickerUid_);
+        output.writeUInt32(12, kickerUid_);
+      }
+      if (targetUid_ != 0) {
+        output.writeUInt32(13, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +179,13 @@ public final class SceneKickPlayerNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, targetUid_);
-      }
       if (kickerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, kickerUid_);
+          .computeUInt32Size(12, kickerUid_);
+      }
+      if (targetUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +318,14 @@ public final class SceneKickPlayerNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 211
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 201;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SceneKickPlayerNotify}
@@ -474,7 +482,7 @@ public final class SceneKickPlayerNotifyOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -482,7 +490,7 @@ public final class SceneKickPlayerNotifyOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -493,7 +501,7 @@ public final class SceneKickPlayerNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -505,7 +513,7 @@ public final class SceneKickPlayerNotifyOuterClass {
 
       private int kickerUid_ ;
       /**
-       * <code>uint32 kicker_uid = 9;</code>
+       * <code>uint32 kicker_uid = 12;</code>
        * @return The kickerUid.
        */
       @java.lang.Override
@@ -513,7 +521,7 @@ public final class SceneKickPlayerNotifyOuterClass {
         return kickerUid_;
       }
       /**
-       * <code>uint32 kicker_uid = 9;</code>
+       * <code>uint32 kicker_uid = 12;</code>
        * @param value The kickerUid to set.
        * @return This builder for chaining.
        */
@@ -524,7 +532,7 @@ public final class SceneKickPlayerNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 kicker_uid = 9;</code>
+       * <code>uint32 kicker_uid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearKickerUid() {
@@ -601,8 +609,8 @@ public final class SceneKickPlayerNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SceneKickPlayerNotify.proto\"?\n\025SceneKi" +
-      "ckPlayerNotify\022\022\n\ntarget_uid\030\010 \001(\r\022\022\n\nki" +
-      "cker_uid\030\t \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "ckPlayerNotify\022\022\n\ntarget_uid\030\r \001(\r\022\022\n\nki" +
+      "cker_uid\030\014 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

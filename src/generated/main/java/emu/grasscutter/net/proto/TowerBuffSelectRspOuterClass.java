@@ -19,23 +19,26 @@ public final class TowerBuffSelectRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 tower_buff_id = 13;</code>
+     * <code>uint32 tower_buff_id = 6;</code>
      * @return The towerBuffId.
      */
     int getTowerBuffId();
   }
   /**
    * <pre>
-   * CmdId: 2497
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 2499;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code TowerBuffSelectRsp}
@@ -82,14 +85,14 @@ public final class TowerBuffSelectRspOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
+            case 48: {
 
               towerBuffId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -124,10 +127,10 @@ public final class TowerBuffSelectRspOuterClass {
               emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp.class, emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -135,10 +138,10 @@ public final class TowerBuffSelectRspOuterClass {
       return retcode_;
     }
 
-    public static final int TOWER_BUFF_ID_FIELD_NUMBER = 13;
+    public static final int TOWER_BUFF_ID_FIELD_NUMBER = 6;
     private int towerBuffId_;
     /**
-     * <code>uint32 tower_buff_id = 13;</code>
+     * <code>uint32 tower_buff_id = 6;</code>
      * @return The towerBuffId.
      */
     @java.lang.Override
@@ -160,11 +163,11 @@ public final class TowerBuffSelectRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
-      }
       if (towerBuffId_ != 0) {
-        output.writeUInt32(13, towerBuffId_);
+        output.writeUInt32(6, towerBuffId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +178,13 @@ public final class TowerBuffSelectRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
-      }
       if (towerBuffId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, towerBuffId_);
+          .computeUInt32Size(6, towerBuffId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +317,13 @@ public final class TowerBuffSelectRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2497
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 2499;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code TowerBuffSelectRsp}
@@ -474,7 +480,7 @@ public final class TowerBuffSelectRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,7 +488,7 @@ public final class TowerBuffSelectRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -493,7 +499,7 @@ public final class TowerBuffSelectRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -505,7 +511,7 @@ public final class TowerBuffSelectRspOuterClass {
 
       private int towerBuffId_ ;
       /**
-       * <code>uint32 tower_buff_id = 13;</code>
+       * <code>uint32 tower_buff_id = 6;</code>
        * @return The towerBuffId.
        */
       @java.lang.Override
@@ -513,7 +519,7 @@ public final class TowerBuffSelectRspOuterClass {
         return towerBuffId_;
       }
       /**
-       * <code>uint32 tower_buff_id = 13;</code>
+       * <code>uint32 tower_buff_id = 6;</code>
        * @param value The towerBuffId to set.
        * @return This builder for chaining.
        */
@@ -524,7 +530,7 @@ public final class TowerBuffSelectRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 tower_buff_id = 13;</code>
+       * <code>uint32 tower_buff_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTowerBuffId() {
@@ -601,8 +607,8 @@ public final class TowerBuffSelectRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030TowerBuffSelectRsp.proto\"<\n\022TowerBuffS" +
-      "electRsp\022\017\n\007retcode\030\013 \001(\005\022\025\n\rtower_buff_" +
-      "id\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "electRsp\022\017\n\007retcode\030\010 \001(\005\022\025\n\rtower_buff_" +
+      "id\030\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,67 +19,67 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 face_angle_compact = 14;</code>
-     * @return The faceAngleCompact.
-     */
-    int getFaceAngleCompact();
-
-    /**
-     * <code>uint32 to_state_hash = 5;</code>
-     * @return The toStateHash.
-     */
-    int getToStateHash();
-
-    /**
-     * <code>uint32 normalized_time_compact = 9;</code>
-     * @return The normalizedTimeCompact.
-     */
-    int getNormalizedTimeCompact();
-
-    /**
-     * <code>uint32 Unk2700_HEMGNDKMAFO = 2;</code>
-     * @return The unk2700HEMGNDKMAFO.
-     */
-    int getUnk2700HEMGNDKMAFO();
-
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return Whether the pos field is set.
-     */
-    boolean hasPos();
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
-    /**
-     * <code>.Vector pos = 13;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
-
-    /**
-     * <code>float fade_duration = 3;</code>
+     * <code>float fade_duration = 4;</code>
      * @return The fadeDuration.
      */
     float getFadeDuration();
 
     /**
-     * <code>bool Unk2700_CJCJLGHIBPK = 1;</code>
-     * @return The unk2700CJCJLGHIBPK.
+     * <code>uint32 Unk3300_BKBPGIAOBEL = 11;</code>
+     * @return The unk3300BKBPGIAOBEL.
      */
-    boolean getUnk2700CJCJLGHIBPK();
+    int getUnk3300BKBPGIAOBEL();
 
     /**
-     * <code>uint32 entity_id = 15;</code>
+     * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
+     * @return The unk3300NMCCLIKMOEN.
+     */
+    int getUnk3300NMCCLIKMOEN();
+
+    /**
+     * <code>.Vector pos = 5;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>.Vector pos = 5;</code>
+     * @return The pos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+    /**
+     * <code>.Vector pos = 5;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+
+    /**
+     * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
+     * @return The unk3300KLMEKMGFGPD.
+     */
+    boolean getUnk3300KLMEKMGFGPD();
+
+    /**
+     * <code>uint32 normalized_time_compact = 6;</code>
+     * @return The normalizedTimeCompact.
+     */
+    int getNormalizedTimeCompact();
+
+    /**
+     * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
+     * @return The unk3300MEOPKEDJCIN.
+     */
+    boolean getUnk3300MEOPKEDJCIN();
+
+    /**
+     * <code>int32 face_angle_compact = 15;</code>
+     * @return The faceAngleCompact.
+     */
+    int getFaceAngleCompact();
+
+    /**
+     * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
      */
     int getEntityId();
-
-    /**
-     * <code>bool Unk2700_JECBLPNLJMJ = 7;</code>
-     * @return The unk2700JECBLPNLJMJ.
-     */
-    boolean getUnk2700JECBLPNLJMJ();
   }
   /**
    * Protobuf type {@code EvtAnimatorStateChangedInfo}
@@ -128,35 +128,25 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
               break;
             case 8: {
 
-              unk2700CJCJLGHIBPK_ = input.readBool();
+              unk3300NMCCLIKMOEN_ = input.readUInt32();
               break;
             }
             case 16: {
 
-              unk2700HEMGNDKMAFO_ = input.readUInt32();
+              entityId_ = input.readUInt32();
               break;
             }
-            case 29: {
+            case 24: {
+
+              unk3300KLMEKMGFGPD_ = input.readBool();
+              break;
+            }
+            case 37: {
 
               fadeDuration_ = input.readFloat();
               break;
             }
-            case 40: {
-
-              toStateHash_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk2700JECBLPNLJMJ_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              normalizedTimeCompact_ = input.readUInt32();
-              break;
-            }
-            case 106: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -169,14 +159,24 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
 
               break;
             }
-            case 112: {
+            case 48: {
 
-              faceAngleCompact_ = input.readInt32();
+              normalizedTimeCompact_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              unk3300MEOPKEDJCIN_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              unk3300BKBPGIAOBEL_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              entityId_ = input.readUInt32();
+              faceAngleCompact_ = input.readInt32();
               break;
             }
             default: {
@@ -211,80 +211,10 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
               emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.class, emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.Builder.class);
     }
 
-    public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 14;
-    private int faceAngleCompact_;
-    /**
-     * <code>int32 face_angle_compact = 14;</code>
-     * @return The faceAngleCompact.
-     */
-    @java.lang.Override
-    public int getFaceAngleCompact() {
-      return faceAngleCompact_;
-    }
-
-    public static final int TO_STATE_HASH_FIELD_NUMBER = 5;
-    private int toStateHash_;
-    /**
-     * <code>uint32 to_state_hash = 5;</code>
-     * @return The toStateHash.
-     */
-    @java.lang.Override
-    public int getToStateHash() {
-      return toStateHash_;
-    }
-
-    public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 9;
-    private int normalizedTimeCompact_;
-    /**
-     * <code>uint32 normalized_time_compact = 9;</code>
-     * @return The normalizedTimeCompact.
-     */
-    @java.lang.Override
-    public int getNormalizedTimeCompact() {
-      return normalizedTimeCompact_;
-    }
-
-    public static final int UNK2700_HEMGNDKMAFO_FIELD_NUMBER = 2;
-    private int unk2700HEMGNDKMAFO_;
-    /**
-     * <code>uint32 Unk2700_HEMGNDKMAFO = 2;</code>
-     * @return The unk2700HEMGNDKMAFO.
-     */
-    @java.lang.Override
-    public int getUnk2700HEMGNDKMAFO() {
-      return unk2700HEMGNDKMAFO_;
-    }
-
-    public static final int POS_FIELD_NUMBER = 13;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return Whether the pos field is set.
-     */
-    @java.lang.Override
-    public boolean hasPos() {
-      return pos_ != null;
-    }
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return The pos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-    }
-    /**
-     * <code>.Vector pos = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
-    }
-
-    public static final int FADE_DURATION_FIELD_NUMBER = 3;
+    public static final int FADE_DURATION_FIELD_NUMBER = 4;
     private float fadeDuration_;
     /**
-     * <code>float fade_duration = 3;</code>
+     * <code>float fade_duration = 4;</code>
      * @return The fadeDuration.
      */
     @java.lang.Override
@@ -292,37 +222,107 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       return fadeDuration_;
     }
 
-    public static final int UNK2700_CJCJLGHIBPK_FIELD_NUMBER = 1;
-    private boolean unk2700CJCJLGHIBPK_;
+    public static final int UNK3300_BKBPGIAOBEL_FIELD_NUMBER = 11;
+    private int unk3300BKBPGIAOBEL_;
     /**
-     * <code>bool Unk2700_CJCJLGHIBPK = 1;</code>
-     * @return The unk2700CJCJLGHIBPK.
+     * <code>uint32 Unk3300_BKBPGIAOBEL = 11;</code>
+     * @return The unk3300BKBPGIAOBEL.
      */
     @java.lang.Override
-    public boolean getUnk2700CJCJLGHIBPK() {
-      return unk2700CJCJLGHIBPK_;
+    public int getUnk3300BKBPGIAOBEL() {
+      return unk3300BKBPGIAOBEL_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 15;
+    public static final int UNK3300_NMCCLIKMOEN_FIELD_NUMBER = 1;
+    private int unk3300NMCCLIKMOEN_;
+    /**
+     * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
+     * @return The unk3300NMCCLIKMOEN.
+     */
+    @java.lang.Override
+    public int getUnk3300NMCCLIKMOEN() {
+      return unk3300NMCCLIKMOEN_;
+    }
+
+    public static final int POS_FIELD_NUMBER = 5;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+    /**
+     * <code>.Vector pos = 5;</code>
+     * @return Whether the pos field is set.
+     */
+    @java.lang.Override
+    public boolean hasPos() {
+      return pos_ != null;
+    }
+    /**
+     * <code>.Vector pos = 5;</code>
+     * @return The pos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>.Vector pos = 5;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+      return getPos();
+    }
+
+    public static final int UNK3300_KLMEKMGFGPD_FIELD_NUMBER = 3;
+    private boolean unk3300KLMEKMGFGPD_;
+    /**
+     * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
+     * @return The unk3300KLMEKMGFGPD.
+     */
+    @java.lang.Override
+    public boolean getUnk3300KLMEKMGFGPD() {
+      return unk3300KLMEKMGFGPD_;
+    }
+
+    public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 6;
+    private int normalizedTimeCompact_;
+    /**
+     * <code>uint32 normalized_time_compact = 6;</code>
+     * @return The normalizedTimeCompact.
+     */
+    @java.lang.Override
+    public int getNormalizedTimeCompact() {
+      return normalizedTimeCompact_;
+    }
+
+    public static final int UNK3300_MEOPKEDJCIN_FIELD_NUMBER = 7;
+    private boolean unk3300MEOPKEDJCIN_;
+    /**
+     * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
+     * @return The unk3300MEOPKEDJCIN.
+     */
+    @java.lang.Override
+    public boolean getUnk3300MEOPKEDJCIN() {
+      return unk3300MEOPKEDJCIN_;
+    }
+
+    public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 15;
+    private int faceAngleCompact_;
+    /**
+     * <code>int32 face_angle_compact = 15;</code>
+     * @return The faceAngleCompact.
+     */
+    @java.lang.Override
+    public int getFaceAngleCompact() {
+      return faceAngleCompact_;
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 2;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 15;</code>
+     * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
      */
     @java.lang.Override
     public int getEntityId() {
       return entityId_;
-    }
-
-    public static final int UNK2700_JECBLPNLJMJ_FIELD_NUMBER = 7;
-    private boolean unk2700JECBLPNLJMJ_;
-    /**
-     * <code>bool Unk2700_JECBLPNLJMJ = 7;</code>
-     * @return The unk2700JECBLPNLJMJ.
-     */
-    @java.lang.Override
-    public boolean getUnk2700JECBLPNLJMJ() {
-      return unk2700JECBLPNLJMJ_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -339,32 +339,32 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk2700CJCJLGHIBPK_ != false) {
-        output.writeBool(1, unk2700CJCJLGHIBPK_);
-      }
-      if (unk2700HEMGNDKMAFO_ != 0) {
-        output.writeUInt32(2, unk2700HEMGNDKMAFO_);
-      }
-      if (fadeDuration_ != 0F) {
-        output.writeFloat(3, fadeDuration_);
-      }
-      if (toStateHash_ != 0) {
-        output.writeUInt32(5, toStateHash_);
-      }
-      if (unk2700JECBLPNLJMJ_ != false) {
-        output.writeBool(7, unk2700JECBLPNLJMJ_);
-      }
-      if (normalizedTimeCompact_ != 0) {
-        output.writeUInt32(9, normalizedTimeCompact_);
-      }
-      if (pos_ != null) {
-        output.writeMessage(13, getPos());
-      }
-      if (faceAngleCompact_ != 0) {
-        output.writeInt32(14, faceAngleCompact_);
+      if (unk3300NMCCLIKMOEN_ != 0) {
+        output.writeUInt32(1, unk3300NMCCLIKMOEN_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(15, entityId_);
+        output.writeUInt32(2, entityId_);
+      }
+      if (unk3300KLMEKMGFGPD_ != false) {
+        output.writeBool(3, unk3300KLMEKMGFGPD_);
+      }
+      if (fadeDuration_ != 0F) {
+        output.writeFloat(4, fadeDuration_);
+      }
+      if (pos_ != null) {
+        output.writeMessage(5, getPos());
+      }
+      if (normalizedTimeCompact_ != 0) {
+        output.writeUInt32(6, normalizedTimeCompact_);
+      }
+      if (unk3300MEOPKEDJCIN_ != false) {
+        output.writeBool(7, unk3300MEOPKEDJCIN_);
+      }
+      if (unk3300BKBPGIAOBEL_ != 0) {
+        output.writeUInt32(11, unk3300BKBPGIAOBEL_);
+      }
+      if (faceAngleCompact_ != 0) {
+        output.writeInt32(15, faceAngleCompact_);
       }
       unknownFields.writeTo(output);
     }
@@ -375,41 +375,41 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk2700CJCJLGHIBPK_ != false) {
+      if (unk3300NMCCLIKMOEN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, unk2700CJCJLGHIBPK_);
-      }
-      if (unk2700HEMGNDKMAFO_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, unk2700HEMGNDKMAFO_);
-      }
-      if (fadeDuration_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, fadeDuration_);
-      }
-      if (toStateHash_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, toStateHash_);
-      }
-      if (unk2700JECBLPNLJMJ_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, unk2700JECBLPNLJMJ_);
-      }
-      if (normalizedTimeCompact_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, normalizedTimeCompact_);
-      }
-      if (pos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getPos());
-      }
-      if (faceAngleCompact_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, faceAngleCompact_);
+          .computeUInt32Size(1, unk3300NMCCLIKMOEN_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, entityId_);
+          .computeUInt32Size(2, entityId_);
+      }
+      if (unk3300KLMEKMGFGPD_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, unk3300KLMEKMGFGPD_);
+      }
+      if (fadeDuration_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, fadeDuration_);
+      }
+      if (pos_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getPos());
+      }
+      if (normalizedTimeCompact_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, normalizedTimeCompact_);
+      }
+      if (unk3300MEOPKEDJCIN_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, unk3300MEOPKEDJCIN_);
+      }
+      if (unk3300BKBPGIAOBEL_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, unk3300BKBPGIAOBEL_);
+      }
+      if (faceAngleCompact_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, faceAngleCompact_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -426,28 +426,28 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       }
       emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo other = (emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo) obj;
 
-      if (getFaceAngleCompact()
-          != other.getFaceAngleCompact()) return false;
-      if (getToStateHash()
-          != other.getToStateHash()) return false;
-      if (getNormalizedTimeCompact()
-          != other.getNormalizedTimeCompact()) return false;
-      if (getUnk2700HEMGNDKMAFO()
-          != other.getUnk2700HEMGNDKMAFO()) return false;
+      if (java.lang.Float.floatToIntBits(getFadeDuration())
+          != java.lang.Float.floatToIntBits(
+              other.getFadeDuration())) return false;
+      if (getUnk3300BKBPGIAOBEL()
+          != other.getUnk3300BKBPGIAOBEL()) return false;
+      if (getUnk3300NMCCLIKMOEN()
+          != other.getUnk3300NMCCLIKMOEN()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (java.lang.Float.floatToIntBits(getFadeDuration())
-          != java.lang.Float.floatToIntBits(
-              other.getFadeDuration())) return false;
-      if (getUnk2700CJCJLGHIBPK()
-          != other.getUnk2700CJCJLGHIBPK()) return false;
+      if (getUnk3300KLMEKMGFGPD()
+          != other.getUnk3300KLMEKMGFGPD()) return false;
+      if (getNormalizedTimeCompact()
+          != other.getNormalizedTimeCompact()) return false;
+      if (getUnk3300MEOPKEDJCIN()
+          != other.getUnk3300MEOPKEDJCIN()) return false;
+      if (getFaceAngleCompact()
+          != other.getFaceAngleCompact()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (getUnk2700JECBLPNLJMJ()
-          != other.getUnk2700JECBLPNLJMJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -459,29 +459,29 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FACE_ANGLE_COMPACT_FIELD_NUMBER;
-      hash = (53 * hash) + getFaceAngleCompact();
-      hash = (37 * hash) + TO_STATE_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getToStateHash();
-      hash = (37 * hash) + NORMALIZED_TIME_COMPACT_FIELD_NUMBER;
-      hash = (53 * hash) + getNormalizedTimeCompact();
-      hash = (37 * hash) + UNK2700_HEMGNDKMAFO_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk2700HEMGNDKMAFO();
+      hash = (37 * hash) + FADE_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getFadeDuration());
+      hash = (37 * hash) + UNK3300_BKBPGIAOBEL_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300BKBPGIAOBEL();
+      hash = (37 * hash) + UNK3300_NMCCLIKMOEN_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300NMCCLIKMOEN();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + FADE_DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getFadeDuration());
-      hash = (37 * hash) + UNK2700_CJCJLGHIBPK_FIELD_NUMBER;
+      hash = (37 * hash) + UNK3300_KLMEKMGFGPD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700CJCJLGHIBPK());
+          getUnk3300KLMEKMGFGPD());
+      hash = (37 * hash) + NORMALIZED_TIME_COMPACT_FIELD_NUMBER;
+      hash = (53 * hash) + getNormalizedTimeCompact();
+      hash = (37 * hash) + UNK3300_MEOPKEDJCIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUnk3300MEOPKEDJCIN());
+      hash = (37 * hash) + FACE_ANGLE_COMPACT_FIELD_NUMBER;
+      hash = (53 * hash) + getFaceAngleCompact();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + UNK2700_JECBLPNLJMJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700JECBLPNLJMJ());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -615,13 +615,11 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        faceAngleCompact_ = 0;
+        fadeDuration_ = 0F;
 
-        toStateHash_ = 0;
+        unk3300BKBPGIAOBEL_ = 0;
 
-        normalizedTimeCompact_ = 0;
-
-        unk2700HEMGNDKMAFO_ = 0;
+        unk3300NMCCLIKMOEN_ = 0;
 
         if (posBuilder_ == null) {
           pos_ = null;
@@ -629,13 +627,15 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           pos_ = null;
           posBuilder_ = null;
         }
-        fadeDuration_ = 0F;
+        unk3300KLMEKMGFGPD_ = false;
 
-        unk2700CJCJLGHIBPK_ = false;
+        normalizedTimeCompact_ = 0;
+
+        unk3300MEOPKEDJCIN_ = false;
+
+        faceAngleCompact_ = 0;
 
         entityId_ = 0;
-
-        unk2700JECBLPNLJMJ_ = false;
 
         return this;
       }
@@ -663,19 +663,19 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo buildPartial() {
         emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo result = new emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo(this);
-        result.faceAngleCompact_ = faceAngleCompact_;
-        result.toStateHash_ = toStateHash_;
-        result.normalizedTimeCompact_ = normalizedTimeCompact_;
-        result.unk2700HEMGNDKMAFO_ = unk2700HEMGNDKMAFO_;
+        result.fadeDuration_ = fadeDuration_;
+        result.unk3300BKBPGIAOBEL_ = unk3300BKBPGIAOBEL_;
+        result.unk3300NMCCLIKMOEN_ = unk3300NMCCLIKMOEN_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
-        result.fadeDuration_ = fadeDuration_;
-        result.unk2700CJCJLGHIBPK_ = unk2700CJCJLGHIBPK_;
+        result.unk3300KLMEKMGFGPD_ = unk3300KLMEKMGFGPD_;
+        result.normalizedTimeCompact_ = normalizedTimeCompact_;
+        result.unk3300MEOPKEDJCIN_ = unk3300MEOPKEDJCIN_;
+        result.faceAngleCompact_ = faceAngleCompact_;
         result.entityId_ = entityId_;
-        result.unk2700JECBLPNLJMJ_ = unk2700JECBLPNLJMJ_;
         onBuilt();
         return result;
       }
@@ -724,32 +724,32 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo other) {
         if (other == emu.grasscutter.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.getDefaultInstance()) return this;
-        if (other.getFaceAngleCompact() != 0) {
-          setFaceAngleCompact(other.getFaceAngleCompact());
+        if (other.getFadeDuration() != 0F) {
+          setFadeDuration(other.getFadeDuration());
         }
-        if (other.getToStateHash() != 0) {
-          setToStateHash(other.getToStateHash());
+        if (other.getUnk3300BKBPGIAOBEL() != 0) {
+          setUnk3300BKBPGIAOBEL(other.getUnk3300BKBPGIAOBEL());
         }
-        if (other.getNormalizedTimeCompact() != 0) {
-          setNormalizedTimeCompact(other.getNormalizedTimeCompact());
-        }
-        if (other.getUnk2700HEMGNDKMAFO() != 0) {
-          setUnk2700HEMGNDKMAFO(other.getUnk2700HEMGNDKMAFO());
+        if (other.getUnk3300NMCCLIKMOEN() != 0) {
+          setUnk3300NMCCLIKMOEN(other.getUnk3300NMCCLIKMOEN());
         }
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        if (other.getFadeDuration() != 0F) {
-          setFadeDuration(other.getFadeDuration());
+        if (other.getUnk3300KLMEKMGFGPD() != false) {
+          setUnk3300KLMEKMGFGPD(other.getUnk3300KLMEKMGFGPD());
         }
-        if (other.getUnk2700CJCJLGHIBPK() != false) {
-          setUnk2700CJCJLGHIBPK(other.getUnk2700CJCJLGHIBPK());
+        if (other.getNormalizedTimeCompact() != 0) {
+          setNormalizedTimeCompact(other.getNormalizedTimeCompact());
+        }
+        if (other.getUnk3300MEOPKEDJCIN() != false) {
+          setUnk3300MEOPKEDJCIN(other.getUnk3300MEOPKEDJCIN());
+        }
+        if (other.getFaceAngleCompact() != 0) {
+          setFaceAngleCompact(other.getFaceAngleCompact());
         }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
-        }
-        if (other.getUnk2700JECBLPNLJMJ() != false) {
-          setUnk2700JECBLPNLJMJ(other.getUnk2700JECBLPNLJMJ());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -780,126 +780,95 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
 
-      private int faceAngleCompact_ ;
+      private float fadeDuration_ ;
       /**
-       * <code>int32 face_angle_compact = 14;</code>
-       * @return The faceAngleCompact.
+       * <code>float fade_duration = 4;</code>
+       * @return The fadeDuration.
        */
       @java.lang.Override
-      public int getFaceAngleCompact() {
-        return faceAngleCompact_;
+      public float getFadeDuration() {
+        return fadeDuration_;
       }
       /**
-       * <code>int32 face_angle_compact = 14;</code>
-       * @param value The faceAngleCompact to set.
+       * <code>float fade_duration = 4;</code>
+       * @param value The fadeDuration to set.
        * @return This builder for chaining.
        */
-      public Builder setFaceAngleCompact(int value) {
+      public Builder setFadeDuration(float value) {
         
-        faceAngleCompact_ = value;
+        fadeDuration_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 face_angle_compact = 14;</code>
+       * <code>float fade_duration = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFaceAngleCompact() {
+      public Builder clearFadeDuration() {
         
-        faceAngleCompact_ = 0;
+        fadeDuration_ = 0F;
         onChanged();
         return this;
       }
 
-      private int toStateHash_ ;
+      private int unk3300BKBPGIAOBEL_ ;
       /**
-       * <code>uint32 to_state_hash = 5;</code>
-       * @return The toStateHash.
+       * <code>uint32 Unk3300_BKBPGIAOBEL = 11;</code>
+       * @return The unk3300BKBPGIAOBEL.
        */
       @java.lang.Override
-      public int getToStateHash() {
-        return toStateHash_;
+      public int getUnk3300BKBPGIAOBEL() {
+        return unk3300BKBPGIAOBEL_;
       }
       /**
-       * <code>uint32 to_state_hash = 5;</code>
-       * @param value The toStateHash to set.
+       * <code>uint32 Unk3300_BKBPGIAOBEL = 11;</code>
+       * @param value The unk3300BKBPGIAOBEL to set.
        * @return This builder for chaining.
        */
-      public Builder setToStateHash(int value) {
+      public Builder setUnk3300BKBPGIAOBEL(int value) {
         
-        toStateHash_ = value;
+        unk3300BKBPGIAOBEL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 to_state_hash = 5;</code>
+       * <code>uint32 Unk3300_BKBPGIAOBEL = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToStateHash() {
+      public Builder clearUnk3300BKBPGIAOBEL() {
         
-        toStateHash_ = 0;
+        unk3300BKBPGIAOBEL_ = 0;
         onChanged();
         return this;
       }
 
-      private int normalizedTimeCompact_ ;
+      private int unk3300NMCCLIKMOEN_ ;
       /**
-       * <code>uint32 normalized_time_compact = 9;</code>
-       * @return The normalizedTimeCompact.
+       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
+       * @return The unk3300NMCCLIKMOEN.
        */
       @java.lang.Override
-      public int getNormalizedTimeCompact() {
-        return normalizedTimeCompact_;
+      public int getUnk3300NMCCLIKMOEN() {
+        return unk3300NMCCLIKMOEN_;
       }
       /**
-       * <code>uint32 normalized_time_compact = 9;</code>
-       * @param value The normalizedTimeCompact to set.
+       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
+       * @param value The unk3300NMCCLIKMOEN to set.
        * @return This builder for chaining.
        */
-      public Builder setNormalizedTimeCompact(int value) {
+      public Builder setUnk3300NMCCLIKMOEN(int value) {
         
-        normalizedTimeCompact_ = value;
+        unk3300NMCCLIKMOEN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 normalized_time_compact = 9;</code>
+       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNormalizedTimeCompact() {
+      public Builder clearUnk3300NMCCLIKMOEN() {
         
-        normalizedTimeCompact_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int unk2700HEMGNDKMAFO_ ;
-      /**
-       * <code>uint32 Unk2700_HEMGNDKMAFO = 2;</code>
-       * @return The unk2700HEMGNDKMAFO.
-       */
-      @java.lang.Override
-      public int getUnk2700HEMGNDKMAFO() {
-        return unk2700HEMGNDKMAFO_;
-      }
-      /**
-       * <code>uint32 Unk2700_HEMGNDKMAFO = 2;</code>
-       * @param value The unk2700HEMGNDKMAFO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk2700HEMGNDKMAFO(int value) {
-        
-        unk2700HEMGNDKMAFO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 Unk2700_HEMGNDKMAFO = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk2700HEMGNDKMAFO() {
-        
-        unk2700HEMGNDKMAFO_ = 0;
+        unk3300NMCCLIKMOEN_ = 0;
         onChanged();
         return this;
       }
@@ -908,14 +877,14 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -926,7 +895,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -942,7 +911,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -956,7 +925,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -974,7 +943,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public Builder clearPos() {
         if (posBuilder_ == null) {
@@ -988,7 +957,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         
@@ -996,7 +965,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return getPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -1007,7 +976,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1023,71 +992,133 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return posBuilder_;
       }
 
-      private float fadeDuration_ ;
+      private boolean unk3300KLMEKMGFGPD_ ;
       /**
-       * <code>float fade_duration = 3;</code>
-       * @return The fadeDuration.
+       * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
+       * @return The unk3300KLMEKMGFGPD.
        */
       @java.lang.Override
-      public float getFadeDuration() {
-        return fadeDuration_;
+      public boolean getUnk3300KLMEKMGFGPD() {
+        return unk3300KLMEKMGFGPD_;
       }
       /**
-       * <code>float fade_duration = 3;</code>
-       * @param value The fadeDuration to set.
+       * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
+       * @param value The unk3300KLMEKMGFGPD to set.
        * @return This builder for chaining.
        */
-      public Builder setFadeDuration(float value) {
+      public Builder setUnk3300KLMEKMGFGPD(boolean value) {
         
-        fadeDuration_ = value;
+        unk3300KLMEKMGFGPD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float fade_duration = 3;</code>
+       * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFadeDuration() {
+      public Builder clearUnk3300KLMEKMGFGPD() {
         
-        fadeDuration_ = 0F;
+        unk3300KLMEKMGFGPD_ = false;
         onChanged();
         return this;
       }
 
-      private boolean unk2700CJCJLGHIBPK_ ;
+      private int normalizedTimeCompact_ ;
       /**
-       * <code>bool Unk2700_CJCJLGHIBPK = 1;</code>
-       * @return The unk2700CJCJLGHIBPK.
+       * <code>uint32 normalized_time_compact = 6;</code>
+       * @return The normalizedTimeCompact.
        */
       @java.lang.Override
-      public boolean getUnk2700CJCJLGHIBPK() {
-        return unk2700CJCJLGHIBPK_;
+      public int getNormalizedTimeCompact() {
+        return normalizedTimeCompact_;
       }
       /**
-       * <code>bool Unk2700_CJCJLGHIBPK = 1;</code>
-       * @param value The unk2700CJCJLGHIBPK to set.
+       * <code>uint32 normalized_time_compact = 6;</code>
+       * @param value The normalizedTimeCompact to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700CJCJLGHIBPK(boolean value) {
+      public Builder setNormalizedTimeCompact(int value) {
         
-        unk2700CJCJLGHIBPK_ = value;
+        normalizedTimeCompact_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool Unk2700_CJCJLGHIBPK = 1;</code>
+       * <code>uint32 normalized_time_compact = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700CJCJLGHIBPK() {
+      public Builder clearNormalizedTimeCompact() {
         
-        unk2700CJCJLGHIBPK_ = false;
+        normalizedTimeCompact_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean unk3300MEOPKEDJCIN_ ;
+      /**
+       * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
+       * @return The unk3300MEOPKEDJCIN.
+       */
+      @java.lang.Override
+      public boolean getUnk3300MEOPKEDJCIN() {
+        return unk3300MEOPKEDJCIN_;
+      }
+      /**
+       * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
+       * @param value The unk3300MEOPKEDJCIN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300MEOPKEDJCIN(boolean value) {
+        
+        unk3300MEOPKEDJCIN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300MEOPKEDJCIN() {
+        
+        unk3300MEOPKEDJCIN_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int faceAngleCompact_ ;
+      /**
+       * <code>int32 face_angle_compact = 15;</code>
+       * @return The faceAngleCompact.
+       */
+      @java.lang.Override
+      public int getFaceAngleCompact() {
+        return faceAngleCompact_;
+      }
+      /**
+       * <code>int32 face_angle_compact = 15;</code>
+       * @param value The faceAngleCompact to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFaceAngleCompact(int value) {
+        
+        faceAngleCompact_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 face_angle_compact = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFaceAngleCompact() {
+        
+        faceAngleCompact_ = 0;
         onChanged();
         return this;
       }
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 15;</code>
+       * <code>uint32 entity_id = 2;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -1095,7 +1126,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 15;</code>
+       * <code>uint32 entity_id = 2;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -1106,43 +1137,12 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 15;</code>
+       * <code>uint32 entity_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
         
         entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean unk2700JECBLPNLJMJ_ ;
-      /**
-       * <code>bool Unk2700_JECBLPNLJMJ = 7;</code>
-       * @return The unk2700JECBLPNLJMJ.
-       */
-      @java.lang.Override
-      public boolean getUnk2700JECBLPNLJMJ() {
-        return unk2700JECBLPNLJMJ_;
-      }
-      /**
-       * <code>bool Unk2700_JECBLPNLJMJ = 7;</code>
-       * @param value The unk2700JECBLPNLJMJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk2700JECBLPNLJMJ(boolean value) {
-        
-        unk2700JECBLPNLJMJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool Unk2700_JECBLPNLJMJ = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk2700JECBLPNLJMJ() {
-        
-        unk2700JECBLPNLJMJ_ = false;
         onChanged();
         return this;
       }
@@ -1214,14 +1214,14 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!EvtAnimatorStateChangedInfo.proto\032\014Vec" +
-      "tor.proto\"\210\002\n\033EvtAnimatorStateChangedInf" +
-      "o\022\032\n\022face_angle_compact\030\016 \001(\005\022\025\n\rto_stat" +
-      "e_hash\030\005 \001(\r\022\037\n\027normalized_time_compact\030" +
-      "\t \001(\r\022\033\n\023Unk2700_HEMGNDKMAFO\030\002 \001(\r\022\024\n\003po" +
-      "s\030\r \001(\0132\007.Vector\022\025\n\rfade_duration\030\003 \001(\002\022" +
-      "\033\n\023Unk2700_CJCJLGHIBPK\030\001 \001(\010\022\021\n\tentity_i" +
-      "d\030\017 \001(\r\022\033\n\023Unk2700_JECBLPNLJMJ\030\007 \001(\010B\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "tor.proto\"\216\002\n\033EvtAnimatorStateChangedInf" +
+      "o\022\025\n\rfade_duration\030\004 \001(\002\022\033\n\023Unk3300_BKBP" +
+      "GIAOBEL\030\013 \001(\r\022\033\n\023Unk3300_NMCCLIKMOEN\030\001 \001" +
+      "(\r\022\024\n\003pos\030\005 \001(\0132\007.Vector\022\033\n\023Unk3300_KLME" +
+      "KMGFGPD\030\003 \001(\010\022\037\n\027normalized_time_compact" +
+      "\030\006 \001(\r\022\033\n\023Unk3300_MEOPKEDJCIN\030\007 \001(\010\022\032\n\022f" +
+      "ace_angle_compact\030\017 \001(\005\022\021\n\tentity_id\030\002 \001" +
+      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1233,7 +1233,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     internal_static_EvtAnimatorStateChangedInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtAnimatorStateChangedInfo_descriptor,
-        new java.lang.String[] { "FaceAngleCompact", "ToStateHash", "NormalizedTimeCompact", "Unk2700HEMGNDKMAFO", "Pos", "FadeDuration", "Unk2700CJCJLGHIBPK", "EntityId", "Unk2700JECBLPNLJMJ", });
+        new java.lang.String[] { "FadeDuration", "Unk3300BKBPGIAOBEL", "Unk3300NMCCLIKMOEN", "Pos", "Unk3300KLMEKMGFGPD", "NormalizedTimeCompact", "Unk3300MEOPKEDJCIN", "FaceAngleCompact", "EntityId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

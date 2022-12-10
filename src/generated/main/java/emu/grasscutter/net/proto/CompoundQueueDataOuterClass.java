@@ -19,28 +19,28 @@ public final class CompoundQueueDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 output_count = 1;</code>
-     * @return The outputCount.
+     * <code>uint32 Unk3300_NCEHJAAHOKM = 5;</code>
+     * @return The unk3300NCEHJAAHOKM.
      */
-    int getOutputCount();
+    int getUnk3300NCEHJAAHOKM();
 
     /**
-     * <code>uint32 compound_id = 4;</code>
+     * <code>uint32 Unk3300_COMIGCMIPLE = 14;</code>
+     * @return The unk3300COMIGCMIPLE.
+     */
+    int getUnk3300COMIGCMIPLE();
+
+    /**
+     * <code>uint32 Unk3300_JHJNOPCPPAD = 10;</code>
+     * @return The unk3300JHJNOPCPPAD.
+     */
+    int getUnk3300JHJNOPCPPAD();
+
+    /**
+     * <code>uint32 compound_id = 12;</code>
      * @return The compoundId.
      */
     int getCompoundId();
-
-    /**
-     * <code>uint32 output_time = 14;</code>
-     * @return The outputTime.
-     */
-    int getOutputTime();
-
-    /**
-     * <code>uint32 wait_count = 8;</code>
-     * @return The waitCount.
-     */
-    int getWaitCount();
   }
   /**
    * Protobuf type {@code CompoundQueueData}
@@ -87,24 +87,24 @@ public final class CompoundQueueDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
-              outputCount_ = input.readUInt32();
+              unk3300NCEHJAAHOKM_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 80: {
+
+              unk3300JHJNOPCPPAD_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               compoundId_ = input.readUInt32();
               break;
             }
-            case 64: {
-
-              waitCount_ = input.readUInt32();
-              break;
-            }
             case 112: {
 
-              outputTime_ = input.readUInt32();
+              unk3300COMIGCMIPLE_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,48 +139,48 @@ public final class CompoundQueueDataOuterClass {
               emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.class, emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.Builder.class);
     }
 
-    public static final int OUTPUT_COUNT_FIELD_NUMBER = 1;
-    private int outputCount_;
+    public static final int UNK3300_NCEHJAAHOKM_FIELD_NUMBER = 5;
+    private int unk3300NCEHJAAHOKM_;
     /**
-     * <code>uint32 output_count = 1;</code>
-     * @return The outputCount.
+     * <code>uint32 Unk3300_NCEHJAAHOKM = 5;</code>
+     * @return The unk3300NCEHJAAHOKM.
      */
     @java.lang.Override
-    public int getOutputCount() {
-      return outputCount_;
+    public int getUnk3300NCEHJAAHOKM() {
+      return unk3300NCEHJAAHOKM_;
     }
 
-    public static final int COMPOUND_ID_FIELD_NUMBER = 4;
+    public static final int UNK3300_COMIGCMIPLE_FIELD_NUMBER = 14;
+    private int unk3300COMIGCMIPLE_;
+    /**
+     * <code>uint32 Unk3300_COMIGCMIPLE = 14;</code>
+     * @return The unk3300COMIGCMIPLE.
+     */
+    @java.lang.Override
+    public int getUnk3300COMIGCMIPLE() {
+      return unk3300COMIGCMIPLE_;
+    }
+
+    public static final int UNK3300_JHJNOPCPPAD_FIELD_NUMBER = 10;
+    private int unk3300JHJNOPCPPAD_;
+    /**
+     * <code>uint32 Unk3300_JHJNOPCPPAD = 10;</code>
+     * @return The unk3300JHJNOPCPPAD.
+     */
+    @java.lang.Override
+    public int getUnk3300JHJNOPCPPAD() {
+      return unk3300JHJNOPCPPAD_;
+    }
+
+    public static final int COMPOUND_ID_FIELD_NUMBER = 12;
     private int compoundId_;
     /**
-     * <code>uint32 compound_id = 4;</code>
+     * <code>uint32 compound_id = 12;</code>
      * @return The compoundId.
      */
     @java.lang.Override
     public int getCompoundId() {
       return compoundId_;
-    }
-
-    public static final int OUTPUT_TIME_FIELD_NUMBER = 14;
-    private int outputTime_;
-    /**
-     * <code>uint32 output_time = 14;</code>
-     * @return The outputTime.
-     */
-    @java.lang.Override
-    public int getOutputTime() {
-      return outputTime_;
-    }
-
-    public static final int WAIT_COUNT_FIELD_NUMBER = 8;
-    private int waitCount_;
-    /**
-     * <code>uint32 wait_count = 8;</code>
-     * @return The waitCount.
-     */
-    @java.lang.Override
-    public int getWaitCount() {
-      return waitCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +197,17 @@ public final class CompoundQueueDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (outputCount_ != 0) {
-        output.writeUInt32(1, outputCount_);
+      if (unk3300NCEHJAAHOKM_ != 0) {
+        output.writeUInt32(5, unk3300NCEHJAAHOKM_);
+      }
+      if (unk3300JHJNOPCPPAD_ != 0) {
+        output.writeUInt32(10, unk3300JHJNOPCPPAD_);
       }
       if (compoundId_ != 0) {
-        output.writeUInt32(4, compoundId_);
+        output.writeUInt32(12, compoundId_);
       }
-      if (waitCount_ != 0) {
-        output.writeUInt32(8, waitCount_);
-      }
-      if (outputTime_ != 0) {
-        output.writeUInt32(14, outputTime_);
+      if (unk3300COMIGCMIPLE_ != 0) {
+        output.writeUInt32(14, unk3300COMIGCMIPLE_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +218,21 @@ public final class CompoundQueueDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (outputCount_ != 0) {
+      if (unk3300NCEHJAAHOKM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, outputCount_);
+          .computeUInt32Size(5, unk3300NCEHJAAHOKM_);
+      }
+      if (unk3300JHJNOPCPPAD_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, unk3300JHJNOPCPPAD_);
       }
       if (compoundId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, compoundId_);
+          .computeUInt32Size(12, compoundId_);
       }
-      if (waitCount_ != 0) {
+      if (unk3300COMIGCMIPLE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, waitCount_);
-      }
-      if (outputTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, outputTime_);
+          .computeUInt32Size(14, unk3300COMIGCMIPLE_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +249,14 @@ public final class CompoundQueueDataOuterClass {
       }
       emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData other = (emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData) obj;
 
-      if (getOutputCount()
-          != other.getOutputCount()) return false;
+      if (getUnk3300NCEHJAAHOKM()
+          != other.getUnk3300NCEHJAAHOKM()) return false;
+      if (getUnk3300COMIGCMIPLE()
+          != other.getUnk3300COMIGCMIPLE()) return false;
+      if (getUnk3300JHJNOPCPPAD()
+          != other.getUnk3300JHJNOPCPPAD()) return false;
       if (getCompoundId()
           != other.getCompoundId()) return false;
-      if (getOutputTime()
-          != other.getOutputTime()) return false;
-      if (getWaitCount()
-          != other.getWaitCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,14 +268,14 @@ public final class CompoundQueueDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OUTPUT_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputCount();
+      hash = (37 * hash) + UNK3300_NCEHJAAHOKM_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300NCEHJAAHOKM();
+      hash = (37 * hash) + UNK3300_COMIGCMIPLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300COMIGCMIPLE();
+      hash = (37 * hash) + UNK3300_JHJNOPCPPAD_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300JHJNOPCPPAD();
       hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCompoundId();
-      hash = (37 * hash) + OUTPUT_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputTime();
-      hash = (37 * hash) + WAIT_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getWaitCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,13 +409,13 @@ public final class CompoundQueueDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        outputCount_ = 0;
+        unk3300NCEHJAAHOKM_ = 0;
+
+        unk3300COMIGCMIPLE_ = 0;
+
+        unk3300JHJNOPCPPAD_ = 0;
 
         compoundId_ = 0;
-
-        outputTime_ = 0;
-
-        waitCount_ = 0;
 
         return this;
       }
@@ -443,10 +443,10 @@ public final class CompoundQueueDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData buildPartial() {
         emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData result = new emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData(this);
-        result.outputCount_ = outputCount_;
+        result.unk3300NCEHJAAHOKM_ = unk3300NCEHJAAHOKM_;
+        result.unk3300COMIGCMIPLE_ = unk3300COMIGCMIPLE_;
+        result.unk3300JHJNOPCPPAD_ = unk3300JHJNOPCPPAD_;
         result.compoundId_ = compoundId_;
-        result.outputTime_ = outputTime_;
-        result.waitCount_ = waitCount_;
         onBuilt();
         return result;
       }
@@ -495,17 +495,17 @@ public final class CompoundQueueDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData other) {
         if (other == emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.getDefaultInstance()) return this;
-        if (other.getOutputCount() != 0) {
-          setOutputCount(other.getOutputCount());
+        if (other.getUnk3300NCEHJAAHOKM() != 0) {
+          setUnk3300NCEHJAAHOKM(other.getUnk3300NCEHJAAHOKM());
+        }
+        if (other.getUnk3300COMIGCMIPLE() != 0) {
+          setUnk3300COMIGCMIPLE(other.getUnk3300COMIGCMIPLE());
+        }
+        if (other.getUnk3300JHJNOPCPPAD() != 0) {
+          setUnk3300JHJNOPCPPAD(other.getUnk3300JHJNOPCPPAD());
         }
         if (other.getCompoundId() != 0) {
           setCompoundId(other.getCompoundId());
-        }
-        if (other.getOutputTime() != 0) {
-          setOutputTime(other.getOutputTime());
-        }
-        if (other.getWaitCount() != 0) {
-          setWaitCount(other.getWaitCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,40 +536,102 @@ public final class CompoundQueueDataOuterClass {
         return this;
       }
 
-      private int outputCount_ ;
+      private int unk3300NCEHJAAHOKM_ ;
       /**
-       * <code>uint32 output_count = 1;</code>
-       * @return The outputCount.
+       * <code>uint32 Unk3300_NCEHJAAHOKM = 5;</code>
+       * @return The unk3300NCEHJAAHOKM.
        */
       @java.lang.Override
-      public int getOutputCount() {
-        return outputCount_;
+      public int getUnk3300NCEHJAAHOKM() {
+        return unk3300NCEHJAAHOKM_;
       }
       /**
-       * <code>uint32 output_count = 1;</code>
-       * @param value The outputCount to set.
+       * <code>uint32 Unk3300_NCEHJAAHOKM = 5;</code>
+       * @param value The unk3300NCEHJAAHOKM to set.
        * @return This builder for chaining.
        */
-      public Builder setOutputCount(int value) {
+      public Builder setUnk3300NCEHJAAHOKM(int value) {
         
-        outputCount_ = value;
+        unk3300NCEHJAAHOKM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 output_count = 1;</code>
+       * <code>uint32 Unk3300_NCEHJAAHOKM = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOutputCount() {
+      public Builder clearUnk3300NCEHJAAHOKM() {
         
-        outputCount_ = 0;
+        unk3300NCEHJAAHOKM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int unk3300COMIGCMIPLE_ ;
+      /**
+       * <code>uint32 Unk3300_COMIGCMIPLE = 14;</code>
+       * @return The unk3300COMIGCMIPLE.
+       */
+      @java.lang.Override
+      public int getUnk3300COMIGCMIPLE() {
+        return unk3300COMIGCMIPLE_;
+      }
+      /**
+       * <code>uint32 Unk3300_COMIGCMIPLE = 14;</code>
+       * @param value The unk3300COMIGCMIPLE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300COMIGCMIPLE(int value) {
+        
+        unk3300COMIGCMIPLE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3300_COMIGCMIPLE = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300COMIGCMIPLE() {
+        
+        unk3300COMIGCMIPLE_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int unk3300JHJNOPCPPAD_ ;
+      /**
+       * <code>uint32 Unk3300_JHJNOPCPPAD = 10;</code>
+       * @return The unk3300JHJNOPCPPAD.
+       */
+      @java.lang.Override
+      public int getUnk3300JHJNOPCPPAD() {
+        return unk3300JHJNOPCPPAD_;
+      }
+      /**
+       * <code>uint32 Unk3300_JHJNOPCPPAD = 10;</code>
+       * @param value The unk3300JHJNOPCPPAD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300JHJNOPCPPAD(int value) {
+        
+        unk3300JHJNOPCPPAD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3300_JHJNOPCPPAD = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300JHJNOPCPPAD() {
+        
+        unk3300JHJNOPCPPAD_ = 0;
         onChanged();
         return this;
       }
 
       private int compoundId_ ;
       /**
-       * <code>uint32 compound_id = 4;</code>
+       * <code>uint32 compound_id = 12;</code>
        * @return The compoundId.
        */
       @java.lang.Override
@@ -577,7 +639,7 @@ public final class CompoundQueueDataOuterClass {
         return compoundId_;
       }
       /**
-       * <code>uint32 compound_id = 4;</code>
+       * <code>uint32 compound_id = 12;</code>
        * @param value The compoundId to set.
        * @return This builder for chaining.
        */
@@ -588,74 +650,12 @@ public final class CompoundQueueDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 compound_id = 4;</code>
+       * <code>uint32 compound_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
         
         compoundId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int outputTime_ ;
-      /**
-       * <code>uint32 output_time = 14;</code>
-       * @return The outputTime.
-       */
-      @java.lang.Override
-      public int getOutputTime() {
-        return outputTime_;
-      }
-      /**
-       * <code>uint32 output_time = 14;</code>
-       * @param value The outputTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOutputTime(int value) {
-        
-        outputTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 output_time = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOutputTime() {
-        
-        outputTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int waitCount_ ;
-      /**
-       * <code>uint32 wait_count = 8;</code>
-       * @return The waitCount.
-       */
-      @java.lang.Override
-      public int getWaitCount() {
-        return waitCount_;
-      }
-      /**
-       * <code>uint32 wait_count = 8;</code>
-       * @param value The waitCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWaitCount(int value) {
-        
-        waitCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 wait_count = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWaitCount() {
-        
-        waitCount_ = 0;
         onChanged();
         return this;
       }
@@ -726,11 +726,11 @@ public final class CompoundQueueDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027CompoundQueueData.proto\"g\n\021CompoundQue" +
-      "ueData\022\024\n\014output_count\030\001 \001(\r\022\023\n\013compound" +
-      "_id\030\004 \001(\r\022\023\n\013output_time\030\016 \001(\r\022\022\n\nwait_c" +
-      "ount\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\027CompoundQueueData.proto\"\177\n\021CompoundQue" +
+      "ueData\022\033\n\023Unk3300_NCEHJAAHOKM\030\005 \001(\r\022\033\n\023U" +
+      "nk3300_COMIGCMIPLE\030\016 \001(\r\022\033\n\023Unk3300_JHJN" +
+      "OPCPPAD\030\n \001(\r\022\023\n\013compound_id\030\014 \001(\rB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,7 +741,7 @@ public final class CompoundQueueDataOuterClass {
     internal_static_CompoundQueueData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CompoundQueueData_descriptor,
-        new java.lang.String[] { "OutputCount", "CompoundId", "OutputTime", "WaitCount", });
+        new java.lang.String[] { "Unk3300NCEHJAAHOKM", "Unk3300COMIGCMIPLE", "Unk3300JHJNOPCPPAD", "CompoundId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
