@@ -25,10 +25,10 @@ public final class DoGachaRspOuterClass {
     boolean getUnk3300OHFMHIHJHPJ();
 
     /**
-     * <code>uint32 Unk3300_JLELMHELIDC = 3;</code>
-     * @return The unk3300JLELMHELIDC.
+     * <code>uint32 LeftGachaTimes = 3;</code>
+     * @return The leftGachaTimes.
      */
-    int getUnk3300JLELMHELIDC();
+    int getLeftGachaTimes();
 
     /**
      * <code>repeated .GachaItem gacha_item_list = 9;</code>
@@ -103,22 +103,22 @@ public final class DoGachaRspOuterClass {
     int getUnk3300KEIJFMKAKDH();
 
     /**
-     * <code>uint32 Unk3300_DBFMKAMNPCL = 13;</code>
-     * @return The unk3300DBFMKAMNPCL.
+     * <code>uint32 TenCostItemId = 13;</code>
+     * @return The tenCostItemId.
      */
-    int getUnk3300DBFMKAMNPCL();
+    int getTenCostItemId();
 
     /**
-     * <code>uint32 Unk3300_JLBFLPEMAPP = 8;</code>
-     * @return The unk3300JLBFLPEMAPP.
+     * <code>uint32 CostItemNum = 8;</code>
+     * @return The costItemNum.
      */
-    int getUnk3300JLBFLPEMAPP();
+    int getCostItemNum();
 
     /**
-     * <code>uint32 Unk3300_MEDMCPFCIOO = 2;</code>
-     * @return The unk3300MEDMCPFCIOO.
+     * <code>uint32 TenCostItemNum = 2;</code>
+     * @return The tenCostItemNum.
      */
-    int getUnk3300MEDMCPFCIOO();
+    int getTenCostItemNum();
 
     /**
      * <code>uint32 Unk3300_HLANONBCBLM = 1550;</code>
@@ -127,10 +127,10 @@ public final class DoGachaRspOuterClass {
     int getUnk3300HLANONBCBLM();
 
     /**
-     * <code>uint32 Unk3300_PLFMMOFNGAG = 7;</code>
-     * @return The unk3300PLFMMOFNGAG.
+     * <code>uint32 CostItemId = 7;</code>
+     * @return The costItemId.
      */
-    int getUnk3300PLFMMOFNGAG();
+    int getCostItemId();
 
     /**
      * <code>uint32 gacha_schedule_id = 14;</code>
@@ -214,12 +214,12 @@ public final class DoGachaRspOuterClass {
             }
             case 16: {
 
-              unk3300MEDMCPFCIOO_ = input.readUInt32();
+              tenCostItemNum_ = input.readUInt32();
               break;
             }
             case 24: {
 
-              unk3300JLELMHELIDC_ = input.readUInt32();
+              leftGachaTimes_ = input.readUInt32();
               break;
             }
             case 32: {
@@ -239,12 +239,12 @@ public final class DoGachaRspOuterClass {
             }
             case 56: {
 
-              unk3300PLFMMOFNGAG_ = input.readUInt32();
+              costItemId_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              unk3300JLBFLPEMAPP_ = input.readUInt32();
+              costItemNum_ = input.readUInt32();
               break;
             }
             case 74: {
@@ -273,7 +273,7 @@ public final class DoGachaRspOuterClass {
             }
             case 104: {
 
-              unk3300DBFMKAMNPCL_ = input.readUInt32();
+              tenCostItemId_ = input.readUInt32();
               break;
             }
             case 112: {
@@ -352,15 +352,15 @@ public final class DoGachaRspOuterClass {
       return unk3300OHFMHIHJHPJ_;
     }
 
-    public static final int UNK3300_JLELMHELIDC_FIELD_NUMBER = 3;
-    private int unk3300JLELMHELIDC_;
+    public static final int LEFTGACHATIMES_FIELD_NUMBER = 3;
+    private int leftGachaTimes_;
     /**
-     * <code>uint32 Unk3300_JLELMHELIDC = 3;</code>
-     * @return The unk3300JLELMHELIDC.
+     * <code>uint32 LeftGachaTimes = 3;</code>
+     * @return The leftGachaTimes.
      */
     @java.lang.Override
-    public int getUnk3300JLELMHELIDC() {
-      return unk3300JLELMHELIDC_;
+    public int getLeftGachaTimes() {
+      return leftGachaTimes_;
     }
 
     public static final int GACHA_ITEM_LIST_FIELD_NUMBER = 9;
@@ -491,37 +491,37 @@ public final class DoGachaRspOuterClass {
       return unk3300KEIJFMKAKDH_;
     }
 
-    public static final int UNK3300_DBFMKAMNPCL_FIELD_NUMBER = 13;
-    private int unk3300DBFMKAMNPCL_;
+    public static final int TENCOSTITEMID_FIELD_NUMBER = 13;
+    private int tenCostItemId_;
     /**
-     * <code>uint32 Unk3300_DBFMKAMNPCL = 13;</code>
-     * @return The unk3300DBFMKAMNPCL.
+     * <code>uint32 TenCostItemId = 13;</code>
+     * @return The tenCostItemId.
      */
     @java.lang.Override
-    public int getUnk3300DBFMKAMNPCL() {
-      return unk3300DBFMKAMNPCL_;
+    public int getTenCostItemId() {
+      return tenCostItemId_;
     }
 
-    public static final int UNK3300_JLBFLPEMAPP_FIELD_NUMBER = 8;
-    private int unk3300JLBFLPEMAPP_;
+    public static final int COSTITEMNUM_FIELD_NUMBER = 8;
+    private int costItemNum_;
     /**
-     * <code>uint32 Unk3300_JLBFLPEMAPP = 8;</code>
-     * @return The unk3300JLBFLPEMAPP.
+     * <code>uint32 CostItemNum = 8;</code>
+     * @return The costItemNum.
      */
     @java.lang.Override
-    public int getUnk3300JLBFLPEMAPP() {
-      return unk3300JLBFLPEMAPP_;
+    public int getCostItemNum() {
+      return costItemNum_;
     }
 
-    public static final int UNK3300_MEDMCPFCIOO_FIELD_NUMBER = 2;
-    private int unk3300MEDMCPFCIOO_;
+    public static final int TENCOSTITEMNUM_FIELD_NUMBER = 2;
+    private int tenCostItemNum_;
     /**
-     * <code>uint32 Unk3300_MEDMCPFCIOO = 2;</code>
-     * @return The unk3300MEDMCPFCIOO.
+     * <code>uint32 TenCostItemNum = 2;</code>
+     * @return The tenCostItemNum.
      */
     @java.lang.Override
-    public int getUnk3300MEDMCPFCIOO() {
-      return unk3300MEDMCPFCIOO_;
+    public int getTenCostItemNum() {
+      return tenCostItemNum_;
     }
 
     public static final int UNK3300_HLANONBCBLM_FIELD_NUMBER = 1550;
@@ -535,15 +535,15 @@ public final class DoGachaRspOuterClass {
       return unk3300HLANONBCBLM_;
     }
 
-    public static final int UNK3300_PLFMMOFNGAG_FIELD_NUMBER = 7;
-    private int unk3300PLFMMOFNGAG_;
+    public static final int COSTITEMID_FIELD_NUMBER = 7;
+    private int costItemId_;
     /**
-     * <code>uint32 Unk3300_PLFMMOFNGAG = 7;</code>
-     * @return The unk3300PLFMMOFNGAG.
+     * <code>uint32 CostItemId = 7;</code>
+     * @return The costItemId.
      */
     @java.lang.Override
-    public int getUnk3300PLFMMOFNGAG() {
-      return unk3300PLFMMOFNGAG_;
+    public int getCostItemId() {
+      return costItemId_;
     }
 
     public static final int GACHA_SCHEDULE_ID_FIELD_NUMBER = 14;
@@ -596,11 +596,11 @@ public final class DoGachaRspOuterClass {
       if (unk3300NMOKGFGDFFC_ != 0) {
         output.writeUInt32(1, unk3300NMOKGFGDFFC_);
       }
-      if (unk3300MEDMCPFCIOO_ != 0) {
-        output.writeUInt32(2, unk3300MEDMCPFCIOO_);
+      if (tenCostItemNum_ != 0) {
+        output.writeUInt32(2, tenCostItemNum_);
       }
-      if (unk3300JLELMHELIDC_ != 0) {
-        output.writeUInt32(3, unk3300JLELMHELIDC_);
+      if (leftGachaTimes_ != 0) {
+        output.writeUInt32(3, leftGachaTimes_);
       }
       if (gachaTimes_ != 0) {
         output.writeUInt32(4, gachaTimes_);
@@ -611,11 +611,11 @@ public final class DoGachaRspOuterClass {
       if (unk3300OPGAHAGHEPF_ != 0) {
         output.writeUInt32(6, unk3300OPGAHAGHEPF_);
       }
-      if (unk3300PLFMMOFNGAG_ != 0) {
-        output.writeUInt32(7, unk3300PLFMMOFNGAG_);
+      if (costItemId_ != 0) {
+        output.writeUInt32(7, costItemId_);
       }
-      if (unk3300JLBFLPEMAPP_ != 0) {
-        output.writeUInt32(8, unk3300JLBFLPEMAPP_);
+      if (costItemNum_ != 0) {
+        output.writeUInt32(8, costItemNum_);
       }
       for (int i = 0; i < gachaItemList_.size(); i++) {
         output.writeMessage(9, gachaItemList_.get(i));
@@ -629,8 +629,8 @@ public final class DoGachaRspOuterClass {
       if (unk3300KEIJFMKAKDH_ != 0) {
         output.writeUInt32(12, unk3300KEIJFMKAKDH_);
       }
-      if (unk3300DBFMKAMNPCL_ != 0) {
-        output.writeUInt32(13, unk3300DBFMKAMNPCL_);
+      if (tenCostItemId_ != 0) {
+        output.writeUInt32(13, tenCostItemId_);
       }
       if (gachaScheduleId_ != 0) {
         output.writeUInt32(14, gachaScheduleId_);
@@ -663,13 +663,13 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, unk3300NMOKGFGDFFC_);
       }
-      if (unk3300MEDMCPFCIOO_ != 0) {
+      if (tenCostItemNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, unk3300MEDMCPFCIOO_);
+          .computeUInt32Size(2, tenCostItemNum_);
       }
-      if (unk3300JLELMHELIDC_ != 0) {
+      if (leftGachaTimes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, unk3300JLELMHELIDC_);
+          .computeUInt32Size(3, leftGachaTimes_);
       }
       if (gachaTimes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -683,13 +683,13 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, unk3300OPGAHAGHEPF_);
       }
-      if (unk3300PLFMMOFNGAG_ != 0) {
+      if (costItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, unk3300PLFMMOFNGAG_);
+          .computeUInt32Size(7, costItemId_);
       }
-      if (unk3300JLBFLPEMAPP_ != 0) {
+      if (costItemNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, unk3300JLBFLPEMAPP_);
+          .computeUInt32Size(8, costItemNum_);
       }
       for (int i = 0; i < gachaItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -707,9 +707,9 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, unk3300KEIJFMKAKDH_);
       }
-      if (unk3300DBFMKAMNPCL_ != 0) {
+      if (tenCostItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, unk3300DBFMKAMNPCL_);
+          .computeUInt32Size(13, tenCostItemId_);
       }
       if (gachaScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -752,8 +752,8 @@ public final class DoGachaRspOuterClass {
 
       if (getUnk3300OHFMHIHJHPJ()
           != other.getUnk3300OHFMHIHJHPJ()) return false;
-      if (getUnk3300JLELMHELIDC()
-          != other.getUnk3300JLELMHELIDC()) return false;
+      if (getLeftGachaTimes()
+          != other.getLeftGachaTimes()) return false;
       if (!getGachaItemListList()
           .equals(other.getGachaItemListList())) return false;
       if (getUnk3300HBILIAEIHNK()
@@ -772,16 +772,16 @@ public final class DoGachaRspOuterClass {
           != other.getUnk3300GLPMIEMBGGL()) return false;
       if (getUnk3300KEIJFMKAKDH()
           != other.getUnk3300KEIJFMKAKDH()) return false;
-      if (getUnk3300DBFMKAMNPCL()
-          != other.getUnk3300DBFMKAMNPCL()) return false;
-      if (getUnk3300JLBFLPEMAPP()
-          != other.getUnk3300JLBFLPEMAPP()) return false;
-      if (getUnk3300MEDMCPFCIOO()
-          != other.getUnk3300MEDMCPFCIOO()) return false;
+      if (getTenCostItemId()
+          != other.getTenCostItemId()) return false;
+      if (getCostItemNum()
+          != other.getCostItemNum()) return false;
+      if (getTenCostItemNum()
+          != other.getTenCostItemNum()) return false;
       if (getUnk3300HLANONBCBLM()
           != other.getUnk3300HLANONBCBLM()) return false;
-      if (getUnk3300PLFMMOFNGAG()
-          != other.getUnk3300PLFMMOFNGAG()) return false;
+      if (getCostItemId()
+          != other.getCostItemId()) return false;
       if (getGachaScheduleId()
           != other.getGachaScheduleId()) return false;
       if (getDailyGachaTimes()
@@ -802,8 +802,8 @@ public final class DoGachaRspOuterClass {
       hash = (37 * hash) + UNK3300_OHFMHIHJHPJ_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300OHFMHIHJHPJ());
-      hash = (37 * hash) + UNK3300_JLELMHELIDC_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300JLELMHELIDC();
+      hash = (37 * hash) + LEFTGACHATIMES_FIELD_NUMBER;
+      hash = (53 * hash) + getLeftGachaTimes();
       if (getGachaItemListCount() > 0) {
         hash = (37 * hash) + GACHA_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGachaItemListList().hashCode();
@@ -825,16 +825,16 @@ public final class DoGachaRspOuterClass {
       hash = (53 * hash) + getUnk3300GLPMIEMBGGL();
       hash = (37 * hash) + UNK3300_KEIJFMKAKDH_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300KEIJFMKAKDH();
-      hash = (37 * hash) + UNK3300_DBFMKAMNPCL_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300DBFMKAMNPCL();
-      hash = (37 * hash) + UNK3300_JLBFLPEMAPP_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300JLBFLPEMAPP();
-      hash = (37 * hash) + UNK3300_MEDMCPFCIOO_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300MEDMCPFCIOO();
+      hash = (37 * hash) + TENCOSTITEMID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenCostItemId();
+      hash = (37 * hash) + COSTITEMNUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCostItemNum();
+      hash = (37 * hash) + TENCOSTITEMNUM_FIELD_NUMBER;
+      hash = (53 * hash) + getTenCostItemNum();
       hash = (37 * hash) + UNK3300_HLANONBCBLM_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300HLANONBCBLM();
-      hash = (37 * hash) + UNK3300_PLFMMOFNGAG_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300PLFMMOFNGAG();
+      hash = (37 * hash) + COSTITEMID_FIELD_NUMBER;
+      hash = (53 * hash) + getCostItemId();
       hash = (37 * hash) + GACHA_SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGachaScheduleId();
       hash = (37 * hash) + DAILY_GACHA_TIMES_FIELD_NUMBER;
@@ -987,7 +987,7 @@ public final class DoGachaRspOuterClass {
         super.clear();
         unk3300OHFMHIHJHPJ_ = false;
 
-        unk3300JLELMHELIDC_ = 0;
+        leftGachaTimes_ = 0;
 
         if (gachaItemListBuilder_ == null) {
           gachaItemList_ = java.util.Collections.emptyList();
@@ -1011,15 +1011,15 @@ public final class DoGachaRspOuterClass {
 
         unk3300KEIJFMKAKDH_ = 0;
 
-        unk3300DBFMKAMNPCL_ = 0;
+        tenCostItemId_ = 0;
 
-        unk3300JLBFLPEMAPP_ = 0;
+        costItemNum_ = 0;
 
-        unk3300MEDMCPFCIOO_ = 0;
+        tenCostItemNum_ = 0;
 
         unk3300HLANONBCBLM_ = 0;
 
-        unk3300PLFMMOFNGAG_ = 0;
+        costItemId_ = 0;
 
         gachaScheduleId_ = 0;
 
@@ -1055,7 +1055,7 @@ public final class DoGachaRspOuterClass {
         emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp result = new emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp(this);
         int from_bitField0_ = bitField0_;
         result.unk3300OHFMHIHJHPJ_ = unk3300OHFMHIHJHPJ_;
-        result.unk3300JLELMHELIDC_ = unk3300JLELMHELIDC_;
+        result.leftGachaTimes_ = leftGachaTimes_;
         if (gachaItemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             gachaItemList_ = java.util.Collections.unmodifiableList(gachaItemList_);
@@ -1073,11 +1073,11 @@ public final class DoGachaRspOuterClass {
         result.gachaTimes_ = gachaTimes_;
         result.unk3300GLPMIEMBGGL_ = unk3300GLPMIEMBGGL_;
         result.unk3300KEIJFMKAKDH_ = unk3300KEIJFMKAKDH_;
-        result.unk3300DBFMKAMNPCL_ = unk3300DBFMKAMNPCL_;
-        result.unk3300JLBFLPEMAPP_ = unk3300JLBFLPEMAPP_;
-        result.unk3300MEDMCPFCIOO_ = unk3300MEDMCPFCIOO_;
+        result.tenCostItemId_ = tenCostItemId_;
+        result.costItemNum_ = costItemNum_;
+        result.tenCostItemNum_ = tenCostItemNum_;
         result.unk3300HLANONBCBLM_ = unk3300HLANONBCBLM_;
-        result.unk3300PLFMMOFNGAG_ = unk3300PLFMMOFNGAG_;
+        result.costItemId_ = costItemId_;
         result.gachaScheduleId_ = gachaScheduleId_;
         result.dailyGachaTimes_ = dailyGachaTimes_;
         result.retcode_ = retcode_;
@@ -1132,8 +1132,8 @@ public final class DoGachaRspOuterClass {
         if (other.getUnk3300OHFMHIHJHPJ() != false) {
           setUnk3300OHFMHIHJHPJ(other.getUnk3300OHFMHIHJHPJ());
         }
-        if (other.getUnk3300JLELMHELIDC() != 0) {
-          setUnk3300JLELMHELIDC(other.getUnk3300JLELMHELIDC());
+        if (other.getLeftGachaTimes() != 0) {
+          setLeftGachaTimes(other.getLeftGachaTimes());
         }
         if (gachaItemListBuilder_ == null) {
           if (!other.gachaItemList_.isEmpty()) {
@@ -1185,20 +1185,20 @@ public final class DoGachaRspOuterClass {
         if (other.getUnk3300KEIJFMKAKDH() != 0) {
           setUnk3300KEIJFMKAKDH(other.getUnk3300KEIJFMKAKDH());
         }
-        if (other.getUnk3300DBFMKAMNPCL() != 0) {
-          setUnk3300DBFMKAMNPCL(other.getUnk3300DBFMKAMNPCL());
+        if (other.getTenCostItemId() != 0) {
+          setTenCostItemId(other.getTenCostItemId());
         }
-        if (other.getUnk3300JLBFLPEMAPP() != 0) {
-          setUnk3300JLBFLPEMAPP(other.getUnk3300JLBFLPEMAPP());
+        if (other.getCostItemNum() != 0) {
+          setCostItemNum(other.getCostItemNum());
         }
-        if (other.getUnk3300MEDMCPFCIOO() != 0) {
-          setUnk3300MEDMCPFCIOO(other.getUnk3300MEDMCPFCIOO());
+        if (other.getTenCostItemNum() != 0) {
+          setTenCostItemNum(other.getTenCostItemNum());
         }
         if (other.getUnk3300HLANONBCBLM() != 0) {
           setUnk3300HLANONBCBLM(other.getUnk3300HLANONBCBLM());
         }
-        if (other.getUnk3300PLFMMOFNGAG() != 0) {
-          setUnk3300PLFMMOFNGAG(other.getUnk3300PLFMMOFNGAG());
+        if (other.getCostItemId() != 0) {
+          setCostItemId(other.getCostItemId());
         }
         if (other.getGachaScheduleId() != 0) {
           setGachaScheduleId(other.getGachaScheduleId());
@@ -1270,33 +1270,33 @@ public final class DoGachaRspOuterClass {
         return this;
       }
 
-      private int unk3300JLELMHELIDC_ ;
+      private int leftGachaTimes_ ;
       /**
-       * <code>uint32 Unk3300_JLELMHELIDC = 3;</code>
-       * @return The unk3300JLELMHELIDC.
+       * <code>uint32 LeftGachaTimes = 3;</code>
+       * @return The leftGachaTimes.
        */
       @java.lang.Override
-      public int getUnk3300JLELMHELIDC() {
-        return unk3300JLELMHELIDC_;
+      public int getLeftGachaTimes() {
+        return leftGachaTimes_;
       }
       /**
-       * <code>uint32 Unk3300_JLELMHELIDC = 3;</code>
-       * @param value The unk3300JLELMHELIDC to set.
+       * <code>uint32 LeftGachaTimes = 3;</code>
+       * @param value The leftGachaTimes to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300JLELMHELIDC(int value) {
+      public Builder setLeftGachaTimes(int value) {
         
-        unk3300JLELMHELIDC_ = value;
+        leftGachaTimes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_JLELMHELIDC = 3;</code>
+       * <code>uint32 LeftGachaTimes = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300JLELMHELIDC() {
+      public Builder clearLeftGachaTimes() {
         
-        unk3300JLELMHELIDC_ = 0;
+        leftGachaTimes_ = 0;
         onChanged();
         return this;
       }
@@ -1789,95 +1789,95 @@ public final class DoGachaRspOuterClass {
         return this;
       }
 
-      private int unk3300DBFMKAMNPCL_ ;
+      private int tenCostItemId_ ;
       /**
-       * <code>uint32 Unk3300_DBFMKAMNPCL = 13;</code>
-       * @return The unk3300DBFMKAMNPCL.
+       * <code>uint32 TenCostItemId = 13;</code>
+       * @return The tenCostItemId.
        */
       @java.lang.Override
-      public int getUnk3300DBFMKAMNPCL() {
-        return unk3300DBFMKAMNPCL_;
+      public int getTenCostItemId() {
+        return tenCostItemId_;
       }
       /**
-       * <code>uint32 Unk3300_DBFMKAMNPCL = 13;</code>
-       * @param value The unk3300DBFMKAMNPCL to set.
+       * <code>uint32 TenCostItemId = 13;</code>
+       * @param value The tenCostItemId to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300DBFMKAMNPCL(int value) {
+      public Builder setTenCostItemId(int value) {
         
-        unk3300DBFMKAMNPCL_ = value;
+        tenCostItemId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_DBFMKAMNPCL = 13;</code>
+       * <code>uint32 TenCostItemId = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300DBFMKAMNPCL() {
+      public Builder clearTenCostItemId() {
         
-        unk3300DBFMKAMNPCL_ = 0;
+        tenCostItemId_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300JLBFLPEMAPP_ ;
+      private int costItemNum_ ;
       /**
-       * <code>uint32 Unk3300_JLBFLPEMAPP = 8;</code>
-       * @return The unk3300JLBFLPEMAPP.
+       * <code>uint32 CostItemNum = 8;</code>
+       * @return The costItemNum.
        */
       @java.lang.Override
-      public int getUnk3300JLBFLPEMAPP() {
-        return unk3300JLBFLPEMAPP_;
+      public int getCostItemNum() {
+        return costItemNum_;
       }
       /**
-       * <code>uint32 Unk3300_JLBFLPEMAPP = 8;</code>
-       * @param value The unk3300JLBFLPEMAPP to set.
+       * <code>uint32 CostItemNum = 8;</code>
+       * @param value The costItemNum to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300JLBFLPEMAPP(int value) {
+      public Builder setCostItemNum(int value) {
         
-        unk3300JLBFLPEMAPP_ = value;
+        costItemNum_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_JLBFLPEMAPP = 8;</code>
+       * <code>uint32 CostItemNum = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300JLBFLPEMAPP() {
+      public Builder clearCostItemNum() {
         
-        unk3300JLBFLPEMAPP_ = 0;
+        costItemNum_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300MEDMCPFCIOO_ ;
+      private int tenCostItemNum_ ;
       /**
-       * <code>uint32 Unk3300_MEDMCPFCIOO = 2;</code>
-       * @return The unk3300MEDMCPFCIOO.
+       * <code>uint32 TenCostItemNum = 2;</code>
+       * @return The tenCostItemNum.
        */
       @java.lang.Override
-      public int getUnk3300MEDMCPFCIOO() {
-        return unk3300MEDMCPFCIOO_;
+      public int getTenCostItemNum() {
+        return tenCostItemNum_;
       }
       /**
-       * <code>uint32 Unk3300_MEDMCPFCIOO = 2;</code>
-       * @param value The unk3300MEDMCPFCIOO to set.
+       * <code>uint32 TenCostItemNum = 2;</code>
+       * @param value The tenCostItemNum to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300MEDMCPFCIOO(int value) {
+      public Builder setTenCostItemNum(int value) {
         
-        unk3300MEDMCPFCIOO_ = value;
+        tenCostItemNum_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_MEDMCPFCIOO = 2;</code>
+       * <code>uint32 TenCostItemNum = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300MEDMCPFCIOO() {
+      public Builder clearTenCostItemNum() {
         
-        unk3300MEDMCPFCIOO_ = 0;
+        tenCostItemNum_ = 0;
         onChanged();
         return this;
       }
@@ -1913,33 +1913,33 @@ public final class DoGachaRspOuterClass {
         return this;
       }
 
-      private int unk3300PLFMMOFNGAG_ ;
+      private int costItemId_ ;
       /**
-       * <code>uint32 Unk3300_PLFMMOFNGAG = 7;</code>
-       * @return The unk3300PLFMMOFNGAG.
+       * <code>uint32 CostItemId = 7;</code>
+       * @return The costItemId.
        */
       @java.lang.Override
-      public int getUnk3300PLFMMOFNGAG() {
-        return unk3300PLFMMOFNGAG_;
+      public int getCostItemId() {
+        return costItemId_;
       }
       /**
-       * <code>uint32 Unk3300_PLFMMOFNGAG = 7;</code>
-       * @param value The unk3300PLFMMOFNGAG to set.
+       * <code>uint32 CostItemId = 7;</code>
+       * @param value The costItemId to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300PLFMMOFNGAG(int value) {
+      public Builder setCostItemId(int value) {
         
-        unk3300PLFMMOFNGAG_ = value;
+        costItemId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_PLFMMOFNGAG = 7;</code>
+       * <code>uint32 CostItemId = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300PLFMMOFNGAG() {
+      public Builder clearCostItemId() {
         
-        unk3300PLFMMOFNGAG_ = 0;
+        costItemId_ = 0;
         onChanged();
         return this;
       }
@@ -2103,22 +2103,21 @@ public final class DoGachaRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020DoGachaRsp.proto\032\017GachaItem.proto\"\236\004\n\n" +
+      "\n\020DoGachaRsp.proto\032\017GachaItem.proto\"\375\003\n\n" +
       "DoGachaRsp\022\034\n\023Unk3300_OHFMHIHJHPJ\030\224\016 \001(\010" +
-      "\022\033\n\023Unk3300_JLELMHELIDC\030\003 \001(\r\022#\n\017gacha_i" +
-      "tem_list\030\t \003(\0132\n.GachaItem\022\034\n\023Unk3300_HB" +
-      "ILIAEIHNK\030\337\016 \001(\010\022\022\n\ngacha_type\030\n \001(\r\022\033\n\023" +
-      "Unk3300_OPGAHAGHEPF\030\006 \001(\r\022\033\n\023Unk3300_NMO" +
-      "KGFGDFFC\030\001 \001(\r\022\033\n\023Unk3300_BLLMPAJNCPI\030\005 " +
-      "\001(\r\022\023\n\013gacha_times\030\004 \001(\r\022\033\n\023Unk3300_GLPM" +
-      "IEMBGGL\030\017 \001(\r\022\033\n\023Unk3300_KEIJFMKAKDH\030\014 \001" +
-      "(\r\022\033\n\023Unk3300_DBFMKAMNPCL\030\r \001(\r\022\033\n\023Unk33" +
-      "00_JLBFLPEMAPP\030\010 \001(\r\022\033\n\023Unk3300_MEDMCPFC" +
-      "IOO\030\002 \001(\r\022\034\n\023Unk3300_HLANONBCBLM\030\216\014 \001(\r\022" +
-      "\033\n\023Unk3300_PLFMMOFNGAG\030\007 \001(\r\022\031\n\021gacha_sc" +
-      "hedule_id\030\016 \001(\r\022\032\n\021daily_gacha_times\030\323\003 " +
-      "\001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\022\026\n\016LeftGachaTimes\030\003 \001(\r\022#\n\017gacha_item_l" +
+      "ist\030\t \003(\0132\n.GachaItem\022\034\n\023Unk3300_HBILIAE" +
+      "IHNK\030\337\016 \001(\010\022\022\n\ngacha_type\030\n \001(\r\022\033\n\023Unk33" +
+      "00_OPGAHAGHEPF\030\006 \001(\r\022\033\n\023Unk3300_NMOKGFGD" +
+      "FFC\030\001 \001(\r\022\033\n\023Unk3300_BLLMPAJNCPI\030\005 \001(\r\022\023" +
+      "\n\013gacha_times\030\004 \001(\r\022\033\n\023Unk3300_GLPMIEMBG" +
+      "GL\030\017 \001(\r\022\033\n\023Unk3300_KEIJFMKAKDH\030\014 \001(\r\022\025\n" +
+      "\rTenCostItemId\030\r \001(\r\022\023\n\013CostItemNum\030\010 \001(" +
+      "\r\022\026\n\016TenCostItemNum\030\002 \001(\r\022\034\n\023Unk3300_HLA" +
+      "NONBCBLM\030\216\014 \001(\r\022\022\n\nCostItemId\030\007 \001(\r\022\031\n\021g" +
+      "acha_schedule_id\030\016 \001(\r\022\032\n\021daily_gacha_ti" +
+      "mes\030\323\003 \001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2130,7 +2129,7 @@ public final class DoGachaRspOuterClass {
     internal_static_DoGachaRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DoGachaRsp_descriptor,
-        new java.lang.String[] { "Unk3300OHFMHIHJHPJ", "Unk3300JLELMHELIDC", "GachaItemList", "Unk3300HBILIAEIHNK", "GachaType", "Unk3300OPGAHAGHEPF", "Unk3300NMOKGFGDFFC", "Unk3300BLLMPAJNCPI", "GachaTimes", "Unk3300GLPMIEMBGGL", "Unk3300KEIJFMKAKDH", "Unk3300DBFMKAMNPCL", "Unk3300JLBFLPEMAPP", "Unk3300MEDMCPFCIOO", "Unk3300HLANONBCBLM", "Unk3300PLFMMOFNGAG", "GachaScheduleId", "DailyGachaTimes", "Retcode", });
+        new java.lang.String[] { "Unk3300OHFMHIHJHPJ", "LeftGachaTimes", "GachaItemList", "Unk3300HBILIAEIHNK", "GachaType", "Unk3300OPGAHAGHEPF", "Unk3300NMOKGFGDFFC", "Unk3300BLLMPAJNCPI", "GachaTimes", "Unk3300GLPMIEMBGGL", "Unk3300KEIJFMKAKDH", "TenCostItemId", "CostItemNum", "TenCostItemNum", "Unk3300HLANONBCBLM", "CostItemId", "GachaScheduleId", "DailyGachaTimes", "Retcode", });
     emu.grasscutter.net.proto.GachaItemOuterClass.getDescriptor();
   }
 
