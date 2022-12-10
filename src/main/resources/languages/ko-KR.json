@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "게임 서버가 \u001b[1m\u001b[33m%s:%s\u001b[0m에서 열렸습니다.",
       "port_bind": "게임 서버가 포트 %s에서 열렸습니다.",
       "connect": "클라이언트가 %s에서 연결됐습니다.",
       "disconnect": "클라이언트가 %s에서 연결이 끊겼습니다.",
@@ -9,9 +9,9 @@
       "command_error": "명령어 오류:"
     },
     "dispatch": {
-      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] 디스패치 서버가 \u001b[1m\u001b[33m%s:%s\u001b[0m에서 열렸습니다.",
       "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
-      "request": "🇺🇸[Dispatch] Client %s %s request: %s",
+      "request": "[Dispatch] 클라이언트 %s %s 응답: %s",
       "keystore": {
         "general_error": "[Dispatch] 키스토어 로딩중 오류가 발생했습니다!",
         "password_error": "[Dispatch] 키스토어를 로딩할 수 없습니다. 기본 키스토어 암호로 시도 중...",
@@ -19,10 +19,10 @@
         "default_password": "[Dispatch] 기본 키스토어 암호가 성공적으로 로딩됐습니다. config.json에서 암호를 123456으로 설정해 보십시오."
       },
       "authentication": {
-        "default_unable_to_verify": "🇺🇸[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
+        "default_unable_to_verify": "[Authentication] 검증된 유저. 기본 인증 처리기에서 사용할 수 없는 매서드입니다."
       },
       "no_commands_error": "디스패치 전용 모드에서는 명령어가 지원되지 않습니다.",
-      "unhandled_request_error": "🇺🇸[Dispatch] Potential unhandled %s request: %s.",
+      "unhandled_request_error": "[Dispatch] 처리되지 않은 가능성 %s 응답: %s.",
       "account": {
         "login_attempt": "[Dispatch] %s 클라이언트에서 로그인을 시도하고 있습니다.",
         "login_success": "[Dispatch] %s 클라이언트가 %s로 로그인 했습니다.",
@@ -136,8 +136,8 @@
       "artifacts": "%s의 성유물을 초기화했습니다.",
       "materials": "%s의 재료를 초기화했습니다.",
       "furniture": "%s의 가구를 초기화했습니다.",
-      "displays": "🇺🇸Cleared displays for %s.",
-      "virtuals": "🇺🇸Cleared virtuals for %s.",
+      "displays": "%s의 Display를 초기화했습니다.",
+      "virtuals": "%s의 Virtuals를 초기화했습니다.",
       "everything": "%s의 모든 아이템을 초기화했습니다.",
       "description": "인벤토레에서 잠금된 물건을 제외한 항목을 삭제합니다. 기본적으로 4성, 1레벨, 1재련보다 낮은것만을 기준으로 하지만, 더 높게 설정할 수 있습니다."
     },
@@ -155,9 +155,9 @@
       "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
       "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
       "given": "%s개의 %s를 %s에게 지급했습니다.",
-      "given_with_level_and_refinement": "Give %s with level %s, refinement %s %s times to %s.",
-      "given_level": "🇺🇸Given %s with level %s %s times to %s.",
-      "given_avatar": "🇺🇸Given %s with level %s to %s.",
+      "given_with_level_and_refinement": "%s을 %s레벨, %s재련, %s번 %s에게 지급했습니다.",
+      "given_level": "%s을 레벨 %s로 %s번 %s에게 지급했습니다.",
+      "given_avatar": "%s을 레벨 %s로 %s에게 지급했습니다.",
       "giveall_success": "모든 아이템이 성공적으로 지급되었습니다.",
       "description": "지정된 플레이어가 아이템을 획득합니다. 모든 무기, 캐릭터, 재료를 제공할 수 있으며, 맞춤 성유물을 제공할 수도 있습니다."
     },
@@ -232,10 +232,10 @@
       "description": "대상 플레이어의 상점의 새로고침 시간을 초기화합니다"
     },
     "sendMail": {
-      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
+      "give_usage": "사용법: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "아이디가 '%s'인 사용자가 없습니다.",
       "start_composition": "메세지 작성 시작중.\n계속하려면 '/sendmail <title>'을 입력하십시오.\n'/sendmail stop'도 언제든지 사용할 수 있습니다.",
-      "templates": "🇺🇸Mail templates coming soon implemented...",
+      "templates": "곧 구현될 메일 템플릿...",
       "invalid_arguments": "잘못된 인수입니다.",
       "send_cancel": "메세지 전송이 취소되었습니다",
       "send_done": "%s에게 메세지가 전송되었습니다!",
@@ -247,11 +247,11 @@
       "set_message_sender": "메세지 발송자가 '%s'으로 설정되었습니다.\n계속하려면 '/sendmail <itemID|itemName|finish> [amount] [level]'을 사용하십시오.",
       "send": "%s 의 %s을 (레벨 %s)을 메세지에 첨부했습니다.\n계속 항목을 추가하거나, '/sendmail finish'을 사용해 메세지를 보낼 수 있습니다..",
       "invalid_arguments_please_use": "잘못된 인수입니다.\n '/sendmail %s'을 사용하십시오",
-      "title": "🇺🇸<title>",
-      "message": "🇺🇸<message>",
-      "sender": "🇺🇸<sender>",
-      "arguments": "🇺🇸<itemID|itemName|finish> [amount] [level]",
-      "error": "오류: Invalid construction stage %s. Check console for stacktrace.",
+      "title": "<title>",
+      "message": "<message>",
+      "sender": "<sender>",
+      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "error": "오류: 잘못된 시공 단계 %s. Console에서 스택을 확인하십시오.",
       "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
     },
     "sendMessage": {
@@ -259,13 +259,13 @@
       "description": "서버가 플레이어에게 메세지를 전송합니다. 목표를 지정하지 않고 명령어를 사용하는 경우, 서버의 모든 인원에게 메세지가 발송됩니다."
     },
     "setConst": {
-      "range_error": "🇺🇸Constellation level must be between 0 and 6.",
-      "level_error": "🇺🇸Invalid constellation level.",
-      "fail": "🇺🇸Failed to set constellation.",
-      "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
-      "success": "🇺🇸Constellations for %s have been set to %s.",
-      "successall": "🇺🇸Constellations for all characters have been set to %s.",
-      "description": "🇺🇸Sets constellation level for your current active character"
+      "range_error": "별자리 레벨은 0과 6사이여야 합니다.",
+      "level_error": "잘못된 별자리 레벨.",
+      "fail": "별자리 설정에 실패했습니다..",
+      "failed_success": "%s에 대한 별자리가 %s로 설정되었습니다. 변경 사항을 보려면 Scene를 다시 로드하세요.",
+      "success": "%s의 별자리가 %s로 설정되었습니다.",
+      "successall": "모든 캐릭터의 별자리가 %s로 설정되었습니다.",
+      "description": "현재 캐릭터의 별자리가 정상적으로 설정되었습니다"
     },
     "setFetterLevel": {
       "range_error": "호감도 지수는 0 과 10 사이에 위치해야합니다.",
@@ -278,10 +278,10 @@
     },
     "setStats": {
       "description": "당신의 현재 캐릭터의 스텟들을 조절합니다.",
-      "locked_to": "🇺🇸%s locked to %s.",
-      "locked_for_to": "🇺🇸%s for %s locked to %s.",
-      "unlocked": "🇺🇸%s unlocked.",
-      "unlocked_for": "🇺🇸%s for %s unlocked."
+      "locked_to": "%s가 %s로 잠겨있습니다.",
+      "locked_for_to": "%s의 %s가 %s로 잠겨있습니다.",
+      "unlocked": "%s 잠금해제됨.",
+      "unlocked_for": "%s의 %s 잠금이 해제됩니다."
     },
     "spawn": {
       "success": " %s 개의 %s 를 소환하는데 성공했습니다.",
@@ -293,9 +293,9 @@
       "description": "서버를 중지합니다"
     },
     "talent": {
-      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
-      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
-      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "out_of_range": "불분명한 특성 레벨. 특성의 레벨은 16 미만이여야합니다.",
+      "set_id": "특성 설정 %s - \"%s\" to %s.",
+      "id_desc": "특성 %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "잘못된 스킬ID.",
       "invalid_level": "불분명한 스킬 레벨.",
       "normal_attack_id": "기본공격 ID %s.",
@@ -310,7 +310,7 @@
       "failed_to_add_avatar": "추가하는데 실패했습니다 캐릭터 ID %s.",
       "failed_to_parse_index": "분석에 실패함 index: %s",
       "remove_too_much": "팀에는 최소 1명의 캐릭터가 편성 되어야 합니다.",
-      "ignore_index": "🇺🇸Ignored index(es): %s",
+      "ignore_index": "무시된 인덱스(들): %s",
       "index_out_of_range": "지정된 목차는 범위 밖에 있습니다.",
       "failed_parse_avatar_id": "분석에 실패한 캐릭터 ID: %s",
       "avatar_already_in_team": "해당 캐릭터는 이미 팀에 포함되어 있습니다.",
@@ -379,25 +379,25 @@
       "header_monster": "몬스터"
     },
     "index": {
-      "title": "🇺🇸Documentation",
-      "handbook": "🇺🇸GM Handbook",
-      "gacha_mapping": "🇺🇸Gacha mapping JSON"
+      "title": "문서",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "Gacha mapping JSON"
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "플러그인 디렉토리를 생성하지 못했습니다: ",
+    "unable_to_load": "플러그인을 로드할 수 없습니다.",
+    "invalid_config": "%s플러그인에 잘못된 구성 파일이 있습니다.",
+    "invalid_main_class": "%s플러그인에 잘못된 메인 클래스가 있습니다.",
+    "missing_config": "%s플러그인에 올바른 구성 파일이 없습니다.",
+    "failed_to_load_plugin": "플러그인을 로드하는데 실패했습니다: %s",
+    "failed_to_load": "플러그인을 로드하는데 실패했습니다.",
+    "failed_to_load_dependencies": "종속성 플러그인을 로드하지 못했습니다.",
+    "loading_plugin": "플러그인을 로드하는중: %s",
+    "failed_add_id": "플러그인의 식별자를 추가하지 못했습니다: %s",
+    "enabling_plugin": "플러그인을 활성화했습니다: %s",
+    "enabling_failed": "플러그인을 활성화하는데 실패했습니다: %s",
+    "disabling_plugin": "플러그인을 비활성화했습니다: %s",
+    "disabling_failed": "플러그인을 비활성화하는데 실패했습니다: %s"
   }
 }
