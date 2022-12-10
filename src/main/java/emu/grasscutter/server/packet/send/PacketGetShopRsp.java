@@ -33,18 +33,19 @@ public class PacketGetShopRsp extends BasePacket {
             List<ShopGoods> goodsList = new ArrayList<>();
             for (ShopInfo info : list) {
                 ShopGoods.Builder goods = ShopGoods.newBuilder()
-                        .setGoodsId(info.getGoodsId())
+//                        .setGoodsId(info.getGoodsId())
                         .setGoodsItem(ItemParamOuterClass.ItemParam.newBuilder().setItemId(info.getGoodsItem().getId()).setCount(info.getGoodsItem().getCount()).build())
-                        .setScoin(info.getScoin())
+//                        .setScoin(info.getScoin())
                         .setHcoin(info.getHcoin())
-                        .setBuyLimit(info.getBuyLimit())
+//                        .setBuyLimit(info.getBuyLimit())
                         .setBeginTime(info.getBeginTime())
                         .setEndTime(info.getEndTime())
-                        .setMinLevel(info.getMinLevel())
-                        .setMaxLevel(info.getMaxLevel())
-                        .setMcoin(info.getMcoin())
-                        .setDisableType(info.getDisableType())
-                        .setSecondarySheetId(info.getSecondarySheetId());
+//                        .setMinLevel(info.getMinLevel())
+//                        .setMaxLevel(info.getMaxLevel())
+//                        .setMcoin(info.getMcoin())
+//                        .setDisableType(info.getDisableType())
+//                        .setSecondarySheetId(info.getSecondarySheetId())
+                        ;
                 if (info.getCostItemList() != null) {
                     goods.addAllCostItemList(info.getCostItemList().stream().map(x -> ItemParamOuterClass.ItemParam.newBuilder().setItemId(x.getId()).setCount(x.getCount()).build()).collect(Collectors.toList()));
                 }
@@ -63,7 +64,7 @@ public class PacketGetShopRsp extends BasePacket {
                     goods.setBoughtNum(currentShopLimit.getHasBoughtInPeriod());
                     goods.setNextRefreshTime(currentShopLimit.getNextRefreshTime());
                 } else {
-                    inv.addShopLimit(goods.getGoodsId(), 0, nextRefreshTime); // save generated refresh time
+//                    inv.addShopLimit(goods.getGoodsId(), 0, nextRefreshTime); // save generated refresh time
                     goods.setNextRefreshTime(nextRefreshTime);
                 }
 

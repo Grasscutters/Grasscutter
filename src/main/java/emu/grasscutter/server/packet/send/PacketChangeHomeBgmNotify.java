@@ -2,14 +2,14 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.Unk2700FJEHHCPCBLGServerNotify;
+import emu.grasscutter.net.proto.HomeChangeBgmNotifyOuterClass;
 
 public class PacketChangeHomeBgmNotify extends BasePacket {
     public PacketChangeHomeBgmNotify(int homeBgmId) {
-        super(PacketOpcodes.Unk2700_FJEHHCPCBLG_ServerNotify);
+        super(PacketOpcodes.HomeChangeBgmNotify);
 
-        var notify = Unk2700FJEHHCPCBLGServerNotify.Unk2700_FJEHHCPCBLG_ServerNotify.newBuilder()
-            .setUnk2700BJHAMKKECEI(homeBgmId)
+        var notify = HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.newBuilder()
+            .setBgmId(homeBgmId)
             .build();
 
         this.setData(notify);

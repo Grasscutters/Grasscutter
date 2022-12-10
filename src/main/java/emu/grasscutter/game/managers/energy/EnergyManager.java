@@ -228,16 +228,16 @@ public class EnergyManager extends BasePlayerManager {
             return;
         }
 
-        // Make sure the target is an actual enemy.
-        GameEntity targetEntity = this.player.getScene().getEntityById(attackRes.getDefenseId());
-        if (!(targetEntity instanceof EntityMonster targetMonster)) {
-            return;
-        }
-
-        MonsterType targetType = targetMonster.getMonsterData().getType();
-        if (targetType != MonsterType.MONSTER_ORDINARY && targetType != MonsterType.MONSTER_BOSS) {
-            return;
-        }
+//        // Make sure the target is an actual enemy.
+//        GameEntity targetEntity = this.player.getScene().getEntityById(attackRes.getDefenseId());
+//        if (!(targetEntity instanceof EntityMonster targetMonster)) {
+//            return;
+//        }
+//
+//        MonsterType targetType = targetMonster.getMonsterData().getType();
+//        if (targetType != MonsterType.MONSTER_ORDINARY && targetType != MonsterType.MONSTER_BOSS) {
+//            return;
+//        }
 
         // Get the ability that caused this hit.
         AbilityIdentifier ability = attackRes.getAbilityIdentifier();

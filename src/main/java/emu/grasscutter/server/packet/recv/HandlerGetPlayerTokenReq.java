@@ -106,7 +106,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
 
-                var client_seed_encrypted = Utils.base64Decode(req.getClientSeed());
+                var client_seed_encrypted = Utils.base64Decode(req.getClientRandKey());
                 var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted))
                     .getLong();
 
@@ -124,7 +124,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 session.send(new PacketGetPlayerTokenRsp(session, Utils.base64Encode(seed_encrypted), Utils.base64Encode(privateSignature.sign())));
             } catch (Exception ignore) {
                 // Only UA Patch users will have exception
-                byte[] clientBytes = Utils.base64Decode(req.getClientSeed());
+                byte[] clientBytes = Utils.base64Decode(req.getClientRandKey());
                 byte[] seed = ByteHelper.longToBytes(Crypto.ENCRYPT_SEED);
                 Crypto.xor(clientBytes, seed);
 

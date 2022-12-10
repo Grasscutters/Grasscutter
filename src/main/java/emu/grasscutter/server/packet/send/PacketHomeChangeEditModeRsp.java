@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.HomeChangeEditModeRspOuterClass;
 
 public class PacketHomeChangeEditModeRsp extends BasePacket {
 
-	public PacketHomeChangeEditModeRsp(boolean enterEditMode) {
-		super(PacketOpcodes.HomeChangeEditModeRsp);
+    public PacketHomeChangeEditModeRsp(boolean isEnterEditMode) {
+        super(PacketOpcodes.HomeChangeEditModeRsp);
 
-		var proto = HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder();
+        var proto = HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder();
 
-		proto.setIsEnterEditMode(enterEditMode);
+        proto.setIsEnterEditMode(isEnterEditMode);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

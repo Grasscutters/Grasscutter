@@ -27,7 +27,7 @@ public class FurnitureMakeSlotItem {
                 .setAvatarId(avatarId)
                 .setMakeId(makeId)
                 .setBeginTime(beginTime)
-                .setDurTime(durTime)
+//                .setDurTime(durTime)
                 .build();
     }
 }

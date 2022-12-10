@@ -362,13 +362,13 @@ public class BattlePassManager extends BasePlayerDataManager {
         BattlePassSchedule.Builder schedule = BattlePassSchedule.newBuilder()
                 .setScheduleId(2700)
                 .setLevel(this.getLevel())
-                .setPoint(this.getPoint())
+//                .setPoint(this.getPoint())
                 .setBeginTime(0)
                 .setEndTime(2059483200)
-                .setIsViewed(this.isViewed())
+//                .setIsViewed(this.isViewed())
                 .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
-                .setUnk2700ODHAAHEPFAG(2) // Not bought on Playstation.
-                .setCurCyclePoints(this.getCyclePoints())
+//                .setUnk2700ODHAAHEPFAG(2) // Not bought on Playstation.
+//                .setCurCyclePoints(this.getCyclePoints())
                 .setCurCycle(BattlePassCycle.newBuilder()
                     .setBeginTime(0)
                     .setEndTime((int)nextSundayTime.atZone(ZoneId.systemDefault()).toEpochSecond())

@@ -281,22 +281,22 @@ public class Scene {
     }
 
     public void handleAttack(AttackResult result) {
-        //GameEntity attacker = getEntityById(result.getAttackerId());
-        GameEntity target = getEntityById(result.getDefenseId());
-
-        if (target == null) {
-            return;
-        }
-
-        // Godmode check
-        if (target instanceof EntityAvatar) {
-            if (((EntityAvatar) target).getPlayer().inGodmode()) {
-                return;
-            }
-        }
-
-        // Sanity check
-        target.damage(result.getDamage(), result.getAttackerId());
+//        //GameEntity attacker = getEntityById(result.getAttackerId());
+//        GameEntity target = getEntityById(result.getDefenseId());
+//
+//        if (target == null) {
+//            return;
+//        }
+//
+//        // Godmode check
+//        if (target instanceof EntityAvatar) {
+//            if (((EntityAvatar) target).getPlayer().inGodmode()) {
+//                return;
+//            }
+//        }
+//
+//        // Sanity check
+//        target.damage(result.getDamage(), result.getAttackerId());
     }
 
     public void killEntity(GameEntity target) {

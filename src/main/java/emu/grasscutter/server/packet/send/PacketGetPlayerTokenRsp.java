@@ -43,7 +43,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
             .setIsProficientPlayer(session.getPlayer().getAvatars().getAvatarCount() > 0)
             .setRetcode(retcode)
             .setMsg(msg)
-            .setBlackUidEndTime(blackEndTime)
+//            .setBlackUidEndTime(blackEndTime)
             .setRegPlatform(3)
             .setCountryCode("US")
             .setClientIpStr(session.getAddress().getAddress().getHostAddress())
@@ -70,8 +70,8 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
             .setClientVersionRandomKey("c25-314dd05b0b5f")
             .setRegPlatform(3)
             .setClientIpStr(session.getAddress().getAddress().getHostAddress())
-            .setEncryptedSeed(encryptedSeed)
-            .setSeedSignature(encryptedSeedSign)
+            .setServerRandKey(encryptedSeed)
+            .setSign(encryptedSeedSign)
             .build();
 
         this.setData(p.toByteArray());

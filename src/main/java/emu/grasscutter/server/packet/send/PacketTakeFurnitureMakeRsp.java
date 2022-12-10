@@ -24,7 +24,7 @@ public class PacketTakeFurnitureMakeRsp extends BasePacket {
 				.setMakeId(makeId);
 
 		if(output != null){
-			proto.addAllOutputItemList(output);
+//			proto.addAllOutputItemList(output);
 		}
 
 		if(others != null){

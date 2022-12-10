@@ -32,7 +32,7 @@ public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 
         ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
         for (GameQuest quest : quests) {
-            proto.addAddQuestIdList(quest.getSubQuestId());
+//            proto.addAddQuestIdList(quest.getSubQuestId());
         }
         proto.build();
 

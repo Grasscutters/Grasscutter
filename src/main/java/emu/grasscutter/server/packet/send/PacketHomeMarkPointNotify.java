@@ -26,7 +26,8 @@ public class PacketHomeMarkPointNotify extends BasePacket {
 			var markPointData = HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder()
 					.setModuleId(moduleId)
 					.setSceneId(moduleId + 2000)
-					.setTeapotSpiritPos(homeScene.getDjinnPos().toProto());
+//					.setTeapotSpiritPos(homeScene.getDjinnPos().toProto())
+            ;
 
 			// Now it only supports the teleport point
 			// TODO add more types

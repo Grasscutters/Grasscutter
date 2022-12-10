@@ -69,74 +69,74 @@ public class CookingManager extends BasePlayerManager {
     }
 
     public void handlePlayerCookReq(PlayerCookReq req) {
-        // Get info from the request.
-        int recipeId = req.getRecipeId();
-        int quality = req.getQteQuality();
-        int count = req.getCookCount();
-        int avatar = req.getAssistAvatar();
-
-        // Get recipe data.
-        var recipeData = GameData.getCookRecipeDataMap().get(recipeId);
-        if (recipeData == null) {
-            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
-            return;
-        }
-
-        // Get proficiency for player.
-        int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
-
-        // Try consuming materials.
-        boolean success = player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
-        if (!success) {
-            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
-        }
-
-        // Get result item information.
-        int qualityIndex =
-            quality == 0
-            ? 2
-            : quality - 1;
-
-        ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);
-        ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getItemId());
-
-        // Handle character's specialties.
-        int specialtyCount = 0;
-        double specialtyChance = this.getSpecialtyChance(resultItemData);
-
-        var bonusData = GameData.getCookBonusDataMap().get(avatar);
-        if (bonusData != null && recipeId == bonusData.getRecipeId()) {
-            // Roll for specialy replacements.
-            for (int i = 0; i < count; i++) {
-                if (ThreadLocalRandom.current().nextDouble() <= specialtyChance) {
-                    specialtyCount++;
-                }
-            }
-        }
-
-        // Obtain results.
-        List<GameItem> cookResults = new ArrayList<>();
-
-        int normalCount = count - specialtyCount;
-        GameItem cookResultNormal = new GameItem(resultItemData, resultParam.getCount() * normalCount);
-        cookResults.add(cookResultNormal);
-        this.player.getInventory().addItem(cookResultNormal);
-
-        if (specialtyCount > 0) {
-            ItemData specialtyItemData = GameData.getItemDataMap().get(bonusData.getReplacementItemId());
-            GameItem cookResultSpecialty = new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount);
-            cookResults.add(cookResultSpecialty);
-            this.player.getInventory().addItem(cookResultSpecialty);
-        }
-
-        // Increase player proficiency, if this was a manual perfect cook.
-        if (quality == MANUAL_PERFECT_COOK_QUALITY) {
-            proficiency = Math.min(proficiency + 1, recipeData.getMaxProficiency());
-            this.player.getUnlockedRecipies().put(recipeId, proficiency);
-        }
-
-        // Send response.
-        this.player.sendPacket(new PacketPlayerCookRsp(cookResults, quality, count, recipeId, proficiency));
+//        // Get info from the request.
+//        int recipeId = req.getRecipeId();
+//        int quality = req.getQteQuality();
+//        int count = req.getCookCount();
+//        int avatar = req.getAssistAvatar();
+//
+//        // Get recipe data.
+//        var recipeData = GameData.getCookRecipeDataMap().get(recipeId);
+//        if (recipeData == null) {
+//            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+//            return;
+//        }
+//
+//        // Get proficiency for player.
+//        int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
+//
+//        // Try consuming materials.
+//        boolean success = player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
+//        if (!success) {
+//            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+//        }
+//
+//        // Get result item information.
+//        int qualityIndex =
+//            quality == 0
+//            ? 2
+//            : quality - 1;
+//
+//        ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);
+//        ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getItemId());
+//
+//        // Handle character's specialties.
+//        int specialtyCount = 0;
+//        double specialtyChance = this.getSpecialtyChance(resultItemData);
+//
+//        var bonusData = GameData.getCookBonusDataMap().get(avatar);
+//        if (bonusData != null && recipeId == bonusData.getRecipeId()) {
+//            // Roll for specialy replacements.
+//            for (int i = 0; i < count; i++) {
+//                if (ThreadLocalRandom.current().nextDouble() <= specialtyChance) {
+//                    specialtyCount++;
+//                }
+//            }
+//        }
+//
+//        // Obtain results.
+//        List<GameItem> cookResults = new ArrayList<>();
+//
+//        int normalCount = count - specialtyCount;
+//        GameItem cookResultNormal = new GameItem(resultItemData, resultParam.getCount() * normalCount);
+//        cookResults.add(cookResultNormal);
+//        this.player.getInventory().addItem(cookResultNormal);
+//
+//        if (specialtyCount > 0) {
+//            ItemData specialtyItemData = GameData.getItemDataMap().get(bonusData.getReplacementItemId());
+//            GameItem cookResultSpecialty = new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount);
+//            cookResults.add(cookResultSpecialty);
+//            this.player.getInventory().addItem(cookResultSpecialty);
+//        }
+//
+//        // Increase player proficiency, if this was a manual perfect cook.
+//        if (quality == MANUAL_PERFECT_COOK_QUALITY) {
+//            proficiency = Math.min(proficiency + 1, recipeData.getMaxProficiency());
+//            this.player.getUnlockedRecipies().put(recipeId, proficiency);
+//        }
+//
+//        // Send response.
+//        this.player.sendPacket(new PacketPlayerCookRsp(cookResults, quality, count, recipeId, proficiency));
     }
 
     /********************

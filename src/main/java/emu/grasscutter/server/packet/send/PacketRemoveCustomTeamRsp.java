@@ -3,15 +3,15 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.net.proto.RemoveCustomTeamRspOuterClass.RemoveCustomTeamRsp;
+import emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp;
 
 public class PacketRemoveCustomTeamRsp extends BasePacket {
     public PacketRemoveCustomTeamRsp(Retcode retcode, int id) {
-        super(PacketOpcodes.RemoveCustomTeamRsp);
+          super(PacketOpcodes.DelBackupAvatarTeamRsp);
 
-        RemoveCustomTeamRsp proto = RemoveCustomTeamRsp.newBuilder()
+        DelBackupAvatarTeamRsp proto = DelBackupAvatarTeamRsp.newBuilder()
             .setRetcode(retcode.getNumber())
-            .setId(id)
+            .setBackupAvatarTeamId(id)
             .build();
 
         this.setData(proto);

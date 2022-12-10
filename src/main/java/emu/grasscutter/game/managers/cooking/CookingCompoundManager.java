@@ -50,8 +50,8 @@ public class CookingCompoundManager extends BasePlayerManager {
         List<CompoundQueueData> compoundQueueData = new ArrayList<>(player.getActiveCookCompounds().size());
         int currentTime = Utils.getCurrentSeconds();
         for (var item : player.getActiveCookCompounds().values()) {
-            var data = CompoundQueueData.newBuilder().setCompoundId(item.getCompoundId()).setOutputCount(item.getOutputCount(currentTime)).setOutputTime(item.getOutputTime(currentTime)).setWaitCount(item.getWaitCount(currentTime)).build();
-            compoundQueueData.add(data);
+//            var data = CompoundQueueData.newBuilder().setCompoundId(item.getCompoundId()).setOutputCount(item.getOutputCount(currentTime)).setOutputTime(item.getOutputTime(currentTime)).setWaitCount(item.getWaitCount(currentTime)).build();
+//            compoundQueueData.add(data);
         }
         return compoundQueueData;
     }
@@ -91,8 +91,8 @@ public class CookingCompoundManager extends BasePlayerManager {
             c = new ActiveCookCompoundData(id, compound.getCostTime(), count, currentTime);
             activeCompounds.put(id, c);
         }
-        var data = CompoundQueueData.newBuilder().setCompoundId(id).setOutputCount(c.getOutputCount(currentTime)).setOutputTime(c.getOutputTime(currentTime)).setWaitCount(c.getWaitCount(currentTime)).build();
-        player.sendPacket(new PacketPlayerCompoundMaterialRsp(data));
+//        var data = CompoundQueueData.newBuilder().setCompoundId(id).setOutputCount(c.getOutputCount(currentTime)).setOutputTime(c.getOutputTime(currentTime)).setWaitCount(c.getWaitCount(currentTime)).build();
+//        player.sendPacket(new PacketPlayerCompoundMaterialRsp(data));
     }
 
     public synchronized void handleTakeCompoundOutputReq(TakeCompoundOutputReq req) {

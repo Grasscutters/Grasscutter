@@ -71,13 +71,13 @@ public abstract class ActivityHandler {
     public ActivityInfoOuterClass.ActivityInfo toProto(PlayerActivityData playerActivityData){
         var proto = ActivityInfoOuterClass.ActivityInfo.newBuilder();
         proto.setActivityId(activityConfigItem.getActivityId())
-            .setActivityType(activityConfigItem.getActivityType())
+//            .setActivityType(activityConfigItem.getActivityType())
             .setScheduleId(activityConfigItem.getScheduleId())
             .setBeginTime(DateHelper.getUnixTime(activityConfigItem.getBeginTime()))
             .setFirstDayStartTime(DateHelper.getUnixTime(activityConfigItem.getBeginTime()))
             .setEndTime(DateHelper.getUnixTime(activityConfigItem.getEndTime()))
-            .addAllMeetCondList(activityConfigItem.getMeetCondList());
-
+//            .addAllMeetCondList(activityConfigItem.getMeetCondList())
+            ;
         if (playerActivityData != null){
             proto.addAllWatcherInfoList(playerActivityData.getAllWatcherInfoList());
         }

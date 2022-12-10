@@ -44,7 +44,7 @@ public class PacketTowerAllDataRsp extends BasePacket {
                         .getScheduleStartTime()))
                 .setNextScheduleChangeTime(DateHelper.getUnixTime(towerScheduleManager.getTowerScheduleConfig()
                         .getNextScheduleChangeTime()))
-                .putAllFloorOpenTimeMap(openTimeMap)
+//                .putAllFloorOpenTimeMap(openTimeMap)
                 .setIsFinishedEntranceFloor(towerManager.canEnterScheduleFloor())
                 .build();
 

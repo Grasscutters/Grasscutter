@@ -115,14 +115,14 @@ public class WorldDataSystem extends BaseGameSystem {
                 .setLevel(getMonsterLevel(monster.get(), player.getWorld()))
                 .setIsAlive(true)
                 .setNextRefreshTime(Integer.MAX_VALUE)
-                .setRefreshInterval(Integer.MAX_VALUE)
+//                .setRefreshInterval(Integer.MAX_VALUE)
                 .setPos(monster.get().pos.toProto());
 
         if ("Boss".equals(imd.getMonsterCategory())) {
             var bossChest = group.searchBossChestInGroup();
             if (bossChest.isPresent()) {
                 builder.setResin(bossChest.get().resin);
-                builder.setBossChestNum(bossChest.get().take_num);
+//                builder.setBossChestNum(bossChest.get().take_num);
             }
         }
         return builder.build();

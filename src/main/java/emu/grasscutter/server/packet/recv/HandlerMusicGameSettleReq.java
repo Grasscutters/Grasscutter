@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
-import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
+//import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
+//import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.packet.Opcodes;
@@ -23,7 +23,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         if (playerData.isEmpty()) {
             return;
         }
-        var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
+        //var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
         boolean isNewRecord = false;
         // check if custom beatmap
 

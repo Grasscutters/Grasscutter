@@ -12,12 +12,12 @@ public class PacketTowerCurLevelRecordChangeNotify extends BasePacket {
 
 		TowerCurLevelRecordChangeNotify proto = TowerCurLevelRecordChangeNotify.newBuilder()
 				.setCurLevelRecord(TowerCurLevelRecord.newBuilder()
-						.setCurFloorId(curFloorId)
-						.setCurLevelIndex(curLevelIndex)
+//						.setCurFloorId(curFloorId)
+//						.setCurLevelIndex(curLevelIndex)
 						// TODO team info
 						.build())
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

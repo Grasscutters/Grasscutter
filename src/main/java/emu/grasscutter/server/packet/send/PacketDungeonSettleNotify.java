@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify;
 
 public class PacketDungeonSettleNotify extends BasePacket {
-	
+
 	public PacketDungeonSettleNotify(WorldChallenge challenge) {
 		super(PacketOpcodes.DungeonSettleNotify);
 
@@ -18,7 +18,7 @@ public class PacketDungeonSettleNotify extends BasePacket {
 				.setCloseTime(challenge.getScene().getAutoCloseTime())
 				.setResult(challenge.isSuccess() ? 1 : 0)
 				.build();
-		
+
 		this.setData(proto);
 	}
 
@@ -37,7 +37,7 @@ public class PacketDungeonSettleNotify extends BasePacket {
 
 		var towerLevelEndNotify = TowerLevelEndNotify.newBuilder()
 				.setIsSuccess(challenge.isSuccess())
-				.setContinueState(continueStatus)
+//				.setContinueState(continueStatus)
 				.addFinishedStarCondList(1)
 				.addFinishedStarCondList(2)
 				.addFinishedStarCondList(3)
@@ -47,7 +47,7 @@ public class PacketDungeonSettleNotify extends BasePacket {
 						.build())
 				;
 		if(nextFloorId > 0 && canJump){
-			towerLevelEndNotify.setNextFloorId(nextFloorId);
+//			towerLevelEndNotify.setNextFloorId(nextFloorId);
 		}
 
 		DungeonSettleNotify proto = DungeonSettleNotify.newBuilder()

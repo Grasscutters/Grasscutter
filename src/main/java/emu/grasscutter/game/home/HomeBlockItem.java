@@ -28,13 +28,13 @@ public class HomeBlockItem {
     public void update(HomeBlockArrangementInfo homeBlockArrangementInfo) {
         this.blockId = homeBlockArrangementInfo.getBlockId();
 
-        this.deployFurnitureList = homeBlockArrangementInfo.getDeployFurniureListList().stream()
-                .map(HomeFurnitureItem::parseFrom)
-                .toList();
-
-        this.persistentFurnitureList = homeBlockArrangementInfo.getPersistentFurnitureListList().stream()
-                .map(HomeFurnitureItem::parseFrom)
-                .toList();
+//        this.deployFurnitureList = homeBlockArrangementInfo.getDeployFurniureListList().stream()
+//                .map(HomeFurnitureItem::parseFrom)
+//                .toList();
+//
+//        this.persistentFurnitureList = homeBlockArrangementInfo.getPersistentFurnitureListList().stream()
+//                .map(HomeFurnitureItem::parseFrom)
+//                .toList();
 
         this.deployAnimalList = homeBlockArrangementInfo.getDeployAnimalListList().stream()
                 .map(HomeAnimalItem::parseFrom)
@@ -57,8 +57,8 @@ public class HomeBlockItem {
                 .setIsUnlocked(unlocked)
                 .setComfortValue(calComfort());
 
-        this.deployFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
-        this.persistentFurnitureList.forEach(f -> proto.addPersistentFurnitureList(f.toProto()));
+//        this.deployFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
+//        this.persistentFurnitureList.forEach(f -> proto.addPersistentFurnitureList(f.toProto()));
         this.deployAnimalList.forEach(f -> proto.addDeployAnimalList(f.toProto()));
         this.deployNPCList.forEach(f -> proto.addDeployNpcList(f.toProto()));
 

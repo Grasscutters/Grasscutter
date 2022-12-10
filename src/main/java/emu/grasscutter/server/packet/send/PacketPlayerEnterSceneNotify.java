@@ -28,8 +28,8 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
                 .setEnterSceneToken(player.getEnterSceneToken())
                 .setWorldLevel(player.getWorldLevel())
                 .setEnterReason(EnterReason.Login.getValue())
-                .setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
-                .setWorldType(1)
+//                .setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
+//                .setWorldType(1)
                 .setSceneTransaction("3-" + player.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
 
         this.setData(proto);
@@ -47,7 +47,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
         PlayerEnterSceneNotify.Builder proto = PlayerEnterSceneNotify.newBuilder()
-                .setPrevSceneId(player.getSceneId())
+//                .setPrevSceneId(player.getSceneId())
                 .setPrevPos(player.getPosition().toProto())
                 .setSceneId(newScene)
                 .setPos(newPos.toProto())
@@ -57,7 +57,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
                 .setEnterSceneToken(player.getEnterSceneToken())
                 .setWorldLevel(target.getWorld().getWorldLevel())
                 .setEnterReason(reason.getValue())
-                .setWorldType(1)
+//                .setWorldType(1)
                 .setSceneTransaction(newScene + "-" + target.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
 
         this.setData(proto);

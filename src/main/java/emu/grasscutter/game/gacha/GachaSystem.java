@@ -317,7 +317,7 @@ public class GachaSystem extends BaseGameSystem {
                     }
                     break;
                 case -1:  // New character
-                    gachaItem.setIsGachaItemNew(true);
+//                    gachaItem.setIsGachaItemNew(true);
                     break;
                 default:
                     if (constellation >= 6) {  // C6, give consolation starglitter

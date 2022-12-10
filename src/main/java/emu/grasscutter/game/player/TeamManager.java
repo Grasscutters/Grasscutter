@@ -22,16 +22,16 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
-import emu.grasscutter.server.packet.send.PacketAddCustomTeamRsp;
+import emu.grasscutter.server.packet.send.PacketAddBackupAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarTeamAllDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
 import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketCustomTeamListNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
@@ -660,7 +660,7 @@ public class TeamManager extends BasePlayerDataManager {
     public synchronized void addNewCustomTeam() {
         // Sanity check - max number of teams.
         if (this.teams.size() == GameConstants.MAX_TEAMS) {
-            player.sendPacket(new PacketAddCustomTeamRsp(Retcode.RET_FAIL));
+            player.sendPacket(new PacketAddBackupAvatarTeamRsp(Retcode.RET_FAIL));
             return;
         }
 
@@ -677,8 +677,8 @@ public class TeamManager extends BasePlayerDataManager {
         this.teams.put(id, new TeamInfo());
 
         // Send packets.
-        player.sendPacket(new PacketCustomTeamListNotify(player));
-        player.sendPacket(new PacketAddCustomTeamRsp());
+        player.sendPacket(new PacketAvatarTeamAllDataNotify(player));
+        player.sendPacket(new PacketAddBackupAvatarTeamRsp());
     }
 
     public synchronized void removeCustomTeam(int id) {
@@ -691,7 +691,7 @@ public class TeamManager extends BasePlayerDataManager {
         this.teams.remove(id);
 
         // Send packets.
-        player.sendPacket(new PacketCustomTeamListNotify(player));
+        //player.sendPacket(new PacketCustomTeamListNotify(player));
         player.sendPacket(new PacketRemoveCustomTeamRsp(id));
     }
 }

@@ -66,12 +66,12 @@ public class ForgingManager extends BasePlayerManager {
             ActiveForgeData activeForge = this.player.getActiveForges().get(i);
 
             ForgeQueueData data = ForgeQueueData.newBuilder()
-                .setQueueId(i + 1)
+//                .setQueueId(i + 1)
                 .setForgeId(activeForge.getForgeId())
-                .setFinishCount(activeForge.getFinishedCount(currentTime))
-                .setUnfinishCount(activeForge.getUnfinishedCount(currentTime))
-                .setTotalFinishTimestamp(activeForge.getTotalFinishTimestamp())
-                .setNextFinishTimestamp(activeForge.getNextFinishTimestamp(currentTime))
+//                .setFinishCount(activeForge.getFinishedCount(currentTime))
+//                .setUnfinishCount(activeForge.getUnfinishedCount(currentTime))
+//                .setTotalFinishTimestamp(activeForge.getTotalFinishTimestamp())
+//                .setNextFinishTimestamp(activeForge.getNextFinishTimestamp(currentTime))
                 .setAvatarId(activeForge.getAvatarId())
                 .build();
 
