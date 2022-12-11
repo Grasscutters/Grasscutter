@@ -33,7 +33,7 @@ import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
 import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
+import emu.grasscutter.server.packet.send.PacketDelBackupAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
@@ -684,14 +684,14 @@ public class TeamManager extends BasePlayerDataManager {
     public synchronized void removeCustomTeam(int id) {
         // Check if the target id exists.
         if (!this.teams.containsKey(id)) {
-            player.sendPacket(new PacketRemoveCustomTeamRsp(Retcode.RET_FAIL, id));
+            player.sendPacket(new PacketDelBackupAvatarTeamRsp(Retcode.RET_FAIL, id));
         }
 
         // Remove team.
         this.teams.remove(id);
 
         // Send packets.
-        //player.sendPacket(new PacketCustomTeamListNotify(player));
-        player.sendPacket(new PacketRemoveCustomTeamRsp(id));
+        player.sendPacket(new PacketAvatarTeamAllDataNotify(player));
+        player.sendPacket(new PacketDelBackupAvatarTeamRsp(id));
     }
 }
