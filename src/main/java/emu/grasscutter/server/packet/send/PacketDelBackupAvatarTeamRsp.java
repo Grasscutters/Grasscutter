@@ -5,8 +5,8 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp;
 
-public class PacketRemoveCustomTeamRsp extends BasePacket {
-    public PacketRemoveCustomTeamRsp(Retcode retcode, int id) {
+public class PacketDelBackupAvatarTeamRsp extends BasePacket {
+    public PacketDelBackupAvatarTeamRsp(Retcode retcode, int id) {
           super(PacketOpcodes.DelBackupAvatarTeamRsp);
 
         DelBackupAvatarTeamRsp proto = DelBackupAvatarTeamRsp.newBuilder()
@@ -17,7 +17,7 @@ public class PacketRemoveCustomTeamRsp extends BasePacket {
         this.setData(proto);
     }
 
-    public PacketRemoveCustomTeamRsp(int id) {
+    public PacketDelBackupAvatarTeamRsp(int id) {
         this(Retcode.RET_SUCC, id);
     }
 }
