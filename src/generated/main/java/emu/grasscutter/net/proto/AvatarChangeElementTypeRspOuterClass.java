@@ -19,17 +19,20 @@ public final class AvatarChangeElementTypeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 1651
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1717;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AvatarChangeElementTypeRsp}
@@ -76,7 +79,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
@@ -113,10 +116,10 @@ public final class AvatarChangeElementTypeRspOuterClass {
               emu.grasscutter.net.proto.AvatarChangeElementTypeRspOuterClass.AvatarChangeElementTypeRsp.class, emu.grasscutter.net.proto.AvatarChangeElementTypeRspOuterClass.AvatarChangeElementTypeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -139,7 +142,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +155,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +284,13 @@ public final class AvatarChangeElementTypeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1651
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1717;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AvatarChangeElementTypeRsp}
@@ -435,7 +441,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -443,7 +449,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -454,7 +460,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -531,7 +537,7 @@ public final class AvatarChangeElementTypeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n AvatarChangeElementTypeRsp.proto\"-\n\032Av" +
-      "atarChangeElementTypeRsp\022\017\n\007retcode\030\r \001(" +
+      "atarChangeElementTypeRsp\022\017\n\007retcode\030\t \001(" +
       "\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

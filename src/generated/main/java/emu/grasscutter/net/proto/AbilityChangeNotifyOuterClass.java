@@ -19,32 +19,35 @@ public final class AbilityChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      * @return Whether the abilityControlBlock field is set.
      */
     boolean hasAbilityControlBlock();
     /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      * @return The abilityControlBlock.
      */
     emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock getAbilityControlBlock();
     /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      */
     emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder();
+
+    /**
+     * <code>uint32 entity_id = 10;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 1131
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1127;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AbilityChangeNotify}
@@ -91,12 +94,7 @@ public final class AbilityChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 50: {
               emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = null;
               if (abilityControlBlock_ != null) {
                 subBuilder = abilityControlBlock_.toBuilder();
@@ -107,6 +105,11 @@ public final class AbilityChangeNotifyOuterClass {
                 abilityControlBlock_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 80: {
+
+              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -141,21 +144,10 @@ public final class AbilityChangeNotifyOuterClass {
               emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify.class, emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 15;
+    public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
     /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      * @return Whether the abilityControlBlock field is set.
      */
     @java.lang.Override
@@ -163,7 +155,7 @@ public final class AbilityChangeNotifyOuterClass {
       return abilityControlBlock_ != null;
     }
     /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      * @return The abilityControlBlock.
      */
     @java.lang.Override
@@ -171,11 +163,22 @@ public final class AbilityChangeNotifyOuterClass {
       return abilityControlBlock_ == null ? emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.getDefaultInstance() : abilityControlBlock_;
     }
     /**
-     * <code>.AbilityControlBlock ability_control_block = 15;</code>
+     * <code>.AbilityControlBlock ability_control_block = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder() {
       return getAbilityControlBlock();
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 10;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -192,11 +195,11 @@ public final class AbilityChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (entityId_ != 0) {
-        output.writeUInt32(1, entityId_);
-      }
       if (abilityControlBlock_ != null) {
-        output.writeMessage(15, getAbilityControlBlock());
+        output.writeMessage(6, getAbilityControlBlock());
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(10, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,13 +210,13 @@ public final class AbilityChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entityId_);
-      }
       if (abilityControlBlock_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getAbilityControlBlock());
+          .computeMessageSize(6, getAbilityControlBlock());
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -230,13 +233,13 @@ public final class AbilityChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify other = (emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (hasAbilityControlBlock() != other.hasAbilityControlBlock()) return false;
       if (hasAbilityControlBlock()) {
         if (!getAbilityControlBlock()
             .equals(other.getAbilityControlBlock())) return false;
       }
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -248,12 +251,12 @@ public final class AbilityChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       if (hasAbilityControlBlock()) {
         hash = (37 * hash) + ABILITY_CONTROL_BLOCK_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityControlBlock().hashCode();
       }
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -351,10 +354,13 @@ public final class AbilityChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1131
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1127;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AbilityChangeNotify}
@@ -394,14 +400,14 @@ public final class AbilityChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         if (abilityControlBlockBuilder_ == null) {
           abilityControlBlock_ = null;
         } else {
           abilityControlBlock_ = null;
           abilityControlBlockBuilder_ = null;
         }
+        entityId_ = 0;
+
         return this;
       }
 
@@ -428,12 +434,12 @@ public final class AbilityChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify buildPartial() {
         emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify result = new emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify(this);
-        result.entityId_ = entityId_;
         if (abilityControlBlockBuilder_ == null) {
           result.abilityControlBlock_ = abilityControlBlock_;
         } else {
           result.abilityControlBlock_ = abilityControlBlockBuilder_.build();
         }
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -482,11 +488,11 @@ public final class AbilityChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify other) {
         if (other == emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.hasAbilityControlBlock()) {
           mergeAbilityControlBlock(other.getAbilityControlBlock());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -517,49 +523,18 @@ public final class AbilityChangeNotifyOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock, emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder, emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder> abilityControlBlockBuilder_;
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        * @return Whether the abilityControlBlock field is set.
        */
       public boolean hasAbilityControlBlock() {
         return abilityControlBlockBuilder_ != null || abilityControlBlock_ != null;
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        * @return The abilityControlBlock.
        */
       public emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock getAbilityControlBlock() {
@@ -570,7 +545,7 @@ public final class AbilityChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public Builder setAbilityControlBlock(emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock value) {
         if (abilityControlBlockBuilder_ == null) {
@@ -586,7 +561,7 @@ public final class AbilityChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public Builder setAbilityControlBlock(
           emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder builderForValue) {
@@ -600,7 +575,7 @@ public final class AbilityChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public Builder mergeAbilityControlBlock(emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock value) {
         if (abilityControlBlockBuilder_ == null) {
@@ -618,7 +593,7 @@ public final class AbilityChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public Builder clearAbilityControlBlock() {
         if (abilityControlBlockBuilder_ == null) {
@@ -632,7 +607,7 @@ public final class AbilityChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder getAbilityControlBlockBuilder() {
         
@@ -640,7 +615,7 @@ public final class AbilityChangeNotifyOuterClass {
         return getAbilityControlBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       public emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder() {
         if (abilityControlBlockBuilder_ != null) {
@@ -651,7 +626,7 @@ public final class AbilityChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.AbilityControlBlock ability_control_block = 15;</code>
+       * <code>.AbilityControlBlock ability_control_block = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock, emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder, emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder> 
@@ -665,6 +640,37 @@ public final class AbilityChangeNotifyOuterClass {
           abilityControlBlock_ = null;
         }
         return abilityControlBlockBuilder_;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -734,9 +740,9 @@ public final class AbilityChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031AbilityChangeNotify.proto\032\031AbilityCont" +
-      "rolBlock.proto\"]\n\023AbilityChangeNotify\022\021\n" +
-      "\tentity_id\030\001 \001(\r\0223\n\025ability_control_bloc" +
-      "k\030\017 \001(\0132\024.AbilityControlBlockB\033\n\031emu.gra" +
+      "rolBlock.proto\"]\n\023AbilityChangeNotify\0223\n" +
+      "\025ability_control_block\030\006 \001(\0132\024.AbilityCo" +
+      "ntrolBlock\022\021\n\tentity_id\030\n \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +755,7 @@ public final class AbilityChangeNotifyOuterClass {
     internal_static_AbilityChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityChangeNotify_descriptor,
-        new java.lang.String[] { "EntityId", "AbilityControlBlock", });
+        new java.lang.String[] { "AbilityControlBlock", "EntityId", });
     emu.grasscutter.net.proto.AbilityControlBlockOuterClass.getDescriptor();
   }
 

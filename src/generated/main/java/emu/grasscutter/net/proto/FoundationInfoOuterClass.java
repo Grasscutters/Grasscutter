@@ -53,10 +53,10 @@ public final class FoundationInfoOuterClass {
     int getCurrentBuildingId();
 
     /**
-     * <code>uint32 begin_build_time_ms = 4;</code>
-     * @return The beginBuildTimeMs.
+     * <code>uint32 locked_by_uid = 4;</code>
+     * @return The lockedByUid.
      */
-    int getBeginBuildTimeMs();
+    int getLockedByUid();
   }
   /**
    * Protobuf type {@code FoundationInfo}
@@ -140,7 +140,7 @@ public final class FoundationInfoOuterClass {
             }
             case 32: {
 
-              beginBuildTimeMs_ = input.readUInt32();
+              lockedByUid_ = input.readUInt32();
               break;
             }
             default: {
@@ -236,15 +236,15 @@ public final class FoundationInfoOuterClass {
       return currentBuildingId_;
     }
 
-    public static final int BEGIN_BUILD_TIME_MS_FIELD_NUMBER = 4;
-    private int beginBuildTimeMs_;
+    public static final int LOCKED_BY_UID_FIELD_NUMBER = 4;
+    private int lockedByUid_;
     /**
-     * <code>uint32 begin_build_time_ms = 4;</code>
-     * @return The beginBuildTimeMs.
+     * <code>uint32 locked_by_uid = 4;</code>
+     * @return The lockedByUid.
      */
     @java.lang.Override
-    public int getBeginBuildTimeMs() {
-      return beginBuildTimeMs_;
+    public int getLockedByUid() {
+      return lockedByUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -275,8 +275,8 @@ public final class FoundationInfoOuterClass {
       if (currentBuildingId_ != 0) {
         output.writeUInt32(3, currentBuildingId_);
       }
-      if (beginBuildTimeMs_ != 0) {
-        output.writeUInt32(4, beginBuildTimeMs_);
+      if (lockedByUid_ != 0) {
+        output.writeUInt32(4, lockedByUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -309,9 +309,9 @@ public final class FoundationInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, currentBuildingId_);
       }
-      if (beginBuildTimeMs_ != 0) {
+      if (lockedByUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, beginBuildTimeMs_);
+          .computeUInt32Size(4, lockedByUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -333,8 +333,8 @@ public final class FoundationInfoOuterClass {
           .equals(other.getUidListList())) return false;
       if (getCurrentBuildingId()
           != other.getCurrentBuildingId()) return false;
-      if (getBeginBuildTimeMs()
-          != other.getBeginBuildTimeMs()) return false;
+      if (getLockedByUid()
+          != other.getLockedByUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -354,8 +354,8 @@ public final class FoundationInfoOuterClass {
       }
       hash = (37 * hash) + CURRENT_BUILDING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentBuildingId();
-      hash = (37 * hash) + BEGIN_BUILD_TIME_MS_FIELD_NUMBER;
-      hash = (53 * hash) + getBeginBuildTimeMs();
+      hash = (37 * hash) + LOCKED_BY_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getLockedByUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -495,7 +495,7 @@ public final class FoundationInfoOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         currentBuildingId_ = 0;
 
-        beginBuildTimeMs_ = 0;
+        lockedByUid_ = 0;
 
         return this;
       }
@@ -531,7 +531,7 @@ public final class FoundationInfoOuterClass {
         }
         result.uidList_ = uidList_;
         result.currentBuildingId_ = currentBuildingId_;
-        result.beginBuildTimeMs_ = beginBuildTimeMs_;
+        result.lockedByUid_ = lockedByUid_;
         onBuilt();
         return result;
       }
@@ -596,8 +596,8 @@ public final class FoundationInfoOuterClass {
         if (other.getCurrentBuildingId() != 0) {
           setCurrentBuildingId(other.getCurrentBuildingId());
         }
-        if (other.getBeginBuildTimeMs() != 0) {
-          setBeginBuildTimeMs(other.getBeginBuildTimeMs());
+        if (other.getLockedByUid() != 0) {
+          setLockedByUid(other.getLockedByUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -793,33 +793,33 @@ public final class FoundationInfoOuterClass {
         return this;
       }
 
-      private int beginBuildTimeMs_ ;
+      private int lockedByUid_ ;
       /**
-       * <code>uint32 begin_build_time_ms = 4;</code>
-       * @return The beginBuildTimeMs.
+       * <code>uint32 locked_by_uid = 4;</code>
+       * @return The lockedByUid.
        */
       @java.lang.Override
-      public int getBeginBuildTimeMs() {
-        return beginBuildTimeMs_;
+      public int getLockedByUid() {
+        return lockedByUid_;
       }
       /**
-       * <code>uint32 begin_build_time_ms = 4;</code>
-       * @param value The beginBuildTimeMs to set.
+       * <code>uint32 locked_by_uid = 4;</code>
+       * @param value The lockedByUid to set.
        * @return This builder for chaining.
        */
-      public Builder setBeginBuildTimeMs(int value) {
+      public Builder setLockedByUid(int value) {
         
-        beginBuildTimeMs_ = value;
+        lockedByUid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 begin_build_time_ms = 4;</code>
+       * <code>uint32 locked_by_uid = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBeginBuildTimeMs() {
+      public Builder clearLockedByUid() {
         
-        beginBuildTimeMs_ = 0;
+        lockedByUid_ = 0;
         onChanged();
         return this;
       }
@@ -891,11 +891,11 @@ public final class FoundationInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024FoundationInfo.proto\032\026FoundationStatus" +
-      ".proto\"\177\n\016FoundationInfo\022!\n\006status\030\001 \001(\016" +
+      ".proto\"y\n\016FoundationInfo\022!\n\006status\030\001 \001(\016" +
       "2\021.FoundationStatus\022\020\n\010uid_list\030\002 \003(\r\022\033\n" +
-      "\023current_building_id\030\003 \001(\r\022\033\n\023begin_buil" +
-      "d_time_ms\030\004 \001(\rB\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "\023current_building_id\030\003 \001(\r\022\025\n\rlocked_by_" +
+      "uid\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -907,7 +907,7 @@ public final class FoundationInfoOuterClass {
     internal_static_FoundationInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FoundationInfo_descriptor,
-        new java.lang.String[] { "Status", "UidList", "CurrentBuildingId", "BeginBuildTimeMs", });
+        new java.lang.String[] { "Status", "UidList", "CurrentBuildingId", "LockedByUid", });
     emu.grasscutter.net.proto.FoundationStatusOuterClass.getDescriptor();
   }
 

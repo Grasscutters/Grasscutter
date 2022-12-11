@@ -19,17 +19,20 @@ public final class HomeSceneInitFinishRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 4505
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4531;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code HomeSceneInitFinishRsp}
@@ -76,7 +79,7 @@ public final class HomeSceneInitFinishRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 120: {
 
               retcode_ = input.readInt32();
               break;
@@ -113,10 +116,10 @@ public final class HomeSceneInitFinishRspOuterClass {
               emu.grasscutter.net.proto.HomeSceneInitFinishRspOuterClass.HomeSceneInitFinishRsp.class, emu.grasscutter.net.proto.HomeSceneInitFinishRspOuterClass.HomeSceneInitFinishRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -139,7 +142,7 @@ public final class HomeSceneInitFinishRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +155,7 @@ public final class HomeSceneInitFinishRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +284,13 @@ public final class HomeSceneInitFinishRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4505
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4531;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code HomeSceneInitFinishRsp}
@@ -435,7 +441,7 @@ public final class HomeSceneInitFinishRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -443,7 +449,7 @@ public final class HomeSceneInitFinishRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -454,7 +460,7 @@ public final class HomeSceneInitFinishRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -531,7 +537,7 @@ public final class HomeSceneInitFinishRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034HomeSceneInitFinishRsp.proto\")\n\026HomeSc" +
-      "eneInitFinishRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu" +
+      "eneInitFinishRsp\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
