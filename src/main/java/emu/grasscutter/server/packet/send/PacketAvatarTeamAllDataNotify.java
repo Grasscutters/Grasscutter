@@ -3,18 +3,18 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.CustomTeamListNotifyOuterClass.CustomTeamListNotify;
+import emu.grasscutter.net.proto.AvatarTeamAllDataNotifyOuterClass.AvatarTeamAllDataNotify;
 
-public class PacketCustomTeamListNotify extends BasePacket {
-    public PacketCustomTeamListNotify(Player player) {
-        super(PacketOpcodes.CustomTeamListNotify);
+public class PacketAvatarTeamAllDataNotify extends BasePacket {
+    public PacketAvatarTeamAllDataNotify(Player player) {
+        super(PacketOpcodes.AvatarTeamAllDataNotify);
 
-        CustomTeamListNotify.Builder proto = CustomTeamListNotify.newBuilder();
+        AvatarTeamAllDataNotify.Builder proto = AvatarTeamAllDataNotify.newBuilder();
 
         // Add the id list for custom teams.
         for (int id : player.getTeamManager().getTeams().keySet()) {
             if (id > 4) {
-                proto.addCustomTeamIds(id);
+                proto.addBackupAvatarTeamOrderList(id);
             }
         }
 

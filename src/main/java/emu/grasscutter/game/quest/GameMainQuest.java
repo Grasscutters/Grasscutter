@@ -37,7 +37,6 @@ import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 
-import static emu.grasscutter.config.Configuration.SCRIPT;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
@@ -356,7 +355,7 @@ public class GameMainQuest {
                 .setIsFinished(isFinished());
 
             proto.setParentQuestState(getState().getValue())
-                .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
+                .setVideoKey(QuestManager.getQuestKey(parentQuestId));
             for (GameQuest quest : this.getChildQuests().values()) {
                 if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
                     ChildQuest childQuest = ChildQuest.newBuilder()
