@@ -2,7 +2,7 @@ package emu.grasscutter.game.activity.musicgame;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.MusicGameBasicData;
-import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
+import emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass;
 import emu.grasscutter.net.proto.MusicGameRecordOuterClass;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -61,25 +61,25 @@ public class MusicGamePlayerData {
         int score;
         boolean settle;
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toPersonalBriefProto() {
+        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder toPersonalBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
-            return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
-                .setCanShare(true)
-                .setCreateTime(musicGameBeatmap.getCreateTime())
+            return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder()
+//                .setCanShare(true)
+//                .setCreateTime(musicGameBeatmap.getCreateTime())
                 .setMusicId(musicGameBeatmap.getMusicId())
                 .setMaxScore(musicGameBeatmap.getMaxScore())
-                .setPosition(musicGameBeatmap.getSavePosition())
-                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
-                .setMusicShareId(musicShareId);
+//                .setPosition(musicGameBeatmap.getSavePosition())
+//                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
+                .setUgcGuid(musicShareId);
         }
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toOthersBriefProto() {
+        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder toOthersBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return musicGameBeatmap.toBriefProto()
-                .setScore(score)
-                .setSettle(settle)
+//                .setScore(score)
+//                .setSettle(settle)
                 ;
         }
 
