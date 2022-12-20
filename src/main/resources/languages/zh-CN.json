@@ -343,6 +343,10 @@
       "success": "已为：%s 解锁全部开放状态。",
       "description": "为玩家解锁全部开放状态"
     },
+    "unlockmap": {
+      "success": "已为：%s 解锁地图。",
+      "description": "为玩家解锁地图"
+    },
     "unban": {
       "success": "成功取消玩家的封禁。",
       "failure": "取消玩家的封禁失败，因为玩家不存在。",

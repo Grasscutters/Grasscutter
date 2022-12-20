@@ -343,6 +343,10 @@
       "success": "Unlocked all open states for %s.",
       "description": "Unlocks all open states for a player."
     },
+    "unlockmap": {
+      "success": "Unlocked map for %s.",
+      "description": "Unlocked map for a player."
+    },
     "unban": {
       "success": "Successful.",
       "failure": "Failed, player not found.",
