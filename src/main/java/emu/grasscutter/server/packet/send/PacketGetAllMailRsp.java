@@ -61,7 +61,7 @@ public class PacketGetAllMailRsp extends BasePacket {
                                 mailData.setImportance(message.importance);
                                 mailData.setIsRead(message.isRead);
                                 mailData.setIsAttachmentGot(message.isAttachmentGot);
-                                mailData.setConfigId(1);
+                                mailData.setCollectStateValue(1);
 
                                 mailDataList.add(mailData.build());
                             }
@@ -70,7 +70,7 @@ public class PacketGetAllMailRsp extends BasePacket {
                 }
 
                 proto.addAllMailList(mailDataList);
-                proto.setIsTruncated(mailDataList.size() <= 1000 ? false : true); // When enabled this will send a notification to the user telling them their inbox is full and they should delete old messages when opening the mailbox.
+                proto.setIsTruncated(mailDataList.size() > 1000); // When enabled this will send a notification to the user telling them their inbox is full and they should delete old messages when opening the mailbox.
             }
         }
         this.setData(proto.build());
