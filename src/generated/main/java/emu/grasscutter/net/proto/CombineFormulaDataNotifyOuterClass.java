@@ -25,17 +25,20 @@ public final class CombineFormulaDataNotifyOuterClass {
     int getCombineId();
 
     /**
-     * <code>bool is_locked = 3;</code>
+     * <code>bool is_locked = 8;</code>
      * @return The isLocked.
      */
     boolean getIsLocked();
   }
   /**
    * <pre>
-   * CmdId: 632
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 665;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code CombineFormulaDataNotify}
@@ -82,14 +85,14 @@ public final class CombineFormulaDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              isLocked_ = input.readBool();
-              break;
-            }
             case 48: {
 
               combineId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isLocked_ = input.readBool();
               break;
             }
             default: {
@@ -135,10 +138,10 @@ public final class CombineFormulaDataNotifyOuterClass {
       return combineId_;
     }
 
-    public static final int IS_LOCKED_FIELD_NUMBER = 3;
+    public static final int IS_LOCKED_FIELD_NUMBER = 8;
     private boolean isLocked_;
     /**
-     * <code>bool is_locked = 3;</code>
+     * <code>bool is_locked = 8;</code>
      * @return The isLocked.
      */
     @java.lang.Override
@@ -160,11 +163,11 @@ public final class CombineFormulaDataNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isLocked_ != false) {
-        output.writeBool(3, isLocked_);
-      }
       if (combineId_ != 0) {
         output.writeUInt32(6, combineId_);
+      }
+      if (isLocked_ != false) {
+        output.writeBool(8, isLocked_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +178,13 @@ public final class CombineFormulaDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isLocked_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isLocked_);
-      }
       if (combineId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, combineId_);
+      }
+      if (isLocked_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isLocked_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,10 +318,13 @@ public final class CombineFormulaDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 632
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 665;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code CombineFormulaDataNotify}
@@ -506,7 +512,7 @@ public final class CombineFormulaDataNotifyOuterClass {
 
       private boolean isLocked_ ;
       /**
-       * <code>bool is_locked = 3;</code>
+       * <code>bool is_locked = 8;</code>
        * @return The isLocked.
        */
       @java.lang.Override
@@ -514,7 +520,7 @@ public final class CombineFormulaDataNotifyOuterClass {
         return isLocked_;
       }
       /**
-       * <code>bool is_locked = 3;</code>
+       * <code>bool is_locked = 8;</code>
        * @param value The isLocked to set.
        * @return This builder for chaining.
        */
@@ -525,7 +531,7 @@ public final class CombineFormulaDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_locked = 3;</code>
+       * <code>bool is_locked = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
@@ -603,7 +609,7 @@ public final class CombineFormulaDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036CombineFormulaDataNotify.proto\"A\n\030Comb" +
       "ineFormulaDataNotify\022\022\n\ncombine_id\030\006 \001(\r" +
-      "\022\021\n\tis_locked\030\003 \001(\010B\033\n\031emu.grasscutter.n" +
+      "\022\021\n\tis_locked\030\010 \001(\010B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

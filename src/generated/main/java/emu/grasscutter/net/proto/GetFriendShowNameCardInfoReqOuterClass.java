@@ -19,17 +19,21 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 3;</code>
+     * <code>uint32 uid = 5;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
    * <pre>
-   * CmdId: 4061
-   * EnetChannelId: 0
-   * EnetIsReliable: true
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4098;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code GetFriendShowNameCardInfoReq}
@@ -76,7 +80,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 40: {
 
               uid_ = input.readUInt32();
               break;
@@ -113,10 +117,10 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
               emu.grasscutter.net.proto.GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.class, emu.grasscutter.net.proto.GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 3;
+    public static final int UID_FIELD_NUMBER = 5;
     private int uid_;
     /**
-     * <code>uint32 uid = 3;</code>
+     * <code>uint32 uid = 5;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -139,7 +143,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(3, uid_);
+        output.writeUInt32(5, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +156,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, uid_);
+          .computeUInt32Size(5, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +285,14 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4061
-     * EnetChannelId: 0
-     * EnetIsReliable: true
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4098;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code GetFriendShowNameCardInfoReq}
@@ -435,7 +443,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 5;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -443,7 +451,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 5;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -454,7 +462,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -531,7 +539,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"GetFriendShowNameCardInfoReq.proto\"+\n\034" +
-      "GetFriendShowNameCardInfoReq\022\013\n\003uid\030\003 \001(" +
+      "GetFriendShowNameCardInfoReq\022\013\n\003uid\030\005 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

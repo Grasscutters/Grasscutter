@@ -13,19 +13,19 @@ import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 @Entity(value = "friendships", useDiscriminator = false)
 public class Friendship {
 	@Id private ObjectId id;
-	
+
 	@Transient private Player owner;
-	
+
 	@Indexed private int ownerId;
 	@Indexed private int friendId;
 	private boolean isFriend;
 	private int askerId;
-	
+
 	private PlayerProfile profile;
-	
+
 	@Deprecated // Morphia use only
 	public Friendship() { }
-	
+
 	public Friendship(Player owner, Player friend, Player asker) {
 		this.setOwner(owner);
 		this.ownerId = owner.getUid();
@@ -69,12 +69,12 @@ public class Friendship {
 	public PlayerProfile getFriendProfile() {
 		return profile;
 	}
-	
+
 	public void setFriendProfile(Player character) {
 		if (character == null || this.friendId != character.getUid()) return;
 		this.profile = character.getProfile();
 	}
-	
+
 	public boolean isOnline() {
 		return getFriendProfile().getPlayer() != null;
 	}
@@ -86,7 +86,7 @@ public class Friendship {
 	public void delete() {
 		DatabaseHelper.deleteFriendship(this);
 	}
-	
+
 	public FriendBrief toProto() {
 		FriendBrief proto = FriendBrief.newBuilder()
 				.setUid(getFriendProfile().getUid())
@@ -95,7 +95,7 @@ public class Friendship {
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
 				.setWorldLevel(getFriendProfile().getWorldLevel())
 				.setSignature(getFriendProfile().getSignature())
-				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE : FriendOnlineState.FRIEND_ONLINE_STATE_FREIEND_DISCONNECT)
+				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE : FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT)
 				.setIsMpModeAvailable(true)
 				.setLastActiveTime(getFriendProfile().getLastActiveTime())
 				.setNameCardId(getFriendProfile().getNameCard())

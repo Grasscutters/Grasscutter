@@ -82,7 +82,7 @@ public class ItemData extends GameResource {
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
 
-    @SerializedName(value="roomSceneId", alternate={"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK"})
+    @SerializedName(value="roomSceneId", alternate={"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
     private int roomSceneId;
 
     // Custom

@@ -5,7 +5,7 @@ import emu.grasscutter.game.activity.GameActivity;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
-import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
+import emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass;
 import emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass;
 import emu.grasscutter.utils.JsonUtils;
 
@@ -29,15 +29,15 @@ public class MusicGameActivityHandler extends ActivityHandler {
             .putAllMusicGameRecordMap(
                 musicGamePlayerData.getMusicGameRecord().values().stream()
                     .collect(Collectors.toMap(MusicGamePlayerData.MusicGameRecord::getMusicId, MusicGamePlayerData.MusicGameRecord::toProto)))
-            .addAllPersonCustomBeatmap(musicGamePlayerData.getPersonalCustomBeatmapRecord().values().stream()
-                .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
-                .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
-                .toList())
-
-            .addAllOthersCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
-                .map(MusicGamePlayerData.CustomBeatmapRecord::toOthersBriefProto)
-                .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
-                .toList())
+//            .addAllPersonCustomBeatmap(musicGamePlayerData.getPersonalCustomBeatmapRecord().values().stream()
+//                .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
+//                .map(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder::build)
+//                .toList())
+//
+//            .addAllOthersCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
+//                .map(MusicGamePlayerData.CustomBeatmapRecord::toOthersBriefProto)
+//                .map(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder::build)
+//                .toList())
             .build());
     }
 

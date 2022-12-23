@@ -19,13 +19,13 @@ public final class GetOnlinePlayerListRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 param = 11;</code>
+     * <code>uint32 param = 8;</code>
      * @return The param.
      */
     int getParam();
@@ -56,10 +56,13 @@ public final class GetOnlinePlayerListRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 73
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 78;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code GetOnlinePlayerListRsp}
@@ -117,14 +120,14 @@ public final class GetOnlinePlayerListRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry));
               break;
             }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 88: {
+            case 64: {
 
               param_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -162,10 +165,10 @@ public final class GetOnlinePlayerListRspOuterClass {
               emu.grasscutter.net.proto.GetOnlinePlayerListRspOuterClass.GetOnlinePlayerListRsp.class, emu.grasscutter.net.proto.GetOnlinePlayerListRspOuterClass.GetOnlinePlayerListRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -173,10 +176,10 @@ public final class GetOnlinePlayerListRspOuterClass {
       return retcode_;
     }
 
-    public static final int PARAM_FIELD_NUMBER = 11;
+    public static final int PARAM_FIELD_NUMBER = 8;
     private int param_;
     /**
-     * <code>uint32 param = 11;</code>
+     * <code>uint32 param = 8;</code>
      * @return The param.
      */
     @java.lang.Override
@@ -241,11 +244,11 @@ public final class GetOnlinePlayerListRspOuterClass {
       for (int i = 0; i < playerInfoList_.size(); i++) {
         output.writeMessage(5, playerInfoList_.get(i));
       }
-      if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
-      }
       if (param_ != 0) {
-        output.writeUInt32(11, param_);
+        output.writeUInt32(8, param_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -260,13 +263,13 @@ public final class GetOnlinePlayerListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, playerInfoList_.get(i));
       }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
-      }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, param_);
+          .computeUInt32Size(8, param_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -405,10 +408,13 @@ public final class GetOnlinePlayerListRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 73
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 78;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code GetOnlinePlayerListRsp}
@@ -609,7 +615,7 @@ public final class GetOnlinePlayerListRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -617,7 +623,7 @@ public final class GetOnlinePlayerListRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -628,7 +634,7 @@ public final class GetOnlinePlayerListRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -640,7 +646,7 @@ public final class GetOnlinePlayerListRspOuterClass {
 
       private int param_ ;
       /**
-       * <code>uint32 param = 11;</code>
+       * <code>uint32 param = 8;</code>
        * @return The param.
        */
       @java.lang.Override
@@ -648,7 +654,7 @@ public final class GetOnlinePlayerListRspOuterClass {
         return param_;
       }
       /**
-       * <code>uint32 param = 11;</code>
+       * <code>uint32 param = 8;</code>
        * @param value The param to set.
        * @return This builder for chaining.
        */
@@ -659,7 +665,7 @@ public final class GetOnlinePlayerListRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param = 11;</code>
+       * <code>uint32 param = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam() {
@@ -977,7 +983,7 @@ public final class GetOnlinePlayerListRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034GetOnlinePlayerListRsp.proto\032\026OnlinePl" +
       "ayerInfo.proto\"e\n\026GetOnlinePlayerListRsp" +
-      "\022\017\n\007retcode\030\007 \001(\005\022\r\n\005param\030\013 \001(\r\022+\n\020play" +
+      "\022\017\n\007retcode\030\017 \001(\005\022\r\n\005param\030\010 \001(\r\022+\n\020play" +
       "er_info_list\030\005 \003(\0132\021.OnlinePlayerInfoB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };

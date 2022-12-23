@@ -19,17 +19,17 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @return A list containing the avatarGuid.
      */
     java.util.List<java.lang.Long> getAvatarGuidList();
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @return The count of avatarGuid.
      */
     int getAvatarGuidCount();
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuid at the given index.
      */
@@ -37,10 +37,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1752
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1777;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionCallBackReq}
@@ -89,7 +93,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuid_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -97,7 +101,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
               avatarGuid_.addLong(input.readUInt64());
               break;
             }
-            case 106: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -145,10 +149,10 @@ public final class AvatarExpeditionCallBackReqOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionCallBackReqOuterClass.AvatarExpeditionCallBackReq.class, emu.grasscutter.net.proto.AvatarExpeditionCallBackReqOuterClass.AvatarExpeditionCallBackReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.LongList avatarGuid_;
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @return A list containing the avatarGuid.
      */
     @java.lang.Override
@@ -157,14 +161,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       return avatarGuid_;
     }
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @return The count of avatarGuid.
      */
     public int getAvatarGuidCount() {
       return avatarGuid_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid = 13;</code>
+     * <code>repeated uint64 avatar_guid = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuid at the given index.
      */
@@ -189,7 +193,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarGuidList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(avatarGuidMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuid_.size(); i++) {
@@ -347,10 +351,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1752
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1777;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionCallBackReq}
@@ -520,7 +528,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @return A list containing the avatarGuid.
        */
       public java.util.List<java.lang.Long>
@@ -529,14 +537,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuid_) : avatarGuid_;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @return The count of avatarGuid.
        */
       public int getAvatarGuidCount() {
         return avatarGuid_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @param index The index of the element to return.
        * @return The avatarGuid at the given index.
        */
@@ -544,7 +552,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return avatarGuid_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
@@ -557,7 +565,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @param value The avatarGuid to add.
        * @return This builder for chaining.
        */
@@ -568,7 +576,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @param values The avatarGuid to add.
        * @return This builder for chaining.
        */
@@ -581,7 +589,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 13;</code>
+       * <code>repeated uint64 avatar_guid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -659,7 +667,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!AvatarExpeditionCallBackReq.proto\"2\n\033A" +
       "vatarExpeditionCallBackReq\022\023\n\013avatar_gui" +
-      "d\030\r \003(\004B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "d\030\016 \003(\004B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
