@@ -19,21 +19,17 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 8;</code>
+     * <code>uint32 scene_id = 15;</code>
      * @return The sceneId.
      */
     int getSceneId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 950;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 930
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetDailyDungeonEntryInfoReq}
@@ -80,7 +76,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 120: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -117,10 +113,10 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
               emu.grasscutter.net.proto.GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.class, emu.grasscutter.net.proto.GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 8;
+    public static final int SCENE_ID_FIELD_NUMBER = 15;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 8;</code>
+     * <code>uint32 scene_id = 15;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -143,7 +139,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+        output.writeUInt32(15, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +152,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
+          .computeUInt32Size(15, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,14 +281,10 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 950;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 930
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetDailyDungeonEntryInfoReq}
@@ -443,7 +435,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 8;</code>
+       * <code>uint32 scene_id = 15;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -451,7 +443,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 8;</code>
+       * <code>uint32 scene_id = 15;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +454,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 8;</code>
+       * <code>uint32 scene_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -539,7 +531,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!GetDailyDungeonEntryInfoReq.proto\"/\n\033G" +
-      "etDailyDungeonEntryInfoReq\022\020\n\010scene_id\030\010" +
+      "etDailyDungeonEntryInfoReq\022\020\n\010scene_id\030\017" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

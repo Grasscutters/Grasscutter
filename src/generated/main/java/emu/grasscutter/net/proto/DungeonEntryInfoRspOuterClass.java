@@ -19,80 +19,77 @@ public final class DungeonEntryInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> 
         getDungeonEntryListList();
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo getDungeonEntryList(int index);
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     int getDungeonEntryListCount();
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder> 
         getDungeonEntryListOrBuilderList();
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder getDungeonEntryListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 recommend_dungeon_id = 15;</code>
+     * <code>uint32 point_id = 15;</code>
+     * @return The pointId.
+     */
+    int getPointId();
+
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> 
+        getUnk2800JJFLDCLMEHDList();
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB getUnk2800JJFLDCLMEHD(int index);
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    int getUnk2800JJFLDCLMEHDCount();
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder> 
+        getUnk2800JJFLDCLMEHDOrBuilderList();
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder getUnk2800JJFLDCLMEHDOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 recommend_dungeon_id = 14;</code>
      * @return The recommendDungeonId.
      */
     int getRecommendDungeonId();
 
     /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> 
-        getDungeonEntryPointListList();
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo getDungeonEntryPointList(int index);
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    int getDungeonEntryPointListCount();
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder> 
-        getDungeonEntryPointListOrBuilderList();
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder getDungeonEntryPointListOrBuilder(
-        int index);
-
-    /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
-
-    /**
-     * <code>uint32 point_id = 12;</code>
-     * @return The pointId.
-     */
-    int getPointId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 930;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 998
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DungeonEntryInfoRsp}
@@ -108,7 +105,7 @@ public final class DungeonEntryInfoRspOuterClass {
     }
     private DungeonEntryInfoRsp() {
       dungeonEntryList_ = java.util.Collections.emptyList();
-      dungeonEntryPointList_ = java.util.Collections.emptyList();
+      unk2800JJFLDCLMEHD_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -142,7 +139,21 @@ public final class DungeonEntryInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk2800JJFLDCLMEHD_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk2800JJFLDCLMEHD_.add(
+                  input.readMessage(emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dungeonEntryList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -151,28 +162,14 @@ public final class DungeonEntryInfoRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.parser(), extensionRegistry));
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dungeonEntryPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              dungeonEntryPointList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
             case 112: {
 
-              retcode_ = input.readInt32();
+              recommendDungeonId_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              recommendDungeonId_ = input.readUInt32();
+              pointId_ = input.readUInt32();
               break;
             }
             default: {
@@ -190,11 +187,11 @@ public final class DungeonEntryInfoRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk2800JJFLDCLMEHD_ = java.util.Collections.unmodifiableList(unk2800JJFLDCLMEHD_);
+        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           dungeonEntryList_ = java.util.Collections.unmodifiableList(dungeonEntryList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          dungeonEntryPointList_ = java.util.Collections.unmodifiableList(dungeonEntryPointList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -213,17 +210,17 @@ public final class DungeonEntryInfoRspOuterClass {
               emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.class, emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.Builder.class);
     }
 
-    public static final int DUNGEON_ENTRY_LIST_FIELD_NUMBER = 8;
+    public static final int DUNGEON_ENTRY_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> dungeonEntryList_;
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> getDungeonEntryListList() {
       return dungeonEntryList_;
     }
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder> 
@@ -231,21 +228,21 @@ public final class DungeonEntryInfoRspOuterClass {
       return dungeonEntryList_;
     }
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     @java.lang.Override
     public int getDungeonEntryListCount() {
       return dungeonEntryList_.size();
     }
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo getDungeonEntryList(int index) {
       return dungeonEntryList_.get(index);
     }
     /**
-     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+     * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder getDungeonEntryListOrBuilder(
@@ -253,10 +250,61 @@ public final class DungeonEntryInfoRspOuterClass {
       return dungeonEntryList_.get(index);
     }
 
-    public static final int RECOMMEND_DUNGEON_ID_FIELD_NUMBER = 15;
+    public static final int POINT_ID_FIELD_NUMBER = 15;
+    private int pointId_;
+    /**
+     * <code>uint32 point_id = 15;</code>
+     * @return The pointId.
+     */
+    @java.lang.Override
+    public int getPointId() {
+      return pointId_;
+    }
+
+    public static final int UNK2800_JJFLDCLMEHD_FIELD_NUMBER = 4;
+    private java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> unk2800JJFLDCLMEHD_;
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> getUnk2800JJFLDCLMEHDList() {
+      return unk2800JJFLDCLMEHD_;
+    }
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder> 
+        getUnk2800JJFLDCLMEHDOrBuilderList() {
+      return unk2800JJFLDCLMEHD_;
+    }
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    @java.lang.Override
+    public int getUnk2800JJFLDCLMEHDCount() {
+      return unk2800JJFLDCLMEHD_.size();
+    }
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB getUnk2800JJFLDCLMEHD(int index) {
+      return unk2800JJFLDCLMEHD_.get(index);
+    }
+    /**
+     * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder getUnk2800JJFLDCLMEHDOrBuilder(
+        int index) {
+      return unk2800JJFLDCLMEHD_.get(index);
+    }
+
+    public static final int RECOMMEND_DUNGEON_ID_FIELD_NUMBER = 14;
     private int recommendDungeonId_;
     /**
-     * <code>uint32 recommend_dungeon_id = 15;</code>
+     * <code>uint32 recommend_dungeon_id = 14;</code>
      * @return The recommendDungeonId.
      */
     @java.lang.Override
@@ -264,66 +312,15 @@ public final class DungeonEntryInfoRspOuterClass {
       return recommendDungeonId_;
     }
 
-    public static final int DUNGEON_ENTRY_POINT_LIST_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> dungeonEntryPointList_;
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> getDungeonEntryPointListList() {
-      return dungeonEntryPointList_;
-    }
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder> 
-        getDungeonEntryPointListOrBuilderList() {
-      return dungeonEntryPointList_;
-    }
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    @java.lang.Override
-    public int getDungeonEntryPointListCount() {
-      return dungeonEntryPointList_.size();
-    }
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo getDungeonEntryPointList(int index) {
-      return dungeonEntryPointList_.get(index);
-    }
-    /**
-     * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder getDungeonEntryPointListOrBuilder(
-        int index) {
-      return dungeonEntryPointList_.get(index);
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
-    }
-
-    public static final int POINT_ID_FIELD_NUMBER = 12;
-    private int pointId_;
-    /**
-     * <code>uint32 point_id = 12;</code>
-     * @return The pointId.
-     */
-    @java.lang.Override
-    public int getPointId() {
-      return pointId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -340,20 +337,20 @@ public final class DungeonEntryInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < dungeonEntryList_.size(); i++) {
-        output.writeMessage(8, dungeonEntryList_.get(i));
-      }
-      for (int i = 0; i < dungeonEntryPointList_.size(); i++) {
-        output.writeMessage(10, dungeonEntryPointList_.get(i));
-      }
-      if (pointId_ != 0) {
-        output.writeUInt32(12, pointId_);
+      for (int i = 0; i < unk2800JJFLDCLMEHD_.size(); i++) {
+        output.writeMessage(4, unk2800JJFLDCLMEHD_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(11, retcode_);
+      }
+      for (int i = 0; i < dungeonEntryList_.size(); i++) {
+        output.writeMessage(12, dungeonEntryList_.get(i));
       }
       if (recommendDungeonId_ != 0) {
-        output.writeUInt32(15, recommendDungeonId_);
+        output.writeUInt32(14, recommendDungeonId_);
+      }
+      if (pointId_ != 0) {
+        output.writeUInt32(15, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -364,25 +361,25 @@ public final class DungeonEntryInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < dungeonEntryList_.size(); i++) {
+      for (int i = 0; i < unk2800JJFLDCLMEHD_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, dungeonEntryList_.get(i));
-      }
-      for (int i = 0; i < dungeonEntryPointList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, dungeonEntryPointList_.get(i));
-      }
-      if (pointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, pointId_);
+          .computeMessageSize(4, unk2800JJFLDCLMEHD_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(11, retcode_);
+      }
+      for (int i = 0; i < dungeonEntryList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, dungeonEntryList_.get(i));
       }
       if (recommendDungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, recommendDungeonId_);
+          .computeUInt32Size(14, recommendDungeonId_);
+      }
+      if (pointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -401,14 +398,14 @@ public final class DungeonEntryInfoRspOuterClass {
 
       if (!getDungeonEntryListList()
           .equals(other.getDungeonEntryListList())) return false;
-      if (getRecommendDungeonId()
-          != other.getRecommendDungeonId()) return false;
-      if (!getDungeonEntryPointListList()
-          .equals(other.getDungeonEntryPointListList())) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getPointId()
           != other.getPointId()) return false;
+      if (!getUnk2800JJFLDCLMEHDList()
+          .equals(other.getUnk2800JJFLDCLMEHDList())) return false;
+      if (getRecommendDungeonId()
+          != other.getRecommendDungeonId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -424,16 +421,16 @@ public final class DungeonEntryInfoRspOuterClass {
         hash = (37 * hash) + DUNGEON_ENTRY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDungeonEntryListList().hashCode();
       }
-      hash = (37 * hash) + RECOMMEND_DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRecommendDungeonId();
-      if (getDungeonEntryPointListCount() > 0) {
-        hash = (37 * hash) + DUNGEON_ENTRY_POINT_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getDungeonEntryPointListList().hashCode();
-      }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
+      if (getUnk2800JJFLDCLMEHDCount() > 0) {
+        hash = (37 * hash) + UNK2800_JJFLDCLMEHD_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk2800JJFLDCLMEHDList().hashCode();
+      }
+      hash = (37 * hash) + RECOMMEND_DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRecommendDungeonId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -531,13 +528,10 @@ public final class DungeonEntryInfoRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 930;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 998
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DungeonEntryInfoRsp}
@@ -573,7 +567,7 @@ public final class DungeonEntryInfoRspOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getDungeonEntryListFieldBuilder();
-          getDungeonEntryPointListFieldBuilder();
+          getUnk2800JJFLDCLMEHDFieldBuilder();
         }
       }
       @java.lang.Override
@@ -585,17 +579,17 @@ public final class DungeonEntryInfoRspOuterClass {
         } else {
           dungeonEntryListBuilder_.clear();
         }
-        recommendDungeonId_ = 0;
+        pointId_ = 0;
 
-        if (dungeonEntryPointListBuilder_ == null) {
-          dungeonEntryPointList_ = java.util.Collections.emptyList();
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          unk2800JJFLDCLMEHD_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          dungeonEntryPointListBuilder_.clear();
+          unk2800JJFLDCLMEHDBuilder_.clear();
         }
-        retcode_ = 0;
+        recommendDungeonId_ = 0;
 
-        pointId_ = 0;
+        retcode_ = 0;
 
         return this;
       }
@@ -633,18 +627,18 @@ public final class DungeonEntryInfoRspOuterClass {
         } else {
           result.dungeonEntryList_ = dungeonEntryListBuilder_.build();
         }
-        result.recommendDungeonId_ = recommendDungeonId_;
-        if (dungeonEntryPointListBuilder_ == null) {
+        result.pointId_ = pointId_;
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            dungeonEntryPointList_ = java.util.Collections.unmodifiableList(dungeonEntryPointList_);
+            unk2800JJFLDCLMEHD_ = java.util.Collections.unmodifiableList(unk2800JJFLDCLMEHD_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.dungeonEntryPointList_ = dungeonEntryPointList_;
+          result.unk2800JJFLDCLMEHD_ = unk2800JJFLDCLMEHD_;
         } else {
-          result.dungeonEntryPointList_ = dungeonEntryPointListBuilder_.build();
+          result.unk2800JJFLDCLMEHD_ = unk2800JJFLDCLMEHDBuilder_.build();
         }
+        result.recommendDungeonId_ = recommendDungeonId_;
         result.retcode_ = retcode_;
-        result.pointId_ = pointId_;
         onBuilt();
         return result;
       }
@@ -719,40 +713,40 @@ public final class DungeonEntryInfoRspOuterClass {
             }
           }
         }
-        if (other.getRecommendDungeonId() != 0) {
-          setRecommendDungeonId(other.getRecommendDungeonId());
+        if (other.getPointId() != 0) {
+          setPointId(other.getPointId());
         }
-        if (dungeonEntryPointListBuilder_ == null) {
-          if (!other.dungeonEntryPointList_.isEmpty()) {
-            if (dungeonEntryPointList_.isEmpty()) {
-              dungeonEntryPointList_ = other.dungeonEntryPointList_;
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          if (!other.unk2800JJFLDCLMEHD_.isEmpty()) {
+            if (unk2800JJFLDCLMEHD_.isEmpty()) {
+              unk2800JJFLDCLMEHD_ = other.unk2800JJFLDCLMEHD_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureDungeonEntryPointListIsMutable();
-              dungeonEntryPointList_.addAll(other.dungeonEntryPointList_);
+              ensureUnk2800JJFLDCLMEHDIsMutable();
+              unk2800JJFLDCLMEHD_.addAll(other.unk2800JJFLDCLMEHD_);
             }
             onChanged();
           }
         } else {
-          if (!other.dungeonEntryPointList_.isEmpty()) {
-            if (dungeonEntryPointListBuilder_.isEmpty()) {
-              dungeonEntryPointListBuilder_.dispose();
-              dungeonEntryPointListBuilder_ = null;
-              dungeonEntryPointList_ = other.dungeonEntryPointList_;
+          if (!other.unk2800JJFLDCLMEHD_.isEmpty()) {
+            if (unk2800JJFLDCLMEHDBuilder_.isEmpty()) {
+              unk2800JJFLDCLMEHDBuilder_.dispose();
+              unk2800JJFLDCLMEHDBuilder_ = null;
+              unk2800JJFLDCLMEHD_ = other.unk2800JJFLDCLMEHD_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              dungeonEntryPointListBuilder_ = 
+              unk2800JJFLDCLMEHDBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDungeonEntryPointListFieldBuilder() : null;
+                   getUnk2800JJFLDCLMEHDFieldBuilder() : null;
             } else {
-              dungeonEntryPointListBuilder_.addAllMessages(other.dungeonEntryPointList_);
+              unk2800JJFLDCLMEHDBuilder_.addAllMessages(other.unk2800JJFLDCLMEHD_);
             }
           }
         }
+        if (other.getRecommendDungeonId() != 0) {
+          setRecommendDungeonId(other.getRecommendDungeonId());
+        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
-        }
-        if (other.getPointId() != 0) {
-          setPointId(other.getPointId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -797,7 +791,7 @@ public final class DungeonEntryInfoRspOuterClass {
           emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder> dungeonEntryListBuilder_;
 
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> getDungeonEntryListList() {
         if (dungeonEntryListBuilder_ == null) {
@@ -807,7 +801,7 @@ public final class DungeonEntryInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public int getDungeonEntryListCount() {
         if (dungeonEntryListBuilder_ == null) {
@@ -817,7 +811,7 @@ public final class DungeonEntryInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo getDungeonEntryList(int index) {
         if (dungeonEntryListBuilder_ == null) {
@@ -827,7 +821,7 @@ public final class DungeonEntryInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder setDungeonEntryList(
           int index, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo value) {
@@ -844,7 +838,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder setDungeonEntryList(
           int index, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder builderForValue) {
@@ -858,7 +852,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder addDungeonEntryList(emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo value) {
         if (dungeonEntryListBuilder_ == null) {
@@ -874,7 +868,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder addDungeonEntryList(
           int index, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo value) {
@@ -891,7 +885,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder addDungeonEntryList(
           emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder builderForValue) {
@@ -905,7 +899,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder addDungeonEntryList(
           int index, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder builderForValue) {
@@ -919,7 +913,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder addAllDungeonEntryList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> values) {
@@ -934,7 +928,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder clearDungeonEntryList() {
         if (dungeonEntryListBuilder_ == null) {
@@ -947,7 +941,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public Builder removeDungeonEntryList(int index) {
         if (dungeonEntryListBuilder_ == null) {
@@ -960,14 +954,14 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder getDungeonEntryListBuilder(
           int index) {
         return getDungeonEntryListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder getDungeonEntryListOrBuilder(
           int index) {
@@ -977,7 +971,7 @@ public final class DungeonEntryInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder> 
            getDungeonEntryListOrBuilderList() {
@@ -988,14 +982,14 @@ public final class DungeonEntryInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder addDungeonEntryListBuilder() {
         return getDungeonEntryListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder addDungeonEntryListBuilder(
           int index) {
@@ -1003,7 +997,7 @@ public final class DungeonEntryInfoRspOuterClass {
             index, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 8;</code>
+       * <code>repeated .DungeonEntryInfo dungeon_entry_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder> 
            getDungeonEntryListBuilderList() {
@@ -1024,311 +1018,9 @@ public final class DungeonEntryInfoRspOuterClass {
         return dungeonEntryListBuilder_;
       }
 
-      private int recommendDungeonId_ ;
-      /**
-       * <code>uint32 recommend_dungeon_id = 15;</code>
-       * @return The recommendDungeonId.
-       */
-      @java.lang.Override
-      public int getRecommendDungeonId() {
-        return recommendDungeonId_;
-      }
-      /**
-       * <code>uint32 recommend_dungeon_id = 15;</code>
-       * @param value The recommendDungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecommendDungeonId(int value) {
-        
-        recommendDungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 recommend_dungeon_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecommendDungeonId() {
-        
-        recommendDungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> dungeonEntryPointList_ =
-        java.util.Collections.emptyList();
-      private void ensureDungeonEntryPointListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          dungeonEntryPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo>(dungeonEntryPointList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder> dungeonEntryPointListBuilder_;
-
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> getDungeonEntryPointListList() {
-        if (dungeonEntryPointListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(dungeonEntryPointList_);
-        } else {
-          return dungeonEntryPointListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public int getDungeonEntryPointListCount() {
-        if (dungeonEntryPointListBuilder_ == null) {
-          return dungeonEntryPointList_.size();
-        } else {
-          return dungeonEntryPointListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo getDungeonEntryPointList(int index) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          return dungeonEntryPointList_.get(index);
-        } else {
-          return dungeonEntryPointListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder setDungeonEntryPointList(
-          int index, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo value) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.set(index, value);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder setDungeonEntryPointList(
-          int index, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder builderForValue) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder addDungeonEntryPointList(emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo value) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.add(value);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder addDungeonEntryPointList(
-          int index, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo value) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.add(index, value);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder addDungeonEntryPointList(
-          emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder builderForValue) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder addDungeonEntryPointList(
-          int index, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder builderForValue) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder addAllDungeonEntryPointList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> values) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          ensureDungeonEntryPointListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, dungeonEntryPointList_);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder clearDungeonEntryPointList() {
-        if (dungeonEntryPointListBuilder_ == null) {
-          dungeonEntryPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public Builder removeDungeonEntryPointList(int index) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          ensureDungeonEntryPointListIsMutable();
-          dungeonEntryPointList_.remove(index);
-          onChanged();
-        } else {
-          dungeonEntryPointListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder getDungeonEntryPointListBuilder(
-          int index) {
-        return getDungeonEntryPointListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder getDungeonEntryPointListOrBuilder(
-          int index) {
-        if (dungeonEntryPointListBuilder_ == null) {
-          return dungeonEntryPointList_.get(index);  } else {
-          return dungeonEntryPointListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder> 
-           getDungeonEntryPointListOrBuilderList() {
-        if (dungeonEntryPointListBuilder_ != null) {
-          return dungeonEntryPointListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(dungeonEntryPointList_);
-        }
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder addDungeonEntryPointListBuilder() {
-        return getDungeonEntryPointListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder addDungeonEntryPointListBuilder(
-          int index) {
-        return getDungeonEntryPointListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .DungeonEntryPointInfo dungeon_entry_point_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder> 
-           getDungeonEntryPointListBuilderList() {
-        return getDungeonEntryPointListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder> 
-          getDungeonEntryPointListFieldBuilder() {
-        if (dungeonEntryPointListBuilder_ == null) {
-          dungeonEntryPointListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.Builder, emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfoOrBuilder>(
-                  dungeonEntryPointList_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          dungeonEntryPointList_ = null;
-        }
-        return dungeonEntryPointListBuilder_;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pointId_ ;
       /**
-       * <code>uint32 point_id = 12;</code>
+       * <code>uint32 point_id = 15;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -1336,7 +1028,7 @@ public final class DungeonEntryInfoRspOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 point_id = 12;</code>
+       * <code>uint32 point_id = 15;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -1347,12 +1039,314 @@ public final class DungeonEntryInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 point_id = 12;</code>
+       * <code>uint32 point_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
         
         pointId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> unk2800JJFLDCLMEHD_ =
+        java.util.Collections.emptyList();
+      private void ensureUnk2800JJFLDCLMEHDIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          unk2800JJFLDCLMEHD_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB>(unk2800JJFLDCLMEHD_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder> unk2800JJFLDCLMEHDBuilder_;
+
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> getUnk2800JJFLDCLMEHDList() {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unk2800JJFLDCLMEHD_);
+        } else {
+          return unk2800JJFLDCLMEHDBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public int getUnk2800JJFLDCLMEHDCount() {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          return unk2800JJFLDCLMEHD_.size();
+        } else {
+          return unk2800JJFLDCLMEHDBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB getUnk2800JJFLDCLMEHD(int index) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          return unk2800JJFLDCLMEHD_.get(index);
+        } else {
+          return unk2800JJFLDCLMEHDBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder setUnk2800JJFLDCLMEHD(
+          int index, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB value) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.set(index, value);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder setUnk2800JJFLDCLMEHD(
+          int index, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder builderForValue) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder addUnk2800JJFLDCLMEHD(emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB value) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.add(value);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder addUnk2800JJFLDCLMEHD(
+          int index, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB value) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.add(index, value);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder addUnk2800JJFLDCLMEHD(
+          emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder builderForValue) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder addUnk2800JJFLDCLMEHD(
+          int index, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder builderForValue) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder addAllUnk2800JJFLDCLMEHD(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB> values) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unk2800JJFLDCLMEHD_);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder clearUnk2800JJFLDCLMEHD() {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          unk2800JJFLDCLMEHD_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public Builder removeUnk2800JJFLDCLMEHD(int index) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          ensureUnk2800JJFLDCLMEHDIsMutable();
+          unk2800JJFLDCLMEHD_.remove(index);
+          onChanged();
+        } else {
+          unk2800JJFLDCLMEHDBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder getUnk2800JJFLDCLMEHDBuilder(
+          int index) {
+        return getUnk2800JJFLDCLMEHDFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder getUnk2800JJFLDCLMEHDOrBuilder(
+          int index) {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          return unk2800JJFLDCLMEHD_.get(index);  } else {
+          return unk2800JJFLDCLMEHDBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder> 
+           getUnk2800JJFLDCLMEHDOrBuilderList() {
+        if (unk2800JJFLDCLMEHDBuilder_ != null) {
+          return unk2800JJFLDCLMEHDBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unk2800JJFLDCLMEHD_);
+        }
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder addUnk2800JJFLDCLMEHDBuilder() {
+        return getUnk2800JJFLDCLMEHDFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder addUnk2800JJFLDCLMEHDBuilder(
+          int index) {
+        return getUnk2800JJFLDCLMEHDFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk2800_MHCFAGCKGIB Unk2800_JJFLDCLMEHD = 4;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder> 
+           getUnk2800JJFLDCLMEHDBuilderList() {
+        return getUnk2800JJFLDCLMEHDFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder> 
+          getUnk2800JJFLDCLMEHDFieldBuilder() {
+        if (unk2800JJFLDCLMEHDBuilder_ == null) {
+          unk2800JJFLDCLMEHDBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIB.Builder, emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.Unk2800_MHCFAGCKGIBOrBuilder>(
+                  unk2800JJFLDCLMEHD_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          unk2800JJFLDCLMEHD_ = null;
+        }
+        return unk2800JJFLDCLMEHDBuilder_;
+      }
+
+      private int recommendDungeonId_ ;
+      /**
+       * <code>uint32 recommend_dungeon_id = 14;</code>
+       * @return The recommendDungeonId.
+       */
+      @java.lang.Override
+      public int getRecommendDungeonId() {
+        return recommendDungeonId_;
+      }
+      /**
+       * <code>uint32 recommend_dungeon_id = 14;</code>
+       * @param value The recommendDungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecommendDungeonId(int value) {
+        
+        recommendDungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 recommend_dungeon_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecommendDungeonId() {
+        
+        recommendDungeonId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -1424,28 +1418,28 @@ public final class DungeonEntryInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031DungeonEntryInfoRsp.proto\032\026DungeonEntr" +
-      "yInfo.proto\032\033DungeonEntryPointInfo.proto" +
-      "\"\277\001\n\023DungeonEntryInfoRsp\022-\n\022dungeon_entr" +
-      "y_list\030\010 \003(\0132\021.DungeonEntryInfo\022\034\n\024recom" +
-      "mend_dungeon_id\030\017 \001(\r\0228\n\030dungeon_entry_p" +
-      "oint_list\030\n \003(\0132\026.DungeonEntryPointInfo\022" +
-      "\017\n\007retcode\030\016 \001(\005\022\020\n\010point_id\030\014 \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "yInfo.proto\032\031Unk2800_MHCFAGCKGIB.proto\"\270" +
+      "\001\n\023DungeonEntryInfoRsp\022-\n\022dungeon_entry_" +
+      "list\030\014 \003(\0132\021.DungeonEntryInfo\022\020\n\010point_i" +
+      "d\030\017 \001(\r\0221\n\023Unk2800_JJFLDCLMEHD\030\004 \003(\0132\024.U" +
+      "nk2800_MHCFAGCKGIB\022\034\n\024recommend_dungeon_" +
+      "id\030\016 \001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.getDescriptor(),
         });
     internal_static_DungeonEntryInfoRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_DungeonEntryInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonEntryInfoRsp_descriptor,
-        new java.lang.String[] { "DungeonEntryList", "RecommendDungeonId", "DungeonEntryPointList", "Retcode", "PointId", });
+        new java.lang.String[] { "DungeonEntryList", "PointId", "Unk2800JJFLDCLMEHD", "RecommendDungeonId", "Retcode", });
     emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk2800MHCFAGCKGIB.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

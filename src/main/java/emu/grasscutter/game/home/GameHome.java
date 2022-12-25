@@ -82,7 +82,7 @@ public class GameHome {
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
-        player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
+        player.getSession().send(new PacketUnlockedHomeBgmNotify(player));
     }
 
     public Player getPlayer() {
@@ -99,8 +99,8 @@ public class GameHome {
         if (!getUnlockedHomeBgmList().add(homeBgmId)) return false;
 
         var player = this.getPlayer();
-        player.sendPacket(new PacketHomeNewUnlockedBgmIdListNotify(homeBgmId));
-        player.sendPacket(new PacketHomeAllUnlockedBgmIdListNotify(player));
+        player.sendPacket(new PacketUnlockHomeBgmNotify(homeBgmId));
+        player.sendPacket(new PacketUnlockedHomeBgmNotify(player));
         save();
         return true;
     }

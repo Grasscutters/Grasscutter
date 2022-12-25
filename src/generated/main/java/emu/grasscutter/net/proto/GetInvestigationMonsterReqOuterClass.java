@@ -19,38 +19,34 @@ public final class GetInvestigationMonsterReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_for_mark = 8;</code>
-     * @return The isForMark.
-     */
-    boolean getIsForMark();
-
-    /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @return A list containing the cityIdList.
      */
     java.util.List<java.lang.Integer> getCityIdListList();
     /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @return The count of cityIdList.
      */
     int getCityIdListCount();
     /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @param index The index of the element to return.
      * @return The cityIdList at the given index.
      */
     int getCityIdList(int index);
+
+    /**
+     * <code>bool Unk2700_DEMFDHNFBBJ = 4;</code>
+     * @return The unk2700DEMFDHNFBBJ.
+     */
+    boolean getUnk2700DEMFDHNFBBJ();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1930;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 1901
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetInvestigationMonsterReq}
@@ -99,12 +95,7 @@ public final class GetInvestigationMonsterReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              isForMark_ = input.readBool();
-              break;
-            }
-            case 88: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +103,7 @@ public final class GetInvestigationMonsterReqOuterClass {
               cityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -123,6 +114,11 @@ public final class GetInvestigationMonsterReqOuterClass {
                 cityIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 32: {
+
+              unk2700DEMFDHNFBBJ_ = input.readBool();
               break;
             }
             default: {
@@ -160,21 +156,10 @@ public final class GetInvestigationMonsterReqOuterClass {
               emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.class, emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.Builder.class);
     }
 
-    public static final int IS_FOR_MARK_FIELD_NUMBER = 8;
-    private boolean isForMark_;
-    /**
-     * <code>bool is_for_mark = 8;</code>
-     * @return The isForMark.
-     */
-    @java.lang.Override
-    public boolean getIsForMark() {
-      return isForMark_;
-    }
-
-    public static final int CITY_ID_LIST_FIELD_NUMBER = 11;
+    public static final int CITY_ID_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList cityIdList_;
     /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @return A list containing the cityIdList.
      */
     @java.lang.Override
@@ -183,14 +168,14 @@ public final class GetInvestigationMonsterReqOuterClass {
       return cityIdList_;
     }
     /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @return The count of cityIdList.
      */
     public int getCityIdListCount() {
       return cityIdList_.size();
     }
     /**
-     * <code>repeated uint32 city_id_list = 11;</code>
+     * <code>repeated uint32 city_id_list = 3;</code>
      * @param index The index of the element to return.
      * @return The cityIdList at the given index.
      */
@@ -198,6 +183,17 @@ public final class GetInvestigationMonsterReqOuterClass {
       return cityIdList_.getInt(index);
     }
     private int cityIdListMemoizedSerializedSize = -1;
+
+    public static final int UNK2700_DEMFDHNFBBJ_FIELD_NUMBER = 4;
+    private boolean unk2700DEMFDHNFBBJ_;
+    /**
+     * <code>bool Unk2700_DEMFDHNFBBJ = 4;</code>
+     * @return The unk2700DEMFDHNFBBJ.
+     */
+    @java.lang.Override
+    public boolean getUnk2700DEMFDHNFBBJ() {
+      return unk2700DEMFDHNFBBJ_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -214,15 +210,15 @@ public final class GetInvestigationMonsterReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (isForMark_ != false) {
-        output.writeBool(8, isForMark_);
-      }
       if (getCityIdListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(cityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < cityIdList_.size(); i++) {
         output.writeUInt32NoTag(cityIdList_.getInt(i));
+      }
+      if (unk2700DEMFDHNFBBJ_ != false) {
+        output.writeBool(4, unk2700DEMFDHNFBBJ_);
       }
       unknownFields.writeTo(output);
     }
@@ -233,10 +229,6 @@ public final class GetInvestigationMonsterReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isForMark_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isForMark_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < cityIdList_.size(); i++) {
@@ -250,6 +242,10 @@ public final class GetInvestigationMonsterReqOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         cityIdListMemoizedSerializedSize = dataSize;
+      }
+      if (unk2700DEMFDHNFBBJ_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, unk2700DEMFDHNFBBJ_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -266,10 +262,10 @@ public final class GetInvestigationMonsterReqOuterClass {
       }
       emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq other = (emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq) obj;
 
-      if (getIsForMark()
-          != other.getIsForMark()) return false;
       if (!getCityIdListList()
           .equals(other.getCityIdListList())) return false;
+      if (getUnk2700DEMFDHNFBBJ()
+          != other.getUnk2700DEMFDHNFBBJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -281,13 +277,13 @@ public final class GetInvestigationMonsterReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_FOR_MARK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsForMark());
       if (getCityIdListCount() > 0) {
         hash = (37 * hash) + CITY_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCityIdListList().hashCode();
       }
+      hash = (37 * hash) + UNK2700_DEMFDHNFBBJ_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUnk2700DEMFDHNFBBJ());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -385,14 +381,10 @@ public final class GetInvestigationMonsterReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1930;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 1901
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetInvestigationMonsterReq}
@@ -432,10 +424,10 @@ public final class GetInvestigationMonsterReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isForMark_ = false;
-
         cityIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        unk2700DEMFDHNFBBJ_ = false;
+
         return this;
       }
 
@@ -463,12 +455,12 @@ public final class GetInvestigationMonsterReqOuterClass {
       public emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq buildPartial() {
         emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq result = new emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq(this);
         int from_bitField0_ = bitField0_;
-        result.isForMark_ = isForMark_;
         if (((bitField0_ & 0x00000001) != 0)) {
           cityIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cityIdList_ = cityIdList_;
+        result.unk2700DEMFDHNFBBJ_ = unk2700DEMFDHNFBBJ_;
         onBuilt();
         return result;
       }
@@ -517,9 +509,6 @@ public final class GetInvestigationMonsterReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq other) {
         if (other == emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.getDefaultInstance()) return this;
-        if (other.getIsForMark() != false) {
-          setIsForMark(other.getIsForMark());
-        }
         if (!other.cityIdList_.isEmpty()) {
           if (cityIdList_.isEmpty()) {
             cityIdList_ = other.cityIdList_;
@@ -529,6 +518,9 @@ public final class GetInvestigationMonsterReqOuterClass {
             cityIdList_.addAll(other.cityIdList_);
           }
           onChanged();
+        }
+        if (other.getUnk2700DEMFDHNFBBJ() != false) {
+          setUnk2700DEMFDHNFBBJ(other.getUnk2700DEMFDHNFBBJ());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -560,37 +552,6 @@ public final class GetInvestigationMonsterReqOuterClass {
       }
       private int bitField0_;
 
-      private boolean isForMark_ ;
-      /**
-       * <code>bool is_for_mark = 8;</code>
-       * @return The isForMark.
-       */
-      @java.lang.Override
-      public boolean getIsForMark() {
-        return isForMark_;
-      }
-      /**
-       * <code>bool is_for_mark = 8;</code>
-       * @param value The isForMark to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsForMark(boolean value) {
-        
-        isForMark_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_for_mark = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsForMark() {
-        
-        isForMark_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList cityIdList_ = emptyIntList();
       private void ensureCityIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -599,7 +560,7 @@ public final class GetInvestigationMonsterReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @return A list containing the cityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -608,14 +569,14 @@ public final class GetInvestigationMonsterReqOuterClass {
                  java.util.Collections.unmodifiableList(cityIdList_) : cityIdList_;
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @return The count of cityIdList.
        */
       public int getCityIdListCount() {
         return cityIdList_.size();
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @param index The index of the element to return.
        * @return The cityIdList at the given index.
        */
@@ -623,7 +584,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         return cityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The cityIdList to set.
        * @return This builder for chaining.
@@ -636,7 +597,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @param value The cityIdList to add.
        * @return This builder for chaining.
        */
@@ -647,7 +608,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @param values The cityIdList to add.
        * @return This builder for chaining.
        */
@@ -660,12 +621,43 @@ public final class GetInvestigationMonsterReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 city_id_list = 11;</code>
+       * <code>repeated uint32 city_id_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityIdList() {
         cityIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private boolean unk2700DEMFDHNFBBJ_ ;
+      /**
+       * <code>bool Unk2700_DEMFDHNFBBJ = 4;</code>
+       * @return The unk2700DEMFDHNFBBJ.
+       */
+      @java.lang.Override
+      public boolean getUnk2700DEMFDHNFBBJ() {
+        return unk2700DEMFDHNFBBJ_;
+      }
+      /**
+       * <code>bool Unk2700_DEMFDHNFBBJ = 4;</code>
+       * @param value The unk2700DEMFDHNFBBJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk2700DEMFDHNFBBJ(boolean value) {
+        
+        unk2700DEMFDHNFBBJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool Unk2700_DEMFDHNFBBJ = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk2700DEMFDHNFBBJ() {
+        
+        unk2700DEMFDHNFBBJ_ = false;
         onChanged();
         return this;
       }
@@ -736,10 +728,10 @@ public final class GetInvestigationMonsterReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n GetInvestigationMonsterReq.proto\"G\n\032Ge" +
-      "tInvestigationMonsterReq\022\023\n\013is_for_mark\030" +
-      "\010 \001(\010\022\024\n\014city_id_list\030\013 \003(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n GetInvestigationMonsterReq.proto\"O\n\032Ge" +
+      "tInvestigationMonsterReq\022\024\n\014city_id_list" +
+      "\030\003 \003(\r\022\033\n\023Unk2700_DEMFDHNFBBJ\030\004 \001(\010B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -750,7 +742,7 @@ public final class GetInvestigationMonsterReqOuterClass {
     internal_static_GetInvestigationMonsterReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetInvestigationMonsterReq_descriptor,
-        new java.lang.String[] { "IsForMark", "CityIdList", });
+        new java.lang.String[] { "CityIdList", "Unk2700DEMFDHNFBBJ", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

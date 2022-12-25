@@ -19,21 +19,17 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 team_id = 10;</code>
+     * <code>uint32 team_id = 9;</code>
      * @return The teamId.
      */
     int getTeamId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1738;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 1796
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChooseCurAvatarTeamReq}
@@ -80,7 +76,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 72: {
 
               teamId_ = input.readUInt32();
               break;
@@ -117,10 +113,10 @@ public final class ChooseCurAvatarTeamReqOuterClass {
               emu.grasscutter.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.class, emu.grasscutter.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.Builder.class);
     }
 
-    public static final int TEAM_ID_FIELD_NUMBER = 10;
+    public static final int TEAM_ID_FIELD_NUMBER = 9;
     private int teamId_;
     /**
-     * <code>uint32 team_id = 10;</code>
+     * <code>uint32 team_id = 9;</code>
      * @return The teamId.
      */
     @java.lang.Override
@@ -143,7 +139,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (teamId_ != 0) {
-        output.writeUInt32(10, teamId_);
+        output.writeUInt32(9, teamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +152,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       size = 0;
       if (teamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, teamId_);
+          .computeUInt32Size(9, teamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,14 +281,10 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1738;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 1796
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChooseCurAvatarTeamReq}
@@ -443,7 +435,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
       private int teamId_ ;
       /**
-       * <code>uint32 team_id = 10;</code>
+       * <code>uint32 team_id = 9;</code>
        * @return The teamId.
        */
       @java.lang.Override
@@ -451,7 +443,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         return teamId_;
       }
       /**
-       * <code>uint32 team_id = 10;</code>
+       * <code>uint32 team_id = 9;</code>
        * @param value The teamId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +454,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 team_id = 10;</code>
+       * <code>uint32 team_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearTeamId() {
@@ -539,7 +531,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ChooseCurAvatarTeamReq.proto\")\n\026Choose" +
-      "CurAvatarTeamReq\022\017\n\007team_id\030\n \001(\rB\033\n\031emu" +
+      "CurAvatarTeamReq\022\017\n\007team_id\030\t \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

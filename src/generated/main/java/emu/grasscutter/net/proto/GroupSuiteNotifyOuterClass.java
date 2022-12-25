@@ -19,11 +19,11 @@ public final class GroupSuiteNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     int getGroupMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     boolean containsGroupMap(
         int key);
@@ -34,19 +34,19 @@ public final class GroupSuiteNotifyOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGroupMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGroupMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
 
     int getGroupMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
 
     int getGroupMapOrThrow(
@@ -54,13 +54,10 @@ public final class GroupSuiteNotifyOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 3489;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 3257
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GroupSuiteNotify}
@@ -108,7 +105,7 @@ public final class GroupSuiteNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupMap_ = com.google.protobuf.MapField.newMapField(
                     GroupMapDefaultEntryHolder.defaultEntry);
@@ -150,7 +147,7 @@ public final class GroupSuiteNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 3:
           return internalGetGroupMap();
         default:
           throw new RuntimeException(
@@ -165,7 +162,7 @@ public final class GroupSuiteNotifyOuterClass {
               emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.class, emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.Builder.class);
     }
 
-    public static final int GROUP_MAP_FIELD_NUMBER = 4;
+    public static final int GROUP_MAP_FIELD_NUMBER = 3;
     private static final class GroupMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -192,7 +189,7 @@ public final class GroupSuiteNotifyOuterClass {
       return internalGetGroupMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
 
     @java.lang.Override
@@ -210,7 +207,7 @@ public final class GroupSuiteNotifyOuterClass {
       return getGroupMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     @java.lang.Override
 
@@ -218,7 +215,7 @@ public final class GroupSuiteNotifyOuterClass {
       return internalGetGroupMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     @java.lang.Override
 
@@ -231,7 +228,7 @@ public final class GroupSuiteNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
      */
     @java.lang.Override
 
@@ -265,7 +262,7 @@ public final class GroupSuiteNotifyOuterClass {
           output,
           internalGetGroupMap(),
           GroupMapDefaultEntryHolder.defaultEntry,
-          4);
+          3);
       unknownFields.writeTo(output);
     }
 
@@ -283,7 +280,7 @@ public final class GroupSuiteNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, groupMap__);
+            .computeMessageSize(3, groupMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -414,13 +411,10 @@ public final class GroupSuiteNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 3489;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 3257
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GroupSuiteNotify}
@@ -438,7 +432,7 @@ public final class GroupSuiteNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 3:
             return internalGetGroupMap();
           default:
             throw new RuntimeException(
@@ -449,7 +443,7 @@ public final class GroupSuiteNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 3:
             return internalGetMutableGroupMap();
           default:
             throw new RuntimeException(
@@ -619,7 +613,7 @@ public final class GroupSuiteNotifyOuterClass {
         return internalGetGroupMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
 
       @java.lang.Override
@@ -637,7 +631,7 @@ public final class GroupSuiteNotifyOuterClass {
         return getGroupMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
       @java.lang.Override
 
@@ -645,7 +639,7 @@ public final class GroupSuiteNotifyOuterClass {
         return internalGetGroupMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
       @java.lang.Override
 
@@ -658,7 +652,7 @@ public final class GroupSuiteNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
       @java.lang.Override
 
@@ -679,7 +673,7 @@ public final class GroupSuiteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
 
       public Builder removeGroupMap(
@@ -698,7 +692,7 @@ public final class GroupSuiteNotifyOuterClass {
         return internalGetMutableGroupMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
       public Builder putGroupMap(
           int key,
@@ -710,7 +704,7 @@ public final class GroupSuiteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; group_map = 3;</code>
        */
 
       public Builder putAllGroupMap(
@@ -792,7 +786,7 @@ public final class GroupSuiteNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GroupSuiteNotify.proto\"w\n\020GroupSuiteNo" +
-      "tify\0222\n\tgroup_map\030\004 \003(\0132\037.GroupSuiteNoti" +
+      "tify\0222\n\tgroup_map\030\003 \003(\0132\037.GroupSuiteNoti" +
       "fy.GroupMapEntry\032/\n\rGroupMapEntry\022\013\n\003key" +
       "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"

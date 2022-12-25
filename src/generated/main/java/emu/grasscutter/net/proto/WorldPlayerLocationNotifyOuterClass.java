@@ -19,62 +19,59 @@ public final class WorldPlayerLocationNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> 
         getPlayerWorldLocListList();
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index);
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     int getPlayerWorldLocListCount();
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> 
         getPlayerWorldLocListOrBuilderList();
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> 
         getPlayerLocListList();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index);
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     int getPlayerLocListCount();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
         getPlayerLocListOrBuilderList();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 224;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 258
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WorldPlayerLocationNotify}
@@ -124,7 +121,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerWorldLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,7 +130,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.parser(), extensionRegistry));
               break;
             }
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 playerLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -180,17 +177,17 @@ public final class WorldPlayerLocationNotifyOuterClass {
               emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.class, emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.Builder.class);
     }
 
-    public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 5;
+    public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_;
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
       return playerWorldLocList_;
     }
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> 
@@ -198,21 +195,21 @@ public final class WorldPlayerLocationNotifyOuterClass {
       return playerWorldLocList_;
     }
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     @java.lang.Override
     public int getPlayerWorldLocListCount() {
       return playerWorldLocList_.size();
     }
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
       return playerWorldLocList_.get(index);
     }
     /**
-     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+     * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(
@@ -220,17 +217,17 @@ public final class WorldPlayerLocationNotifyOuterClass {
       return playerWorldLocList_.get(index);
     }
 
-    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 14;
+    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> getPlayerLocListList() {
       return playerLocList_;
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
@@ -238,21 +235,21 @@ public final class WorldPlayerLocationNotifyOuterClass {
       return playerLocList_;
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     @java.lang.Override
     public int getPlayerLocListCount() {
       return playerLocList_.size();
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index) {
       return playerLocList_.get(index);
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+     * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
@@ -275,10 +272,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < playerWorldLocList_.size(); i++) {
-        output.writeMessage(5, playerWorldLocList_.get(i));
+        output.writeMessage(8, playerWorldLocList_.get(i));
       }
       for (int i = 0; i < playerLocList_.size(); i++) {
-        output.writeMessage(14, playerLocList_.get(i));
+        output.writeMessage(15, playerLocList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -291,11 +288,11 @@ public final class WorldPlayerLocationNotifyOuterClass {
       size = 0;
       for (int i = 0; i < playerWorldLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, playerWorldLocList_.get(i));
+          .computeMessageSize(8, playerWorldLocList_.get(i));
       }
       for (int i = 0; i < playerLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, playerLocList_.get(i));
+          .computeMessageSize(15, playerLocList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -432,13 +429,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 224;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 258
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WorldPlayerLocationNotify}
@@ -680,7 +674,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
           emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> playerWorldLocListBuilder_;
 
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
         if (playerWorldLocListBuilder_ == null) {
@@ -690,7 +684,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public int getPlayerWorldLocListCount() {
         if (playerWorldLocListBuilder_ == null) {
@@ -700,7 +694,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
         if (playerWorldLocListBuilder_ == null) {
@@ -710,7 +704,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder setPlayerWorldLocList(
           int index, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
@@ -727,7 +721,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder setPlayerWorldLocList(
           int index, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
@@ -741,7 +735,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder addPlayerWorldLocList(emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
         if (playerWorldLocListBuilder_ == null) {
@@ -757,7 +751,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder addPlayerWorldLocList(
           int index, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
@@ -774,7 +768,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder addPlayerWorldLocList(
           emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
@@ -788,7 +782,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder addPlayerWorldLocList(
           int index, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
@@ -802,7 +796,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder addAllPlayerWorldLocList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> values) {
@@ -817,7 +811,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder clearPlayerWorldLocList() {
         if (playerWorldLocListBuilder_ == null) {
@@ -830,7 +824,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public Builder removePlayerWorldLocList(int index) {
         if (playerWorldLocListBuilder_ == null) {
@@ -843,14 +837,14 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder getPlayerWorldLocListBuilder(
           int index) {
         return getPlayerWorldLocListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(
           int index) {
@@ -860,7 +854,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> 
            getPlayerWorldLocListOrBuilderList() {
@@ -871,14 +865,14 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder() {
         return getPlayerWorldLocListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder(
           int index) {
@@ -886,7 +880,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             index, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
+       * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder> 
            getPlayerWorldLocListBuilderList() {
@@ -920,7 +914,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> playerLocListBuilder_;
 
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> getPlayerLocListList() {
         if (playerLocListBuilder_ == null) {
@@ -930,7 +924,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public int getPlayerLocListCount() {
         if (playerLocListBuilder_ == null) {
@@ -940,7 +934,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index) {
         if (playerLocListBuilder_ == null) {
@@ -950,7 +944,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder setPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
@@ -967,7 +961,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder setPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -981,7 +975,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder addPlayerLocList(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
         if (playerLocListBuilder_ == null) {
@@ -997,7 +991,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder addPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
@@ -1014,7 +1008,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder addPlayerLocList(
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -1028,7 +1022,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder addPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -1042,7 +1036,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder addAllPlayerLocList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> values) {
@@ -1057,7 +1051,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder clearPlayerLocList() {
         if (playerLocListBuilder_ == null) {
@@ -1070,7 +1064,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public Builder removePlayerLocList(int index) {
         if (playerLocListBuilder_ == null) {
@@ -1083,14 +1077,14 @@ public final class WorldPlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder getPlayerLocListBuilder(
           int index) {
         return getPlayerLocListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
           int index) {
@@ -1100,7 +1094,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
            getPlayerLocListOrBuilderList() {
@@ -1111,14 +1105,14 @@ public final class WorldPlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder addPlayerLocListBuilder() {
         return getPlayerLocListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder addPlayerLocListBuilder(
           int index) {
@@ -1126,7 +1120,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
+       * <code>repeated .PlayerLocationInfo player_loc_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder> 
            getPlayerLocListBuilderList() {
@@ -1216,8 +1210,8 @@ public final class WorldPlayerLocationNotifyOuterClass {
       "\n\037WorldPlayerLocationNotify.proto\032\030Playe" +
       "rLocationInfo.proto\032\035PlayerWorldLocation" +
       "Info.proto\"\202\001\n\031WorldPlayerLocationNotify" +
-      "\0227\n\025player_world_loc_list\030\005 \003(\0132\030.Player" +
-      "WorldLocationInfo\022,\n\017player_loc_list\030\016 \003" +
+      "\0227\n\025player_world_loc_list\030\010 \003(\0132\030.Player" +
+      "WorldLocationInfo\022,\n\017player_loc_list\030\017 \003" +
       "(\0132\023.PlayerLocationInfoB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };

@@ -349,7 +349,6 @@ public final class DatabaseHelper {
     public static void savePlayerActivityData(PlayerActivityData playerActivityData) {
         DatabaseManager.getGameDatastore().save(playerActivityData);
     }
-
     public static MusicGameBeatmap getMusicGameBeatmap(long musicShareId) {
         return DatabaseManager.getGameDatastore().find(MusicGameBeatmap.class)
             .filter(Filters.eq("musicShareId", musicShareId))

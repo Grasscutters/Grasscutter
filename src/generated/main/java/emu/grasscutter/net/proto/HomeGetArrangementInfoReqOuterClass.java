@@ -19,17 +19,17 @@ public final class HomeGetArrangementInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @return A list containing the sceneIdList.
      */
     java.util.List<java.lang.Integer> getSceneIdListList();
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @return The count of sceneIdList.
      */
     int getSceneIdListCount();
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @param index The index of the element to return.
      * @return The sceneIdList at the given index.
      */
@@ -37,14 +37,10 @@ public final class HomeGetArrangementInfoReqOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4601;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 4848
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code HomeGetArrangementInfoReq}
@@ -93,7 +89,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sceneIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +97,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
               sceneIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,10 +145,10 @@ public final class HomeGetArrangementInfoReqOuterClass {
               emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.class, emu.grasscutter.net.proto.HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.Builder.class);
     }
 
-    public static final int SCENE_ID_LIST_FIELD_NUMBER = 6;
+    public static final int SCENE_ID_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList sceneIdList_;
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @return A list containing the sceneIdList.
      */
     @java.lang.Override
@@ -161,14 +157,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
       return sceneIdList_;
     }
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @return The count of sceneIdList.
      */
     public int getSceneIdListCount() {
       return sceneIdList_.size();
     }
     /**
-     * <code>repeated uint32 scene_id_list = 6;</code>
+     * <code>repeated uint32 scene_id_list = 13;</code>
      * @param index The index of the element to return.
      * @return The sceneIdList at the given index.
      */
@@ -193,7 +189,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getSceneIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(sceneIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < sceneIdList_.size(); i++) {
@@ -351,14 +347,10 @@ public final class HomeGetArrangementInfoReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4601;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 4848
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code HomeGetArrangementInfoReq}
@@ -528,7 +520,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @return A list containing the sceneIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -537,14 +529,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
                  java.util.Collections.unmodifiableList(sceneIdList_) : sceneIdList_;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @return The count of sceneIdList.
        */
       public int getSceneIdListCount() {
         return sceneIdList_.size();
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @param index The index of the element to return.
        * @return The sceneIdList at the given index.
        */
@@ -552,7 +544,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return sceneIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The sceneIdList to set.
        * @return This builder for chaining.
@@ -565,7 +557,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @param value The sceneIdList to add.
        * @return This builder for chaining.
        */
@@ -576,7 +568,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @param values The sceneIdList to add.
        * @return This builder for chaining.
        */
@@ -589,7 +581,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scene_id_list = 6;</code>
+       * <code>repeated uint32 scene_id_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneIdList() {
@@ -667,7 +659,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037HomeGetArrangementInfoReq.proto\"2\n\031Hom" +
       "eGetArrangementInfoReq\022\025\n\rscene_id_list\030" +
-      "\006 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\r \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -20,24 +20,24 @@ public final class ModifierActionOuterClass {
   public enum ModifierAction
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>MODIFIER_ACTION_ADDED = 0;</code>
+     * <code>ADDED = 0;</code>
      */
-    MODIFIER_ACTION_ADDED(0),
+    ADDED(0),
     /**
-     * <code>MODIFIER_ACTION_REMOVED = 1;</code>
+     * <code>REMOVED = 1;</code>
      */
-    MODIFIER_ACTION_REMOVED(1),
+    REMOVED(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>MODIFIER_ACTION_ADDED = 0;</code>
+     * <code>ADDED = 0;</code>
      */
-    public static final int MODIFIER_ACTION_ADDED_VALUE = 0;
+    public static final int ADDED_VALUE = 0;
     /**
-     * <code>MODIFIER_ACTION_REMOVED = 1;</code>
+     * <code>REMOVED = 1;</code>
      */
-    public static final int MODIFIER_ACTION_REMOVED_VALUE = 1;
+    public static final int REMOVED_VALUE = 1;
 
 
     public final int getNumber() {
@@ -64,8 +64,8 @@ public final class ModifierActionOuterClass {
      */
     public static ModifierAction forNumber(int value) {
       switch (value) {
-        case 0: return MODIFIER_ACTION_ADDED;
-        case 1: return MODIFIER_ACTION_REMOVED;
+        case 0: return ADDED;
+        case 1: return REMOVED;
         default: return null;
       }
     }
@@ -131,10 +131,9 @@ public final class ModifierActionOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ModifierAction.proto*H\n\016ModifierAction" +
-      "\022\031\n\025MODIFIER_ACTION_ADDED\020\000\022\033\n\027MODIFIER_" +
-      "ACTION_REMOVED\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\024ModifierAction.proto*(\n\016ModifierAction" +
+      "\022\t\n\005ADDED\020\000\022\013\n\007REMOVED\020\001B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

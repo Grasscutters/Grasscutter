@@ -19,27 +19,23 @@ public final class McoinExchangeHcoinReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 hcoin = 1;</code>
+     * <code>uint32 hcoin = 5;</code>
      * @return The hcoin.
      */
     int getHcoin();
 
     /**
-     * <code>uint32 mcoin_cost = 3;</code>
+     * <code>uint32 mcoin_cost = 1;</code>
      * @return The mcoinCost.
      */
     int getMcoinCost();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 623;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 616
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code McoinExchangeHcoinReq}
@@ -88,12 +84,12 @@ public final class McoinExchangeHcoinReqOuterClass {
               break;
             case 8: {
 
-              hcoin_ = input.readUInt32();
+              mcoinCost_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 40: {
 
-              mcoinCost_ = input.readUInt32();
+              hcoin_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,10 +124,10 @@ public final class McoinExchangeHcoinReqOuterClass {
               emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.class, emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.Builder.class);
     }
 
-    public static final int HCOIN_FIELD_NUMBER = 1;
+    public static final int HCOIN_FIELD_NUMBER = 5;
     private int hcoin_;
     /**
-     * <code>uint32 hcoin = 1;</code>
+     * <code>uint32 hcoin = 5;</code>
      * @return The hcoin.
      */
     @java.lang.Override
@@ -139,10 +135,10 @@ public final class McoinExchangeHcoinReqOuterClass {
       return hcoin_;
     }
 
-    public static final int MCOIN_COST_FIELD_NUMBER = 3;
+    public static final int MCOIN_COST_FIELD_NUMBER = 1;
     private int mcoinCost_;
     /**
-     * <code>uint32 mcoin_cost = 3;</code>
+     * <code>uint32 mcoin_cost = 1;</code>
      * @return The mcoinCost.
      */
     @java.lang.Override
@@ -164,11 +160,11 @@ public final class McoinExchangeHcoinReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hcoin_ != 0) {
-        output.writeUInt32(1, hcoin_);
-      }
       if (mcoinCost_ != 0) {
-        output.writeUInt32(3, mcoinCost_);
+        output.writeUInt32(1, mcoinCost_);
+      }
+      if (hcoin_ != 0) {
+        output.writeUInt32(5, hcoin_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,13 +175,13 @@ public final class McoinExchangeHcoinReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hcoin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, hcoin_);
-      }
       if (mcoinCost_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, mcoinCost_);
+          .computeUInt32Size(1, mcoinCost_);
+      }
+      if (hcoin_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, hcoin_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -318,14 +314,10 @@ public final class McoinExchangeHcoinReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 623;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 616
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code McoinExchangeHcoinReq}
@@ -482,7 +474,7 @@ public final class McoinExchangeHcoinReqOuterClass {
 
       private int hcoin_ ;
       /**
-       * <code>uint32 hcoin = 1;</code>
+       * <code>uint32 hcoin = 5;</code>
        * @return The hcoin.
        */
       @java.lang.Override
@@ -490,7 +482,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         return hcoin_;
       }
       /**
-       * <code>uint32 hcoin = 1;</code>
+       * <code>uint32 hcoin = 5;</code>
        * @param value The hcoin to set.
        * @return This builder for chaining.
        */
@@ -501,7 +493,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 hcoin = 1;</code>
+       * <code>uint32 hcoin = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearHcoin() {
@@ -513,7 +505,7 @@ public final class McoinExchangeHcoinReqOuterClass {
 
       private int mcoinCost_ ;
       /**
-       * <code>uint32 mcoin_cost = 3;</code>
+       * <code>uint32 mcoin_cost = 1;</code>
        * @return The mcoinCost.
        */
       @java.lang.Override
@@ -521,7 +513,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         return mcoinCost_;
       }
       /**
-       * <code>uint32 mcoin_cost = 3;</code>
+       * <code>uint32 mcoin_cost = 1;</code>
        * @param value The mcoinCost to set.
        * @return This builder for chaining.
        */
@@ -532,7 +524,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mcoin_cost = 3;</code>
+       * <code>uint32 mcoin_cost = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMcoinCost() {
@@ -609,8 +601,8 @@ public final class McoinExchangeHcoinReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033McoinExchangeHcoinReq.proto\":\n\025McoinEx" +
-      "changeHcoinReq\022\r\n\005hcoin\030\001 \001(\r\022\022\n\nmcoin_c" +
-      "ost\030\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "changeHcoinReq\022\r\n\005hcoin\030\005 \001(\r\022\022\n\nmcoin_c" +
+      "ost\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

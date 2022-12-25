@@ -19,21 +19,17 @@ public final class SetPlayerHeadImageReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 5;</code>
+     * <code>uint32 avatar_id = 7;</code>
      * @return The avatarId.
      */
     int getAvatarId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4090;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 4082
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SetPlayerHeadImageReq}
@@ -80,7 +76,7 @@ public final class SetPlayerHeadImageReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -117,10 +113,10 @@ public final class SetPlayerHeadImageReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerHeadImageReqOuterClass.SetPlayerHeadImageReq.class, emu.grasscutter.net.proto.SetPlayerHeadImageReqOuterClass.SetPlayerHeadImageReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 5;
+    public static final int AVATAR_ID_FIELD_NUMBER = 7;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 5;</code>
+     * <code>uint32 avatar_id = 7;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -143,7 +139,7 @@ public final class SetPlayerHeadImageReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(5, avatarId_);
+        output.writeUInt32(7, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +152,7 @@ public final class SetPlayerHeadImageReqOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, avatarId_);
+          .computeUInt32Size(7, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,14 +281,10 @@ public final class SetPlayerHeadImageReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4090;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 4082
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SetPlayerHeadImageReq}
@@ -443,7 +435,7 @@ public final class SetPlayerHeadImageReqOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 7;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -451,7 +443,7 @@ public final class SetPlayerHeadImageReqOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 7;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +454,7 @@ public final class SetPlayerHeadImageReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -539,7 +531,7 @@ public final class SetPlayerHeadImageReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SetPlayerHeadImageReq.proto\"*\n\025SetPlay" +
-      "erHeadImageReq\022\021\n\tavatar_id\030\005 \001(\rB\033\n\031emu" +
+      "erHeadImageReq\022\021\n\tavatar_id\030\007 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

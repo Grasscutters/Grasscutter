@@ -19,27 +19,27 @@ public final class TowerTeamOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>uint32 tower_team_id = 3;</code>
+     * @return The towerTeamId.
+     */
+    int getTowerTeamId();
+
+    /**
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @return A list containing the avatarGuidList.
      */
     java.util.List<java.lang.Long> getAvatarGuidListList();
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @return The count of avatarGuidList.
      */
     int getAvatarGuidListCount();
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
     long getAvatarGuidList(int index);
-
-    /**
-     * <code>uint32 tower_team_id = 14;</code>
-     * @return The towerTeamId.
-     */
-    int getTowerTeamId();
   }
   /**
    * Protobuf type {@code TowerTeam}
@@ -88,7 +88,12 @@ public final class TowerTeamOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
+
+              towerTeamId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -96,7 +101,7 @@ public final class TowerTeamOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 42: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -107,11 +112,6 @@ public final class TowerTeamOuterClass {
                 avatarGuidList_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              towerTeamId_ = input.readUInt32();
               break;
             }
             default: {
@@ -149,10 +149,21 @@ public final class TowerTeamOuterClass {
               emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.class, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+    public static final int TOWER_TEAM_ID_FIELD_NUMBER = 3;
+    private int towerTeamId_;
+    /**
+     * <code>uint32 tower_team_id = 3;</code>
+     * @return The towerTeamId.
+     */
+    @java.lang.Override
+    public int getTowerTeamId() {
+      return towerTeamId_;
+    }
+
+    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @return A list containing the avatarGuidList.
      */
     @java.lang.Override
@@ -161,14 +172,14 @@ public final class TowerTeamOuterClass {
       return avatarGuidList_;
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @return The count of avatarGuidList.
      */
     public int getAvatarGuidListCount() {
       return avatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
@@ -176,17 +187,6 @@ public final class TowerTeamOuterClass {
       return avatarGuidList_.getLong(index);
     }
     private int avatarGuidListMemoizedSerializedSize = -1;
-
-    public static final int TOWER_TEAM_ID_FIELD_NUMBER = 14;
-    private int towerTeamId_;
-    /**
-     * <code>uint32 tower_team_id = 14;</code>
-     * @return The towerTeamId.
-     */
-    @java.lang.Override
-    public int getTowerTeamId() {
-      return towerTeamId_;
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -203,15 +203,15 @@ public final class TowerTeamOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (towerTeamId_ != 0) {
+        output.writeUInt32(3, towerTeamId_);
+      }
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(avatarGuidList_.getLong(i));
-      }
-      if (towerTeamId_ != 0) {
-        output.writeUInt32(14, towerTeamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,6 +222,10 @@ public final class TowerTeamOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (towerTeamId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, towerTeamId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -235,10 +239,6 @@ public final class TowerTeamOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         avatarGuidListMemoizedSerializedSize = dataSize;
-      }
-      if (towerTeamId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, towerTeamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -255,10 +255,10 @@ public final class TowerTeamOuterClass {
       }
       emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam other = (emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam) obj;
 
-      if (!getAvatarGuidListList()
-          .equals(other.getAvatarGuidListList())) return false;
       if (getTowerTeamId()
           != other.getTowerTeamId()) return false;
+      if (!getAvatarGuidListList()
+          .equals(other.getAvatarGuidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +270,12 @@ public final class TowerTeamOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOWER_TEAM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTowerTeamId();
       if (getAvatarGuidListCount() > 0) {
         hash = (37 * hash) + AVATAR_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarGuidListList().hashCode();
       }
-      hash = (37 * hash) + TOWER_TEAM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTowerTeamId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,10 +409,10 @@ public final class TowerTeamOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         towerTeamId_ = 0;
 
+        avatarGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -440,12 +440,12 @@ public final class TowerTeamOuterClass {
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam buildPartial() {
         emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam result = new emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam(this);
         int from_bitField0_ = bitField0_;
+        result.towerTeamId_ = towerTeamId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarGuidList_ = avatarGuidList_;
-        result.towerTeamId_ = towerTeamId_;
         onBuilt();
         return result;
       }
@@ -494,6 +494,9 @@ public final class TowerTeamOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam other) {
         if (other == emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.getDefaultInstance()) return this;
+        if (other.getTowerTeamId() != 0) {
+          setTowerTeamId(other.getTowerTeamId());
+        }
         if (!other.avatarGuidList_.isEmpty()) {
           if (avatarGuidList_.isEmpty()) {
             avatarGuidList_ = other.avatarGuidList_;
@@ -503,9 +506,6 @@ public final class TowerTeamOuterClass {
             avatarGuidList_.addAll(other.avatarGuidList_);
           }
           onChanged();
-        }
-        if (other.getTowerTeamId() != 0) {
-          setTowerTeamId(other.getTowerTeamId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -537,6 +537,37 @@ public final class TowerTeamOuterClass {
       }
       private int bitField0_;
 
+      private int towerTeamId_ ;
+      /**
+       * <code>uint32 tower_team_id = 3;</code>
+       * @return The towerTeamId.
+       */
+      @java.lang.Override
+      public int getTowerTeamId() {
+        return towerTeamId_;
+      }
+      /**
+       * <code>uint32 tower_team_id = 3;</code>
+       * @param value The towerTeamId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTowerTeamId(int value) {
+        
+        towerTeamId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 tower_team_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTowerTeamId() {
+        
+        towerTeamId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.LongList avatarGuidList_ = emptyLongList();
       private void ensureAvatarGuidListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -545,7 +576,7 @@ public final class TowerTeamOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @return A list containing the avatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -554,14 +585,14 @@ public final class TowerTeamOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuidList_) : avatarGuidList_;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @return The count of avatarGuidList.
        */
       public int getAvatarGuidListCount() {
         return avatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @param index The index of the element to return.
        * @return The avatarGuidList at the given index.
        */
@@ -569,7 +600,7 @@ public final class TowerTeamOuterClass {
         return avatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuidList to set.
        * @return This builder for chaining.
@@ -582,7 +613,7 @@ public final class TowerTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @param value The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -593,7 +624,7 @@ public final class TowerTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @param values The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -606,43 +637,12 @@ public final class TowerTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuidList() {
         avatarGuidList_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int towerTeamId_ ;
-      /**
-       * <code>uint32 tower_team_id = 14;</code>
-       * @return The towerTeamId.
-       */
-      @java.lang.Override
-      public int getTowerTeamId() {
-        return towerTeamId_;
-      }
-      /**
-       * <code>uint32 tower_team_id = 14;</code>
-       * @param value The towerTeamId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTowerTeamId(int value) {
-        
-        towerTeamId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 tower_team_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTowerTeamId() {
-        
-        towerTeamId_ = 0;
         onChanged();
         return this;
       }
@@ -713,8 +713,8 @@ public final class TowerTeamOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017TowerTeam.proto\"<\n\tTowerTeam\022\030\n\020avatar" +
-      "_guid_list\030\005 \003(\004\022\025\n\rtower_team_id\030\016 \001(\rB" +
+      "\n\017TowerTeam.proto\"<\n\tTowerTeam\022\025\n\rtower_" +
+      "team_id\030\003 \001(\r\022\030\n\020avatar_guid_list\030\016 \003(\004B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -726,7 +726,7 @@ public final class TowerTeamOuterClass {
     internal_static_TowerTeam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerTeam_descriptor,
-        new java.lang.String[] { "AvatarGuidList", "TowerTeamId", });
+        new java.lang.String[] { "TowerTeamId", "AvatarGuidList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

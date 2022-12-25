@@ -19,26 +19,23 @@ public final class ForgeFormulaDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_locked = 4;</code>
+     * <code>bool is_locked = 15;</code>
      * @return The isLocked.
      */
     boolean getIsLocked();
 
     /**
-     * <code>uint32 forge_id = 3;</code>
+     * <code>uint32 forge_id = 13;</code>
      * @return The forgeId.
      */
     int getForgeId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 626;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 689
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ForgeFormulaDataNotify}
@@ -85,12 +82,12 @@ public final class ForgeFormulaDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 104: {
 
               forgeId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 120: {
 
               isLocked_ = input.readBool();
               break;
@@ -127,10 +124,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
               emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.class, emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.Builder.class);
     }
 
-    public static final int IS_LOCKED_FIELD_NUMBER = 4;
+    public static final int IS_LOCKED_FIELD_NUMBER = 15;
     private boolean isLocked_;
     /**
-     * <code>bool is_locked = 4;</code>
+     * <code>bool is_locked = 15;</code>
      * @return The isLocked.
      */
     @java.lang.Override
@@ -138,10 +135,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
       return isLocked_;
     }
 
-    public static final int FORGE_ID_FIELD_NUMBER = 3;
+    public static final int FORGE_ID_FIELD_NUMBER = 13;
     private int forgeId_;
     /**
-     * <code>uint32 forge_id = 3;</code>
+     * <code>uint32 forge_id = 13;</code>
      * @return The forgeId.
      */
     @java.lang.Override
@@ -164,10 +161,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (forgeId_ != 0) {
-        output.writeUInt32(3, forgeId_);
+        output.writeUInt32(13, forgeId_);
       }
       if (isLocked_ != false) {
-        output.writeBool(4, isLocked_);
+        output.writeBool(15, isLocked_);
       }
       unknownFields.writeTo(output);
     }
@@ -180,11 +177,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
       size = 0;
       if (forgeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, forgeId_);
+          .computeUInt32Size(13, forgeId_);
       }
       if (isLocked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isLocked_);
+          .computeBoolSize(15, isLocked_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -318,13 +315,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 626;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 689
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ForgeFormulaDataNotify}
@@ -481,7 +475,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
       private boolean isLocked_ ;
       /**
-       * <code>bool is_locked = 4;</code>
+       * <code>bool is_locked = 15;</code>
        * @return The isLocked.
        */
       @java.lang.Override
@@ -489,7 +483,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return isLocked_;
       }
       /**
-       * <code>bool is_locked = 4;</code>
+       * <code>bool is_locked = 15;</code>
        * @param value The isLocked to set.
        * @return This builder for chaining.
        */
@@ -500,7 +494,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_locked = 4;</code>
+       * <code>bool is_locked = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
@@ -512,7 +506,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
       private int forgeId_ ;
       /**
-       * <code>uint32 forge_id = 3;</code>
+       * <code>uint32 forge_id = 13;</code>
        * @return The forgeId.
        */
       @java.lang.Override
@@ -520,7 +514,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return forgeId_;
       }
       /**
-       * <code>uint32 forge_id = 3;</code>
+       * <code>uint32 forge_id = 13;</code>
        * @param value The forgeId to set.
        * @return This builder for chaining.
        */
@@ -531,7 +525,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 forge_id = 3;</code>
+       * <code>uint32 forge_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearForgeId() {
@@ -608,8 +602,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ForgeFormulaDataNotify.proto\"=\n\026ForgeF" +
-      "ormulaDataNotify\022\021\n\tis_locked\030\004 \001(\010\022\020\n\010f" +
-      "orge_id\030\003 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "ormulaDataNotify\022\021\n\tis_locked\030\017 \001(\010\022\020\n\010f" +
+      "orge_id\030\r \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,20 +19,17 @@ public final class CanUseSkillNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_can_use_skill = 12;</code>
+     * <code>bool is_can_use_skill = 2;</code>
      * @return The isCanUseSkill.
      */
     boolean getIsCanUseSkill();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1042;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 1005
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CanUseSkillNotify}
@@ -79,7 +76,7 @@ public final class CanUseSkillNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 16: {
 
               isCanUseSkill_ = input.readBool();
               break;
@@ -116,10 +113,10 @@ public final class CanUseSkillNotifyOuterClass {
               emu.grasscutter.net.proto.CanUseSkillNotifyOuterClass.CanUseSkillNotify.class, emu.grasscutter.net.proto.CanUseSkillNotifyOuterClass.CanUseSkillNotify.Builder.class);
     }
 
-    public static final int IS_CAN_USE_SKILL_FIELD_NUMBER = 12;
+    public static final int IS_CAN_USE_SKILL_FIELD_NUMBER = 2;
     private boolean isCanUseSkill_;
     /**
-     * <code>bool is_can_use_skill = 12;</code>
+     * <code>bool is_can_use_skill = 2;</code>
      * @return The isCanUseSkill.
      */
     @java.lang.Override
@@ -142,7 +139,7 @@ public final class CanUseSkillNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isCanUseSkill_ != false) {
-        output.writeBool(12, isCanUseSkill_);
+        output.writeBool(2, isCanUseSkill_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +152,7 @@ public final class CanUseSkillNotifyOuterClass {
       size = 0;
       if (isCanUseSkill_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isCanUseSkill_);
+          .computeBoolSize(2, isCanUseSkill_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,13 +282,10 @@ public final class CanUseSkillNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1042;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 1005
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CanUseSkillNotify}
@@ -442,7 +436,7 @@ public final class CanUseSkillNotifyOuterClass {
 
       private boolean isCanUseSkill_ ;
       /**
-       * <code>bool is_can_use_skill = 12;</code>
+       * <code>bool is_can_use_skill = 2;</code>
        * @return The isCanUseSkill.
        */
       @java.lang.Override
@@ -450,7 +444,7 @@ public final class CanUseSkillNotifyOuterClass {
         return isCanUseSkill_;
       }
       /**
-       * <code>bool is_can_use_skill = 12;</code>
+       * <code>bool is_can_use_skill = 2;</code>
        * @param value The isCanUseSkill to set.
        * @return This builder for chaining.
        */
@@ -461,7 +455,7 @@ public final class CanUseSkillNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_can_use_skill = 12;</code>
+       * <code>bool is_can_use_skill = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCanUseSkill() {
@@ -538,7 +532,7 @@ public final class CanUseSkillNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027CanUseSkillNotify.proto\"-\n\021CanUseSkill" +
-      "Notify\022\030\n\020is_can_use_skill\030\014 \001(\010B\033\n\031emu." +
+      "Notify\022\030\n\020is_can_use_skill\030\002 \001(\010B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

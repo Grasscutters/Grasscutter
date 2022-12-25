@@ -56,7 +56,7 @@ public class HomeSceneItem {
         this.bornPos = new Position(arrangementInfo.getBornPos());
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
-        this.homeBgmId = arrangementInfo.getBgmId();
+        this.homeBgmId = arrangementInfo.getUnk2700BJHAMKKECEI();
         this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
@@ -84,7 +84,7 @@ public class HomeSceneItem {
                 .setDjinnPos(djinnPos.toProto())
                 .setIsSetBornPos(true)
                 .setSceneId(sceneId)
-                .setBgmId(homeBgmId)
+                .setUnk2700BJHAMKKECEI(homeBgmId)
                 .setTmpVersion(tmpVersion);
 
         if (mainHouse != null) {

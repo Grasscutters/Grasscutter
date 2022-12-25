@@ -19,61 +19,58 @@ public final class ChapterStateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 chapter_id = 9;</code>
-     * @return The chapterId.
-     */
-    int getChapterId();
-
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     * @return Whether the needBeginTime field is set.
-     */
-    boolean hasNeedBeginTime();
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     * @return The needBeginTime.
-     */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime();
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder();
-
-    /**
-     * <code>.ChapterState chapter_state = 1;</code>
+     * <code>.ChapterState chapter_state = 9;</code>
      * @return The enum numeric value on the wire for chapterState.
      */
     int getChapterStateValue();
     /**
-     * <code>.ChapterState chapter_state = 1;</code>
+     * <code>.ChapterState chapter_state = 9;</code>
      * @return The chapterState.
      */
     emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState();
 
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      * @return Whether the needPlayerLevel field is set.
      */
     boolean hasNeedPlayerLevel();
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      * @return The needPlayerLevel.
      */
     emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel getNeedPlayerLevel();
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      */
     emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevelOrBuilder getNeedPlayerLevelOrBuilder();
+
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     * @return Whether the needBeginTime field is set.
+     */
+    boolean hasNeedBeginTime();
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     * @return The needBeginTime.
+     */
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime();
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     */
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder();
+
+    /**
+     * <code>uint32 chapter_id = 2;</code>
+     * @return The chapterId.
+     */
+    int getChapterId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 442;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 405
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChapterStateNotify}
@@ -121,31 +118,7 @@ public final class ChapterStateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              chapterState_ = rawValue;
-              break;
-            }
-            case 42: {
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder subBuilder = null;
-              if (needPlayerLevel_ != null) {
-                subBuilder = needPlayerLevel_.toBuilder();
-              }
-              needPlayerLevel_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(needPlayerLevel_);
-                needPlayerLevel_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              chapterId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
+            case 10: {
               emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder subBuilder = null;
               if (needBeginTime_ != null) {
                 subBuilder = needBeginTime_.toBuilder();
@@ -154,6 +127,30 @@ public final class ChapterStateNotifyOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(needBeginTime_);
                 needBeginTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              chapterId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              chapterState_ = rawValue;
+              break;
+            }
+            case 82: {
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder subBuilder = null;
+              if (needPlayerLevel_ != null) {
+                subBuilder = needPlayerLevel_.toBuilder();
+              }
+              needPlayerLevel_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(needPlayerLevel_);
+                needPlayerLevel_ = subBuilder.buildPartial();
               }
 
               break;
@@ -195,13 +192,13 @@ public final class ChapterStateNotifyOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>bool is_limit = 12;</code>
+       * <code>bool is_limit = 2;</code>
        * @return The isLimit.
        */
       boolean getIsLimit();
 
       /**
-       * <code>uint32 config_need_player_level = 3;</code>
+       * <code>uint32 config_need_player_level = 11;</code>
        * @return The configNeedPlayerLevel.
        */
       int getConfigNeedPlayerLevel();
@@ -251,14 +248,14 @@ public final class ChapterStateNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 24: {
-
-                configNeedPlayerLevel_ = input.readUInt32();
-                break;
-              }
-              case 96: {
+              case 16: {
 
                 isLimit_ = input.readBool();
+                break;
+              }
+              case 88: {
+
+                configNeedPlayerLevel_ = input.readUInt32();
                 break;
               }
               default: {
@@ -293,10 +290,10 @@ public final class ChapterStateNotifyOuterClass {
                 emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder.class);
       }
 
-      public static final int IS_LIMIT_FIELD_NUMBER = 12;
+      public static final int IS_LIMIT_FIELD_NUMBER = 2;
       private boolean isLimit_;
       /**
-       * <code>bool is_limit = 12;</code>
+       * <code>bool is_limit = 2;</code>
        * @return The isLimit.
        */
       @java.lang.Override
@@ -304,10 +301,10 @@ public final class ChapterStateNotifyOuterClass {
         return isLimit_;
       }
 
-      public static final int CONFIG_NEED_PLAYER_LEVEL_FIELD_NUMBER = 3;
+      public static final int CONFIG_NEED_PLAYER_LEVEL_FIELD_NUMBER = 11;
       private int configNeedPlayerLevel_;
       /**
-       * <code>uint32 config_need_player_level = 3;</code>
+       * <code>uint32 config_need_player_level = 11;</code>
        * @return The configNeedPlayerLevel.
        */
       @java.lang.Override
@@ -329,11 +326,11 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (configNeedPlayerLevel_ != 0) {
-          output.writeUInt32(3, configNeedPlayerLevel_);
-        }
         if (isLimit_ != false) {
-          output.writeBool(12, isLimit_);
+          output.writeBool(2, isLimit_);
+        }
+        if (configNeedPlayerLevel_ != 0) {
+          output.writeUInt32(11, configNeedPlayerLevel_);
         }
         unknownFields.writeTo(output);
       }
@@ -344,13 +341,13 @@ public final class ChapterStateNotifyOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (configNeedPlayerLevel_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(3, configNeedPlayerLevel_);
-        }
         if (isLimit_ != false) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(12, isLimit_);
+            .computeBoolSize(2, isLimit_);
+        }
+        if (configNeedPlayerLevel_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(11, configNeedPlayerLevel_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -637,7 +634,7 @@ public final class ChapterStateNotifyOuterClass {
 
         private boolean isLimit_ ;
         /**
-         * <code>bool is_limit = 12;</code>
+         * <code>bool is_limit = 2;</code>
          * @return The isLimit.
          */
         @java.lang.Override
@@ -645,7 +642,7 @@ public final class ChapterStateNotifyOuterClass {
           return isLimit_;
         }
         /**
-         * <code>bool is_limit = 12;</code>
+         * <code>bool is_limit = 2;</code>
          * @param value The isLimit to set.
          * @return This builder for chaining.
          */
@@ -656,7 +653,7 @@ public final class ChapterStateNotifyOuterClass {
           return this;
         }
         /**
-         * <code>bool is_limit = 12;</code>
+         * <code>bool is_limit = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearIsLimit() {
@@ -668,7 +665,7 @@ public final class ChapterStateNotifyOuterClass {
 
         private int configNeedPlayerLevel_ ;
         /**
-         * <code>uint32 config_need_player_level = 3;</code>
+         * <code>uint32 config_need_player_level = 11;</code>
          * @return The configNeedPlayerLevel.
          */
         @java.lang.Override
@@ -676,7 +673,7 @@ public final class ChapterStateNotifyOuterClass {
           return configNeedPlayerLevel_;
         }
         /**
-         * <code>uint32 config_need_player_level = 3;</code>
+         * <code>uint32 config_need_player_level = 11;</code>
          * @param value The configNeedPlayerLevel to set.
          * @return This builder for chaining.
          */
@@ -687,7 +684,7 @@ public final class ChapterStateNotifyOuterClass {
           return this;
         }
         /**
-         * <code>uint32 config_need_player_level = 3;</code>
+         * <code>uint32 config_need_player_level = 11;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigNeedPlayerLevel() {
@@ -754,16 +751,16 @@ public final class ChapterStateNotifyOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>bool is_limit = 4;</code>
-       * @return The isLimit.
-       */
-      boolean getIsLimit();
-
-      /**
-       * <code>uint32 config_need_begin_time = 14;</code>
+       * <code>uint32 config_need_begin_time = 3;</code>
        * @return The configNeedBeginTime.
        */
       int getConfigNeedBeginTime();
+
+      /**
+       * <code>bool is_limit = 7;</code>
+       * @return The isLimit.
+       */
+      boolean getIsLimit();
     }
     /**
      * Protobuf type {@code ChapterStateNotify.NeedBeginTime}
@@ -810,14 +807,14 @@ public final class ChapterStateNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 32: {
-
-                isLimit_ = input.readBool();
-                break;
-              }
-              case 112: {
+              case 24: {
 
                 configNeedBeginTime_ = input.readUInt32();
+                break;
+              }
+              case 56: {
+
+                isLimit_ = input.readBool();
                 break;
               }
               default: {
@@ -852,26 +849,26 @@ public final class ChapterStateNotifyOuterClass {
                 emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder.class);
       }
 
-      public static final int IS_LIMIT_FIELD_NUMBER = 4;
-      private boolean isLimit_;
-      /**
-       * <code>bool is_limit = 4;</code>
-       * @return The isLimit.
-       */
-      @java.lang.Override
-      public boolean getIsLimit() {
-        return isLimit_;
-      }
-
-      public static final int CONFIG_NEED_BEGIN_TIME_FIELD_NUMBER = 14;
+      public static final int CONFIG_NEED_BEGIN_TIME_FIELD_NUMBER = 3;
       private int configNeedBeginTime_;
       /**
-       * <code>uint32 config_need_begin_time = 14;</code>
+       * <code>uint32 config_need_begin_time = 3;</code>
        * @return The configNeedBeginTime.
        */
       @java.lang.Override
       public int getConfigNeedBeginTime() {
         return configNeedBeginTime_;
+      }
+
+      public static final int IS_LIMIT_FIELD_NUMBER = 7;
+      private boolean isLimit_;
+      /**
+       * <code>bool is_limit = 7;</code>
+       * @return The isLimit.
+       */
+      @java.lang.Override
+      public boolean getIsLimit() {
+        return isLimit_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -888,11 +885,11 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (isLimit_ != false) {
-          output.writeBool(4, isLimit_);
-        }
         if (configNeedBeginTime_ != 0) {
-          output.writeUInt32(14, configNeedBeginTime_);
+          output.writeUInt32(3, configNeedBeginTime_);
+        }
+        if (isLimit_ != false) {
+          output.writeBool(7, isLimit_);
         }
         unknownFields.writeTo(output);
       }
@@ -903,13 +900,13 @@ public final class ChapterStateNotifyOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (isLimit_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(4, isLimit_);
-        }
         if (configNeedBeginTime_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(14, configNeedBeginTime_);
+            .computeUInt32Size(3, configNeedBeginTime_);
+        }
+        if (isLimit_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(7, isLimit_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -926,10 +923,10 @@ public final class ChapterStateNotifyOuterClass {
         }
         emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime) obj;
 
-        if (getIsLimit()
-            != other.getIsLimit()) return false;
         if (getConfigNeedBeginTime()
             != other.getConfigNeedBeginTime()) return false;
+        if (getIsLimit()
+            != other.getIsLimit()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -941,11 +938,11 @@ public final class ChapterStateNotifyOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONFIG_NEED_BEGIN_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getConfigNeedBeginTime();
         hash = (37 * hash) + IS_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsLimit());
-        hash = (37 * hash) + CONFIG_NEED_BEGIN_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getConfigNeedBeginTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1079,9 +1076,9 @@ public final class ChapterStateNotifyOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          isLimit_ = false;
-
           configNeedBeginTime_ = 0;
+
+          isLimit_ = false;
 
           return this;
         }
@@ -1109,8 +1106,8 @@ public final class ChapterStateNotifyOuterClass {
         @java.lang.Override
         public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime buildPartial() {
           emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime(this);
-          result.isLimit_ = isLimit_;
           result.configNeedBeginTime_ = configNeedBeginTime_;
+          result.isLimit_ = isLimit_;
           onBuilt();
           return result;
         }
@@ -1159,11 +1156,11 @@ public final class ChapterStateNotifyOuterClass {
 
         public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime other) {
           if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance()) return this;
-          if (other.getIsLimit() != false) {
-            setIsLimit(other.getIsLimit());
-          }
           if (other.getConfigNeedBeginTime() != 0) {
             setConfigNeedBeginTime(other.getConfigNeedBeginTime());
+          }
+          if (other.getIsLimit() != false) {
+            setIsLimit(other.getIsLimit());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1194,40 +1191,9 @@ public final class ChapterStateNotifyOuterClass {
           return this;
         }
 
-        private boolean isLimit_ ;
-        /**
-         * <code>bool is_limit = 4;</code>
-         * @return The isLimit.
-         */
-        @java.lang.Override
-        public boolean getIsLimit() {
-          return isLimit_;
-        }
-        /**
-         * <code>bool is_limit = 4;</code>
-         * @param value The isLimit to set.
-         * @return This builder for chaining.
-         */
-        public Builder setIsLimit(boolean value) {
-          
-          isLimit_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bool is_limit = 4;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearIsLimit() {
-          
-          isLimit_ = false;
-          onChanged();
-          return this;
-        }
-
         private int configNeedBeginTime_ ;
         /**
-         * <code>uint32 config_need_begin_time = 14;</code>
+         * <code>uint32 config_need_begin_time = 3;</code>
          * @return The configNeedBeginTime.
          */
         @java.lang.Override
@@ -1235,7 +1201,7 @@ public final class ChapterStateNotifyOuterClass {
           return configNeedBeginTime_;
         }
         /**
-         * <code>uint32 config_need_begin_time = 14;</code>
+         * <code>uint32 config_need_begin_time = 3;</code>
          * @param value The configNeedBeginTime to set.
          * @return This builder for chaining.
          */
@@ -1246,12 +1212,43 @@ public final class ChapterStateNotifyOuterClass {
           return this;
         }
         /**
-         * <code>uint32 config_need_begin_time = 14;</code>
+         * <code>uint32 config_need_begin_time = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigNeedBeginTime() {
           
           configNeedBeginTime_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean isLimit_ ;
+        /**
+         * <code>bool is_limit = 7;</code>
+         * @return The isLimit.
+         */
+        @java.lang.Override
+        public boolean getIsLimit() {
+          return isLimit_;
+        }
+        /**
+         * <code>bool is_limit = 7;</code>
+         * @param value The isLimit to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsLimit(boolean value) {
+          
+          isLimit_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool is_limit = 7;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIsLimit() {
+          
+          isLimit_ = false;
           onChanged();
           return this;
         }
@@ -1308,54 +1305,17 @@ public final class ChapterStateNotifyOuterClass {
 
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 9;
-    private int chapterId_;
-    /**
-     * <code>uint32 chapter_id = 9;</code>
-     * @return The chapterId.
-     */
-    @java.lang.Override
-    public int getChapterId() {
-      return chapterId_;
-    }
-
-    public static final int NEED_BEGIN_TIME_FIELD_NUMBER = 13;
-    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime needBeginTime_;
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     * @return Whether the needBeginTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasNeedBeginTime() {
-      return needBeginTime_ != null;
-    }
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     * @return The needBeginTime.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime() {
-      return needBeginTime_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
-    }
-    /**
-     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder() {
-      return getNeedBeginTime();
-    }
-
-    public static final int CHAPTER_STATE_FIELD_NUMBER = 1;
+    public static final int CHAPTER_STATE_FIELD_NUMBER = 9;
     private int chapterState_;
     /**
-     * <code>.ChapterState chapter_state = 1;</code>
+     * <code>.ChapterState chapter_state = 9;</code>
      * @return The enum numeric value on the wire for chapterState.
      */
     @java.lang.Override public int getChapterStateValue() {
       return chapterState_;
     }
     /**
-     * <code>.ChapterState chapter_state = 1;</code>
+     * <code>.ChapterState chapter_state = 9;</code>
      * @return The chapterState.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState() {
@@ -1364,10 +1324,10 @@ public final class ChapterStateNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.UNRECOGNIZED : result;
     }
 
-    public static final int NEED_PLAYER_LEVEL_FIELD_NUMBER = 5;
+    public static final int NEED_PLAYER_LEVEL_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel needPlayerLevel_;
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      * @return Whether the needPlayerLevel field is set.
      */
     @java.lang.Override
@@ -1375,7 +1335,7 @@ public final class ChapterStateNotifyOuterClass {
       return needPlayerLevel_ != null;
     }
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      * @return The needPlayerLevel.
      */
     @java.lang.Override
@@ -1383,11 +1343,48 @@ public final class ChapterStateNotifyOuterClass {
       return needPlayerLevel_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.getDefaultInstance() : needPlayerLevel_;
     }
     /**
-     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+     * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevelOrBuilder getNeedPlayerLevelOrBuilder() {
       return getNeedPlayerLevel();
+    }
+
+    public static final int NEED_BEGIN_TIME_FIELD_NUMBER = 1;
+    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime needBeginTime_;
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     * @return Whether the needBeginTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasNeedBeginTime() {
+      return needBeginTime_ != null;
+    }
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     * @return The needBeginTime.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime() {
+      return needBeginTime_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
+    }
+    /**
+     * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder() {
+      return getNeedBeginTime();
+    }
+
+    public static final int CHAPTER_ID_FIELD_NUMBER = 2;
+    private int chapterId_;
+    /**
+     * <code>uint32 chapter_id = 2;</code>
+     * @return The chapterId.
+     */
+    @java.lang.Override
+    public int getChapterId() {
+      return chapterId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1404,17 +1401,17 @@ public final class ChapterStateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
-        output.writeEnum(1, chapterState_);
-      }
-      if (needPlayerLevel_ != null) {
-        output.writeMessage(5, getNeedPlayerLevel());
+      if (needBeginTime_ != null) {
+        output.writeMessage(1, getNeedBeginTime());
       }
       if (chapterId_ != 0) {
-        output.writeUInt32(9, chapterId_);
+        output.writeUInt32(2, chapterId_);
       }
-      if (needBeginTime_ != null) {
-        output.writeMessage(13, getNeedBeginTime());
+      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
+        output.writeEnum(9, chapterState_);
+      }
+      if (needPlayerLevel_ != null) {
+        output.writeMessage(10, getNeedPlayerLevel());
       }
       unknownFields.writeTo(output);
     }
@@ -1425,21 +1422,21 @@ public final class ChapterStateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
+      if (needBeginTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, chapterState_);
-      }
-      if (needPlayerLevel_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getNeedPlayerLevel());
+          .computeMessageSize(1, getNeedBeginTime());
       }
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, chapterId_);
+          .computeUInt32Size(2, chapterId_);
       }
-      if (needBeginTime_ != null) {
+      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getNeedBeginTime());
+          .computeEnumSize(9, chapterState_);
+      }
+      if (needPlayerLevel_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getNeedPlayerLevel());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1456,19 +1453,19 @@ public final class ChapterStateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify) obj;
 
-      if (getChapterId()
-          != other.getChapterId()) return false;
-      if (hasNeedBeginTime() != other.hasNeedBeginTime()) return false;
-      if (hasNeedBeginTime()) {
-        if (!getNeedBeginTime()
-            .equals(other.getNeedBeginTime())) return false;
-      }
       if (chapterState_ != other.chapterState_) return false;
       if (hasNeedPlayerLevel() != other.hasNeedPlayerLevel()) return false;
       if (hasNeedPlayerLevel()) {
         if (!getNeedPlayerLevel()
             .equals(other.getNeedPlayerLevel())) return false;
       }
+      if (hasNeedBeginTime() != other.hasNeedBeginTime()) return false;
+      if (hasNeedBeginTime()) {
+        if (!getNeedBeginTime()
+            .equals(other.getNeedBeginTime())) return false;
+      }
+      if (getChapterId()
+          != other.getChapterId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1480,18 +1477,18 @@ public final class ChapterStateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChapterId();
-      if (hasNeedBeginTime()) {
-        hash = (37 * hash) + NEED_BEGIN_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getNeedBeginTime().hashCode();
-      }
       hash = (37 * hash) + CHAPTER_STATE_FIELD_NUMBER;
       hash = (53 * hash) + chapterState_;
       if (hasNeedPlayerLevel()) {
         hash = (37 * hash) + NEED_PLAYER_LEVEL_FIELD_NUMBER;
         hash = (53 * hash) + getNeedPlayerLevel().hashCode();
       }
+      if (hasNeedBeginTime()) {
+        hash = (37 * hash) + NEED_BEGIN_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getNeedBeginTime().hashCode();
+      }
+      hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChapterId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1589,13 +1586,10 @@ public final class ChapterStateNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 442;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 405
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChapterStateNotify}
@@ -1635,14 +1629,6 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        chapterId_ = 0;
-
-        if (needBeginTimeBuilder_ == null) {
-          needBeginTime_ = null;
-        } else {
-          needBeginTime_ = null;
-          needBeginTimeBuilder_ = null;
-        }
         chapterState_ = 0;
 
         if (needPlayerLevelBuilder_ == null) {
@@ -1651,6 +1637,14 @@ public final class ChapterStateNotifyOuterClass {
           needPlayerLevel_ = null;
           needPlayerLevelBuilder_ = null;
         }
+        if (needBeginTimeBuilder_ == null) {
+          needBeginTime_ = null;
+        } else {
+          needBeginTime_ = null;
+          needBeginTimeBuilder_ = null;
+        }
+        chapterId_ = 0;
+
         return this;
       }
 
@@ -1677,18 +1671,18 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify buildPartial() {
         emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify(this);
-        result.chapterId_ = chapterId_;
-        if (needBeginTimeBuilder_ == null) {
-          result.needBeginTime_ = needBeginTime_;
-        } else {
-          result.needBeginTime_ = needBeginTimeBuilder_.build();
-        }
         result.chapterState_ = chapterState_;
         if (needPlayerLevelBuilder_ == null) {
           result.needPlayerLevel_ = needPlayerLevel_;
         } else {
           result.needPlayerLevel_ = needPlayerLevelBuilder_.build();
         }
+        if (needBeginTimeBuilder_ == null) {
+          result.needBeginTime_ = needBeginTime_;
+        } else {
+          result.needBeginTime_ = needBeginTimeBuilder_.build();
+        }
+        result.chapterId_ = chapterId_;
         onBuilt();
         return result;
       }
@@ -1737,17 +1731,17 @@ public final class ChapterStateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify other) {
         if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.getDefaultInstance()) return this;
-        if (other.getChapterId() != 0) {
-          setChapterId(other.getChapterId());
-        }
-        if (other.hasNeedBeginTime()) {
-          mergeNeedBeginTime(other.getNeedBeginTime());
-        }
         if (other.chapterState_ != 0) {
           setChapterStateValue(other.getChapterStateValue());
         }
         if (other.hasNeedPlayerLevel()) {
           mergeNeedPlayerLevel(other.getNeedPlayerLevel());
+        }
+        if (other.hasNeedBeginTime()) {
+          mergeNeedBeginTime(other.getNeedBeginTime());
+        }
+        if (other.getChapterId() != 0) {
+          setChapterId(other.getChapterId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1778,166 +1772,16 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
 
-      private int chapterId_ ;
-      /**
-       * <code>uint32 chapter_id = 9;</code>
-       * @return The chapterId.
-       */
-      @java.lang.Override
-      public int getChapterId() {
-        return chapterId_;
-      }
-      /**
-       * <code>uint32 chapter_id = 9;</code>
-       * @param value The chapterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChapterId(int value) {
-        
-        chapterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 chapter_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChapterId() {
-        
-        chapterId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime needBeginTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder> needBeginTimeBuilder_;
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       * @return Whether the needBeginTime field is set.
-       */
-      public boolean hasNeedBeginTime() {
-        return needBeginTimeBuilder_ != null || needBeginTime_ != null;
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       * @return The needBeginTime.
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime() {
-        if (needBeginTimeBuilder_ == null) {
-          return needBeginTime_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
-        } else {
-          return needBeginTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public Builder setNeedBeginTime(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime value) {
-        if (needBeginTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          needBeginTime_ = value;
-          onChanged();
-        } else {
-          needBeginTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public Builder setNeedBeginTime(
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder builderForValue) {
-        if (needBeginTimeBuilder_ == null) {
-          needBeginTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          needBeginTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public Builder mergeNeedBeginTime(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime value) {
-        if (needBeginTimeBuilder_ == null) {
-          if (needBeginTime_ != null) {
-            needBeginTime_ =
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.newBuilder(needBeginTime_).mergeFrom(value).buildPartial();
-          } else {
-            needBeginTime_ = value;
-          }
-          onChanged();
-        } else {
-          needBeginTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public Builder clearNeedBeginTime() {
-        if (needBeginTimeBuilder_ == null) {
-          needBeginTime_ = null;
-          onChanged();
-        } else {
-          needBeginTime_ = null;
-          needBeginTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder getNeedBeginTimeBuilder() {
-        
-        onChanged();
-        return getNeedBeginTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder() {
-        if (needBeginTimeBuilder_ != null) {
-          return needBeginTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return needBeginTime_ == null ?
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
-        }
-      }
-      /**
-       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder> 
-          getNeedBeginTimeFieldBuilder() {
-        if (needBeginTimeBuilder_ == null) {
-          needBeginTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder>(
-                  getNeedBeginTime(),
-                  getParentForChildren(),
-                  isClean());
-          needBeginTime_ = null;
-        }
-        return needBeginTimeBuilder_;
-      }
-
       private int chapterState_ = 0;
       /**
-       * <code>.ChapterState chapter_state = 1;</code>
+       * <code>.ChapterState chapter_state = 9;</code>
        * @return The enum numeric value on the wire for chapterState.
        */
       @java.lang.Override public int getChapterStateValue() {
         return chapterState_;
       }
       /**
-       * <code>.ChapterState chapter_state = 1;</code>
+       * <code>.ChapterState chapter_state = 9;</code>
        * @param value The enum numeric value on the wire for chapterState to set.
        * @return This builder for chaining.
        */
@@ -1948,7 +1792,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterState chapter_state = 1;</code>
+       * <code>.ChapterState chapter_state = 9;</code>
        * @return The chapterState.
        */
       @java.lang.Override
@@ -1958,7 +1802,7 @@ public final class ChapterStateNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ChapterState chapter_state = 1;</code>
+       * <code>.ChapterState chapter_state = 9;</code>
        * @param value The chapterState to set.
        * @return This builder for chaining.
        */
@@ -1972,7 +1816,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterState chapter_state = 1;</code>
+       * <code>.ChapterState chapter_state = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearChapterState() {
@@ -1986,14 +1830,14 @@ public final class ChapterStateNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevelOrBuilder> needPlayerLevelBuilder_;
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        * @return Whether the needPlayerLevel field is set.
        */
       public boolean hasNeedPlayerLevel() {
         return needPlayerLevelBuilder_ != null || needPlayerLevel_ != null;
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        * @return The needPlayerLevel.
        */
       public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel getNeedPlayerLevel() {
@@ -2004,7 +1848,7 @@ public final class ChapterStateNotifyOuterClass {
         }
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public Builder setNeedPlayerLevel(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel value) {
         if (needPlayerLevelBuilder_ == null) {
@@ -2020,7 +1864,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public Builder setNeedPlayerLevel(
           emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder builderForValue) {
@@ -2034,7 +1878,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public Builder mergeNeedPlayerLevel(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel value) {
         if (needPlayerLevelBuilder_ == null) {
@@ -2052,7 +1896,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public Builder clearNeedPlayerLevel() {
         if (needPlayerLevelBuilder_ == null) {
@@ -2066,7 +1910,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder getNeedPlayerLevelBuilder() {
         
@@ -2074,7 +1918,7 @@ public final class ChapterStateNotifyOuterClass {
         return getNeedPlayerLevelFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevelOrBuilder getNeedPlayerLevelOrBuilder() {
         if (needPlayerLevelBuilder_ != null) {
@@ -2085,7 +1929,7 @@ public final class ChapterStateNotifyOuterClass {
         }
       }
       /**
-       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 5;</code>
+       * <code>.ChapterStateNotify.NeedPlayerLevel need_player_level = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevel.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedPlayerLevelOrBuilder> 
@@ -2099,6 +1943,156 @@ public final class ChapterStateNotifyOuterClass {
           needPlayerLevel_ = null;
         }
         return needPlayerLevelBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime needBeginTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder> needBeginTimeBuilder_;
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       * @return Whether the needBeginTime field is set.
+       */
+      public boolean hasNeedBeginTime() {
+        return needBeginTimeBuilder_ != null || needBeginTime_ != null;
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       * @return The needBeginTime.
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime getNeedBeginTime() {
+        if (needBeginTimeBuilder_ == null) {
+          return needBeginTime_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
+        } else {
+          return needBeginTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public Builder setNeedBeginTime(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime value) {
+        if (needBeginTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          needBeginTime_ = value;
+          onChanged();
+        } else {
+          needBeginTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public Builder setNeedBeginTime(
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder builderForValue) {
+        if (needBeginTimeBuilder_ == null) {
+          needBeginTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          needBeginTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public Builder mergeNeedBeginTime(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime value) {
+        if (needBeginTimeBuilder_ == null) {
+          if (needBeginTime_ != null) {
+            needBeginTime_ =
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.newBuilder(needBeginTime_).mergeFrom(value).buildPartial();
+          } else {
+            needBeginTime_ = value;
+          }
+          onChanged();
+        } else {
+          needBeginTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public Builder clearNeedBeginTime() {
+        if (needBeginTimeBuilder_ == null) {
+          needBeginTime_ = null;
+          onChanged();
+        } else {
+          needBeginTime_ = null;
+          needBeginTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder getNeedBeginTimeBuilder() {
+        
+        onChanged();
+        return getNeedBeginTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder getNeedBeginTimeOrBuilder() {
+        if (needBeginTimeBuilder_ != null) {
+          return needBeginTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return needBeginTime_ == null ?
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.getDefaultInstance() : needBeginTime_;
+        }
+      }
+      /**
+       * <code>.ChapterStateNotify.NeedBeginTime need_begin_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder> 
+          getNeedBeginTimeFieldBuilder() {
+        if (needBeginTimeBuilder_ == null) {
+          needBeginTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTime.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.NeedBeginTimeOrBuilder>(
+                  getNeedBeginTime(),
+                  getParentForChildren(),
+                  isClean());
+          needBeginTime_ = null;
+        }
+        return needBeginTimeBuilder_;
+      }
+
+      private int chapterId_ ;
+      /**
+       * <code>uint32 chapter_id = 2;</code>
+       * @return The chapterId.
+       */
+      @java.lang.Override
+      public int getChapterId() {
+        return chapterId_;
+      }
+      /**
+       * <code>uint32 chapter_id = 2;</code>
+       * @param value The chapterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChapterId(int value) {
+        
+        chapterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 chapter_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChapterId() {
+        
+        chapterId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2178,15 +2172,15 @@ public final class ChapterStateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ChapterStateNotify.proto\032\022ChapterState" +
-      ".proto\"\324\002\n\022ChapterStateNotify\022\022\n\nchapter" +
-      "_id\030\t \001(\r\022:\n\017need_begin_time\030\r \001(\0132!.Cha" +
-      "pterStateNotify.NeedBeginTime\022$\n\rchapter" +
-      "_state\030\001 \001(\0162\r.ChapterState\022>\n\021need_play" +
-      "er_level\030\005 \001(\0132#.ChapterStateNotify.Need" +
-      "PlayerLevel\032E\n\017NeedPlayerLevel\022\020\n\010is_lim" +
-      "it\030\014 \001(\010\022 \n\030config_need_player_level\030\003 \001" +
-      "(\r\032A\n\rNeedBeginTime\022\020\n\010is_limit\030\004 \001(\010\022\036\n" +
-      "\026config_need_begin_time\030\016 \001(\rB\033\n\031emu.gra" +
+      ".proto\"\324\002\n\022ChapterStateNotify\022$\n\rchapter" +
+      "_state\030\t \001(\0162\r.ChapterState\022>\n\021need_play" +
+      "er_level\030\n \001(\0132#.ChapterStateNotify.Need" +
+      "PlayerLevel\022:\n\017need_begin_time\030\001 \001(\0132!.C" +
+      "hapterStateNotify.NeedBeginTime\022\022\n\nchapt" +
+      "er_id\030\002 \001(\r\032E\n\017NeedPlayerLevel\022\020\n\010is_lim" +
+      "it\030\002 \001(\010\022 \n\030config_need_player_level\030\013 \001" +
+      "(\r\032A\n\rNeedBeginTime\022\036\n\026config_need_begin" +
+      "_time\030\003 \001(\r\022\020\n\010is_limit\030\007 \001(\010B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -2199,7 +2193,7 @@ public final class ChapterStateNotifyOuterClass {
     internal_static_ChapterStateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChapterStateNotify_descriptor,
-        new java.lang.String[] { "ChapterId", "NeedBeginTime", "ChapterState", "NeedPlayerLevel", });
+        new java.lang.String[] { "ChapterState", "NeedPlayerLevel", "NeedBeginTime", "ChapterId", });
     internal_static_ChapterStateNotify_NeedPlayerLevel_descriptor =
       internal_static_ChapterStateNotify_descriptor.getNestedTypes().get(0);
     internal_static_ChapterStateNotify_NeedPlayerLevel_fieldAccessorTable = new
@@ -2211,7 +2205,7 @@ public final class ChapterStateNotifyOuterClass {
     internal_static_ChapterStateNotify_NeedBeginTime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChapterStateNotify_NeedBeginTime_descriptor,
-        new java.lang.String[] { "IsLimit", "ConfigNeedBeginTime", });
+        new java.lang.String[] { "ConfigNeedBeginTime", "IsLimit", });
     emu.grasscutter.net.proto.ChapterStateOuterClass.getDescriptor();
   }
 

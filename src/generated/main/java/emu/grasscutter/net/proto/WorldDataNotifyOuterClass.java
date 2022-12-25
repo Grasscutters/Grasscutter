@@ -19,11 +19,11 @@ public final class WorldDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     int getWorldPropMapCount();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     boolean containsWorldPropMap(
         int key);
@@ -34,19 +34,19 @@ public final class WorldDataNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getWorldPropMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getWorldPropMapMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
 
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
         int key,
         emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue);
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
 
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
@@ -54,14 +54,10 @@ public final class WorldDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 3436;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 3308
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WorldDataNotify}
@@ -109,7 +105,7 @@ public final class WorldDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 worldPropMap_ = com.google.protobuf.MapField.newMapField(
                     WorldPropMapDefaultEntryHolder.defaultEntry);
@@ -151,7 +147,7 @@ public final class WorldDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
+        case 9:
           return internalGetWorldPropMap();
         default:
           throw new RuntimeException(
@@ -283,7 +279,7 @@ public final class WorldDataNotifyOuterClass {
       // @@protoc_insertion_point(enum_scope:WorldDataNotify.DataType)
     }
 
-    public static final int WORLD_PROP_MAP_FIELD_NUMBER = 6;
+    public static final int WORLD_PROP_MAP_FIELD_NUMBER = 9;
     private static final class WorldPropMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> defaultEntry =
@@ -310,7 +306,7 @@ public final class WorldDataNotifyOuterClass {
       return internalGetWorldPropMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
 
     @java.lang.Override
@@ -328,7 +324,7 @@ public final class WorldDataNotifyOuterClass {
       return getWorldPropMapMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     @java.lang.Override
 
@@ -336,7 +332,7 @@ public final class WorldDataNotifyOuterClass {
       return internalGetWorldPropMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     @java.lang.Override
 
@@ -349,7 +345,7 @@ public final class WorldDataNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
      */
     @java.lang.Override
 
@@ -383,7 +379,7 @@ public final class WorldDataNotifyOuterClass {
           output,
           internalGetWorldPropMap(),
           WorldPropMapDefaultEntryHolder.defaultEntry,
-          6);
+          9);
       unknownFields.writeTo(output);
     }
 
@@ -401,7 +397,7 @@ public final class WorldDataNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, worldPropMap__);
+            .computeMessageSize(9, worldPropMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -532,14 +528,10 @@ public final class WorldDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 3436;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 3308
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WorldDataNotify}
@@ -557,7 +549,7 @@ public final class WorldDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 9:
             return internalGetWorldPropMap();
           default:
             throw new RuntimeException(
@@ -568,7 +560,7 @@ public final class WorldDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 9:
             return internalGetMutableWorldPropMap();
           default:
             throw new RuntimeException(
@@ -738,7 +730,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetWorldPropMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
 
       @java.lang.Override
@@ -756,7 +748,7 @@ public final class WorldDataNotifyOuterClass {
         return getWorldPropMapMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
       @java.lang.Override
 
@@ -764,7 +756,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetWorldPropMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
       @java.lang.Override
 
@@ -777,7 +769,7 @@ public final class WorldDataNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
       @java.lang.Override
 
@@ -798,7 +790,7 @@ public final class WorldDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
 
       public Builder removeWorldPropMap(
@@ -817,7 +809,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetMutableWorldPropMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
       public Builder putWorldPropMap(
           int key,
@@ -829,7 +821,7 @@ public final class WorldDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 6;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 9;</code>
        */
 
       public Builder putAllWorldPropMap(
@@ -911,7 +903,7 @@ public final class WorldDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025WorldDataNotify.proto\032\017PropValue.proto" +
-      "\"\346\001\n\017WorldDataNotify\022:\n\016world_prop_map\030\006" +
+      "\"\346\001\n\017WorldDataNotify\022:\n\016world_prop_map\030\t" +
       " \003(\0132\".WorldDataNotify.WorldPropMapEntry" +
       "\032?\n\021WorldPropMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005va" +
       "lue\030\002 \001(\0132\n.PropValue:\0028\001\"V\n\010DataType\022\022\n" +

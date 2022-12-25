@@ -6,12 +6,7 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.MailChangeNotifyOuterClass.MailChangeNotify;
-import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
-import emu.grasscutter.net.proto.MailItemOuterClass.MailItem;
-import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
-
-import emu.grasscutter.net.proto.EquipParamOuterClass.EquipParam;
+import emu.grasscutter.net.proto.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,20 +24,20 @@ public class PacketMailChangeNotify extends BasePacket {
     public PacketMailChangeNotify(Player player, List<Mail> mailList, List<Integer> delMailIdList) {
         super(PacketOpcodes.MailChangeNotify);
 
-        var proto = MailChangeNotify.newBuilder();
+        MailChangeNotifyOuterClass.MailChangeNotify.Builder proto = MailChangeNotifyOuterClass.MailChangeNotify.newBuilder();
 
         if (mailList != null) {
             for (Mail message : mailList) {
-                var mailTextContent = MailTextContent.newBuilder();
+                MailTextContentOuterClass.MailTextContent.Builder mailTextContent = MailTextContentOuterClass.MailTextContent.newBuilder();
                 mailTextContent.setTitle(message.mailContent.title);
                 mailTextContent.setContent(message.mailContent.content);
                 mailTextContent.setSender(message.mailContent.sender);
 
-                List<MailItem> mailItems = new ArrayList<>();
+                List<MailItemOuterClass.MailItem> mailItems = new ArrayList<MailItemOuterClass.MailItem>();
 
                 for (Mail.MailItem item : message.itemList) {
-                    var mailItem = MailItem.newBuilder();
-                    var itemParam = EquipParam.newBuilder();
+                    MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
+                    EquipParamOuterClass.EquipParam.Builder itemParam = EquipParamOuterClass.EquipParam.newBuilder();
                     itemParam.setItemId(item.itemId);
                     itemParam.setItemNum(item.itemCount);
                     mailItem.setEquipParam(itemParam.build());
@@ -50,7 +45,7 @@ public class PacketMailChangeNotify extends BasePacket {
                     mailItems.add(mailItem.build());
                 }
 
-                var mailData = MailData.newBuilder();
+                MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
                 mailData.setMailId(player.getMailId(message));
                 mailData.setMailTextContent(mailTextContent.build());
                 mailData.addAllItemList(mailItems);
@@ -59,7 +54,7 @@ public class PacketMailChangeNotify extends BasePacket {
                 mailData.setImportance(message.importance);
                 mailData.setIsRead(message.isRead);
                 mailData.setIsAttachmentGot(message.isAttachmentGot);
-                mailData.setCollectStateValue(message.stateValue);
+                mailData.setUnk2700NDPPGJKJOMHValue(message.stateValue);
 
                 proto.addMailList(mailData.build());
             }

@@ -34,42 +34,38 @@ public final class CreateVehicleReqOuterClass {
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>uint32 vehicle_id = 4;</code>
+     * <code>uint32 vehicle_id = 2;</code>
      * @return The vehicleId.
      */
     int getVehicleId();
 
     /**
-     * <code>uint32 scene_point_id = 3;</code>
+     * <code>uint32 scene_point_id = 7;</code>
      * @return The scenePointId.
      */
     int getScenePointId();
 
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      * @return Whether the rot field is set.
      */
     boolean hasRot();
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      * @return The rot.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getRot();
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 807;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 893
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CreateVehicleReq}
@@ -116,17 +112,12 @@ public final class CreateVehicleReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              scenePointId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 16: {
 
               vehicleId_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -137,6 +128,11 @@ public final class CreateVehicleReqOuterClass {
                 rot_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 56: {
+
+              scenePointId_ = input.readUInt32();
               break;
             }
             case 90: {
@@ -210,10 +206,10 @@ public final class CreateVehicleReqOuterClass {
       return getPos();
     }
 
-    public static final int VEHICLE_ID_FIELD_NUMBER = 4;
+    public static final int VEHICLE_ID_FIELD_NUMBER = 2;
     private int vehicleId_;
     /**
-     * <code>uint32 vehicle_id = 4;</code>
+     * <code>uint32 vehicle_id = 2;</code>
      * @return The vehicleId.
      */
     @java.lang.Override
@@ -221,10 +217,10 @@ public final class CreateVehicleReqOuterClass {
       return vehicleId_;
     }
 
-    public static final int SCENE_POINT_ID_FIELD_NUMBER = 3;
+    public static final int SCENE_POINT_ID_FIELD_NUMBER = 7;
     private int scenePointId_;
     /**
-     * <code>uint32 scene_point_id = 3;</code>
+     * <code>uint32 scene_point_id = 7;</code>
      * @return The scenePointId.
      */
     @java.lang.Override
@@ -232,10 +228,10 @@ public final class CreateVehicleReqOuterClass {
       return scenePointId_;
     }
 
-    public static final int ROT_FIELD_NUMBER = 6;
+    public static final int ROT_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      * @return Whether the rot field is set.
      */
     @java.lang.Override
@@ -243,7 +239,7 @@ public final class CreateVehicleReqOuterClass {
       return rot_ != null;
     }
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      * @return The rot.
      */
     @java.lang.Override
@@ -251,7 +247,7 @@ public final class CreateVehicleReqOuterClass {
       return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
     }
     /**
-     * <code>.Vector rot = 6;</code>
+     * <code>.Vector rot = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
@@ -272,14 +268,14 @@ public final class CreateVehicleReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scenePointId_ != 0) {
-        output.writeUInt32(3, scenePointId_);
-      }
       if (vehicleId_ != 0) {
-        output.writeUInt32(4, vehicleId_);
+        output.writeUInt32(2, vehicleId_);
       }
       if (rot_ != null) {
-        output.writeMessage(6, getRot());
+        output.writeMessage(5, getRot());
+      }
+      if (scenePointId_ != 0) {
+        output.writeUInt32(7, scenePointId_);
       }
       if (pos_ != null) {
         output.writeMessage(11, getPos());
@@ -293,17 +289,17 @@ public final class CreateVehicleReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scenePointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, scenePointId_);
-      }
       if (vehicleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, vehicleId_);
+          .computeUInt32Size(2, vehicleId_);
       }
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getRot());
+          .computeMessageSize(5, getRot());
+      }
+      if (scenePointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, scenePointId_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -458,14 +454,10 @@ public final class CreateVehicleReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 807;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 893
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CreateVehicleReq}
@@ -769,7 +761,7 @@ public final class CreateVehicleReqOuterClass {
 
       private int vehicleId_ ;
       /**
-       * <code>uint32 vehicle_id = 4;</code>
+       * <code>uint32 vehicle_id = 2;</code>
        * @return The vehicleId.
        */
       @java.lang.Override
@@ -777,7 +769,7 @@ public final class CreateVehicleReqOuterClass {
         return vehicleId_;
       }
       /**
-       * <code>uint32 vehicle_id = 4;</code>
+       * <code>uint32 vehicle_id = 2;</code>
        * @param value The vehicleId to set.
        * @return This builder for chaining.
        */
@@ -788,7 +780,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 vehicle_id = 4;</code>
+       * <code>uint32 vehicle_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearVehicleId() {
@@ -800,7 +792,7 @@ public final class CreateVehicleReqOuterClass {
 
       private int scenePointId_ ;
       /**
-       * <code>uint32 scene_point_id = 3;</code>
+       * <code>uint32 scene_point_id = 7;</code>
        * @return The scenePointId.
        */
       @java.lang.Override
@@ -808,7 +800,7 @@ public final class CreateVehicleReqOuterClass {
         return scenePointId_;
       }
       /**
-       * <code>uint32 scene_point_id = 3;</code>
+       * <code>uint32 scene_point_id = 7;</code>
        * @param value The scenePointId to set.
        * @return This builder for chaining.
        */
@@ -819,7 +811,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_point_id = 3;</code>
+       * <code>uint32 scene_point_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearScenePointId() {
@@ -833,14 +825,14 @@ public final class CreateVehicleReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        * @return Whether the rot field is set.
        */
       public boolean hasRot() {
         return rotBuilder_ != null || rot_ != null;
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        * @return The rot.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
@@ -851,7 +843,7 @@ public final class CreateVehicleReqOuterClass {
         }
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public Builder setRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
@@ -867,7 +859,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public Builder setRot(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -881,7 +873,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public Builder mergeRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
@@ -899,7 +891,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public Builder clearRot() {
         if (rotBuilder_ == null) {
@@ -913,7 +905,7 @@ public final class CreateVehicleReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
         
@@ -921,7 +913,7 @@ public final class CreateVehicleReqOuterClass {
         return getRotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
         if (rotBuilder_ != null) {
@@ -932,7 +924,7 @@ public final class CreateVehicleReqOuterClass {
         }
       }
       /**
-       * <code>.Vector rot = 6;</code>
+       * <code>.Vector rot = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1016,8 +1008,8 @@ public final class CreateVehicleReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026CreateVehicleReq.proto\032\014Vector.proto\"j" +
       "\n\020CreateVehicleReq\022\024\n\003pos\030\013 \001(\0132\007.Vector" +
-      "\022\022\n\nvehicle_id\030\004 \001(\r\022\026\n\016scene_point_id\030\003" +
-      " \001(\r\022\024\n\003rot\030\006 \001(\0132\007.VectorB\033\n\031emu.grassc" +
+      "\022\022\n\nvehicle_id\030\002 \001(\r\022\026\n\016scene_point_id\030\007" +
+      " \001(\r\022\024\n\003rot\030\005 \001(\0132\007.VectorB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

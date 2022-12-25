@@ -125,15 +125,15 @@ public final class MailDataOuterClass {
         getArgumentListBytes(int index);
 
     /**
-     * <code>.MailCollectState collect_state = 15;</code>
-     * @return The enum numeric value on the wire for collectState.
+     * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+     * @return The enum numeric value on the wire for unk2700NDPPGJKJOMH.
      */
-    int getCollectStateValue();
+    int getUnk2700NDPPGJKJOMHValue();
     /**
-     * <code>.MailCollectState collect_state = 15;</code>
-     * @return The collectState.
+     * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+     * @return The unk2700NDPPGJKJOMH.
      */
-    emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState getCollectState();
+    emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL getUnk2700NDPPGJKJOMH();
   }
   /**
    * Protobuf type {@code MailData}
@@ -150,7 +150,7 @@ public final class MailDataOuterClass {
     private MailData() {
       itemList_ = java.util.Collections.emptyList();
       argumentList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      collectState_ = 0;
+      unk2700NDPPGJKJOMH_ = 0;
     }
 
     @java.lang.Override
@@ -253,7 +253,7 @@ public final class MailDataOuterClass {
             case 120: {
               int rawValue = input.readEnum();
 
-              collectState_ = rawValue;
+              unk2700NDPPGJKJOMH_ = rawValue;
               break;
             }
             default: {
@@ -472,23 +472,23 @@ public final class MailDataOuterClass {
       return argumentList_.getByteString(index);
     }
 
-    public static final int COLLECT_STATE_FIELD_NUMBER = 15;
-    private int collectState_;
+    public static final int UNK2700_NDPPGJKJOMH_FIELD_NUMBER = 15;
+    private int unk2700NDPPGJKJOMH_;
     /**
-     * <code>.MailCollectState collect_state = 15;</code>
-     * @return The enum numeric value on the wire for collectState.
+     * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+     * @return The enum numeric value on the wire for unk2700NDPPGJKJOMH.
      */
-    @java.lang.Override public int getCollectStateValue() {
-      return collectState_;
+    @java.lang.Override public int getUnk2700NDPPGJKJOMHValue() {
+      return unk2700NDPPGJKJOMH_;
     }
     /**
-     * <code>.MailCollectState collect_state = 15;</code>
-     * @return The collectState.
+     * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+     * @return The unk2700NDPPGJKJOMH.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState getCollectState() {
+    @java.lang.Override public emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL getUnk2700NDPPGJKJOMH() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState result = emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.valueOf(collectState_);
-      return result == null ? emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL result = emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.valueOf(unk2700NDPPGJKJOMH_);
+      return result == null ? emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -535,8 +535,8 @@ public final class MailDataOuterClass {
       for (int i = 0; i < argumentList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, argumentList_.getRaw(i));
       }
-      if (collectState_ != emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.MAIL_COLLECT_STATE_COLLECTIBLE_UNKNOWN.getNumber()) {
-        output.writeEnum(15, collectState_);
+      if (unk2700NDPPGJKJOMH_ != emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.Unk2700_CBJEDMGOBPL_Unk2700_MBLDLJOKLBL.getNumber()) {
+        output.writeEnum(15, unk2700NDPPGJKJOMH_);
       }
       unknownFields.writeTo(output);
     }
@@ -591,9 +591,9 @@ public final class MailDataOuterClass {
         size += dataSize;
         size += 1 * getArgumentListList().size();
       }
-      if (collectState_ != emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.MAIL_COLLECT_STATE_COLLECTIBLE_UNKNOWN.getNumber()) {
+      if (unk2700NDPPGJKJOMH_ != emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.Unk2700_CBJEDMGOBPL_Unk2700_MBLDLJOKLBL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, collectState_);
+          .computeEnumSize(15, unk2700NDPPGJKJOMH_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -633,7 +633,7 @@ public final class MailDataOuterClass {
           != other.getConfigId()) return false;
       if (!getArgumentListList()
           .equals(other.getArgumentListList())) return false;
-      if (collectState_ != other.collectState_) return false;
+      if (unk2700NDPPGJKJOMH_ != other.unk2700NDPPGJKJOMH_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -673,8 +673,8 @@ public final class MailDataOuterClass {
         hash = (37 * hash) + ARGUMENT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getArgumentListList().hashCode();
       }
-      hash = (37 * hash) + COLLECT_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + collectState_;
+      hash = (37 * hash) + UNK2700_NDPPGJKJOMH_FIELD_NUMBER;
+      hash = (53 * hash) + unk2700NDPPGJKJOMH_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -837,7 +837,7 @@ public final class MailDataOuterClass {
 
         argumentList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        collectState_ = 0;
+        unk2700NDPPGJKJOMH_ = 0;
 
         return this;
       }
@@ -892,7 +892,7 @@ public final class MailDataOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.argumentList_ = argumentList_;
-        result.collectState_ = collectState_;
+        result.unk2700NDPPGJKJOMH_ = unk2700NDPPGJKJOMH_;
         onBuilt();
         return result;
       }
@@ -1001,8 +1001,8 @@ public final class MailDataOuterClass {
           }
           onChanged();
         }
-        if (other.collectState_ != 0) {
-          setCollectStateValue(other.getCollectStateValue());
+        if (other.unk2700NDPPGJKJOMH_ != 0) {
+          setUnk2700NDPPGJKJOMHValue(other.getUnk2700NDPPGJKJOMHValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1720,56 +1720,56 @@ public final class MailDataOuterClass {
         return this;
       }
 
-      private int collectState_ = 0;
+      private int unk2700NDPPGJKJOMH_ = 0;
       /**
-       * <code>.MailCollectState collect_state = 15;</code>
-       * @return The enum numeric value on the wire for collectState.
+       * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+       * @return The enum numeric value on the wire for unk2700NDPPGJKJOMH.
        */
-      @java.lang.Override public int getCollectStateValue() {
-        return collectState_;
+      @java.lang.Override public int getUnk2700NDPPGJKJOMHValue() {
+        return unk2700NDPPGJKJOMH_;
       }
       /**
-       * <code>.MailCollectState collect_state = 15;</code>
-       * @param value The enum numeric value on the wire for collectState to set.
+       * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+       * @param value The enum numeric value on the wire for unk2700NDPPGJKJOMH to set.
        * @return This builder for chaining.
        */
-      public Builder setCollectStateValue(int value) {
+      public Builder setUnk2700NDPPGJKJOMHValue(int value) {
         
-        collectState_ = value;
+        unk2700NDPPGJKJOMH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.MailCollectState collect_state = 15;</code>
-       * @return The collectState.
+       * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+       * @return The unk2700NDPPGJKJOMH.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState getCollectState() {
+      public emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL getUnk2700NDPPGJKJOMH() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState result = emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.valueOf(collectState_);
-        return result == null ? emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL result = emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.valueOf(unk2700NDPPGJKJOMH_);
+        return result == null ? emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL.UNRECOGNIZED : result;
       }
       /**
-       * <code>.MailCollectState collect_state = 15;</code>
-       * @param value The collectState to set.
+       * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
+       * @param value The unk2700NDPPGJKJOMH to set.
        * @return This builder for chaining.
        */
-      public Builder setCollectState(emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState value) {
+      public Builder setUnk2700NDPPGJKJOMH(emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.Unk2700_CBJEDMGOBPL value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        collectState_ = value.getNumber();
+        unk2700NDPPGJKJOMH_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.MailCollectState collect_state = 15;</code>
+       * <code>.Unk2700_CBJEDMGOBPL Unk2700_NDPPGJKJOMH = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCollectState() {
+      public Builder clearUnk2700NDPPGJKJOMH() {
         
-        collectState_ = 0;
+        unk2700NDPPGJKJOMH_ = 0;
         onChanged();
         return this;
       }
@@ -1840,34 +1840,34 @@ public final class MailDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016MailData.proto\032\026MailCollectState.proto" +
-      "\032\016MailItem.proto\032\025MailTextContent.proto\"" +
-      "\242\002\n\010MailData\022\017\n\007mail_id\030\001 \001(\r\022+\n\021mail_te" +
-      "xt_content\030\004 \001(\0132\020.MailTextContent\022\034\n\tit" +
-      "em_list\030\007 \003(\0132\t.MailItem\022\021\n\tsend_time\030\010 " +
-      "\001(\r\022\023\n\013expire_time\030\t \001(\r\022\022\n\nimportance\030\n" +
-      " \001(\r\022\017\n\007is_read\030\013 \001(\010\022\031\n\021is_attachment_g" +
-      "ot\030\014 \001(\010\022\021\n\tconfig_id\030\r \001(\r\022\025\n\rargument_" +
-      "list\030\016 \003(\t\022(\n\rcollect_state\030\017 \001(\0162\021.Mail" +
-      "CollectStateB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "\n\016MailData.proto\032\016MailItem.proto\032\025MailTe" +
+      "xtContent.proto\032\031Unk2700_CBJEDMGOBPL.pro" +
+      "to\"\253\002\n\010MailData\022\017\n\007mail_id\030\001 \001(\r\022+\n\021mail" +
+      "_text_content\030\004 \001(\0132\020.MailTextContent\022\034\n" +
+      "\titem_list\030\007 \003(\0132\t.MailItem\022\021\n\tsend_time" +
+      "\030\010 \001(\r\022\023\n\013expire_time\030\t \001(\r\022\022\n\nimportanc" +
+      "e\030\n \001(\r\022\017\n\007is_read\030\013 \001(\010\022\031\n\021is_attachmen" +
+      "t_got\030\014 \001(\010\022\021\n\tconfig_id\030\r \001(\r\022\025\n\rargume" +
+      "nt_list\030\016 \003(\t\0221\n\023Unk2700_NDPPGJKJOMH\030\017 \001" +
+      "(\0162\024.Unk2700_CBJEDMGOBPLB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.MailCollectStateOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MailItemOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MailTextContentOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.getDescriptor(),
         });
     internal_static_MailData_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_MailData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MailData_descriptor,
-        new java.lang.String[] { "MailId", "MailTextContent", "ItemList", "SendTime", "ExpireTime", "Importance", "IsRead", "IsAttachmentGot", "ConfigId", "ArgumentList", "CollectState", });
-    emu.grasscutter.net.proto.MailCollectStateOuterClass.getDescriptor();
+        new java.lang.String[] { "MailId", "MailTextContent", "ItemList", "SendTime", "ExpireTime", "Importance", "IsRead", "IsAttachmentGot", "ConfigId", "ArgumentList", "Unk2700NDPPGJKJOMH", });
     emu.grasscutter.net.proto.MailItemOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MailTextContentOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk2700CBJEDMGOBPL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

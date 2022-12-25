@@ -19,20 +19,17 @@ public final class UnlockTransPointRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 3046;
-   *   ENET_CHANNEL_ID = 1;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   * CmdId: 3426
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code UnlockTransPointRsp}
@@ -79,7 +76,7 @@ public final class UnlockTransPointRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
@@ -116,10 +113,10 @@ public final class UnlockTransPointRspOuterClass {
               emu.grasscutter.net.proto.UnlockTransPointRspOuterClass.UnlockTransPointRsp.class, emu.grasscutter.net.proto.UnlockTransPointRspOuterClass.UnlockTransPointRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -142,7 +139,7 @@ public final class UnlockTransPointRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +152,7 @@ public final class UnlockTransPointRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,13 +281,10 @@ public final class UnlockTransPointRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 3046;
-     *   ENET_CHANNEL_ID = 1;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     * CmdId: 3426
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code UnlockTransPointRsp}
@@ -441,7 +435,7 @@ public final class UnlockTransPointRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -449,7 +443,7 @@ public final class UnlockTransPointRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -460,7 +454,7 @@ public final class UnlockTransPointRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -537,7 +531,7 @@ public final class UnlockTransPointRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031UnlockTransPointRsp.proto\"&\n\023UnlockTra" +
-      "nsPointRsp\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grass" +
+      "nsPointRsp\022\017\n\007retcode\030\014 \001(\005B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

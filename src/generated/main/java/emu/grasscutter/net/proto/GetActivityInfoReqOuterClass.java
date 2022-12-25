@@ -19,17 +19,17 @@ public final class GetActivityInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @return A list containing the activityIdList.
      */
     java.util.List<java.lang.Integer> getActivityIdListList();
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @return The count of activityIdList.
      */
     int getActivityIdListCount();
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The activityIdList at the given index.
      */
@@ -37,14 +37,10 @@ public final class GetActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2011;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   * CmdId: 2095
+   * EnetChannelId: 0
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetActivityInfoReq}
@@ -93,7 +89,7 @@ public final class GetActivityInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 activityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +97,7 @@ public final class GetActivityInfoReqOuterClass {
               activityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,10 +145,10 @@ public final class GetActivityInfoReqOuterClass {
               emu.grasscutter.net.proto.GetActivityInfoReqOuterClass.GetActivityInfoReq.class, emu.grasscutter.net.proto.GetActivityInfoReqOuterClass.GetActivityInfoReq.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_LIST_FIELD_NUMBER = 1;
+    public static final int ACTIVITY_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList activityIdList_;
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @return A list containing the activityIdList.
      */
     @java.lang.Override
@@ -161,14 +157,14 @@ public final class GetActivityInfoReqOuterClass {
       return activityIdList_;
     }
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @return The count of activityIdList.
      */
     public int getActivityIdListCount() {
       return activityIdList_.size();
     }
     /**
-     * <code>repeated uint32 activity_id_list = 1;</code>
+     * <code>repeated uint32 activity_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The activityIdList at the given index.
      */
@@ -193,7 +189,7 @@ public final class GetActivityInfoReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getActivityIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(activityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < activityIdList_.size(); i++) {
@@ -351,14 +347,10 @@ public final class GetActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2011;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     * CmdId: 2095
+     * EnetChannelId: 0
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetActivityInfoReq}
@@ -528,7 +520,7 @@ public final class GetActivityInfoReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @return A list containing the activityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -537,14 +529,14 @@ public final class GetActivityInfoReqOuterClass {
                  java.util.Collections.unmodifiableList(activityIdList_) : activityIdList_;
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @return The count of activityIdList.
        */
       public int getActivityIdListCount() {
         return activityIdList_.size();
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @param index The index of the element to return.
        * @return The activityIdList at the given index.
        */
@@ -552,7 +544,7 @@ public final class GetActivityInfoReqOuterClass {
         return activityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The activityIdList to set.
        * @return This builder for chaining.
@@ -565,7 +557,7 @@ public final class GetActivityInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @param value The activityIdList to add.
        * @return This builder for chaining.
        */
@@ -576,7 +568,7 @@ public final class GetActivityInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @param values The activityIdList to add.
        * @return This builder for chaining.
        */
@@ -589,7 +581,7 @@ public final class GetActivityInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_id_list = 1;</code>
+       * <code>repeated uint32 activity_id_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityIdList() {
@@ -666,7 +658,7 @@ public final class GetActivityInfoReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GetActivityInfoReq.proto\".\n\022GetActivit" +
-      "yInfoReq\022\030\n\020activity_id_list\030\001 \003(\rB\033\n\031em" +
+      "yInfoReq\022\030\n\020activity_id_list\030\004 \003(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
