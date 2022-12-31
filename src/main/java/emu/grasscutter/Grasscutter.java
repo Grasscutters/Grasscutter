@@ -112,7 +112,7 @@ public final class Grasscutter {
         ScriptLoader.init();
 
         // Generate handbooks.
-        Tools.createGmHandbooks();
+        Tools.createGmHandbooks(false);
 
         // Initialize database.
         DatabaseManager.initialize();

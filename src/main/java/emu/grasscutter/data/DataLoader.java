@@ -92,7 +92,7 @@ public class DataLoader {
 
     public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType) throws IOException {
         val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
-        Grasscutter.getLogger().info("Loading data table from: "+path);
+        Grasscutter.getLogger().debug("Loading data table from: "+path);
         return switch (FileUtils.getFileExtension(path)) {
             case "json" -> JsonUtils.loadToList(path, classType);
             case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);
