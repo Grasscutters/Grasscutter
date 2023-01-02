@@ -217,8 +217,11 @@ public class Scene {
     }
 
     public synchronized void addEntity(GameEntity entity) {
+
         EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
+        event.call();
         if(event.isCanceled()) return;
+
         this.addEntityDirectly(entity);
         this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
     }
@@ -226,6 +229,7 @@ public class Scene {
     public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
 
         EntitySpawnEvent event = new EntitySpawnEvent(entity, player);
+        event.call();
         if(event.isCanceled()) return;
 
         this.addEntityDirectly(entity);
@@ -241,8 +245,11 @@ public class Scene {
             return;
         }
         for (GameEntity entity : entities) {
+
             EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
+            event.call();
             if(event.isCanceled()) continue;
+
             this.addEntityDirectly(entity);
         }
 
