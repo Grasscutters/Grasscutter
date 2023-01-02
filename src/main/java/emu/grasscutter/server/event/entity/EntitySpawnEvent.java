@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class EntitySpawnEvent extends EntityEvent implements Cancellable {
 
-    private Player player;
+    private final Player player;
 
     public EntitySpawnEvent(GameEntity entity, @Nullable Player player) {
         super(entity);
