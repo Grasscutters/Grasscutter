@@ -26,6 +26,7 @@ import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.server.event.entity.EntitySpawnEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import lombok.Getter;
@@ -216,11 +217,17 @@ public class Scene {
     }
 
     public synchronized void addEntity(GameEntity entity) {
+        EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
+        if(event.isCanceled()) return;
         this.addEntityDirectly(entity);
         this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
     }
 
     public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
+
+        EntitySpawnEvent event = new EntitySpawnEvent(entity, player);
+        if(event.isCanceled()) return;
+
         this.addEntityDirectly(entity);
         player.sendPacket(new PacketSceneEntityAppearNotify(entity));
 
@@ -234,6 +241,8 @@ public class Scene {
             return;
         }
         for (GameEntity entity : entities) {
+            EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
+            if(event.isCanceled()) continue;
             this.addEntityDirectly(entity);
         }
 
