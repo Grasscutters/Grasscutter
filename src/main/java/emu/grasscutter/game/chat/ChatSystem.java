@@ -156,13 +156,13 @@ public class ChatSystem implements ChatSystemHandler {
         // Format message.
         message = GAME_INFO.serverAccount.globalChatFormat
             .replace("{nickName}", player.getNickname())
-            .replace("{uid}", player.getUid().toString())
+            .replace("{uid}", String.valueOf(player.getUid()))
             .replace("{message}", message);
         // Forward messages to other players.
         for (Player p : server.getPlayers().values()) {
             if (p != player) {
                 // Create chat packet and put in history.
-                packet = new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, p.getUid(), message);
+                var packet = new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, p.getUid(), message);
                 putInHistory(p.getUid(), GameConstants.SERVER_CONSOLE_UID, packet.getChatInfo());
                 // Send.
                 p.sendPacket(packet);
