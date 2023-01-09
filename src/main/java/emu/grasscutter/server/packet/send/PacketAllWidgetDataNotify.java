@@ -23,7 +23,7 @@ public class PacketAllWidgetDataNotify extends BasePacket {
                 LunchBoxDataOuterClass.LunchBoxData.newBuilder().build()
             )
             // Maybe it's a little difficult, or it makes you upset :(
-            .addAllOneofGatherPointDetectorDataList(List.of())
+            .addAllOneoffGatherPointDetectorDataList(List.of())
             // So, goodbye, and hopefully sometime in the future o(*￣▽￣*)ブ
             .addAllCoolDownGroupDataList(List.of())
             // I'll see your PR with a title that says (・∀・(・∀・(・∀・*)

@@ -19,29 +19,32 @@ public final class GetWorldMpInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>uint32 quit_mp_valid_time = 15;</code>
+     * @return The quitMpValidTime.
+     */
+    int getQuitMpValidTime();
+
+    /**
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>bool is_in_mp_mode = 1;</code>
+     * <code>bool is_in_mp_mode = 14;</code>
      * @return The isInMpMode.
      */
     boolean getIsInMpMode();
-
-    /**
-     * <code>uint32 quit_mp_valid_time = 9;</code>
-     * @return The quitMpValidTime.
-     */
-    int getQuitMpValidTime();
   }
   /**
    * <pre>
-   * CmdId: 3320
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 3310;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code GetWorldMpInfoRsp}
@@ -90,17 +93,17 @@ public final class GetWorldMpInfoRspOuterClass {
               break;
             case 8: {
 
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
               isInMpMode_ = input.readBool();
               break;
             }
-            case 72: {
+            case 120: {
 
               quitMpValidTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -135,10 +138,21 @@ public final class GetWorldMpInfoRspOuterClass {
               emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp.class, emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 15;
+    private int quitMpValidTime_;
+    /**
+     * <code>uint32 quit_mp_valid_time = 15;</code>
+     * @return The quitMpValidTime.
+     */
+    @java.lang.Override
+    public int getQuitMpValidTime() {
+      return quitMpValidTime_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -146,26 +160,15 @@ public final class GetWorldMpInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_IN_MP_MODE_FIELD_NUMBER = 1;
+    public static final int IS_IN_MP_MODE_FIELD_NUMBER = 14;
     private boolean isInMpMode_;
     /**
-     * <code>bool is_in_mp_mode = 1;</code>
+     * <code>bool is_in_mp_mode = 14;</code>
      * @return The isInMpMode.
      */
     @java.lang.Override
     public boolean getIsInMpMode() {
       return isInMpMode_;
-    }
-
-    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 9;
-    private int quitMpValidTime_;
-    /**
-     * <code>uint32 quit_mp_valid_time = 9;</code>
-     * @return The quitMpValidTime.
-     */
-    @java.lang.Override
-    public int getQuitMpValidTime() {
-      return quitMpValidTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -182,14 +185,14 @@ public final class GetWorldMpInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (retcode_ != 0) {
+        output.writeInt32(1, retcode_);
+      }
       if (isInMpMode_ != false) {
-        output.writeBool(1, isInMpMode_);
+        output.writeBool(14, isInMpMode_);
       }
       if (quitMpValidTime_ != 0) {
-        output.writeUInt32(9, quitMpValidTime_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeUInt32(15, quitMpValidTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,17 +203,17 @@ public final class GetWorldMpInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, retcode_);
+      }
       if (isInMpMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isInMpMode_);
+          .computeBoolSize(14, isInMpMode_);
       }
       if (quitMpValidTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, quitMpValidTime_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeUInt32Size(15, quitMpValidTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,12 +230,12 @@ public final class GetWorldMpInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp other = (emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp) obj;
 
+      if (getQuitMpValidTime()
+          != other.getQuitMpValidTime()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getIsInMpMode()
           != other.getIsInMpMode()) return false;
-      if (getQuitMpValidTime()
-          != other.getQuitMpValidTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -244,13 +247,13 @@ public final class GetWorldMpInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUIT_MP_VALID_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getQuitMpValidTime();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + IS_IN_MP_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInMpMode());
-      hash = (37 * hash) + QUIT_MP_VALID_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getQuitMpValidTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -348,10 +351,13 @@ public final class GetWorldMpInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3320
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 3310;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code GetWorldMpInfoRsp}
@@ -391,11 +397,11 @@ public final class GetWorldMpInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        quitMpValidTime_ = 0;
+
         retcode_ = 0;
 
         isInMpMode_ = false;
-
-        quitMpValidTime_ = 0;
 
         return this;
       }
@@ -423,9 +429,9 @@ public final class GetWorldMpInfoRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp buildPartial() {
         emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp result = new emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp(this);
+        result.quitMpValidTime_ = quitMpValidTime_;
         result.retcode_ = retcode_;
         result.isInMpMode_ = isInMpMode_;
-        result.quitMpValidTime_ = quitMpValidTime_;
         onBuilt();
         return result;
       }
@@ -474,14 +480,14 @@ public final class GetWorldMpInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp other) {
         if (other == emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp.getDefaultInstance()) return this;
+        if (other.getQuitMpValidTime() != 0) {
+          setQuitMpValidTime(other.getQuitMpValidTime());
+        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (other.getIsInMpMode() != false) {
           setIsInMpMode(other.getIsInMpMode());
-        }
-        if (other.getQuitMpValidTime() != 0) {
-          setQuitMpValidTime(other.getQuitMpValidTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -512,9 +518,40 @@ public final class GetWorldMpInfoRspOuterClass {
         return this;
       }
 
+      private int quitMpValidTime_ ;
+      /**
+       * <code>uint32 quit_mp_valid_time = 15;</code>
+       * @return The quitMpValidTime.
+       */
+      @java.lang.Override
+      public int getQuitMpValidTime() {
+        return quitMpValidTime_;
+      }
+      /**
+       * <code>uint32 quit_mp_valid_time = 15;</code>
+       * @param value The quitMpValidTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuitMpValidTime(int value) {
+        
+        quitMpValidTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 quit_mp_valid_time = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuitMpValidTime() {
+        
+        quitMpValidTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -522,7 +559,7 @@ public final class GetWorldMpInfoRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -533,7 +570,7 @@ public final class GetWorldMpInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -545,7 +582,7 @@ public final class GetWorldMpInfoRspOuterClass {
 
       private boolean isInMpMode_ ;
       /**
-       * <code>bool is_in_mp_mode = 1;</code>
+       * <code>bool is_in_mp_mode = 14;</code>
        * @return The isInMpMode.
        */
       @java.lang.Override
@@ -553,7 +590,7 @@ public final class GetWorldMpInfoRspOuterClass {
         return isInMpMode_;
       }
       /**
-       * <code>bool is_in_mp_mode = 1;</code>
+       * <code>bool is_in_mp_mode = 14;</code>
        * @param value The isInMpMode to set.
        * @return This builder for chaining.
        */
@@ -564,43 +601,12 @@ public final class GetWorldMpInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_in_mp_mode = 1;</code>
+       * <code>bool is_in_mp_mode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInMpMode() {
         
         isInMpMode_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int quitMpValidTime_ ;
-      /**
-       * <code>uint32 quit_mp_valid_time = 9;</code>
-       * @return The quitMpValidTime.
-       */
-      @java.lang.Override
-      public int getQuitMpValidTime() {
-        return quitMpValidTime_;
-      }
-      /**
-       * <code>uint32 quit_mp_valid_time = 9;</code>
-       * @param value The quitMpValidTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuitMpValidTime(int value) {
-        
-        quitMpValidTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 quit_mp_valid_time = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuitMpValidTime() {
-        
-        quitMpValidTime_ = 0;
         onChanged();
         return this;
       }
@@ -672,8 +678,8 @@ public final class GetWorldMpInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GetWorldMpInfoRsp.proto\"W\n\021GetWorldMpI" +
-      "nfoRsp\022\017\n\007retcode\030\014 \001(\005\022\025\n\ris_in_mp_mode" +
-      "\030\001 \001(\010\022\032\n\022quit_mp_valid_time\030\t \001(\rB\033\n\031em" +
+      "nfoRsp\022\032\n\022quit_mp_valid_time\030\017 \001(\r\022\017\n\007re" +
+      "tcode\030\001 \001(\005\022\025\n\ris_in_mp_mode\030\016 \001(\010B\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -685,7 +691,7 @@ public final class GetWorldMpInfoRspOuterClass {
     internal_static_GetWorldMpInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetWorldMpInfoRsp_descriptor,
-        new java.lang.String[] { "Retcode", "IsInMpMode", "QuitMpValidTime", });
+        new java.lang.String[] { "QuitMpValidTime", "Retcode", "IsInMpMode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

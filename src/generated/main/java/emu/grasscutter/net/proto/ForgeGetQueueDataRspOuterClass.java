@@ -19,11 +19,17 @@ public final class ForgeGetQueueDataRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>uint32 max_queue_num = 4;</code>
+     * @return The maxQueueNum.
+     */
+    int getMaxQueueNum();
+
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     int getForgeQueueMapCount();
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     boolean containsForgeQueueMap(
         int key);
@@ -34,19 +40,19 @@ public final class ForgeGetQueueDataRspOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
     getForgeQueueMap();
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
     getForgeQueueMapMap();
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
 
     emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
         int key,
         emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue);
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
 
     emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
@@ -57,19 +63,16 @@ public final class ForgeGetQueueDataRspOuterClass {
      * @return The retcode.
      */
     int getRetcode();
-
-    /**
-     * <code>uint32 max_queue_num = 6;</code>
-     * @return The maxQueueNum.
-     */
-    int getMaxQueueNum();
   }
   /**
    * <pre>
-   * CmdId: 641
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 667;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code ForgeGetQueueDataRsp}
@@ -117,7 +120,12 @@ public final class ForgeGetQueueDataRspOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 32: {
+
+              maxQueueNum_ = input.readUInt32();
+              break;
+            }
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
                     ForgeQueueMapDefaultEntryHolder.defaultEntry);
@@ -128,11 +136,6 @@ public final class ForgeGetQueueDataRspOuterClass {
                   ForgeQueueMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               forgeQueueMap_.getMutableMap().put(
                   forgeQueueMap__.getKey(), forgeQueueMap__.getValue());
-              break;
-            }
-            case 48: {
-
-              maxQueueNum_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -169,7 +172,7 @@ public final class ForgeGetQueueDataRspOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 2:
+        case 9:
           return internalGetForgeQueueMap();
         default:
           throw new RuntimeException(
@@ -184,7 +187,18 @@ public final class ForgeGetQueueDataRspOuterClass {
               emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.class, emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.Builder.class);
     }
 
-    public static final int FORGE_QUEUE_MAP_FIELD_NUMBER = 2;
+    public static final int MAX_QUEUE_NUM_FIELD_NUMBER = 4;
+    private int maxQueueNum_;
+    /**
+     * <code>uint32 max_queue_num = 4;</code>
+     * @return The maxQueueNum.
+     */
+    @java.lang.Override
+    public int getMaxQueueNum() {
+      return maxQueueNum_;
+    }
+
+    public static final int FORGE_QUEUE_MAP_FIELD_NUMBER = 9;
     private static final class ForgeQueueMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> defaultEntry =
@@ -211,7 +225,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       return internalGetForgeQueueMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
 
     @java.lang.Override
@@ -229,7 +243,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       return getForgeQueueMapMap();
     }
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
 
@@ -237,7 +251,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       return internalGetForgeQueueMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
 
@@ -250,7 +264,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
 
@@ -276,17 +290,6 @@ public final class ForgeGetQueueDataRspOuterClass {
       return retcode_;
     }
 
-    public static final int MAX_QUEUE_NUM_FIELD_NUMBER = 6;
-    private int maxQueueNum_;
-    /**
-     * <code>uint32 max_queue_num = 6;</code>
-     * @return The maxQueueNum.
-     */
-    @java.lang.Override
-    public int getMaxQueueNum() {
-      return maxQueueNum_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -301,15 +304,15 @@ public final class ForgeGetQueueDataRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxQueueNum_ != 0) {
+        output.writeUInt32(4, maxQueueNum_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetForgeQueueMap(),
           ForgeQueueMapDefaultEntryHolder.defaultEntry,
-          2);
-      if (maxQueueNum_ != 0) {
-        output.writeUInt32(6, maxQueueNum_);
-      }
+          9);
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
@@ -322,6 +325,10 @@ public final class ForgeGetQueueDataRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (maxQueueNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, maxQueueNum_);
+      }
       for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> entry
            : internalGetForgeQueueMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
@@ -330,11 +337,7 @@ public final class ForgeGetQueueDataRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, forgeQueueMap__);
-      }
-      if (maxQueueNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, maxQueueNum_);
+            .computeMessageSize(9, forgeQueueMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -355,12 +358,12 @@ public final class ForgeGetQueueDataRspOuterClass {
       }
       emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp other = (emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp) obj;
 
+      if (getMaxQueueNum()
+          != other.getMaxQueueNum()) return false;
       if (!internalGetForgeQueueMap().equals(
           other.internalGetForgeQueueMap())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (getMaxQueueNum()
-          != other.getMaxQueueNum()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -372,14 +375,14 @@ public final class ForgeGetQueueDataRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_QUEUE_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxQueueNum();
       if (!internalGetForgeQueueMap().getMap().isEmpty()) {
         hash = (37 * hash) + FORGE_QUEUE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetForgeQueueMap().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + MAX_QUEUE_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxQueueNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,10 +480,13 @@ public final class ForgeGetQueueDataRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 641
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 667;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code ForgeGetQueueDataRsp}
@@ -498,7 +504,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 2:
+          case 9:
             return internalGetForgeQueueMap();
           default:
             throw new RuntimeException(
@@ -509,7 +515,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 2:
+          case 9:
             return internalGetMutableForgeQueueMap();
           default:
             throw new RuntimeException(
@@ -542,10 +548,10 @@ public final class ForgeGetQueueDataRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxQueueNum_ = 0;
+
         internalGetMutableForgeQueueMap().clear();
         retcode_ = 0;
-
-        maxQueueNum_ = 0;
 
         return this;
       }
@@ -574,10 +580,10 @@ public final class ForgeGetQueueDataRspOuterClass {
       public emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp buildPartial() {
         emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp result = new emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp(this);
         int from_bitField0_ = bitField0_;
+        result.maxQueueNum_ = maxQueueNum_;
         result.forgeQueueMap_ = internalGetForgeQueueMap();
         result.forgeQueueMap_.makeImmutable();
         result.retcode_ = retcode_;
-        result.maxQueueNum_ = maxQueueNum_;
         onBuilt();
         return result;
       }
@@ -626,13 +632,13 @@ public final class ForgeGetQueueDataRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp other) {
         if (other == emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.getDefaultInstance()) return this;
+        if (other.getMaxQueueNum() != 0) {
+          setMaxQueueNum(other.getMaxQueueNum());
+        }
         internalGetMutableForgeQueueMap().mergeFrom(
             other.internalGetForgeQueueMap());
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
-        }
-        if (other.getMaxQueueNum() != 0) {
-          setMaxQueueNum(other.getMaxQueueNum());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -664,6 +670,37 @@ public final class ForgeGetQueueDataRspOuterClass {
       }
       private int bitField0_;
 
+      private int maxQueueNum_ ;
+      /**
+       * <code>uint32 max_queue_num = 4;</code>
+       * @return The maxQueueNum.
+       */
+      @java.lang.Override
+      public int getMaxQueueNum() {
+        return maxQueueNum_;
+      }
+      /**
+       * <code>uint32 max_queue_num = 4;</code>
+       * @param value The maxQueueNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxQueueNum(int value) {
+        
+        maxQueueNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 max_queue_num = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxQueueNum() {
+        
+        maxQueueNum_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
@@ -691,7 +728,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return internalGetForgeQueueMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
 
       @java.lang.Override
@@ -709,7 +746,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return getForgeQueueMapMap();
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
 
@@ -717,7 +754,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return internalGetForgeQueueMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
 
@@ -730,7 +767,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
 
@@ -751,7 +788,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
 
       public Builder removeForgeQueueMap(
@@ -770,7 +807,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return internalGetMutableForgeQueueMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       public Builder putForgeQueueMap(
           int key,
@@ -782,7 +819,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 2;</code>
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
 
       public Builder putAllForgeQueueMap(
@@ -819,37 +856,6 @@ public final class ForgeGetQueueDataRspOuterClass {
       public Builder clearRetcode() {
         
         retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int maxQueueNum_ ;
-      /**
-       * <code>uint32 max_queue_num = 6;</code>
-       * @return The maxQueueNum.
-       */
-      @java.lang.Override
-      public int getMaxQueueNum() {
-        return maxQueueNum_;
-      }
-      /**
-       * <code>uint32 max_queue_num = 6;</code>
-       * @param value The maxQueueNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxQueueNum(int value) {
-        
-        maxQueueNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 max_queue_num = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxQueueNum() {
-        
-        maxQueueNum_ = 0;
         onChanged();
         return this;
       }
@@ -926,10 +932,10 @@ public final class ForgeGetQueueDataRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ForgeGetQueueDataRsp.proto\032\024ForgeQueue" +
-      "Data.proto\"\310\001\n\024ForgeGetQueueDataRsp\022A\n\017f" +
-      "orge_queue_map\030\002 \003(\0132(.ForgeGetQueueData" +
-      "Rsp.ForgeQueueMapEntry\022\017\n\007retcode\030\017 \001(\005\022" +
-      "\025\n\rmax_queue_num\030\006 \001(\r\032E\n\022ForgeQueueMapE" +
+      "Data.proto\"\310\001\n\024ForgeGetQueueDataRsp\022\025\n\rm" +
+      "ax_queue_num\030\004 \001(\r\022A\n\017forge_queue_map\030\t " +
+      "\003(\0132(.ForgeGetQueueDataRsp.ForgeQueueMap" +
+      "Entry\022\017\n\007retcode\030\017 \001(\005\032E\n\022ForgeQueueMapE" +
       "ntry\022\013\n\003key\030\001 \001(\r\022\036\n\005value\030\002 \001(\0132\017.Forge" +
       "QueueData:\0028\001B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
@@ -944,7 +950,7 @@ public final class ForgeGetQueueDataRspOuterClass {
     internal_static_ForgeGetQueueDataRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ForgeGetQueueDataRsp_descriptor,
-        new java.lang.String[] { "ForgeQueueMap", "Retcode", "MaxQueueNum", });
+        new java.lang.String[] { "MaxQueueNum", "ForgeQueueMap", "Retcode", });
     internal_static_ForgeGetQueueDataRsp_ForgeQueueMapEntry_descriptor =
       internal_static_ForgeGetQueueDataRsp_descriptor.getNestedTypes().get(0);
     internal_static_ForgeGetQueueDataRsp_ForgeQueueMapEntry_fieldAccessorTable = new

@@ -18,14 +18,14 @@ public class PacketForgeQueueManipulateRsp extends BasePacket {
         ForgeQueueManipulateRsp.Builder builder = ForgeQueueManipulateRsp.newBuilder()
                 .setRetcode(retcode.getNumber())
                 .setManipulateType(type);
-        
+
         for (GameItem item : output) {
             ItemParam toAdd = ItemParam.newBuilder()
                 .setItemId(item.getItemId())
                 .setCount(item.getCount())
                 .build();
 
-            builder.addOutputItemList(toAdd);
+            builder.addExtraOutputItemList(toAdd);
         }
 
         for (GameItem item : refund) {

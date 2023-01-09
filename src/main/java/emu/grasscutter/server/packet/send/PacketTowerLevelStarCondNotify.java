@@ -26,7 +26,7 @@ public class PacketTowerLevelStarCondNotify extends BasePacket {
 						.build()
 				)
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

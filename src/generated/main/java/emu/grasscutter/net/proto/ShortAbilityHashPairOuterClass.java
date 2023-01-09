@@ -19,16 +19,16 @@ public final class ShortAbilityHashPairOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>sfixed32 ability_name_hash = 6;</code>
+     * @return The abilityNameHash.
+     */
+    int getAbilityNameHash();
+
+    /**
      * <code>sfixed32 ability_config_hash = 15;</code>
      * @return The abilityConfigHash.
      */
     int getAbilityConfigHash();
-
-    /**
-     * <code>sfixed32 ability_name_hash = 1;</code>
-     * @return The abilityNameHash.
-     */
-    int getAbilityNameHash();
   }
   /**
    * Protobuf type {@code ShortAbilityHashPair}
@@ -75,7 +75,7 @@ public final class ShortAbilityHashPairOuterClass {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 53: {
 
               abilityNameHash_ = input.readSFixed32();
               break;
@@ -117,6 +117,17 @@ public final class ShortAbilityHashPairOuterClass {
               emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair.class, emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair.Builder.class);
     }
 
+    public static final int ABILITY_NAME_HASH_FIELD_NUMBER = 6;
+    private int abilityNameHash_;
+    /**
+     * <code>sfixed32 ability_name_hash = 6;</code>
+     * @return The abilityNameHash.
+     */
+    @java.lang.Override
+    public int getAbilityNameHash() {
+      return abilityNameHash_;
+    }
+
     public static final int ABILITY_CONFIG_HASH_FIELD_NUMBER = 15;
     private int abilityConfigHash_;
     /**
@@ -126,17 +137,6 @@ public final class ShortAbilityHashPairOuterClass {
     @java.lang.Override
     public int getAbilityConfigHash() {
       return abilityConfigHash_;
-    }
-
-    public static final int ABILITY_NAME_HASH_FIELD_NUMBER = 1;
-    private int abilityNameHash_;
-    /**
-     * <code>sfixed32 ability_name_hash = 1;</code>
-     * @return The abilityNameHash.
-     */
-    @java.lang.Override
-    public int getAbilityNameHash() {
-      return abilityNameHash_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -154,7 +154,7 @@ public final class ShortAbilityHashPairOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (abilityNameHash_ != 0) {
-        output.writeSFixed32(1, abilityNameHash_);
+        output.writeSFixed32(6, abilityNameHash_);
       }
       if (abilityConfigHash_ != 0) {
         output.writeSFixed32(15, abilityConfigHash_);
@@ -170,7 +170,7 @@ public final class ShortAbilityHashPairOuterClass {
       size = 0;
       if (abilityNameHash_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeSFixed32Size(1, abilityNameHash_);
+          .computeSFixed32Size(6, abilityNameHash_);
       }
       if (abilityConfigHash_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -191,10 +191,10 @@ public final class ShortAbilityHashPairOuterClass {
       }
       emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair other = (emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair) obj;
 
-      if (getAbilityConfigHash()
-          != other.getAbilityConfigHash()) return false;
       if (getAbilityNameHash()
           != other.getAbilityNameHash()) return false;
+      if (getAbilityConfigHash()
+          != other.getAbilityConfigHash()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +206,10 @@ public final class ShortAbilityHashPairOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ABILITY_CONFIG_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getAbilityConfigHash();
       hash = (37 * hash) + ABILITY_NAME_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getAbilityNameHash();
+      hash = (37 * hash) + ABILITY_CONFIG_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getAbilityConfigHash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,9 +343,9 @@ public final class ShortAbilityHashPairOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        abilityConfigHash_ = 0;
-
         abilityNameHash_ = 0;
+
+        abilityConfigHash_ = 0;
 
         return this;
       }
@@ -373,8 +373,8 @@ public final class ShortAbilityHashPairOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair buildPartial() {
         emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair result = new emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair(this);
-        result.abilityConfigHash_ = abilityConfigHash_;
         result.abilityNameHash_ = abilityNameHash_;
+        result.abilityConfigHash_ = abilityConfigHash_;
         onBuilt();
         return result;
       }
@@ -423,11 +423,11 @@ public final class ShortAbilityHashPairOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair other) {
         if (other == emu.grasscutter.net.proto.ShortAbilityHashPairOuterClass.ShortAbilityHashPair.getDefaultInstance()) return this;
-        if (other.getAbilityConfigHash() != 0) {
-          setAbilityConfigHash(other.getAbilityConfigHash());
-        }
         if (other.getAbilityNameHash() != 0) {
           setAbilityNameHash(other.getAbilityNameHash());
+        }
+        if (other.getAbilityConfigHash() != 0) {
+          setAbilityConfigHash(other.getAbilityConfigHash());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,6 +458,37 @@ public final class ShortAbilityHashPairOuterClass {
         return this;
       }
 
+      private int abilityNameHash_ ;
+      /**
+       * <code>sfixed32 ability_name_hash = 6;</code>
+       * @return The abilityNameHash.
+       */
+      @java.lang.Override
+      public int getAbilityNameHash() {
+        return abilityNameHash_;
+      }
+      /**
+       * <code>sfixed32 ability_name_hash = 6;</code>
+       * @param value The abilityNameHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAbilityNameHash(int value) {
+        
+        abilityNameHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>sfixed32 ability_name_hash = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAbilityNameHash() {
+        
+        abilityNameHash_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int abilityConfigHash_ ;
       /**
        * <code>sfixed32 ability_config_hash = 15;</code>
@@ -485,37 +516,6 @@ public final class ShortAbilityHashPairOuterClass {
       public Builder clearAbilityConfigHash() {
         
         abilityConfigHash_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int abilityNameHash_ ;
-      /**
-       * <code>sfixed32 ability_name_hash = 1;</code>
-       * @return The abilityNameHash.
-       */
-      @java.lang.Override
-      public int getAbilityNameHash() {
-        return abilityNameHash_;
-      }
-      /**
-       * <code>sfixed32 ability_name_hash = 1;</code>
-       * @param value The abilityNameHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAbilityNameHash(int value) {
-        
-        abilityNameHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>sfixed32 ability_name_hash = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAbilityNameHash() {
-        
-        abilityNameHash_ = 0;
         onChanged();
         return this;
       }
@@ -587,8 +587,8 @@ public final class ShortAbilityHashPairOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ShortAbilityHashPair.proto\"N\n\024ShortAbi" +
-      "lityHashPair\022\033\n\023ability_config_hash\030\017 \001(" +
-      "\017\022\031\n\021ability_name_hash\030\001 \001(\017B\033\n\031emu.gras" +
+      "lityHashPair\022\031\n\021ability_name_hash\030\006 \001(\017\022" +
+      "\033\n\023ability_config_hash\030\017 \001(\017B\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -600,7 +600,7 @@ public final class ShortAbilityHashPairOuterClass {
     internal_static_ShortAbilityHashPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ShortAbilityHashPair_descriptor,
-        new java.lang.String[] { "AbilityConfigHash", "AbilityNameHash", });
+        new java.lang.String[] { "AbilityNameHash", "AbilityConfigHash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

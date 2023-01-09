@@ -19,16 +19,16 @@ public final class StrengthenPointDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 base_point = 10;</code>
-     * @return The basePoint.
+     * <code>uint32 Unk3300_HIKDEKIPCPB = 1;</code>
+     * @return The unk3300HIKDEKIPCPB.
      */
-    int getBasePoint();
+    int getUnk3300HIKDEKIPCPB();
 
     /**
-     * <code>uint32 cur_point = 11;</code>
-     * @return The curPoint.
+     * <code>uint32 Unk3300_NNKPOLLBLDO = 10;</code>
+     * @return The unk3300NNKPOLLBLDO.
      */
-    int getCurPoint();
+    int getUnk3300NNKPOLLBLDO();
   }
   /**
    * Protobuf type {@code StrengthenPointData}
@@ -75,14 +75,14 @@ public final class StrengthenPointDataOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 8: {
 
-              basePoint_ = input.readUInt32();
+              unk3300HIKDEKIPCPB_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
-              curPoint_ = input.readUInt32();
+              unk3300NNKPOLLBLDO_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +117,26 @@ public final class StrengthenPointDataOuterClass {
               emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.class, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.Builder.class);
     }
 
-    public static final int BASE_POINT_FIELD_NUMBER = 10;
-    private int basePoint_;
+    public static final int UNK3300_HIKDEKIPCPB_FIELD_NUMBER = 1;
+    private int unk3300HIKDEKIPCPB_;
     /**
-     * <code>uint32 base_point = 10;</code>
-     * @return The basePoint.
+     * <code>uint32 Unk3300_HIKDEKIPCPB = 1;</code>
+     * @return The unk3300HIKDEKIPCPB.
      */
     @java.lang.Override
-    public int getBasePoint() {
-      return basePoint_;
+    public int getUnk3300HIKDEKIPCPB() {
+      return unk3300HIKDEKIPCPB_;
     }
 
-    public static final int CUR_POINT_FIELD_NUMBER = 11;
-    private int curPoint_;
+    public static final int UNK3300_NNKPOLLBLDO_FIELD_NUMBER = 10;
+    private int unk3300NNKPOLLBLDO_;
     /**
-     * <code>uint32 cur_point = 11;</code>
-     * @return The curPoint.
+     * <code>uint32 Unk3300_NNKPOLLBLDO = 10;</code>
+     * @return The unk3300NNKPOLLBLDO.
      */
     @java.lang.Override
-    public int getCurPoint() {
-      return curPoint_;
+    public int getUnk3300NNKPOLLBLDO() {
+      return unk3300NNKPOLLBLDO_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +153,11 @@ public final class StrengthenPointDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (basePoint_ != 0) {
-        output.writeUInt32(10, basePoint_);
+      if (unk3300HIKDEKIPCPB_ != 0) {
+        output.writeUInt32(1, unk3300HIKDEKIPCPB_);
       }
-      if (curPoint_ != 0) {
-        output.writeUInt32(11, curPoint_);
+      if (unk3300NNKPOLLBLDO_ != 0) {
+        output.writeUInt32(10, unk3300NNKPOLLBLDO_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +168,13 @@ public final class StrengthenPointDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (basePoint_ != 0) {
+      if (unk3300HIKDEKIPCPB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, basePoint_);
+          .computeUInt32Size(1, unk3300HIKDEKIPCPB_);
       }
-      if (curPoint_ != 0) {
+      if (unk3300NNKPOLLBLDO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, curPoint_);
+          .computeUInt32Size(10, unk3300NNKPOLLBLDO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +191,10 @@ public final class StrengthenPointDataOuterClass {
       }
       emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData other = (emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData) obj;
 
-      if (getBasePoint()
-          != other.getBasePoint()) return false;
-      if (getCurPoint()
-          != other.getCurPoint()) return false;
+      if (getUnk3300HIKDEKIPCPB()
+          != other.getUnk3300HIKDEKIPCPB()) return false;
+      if (getUnk3300NNKPOLLBLDO()
+          != other.getUnk3300NNKPOLLBLDO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +206,10 @@ public final class StrengthenPointDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BASE_POINT_FIELD_NUMBER;
-      hash = (53 * hash) + getBasePoint();
-      hash = (37 * hash) + CUR_POINT_FIELD_NUMBER;
-      hash = (53 * hash) + getCurPoint();
+      hash = (37 * hash) + UNK3300_HIKDEKIPCPB_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300HIKDEKIPCPB();
+      hash = (37 * hash) + UNK3300_NNKPOLLBLDO_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300NNKPOLLBLDO();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,9 +343,9 @@ public final class StrengthenPointDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        basePoint_ = 0;
+        unk3300HIKDEKIPCPB_ = 0;
 
-        curPoint_ = 0;
+        unk3300NNKPOLLBLDO_ = 0;
 
         return this;
       }
@@ -373,8 +373,8 @@ public final class StrengthenPointDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData buildPartial() {
         emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData result = new emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData(this);
-        result.basePoint_ = basePoint_;
-        result.curPoint_ = curPoint_;
+        result.unk3300HIKDEKIPCPB_ = unk3300HIKDEKIPCPB_;
+        result.unk3300NNKPOLLBLDO_ = unk3300NNKPOLLBLDO_;
         onBuilt();
         return result;
       }
@@ -423,11 +423,11 @@ public final class StrengthenPointDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData other) {
         if (other == emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance()) return this;
-        if (other.getBasePoint() != 0) {
-          setBasePoint(other.getBasePoint());
+        if (other.getUnk3300HIKDEKIPCPB() != 0) {
+          setUnk3300HIKDEKIPCPB(other.getUnk3300HIKDEKIPCPB());
         }
-        if (other.getCurPoint() != 0) {
-          setCurPoint(other.getCurPoint());
+        if (other.getUnk3300NNKPOLLBLDO() != 0) {
+          setUnk3300NNKPOLLBLDO(other.getUnk3300NNKPOLLBLDO());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,64 +458,64 @@ public final class StrengthenPointDataOuterClass {
         return this;
       }
 
-      private int basePoint_ ;
+      private int unk3300HIKDEKIPCPB_ ;
       /**
-       * <code>uint32 base_point = 10;</code>
-       * @return The basePoint.
+       * <code>uint32 Unk3300_HIKDEKIPCPB = 1;</code>
+       * @return The unk3300HIKDEKIPCPB.
        */
       @java.lang.Override
-      public int getBasePoint() {
-        return basePoint_;
+      public int getUnk3300HIKDEKIPCPB() {
+        return unk3300HIKDEKIPCPB_;
       }
       /**
-       * <code>uint32 base_point = 10;</code>
-       * @param value The basePoint to set.
+       * <code>uint32 Unk3300_HIKDEKIPCPB = 1;</code>
+       * @param value The unk3300HIKDEKIPCPB to set.
        * @return This builder for chaining.
        */
-      public Builder setBasePoint(int value) {
+      public Builder setUnk3300HIKDEKIPCPB(int value) {
         
-        basePoint_ = value;
+        unk3300HIKDEKIPCPB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 base_point = 10;</code>
+       * <code>uint32 Unk3300_HIKDEKIPCPB = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBasePoint() {
+      public Builder clearUnk3300HIKDEKIPCPB() {
         
-        basePoint_ = 0;
+        unk3300HIKDEKIPCPB_ = 0;
         onChanged();
         return this;
       }
 
-      private int curPoint_ ;
+      private int unk3300NNKPOLLBLDO_ ;
       /**
-       * <code>uint32 cur_point = 11;</code>
-       * @return The curPoint.
+       * <code>uint32 Unk3300_NNKPOLLBLDO = 10;</code>
+       * @return The unk3300NNKPOLLBLDO.
        */
       @java.lang.Override
-      public int getCurPoint() {
-        return curPoint_;
+      public int getUnk3300NNKPOLLBLDO() {
+        return unk3300NNKPOLLBLDO_;
       }
       /**
-       * <code>uint32 cur_point = 11;</code>
-       * @param value The curPoint to set.
+       * <code>uint32 Unk3300_NNKPOLLBLDO = 10;</code>
+       * @param value The unk3300NNKPOLLBLDO to set.
        * @return This builder for chaining.
        */
-      public Builder setCurPoint(int value) {
+      public Builder setUnk3300NNKPOLLBLDO(int value) {
         
-        curPoint_ = value;
+        unk3300NNKPOLLBLDO_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 cur_point = 11;</code>
+       * <code>uint32 Unk3300_NNKPOLLBLDO = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurPoint() {
+      public Builder clearUnk3300NNKPOLLBLDO() {
         
-        curPoint_ = 0;
+        unk3300NNKPOLLBLDO_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +586,10 @@ public final class StrengthenPointDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031StrengthenPointData.proto\"<\n\023Strengthe" +
-      "nPointData\022\022\n\nbase_point\030\n \001(\r\022\021\n\tcur_po" +
-      "int\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\n\031StrengthenPointData.proto\"O\n\023Strengthe" +
+      "nPointData\022\033\n\023Unk3300_HIKDEKIPCPB\030\001 \001(\r\022" +
+      "\033\n\023Unk3300_NNKPOLLBLDO\030\n \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +600,7 @@ public final class StrengthenPointDataOuterClass {
     internal_static_StrengthenPointData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StrengthenPointData_descriptor,
-        new java.lang.String[] { "BasePoint", "CurPoint", });
+        new java.lang.String[] { "Unk3300HIKDEKIPCPB", "Unk3300NNKPOLLBLDO", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

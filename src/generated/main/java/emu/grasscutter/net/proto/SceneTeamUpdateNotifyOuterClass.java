@@ -43,17 +43,20 @@ public final class SceneTeamUpdateNotifyOuterClass {
         int index);
 
     /**
-     * <code>bool is_in_mp = 15;</code>
+     * <code>bool is_in_mp = 7;</code>
      * @return The isInMp.
      */
     boolean getIsInMp();
   }
   /**
    * <pre>
-   * CmdId: 1775
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1728;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SceneTeamUpdateNotify}
@@ -102,6 +105,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 56: {
+
+              isInMp_ = input.readBool();
+              break;
+            }
             case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sceneTeamAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar>();
@@ -109,11 +117,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
               }
               sceneTeamAvatarList_.add(
                   input.readMessage(emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              isInMp_ = input.readBool();
               break;
             }
             default: {
@@ -191,10 +194,10 @@ public final class SceneTeamUpdateNotifyOuterClass {
       return sceneTeamAvatarList_.get(index);
     }
 
-    public static final int IS_IN_MP_FIELD_NUMBER = 15;
+    public static final int IS_IN_MP_FIELD_NUMBER = 7;
     private boolean isInMp_;
     /**
-     * <code>bool is_in_mp = 15;</code>
+     * <code>bool is_in_mp = 7;</code>
      * @return The isInMp.
      */
     @java.lang.Override
@@ -216,11 +219,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (isInMp_ != false) {
+        output.writeBool(7, isInMp_);
+      }
       for (int i = 0; i < sceneTeamAvatarList_.size(); i++) {
         output.writeMessage(11, sceneTeamAvatarList_.get(i));
-      }
-      if (isInMp_ != false) {
-        output.writeBool(15, isInMp_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,13 +234,13 @@ public final class SceneTeamUpdateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isInMp_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isInMp_);
+      }
       for (int i = 0; i < sceneTeamAvatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, sceneTeamAvatarList_.get(i));
-      }
-      if (isInMp_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isInMp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -373,10 +376,13 @@ public final class SceneTeamUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1775
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1728;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SceneTeamUpdateNotify}
@@ -811,7 +817,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
 
       private boolean isInMp_ ;
       /**
-       * <code>bool is_in_mp = 15;</code>
+       * <code>bool is_in_mp = 7;</code>
        * @return The isInMp.
        */
       @java.lang.Override
@@ -819,7 +825,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
         return isInMp_;
       }
       /**
-       * <code>bool is_in_mp = 15;</code>
+       * <code>bool is_in_mp = 7;</code>
        * @param value The isInMp to set.
        * @return This builder for chaining.
        */
@@ -830,7 +836,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_in_mp = 15;</code>
+       * <code>bool is_in_mp = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInMp() {
@@ -909,7 +915,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
       "\n\033SceneTeamUpdateNotify.proto\032\025SceneTeam" +
       "Avatar.proto\"[\n\025SceneTeamUpdateNotify\0220\n" +
       "\026scene_team_avatar_list\030\013 \003(\0132\020.SceneTea" +
-      "mAvatar\022\020\n\010is_in_mp\030\017 \001(\010B\033\n\031emu.grasscu" +
+      "mAvatar\022\020\n\010is_in_mp\030\007 \001(\010B\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

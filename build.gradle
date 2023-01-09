@@ -43,7 +43,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.4.4-dev'
+version = '1.4.5-dev'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -123,7 +123,7 @@ jar {
 
     archiveBaseName = 'grasscutter'
     if (project.hasProperty('jarFilename')) {
-        archiveFileName = "${jarFilename}.${extension}"
+        archiveFileName = "${jarFilename}.${archiveExtension}"
     }
 
     from {

@@ -40,9 +40,9 @@ public final class InteractTypeOuterClass {
      */
     INTERACT_TYPE_OPEN_STATUE(4),
     /**
-     * <code>INTERACT_TYPE_CONSUM = 5;</code>
+     * <code>INTERACT_TYPE_CONSUME = 5;</code>
      */
-    INTERACT_TYPE_CONSUM(5),
+    INTERACT_TYPE_CONSUME(5),
     /**
      * <code>INTERACT_TYPE_MP_PLAY_REWARD = 6;</code>
      */
@@ -80,13 +80,13 @@ public final class InteractTypeOuterClass {
      */
     INTERACT_TYPE_QUEST_GADGET(14),
     /**
-     * <code>INTERACT_TYPE_Unk2700_LIEIKFDFMGF = 15;</code>
+     * <code>INTERACT_TYPE_UI_INTERACT = 15;</code>
      */
-    INTERACT_TYPE_Unk2700_LIEIKFDFMGF(15),
+    INTERACT_TYPE_UI_INTERACT(15),
     /**
-     * <code>INTERACT_TYPE_Unk3000_NMOCFKDNCOB = 16;</code>
+     * <code>INTERACT_TYPE_DESHRET_OBELISK = 16;</code>
      */
-    INTERACT_TYPE_Unk3000_NMOCFKDNCOB(16),
+    INTERACT_TYPE_DESHRET_OBELISK(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -111,9 +111,9 @@ public final class InteractTypeOuterClass {
      */
     public static final int INTERACT_TYPE_OPEN_STATUE_VALUE = 4;
     /**
-     * <code>INTERACT_TYPE_CONSUM = 5;</code>
+     * <code>INTERACT_TYPE_CONSUME = 5;</code>
      */
-    public static final int INTERACT_TYPE_CONSUM_VALUE = 5;
+    public static final int INTERACT_TYPE_CONSUME_VALUE = 5;
     /**
      * <code>INTERACT_TYPE_MP_PLAY_REWARD = 6;</code>
      */
@@ -151,13 +151,13 @@ public final class InteractTypeOuterClass {
      */
     public static final int INTERACT_TYPE_QUEST_GADGET_VALUE = 14;
     /**
-     * <code>INTERACT_TYPE_Unk2700_LIEIKFDFMGF = 15;</code>
+     * <code>INTERACT_TYPE_UI_INTERACT = 15;</code>
      */
-    public static final int INTERACT_TYPE_Unk2700_LIEIKFDFMGF_VALUE = 15;
+    public static final int INTERACT_TYPE_UI_INTERACT_VALUE = 15;
     /**
-     * <code>INTERACT_TYPE_Unk3000_NMOCFKDNCOB = 16;</code>
+     * <code>INTERACT_TYPE_DESHRET_OBELISK = 16;</code>
      */
-    public static final int INTERACT_TYPE_Unk3000_NMOCFKDNCOB_VALUE = 16;
+    public static final int INTERACT_TYPE_DESHRET_OBELISK_VALUE = 16;
 
 
     public final int getNumber() {
@@ -189,7 +189,7 @@ public final class InteractTypeOuterClass {
         case 2: return INTERACT_TYPE_GATHER;
         case 3: return INTERACT_TYPE_OPEN_CHEST;
         case 4: return INTERACT_TYPE_OPEN_STATUE;
-        case 5: return INTERACT_TYPE_CONSUM;
+        case 5: return INTERACT_TYPE_CONSUME;
         case 6: return INTERACT_TYPE_MP_PLAY_REWARD;
         case 7: return INTERACT_TYPE_VIEW;
         case 8: return INTERACT_TYPE_GENERAL_REWARD;
@@ -199,8 +199,8 @@ public final class InteractTypeOuterClass {
         case 12: return INTERACT_TYPE_HOME_GATHER;
         case 13: return INTERACT_TYPE_ENV_ANIMAL;
         case 14: return INTERACT_TYPE_QUEST_GADGET;
-        case 15: return INTERACT_TYPE_Unk2700_LIEIKFDFMGF;
-        case 16: return INTERACT_TYPE_Unk3000_NMOCFKDNCOB;
+        case 15: return INTERACT_TYPE_UI_INTERACT;
+        case 16: return INTERACT_TYPE_DESHRET_OBELISK;
         default: return null;
       }
     }
@@ -266,21 +266,21 @@ public final class InteractTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022InteractType.proto*\227\004\n\014InteractType\022\026\n" +
+      "\n\022InteractType.proto*\214\004\n\014InteractType\022\026\n" +
       "\022INTERACT_TYPE_NONE\020\000\022\033\n\027INTERACT_TYPE_P" +
       "ICK_ITEM\020\001\022\030\n\024INTERACT_TYPE_GATHER\020\002\022\034\n\030" +
       "INTERACT_TYPE_OPEN_CHEST\020\003\022\035\n\031INTERACT_T" +
-      "YPE_OPEN_STATUE\020\004\022\030\n\024INTERACT_TYPE_CONSU" +
-      "M\020\005\022 \n\034INTERACT_TYPE_MP_PLAY_REWARD\020\006\022\026\n" +
-      "\022INTERACT_TYPE_VIEW\020\007\022 \n\034INTERACT_TYPE_G" +
-      "ENERAL_REWARD\020\010\022\036\n\032INTERACT_TYPE_MIRACLE" +
-      "_RING\020\t\022\034\n\030INTERACT_TYPE_FOUNDATION\020\n\022\034\n" +
-      "\030INTERACT_TYPE_ECHO_SHELL\020\013\022\035\n\031INTERACT_" +
-      "TYPE_HOME_GATHER\020\014\022\034\n\030INTERACT_TYPE_ENV_" +
-      "ANIMAL\020\r\022\036\n\032INTERACT_TYPE_QUEST_GADGET\020\016" +
-      "\022%\n!INTERACT_TYPE_Unk2700_LIEIKFDFMGF\020\017\022" +
-      "%\n!INTERACT_TYPE_Unk3000_NMOCFKDNCOB\020\020B\033" +
-      "\n\031emu.grasscutter.net.protob\006proto3"
+      "YPE_OPEN_STATUE\020\004\022\031\n\025INTERACT_TYPE_CONSU" +
+      "ME\020\005\022 \n\034INTERACT_TYPE_MP_PLAY_REWARD\020\006\022\026" +
+      "\n\022INTERACT_TYPE_VIEW\020\007\022 \n\034INTERACT_TYPE_" +
+      "GENERAL_REWARD\020\010\022\036\n\032INTERACT_TYPE_MIRACL" +
+      "E_RING\020\t\022\034\n\030INTERACT_TYPE_FOUNDATION\020\n\022\034" +
+      "\n\030INTERACT_TYPE_ECHO_SHELL\020\013\022\035\n\031INTERACT" +
+      "_TYPE_HOME_GATHER\020\014\022\034\n\030INTERACT_TYPE_ENV" +
+      "_ANIMAL\020\r\022\036\n\032INTERACT_TYPE_QUEST_GADGET\020" +
+      "\016\022\035\n\031INTERACT_TYPE_UI_INTERACT\020\017\022!\n\035INTE" +
+      "RACT_TYPE_DESHRET_OBELISK\020\020B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

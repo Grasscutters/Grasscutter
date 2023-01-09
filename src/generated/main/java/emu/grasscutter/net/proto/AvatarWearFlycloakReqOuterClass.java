@@ -25,17 +25,21 @@ public final class AvatarWearFlycloakReqOuterClass {
     long getAvatarGuid();
 
     /**
-     * <code>uint32 flycloak_id = 13;</code>
+     * <code>uint32 flycloak_id = 15;</code>
      * @return The flycloakId.
      */
     int getFlycloakId();
   }
   /**
    * <pre>
-   * CmdId: 1737
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1636;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code AvatarWearFlycloakReq}
@@ -87,7 +91,7 @@ public final class AvatarWearFlycloakReqOuterClass {
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 120: {
 
               flycloakId_ = input.readUInt32();
               break;
@@ -135,10 +139,10 @@ public final class AvatarWearFlycloakReqOuterClass {
       return avatarGuid_;
     }
 
-    public static final int FLYCLOAK_ID_FIELD_NUMBER = 13;
+    public static final int FLYCLOAK_ID_FIELD_NUMBER = 15;
     private int flycloakId_;
     /**
-     * <code>uint32 flycloak_id = 13;</code>
+     * <code>uint32 flycloak_id = 15;</code>
      * @return The flycloakId.
      */
     @java.lang.Override
@@ -164,7 +168,7 @@ public final class AvatarWearFlycloakReqOuterClass {
         output.writeUInt64(11, avatarGuid_);
       }
       if (flycloakId_ != 0) {
-        output.writeUInt32(13, flycloakId_);
+        output.writeUInt32(15, flycloakId_);
       }
       unknownFields.writeTo(output);
     }
@@ -181,7 +185,7 @@ public final class AvatarWearFlycloakReqOuterClass {
       }
       if (flycloakId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, flycloakId_);
+          .computeUInt32Size(15, flycloakId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,10 +319,14 @@ public final class AvatarWearFlycloakReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1737
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1636;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code AvatarWearFlycloakReq}
@@ -506,7 +514,7 @@ public final class AvatarWearFlycloakReqOuterClass {
 
       private int flycloakId_ ;
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @return The flycloakId.
        */
       @java.lang.Override
@@ -514,7 +522,7 @@ public final class AvatarWearFlycloakReqOuterClass {
         return flycloakId_;
       }
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @param value The flycloakId to set.
        * @return This builder for chaining.
        */
@@ -525,7 +533,7 @@ public final class AvatarWearFlycloakReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 flycloak_id = 13;</code>
+       * <code>uint32 flycloak_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlycloakId() {
@@ -603,7 +611,7 @@ public final class AvatarWearFlycloakReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033AvatarWearFlycloakReq.proto\"A\n\025AvatarW" +
       "earFlycloakReq\022\023\n\013avatar_guid\030\013 \001(\004\022\023\n\013f" +
-      "lycloak_id\030\r \001(\rB\033\n\031emu.grasscutter.net." +
+      "lycloak_id\030\017 \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

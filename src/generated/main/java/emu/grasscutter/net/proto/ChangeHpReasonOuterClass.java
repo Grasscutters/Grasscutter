@@ -92,13 +92,13 @@ public final class ChangeHpReasonOuterClass {
      */
     CHANGE_HP_REASON_SUB_PLAYER_LEAVE(17),
     /**
-     * <code>CHANGE_HP_REASON_Unk2700_CIKCDBOJGDK = 18;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_ENERGY = 18;</code>
      */
-    CHANGE_HP_REASON_Unk2700_CIKCDBOJGDK(18),
+    CHANGE_HP_REASON_ATTACK_BY_ENERGY(18),
     /**
-     * <code>CHANGE_HP_REASON_Unk2700_HEKLBLFBJJK = 19;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_RECYCLE = 19;</code>
      */
-    CHANGE_HP_REASON_Unk2700_HEKLBLFBJJK(19),
+    CHANGE_HP_REASON_ATTACK_BY_RECYCLE(19),
     /**
      * <code>CHANGE_HP_REASON_BY_LUA = 51;</code>
      */
@@ -136,9 +136,9 @@ public final class ChangeHpReasonOuterClass {
      */
     CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY(108),
     /**
-     * <code>CHANGE_HP_REASON_ADD_ROUGUELIKE_SPRING = 109;</code>
+     * <code>CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING = 109;</code>
      */
-    CHANGE_HP_REASON_ADD_ROUGUELIKE_SPRING(109),
+    CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING(109),
     UNRECOGNIZED(-1),
     ;
 
@@ -215,13 +215,13 @@ public final class ChangeHpReasonOuterClass {
      */
     public static final int CHANGE_HP_REASON_SUB_PLAYER_LEAVE_VALUE = 17;
     /**
-     * <code>CHANGE_HP_REASON_Unk2700_CIKCDBOJGDK = 18;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_ENERGY = 18;</code>
      */
-    public static final int CHANGE_HP_REASON_Unk2700_CIKCDBOJGDK_VALUE = 18;
+    public static final int CHANGE_HP_REASON_ATTACK_BY_ENERGY_VALUE = 18;
     /**
-     * <code>CHANGE_HP_REASON_Unk2700_HEKLBLFBJJK = 19;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_RECYCLE = 19;</code>
      */
-    public static final int CHANGE_HP_REASON_Unk2700_HEKLBLFBJJK_VALUE = 19;
+    public static final int CHANGE_HP_REASON_ATTACK_BY_RECYCLE_VALUE = 19;
     /**
      * <code>CHANGE_HP_REASON_BY_LUA = 51;</code>
      */
@@ -259,9 +259,9 @@ public final class ChangeHpReasonOuterClass {
      */
     public static final int CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY_VALUE = 108;
     /**
-     * <code>CHANGE_HP_REASON_ADD_ROUGUELIKE_SPRING = 109;</code>
+     * <code>CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING = 109;</code>
      */
-    public static final int CHANGE_HP_REASON_ADD_ROUGUELIKE_SPRING_VALUE = 109;
+    public static final int CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING_VALUE = 109;
 
 
     public final int getNumber() {
@@ -306,8 +306,8 @@ public final class ChangeHpReasonOuterClass {
         case 15: return CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET;
         case 16: return CHANGE_HP_REASON_SUB_REPLACE;
         case 17: return CHANGE_HP_REASON_SUB_PLAYER_LEAVE;
-        case 18: return CHANGE_HP_REASON_Unk2700_CIKCDBOJGDK;
-        case 19: return CHANGE_HP_REASON_Unk2700_HEKLBLFBJJK;
+        case 18: return CHANGE_HP_REASON_ATTACK_BY_ENERGY;
+        case 19: return CHANGE_HP_REASON_ATTACK_BY_RECYCLE;
         case 51: return CHANGE_HP_REASON_BY_LUA;
         case 101: return CHANGE_HP_REASON_ADD_ABILITY;
         case 102: return CHANGE_HP_REASON_ADD_ITEM;
@@ -317,7 +317,7 @@ public final class ChangeHpReasonOuterClass {
         case 106: return CHANGE_HP_REASON_ADD_BACKGROUND;
         case 107: return CHANGE_HP_REASON_ADD_GM;
         case 108: return CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY;
-        case 109: return CHANGE_HP_REASON_ADD_ROUGUELIKE_SPRING;
+        case 109: return CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING;
         default: return null;
       }
     }
@@ -383,7 +383,7 @@ public final class ChangeHpReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ChangeHpReason.proto*\254\010\n\016ChangeHpReaso" +
+      "\n\024ChangeHpReason.proto*\246\010\n\016ChangeHpReaso" +
       "n\022\031\n\025CHANGE_HP_REASON_NONE\020\000\022\037\n\033CHANGE_H" +
       "P_REASON_SUB_AVATAR\020\001\022 \n\034CHANGE_HP_REASO" +
       "N_SUB_MONSTER\020\002\022\035\n\031CHANGE_HP_REASON_SUB_" +
@@ -399,19 +399,19 @@ public final class ChangeHpReasonOuterClass {
       "B_STORM_LIGHTNING\020\016\022+\n\'CHANGE_HP_REASON_" +
       "SUB_KILL_SERVER_GADGET\020\017\022 \n\034CHANGE_HP_RE" +
       "ASON_SUB_REPLACE\020\020\022%\n!CHANGE_HP_REASON_S" +
-      "UB_PLAYER_LEAVE\020\021\022(\n$CHANGE_HP_REASON_Un" +
-      "k2700_CIKCDBOJGDK\020\022\022(\n$CHANGE_HP_REASON_" +
-      "Unk2700_HEKLBLFBJJK\020\023\022\033\n\027CHANGE_HP_REASO" +
-      "N_BY_LUA\0203\022 \n\034CHANGE_HP_REASON_ADD_ABILI" +
-      "TY\020e\022\035\n\031CHANGE_HP_REASON_ADD_ITEM\020f\022\037\n\033C" +
-      "HANGE_HP_REASON_ADD_REVIVE\020g\022 \n\034CHANGE_H" +
-      "P_REASON_ADD_UPGRADE\020h\022\037\n\033CHANGE_HP_REAS" +
-      "ON_ADD_STATUE\020i\022#\n\037CHANGE_HP_REASON_ADD_" +
-      "BACKGROUND\020j\022\033\n\027CHANGE_HP_REASON_ADD_GM\020" +
-      "k\022.\n*CHANGE_HP_REASON_ADD_TRIAL_AVATAR_A" +
-      "CTIVITY\020l\022*\n&CHANGE_HP_REASON_ADD_ROUGUE" +
-      "LIKE_SPRING\020mB\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "UB_PLAYER_LEAVE\020\021\022%\n!CHANGE_HP_REASON_AT" +
+      "TACK_BY_ENERGY\020\022\022&\n\"CHANGE_HP_REASON_ATT" +
+      "ACK_BY_RECYCLE\020\023\022\033\n\027CHANGE_HP_REASON_BY_" +
+      "LUA\0203\022 \n\034CHANGE_HP_REASON_ADD_ABILITY\020e\022" +
+      "\035\n\031CHANGE_HP_REASON_ADD_ITEM\020f\022\037\n\033CHANGE" +
+      "_HP_REASON_ADD_REVIVE\020g\022 \n\034CHANGE_HP_REA" +
+      "SON_ADD_UPGRADE\020h\022\037\n\033CHANGE_HP_REASON_AD" +
+      "D_STATUE\020i\022#\n\037CHANGE_HP_REASON_ADD_BACKG" +
+      "ROUND\020j\022\033\n\027CHANGE_HP_REASON_ADD_GM\020k\022.\n*" +
+      "CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVI" +
+      "TY\020l\022)\n%CHANGE_HP_REASON_ADD_ROGUELIKE_S" +
+      "PRING\020mB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

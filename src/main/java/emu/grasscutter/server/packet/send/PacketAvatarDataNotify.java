@@ -13,7 +13,7 @@ public class PacketAvatarDataNotify extends BasePacket {
 
         AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
                 .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
-                //.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
+                .setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
                 .addAllOwnedFlycloakList(player.getFlyCloakList())
                 .addAllOwnedCostumeList(player.getCostumeList());
 
@@ -22,7 +22,7 @@ public class PacketAvatarDataNotify extends BasePacket {
         player.getTeamManager().getTeams().forEach((id, teamInfo) -> {
             proto.putAvatarTeamMap(id, teamInfo.toProto(player));
             if (id > 4) {  // Add the id list for custom teams.
-                proto.addCustomTeamIds(id);
+                proto.addBackupAvatarTeamOrderList(id);
             }
         });
 

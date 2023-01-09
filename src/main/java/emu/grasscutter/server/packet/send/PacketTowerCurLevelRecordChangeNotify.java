@@ -17,7 +17,7 @@ public class PacketTowerCurLevelRecordChangeNotify extends BasePacket {
 						// TODO team info
 						.build())
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

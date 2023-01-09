@@ -103,19 +103,19 @@ public final class EntityAuthorityInfoOuterClass {
         int index);
 
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-     * @return Whether the unk2700KDGMOPELHNE field is set.
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+     * @return Whether the clientExtraInfo field is set.
      */
-    boolean hasUnk2700KDGMOPELHNE();
+    boolean hasClientExtraInfo();
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-     * @return The unk2700KDGMOPELHNE.
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+     * @return The clientExtraInfo.
      */
-    emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM getUnk2700KDGMOPELHNE();
+    emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo getClientExtraInfo();
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
      */
-    emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder getUnk2700KDGMOPELHNEOrBuilder();
+    emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder getClientExtraInfoOrBuilder();
   }
   /**
    * Protobuf type {@code EntityAuthorityInfo}
@@ -226,14 +226,14 @@ public final class EntityAuthorityInfoOuterClass {
               break;
             }
             case 50: {
-              emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder subBuilder = null;
-              if (unk2700KDGMOPELHNE_ != null) {
-                subBuilder = unk2700KDGMOPELHNE_.toBuilder();
+              emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder subBuilder = null;
+              if (clientExtraInfo_ != null) {
+                subBuilder = clientExtraInfo_.toBuilder();
               }
-              unk2700KDGMOPELHNE_ = input.readMessage(emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.parser(), extensionRegistry);
+              clientExtraInfo_ = input.readMessage(emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(unk2700KDGMOPELHNE_);
-                unk2700KDGMOPELHNE_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(clientExtraInfo_);
+                clientExtraInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -417,30 +417,30 @@ public final class EntityAuthorityInfoOuterClass {
       return poseParaList_.get(index);
     }
 
-    public static final int UNK2700_KDGMOPELHNE_FIELD_NUMBER = 6;
-    private emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM unk2700KDGMOPELHNE_;
+    public static final int CLIENT_EXTRA_INFO_FIELD_NUMBER = 6;
+    private emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo clientExtraInfo_;
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-     * @return Whether the unk2700KDGMOPELHNE field is set.
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+     * @return Whether the clientExtraInfo field is set.
      */
     @java.lang.Override
-    public boolean hasUnk2700KDGMOPELHNE() {
-      return unk2700KDGMOPELHNE_ != null;
+    public boolean hasClientExtraInfo() {
+      return clientExtraInfo_ != null;
     }
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-     * @return The unk2700KDGMOPELHNE.
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+     * @return The clientExtraInfo.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM getUnk2700KDGMOPELHNE() {
-      return unk2700KDGMOPELHNE_ == null ? emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.getDefaultInstance() : unk2700KDGMOPELHNE_;
+    public emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo getClientExtraInfo() {
+      return clientExtraInfo_ == null ? emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.getDefaultInstance() : clientExtraInfo_;
     }
     /**
-     * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+     * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder getUnk2700KDGMOPELHNEOrBuilder() {
-      return getUnk2700KDGMOPELHNE();
+    public emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder getClientExtraInfoOrBuilder() {
+      return getClientExtraInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -472,8 +472,8 @@ public final class EntityAuthorityInfoOuterClass {
       for (int i = 0; i < poseParaList_.size(); i++) {
         output.writeMessage(5, poseParaList_.get(i));
       }
-      if (unk2700KDGMOPELHNE_ != null) {
-        output.writeMessage(6, getUnk2700KDGMOPELHNE());
+      if (clientExtraInfo_ != null) {
+        output.writeMessage(6, getClientExtraInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -504,9 +504,9 @@ public final class EntityAuthorityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, poseParaList_.get(i));
       }
-      if (unk2700KDGMOPELHNE_ != null) {
+      if (clientExtraInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getUnk2700KDGMOPELHNE());
+          .computeMessageSize(6, getClientExtraInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -545,10 +545,10 @@ public final class EntityAuthorityInfoOuterClass {
       }
       if (!getPoseParaListList()
           .equals(other.getPoseParaListList())) return false;
-      if (hasUnk2700KDGMOPELHNE() != other.hasUnk2700KDGMOPELHNE()) return false;
-      if (hasUnk2700KDGMOPELHNE()) {
-        if (!getUnk2700KDGMOPELHNE()
-            .equals(other.getUnk2700KDGMOPELHNE())) return false;
+      if (hasClientExtraInfo() != other.hasClientExtraInfo()) return false;
+      if (hasClientExtraInfo()) {
+        if (!getClientExtraInfo()
+            .equals(other.getClientExtraInfo())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -581,9 +581,9 @@ public final class EntityAuthorityInfoOuterClass {
         hash = (37 * hash) + POSE_PARA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPoseParaListList().hashCode();
       }
-      if (hasUnk2700KDGMOPELHNE()) {
-        hash = (37 * hash) + UNK2700_KDGMOPELHNE_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk2700KDGMOPELHNE().hashCode();
+      if (hasClientExtraInfo()) {
+        hash = (37 * hash) + CLIENT_EXTRA_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getClientExtraInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -749,11 +749,11 @@ public final class EntityAuthorityInfoOuterClass {
         } else {
           poseParaListBuilder_.clear();
         }
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          unk2700KDGMOPELHNE_ = null;
+        if (clientExtraInfoBuilder_ == null) {
+          clientExtraInfo_ = null;
         } else {
-          unk2700KDGMOPELHNE_ = null;
-          unk2700KDGMOPELHNEBuilder_ = null;
+          clientExtraInfo_ = null;
+          clientExtraInfoBuilder_ = null;
         }
         return this;
       }
@@ -811,10 +811,10 @@ public final class EntityAuthorityInfoOuterClass {
         } else {
           result.poseParaList_ = poseParaListBuilder_.build();
         }
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          result.unk2700KDGMOPELHNE_ = unk2700KDGMOPELHNE_;
+        if (clientExtraInfoBuilder_ == null) {
+          result.clientExtraInfo_ = clientExtraInfo_;
         } else {
-          result.unk2700KDGMOPELHNE_ = unk2700KDGMOPELHNEBuilder_.build();
+          result.clientExtraInfo_ = clientExtraInfoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -902,8 +902,8 @@ public final class EntityAuthorityInfoOuterClass {
             }
           }
         }
-        if (other.hasUnk2700KDGMOPELHNE()) {
-          mergeUnk2700KDGMOPELHNE(other.getUnk2700KDGMOPELHNE());
+        if (other.hasClientExtraInfo()) {
+          mergeClientExtraInfo(other.getClientExtraInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1651,123 +1651,123 @@ public final class EntityAuthorityInfoOuterClass {
         return poseParaListBuilder_;
       }
 
-      private emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM unk2700KDGMOPELHNE_;
+      private emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo clientExtraInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder> unk2700KDGMOPELHNEBuilder_;
+          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder> clientExtraInfoBuilder_;
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-       * @return Whether the unk2700KDGMOPELHNE field is set.
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+       * @return Whether the clientExtraInfo field is set.
        */
-      public boolean hasUnk2700KDGMOPELHNE() {
-        return unk2700KDGMOPELHNEBuilder_ != null || unk2700KDGMOPELHNE_ != null;
+      public boolean hasClientExtraInfo() {
+        return clientExtraInfoBuilder_ != null || clientExtraInfo_ != null;
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
-       * @return The unk2700KDGMOPELHNE.
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
+       * @return The clientExtraInfo.
        */
-      public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM getUnk2700KDGMOPELHNE() {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          return unk2700KDGMOPELHNE_ == null ? emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.getDefaultInstance() : unk2700KDGMOPELHNE_;
+      public emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo getClientExtraInfo() {
+        if (clientExtraInfoBuilder_ == null) {
+          return clientExtraInfo_ == null ? emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.getDefaultInstance() : clientExtraInfo_;
         } else {
-          return unk2700KDGMOPELHNEBuilder_.getMessage();
+          return clientExtraInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public Builder setUnk2700KDGMOPELHNE(emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM value) {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
+      public Builder setClientExtraInfo(emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo value) {
+        if (clientExtraInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          unk2700KDGMOPELHNE_ = value;
+          clientExtraInfo_ = value;
           onChanged();
         } else {
-          unk2700KDGMOPELHNEBuilder_.setMessage(value);
+          clientExtraInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public Builder setUnk2700KDGMOPELHNE(
-          emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder builderForValue) {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          unk2700KDGMOPELHNE_ = builderForValue.build();
+      public Builder setClientExtraInfo(
+          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder builderForValue) {
+        if (clientExtraInfoBuilder_ == null) {
+          clientExtraInfo_ = builderForValue.build();
           onChanged();
         } else {
-          unk2700KDGMOPELHNEBuilder_.setMessage(builderForValue.build());
+          clientExtraInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public Builder mergeUnk2700KDGMOPELHNE(emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM value) {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          if (unk2700KDGMOPELHNE_ != null) {
-            unk2700KDGMOPELHNE_ =
-              emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.newBuilder(unk2700KDGMOPELHNE_).mergeFrom(value).buildPartial();
+      public Builder mergeClientExtraInfo(emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo value) {
+        if (clientExtraInfoBuilder_ == null) {
+          if (clientExtraInfo_ != null) {
+            clientExtraInfo_ =
+              emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.newBuilder(clientExtraInfo_).mergeFrom(value).buildPartial();
           } else {
-            unk2700KDGMOPELHNE_ = value;
+            clientExtraInfo_ = value;
           }
           onChanged();
         } else {
-          unk2700KDGMOPELHNEBuilder_.mergeFrom(value);
+          clientExtraInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public Builder clearUnk2700KDGMOPELHNE() {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          unk2700KDGMOPELHNE_ = null;
+      public Builder clearClientExtraInfo() {
+        if (clientExtraInfoBuilder_ == null) {
+          clientExtraInfo_ = null;
           onChanged();
         } else {
-          unk2700KDGMOPELHNE_ = null;
-          unk2700KDGMOPELHNEBuilder_ = null;
+          clientExtraInfo_ = null;
+          clientExtraInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder getUnk2700KDGMOPELHNEBuilder() {
+      public emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder getClientExtraInfoBuilder() {
         
         onChanged();
-        return getUnk2700KDGMOPELHNEFieldBuilder().getBuilder();
+        return getClientExtraInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
-      public emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder getUnk2700KDGMOPELHNEOrBuilder() {
-        if (unk2700KDGMOPELHNEBuilder_ != null) {
-          return unk2700KDGMOPELHNEBuilder_.getMessageOrBuilder();
+      public emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder getClientExtraInfoOrBuilder() {
+        if (clientExtraInfoBuilder_ != null) {
+          return clientExtraInfoBuilder_.getMessageOrBuilder();
         } else {
-          return unk2700KDGMOPELHNE_ == null ?
-              emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.getDefaultInstance() : unk2700KDGMOPELHNE_;
+          return clientExtraInfo_ == null ?
+              emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.getDefaultInstance() : clientExtraInfo_;
         }
       }
       /**
-       * <code>.Unk2700_HFMDKDHCJCM Unk2700_KDGMOPELHNE = 6;</code>
+       * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder> 
-          getUnk2700KDGMOPELHNEFieldBuilder() {
-        if (unk2700KDGMOPELHNEBuilder_ == null) {
-          unk2700KDGMOPELHNEBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCM.Builder, emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.Unk2700_HFMDKDHCJCMOrBuilder>(
-                  getUnk2700KDGMOPELHNE(),
+          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder> 
+          getClientExtraInfoFieldBuilder() {
+        if (clientExtraInfoBuilder_ == null) {
+          clientExtraInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder, emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder>(
+                  getClientExtraInfo(),
                   getParentForChildren(),
                   isClean());
-          unk2700KDGMOPELHNE_ = null;
+          clientExtraInfo_ = null;
         }
-        return unk2700KDGMOPELHNEBuilder_;
+        return clientExtraInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1838,27 +1838,27 @@ public final class EntityAuthorityInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031EntityAuthorityInfo.proto\032\032AbilitySync" +
       "StateInfo.proto\032$AnimatorParameterValueI" +
-      "nfoPair.proto\032\037EntityRendererChangedInfo" +
-      ".proto\032\027SceneEntityAiInfo.proto\032\031Unk2700" +
-      "_HFMDKDHCJCM.proto\032\014Vector.proto\"\251\002\n\023Ent" +
-      "ityAuthorityInfo\022+\n\014ability_info\030\001 \001(\0132\025" +
-      ".AbilitySyncStateInfo\0229\n\025renderer_change" +
-      "d_info\030\002 \001(\0132\032.EntityRendererChangedInfo" +
-      "\022#\n\007ai_info\030\003 \001(\0132\022.SceneEntityAiInfo\022\031\n" +
-      "\010born_pos\030\004 \001(\0132\007.Vector\0227\n\016pose_para_li" +
-      "st\030\005 \003(\0132\037.AnimatorParameterValueInfoPai" +
-      "r\0221\n\023Unk2700_KDGMOPELHNE\030\006 \001(\0132\024.Unk2700" +
-      "_HFMDKDHCJCMB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "nfoPair.proto\032\033EntityClientExtraInfo.pro" +
+      "to\032\037EntityRendererChangedInfo.proto\032\027Sce" +
+      "neEntityAiInfo.proto\032\014Vector.proto\"\251\002\n\023E" +
+      "ntityAuthorityInfo\022+\n\014ability_info\030\001 \001(\013" +
+      "2\025.AbilitySyncStateInfo\0229\n\025renderer_chan" +
+      "ged_info\030\002 \001(\0132\032.EntityRendererChangedIn" +
+      "fo\022#\n\007ai_info\030\003 \001(\0132\022.SceneEntityAiInfo\022" +
+      "\031\n\010born_pos\030\004 \001(\0132\007.Vector\0227\n\016pose_para_" +
+      "list\030\005 \003(\0132\037.AnimatorParameterValueInfoP" +
+      "air\0221\n\021client_extra_info\030\006 \001(\0132\026.EntityC" +
+      "lientExtraInfoB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_EntityAuthorityInfo_descriptor =
@@ -1866,12 +1866,12 @@ public final class EntityAuthorityInfoOuterClass {
     internal_static_EntityAuthorityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EntityAuthorityInfo_descriptor,
-        new java.lang.String[] { "AbilityInfo", "RendererChangedInfo", "AiInfo", "BornPos", "PoseParaList", "Unk2700KDGMOPELHNE", });
+        new java.lang.String[] { "AbilityInfo", "RendererChangedInfo", "AiInfo", "BornPos", "PoseParaList", "ClientExtraInfo", });
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.Unk2700HFMDKDHCJCM.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

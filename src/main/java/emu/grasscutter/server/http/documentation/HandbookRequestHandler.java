@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class HandbookRequestHandler implements DocumentationHandler {
     private List<String> handbookHtmls;
@@ -33,12 +35,24 @@ final class HandbookRequestHandler implements DocumentationHandler {
 
     @Override
     public void handle(Context ctx) {
-        final int langIdx = Language.TextStrings.MAP_LANGUAGES.getOrDefault(DOCUMENT_LANGUAGE, 0);  // TODO: This should really be based off the client language somehow
+        int langIdx = 0;
+        String acceptLanguage = ctx.header("Accept-Language");
+        if (acceptLanguage != null) {
+            Pattern localePattern = Pattern.compile("[a-z]+-[A-Z]+");
+            Matcher matcher = localePattern.matcher(acceptLanguage);
+            if (matcher.find()) {
+                String lang = matcher.group(0);
+                langIdx = Language.TextStrings.MAP_GC_LANGUAGES.getOrDefault(lang,0);
+            }
+        }
+
         if (this.handbookHtmls == null) {
             ctx.status(500);
         } else {
-            ctx.contentType(ContentType.TEXT_HTML);
-            ctx.result(this.handbookHtmls.get(langIdx));
+            if (langIdx <= this.handbookHtmls.size() - 1) {
+                ctx.contentType(ContentType.TEXT_HTML);
+                ctx.result(this.handbookHtmls.get(langIdx));
+            }
         }
     }
 

@@ -19,16 +19,10 @@ public final class CompoundQueueDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 output_count = 1;</code>
-     * @return The outputCount.
+     * <code>uint32 wait_count = 5;</code>
+     * @return The waitCount.
      */
-    int getOutputCount();
-
-    /**
-     * <code>uint32 compound_id = 4;</code>
-     * @return The compoundId.
-     */
-    int getCompoundId();
+    int getWaitCount();
 
     /**
      * <code>uint32 output_time = 14;</code>
@@ -37,10 +31,16 @@ public final class CompoundQueueDataOuterClass {
     int getOutputTime();
 
     /**
-     * <code>uint32 wait_count = 8;</code>
-     * @return The waitCount.
+     * <code>uint32 output_count = 10;</code>
+     * @return The outputCount.
      */
-    int getWaitCount();
+    int getOutputCount();
+
+    /**
+     * <code>uint32 compound_id = 12;</code>
+     * @return The compoundId.
+     */
+    int getCompoundId();
   }
   /**
    * Protobuf type {@code CompoundQueueData}
@@ -87,19 +87,19 @@ public final class CompoundQueueDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
+
+              waitCount_ = input.readUInt32();
+              break;
+            }
+            case 80: {
 
               outputCount_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 96: {
 
               compoundId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              waitCount_ = input.readUInt32();
               break;
             }
             case 112: {
@@ -139,26 +139,15 @@ public final class CompoundQueueDataOuterClass {
               emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.class, emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.Builder.class);
     }
 
-    public static final int OUTPUT_COUNT_FIELD_NUMBER = 1;
-    private int outputCount_;
+    public static final int WAIT_COUNT_FIELD_NUMBER = 5;
+    private int waitCount_;
     /**
-     * <code>uint32 output_count = 1;</code>
-     * @return The outputCount.
+     * <code>uint32 wait_count = 5;</code>
+     * @return The waitCount.
      */
     @java.lang.Override
-    public int getOutputCount() {
-      return outputCount_;
-    }
-
-    public static final int COMPOUND_ID_FIELD_NUMBER = 4;
-    private int compoundId_;
-    /**
-     * <code>uint32 compound_id = 4;</code>
-     * @return The compoundId.
-     */
-    @java.lang.Override
-    public int getCompoundId() {
-      return compoundId_;
+    public int getWaitCount() {
+      return waitCount_;
     }
 
     public static final int OUTPUT_TIME_FIELD_NUMBER = 14;
@@ -172,15 +161,26 @@ public final class CompoundQueueDataOuterClass {
       return outputTime_;
     }
 
-    public static final int WAIT_COUNT_FIELD_NUMBER = 8;
-    private int waitCount_;
+    public static final int OUTPUT_COUNT_FIELD_NUMBER = 10;
+    private int outputCount_;
     /**
-     * <code>uint32 wait_count = 8;</code>
-     * @return The waitCount.
+     * <code>uint32 output_count = 10;</code>
+     * @return The outputCount.
      */
     @java.lang.Override
-    public int getWaitCount() {
-      return waitCount_;
+    public int getOutputCount() {
+      return outputCount_;
+    }
+
+    public static final int COMPOUND_ID_FIELD_NUMBER = 12;
+    private int compoundId_;
+    /**
+     * <code>uint32 compound_id = 12;</code>
+     * @return The compoundId.
+     */
+    @java.lang.Override
+    public int getCompoundId() {
+      return compoundId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,14 +197,14 @@ public final class CompoundQueueDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (waitCount_ != 0) {
+        output.writeUInt32(5, waitCount_);
+      }
       if (outputCount_ != 0) {
-        output.writeUInt32(1, outputCount_);
+        output.writeUInt32(10, outputCount_);
       }
       if (compoundId_ != 0) {
-        output.writeUInt32(4, compoundId_);
-      }
-      if (waitCount_ != 0) {
-        output.writeUInt32(8, waitCount_);
+        output.writeUInt32(12, compoundId_);
       }
       if (outputTime_ != 0) {
         output.writeUInt32(14, outputTime_);
@@ -218,17 +218,17 @@ public final class CompoundQueueDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (waitCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, waitCount_);
+      }
       if (outputCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, outputCount_);
+          .computeUInt32Size(10, outputCount_);
       }
       if (compoundId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, compoundId_);
-      }
-      if (waitCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, waitCount_);
+          .computeUInt32Size(12, compoundId_);
       }
       if (outputTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -249,14 +249,14 @@ public final class CompoundQueueDataOuterClass {
       }
       emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData other = (emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData) obj;
 
+      if (getWaitCount()
+          != other.getWaitCount()) return false;
+      if (getOutputTime()
+          != other.getOutputTime()) return false;
       if (getOutputCount()
           != other.getOutputCount()) return false;
       if (getCompoundId()
           != other.getCompoundId()) return false;
-      if (getOutputTime()
-          != other.getOutputTime()) return false;
-      if (getWaitCount()
-          != other.getWaitCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,14 +268,14 @@ public final class CompoundQueueDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WAIT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getWaitCount();
+      hash = (37 * hash) + OUTPUT_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputTime();
       hash = (37 * hash) + OUTPUT_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getOutputCount();
       hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCompoundId();
-      hash = (37 * hash) + OUTPUT_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputTime();
-      hash = (37 * hash) + WAIT_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getWaitCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,13 +409,13 @@ public final class CompoundQueueDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        outputCount_ = 0;
-
-        compoundId_ = 0;
+        waitCount_ = 0;
 
         outputTime_ = 0;
 
-        waitCount_ = 0;
+        outputCount_ = 0;
+
+        compoundId_ = 0;
 
         return this;
       }
@@ -443,10 +443,10 @@ public final class CompoundQueueDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData buildPartial() {
         emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData result = new emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData(this);
+        result.waitCount_ = waitCount_;
+        result.outputTime_ = outputTime_;
         result.outputCount_ = outputCount_;
         result.compoundId_ = compoundId_;
-        result.outputTime_ = outputTime_;
-        result.waitCount_ = waitCount_;
         onBuilt();
         return result;
       }
@@ -495,17 +495,17 @@ public final class CompoundQueueDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData other) {
         if (other == emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.getDefaultInstance()) return this;
+        if (other.getWaitCount() != 0) {
+          setWaitCount(other.getWaitCount());
+        }
+        if (other.getOutputTime() != 0) {
+          setOutputTime(other.getOutputTime());
+        }
         if (other.getOutputCount() != 0) {
           setOutputCount(other.getOutputCount());
         }
         if (other.getCompoundId() != 0) {
           setCompoundId(other.getCompoundId());
-        }
-        if (other.getOutputTime() != 0) {
-          setOutputTime(other.getOutputTime());
-        }
-        if (other.getWaitCount() != 0) {
-          setWaitCount(other.getWaitCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,64 +536,33 @@ public final class CompoundQueueDataOuterClass {
         return this;
       }
 
-      private int outputCount_ ;
+      private int waitCount_ ;
       /**
-       * <code>uint32 output_count = 1;</code>
-       * @return The outputCount.
+       * <code>uint32 wait_count = 5;</code>
+       * @return The waitCount.
        */
       @java.lang.Override
-      public int getOutputCount() {
-        return outputCount_;
+      public int getWaitCount() {
+        return waitCount_;
       }
       /**
-       * <code>uint32 output_count = 1;</code>
-       * @param value The outputCount to set.
+       * <code>uint32 wait_count = 5;</code>
+       * @param value The waitCount to set.
        * @return This builder for chaining.
        */
-      public Builder setOutputCount(int value) {
+      public Builder setWaitCount(int value) {
         
-        outputCount_ = value;
+        waitCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 output_count = 1;</code>
+       * <code>uint32 wait_count = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOutputCount() {
+      public Builder clearWaitCount() {
         
-        outputCount_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int compoundId_ ;
-      /**
-       * <code>uint32 compound_id = 4;</code>
-       * @return The compoundId.
-       */
-      @java.lang.Override
-      public int getCompoundId() {
-        return compoundId_;
-      }
-      /**
-       * <code>uint32 compound_id = 4;</code>
-       * @param value The compoundId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCompoundId(int value) {
-        
-        compoundId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 compound_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCompoundId() {
-        
-        compoundId_ = 0;
+        waitCount_ = 0;
         onChanged();
         return this;
       }
@@ -629,33 +598,64 @@ public final class CompoundQueueDataOuterClass {
         return this;
       }
 
-      private int waitCount_ ;
+      private int outputCount_ ;
       /**
-       * <code>uint32 wait_count = 8;</code>
-       * @return The waitCount.
+       * <code>uint32 output_count = 10;</code>
+       * @return The outputCount.
        */
       @java.lang.Override
-      public int getWaitCount() {
-        return waitCount_;
+      public int getOutputCount() {
+        return outputCount_;
       }
       /**
-       * <code>uint32 wait_count = 8;</code>
-       * @param value The waitCount to set.
+       * <code>uint32 output_count = 10;</code>
+       * @param value The outputCount to set.
        * @return This builder for chaining.
        */
-      public Builder setWaitCount(int value) {
+      public Builder setOutputCount(int value) {
         
-        waitCount_ = value;
+        outputCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 wait_count = 8;</code>
+       * <code>uint32 output_count = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearWaitCount() {
+      public Builder clearOutputCount() {
         
-        waitCount_ = 0;
+        outputCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int compoundId_ ;
+      /**
+       * <code>uint32 compound_id = 12;</code>
+       * @return The compoundId.
+       */
+      @java.lang.Override
+      public int getCompoundId() {
+        return compoundId_;
+      }
+      /**
+       * <code>uint32 compound_id = 12;</code>
+       * @param value The compoundId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompoundId(int value) {
+        
+        compoundId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 compound_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompoundId() {
+        
+        compoundId_ = 0;
         onChanged();
         return this;
       }
@@ -727,9 +727,9 @@ public final class CompoundQueueDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027CompoundQueueData.proto\"g\n\021CompoundQue" +
-      "ueData\022\024\n\014output_count\030\001 \001(\r\022\023\n\013compound" +
-      "_id\030\004 \001(\r\022\023\n\013output_time\030\016 \001(\r\022\022\n\nwait_c" +
-      "ount\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "ueData\022\022\n\nwait_count\030\005 \001(\r\022\023\n\013output_tim" +
+      "e\030\016 \001(\r\022\024\n\014output_count\030\n \001(\r\022\023\n\013compoun" +
+      "d_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -741,7 +741,7 @@ public final class CompoundQueueDataOuterClass {
     internal_static_CompoundQueueData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CompoundQueueData_descriptor,
-        new java.lang.String[] { "OutputCount", "CompoundId", "OutputTime", "WaitCount", });
+        new java.lang.String[] { "WaitCount", "OutputTime", "OutputCount", "CompoundId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
