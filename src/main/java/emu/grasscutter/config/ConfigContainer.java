@@ -282,6 +282,9 @@ public class ConfigContainer {
 
         public String nickName = "Server";
         public String signature = "Welcome to Grasscutter!";
+
+        public boolean globalChatEnabled = false;
+        public String globalChatFormat = "<color=#99CC99>{nickName}({uid})</color>: {message}";
     }
 
     public static class Files {

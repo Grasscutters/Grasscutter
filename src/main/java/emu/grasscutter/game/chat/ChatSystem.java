@@ -145,18 +145,27 @@ public class ChatSystem implements ChatSystemHandler {
                 target.sendPacket(packet);
                 putInHistory(targetUid, player.getUid(), packet.getChatInfo());
             } else {
-                message = "<color=green>" + player.getNickname() + "</color>: " + message;
-                // Forward messages to other players
-                for (Player p : server.getPlayers().values()) {
-                    if (p != player) {
-                        // Create chat packet and put in history.
-                        packet = new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, targetUid, message);
-                        putInHistory(targetUid, GameConstants.SERVER_CONSOLE_UID, packet.getChatInfo());
+                handleServerChat(player, message);
+            }
+        }
+    }
 
-                        // Send.
-                        p.sendPacket(packet);
-                    }
-                }
+    private void handleServerChat(Player player, String message) {
+        if (!GAME_INFO.serverAccount.globalChatEnabled)
+            return;
+        // Format message.
+        message = GAME_INFO.serverAccount.globalChatFormat
+            .replace("{nickName}", player.getNickname())
+            .replace("{uid}", player.getUid().toString())
+            .replace("{message}", message);
+        // Forward messages to other players.
+        for (Player p : server.getPlayers().values()) {
+            if (p != player) {
+                // Create chat packet and put in history.
+                packet = new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, p.getUid(), message);
+                putInHistory(p.getUid(), GameConstants.SERVER_CONSOLE_UID, packet.getChatInfo());
+                // Send.
+                p.sendPacket(packet);
             }
         }
     }
