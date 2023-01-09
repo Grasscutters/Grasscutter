@@ -140,9 +140,24 @@ public class ChatSystem implements ChatSystemHandler {
         // Check if command
         boolean isCommand = tryInvokeCommand(player, target, message);
 
-        if ((target != null) && (!isCommand)) {
-            target.sendPacket(packet);
-            putInHistory(targetUid, player.getUid(), packet.getChatInfo());
+        if (!isCommand) {
+            if (target != null) {
+                target.sendPacket(packet);
+                putInHistory(targetUid, player.getUid(), packet.getChatInfo());
+            } else {
+                message = "<color=green>" + player.getNickname() + "</color>: " + message;
+                // Forward messages to other players
+                for (Player p : server.getPlayers().values()) {
+                    if (p != player) {
+                        // Create chat packet and put in history.
+                        packet = new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, targetUid, message);
+                        putInHistory(targetUid, GameConstants.SERVER_CONSOLE_UID, packet.getChatInfo());
+
+                        // Send.
+                        p.sendPacket(packet);
+                    }
+                }
+            }
         }
     }
 
