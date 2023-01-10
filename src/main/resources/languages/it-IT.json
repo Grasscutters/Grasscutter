@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "Server di gioco avviato su \u001B[1m\u001B[33m%s:%s\u001B[0m",
+      "address_bind": "Server di gioco avviato su \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Server di gioco avviato sulla porta %s",
       "connect": "Client connesso da %s",
       "disconnect": "Client disconnesso da %s",
@@ -9,7 +9,7 @@
       "command_error": "Errore comando:"
     },
     "dispatch": {
-      "address_bind": "[Dispatch] Dispatch server avviato su \u001B[1m\u001B[33m%s:%s\u001B[0m",
+      "address_bind": "[Dispatch] Dispatch server avviato su \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Dispatch server avviato sulla porta %s",
       "request": "[Dispatch] Client %s %s richiesta: %s",
       "keystore": {
@@ -80,19 +80,19 @@
       "set_to": "%s impostato su %s.",
       "set_for_to": "%s per %s impostato su %s.",
       "invalid": {
-      "amount": "Importo non valido.",
-      "artifactId": "ID artefatto non valido.",
-      "avatarId": "ID avatar non valido.",
-      "avatarLevel": "Livello avatar non valido.",
-      "entityId": "ID entità non valido.",
-      "itemId": "ID articolo non valido.",
-      "itemLevel": "ItemLevel non valido.",
-      "itemRefinement": "Raffinamento articolo non valido.",
-      "statValue": "Valore statistica non valido.",
-      "value_between": "Valore non valido: %s deve essere compreso tra %s e %s.",
-      "playerId": "ID giocatore non valido.",
-      "uid": "UID non valido.",
-      "id": "ID non valido."
+        "amount": "Importo non valido.",
+        "artifactId": "ID artefatto non valido.",
+        "avatarId": "ID avatar non valido.",
+        "avatarLevel": "Livello avatar non valido.",
+        "entityId": "ID entità non valido.",
+        "itemId": "ID articolo non valido.",
+        "itemLevel": "ItemLevel non valido.",
+        "itemRefinement": "Raffinamento articolo non valido.",
+        "statValue": "Valore statistica non valido.",
+        "value_between": "Valore non valido: %s deve essere compreso tra %s e %s.",
+        "playerId": "ID giocatore non valido.",
+        "uid": "UID non valido.",
+        "id": "ID non valido."
       }
     },
     "execution": {
@@ -139,7 +139,8 @@
       "displays": "Display cancellati per %s.",
       "virtuals": "Virtuali cancellate per %s.",
       "everything": "Cancellato tutto per %s.",
-      "description": "Elimina gli oggetti sbloccati non equipaggiati dal tuo inventario. Il valore predefinito è 4* livello 1 raffinamento 1 o inferiore, ma può essere impostato su un livello superiore." },
+      "description": "Elimina gli oggetti sbloccati non equipaggiati dal tuo inventario. Il valore predefinito è 4* livello 1 raffinamento 1 o inferiore, ma può essere impostato su un livello superiore."
+    },
     "coop": {
       "success": "Convocato %s nel mondo di %s.",
       "description": "Forza qualcuno a unirsi al mondo degli altri. Se nessuno viene preso di mira, ti manda comunque in modalità cooperativa."
@@ -159,7 +160,7 @@
       "given_avatar": "Dato %s con livello da %s a %s.",
       "giveall_success": "Ha dato tutti gli oggetti con successo.",
       "description": "Dà un oggetto a te o al giocatore specificato. Può anche dare tutte le armi, avatar e/o materiali, e può costruire artefatti personalizzati."
-   },
+    },
     "heal": {
       "success": "Tutti i personaggi sono stati curati.",
       "description": "Guarisci tutti i personaggi della tua squadra attuale."
@@ -253,35 +254,35 @@
       "error": "ERRORE: fase di costruzione %s non valida. Controlla lo stacktrace della console.",
       "description": "Invia posta all'utente specificato. L'utilizzo di questo comando cambia in base al suo stato di composizione"
     },
-      "sendMessage": {
-          "success": "Messaggio inviato.",
-          "description": "Invia un messaggio a un giocatore come server. Se usato senza target, invia a tutti i giocatori sul server."
-        },
-        "setConst": {
-          "range_error": "Il livello della costellazione deve essere compreso tra 0 e 6.",
-          "level_error": "Livello costellazione non valido.",
-          "fail": "Impossibile impostare la costellazione.",
-          "failed_success": "Le costellazioni per %s sono state impostate su %s. Ricarica la scena per vedere le modifiche.",
-          "success": "Le costellazioni per %s sono state impostate su %s.",
-          "successall": "Le costellazioni per tutti i personaggi sono state impostate su %s.",
-          "description": "Imposta il livello di costellazione per il tuo attuale personaggio attivo"
-        },
-        "setFetterLevel": {
-          "range_error": "Il livello di restrizione deve essere compreso tra 0 e 10.",
-          "success": "Livello di restrizione impostato su %s.",
-          "level_error": "Livello restrizione non valido.",
-          "description": "Imposta il tuo livello di restrizione per il tuo attuale personaggio attivo"
-        },
-        "setProp": {
-          "description": "Imposta le proprietà dell'intero account. Cose come godmode possono essere abilitate in questo modo, oltre a cambiare cose come il pavimento dell'abisso sbloccato e il progresso del pass battaglia.\n\tValori per <prop> (senza distinzione tra maiuscole e minuscole): GodMode | UnlimitedStamina | UnlimitedEnergy | TowerLevel | WorldLevel | BPLevel | SetOpenState | UnsetOpenState | UnlockMap\n\t(cont.) vedi PlayerProperty enum per altri possibili valori, nella forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
-        },
-        "setStats": {
-          "description": "Imposta la proprietà di combattimento per il tuo personaggio attivo corrente\n\tValori per <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-          "locked_to": "%s bloccato su %s.",
-          "locked_for_to": "%s per %s bloccato su %s.",
-          "unlocked": "%s sbloccato.",
-          "unlocked_for": "%s per %s sbloccato."
-        },
+    "sendMessage": {
+      "success": "Messaggio inviato.",
+      "description": "Invia un messaggio a un giocatore come server. Se usato senza target, invia a tutti i giocatori sul server."
+    },
+    "setConst": {
+      "range_error": "Il livello della costellazione deve essere compreso tra 0 e 6.",
+      "level_error": "Livello costellazione non valido.",
+      "fail": "Impossibile impostare la costellazione.",
+      "failed_success": "Le costellazioni per %s sono state impostate su %s. Ricarica la scena per vedere le modifiche.",
+      "success": "Le costellazioni per %s sono state impostate su %s.",
+      "successall": "Le costellazioni per tutti i personaggi sono state impostate su %s.",
+      "description": "Imposta il livello di costellazione per il tuo attuale personaggio attivo"
+    },
+    "setFetterLevel": {
+      "range_error": "Il livello di restrizione deve essere compreso tra 0 e 10.",
+      "success": "Livello di restrizione impostato su %s.",
+      "level_error": "Livello restrizione non valido.",
+      "description": "Imposta il tuo livello di restrizione per il tuo attuale personaggio attivo"
+    },
+    "setProp": {
+      "description": "Imposta le proprietà dell'intero account. Cose come godmode possono essere abilitate in questo modo, oltre a cambiare cose come il pavimento dell'abisso sbloccato e il progresso del pass battaglia.\n\tValori per <prop> (senza distinzione tra maiuscole e minuscole): GodMode | UnlimitedStamina | UnlimitedEnergy | TowerLevel | WorldLevel | BPLevel | SetOpenState | UnsetOpenState | UnlockMap\n\t(cont.) vedi PlayerProperty enum per altri possibili valori, nella forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
+    },
+    "setStats": {
+      "description": "Imposta la proprietà di combattimento per il tuo personaggio attivo corrente\n\tValori per <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "%s bloccato su %s.",
+      "locked_for_to": "%s per %s bloccato su %s.",
+      "unlocked": "%s sbloccato.",
+      "unlocked_for": "%s per %s sbloccato."
+    },
     "spawn": {
       "success": "Evocati %s di %s.",
       "limit_reached": "Limite di evocazione della scena raggiunto. Generazione invece di %s entità.",
@@ -356,7 +357,7 @@
       "available_three_stars": "Articoli a 3 stelle disponibili"
     },
     "records": {
-      "title": "Gacha Records",
+      "title": "🇺🇸Gacha Records",
       "date": "Data",
       "item": "oggetto"
     }
@@ -372,7 +373,7 @@
       "header_id": "ID",
       "header_command": "Comando",
       "header_description": "Descrizione",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Articolo",
       "header_scene": "Scena",
       "header_monster": "Mostro"
@@ -384,19 +385,19 @@
     }
   },
   "plugin": {
-      "directory_failed": "Impossibile creare la directory dei plugin: ",
-      "unable_to_load": "Impossibile caricare il plug-in.",
-      "invalid_config": "Il plug-in %s ha un file di configurazione non valido.",
-      "invalid_main_class": "Il plug-in %s ha una classe principale non valida.",
-      "missing_config": "Il plug-in %s non ha un file di configurazione valido.",
-      "failed_to_load_plugin": "Impossibile caricare il plug-in: %s",
-      "failed_to_load": "Impossibile caricare un plug-in.",
-      "failed_to_load_dependencies": "Impossibile caricare i plugin con le dipendenze.",
-      "loading_plugin": "Caricamento plug-in: %s",
-      "failed_add_id": "Impossibile aggiungere l'identificatore del plug-in: %s",
-      "enabling_plugin": "Abilitazione plug-in: %s",
-      "enabling_failed": "Impossibile abilitare il plug-in: %s",
-      "disabling_plugin": "Disabilitazione plug-in: %s",
-      "disabling_failed": "Impossibile disabilitare il plug-in: %s"
+    "directory_failed": "Impossibile creare la directory dei plugin: ",
+    "unable_to_load": "Impossibile caricare il plug-in.",
+    "invalid_config": "Il plug-in %s ha un file di configurazione non valido.",
+    "invalid_main_class": "Il plug-in %s ha una classe principale non valida.",
+    "missing_config": "Il plug-in %s non ha un file di configurazione valido.",
+    "failed_to_load_plugin": "Impossibile caricare il plug-in: %s",
+    "failed_to_load": "Impossibile caricare un plug-in.",
+    "failed_to_load_dependencies": "Impossibile caricare i plugin con le dipendenze.",
+    "loading_plugin": "Caricamento plug-in: %s",
+    "failed_add_id": "Impossibile aggiungere l'identificatore del plug-in: %s",
+    "enabling_plugin": "Abilitazione plug-in: %s",
+    "enabling_failed": "Impossibile abilitare il plug-in: %s",
+    "disabling_plugin": "Disabilitazione plug-in: %s",
+    "disabling_failed": "Impossibile disabilitare il plug-in: %s"
   }
 }

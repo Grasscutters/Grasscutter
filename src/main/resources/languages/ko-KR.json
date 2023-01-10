@@ -247,10 +247,10 @@
       "set_message_sender": "메세지 발송자가 '%s'으로 설정되었습니다.\n계속하려면 '/sendmail <itemID|itemName|finish> [amount] [level]'을 사용하십시오.",
       "send": "%s 의 %s을 (레벨 %s)을 메세지에 첨부했습니다.\n계속 항목을 추가하거나, '/sendmail finish'을 사용해 메세지를 보낼 수 있습니다..",
       "invalid_arguments_please_use": "잘못된 인수입니다.\n '/sendmail %s'을 사용하십시오",
-      "title": "<title>",
-      "message": "<message>",
-      "sender": "<sender>",
-      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "title": "🇺🇸<title>",
+      "message": "🇺🇸<message>",
+      "sender": "🇺🇸<sender>",
+      "arguments": "🇺🇸<itemID|itemName|finish> [amount] [level]",
       "error": "오류: 잘못된 시공 단계 %s. Console에서 스택을 확인하십시오.",
       "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
     },
@@ -380,8 +380,8 @@
     },
     "index": {
       "title": "문서",
-      "handbook": "GM Handbook",
-      "gacha_mapping": "Gacha mapping JSON"
+      "handbook": "🇺🇸GM Handbook",
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   },
   "plugin": {
