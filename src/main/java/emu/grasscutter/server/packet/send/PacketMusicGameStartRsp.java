@@ -6,14 +6,14 @@ import emu.grasscutter.net.proto.MusicGameStartRspOuterClass;
 
 public class PacketMusicGameStartRsp extends BasePacket {
 
-	public PacketMusicGameStartRsp(int musicBasicId, long musicShareId) {
-		super(PacketOpcodes.MusicGameStartRsp);
+    public PacketMusicGameStartRsp(int musicBasicId, long musicShareId) {
+        super(PacketOpcodes.MusicGameStartRsp);
 
-		var proto = MusicGameStartRspOuterClass.MusicGameStartRsp.newBuilder();
+        var proto = MusicGameStartRspOuterClass.MusicGameStartRsp.newBuilder();
 
-		proto.setMusicBasicId(musicBasicId)
+        proto.setMusicBasicId(musicBasicId)
             .setUgcGuid(musicShareId);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

@@ -36,7 +36,7 @@
 //        musicGameBeatmap.save();
 //
 //        var playerData = session.getPlayer().getActivityManager().getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
-//        if(playerData.isEmpty()){
+//        if (playerData.isEmpty()) {
 //            return;
 //        }
 //

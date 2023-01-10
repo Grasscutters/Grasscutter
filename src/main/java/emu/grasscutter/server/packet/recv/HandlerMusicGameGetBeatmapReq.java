@@ -17,7 +17,7 @@
 //
 //		var musicGameBeatmap = MusicGameBeatmap.getByShareId(req.getMusicShareId());
 //
-//		if(musicGameBeatmap == null){
+//		if (musicGameBeatmap == null) {
 //			return;
 //		}
 //

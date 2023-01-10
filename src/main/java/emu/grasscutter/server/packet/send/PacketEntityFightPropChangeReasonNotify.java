@@ -23,7 +23,7 @@ public class PacketEntityFightPropChangeReasonNotify extends BasePacket {
                 .setReason(reason)
                 .setChangeHpReason(changeHpReason);
 
-        for(int p : param){
+        for (int p : param) {
             proto.addParamList(p);
         }
 

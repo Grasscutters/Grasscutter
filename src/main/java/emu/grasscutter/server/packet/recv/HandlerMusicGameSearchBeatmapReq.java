@@ -17,7 +17,7 @@
 //
 //		var musicGameBeatmap = MusicGameBeatmap.getByShareId(req.getMusicShareId());
 //
-//		if(musicGameBeatmap == null){
+//		if (musicGameBeatmap == null) {
 //			session.send(new PacketMusicGameSearchBeatmapRsp(11153, req.getUnknownEnum1()));
 //			return;
 //		}

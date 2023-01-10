@@ -122,7 +122,7 @@ public class JsonAdapters {
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
             Class<T> enumClass = (Class<T>) type.getRawType();
             if (!enumClass.isEnum()) return null;
-            
+
             // Make mappings of (string) names to enum constants
             val map = new HashMap<String, T>();
             val enumConstants = enumClass.getEnumConstants();
