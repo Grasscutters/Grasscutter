@@ -221,7 +221,6 @@ public class Scene {
         EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
         event.call();
         if(event.isCanceled()) return;
-
         this.addEntityDirectly(entity);
         this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
     }
@@ -231,7 +230,6 @@ public class Scene {
         EntitySpawnEvent event = new EntitySpawnEvent(entity, player);
         event.call();
         if(event.isCanceled()) return;
-
         this.addEntityDirectly(entity);
         player.sendPacket(new PacketSceneEntityAppearNotify(entity));
 
@@ -245,11 +243,12 @@ public class Scene {
             return;
         }
         for (GameEntity entity : entities) {
-
             EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
             event.call();
-            if(event.isCanceled()) continue;
-
+            if(event.isCanceled()) {
+                entities.remove(entity);
+                continue;
+            }
             this.addEntityDirectly(entity);
         }
 
