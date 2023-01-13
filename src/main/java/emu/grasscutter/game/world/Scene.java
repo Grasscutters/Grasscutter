@@ -217,7 +217,6 @@ public class Scene {
     }
 
     public synchronized void addEntity(GameEntity entity) {
-
         EntitySpawnEvent event = new EntitySpawnEvent(entity, null);
         event.call();
         if(event.isCanceled()) return;
@@ -226,7 +225,6 @@ public class Scene {
     }
 
     public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
-
         EntitySpawnEvent event = new EntitySpawnEvent(entity, player);
         event.call();
         if(event.isCanceled()) return;
