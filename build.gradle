@@ -34,6 +34,9 @@ plugins {
     // Maven
     id 'maven-publish'
     id 'signing'
+
+    // Lombok for delombok'ification
+    id "io.freefair.lombok" version "6.6.1"
 }
 
 compileJava.options.encoding = "UTF-8"
@@ -43,7 +46,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.4.5-dev'
+version = '1.4.5'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -96,7 +99,7 @@ dependencies {
     implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
 
-    protobuf files('proto/')
+     protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
@@ -112,7 +115,6 @@ application {
     // Define the main class for the application
     getMainClass().set('emu.grasscutter.Grasscutter')
 }
-
 
 jar {
     exclude '*.proto'
@@ -205,11 +207,17 @@ clean {
 }
 
 protobuf {
+    generateProtoTasks {
+        all().each { task ->
+            task.enabled = false
+        }
+    }
+
     protoc {
         // The artifact spec for the Protobuf Compiler
         artifact = 'com.google.protobuf:protoc:3.18.1'
     }
-//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+
     generatedFilesBaseDir = "$projectDir/src/generated/"
 }
 
@@ -253,6 +261,8 @@ javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
+
+    source = delombok
 }
 
 task injectGitHash {
