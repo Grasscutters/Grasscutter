@@ -99,7 +99,7 @@ dependencies {
     implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
 
-     protobuf files('proto/')
+    protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
@@ -207,12 +207,6 @@ clean {
 }
 
 protobuf {
-    generateProtoTasks {
-        all().each { task ->
-            task.enabled = false
-        }
-    }
-
     protoc {
         // The artifact spec for the Protobuf Compiler
         artifact = 'com.google.protobuf:protoc:3.18.1'
@@ -261,8 +255,6 @@ javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
-
-    source = delombok
 }
 
 task injectGitHash {
