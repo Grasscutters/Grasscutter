@@ -104,6 +104,9 @@ public class SceneScriptManager {
         currentTriggers.put(eventId, new HashSet<>());
     }
     public void refreshGroup(SceneGroup group, int suiteIndex) {
+        if (group == null) {
+            return;
+        }
         var suite = group.getSuiteByIndex(suiteIndex);
         if (suite == null) {
             return;
