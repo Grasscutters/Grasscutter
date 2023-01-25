@@ -14,6 +14,9 @@ public class SceneRegion {
     public Position size;
     // for SPHERE
     public int radius;
+    public int area_id;
+    public float height;
+    public Position point_array;
 
     public transient SceneGroup group;
     public boolean contains(Position position) {

@@ -15,6 +15,7 @@ public class SceneSuite {
 	public List<String> triggers = List.of();
     public List<Integer> regions = List.of();
     public int rand_weight;
+    public int[] npcs;
 
 	public transient List<SceneMonster> sceneMonsters = List.of();
 	public transient List<SceneGadget> sceneGadgets = List.of();

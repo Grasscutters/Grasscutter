@@ -10,6 +10,9 @@ public class SceneTrigger {
 	public String source;
 	public String condition;
 	public String action;
+    public boolean forbid_guest;
+    public int trigger_count;
+    public String tlog_tag;
 
 	public transient SceneGroup currentGroup;
 	@Override
@@ -34,6 +37,8 @@ public class SceneTrigger {
 				", source='" + source + '\'' +
 				", condition='" + condition + '\'' +
 				", action='" + action + '\'' +
+				", forbid_guest='" + forbid_guest + '\'' +
+				", trigger_count='" + trigger_count + '\'' +
 				'}';
 	}
 }
