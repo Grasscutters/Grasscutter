@@ -2,8 +2,9 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
-import java.util.List;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 public class SceneRegion {
@@ -20,6 +21,13 @@ public class SceneRegion {
 
     public transient SceneGroup group;
 
+    /**
+     * @return The group ID for this region.
+     */
+    public int getGroupId() {
+        return this.group == null ? -1 : this.group.id;
+    }
+
     public boolean contains(Position position) {
         switch (shape) {
             case ScriptRegionShape.CUBIC:
@@ -34,5 +42,22 @@ public class SceneRegion {
                 return x + y + z <= (radius * radius);
         }
         return false;
+    }
+
+    /**
+     * Checks if two regions are the same.
+     *
+     * @param region The region to compare to.
+     * @return True if the regions are the same, false otherwise.
+     */
+    public boolean equals(SceneRegion region) {
+        return this.config_id == region.config_id
+                && this.shape == region.shape
+                && this.pos.equals(region.pos)
+                && this.size.equals(region.size)
+                && this.radius == region.radius
+                && this.area_id == region.area_id
+                && this.height == region.height
+                && this.point_array.equals(region.point_array);
     }
 }

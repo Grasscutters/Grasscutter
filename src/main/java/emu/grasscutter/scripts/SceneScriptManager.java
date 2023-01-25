@@ -1,7 +1,5 @@
 package emu.grasscutter.scripts;
 
-import static emu.grasscutter.scripts.constants.EventType.*;
-
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
@@ -28,6 +26,14 @@ import emu.grasscutter.utils.Position;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import kotlin.Pair;
+import lombok.val;
+import org.luaj.vm2.LuaError;
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,13 +41,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import kotlin.Pair;
-import lombok.val;
-import org.luaj.vm2.LuaError;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
 
 public class SceneScriptManager {
     private final Scene scene;
@@ -351,9 +352,10 @@ public class SceneScriptManager {
     }
 
     public synchronized void deregisterRegion(SceneRegion region) {
-        var instance =
-                regions.values().stream().filter(r -> r.getConfigId() == region.config_id).findFirst();
-        instance.ifPresent(entityRegion -> regions.remove(entityRegion.getId()));
+        this.regions.values().stream()
+            .filter(r -> r.getMetaRegion().equals(region))
+            .findFirst()
+            .ifPresent(entityRegion -> this.regions.remove(entityRegion.getId()));
     }
 
     public Map<Integer, Set<SceneGroup>> getLoadedGroupSetPerBlock() {
