@@ -44,8 +44,11 @@ public final class JsonUtils {
 
     public static <T> T loadToClass(Reader fileReader, Class<T> classType) throws IOException {
         return gson.fromJson(fileReader, classType);
-    }
 
+
+
+        // return gson.fromJson(fileReader, classType);
+    }
     @Deprecated(forRemoval = true)
     public static <T> T loadToClass(String filename, Class<T> classType) throws IOException {
         try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
