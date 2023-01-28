@@ -24,7 +24,7 @@ public class HandlerBackMyWorldReq extends PacketHandler {
 		
 		session.getPlayer().getWorld().transferPlayerToScene(
 			session.getPlayer(),
-			scene.getPrevScene(),
+			prevScene,
 			TeleportType.WAYPOINT,
 			session.getPlayer().getPrevPos());
 
