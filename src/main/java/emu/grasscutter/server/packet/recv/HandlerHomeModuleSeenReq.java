@@ -13,7 +13,7 @@ public class HandlerHomeModuleSeenReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = HomeModuleSeenReq.parseFrom(payload);
         var seen = req.getSeenModuleIdListList();
-
+        // TODO: Make 'seen' status persist
         session.send(new PacketHomeModuleSeenRsp(seen));
         
     }

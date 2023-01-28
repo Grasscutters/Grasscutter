@@ -69,8 +69,11 @@ public class GameHome {
             if (defaultItem != null) {
                 Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
+            }else{
+                // Sumeru res missing bricks account, use default realm data to allow main house in other realms
+                defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
+                return HomeSceneItem.parseFrom(defaultItem, sceneId);
             }
-            return null;
         });
     }
 
