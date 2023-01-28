@@ -14,6 +14,18 @@ public class ItemUseUnlockHomeModule extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        return false;
+        return true;
+    }
+
+    @Override
+    public boolean postUseItem(UseItemParams params){
+
+        // Realm 5 will break all homes, so blacklist for now
+        if(this.i == 5){
+            return false;
+        }
+
+        params.player.addRealmList(this.i);
+        return true;
     }
 }
