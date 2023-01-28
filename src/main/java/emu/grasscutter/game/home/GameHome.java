@@ -85,7 +85,7 @@ public class GameHome {
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
     }
 
-    // Let the game know the reward is claimed
+    // Tell the client the reward is claimed or realm unlocked
     public void onClaimReward(Player player){
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
     }

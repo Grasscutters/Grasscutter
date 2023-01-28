@@ -393,7 +393,8 @@ public class Player {
 
         // Tell the client the realm is unlocked
         if(realmId > 3){ // Realms 3 and below are default 'unlocked'
-            this.sendPacket(new PacketHomeModuleUnlockNotify(realmId)); // Update needs scene change?
+            this.sendPacket(new PacketHomeModuleUnlockNotify(realmId));
+            this.getHome().onClaimReward(this);
         }
     }
 

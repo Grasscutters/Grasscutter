@@ -44,9 +44,10 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         super(PacketOpcodes.PlayerEnterSceneNotify);
 
         // Set previous position
-        if(newScene != 3){ // Hardcoded for now else you always return to beach
-            // TODO: Don't update position within same scene
+        if(!(newScene == 3)){ // Hardcoded for now else weird positions will occur
+            // Don't update position within same scene or teapot
         }else{
+            // Only used for exiting teapot currently
             player.setPrevPos(player.getPosition());
         }
 
