@@ -43,6 +43,13 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
     public PacketPlayerEnterSceneNotify(Player player, Player target, EnterType type, EnterReason reason, int newScene, Position newPos) {
         super(PacketOpcodes.PlayerEnterSceneNotify);
 
+        // Set previous position
+        if(newScene != 3){ // Hardcoded for now else you always return to beach
+            // TODO: Don't update position within same scene
+        }else{
+            player.setPrevPos(player.getPosition());
+        }
+
         player.setSceneLoadState(SceneLoadState.LOADING);
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 

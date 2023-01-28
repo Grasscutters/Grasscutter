@@ -97,6 +97,7 @@ public class Player {
     @Getter private int headImage;
     @Getter private int nameCardId = 210001;
     @Getter private Position position;
+    @Getter @Setter private Position prevPos;
     @Getter private Position rotation;
     @Getter private PlayerBirthday birthday;
     @Getter private PlayerCodex codex;
@@ -208,6 +209,7 @@ public class Player {
         this.questManager = new QuestManager(this);
         this.buffManager = new PlayerBuffManager(this);
         this.position = new Position(GameConstants.START_POSITION);
+        this.prevPos = new Position();
         this.rotation = new Position(0, 307, 0);
         this.sceneId = 3;
         this.regionId = 1;
