@@ -85,6 +85,11 @@ public class GameHome {
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
     }
 
+    // Let the game know the reward is claimed
+    public void onClaimReward(Player player){
+        player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
+    }
+
     public Player getPlayer() {
         if (this.player == null)
             this.player = Grasscutter.getGameServer().getPlayerByUid((int) this.ownerUid, true);

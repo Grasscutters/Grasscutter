@@ -117,6 +117,7 @@ public class Player {
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> costumeList;
     @Getter @Setter private Set<Integer> rewardedLevels;
+    @Getter @Setter private Set<Integer> homeRewardedLevels;
     @Getter @Setter private Set<Integer> realmList;
     @Getter private Set<Integer> unlockedForgingBlueprints;
     @Getter private Set<Integer> unlockedCombines;
@@ -248,6 +249,7 @@ public class Player {
 
         this.birthday = new PlayerBirthday();
         this.rewardedLevels = new HashSet<>();
+        this.homeRewardedLevels = new HashSet<>();
         this.moonCardGetTimes = new HashSet<>();
         this.codex = new PlayerCodex(this);
         this.progressManager = new PlayerProgressManager(this);
