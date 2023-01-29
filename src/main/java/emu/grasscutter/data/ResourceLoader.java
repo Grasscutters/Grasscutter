@@ -297,9 +297,9 @@ public class ResourceLoader {
             Grasscutter.getLogger().error("Error loading ability modifiers: ", e);
             return;
         }
-         //System.out.println("Loaded modifiers, found types:");
-         //modifierActionTypes.stream().sorted().forEach(s -> System.out.printf("%s, ", s));
-         //System.out.println("[End]");
+        // System.out.println("Loaded modifiers, found types:");
+        // modifierActionTypes.stream().sorted().forEach(s -> System.out.printf("%s, ", s));
+        // System.out.println("[End]");
     }
     private static void loadAbilityModifiers(Path path) {
         try {
