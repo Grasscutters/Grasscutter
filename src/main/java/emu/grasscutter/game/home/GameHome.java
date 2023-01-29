@@ -69,7 +69,7 @@ public class GameHome {
             if (defaultItem != null) {
                 Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
-            }else{
+            } else {
                 // Realm res missing bricks account, use default realm data to allow main house
                 defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
