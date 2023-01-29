@@ -10,7 +10,7 @@ import emu.grasscutter.server.packet.send.PacketBackMyWorldRsp;
 
 @Opcodes(PacketOpcodes.BackMyWorldReq)
 public class HandlerBackMyWorldReq extends PacketHandler {
-	
+
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 
@@ -18,15 +18,15 @@ public class HandlerBackMyWorldReq extends PacketHandler {
 		int prevScene = scene.getPrevScene();
 
 		// Sanity check for switching between teapot realms
-		if(prevScene >= 2000 && prevScene <= 2006){
+		if (prevScene >= 2000 && prevScene <= 2006) {
 			prevScene = 3;
 		}
-		
+
 		session.getPlayer().getWorld().transferPlayerToScene(
-			session.getPlayer(),
-			prevScene,
-			TeleportType.WAYPOINT,
-			session.getPlayer().getPrevPos());
+				session.getPlayer(),
+				prevScene,
+				TeleportType.WAYPOINT,
+				session.getPlayer().getPrevPos());
 
 		session.send(new PacketBackMyWorldRsp());
 	}

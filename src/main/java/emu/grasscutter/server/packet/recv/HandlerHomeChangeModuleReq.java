@@ -12,7 +12,6 @@ import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
 import emu.grasscutter.utils.Position;
 
-
 @Opcodes(PacketOpcodes.HomeChangeModuleReq)
 public class HandlerHomeChangeModuleReq extends PacketHandler {
 
@@ -31,8 +30,8 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
         session.getPlayer().getWorld().transferPlayerToScene(
-            session.getPlayer(), realmId,
-            TeleportType.WAYPOINT, pos
+                session.getPlayer(), realmId,
+                TeleportType.WAYPOINT, pos
         );
     }
 }

@@ -46,7 +46,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         // Set previous position
         if(!(newScene == 3)){ // Hardcoded for now else weird positions will occur
             // Don't update position within same scene or teapot
-        }else{
+        } else {
             // Only used for exiting teapot currently
             player.setPrevPos(player.getPosition());
         }
