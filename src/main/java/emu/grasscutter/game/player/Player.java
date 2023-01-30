@@ -119,6 +119,7 @@ public class Player {
     @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> homeRewardedLevels;
     @Getter @Setter private Set<Integer> realmList;
+    @Getter @Setter private Set<Integer> seenRealmList;
     @Getter private Set<Integer> unlockedForgingBlueprints;
     @Getter private Set<Integer> unlockedCombines;
     @Getter private Set<Integer> unlockedFurniture;
@@ -250,6 +251,7 @@ public class Player {
         this.birthday = new PlayerBirthday();
         this.rewardedLevels = new HashSet<>();
         this.homeRewardedLevels = new HashSet<>();
+        this.seenRealmList = new HashSet<>();
         this.moonCardGetTimes = new HashSet<>();
         this.codex = new PlayerCodex(this);
         this.progressManager = new PlayerProgressManager(this);
@@ -396,6 +398,15 @@ public class Player {
             this.sendPacket(new PacketHomeModuleUnlockNotify(realmId));
             this.getHome().onClaimReward(this);
         }
+    }
+
+    public void addSeenRealmList(int seenId) {
+        if (this.seenRealmList == null) {
+            this.seenRealmList = new HashSet<>();
+        } else if (this.seenRealmList.contains(seenId)) {
+            return;
+        }
+        this.seenRealmList.add(seenId);
     }
 
     public int getExpeditionLimit() {
