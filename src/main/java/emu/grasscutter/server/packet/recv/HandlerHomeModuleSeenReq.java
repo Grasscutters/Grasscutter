@@ -15,6 +15,5 @@ public class HandlerHomeModuleSeenReq extends PacketHandler {
         var seen = req.getSeenModuleIdListList();
         // TODO: Make 'seen' status persist
         session.send(new PacketHomeModuleSeenRsp(seen));
-        
     }
 }
