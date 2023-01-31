@@ -19,13 +19,13 @@ public final class EntityEnvironmentInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 json_climate_type = 1;</code>
+     * <code>uint32 jsonClimateType = 1;</code>
      * @return The jsonClimateType.
      */
     int getJsonClimateType();
 
     /**
-     * <code>uint32 climate_area_id = 2;</code>
+     * <code>uint32 climateAreaId = 2;</code>
      * @return The climateAreaId.
      */
     int getClimateAreaId();
@@ -117,10 +117,10 @@ public final class EntityEnvironmentInfoOuterClass {
               emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo.class, emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo.Builder.class);
     }
 
-    public static final int JSON_CLIMATE_TYPE_FIELD_NUMBER = 1;
+    public static final int JSONCLIMATETYPE_FIELD_NUMBER = 1;
     private int jsonClimateType_;
     /**
-     * <code>uint32 json_climate_type = 1;</code>
+     * <code>uint32 jsonClimateType = 1;</code>
      * @return The jsonClimateType.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class EntityEnvironmentInfoOuterClass {
       return jsonClimateType_;
     }
 
-    public static final int CLIMATE_AREA_ID_FIELD_NUMBER = 2;
+    public static final int CLIMATEAREAID_FIELD_NUMBER = 2;
     private int climateAreaId_;
     /**
-     * <code>uint32 climate_area_id = 2;</code>
+     * <code>uint32 climateAreaId = 2;</code>
      * @return The climateAreaId.
      */
     @java.lang.Override
@@ -206,9 +206,9 @@ public final class EntityEnvironmentInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JSON_CLIMATE_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + JSONCLIMATETYPE_FIELD_NUMBER;
       hash = (53 * hash) + getJsonClimateType();
-      hash = (37 * hash) + CLIMATE_AREA_ID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIMATEAREAID_FIELD_NUMBER;
       hash = (53 * hash) + getClimateAreaId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -460,7 +460,7 @@ public final class EntityEnvironmentInfoOuterClass {
 
       private int jsonClimateType_ ;
       /**
-       * <code>uint32 json_climate_type = 1;</code>
+       * <code>uint32 jsonClimateType = 1;</code>
        * @return The jsonClimateType.
        */
       @java.lang.Override
@@ -468,7 +468,7 @@ public final class EntityEnvironmentInfoOuterClass {
         return jsonClimateType_;
       }
       /**
-       * <code>uint32 json_climate_type = 1;</code>
+       * <code>uint32 jsonClimateType = 1;</code>
        * @param value The jsonClimateType to set.
        * @return This builder for chaining.
        */
@@ -479,7 +479,7 @@ public final class EntityEnvironmentInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 json_climate_type = 1;</code>
+       * <code>uint32 jsonClimateType = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearJsonClimateType() {
@@ -491,7 +491,7 @@ public final class EntityEnvironmentInfoOuterClass {
 
       private int climateAreaId_ ;
       /**
-       * <code>uint32 climate_area_id = 2;</code>
+       * <code>uint32 climateAreaId = 2;</code>
        * @return The climateAreaId.
        */
       @java.lang.Override
@@ -499,7 +499,7 @@ public final class EntityEnvironmentInfoOuterClass {
         return climateAreaId_;
       }
       /**
-       * <code>uint32 climate_area_id = 2;</code>
+       * <code>uint32 climateAreaId = 2;</code>
        * @param value The climateAreaId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +510,7 @@ public final class EntityEnvironmentInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 climate_area_id = 2;</code>
+       * <code>uint32 climateAreaId = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClimateAreaId() {
@@ -586,10 +586,10 @@ public final class EntityEnvironmentInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033EntityEnvironmentInfo.proto\"K\n\025EntityE" +
-      "nvironmentInfo\022\031\n\021json_climate_type\030\001 \001(" +
-      "\r\022\027\n\017climate_area_id\030\002 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n\033EntityEnvironmentInfo.proto\"G\n\025EntityE" +
+      "nvironmentInfo\022\027\n\017jsonClimateType\030\001 \001(\r\022" +
+      "\025\n\rclimateAreaId\030\002 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

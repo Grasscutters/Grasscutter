@@ -25,7 +25,7 @@ public final class VehicleMemberOuterClass {
     int getUid();
 
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>uint64 avatarGuid = 2;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
@@ -139,10 +139,10 @@ public final class VehicleMemberOuterClass {
       return uid_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    public static final int AVATARGUID_FIELD_NUMBER = 2;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>uint64 avatarGuid = 2;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -239,7 +239,7 @@ public final class VehicleMemberOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
       hash = (37 * hash) + POS_FIELD_NUMBER;
@@ -531,7 +531,7 @@ public final class VehicleMemberOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatarGuid = 2;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -539,7 +539,7 @@ public final class VehicleMemberOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatarGuid = 2;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -550,7 +550,7 @@ public final class VehicleMemberOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatarGuid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -657,10 +657,10 @@ public final class VehicleMemberOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023VehicleMember.proto\">\n\rVehicleMember\022\013" +
-      "\n\003uid\030\001 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004\022\013\n\003pos\030" +
-      "\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
-      "o3"
+      "\n\023VehicleMember.proto\"=\n\rVehicleMember\022\013" +
+      "\n\003uid\030\001 \001(\r\022\022\n\navatarGuid\030\002 \001(\004\022\013\n\003pos\030\003" +
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

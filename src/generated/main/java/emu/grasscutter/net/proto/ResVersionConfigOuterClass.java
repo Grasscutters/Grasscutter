@@ -43,24 +43,24 @@ public final class ResVersionConfigOuterClass {
         getMd5Bytes();
 
     /**
-     * <code>string release_total_size = 4;</code>
+     * <code>string releaseTotalSize = 4;</code>
      * @return The releaseTotalSize.
      */
     java.lang.String getReleaseTotalSize();
     /**
-     * <code>string release_total_size = 4;</code>
+     * <code>string releaseTotalSize = 4;</code>
      * @return The bytes for releaseTotalSize.
      */
     com.google.protobuf.ByteString
         getReleaseTotalSizeBytes();
 
     /**
-     * <code>string version_suffix = 5;</code>
+     * <code>string versionSuffix = 5;</code>
      * @return The versionSuffix.
      */
     java.lang.String getVersionSuffix();
     /**
-     * <code>string version_suffix = 5;</code>
+     * <code>string versionSuffix = 5;</code>
      * @return The bytes for versionSuffix.
      */
     com.google.protobuf.ByteString
@@ -79,12 +79,12 @@ public final class ResVersionConfigOuterClass {
         getBranchBytes();
 
     /**
-     * <code>string next_script_version = 7;</code>
+     * <code>string nextScriptVersion = 7;</code>
      * @return The nextScriptVersion.
      */
     java.lang.String getNextScriptVersion();
     /**
-     * <code>string next_script_version = 7;</code>
+     * <code>string nextScriptVersion = 7;</code>
      * @return The bytes for nextScriptVersion.
      */
     com.google.protobuf.ByteString
@@ -272,10 +272,10 @@ public final class ResVersionConfigOuterClass {
       }
     }
 
-    public static final int RELEASE_TOTAL_SIZE_FIELD_NUMBER = 4;
+    public static final int RELEASETOTALSIZE_FIELD_NUMBER = 4;
     private volatile java.lang.Object releaseTotalSize_;
     /**
-     * <code>string release_total_size = 4;</code>
+     * <code>string releaseTotalSize = 4;</code>
      * @return The releaseTotalSize.
      */
     @java.lang.Override
@@ -292,7 +292,7 @@ public final class ResVersionConfigOuterClass {
       }
     }
     /**
-     * <code>string release_total_size = 4;</code>
+     * <code>string releaseTotalSize = 4;</code>
      * @return The bytes for releaseTotalSize.
      */
     @java.lang.Override
@@ -310,10 +310,10 @@ public final class ResVersionConfigOuterClass {
       }
     }
 
-    public static final int VERSION_SUFFIX_FIELD_NUMBER = 5;
+    public static final int VERSIONSUFFIX_FIELD_NUMBER = 5;
     private volatile java.lang.Object versionSuffix_;
     /**
-     * <code>string version_suffix = 5;</code>
+     * <code>string versionSuffix = 5;</code>
      * @return The versionSuffix.
      */
     @java.lang.Override
@@ -330,7 +330,7 @@ public final class ResVersionConfigOuterClass {
       }
     }
     /**
-     * <code>string version_suffix = 5;</code>
+     * <code>string versionSuffix = 5;</code>
      * @return The bytes for versionSuffix.
      */
     @java.lang.Override
@@ -386,10 +386,10 @@ public final class ResVersionConfigOuterClass {
       }
     }
 
-    public static final int NEXT_SCRIPT_VERSION_FIELD_NUMBER = 7;
+    public static final int NEXTSCRIPTVERSION_FIELD_NUMBER = 7;
     private volatile java.lang.Object nextScriptVersion_;
     /**
-     * <code>string next_script_version = 7;</code>
+     * <code>string nextScriptVersion = 7;</code>
      * @return The nextScriptVersion.
      */
     @java.lang.Override
@@ -406,7 +406,7 @@ public final class ResVersionConfigOuterClass {
       }
     }
     /**
-     * <code>string next_script_version = 7;</code>
+     * <code>string nextScriptVersion = 7;</code>
      * @return The bytes for nextScriptVersion.
      */
     @java.lang.Override
@@ -538,13 +538,13 @@ public final class ResVersionConfigOuterClass {
           getRelogin());
       hash = (37 * hash) + MD5_FIELD_NUMBER;
       hash = (53 * hash) + getMd5().hashCode();
-      hash = (37 * hash) + RELEASE_TOTAL_SIZE_FIELD_NUMBER;
+      hash = (37 * hash) + RELEASETOTALSIZE_FIELD_NUMBER;
       hash = (53 * hash) + getReleaseTotalSize().hashCode();
-      hash = (37 * hash) + VERSION_SUFFIX_FIELD_NUMBER;
+      hash = (37 * hash) + VERSIONSUFFIX_FIELD_NUMBER;
       hash = (53 * hash) + getVersionSuffix().hashCode();
       hash = (37 * hash) + BRANCH_FIELD_NUMBER;
       hash = (53 * hash) + getBranch().hashCode();
-      hash = (37 * hash) + NEXT_SCRIPT_VERSION_FIELD_NUMBER;
+      hash = (37 * hash) + NEXTSCRIPTVERSION_FIELD_NUMBER;
       hash = (53 * hash) + getNextScriptVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -969,7 +969,7 @@ public final class ResVersionConfigOuterClass {
 
       private java.lang.Object releaseTotalSize_ = "";
       /**
-       * <code>string release_total_size = 4;</code>
+       * <code>string releaseTotalSize = 4;</code>
        * @return The releaseTotalSize.
        */
       public java.lang.String getReleaseTotalSize() {
@@ -985,7 +985,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string release_total_size = 4;</code>
+       * <code>string releaseTotalSize = 4;</code>
        * @return The bytes for releaseTotalSize.
        */
       public com.google.protobuf.ByteString
@@ -1002,7 +1002,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string release_total_size = 4;</code>
+       * <code>string releaseTotalSize = 4;</code>
        * @param value The releaseTotalSize to set.
        * @return This builder for chaining.
        */
@@ -1017,7 +1017,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string release_total_size = 4;</code>
+       * <code>string releaseTotalSize = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReleaseTotalSize() {
@@ -1027,7 +1027,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string release_total_size = 4;</code>
+       * <code>string releaseTotalSize = 4;</code>
        * @param value The bytes for releaseTotalSize to set.
        * @return This builder for chaining.
        */
@@ -1045,7 +1045,7 @@ public final class ResVersionConfigOuterClass {
 
       private java.lang.Object versionSuffix_ = "";
       /**
-       * <code>string version_suffix = 5;</code>
+       * <code>string versionSuffix = 5;</code>
        * @return The versionSuffix.
        */
       public java.lang.String getVersionSuffix() {
@@ -1061,7 +1061,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string version_suffix = 5;</code>
+       * <code>string versionSuffix = 5;</code>
        * @return The bytes for versionSuffix.
        */
       public com.google.protobuf.ByteString
@@ -1078,7 +1078,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string version_suffix = 5;</code>
+       * <code>string versionSuffix = 5;</code>
        * @param value The versionSuffix to set.
        * @return This builder for chaining.
        */
@@ -1093,7 +1093,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string version_suffix = 5;</code>
+       * <code>string versionSuffix = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersionSuffix() {
@@ -1103,7 +1103,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string version_suffix = 5;</code>
+       * <code>string versionSuffix = 5;</code>
        * @param value The bytes for versionSuffix to set.
        * @return This builder for chaining.
        */
@@ -1197,7 +1197,7 @@ public final class ResVersionConfigOuterClass {
 
       private java.lang.Object nextScriptVersion_ = "";
       /**
-       * <code>string next_script_version = 7;</code>
+       * <code>string nextScriptVersion = 7;</code>
        * @return The nextScriptVersion.
        */
       public java.lang.String getNextScriptVersion() {
@@ -1213,7 +1213,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string next_script_version = 7;</code>
+       * <code>string nextScriptVersion = 7;</code>
        * @return The bytes for nextScriptVersion.
        */
       public com.google.protobuf.ByteString
@@ -1230,7 +1230,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string next_script_version = 7;</code>
+       * <code>string nextScriptVersion = 7;</code>
        * @param value The nextScriptVersion to set.
        * @return This builder for chaining.
        */
@@ -1245,7 +1245,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string next_script_version = 7;</code>
+       * <code>string nextScriptVersion = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearNextScriptVersion() {
@@ -1255,7 +1255,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string next_script_version = 7;</code>
+       * <code>string nextScriptVersion = 7;</code>
        * @param value The bytes for nextScriptVersion to set.
        * @return This builder for chaining.
        */
@@ -1337,12 +1337,12 @@ public final class ResVersionConfigOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ResVersionConfig.proto\"\242\001\n\020ResVersionC" +
+      "\n\026ResVersionConfig.proto\"\235\001\n\020ResVersionC" +
       "onfig\022\017\n\007version\030\001 \001(\r\022\017\n\007relogin\030\002 \001(\010\022" +
-      "\013\n\003md5\030\003 \001(\t\022\032\n\022release_total_size\030\004 \001(\t" +
-      "\022\026\n\016version_suffix\030\005 \001(\t\022\016\n\006branch\030\006 \001(\t" +
-      "\022\033\n\023next_script_version\030\007 \001(\tB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\013\n\003md5\030\003 \001(\t\022\030\n\020releaseTotalSize\030\004 \001(\t\022\025" +
+      "\n\rversionSuffix\030\005 \001(\t\022\016\n\006branch\030\006 \001(\t\022\031\n" +
+      "\021nextScriptVersion\030\007 \001(\tB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

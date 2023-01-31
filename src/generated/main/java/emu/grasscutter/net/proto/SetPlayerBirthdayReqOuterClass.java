@@ -19,32 +19,21 @@ public final class SetPlayerBirthdayReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      * @return Whether the birthday field is set.
      */
     boolean hasBirthday();
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      * @return The birthday.
      */
     emu.grasscutter.net.proto.BirthdayOuterClass.Birthday getBirthday();
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      */
     emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4048;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code SetPlayerBirthdayReq}
    */
   public static final class SetPlayerBirthdayReq extends
@@ -89,7 +78,7 @@ public final class SetPlayerBirthdayReqOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 122: {
               emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder subBuilder = null;
               if (birthday_ != null) {
                 subBuilder = birthday_.toBuilder();
@@ -134,10 +123,149 @@ public final class SetPlayerBirthdayReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerBirthdayReqOuterClass.SetPlayerBirthdayReq.class, emu.grasscutter.net.proto.SetPlayerBirthdayReqOuterClass.SetPlayerBirthdayReq.Builder.class);
     }
 
-    public static final int BIRTHDAY_FIELD_NUMBER = 8;
+    /**
+     * Protobuf enum {@code SetPlayerBirthdayReq.HIPLJKMFJAC}
+     */
+    public enum HIPLJKMFJAC
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4078;</code>
+       */
+      PEPPOHPHJOJ(1, 4078),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final HIPLJKMFJAC DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final HIPLJKMFJAC EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4078;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4078;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static HIPLJKMFJAC valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static HIPLJKMFJAC forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4078: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<HIPLJKMFJAC>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          HIPLJKMFJAC> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<HIPLJKMFJAC>() {
+              public HIPLJKMFJAC findValueByNumber(int number) {
+                return HIPLJKMFJAC.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.SetPlayerBirthdayReqOuterClass.SetPlayerBirthdayReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final HIPLJKMFJAC[] VALUES = getStaticValuesArray();
+      private static HIPLJKMFJAC[] getStaticValuesArray() {
+        return new HIPLJKMFJAC[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static HIPLJKMFJAC valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private HIPLJKMFJAC(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:SetPlayerBirthdayReq.HIPLJKMFJAC)
+    }
+
+    public static final int BIRTHDAY_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.BirthdayOuterClass.Birthday birthday_;
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      * @return Whether the birthday field is set.
      */
     @java.lang.Override
@@ -145,7 +273,7 @@ public final class SetPlayerBirthdayReqOuterClass {
       return birthday_ != null;
     }
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      * @return The birthday.
      */
     @java.lang.Override
@@ -153,7 +281,7 @@ public final class SetPlayerBirthdayReqOuterClass {
       return birthday_ == null ? emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance() : birthday_;
     }
     /**
-     * <code>.Birthday birthday = 8;</code>
+     * <code>.Birthday birthday = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
@@ -175,7 +303,7 @@ public final class SetPlayerBirthdayReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (birthday_ != null) {
-        output.writeMessage(8, getBirthday());
+        output.writeMessage(15, getBirthday());
       }
       unknownFields.writeTo(output);
     }
@@ -188,7 +316,7 @@ public final class SetPlayerBirthdayReqOuterClass {
       size = 0;
       if (birthday_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getBirthday());
+          .computeMessageSize(15, getBirthday());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -321,17 +449,6 @@ public final class SetPlayerBirthdayReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4048;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code SetPlayerBirthdayReq}
      */
     public static final class Builder extends
@@ -490,14 +607,14 @@ public final class SetPlayerBirthdayReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday, emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder, emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder> birthdayBuilder_;
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        * @return Whether the birthday field is set.
        */
       public boolean hasBirthday() {
         return birthdayBuilder_ != null || birthday_ != null;
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        * @return The birthday.
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.Birthday getBirthday() {
@@ -508,7 +625,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         }
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public Builder setBirthday(emu.grasscutter.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
@@ -524,7 +641,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public Builder setBirthday(
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder builderForValue) {
@@ -538,7 +655,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public Builder mergeBirthday(emu.grasscutter.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
@@ -556,7 +673,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public Builder clearBirthday() {
         if (birthdayBuilder_ == null) {
@@ -570,7 +687,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder getBirthdayBuilder() {
         
@@ -578,7 +695,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         return getBirthdayFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
         if (birthdayBuilder_ != null) {
@@ -589,7 +706,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         }
       }
       /**
-       * <code>.Birthday birthday = 8;</code>
+       * <code>.Birthday birthday = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday, emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder, emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder> 
@@ -672,9 +789,11 @@ public final class SetPlayerBirthdayReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032SetPlayerBirthdayReq.proto\032\016Birthday.p" +
-      "roto\"3\n\024SetPlayerBirthdayReq\022\033\n\010birthday" +
-      "\030\010 \001(\0132\t.BirthdayB\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "roto\"\225\001\n\024SetPlayerBirthdayReq\022\033\n\010birthda" +
+      "y\030\017 \001(\0132\t.Birthday\"`\n\013HIPLJKMFJAC\022\010\n\004NON" +
+      "E\020\000\022\020\n\013PEPPOHPHJOJ\020\356\037\022\017\n\013DCDNILFDFLB\020\000\022\017" +
+      "\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

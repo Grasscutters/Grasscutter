@@ -19,34 +19,23 @@ public final class ForgeQueueManipulateReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 forge_queue_id = 3;</code>
+     * <code>uint32 forgeQueueId = 5;</code>
      * @return The forgeQueueId.
      */
     int getForgeQueueId();
 
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+     * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
      * @return The enum numeric value on the wire for manipulateType.
      */
     int getManipulateTypeValue();
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+     * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
      * @return The manipulateType.
      */
     emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 622;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code ForgeQueueManipulateReq}
    */
   public static final class ForgeQueueManipulateReq extends
@@ -92,15 +81,15 @@ public final class ForgeQueueManipulateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              forgeQueueId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 16: {
               int rawValue = input.readEnum();
 
               manipulateType_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              forgeQueueId_ = input.readUInt32();
               break;
             }
             default: {
@@ -135,10 +124,149 @@ public final class ForgeQueueManipulateReqOuterClass {
               emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq.class, emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq.Builder.class);
     }
 
-    public static final int FORGE_QUEUE_ID_FIELD_NUMBER = 3;
+    /**
+     * Protobuf enum {@code ForgeQueueManipulateReq.BKBECDMOFNM}
+     */
+    public enum BKBECDMOFNM
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 653;</code>
+       */
+      PEPPOHPHJOJ(1, 653),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final BKBECDMOFNM DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final BKBECDMOFNM EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 653;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 653;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BKBECDMOFNM valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static BKBECDMOFNM forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 653: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BKBECDMOFNM>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BKBECDMOFNM> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BKBECDMOFNM>() {
+              public BKBECDMOFNM findValueByNumber(int number) {
+                return BKBECDMOFNM.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final BKBECDMOFNM[] VALUES = getStaticValuesArray();
+      private static BKBECDMOFNM[] getStaticValuesArray() {
+        return new BKBECDMOFNM[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static BKBECDMOFNM valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private BKBECDMOFNM(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ForgeQueueManipulateReq.BKBECDMOFNM)
+    }
+
+    public static final int FORGEQUEUEID_FIELD_NUMBER = 5;
     private int forgeQueueId_;
     /**
-     * <code>uint32 forge_queue_id = 3;</code>
+     * <code>uint32 forgeQueueId = 5;</code>
      * @return The forgeQueueId.
      */
     @java.lang.Override
@@ -146,17 +274,17 @@ public final class ForgeQueueManipulateReqOuterClass {
       return forgeQueueId_;
     }
 
-    public static final int MANIPULATE_TYPE_FIELD_NUMBER = 4;
+    public static final int MANIPULATETYPE_FIELD_NUMBER = 2;
     private int manipulateType_;
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+     * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
      * @return The enum numeric value on the wire for manipulateType.
      */
     @java.lang.Override public int getManipulateTypeValue() {
       return manipulateType_;
     }
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+     * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
      * @return The manipulateType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
@@ -179,11 +307,11 @@ public final class ForgeQueueManipulateReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (forgeQueueId_ != 0) {
-        output.writeUInt32(3, forgeQueueId_);
-      }
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
-        output.writeEnum(4, manipulateType_);
+        output.writeEnum(2, manipulateType_);
+      }
+      if (forgeQueueId_ != 0) {
+        output.writeUInt32(5, forgeQueueId_);
       }
       unknownFields.writeTo(output);
     }
@@ -194,13 +322,13 @@ public final class ForgeQueueManipulateReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (forgeQueueId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, forgeQueueId_);
-      }
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, manipulateType_);
+          .computeEnumSize(2, manipulateType_);
+      }
+      if (forgeQueueId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, forgeQueueId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -231,9 +359,9 @@ public final class ForgeQueueManipulateReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORGE_QUEUE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + FORGEQUEUEID_FIELD_NUMBER;
       hash = (53 * hash) + getForgeQueueId();
-      hash = (37 * hash) + MANIPULATE_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + MANIPULATETYPE_FIELD_NUMBER;
       hash = (53 * hash) + manipulateType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -331,17 +459,6 @@ public final class ForgeQueueManipulateReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 622;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code ForgeQueueManipulateReq}
      */
     public static final class Builder extends
@@ -496,7 +613,7 @@ public final class ForgeQueueManipulateReqOuterClass {
 
       private int forgeQueueId_ ;
       /**
-       * <code>uint32 forge_queue_id = 3;</code>
+       * <code>uint32 forgeQueueId = 5;</code>
        * @return The forgeQueueId.
        */
       @java.lang.Override
@@ -504,7 +621,7 @@ public final class ForgeQueueManipulateReqOuterClass {
         return forgeQueueId_;
       }
       /**
-       * <code>uint32 forge_queue_id = 3;</code>
+       * <code>uint32 forgeQueueId = 5;</code>
        * @param value The forgeQueueId to set.
        * @return This builder for chaining.
        */
@@ -515,7 +632,7 @@ public final class ForgeQueueManipulateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 forge_queue_id = 3;</code>
+       * <code>uint32 forgeQueueId = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearForgeQueueId() {
@@ -527,14 +644,14 @@ public final class ForgeQueueManipulateReqOuterClass {
 
       private int manipulateType_ = 0;
       /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+       * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
        * @return The enum numeric value on the wire for manipulateType.
        */
       @java.lang.Override public int getManipulateTypeValue() {
         return manipulateType_;
       }
       /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+       * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
        * @param value The enum numeric value on the wire for manipulateType to set.
        * @return This builder for chaining.
        */
@@ -545,7 +662,7 @@ public final class ForgeQueueManipulateReqOuterClass {
         return this;
       }
       /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+       * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
        * @return The manipulateType.
        */
       @java.lang.Override
@@ -555,7 +672,7 @@ public final class ForgeQueueManipulateReqOuterClass {
         return result == null ? emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+       * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
        * @param value The manipulateType to set.
        * @return This builder for chaining.
        */
@@ -569,7 +686,7 @@ public final class ForgeQueueManipulateReqOuterClass {
         return this;
       }
       /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 4;</code>
+       * <code>.ForgeQueueManipulateType manipulateType = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearManipulateType() {
@@ -646,11 +763,13 @@ public final class ForgeQueueManipulateReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ForgeQueueManipulateReq.proto\032\036ForgeQu" +
-      "eueManipulateType.proto\"e\n\027ForgeQueueMan" +
-      "ipulateReq\022\026\n\016forge_queue_id\030\003 \001(\r\0222\n\017ma" +
-      "nipulate_type\030\004 \001(\0162\031.ForgeQueueManipula" +
-      "teTypeB\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "eueManipulateType.proto\"\304\001\n\027ForgeQueueMa" +
+      "nipulateReq\022\024\n\014forgeQueueId\030\005 \001(\r\0221\n\016man" +
+      "ipulateType\030\002 \001(\0162\031.ForgeQueueManipulate" +
+      "Type\"`\n\013BKBECDMOFNM\022\010\n\004NONE\020\000\022\020\n\013PEPPOHP" +
+      "HJOJ\020\215\005\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020" +
+      "\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

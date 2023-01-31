@@ -25,17 +25,6 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     int getUid();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 8516;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code WinterCampAcceptGiveItemReq}
    */
   public static final class WinterCampAcceptGiveItemReq extends
@@ -115,6 +104,145 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.class, emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code WinterCampAcceptGiveItemReq.LIKNMOCMKLA}
+     */
+    public enum LIKNMOCMKLA
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 8148;</code>
+       */
+      PEPPOHPHJOJ(1, 8148),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final LIKNMOCMKLA DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final LIKNMOCMKLA EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 8148;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 8148;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LIKNMOCMKLA valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static LIKNMOCMKLA forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 8148: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LIKNMOCMKLA>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          LIKNMOCMKLA> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LIKNMOCMKLA>() {
+              public LIKNMOCMKLA findValueByNumber(int number) {
+                return LIKNMOCMKLA.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final LIKNMOCMKLA[] VALUES = getStaticValuesArray();
+      private static LIKNMOCMKLA[] getStaticValuesArray() {
+        return new LIKNMOCMKLA[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static LIKNMOCMKLA valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private LIKNMOCMKLA(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:WinterCampAcceptGiveItemReq.LIKNMOCMKLA)
     }
 
     public static final int UID_FIELD_NUMBER = 4;
@@ -284,17 +412,6 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 8516;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code WinterCampAcceptGiveItemReq}
      */
     public static final class Builder extends
@@ -538,9 +655,12 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!WinterCampAcceptGiveItemReq.proto\"*\n\033W" +
-      "interCampAcceptGiveItemReq\022\013\n\003uid\030\004 \001(\rB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n!WinterCampAcceptGiveItemReq.proto\"\214\001\n\033" +
+      "WinterCampAcceptGiveItemReq\022\013\n\003uid\030\004 \001(\r" +
+      "\"`\n\013LIKNMOCMKLA\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ" +
+      "\020\324?\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n" +
+      "\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

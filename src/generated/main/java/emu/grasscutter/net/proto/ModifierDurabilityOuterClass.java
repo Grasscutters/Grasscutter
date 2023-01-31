@@ -19,13 +19,13 @@ public final class ModifierDurabilityOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float reduce_ratio = 1;</code>
+     * <code>float reduceRatio = 1;</code>
      * @return The reduceRatio.
      */
     float getReduceRatio();
 
     /**
-     * <code>float remaining_durability = 2;</code>
+     * <code>float remainingDurability = 2;</code>
      * @return The remainingDurability.
      */
     float getRemainingDurability();
@@ -117,10 +117,10 @@ public final class ModifierDurabilityOuterClass {
               emu.grasscutter.net.proto.ModifierDurabilityOuterClass.ModifierDurability.class, emu.grasscutter.net.proto.ModifierDurabilityOuterClass.ModifierDurability.Builder.class);
     }
 
-    public static final int REDUCE_RATIO_FIELD_NUMBER = 1;
+    public static final int REDUCERATIO_FIELD_NUMBER = 1;
     private float reduceRatio_;
     /**
-     * <code>float reduce_ratio = 1;</code>
+     * <code>float reduceRatio = 1;</code>
      * @return The reduceRatio.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class ModifierDurabilityOuterClass {
       return reduceRatio_;
     }
 
-    public static final int REMAINING_DURABILITY_FIELD_NUMBER = 2;
+    public static final int REMAININGDURABILITY_FIELD_NUMBER = 2;
     private float remainingDurability_;
     /**
-     * <code>float remaining_durability = 2;</code>
+     * <code>float remainingDurability = 2;</code>
      * @return The remainingDurability.
      */
     @java.lang.Override
@@ -208,10 +208,10 @@ public final class ModifierDurabilityOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REDUCE_RATIO_FIELD_NUMBER;
+      hash = (37 * hash) + REDUCERATIO_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getReduceRatio());
-      hash = (37 * hash) + REMAINING_DURABILITY_FIELD_NUMBER;
+      hash = (37 * hash) + REMAININGDURABILITY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getRemainingDurability());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -464,7 +464,7 @@ public final class ModifierDurabilityOuterClass {
 
       private float reduceRatio_ ;
       /**
-       * <code>float reduce_ratio = 1;</code>
+       * <code>float reduceRatio = 1;</code>
        * @return The reduceRatio.
        */
       @java.lang.Override
@@ -472,7 +472,7 @@ public final class ModifierDurabilityOuterClass {
         return reduceRatio_;
       }
       /**
-       * <code>float reduce_ratio = 1;</code>
+       * <code>float reduceRatio = 1;</code>
        * @param value The reduceRatio to set.
        * @return This builder for chaining.
        */
@@ -483,7 +483,7 @@ public final class ModifierDurabilityOuterClass {
         return this;
       }
       /**
-       * <code>float reduce_ratio = 1;</code>
+       * <code>float reduceRatio = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearReduceRatio() {
@@ -495,7 +495,7 @@ public final class ModifierDurabilityOuterClass {
 
       private float remainingDurability_ ;
       /**
-       * <code>float remaining_durability = 2;</code>
+       * <code>float remainingDurability = 2;</code>
        * @return The remainingDurability.
        */
       @java.lang.Override
@@ -503,7 +503,7 @@ public final class ModifierDurabilityOuterClass {
         return remainingDurability_;
       }
       /**
-       * <code>float remaining_durability = 2;</code>
+       * <code>float remainingDurability = 2;</code>
        * @param value The remainingDurability to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class ModifierDurabilityOuterClass {
         return this;
       }
       /**
-       * <code>float remaining_durability = 2;</code>
+       * <code>float remainingDurability = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemainingDurability() {
@@ -590,10 +590,10 @@ public final class ModifierDurabilityOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030ModifierDurability.proto\"H\n\022ModifierDu" +
-      "rability\022\024\n\014reduce_ratio\030\001 \001(\002\022\034\n\024remain" +
-      "ing_durability\030\002 \001(\002B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\030ModifierDurability.proto\"F\n\022ModifierDu" +
+      "rability\022\023\n\013reduceRatio\030\001 \001(\002\022\033\n\023remaini" +
+      "ngDurability\030\002 \001(\002B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,76 +19,76 @@ public final class AdjustTrackingInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-     * @return The unk3300CHCOHLGBHLB.
-     */
-    java.lang.String getUnk3300CHCOHLGBHLB();
-    /**
-     * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-     * @return The bytes for unk3300CHCOHLGBHLB.
-     */
-    com.google.protobuf.ByteString
-        getUnk3300CHCOHLGBHLBBytes();
-
-    /**
-     * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+     * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
      * @return The unk3300GAMLJPFKCGC.
      */
     java.lang.String getUnk3300GAMLJPFKCGC();
     /**
-     * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+     * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
      * @return The bytes for unk3300GAMLJPFKCGC.
      */
     com.google.protobuf.ByteString
         getUnk3300GAMLJPFKCGCBytes();
 
     /**
-     * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-     * @return The unk3300ONNMBNODPIA.
+     * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+     * @return The unk3300CHCOHLGBHLB.
      */
-    java.lang.String getUnk3300ONNMBNODPIA();
+    java.lang.String getUnk3300CHCOHLGBHLB();
     /**
-     * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-     * @return The bytes for unk3300ONNMBNODPIA.
-     */
-    com.google.protobuf.ByteString
-        getUnk3300ONNMBNODPIABytes();
-
-    /**
-     * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-     * @return The unk3300MHDOPAMDMPL.
-     */
-    java.lang.String getUnk3300MHDOPAMDMPL();
-    /**
-     * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-     * @return The bytes for unk3300MHDOPAMDMPL.
+     * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+     * @return The bytes for unk3300CHCOHLGBHLB.
      */
     com.google.protobuf.ByteString
-        getUnk3300MHDOPAMDMPLBytes();
+        getUnk3300CHCOHLGBHLBBytes();
 
     /**
-     * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+     * <code>string Unk3300_INAIEOMCIEM = 15;</code>
      * @return The unk3300INAIEOMCIEM.
      */
     java.lang.String getUnk3300INAIEOMCIEM();
     /**
-     * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+     * <code>string Unk3300_INAIEOMCIEM = 15;</code>
      * @return The bytes for unk3300INAIEOMCIEM.
      */
     com.google.protobuf.ByteString
         getUnk3300INAIEOMCIEMBytes();
 
     /**
-     * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+     * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+     * @return The unk3300ONNMBNODPIA.
+     */
+    java.lang.String getUnk3300ONNMBNODPIA();
+    /**
+     * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+     * @return The bytes for unk3300ONNMBNODPIA.
+     */
+    com.google.protobuf.ByteString
+        getUnk3300ONNMBNODPIABytes();
+
+    /**
+     * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
      * @return The unk3300KLKFLIIOFKK.
      */
     java.lang.String getUnk3300KLKFLIIOFKK();
     /**
-     * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+     * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
      * @return The bytes for unk3300KLKFLIIOFKK.
      */
     com.google.protobuf.ByteString
         getUnk3300KLKFLIIOFKKBytes();
+
+    /**
+     * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+     * @return The unk3300MHDOPAMDMPL.
+     */
+    java.lang.String getUnk3300MHDOPAMDMPL();
+    /**
+     * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+     * @return The bytes for unk3300MHDOPAMDMPL.
+     */
+    com.google.protobuf.ByteString
+        getUnk3300MHDOPAMDMPLBytes();
   }
   /**
    * Protobuf type {@code AdjustTrackingInfo}
@@ -103,12 +103,12 @@ public final class AdjustTrackingInfoOuterClass {
       super(builder);
     }
     private AdjustTrackingInfo() {
-      unk3300CHCOHLGBHLB_ = "";
       unk3300GAMLJPFKCGC_ = "";
-      unk3300ONNMBNODPIA_ = "";
-      unk3300MHDOPAMDMPL_ = "";
+      unk3300CHCOHLGBHLB_ = "";
       unk3300INAIEOMCIEM_ = "";
+      unk3300ONNMBNODPIA_ = "";
       unk3300KLKFLIIOFKK_ = "";
+      unk3300MHDOPAMDMPL_ = "";
     }
 
     @java.lang.Override
@@ -141,40 +141,40 @@ public final class AdjustTrackingInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300CHCOHLGBHLB_ = s;
-              break;
-            }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300KLKFLIIOFKK_ = s;
-              break;
-            }
-            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               unk3300ONNMBNODPIA_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              unk3300MHDOPAMDMPL_ = s;
+              unk3300GAMLJPFKCGC_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              unk3300INAIEOMCIEM_ = s;
+              unk3300KLKFLIIOFKK_ = s;
               break;
             }
-            case 74: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              unk3300GAMLJPFKCGC_ = s;
+              unk3300CHCOHLGBHLB_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300MHDOPAMDMPL_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unk3300INAIEOMCIEM_ = s;
               break;
             }
             default: {
@@ -209,48 +209,10 @@ public final class AdjustTrackingInfoOuterClass {
               emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.class, emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder.class);
     }
 
-    public static final int UNK3300_CHCOHLGBHLB_FIELD_NUMBER = 2;
-    private volatile java.lang.Object unk3300CHCOHLGBHLB_;
-    /**
-     * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-     * @return The unk3300CHCOHLGBHLB.
-     */
-    @java.lang.Override
-    public java.lang.String getUnk3300CHCOHLGBHLB() {
-      java.lang.Object ref = unk3300CHCOHLGBHLB_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        unk3300CHCOHLGBHLB_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-     * @return The bytes for unk3300CHCOHLGBHLB.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUnk3300CHCOHLGBHLBBytes() {
-      java.lang.Object ref = unk3300CHCOHLGBHLB_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unk3300CHCOHLGBHLB_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UNK3300_GAMLJPFKCGC_FIELD_NUMBER = 9;
+    public static final int UNK3300_GAMLJPFKCGC_FIELD_NUMBER = 5;
     private volatile java.lang.Object unk3300GAMLJPFKCGC_;
     /**
-     * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+     * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
      * @return The unk3300GAMLJPFKCGC.
      */
     @java.lang.Override
@@ -267,7 +229,7 @@ public final class AdjustTrackingInfoOuterClass {
       }
     }
     /**
-     * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+     * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
      * @return The bytes for unk3300GAMLJPFKCGC.
      */
     @java.lang.Override
@@ -285,86 +247,48 @@ public final class AdjustTrackingInfoOuterClass {
       }
     }
 
-    public static final int UNK3300_ONNMBNODPIA_FIELD_NUMBER = 4;
-    private volatile java.lang.Object unk3300ONNMBNODPIA_;
+    public static final int UNK3300_CHCOHLGBHLB_FIELD_NUMBER = 8;
+    private volatile java.lang.Object unk3300CHCOHLGBHLB_;
     /**
-     * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-     * @return The unk3300ONNMBNODPIA.
+     * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+     * @return The unk3300CHCOHLGBHLB.
      */
     @java.lang.Override
-    public java.lang.String getUnk3300ONNMBNODPIA() {
-      java.lang.Object ref = unk3300ONNMBNODPIA_;
+    public java.lang.String getUnk3300CHCOHLGBHLB() {
+      java.lang.Object ref = unk3300CHCOHLGBHLB_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        unk3300ONNMBNODPIA_ = s;
+        unk3300CHCOHLGBHLB_ = s;
         return s;
       }
     }
     /**
-     * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-     * @return The bytes for unk3300ONNMBNODPIA.
+     * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+     * @return The bytes for unk3300CHCOHLGBHLB.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUnk3300ONNMBNODPIABytes() {
-      java.lang.Object ref = unk3300ONNMBNODPIA_;
+        getUnk3300CHCOHLGBHLBBytes() {
+      java.lang.Object ref = unk3300CHCOHLGBHLB_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        unk3300ONNMBNODPIA_ = b;
+        unk3300CHCOHLGBHLB_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int UNK3300_MHDOPAMDMPL_FIELD_NUMBER = 6;
-    private volatile java.lang.Object unk3300MHDOPAMDMPL_;
-    /**
-     * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-     * @return The unk3300MHDOPAMDMPL.
-     */
-    @java.lang.Override
-    public java.lang.String getUnk3300MHDOPAMDMPL() {
-      java.lang.Object ref = unk3300MHDOPAMDMPL_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        unk3300MHDOPAMDMPL_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-     * @return The bytes for unk3300MHDOPAMDMPL.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUnk3300MHDOPAMDMPLBytes() {
-      java.lang.Object ref = unk3300MHDOPAMDMPL_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unk3300MHDOPAMDMPL_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UNK3300_INAIEOMCIEM_FIELD_NUMBER = 7;
+    public static final int UNK3300_INAIEOMCIEM_FIELD_NUMBER = 15;
     private volatile java.lang.Object unk3300INAIEOMCIEM_;
     /**
-     * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+     * <code>string Unk3300_INAIEOMCIEM = 15;</code>
      * @return The unk3300INAIEOMCIEM.
      */
     @java.lang.Override
@@ -381,7 +305,7 @@ public final class AdjustTrackingInfoOuterClass {
       }
     }
     /**
-     * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+     * <code>string Unk3300_INAIEOMCIEM = 15;</code>
      * @return The bytes for unk3300INAIEOMCIEM.
      */
     @java.lang.Override
@@ -399,10 +323,48 @@ public final class AdjustTrackingInfoOuterClass {
       }
     }
 
-    public static final int UNK3300_KLKFLIIOFKK_FIELD_NUMBER = 3;
+    public static final int UNK3300_ONNMBNODPIA_FIELD_NUMBER = 3;
+    private volatile java.lang.Object unk3300ONNMBNODPIA_;
+    /**
+     * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+     * @return The unk3300ONNMBNODPIA.
+     */
+    @java.lang.Override
+    public java.lang.String getUnk3300ONNMBNODPIA() {
+      java.lang.Object ref = unk3300ONNMBNODPIA_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unk3300ONNMBNODPIA_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+     * @return The bytes for unk3300ONNMBNODPIA.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUnk3300ONNMBNODPIABytes() {
+      java.lang.Object ref = unk3300ONNMBNODPIA_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unk3300ONNMBNODPIA_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UNK3300_KLKFLIIOFKK_FIELD_NUMBER = 7;
     private volatile java.lang.Object unk3300KLKFLIIOFKK_;
     /**
-     * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+     * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
      * @return The unk3300KLKFLIIOFKK.
      */
     @java.lang.Override
@@ -419,7 +381,7 @@ public final class AdjustTrackingInfoOuterClass {
       }
     }
     /**
-     * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+     * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
      * @return The bytes for unk3300KLKFLIIOFKK.
      */
     @java.lang.Override
@@ -431,6 +393,44 @@ public final class AdjustTrackingInfoOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         unk3300KLKFLIIOFKK_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UNK3300_MHDOPAMDMPL_FIELD_NUMBER = 13;
+    private volatile java.lang.Object unk3300MHDOPAMDMPL_;
+    /**
+     * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+     * @return The unk3300MHDOPAMDMPL.
+     */
+    @java.lang.Override
+    public java.lang.String getUnk3300MHDOPAMDMPL() {
+      java.lang.Object ref = unk3300MHDOPAMDMPL_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unk3300MHDOPAMDMPL_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+     * @return The bytes for unk3300MHDOPAMDMPL.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUnk3300MHDOPAMDMPLBytes() {
+      java.lang.Object ref = unk3300MHDOPAMDMPL_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unk3300MHDOPAMDMPL_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -451,23 +451,23 @@ public final class AdjustTrackingInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300CHCOHLGBHLB_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unk3300CHCOHLGBHLB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300KLKFLIIOFKK_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unk3300KLKFLIIOFKK_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300ONNMBNODPIA_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unk3300ONNMBNODPIA_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300MHDOPAMDMPL_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, unk3300MHDOPAMDMPL_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300INAIEOMCIEM_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, unk3300INAIEOMCIEM_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unk3300ONNMBNODPIA_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300GAMLJPFKCGC_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, unk3300GAMLJPFKCGC_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unk3300GAMLJPFKCGC_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300KLKFLIIOFKK_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, unk3300KLKFLIIOFKK_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300CHCOHLGBHLB_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unk3300CHCOHLGBHLB_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300MHDOPAMDMPL_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, unk3300MHDOPAMDMPL_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300INAIEOMCIEM_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, unk3300INAIEOMCIEM_);
       }
       unknownFields.writeTo(output);
     }
@@ -478,23 +478,23 @@ public final class AdjustTrackingInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300CHCOHLGBHLB_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unk3300CHCOHLGBHLB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300KLKFLIIOFKK_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, unk3300KLKFLIIOFKK_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300ONNMBNODPIA_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unk3300ONNMBNODPIA_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300MHDOPAMDMPL_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, unk3300MHDOPAMDMPL_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300INAIEOMCIEM_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, unk3300INAIEOMCIEM_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, unk3300ONNMBNODPIA_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300GAMLJPFKCGC_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, unk3300GAMLJPFKCGC_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unk3300GAMLJPFKCGC_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300KLKFLIIOFKK_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, unk3300KLKFLIIOFKK_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300CHCOHLGBHLB_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unk3300CHCOHLGBHLB_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300MHDOPAMDMPL_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, unk3300MHDOPAMDMPL_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300INAIEOMCIEM_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, unk3300INAIEOMCIEM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -511,18 +511,18 @@ public final class AdjustTrackingInfoOuterClass {
       }
       emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other = (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) obj;
 
-      if (!getUnk3300CHCOHLGBHLB()
-          .equals(other.getUnk3300CHCOHLGBHLB())) return false;
       if (!getUnk3300GAMLJPFKCGC()
           .equals(other.getUnk3300GAMLJPFKCGC())) return false;
-      if (!getUnk3300ONNMBNODPIA()
-          .equals(other.getUnk3300ONNMBNODPIA())) return false;
-      if (!getUnk3300MHDOPAMDMPL()
-          .equals(other.getUnk3300MHDOPAMDMPL())) return false;
+      if (!getUnk3300CHCOHLGBHLB()
+          .equals(other.getUnk3300CHCOHLGBHLB())) return false;
       if (!getUnk3300INAIEOMCIEM()
           .equals(other.getUnk3300INAIEOMCIEM())) return false;
+      if (!getUnk3300ONNMBNODPIA()
+          .equals(other.getUnk3300ONNMBNODPIA())) return false;
       if (!getUnk3300KLKFLIIOFKK()
           .equals(other.getUnk3300KLKFLIIOFKK())) return false;
+      if (!getUnk3300MHDOPAMDMPL()
+          .equals(other.getUnk3300MHDOPAMDMPL())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -534,18 +534,18 @@ public final class AdjustTrackingInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UNK3300_CHCOHLGBHLB_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300CHCOHLGBHLB().hashCode();
       hash = (37 * hash) + UNK3300_GAMLJPFKCGC_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300GAMLJPFKCGC().hashCode();
-      hash = (37 * hash) + UNK3300_ONNMBNODPIA_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300ONNMBNODPIA().hashCode();
-      hash = (37 * hash) + UNK3300_MHDOPAMDMPL_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300MHDOPAMDMPL().hashCode();
+      hash = (37 * hash) + UNK3300_CHCOHLGBHLB_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300CHCOHLGBHLB().hashCode();
       hash = (37 * hash) + UNK3300_INAIEOMCIEM_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300INAIEOMCIEM().hashCode();
+      hash = (37 * hash) + UNK3300_ONNMBNODPIA_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300ONNMBNODPIA().hashCode();
       hash = (37 * hash) + UNK3300_KLKFLIIOFKK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300KLKFLIIOFKK().hashCode();
+      hash = (37 * hash) + UNK3300_MHDOPAMDMPL_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3300MHDOPAMDMPL().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -679,17 +679,17 @@ public final class AdjustTrackingInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unk3300CHCOHLGBHLB_ = "";
-
         unk3300GAMLJPFKCGC_ = "";
 
-        unk3300ONNMBNODPIA_ = "";
-
-        unk3300MHDOPAMDMPL_ = "";
+        unk3300CHCOHLGBHLB_ = "";
 
         unk3300INAIEOMCIEM_ = "";
 
+        unk3300ONNMBNODPIA_ = "";
+
         unk3300KLKFLIIOFKK_ = "";
+
+        unk3300MHDOPAMDMPL_ = "";
 
         return this;
       }
@@ -717,12 +717,12 @@ public final class AdjustTrackingInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo buildPartial() {
         emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo result = new emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo(this);
-        result.unk3300CHCOHLGBHLB_ = unk3300CHCOHLGBHLB_;
         result.unk3300GAMLJPFKCGC_ = unk3300GAMLJPFKCGC_;
-        result.unk3300ONNMBNODPIA_ = unk3300ONNMBNODPIA_;
-        result.unk3300MHDOPAMDMPL_ = unk3300MHDOPAMDMPL_;
+        result.unk3300CHCOHLGBHLB_ = unk3300CHCOHLGBHLB_;
         result.unk3300INAIEOMCIEM_ = unk3300INAIEOMCIEM_;
+        result.unk3300ONNMBNODPIA_ = unk3300ONNMBNODPIA_;
         result.unk3300KLKFLIIOFKK_ = unk3300KLKFLIIOFKK_;
+        result.unk3300MHDOPAMDMPL_ = unk3300MHDOPAMDMPL_;
         onBuilt();
         return result;
       }
@@ -771,28 +771,28 @@ public final class AdjustTrackingInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other) {
         if (other == emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.getDefaultInstance()) return this;
-        if (!other.getUnk3300CHCOHLGBHLB().isEmpty()) {
-          unk3300CHCOHLGBHLB_ = other.unk3300CHCOHLGBHLB_;
-          onChanged();
-        }
         if (!other.getUnk3300GAMLJPFKCGC().isEmpty()) {
           unk3300GAMLJPFKCGC_ = other.unk3300GAMLJPFKCGC_;
           onChanged();
         }
-        if (!other.getUnk3300ONNMBNODPIA().isEmpty()) {
-          unk3300ONNMBNODPIA_ = other.unk3300ONNMBNODPIA_;
-          onChanged();
-        }
-        if (!other.getUnk3300MHDOPAMDMPL().isEmpty()) {
-          unk3300MHDOPAMDMPL_ = other.unk3300MHDOPAMDMPL_;
+        if (!other.getUnk3300CHCOHLGBHLB().isEmpty()) {
+          unk3300CHCOHLGBHLB_ = other.unk3300CHCOHLGBHLB_;
           onChanged();
         }
         if (!other.getUnk3300INAIEOMCIEM().isEmpty()) {
           unk3300INAIEOMCIEM_ = other.unk3300INAIEOMCIEM_;
           onChanged();
         }
+        if (!other.getUnk3300ONNMBNODPIA().isEmpty()) {
+          unk3300ONNMBNODPIA_ = other.unk3300ONNMBNODPIA_;
+          onChanged();
+        }
         if (!other.getUnk3300KLKFLIIOFKK().isEmpty()) {
           unk3300KLKFLIIOFKK_ = other.unk3300KLKFLIIOFKK_;
+          onChanged();
+        }
+        if (!other.getUnk3300MHDOPAMDMPL().isEmpty()) {
+          unk3300MHDOPAMDMPL_ = other.unk3300MHDOPAMDMPL_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -824,85 +824,9 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
 
-      private java.lang.Object unk3300CHCOHLGBHLB_ = "";
-      /**
-       * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-       * @return The unk3300CHCOHLGBHLB.
-       */
-      public java.lang.String getUnk3300CHCOHLGBHLB() {
-        java.lang.Object ref = unk3300CHCOHLGBHLB_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          unk3300CHCOHLGBHLB_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-       * @return The bytes for unk3300CHCOHLGBHLB.
-       */
-      public com.google.protobuf.ByteString
-          getUnk3300CHCOHLGBHLBBytes() {
-        java.lang.Object ref = unk3300CHCOHLGBHLB_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unk3300CHCOHLGBHLB_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-       * @param value The unk3300CHCOHLGBHLB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300CHCOHLGBHLB(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        unk3300CHCOHLGBHLB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300CHCOHLGBHLB() {
-        
-        unk3300CHCOHLGBHLB_ = getDefaultInstance().getUnk3300CHCOHLGBHLB();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string Unk3300_CHCOHLGBHLB = 2;</code>
-       * @param value The bytes for unk3300CHCOHLGBHLB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300CHCOHLGBHLBBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        unk3300CHCOHLGBHLB_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object unk3300GAMLJPFKCGC_ = "";
       /**
-       * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+       * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
        * @return The unk3300GAMLJPFKCGC.
        */
       public java.lang.String getUnk3300GAMLJPFKCGC() {
@@ -918,7 +842,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+       * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
        * @return The bytes for unk3300GAMLJPFKCGC.
        */
       public com.google.protobuf.ByteString
@@ -935,7 +859,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+       * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
        * @param value The unk3300GAMLJPFKCGC to set.
        * @return This builder for chaining.
        */
@@ -950,7 +874,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+       * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GAMLJPFKCGC() {
@@ -960,7 +884,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_GAMLJPFKCGC = 9;</code>
+       * <code>string Unk3300_GAMLJPFKCGC = 5;</code>
        * @param value The bytes for unk3300GAMLJPFKCGC to set.
        * @return This builder for chaining.
        */
@@ -976,161 +900,85 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
 
-      private java.lang.Object unk3300ONNMBNODPIA_ = "";
+      private java.lang.Object unk3300CHCOHLGBHLB_ = "";
       /**
-       * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-       * @return The unk3300ONNMBNODPIA.
+       * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+       * @return The unk3300CHCOHLGBHLB.
        */
-      public java.lang.String getUnk3300ONNMBNODPIA() {
-        java.lang.Object ref = unk3300ONNMBNODPIA_;
+      public java.lang.String getUnk3300CHCOHLGBHLB() {
+        java.lang.Object ref = unk3300CHCOHLGBHLB_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          unk3300ONNMBNODPIA_ = s;
+          unk3300CHCOHLGBHLB_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-       * @return The bytes for unk3300ONNMBNODPIA.
+       * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+       * @return The bytes for unk3300CHCOHLGBHLB.
        */
       public com.google.protobuf.ByteString
-          getUnk3300ONNMBNODPIABytes() {
-        java.lang.Object ref = unk3300ONNMBNODPIA_;
+          getUnk3300CHCOHLGBHLBBytes() {
+        java.lang.Object ref = unk3300CHCOHLGBHLB_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          unk3300ONNMBNODPIA_ = b;
+          unk3300CHCOHLGBHLB_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-       * @param value The unk3300ONNMBNODPIA to set.
+       * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+       * @param value The unk3300CHCOHLGBHLB to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300ONNMBNODPIA(
+      public Builder setUnk3300CHCOHLGBHLB(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        unk3300ONNMBNODPIA_ = value;
+        unk3300CHCOHLGBHLB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string Unk3300_ONNMBNODPIA = 4;</code>
+       * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300ONNMBNODPIA() {
+      public Builder clearUnk3300CHCOHLGBHLB() {
         
-        unk3300ONNMBNODPIA_ = getDefaultInstance().getUnk3300ONNMBNODPIA();
+        unk3300CHCOHLGBHLB_ = getDefaultInstance().getUnk3300CHCOHLGBHLB();
         onChanged();
         return this;
       }
       /**
-       * <code>string Unk3300_ONNMBNODPIA = 4;</code>
-       * @param value The bytes for unk3300ONNMBNODPIA to set.
+       * <code>string Unk3300_CHCOHLGBHLB = 8;</code>
+       * @param value The bytes for unk3300CHCOHLGBHLB to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300ONNMBNODPIABytes(
+      public Builder setUnk3300CHCOHLGBHLBBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        unk3300ONNMBNODPIA_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object unk3300MHDOPAMDMPL_ = "";
-      /**
-       * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-       * @return The unk3300MHDOPAMDMPL.
-       */
-      public java.lang.String getUnk3300MHDOPAMDMPL() {
-        java.lang.Object ref = unk3300MHDOPAMDMPL_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          unk3300MHDOPAMDMPL_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-       * @return The bytes for unk3300MHDOPAMDMPL.
-       */
-      public com.google.protobuf.ByteString
-          getUnk3300MHDOPAMDMPLBytes() {
-        java.lang.Object ref = unk3300MHDOPAMDMPL_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unk3300MHDOPAMDMPL_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-       * @param value The unk3300MHDOPAMDMPL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300MHDOPAMDMPL(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        unk3300MHDOPAMDMPL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300MHDOPAMDMPL() {
-        
-        unk3300MHDOPAMDMPL_ = getDefaultInstance().getUnk3300MHDOPAMDMPL();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string Unk3300_MHDOPAMDMPL = 6;</code>
-       * @param value The bytes for unk3300MHDOPAMDMPL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300MHDOPAMDMPLBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        unk3300MHDOPAMDMPL_ = value;
+        unk3300CHCOHLGBHLB_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object unk3300INAIEOMCIEM_ = "";
       /**
-       * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+       * <code>string Unk3300_INAIEOMCIEM = 15;</code>
        * @return The unk3300INAIEOMCIEM.
        */
       public java.lang.String getUnk3300INAIEOMCIEM() {
@@ -1146,7 +994,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+       * <code>string Unk3300_INAIEOMCIEM = 15;</code>
        * @return The bytes for unk3300INAIEOMCIEM.
        */
       public com.google.protobuf.ByteString
@@ -1163,7 +1011,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+       * <code>string Unk3300_INAIEOMCIEM = 15;</code>
        * @param value The unk3300INAIEOMCIEM to set.
        * @return This builder for chaining.
        */
@@ -1178,7 +1026,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+       * <code>string Unk3300_INAIEOMCIEM = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300INAIEOMCIEM() {
@@ -1188,7 +1036,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_INAIEOMCIEM = 7;</code>
+       * <code>string Unk3300_INAIEOMCIEM = 15;</code>
        * @param value The bytes for unk3300INAIEOMCIEM to set.
        * @return This builder for chaining.
        */
@@ -1204,9 +1052,85 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
 
+      private java.lang.Object unk3300ONNMBNODPIA_ = "";
+      /**
+       * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+       * @return The unk3300ONNMBNODPIA.
+       */
+      public java.lang.String getUnk3300ONNMBNODPIA() {
+        java.lang.Object ref = unk3300ONNMBNODPIA_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unk3300ONNMBNODPIA_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+       * @return The bytes for unk3300ONNMBNODPIA.
+       */
+      public com.google.protobuf.ByteString
+          getUnk3300ONNMBNODPIABytes() {
+        java.lang.Object ref = unk3300ONNMBNODPIA_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unk3300ONNMBNODPIA_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+       * @param value The unk3300ONNMBNODPIA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300ONNMBNODPIA(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        unk3300ONNMBNODPIA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300ONNMBNODPIA() {
+        
+        unk3300ONNMBNODPIA_ = getDefaultInstance().getUnk3300ONNMBNODPIA();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Unk3300_ONNMBNODPIA = 3;</code>
+       * @param value The bytes for unk3300ONNMBNODPIA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300ONNMBNODPIABytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        unk3300ONNMBNODPIA_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object unk3300KLKFLIIOFKK_ = "";
       /**
-       * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+       * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
        * @return The unk3300KLKFLIIOFKK.
        */
       public java.lang.String getUnk3300KLKFLIIOFKK() {
@@ -1222,7 +1146,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+       * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
        * @return The bytes for unk3300KLKFLIIOFKK.
        */
       public com.google.protobuf.ByteString
@@ -1239,7 +1163,7 @@ public final class AdjustTrackingInfoOuterClass {
         }
       }
       /**
-       * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+       * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
        * @param value The unk3300KLKFLIIOFKK to set.
        * @return This builder for chaining.
        */
@@ -1254,7 +1178,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+       * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KLKFLIIOFKK() {
@@ -1264,7 +1188,7 @@ public final class AdjustTrackingInfoOuterClass {
         return this;
       }
       /**
-       * <code>string Unk3300_KLKFLIIOFKK = 3;</code>
+       * <code>string Unk3300_KLKFLIIOFKK = 7;</code>
        * @param value The bytes for unk3300KLKFLIIOFKK to set.
        * @return This builder for chaining.
        */
@@ -1276,6 +1200,82 @@ public final class AdjustTrackingInfoOuterClass {
   checkByteStringIsUtf8(value);
         
         unk3300KLKFLIIOFKK_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object unk3300MHDOPAMDMPL_ = "";
+      /**
+       * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+       * @return The unk3300MHDOPAMDMPL.
+       */
+      public java.lang.String getUnk3300MHDOPAMDMPL() {
+        java.lang.Object ref = unk3300MHDOPAMDMPL_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unk3300MHDOPAMDMPL_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+       * @return The bytes for unk3300MHDOPAMDMPL.
+       */
+      public com.google.protobuf.ByteString
+          getUnk3300MHDOPAMDMPLBytes() {
+        java.lang.Object ref = unk3300MHDOPAMDMPL_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unk3300MHDOPAMDMPL_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+       * @param value The unk3300MHDOPAMDMPL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300MHDOPAMDMPL(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        unk3300MHDOPAMDMPL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3300MHDOPAMDMPL() {
+        
+        unk3300MHDOPAMDMPL_ = getDefaultInstance().getUnk3300MHDOPAMDMPL();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Unk3300_MHDOPAMDMPL = 13;</code>
+       * @param value The bytes for unk3300MHDOPAMDMPL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3300MHDOPAMDMPLBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        unk3300MHDOPAMDMPL_ = value;
         onChanged();
         return this;
       }
@@ -1347,11 +1347,11 @@ public final class AdjustTrackingInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030AdjustTrackingInfo.proto\"\302\001\n\022AdjustTra" +
-      "ckingInfo\022\033\n\023Unk3300_CHCOHLGBHLB\030\002 \001(\t\022\033" +
-      "\n\023Unk3300_GAMLJPFKCGC\030\t \001(\t\022\033\n\023Unk3300_O" +
-      "NNMBNODPIA\030\004 \001(\t\022\033\n\023Unk3300_MHDOPAMDMPL\030" +
-      "\006 \001(\t\022\033\n\023Unk3300_INAIEOMCIEM\030\007 \001(\t\022\033\n\023Un" +
-      "k3300_KLKFLIIOFKK\030\003 \001(\tB\033\n\031emu.grasscutt" +
+      "ckingInfo\022\033\n\023Unk3300_GAMLJPFKCGC\030\005 \001(\t\022\033" +
+      "\n\023Unk3300_CHCOHLGBHLB\030\010 \001(\t\022\033\n\023Unk3300_I" +
+      "NAIEOMCIEM\030\017 \001(\t\022\033\n\023Unk3300_ONNMBNODPIA\030" +
+      "\003 \001(\t\022\033\n\023Unk3300_KLKFLIIOFKK\030\007 \001(\t\022\033\n\023Un" +
+      "k3300_MHDOPAMDMPL\030\r \001(\tB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1363,7 +1363,7 @@ public final class AdjustTrackingInfoOuterClass {
     internal_static_AdjustTrackingInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AdjustTrackingInfo_descriptor,
-        new java.lang.String[] { "Unk3300CHCOHLGBHLB", "Unk3300GAMLJPFKCGC", "Unk3300ONNMBNODPIA", "Unk3300MHDOPAMDMPL", "Unk3300INAIEOMCIEM", "Unk3300KLKFLIIOFKK", });
+        new java.lang.String[] { "Unk3300GAMLJPFKCGC", "Unk3300CHCOHLGBHLB", "Unk3300INAIEOMCIEM", "Unk3300ONNMBNODPIA", "Unk3300KLKFLIIOFKK", "Unk3300MHDOPAMDMPL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

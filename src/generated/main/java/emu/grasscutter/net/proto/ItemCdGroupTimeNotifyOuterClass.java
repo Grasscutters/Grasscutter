@@ -19,11 +19,11 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     int getItemCdMapCount();
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     boolean containsItemCdMap(
         int key);
@@ -34,35 +34,25 @@ public final class ItemCdGroupTimeNotifyOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Long>
     getItemCdMap();
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Long>
     getItemCdMapMap();
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
 
     long getItemCdMapOrDefault(
         int key,
         long defaultValue);
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
 
     long getItemCdMapOrThrow(
         int key);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 680;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code ItemCdGroupTimeNotify}
    */
   public static final class ItemCdGroupTimeNotify extends
@@ -108,7 +98,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemCdMap_ = com.google.protobuf.MapField.newMapField(
                     ItemCdMapDefaultEntryHolder.defaultEntry);
@@ -150,7 +140,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 13:
           return internalGetItemCdMap();
         default:
           throw new RuntimeException(
@@ -165,7 +155,138 @@ public final class ItemCdGroupTimeNotifyOuterClass {
               emu.grasscutter.net.proto.ItemCdGroupTimeNotifyOuterClass.ItemCdGroupTimeNotify.class, emu.grasscutter.net.proto.ItemCdGroupTimeNotifyOuterClass.ItemCdGroupTimeNotify.Builder.class);
     }
 
-    public static final int ITEM_CD_MAP_FIELD_NUMBER = 7;
+    /**
+     * Protobuf enum {@code ItemCdGroupTimeNotify.KAJJPFAOALJ}
+     */
+    public enum KAJJPFAOALJ
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 651;</code>
+       */
+      PEPPOHPHJOJ(1, 651),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final KAJJPFAOALJ DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 651;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 651;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static KAJJPFAOALJ valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static KAJJPFAOALJ forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 651: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<KAJJPFAOALJ>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          KAJJPFAOALJ> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<KAJJPFAOALJ>() {
+              public KAJJPFAOALJ findValueByNumber(int number) {
+                return KAJJPFAOALJ.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ItemCdGroupTimeNotifyOuterClass.ItemCdGroupTimeNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final KAJJPFAOALJ[] VALUES = getStaticValuesArray();
+      private static KAJJPFAOALJ[] getStaticValuesArray() {
+        return new KAJJPFAOALJ[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static KAJJPFAOALJ valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private KAJJPFAOALJ(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ItemCdGroupTimeNotify.KAJJPFAOALJ)
+    }
+
+    public static final int ITEMCDMAP_FIELD_NUMBER = 13;
     private static final class ItemCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Long> defaultEntry =
@@ -192,7 +313,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       return internalGetItemCdMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
 
     @java.lang.Override
@@ -210,7 +331,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       return getItemCdMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     @java.lang.Override
 
@@ -218,7 +339,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       return internalGetItemCdMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     @java.lang.Override
 
@@ -231,7 +352,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+     * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
      */
     @java.lang.Override
 
@@ -265,7 +386,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
           output,
           internalGetItemCdMap(),
           ItemCdMapDefaultEntryHolder.defaultEntry,
-          7);
+          13);
       unknownFields.writeTo(output);
     }
 
@@ -283,7 +404,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, itemCdMap__);
+            .computeMessageSize(13, itemCdMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +435,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetItemCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + ITEM_CD_MAP_FIELD_NUMBER;
+        hash = (37 * hash) + ITEMCDMAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetItemCdMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -413,16 +534,6 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 680;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code ItemCdGroupTimeNotify}
      */
     public static final class Builder extends
@@ -438,7 +549,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 13:
             return internalGetItemCdMap();
           default:
             throw new RuntimeException(
@@ -449,7 +560,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 13:
             return internalGetMutableItemCdMap();
           default:
             throw new RuntimeException(
@@ -619,7 +730,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return internalGetItemCdMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
 
       @java.lang.Override
@@ -637,7 +748,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return getItemCdMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
       @java.lang.Override
 
@@ -645,7 +756,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return internalGetItemCdMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
       @java.lang.Override
 
@@ -658,7 +769,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
       @java.lang.Override
 
@@ -679,7 +790,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
 
       public Builder removeItemCdMap(
@@ -698,7 +809,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return internalGetMutableItemCdMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
       public Builder putItemCdMap(
           int key,
@@ -710,7 +821,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint64&gt; item_cd_map = 7;</code>
+       * <code>map&lt;uint32, uint64&gt; itemCdMap = 13;</code>
        */
 
       public Builder putAllItemCdMap(
@@ -791,12 +902,14 @@ public final class ItemCdGroupTimeNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033ItemCdGroupTimeNotify.proto\"\205\001\n\025ItemCd" +
-      "GroupTimeNotify\022:\n\013item_cd_map\030\007 \003(\0132%.I" +
-      "temCdGroupTimeNotify.ItemCdMapEntry\0320\n\016I" +
-      "temCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
-      "\004:\0028\001B\033\n\031emu.grasscutter.net.protob\006prot" +
-      "o3"
+      "\n\033ItemCdGroupTimeNotify.proto\"\324\001\n\025ItemCd" +
+      "GroupTimeNotify\0228\n\titemCdMap\030\r \003(\0132%.Ite" +
+      "mCdGroupTimeNotify.ItemCdMapEntry\0320\n\016Ite" +
+      "mCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:" +
+      "\0028\001\"O\n\013KAJJPFAOALJ\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPH" +
+      "JOJ\020\213\005\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001" +
+      "\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,34 +19,24 @@ public final class CreateVehicleRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 5;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 vehicle_id = 8;</code>
+     * <code>uint32 vehicleId = 10;</code>
      * @return The vehicleId.
      */
     int getVehicleId();
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 entityId = 13;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 817;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code CreateVehicleRsp}
    */
   public static final class CreateVehicleRsp extends
@@ -91,19 +81,19 @@ public final class CreateVehicleRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 40: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+            case 80: {
 
               vehicleId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -138,21 +128,141 @@ public final class CreateVehicleRspOuterClass {
               emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.class, emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 5;
-    private int entityId_;
     /**
-     * <code>uint32 entity_id = 5;</code>
-     * @return The entityId.
+     * Protobuf enum {@code CreateVehicleRsp.ENBFHMKDDBM}
      */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
+    public enum ENBFHMKDDBM
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 818;</code>
+       */
+      PEPPOHPHJOJ(1, 818),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final ENBFHMKDDBM DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 818;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 818;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ENBFHMKDDBM valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ENBFHMKDDBM forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 818: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ENBFHMKDDBM>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ENBFHMKDDBM> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ENBFHMKDDBM>() {
+              public ENBFHMKDDBM findValueByNumber(int number) {
+                return ENBFHMKDDBM.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ENBFHMKDDBM[] VALUES = getStaticValuesArray();
+      private static ENBFHMKDDBM[] getStaticValuesArray() {
+        return new ENBFHMKDDBM[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static ENBFHMKDDBM valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private ENBFHMKDDBM(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:CreateVehicleRsp.ENBFHMKDDBM)
     }
 
-    public static final int VEHICLE_ID_FIELD_NUMBER = 8;
+    public static final int VEHICLEID_FIELD_NUMBER = 10;
     private int vehicleId_;
     /**
-     * <code>uint32 vehicle_id = 8;</code>
+     * <code>uint32 vehicleId = 10;</code>
      * @return The vehicleId.
      */
     @java.lang.Override
@@ -160,15 +270,26 @@ public final class CreateVehicleRspOuterClass {
       return vehicleId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int ENTITYID_FIELD_NUMBER = 13;
+    private int entityId_;
+    /**
+     * <code>uint32 entityId = 13;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -186,13 +307,13 @@ public final class CreateVehicleRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
-      }
-      if (entityId_ != 0) {
-        output.writeUInt32(5, entityId_);
+        output.writeInt32(3, retcode_);
       }
       if (vehicleId_ != 0) {
-        output.writeUInt32(8, vehicleId_);
+        output.writeUInt32(10, vehicleId_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(13, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,15 +326,15 @@ public final class CreateVehicleRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
-      }
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, entityId_);
+          .computeInt32Size(3, retcode_);
       }
       if (vehicleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, vehicleId_);
+          .computeUInt32Size(10, vehicleId_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -230,12 +351,12 @@ public final class CreateVehicleRspOuterClass {
       }
       emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp other = (emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (getVehicleId()
           != other.getVehicleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -247,12 +368,12 @@ public final class CreateVehicleRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + VEHICLE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + VEHICLEID_FIELD_NUMBER;
       hash = (53 * hash) + getVehicleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -349,16 +470,6 @@ public final class CreateVehicleRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 817;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code CreateVehicleRsp}
      */
     public static final class Builder extends
@@ -396,11 +507,11 @@ public final class CreateVehicleRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         vehicleId_ = 0;
 
         retcode_ = 0;
+
+        entityId_ = 0;
 
         return this;
       }
@@ -428,9 +539,9 @@ public final class CreateVehicleRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp buildPartial() {
         emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp result = new emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp(this);
-        result.entityId_ = entityId_;
         result.vehicleId_ = vehicleId_;
         result.retcode_ = retcode_;
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -479,14 +590,14 @@ public final class CreateVehicleRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp other) {
         if (other == emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.getVehicleId() != 0) {
           setVehicleId(other.getVehicleId());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -517,40 +628,9 @@ public final class CreateVehicleRspOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int vehicleId_ ;
       /**
-       * <code>uint32 vehicle_id = 8;</code>
+       * <code>uint32 vehicleId = 10;</code>
        * @return The vehicleId.
        */
       @java.lang.Override
@@ -558,7 +638,7 @@ public final class CreateVehicleRspOuterClass {
         return vehicleId_;
       }
       /**
-       * <code>uint32 vehicle_id = 8;</code>
+       * <code>uint32 vehicleId = 10;</code>
        * @param value The vehicleId to set.
        * @return This builder for chaining.
        */
@@ -569,7 +649,7 @@ public final class CreateVehicleRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 vehicle_id = 8;</code>
+       * <code>uint32 vehicleId = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearVehicleId() {
@@ -581,7 +661,7 @@ public final class CreateVehicleRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -589,7 +669,7 @@ public final class CreateVehicleRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -600,12 +680,43 @@ public final class CreateVehicleRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entityId = 13;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entityId = 13;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entityId = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
         onChanged();
         return this;
       }
@@ -676,9 +787,11 @@ public final class CreateVehicleRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026CreateVehicleRsp.proto\"J\n\020CreateVehicl" +
-      "eRsp\022\021\n\tentity_id\030\005 \001(\r\022\022\n\nvehicle_id\030\010 " +
-      "\001(\r\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter." +
+      "\n\026CreateVehicleRsp.proto\"\231\001\n\020CreateVehic" +
+      "leRsp\022\021\n\tvehicleId\030\n \001(\r\022\017\n\007retcode\030\003 \001(" +
+      "\005\022\020\n\010entityId\030\r \001(\r\"O\n\013ENBFHMKDDBM\022\010\n\004NO" +
+      "NE\020\000\022\020\n\013PEPPOHPHJOJ\020\262\006\022\017\n\013DCDNILFDFLB\020\000\022" +
+      "\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -690,7 +803,7 @@ public final class CreateVehicleRspOuterClass {
     internal_static_CreateVehicleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateVehicleRsp_descriptor,
-        new java.lang.String[] { "EntityId", "VehicleId", "Retcode", });
+        new java.lang.String[] { "VehicleId", "Retcode", "EntityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

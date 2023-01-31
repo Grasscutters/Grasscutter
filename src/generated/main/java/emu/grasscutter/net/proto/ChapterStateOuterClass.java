@@ -20,9 +20,9 @@ public final class ChapterStateOuterClass {
   public enum ChapterState
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CHAPTER_STATE_INVALID = 0;</code>
+     * <code>CHAPTER_STATE_NONE = 0;</code>
      */
-    CHAPTER_STATE_INVALID(0),
+    CHAPTER_STATE_NONE(0),
     /**
      * <code>CHAPTER_STATE_UNABLE_TO_BEGIN = 1;</code>
      */
@@ -39,9 +39,9 @@ public final class ChapterStateOuterClass {
     ;
 
     /**
-     * <code>CHAPTER_STATE_INVALID = 0;</code>
+     * <code>CHAPTER_STATE_NONE = 0;</code>
      */
-    public static final int CHAPTER_STATE_INVALID_VALUE = 0;
+    public static final int CHAPTER_STATE_NONE_VALUE = 0;
     /**
      * <code>CHAPTER_STATE_UNABLE_TO_BEGIN = 1;</code>
      */
@@ -80,7 +80,7 @@ public final class ChapterStateOuterClass {
      */
     public static ChapterState forNumber(int value) {
       switch (value) {
-        case 0: return CHAPTER_STATE_INVALID;
+        case 0: return CHAPTER_STATE_NONE;
         case 1: return CHAPTER_STATE_UNABLE_TO_BEGIN;
         case 2: return CHAPTER_STATE_BEGIN;
         case 3: return CHAPTER_STATE_END;
@@ -149,11 +149,11 @@ public final class ChapterStateOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022ChapterState.proto*|\n\014ChapterState\022\031\n\025" +
-      "CHAPTER_STATE_INVALID\020\000\022!\n\035CHAPTER_STATE" +
-      "_UNABLE_TO_BEGIN\020\001\022\027\n\023CHAPTER_STATE_BEGI" +
-      "N\020\002\022\025\n\021CHAPTER_STATE_END\020\003B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n\022ChapterState.proto*y\n\014ChapterState\022\026\n\022" +
+      "CHAPTER_STATE_NONE\020\000\022!\n\035CHAPTER_STATE_UN" +
+      "ABLE_TO_BEGIN\020\001\022\027\n\023CHAPTER_STATE_BEGIN\020\002" +
+      "\022\025\n\021CHAPTER_STATE_END\020\003B\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

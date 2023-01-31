@@ -19,23 +19,12 @@ public final class TowerEnterLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 enter_point_id = 3;</code>
+     * <code>uint32 enterPointId = 9;</code>
      * @return The enterPointId.
      */
     int getEnterPointId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2427;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code TowerEnterLevelReq}
    */
   public static final class TowerEnterLevelReq extends
@@ -80,7 +69,7 @@ public final class TowerEnterLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               enterPointId_ = input.readUInt32();
               break;
@@ -117,10 +106,149 @@ public final class TowerEnterLevelReqOuterClass {
               emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.class, emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.Builder.class);
     }
 
-    public static final int ENTER_POINT_ID_FIELD_NUMBER = 3;
+    /**
+     * Protobuf enum {@code TowerEnterLevelReq.MFBIEBDFJHG}
+     */
+    public enum MFBIEBDFJHG
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 2424;</code>
+       */
+      PEPPOHPHJOJ(1, 2424),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final MFBIEBDFJHG DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final MFBIEBDFJHG EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 2424;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 2424;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MFBIEBDFJHG valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MFBIEBDFJHG forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 2424: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MFBIEBDFJHG>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MFBIEBDFJHG> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MFBIEBDFJHG>() {
+              public MFBIEBDFJHG findValueByNumber(int number) {
+                return MFBIEBDFJHG.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MFBIEBDFJHG[] VALUES = getStaticValuesArray();
+      private static MFBIEBDFJHG[] getStaticValuesArray() {
+        return new MFBIEBDFJHG[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static MFBIEBDFJHG valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private MFBIEBDFJHG(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TowerEnterLevelReq.MFBIEBDFJHG)
+    }
+
+    public static final int ENTERPOINTID_FIELD_NUMBER = 9;
     private int enterPointId_;
     /**
-     * <code>uint32 enter_point_id = 3;</code>
+     * <code>uint32 enterPointId = 9;</code>
      * @return The enterPointId.
      */
     @java.lang.Override
@@ -143,7 +271,7 @@ public final class TowerEnterLevelReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (enterPointId_ != 0) {
-        output.writeUInt32(3, enterPointId_);
+        output.writeUInt32(9, enterPointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +284,7 @@ public final class TowerEnterLevelReqOuterClass {
       size = 0;
       if (enterPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, enterPointId_);
+          .computeUInt32Size(9, enterPointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +314,7 @@ public final class TowerEnterLevelReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTER_POINT_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTERPOINTID_FIELD_NUMBER;
       hash = (53 * hash) + getEnterPointId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -284,17 +412,6 @@ public final class TowerEnterLevelReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2427;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code TowerEnterLevelReq}
      */
     public static final class Builder extends
@@ -443,7 +560,7 @@ public final class TowerEnterLevelReqOuterClass {
 
       private int enterPointId_ ;
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enterPointId = 9;</code>
        * @return The enterPointId.
        */
       @java.lang.Override
@@ -451,7 +568,7 @@ public final class TowerEnterLevelReqOuterClass {
         return enterPointId_;
       }
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enterPointId = 9;</code>
        * @param value The enterPointId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +579,7 @@ public final class TowerEnterLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enterPointId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnterPointId() {
@@ -538,9 +655,12 @@ public final class TowerEnterLevelReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030TowerEnterLevelReq.proto\",\n\022TowerEnter" +
-      "LevelReq\022\026\n\016enter_point_id\030\003 \001(\rB\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "\n\030TowerEnterLevelReq.proto\"\214\001\n\022TowerEnte" +
+      "rLevelReq\022\024\n\014enterPointId\030\t \001(\r\"`\n\013MFBIE" +
+      "BDFJHG\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\370\022\022\017\n\013DC" +
+      "DNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGA" +
+      "OCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

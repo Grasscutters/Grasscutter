@@ -19,22 +19,12 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 612;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code SetIsAutoUnlockSpecificEquipRsp}
    */
   public static final class SetIsAutoUnlockSpecificEquipRsp extends
@@ -79,7 +69,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -116,10 +106,141 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
               emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipRspOuterClass.SetIsAutoUnlockSpecificEquipRsp.class, emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipRspOuterClass.SetIsAutoUnlockSpecificEquipRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    /**
+     * Protobuf enum {@code SetIsAutoUnlockSpecificEquipRsp.DNPEDMFMCLL}
+     */
+    public enum DNPEDMFMCLL
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 638;</code>
+       */
+      PEPPOHPHJOJ(1, 638),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final DNPEDMFMCLL DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 638;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 638;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DNPEDMFMCLL valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DNPEDMFMCLL forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 638: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DNPEDMFMCLL>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DNPEDMFMCLL> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DNPEDMFMCLL>() {
+              public DNPEDMFMCLL findValueByNumber(int number) {
+                return DNPEDMFMCLL.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipRspOuterClass.SetIsAutoUnlockSpecificEquipRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DNPEDMFMCLL[] VALUES = getStaticValuesArray();
+      private static DNPEDMFMCLL[] getStaticValuesArray() {
+        return new DNPEDMFMCLL[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static DNPEDMFMCLL valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private DNPEDMFMCLL(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:SetIsAutoUnlockSpecificEquipRsp.DNPEDMFMCLL)
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -142,7 +263,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +276,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -283,16 +404,6 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 612;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code SetIsAutoUnlockSpecificEquipRsp}
      */
     public static final class Builder extends
@@ -441,7 +552,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -449,7 +560,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -460,7 +571,7 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -537,9 +648,11 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%SetIsAutoUnlockSpecificEquipRsp.proto\"" +
-      "2\n\037SetIsAutoUnlockSpecificEquipRsp\022\017\n\007re" +
-      "tcode\030\r \001(\005B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\203\001\n\037SetIsAutoUnlockSpecificEquipRsp\022\017\n\007r" +
+      "etcode\030\010 \001(\005\"O\n\013DNPEDMFMCLL\022\010\n\004NONE\020\000\022\020\n" +
+      "\013PEPPOHPHJOJ\020\376\004\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBK" +
+      "OLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

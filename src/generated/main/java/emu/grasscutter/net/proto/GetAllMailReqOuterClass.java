@@ -19,23 +19,12 @@ public final class GetAllMailReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_collected = 4;</code>
+     * <code>bool isCollected = 8;</code>
      * @return The isCollected.
      */
     boolean getIsCollected();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1427;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code GetAllMailReq}
    */
   public static final class GetAllMailReq extends
@@ -80,7 +69,7 @@ public final class GetAllMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
               isCollected_ = input.readBool();
               break;
@@ -117,10 +106,149 @@ public final class GetAllMailReqOuterClass {
               emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.class, emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.Builder.class);
     }
 
-    public static final int IS_COLLECTED_FIELD_NUMBER = 4;
+    /**
+     * Protobuf enum {@code GetAllMailReq.LHAPJAHPMOI}
+     */
+    public enum LHAPJAHPMOI
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 1424;</code>
+       */
+      PEPPOHPHJOJ(1, 1424),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final LHAPJAHPMOI DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final LHAPJAHPMOI EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 1424;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 1424;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LHAPJAHPMOI valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static LHAPJAHPMOI forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 1424: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LHAPJAHPMOI>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          LHAPJAHPMOI> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LHAPJAHPMOI>() {
+              public LHAPJAHPMOI findValueByNumber(int number) {
+                return LHAPJAHPMOI.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final LHAPJAHPMOI[] VALUES = getStaticValuesArray();
+      private static LHAPJAHPMOI[] getStaticValuesArray() {
+        return new LHAPJAHPMOI[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static LHAPJAHPMOI valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private LHAPJAHPMOI(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:GetAllMailReq.LHAPJAHPMOI)
+    }
+
+    public static final int ISCOLLECTED_FIELD_NUMBER = 8;
     private boolean isCollected_;
     /**
-     * <code>bool is_collected = 4;</code>
+     * <code>bool isCollected = 8;</code>
      * @return The isCollected.
      */
     @java.lang.Override
@@ -143,7 +271,7 @@ public final class GetAllMailReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isCollected_ != false) {
-        output.writeBool(4, isCollected_);
+        output.writeBool(8, isCollected_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +284,7 @@ public final class GetAllMailReqOuterClass {
       size = 0;
       if (isCollected_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isCollected_);
+          .computeBoolSize(8, isCollected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +314,7 @@ public final class GetAllMailReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_COLLECTED_FIELD_NUMBER;
+      hash = (37 * hash) + ISCOLLECTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCollected());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -285,17 +413,6 @@ public final class GetAllMailReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1427;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code GetAllMailReq}
      */
     public static final class Builder extends
@@ -444,7 +561,7 @@ public final class GetAllMailReqOuterClass {
 
       private boolean isCollected_ ;
       /**
-       * <code>bool is_collected = 4;</code>
+       * <code>bool isCollected = 8;</code>
        * @return The isCollected.
        */
       @java.lang.Override
@@ -452,7 +569,7 @@ public final class GetAllMailReqOuterClass {
         return isCollected_;
       }
       /**
-       * <code>bool is_collected = 4;</code>
+       * <code>bool isCollected = 8;</code>
        * @param value The isCollected to set.
        * @return This builder for chaining.
        */
@@ -463,7 +580,7 @@ public final class GetAllMailReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_collected = 4;</code>
+       * <code>bool isCollected = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCollected() {
@@ -539,9 +656,11 @@ public final class GetAllMailReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023GetAllMailReq.proto\"%\n\rGetAllMailReq\022\024" +
-      "\n\014is_collected\030\004 \001(\010B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\023GetAllMailReq.proto\"\206\001\n\rGetAllMailReq\022" +
+      "\023\n\013isCollected\030\010 \001(\010\"`\n\013LHAPJAHPMOI\022\010\n\004N" +
+      "ONE\020\000\022\020\n\013PEPPOHPHJOJ\020\220\013\022\017\n\013DCDNILFDFLB\020\000" +
+      "\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

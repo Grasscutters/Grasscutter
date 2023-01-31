@@ -43,7 +43,7 @@ public final class SocialDetailOuterClass {
     int getLevel();
 
     /**
-     * <code>uint32 avatar_id = 4;</code>
+     * <code>uint32 avatarId = 4;</code>
      * @return The avatarId.
      */
     int getAvatarId();
@@ -76,35 +76,35 @@ public final class SocialDetailOuterClass {
     emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder();
 
     /**
-     * <code>uint32 world_level = 7;</code>
+     * <code>uint32 worldLevel = 7;</code>
      * @return The worldLevel.
      */
     int getWorldLevel();
 
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @return A list containing the reservedList.
      */
     java.util.List<java.lang.Integer> getReservedListList();
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @return The count of reservedList.
      */
     int getReservedListCount();
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @param index The index of the element to return.
      * @return The reservedList at the given index.
      */
     int getReservedList(int index);
 
     /**
-     * <code>.FriendOnlineState online_state = 9;</code>
+     * <code>.FriendOnlineState onlineState = 9;</code>
      * @return The enum numeric value on the wire for onlineState.
      */
     int getOnlineStateValue();
     /**
-     * <code>.FriendOnlineState online_state = 9;</code>
+     * <code>.FriendOnlineState onlineState = 9;</code>
      * @return The onlineState.
      */
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState getOnlineState();
@@ -116,149 +116,161 @@ public final class SocialDetailOuterClass {
     int getParam();
 
     /**
-     * <code>bool is_friend = 11;</code>
+     * <code>bool isFriend = 11;</code>
      * @return The isFriend.
      */
     boolean getIsFriend();
 
     /**
-     * <code>bool is_mp_mode_available = 12;</code>
+     * <code>bool isMpModeAvailable = 12;</code>
      * @return The isMpModeAvailable.
      */
     boolean getIsMpModeAvailable();
 
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string onlineId = 13;</code>
      * @return The onlineId.
      */
     java.lang.String getOnlineId();
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string onlineId = 13;</code>
      * @return The bytes for onlineId.
      */
     com.google.protobuf.ByteString
         getOnlineIdBytes();
 
     /**
-     * <code>uint32 name_card_id = 14;</code>
+     * <code>uint32 nameCardId = 14;</code>
      * @return The nameCardId.
      */
     int getNameCardId();
 
     /**
-     * <code>bool is_in_blacklist = 15;</code>
+     * <code>bool isInBlacklist = 15;</code>
      * @return The isInBlacklist.
      */
     boolean getIsInBlacklist();
 
     /**
-     * <code>bool is_chat_no_disturb = 16;</code>
+     * <code>bool isChatNoDisturb = 16;</code>
      * @return The isChatNoDisturb.
      */
     boolean getIsChatNoDisturb();
 
     /**
-     * <code>string remark_name = 17;</code>
+     * <code>string remarkName = 17;</code>
      * @return The remarkName.
      */
     java.lang.String getRemarkName();
     /**
-     * <code>string remark_name = 17;</code>
+     * <code>string remarkName = 17;</code>
      * @return The bytes for remarkName.
      */
     com.google.protobuf.ByteString
         getRemarkNameBytes();
 
     /**
-     * <code>uint32 finish_achievement_num = 18;</code>
+     * <code>uint32 finishAchievementNum = 18;</code>
      * @return The finishAchievementNum.
      */
     int getFinishAchievementNum();
 
     /**
-     * <code>uint32 tower_floor_index = 19;</code>
+     * <code>uint32 towerFloorIndex = 19;</code>
      * @return The towerFloorIndex.
      */
     int getTowerFloorIndex();
 
     /**
-     * <code>uint32 tower_level_index = 20;</code>
+     * <code>uint32 towerLevelIndex = 20;</code>
      * @return The towerLevelIndex.
      */
     int getTowerLevelIndex();
 
     /**
-     * <code>bool is_show_avatar = 21;</code>
+     * <code>bool isShowAvatar = 21;</code>
      * @return The isShowAvatar.
      */
     boolean getIsShowAvatar();
 
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> 
         getShowAvatarInfoListList();
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getShowAvatarInfoList(int index);
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     int getShowAvatarInfoListCount();
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
         getShowAvatarInfoListOrBuilderList();
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
         int index);
 
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @return A list containing the showNameCardIdList.
      */
     java.util.List<java.lang.Integer> getShowNameCardIdListList();
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @return The count of showNameCardIdList.
      */
     int getShowNameCardIdListCount();
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @param index The index of the element to return.
      * @return The showNameCardIdList at the given index.
      */
     int getShowNameCardIdList(int index);
 
     /**
-     * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+     * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
      * @return The enum numeric value on the wire for friendEnterHomeOption.
      */
     int getFriendEnterHomeOptionValue();
     /**
-     * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+     * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
      * @return The friendEnterHomeOption.
      */
     emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption getFriendEnterHomeOption();
 
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      * @return Whether the profilePicture field is set.
      */
     boolean hasProfilePicture();
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      * @return The profilePicture.
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+
+    /**
+     * <code>string gpbkdlaodce = 26;</code>
+     * @return The gpbkdlaodce.
+     */
+    java.lang.String getGpbkdlaodce();
+    /**
+     * <code>string gpbkdlaodce = 26;</code>
+     * @return The bytes for gpbkdlaodce.
+     */
+    com.google.protobuf.ByteString
+        getGpbkdlaodceBytes();
   }
   /**
    * Protobuf type {@code SocialDetail}
@@ -282,6 +294,7 @@ public final class SocialDetailOuterClass {
       showAvatarInfoList_ = java.util.Collections.emptyList();
       showNameCardIdList_ = emptyIntList();
       friendEnterHomeOption_ = 0;
+      gpbkdlaodce_ = "";
     }
 
     @java.lang.Override
@@ -498,6 +511,12 @@ public final class SocialDetailOuterClass {
 
               break;
             }
+            case 210: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gpbkdlaodce_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -599,10 +618,10 @@ public final class SocialDetailOuterClass {
       return level_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 4;
+    public static final int AVATARID_FIELD_NUMBER = 4;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 4;</code>
+     * <code>uint32 avatarId = 4;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -674,10 +693,10 @@ public final class SocialDetailOuterClass {
       return getBirthday();
     }
 
-    public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
+    public static final int WORLDLEVEL_FIELD_NUMBER = 7;
     private int worldLevel_;
     /**
-     * <code>uint32 world_level = 7;</code>
+     * <code>uint32 worldLevel = 7;</code>
      * @return The worldLevel.
      */
     @java.lang.Override
@@ -685,10 +704,10 @@ public final class SocialDetailOuterClass {
       return worldLevel_;
     }
 
-    public static final int RESERVED_LIST_FIELD_NUMBER = 8;
+    public static final int RESERVEDLIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList reservedList_;
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @return A list containing the reservedList.
      */
     @java.lang.Override
@@ -697,14 +716,14 @@ public final class SocialDetailOuterClass {
       return reservedList_;
     }
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @return The count of reservedList.
      */
     public int getReservedListCount() {
       return reservedList_.size();
     }
     /**
-     * <code>repeated uint32 reserved_list = 8;</code>
+     * <code>repeated uint32 reservedList = 8;</code>
      * @param index The index of the element to return.
      * @return The reservedList at the given index.
      */
@@ -713,17 +732,17 @@ public final class SocialDetailOuterClass {
     }
     private int reservedListMemoizedSerializedSize = -1;
 
-    public static final int ONLINE_STATE_FIELD_NUMBER = 9;
+    public static final int ONLINESTATE_FIELD_NUMBER = 9;
     private int onlineState_;
     /**
-     * <code>.FriendOnlineState online_state = 9;</code>
+     * <code>.FriendOnlineState onlineState = 9;</code>
      * @return The enum numeric value on the wire for onlineState.
      */
     @java.lang.Override public int getOnlineStateValue() {
       return onlineState_;
     }
     /**
-     * <code>.FriendOnlineState online_state = 9;</code>
+     * <code>.FriendOnlineState onlineState = 9;</code>
      * @return The onlineState.
      */
     @java.lang.Override public emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState getOnlineState() {
@@ -743,10 +762,10 @@ public final class SocialDetailOuterClass {
       return param_;
     }
 
-    public static final int IS_FRIEND_FIELD_NUMBER = 11;
+    public static final int ISFRIEND_FIELD_NUMBER = 11;
     private boolean isFriend_;
     /**
-     * <code>bool is_friend = 11;</code>
+     * <code>bool isFriend = 11;</code>
      * @return The isFriend.
      */
     @java.lang.Override
@@ -754,10 +773,10 @@ public final class SocialDetailOuterClass {
       return isFriend_;
     }
 
-    public static final int IS_MP_MODE_AVAILABLE_FIELD_NUMBER = 12;
+    public static final int ISMPMODEAVAILABLE_FIELD_NUMBER = 12;
     private boolean isMpModeAvailable_;
     /**
-     * <code>bool is_mp_mode_available = 12;</code>
+     * <code>bool isMpModeAvailable = 12;</code>
      * @return The isMpModeAvailable.
      */
     @java.lang.Override
@@ -765,10 +784,10 @@ public final class SocialDetailOuterClass {
       return isMpModeAvailable_;
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 13;
+    public static final int ONLINEID_FIELD_NUMBER = 13;
     private volatile java.lang.Object onlineId_;
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string onlineId = 13;</code>
      * @return The onlineId.
      */
     @java.lang.Override
@@ -785,7 +804,7 @@ public final class SocialDetailOuterClass {
       }
     }
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string onlineId = 13;</code>
      * @return The bytes for onlineId.
      */
     @java.lang.Override
@@ -803,10 +822,10 @@ public final class SocialDetailOuterClass {
       }
     }
 
-    public static final int NAME_CARD_ID_FIELD_NUMBER = 14;
+    public static final int NAMECARDID_FIELD_NUMBER = 14;
     private int nameCardId_;
     /**
-     * <code>uint32 name_card_id = 14;</code>
+     * <code>uint32 nameCardId = 14;</code>
      * @return The nameCardId.
      */
     @java.lang.Override
@@ -814,10 +833,10 @@ public final class SocialDetailOuterClass {
       return nameCardId_;
     }
 
-    public static final int IS_IN_BLACKLIST_FIELD_NUMBER = 15;
+    public static final int ISINBLACKLIST_FIELD_NUMBER = 15;
     private boolean isInBlacklist_;
     /**
-     * <code>bool is_in_blacklist = 15;</code>
+     * <code>bool isInBlacklist = 15;</code>
      * @return The isInBlacklist.
      */
     @java.lang.Override
@@ -825,10 +844,10 @@ public final class SocialDetailOuterClass {
       return isInBlacklist_;
     }
 
-    public static final int IS_CHAT_NO_DISTURB_FIELD_NUMBER = 16;
+    public static final int ISCHATNODISTURB_FIELD_NUMBER = 16;
     private boolean isChatNoDisturb_;
     /**
-     * <code>bool is_chat_no_disturb = 16;</code>
+     * <code>bool isChatNoDisturb = 16;</code>
      * @return The isChatNoDisturb.
      */
     @java.lang.Override
@@ -836,10 +855,10 @@ public final class SocialDetailOuterClass {
       return isChatNoDisturb_;
     }
 
-    public static final int REMARK_NAME_FIELD_NUMBER = 17;
+    public static final int REMARKNAME_FIELD_NUMBER = 17;
     private volatile java.lang.Object remarkName_;
     /**
-     * <code>string remark_name = 17;</code>
+     * <code>string remarkName = 17;</code>
      * @return The remarkName.
      */
     @java.lang.Override
@@ -856,7 +875,7 @@ public final class SocialDetailOuterClass {
       }
     }
     /**
-     * <code>string remark_name = 17;</code>
+     * <code>string remarkName = 17;</code>
      * @return The bytes for remarkName.
      */
     @java.lang.Override
@@ -874,10 +893,10 @@ public final class SocialDetailOuterClass {
       }
     }
 
-    public static final int FINISH_ACHIEVEMENT_NUM_FIELD_NUMBER = 18;
+    public static final int FINISHACHIEVEMENTNUM_FIELD_NUMBER = 18;
     private int finishAchievementNum_;
     /**
-     * <code>uint32 finish_achievement_num = 18;</code>
+     * <code>uint32 finishAchievementNum = 18;</code>
      * @return The finishAchievementNum.
      */
     @java.lang.Override
@@ -885,10 +904,10 @@ public final class SocialDetailOuterClass {
       return finishAchievementNum_;
     }
 
-    public static final int TOWER_FLOOR_INDEX_FIELD_NUMBER = 19;
+    public static final int TOWERFLOORINDEX_FIELD_NUMBER = 19;
     private int towerFloorIndex_;
     /**
-     * <code>uint32 tower_floor_index = 19;</code>
+     * <code>uint32 towerFloorIndex = 19;</code>
      * @return The towerFloorIndex.
      */
     @java.lang.Override
@@ -896,10 +915,10 @@ public final class SocialDetailOuterClass {
       return towerFloorIndex_;
     }
 
-    public static final int TOWER_LEVEL_INDEX_FIELD_NUMBER = 20;
+    public static final int TOWERLEVELINDEX_FIELD_NUMBER = 20;
     private int towerLevelIndex_;
     /**
-     * <code>uint32 tower_level_index = 20;</code>
+     * <code>uint32 towerLevelIndex = 20;</code>
      * @return The towerLevelIndex.
      */
     @java.lang.Override
@@ -907,10 +926,10 @@ public final class SocialDetailOuterClass {
       return towerLevelIndex_;
     }
 
-    public static final int IS_SHOW_AVATAR_FIELD_NUMBER = 21;
+    public static final int ISSHOWAVATAR_FIELD_NUMBER = 21;
     private boolean isShowAvatar_;
     /**
-     * <code>bool is_show_avatar = 21;</code>
+     * <code>bool isShowAvatar = 21;</code>
      * @return The isShowAvatar.
      */
     @java.lang.Override
@@ -918,17 +937,17 @@ public final class SocialDetailOuterClass {
       return isShowAvatar_;
     }
 
-    public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 22;
+    public static final int SHOWAVATARINFOLIST_FIELD_NUMBER = 22;
     private java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_;
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> getShowAvatarInfoListList() {
       return showAvatarInfoList_;
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
@@ -936,21 +955,21 @@ public final class SocialDetailOuterClass {
       return showAvatarInfoList_;
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     @java.lang.Override
     public int getShowAvatarInfoListCount() {
       return showAvatarInfoList_.size();
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getShowAvatarInfoList(int index) {
       return showAvatarInfoList_.get(index);
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+     * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
@@ -958,10 +977,10 @@ public final class SocialDetailOuterClass {
       return showAvatarInfoList_.get(index);
     }
 
-    public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 23;
+    public static final int SHOWNAMECARDIDLIST_FIELD_NUMBER = 23;
     private com.google.protobuf.Internal.IntList showNameCardIdList_;
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @return A list containing the showNameCardIdList.
      */
     @java.lang.Override
@@ -970,14 +989,14 @@ public final class SocialDetailOuterClass {
       return showNameCardIdList_;
     }
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @return The count of showNameCardIdList.
      */
     public int getShowNameCardIdListCount() {
       return showNameCardIdList_.size();
     }
     /**
-     * <code>repeated uint32 show_name_card_id_list = 23;</code>
+     * <code>repeated uint32 showNameCardIdList = 23;</code>
      * @param index The index of the element to return.
      * @return The showNameCardIdList at the given index.
      */
@@ -986,17 +1005,17 @@ public final class SocialDetailOuterClass {
     }
     private int showNameCardIdListMemoizedSerializedSize = -1;
 
-    public static final int FRIEND_ENTER_HOME_OPTION_FIELD_NUMBER = 24;
+    public static final int FRIENDENTERHOMEOPTION_FIELD_NUMBER = 24;
     private int friendEnterHomeOption_;
     /**
-     * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+     * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
      * @return The enum numeric value on the wire for friendEnterHomeOption.
      */
     @java.lang.Override public int getFriendEnterHomeOptionValue() {
       return friendEnterHomeOption_;
     }
     /**
-     * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+     * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
      * @return The friendEnterHomeOption.
      */
     @java.lang.Override public emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption getFriendEnterHomeOption() {
@@ -1005,10 +1024,10 @@ public final class SocialDetailOuterClass {
       return result == null ? emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.UNRECOGNIZED : result;
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 25;
+    public static final int PROFILEPICTURE_FIELD_NUMBER = 25;
     private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      * @return Whether the profilePicture field is set.
      */
     @java.lang.Override
@@ -1016,7 +1035,7 @@ public final class SocialDetailOuterClass {
       return profilePicture_ != null;
     }
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      * @return The profilePicture.
      */
     @java.lang.Override
@@ -1024,11 +1043,49 @@ public final class SocialDetailOuterClass {
       return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
     /**
-     * <code>.ProfilePicture profile_picture = 25;</code>
+     * <code>.ProfilePicture profilePicture = 25;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
       return getProfilePicture();
+    }
+
+    public static final int GPBKDLAODCE_FIELD_NUMBER = 26;
+    private volatile java.lang.Object gpbkdlaodce_;
+    /**
+     * <code>string gpbkdlaodce = 26;</code>
+     * @return The gpbkdlaodce.
+     */
+    @java.lang.Override
+    public java.lang.String getGpbkdlaodce() {
+      java.lang.Object ref = gpbkdlaodce_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gpbkdlaodce_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string gpbkdlaodce = 26;</code>
+     * @return The bytes for gpbkdlaodce.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGpbkdlaodceBytes() {
+      java.lang.Object ref = gpbkdlaodce_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gpbkdlaodce_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1128,6 +1185,9 @@ public final class SocialDetailOuterClass {
       }
       if (profilePicture_ != null) {
         output.writeMessage(25, getProfilePicture());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpbkdlaodce_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, gpbkdlaodce_);
       }
       unknownFields.writeTo(output);
     }
@@ -1254,6 +1314,9 @@ public final class SocialDetailOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(25, getProfilePicture());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpbkdlaodce_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, gpbkdlaodce_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1323,6 +1386,8 @@ public final class SocialDetailOuterClass {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
+      if (!getGpbkdlaodce()
+          .equals(other.getGpbkdlaodce())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1340,7 +1405,7 @@ public final class SocialDetailOuterClass {
       hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
@@ -1348,57 +1413,59 @@ public final class SocialDetailOuterClass {
         hash = (37 * hash) + BIRTHDAY_FIELD_NUMBER;
         hash = (53 * hash) + getBirthday().hashCode();
       }
-      hash = (37 * hash) + WORLD_LEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + WORLDLEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getWorldLevel();
       if (getReservedListCount() > 0) {
-        hash = (37 * hash) + RESERVED_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + RESERVEDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getReservedListList().hashCode();
       }
-      hash = (37 * hash) + ONLINE_STATE_FIELD_NUMBER;
+      hash = (37 * hash) + ONLINESTATE_FIELD_NUMBER;
       hash = (53 * hash) + onlineState_;
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
-      hash = (37 * hash) + IS_FRIEND_FIELD_NUMBER;
+      hash = (37 * hash) + ISFRIEND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFriend());
-      hash = (37 * hash) + IS_MP_MODE_AVAILABLE_FIELD_NUMBER;
+      hash = (37 * hash) + ISMPMODEAVAILABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsMpModeAvailable());
-      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ONLINEID_FIELD_NUMBER;
       hash = (53 * hash) + getOnlineId().hashCode();
-      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
+      hash = (37 * hash) + NAMECARDID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
-      hash = (37 * hash) + IS_IN_BLACKLIST_FIELD_NUMBER;
+      hash = (37 * hash) + ISINBLACKLIST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInBlacklist());
-      hash = (37 * hash) + IS_CHAT_NO_DISTURB_FIELD_NUMBER;
+      hash = (37 * hash) + ISCHATNODISTURB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsChatNoDisturb());
-      hash = (37 * hash) + REMARK_NAME_FIELD_NUMBER;
+      hash = (37 * hash) + REMARKNAME_FIELD_NUMBER;
       hash = (53 * hash) + getRemarkName().hashCode();
-      hash = (37 * hash) + FINISH_ACHIEVEMENT_NUM_FIELD_NUMBER;
+      hash = (37 * hash) + FINISHACHIEVEMENTNUM_FIELD_NUMBER;
       hash = (53 * hash) + getFinishAchievementNum();
-      hash = (37 * hash) + TOWER_FLOOR_INDEX_FIELD_NUMBER;
+      hash = (37 * hash) + TOWERFLOORINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getTowerFloorIndex();
-      hash = (37 * hash) + TOWER_LEVEL_INDEX_FIELD_NUMBER;
+      hash = (37 * hash) + TOWERLEVELINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getTowerLevelIndex();
-      hash = (37 * hash) + IS_SHOW_AVATAR_FIELD_NUMBER;
+      hash = (37 * hash) + ISSHOWAVATAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsShowAvatar());
       if (getShowAvatarInfoListCount() > 0) {
-        hash = (37 * hash) + SHOW_AVATAR_INFO_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + SHOWAVATARINFOLIST_FIELD_NUMBER;
         hash = (53 * hash) + getShowAvatarInfoListList().hashCode();
       }
       if (getShowNameCardIdListCount() > 0) {
-        hash = (37 * hash) + SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + SHOWNAMECARDIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getShowNameCardIdListList().hashCode();
       }
-      hash = (37 * hash) + FRIEND_ENTER_HOME_OPTION_FIELD_NUMBER;
+      hash = (37 * hash) + FRIENDENTERHOMEOPTION_FIELD_NUMBER;
       hash = (53 * hash) + friendEnterHomeOption_;
       if (hasProfilePicture()) {
-        hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
+        hash = (37 * hash) + PROFILEPICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
+      hash = (37 * hash) + GPBKDLAODCE_FIELD_NUMBER;
+      hash = (53 * hash) + getGpbkdlaodce().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1595,6 +1662,8 @@ public final class SocialDetailOuterClass {
           profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
+        gpbkdlaodce_ = "";
+
         return this;
       }
 
@@ -1671,6 +1740,7 @@ public final class SocialDetailOuterClass {
         } else {
           result.profilePicture_ = profilePictureBuilder_.build();
         }
+        result.gpbkdlaodce_ = gpbkdlaodce_;
         onBuilt();
         return result;
       }
@@ -1834,6 +1904,10 @@ public final class SocialDetailOuterClass {
         }
         if (other.hasProfilePicture()) {
           mergeProfilePicture(other.getProfilePicture());
+        }
+        if (!other.getGpbkdlaodce().isEmpty()) {
+          gpbkdlaodce_ = other.gpbkdlaodce_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2005,7 +2079,7 @@ public final class SocialDetailOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatarId = 4;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -2013,7 +2087,7 @@ public final class SocialDetailOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatarId = 4;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -2024,7 +2098,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatarId = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -2231,7 +2305,7 @@ public final class SocialDetailOuterClass {
 
       private int worldLevel_ ;
       /**
-       * <code>uint32 world_level = 7;</code>
+       * <code>uint32 worldLevel = 7;</code>
        * @return The worldLevel.
        */
       @java.lang.Override
@@ -2239,7 +2313,7 @@ public final class SocialDetailOuterClass {
         return worldLevel_;
       }
       /**
-       * <code>uint32 world_level = 7;</code>
+       * <code>uint32 worldLevel = 7;</code>
        * @param value The worldLevel to set.
        * @return This builder for chaining.
        */
@@ -2250,7 +2324,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 world_level = 7;</code>
+       * <code>uint32 worldLevel = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearWorldLevel() {
@@ -2268,7 +2342,7 @@ public final class SocialDetailOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @return A list containing the reservedList.
        */
       public java.util.List<java.lang.Integer>
@@ -2277,14 +2351,14 @@ public final class SocialDetailOuterClass {
                  java.util.Collections.unmodifiableList(reservedList_) : reservedList_;
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @return The count of reservedList.
        */
       public int getReservedListCount() {
         return reservedList_.size();
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @param index The index of the element to return.
        * @return The reservedList at the given index.
        */
@@ -2292,7 +2366,7 @@ public final class SocialDetailOuterClass {
         return reservedList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @param index The index to set the value at.
        * @param value The reservedList to set.
        * @return This builder for chaining.
@@ -2305,7 +2379,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @param value The reservedList to add.
        * @return This builder for chaining.
        */
@@ -2316,7 +2390,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @param values The reservedList to add.
        * @return This builder for chaining.
        */
@@ -2329,7 +2403,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 reserved_list = 8;</code>
+       * <code>repeated uint32 reservedList = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearReservedList() {
@@ -2341,14 +2415,14 @@ public final class SocialDetailOuterClass {
 
       private int onlineState_ = 0;
       /**
-       * <code>.FriendOnlineState online_state = 9;</code>
+       * <code>.FriendOnlineState onlineState = 9;</code>
        * @return The enum numeric value on the wire for onlineState.
        */
       @java.lang.Override public int getOnlineStateValue() {
         return onlineState_;
       }
       /**
-       * <code>.FriendOnlineState online_state = 9;</code>
+       * <code>.FriendOnlineState onlineState = 9;</code>
        * @param value The enum numeric value on the wire for onlineState to set.
        * @return This builder for chaining.
        */
@@ -2359,7 +2433,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.FriendOnlineState online_state = 9;</code>
+       * <code>.FriendOnlineState onlineState = 9;</code>
        * @return The onlineState.
        */
       @java.lang.Override
@@ -2369,7 +2443,7 @@ public final class SocialDetailOuterClass {
         return result == null ? emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.UNRECOGNIZED : result;
       }
       /**
-       * <code>.FriendOnlineState online_state = 9;</code>
+       * <code>.FriendOnlineState onlineState = 9;</code>
        * @param value The onlineState to set.
        * @return This builder for chaining.
        */
@@ -2383,7 +2457,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.FriendOnlineState online_state = 9;</code>
+       * <code>.FriendOnlineState onlineState = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlineState() {
@@ -2426,7 +2500,7 @@ public final class SocialDetailOuterClass {
 
       private boolean isFriend_ ;
       /**
-       * <code>bool is_friend = 11;</code>
+       * <code>bool isFriend = 11;</code>
        * @return The isFriend.
        */
       @java.lang.Override
@@ -2434,7 +2508,7 @@ public final class SocialDetailOuterClass {
         return isFriend_;
       }
       /**
-       * <code>bool is_friend = 11;</code>
+       * <code>bool isFriend = 11;</code>
        * @param value The isFriend to set.
        * @return This builder for chaining.
        */
@@ -2445,7 +2519,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_friend = 11;</code>
+       * <code>bool isFriend = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFriend() {
@@ -2457,7 +2531,7 @@ public final class SocialDetailOuterClass {
 
       private boolean isMpModeAvailable_ ;
       /**
-       * <code>bool is_mp_mode_available = 12;</code>
+       * <code>bool isMpModeAvailable = 12;</code>
        * @return The isMpModeAvailable.
        */
       @java.lang.Override
@@ -2465,7 +2539,7 @@ public final class SocialDetailOuterClass {
         return isMpModeAvailable_;
       }
       /**
-       * <code>bool is_mp_mode_available = 12;</code>
+       * <code>bool isMpModeAvailable = 12;</code>
        * @param value The isMpModeAvailable to set.
        * @return This builder for chaining.
        */
@@ -2476,7 +2550,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_mp_mode_available = 12;</code>
+       * <code>bool isMpModeAvailable = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsMpModeAvailable() {
@@ -2488,7 +2562,7 @@ public final class SocialDetailOuterClass {
 
       private java.lang.Object onlineId_ = "";
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string onlineId = 13;</code>
        * @return The onlineId.
        */
       public java.lang.String getOnlineId() {
@@ -2504,7 +2578,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string onlineId = 13;</code>
        * @return The bytes for onlineId.
        */
       public com.google.protobuf.ByteString
@@ -2521,7 +2595,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string onlineId = 13;</code>
        * @param value The onlineId to set.
        * @return This builder for chaining.
        */
@@ -2536,7 +2610,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string onlineId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
@@ -2546,7 +2620,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string onlineId = 13;</code>
        * @param value The bytes for onlineId to set.
        * @return This builder for chaining.
        */
@@ -2564,7 +2638,7 @@ public final class SocialDetailOuterClass {
 
       private int nameCardId_ ;
       /**
-       * <code>uint32 name_card_id = 14;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @return The nameCardId.
        */
       @java.lang.Override
@@ -2572,7 +2646,7 @@ public final class SocialDetailOuterClass {
         return nameCardId_;
       }
       /**
-       * <code>uint32 name_card_id = 14;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @param value The nameCardId to set.
        * @return This builder for chaining.
        */
@@ -2583,7 +2657,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 name_card_id = 14;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
@@ -2595,7 +2669,7 @@ public final class SocialDetailOuterClass {
 
       private boolean isInBlacklist_ ;
       /**
-       * <code>bool is_in_blacklist = 15;</code>
+       * <code>bool isInBlacklist = 15;</code>
        * @return The isInBlacklist.
        */
       @java.lang.Override
@@ -2603,7 +2677,7 @@ public final class SocialDetailOuterClass {
         return isInBlacklist_;
       }
       /**
-       * <code>bool is_in_blacklist = 15;</code>
+       * <code>bool isInBlacklist = 15;</code>
        * @param value The isInBlacklist to set.
        * @return This builder for chaining.
        */
@@ -2614,7 +2688,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_in_blacklist = 15;</code>
+       * <code>bool isInBlacklist = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInBlacklist() {
@@ -2626,7 +2700,7 @@ public final class SocialDetailOuterClass {
 
       private boolean isChatNoDisturb_ ;
       /**
-       * <code>bool is_chat_no_disturb = 16;</code>
+       * <code>bool isChatNoDisturb = 16;</code>
        * @return The isChatNoDisturb.
        */
       @java.lang.Override
@@ -2634,7 +2708,7 @@ public final class SocialDetailOuterClass {
         return isChatNoDisturb_;
       }
       /**
-       * <code>bool is_chat_no_disturb = 16;</code>
+       * <code>bool isChatNoDisturb = 16;</code>
        * @param value The isChatNoDisturb to set.
        * @return This builder for chaining.
        */
@@ -2645,7 +2719,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_chat_no_disturb = 16;</code>
+       * <code>bool isChatNoDisturb = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsChatNoDisturb() {
@@ -2657,7 +2731,7 @@ public final class SocialDetailOuterClass {
 
       private java.lang.Object remarkName_ = "";
       /**
-       * <code>string remark_name = 17;</code>
+       * <code>string remarkName = 17;</code>
        * @return The remarkName.
        */
       public java.lang.String getRemarkName() {
@@ -2673,7 +2747,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>string remark_name = 17;</code>
+       * <code>string remarkName = 17;</code>
        * @return The bytes for remarkName.
        */
       public com.google.protobuf.ByteString
@@ -2690,7 +2764,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>string remark_name = 17;</code>
+       * <code>string remarkName = 17;</code>
        * @param value The remarkName to set.
        * @return This builder for chaining.
        */
@@ -2705,7 +2779,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>string remark_name = 17;</code>
+       * <code>string remarkName = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemarkName() {
@@ -2715,7 +2789,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>string remark_name = 17;</code>
+       * <code>string remarkName = 17;</code>
        * @param value The bytes for remarkName to set.
        * @return This builder for chaining.
        */
@@ -2733,7 +2807,7 @@ public final class SocialDetailOuterClass {
 
       private int finishAchievementNum_ ;
       /**
-       * <code>uint32 finish_achievement_num = 18;</code>
+       * <code>uint32 finishAchievementNum = 18;</code>
        * @return The finishAchievementNum.
        */
       @java.lang.Override
@@ -2741,7 +2815,7 @@ public final class SocialDetailOuterClass {
         return finishAchievementNum_;
       }
       /**
-       * <code>uint32 finish_achievement_num = 18;</code>
+       * <code>uint32 finishAchievementNum = 18;</code>
        * @param value The finishAchievementNum to set.
        * @return This builder for chaining.
        */
@@ -2752,7 +2826,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 finish_achievement_num = 18;</code>
+       * <code>uint32 finishAchievementNum = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishAchievementNum() {
@@ -2764,7 +2838,7 @@ public final class SocialDetailOuterClass {
 
       private int towerFloorIndex_ ;
       /**
-       * <code>uint32 tower_floor_index = 19;</code>
+       * <code>uint32 towerFloorIndex = 19;</code>
        * @return The towerFloorIndex.
        */
       @java.lang.Override
@@ -2772,7 +2846,7 @@ public final class SocialDetailOuterClass {
         return towerFloorIndex_;
       }
       /**
-       * <code>uint32 tower_floor_index = 19;</code>
+       * <code>uint32 towerFloorIndex = 19;</code>
        * @param value The towerFloorIndex to set.
        * @return This builder for chaining.
        */
@@ -2783,7 +2857,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 tower_floor_index = 19;</code>
+       * <code>uint32 towerFloorIndex = 19;</code>
        * @return This builder for chaining.
        */
       public Builder clearTowerFloorIndex() {
@@ -2795,7 +2869,7 @@ public final class SocialDetailOuterClass {
 
       private int towerLevelIndex_ ;
       /**
-       * <code>uint32 tower_level_index = 20;</code>
+       * <code>uint32 towerLevelIndex = 20;</code>
        * @return The towerLevelIndex.
        */
       @java.lang.Override
@@ -2803,7 +2877,7 @@ public final class SocialDetailOuterClass {
         return towerLevelIndex_;
       }
       /**
-       * <code>uint32 tower_level_index = 20;</code>
+       * <code>uint32 towerLevelIndex = 20;</code>
        * @param value The towerLevelIndex to set.
        * @return This builder for chaining.
        */
@@ -2814,7 +2888,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 tower_level_index = 20;</code>
+       * <code>uint32 towerLevelIndex = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearTowerLevelIndex() {
@@ -2826,7 +2900,7 @@ public final class SocialDetailOuterClass {
 
       private boolean isShowAvatar_ ;
       /**
-       * <code>bool is_show_avatar = 21;</code>
+       * <code>bool isShowAvatar = 21;</code>
        * @return The isShowAvatar.
        */
       @java.lang.Override
@@ -2834,7 +2908,7 @@ public final class SocialDetailOuterClass {
         return isShowAvatar_;
       }
       /**
-       * <code>bool is_show_avatar = 21;</code>
+       * <code>bool isShowAvatar = 21;</code>
        * @param value The isShowAvatar to set.
        * @return This builder for chaining.
        */
@@ -2845,7 +2919,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_show_avatar = 21;</code>
+       * <code>bool isShowAvatar = 21;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsShowAvatar() {
@@ -2868,7 +2942,7 @@ public final class SocialDetailOuterClass {
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> showAvatarInfoListBuilder_;
 
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> getShowAvatarInfoListList() {
         if (showAvatarInfoListBuilder_ == null) {
@@ -2878,7 +2952,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public int getShowAvatarInfoListCount() {
         if (showAvatarInfoListBuilder_ == null) {
@@ -2888,7 +2962,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getShowAvatarInfoList(int index) {
         if (showAvatarInfoListBuilder_ == null) {
@@ -2898,7 +2972,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder setShowAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
@@ -2915,7 +2989,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder setShowAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -2929,7 +3003,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder addShowAvatarInfoList(emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
         if (showAvatarInfoListBuilder_ == null) {
@@ -2945,7 +3019,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder addShowAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
@@ -2962,7 +3036,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder addShowAvatarInfoList(
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -2976,7 +3050,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder addShowAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -2990,7 +3064,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder addAllShowAvatarInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> values) {
@@ -3005,7 +3079,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder clearShowAvatarInfoList() {
         if (showAvatarInfoListBuilder_ == null) {
@@ -3018,7 +3092,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public Builder removeShowAvatarInfoList(int index) {
         if (showAvatarInfoListBuilder_ == null) {
@@ -3031,14 +3105,14 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder getShowAvatarInfoListBuilder(
           int index) {
         return getShowAvatarInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
           int index) {
@@ -3048,7 +3122,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
            getShowAvatarInfoListOrBuilderList() {
@@ -3059,14 +3133,14 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder addShowAvatarInfoListBuilder() {
         return getShowAvatarInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder addShowAvatarInfoListBuilder(
           int index) {
@@ -3074,7 +3148,7 @@ public final class SocialDetailOuterClass {
             index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo show_avatar_info_list = 22;</code>
+       * <code>repeated .SocialShowAvatarInfo showAvatarInfoList = 22;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder> 
            getShowAvatarInfoListBuilderList() {
@@ -3103,7 +3177,7 @@ public final class SocialDetailOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @return A list containing the showNameCardIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -3112,14 +3186,14 @@ public final class SocialDetailOuterClass {
                  java.util.Collections.unmodifiableList(showNameCardIdList_) : showNameCardIdList_;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @return The count of showNameCardIdList.
        */
       public int getShowNameCardIdListCount() {
         return showNameCardIdList_.size();
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @param index The index of the element to return.
        * @return The showNameCardIdList at the given index.
        */
@@ -3127,7 +3201,7 @@ public final class SocialDetailOuterClass {
         return showNameCardIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @param index The index to set the value at.
        * @param value The showNameCardIdList to set.
        * @return This builder for chaining.
@@ -3140,7 +3214,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @param value The showNameCardIdList to add.
        * @return This builder for chaining.
        */
@@ -3151,7 +3225,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @param values The showNameCardIdList to add.
        * @return This builder for chaining.
        */
@@ -3164,7 +3238,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 23;</code>
+       * <code>repeated uint32 showNameCardIdList = 23;</code>
        * @return This builder for chaining.
        */
       public Builder clearShowNameCardIdList() {
@@ -3176,14 +3250,14 @@ public final class SocialDetailOuterClass {
 
       private int friendEnterHomeOption_ = 0;
       /**
-       * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+       * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
        * @return The enum numeric value on the wire for friendEnterHomeOption.
        */
       @java.lang.Override public int getFriendEnterHomeOptionValue() {
         return friendEnterHomeOption_;
       }
       /**
-       * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+       * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
        * @param value The enum numeric value on the wire for friendEnterHomeOption to set.
        * @return This builder for chaining.
        */
@@ -3194,7 +3268,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+       * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
        * @return The friendEnterHomeOption.
        */
       @java.lang.Override
@@ -3204,7 +3278,7 @@ public final class SocialDetailOuterClass {
         return result == null ? emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.UNRECOGNIZED : result;
       }
       /**
-       * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+       * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
        * @param value The friendEnterHomeOption to set.
        * @return This builder for chaining.
        */
@@ -3218,7 +3292,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.FriendEnterHomeOption friend_enter_home_option = 24;</code>
+       * <code>.FriendEnterHomeOption friendEnterHomeOption = 24;</code>
        * @return This builder for chaining.
        */
       public Builder clearFriendEnterHomeOption() {
@@ -3232,14 +3306,14 @@ public final class SocialDetailOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
         return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        * @return The profilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
@@ -3250,7 +3324,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public Builder setProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -3266,7 +3340,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public Builder setProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -3280,7 +3354,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public Builder mergeProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -3298,7 +3372,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public Builder clearProfilePicture() {
         if (profilePictureBuilder_ == null) {
@@ -3312,7 +3386,7 @@ public final class SocialDetailOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
         
@@ -3320,7 +3394,7 @@ public final class SocialDetailOuterClass {
         return getProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
         if (profilePictureBuilder_ != null) {
@@ -3331,7 +3405,7 @@ public final class SocialDetailOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 25;</code>
+       * <code>.ProfilePicture profilePicture = 25;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -3345,6 +3419,82 @@ public final class SocialDetailOuterClass {
           profilePicture_ = null;
         }
         return profilePictureBuilder_;
+      }
+
+      private java.lang.Object gpbkdlaodce_ = "";
+      /**
+       * <code>string gpbkdlaodce = 26;</code>
+       * @return The gpbkdlaodce.
+       */
+      public java.lang.String getGpbkdlaodce() {
+        java.lang.Object ref = gpbkdlaodce_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gpbkdlaodce_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string gpbkdlaodce = 26;</code>
+       * @return The bytes for gpbkdlaodce.
+       */
+      public com.google.protobuf.ByteString
+          getGpbkdlaodceBytes() {
+        java.lang.Object ref = gpbkdlaodce_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gpbkdlaodce_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string gpbkdlaodce = 26;</code>
+       * @param value The gpbkdlaodce to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGpbkdlaodce(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        gpbkdlaodce_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string gpbkdlaodce = 26;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGpbkdlaodce() {
+        
+        gpbkdlaodce_ = getDefaultInstance().getGpbkdlaodce();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string gpbkdlaodce = 26;</code>
+       * @param value The bytes for gpbkdlaodce to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGpbkdlaodceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        gpbkdlaodce_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3413,35 +3563,35 @@ public final class SocialDetailOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022SocialDetail.proto\032\016Birthday.proto\032\033Fr" +
-      "iendEnterHomeOption.proto\032\027FriendOnlineS" +
-      "tate.proto\032\024ProfilePicture.proto\032\032Social" +
-      "ShowAvatarInfo.proto\"\260\005\n\014SocialDetail\022\013\n" +
+      "\n\022SocialDetail.proto\032\016Birthday.proto\032\027Fr" +
+      "iendOnlineState.proto\032\033FriendEnterHomeOp" +
+      "tion.proto\032\024ProfilePicture.proto\032\032Social" +
+      "ShowAvatarInfo.proto\"\241\005\n\014SocialDetail\022\013\n" +
       "\003uid\030\001 \001(\r\022\020\n\010nickname\030\002 \001(\t\022\r\n\005level\030\003 " +
-      "\001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\021\n\tsignature\030\005 \001(" +
-      "\t\022\033\n\010birthday\030\006 \001(\0132\t.Birthday\022\023\n\013world_" +
-      "level\030\007 \001(\r\022\025\n\rreserved_list\030\010 \003(\r\022(\n\014on" +
-      "line_state\030\t \001(\0162\022.FriendOnlineState\022\r\n\005" +
-      "param\030\n \001(\r\022\021\n\tis_friend\030\013 \001(\010\022\034\n\024is_mp_" +
-      "mode_available\030\014 \001(\010\022\021\n\tonline_id\030\r \001(\t\022" +
-      "\024\n\014name_card_id\030\016 \001(\r\022\027\n\017is_in_blacklist" +
-      "\030\017 \001(\010\022\032\n\022is_chat_no_disturb\030\020 \001(\010\022\023\n\013re" +
-      "mark_name\030\021 \001(\t\022\036\n\026finish_achievement_nu" +
-      "m\030\022 \001(\r\022\031\n\021tower_floor_index\030\023 \001(\r\022\031\n\021to" +
-      "wer_level_index\030\024 \001(\r\022\026\n\016is_show_avatar\030" +
-      "\025 \001(\010\0224\n\025show_avatar_info_list\030\026 \003(\0132\025.S" +
-      "ocialShowAvatarInfo\022\036\n\026show_name_card_id" +
-      "_list\030\027 \003(\r\0228\n\030friend_enter_home_option\030" +
-      "\030 \001(\0162\026.FriendEnterHomeOption\022(\n\017profile" +
-      "_picture\030\031 \001(\0132\017.ProfilePictureB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\001(\r\022\020\n\010avatarId\030\004 \001(\r\022\021\n\tsignature\030\005 \001(\t" +
+      "\022\033\n\010birthday\030\006 \001(\0132\t.Birthday\022\022\n\nworldLe" +
+      "vel\030\007 \001(\r\022\024\n\014reservedList\030\010 \003(\r\022\'\n\013onlin" +
+      "eState\030\t \001(\0162\022.FriendOnlineState\022\r\n\005para" +
+      "m\030\n \001(\r\022\020\n\010isFriend\030\013 \001(\010\022\031\n\021isMpModeAva" +
+      "ilable\030\014 \001(\010\022\020\n\010onlineId\030\r \001(\t\022\022\n\nnameCa" +
+      "rdId\030\016 \001(\r\022\025\n\risInBlacklist\030\017 \001(\010\022\027\n\017isC" +
+      "hatNoDisturb\030\020 \001(\010\022\022\n\nremarkName\030\021 \001(\t\022\034" +
+      "\n\024finishAchievementNum\030\022 \001(\r\022\027\n\017towerFlo" +
+      "orIndex\030\023 \001(\r\022\027\n\017towerLevelIndex\030\024 \001(\r\022\024" +
+      "\n\014isShowAvatar\030\025 \001(\010\0221\n\022showAvatarInfoLi" +
+      "st\030\026 \003(\0132\025.SocialShowAvatarInfo\022\032\n\022showN" +
+      "ameCardIdList\030\027 \003(\r\0225\n\025friendEnterHomeOp" +
+      "tion\030\030 \001(\0162\026.FriendEnterHomeOption\022\'\n\016pr" +
+      "ofilePicture\030\031 \001(\0132\017.ProfilePicture\022\023\n\013g" +
+      "pbkdlaodce\030\032 \001(\tB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.BirthdayOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor(),
         });
@@ -3450,10 +3600,10 @@ public final class SocialDetailOuterClass {
     internal_static_SocialDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SocialDetail_descriptor,
-        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "Signature", "Birthday", "WorldLevel", "ReservedList", "OnlineState", "Param", "IsFriend", "IsMpModeAvailable", "OnlineId", "NameCardId", "IsInBlacklist", "IsChatNoDisturb", "RemarkName", "FinishAchievementNum", "TowerFloorIndex", "TowerLevelIndex", "IsShowAvatar", "ShowAvatarInfoList", "ShowNameCardIdList", "FriendEnterHomeOption", "ProfilePicture", });
+        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "Signature", "Birthday", "WorldLevel", "ReservedList", "OnlineState", "Param", "IsFriend", "IsMpModeAvailable", "OnlineId", "NameCardId", "IsInBlacklist", "IsChatNoDisturb", "RemarkName", "FinishAchievementNum", "TowerFloorIndex", "TowerLevelIndex", "IsShowAvatar", "ShowAvatarInfoList", "ShowNameCardIdList", "FriendEnterHomeOption", "ProfilePicture", "Gpbkdlaodce", });
     emu.grasscutter.net.proto.BirthdayOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
   }

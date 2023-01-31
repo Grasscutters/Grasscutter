@@ -19,32 +19,21 @@ public final class LaunchFireworksReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      * @return Whether the schemeData field is set.
      */
     boolean hasSchemeData();
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      * @return The schemeData.
      */
     emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData getSchemeData();
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      */
     emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataOrBuilder();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 5977;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code LaunchFireworksReq}
    */
   public static final class LaunchFireworksReq extends
@@ -89,7 +78,7 @@ public final class LaunchFireworksReqOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 10: {
               emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder subBuilder = null;
               if (schemeData_ != null) {
                 subBuilder = schemeData_.toBuilder();
@@ -134,10 +123,149 @@ public final class LaunchFireworksReqOuterClass {
               emu.grasscutter.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq.class, emu.grasscutter.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq.Builder.class);
     }
 
-    public static final int SCHEME_DATA_FIELD_NUMBER = 8;
+    /**
+     * Protobuf enum {@code LaunchFireworksReq.MCIHLAOBBDE}
+     */
+    public enum MCIHLAOBBDE
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 5921;</code>
+       */
+      PEPPOHPHJOJ(1, 5921),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final MCIHLAOBBDE DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final MCIHLAOBBDE EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 5921;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 5921;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MCIHLAOBBDE valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MCIHLAOBBDE forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 5921: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MCIHLAOBBDE>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MCIHLAOBBDE> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MCIHLAOBBDE>() {
+              public MCIHLAOBBDE findValueByNumber(int number) {
+                return MCIHLAOBBDE.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MCIHLAOBBDE[] VALUES = getStaticValuesArray();
+      private static MCIHLAOBBDE[] getStaticValuesArray() {
+        return new MCIHLAOBBDE[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static MCIHLAOBBDE valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private MCIHLAOBBDE(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:LaunchFireworksReq.MCIHLAOBBDE)
+    }
+
+    public static final int SCHEMEDATA_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData schemeData_;
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      * @return Whether the schemeData field is set.
      */
     @java.lang.Override
@@ -145,7 +273,7 @@ public final class LaunchFireworksReqOuterClass {
       return schemeData_ != null;
     }
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      * @return The schemeData.
      */
     @java.lang.Override
@@ -153,7 +281,7 @@ public final class LaunchFireworksReqOuterClass {
       return schemeData_ == null ? emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.getDefaultInstance() : schemeData_;
     }
     /**
-     * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+     * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataOrBuilder() {
@@ -175,7 +303,7 @@ public final class LaunchFireworksReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (schemeData_ != null) {
-        output.writeMessage(8, getSchemeData());
+        output.writeMessage(1, getSchemeData());
       }
       unknownFields.writeTo(output);
     }
@@ -188,7 +316,7 @@ public final class LaunchFireworksReqOuterClass {
       size = 0;
       if (schemeData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getSchemeData());
+          .computeMessageSize(1, getSchemeData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -222,7 +350,7 @@ public final class LaunchFireworksReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemeData()) {
-        hash = (37 * hash) + SCHEME_DATA_FIELD_NUMBER;
+        hash = (37 * hash) + SCHEMEDATA_FIELD_NUMBER;
         hash = (53 * hash) + getSchemeData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -321,17 +449,6 @@ public final class LaunchFireworksReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 5977;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code LaunchFireworksReq}
      */
     public static final class Builder extends
@@ -490,14 +607,14 @@ public final class LaunchFireworksReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> schemeDataBuilder_;
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        * @return Whether the schemeData field is set.
        */
       public boolean hasSchemeData() {
         return schemeDataBuilder_ != null || schemeData_ != null;
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        * @return The schemeData.
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData getSchemeData() {
@@ -508,7 +625,7 @@ public final class LaunchFireworksReqOuterClass {
         }
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public Builder setSchemeData(emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
         if (schemeDataBuilder_ == null) {
@@ -524,7 +641,7 @@ public final class LaunchFireworksReqOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public Builder setSchemeData(
           emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder builderForValue) {
@@ -538,7 +655,7 @@ public final class LaunchFireworksReqOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public Builder mergeSchemeData(emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
         if (schemeDataBuilder_ == null) {
@@ -556,7 +673,7 @@ public final class LaunchFireworksReqOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public Builder clearSchemeData() {
         if (schemeDataBuilder_ == null) {
@@ -570,7 +687,7 @@ public final class LaunchFireworksReqOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder getSchemeDataBuilder() {
         
@@ -578,7 +695,7 @@ public final class LaunchFireworksReqOuterClass {
         return getSchemeDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataOrBuilder() {
         if (schemeDataBuilder_ != null) {
@@ -589,7 +706,7 @@ public final class LaunchFireworksReqOuterClass {
         }
       }
       /**
-       * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
+       * <code>.FireworksLaunchSchemeData schemeData = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> 
@@ -672,10 +789,12 @@ public final class LaunchFireworksReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030LaunchFireworksReq.proto\032\037FireworksLau" +
-      "nchSchemeData.proto\"E\n\022LaunchFireworksRe" +
-      "q\022/\n\013scheme_data\030\010 \001(\0132\032.FireworksLaunch" +
-      "SchemeDataB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "nchSchemeData.proto\"\246\001\n\022LaunchFireworksR" +
+      "eq\022.\n\nschemeData\030\001 \001(\0132\032.FireworksLaunch" +
+      "SchemeData\"`\n\013MCIHLAOBBDE\022\010\n\004NONE\020\000\022\020\n\013P" +
+      "EPPOHPHJOJ\020\241.\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOL" +
+      "MPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

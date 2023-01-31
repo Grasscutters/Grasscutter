@@ -19,29 +19,18 @@ public final class TakeCompoundOutputReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 compound_group_id = 4;</code>
-     * @return The compoundGroupId.
-     */
-    int getCompoundGroupId();
-
-    /**
-     * <code>uint32 compound_id = 9;</code>
+     * <code>uint32 compoundId = 13;</code>
      * @return The compoundId.
      */
     int getCompoundId();
+
+    /**
+     * <code>uint32 compoundGroupId = 4;</code>
+     * @return The compoundGroupId.
+     */
+    int getCompoundGroupId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 134;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code TakeCompoundOutputReq}
    */
   public static final class TakeCompoundOutputReq extends
@@ -91,7 +80,7 @@ public final class TakeCompoundOutputReqOuterClass {
               compoundGroupId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 104: {
 
               compoundId_ = input.readUInt32();
               break;
@@ -128,26 +117,165 @@ public final class TakeCompoundOutputReqOuterClass {
               emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq.class, emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq.Builder.class);
     }
 
-    public static final int COMPOUND_GROUP_ID_FIELD_NUMBER = 4;
-    private int compoundGroupId_;
     /**
-     * <code>uint32 compound_group_id = 4;</code>
-     * @return The compoundGroupId.
+     * Protobuf enum {@code TakeCompoundOutputReq.CLNLODBPFBH}
      */
-    @java.lang.Override
-    public int getCompoundGroupId() {
-      return compoundGroupId_;
+    public enum CLNLODBPFBH
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 130;</code>
+       */
+      PEPPOHPHJOJ(1, 130),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final CLNLODBPFBH DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final CLNLODBPFBH EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 130;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 130;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static CLNLODBPFBH valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static CLNLODBPFBH forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 130: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<CLNLODBPFBH>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CLNLODBPFBH> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CLNLODBPFBH>() {
+              public CLNLODBPFBH findValueByNumber(int number) {
+                return CLNLODBPFBH.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final CLNLODBPFBH[] VALUES = getStaticValuesArray();
+      private static CLNLODBPFBH[] getStaticValuesArray() {
+        return new CLNLODBPFBH[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static CLNLODBPFBH valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private CLNLODBPFBH(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TakeCompoundOutputReq.CLNLODBPFBH)
     }
 
-    public static final int COMPOUND_ID_FIELD_NUMBER = 9;
+    public static final int COMPOUNDID_FIELD_NUMBER = 13;
     private int compoundId_;
     /**
-     * <code>uint32 compound_id = 9;</code>
+     * <code>uint32 compoundId = 13;</code>
      * @return The compoundId.
      */
     @java.lang.Override
     public int getCompoundId() {
       return compoundId_;
+    }
+
+    public static final int COMPOUNDGROUPID_FIELD_NUMBER = 4;
+    private int compoundGroupId_;
+    /**
+     * <code>uint32 compoundGroupId = 4;</code>
+     * @return The compoundGroupId.
+     */
+    @java.lang.Override
+    public int getCompoundGroupId() {
+      return compoundGroupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -168,7 +296,7 @@ public final class TakeCompoundOutputReqOuterClass {
         output.writeUInt32(4, compoundGroupId_);
       }
       if (compoundId_ != 0) {
-        output.writeUInt32(9, compoundId_);
+        output.writeUInt32(13, compoundId_);
       }
       unknownFields.writeTo(output);
     }
@@ -185,7 +313,7 @@ public final class TakeCompoundOutputReqOuterClass {
       }
       if (compoundId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, compoundId_);
+          .computeUInt32Size(13, compoundId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -202,10 +330,10 @@ public final class TakeCompoundOutputReqOuterClass {
       }
       emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq other = (emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq) obj;
 
-      if (getCompoundGroupId()
-          != other.getCompoundGroupId()) return false;
       if (getCompoundId()
           != other.getCompoundId()) return false;
+      if (getCompoundGroupId()
+          != other.getCompoundGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -217,10 +345,10 @@ public final class TakeCompoundOutputReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMPOUND_GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCompoundGroupId();
-      hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
+      hash = (37 * hash) + COMPOUNDID_FIELD_NUMBER;
       hash = (53 * hash) + getCompoundId();
+      hash = (37 * hash) + COMPOUNDGROUPID_FIELD_NUMBER;
+      hash = (53 * hash) + getCompoundGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -317,17 +445,6 @@ public final class TakeCompoundOutputReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 134;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code TakeCompoundOutputReq}
      */
     public static final class Builder extends
@@ -365,9 +482,9 @@ public final class TakeCompoundOutputReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        compoundGroupId_ = 0;
-
         compoundId_ = 0;
+
+        compoundGroupId_ = 0;
 
         return this;
       }
@@ -395,8 +512,8 @@ public final class TakeCompoundOutputReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq buildPartial() {
         emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq result = new emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq(this);
-        result.compoundGroupId_ = compoundGroupId_;
         result.compoundId_ = compoundId_;
+        result.compoundGroupId_ = compoundGroupId_;
         onBuilt();
         return result;
       }
@@ -445,11 +562,11 @@ public final class TakeCompoundOutputReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq other) {
         if (other == emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq.getDefaultInstance()) return this;
-        if (other.getCompoundGroupId() != 0) {
-          setCompoundGroupId(other.getCompoundGroupId());
-        }
         if (other.getCompoundId() != 0) {
           setCompoundId(other.getCompoundId());
+        }
+        if (other.getCompoundGroupId() != 0) {
+          setCompoundGroupId(other.getCompoundGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -480,40 +597,9 @@ public final class TakeCompoundOutputReqOuterClass {
         return this;
       }
 
-      private int compoundGroupId_ ;
-      /**
-       * <code>uint32 compound_group_id = 4;</code>
-       * @return The compoundGroupId.
-       */
-      @java.lang.Override
-      public int getCompoundGroupId() {
-        return compoundGroupId_;
-      }
-      /**
-       * <code>uint32 compound_group_id = 4;</code>
-       * @param value The compoundGroupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCompoundGroupId(int value) {
-        
-        compoundGroupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 compound_group_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCompoundGroupId() {
-        
-        compoundGroupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int compoundId_ ;
       /**
-       * <code>uint32 compound_id = 9;</code>
+       * <code>uint32 compoundId = 13;</code>
        * @return The compoundId.
        */
       @java.lang.Override
@@ -521,7 +607,7 @@ public final class TakeCompoundOutputReqOuterClass {
         return compoundId_;
       }
       /**
-       * <code>uint32 compound_id = 9;</code>
+       * <code>uint32 compoundId = 13;</code>
        * @param value The compoundId to set.
        * @return This builder for chaining.
        */
@@ -532,12 +618,43 @@ public final class TakeCompoundOutputReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 compound_id = 9;</code>
+       * <code>uint32 compoundId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
         
         compoundId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int compoundGroupId_ ;
+      /**
+       * <code>uint32 compoundGroupId = 4;</code>
+       * @return The compoundGroupId.
+       */
+      @java.lang.Override
+      public int getCompoundGroupId() {
+        return compoundGroupId_;
+      }
+      /**
+       * <code>uint32 compoundGroupId = 4;</code>
+       * @param value The compoundGroupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompoundGroupId(int value) {
+        
+        compoundGroupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 compoundGroupId = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompoundGroupId() {
+        
+        compoundGroupId_ = 0;
         onChanged();
         return this;
       }
@@ -608,10 +725,12 @@ public final class TakeCompoundOutputReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033TakeCompoundOutputReq.proto\"G\n\025TakeCom" +
-      "poundOutputReq\022\031\n\021compound_group_id\030\004 \001(" +
-      "\r\022\023\n\013compound_id\030\t \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\n\033TakeCompoundOutputReq.proto\"\246\001\n\025TakeCo" +
+      "mpoundOutputReq\022\022\n\ncompoundId\030\r \001(\r\022\027\n\017c" +
+      "ompoundGroupId\030\004 \001(\r\"`\n\013CLNLODBPFBH\022\010\n\004N" +
+      "ONE\020\000\022\020\n\013PEPPOHPHJOJ\020\202\001\022\017\n\013DCDNILFDFLB\020\000" +
+      "\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -622,7 +741,7 @@ public final class TakeCompoundOutputReqOuterClass {
     internal_static_TakeCompoundOutputReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeCompoundOutputReq_descriptor,
-        new java.lang.String[] { "CompoundGroupId", "CompoundId", });
+        new java.lang.String[] { "CompoundId", "CompoundGroupId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

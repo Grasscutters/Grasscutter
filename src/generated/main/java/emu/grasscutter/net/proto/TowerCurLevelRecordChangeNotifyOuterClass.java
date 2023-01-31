@@ -19,31 +19,21 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      * @return Whether the curLevelRecord field is set.
      */
     boolean hasCurLevelRecord();
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      * @return The curLevelRecord.
      */
     emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord getCurLevelRecord();
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      */
     emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2456;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code TowerCurLevelRecordChangeNotify}
    */
   public static final class TowerCurLevelRecordChangeNotify extends
@@ -88,7 +78,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 42: {
               emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder subBuilder = null;
               if (curLevelRecord_ != null) {
                 subBuilder = curLevelRecord_.toBuilder();
@@ -133,10 +123,141 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
               emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.class, emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.Builder.class);
     }
 
-    public static final int CUR_LEVEL_RECORD_FIELD_NUMBER = 1;
+    /**
+     * Protobuf enum {@code TowerCurLevelRecordChangeNotify.MOKEHFOFGCK}
+     */
+    public enum MOKEHFOFGCK
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 2487;</code>
+       */
+      PEPPOHPHJOJ(1, 2487),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final MOKEHFOFGCK DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 2487;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 2487;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MOKEHFOFGCK valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MOKEHFOFGCK forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 2487: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MOKEHFOFGCK>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MOKEHFOFGCK> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MOKEHFOFGCK>() {
+              public MOKEHFOFGCK findValueByNumber(int number) {
+                return MOKEHFOFGCK.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MOKEHFOFGCK[] VALUES = getStaticValuesArray();
+      private static MOKEHFOFGCK[] getStaticValuesArray() {
+        return new MOKEHFOFGCK[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static MOKEHFOFGCK valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private MOKEHFOFGCK(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TowerCurLevelRecordChangeNotify.MOKEHFOFGCK)
+    }
+
+    public static final int CURLEVELRECORD_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord curLevelRecord_;
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      * @return Whether the curLevelRecord field is set.
      */
     @java.lang.Override
@@ -144,7 +265,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       return curLevelRecord_ != null;
     }
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      * @return The curLevelRecord.
      */
     @java.lang.Override
@@ -152,7 +273,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       return curLevelRecord_ == null ? emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.getDefaultInstance() : curLevelRecord_;
     }
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+     * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder() {
@@ -174,7 +295,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (curLevelRecord_ != null) {
-        output.writeMessage(1, getCurLevelRecord());
+        output.writeMessage(5, getCurLevelRecord());
       }
       unknownFields.writeTo(output);
     }
@@ -187,7 +308,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       size = 0;
       if (curLevelRecord_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCurLevelRecord());
+          .computeMessageSize(5, getCurLevelRecord());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -221,7 +342,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasCurLevelRecord()) {
-        hash = (37 * hash) + CUR_LEVEL_RECORD_FIELD_NUMBER;
+        hash = (37 * hash) + CURLEVELRECORD_FIELD_NUMBER;
         hash = (53 * hash) + getCurLevelRecord().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -320,16 +441,6 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2456;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code TowerCurLevelRecordChangeNotify}
      */
     public static final class Builder extends
@@ -488,14 +599,14 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder> curLevelRecordBuilder_;
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        * @return Whether the curLevelRecord field is set.
        */
       public boolean hasCurLevelRecord() {
         return curLevelRecordBuilder_ != null || curLevelRecord_ != null;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        * @return The curLevelRecord.
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord getCurLevelRecord() {
@@ -506,7 +617,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public Builder setCurLevelRecord(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord value) {
         if (curLevelRecordBuilder_ == null) {
@@ -522,7 +633,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public Builder setCurLevelRecord(
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder builderForValue) {
@@ -536,7 +647,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public Builder mergeCurLevelRecord(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord value) {
         if (curLevelRecordBuilder_ == null) {
@@ -554,7 +665,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public Builder clearCurLevelRecord() {
         if (curLevelRecordBuilder_ == null) {
@@ -568,7 +679,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder getCurLevelRecordBuilder() {
         
@@ -576,7 +687,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return getCurLevelRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder() {
         if (curLevelRecordBuilder_ != null) {
@@ -587,7 +698,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 1;</code>
+       * <code>.TowerCurLevelRecord curLevelRecord = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder> 
@@ -670,9 +781,11 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%TowerCurLevelRecordChangeNotify.proto\032" +
-      "\031TowerCurLevelRecord.proto\"Q\n\037TowerCurLe" +
-      "velRecordChangeNotify\022.\n\020cur_level_recor" +
-      "d\030\001 \001(\0132\024.TowerCurLevelRecordB\033\n\031emu.gra" +
+      "\031TowerCurLevelRecord.proto\"\240\001\n\037TowerCurL" +
+      "evelRecordChangeNotify\022,\n\016curLevelRecord" +
+      "\030\005 \001(\0132\024.TowerCurLevelRecord\"O\n\013MOKEHFOF" +
+      "GCK\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\267\023\022\017\n\013DCDNI" +
+      "LFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

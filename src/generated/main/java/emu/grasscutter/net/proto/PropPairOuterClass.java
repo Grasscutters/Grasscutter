@@ -25,17 +25,17 @@ public final class PropPairOuterClass {
     int getType();
 
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      * @return Whether the propValue field is set.
      */
     boolean hasPropValue();
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      * @return The propValue.
      */
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropValue();
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      */
     emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder();
   }
@@ -145,10 +145,10 @@ public final class PropPairOuterClass {
       return type_;
     }
 
-    public static final int PROP_VALUE_FIELD_NUMBER = 2;
+    public static final int PROPVALUE_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.PropValueOuterClass.PropValue propValue_;
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      * @return Whether the propValue field is set.
      */
     @java.lang.Override
@@ -156,7 +156,7 @@ public final class PropPairOuterClass {
       return propValue_ != null;
     }
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      * @return The propValue.
      */
     @java.lang.Override
@@ -164,7 +164,7 @@ public final class PropPairOuterClass {
       return propValue_ == null ? emu.grasscutter.net.proto.PropValueOuterClass.PropValue.getDefaultInstance() : propValue_;
     }
     /**
-     * <code>.PropValue prop_value = 2;</code>
+     * <code>.PropValue propValue = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder() {
@@ -244,7 +244,7 @@ public final class PropPairOuterClass {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
       if (hasPropValue()) {
-        hash = (37 * hash) + PROP_VALUE_FIELD_NUMBER;
+        hash = (37 * hash) + PROPVALUE_FIELD_NUMBER;
         hash = (53 * hash) + getPropValue().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -538,14 +538,14 @@ public final class PropPairOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PropValueOuterClass.PropValue, emu.grasscutter.net.proto.PropValueOuterClass.PropValue.Builder, emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder> propValueBuilder_;
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        * @return Whether the propValue field is set.
        */
       public boolean hasPropValue() {
         return propValueBuilder_ != null || propValue_ != null;
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        * @return The propValue.
        */
       public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getPropValue() {
@@ -556,7 +556,7 @@ public final class PropPairOuterClass {
         }
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public Builder setPropValue(emu.grasscutter.net.proto.PropValueOuterClass.PropValue value) {
         if (propValueBuilder_ == null) {
@@ -572,7 +572,7 @@ public final class PropPairOuterClass {
         return this;
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public Builder setPropValue(
           emu.grasscutter.net.proto.PropValueOuterClass.PropValue.Builder builderForValue) {
@@ -586,7 +586,7 @@ public final class PropPairOuterClass {
         return this;
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public Builder mergePropValue(emu.grasscutter.net.proto.PropValueOuterClass.PropValue value) {
         if (propValueBuilder_ == null) {
@@ -604,7 +604,7 @@ public final class PropPairOuterClass {
         return this;
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public Builder clearPropValue() {
         if (propValueBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class PropPairOuterClass {
         return this;
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public emu.grasscutter.net.proto.PropValueOuterClass.PropValue.Builder getPropValueBuilder() {
         
@@ -626,7 +626,7 @@ public final class PropPairOuterClass {
         return getPropValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       public emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder() {
         if (propValueBuilder_ != null) {
@@ -637,7 +637,7 @@ public final class PropPairOuterClass {
         }
       }
       /**
-       * <code>.PropValue prop_value = 2;</code>
+       * <code>.PropValue propValue = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PropValueOuterClass.PropValue, emu.grasscutter.net.proto.PropValueOuterClass.PropValue.Builder, emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder> 
@@ -719,10 +719,10 @@ public final class PropPairOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016PropPair.proto\032\017PropValue.proto\"8\n\010Pro" +
-      "pPair\022\014\n\004type\030\001 \001(\r\022\036\n\nprop_value\030\002 \001(\0132" +
-      "\n.PropValueB\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\016PropPair.proto\032\017PropValue.proto\"7\n\010Pro" +
+      "pPair\022\014\n\004type\030\001 \001(\r\022\035\n\tpropValue\030\002 \001(\0132\n" +
+      ".PropValueB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,46 +19,36 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 8021;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code WinterCampGetCanGiveFriendItemRsp}
    */
   public static final class WinterCampGetCanGiveFriendItemRsp extends
@@ -105,18 +95,18 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 114: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               itemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -154,10 +144,141 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
               emu.grasscutter.net.proto.WinterCampGetCanGiveFriendItemRspOuterClass.WinterCampGetCanGiveFriendItemRsp.class, emu.grasscutter.net.proto.WinterCampGetCanGiveFriendItemRspOuterClass.WinterCampGetCanGiveFriendItemRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    /**
+     * Protobuf enum {@code WinterCampGetCanGiveFriendItemRsp.ENNLGCHFJGA}
+     */
+    public enum ENNLGCHFJGA
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 8330;</code>
+       */
+      PEPPOHPHJOJ(1, 8330),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final ENNLGCHFJGA DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 8330;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 8330;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ENNLGCHFJGA valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ENNLGCHFJGA forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 8330: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ENNLGCHFJGA>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ENNLGCHFJGA> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ENNLGCHFJGA>() {
+              public ENNLGCHFJGA findValueByNumber(int number) {
+                return ENNLGCHFJGA.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.WinterCampGetCanGiveFriendItemRspOuterClass.WinterCampGetCanGiveFriendItemRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ENNLGCHFJGA[] VALUES = getStaticValuesArray();
+      private static ENNLGCHFJGA[] getStaticValuesArray() {
+        return new ENNLGCHFJGA[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static ENNLGCHFJGA valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private ENNLGCHFJGA(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:WinterCampGetCanGiveFriendItemRsp.ENNLGCHFJGA)
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -165,17 +286,17 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       return retcode_;
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 14;
+    public static final int ITEMLIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -183,21 +304,21 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 14;</code>
+     * <code>repeated .ItemParam itemList = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
@@ -219,11 +340,11 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(14, itemList_.get(i));
+        output.writeMessage(1, itemList_.get(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(2, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -234,13 +355,13 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, itemList_.get(i));
+          .computeMessageSize(1, itemList_.get(i));
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -275,7 +396,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       if (getItemListCount() > 0) {
-        hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + ITEMLIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -374,16 +495,6 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 8021;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code WinterCampGetCanGiveFriendItemRsp}
      */
     public static final class Builder extends
@@ -576,7 +687,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -584,7 +695,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -595,7 +706,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -618,7 +729,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -628,7 +739,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -638,7 +749,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -648,7 +759,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -665,7 +776,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -679,7 +790,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -695,7 +806,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -712,7 +823,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -726,7 +837,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -740,7 +851,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -755,7 +866,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
@@ -768,7 +879,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -781,14 +892,14 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -798,7 +909,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -809,14 +920,14 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -824,7 +935,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 14;</code>
+       * <code>repeated .ItemParam itemList = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -912,10 +1023,12 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'WinterCampGetCanGiveFriendItemRsp.prot" +
-      "o\032\017ItemParam.proto\"S\n!WinterCampGetCanGi" +
-      "veFriendItemRsp\022\017\n\007retcode\030\014 \001(\005\022\035\n\titem" +
-      "_list\030\016 \003(\0132\n.ItemParamB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "o\032\017ItemParam.proto\"\243\001\n!WinterCampGetCanG" +
+      "iveFriendItemRsp\022\017\n\007retcode\030\002 \001(\005\022\034\n\010ite" +
+      "mList\030\001 \003(\0132\n.ItemParam\"O\n\013ENNLGCHFJGA\022\010" +
+      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\212A\022\017\n\013DCDNILFDFL" +
+      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

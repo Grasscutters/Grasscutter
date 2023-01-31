@@ -19,22 +19,12 @@ public final class UnlockNameCardNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 name_card_id = 3;</code>
+     * <code>uint32 nameCardId = 5;</code>
      * @return The nameCardId.
      */
     int getNameCardId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4010;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code UnlockNameCardNotify}
    */
   public static final class UnlockNameCardNotify extends
@@ -79,7 +69,7 @@ public final class UnlockNameCardNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 40: {
 
               nameCardId_ = input.readUInt32();
               break;
@@ -116,10 +106,141 @@ public final class UnlockNameCardNotifyOuterClass {
               emu.grasscutter.net.proto.UnlockNameCardNotifyOuterClass.UnlockNameCardNotify.class, emu.grasscutter.net.proto.UnlockNameCardNotifyOuterClass.UnlockNameCardNotify.Builder.class);
     }
 
-    public static final int NAME_CARD_ID_FIELD_NUMBER = 3;
+    /**
+     * Protobuf enum {@code UnlockNameCardNotify.IPFDAEJJCCP}
+     */
+    public enum IPFDAEJJCCP
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4085;</code>
+       */
+      PEPPOHPHJOJ(1, 4085),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final IPFDAEJJCCP DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4085;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4085;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static IPFDAEJJCCP valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static IPFDAEJJCCP forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4085: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<IPFDAEJJCCP>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          IPFDAEJJCCP> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<IPFDAEJJCCP>() {
+              public IPFDAEJJCCP findValueByNumber(int number) {
+                return IPFDAEJJCCP.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.UnlockNameCardNotifyOuterClass.UnlockNameCardNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final IPFDAEJJCCP[] VALUES = getStaticValuesArray();
+      private static IPFDAEJJCCP[] getStaticValuesArray() {
+        return new IPFDAEJJCCP[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static IPFDAEJJCCP valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private IPFDAEJJCCP(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:UnlockNameCardNotify.IPFDAEJJCCP)
+    }
+
+    public static final int NAMECARDID_FIELD_NUMBER = 5;
     private int nameCardId_;
     /**
-     * <code>uint32 name_card_id = 3;</code>
+     * <code>uint32 nameCardId = 5;</code>
      * @return The nameCardId.
      */
     @java.lang.Override
@@ -142,7 +263,7 @@ public final class UnlockNameCardNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (nameCardId_ != 0) {
-        output.writeUInt32(3, nameCardId_);
+        output.writeUInt32(5, nameCardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +276,7 @@ public final class UnlockNameCardNotifyOuterClass {
       size = 0;
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, nameCardId_);
+          .computeUInt32Size(5, nameCardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -185,7 +306,7 @@ public final class UnlockNameCardNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
+      hash = (37 * hash) + NAMECARDID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -283,16 +404,6 @@ public final class UnlockNameCardNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4010;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code UnlockNameCardNotify}
      */
     public static final class Builder extends
@@ -441,7 +552,7 @@ public final class UnlockNameCardNotifyOuterClass {
 
       private int nameCardId_ ;
       /**
-       * <code>uint32 name_card_id = 3;</code>
+       * <code>uint32 nameCardId = 5;</code>
        * @return The nameCardId.
        */
       @java.lang.Override
@@ -449,7 +560,7 @@ public final class UnlockNameCardNotifyOuterClass {
         return nameCardId_;
       }
       /**
-       * <code>uint32 name_card_id = 3;</code>
+       * <code>uint32 nameCardId = 5;</code>
        * @param value The nameCardId to set.
        * @return This builder for chaining.
        */
@@ -460,7 +571,7 @@ public final class UnlockNameCardNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 name_card_id = 3;</code>
+       * <code>uint32 nameCardId = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
@@ -536,9 +647,11 @@ public final class UnlockNameCardNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032UnlockNameCardNotify.proto\",\n\024UnlockNa" +
-      "meCardNotify\022\024\n\014name_card_id\030\003 \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\032UnlockNameCardNotify.proto\"{\n\024UnlockNa" +
+      "meCardNotify\022\022\n\nnameCardId\030\005 \001(\r\"O\n\013IPFD" +
+      "AEJJCCP\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\365\037\022\017\n\013D" +
+      "CDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

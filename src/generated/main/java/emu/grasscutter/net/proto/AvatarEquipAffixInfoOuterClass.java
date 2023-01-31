@@ -19,13 +19,13 @@ public final class AvatarEquipAffixInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 equip_affix_id = 1;</code>
+     * <code>uint32 equipAffixId = 1;</code>
      * @return The equipAffixId.
      */
     int getEquipAffixId();
 
     /**
-     * <code>uint32 left_cd_time = 2;</code>
+     * <code>uint32 leftCdTime = 2;</code>
      * @return The leftCdTime.
      */
     int getLeftCdTime();
@@ -117,10 +117,10 @@ public final class AvatarEquipAffixInfoOuterClass {
               emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.class, emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder.class);
     }
 
-    public static final int EQUIP_AFFIX_ID_FIELD_NUMBER = 1;
+    public static final int EQUIPAFFIXID_FIELD_NUMBER = 1;
     private int equipAffixId_;
     /**
-     * <code>uint32 equip_affix_id = 1;</code>
+     * <code>uint32 equipAffixId = 1;</code>
      * @return The equipAffixId.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class AvatarEquipAffixInfoOuterClass {
       return equipAffixId_;
     }
 
-    public static final int LEFT_CD_TIME_FIELD_NUMBER = 2;
+    public static final int LEFTCDTIME_FIELD_NUMBER = 2;
     private int leftCdTime_;
     /**
-     * <code>uint32 left_cd_time = 2;</code>
+     * <code>uint32 leftCdTime = 2;</code>
      * @return The leftCdTime.
      */
     @java.lang.Override
@@ -206,9 +206,9 @@ public final class AvatarEquipAffixInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EQUIP_AFFIX_ID_FIELD_NUMBER;
+      hash = (37 * hash) + EQUIPAFFIXID_FIELD_NUMBER;
       hash = (53 * hash) + getEquipAffixId();
-      hash = (37 * hash) + LEFT_CD_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + LEFTCDTIME_FIELD_NUMBER;
       hash = (53 * hash) + getLeftCdTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -460,7 +460,7 @@ public final class AvatarEquipAffixInfoOuterClass {
 
       private int equipAffixId_ ;
       /**
-       * <code>uint32 equip_affix_id = 1;</code>
+       * <code>uint32 equipAffixId = 1;</code>
        * @return The equipAffixId.
        */
       @java.lang.Override
@@ -468,7 +468,7 @@ public final class AvatarEquipAffixInfoOuterClass {
         return equipAffixId_;
       }
       /**
-       * <code>uint32 equip_affix_id = 1;</code>
+       * <code>uint32 equipAffixId = 1;</code>
        * @param value The equipAffixId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +479,7 @@ public final class AvatarEquipAffixInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 equip_affix_id = 1;</code>
+       * <code>uint32 equipAffixId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEquipAffixId() {
@@ -491,7 +491,7 @@ public final class AvatarEquipAffixInfoOuterClass {
 
       private int leftCdTime_ ;
       /**
-       * <code>uint32 left_cd_time = 2;</code>
+       * <code>uint32 leftCdTime = 2;</code>
        * @return The leftCdTime.
        */
       @java.lang.Override
@@ -499,7 +499,7 @@ public final class AvatarEquipAffixInfoOuterClass {
         return leftCdTime_;
       }
       /**
-       * <code>uint32 left_cd_time = 2;</code>
+       * <code>uint32 leftCdTime = 2;</code>
        * @param value The leftCdTime to set.
        * @return This builder for chaining.
        */
@@ -510,7 +510,7 @@ public final class AvatarEquipAffixInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_cd_time = 2;</code>
+       * <code>uint32 leftCdTime = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftCdTime() {
@@ -586,10 +586,10 @@ public final class AvatarEquipAffixInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032AvatarEquipAffixInfo.proto\"D\n\024AvatarEq" +
-      "uipAffixInfo\022\026\n\016equip_affix_id\030\001 \001(\r\022\024\n\014" +
-      "left_cd_time\030\002 \001(\rB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\n\032AvatarEquipAffixInfo.proto\"@\n\024AvatarEq" +
+      "uipAffixInfo\022\024\n\014equipAffixId\030\001 \001(\r\022\022\n\nle" +
+      "ftCdTime\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

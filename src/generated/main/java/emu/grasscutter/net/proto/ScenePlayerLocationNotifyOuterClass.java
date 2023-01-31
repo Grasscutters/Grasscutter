@@ -19,70 +19,60 @@ public final class ScenePlayerLocationNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 11;</code>
+     * <code>uint32 sceneId = 1;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> 
         getVehicleLocListList();
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo getVehicleLocList(int index);
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     int getVehicleLocListCount();
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder> 
         getVehicleLocListOrBuilderList();
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder getVehicleLocListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> 
         getPlayerLocListList();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index);
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     int getPlayerLocListCount();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
         getPlayerLocListOrBuilderList();
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
         int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 248;
-   *   ENET_CHANNEL_ID = 1;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code ScenePlayerLocationNotify}
    */
   public static final class ScenePlayerLocationNotify extends
@@ -130,16 +120,12 @@ public final class ScenePlayerLocationNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                playerLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              playerLocList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
+            case 8: {
+
+              sceneId_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 vehicleLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,9 +134,13 @@ public final class ScenePlayerLocationNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.parser(), extensionRegistry));
               break;
             }
-            case 88: {
-
-              sceneId_ = input.readUInt32();
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                playerLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              playerLocList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -168,11 +158,11 @@ public final class ScenePlayerLocationNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          playerLocList_ = java.util.Collections.unmodifiableList(playerLocList_);
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           vehicleLocList_ = java.util.Collections.unmodifiableList(vehicleLocList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          playerLocList_ = java.util.Collections.unmodifiableList(playerLocList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -191,10 +181,139 @@ public final class ScenePlayerLocationNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.class, emu.grasscutter.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 11;
+    /**
+     * Protobuf enum {@code ScenePlayerLocationNotify.LFLJGBMLKKD}
+     */
+    public enum LFLJGBMLKKD
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0),
+      /**
+       * <code>PEPPOHPHJOJ = 278;</code>
+       */
+      PEPPOHPHJOJ(278),
+      /**
+       * <code>DCDNILFDFLB = 1;</code>
+       */
+      DCDNILFDFLB(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final LFLJGBMLKKD NNBKOLMPOEA = DCDNILFDFLB;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 278;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 278;
+      /**
+       * <code>DCDNILFDFLB = 1;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 1;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LFLJGBMLKKD valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static LFLJGBMLKKD forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 278: return PEPPOHPHJOJ;
+          case 1: return DCDNILFDFLB;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LFLJGBMLKKD>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          LFLJGBMLKKD> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LFLJGBMLKKD>() {
+              public LFLJGBMLKKD findValueByNumber(int number) {
+                return LFLJGBMLKKD.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final LFLJGBMLKKD[] VALUES = getStaticValuesArray();
+      private static LFLJGBMLKKD[] getStaticValuesArray() {
+        return new LFLJGBMLKKD[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static LFLJGBMLKKD valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private LFLJGBMLKKD(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ScenePlayerLocationNotify.LFLJGBMLKKD)
+    }
+
+    public static final int SCENEID_FIELD_NUMBER = 1;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 11;</code>
+     * <code>uint32 sceneId = 1;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -202,17 +321,17 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return sceneId_;
     }
 
-    public static final int VEHICLE_LOC_LIST_FIELD_NUMBER = 6;
+    public static final int VEHICLELOCLIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> vehicleLocList_;
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> getVehicleLocListList() {
       return vehicleLocList_;
     }
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder> 
@@ -220,21 +339,21 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return vehicleLocList_;
     }
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     @java.lang.Override
     public int getVehicleLocListCount() {
       return vehicleLocList_.size();
     }
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo getVehicleLocList(int index) {
       return vehicleLocList_.get(index);
     }
     /**
-     * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+     * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder getVehicleLocListOrBuilder(
@@ -242,17 +361,17 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return vehicleLocList_.get(index);
     }
 
-    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 4;
+    public static final int PLAYERLOCLIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> getPlayerLocListList() {
       return playerLocList_;
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
@@ -260,21 +379,21 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return playerLocList_;
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     @java.lang.Override
     public int getPlayerLocListCount() {
       return playerLocList_.size();
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index) {
       return playerLocList_.get(index);
     }
     /**
-     * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+     * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
@@ -296,14 +415,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < playerLocList_.size(); i++) {
-        output.writeMessage(4, playerLocList_.get(i));
+      if (sceneId_ != 0) {
+        output.writeUInt32(1, sceneId_);
       }
       for (int i = 0; i < vehicleLocList_.size(); i++) {
-        output.writeMessage(6, vehicleLocList_.get(i));
+        output.writeMessage(3, vehicleLocList_.get(i));
       }
-      if (sceneId_ != 0) {
-        output.writeUInt32(11, sceneId_);
+      for (int i = 0; i < playerLocList_.size(); i++) {
+        output.writeMessage(12, playerLocList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -314,17 +433,17 @@ public final class ScenePlayerLocationNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < playerLocList_.size(); i++) {
+      if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, playerLocList_.get(i));
+          .computeUInt32Size(1, sceneId_);
       }
       for (int i = 0; i < vehicleLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, vehicleLocList_.get(i));
+          .computeMessageSize(3, vehicleLocList_.get(i));
       }
-      if (sceneId_ != 0) {
+      for (int i = 0; i < playerLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sceneId_);
+          .computeMessageSize(12, playerLocList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -358,14 +477,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       if (getVehicleLocListCount() > 0) {
-        hash = (37 * hash) + VEHICLE_LOC_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + VEHICLELOCLIST_FIELD_NUMBER;
         hash = (53 * hash) + getVehicleLocListList().hashCode();
       }
       if (getPlayerLocListCount() > 0) {
-        hash = (37 * hash) + PLAYER_LOC_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + PLAYERLOCLIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerLocListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -464,16 +583,6 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 248;
-     *   ENET_CHANNEL_ID = 1;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code ScenePlayerLocationNotify}
      */
     public static final class Builder extends
@@ -708,7 +817,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 11;</code>
+       * <code>uint32 sceneId = 1;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -716,7 +825,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 11;</code>
+       * <code>uint32 sceneId = 1;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -727,7 +836,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 11;</code>
+       * <code>uint32 sceneId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -750,7 +859,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder> vehicleLocListBuilder_;
 
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> getVehicleLocListList() {
         if (vehicleLocListBuilder_ == null) {
@@ -760,7 +869,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public int getVehicleLocListCount() {
         if (vehicleLocListBuilder_ == null) {
@@ -770,7 +879,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo getVehicleLocList(int index) {
         if (vehicleLocListBuilder_ == null) {
@@ -780,7 +889,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder setVehicleLocList(
           int index, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo value) {
@@ -797,7 +906,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder setVehicleLocList(
           int index, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder builderForValue) {
@@ -811,7 +920,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder addVehicleLocList(emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo value) {
         if (vehicleLocListBuilder_ == null) {
@@ -827,7 +936,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder addVehicleLocList(
           int index, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo value) {
@@ -844,7 +953,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder addVehicleLocList(
           emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder builderForValue) {
@@ -858,7 +967,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder addVehicleLocList(
           int index, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder builderForValue) {
@@ -872,7 +981,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder addAllVehicleLocList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> values) {
@@ -887,7 +996,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder clearVehicleLocList() {
         if (vehicleLocListBuilder_ == null) {
@@ -900,7 +1009,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public Builder removeVehicleLocList(int index) {
         if (vehicleLocListBuilder_ == null) {
@@ -913,14 +1022,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder getVehicleLocListBuilder(
           int index) {
         return getVehicleLocListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder getVehicleLocListOrBuilder(
           int index) {
@@ -930,7 +1039,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfoOrBuilder> 
            getVehicleLocListOrBuilderList() {
@@ -941,14 +1050,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder addVehicleLocListBuilder() {
         return getVehicleLocListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder addVehicleLocListBuilder(
           int index) {
@@ -956,7 +1065,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
             index, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .VehicleLocationInfo vehicle_loc_list = 6;</code>
+       * <code>repeated .VehicleLocationInfo vehicleLocList = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder> 
            getVehicleLocListBuilderList() {
@@ -990,7 +1099,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> playerLocListBuilder_;
 
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> getPlayerLocListList() {
         if (playerLocListBuilder_ == null) {
@@ -1000,7 +1109,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public int getPlayerLocListCount() {
         if (playerLocListBuilder_ == null) {
@@ -1010,7 +1119,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int index) {
         if (playerLocListBuilder_ == null) {
@@ -1020,7 +1129,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder setPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
@@ -1037,7 +1146,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder setPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -1051,7 +1160,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder addPlayerLocList(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
         if (playerLocListBuilder_ == null) {
@@ -1067,7 +1176,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder addPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
@@ -1084,7 +1193,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder addPlayerLocList(
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -1098,7 +1207,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder addPlayerLocList(
           int index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -1112,7 +1221,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder addAllPlayerLocList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> values) {
@@ -1127,7 +1236,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder clearPlayerLocList() {
         if (playerLocListBuilder_ == null) {
@@ -1140,7 +1249,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public Builder removePlayerLocList(int index) {
         if (playerLocListBuilder_ == null) {
@@ -1153,14 +1262,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder getPlayerLocListBuilder(
           int index) {
         return getPlayerLocListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(
           int index) {
@@ -1170,7 +1279,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
            getPlayerLocListOrBuilderList() {
@@ -1181,14 +1290,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder addPlayerLocListBuilder() {
         return getPlayerLocListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder addPlayerLocListBuilder(
           int index) {
@@ -1196,7 +1305,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
             index, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerLocationInfo player_loc_list = 4;</code>
+       * <code>repeated .PlayerLocationInfo playerLocList = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder> 
            getPlayerLocListBuilderList() {
@@ -1283,19 +1392,21 @@ public final class ScenePlayerLocationNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\037ScenePlayerLocationNotify.proto\032\030Playe" +
-      "rLocationInfo.proto\032\031VehicleLocationInfo" +
-      ".proto\"\213\001\n\031ScenePlayerLocationNotify\022\020\n\010" +
-      "scene_id\030\013 \001(\r\022.\n\020vehicle_loc_list\030\006 \003(\013" +
-      "2\024.VehicleLocationInfo\022,\n\017player_loc_lis" +
-      "t\030\004 \003(\0132\023.PlayerLocationInfoB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\037ScenePlayerLocationNotify.proto\032\031Vehic" +
+      "leLocationInfo.proto\032\030PlayerLocationInfo" +
+      ".proto\"\327\001\n\031ScenePlayerLocationNotify\022\017\n\007" +
+      "sceneId\030\001 \001(\r\022,\n\016vehicleLocList\030\003 \003(\0132\024." +
+      "VehicleLocationInfo\022*\n\rplayerLocList\030\014 \003" +
+      "(\0132\023.PlayerLocationInfo\"O\n\013LFLJGBMLKKD\022\010" +
+      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\226\002\022\017\n\013DCDNILFDFL" +
+      "B\020\001\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.getDescriptor(),
         });
     internal_static_ScenePlayerLocationNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1303,8 +1414,8 @@ public final class ScenePlayerLocationNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ScenePlayerLocationNotify_descriptor,
         new java.lang.String[] { "SceneId", "VehicleLocList", "PlayerLocList", });
-    emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

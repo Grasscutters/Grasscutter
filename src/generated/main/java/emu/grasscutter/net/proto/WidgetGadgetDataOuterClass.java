@@ -19,24 +19,24 @@ public final class WidgetGadgetDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @return A list containing the gadgetEntityIdList.
      */
     java.util.List<java.lang.Integer> getGadgetEntityIdListList();
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @return The count of gadgetEntityIdList.
      */
     int getGadgetEntityIdListCount();
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @param index The index of the element to return.
      * @return The gadgetEntityIdList at the given index.
      */
     int getGadgetEntityIdList(int index);
 
     /**
-     * <code>uint32 gadget_id = 2;</code>
+     * <code>uint32 gadgetId = 9;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
@@ -88,12 +88,12 @@ public final class WidgetGadgetDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 72: {
 
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 gadgetEntityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +101,7 @@ public final class WidgetGadgetDataOuterClass {
               gadgetEntityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,10 +149,10 @@ public final class WidgetGadgetDataOuterClass {
               emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.class, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder.class);
     }
 
-    public static final int GADGET_ENTITY_ID_LIST_FIELD_NUMBER = 6;
+    public static final int GADGETENTITYIDLIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList gadgetEntityIdList_;
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @return A list containing the gadgetEntityIdList.
      */
     @java.lang.Override
@@ -161,14 +161,14 @@ public final class WidgetGadgetDataOuterClass {
       return gadgetEntityIdList_;
     }
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @return The count of gadgetEntityIdList.
      */
     public int getGadgetEntityIdListCount() {
       return gadgetEntityIdList_.size();
     }
     /**
-     * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+     * <code>repeated uint32 gadgetEntityIdList = 15;</code>
      * @param index The index of the element to return.
      * @return The gadgetEntityIdList at the given index.
      */
@@ -177,10 +177,10 @@ public final class WidgetGadgetDataOuterClass {
     }
     private int gadgetEntityIdListMemoizedSerializedSize = -1;
 
-    public static final int GADGET_ID_FIELD_NUMBER = 2;
+    public static final int GADGETID_FIELD_NUMBER = 9;
     private int gadgetId_;
     /**
-     * <code>uint32 gadget_id = 2;</code>
+     * <code>uint32 gadgetId = 9;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -204,10 +204,10 @@ public final class WidgetGadgetDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (gadgetId_ != 0) {
-        output.writeUInt32(2, gadgetId_);
+        output.writeUInt32(9, gadgetId_);
       }
       if (getGadgetEntityIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(gadgetEntityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < gadgetEntityIdList_.size(); i++) {
@@ -224,7 +224,7 @@ public final class WidgetGadgetDataOuterClass {
       size = 0;
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, gadgetId_);
+          .computeUInt32Size(9, gadgetId_);
       }
       {
         int dataSize = 0;
@@ -271,10 +271,10 @@ public final class WidgetGadgetDataOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getGadgetEntityIdListCount() > 0) {
-        hash = (37 * hash) + GADGET_ENTITY_ID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + GADGETENTITYIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getGadgetEntityIdListList().hashCode();
       }
-      hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
+      hash = (37 * hash) + GADGETID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -545,7 +545,7 @@ public final class WidgetGadgetDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @return A list containing the gadgetEntityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -554,14 +554,14 @@ public final class WidgetGadgetDataOuterClass {
                  java.util.Collections.unmodifiableList(gadgetEntityIdList_) : gadgetEntityIdList_;
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @return The count of gadgetEntityIdList.
        */
       public int getGadgetEntityIdListCount() {
         return gadgetEntityIdList_.size();
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @param index The index of the element to return.
        * @return The gadgetEntityIdList at the given index.
        */
@@ -569,7 +569,7 @@ public final class WidgetGadgetDataOuterClass {
         return gadgetEntityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @param index The index to set the value at.
        * @param value The gadgetEntityIdList to set.
        * @return This builder for chaining.
@@ -582,7 +582,7 @@ public final class WidgetGadgetDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @param value The gadgetEntityIdList to add.
        * @return This builder for chaining.
        */
@@ -593,7 +593,7 @@ public final class WidgetGadgetDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @param values The gadgetEntityIdList to add.
        * @return This builder for chaining.
        */
@@ -606,7 +606,7 @@ public final class WidgetGadgetDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 gadget_entity_id_list = 6;</code>
+       * <code>repeated uint32 gadgetEntityIdList = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityIdList() {
@@ -618,7 +618,7 @@ public final class WidgetGadgetDataOuterClass {
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 2;</code>
+       * <code>uint32 gadgetId = 9;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -626,7 +626,7 @@ public final class WidgetGadgetDataOuterClass {
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 2;</code>
+       * <code>uint32 gadgetId = 9;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -637,7 +637,7 @@ public final class WidgetGadgetDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 2;</code>
+       * <code>uint32 gadgetId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -713,10 +713,10 @@ public final class WidgetGadgetDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026WidgetGadgetData.proto\"D\n\020WidgetGadget" +
-      "Data\022\035\n\025gadget_entity_id_list\030\006 \003(\r\022\021\n\tg" +
-      "adget_id\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "\n\026WidgetGadgetData.proto\"@\n\020WidgetGadget" +
+      "Data\022\032\n\022gadgetEntityIdList\030\017 \003(\r\022\020\n\010gadg" +
+      "etId\030\t \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

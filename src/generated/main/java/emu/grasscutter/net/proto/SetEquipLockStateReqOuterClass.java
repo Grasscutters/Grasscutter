@@ -19,29 +19,18 @@ public final class SetEquipLockStateReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 target_equip_guid = 10;</code>
+     * <code>uint64 targetEquipGuid = 10;</code>
      * @return The targetEquipGuid.
      */
     long getTargetEquipGuid();
 
     /**
-     * <code>bool is_locked = 5;</code>
+     * <code>bool isLocked = 3;</code>
      * @return The isLocked.
      */
     boolean getIsLocked();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 609;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code SetEquipLockStateReq}
    */
   public static final class SetEquipLockStateReq extends
@@ -86,7 +75,7 @@ public final class SetEquipLockStateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               isLocked_ = input.readBool();
               break;
@@ -128,10 +117,149 @@ public final class SetEquipLockStateReqOuterClass {
               emu.grasscutter.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq.class, emu.grasscutter.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq.Builder.class);
     }
 
-    public static final int TARGET_EQUIP_GUID_FIELD_NUMBER = 10;
+    /**
+     * Protobuf enum {@code SetEquipLockStateReq.OHOCDDBFFKA}
+     */
+    public enum OHOCDDBFFKA
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 684;</code>
+       */
+      PEPPOHPHJOJ(1, 684),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final OHOCDDBFFKA DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final OHOCDDBFFKA EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 684;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 684;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static OHOCDDBFFKA valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static OHOCDDBFFKA forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 684: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<OHOCDDBFFKA>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          OHOCDDBFFKA> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OHOCDDBFFKA>() {
+              public OHOCDDBFFKA findValueByNumber(int number) {
+                return OHOCDDBFFKA.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final OHOCDDBFFKA[] VALUES = getStaticValuesArray();
+      private static OHOCDDBFFKA[] getStaticValuesArray() {
+        return new OHOCDDBFFKA[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static OHOCDDBFFKA valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private OHOCDDBFFKA(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:SetEquipLockStateReq.OHOCDDBFFKA)
+    }
+
+    public static final int TARGETEQUIPGUID_FIELD_NUMBER = 10;
     private long targetEquipGuid_;
     /**
-     * <code>uint64 target_equip_guid = 10;</code>
+     * <code>uint64 targetEquipGuid = 10;</code>
      * @return The targetEquipGuid.
      */
     @java.lang.Override
@@ -139,10 +267,10 @@ public final class SetEquipLockStateReqOuterClass {
       return targetEquipGuid_;
     }
 
-    public static final int IS_LOCKED_FIELD_NUMBER = 5;
+    public static final int ISLOCKED_FIELD_NUMBER = 3;
     private boolean isLocked_;
     /**
-     * <code>bool is_locked = 5;</code>
+     * <code>bool isLocked = 3;</code>
      * @return The isLocked.
      */
     @java.lang.Override
@@ -165,7 +293,7 @@ public final class SetEquipLockStateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isLocked_ != false) {
-        output.writeBool(5, isLocked_);
+        output.writeBool(3, isLocked_);
       }
       if (targetEquipGuid_ != 0L) {
         output.writeUInt64(10, targetEquipGuid_);
@@ -181,7 +309,7 @@ public final class SetEquipLockStateReqOuterClass {
       size = 0;
       if (isLocked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isLocked_);
+          .computeBoolSize(3, isLocked_);
       }
       if (targetEquipGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -217,10 +345,10 @@ public final class SetEquipLockStateReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_EQUIP_GUID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETEQUIPGUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetEquipGuid());
-      hash = (37 * hash) + IS_LOCKED_FIELD_NUMBER;
+      hash = (37 * hash) + ISLOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLocked());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -319,17 +447,6 @@ public final class SetEquipLockStateReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 609;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code SetEquipLockStateReq}
      */
     public static final class Builder extends
@@ -484,7 +601,7 @@ public final class SetEquipLockStateReqOuterClass {
 
       private long targetEquipGuid_ ;
       /**
-       * <code>uint64 target_equip_guid = 10;</code>
+       * <code>uint64 targetEquipGuid = 10;</code>
        * @return The targetEquipGuid.
        */
       @java.lang.Override
@@ -492,7 +609,7 @@ public final class SetEquipLockStateReqOuterClass {
         return targetEquipGuid_;
       }
       /**
-       * <code>uint64 target_equip_guid = 10;</code>
+       * <code>uint64 targetEquipGuid = 10;</code>
        * @param value The targetEquipGuid to set.
        * @return This builder for chaining.
        */
@@ -503,7 +620,7 @@ public final class SetEquipLockStateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 target_equip_guid = 10;</code>
+       * <code>uint64 targetEquipGuid = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEquipGuid() {
@@ -515,7 +632,7 @@ public final class SetEquipLockStateReqOuterClass {
 
       private boolean isLocked_ ;
       /**
-       * <code>bool is_locked = 5;</code>
+       * <code>bool isLocked = 3;</code>
        * @return The isLocked.
        */
       @java.lang.Override
@@ -523,7 +640,7 @@ public final class SetEquipLockStateReqOuterClass {
         return isLocked_;
       }
       /**
-       * <code>bool is_locked = 5;</code>
+       * <code>bool isLocked = 3;</code>
        * @param value The isLocked to set.
        * @return This builder for chaining.
        */
@@ -534,7 +651,7 @@ public final class SetEquipLockStateReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_locked = 5;</code>
+       * <code>bool isLocked = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
@@ -610,10 +727,12 @@ public final class SetEquipLockStateReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032SetEquipLockStateReq.proto\"D\n\024SetEquip" +
-      "LockStateReq\022\031\n\021target_equip_guid\030\n \001(\004\022" +
-      "\021\n\tis_locked\030\005 \001(\010B\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\n\032SetEquipLockStateReq.proto\"\243\001\n\024SetEqui" +
+      "pLockStateReq\022\027\n\017targetEquipGuid\030\n \001(\004\022\020" +
+      "\n\010isLocked\030\003 \001(\010\"`\n\013OHOCDDBFFKA\022\010\n\004NONE\020" +
+      "\000\022\020\n\013PEPPOHPHJOJ\020\254\005\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013" +
+      "NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

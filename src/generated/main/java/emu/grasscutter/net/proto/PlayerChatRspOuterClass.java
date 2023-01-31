@@ -19,28 +19,18 @@ public final class PlayerChatRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 chat_forbidden_endtime = 8;</code>
+     * <code>uint32 chatForbiddenEndtime = 2;</code>
      * @return The chatForbiddenEndtime.
      */
     int getChatForbiddenEndtime();
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 3087;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code PlayerChatRsp}
    */
   public static final class PlayerChatRsp extends
@@ -85,12 +75,12 @@ public final class PlayerChatRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 16: {
 
               chatForbiddenEndtime_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -127,10 +117,141 @@ public final class PlayerChatRspOuterClass {
               emu.grasscutter.net.proto.PlayerChatRspOuterClass.PlayerChatRsp.class, emu.grasscutter.net.proto.PlayerChatRspOuterClass.PlayerChatRsp.Builder.class);
     }
 
-    public static final int CHAT_FORBIDDEN_ENDTIME_FIELD_NUMBER = 8;
+    /**
+     * Protobuf enum {@code PlayerChatRsp.LKKMEKKIFAK}
+     */
+    public enum LKKMEKKIFAK
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 3480;</code>
+       */
+      PEPPOHPHJOJ(1, 3480),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final LKKMEKKIFAK DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 3480;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 3480;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LKKMEKKIFAK valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static LKKMEKKIFAK forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 3480: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LKKMEKKIFAK>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          LKKMEKKIFAK> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LKKMEKKIFAK>() {
+              public LKKMEKKIFAK findValueByNumber(int number) {
+                return LKKMEKKIFAK.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.PlayerChatRspOuterClass.PlayerChatRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final LKKMEKKIFAK[] VALUES = getStaticValuesArray();
+      private static LKKMEKKIFAK[] getStaticValuesArray() {
+        return new LKKMEKKIFAK[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static LKKMEKKIFAK valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private LKKMEKKIFAK(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:PlayerChatRsp.LKKMEKKIFAK)
+    }
+
+    public static final int CHATFORBIDDENENDTIME_FIELD_NUMBER = 2;
     private int chatForbiddenEndtime_;
     /**
-     * <code>uint32 chat_forbidden_endtime = 8;</code>
+     * <code>uint32 chatForbiddenEndtime = 2;</code>
      * @return The chatForbiddenEndtime.
      */
     @java.lang.Override
@@ -138,10 +259,10 @@ public final class PlayerChatRspOuterClass {
       return chatForbiddenEndtime_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -164,10 +285,10 @@ public final class PlayerChatRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (chatForbiddenEndtime_ != 0) {
-        output.writeUInt32(8, chatForbiddenEndtime_);
+        output.writeUInt32(2, chatForbiddenEndtime_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -180,11 +301,11 @@ public final class PlayerChatRspOuterClass {
       size = 0;
       if (chatForbiddenEndtime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, chatForbiddenEndtime_);
+          .computeUInt32Size(2, chatForbiddenEndtime_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -216,7 +337,7 @@ public final class PlayerChatRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CHAT_FORBIDDEN_ENDTIME_FIELD_NUMBER;
+      hash = (37 * hash) + CHATFORBIDDENENDTIME_FIELD_NUMBER;
       hash = (53 * hash) + getChatForbiddenEndtime();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -316,16 +437,6 @@ public final class PlayerChatRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 3087;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code PlayerChatRsp}
      */
     public static final class Builder extends
@@ -480,7 +591,7 @@ public final class PlayerChatRspOuterClass {
 
       private int chatForbiddenEndtime_ ;
       /**
-       * <code>uint32 chat_forbidden_endtime = 8;</code>
+       * <code>uint32 chatForbiddenEndtime = 2;</code>
        * @return The chatForbiddenEndtime.
        */
       @java.lang.Override
@@ -488,7 +599,7 @@ public final class PlayerChatRspOuterClass {
         return chatForbiddenEndtime_;
       }
       /**
-       * <code>uint32 chat_forbidden_endtime = 8;</code>
+       * <code>uint32 chatForbiddenEndtime = 2;</code>
        * @param value The chatForbiddenEndtime to set.
        * @return This builder for chaining.
        */
@@ -499,7 +610,7 @@ public final class PlayerChatRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 chat_forbidden_endtime = 8;</code>
+       * <code>uint32 chatForbiddenEndtime = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearChatForbiddenEndtime() {
@@ -511,7 +622,7 @@ public final class PlayerChatRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -519,7 +630,7 @@ public final class PlayerChatRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -530,7 +641,7 @@ public final class PlayerChatRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -606,9 +717,11 @@ public final class PlayerChatRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023PlayerChatRsp.proto\"@\n\rPlayerChatRsp\022\036" +
-      "\n\026chat_forbidden_endtime\030\010 \001(\r\022\017\n\007retcod" +
-      "e\030\014 \001(\005B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "\n\023PlayerChatRsp.proto\"\217\001\n\rPlayerChatRsp\022" +
+      "\034\n\024chatForbiddenEndtime\030\002 \001(\r\022\017\n\007retcode" +
+      "\030\016 \001(\005\"O\n\013LKKMEKKIFAK\022\010\n\004NONE\020\000\022\020\n\013PEPPO" +
+      "HPHJOJ\020\230\033\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOE" +
+      "A\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
