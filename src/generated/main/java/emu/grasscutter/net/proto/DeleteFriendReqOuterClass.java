@@ -19,21 +19,21 @@ public final class DeleteFriendReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 6;</code>
+     * <code>uint32 targetUid = 6;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4027;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum EGKJOEALFON {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4024;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code DeleteFriendReq}
@@ -117,10 +117,10 @@ public final class DeleteFriendReqOuterClass {
               emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.class, emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 6;
+    public static final int TARGETUID_FIELD_NUMBER = 6;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 6;</code>
+     * <code>uint32 targetUid = 6;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -186,7 +186,7 @@ public final class DeleteFriendReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETUID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class DeleteFriendReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4027;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum EGKJOEALFON {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4024;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code DeleteFriendReq}
@@ -443,7 +443,7 @@ public final class DeleteFriendReqOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 6;</code>
+       * <code>uint32 targetUid = 6;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class DeleteFriendReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 6;</code>
+       * <code>uint32 targetUid = 6;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class DeleteFriendReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 6;</code>
+       * <code>uint32 targetUid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -538,9 +538,9 @@ public final class DeleteFriendReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025DeleteFriendReq.proto\"%\n\017DeleteFriendR" +
-      "eq\022\022\n\ntarget_uid\030\006 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\n\025DeleteFriendReq.proto\"$\n\017DeleteFriendR" +
+      "eq\022\021\n\ttargetUid\030\006 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

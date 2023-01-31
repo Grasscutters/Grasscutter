@@ -19,45 +19,45 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 11;</code>
+     * <code>uint32 entityId = 1;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> 
         getInvokesList();
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry getInvokes(int index);
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     int getInvokesCount();
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> 
         getInvokesOrBuilderList();
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getInvokesOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1119;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum NFFHBOGDOEJ {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1198;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code ClientAbilityInitFinishNotify}
@@ -106,18 +106,18 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 8: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 invokes_ = new java.util.ArrayList<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
               invokes_.add(
                   input.readMessage(emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -155,10 +155,10 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
               emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass.ClientAbilityInitFinishNotify.class, emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass.ClientAbilityInitFinishNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 11;
+    public static final int ENTITYID_FIELD_NUMBER = 1;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 11;</code>
+     * <code>uint32 entityId = 1;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -166,17 +166,17 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int INVOKES_FIELD_NUMBER = 9;
+    public static final int INVOKES_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> getInvokesList() {
       return invokes_;
     }
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> 
@@ -184,21 +184,21 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
       return invokes_;
     }
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     @java.lang.Override
     public int getInvokesCount() {
       return invokes_.size();
     }
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry getInvokes(int index) {
       return invokes_.get(index);
     }
     /**
-     * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+     * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getInvokesOrBuilder(
@@ -220,11 +220,11 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < invokes_.size(); i++) {
-        output.writeMessage(9, invokes_.get(i));
-      }
       if (entityId_ != 0) {
-        output.writeUInt32(11, entityId_);
+        output.writeUInt32(1, entityId_);
+      }
+      for (int i = 0; i < invokes_.size(); i++) {
+        output.writeMessage(14, invokes_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -235,13 +235,13 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < invokes_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, invokes_.get(i));
-      }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, entityId_);
+          .computeUInt32Size(1, entityId_);
+      }
+      for (int i = 0; i < invokes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, invokes_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -273,7 +273,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       if (getInvokesCount() > 0) {
         hash = (37 * hash) + INVOKES_FIELD_NUMBER;
@@ -376,14 +376,14 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1119;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum NFFHBOGDOEJ {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1198;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code ClientAbilityInitFinishNotify}
@@ -578,7 +578,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entityId = 1;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -586,7 +586,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entityId = 1;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -597,7 +597,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entityId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -620,7 +620,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
           emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> invokesBuilder_;
 
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> getInvokesList() {
         if (invokesBuilder_ == null) {
@@ -630,7 +630,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public int getInvokesCount() {
         if (invokesBuilder_ == null) {
@@ -640,7 +640,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry getInvokes(int index) {
         if (invokesBuilder_ == null) {
@@ -650,7 +650,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder setInvokes(
           int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
@@ -667,7 +667,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder setInvokes(
           int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
@@ -681,7 +681,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder addInvokes(emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (invokesBuilder_ == null) {
@@ -697,7 +697,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder addInvokes(
           int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
@@ -714,7 +714,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder addInvokes(
           emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
@@ -728,7 +728,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder addInvokes(
           int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
@@ -742,7 +742,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder addAllInvokes(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> values) {
@@ -757,7 +757,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder clearInvokes() {
         if (invokesBuilder_ == null) {
@@ -770,7 +770,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public Builder removeInvokes(int index) {
         if (invokesBuilder_ == null) {
@@ -783,14 +783,14 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getInvokesBuilder(
           int index) {
         return getInvokesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getInvokesOrBuilder(
           int index) {
@@ -800,7 +800,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> 
            getInvokesOrBuilderList() {
@@ -811,14 +811,14 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder addInvokesBuilder() {
         return getInvokesFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder addInvokesBuilder(
           int index) {
@@ -826,7 +826,7 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
             index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 9;</code>
+       * <code>repeated .AbilityInvokeEntry invokes = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder> 
            getInvokesBuilderList() {
@@ -914,10 +914,10 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#ClientAbilityInitFinishNotify.proto\032\030A" +
-      "bilityInvokeEntry.proto\"X\n\035ClientAbility" +
-      "InitFinishNotify\022\021\n\tentity_id\030\013 \001(\r\022$\n\007i" +
-      "nvokes\030\t \003(\0132\023.AbilityInvokeEntryB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "bilityInvokeEntry.proto\"W\n\035ClientAbility" +
+      "InitFinishNotify\022\020\n\010entityId\030\001 \001(\r\022$\n\007in" +
+      "vokes\030\016 \003(\0132\023.AbilityInvokeEntryB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

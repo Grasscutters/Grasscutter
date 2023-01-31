@@ -19,27 +19,27 @@ public final class GetScenePointReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 13;</code>
+     * <code>uint32 sceneId = 15;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>uint32 belong_uid = 5;</code>
+     * <code>uint32 belongUid = 3;</code>
      * @return The belongUid.
      */
     int getBelongUid();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 299;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum INCOMKHOKIP {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 216;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code GetScenePointReq}
@@ -86,12 +86,12 @@ public final class GetScenePointReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               belongUid_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -128,10 +128,10 @@ public final class GetScenePointReqOuterClass {
               emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq.class, emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 13;
+    public static final int SCENEID_FIELD_NUMBER = 15;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 13;</code>
+     * <code>uint32 sceneId = 15;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -139,10 +139,10 @@ public final class GetScenePointReqOuterClass {
       return sceneId_;
     }
 
-    public static final int BELONG_UID_FIELD_NUMBER = 5;
+    public static final int BELONGUID_FIELD_NUMBER = 3;
     private int belongUid_;
     /**
-     * <code>uint32 belong_uid = 5;</code>
+     * <code>uint32 belongUid = 3;</code>
      * @return The belongUid.
      */
     @java.lang.Override
@@ -165,10 +165,10 @@ public final class GetScenePointReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (belongUid_ != 0) {
-        output.writeUInt32(5, belongUid_);
+        output.writeUInt32(3, belongUid_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(13, sceneId_);
+        output.writeUInt32(15, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -181,11 +181,11 @@ public final class GetScenePointReqOuterClass {
       size = 0;
       if (belongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, belongUid_);
+          .computeUInt32Size(3, belongUid_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, sceneId_);
+          .computeUInt32Size(15, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,9 +217,9 @@ public final class GetScenePointReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + BELONG_UID_FIELD_NUMBER;
+      hash = (37 * hash) + BELONGUID_FIELD_NUMBER;
       hash = (53 * hash) + getBelongUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -318,14 +318,14 @@ public final class GetScenePointReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 299;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum INCOMKHOKIP {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 216;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code GetScenePointReq}
@@ -482,7 +482,7 @@ public final class GetScenePointReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 13;</code>
+       * <code>uint32 sceneId = 15;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -490,7 +490,7 @@ public final class GetScenePointReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 13;</code>
+       * <code>uint32 sceneId = 15;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -501,7 +501,7 @@ public final class GetScenePointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 13;</code>
+       * <code>uint32 sceneId = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -513,7 +513,7 @@ public final class GetScenePointReqOuterClass {
 
       private int belongUid_ ;
       /**
-       * <code>uint32 belong_uid = 5;</code>
+       * <code>uint32 belongUid = 3;</code>
        * @return The belongUid.
        */
       @java.lang.Override
@@ -521,7 +521,7 @@ public final class GetScenePointReqOuterClass {
         return belongUid_;
       }
       /**
-       * <code>uint32 belong_uid = 5;</code>
+       * <code>uint32 belongUid = 3;</code>
        * @param value The belongUid to set.
        * @return This builder for chaining.
        */
@@ -532,7 +532,7 @@ public final class GetScenePointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 belong_uid = 5;</code>
+       * <code>uint32 belongUid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearBelongUid() {
@@ -608,9 +608,9 @@ public final class GetScenePointReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026GetScenePointReq.proto\"8\n\020GetScenePoin" +
-      "tReq\022\020\n\010scene_id\030\r \001(\r\022\022\n\nbelong_uid\030\005 \001" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\026GetScenePointReq.proto\"6\n\020GetScenePoin" +
+      "tReq\022\017\n\007sceneId\030\017 \001(\r\022\021\n\tbelongUid\030\003 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,32 +19,32 @@ public final class SceneEntityAiInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_ai_open = 1;</code>
+     * <code>bool isAiOpen = 1;</code>
      * @return The isAiOpen.
      */
     boolean getIsAiOpen();
 
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      * @return Whether the bornPos field is set.
      */
     boolean hasBornPos();
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      * @return The bornPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos();
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder();
 
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     int getSkillCdMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     boolean containsSkillCdMap(
         int key);
@@ -55,45 +55,45 @@ public final class SceneEntityAiInfoOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getSkillCdMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getSkillCdMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
 
     int getSkillCdMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
 
     int getSkillCdMapOrThrow(
         int key);
 
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      * @return Whether the servantInfo field is set.
      */
     boolean hasServantInfo();
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      * @return The servantInfo.
      */
     emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo getServantInfo();
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      */
     emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfoOrBuilder getServantInfoOrBuilder();
 
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     int getAiThreatMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     boolean containsAiThreatMap(
         int key);
@@ -104,30 +104,30 @@ public final class SceneEntityAiInfoOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAiThreatMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAiThreatMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
 
     int getAiThreatMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
 
     int getAiThreatMapOrThrow(
         int key);
 
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     int getSkillGroupCdMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     boolean containsSkillGroupCdMap(
         int key);
@@ -138,26 +138,26 @@ public final class SceneEntityAiInfoOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getSkillGroupCdMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getSkillGroupCdMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
 
     int getSkillGroupCdMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
 
     int getSkillGroupCdMapOrThrow(
         int key);
 
     /**
-     * <code>uint32 cur_tactic = 7;</code>
+     * <code>uint32 curTactic = 7;</code>
      * @return The curTactic.
      */
     int getCurTactic();
@@ -331,10 +331,10 @@ public final class SceneEntityAiInfoOuterClass {
               emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.class, emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.Builder.class);
     }
 
-    public static final int IS_AI_OPEN_FIELD_NUMBER = 1;
+    public static final int ISAIOPEN_FIELD_NUMBER = 1;
     private boolean isAiOpen_;
     /**
-     * <code>bool is_ai_open = 1;</code>
+     * <code>bool isAiOpen = 1;</code>
      * @return The isAiOpen.
      */
     @java.lang.Override
@@ -342,10 +342,10 @@ public final class SceneEntityAiInfoOuterClass {
       return isAiOpen_;
     }
 
-    public static final int BORN_POS_FIELD_NUMBER = 2;
+    public static final int BORNPOS_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector bornPos_;
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      * @return Whether the bornPos field is set.
      */
     @java.lang.Override
@@ -353,7 +353,7 @@ public final class SceneEntityAiInfoOuterClass {
       return bornPos_ != null;
     }
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      * @return The bornPos.
      */
     @java.lang.Override
@@ -361,14 +361,14 @@ public final class SceneEntityAiInfoOuterClass {
       return bornPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornPos_;
     }
     /**
-     * <code>.Vector born_pos = 2;</code>
+     * <code>.Vector bornPos = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
       return getBornPos();
     }
 
-    public static final int SKILL_CD_MAP_FIELD_NUMBER = 3;
+    public static final int SKILLCDMAP_FIELD_NUMBER = 3;
     private static final class SkillCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -395,7 +395,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetSkillCdMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
 
     @java.lang.Override
@@ -413,7 +413,7 @@ public final class SceneEntityAiInfoOuterClass {
       return getSkillCdMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     @java.lang.Override
 
@@ -421,7 +421,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetSkillCdMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     @java.lang.Override
 
@@ -434,7 +434,7 @@ public final class SceneEntityAiInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
      */
     @java.lang.Override
 
@@ -449,10 +449,10 @@ public final class SceneEntityAiInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int SERVANT_INFO_FIELD_NUMBER = 4;
+    public static final int SERVANTINFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo servantInfo_;
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      * @return Whether the servantInfo field is set.
      */
     @java.lang.Override
@@ -460,7 +460,7 @@ public final class SceneEntityAiInfoOuterClass {
       return servantInfo_ != null;
     }
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      * @return The servantInfo.
      */
     @java.lang.Override
@@ -468,14 +468,14 @@ public final class SceneEntityAiInfoOuterClass {
       return servantInfo_ == null ? emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.getDefaultInstance() : servantInfo_;
     }
     /**
-     * <code>.ServantInfo servant_info = 4;</code>
+     * <code>.ServantInfo servantInfo = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfoOrBuilder getServantInfoOrBuilder() {
       return getServantInfo();
     }
 
-    public static final int AI_THREAT_MAP_FIELD_NUMBER = 5;
+    public static final int AITHREATMAP_FIELD_NUMBER = 5;
     private static final class AiThreatMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -502,7 +502,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetAiThreatMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
 
     @java.lang.Override
@@ -520,7 +520,7 @@ public final class SceneEntityAiInfoOuterClass {
       return getAiThreatMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     @java.lang.Override
 
@@ -528,7 +528,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetAiThreatMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     @java.lang.Override
 
@@ -541,7 +541,7 @@ public final class SceneEntityAiInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+     * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
      */
     @java.lang.Override
 
@@ -556,7 +556,7 @@ public final class SceneEntityAiInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int SKILL_GROUP_CD_MAP_FIELD_NUMBER = 6;
+    public static final int SKILLGROUPCDMAP_FIELD_NUMBER = 6;
     private static final class SkillGroupCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -583,7 +583,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetSkillGroupCdMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
 
     @java.lang.Override
@@ -601,7 +601,7 @@ public final class SceneEntityAiInfoOuterClass {
       return getSkillGroupCdMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     @java.lang.Override
 
@@ -609,7 +609,7 @@ public final class SceneEntityAiInfoOuterClass {
       return internalGetSkillGroupCdMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     @java.lang.Override
 
@@ -622,7 +622,7 @@ public final class SceneEntityAiInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
      */
     @java.lang.Override
 
@@ -637,10 +637,10 @@ public final class SceneEntityAiInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int CUR_TACTIC_FIELD_NUMBER = 7;
+    public static final int CURTACTIC_FIELD_NUMBER = 7;
     private int curTactic_;
     /**
-     * <code>uint32 cur_tactic = 7;</code>
+     * <code>uint32 curTactic = 7;</code>
      * @return The curTactic.
      */
     @java.lang.Override
@@ -793,30 +793,30 @@ public final class SceneEntityAiInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_AI_OPEN_FIELD_NUMBER;
+      hash = (37 * hash) + ISAIOPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAiOpen());
       if (hasBornPos()) {
-        hash = (37 * hash) + BORN_POS_FIELD_NUMBER;
+        hash = (37 * hash) + BORNPOS_FIELD_NUMBER;
         hash = (53 * hash) + getBornPos().hashCode();
       }
       if (!internalGetSkillCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + SKILL_CD_MAP_FIELD_NUMBER;
+        hash = (37 * hash) + SKILLCDMAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSkillCdMap().hashCode();
       }
       if (hasServantInfo()) {
-        hash = (37 * hash) + SERVANT_INFO_FIELD_NUMBER;
+        hash = (37 * hash) + SERVANTINFO_FIELD_NUMBER;
         hash = (53 * hash) + getServantInfo().hashCode();
       }
       if (!internalGetAiThreatMap().getMap().isEmpty()) {
-        hash = (37 * hash) + AI_THREAT_MAP_FIELD_NUMBER;
+        hash = (37 * hash) + AITHREATMAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAiThreatMap().hashCode();
       }
       if (!internalGetSkillGroupCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + SKILL_GROUP_CD_MAP_FIELD_NUMBER;
+        hash = (37 * hash) + SKILLGROUPCDMAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSkillGroupCdMap().hashCode();
       }
-      hash = (37 * hash) + CUR_TACTIC_FIELD_NUMBER;
+      hash = (37 * hash) + CURTACTIC_FIELD_NUMBER;
       hash = (53 * hash) + getCurTactic();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1143,7 +1143,7 @@ public final class SceneEntityAiInfoOuterClass {
 
       private boolean isAiOpen_ ;
       /**
-       * <code>bool is_ai_open = 1;</code>
+       * <code>bool isAiOpen = 1;</code>
        * @return The isAiOpen.
        */
       @java.lang.Override
@@ -1151,7 +1151,7 @@ public final class SceneEntityAiInfoOuterClass {
         return isAiOpen_;
       }
       /**
-       * <code>bool is_ai_open = 1;</code>
+       * <code>bool isAiOpen = 1;</code>
        * @param value The isAiOpen to set.
        * @return This builder for chaining.
        */
@@ -1162,7 +1162,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_ai_open = 1;</code>
+       * <code>bool isAiOpen = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAiOpen() {
@@ -1176,14 +1176,14 @@ public final class SceneEntityAiInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> bornPosBuilder_;
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        * @return Whether the bornPos field is set.
        */
       public boolean hasBornPos() {
         return bornPosBuilder_ != null || bornPos_ != null;
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        * @return The bornPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos() {
@@ -1194,7 +1194,7 @@ public final class SceneEntityAiInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public Builder setBornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
@@ -1210,7 +1210,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public Builder setBornPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1224,7 +1224,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public Builder mergeBornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
@@ -1242,7 +1242,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public Builder clearBornPos() {
         if (bornPosBuilder_ == null) {
@@ -1256,7 +1256,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getBornPosBuilder() {
         
@@ -1264,7 +1264,7 @@ public final class SceneEntityAiInfoOuterClass {
         return getBornPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
         if (bornPosBuilder_ != null) {
@@ -1275,7 +1275,7 @@ public final class SceneEntityAiInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector born_pos = 2;</code>
+       * <code>.Vector bornPos = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1318,7 +1318,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetSkillCdMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
 
       @java.lang.Override
@@ -1336,7 +1336,7 @@ public final class SceneEntityAiInfoOuterClass {
         return getSkillCdMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
       @java.lang.Override
 
@@ -1344,7 +1344,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetSkillCdMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
       @java.lang.Override
 
@@ -1357,7 +1357,7 @@ public final class SceneEntityAiInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
       @java.lang.Override
 
@@ -1378,7 +1378,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
 
       public Builder removeSkillCdMap(
@@ -1397,7 +1397,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetMutableSkillCdMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
       public Builder putSkillCdMap(
           int key,
@@ -1409,7 +1409,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skillCdMap = 3;</code>
        */
 
       public Builder putAllSkillCdMap(
@@ -1423,14 +1423,14 @@ public final class SceneEntityAiInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfoOrBuilder> servantInfoBuilder_;
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        * @return Whether the servantInfo field is set.
        */
       public boolean hasServantInfo() {
         return servantInfoBuilder_ != null || servantInfo_ != null;
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        * @return The servantInfo.
        */
       public emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo getServantInfo() {
@@ -1441,7 +1441,7 @@ public final class SceneEntityAiInfoOuterClass {
         }
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public Builder setServantInfo(emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo value) {
         if (servantInfoBuilder_ == null) {
@@ -1457,7 +1457,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public Builder setServantInfo(
           emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder builderForValue) {
@@ -1471,7 +1471,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public Builder mergeServantInfo(emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo value) {
         if (servantInfoBuilder_ == null) {
@@ -1489,7 +1489,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public Builder clearServantInfo() {
         if (servantInfoBuilder_ == null) {
@@ -1503,7 +1503,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder getServantInfoBuilder() {
         
@@ -1511,7 +1511,7 @@ public final class SceneEntityAiInfoOuterClass {
         return getServantInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       public emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfoOrBuilder getServantInfoOrBuilder() {
         if (servantInfoBuilder_ != null) {
@@ -1522,7 +1522,7 @@ public final class SceneEntityAiInfoOuterClass {
         }
       }
       /**
-       * <code>.ServantInfo servant_info = 4;</code>
+       * <code>.ServantInfo servantInfo = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfoOrBuilder> 
@@ -1565,7 +1565,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetAiThreatMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
 
       @java.lang.Override
@@ -1583,7 +1583,7 @@ public final class SceneEntityAiInfoOuterClass {
         return getAiThreatMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
       @java.lang.Override
 
@@ -1591,7 +1591,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetAiThreatMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
       @java.lang.Override
 
@@ -1604,7 +1604,7 @@ public final class SceneEntityAiInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
       @java.lang.Override
 
@@ -1625,7 +1625,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
 
       public Builder removeAiThreatMap(
@@ -1644,7 +1644,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetMutableAiThreatMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
       public Builder putAiThreatMap(
           int key,
@@ -1656,7 +1656,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; ai_threat_map = 5;</code>
+       * <code>map&lt;uint32, uint32&gt; aiThreatMap = 5;</code>
        */
 
       public Builder putAllAiThreatMap(
@@ -1693,7 +1693,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetSkillGroupCdMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
 
       @java.lang.Override
@@ -1711,7 +1711,7 @@ public final class SceneEntityAiInfoOuterClass {
         return getSkillGroupCdMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
       @java.lang.Override
 
@@ -1719,7 +1719,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetSkillGroupCdMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
       @java.lang.Override
 
@@ -1732,7 +1732,7 @@ public final class SceneEntityAiInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
       @java.lang.Override
 
@@ -1753,7 +1753,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
 
       public Builder removeSkillGroupCdMap(
@@ -1772,7 +1772,7 @@ public final class SceneEntityAiInfoOuterClass {
         return internalGetMutableSkillGroupCdMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
       public Builder putSkillGroupCdMap(
           int key,
@@ -1784,7 +1784,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; skillGroupCdMap = 6;</code>
        */
 
       public Builder putAllSkillGroupCdMap(
@@ -1796,7 +1796,7 @@ public final class SceneEntityAiInfoOuterClass {
 
       private int curTactic_ ;
       /**
-       * <code>uint32 cur_tactic = 7;</code>
+       * <code>uint32 curTactic = 7;</code>
        * @return The curTactic.
        */
       @java.lang.Override
@@ -1804,7 +1804,7 @@ public final class SceneEntityAiInfoOuterClass {
         return curTactic_;
       }
       /**
-       * <code>uint32 cur_tactic = 7;</code>
+       * <code>uint32 curTactic = 7;</code>
        * @param value The curTactic to set.
        * @return This builder for chaining.
        */
@@ -1815,7 +1815,7 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_tactic = 7;</code>
+       * <code>uint32 curTactic = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurTactic() {
@@ -1906,27 +1906,26 @@ public final class SceneEntityAiInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027SceneEntityAiInfo.proto\032\021ServantInfo.p" +
-      "roto\032\014Vector.proto\"\324\003\n\021SceneEntityAiInfo" +
-      "\022\022\n\nis_ai_open\030\001 \001(\010\022\031\n\010born_pos\030\002 \001(\0132\007" +
-      ".Vector\0228\n\014skill_cd_map\030\003 \003(\0132\".SceneEnt" +
-      "ityAiInfo.SkillCdMapEntry\022\"\n\014servant_inf" +
-      "o\030\004 \001(\0132\014.ServantInfo\022:\n\rai_threat_map\030\005" +
-      " \003(\0132#.SceneEntityAiInfo.AiThreatMapEntr" +
-      "y\022C\n\022skill_group_cd_map\030\006 \003(\0132\'.SceneEnt" +
-      "ityAiInfo.SkillGroupCdMapEntry\022\022\n\ncur_ta" +
-      "ctic\030\007 \001(\r\0321\n\017SkillCdMapEntry\022\013\n\003key\030\001 \001" +
-      "(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0322\n\020AiThreatMapEntr" +
-      "y\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0326\n\024Ski" +
-      "llGroupCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030" +
-      "\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\n\027SceneEntityAiInfo.proto\032\014Vector.proto\032" +
+      "\021ServantInfo.proto\"\310\003\n\021SceneEntityAiInfo" +
+      "\022\020\n\010isAiOpen\030\001 \001(\010\022\030\n\007bornPos\030\002 \001(\0132\007.Ve" +
+      "ctor\0226\n\nskillCdMap\030\003 \003(\0132\".SceneEntityAi" +
+      "Info.SkillCdMapEntry\022!\n\013servantInfo\030\004 \001(" +
+      "\0132\014.ServantInfo\0228\n\013aiThreatMap\030\005 \003(\0132#.S" +
+      "ceneEntityAiInfo.AiThreatMapEntry\022@\n\017ski" +
+      "llGroupCdMap\030\006 \003(\0132\'.SceneEntityAiInfo.S" +
+      "killGroupCdMapEntry\022\021\n\tcurTactic\030\007 \001(\r\0321" +
+      "\n\017SkillCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030" +
+      "\002 \001(\r:\0028\001\0322\n\020AiThreatMapEntry\022\013\n\003key\030\001 \001" +
+      "(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0326\n\024SkillGroupCdMap" +
+      "Entry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor(),
         });
     internal_static_SceneEntityAiInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1952,8 +1951,8 @@ public final class SceneEntityAiInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityAiInfo_SkillGroupCdMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

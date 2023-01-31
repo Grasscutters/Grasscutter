@@ -19,7 +19,7 @@ public final class SeaLampSectionInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 section_id = 8;</code>
+     * <code>uint32 sectionId = 13;</code>
      * @return The sectionId.
      */
     int getSectionId();
@@ -69,7 +69,7 @@ public final class SeaLampSectionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 104: {
 
               sectionId_ = input.readUInt32();
               break;
@@ -106,10 +106,10 @@ public final class SeaLampSectionInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.class, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder.class);
     }
 
-    public static final int SECTION_ID_FIELD_NUMBER = 8;
+    public static final int SECTIONID_FIELD_NUMBER = 13;
     private int sectionId_;
     /**
-     * <code>uint32 section_id = 8;</code>
+     * <code>uint32 sectionId = 13;</code>
      * @return The sectionId.
      */
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class SeaLampSectionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sectionId_ != 0) {
-        output.writeUInt32(8, sectionId_);
+        output.writeUInt32(13, sectionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +145,7 @@ public final class SeaLampSectionInfoOuterClass {
       size = 0;
       if (sectionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sectionId_);
+          .computeUInt32Size(13, sectionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -175,7 +175,7 @@ public final class SeaLampSectionInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SECTION_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SECTIONID_FIELD_NUMBER;
       hash = (53 * hash) + getSectionId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -421,7 +421,7 @@ public final class SeaLampSectionInfoOuterClass {
 
       private int sectionId_ ;
       /**
-       * <code>uint32 section_id = 8;</code>
+       * <code>uint32 sectionId = 13;</code>
        * @return The sectionId.
        */
       @java.lang.Override
@@ -429,7 +429,7 @@ public final class SeaLampSectionInfoOuterClass {
         return sectionId_;
       }
       /**
-       * <code>uint32 section_id = 8;</code>
+       * <code>uint32 sectionId = 13;</code>
        * @param value The sectionId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +440,7 @@ public final class SeaLampSectionInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 section_id = 8;</code>
+       * <code>uint32 sectionId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearSectionId() {
@@ -516,9 +516,9 @@ public final class SeaLampSectionInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030SeaLampSectionInfo.proto\"(\n\022SeaLampSec" +
-      "tionInfo\022\022\n\nsection_id\030\010 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\030SeaLampSectionInfo.proto\"\'\n\022SeaLampSec" +
+      "tionInfo\022\021\n\tsectionId\030\r \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

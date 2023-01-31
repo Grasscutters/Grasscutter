@@ -1582,49 +1582,49 @@ public final class RegionInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gateserverIp_)) {
+      if (!getGateserverIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gateserverIp_);
       }
       if (gateserverPort_ != 0) {
         output.writeUInt32(2, gateserverPort_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(payCallbackUrl_)) {
+      if (!getPayCallbackUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, payCallbackUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(areaType_)) {
+      if (!getAreaTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, areaType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrl_)) {
+      if (!getResourceUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataUrl_)) {
+      if (!getDataUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, dataUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedbackUrl_)) {
+      if (!getFeedbackUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, feedbackUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bulletinUrl_)) {
+      if (!getBulletinUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, bulletinUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrlBak_)) {
+      if (!getResourceUrlBakBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, resourceUrlBak_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataUrlBak_)) {
+      if (!getDataUrlBakBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, dataUrlBak_);
       }
       if (clientDataVersion_ != 0) {
         output.writeUInt32(14, clientDataVersion_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(handbookUrl_)) {
+      if (!getHandbookUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, handbookUrl_);
       }
       if (clientSilenceDataVersion_ != 0) {
         output.writeUInt32(18, clientSilenceDataVersion_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientDataMd5_)) {
+      if (!getClientDataMd5Bytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 19, clientDataMd5_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceDataMd5_)) {
+      if (!getClientSilenceDataMd5Bytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 20, clientSilenceDataMd5_);
       }
       if (resVersionConfig_ != null) {
@@ -1633,40 +1633,40 @@ public final class RegionInfoOuterClass {
       if (!secretKey_.isEmpty()) {
         output.writeBytes(23, secretKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(officialCommunityUrl_)) {
+      if (!getOfficialCommunityUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 24, officialCommunityUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersionSuffix_)) {
+      if (!getClientVersionSuffixBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 26, clientVersionSuffix_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceVersionSuffix_)) {
+      if (!getClientSilenceVersionSuffixBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 27, clientSilenceVersionSuffix_);
       }
       if (useGateserverDomainName_ != false) {
         output.writeBool(28, useGateserverDomainName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gateserverDomainName_)) {
+      if (!getGateserverDomainNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 29, gateserverDomainName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userCenterUrl_)) {
+      if (!getUserCenterUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 30, userCenterUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountBindUrl_)) {
+      if (!getAccountBindUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 31, accountBindUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cdkeyUrl_)) {
+      if (!getCdkeyUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 32, cdkeyUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privacyPolicyUrl_)) {
+      if (!getPrivacyPolicyUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 33, privacyPolicyUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextResourceUrl_)) {
+      if (!getNextResourceUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 34, nextResourceUrl_);
       }
       if (nextResVersionConfig_ != null) {
         output.writeMessage(35, getNextResVersionConfig());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+      if (!getGameBizBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 36, gameBiz_);
       }
       unknownFields.writeTo(output);
@@ -1678,52 +1678,52 @@ public final class RegionInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gateserverIp_)) {
+      if (!getGateserverIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gateserverIp_);
       }
       if (gateserverPort_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, gateserverPort_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(payCallbackUrl_)) {
+      if (!getPayCallbackUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payCallbackUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(areaType_)) {
+      if (!getAreaTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, areaType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrl_)) {
+      if (!getResourceUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resourceUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataUrl_)) {
+      if (!getDataUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, dataUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedbackUrl_)) {
+      if (!getFeedbackUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, feedbackUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bulletinUrl_)) {
+      if (!getBulletinUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, bulletinUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrlBak_)) {
+      if (!getResourceUrlBakBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, resourceUrlBak_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataUrlBak_)) {
+      if (!getDataUrlBakBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, dataUrlBak_);
       }
       if (clientDataVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, clientDataVersion_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(handbookUrl_)) {
+      if (!getHandbookUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, handbookUrl_);
       }
       if (clientSilenceDataVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(18, clientSilenceDataVersion_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientDataMd5_)) {
+      if (!getClientDataMd5Bytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, clientDataMd5_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceDataMd5_)) {
+      if (!getClientSilenceDataMd5Bytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, clientSilenceDataMd5_);
       }
       if (resVersionConfig_ != null) {
@@ -1734,42 +1734,42 @@ public final class RegionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(23, secretKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(officialCommunityUrl_)) {
+      if (!getOfficialCommunityUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, officialCommunityUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersionSuffix_)) {
+      if (!getClientVersionSuffixBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, clientVersionSuffix_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceVersionSuffix_)) {
+      if (!getClientSilenceVersionSuffixBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, clientSilenceVersionSuffix_);
       }
       if (useGateserverDomainName_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(28, useGateserverDomainName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gateserverDomainName_)) {
+      if (!getGateserverDomainNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, gateserverDomainName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userCenterUrl_)) {
+      if (!getUserCenterUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, userCenterUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountBindUrl_)) {
+      if (!getAccountBindUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, accountBindUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cdkeyUrl_)) {
+      if (!getCdkeyUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, cdkeyUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privacyPolicyUrl_)) {
+      if (!getPrivacyPolicyUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, privacyPolicyUrl_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextResourceUrl_)) {
+      if (!getNextResourceUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, nextResourceUrl_);
       }
       if (nextResVersionConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(35, getNextResVersionConfig());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+      if (!getGameBizBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, gameBiz_);
       }
       size += unknownFields.getSerializedSize();
@@ -4508,33 +4508,34 @@ public final class RegionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020RegionInfo.proto\032\026ResVersionConfig.pro" +
-      "to\"\257\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
-      "\022\027\n\017gateserver_port\030\002 \001(\r\022\030\n\020pay_callbac" +
-      "k_url\030\003 \001(\t\022\021\n\tarea_type\030\007 \001(\t\022\024\n\014resour" +
-      "ce_url\030\010 \001(\t\022\020\n\010data_url\030\t \001(\t\022\024\n\014feedba" +
-      "ck_url\030\n \001(\t\022\024\n\014bulletin_url\030\013 \001(\t\022\030\n\020re" +
-      "source_url_bak\030\014 \001(\t\022\024\n\014data_url_bak\030\r \001" +
-      "(\t\022\033\n\023client_data_version\030\016 \001(\r\022\024\n\014handb" +
-      "ook_url\030\020 \001(\t\022#\n\033client_silence_data_ver" +
-      "sion\030\022 \001(\r\022\027\n\017client_data_md5\030\023 \001(\t\022\037\n\027c" +
-      "lient_silence_data_md5\030\024 \001(\t\022-\n\022res_vers" +
-      "ion_config\030\026 \001(\0132\021.ResVersionConfig\022\022\n\ns" +
-      "ecret_key\030\027 \001(\014\022\036\n\026official_community_ur" +
-      "l\030\030 \001(\t\022\035\n\025client_version_suffix\030\032 \001(\t\022%" +
-      "\n\035client_silence_version_suffix\030\033 \001(\t\022\"\n" +
-      "\032use_gateserver_domain_name\030\034 \001(\010\022\036\n\026gat" +
-      "eserver_domain_name\030\035 \001(\t\022\027\n\017user_center" +
-      "_url\030\036 \001(\t\022\030\n\020account_bind_url\030\037 \001(\t\022\021\n\t" +
-      "cdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030! " +
-      "\001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next_r" +
-      "es_version_config\030# \001(\0132\021.ResVersionConf" +
-      "ig\022\020\n\010game_biz\030$ \001(\tB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "to\032\013bytes.proto\"\257\006\n\nRegionInfo\022\025\n\rgatese" +
+      "rver_ip\030\001 \001(\t\022\027\n\017gateserver_port\030\002 \001(\r\022\030" +
+      "\n\020pay_callback_url\030\003 \001(\t\022\021\n\tarea_type\030\007 " +
+      "\001(\t\022\024\n\014resource_url\030\010 \001(\t\022\020\n\010data_url\030\t " +
+      "\001(\t\022\024\n\014feedback_url\030\n \001(\t\022\024\n\014bulletin_ur" +
+      "l\030\013 \001(\t\022\030\n\020resource_url_bak\030\014 \001(\t\022\024\n\014dat" +
+      "a_url_bak\030\r \001(\t\022\033\n\023client_data_version\030\016" +
+      " \001(\r\022\024\n\014handbook_url\030\020 \001(\t\022#\n\033client_sil" +
+      "ence_data_version\030\022 \001(\r\022\027\n\017client_data_m" +
+      "d5\030\023 \001(\t\022\037\n\027client_silence_data_md5\030\024 \001(" +
+      "\t\022-\n\022res_version_config\030\026 \001(\0132\021.ResVersi" +
+      "onConfig\022\022\n\nsecret_key\030\027 \001(\014\022\036\n\026official" +
+      "_community_url\030\030 \001(\t\022\035\n\025client_version_s" +
+      "uffix\030\032 \001(\t\022%\n\035client_silence_version_su" +
+      "ffix\030\033 \001(\t\022\"\n\032use_gateserver_domain_name" +
+      "\030\034 \001(\010\022\036\n\026gateserver_domain_name\030\035 \001(\t\022\027" +
+      "\n\017user_center_url\030\036 \001(\t\022\030\n\020account_bind_" +
+      "url\030\037 \001(\t\022\021\n\tcdkey_url\030  \001(\t\022\032\n\022privacy_" +
+      "policy_url\030! \001(\t\022\031\n\021next_resource_url\030\" " +
+      "\001(\t\0222\n\027next_res_version_config\030# \001(\0132\021.R" +
+      "esVersionConfig\022\020\n\010game_biz\030$ \001(\tB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.ResVersionConfigOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Bytes.getDescriptor(),
         });
     internal_static_RegionInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4543,6 +4544,7 @@ public final class RegionInfoOuterClass {
         internal_static_RegionInfo_descriptor,
         new java.lang.String[] { "GateserverIp", "GateserverPort", "PayCallbackUrl", "AreaType", "ResourceUrl", "DataUrl", "FeedbackUrl", "BulletinUrl", "ResourceUrlBak", "DataUrlBak", "ClientDataVersion", "HandbookUrl", "ClientSilenceDataVersion", "ClientDataMd5", "ClientSilenceDataMd5", "ResVersionConfig", "SecretKey", "OfficialCommunityUrl", "ClientVersionSuffix", "ClientSilenceVersionSuffix", "UseGateserverDomainName", "GateserverDomainName", "UserCenterUrl", "AccountBindUrl", "CdkeyUrl", "PrivacyPolicyUrl", "NextResourceUrl", "NextResVersionConfig", "GameBiz", });
     emu.grasscutter.net.proto.ResVersionConfigOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Bytes.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

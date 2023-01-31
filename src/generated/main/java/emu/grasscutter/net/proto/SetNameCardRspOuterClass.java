@@ -19,27 +19,27 @@ public final class SetNameCardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 name_card_id = 9;</code>
+     * <code>uint32 nameCardId = 14;</code>
      * @return The nameCardId.
      */
     int getNameCardId();
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4007;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum ICIPJFFEHFM {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4058;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code SetNameCardRsp}
@@ -86,12 +86,12 @@ public final class SetNameCardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               nameCardId_ = input.readUInt32();
               break;
@@ -128,10 +128,10 @@ public final class SetNameCardRspOuterClass {
               emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.class, emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.Builder.class);
     }
 
-    public static final int NAME_CARD_ID_FIELD_NUMBER = 9;
+    public static final int NAMECARDID_FIELD_NUMBER = 14;
     private int nameCardId_;
     /**
-     * <code>uint32 name_card_id = 9;</code>
+     * <code>uint32 nameCardId = 14;</code>
      * @return The nameCardId.
      */
     @java.lang.Override
@@ -139,10 +139,10 @@ public final class SetNameCardRspOuterClass {
       return nameCardId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -165,10 +165,10 @@ public final class SetNameCardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (nameCardId_ != 0) {
-        output.writeUInt32(9, nameCardId_);
+        output.writeUInt32(14, nameCardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -181,11 +181,11 @@ public final class SetNameCardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, nameCardId_);
+          .computeUInt32Size(14, nameCardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,7 +217,7 @@ public final class SetNameCardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
+      hash = (37 * hash) + NAMECARDID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -318,14 +318,14 @@ public final class SetNameCardRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4007;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum ICIPJFFEHFM {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4058;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code SetNameCardRsp}
@@ -482,7 +482,7 @@ public final class SetNameCardRspOuterClass {
 
       private int nameCardId_ ;
       /**
-       * <code>uint32 name_card_id = 9;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @return The nameCardId.
        */
       @java.lang.Override
@@ -490,7 +490,7 @@ public final class SetNameCardRspOuterClass {
         return nameCardId_;
       }
       /**
-       * <code>uint32 name_card_id = 9;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @param value The nameCardId to set.
        * @return This builder for chaining.
        */
@@ -501,7 +501,7 @@ public final class SetNameCardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 name_card_id = 9;</code>
+       * <code>uint32 nameCardId = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
@@ -513,7 +513,7 @@ public final class SetNameCardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -521,7 +521,7 @@ public final class SetNameCardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -532,7 +532,7 @@ public final class SetNameCardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -608,9 +608,9 @@ public final class SetNameCardRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024SetNameCardRsp.proto\"7\n\016SetNameCardRsp" +
-      "\022\024\n\014name_card_id\030\t \001(\r\022\017\n\007retcode\030\004 \001(\005B" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\024SetNameCardRsp.proto\"5\n\016SetNameCardRsp" +
+      "\022\022\n\nnameCardId\030\016 \001(\r\022\017\n\007retcode\030\007 \001(\005B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

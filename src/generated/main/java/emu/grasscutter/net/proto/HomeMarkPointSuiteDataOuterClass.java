@@ -19,7 +19,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 suite_id = 1;</code>
+     * <code>uint32 suiteId = 1;</code>
      * @return The suiteId.
      */
     int getSuiteId();
@@ -106,10 +106,10 @@ public final class HomeMarkPointSuiteDataOuterClass {
               emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.HomeMarkPointSuiteData.class, emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.HomeMarkPointSuiteData.Builder.class);
     }
 
-    public static final int SUITE_ID_FIELD_NUMBER = 1;
+    public static final int SUITEID_FIELD_NUMBER = 1;
     private int suiteId_;
     /**
-     * <code>uint32 suite_id = 1;</code>
+     * <code>uint32 suiteId = 1;</code>
      * @return The suiteId.
      */
     @java.lang.Override
@@ -175,7 +175,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SUITE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SUITEID_FIELD_NUMBER;
       hash = (53 * hash) + getSuiteId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -421,7 +421,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
 
       private int suiteId_ ;
       /**
-       * <code>uint32 suite_id = 1;</code>
+       * <code>uint32 suiteId = 1;</code>
        * @return The suiteId.
        */
       @java.lang.Override
@@ -429,7 +429,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
         return suiteId_;
       }
       /**
-       * <code>uint32 suite_id = 1;</code>
+       * <code>uint32 suiteId = 1;</code>
        * @param value The suiteId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +440,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 suite_id = 1;</code>
+       * <code>uint32 suiteId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSuiteId() {
@@ -516,9 +516,9 @@ public final class HomeMarkPointSuiteDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034HomeMarkPointSuiteData.proto\"*\n\026HomeMa" +
-      "rkPointSuiteData\022\020\n\010suite_id\030\001 \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\034HomeMarkPointSuiteData.proto\")\n\026HomeMa" +
+      "rkPointSuiteData\022\017\n\007suiteId\030\001 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

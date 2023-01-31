@@ -19,13 +19,13 @@ public final class CrystalLinkBuffInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
+     * <code>uint32 Unk3300_BGKLAFCBNOA = 8;</code>
      * @return The unk3300BGKLAFCBNOA.
      */
     int getUnk3300BGKLAFCBNOA();
 
     /**
-     * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
+     * <code>uint32 Unk3300_PFLAOCMEFIL = 7;</code>
      * @return The unk3300PFLAOCMEFIL.
      */
     int getUnk3300PFLAOCMEFIL();
@@ -75,12 +75,12 @@ public final class CrystalLinkBuffInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               unk3300PFLAOCMEFIL_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 64: {
 
               unk3300BGKLAFCBNOA_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class CrystalLinkBuffInfoOuterClass {
               emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.class, emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.Builder.class);
     }
 
-    public static final int UNK3300_BGKLAFCBNOA_FIELD_NUMBER = 6;
+    public static final int UNK3300_BGKLAFCBNOA_FIELD_NUMBER = 8;
     private int unk3300BGKLAFCBNOA_;
     /**
-     * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
+     * <code>uint32 Unk3300_BGKLAFCBNOA = 8;</code>
      * @return The unk3300BGKLAFCBNOA.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class CrystalLinkBuffInfoOuterClass {
       return unk3300BGKLAFCBNOA_;
     }
 
-    public static final int UNK3300_PFLAOCMEFIL_FIELD_NUMBER = 4;
+    public static final int UNK3300_PFLAOCMEFIL_FIELD_NUMBER = 7;
     private int unk3300PFLAOCMEFIL_;
     /**
-     * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
+     * <code>uint32 Unk3300_PFLAOCMEFIL = 7;</code>
      * @return The unk3300PFLAOCMEFIL.
      */
     @java.lang.Override
@@ -154,10 +154,10 @@ public final class CrystalLinkBuffInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (unk3300PFLAOCMEFIL_ != 0) {
-        output.writeUInt32(4, unk3300PFLAOCMEFIL_);
+        output.writeUInt32(7, unk3300PFLAOCMEFIL_);
       }
       if (unk3300BGKLAFCBNOA_ != 0) {
-        output.writeUInt32(6, unk3300BGKLAFCBNOA_);
+        output.writeUInt32(8, unk3300BGKLAFCBNOA_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +170,11 @@ public final class CrystalLinkBuffInfoOuterClass {
       size = 0;
       if (unk3300PFLAOCMEFIL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, unk3300PFLAOCMEFIL_);
+          .computeUInt32Size(7, unk3300PFLAOCMEFIL_);
       }
       if (unk3300BGKLAFCBNOA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, unk3300BGKLAFCBNOA_);
+          .computeUInt32Size(8, unk3300BGKLAFCBNOA_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -460,7 +460,7 @@ public final class CrystalLinkBuffInfoOuterClass {
 
       private int unk3300BGKLAFCBNOA_ ;
       /**
-       * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
+       * <code>uint32 Unk3300_BGKLAFCBNOA = 8;</code>
        * @return The unk3300BGKLAFCBNOA.
        */
       @java.lang.Override
@@ -468,7 +468,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         return unk3300BGKLAFCBNOA_;
       }
       /**
-       * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
+       * <code>uint32 Unk3300_BGKLAFCBNOA = 8;</code>
        * @param value The unk3300BGKLAFCBNOA to set.
        * @return This builder for chaining.
        */
@@ -479,7 +479,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
+       * <code>uint32 Unk3300_BGKLAFCBNOA = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BGKLAFCBNOA() {
@@ -491,7 +491,7 @@ public final class CrystalLinkBuffInfoOuterClass {
 
       private int unk3300PFLAOCMEFIL_ ;
       /**
-       * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
+       * <code>uint32 Unk3300_PFLAOCMEFIL = 7;</code>
        * @return The unk3300PFLAOCMEFIL.
        */
       @java.lang.Override
@@ -499,7 +499,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         return unk3300PFLAOCMEFIL_;
       }
       /**
-       * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
+       * <code>uint32 Unk3300_PFLAOCMEFIL = 7;</code>
        * @param value The unk3300PFLAOCMEFIL to set.
        * @return This builder for chaining.
        */
@@ -510,7 +510,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
+       * <code>uint32 Unk3300_PFLAOCMEFIL = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PFLAOCMEFIL() {
@@ -587,8 +587,8 @@ public final class CrystalLinkBuffInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031CrystalLinkBuffInfo.proto\"O\n\023CrystalLi" +
-      "nkBuffInfo\022\033\n\023Unk3300_BGKLAFCBNOA\030\006 \001(\r\022" +
-      "\033\n\023Unk3300_PFLAOCMEFIL\030\004 \001(\rB\033\n\031emu.gras" +
+      "nkBuffInfo\022\033\n\023Unk3300_BGKLAFCBNOA\030\010 \001(\r\022" +
+      "\033\n\023Unk3300_PFLAOCMEFIL\030\007 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

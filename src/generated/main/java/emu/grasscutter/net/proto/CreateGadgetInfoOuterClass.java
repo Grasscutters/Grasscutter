@@ -19,12 +19,12 @@ public final class CreateGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.GadgetBornType born_type = 1;</code>
+     * <code>.GadgetBornType bornType = 1;</code>
      * @return The enum numeric value on the wire for bornType.
      */
     int getBornTypeValue();
     /**
-     * <code>.GadgetBornType born_type = 1;</code>
+     * <code>.GadgetBornType bornType = 1;</code>
      * @return The bornType.
      */
     emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType();
@@ -152,7 +152,7 @@ public final class CreateGadgetInfoOuterClass {
       int getChestDropId();
 
       /**
-       * <code>bool is_show_cutscene = 2;</code>
+       * <code>bool isShowCutscene = 2;</code>
        * @return The isShowCutscene.
        */
       boolean getIsShowCutscene();
@@ -255,10 +255,10 @@ public final class CreateGadgetInfoOuterClass {
         return chestDropId_;
       }
 
-      public static final int IS_SHOW_CUTSCENE_FIELD_NUMBER = 2;
+      public static final int ISSHOWCUTSCENE_FIELD_NUMBER = 2;
       private boolean isShowCutscene_;
       /**
-       * <code>bool is_show_cutscene = 2;</code>
+       * <code>bool isShowCutscene = 2;</code>
        * @return The isShowCutscene.
        */
       @java.lang.Override
@@ -335,7 +335,7 @@ public final class CreateGadgetInfoOuterClass {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + CHEST_DROP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getChestDropId();
-        hash = (37 * hash) + IS_SHOW_CUTSCENE_FIELD_NUMBER;
+        hash = (37 * hash) + ISSHOWCUTSCENE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsShowCutscene());
         hash = (29 * hash) + unknownFields.hashCode();
@@ -619,7 +619,7 @@ public final class CreateGadgetInfoOuterClass {
 
         private boolean isShowCutscene_ ;
         /**
-         * <code>bool is_show_cutscene = 2;</code>
+         * <code>bool isShowCutscene = 2;</code>
          * @return The isShowCutscene.
          */
         @java.lang.Override
@@ -627,7 +627,7 @@ public final class CreateGadgetInfoOuterClass {
           return isShowCutscene_;
         }
         /**
-         * <code>bool is_show_cutscene = 2;</code>
+         * <code>bool isShowCutscene = 2;</code>
          * @param value The isShowCutscene to set.
          * @return This builder for chaining.
          */
@@ -638,7 +638,7 @@ public final class CreateGadgetInfoOuterClass {
           return this;
         }
         /**
-         * <code>bool is_show_cutscene = 2;</code>
+         * <code>bool isShowCutscene = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearIsShowCutscene() {
@@ -700,17 +700,17 @@ public final class CreateGadgetInfoOuterClass {
 
     }
 
-    public static final int BORN_TYPE_FIELD_NUMBER = 1;
+    public static final int BORNTYPE_FIELD_NUMBER = 1;
     private int bornType_;
     /**
-     * <code>.GadgetBornType born_type = 1;</code>
+     * <code>.GadgetBornType bornType = 1;</code>
      * @return The enum numeric value on the wire for bornType.
      */
     @java.lang.Override public int getBornTypeValue() {
       return bornType_;
     }
     /**
-     * <code>.GadgetBornType born_type = 1;</code>
+     * <code>.GadgetBornType bornType = 1;</code>
      * @return The bornType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
@@ -814,7 +814,7 @@ public final class CreateGadgetInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BORN_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + BORNTYPE_FIELD_NUMBER;
       hash = (53 * hash) + bornType_;
       if (hasChest()) {
         hash = (37 * hash) + CHEST_FIELD_NUMBER;
@@ -1078,14 +1078,14 @@ public final class CreateGadgetInfoOuterClass {
 
       private int bornType_ = 0;
       /**
-       * <code>.GadgetBornType born_type = 1;</code>
+       * <code>.GadgetBornType bornType = 1;</code>
        * @return The enum numeric value on the wire for bornType.
        */
       @java.lang.Override public int getBornTypeValue() {
         return bornType_;
       }
       /**
-       * <code>.GadgetBornType born_type = 1;</code>
+       * <code>.GadgetBornType bornType = 1;</code>
        * @param value The enum numeric value on the wire for bornType to set.
        * @return This builder for chaining.
        */
@@ -1096,7 +1096,7 @@ public final class CreateGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GadgetBornType born_type = 1;</code>
+       * <code>.GadgetBornType bornType = 1;</code>
        * @return The bornType.
        */
       @java.lang.Override
@@ -1106,7 +1106,7 @@ public final class CreateGadgetInfoOuterClass {
         return result == null ? emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.GadgetBornType born_type = 1;</code>
+       * <code>.GadgetBornType bornType = 1;</code>
        * @param value The bornType to set.
        * @return This builder for chaining.
        */
@@ -1120,7 +1120,7 @@ public final class CreateGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GadgetBornType born_type = 1;</code>
+       * <code>.GadgetBornType bornType = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearBornType() {
@@ -1321,11 +1321,11 @@ public final class CreateGadgetInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026CreateGadgetInfo.proto\032\024GadgetBornType" +
-      ".proto\"\230\001\n\020CreateGadgetInfo\022\"\n\tborn_type" +
-      "\030\001 \001(\0162\017.GadgetBornType\022&\n\005chest\030\002 \001(\0132\027" +
-      ".CreateGadgetInfo.Chest\0328\n\005Chest\022\025\n\rches" +
-      "t_drop_id\030\001 \001(\r\022\030\n\020is_show_cutscene\030\002 \001(" +
-      "\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+      ".proto\"\225\001\n\020CreateGadgetInfo\022!\n\010bornType\030" +
+      "\001 \001(\0162\017.GadgetBornType\022&\n\005chest\030\002 \001(\0132\027." +
+      "CreateGadgetInfo.Chest\0326\n\005Chest\022\025\n\rchest" +
+      "_drop_id\030\001 \001(\r\022\026\n\016isShowCutscene\030\002 \001(\010B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

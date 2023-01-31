@@ -19,13 +19,13 @@ public final class QueryFilterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 area_mask = 4;</code>
+     * <code>int32 areaMask = 9;</code>
      * @return The areaMask.
      */
     int getAreaMask();
 
     /**
-     * <code>int32 type_id = 3;</code>
+     * <code>int32 typeId = 3;</code>
      * @return The typeId.
      */
     int getTypeId();
@@ -80,7 +80,7 @@ public final class QueryFilterOuterClass {
               typeId_ = input.readInt32();
               break;
             }
-            case 32: {
+            case 72: {
 
               areaMask_ = input.readInt32();
               break;
@@ -117,10 +117,10 @@ public final class QueryFilterOuterClass {
               emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.class, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder.class);
     }
 
-    public static final int AREA_MASK_FIELD_NUMBER = 4;
+    public static final int AREAMASK_FIELD_NUMBER = 9;
     private int areaMask_;
     /**
-     * <code>int32 area_mask = 4;</code>
+     * <code>int32 areaMask = 9;</code>
      * @return The areaMask.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class QueryFilterOuterClass {
       return areaMask_;
     }
 
-    public static final int TYPE_ID_FIELD_NUMBER = 3;
+    public static final int TYPEID_FIELD_NUMBER = 3;
     private int typeId_;
     /**
-     * <code>int32 type_id = 3;</code>
+     * <code>int32 typeId = 3;</code>
      * @return The typeId.
      */
     @java.lang.Override
@@ -157,7 +157,7 @@ public final class QueryFilterOuterClass {
         output.writeInt32(3, typeId_);
       }
       if (areaMask_ != 0) {
-        output.writeInt32(4, areaMask_);
+        output.writeInt32(9, areaMask_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,7 +174,7 @@ public final class QueryFilterOuterClass {
       }
       if (areaMask_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, areaMask_);
+          .computeInt32Size(9, areaMask_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +206,9 @@ public final class QueryFilterOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AREA_MASK_FIELD_NUMBER;
+      hash = (37 * hash) + AREAMASK_FIELD_NUMBER;
       hash = (53 * hash) + getAreaMask();
-      hash = (37 * hash) + TYPE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TYPEID_FIELD_NUMBER;
       hash = (53 * hash) + getTypeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -460,7 +460,7 @@ public final class QueryFilterOuterClass {
 
       private int areaMask_ ;
       /**
-       * <code>int32 area_mask = 4;</code>
+       * <code>int32 areaMask = 9;</code>
        * @return The areaMask.
        */
       @java.lang.Override
@@ -468,7 +468,7 @@ public final class QueryFilterOuterClass {
         return areaMask_;
       }
       /**
-       * <code>int32 area_mask = 4;</code>
+       * <code>int32 areaMask = 9;</code>
        * @param value The areaMask to set.
        * @return This builder for chaining.
        */
@@ -479,7 +479,7 @@ public final class QueryFilterOuterClass {
         return this;
       }
       /**
-       * <code>int32 area_mask = 4;</code>
+       * <code>int32 areaMask = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaMask() {
@@ -491,7 +491,7 @@ public final class QueryFilterOuterClass {
 
       private int typeId_ ;
       /**
-       * <code>int32 type_id = 3;</code>
+       * <code>int32 typeId = 3;</code>
        * @return The typeId.
        */
       @java.lang.Override
@@ -499,7 +499,7 @@ public final class QueryFilterOuterClass {
         return typeId_;
       }
       /**
-       * <code>int32 type_id = 3;</code>
+       * <code>int32 typeId = 3;</code>
        * @param value The typeId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +510,7 @@ public final class QueryFilterOuterClass {
         return this;
       }
       /**
-       * <code>int32 type_id = 3;</code>
+       * <code>int32 typeId = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTypeId() {
@@ -586,9 +586,9 @@ public final class QueryFilterOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021QueryFilter.proto\"1\n\013QueryFilter\022\021\n\tar" +
-      "ea_mask\030\004 \001(\005\022\017\n\007type_id\030\003 \001(\005B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\n\021QueryFilter.proto\"/\n\013QueryFilter\022\020\n\010ar" +
+      "eaMask\030\t \001(\005\022\016\n\006typeId\030\003 \001(\005B\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

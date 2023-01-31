@@ -34,32 +34,22 @@ public final class AbilityScalarValueEntryOuterClass {
     emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getKeyOrBuilder();
 
     /**
-     * <code>.AbilityScalarType value_type = 2;</code>
+     * <code>.AbilityScalarType valueType = 2;</code>
      * @return The enum numeric value on the wire for valueType.
      */
     int getValueTypeValue();
     /**
-     * <code>.AbilityScalarType value_type = 2;</code>
+     * <code>.AbilityScalarType valueType = 2;</code>
      * @return The valueType.
      */
     emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType getValueType();
 
     /**
      * <code>float float_value = 3;</code>
-     * @return Whether the floatValue field is set.
-     */
-    boolean hasFloatValue();
-    /**
-     * <code>float float_value = 3;</code>
      * @return The floatValue.
      */
     float getFloatValue();
 
-    /**
-     * <code>string string_value = 4;</code>
-     * @return Whether the stringValue field is set.
-     */
-    boolean hasStringValue();
     /**
      * <code>string string_value = 4;</code>
      * @return The stringValue.
@@ -74,20 +64,10 @@ public final class AbilityScalarValueEntryOuterClass {
 
     /**
      * <code>int32 int_value = 5;</code>
-     * @return Whether the intValue field is set.
-     */
-    boolean hasIntValue();
-    /**
-     * <code>int32 int_value = 5;</code>
      * @return The intValue.
      */
     int getIntValue();
 
-    /**
-     * <code>uint32 uint_value = 6;</code>
-     * @return Whether the uintValue field is set.
-     */
-    boolean hasUintValue();
     /**
      * <code>uint32 uint_value = 6;</code>
      * @return The uintValue.
@@ -285,17 +265,17 @@ public final class AbilityScalarValueEntryOuterClass {
       return getKey();
     }
 
-    public static final int VALUE_TYPE_FIELD_NUMBER = 2;
+    public static final int VALUETYPE_FIELD_NUMBER = 2;
     private int valueType_;
     /**
-     * <code>.AbilityScalarType value_type = 2;</code>
+     * <code>.AbilityScalarType valueType = 2;</code>
      * @return The enum numeric value on the wire for valueType.
      */
     @java.lang.Override public int getValueTypeValue() {
       return valueType_;
     }
     /**
-     * <code>.AbilityScalarType value_type = 2;</code>
+     * <code>.AbilityScalarType valueType = 2;</code>
      * @return The valueType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType getValueType() {
@@ -305,14 +285,6 @@ public final class AbilityScalarValueEntryOuterClass {
     }
 
     public static final int FLOAT_VALUE_FIELD_NUMBER = 3;
-    /**
-     * <code>float float_value = 3;</code>
-     * @return Whether the floatValue field is set.
-     */
-    @java.lang.Override
-    public boolean hasFloatValue() {
-      return valueCase_ == 3;
-    }
     /**
      * <code>float float_value = 3;</code>
      * @return The floatValue.
@@ -326,13 +298,6 @@ public final class AbilityScalarValueEntryOuterClass {
     }
 
     public static final int STRING_VALUE_FIELD_NUMBER = 4;
-    /**
-     * <code>string string_value = 4;</code>
-     * @return Whether the stringValue field is set.
-     */
-    public boolean hasStringValue() {
-      return valueCase_ == 4;
-    }
     /**
      * <code>string string_value = 4;</code>
      * @return The stringValue.
@@ -380,14 +345,6 @@ public final class AbilityScalarValueEntryOuterClass {
     public static final int INT_VALUE_FIELD_NUMBER = 5;
     /**
      * <code>int32 int_value = 5;</code>
-     * @return Whether the intValue field is set.
-     */
-    @java.lang.Override
-    public boolean hasIntValue() {
-      return valueCase_ == 5;
-    }
-    /**
-     * <code>int32 int_value = 5;</code>
      * @return The intValue.
      */
     @java.lang.Override
@@ -399,14 +356,6 @@ public final class AbilityScalarValueEntryOuterClass {
     }
 
     public static final int UINT_VALUE_FIELD_NUMBER = 6;
-    /**
-     * <code>uint32 uint_value = 6;</code>
-     * @return Whether the uintValue field is set.
-     */
-    @java.lang.Override
-    public boolean hasUintValue() {
-      return valueCase_ == 6;
-    }
     /**
      * <code>uint32 uint_value = 6;</code>
      * @return The uintValue.
@@ -547,7 +496,7 @@ public final class AbilityScalarValueEntryOuterClass {
         hash = (37 * hash) + KEY_FIELD_NUMBER;
         hash = (53 * hash) + getKey().hashCode();
       }
-      hash = (37 * hash) + VALUE_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + VALUETYPE_FIELD_NUMBER;
       hash = (53 * hash) + valueType_;
       switch (valueCase_) {
         case 3:
@@ -1000,14 +949,14 @@ public final class AbilityScalarValueEntryOuterClass {
 
       private int valueType_ = 0;
       /**
-       * <code>.AbilityScalarType value_type = 2;</code>
+       * <code>.AbilityScalarType valueType = 2;</code>
        * @return The enum numeric value on the wire for valueType.
        */
       @java.lang.Override public int getValueTypeValue() {
         return valueType_;
       }
       /**
-       * <code>.AbilityScalarType value_type = 2;</code>
+       * <code>.AbilityScalarType valueType = 2;</code>
        * @param value The enum numeric value on the wire for valueType to set.
        * @return This builder for chaining.
        */
@@ -1018,7 +967,7 @@ public final class AbilityScalarValueEntryOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScalarType value_type = 2;</code>
+       * <code>.AbilityScalarType valueType = 2;</code>
        * @return The valueType.
        */
       @java.lang.Override
@@ -1028,7 +977,7 @@ public final class AbilityScalarValueEntryOuterClass {
         return result == null ? emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AbilityScalarType value_type = 2;</code>
+       * <code>.AbilityScalarType valueType = 2;</code>
        * @param value The valueType to set.
        * @return This builder for chaining.
        */
@@ -1042,7 +991,7 @@ public final class AbilityScalarValueEntryOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScalarType value_type = 2;</code>
+       * <code>.AbilityScalarType valueType = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearValueType() {
@@ -1052,13 +1001,6 @@ public final class AbilityScalarValueEntryOuterClass {
         return this;
       }
 
-      /**
-       * <code>float float_value = 3;</code>
-       * @return Whether the floatValue field is set.
-       */
-      public boolean hasFloatValue() {
-        return valueCase_ == 3;
-      }
       /**
        * <code>float float_value = 3;</code>
        * @return The floatValue.
@@ -1093,14 +1035,6 @@ public final class AbilityScalarValueEntryOuterClass {
         return this;
       }
 
-      /**
-       * <code>string string_value = 4;</code>
-       * @return Whether the stringValue field is set.
-       */
-      @java.lang.Override
-      public boolean hasStringValue() {
-        return valueCase_ == 4;
-      }
       /**
        * <code>string string_value = 4;</code>
        * @return The stringValue.
@@ -1192,13 +1126,6 @@ public final class AbilityScalarValueEntryOuterClass {
 
       /**
        * <code>int32 int_value = 5;</code>
-       * @return Whether the intValue field is set.
-       */
-      public boolean hasIntValue() {
-        return valueCase_ == 5;
-      }
-      /**
-       * <code>int32 int_value = 5;</code>
        * @return The intValue.
        */
       public int getIntValue() {
@@ -1231,13 +1158,6 @@ public final class AbilityScalarValueEntryOuterClass {
         return this;
       }
 
-      /**
-       * <code>uint32 uint_value = 6;</code>
-       * @return Whether the uintValue field is set.
-       */
-      public boolean hasUintValue() {
-        return valueCase_ == 6;
-      }
       /**
        * <code>uint32 uint_value = 6;</code>
        * @return The uintValue.
@@ -1338,20 +1258,20 @@ public final class AbilityScalarValueEntryOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035AbilityScalarValueEntry.proto\032\027Ability" +
-      "ScalarType.proto\032\023AbilityString.proto\"\301\001" +
+      "\n\035AbilityScalarValueEntry.proto\032\023Ability" +
+      "String.proto\032\027AbilityScalarType.proto\"\300\001" +
       "\n\027AbilityScalarValueEntry\022\033\n\003key\030\001 \001(\0132\016" +
-      ".AbilityString\022&\n\nvalue_type\030\002 \001(\0162\022.Abi" +
-      "lityScalarType\022\025\n\013float_value\030\003 \001(\002H\000\022\026\n" +
-      "\014string_value\030\004 \001(\tH\000\022\023\n\tint_value\030\005 \001(\005" +
-      "H\000\022\024\n\nuint_value\030\006 \001(\rH\000B\007\n\005valueB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      ".AbilityString\022%\n\tvalueType\030\002 \001(\0162\022.Abil" +
+      "ityScalarType\022\025\n\013float_value\030\003 \001(\002H\000\022\026\n\014" +
+      "string_value\030\004 \001(\tH\000\022\023\n\tint_value\030\005 \001(\005H" +
+      "\000\022\024\n\nuint_value\030\006 \001(\rH\000B\007\n\005valueB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor(),
         });
     internal_static_AbilityScalarValueEntry_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1359,8 +1279,8 @@ public final class AbilityScalarValueEntryOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityScalarValueEntry_descriptor,
         new java.lang.String[] { "Key", "ValueType", "FloatValue", "StringValue", "IntValue", "UintValue", "Value", });
-    emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

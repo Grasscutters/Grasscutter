@@ -19,42 +19,42 @@ public final class AvatarDieAnimationEndReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 die_guid = 13;</code>
+     * <code>uint64 dieGuid = 7;</code>
      * @return The dieGuid.
      */
     long getDieGuid();
 
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>uint32 skillId = 4;</code>
+     * @return The skillId.
+     */
+    int getSkillId();
+
+    /**
+     * <code>.Vector rebornPos = 10;</code>
      * @return Whether the rebornPos field is set.
      */
     boolean hasRebornPos();
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>.Vector rebornPos = 10;</code>
      * @return The rebornPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getRebornPos();
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>.Vector rebornPos = 10;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRebornPosOrBuilder();
-
-    /**
-     * <code>uint32 skill_id = 9;</code>
-     * @return The skillId.
-     */
-    int getSkillId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1695;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum BBHLLEDPODB {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1652;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code AvatarDieAnimationEndReq}
@@ -101,17 +101,17 @@ public final class AvatarDieAnimationEndReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 32: {
 
               skillId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 56: {
 
               dieGuid_ = input.readUInt64();
               break;
             }
-            case 114: {
+            case 82: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rebornPos_ != null) {
                 subBuilder = rebornPos_.toBuilder();
@@ -156,10 +156,10 @@ public final class AvatarDieAnimationEndReqOuterClass {
               emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq.class, emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq.Builder.class);
     }
 
-    public static final int DIE_GUID_FIELD_NUMBER = 13;
+    public static final int DIEGUID_FIELD_NUMBER = 7;
     private long dieGuid_;
     /**
-     * <code>uint64 die_guid = 13;</code>
+     * <code>uint64 dieGuid = 7;</code>
      * @return The dieGuid.
      */
     @java.lang.Override
@@ -167,10 +167,21 @@ public final class AvatarDieAnimationEndReqOuterClass {
       return dieGuid_;
     }
 
-    public static final int REBORN_POS_FIELD_NUMBER = 14;
+    public static final int SKILLID_FIELD_NUMBER = 4;
+    private int skillId_;
+    /**
+     * <code>uint32 skillId = 4;</code>
+     * @return The skillId.
+     */
+    @java.lang.Override
+    public int getSkillId() {
+      return skillId_;
+    }
+
+    public static final int REBORNPOS_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rebornPos_;
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>.Vector rebornPos = 10;</code>
      * @return Whether the rebornPos field is set.
      */
     @java.lang.Override
@@ -178,7 +189,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
       return rebornPos_ != null;
     }
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>.Vector rebornPos = 10;</code>
      * @return The rebornPos.
      */
     @java.lang.Override
@@ -186,22 +197,11 @@ public final class AvatarDieAnimationEndReqOuterClass {
       return rebornPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rebornPos_;
     }
     /**
-     * <code>.Vector reborn_pos = 14;</code>
+     * <code>.Vector rebornPos = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRebornPosOrBuilder() {
       return getRebornPos();
-    }
-
-    public static final int SKILL_ID_FIELD_NUMBER = 9;
-    private int skillId_;
-    /**
-     * <code>uint32 skill_id = 9;</code>
-     * @return The skillId.
-     */
-    @java.lang.Override
-    public int getSkillId() {
-      return skillId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -219,13 +219,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (skillId_ != 0) {
-        output.writeUInt32(9, skillId_);
+        output.writeUInt32(4, skillId_);
       }
       if (dieGuid_ != 0L) {
-        output.writeUInt64(13, dieGuid_);
+        output.writeUInt64(7, dieGuid_);
       }
       if (rebornPos_ != null) {
-        output.writeMessage(14, getRebornPos());
+        output.writeMessage(10, getRebornPos());
       }
       unknownFields.writeTo(output);
     }
@@ -238,15 +238,15 @@ public final class AvatarDieAnimationEndReqOuterClass {
       size = 0;
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, skillId_);
+          .computeUInt32Size(4, skillId_);
       }
       if (dieGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, dieGuid_);
+          .computeUInt64Size(7, dieGuid_);
       }
       if (rebornPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getRebornPos());
+          .computeMessageSize(10, getRebornPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -265,13 +265,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
 
       if (getDieGuid()
           != other.getDieGuid()) return false;
+      if (getSkillId()
+          != other.getSkillId()) return false;
       if (hasRebornPos() != other.hasRebornPos()) return false;
       if (hasRebornPos()) {
         if (!getRebornPos()
             .equals(other.getRebornPos())) return false;
       }
-      if (getSkillId()
-          != other.getSkillId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -283,15 +283,15 @@ public final class AvatarDieAnimationEndReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIE_GUID_FIELD_NUMBER;
+      hash = (37 * hash) + DIEGUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDieGuid());
+      hash = (37 * hash) + SKILLID_FIELD_NUMBER;
+      hash = (53 * hash) + getSkillId();
       if (hasRebornPos()) {
-        hash = (37 * hash) + REBORN_POS_FIELD_NUMBER;
+        hash = (37 * hash) + REBORNPOS_FIELD_NUMBER;
         hash = (53 * hash) + getRebornPos().hashCode();
       }
-      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSkillId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -389,14 +389,14 @@ public final class AvatarDieAnimationEndReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1695;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum BBHLLEDPODB {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1652;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code AvatarDieAnimationEndReq}
@@ -438,14 +438,14 @@ public final class AvatarDieAnimationEndReqOuterClass {
         super.clear();
         dieGuid_ = 0L;
 
+        skillId_ = 0;
+
         if (rebornPosBuilder_ == null) {
           rebornPos_ = null;
         } else {
           rebornPos_ = null;
           rebornPosBuilder_ = null;
         }
-        skillId_ = 0;
-
         return this;
       }
 
@@ -473,12 +473,12 @@ public final class AvatarDieAnimationEndReqOuterClass {
       public emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq buildPartial() {
         emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq result = new emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq(this);
         result.dieGuid_ = dieGuid_;
+        result.skillId_ = skillId_;
         if (rebornPosBuilder_ == null) {
           result.rebornPos_ = rebornPos_;
         } else {
           result.rebornPos_ = rebornPosBuilder_.build();
         }
-        result.skillId_ = skillId_;
         onBuilt();
         return result;
       }
@@ -530,11 +530,11 @@ public final class AvatarDieAnimationEndReqOuterClass {
         if (other.getDieGuid() != 0L) {
           setDieGuid(other.getDieGuid());
         }
-        if (other.hasRebornPos()) {
-          mergeRebornPos(other.getRebornPos());
-        }
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
+        }
+        if (other.hasRebornPos()) {
+          mergeRebornPos(other.getRebornPos());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -567,7 +567,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
 
       private long dieGuid_ ;
       /**
-       * <code>uint64 die_guid = 13;</code>
+       * <code>uint64 dieGuid = 7;</code>
        * @return The dieGuid.
        */
       @java.lang.Override
@@ -575,7 +575,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return dieGuid_;
       }
       /**
-       * <code>uint64 die_guid = 13;</code>
+       * <code>uint64 dieGuid = 7;</code>
        * @param value The dieGuid to set.
        * @return This builder for chaining.
        */
@@ -586,7 +586,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 die_guid = 13;</code>
+       * <code>uint64 dieGuid = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearDieGuid() {
@@ -596,18 +596,49 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
 
+      private int skillId_ ;
+      /**
+       * <code>uint32 skillId = 4;</code>
+       * @return The skillId.
+       */
+      @java.lang.Override
+      public int getSkillId() {
+        return skillId_;
+      }
+      /**
+       * <code>uint32 skillId = 4;</code>
+       * @param value The skillId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkillId(int value) {
+        
+        skillId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 skillId = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSkillId() {
+        
+        skillId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector rebornPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rebornPosBuilder_;
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        * @return Whether the rebornPos field is set.
        */
       public boolean hasRebornPos() {
         return rebornPosBuilder_ != null || rebornPos_ != null;
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        * @return The rebornPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getRebornPos() {
@@ -618,7 +649,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         }
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public Builder setRebornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (rebornPosBuilder_ == null) {
@@ -634,7 +665,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public Builder setRebornPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -648,7 +679,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public Builder mergeRebornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (rebornPosBuilder_ == null) {
@@ -666,7 +697,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public Builder clearRebornPos() {
         if (rebornPosBuilder_ == null) {
@@ -680,7 +711,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRebornPosBuilder() {
         
@@ -688,7 +719,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         return getRebornPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRebornPosOrBuilder() {
         if (rebornPosBuilder_ != null) {
@@ -699,7 +730,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
         }
       }
       /**
-       * <code>.Vector reborn_pos = 14;</code>
+       * <code>.Vector rebornPos = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -713,37 +744,6 @@ public final class AvatarDieAnimationEndReqOuterClass {
           rebornPos_ = null;
         }
         return rebornPosBuilder_;
-      }
-
-      private int skillId_ ;
-      /**
-       * <code>uint32 skill_id = 9;</code>
-       * @return The skillId.
-       */
-      @java.lang.Override
-      public int getSkillId() {
-        return skillId_;
-      }
-      /**
-       * <code>uint32 skill_id = 9;</code>
-       * @param value The skillId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSkillId(int value) {
-        
-        skillId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 skill_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSkillId() {
-        
-        skillId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -813,10 +813,10 @@ public final class AvatarDieAnimationEndReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036AvatarDieAnimationEndReq.proto\032\014Vector" +
-      ".proto\"[\n\030AvatarDieAnimationEndReq\022\020\n\010di" +
-      "e_guid\030\r \001(\004\022\033\n\nreborn_pos\030\016 \001(\0132\007.Vecto" +
-      "r\022\020\n\010skill_id\030\t \001(\rB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      ".proto\"X\n\030AvatarDieAnimationEndReq\022\017\n\007di" +
+      "eGuid\030\007 \001(\004\022\017\n\007skillId\030\004 \001(\r\022\032\n\trebornPo" +
+      "s\030\n \001(\0132\007.VectorB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -828,7 +828,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
     internal_static_AvatarDieAnimationEndReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarDieAnimationEndReq_descriptor,
-        new java.lang.String[] { "DieGuid", "RebornPos", "SkillId", });
+        new java.lang.String[] { "DieGuid", "SkillId", "RebornPos", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

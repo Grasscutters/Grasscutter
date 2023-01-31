@@ -19,7 +19,7 @@ public final class MaterialDeleteInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool has_delete_config = 1;</code>
+     * <code>bool hasDeleteConfig = 1;</code>
      * @return The hasDeleteConfig.
      */
     boolean getHasDeleteConfig();
@@ -200,11 +200,11 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       int getDeleteTimeNumMapCount();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       boolean containsDeleteTimeNumMap(
           int key);
@@ -215,26 +215,26 @@ public final class MaterialDeleteInfoOuterClass {
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMapMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       int getDeleteTimeNumMapOrDefault(
           int key,
           int defaultValue);
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       int getDeleteTimeNumMapOrThrow(
           int key);
 
       /**
-       * <code>uint32 config_count_down_time = 2;</code>
+       * <code>uint32 configCountDownTime = 2;</code>
        * @return The configCountDownTime.
        */
       int getConfigCountDownTime();
@@ -347,7 +347,7 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder.class);
       }
 
-      public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
+      public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
       private static final class DeleteTimeNumMapDefaultEntryHolder {
         static final com.google.protobuf.MapEntry<
             java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -374,7 +374,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       @java.lang.Override
@@ -392,7 +392,7 @@ public final class MaterialDeleteInfoOuterClass {
         return getDeleteTimeNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -400,7 +400,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -413,7 +413,7 @@ public final class MaterialDeleteInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -428,10 +428,10 @@ public final class MaterialDeleteInfoOuterClass {
         return map.get(key);
       }
 
-      public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 2;
+      public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 2;
       private int configCountDownTime_;
       /**
-       * <code>uint32 config_count_down_time = 2;</code>
+       * <code>uint32 configCountDownTime = 2;</code>
        * @return The configCountDownTime.
        */
       @java.lang.Override
@@ -516,10 +516,10 @@ public final class MaterialDeleteInfoOuterClass {
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         if (!internalGetDeleteTimeNumMap().getMap().isEmpty()) {
-          hash = (37 * hash) + DELETE_TIME_NUM_MAP_FIELD_NUMBER;
+          hash = (37 * hash) + DELETETIMENUMMAP_FIELD_NUMBER;
           hash = (53 * hash) + internalGetDeleteTimeNumMap().hashCode();
         }
-        hash = (37 * hash) + CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIGCOUNTDOWNTIME_FIELD_NUMBER;
         hash = (53 * hash) + getConfigCountDownTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -819,7 +819,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap().size();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         @java.lang.Override
@@ -837,7 +837,7 @@ public final class MaterialDeleteInfoOuterClass {
           return getDeleteTimeNumMapMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -845,7 +845,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -858,7 +858,7 @@ public final class MaterialDeleteInfoOuterClass {
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -879,7 +879,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         public Builder removeDeleteTimeNumMap(
@@ -898,7 +898,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetMutableDeleteTimeNumMap().getMutableMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         public Builder putDeleteTimeNumMap(
             int key,
@@ -910,7 +910,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         public Builder putAllDeleteTimeNumMap(
@@ -922,7 +922,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configCountDownTime_ ;
         /**
-         * <code>uint32 config_count_down_time = 2;</code>
+         * <code>uint32 configCountDownTime = 2;</code>
          * @return The configCountDownTime.
          */
         @java.lang.Override
@@ -930,7 +930,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configCountDownTime_;
         }
         /**
-         * <code>uint32 config_count_down_time = 2;</code>
+         * <code>uint32 configCountDownTime = 2;</code>
          * @param value The configCountDownTime to set.
          * @return This builder for chaining.
          */
@@ -941,7 +941,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 config_count_down_time = 2;</code>
+         * <code>uint32 configCountDownTime = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigCountDownTime() {
@@ -1008,7 +1008,7 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 delete_time = 1;</code>
+       * <code>uint32 deleteTime = 1;</code>
        * @return The deleteTime.
        */
       int getDeleteTime();
@@ -1095,10 +1095,10 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder.class);
       }
 
-      public static final int DELETE_TIME_FIELD_NUMBER = 1;
+      public static final int DELETETIME_FIELD_NUMBER = 1;
       private int deleteTime_;
       /**
-       * <code>uint32 delete_time = 1;</code>
+       * <code>uint32 deleteTime = 1;</code>
        * @return The deleteTime.
        */
       @java.lang.Override
@@ -1164,7 +1164,7 @@ public final class MaterialDeleteInfoOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
+        hash = (37 * hash) + DELETETIME_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -1410,7 +1410,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int deleteTime_ ;
         /**
-         * <code>uint32 delete_time = 1;</code>
+         * <code>uint32 deleteTime = 1;</code>
          * @return The deleteTime.
          */
         @java.lang.Override
@@ -1418,7 +1418,7 @@ public final class MaterialDeleteInfoOuterClass {
           return deleteTime_;
         }
         /**
-         * <code>uint32 delete_time = 1;</code>
+         * <code>uint32 deleteTime = 1;</code>
          * @param value The deleteTime to set.
          * @return This builder for chaining.
          */
@@ -1429,7 +1429,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 delete_time = 1;</code>
+         * <code>uint32 deleteTime = 1;</code>
          * @return This builder for chaining.
          */
         public Builder clearDeleteTime() {
@@ -1496,11 +1496,11 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       int getDeleteTimeNumMapCount();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       boolean containsDeleteTimeNumMap(
           int key);
@@ -1511,32 +1511,32 @@ public final class MaterialDeleteInfoOuterClass {
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMapMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       int getDeleteTimeNumMapOrDefault(
           int key,
           int defaultValue);
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       int getDeleteTimeNumMapOrThrow(
           int key);
 
       /**
-       * <code>uint32 config_delay_week = 2;</code>
+       * <code>uint32 configDelayWeek = 2;</code>
        * @return The configDelayWeek.
        */
       int getConfigDelayWeek();
 
       /**
-       * <code>uint32 config_count_down_time = 3;</code>
+       * <code>uint32 configCountDownTime = 3;</code>
        * @return The configCountDownTime.
        */
       int getConfigCountDownTime();
@@ -1654,7 +1654,7 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder.class);
       }
 
-      public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
+      public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
       private static final class DeleteTimeNumMapDefaultEntryHolder {
         static final com.google.protobuf.MapEntry<
             java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -1681,7 +1681,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
 
       @java.lang.Override
@@ -1699,7 +1699,7 @@ public final class MaterialDeleteInfoOuterClass {
         return getDeleteTimeNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -1707,7 +1707,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -1720,7 +1720,7 @@ public final class MaterialDeleteInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
        */
       @java.lang.Override
 
@@ -1735,10 +1735,10 @@ public final class MaterialDeleteInfoOuterClass {
         return map.get(key);
       }
 
-      public static final int CONFIG_DELAY_WEEK_FIELD_NUMBER = 2;
+      public static final int CONFIGDELAYWEEK_FIELD_NUMBER = 2;
       private int configDelayWeek_;
       /**
-       * <code>uint32 config_delay_week = 2;</code>
+       * <code>uint32 configDelayWeek = 2;</code>
        * @return The configDelayWeek.
        */
       @java.lang.Override
@@ -1746,10 +1746,10 @@ public final class MaterialDeleteInfoOuterClass {
         return configDelayWeek_;
       }
 
-      public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 3;
+      public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 3;
       private int configCountDownTime_;
       /**
-       * <code>uint32 config_count_down_time = 3;</code>
+       * <code>uint32 configCountDownTime = 3;</code>
        * @return The configCountDownTime.
        */
       @java.lang.Override
@@ -1843,12 +1843,12 @@ public final class MaterialDeleteInfoOuterClass {
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         if (!internalGetDeleteTimeNumMap().getMap().isEmpty()) {
-          hash = (37 * hash) + DELETE_TIME_NUM_MAP_FIELD_NUMBER;
+          hash = (37 * hash) + DELETETIMENUMMAP_FIELD_NUMBER;
           hash = (53 * hash) + internalGetDeleteTimeNumMap().hashCode();
         }
-        hash = (37 * hash) + CONFIG_DELAY_WEEK_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIGDELAYWEEK_FIELD_NUMBER;
         hash = (53 * hash) + getConfigDelayWeek();
-        hash = (37 * hash) + CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIGCOUNTDOWNTIME_FIELD_NUMBER;
         hash = (53 * hash) + getConfigCountDownTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -2154,7 +2154,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap().size();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         @java.lang.Override
@@ -2172,7 +2172,7 @@ public final class MaterialDeleteInfoOuterClass {
           return getDeleteTimeNumMapMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -2180,7 +2180,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -2193,7 +2193,7 @@ public final class MaterialDeleteInfoOuterClass {
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         @java.lang.Override
 
@@ -2214,7 +2214,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         public Builder removeDeleteTimeNumMap(
@@ -2233,7 +2233,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetMutableDeleteTimeNumMap().getMutableMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
         public Builder putDeleteTimeNumMap(
             int key,
@@ -2245,7 +2245,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
          */
 
         public Builder putAllDeleteTimeNumMap(
@@ -2257,7 +2257,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configDelayWeek_ ;
         /**
-         * <code>uint32 config_delay_week = 2;</code>
+         * <code>uint32 configDelayWeek = 2;</code>
          * @return The configDelayWeek.
          */
         @java.lang.Override
@@ -2265,7 +2265,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configDelayWeek_;
         }
         /**
-         * <code>uint32 config_delay_week = 2;</code>
+         * <code>uint32 configDelayWeek = 2;</code>
          * @param value The configDelayWeek to set.
          * @return This builder for chaining.
          */
@@ -2276,7 +2276,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 config_delay_week = 2;</code>
+         * <code>uint32 configDelayWeek = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigDelayWeek() {
@@ -2288,7 +2288,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configCountDownTime_ ;
         /**
-         * <code>uint32 config_count_down_time = 3;</code>
+         * <code>uint32 configCountDownTime = 3;</code>
          * @return The configCountDownTime.
          */
         @java.lang.Override
@@ -2296,7 +2296,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configCountDownTime_;
         }
         /**
-         * <code>uint32 config_count_down_time = 3;</code>
+         * <code>uint32 configCountDownTime = 3;</code>
          * @param value The configCountDownTime to set.
          * @return This builder for chaining.
          */
@@ -2307,7 +2307,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 config_count_down_time = 3;</code>
+         * <code>uint32 configCountDownTime = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigCountDownTime() {
@@ -2412,10 +2412,10 @@ public final class MaterialDeleteInfoOuterClass {
           deleteInfoCase_);
     }
 
-    public static final int HAS_DELETE_CONFIG_FIELD_NUMBER = 1;
+    public static final int HASDELETECONFIG_FIELD_NUMBER = 1;
     private boolean hasDeleteConfig_;
     /**
-     * <code>bool has_delete_config = 1;</code>
+     * <code>bool hasDeleteConfig = 1;</code>
      * @return The hasDeleteConfig.
      */
     @java.lang.Override
@@ -2612,7 +2612,7 @@ public final class MaterialDeleteInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HAS_DELETE_CONFIG_FIELD_NUMBER;
+      hash = (37 * hash) + HASDELETECONFIG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasDeleteConfig());
       switch (deleteInfoCase_) {
@@ -2931,7 +2931,7 @@ public final class MaterialDeleteInfoOuterClass {
 
       private boolean hasDeleteConfig_ ;
       /**
-       * <code>bool has_delete_config = 1;</code>
+       * <code>bool hasDeleteConfig = 1;</code>
        * @return The hasDeleteConfig.
        */
       @java.lang.Override
@@ -2939,7 +2939,7 @@ public final class MaterialDeleteInfoOuterClass {
         return hasDeleteConfig_;
       }
       /**
-       * <code>bool has_delete_config = 1;</code>
+       * <code>bool hasDeleteConfig = 1;</code>
        * @param value The hasDeleteConfig to set.
        * @return This builder for chaining.
        */
@@ -2950,7 +2950,7 @@ public final class MaterialDeleteInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool has_delete_config = 1;</code>
+       * <code>bool hasDeleteConfig = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasDeleteConfig() {
@@ -3474,27 +3474,26 @@ public final class MaterialDeleteInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030MaterialDeleteInfo.proto\"\357\005\n\022MaterialD" +
-      "eleteInfo\022\031\n\021has_delete_config\030\001 \001(\010\022@\n\021" +
-      "count_down_delete\030\002 \001(\0132#.MaterialDelete" +
-      "Info.CountDownDeleteH\000\0229\n\013date_delete\030\003 " +
-      "\001(\0132\".MaterialDeleteInfo.DateTimeDeleteH" +
-      "\000\022T\n\034delay_week_count_down_delete\030\004 \001(\0132" +
-      ",.MaterialDeleteInfo.DelayWeekCountDownD" +
-      "eleteH\000\032\302\001\n\017CountDownDelete\022V\n\023delete_ti" +
-      "me_num_map\030\001 \003(\01329.MaterialDeleteInfo.Co" +
-      "untDownDelete.DeleteTimeNumMapEntry\022\036\n\026c" +
-      "onfig_count_down_time\030\002 \001(\r\0327\n\025DeleteTim" +
-      "eNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r" +
-      ":\0028\001\032%\n\016DateTimeDelete\022\023\n\013delete_time\030\001 " +
-      "\001(\r\032\357\001\n\030DelayWeekCountDownDelete\022_\n\023dele" +
-      "te_time_num_map\030\001 \003(\0132B.MaterialDeleteIn" +
-      "fo.DelayWeekCountDownDelete.DeleteTimeNu" +
-      "mMapEntry\022\031\n\021config_delay_week\030\002 \001(\r\022\036\n\026" +
-      "config_count_down_time\030\003 \001(\r\0327\n\025DeleteTi" +
-      "meNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
-      "\r:\0028\001B\r\n\013delete_infoB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\030MaterialDeleteInfo.proto\"\336\005\n\022MaterialD" +
+      "eleteInfo\022\027\n\017hasDeleteConfig\030\001 \001(\010\022@\n\021co" +
+      "unt_down_delete\030\002 \001(\0132#.MaterialDeleteIn" +
+      "fo.CountDownDeleteH\000\0229\n\013date_delete\030\003 \001(" +
+      "\0132\".MaterialDeleteInfo.DateTimeDeleteH\000\022" +
+      "T\n\034delay_week_count_down_delete\030\004 \001(\0132,." +
+      "MaterialDeleteInfo.DelayWeekCountDownDel" +
+      "eteH\000\032\274\001\n\017CountDownDelete\022S\n\020deleteTimeN" +
+      "umMap\030\001 \003(\01329.MaterialDeleteInfo.CountDo" +
+      "wnDelete.DeleteTimeNumMapEntry\022\033\n\023config" +
+      "CountDownTime\030\002 \001(\r\0327\n\025DeleteTimeNumMapE" +
+      "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\032$\n\016" +
+      "DateTimeDelete\022\022\n\ndeleteTime\030\001 \001(\r\032\347\001\n\030D" +
+      "elayWeekCountDownDelete\022\\\n\020deleteTimeNum" +
+      "Map\030\001 \003(\0132B.MaterialDeleteInfo.DelayWeek" +
+      "CountDownDelete.DeleteTimeNumMapEntry\022\027\n" +
+      "\017configDelayWeek\030\002 \001(\r\022\033\n\023configCountDow" +
+      "nTime\030\003 \001(\r\0327\n\025DeleteTimeNumMapEntry\022\013\n\003" +
+      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\r\n\013delete_i" +
+      "nfoB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

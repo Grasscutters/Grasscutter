@@ -19,27 +19,27 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 apply_uid = 7;</code>
+     * <code>uint32 applyUid = 4;</code>
      * @return The applyUid.
      */
     int getApplyUid();
 
     /**
-     * <code>bool is_agreed = 12;</code>
+     * <code>bool isAgreed = 6;</code>
      * @return The isAgreed.
      */
     boolean getIsAgreed();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1827;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum CCMCDMIKHEK {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1819;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code PlayerApplyEnterMpResultReq}
@@ -86,12 +86,12 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 32: {
 
               applyUid_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 48: {
 
               isAgreed_ = input.readBool();
               break;
@@ -128,10 +128,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpResultReqOuterClass.PlayerApplyEnterMpResultReq.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultReqOuterClass.PlayerApplyEnterMpResultReq.Builder.class);
     }
 
-    public static final int APPLY_UID_FIELD_NUMBER = 7;
+    public static final int APPLYUID_FIELD_NUMBER = 4;
     private int applyUid_;
     /**
-     * <code>uint32 apply_uid = 7;</code>
+     * <code>uint32 applyUid = 4;</code>
      * @return The applyUid.
      */
     @java.lang.Override
@@ -139,10 +139,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       return applyUid_;
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 12;
+    public static final int ISAGREED_FIELD_NUMBER = 6;
     private boolean isAgreed_;
     /**
-     * <code>bool is_agreed = 12;</code>
+     * <code>bool isAgreed = 6;</code>
      * @return The isAgreed.
      */
     @java.lang.Override
@@ -165,10 +165,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (applyUid_ != 0) {
-        output.writeUInt32(7, applyUid_);
+        output.writeUInt32(4, applyUid_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(12, isAgreed_);
+        output.writeBool(6, isAgreed_);
       }
       unknownFields.writeTo(output);
     }
@@ -181,11 +181,11 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       size = 0;
       if (applyUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, applyUid_);
+          .computeUInt32Size(4, applyUid_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isAgreed_);
+          .computeBoolSize(6, isAgreed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,9 +217,9 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APPLY_UID_FIELD_NUMBER;
+      hash = (37 * hash) + APPLYUID_FIELD_NUMBER;
       hash = (53 * hash) + getApplyUid();
-      hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
+      hash = (37 * hash) + ISAGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -319,14 +319,14 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1827;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum CCMCDMIKHEK {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1819;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code PlayerApplyEnterMpResultReq}
@@ -483,7 +483,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
 
       private int applyUid_ ;
       /**
-       * <code>uint32 apply_uid = 7;</code>
+       * <code>uint32 applyUid = 4;</code>
        * @return The applyUid.
        */
       @java.lang.Override
@@ -491,7 +491,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return applyUid_;
       }
       /**
-       * <code>uint32 apply_uid = 7;</code>
+       * <code>uint32 applyUid = 4;</code>
        * @param value The applyUid to set.
        * @return This builder for chaining.
        */
@@ -502,7 +502,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 apply_uid = 7;</code>
+       * <code>uint32 applyUid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearApplyUid() {
@@ -514,7 +514,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
 
       private boolean isAgreed_ ;
       /**
-       * <code>bool is_agreed = 12;</code>
+       * <code>bool isAgreed = 6;</code>
        * @return The isAgreed.
        */
       @java.lang.Override
@@ -522,7 +522,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return isAgreed_;
       }
       /**
-       * <code>bool is_agreed = 12;</code>
+       * <code>bool isAgreed = 6;</code>
        * @param value The isAgreed to set.
        * @return This builder for chaining.
        */
@@ -533,7 +533,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_agreed = 12;</code>
+       * <code>bool isAgreed = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
@@ -609,10 +609,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!PlayerApplyEnterMpResultReq.proto\"C\n\033P" +
-      "layerApplyEnterMpResultReq\022\021\n\tapply_uid\030" +
-      "\007 \001(\r\022\021\n\tis_agreed\030\014 \001(\010B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n!PlayerApplyEnterMpResultReq.proto\"A\n\033P" +
+      "layerApplyEnterMpResultReq\022\020\n\010applyUid\030\004" +
+      " \001(\r\022\020\n\010isAgreed\030\006 \001(\010B\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

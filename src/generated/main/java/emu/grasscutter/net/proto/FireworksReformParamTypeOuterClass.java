@@ -40,9 +40,9 @@ public final class FireworksReformParamTypeOuterClass {
      */
     FIREWORKS_REFORM_PARAM_TYPE_DENSITY(4),
     /**
-     * <code>FIREWORKS_REFORM_PARAM_TYPE_ROTATION = 5;</code>
+     * <code>FIREWORKS_REFORM_PARAM_TYPE_Vector = 5;</code>
      */
-    FIREWORKS_REFORM_PARAM_TYPE_ROTATION(5),
+    FIREWORKS_REFORM_PARAM_TYPE_Vector(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -67,9 +67,9 @@ public final class FireworksReformParamTypeOuterClass {
      */
     public static final int FIREWORKS_REFORM_PARAM_TYPE_DENSITY_VALUE = 4;
     /**
-     * <code>FIREWORKS_REFORM_PARAM_TYPE_ROTATION = 5;</code>
+     * <code>FIREWORKS_REFORM_PARAM_TYPE_Vector = 5;</code>
      */
-    public static final int FIREWORKS_REFORM_PARAM_TYPE_ROTATION_VALUE = 5;
+    public static final int FIREWORKS_REFORM_PARAM_TYPE_Vector_VALUE = 5;
 
 
     public final int getNumber() {
@@ -101,7 +101,7 @@ public final class FireworksReformParamTypeOuterClass {
         case 2: return FIREWORKS_REFORM_PARAM_TYPE_HEIGHT;
         case 3: return FIREWORKS_REFORM_PARAM_TYPE_SIZE;
         case 4: return FIREWORKS_REFORM_PARAM_TYPE_DENSITY;
-        case 5: return FIREWORKS_REFORM_PARAM_TYPE_ROTATION;
+        case 5: return FIREWORKS_REFORM_PARAM_TYPE_Vector;
         default: return null;
       }
     }
@@ -167,15 +167,15 @@ public final class FireworksReformParamTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036FireworksReformParamType.proto*\210\002\n\030Fir" +
+      "\n\036FireworksReformParamType.proto*\206\002\n\030Fir" +
       "eworksReformParamType\022$\n FIREWORKS_REFOR" +
       "M_PARAM_TYPE_NONE\020\000\022%\n!FIREWORKS_REFORM_" +
       "PARAM_TYPE_COLOR\020\001\022&\n\"FIREWORKS_REFORM_P" +
       "ARAM_TYPE_HEIGHT\020\002\022$\n FIREWORKS_REFORM_P" +
       "ARAM_TYPE_SIZE\020\003\022\'\n#FIREWORKS_REFORM_PAR" +
-      "AM_TYPE_DENSITY\020\004\022(\n$FIREWORKS_REFORM_PA" +
-      "RAM_TYPE_ROTATION\020\005B\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "AM_TYPE_DENSITY\020\004\022&\n\"FIREWORKS_REFORM_PA" +
+      "RAM_TYPE_Vector\020\005B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

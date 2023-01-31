@@ -19,21 +19,21 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_auto_unlock_specific_equip = 8;</code>
+     * <code>bool isAutoUnlockSpecificEquip = 3;</code>
      * @return The isAutoUnlockSpecificEquip.
      */
     boolean getIsAutoUnlockSpecificEquip();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 602;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum CAHDIFFNDGH {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 689;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}
@@ -80,7 +80,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 24: {
 
               isAutoUnlockSpecificEquip_ = input.readBool();
               break;
@@ -117,10 +117,10 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
               emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipReqOuterClass.SetIsAutoUnlockSpecificEquipReq.class, emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipReqOuterClass.SetIsAutoUnlockSpecificEquipReq.Builder.class);
     }
 
-    public static final int IS_AUTO_UNLOCK_SPECIFIC_EQUIP_FIELD_NUMBER = 8;
+    public static final int ISAUTOUNLOCKSPECIFICEQUIP_FIELD_NUMBER = 3;
     private boolean isAutoUnlockSpecificEquip_;
     /**
-     * <code>bool is_auto_unlock_specific_equip = 8;</code>
+     * <code>bool isAutoUnlockSpecificEquip = 3;</code>
      * @return The isAutoUnlockSpecificEquip.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAutoUnlockSpecificEquip_ != false) {
-        output.writeBool(8, isAutoUnlockSpecificEquip_);
+        output.writeBool(3, isAutoUnlockSpecificEquip_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
       size = 0;
       if (isAutoUnlockSpecificEquip_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isAutoUnlockSpecificEquip_);
+          .computeBoolSize(3, isAutoUnlockSpecificEquip_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_AUTO_UNLOCK_SPECIFIC_EQUIP_FIELD_NUMBER;
+      hash = (37 * hash) + ISAUTOUNLOCKSPECIFICEQUIP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAutoUnlockSpecificEquip());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -286,14 +286,14 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 602;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum CAHDIFFNDGH {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 689;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}
@@ -444,7 +444,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
 
       private boolean isAutoUnlockSpecificEquip_ ;
       /**
-       * <code>bool is_auto_unlock_specific_equip = 8;</code>
+       * <code>bool isAutoUnlockSpecificEquip = 3;</code>
        * @return The isAutoUnlockSpecificEquip.
        */
       @java.lang.Override
@@ -452,7 +452,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
         return isAutoUnlockSpecificEquip_;
       }
       /**
-       * <code>bool is_auto_unlock_specific_equip = 8;</code>
+       * <code>bool isAutoUnlockSpecificEquip = 3;</code>
        * @param value The isAutoUnlockSpecificEquip to set.
        * @return This builder for chaining.
        */
@@ -463,7 +463,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_auto_unlock_specific_equip = 8;</code>
+       * <code>bool isAutoUnlockSpecificEquip = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAutoUnlockSpecificEquip() {
@@ -540,9 +540,9 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%SetIsAutoUnlockSpecificEquipReq.proto\"" +
-      "H\n\037SetIsAutoUnlockSpecificEquipReq\022%\n\035is" +
-      "_auto_unlock_specific_equip\030\010 \001(\010B\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "D\n\037SetIsAutoUnlockSpecificEquipReq\022!\n\031is" +
+      "AutoUnlockSpecificEquip\030\003 \001(\010B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

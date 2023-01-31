@@ -19,20 +19,20 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_avatar_index_id = 1;</code>
+     * <code>uint32 trialAvatarIndexId = 9;</code>
      * @return The trialAvatarIndexId.
      */
     int getTrialAvatarIndexId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2134;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum CIGCJMPBLBJ {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 2175;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code TrialAvatarFirstPassDungeonNotify}
@@ -79,7 +79,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 72: {
 
               trialAvatarIndexId_ = input.readUInt32();
               break;
@@ -116,10 +116,10 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
               emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.class, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder.class);
     }
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 1;
+    public static final int TRIALAVATARINDEXID_FIELD_NUMBER = 9;
     private int trialAvatarIndexId_;
     /**
-     * <code>uint32 trial_avatar_index_id = 1;</code>
+     * <code>uint32 trialAvatarIndexId = 9;</code>
      * @return The trialAvatarIndexId.
      */
     @java.lang.Override
@@ -142,7 +142,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(1, trialAvatarIndexId_);
+        output.writeUInt32(9, trialAvatarIndexId_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +155,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
       size = 0;
       if (trialAvatarIndexId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, trialAvatarIndexId_);
+          .computeUInt32Size(9, trialAvatarIndexId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -185,7 +185,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TRIALAVATARINDEXID_FIELD_NUMBER;
       hash = (53 * hash) + getTrialAvatarIndexId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -284,13 +284,13 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2134;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum CIGCJMPBLBJ {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 2175;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code TrialAvatarFirstPassDungeonNotify}
@@ -441,7 +441,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
 
       private int trialAvatarIndexId_ ;
       /**
-       * <code>uint32 trial_avatar_index_id = 1;</code>
+       * <code>uint32 trialAvatarIndexId = 9;</code>
        * @return The trialAvatarIndexId.
        */
       @java.lang.Override
@@ -449,7 +449,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
         return trialAvatarIndexId_;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 1;</code>
+       * <code>uint32 trialAvatarIndexId = 9;</code>
        * @param value The trialAvatarIndexId to set.
        * @return This builder for chaining.
        */
@@ -460,7 +460,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 1;</code>
+       * <code>uint32 trialAvatarIndexId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarIndexId() {
@@ -537,9 +537,9 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'TrialAvatarFirstPassDungeonNotify.prot" +
-      "o\"B\n!TrialAvatarFirstPassDungeonNotify\022\035" +
-      "\n\025trial_avatar_index_id\030\001 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "o\"?\n!TrialAvatarFirstPassDungeonNotify\022\032" +
+      "\n\022trialAvatarIndexId\030\t \001(\rB\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

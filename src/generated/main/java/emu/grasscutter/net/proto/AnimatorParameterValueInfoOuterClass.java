@@ -19,16 +19,11 @@ public final class AnimatorParameterValueInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 para_type = 1;</code>
+     * <code>uint32 paraType = 1;</code>
      * @return The paraType.
      */
     int getParaType();
 
-    /**
-     * <code>int32 int_val = 2;</code>
-     * @return Whether the intVal field is set.
-     */
-    boolean hasIntVal();
     /**
      * <code>int32 int_val = 2;</code>
      * @return The intVal.
@@ -37,20 +32,10 @@ public final class AnimatorParameterValueInfoOuterClass {
 
     /**
      * <code>float float_val = 3;</code>
-     * @return Whether the floatVal field is set.
-     */
-    boolean hasFloatVal();
-    /**
-     * <code>float float_val = 3;</code>
      * @return The floatVal.
      */
     float getFloatVal();
 
-    /**
-     * <code>bool bool_val = 4;</code>
-     * @return Whether the boolVal field is set.
-     */
-    boolean hasBoolVal();
     /**
      * <code>bool bool_val = 4;</code>
      * @return The boolVal.
@@ -199,10 +184,10 @@ public final class AnimatorParameterValueInfoOuterClass {
           paraValCase_);
     }
 
-    public static final int PARA_TYPE_FIELD_NUMBER = 1;
+    public static final int PARATYPE_FIELD_NUMBER = 1;
     private int paraType_;
     /**
-     * <code>uint32 para_type = 1;</code>
+     * <code>uint32 paraType = 1;</code>
      * @return The paraType.
      */
     @java.lang.Override
@@ -211,14 +196,6 @@ public final class AnimatorParameterValueInfoOuterClass {
     }
 
     public static final int INT_VAL_FIELD_NUMBER = 2;
-    /**
-     * <code>int32 int_val = 2;</code>
-     * @return Whether the intVal field is set.
-     */
-    @java.lang.Override
-    public boolean hasIntVal() {
-      return paraValCase_ == 2;
-    }
     /**
      * <code>int32 int_val = 2;</code>
      * @return The intVal.
@@ -234,14 +211,6 @@ public final class AnimatorParameterValueInfoOuterClass {
     public static final int FLOAT_VAL_FIELD_NUMBER = 3;
     /**
      * <code>float float_val = 3;</code>
-     * @return Whether the floatVal field is set.
-     */
-    @java.lang.Override
-    public boolean hasFloatVal() {
-      return paraValCase_ == 3;
-    }
-    /**
-     * <code>float float_val = 3;</code>
      * @return The floatVal.
      */
     @java.lang.Override
@@ -253,14 +222,6 @@ public final class AnimatorParameterValueInfoOuterClass {
     }
 
     public static final int BOOL_VAL_FIELD_NUMBER = 4;
-    /**
-     * <code>bool bool_val = 4;</code>
-     * @return Whether the boolVal field is set.
-     */
-    @java.lang.Override
-    public boolean hasBoolVal() {
-      return paraValCase_ == 4;
-    }
     /**
      * <code>bool bool_val = 4;</code>
      * @return The boolVal.
@@ -376,7 +337,7 @@ public final class AnimatorParameterValueInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARA_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + PARATYPE_FIELD_NUMBER;
       hash = (53 * hash) + getParaType();
       switch (paraValCase_) {
         case 2:
@@ -684,7 +645,7 @@ public final class AnimatorParameterValueInfoOuterClass {
 
       private int paraType_ ;
       /**
-       * <code>uint32 para_type = 1;</code>
+       * <code>uint32 paraType = 1;</code>
        * @return The paraType.
        */
       @java.lang.Override
@@ -692,7 +653,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         return paraType_;
       }
       /**
-       * <code>uint32 para_type = 1;</code>
+       * <code>uint32 paraType = 1;</code>
        * @param value The paraType to set.
        * @return This builder for chaining.
        */
@@ -703,7 +664,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 para_type = 1;</code>
+       * <code>uint32 paraType = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearParaType() {
@@ -713,13 +674,6 @@ public final class AnimatorParameterValueInfoOuterClass {
         return this;
       }
 
-      /**
-       * <code>int32 int_val = 2;</code>
-       * @return Whether the intVal field is set.
-       */
-      public boolean hasIntVal() {
-        return paraValCase_ == 2;
-      }
       /**
        * <code>int32 int_val = 2;</code>
        * @return The intVal.
@@ -756,13 +710,6 @@ public final class AnimatorParameterValueInfoOuterClass {
 
       /**
        * <code>float float_val = 3;</code>
-       * @return Whether the floatVal field is set.
-       */
-      public boolean hasFloatVal() {
-        return paraValCase_ == 3;
-      }
-      /**
-       * <code>float float_val = 3;</code>
        * @return The floatVal.
        */
       public float getFloatVal() {
@@ -795,13 +742,6 @@ public final class AnimatorParameterValueInfoOuterClass {
         return this;
       }
 
-      /**
-       * <code>bool bool_val = 4;</code>
-       * @return Whether the boolVal field is set.
-       */
-      public boolean hasBoolVal() {
-        return paraValCase_ == 4;
-      }
       /**
        * <code>bool bool_val = 4;</code>
        * @return The boolVal.
@@ -902,11 +842,11 @@ public final class AnimatorParameterValueInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n AnimatorParameterValueInfo.proto\"w\n\032An" +
-      "imatorParameterValueInfo\022\021\n\tpara_type\030\001 " +
-      "\001(\r\022\021\n\007int_val\030\002 \001(\005H\000\022\023\n\tfloat_val\030\003 \001(" +
-      "\002H\000\022\022\n\010bool_val\030\004 \001(\010H\000B\n\n\010para_valB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n AnimatorParameterValueInfo.proto\"v\n\032An" +
+      "imatorParameterValueInfo\022\020\n\010paraType\030\001 \001" +
+      "(\r\022\021\n\007int_val\030\002 \001(\005H\000\022\023\n\tfloat_val\030\003 \001(\002" +
+      "H\000\022\022\n\010bool_val\030\004 \001(\010H\000B\n\n\010para_valB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

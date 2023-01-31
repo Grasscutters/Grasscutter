@@ -19,20 +19,20 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes bin = 7;</code>
+     * <code>bytes bin = 6;</code>
      * @return The bin.
      */
     com.google.protobuf.ByteString getBin();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 99;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum DELIFMCIALG {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 16;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code RobotPushPlayerDataNotify}
@@ -80,7 +80,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 50: {
 
               bin_ = input.readBytes();
               break;
@@ -117,10 +117,10 @@ public final class RobotPushPlayerDataNotifyOuterClass {
               emu.grasscutter.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify.class, emu.grasscutter.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify.Builder.class);
     }
 
-    public static final int BIN_FIELD_NUMBER = 7;
+    public static final int BIN_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString bin_;
     /**
-     * <code>bytes bin = 7;</code>
+     * <code>bytes bin = 6;</code>
      * @return The bin.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!bin_.isEmpty()) {
-        output.writeBytes(7, bin_);
+        output.writeBytes(6, bin_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       size = 0;
       if (!bin_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, bin_);
+          .computeBytesSize(6, bin_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,13 +285,13 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 99;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum DELIFMCIALG {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 16;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code RobotPushPlayerDataNotify}
@@ -442,7 +442,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
 
       private com.google.protobuf.ByteString bin_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes bin = 7;</code>
+       * <code>bytes bin = 6;</code>
        * @return The bin.
        */
       @java.lang.Override
@@ -450,7 +450,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
         return bin_;
       }
       /**
-       * <code>bytes bin = 7;</code>
+       * <code>bytes bin = 6;</code>
        * @param value The bin to set.
        * @return This builder for chaining.
        */
@@ -464,7 +464,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bytes bin = 7;</code>
+       * <code>bytes bin = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearBin() {
@@ -540,13 +540,15 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\037RobotPushPlayerDataNotify.proto\"(\n\031Rob" +
-      "otPushPlayerDataNotify\022\013\n\003bin\030\007 \001(\014B\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\037RobotPushPlayerDataNotify.proto\032\013bytes" +
+      ".proto\"(\n\031RobotPushPlayerDataNotify\022\013\n\003b" +
+      "in\030\006 \001(\014B\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.Bytes.getDescriptor(),
         });
     internal_static_RobotPushPlayerDataNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -554,6 +556,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RobotPushPlayerDataNotify_descriptor,
         new java.lang.String[] { "Bin", });
+    emu.grasscutter.net.proto.Bytes.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

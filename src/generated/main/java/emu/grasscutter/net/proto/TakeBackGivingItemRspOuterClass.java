@@ -19,26 +19,29 @@ public final class TakeBackGivingItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 giving_id = 6;</code>
-     * @return The givingId.
+     * <code>.ContentAuditInfo info = 13;</code>
+     * @return Whether the info field is set.
      */
-    int getGivingId();
-
+    boolean hasInfo();
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>.ContentAuditInfo info = 13;</code>
+     * @return The info.
      */
-    int getRetcode();
+    emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo getInfo();
+    /**
+     * <code>.ContentAuditInfo info = 13;</code>
+     */
+    emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 196;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum MAOCBMICGGO {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 168;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code TakeBackGivingItemRsp}
@@ -85,14 +88,17 @@ public final class TakeBackGivingItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 106: {
+              emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
 
-              givingId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -127,26 +133,30 @@ public final class TakeBackGivingItemRspOuterClass {
               emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp.class, emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp.Builder.class);
     }
 
-    public static final int GIVING_ID_FIELD_NUMBER = 6;
-    private int givingId_;
+    public static final int INFO_FIELD_NUMBER = 13;
+    private emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo info_;
     /**
-     * <code>uint32 giving_id = 6;</code>
-     * @return The givingId.
+     * <code>.ContentAuditInfo info = 13;</code>
+     * @return Whether the info field is set.
      */
     @java.lang.Override
-    public int getGivingId() {
-      return givingId_;
+    public boolean hasInfo() {
+      return info_ != null;
     }
-
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>.ContentAuditInfo info = 13;</code>
+     * @return The info.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo getInfo() {
+      return info_ == null ? emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : info_;
+    }
+    /**
+     * <code>.ContentAuditInfo info = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder() {
+      return getInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -163,11 +173,8 @@ public final class TakeBackGivingItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (givingId_ != 0) {
-        output.writeUInt32(6, givingId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+      if (info_ != null) {
+        output.writeMessage(13, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -178,13 +185,9 @@ public final class TakeBackGivingItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (givingId_ != 0) {
+      if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, givingId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeMessageSize(13, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -201,10 +204,11 @@ public final class TakeBackGivingItemRspOuterClass {
       }
       emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp other = (emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp) obj;
 
-      if (getGivingId()
-          != other.getGivingId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -216,10 +220,10 @@ public final class TakeBackGivingItemRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GIVING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGivingId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -317,13 +321,13 @@ public final class TakeBackGivingItemRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 196;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum MAOCBMICGGO {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 168;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code TakeBackGivingItemRsp}
@@ -363,10 +367,12 @@ public final class TakeBackGivingItemRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        givingId_ = 0;
-
-        retcode_ = 0;
-
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
         return this;
       }
 
@@ -393,8 +399,11 @@ public final class TakeBackGivingItemRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp buildPartial() {
         emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp result = new emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp(this);
-        result.givingId_ = givingId_;
-        result.retcode_ = retcode_;
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -443,11 +452,8 @@ public final class TakeBackGivingItemRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp other) {
         if (other == emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp.getDefaultInstance()) return this;
-        if (other.getGivingId() != 0) {
-          setGivingId(other.getGivingId());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -478,66 +484,123 @@ public final class TakeBackGivingItemRspOuterClass {
         return this;
       }
 
-      private int givingId_ ;
+      private emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder> infoBuilder_;
       /**
-       * <code>uint32 giving_id = 6;</code>
-       * @return The givingId.
+       * <code>.ContentAuditInfo info = 13;</code>
+       * @return Whether the info field is set.
        */
-      @java.lang.Override
-      public int getGivingId() {
-        return givingId_;
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>uint32 giving_id = 6;</code>
-       * @param value The givingId to set.
-       * @return This builder for chaining.
+       * <code>.ContentAuditInfo info = 13;</code>
+       * @return The info.
        */
-      public Builder setGivingId(int value) {
-        
-        givingId_ = value;
-        onChanged();
-        return this;
+      public emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
       }
       /**
-       * <code>uint32 giving_id = 6;</code>
-       * @return This builder for chaining.
+       * <code>.ContentAuditInfo info = 13;</code>
        */
-      public Builder clearGivingId() {
-        
-        givingId_ = 0;
-        onChanged();
-        return this;
-      }
+      public Builder setInfo(emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
-       * @return This builder for chaining.
+       * <code>.ContentAuditInfo info = 13;</code>
        */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
+      public Builder setInfo(
+          emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <code>.ContentAuditInfo info = 13;</code>
+       */
+      public Builder mergeInfo(emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ContentAuditInfo info = 13;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ContentAuditInfo info = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ContentAuditInfo info = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <code>.ContentAuditInfo info = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo.Builder, emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -606,21 +669,23 @@ public final class TakeBackGivingItemRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033TakeBackGivingItemRsp.proto\";\n\025TakeBac" +
-      "kGivingItemRsp\022\021\n\tgiving_id\030\006 \001(\r\022\017\n\007ret" +
-      "code\030\017 \001(\005B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\033TakeBackGivingItemRsp.proto\032\026ContentAu" +
+      "ditInfo.proto\"8\n\025TakeBackGivingItemRsp\022\037" +
+      "\n\004info\030\r \001(\0132\021.ContentAuditInfoB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.ContentAuditInfoOuterClass.getDescriptor(),
         });
     internal_static_TakeBackGivingItemRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_TakeBackGivingItemRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeBackGivingItemRsp_descriptor,
-        new java.lang.String[] { "GivingId", "Retcode", });
+        new java.lang.String[] { "Info", });
+    emu.grasscutter.net.proto.ContentAuditInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

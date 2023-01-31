@@ -19,21 +19,21 @@ public final class FleurFairMusicGameStartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 music_basic_id = 5;</code>
+     * <code>uint32 musicBasicId = 8;</code>
      * @return The musicBasicId.
      */
     int getMusicBasicId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2070;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum PFDBOCEADKK {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 2105;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code FleurFairMusicGameStartReq}
@@ -80,7 +80,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
 
               musicBasicId_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class FleurFairMusicGameStartReqOuterClass {
               emu.grasscutter.net.proto.FleurFairMusicGameStartReqOuterClass.FleurFairMusicGameStartReq.class, emu.grasscutter.net.proto.FleurFairMusicGameStartReqOuterClass.FleurFairMusicGameStartReq.Builder.class);
     }
 
-    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 5;
+    public static final int MUSICBASICID_FIELD_NUMBER = 8;
     private int musicBasicId_;
     /**
-     * <code>uint32 music_basic_id = 5;</code>
+     * <code>uint32 musicBasicId = 8;</code>
      * @return The musicBasicId.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (musicBasicId_ != 0) {
-        output.writeUInt32(5, musicBasicId_);
+        output.writeUInt32(8, musicBasicId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
       size = 0;
       if (musicBasicId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, musicBasicId_);
+          .computeUInt32Size(8, musicBasicId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
+      hash = (37 * hash) + MUSICBASICID_FIELD_NUMBER;
       hash = (53 * hash) + getMusicBasicId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class FleurFairMusicGameStartReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2070;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum PFDBOCEADKK {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 2105;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code FleurFairMusicGameStartReq}
@@ -443,7 +443,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
 
       private int musicBasicId_ ;
       /**
-       * <code>uint32 music_basic_id = 5;</code>
+       * <code>uint32 musicBasicId = 8;</code>
        * @return The musicBasicId.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
         return musicBasicId_;
       }
       /**
-       * <code>uint32 music_basic_id = 5;</code>
+       * <code>uint32 musicBasicId = 8;</code>
        * @param value The musicBasicId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 music_basic_id = 5;</code>
+       * <code>uint32 musicBasicId = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearMusicBasicId() {
@@ -538,10 +538,10 @@ public final class FleurFairMusicGameStartReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n FleurFairMusicGameStartReq.proto\"4\n\032Fl" +
-      "eurFairMusicGameStartReq\022\026\n\016music_basic_" +
-      "id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
-      "roto3"
+      "\n FleurFairMusicGameStartReq.proto\"2\n\032Fl" +
+      "eurFairMusicGameStartReq\022\024\n\014musicBasicId" +
+      "\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

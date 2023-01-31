@@ -19,21 +19,21 @@ public final class PersonalSceneJumpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 point_id = 14;</code>
+     * <code>uint32 pointId = 13;</code>
      * @return The pointId.
      */
     int getPointId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 252;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum HPGMLJDPNEE {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 260;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code PersonalSceneJumpReq}
@@ -80,7 +80,7 @@ public final class PersonalSceneJumpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 104: {
 
               pointId_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class PersonalSceneJumpReqOuterClass {
               emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.class, emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.Builder.class);
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 14;
+    public static final int POINTID_FIELD_NUMBER = 13;
     private int pointId_;
     /**
-     * <code>uint32 point_id = 14;</code>
+     * <code>uint32 pointId = 13;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class PersonalSceneJumpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(14, pointId_);
+        output.writeUInt32(13, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class PersonalSceneJumpReqOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, pointId_);
+          .computeUInt32Size(13, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class PersonalSceneJumpReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
+      hash = (37 * hash) + POINTID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class PersonalSceneJumpReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 252;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum HPGMLJDPNEE {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 260;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code PersonalSceneJumpReq}
@@ -443,7 +443,7 @@ public final class PersonalSceneJumpReqOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 point_id = 14;</code>
+       * <code>uint32 pointId = 13;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class PersonalSceneJumpReqOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 point_id = 14;</code>
+       * <code>uint32 pointId = 13;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class PersonalSceneJumpReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 point_id = 14;</code>
+       * <code>uint32 pointId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -538,9 +538,9 @@ public final class PersonalSceneJumpReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032PersonalSceneJumpReq.proto\"(\n\024Personal" +
-      "SceneJumpReq\022\020\n\010point_id\030\016 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\n\032PersonalSceneJumpReq.proto\"\'\n\024Personal" +
+      "SceneJumpReq\022\017\n\007pointId\030\r \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,17 +19,17 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @return A list containing the avatarGuid.
      */
     java.util.List<java.lang.Long> getAvatarGuidList();
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @return The count of avatarGuid.
      */
     int getAvatarGuidCount();
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuid at the given index.
      */
@@ -37,14 +37,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1777;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum KEPEFJMFOHO {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1697;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionCallBackReq}
@@ -149,10 +149,10 @@ public final class AvatarExpeditionCallBackReqOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionCallBackReqOuterClass.AvatarExpeditionCallBackReq.class, emu.grasscutter.net.proto.AvatarExpeditionCallBackReqOuterClass.AvatarExpeditionCallBackReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+    public static final int AVATARGUID_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.LongList avatarGuid_;
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @return A list containing the avatarGuid.
      */
     @java.lang.Override
@@ -161,14 +161,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       return avatarGuid_;
     }
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @return The count of avatarGuid.
      */
     public int getAvatarGuidCount() {
       return avatarGuid_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid = 14;</code>
+     * <code>repeated uint64 avatarGuid = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarGuid at the given index.
      */
@@ -251,7 +251,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getAvatarGuidCount() > 0) {
-        hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
+        hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarGuidList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -351,14 +351,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1777;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum KEPEFJMFOHO {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1697;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionCallBackReq}
@@ -528,7 +528,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @return A list containing the avatarGuid.
        */
       public java.util.List<java.lang.Long>
@@ -537,14 +537,14 @@ public final class AvatarExpeditionCallBackReqOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuid_) : avatarGuid_;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @return The count of avatarGuid.
        */
       public int getAvatarGuidCount() {
         return avatarGuid_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @param index The index of the element to return.
        * @return The avatarGuid at the given index.
        */
@@ -552,7 +552,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return avatarGuid_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
@@ -565,7 +565,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @param value The avatarGuid to add.
        * @return This builder for chaining.
        */
@@ -576,7 +576,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @param values The avatarGuid to add.
        * @return This builder for chaining.
        */
@@ -589,7 +589,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid = 14;</code>
+       * <code>repeated uint64 avatarGuid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -665,10 +665,10 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!AvatarExpeditionCallBackReq.proto\"2\n\033A" +
-      "vatarExpeditionCallBackReq\022\023\n\013avatar_gui" +
-      "d\030\016 \003(\004B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n!AvatarExpeditionCallBackReq.proto\"1\n\033A" +
+      "vatarExpeditionCallBackReq\022\022\n\navatarGuid" +
+      "\030\016 \003(\004B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

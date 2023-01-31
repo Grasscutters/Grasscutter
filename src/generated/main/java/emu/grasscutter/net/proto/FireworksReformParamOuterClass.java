@@ -19,18 +19,18 @@ public final class FireworksReformParamOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 value = 1;</code>
+     * <code>int32 value = 8;</code>
      * @return The value.
      */
     int getValue();
 
     /**
-     * <code>.FireworksReformParamType type = 5;</code>
+     * <code>.FireworksReformParamType type = 11;</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.FireworksReformParamType type = 5;</code>
+     * <code>.FireworksReformParamType type = 11;</code>
      * @return The type.
      */
     emu.grasscutter.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType getType();
@@ -81,12 +81,12 @@ public final class FireworksReformParamOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 64: {
 
               value_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 88: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
@@ -124,10 +124,10 @@ public final class FireworksReformParamOuterClass {
               emu.grasscutter.net.proto.FireworksReformParamOuterClass.FireworksReformParam.class, emu.grasscutter.net.proto.FireworksReformParamOuterClass.FireworksReformParam.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
+    public static final int VALUE_FIELD_NUMBER = 8;
     private int value_;
     /**
-     * <code>int32 value = 1;</code>
+     * <code>int32 value = 8;</code>
      * @return The value.
      */
     @java.lang.Override
@@ -135,17 +135,17 @@ public final class FireworksReformParamOuterClass {
       return value_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 5;
+    public static final int TYPE_FIELD_NUMBER = 11;
     private int type_;
     /**
-     * <code>.FireworksReformParamType type = 5;</code>
+     * <code>.FireworksReformParamType type = 11;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.FireworksReformParamType type = 5;</code>
+     * <code>.FireworksReformParamType type = 11;</code>
      * @return The type.
      */
     @java.lang.Override public emu.grasscutter.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType getType() {
@@ -169,10 +169,10 @@ public final class FireworksReformParamOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (value_ != 0) {
-        output.writeInt32(1, value_);
+        output.writeInt32(8, value_);
       }
       if (type_ != emu.grasscutter.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.FIREWORKS_REFORM_PARAM_TYPE_NONE.getNumber()) {
-        output.writeEnum(5, type_);
+        output.writeEnum(11, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -185,11 +185,11 @@ public final class FireworksReformParamOuterClass {
       size = 0;
       if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, value_);
+          .computeInt32Size(8, value_);
       }
       if (type_ != emu.grasscutter.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.FIREWORKS_REFORM_PARAM_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, type_);
+          .computeEnumSize(11, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -474,7 +474,7 @@ public final class FireworksReformParamOuterClass {
 
       private int value_ ;
       /**
-       * <code>int32 value = 1;</code>
+       * <code>int32 value = 8;</code>
        * @return The value.
        */
       @java.lang.Override
@@ -482,7 +482,7 @@ public final class FireworksReformParamOuterClass {
         return value_;
       }
       /**
-       * <code>int32 value = 1;</code>
+       * <code>int32 value = 8;</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
@@ -493,7 +493,7 @@ public final class FireworksReformParamOuterClass {
         return this;
       }
       /**
-       * <code>int32 value = 1;</code>
+       * <code>int32 value = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
@@ -505,14 +505,14 @@ public final class FireworksReformParamOuterClass {
 
       private int type_ = 0;
       /**
-       * <code>.FireworksReformParamType type = 5;</code>
+       * <code>.FireworksReformParamType type = 11;</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.FireworksReformParamType type = 5;</code>
+       * <code>.FireworksReformParamType type = 11;</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -523,7 +523,7 @@ public final class FireworksReformParamOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksReformParamType type = 5;</code>
+       * <code>.FireworksReformParamType type = 11;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -533,7 +533,7 @@ public final class FireworksReformParamOuterClass {
         return result == null ? emu.grasscutter.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.FireworksReformParamType type = 5;</code>
+       * <code>.FireworksReformParamType type = 11;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -547,7 +547,7 @@ public final class FireworksReformParamOuterClass {
         return this;
       }
       /**
-       * <code>.FireworksReformParamType type = 5;</code>
+       * <code>.FireworksReformParamType type = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -625,7 +625,7 @@ public final class FireworksReformParamOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032FireworksReformParam.proto\032\036FireworksR" +
       "eformParamType.proto\"N\n\024FireworksReformP" +
-      "aram\022\r\n\005value\030\001 \001(\005\022\'\n\004type\030\005 \001(\0162\031.Fire" +
+      "aram\022\r\n\005value\030\010 \001(\005\022\'\n\004type\030\013 \001(\0162\031.Fire" +
       "worksReformParamTypeB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };

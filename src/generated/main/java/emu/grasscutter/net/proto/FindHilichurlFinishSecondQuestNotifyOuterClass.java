@@ -19,20 +19,20 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 day_index = 4;</code>
+     * <code>uint32 dayIndex = 9;</code>
      * @return The dayIndex.
      */
     int getDayIndex();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 8644;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum INNBCDKAJKJ {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 8774;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code FindHilichurlFinishSecondQuestNotify}
@@ -79,7 +79,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
 
               dayIndex_ = input.readUInt32();
               break;
@@ -116,10 +116,10 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
               emu.grasscutter.net.proto.FindHilichurlFinishSecondQuestNotifyOuterClass.FindHilichurlFinishSecondQuestNotify.class, emu.grasscutter.net.proto.FindHilichurlFinishSecondQuestNotifyOuterClass.FindHilichurlFinishSecondQuestNotify.Builder.class);
     }
 
-    public static final int DAY_INDEX_FIELD_NUMBER = 4;
+    public static final int DAYINDEX_FIELD_NUMBER = 9;
     private int dayIndex_;
     /**
-     * <code>uint32 day_index = 4;</code>
+     * <code>uint32 dayIndex = 9;</code>
      * @return The dayIndex.
      */
     @java.lang.Override
@@ -142,7 +142,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dayIndex_ != 0) {
-        output.writeUInt32(4, dayIndex_);
+        output.writeUInt32(9, dayIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -155,7 +155,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
       size = 0;
       if (dayIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dayIndex_);
+          .computeUInt32Size(9, dayIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -185,7 +185,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DAY_INDEX_FIELD_NUMBER;
+      hash = (37 * hash) + DAYINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getDayIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -284,13 +284,13 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 8644;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum INNBCDKAJKJ {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 8774;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code FindHilichurlFinishSecondQuestNotify}
@@ -441,7 +441,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
 
       private int dayIndex_ ;
       /**
-       * <code>uint32 day_index = 4;</code>
+       * <code>uint32 dayIndex = 9;</code>
        * @return The dayIndex.
        */
       @java.lang.Override
@@ -449,7 +449,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
         return dayIndex_;
       }
       /**
-       * <code>uint32 day_index = 4;</code>
+       * <code>uint32 dayIndex = 9;</code>
        * @param value The dayIndex to set.
        * @return This builder for chaining.
        */
@@ -460,7 +460,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 day_index = 4;</code>
+       * <code>uint32 dayIndex = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearDayIndex() {
@@ -537,9 +537,9 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n*FindHilichurlFinishSecondQuestNotify.p" +
-      "roto\"9\n$FindHilichurlFinishSecondQuestNo" +
-      "tify\022\021\n\tday_index\030\004 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "roto\"8\n$FindHilichurlFinishSecondQuestNo" +
+      "tify\022\020\n\010dayIndex\030\t \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

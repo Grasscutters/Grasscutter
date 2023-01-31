@@ -19,13 +19,13 @@ public final class ClientGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 camp_id = 1;</code>
+     * <code>uint32 campId = 1;</code>
      * @return The campId.
      */
     int getCampId();
 
     /**
-     * <code>uint32 camp_type = 2;</code>
+     * <code>uint32 campType = 2;</code>
      * @return The campType.
      */
     int getCampType();
@@ -37,13 +37,13 @@ public final class ClientGadgetInfoOuterClass {
     long getGuid();
 
     /**
-     * <code>uint32 owner_entity_id = 4;</code>
+     * <code>uint32 ownerEntityId = 4;</code>
      * @return The ownerEntityId.
      */
     int getOwnerEntityId();
 
     /**
-     * <code>uint32 target_entity_id = 5;</code>
+     * <code>uint32 targetEntityId = 5;</code>
      * @return The targetEntityId.
      */
     int getTargetEntityId();
@@ -55,23 +55,23 @@ public final class ClientGadgetInfoOuterClass {
     boolean getAsyncLoad();
 
     /**
-     * <code>bool is_peer_id_from_player = 7;</code>
+     * <code>bool isPeerIdFromPlayer = 7;</code>
      * @return The isPeerIdFromPlayer.
      */
     boolean getIsPeerIdFromPlayer();
 
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @return A list containing the targetEntityIdList.
      */
     java.util.List<java.lang.Integer> getTargetEntityIdListList();
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @return The count of targetEntityIdList.
      */
     int getTargetEntityIdListCount();
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @param index The index of the element to return.
      * @return The targetEntityIdList at the given index.
      */
@@ -215,10 +215,10 @@ public final class ClientGadgetInfoOuterClass {
               emu.grasscutter.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo.class, emu.grasscutter.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo.Builder.class);
     }
 
-    public static final int CAMP_ID_FIELD_NUMBER = 1;
+    public static final int CAMPID_FIELD_NUMBER = 1;
     private int campId_;
     /**
-     * <code>uint32 camp_id = 1;</code>
+     * <code>uint32 campId = 1;</code>
      * @return The campId.
      */
     @java.lang.Override
@@ -226,10 +226,10 @@ public final class ClientGadgetInfoOuterClass {
       return campId_;
     }
 
-    public static final int CAMP_TYPE_FIELD_NUMBER = 2;
+    public static final int CAMPTYPE_FIELD_NUMBER = 2;
     private int campType_;
     /**
-     * <code>uint32 camp_type = 2;</code>
+     * <code>uint32 campType = 2;</code>
      * @return The campType.
      */
     @java.lang.Override
@@ -248,10 +248,10 @@ public final class ClientGadgetInfoOuterClass {
       return guid_;
     }
 
-    public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 4;
+    public static final int OWNERENTITYID_FIELD_NUMBER = 4;
     private int ownerEntityId_;
     /**
-     * <code>uint32 owner_entity_id = 4;</code>
+     * <code>uint32 ownerEntityId = 4;</code>
      * @return The ownerEntityId.
      */
     @java.lang.Override
@@ -259,10 +259,10 @@ public final class ClientGadgetInfoOuterClass {
       return ownerEntityId_;
     }
 
-    public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 5;
+    public static final int TARGETENTITYID_FIELD_NUMBER = 5;
     private int targetEntityId_;
     /**
-     * <code>uint32 target_entity_id = 5;</code>
+     * <code>uint32 targetEntityId = 5;</code>
      * @return The targetEntityId.
      */
     @java.lang.Override
@@ -281,10 +281,10 @@ public final class ClientGadgetInfoOuterClass {
       return asyncLoad_;
     }
 
-    public static final int IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER = 7;
+    public static final int ISPEERIDFROMPLAYER_FIELD_NUMBER = 7;
     private boolean isPeerIdFromPlayer_;
     /**
-     * <code>bool is_peer_id_from_player = 7;</code>
+     * <code>bool isPeerIdFromPlayer = 7;</code>
      * @return The isPeerIdFromPlayer.
      */
     @java.lang.Override
@@ -292,10 +292,10 @@ public final class ClientGadgetInfoOuterClass {
       return isPeerIdFromPlayer_;
     }
 
-    public static final int TARGET_ENTITY_ID_LIST_FIELD_NUMBER = 8;
+    public static final int TARGETENTITYIDLIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList targetEntityIdList_;
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @return A list containing the targetEntityIdList.
      */
     @java.lang.Override
@@ -304,14 +304,14 @@ public final class ClientGadgetInfoOuterClass {
       return targetEntityIdList_;
     }
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @return The count of targetEntityIdList.
      */
     public int getTargetEntityIdListCount() {
       return targetEntityIdList_.size();
     }
     /**
-     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * <code>repeated uint32 targetEntityIdList = 8;</code>
      * @param index The index of the element to return.
      * @return The targetEntityIdList at the given index.
      */
@@ -456,25 +456,25 @@ public final class ClientGadgetInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CAMP_ID_FIELD_NUMBER;
+      hash = (37 * hash) + CAMPID_FIELD_NUMBER;
       hash = (53 * hash) + getCampId();
-      hash = (37 * hash) + CAMP_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + CAMPTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getCampType();
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGuid());
-      hash = (37 * hash) + OWNER_ENTITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + OWNERENTITYID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerEntityId();
-      hash = (37 * hash) + TARGET_ENTITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETENTITYID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetEntityId();
       hash = (37 * hash) + ASYNC_LOAD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAsyncLoad());
-      hash = (37 * hash) + IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER;
+      hash = (37 * hash) + ISPEERIDFROMPLAYER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsPeerIdFromPlayer());
       if (getTargetEntityIdListCount() > 0) {
-        hash = (37 * hash) + TARGET_ENTITY_ID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + TARGETENTITYIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getTargetEntityIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -776,7 +776,7 @@ public final class ClientGadgetInfoOuterClass {
 
       private int campId_ ;
       /**
-       * <code>uint32 camp_id = 1;</code>
+       * <code>uint32 campId = 1;</code>
        * @return The campId.
        */
       @java.lang.Override
@@ -784,7 +784,7 @@ public final class ClientGadgetInfoOuterClass {
         return campId_;
       }
       /**
-       * <code>uint32 camp_id = 1;</code>
+       * <code>uint32 campId = 1;</code>
        * @param value The campId to set.
        * @return This builder for chaining.
        */
@@ -795,7 +795,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 camp_id = 1;</code>
+       * <code>uint32 campId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCampId() {
@@ -807,7 +807,7 @@ public final class ClientGadgetInfoOuterClass {
 
       private int campType_ ;
       /**
-       * <code>uint32 camp_type = 2;</code>
+       * <code>uint32 campType = 2;</code>
        * @return The campType.
        */
       @java.lang.Override
@@ -815,7 +815,7 @@ public final class ClientGadgetInfoOuterClass {
         return campType_;
       }
       /**
-       * <code>uint32 camp_type = 2;</code>
+       * <code>uint32 campType = 2;</code>
        * @param value The campType to set.
        * @return This builder for chaining.
        */
@@ -826,7 +826,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 camp_type = 2;</code>
+       * <code>uint32 campType = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCampType() {
@@ -869,7 +869,7 @@ public final class ClientGadgetInfoOuterClass {
 
       private int ownerEntityId_ ;
       /**
-       * <code>uint32 owner_entity_id = 4;</code>
+       * <code>uint32 ownerEntityId = 4;</code>
        * @return The ownerEntityId.
        */
       @java.lang.Override
@@ -877,7 +877,7 @@ public final class ClientGadgetInfoOuterClass {
         return ownerEntityId_;
       }
       /**
-       * <code>uint32 owner_entity_id = 4;</code>
+       * <code>uint32 ownerEntityId = 4;</code>
        * @param value The ownerEntityId to set.
        * @return This builder for chaining.
        */
@@ -888,7 +888,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 owner_entity_id = 4;</code>
+       * <code>uint32 ownerEntityId = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearOwnerEntityId() {
@@ -900,7 +900,7 @@ public final class ClientGadgetInfoOuterClass {
 
       private int targetEntityId_ ;
       /**
-       * <code>uint32 target_entity_id = 5;</code>
+       * <code>uint32 targetEntityId = 5;</code>
        * @return The targetEntityId.
        */
       @java.lang.Override
@@ -908,7 +908,7 @@ public final class ClientGadgetInfoOuterClass {
         return targetEntityId_;
       }
       /**
-       * <code>uint32 target_entity_id = 5;</code>
+       * <code>uint32 targetEntityId = 5;</code>
        * @param value The targetEntityId to set.
        * @return This builder for chaining.
        */
@@ -919,7 +919,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_entity_id = 5;</code>
+       * <code>uint32 targetEntityId = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
@@ -962,7 +962,7 @@ public final class ClientGadgetInfoOuterClass {
 
       private boolean isPeerIdFromPlayer_ ;
       /**
-       * <code>bool is_peer_id_from_player = 7;</code>
+       * <code>bool isPeerIdFromPlayer = 7;</code>
        * @return The isPeerIdFromPlayer.
        */
       @java.lang.Override
@@ -970,7 +970,7 @@ public final class ClientGadgetInfoOuterClass {
         return isPeerIdFromPlayer_;
       }
       /**
-       * <code>bool is_peer_id_from_player = 7;</code>
+       * <code>bool isPeerIdFromPlayer = 7;</code>
        * @param value The isPeerIdFromPlayer to set.
        * @return This builder for chaining.
        */
@@ -981,7 +981,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_peer_id_from_player = 7;</code>
+       * <code>bool isPeerIdFromPlayer = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsPeerIdFromPlayer() {
@@ -999,7 +999,7 @@ public final class ClientGadgetInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @return A list containing the targetEntityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -1008,14 +1008,14 @@ public final class ClientGadgetInfoOuterClass {
                  java.util.Collections.unmodifiableList(targetEntityIdList_) : targetEntityIdList_;
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @return The count of targetEntityIdList.
        */
       public int getTargetEntityIdListCount() {
         return targetEntityIdList_.size();
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @param index The index of the element to return.
        * @return The targetEntityIdList at the given index.
        */
@@ -1023,7 +1023,7 @@ public final class ClientGadgetInfoOuterClass {
         return targetEntityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @param index The index to set the value at.
        * @param value The targetEntityIdList to set.
        * @return This builder for chaining.
@@ -1036,7 +1036,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @param value The targetEntityIdList to add.
        * @return This builder for chaining.
        */
@@ -1047,7 +1047,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @param values The targetEntityIdList to add.
        * @return This builder for chaining.
        */
@@ -1060,7 +1060,7 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * <code>repeated uint32 targetEntityIdList = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityIdList() {
@@ -1136,13 +1136,13 @@ public final class ClientGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ClientGadgetInfo.proto\"\312\001\n\020ClientGadge" +
-      "tInfo\022\017\n\007camp_id\030\001 \001(\r\022\021\n\tcamp_type\030\002 \001(" +
-      "\r\022\014\n\004guid\030\003 \001(\004\022\027\n\017owner_entity_id\030\004 \001(\r" +
-      "\022\030\n\020target_entity_id\030\005 \001(\r\022\022\n\nasync_load" +
-      "\030\006 \001(\010\022\036\n\026is_peer_id_from_player\030\007 \001(\010\022\035" +
-      "\n\025target_entity_id_list\030\010 \003(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\026ClientGadgetInfo.proto\"\275\001\n\020ClientGadge" +
+      "tInfo\022\016\n\006campId\030\001 \001(\r\022\020\n\010campType\030\002 \001(\r\022" +
+      "\014\n\004guid\030\003 \001(\004\022\025\n\rownerEntityId\030\004 \001(\r\022\026\n\016" +
+      "targetEntityId\030\005 \001(\r\022\022\n\nasync_load\030\006 \001(\010" +
+      "\022\032\n\022isPeerIdFromPlayer\030\007 \001(\010\022\032\n\022targetEn" +
+      "tityIdList\030\010 \003(\rB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

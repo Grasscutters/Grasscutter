@@ -19,32 +19,32 @@ public final class SetPlayerSignatureRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>string signature = 12;</code>
+     * <code>string signature = 13;</code>
      * @return The signature.
      */
     java.lang.String getSignature();
     /**
-     * <code>string signature = 12;</code>
+     * <code>string signature = 13;</code>
      * @return The bytes for signature.
      */
     com.google.protobuf.ByteString
         getSignatureBytes();
+
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4042;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum FBIHDAIKAAC {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4069;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code SetPlayerSignatureRsp}
@@ -92,12 +92,12 @@ public final class SetPlayerSignatureRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 98: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               signature_ = s;
@@ -135,21 +135,10 @@ public final class SetPlayerSignatureRspOuterClass {
               emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp.class, emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SIGNATURE_FIELD_NUMBER = 12;
+    public static final int SIGNATURE_FIELD_NUMBER = 13;
     private volatile java.lang.Object signature_;
     /**
-     * <code>string signature = 12;</code>
+     * <code>string signature = 13;</code>
      * @return The signature.
      */
     @java.lang.Override
@@ -166,7 +155,7 @@ public final class SetPlayerSignatureRspOuterClass {
       }
     }
     /**
-     * <code>string signature = 12;</code>
+     * <code>string signature = 13;</code>
      * @return The bytes for signature.
      */
     @java.lang.Override
@@ -184,6 +173,17 @@ public final class SetPlayerSignatureRspOuterClass {
       }
     }
 
+    public static final int RETCODE_FIELD_NUMBER = 10;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -199,10 +199,10 @@ public final class SetPlayerSignatureRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(10, retcode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, signature_);
+      if (!getSignatureBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, signature_);
       }
       unknownFields.writeTo(output);
     }
@@ -215,10 +215,10 @@ public final class SetPlayerSignatureRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(10, retcode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, signature_);
+      if (!getSignatureBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, signature_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -235,10 +235,10 @@ public final class SetPlayerSignatureRspOuterClass {
       }
       emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp other = (emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getSignature()
           .equals(other.getSignature())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -250,10 +250,10 @@ public final class SetPlayerSignatureRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -351,13 +351,13 @@ public final class SetPlayerSignatureRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4042;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum FBIHDAIKAAC {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4069;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code SetPlayerSignatureRsp}
@@ -397,9 +397,9 @@ public final class SetPlayerSignatureRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         signature_ = "";
+
+        retcode_ = 0;
 
         return this;
       }
@@ -427,8 +427,8 @@ public final class SetPlayerSignatureRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp buildPartial() {
         emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp result = new emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp(this);
-        result.retcode_ = retcode_;
         result.signature_ = signature_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -477,12 +477,12 @@ public final class SetPlayerSignatureRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp other) {
         if (other == emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.getSignature().isEmpty()) {
           signature_ = other.signature_;
           onChanged();
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -513,40 +513,9 @@ public final class SetPlayerSignatureRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object signature_ = "";
       /**
-       * <code>string signature = 12;</code>
+       * <code>string signature = 13;</code>
        * @return The signature.
        */
       public java.lang.String getSignature() {
@@ -562,7 +531,7 @@ public final class SetPlayerSignatureRspOuterClass {
         }
       }
       /**
-       * <code>string signature = 12;</code>
+       * <code>string signature = 13;</code>
        * @return The bytes for signature.
        */
       public com.google.protobuf.ByteString
@@ -579,7 +548,7 @@ public final class SetPlayerSignatureRspOuterClass {
         }
       }
       /**
-       * <code>string signature = 12;</code>
+       * <code>string signature = 13;</code>
        * @param value The signature to set.
        * @return This builder for chaining.
        */
@@ -594,7 +563,7 @@ public final class SetPlayerSignatureRspOuterClass {
         return this;
       }
       /**
-       * <code>string signature = 12;</code>
+       * <code>string signature = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
@@ -604,7 +573,7 @@ public final class SetPlayerSignatureRspOuterClass {
         return this;
       }
       /**
-       * <code>string signature = 12;</code>
+       * <code>string signature = 13;</code>
        * @param value The bytes for signature to set.
        * @return This builder for chaining.
        */
@@ -616,6 +585,37 @@ public final class SetPlayerSignatureRspOuterClass {
   checkByteStringIsUtf8(value);
         
         signature_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -687,8 +687,8 @@ public final class SetPlayerSignatureRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SetPlayerSignatureRsp.proto\";\n\025SetPlay" +
-      "erSignatureRsp\022\017\n\007retcode\030\006 \001(\005\022\021\n\tsigna" +
-      "ture\030\014 \001(\tB\033\n\031emu.grasscutter.net.protob" +
+      "erSignatureRsp\022\021\n\tsignature\030\r \001(\t\022\017\n\007ret" +
+      "code\030\n \001(\005B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -700,7 +700,7 @@ public final class SetPlayerSignatureRspOuterClass {
     internal_static_SetPlayerSignatureRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetPlayerSignatureRsp_descriptor,
-        new java.lang.String[] { "Retcode", "Signature", });
+        new java.lang.String[] { "Signature", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

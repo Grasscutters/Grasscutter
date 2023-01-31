@@ -19,12 +19,12 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string target_psn_id = 9;</code>
+     * <code>string targetPsnId = 6;</code>
      * @return The targetPsnId.
      */
     java.lang.String getTargetPsnId();
     /**
-     * <code>string target_psn_id = 9;</code>
+     * <code>string targetPsnId = 6;</code>
      * @return The bytes for targetPsnId.
      */
     com.google.protobuf.ByteString
@@ -32,14 +32,14 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1808;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum GPNBHIBAOFM {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1837;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code PSPlayerApplyEnterMpReq}
@@ -87,7 +87,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               targetPsnId_ = s;
@@ -125,10 +125,10 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
               emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq.class, emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq.Builder.class);
     }
 
-    public static final int TARGET_PSN_ID_FIELD_NUMBER = 9;
+    public static final int TARGETPSNID_FIELD_NUMBER = 6;
     private volatile java.lang.Object targetPsnId_;
     /**
-     * <code>string target_psn_id = 9;</code>
+     * <code>string targetPsnId = 6;</code>
      * @return The targetPsnId.
      */
     @java.lang.Override
@@ -145,7 +145,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       }
     }
     /**
-     * <code>string target_psn_id = 9;</code>
+     * <code>string targetPsnId = 6;</code>
      * @return The bytes for targetPsnId.
      */
     @java.lang.Override
@@ -177,8 +177,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, targetPsnId_);
+      if (!getTargetPsnIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, targetPsnId_);
       }
       unknownFields.writeTo(output);
     }
@@ -189,8 +189,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, targetPsnId_);
+      if (!getTargetPsnIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, targetPsnId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,7 +220,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_PSN_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETPSNID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetPsnId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -319,14 +319,14 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1808;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum GPNBHIBAOFM {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1837;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code PSPlayerApplyEnterMpReq}
@@ -478,7 +478,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
 
       private java.lang.Object targetPsnId_ = "";
       /**
-       * <code>string target_psn_id = 9;</code>
+       * <code>string targetPsnId = 6;</code>
        * @return The targetPsnId.
        */
       public java.lang.String getTargetPsnId() {
@@ -494,7 +494,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         }
       }
       /**
-       * <code>string target_psn_id = 9;</code>
+       * <code>string targetPsnId = 6;</code>
        * @return The bytes for targetPsnId.
        */
       public com.google.protobuf.ByteString
@@ -511,7 +511,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         }
       }
       /**
-       * <code>string target_psn_id = 9;</code>
+       * <code>string targetPsnId = 6;</code>
        * @param value The targetPsnId to set.
        * @return This builder for chaining.
        */
@@ -526,7 +526,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         return this;
       }
       /**
-       * <code>string target_psn_id = 9;</code>
+       * <code>string targetPsnId = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetPsnId() {
@@ -536,7 +536,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         return this;
       }
       /**
-       * <code>string target_psn_id = 9;</code>
+       * <code>string targetPsnId = 6;</code>
        * @param value The bytes for targetPsnId to set.
        * @return This builder for chaining.
        */
@@ -618,9 +618,9 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035PSPlayerApplyEnterMpReq.proto\"0\n\027PSPla" +
-      "yerApplyEnterMpReq\022\025\n\rtarget_psn_id\030\t \001(" +
-      "\tB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\035PSPlayerApplyEnterMpReq.proto\".\n\027PSPla" +
+      "yerApplyEnterMpReq\022\023\n\013targetPsnId\030\006 \001(\tB" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

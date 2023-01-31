@@ -19,11 +19,11 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     int getExpeditionInfoMapCount();
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     boolean containsExpeditionInfoMap(
         long key);
@@ -34,19 +34,19 @@ public final class AvatarExpeditionDataNotifyOuterClass {
     java.util.Map<java.lang.Long, emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
     getExpeditionInfoMap();
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     java.util.Map<java.lang.Long, emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
     getExpeditionInfoMapMap();
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
 
     emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
         long key,
         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue);
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
 
     emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrThrow(
@@ -54,13 +54,13 @@ public final class AvatarExpeditionDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1632;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum INDPMHLNJFH {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1638;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionDataNotify}
@@ -108,7 +108,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 expeditionInfoMap_ = com.google.protobuf.MapField.newMapField(
                     ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -150,7 +150,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 15:
+        case 4:
           return internalGetExpeditionInfoMap();
         default:
           throw new RuntimeException(
@@ -165,7 +165,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionDataNotifyOuterClass.AvatarExpeditionDataNotify.class, emu.grasscutter.net.proto.AvatarExpeditionDataNotifyOuterClass.AvatarExpeditionDataNotify.Builder.class);
     }
 
-    public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 15;
+    public static final int EXPEDITIONINFOMAP_FIELD_NUMBER = 4;
     private static final class ExpeditionInfoMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Long, emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry =
@@ -192,7 +192,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       return internalGetExpeditionInfoMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
 
     @java.lang.Override
@@ -210,7 +210,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       return getExpeditionInfoMapMap();
     }
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     @java.lang.Override
 
@@ -218,7 +218,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       return internalGetExpeditionInfoMap().getMap();
     }
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     @java.lang.Override
 
@@ -231,7 +231,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+     * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
      */
     @java.lang.Override
 
@@ -265,7 +265,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
           output,
           internalGetExpeditionInfoMap(),
           ExpeditionInfoMapDefaultEntryHolder.defaultEntry,
-          15);
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -283,7 +283,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, expeditionInfoMap__);
+            .computeMessageSize(4, expeditionInfoMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +314,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetExpeditionInfoMap().getMap().isEmpty()) {
-        hash = (37 * hash) + EXPEDITION_INFO_MAP_FIELD_NUMBER;
+        hash = (37 * hash) + EXPEDITIONINFOMAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetExpeditionInfoMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -414,13 +414,13 @@ public final class AvatarExpeditionDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1632;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum INDPMHLNJFH {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1638;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionDataNotify}
@@ -438,7 +438,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 15:
+          case 4:
             return internalGetExpeditionInfoMap();
           default:
             throw new RuntimeException(
@@ -449,7 +449,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 15:
+          case 4:
             return internalGetMutableExpeditionInfoMap();
           default:
             throw new RuntimeException(
@@ -619,7 +619,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return internalGetExpeditionInfoMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
 
       @java.lang.Override
@@ -637,7 +637,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return getExpeditionInfoMapMap();
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
       @java.lang.Override
 
@@ -645,7 +645,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return internalGetExpeditionInfoMap().getMap();
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
       @java.lang.Override
 
@@ -658,7 +658,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
       @java.lang.Override
 
@@ -679,7 +679,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
 
       public Builder removeExpeditionInfoMap(
@@ -698,7 +698,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return internalGetMutableExpeditionInfoMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
       public Builder putExpeditionInfoMap(
           long key,
@@ -710,7 +710,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 15;</code>
+       * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expeditionInfoMap = 4;</code>
        */
 
       public Builder putAllExpeditionInfoMap(
@@ -792,13 +792,13 @@ public final class AvatarExpeditionDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n AvatarExpeditionDataNotify.proto\032\032Avat" +
-      "arExpeditionInfo.proto\"\276\001\n\032AvatarExpedit" +
-      "ionDataNotify\022O\n\023expedition_info_map\030\017 \003" +
-      "(\01322.AvatarExpeditionDataNotify.Expediti" +
-      "onInfoMapEntry\032O\n\026ExpeditionInfoMapEntry" +
-      "\022\013\n\003key\030\001 \001(\004\022$\n\005value\030\002 \001(\0132\025.AvatarExp" +
-      "editionInfo:\0028\001B\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "arExpeditionInfo.proto\"\274\001\n\032AvatarExpedit" +
+      "ionDataNotify\022M\n\021expeditionInfoMap\030\004 \003(\013" +
+      "22.AvatarExpeditionDataNotify.Expedition" +
+      "InfoMapEntry\032O\n\026ExpeditionInfoMapEntry\022\013" +
+      "\n\003key\030\001 \001(\004\022$\n\005value\030\002 \001(\0132\025.AvatarExped" +
+      "itionInfo:\0028\001B\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

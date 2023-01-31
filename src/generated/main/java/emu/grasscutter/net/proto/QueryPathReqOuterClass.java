@@ -19,122 +19,122 @@ public final class QueryPathReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.QueryFilter filter = 7;</code>
-     * @return Whether the filter field is set.
-     */
-    boolean hasFilter();
-    /**
-     * <code>.QueryFilter filter = 7;</code>
-     * @return The filter.
-     */
-    emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter();
-    /**
-     * <code>.QueryFilter filter = 7;</code>
-     */
-    emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder();
-
-    /**
-     * <code>int32 query_id = 3;</code>
+     * <code>int32 queryId = 13;</code>
      * @return The queryId.
      */
     int getQueryId();
 
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> 
         getDestinationPosList();
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos(int index);
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     int getDestinationPosCount();
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
         getDestinationPosOrBuilderList();
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder(
         int index);
 
     /**
-     * <code>.QueryPathReq.OptionType query_type = 11;</code>
-     * @return The enum numeric value on the wire for queryType.
-     */
-    int getQueryTypeValue();
-    /**
-     * <code>.QueryPathReq.OptionType query_type = 11;</code>
-     * @return The queryType.
-     */
-    emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType getQueryType();
-
-    /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      * @return Whether the unk3300LHNGPJFOMIK field is set.
      */
     boolean hasUnk3300LHNGPJFOMIK();
     /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      * @return The unk3300LHNGPJFOMIK.
      */
     emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getUnk3300LHNGPJFOMIK();
     /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      */
     emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300LHNGPJFOMIKOrBuilder();
 
     /**
-     * <code>uint32 scene_id = 2;</code>
+     * <code>.OptionType queryType = 12;</code>
+     * @return The enum numeric value on the wire for queryType.
+     */
+    int getQueryTypeValue();
+    /**
+     * <code>.OptionType queryType = 12;</code>
+     * @return The queryType.
+     */
+    emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType getQueryType();
+
+    /**
+     * <code>.QueryFilter filter = 2;</code>
+     * @return Whether the filter field is set.
+     */
+    boolean hasFilter();
+    /**
+     * <code>.QueryFilter filter = 2;</code>
+     * @return The filter.
+     */
+    emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter();
+    /**
+     * <code>.QueryFilter filter = 2;</code>
+     */
+    emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder();
+
+    /**
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
+     * @return Whether the unk3300CLGJBBJDOLN field is set.
+     */
+    boolean hasUnk3300CLGJBBJDOLN();
+    /**
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
+     * @return The unk3300CLGJBBJDOLN.
+     */
+    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getUnk3300CLGJBBJDOLN();
+    /**
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
+     */
+    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300CLGJBBJDOLNOrBuilder();
+
+    /**
+     * <code>uint32 sceneId = 7;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>.Vector source_pos = 8;</code>
+     * <code>.Vector sourcePos = 10;</code>
      * @return Whether the sourcePos field is set.
      */
     boolean hasSourcePos();
     /**
-     * <code>.Vector source_pos = 8;</code>
+     * <code>.Vector sourcePos = 10;</code>
      * @return The sourcePos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos();
     /**
-     * <code>.Vector source_pos = 8;</code>
+     * <code>.Vector sourcePos = 10;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder();
-
-    /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
-     * @return Whether the unk3300CLGJBBJDOLN field is set.
-     */
-    boolean hasUnk3300CLGJBBJDOLN();
-    /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
-     * @return The unk3300CLGJBBJDOLN.
-     */
-    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getUnk3300CLGJBBJDOLN();
-    /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
-     */
-    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300CLGJBBJDOLNOrBuilder();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2379;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum OIOAGLJGAJP {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 2305;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code QueryPathReq}
@@ -184,52 +184,7 @@ public final class QueryPathReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              queryId_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
-              if (unk3300LHNGPJFOMIK_ != null) {
-                subBuilder = unk3300LHNGPJFOMIK_.toBuilder();
-              }
-              unk3300LHNGPJFOMIK_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300LHNGPJFOMIK_);
-                unk3300LHNGPJFOMIK_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
-              if (unk3300CLGJBBJDOLN_ != null) {
-                subBuilder = unk3300CLGJBBJDOLN_.toBuilder();
-              }
-              unk3300CLGJBBJDOLN_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300CLGJBBJDOLN_);
-                unk3300CLGJBBJDOLN_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                destinationPos_ = new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              destinationPos_.add(
-                  input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
+            case 18: {
               emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder subBuilder = null;
               if (filter_ != null) {
                 subBuilder = filter_.toBuilder();
@@ -242,7 +197,34 @@ public final class QueryPathReqOuterClass {
 
               break;
             }
-            case 66: {
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                destinationPos_ = new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              destinationPos_.add(
+                  input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
+              if (unk3300LHNGPJFOMIK_ != null) {
+                subBuilder = unk3300LHNGPJFOMIK_.toBuilder();
+              }
+              unk3300LHNGPJFOMIK_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300LHNGPJFOMIK_);
+                unk3300LHNGPJFOMIK_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (sourcePos_ != null) {
                 subBuilder = sourcePos_.toBuilder();
@@ -255,10 +237,28 @@ public final class QueryPathReqOuterClass {
 
               break;
             }
-            case 88: {
+            case 96: {
               int rawValue = input.readEnum();
 
               queryType_ = rawValue;
+              break;
+            }
+            case 104: {
+
+              queryId_ = input.readInt32();
+              break;
+            }
+            case 122: {
+              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder subBuilder = null;
+              if (unk3300CLGJBBJDOLN_ != null) {
+                subBuilder = unk3300CLGJBBJDOLN_.toBuilder();
+              }
+              unk3300CLGJBBJDOLN_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(unk3300CLGJBBJDOLN_);
+                unk3300CLGJBBJDOLN_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -296,153 +296,10 @@ public final class QueryPathReqOuterClass {
               emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.class, emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code QueryPathReq.OptionType}
-     */
-    public enum OptionType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>OPTION_TYPE_NONE = 0;</code>
-       */
-      OPTION_TYPE_NONE(0),
-      /**
-       * <code>OPTION_TYPE_NORMAL = 1;</code>
-       */
-      OPTION_TYPE_NORMAL(1),
-      /**
-       * <code>OPTION_TYPE_FIRST_CAN_GO = 2;</code>
-       */
-      OPTION_TYPE_FIRST_CAN_GO(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>OPTION_TYPE_NONE = 0;</code>
-       */
-      public static final int OPTION_TYPE_NONE_VALUE = 0;
-      /**
-       * <code>OPTION_TYPE_NORMAL = 1;</code>
-       */
-      public static final int OPTION_TYPE_NORMAL_VALUE = 1;
-      /**
-       * <code>OPTION_TYPE_FIRST_CAN_GO = 2;</code>
-       */
-      public static final int OPTION_TYPE_FIRST_CAN_GO_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OptionType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OptionType forNumber(int value) {
-        switch (value) {
-          case 0: return OPTION_TYPE_NONE;
-          case 1: return OPTION_TYPE_NORMAL;
-          case 2: return OPTION_TYPE_FIRST_CAN_GO;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OptionType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OptionType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OptionType>() {
-              public OptionType findValueByNumber(int number) {
-                return OptionType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OptionType[] VALUES = values();
-
-      public static OptionType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private OptionType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:QueryPathReq.OptionType)
-    }
-
-    public static final int FILTER_FIELD_NUMBER = 7;
-    private emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter filter_;
-    /**
-     * <code>.QueryFilter filter = 7;</code>
-     * @return Whether the filter field is set.
-     */
-    @java.lang.Override
-    public boolean hasFilter() {
-      return filter_ != null;
-    }
-    /**
-     * <code>.QueryFilter filter = 7;</code>
-     * @return The filter.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter() {
-      return filter_ == null ? emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
-    }
-    /**
-     * <code>.QueryFilter filter = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder() {
-      return getFilter();
-    }
-
-    public static final int QUERY_ID_FIELD_NUMBER = 3;
+    public static final int QUERYID_FIELD_NUMBER = 13;
     private int queryId_;
     /**
-     * <code>int32 query_id = 3;</code>
+     * <code>int32 queryId = 13;</code>
      * @return The queryId.
      */
     @java.lang.Override
@@ -450,17 +307,17 @@ public final class QueryPathReqOuterClass {
       return queryId_;
     }
 
-    public static final int DESTINATION_POS_FIELD_NUMBER = 6;
+    public static final int DESTINATIONPOS_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> destinationPos_;
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getDestinationPosList() {
       return destinationPos_;
     }
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -468,21 +325,21 @@ public final class QueryPathReqOuterClass {
       return destinationPos_;
     }
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     @java.lang.Override
     public int getDestinationPosCount() {
       return destinationPos_.size();
     }
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos(int index) {
       return destinationPos_.get(index);
     }
     /**
-     * <code>repeated .Vector destination_pos = 6;</code>
+     * <code>repeated .Vector destinationPos = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder(
@@ -490,29 +347,10 @@ public final class QueryPathReqOuterClass {
       return destinationPos_.get(index);
     }
 
-    public static final int QUERY_TYPE_FIELD_NUMBER = 11;
-    private int queryType_;
-    /**
-     * <code>.QueryPathReq.OptionType query_type = 11;</code>
-     * @return The enum numeric value on the wire for queryType.
-     */
-    @java.lang.Override public int getQueryTypeValue() {
-      return queryType_;
-    }
-    /**
-     * <code>.QueryPathReq.OptionType query_type = 11;</code>
-     * @return The queryType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType getQueryType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.valueOf(queryType_);
-      return result == null ? emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.UNRECOGNIZED : result;
-    }
-
-    public static final int UNK3300_LHNGPJFOMIK_FIELD_NUMBER = 4;
+    public static final int UNK3300_LHNGPJFOMIK_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int unk3300LHNGPJFOMIK_;
     /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      * @return Whether the unk3300LHNGPJFOMIK field is set.
      */
     @java.lang.Override
@@ -520,7 +358,7 @@ public final class QueryPathReqOuterClass {
       return unk3300LHNGPJFOMIK_ != null;
     }
     /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      * @return The unk3300LHNGPJFOMIK.
      */
     @java.lang.Override
@@ -528,54 +366,62 @@ public final class QueryPathReqOuterClass {
       return unk3300LHNGPJFOMIK_ == null ? emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : unk3300LHNGPJFOMIK_;
     }
     /**
-     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+     * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300LHNGPJFOMIKOrBuilder() {
       return getUnk3300LHNGPJFOMIK();
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 2;
-    private int sceneId_;
+    public static final int QUERYTYPE_FIELD_NUMBER = 12;
+    private int queryType_;
     /**
-     * <code>uint32 scene_id = 2;</code>
-     * @return The sceneId.
+     * <code>.OptionType queryType = 12;</code>
+     * @return The enum numeric value on the wire for queryType.
      */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
+    @java.lang.Override public int getQueryTypeValue() {
+      return queryType_;
+    }
+    /**
+     * <code>.OptionType queryType = 12;</code>
+     * @return The queryType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType getQueryType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType result = emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.valueOf(queryType_);
+      return result == null ? emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.UNRECOGNIZED : result;
     }
 
-    public static final int SOURCE_POS_FIELD_NUMBER = 8;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+    public static final int FILTER_FIELD_NUMBER = 2;
+    private emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter filter_;
     /**
-     * <code>.Vector source_pos = 8;</code>
-     * @return Whether the sourcePos field is set.
+     * <code>.QueryFilter filter = 2;</code>
+     * @return Whether the filter field is set.
      */
     @java.lang.Override
-    public boolean hasSourcePos() {
-      return sourcePos_ != null;
+    public boolean hasFilter() {
+      return filter_ != null;
     }
     /**
-     * <code>.Vector source_pos = 8;</code>
-     * @return The sourcePos.
+     * <code>.QueryFilter filter = 2;</code>
+     * @return The filter.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
-      return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+    public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter() {
+      return filter_ == null ? emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
     }
     /**
-     * <code>.Vector source_pos = 8;</code>
+     * <code>.QueryFilter filter = 2;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-      return getSourcePos();
+    public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder() {
+      return getFilter();
     }
 
-    public static final int UNK3300_CLGJBBJDOLN_FIELD_NUMBER = 5;
+    public static final int UNK3300_CLGJBBJDOLN_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int unk3300CLGJBBJDOLN_;
     /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
      * @return Whether the unk3300CLGJBBJDOLN field is set.
      */
     @java.lang.Override
@@ -583,7 +429,7 @@ public final class QueryPathReqOuterClass {
       return unk3300CLGJBBJDOLN_ != null;
     }
     /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
      * @return The unk3300CLGJBBJDOLN.
      */
     @java.lang.Override
@@ -591,11 +437,48 @@ public final class QueryPathReqOuterClass {
       return unk3300CLGJBBJDOLN_ == null ? emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : unk3300CLGJBBJDOLN_;
     }
     /**
-     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+     * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300CLGJBBJDOLNOrBuilder() {
       return getUnk3300CLGJBBJDOLN();
+    }
+
+    public static final int SCENEID_FIELD_NUMBER = 7;
+    private int sceneId_;
+    /**
+     * <code>uint32 sceneId = 7;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
+    }
+
+    public static final int SOURCEPOS_FIELD_NUMBER = 10;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+    /**
+     * <code>.Vector sourcePos = 10;</code>
+     * @return Whether the sourcePos field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourcePos() {
+      return sourcePos_ != null;
+    }
+    /**
+     * <code>.Vector sourcePos = 10;</code>
+     * @return The sourcePos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
+      return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+    }
+    /**
+     * <code>.Vector sourcePos = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
+      return getSourcePos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -612,29 +495,29 @@ public final class QueryPathReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(2, sceneId_);
-      }
-      if (queryId_ != 0) {
-        output.writeInt32(3, queryId_);
-      }
-      if (unk3300LHNGPJFOMIK_ != null) {
-        output.writeMessage(4, getUnk3300LHNGPJFOMIK());
-      }
-      if (unk3300CLGJBBJDOLN_ != null) {
-        output.writeMessage(5, getUnk3300CLGJBBJDOLN());
+      if (filter_ != null) {
+        output.writeMessage(2, getFilter());
       }
       for (int i = 0; i < destinationPos_.size(); i++) {
-        output.writeMessage(6, destinationPos_.get(i));
+        output.writeMessage(4, destinationPos_.get(i));
       }
-      if (filter_ != null) {
-        output.writeMessage(7, getFilter());
+      if (unk3300LHNGPJFOMIK_ != null) {
+        output.writeMessage(5, getUnk3300LHNGPJFOMIK());
+      }
+      if (sceneId_ != 0) {
+        output.writeUInt32(7, sceneId_);
       }
       if (sourcePos_ != null) {
-        output.writeMessage(8, getSourcePos());
+        output.writeMessage(10, getSourcePos());
       }
-      if (queryType_ != emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.OPTION_TYPE_NONE.getNumber()) {
-        output.writeEnum(11, queryType_);
+      if (queryType_ != emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.OPTION_TYPE_NONE.getNumber()) {
+        output.writeEnum(12, queryType_);
+      }
+      if (queryId_ != 0) {
+        output.writeInt32(13, queryId_);
+      }
+      if (unk3300CLGJBBJDOLN_ != null) {
+        output.writeMessage(15, getUnk3300CLGJBBJDOLN());
       }
       unknownFields.writeTo(output);
     }
@@ -645,37 +528,37 @@ public final class QueryPathReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (sceneId_ != 0) {
+      if (filter_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, sceneId_);
-      }
-      if (queryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, queryId_);
-      }
-      if (unk3300LHNGPJFOMIK_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getUnk3300LHNGPJFOMIK());
-      }
-      if (unk3300CLGJBBJDOLN_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getUnk3300CLGJBBJDOLN());
+          .computeMessageSize(2, getFilter());
       }
       for (int i = 0; i < destinationPos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, destinationPos_.get(i));
+          .computeMessageSize(4, destinationPos_.get(i));
       }
-      if (filter_ != null) {
+      if (unk3300LHNGPJFOMIK_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getFilter());
+          .computeMessageSize(5, getUnk3300LHNGPJFOMIK());
+      }
+      if (sceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, sceneId_);
       }
       if (sourcePos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getSourcePos());
+          .computeMessageSize(10, getSourcePos());
       }
-      if (queryType_ != emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.OPTION_TYPE_NONE.getNumber()) {
+      if (queryType_ != emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.OPTION_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, queryType_);
+          .computeEnumSize(12, queryType_);
+      }
+      if (queryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, queryId_);
+      }
+      if (unk3300CLGJBBJDOLN_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getUnk3300CLGJBBJDOLN());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -692,20 +575,25 @@ public final class QueryPathReqOuterClass {
       }
       emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq other = (emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq) obj;
 
+      if (getQueryId()
+          != other.getQueryId()) return false;
+      if (!getDestinationPosList()
+          .equals(other.getDestinationPosList())) return false;
+      if (hasUnk3300LHNGPJFOMIK() != other.hasUnk3300LHNGPJFOMIK()) return false;
+      if (hasUnk3300LHNGPJFOMIK()) {
+        if (!getUnk3300LHNGPJFOMIK()
+            .equals(other.getUnk3300LHNGPJFOMIK())) return false;
+      }
+      if (queryType_ != other.queryType_) return false;
       if (hasFilter() != other.hasFilter()) return false;
       if (hasFilter()) {
         if (!getFilter()
             .equals(other.getFilter())) return false;
       }
-      if (getQueryId()
-          != other.getQueryId()) return false;
-      if (!getDestinationPosList()
-          .equals(other.getDestinationPosList())) return false;
-      if (queryType_ != other.queryType_) return false;
-      if (hasUnk3300LHNGPJFOMIK() != other.hasUnk3300LHNGPJFOMIK()) return false;
-      if (hasUnk3300LHNGPJFOMIK()) {
-        if (!getUnk3300LHNGPJFOMIK()
-            .equals(other.getUnk3300LHNGPJFOMIK())) return false;
+      if (hasUnk3300CLGJBBJDOLN() != other.hasUnk3300CLGJBBJDOLN()) return false;
+      if (hasUnk3300CLGJBBJDOLN()) {
+        if (!getUnk3300CLGJBBJDOLN()
+            .equals(other.getUnk3300CLGJBBJDOLN())) return false;
       }
       if (getSceneId()
           != other.getSceneId()) return false;
@@ -713,11 +601,6 @@ public final class QueryPathReqOuterClass {
       if (hasSourcePos()) {
         if (!getSourcePos()
             .equals(other.getSourcePos())) return false;
-      }
-      if (hasUnk3300CLGJBBJDOLN() != other.hasUnk3300CLGJBBJDOLN()) return false;
-      if (hasUnk3300CLGJBBJDOLN()) {
-        if (!getUnk3300CLGJBBJDOLN()
-            .equals(other.getUnk3300CLGJBBJDOLN())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -730,31 +613,31 @@ public final class QueryPathReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasFilter()) {
-        hash = (37 * hash) + FILTER_FIELD_NUMBER;
-        hash = (53 * hash) + getFilter().hashCode();
-      }
-      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + QUERYID_FIELD_NUMBER;
       hash = (53 * hash) + getQueryId();
       if (getDestinationPosCount() > 0) {
-        hash = (37 * hash) + DESTINATION_POS_FIELD_NUMBER;
+        hash = (37 * hash) + DESTINATIONPOS_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationPosList().hashCode();
       }
-      hash = (37 * hash) + QUERY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + queryType_;
       if (hasUnk3300LHNGPJFOMIK()) {
         hash = (37 * hash) + UNK3300_LHNGPJFOMIK_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300LHNGPJFOMIK().hashCode();
       }
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
-      if (hasSourcePos()) {
-        hash = (37 * hash) + SOURCE_POS_FIELD_NUMBER;
-        hash = (53 * hash) + getSourcePos().hashCode();
+      hash = (37 * hash) + QUERYTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + queryType_;
+      if (hasFilter()) {
+        hash = (37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFilter().hashCode();
       }
       if (hasUnk3300CLGJBBJDOLN()) {
         hash = (37 * hash) + UNK3300_CLGJBBJDOLN_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300CLGJBBJDOLN().hashCode();
+      }
+      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
+      if (hasSourcePos()) {
+        hash = (37 * hash) + SOURCEPOS_FIELD_NUMBER;
+        hash = (53 * hash) + getSourcePos().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -853,14 +736,14 @@ public final class QueryPathReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2379;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum OIOAGLJGAJP {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 2305;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code QueryPathReq}
@@ -901,12 +784,6 @@ public final class QueryPathReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (filterBuilder_ == null) {
-          filter_ = null;
-        } else {
-          filter_ = null;
-          filterBuilder_ = null;
-        }
         queryId_ = 0;
 
         if (destinationPosBuilder_ == null) {
@@ -915,13 +792,25 @@ public final class QueryPathReqOuterClass {
         } else {
           destinationPosBuilder_.clear();
         }
-        queryType_ = 0;
-
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
           unk3300LHNGPJFOMIK_ = null;
         } else {
           unk3300LHNGPJFOMIK_ = null;
           unk3300LHNGPJFOMIKBuilder_ = null;
+        }
+        queryType_ = 0;
+
+        if (filterBuilder_ == null) {
+          filter_ = null;
+        } else {
+          filter_ = null;
+          filterBuilder_ = null;
+        }
+        if (unk3300CLGJBBJDOLNBuilder_ == null) {
+          unk3300CLGJBBJDOLN_ = null;
+        } else {
+          unk3300CLGJBBJDOLN_ = null;
+          unk3300CLGJBBJDOLNBuilder_ = null;
         }
         sceneId_ = 0;
 
@@ -930,12 +819,6 @@ public final class QueryPathReqOuterClass {
         } else {
           sourcePos_ = null;
           sourcePosBuilder_ = null;
-        }
-        if (unk3300CLGJBBJDOLNBuilder_ == null) {
-          unk3300CLGJBBJDOLN_ = null;
-        } else {
-          unk3300CLGJBBJDOLN_ = null;
-          unk3300CLGJBBJDOLNBuilder_ = null;
         }
         return this;
       }
@@ -964,11 +847,6 @@ public final class QueryPathReqOuterClass {
       public emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq buildPartial() {
         emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq result = new emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq(this);
         int from_bitField0_ = bitField0_;
-        if (filterBuilder_ == null) {
-          result.filter_ = filter_;
-        } else {
-          result.filter_ = filterBuilder_.build();
-        }
         result.queryId_ = queryId_;
         if (destinationPosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -979,22 +857,27 @@ public final class QueryPathReqOuterClass {
         } else {
           result.destinationPos_ = destinationPosBuilder_.build();
         }
-        result.queryType_ = queryType_;
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
           result.unk3300LHNGPJFOMIK_ = unk3300LHNGPJFOMIK_;
         } else {
           result.unk3300LHNGPJFOMIK_ = unk3300LHNGPJFOMIKBuilder_.build();
+        }
+        result.queryType_ = queryType_;
+        if (filterBuilder_ == null) {
+          result.filter_ = filter_;
+        } else {
+          result.filter_ = filterBuilder_.build();
+        }
+        if (unk3300CLGJBBJDOLNBuilder_ == null) {
+          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLN_;
+        } else {
+          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLNBuilder_.build();
         }
         result.sceneId_ = sceneId_;
         if (sourcePosBuilder_ == null) {
           result.sourcePos_ = sourcePos_;
         } else {
           result.sourcePos_ = sourcePosBuilder_.build();
-        }
-        if (unk3300CLGJBBJDOLNBuilder_ == null) {
-          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLN_;
-        } else {
-          result.unk3300CLGJBBJDOLN_ = unk3300CLGJBBJDOLNBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1044,9 +927,6 @@ public final class QueryPathReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq other) {
         if (other == emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.getDefaultInstance()) return this;
-        if (other.hasFilter()) {
-          mergeFilter(other.getFilter());
-        }
         if (other.getQueryId() != 0) {
           setQueryId(other.getQueryId());
         }
@@ -1076,20 +956,23 @@ public final class QueryPathReqOuterClass {
             }
           }
         }
+        if (other.hasUnk3300LHNGPJFOMIK()) {
+          mergeUnk3300LHNGPJFOMIK(other.getUnk3300LHNGPJFOMIK());
+        }
         if (other.queryType_ != 0) {
           setQueryTypeValue(other.getQueryTypeValue());
         }
-        if (other.hasUnk3300LHNGPJFOMIK()) {
-          mergeUnk3300LHNGPJFOMIK(other.getUnk3300LHNGPJFOMIK());
+        if (other.hasFilter()) {
+          mergeFilter(other.getFilter());
+        }
+        if (other.hasUnk3300CLGJBBJDOLN()) {
+          mergeUnk3300CLGJBBJDOLN(other.getUnk3300CLGJBBJDOLN());
         }
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
         if (other.hasSourcePos()) {
           mergeSourcePos(other.getSourcePos());
-        }
-        if (other.hasUnk3300CLGJBBJDOLN()) {
-          mergeUnk3300CLGJBBJDOLN(other.getUnk3300CLGJBBJDOLN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1121,128 +1004,9 @@ public final class QueryPathReqOuterClass {
       }
       private int bitField0_;
 
-      private emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter filter_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> filterBuilder_;
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       * @return Whether the filter field is set.
-       */
-      public boolean hasFilter() {
-        return filterBuilder_ != null || filter_ != null;
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       * @return The filter.
-       */
-      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter() {
-        if (filterBuilder_ == null) {
-          return filter_ == null ? emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
-        } else {
-          return filterBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public Builder setFilter(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter value) {
-        if (filterBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          filter_ = value;
-          onChanged();
-        } else {
-          filterBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public Builder setFilter(
-          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder builderForValue) {
-        if (filterBuilder_ == null) {
-          filter_ = builderForValue.build();
-          onChanged();
-        } else {
-          filterBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public Builder mergeFilter(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter value) {
-        if (filterBuilder_ == null) {
-          if (filter_ != null) {
-            filter_ =
-              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
-          } else {
-            filter_ = value;
-          }
-          onChanged();
-        } else {
-          filterBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public Builder clearFilter() {
-        if (filterBuilder_ == null) {
-          filter_ = null;
-          onChanged();
-        } else {
-          filter_ = null;
-          filterBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder getFilterBuilder() {
-        
-        onChanged();
-        return getFilterFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder() {
-        if (filterBuilder_ != null) {
-          return filterBuilder_.getMessageOrBuilder();
-        } else {
-          return filter_ == null ?
-              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
-        }
-      }
-      /**
-       * <code>.QueryFilter filter = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> 
-          getFilterFieldBuilder() {
-        if (filterBuilder_ == null) {
-          filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder>(
-                  getFilter(),
-                  getParentForChildren(),
-                  isClean());
-          filter_ = null;
-        }
-        return filterBuilder_;
-      }
-
       private int queryId_ ;
       /**
-       * <code>int32 query_id = 3;</code>
+       * <code>int32 queryId = 13;</code>
        * @return The queryId.
        */
       @java.lang.Override
@@ -1250,7 +1014,7 @@ public final class QueryPathReqOuterClass {
         return queryId_;
       }
       /**
-       * <code>int32 query_id = 3;</code>
+       * <code>int32 queryId = 13;</code>
        * @param value The queryId to set.
        * @return This builder for chaining.
        */
@@ -1261,7 +1025,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>int32 query_id = 3;</code>
+       * <code>int32 queryId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
@@ -1284,7 +1048,7 @@ public final class QueryPathReqOuterClass {
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> destinationPosBuilder_;
 
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getDestinationPosList() {
         if (destinationPosBuilder_ == null) {
@@ -1294,7 +1058,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public int getDestinationPosCount() {
         if (destinationPosBuilder_ == null) {
@@ -1304,7 +1068,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos(int index) {
         if (destinationPosBuilder_ == null) {
@@ -1314,7 +1078,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder setDestinationPos(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1331,7 +1095,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder setDestinationPos(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1345,7 +1109,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder addDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (destinationPosBuilder_ == null) {
@@ -1361,7 +1125,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder addDestinationPos(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1378,7 +1142,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder addDestinationPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1392,7 +1156,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder addDestinationPos(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1406,7 +1170,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder addAllDestinationPos(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.VectorOuterClass.Vector> values) {
@@ -1421,7 +1185,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder clearDestinationPos() {
         if (destinationPosBuilder_ == null) {
@@ -1434,7 +1198,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public Builder removeDestinationPos(int index) {
         if (destinationPosBuilder_ == null) {
@@ -1447,14 +1211,14 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDestinationPosBuilder(
           int index) {
         return getDestinationPosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder(
           int index) {
@@ -1464,7 +1228,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
            getDestinationPosOrBuilderList() {
@@ -1475,14 +1239,14 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addDestinationPosBuilder() {
         return getDestinationPosFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addDestinationPosBuilder(
           int index) {
@@ -1490,7 +1254,7 @@ public final class QueryPathReqOuterClass {
             index, emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
       }
       /**
-       * <code>repeated .Vector destination_pos = 6;</code>
+       * <code>repeated .Vector destinationPos = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder> 
            getDestinationPosBuilderList() {
@@ -1511,72 +1275,18 @@ public final class QueryPathReqOuterClass {
         return destinationPosBuilder_;
       }
 
-      private int queryType_ = 0;
-      /**
-       * <code>.QueryPathReq.OptionType query_type = 11;</code>
-       * @return The enum numeric value on the wire for queryType.
-       */
-      @java.lang.Override public int getQueryTypeValue() {
-        return queryType_;
-      }
-      /**
-       * <code>.QueryPathReq.OptionType query_type = 11;</code>
-       * @param value The enum numeric value on the wire for queryType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryTypeValue(int value) {
-        
-        queryType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.QueryPathReq.OptionType query_type = 11;</code>
-       * @return The queryType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType getQueryType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType result = emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.valueOf(queryType_);
-        return result == null ? emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.QueryPathReq.OptionType query_type = 11;</code>
-       * @param value The queryType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryType(emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq.OptionType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        queryType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.QueryPathReq.OptionType query_type = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQueryType() {
-        
-        queryType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int unk3300LHNGPJFOMIK_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> unk3300LHNGPJFOMIKBuilder_;
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        * @return Whether the unk3300LHNGPJFOMIK field is set.
        */
       public boolean hasUnk3300LHNGPJFOMIK() {
         return unk3300LHNGPJFOMIKBuilder_ != null || unk3300LHNGPJFOMIK_ != null;
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        * @return The unk3300LHNGPJFOMIK.
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getUnk3300LHNGPJFOMIK() {
@@ -1587,7 +1297,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public Builder setUnk3300LHNGPJFOMIK(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
@@ -1603,7 +1313,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public Builder setUnk3300LHNGPJFOMIK(
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder builderForValue) {
@@ -1617,7 +1327,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public Builder mergeUnk3300LHNGPJFOMIK(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
@@ -1635,7 +1345,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public Builder clearUnk3300LHNGPJFOMIK() {
         if (unk3300LHNGPJFOMIKBuilder_ == null) {
@@ -1649,7 +1359,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder getUnk3300LHNGPJFOMIKBuilder() {
         
@@ -1657,7 +1367,7 @@ public final class QueryPathReqOuterClass {
         return getUnk3300LHNGPJFOMIKFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300LHNGPJFOMIKOrBuilder() {
         if (unk3300LHNGPJFOMIKBuilder_ != null) {
@@ -1668,7 +1378,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 4;</code>
+       * <code>.Vector3Int Unk3300_LHNGPJFOMIK = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> 
@@ -1684,168 +1394,191 @@ public final class QueryPathReqOuterClass {
         return unk3300LHNGPJFOMIKBuilder_;
       }
 
-      private int sceneId_ ;
+      private int queryType_ = 0;
       /**
-       * <code>uint32 scene_id = 2;</code>
-       * @return The sceneId.
+       * <code>.OptionType queryType = 12;</code>
+       * @return The enum numeric value on the wire for queryType.
        */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
+      @java.lang.Override public int getQueryTypeValue() {
+        return queryType_;
       }
       /**
-       * <code>uint32 scene_id = 2;</code>
-       * @param value The sceneId to set.
+       * <code>.OptionType queryType = 12;</code>
+       * @param value The enum numeric value on the wire for queryType to set.
        * @return This builder for chaining.
        */
-      public Builder setSceneId(int value) {
+      public Builder setQueryTypeValue(int value) {
         
-        sceneId_ = value;
+        queryType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 scene_id = 2;</code>
+       * <code>.OptionType queryType = 12;</code>
+       * @return The queryType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType getQueryType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType result = emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.valueOf(queryType_);
+        return result == null ? emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.OptionType queryType = 12;</code>
+       * @param value The queryType to set.
        * @return This builder for chaining.
        */
-      public Builder clearSceneId() {
+      public Builder setQueryType(emu.grasscutter.net.proto.OptionTypeOuterClass.OptionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        sceneId_ = 0;
+        queryType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.OptionType queryType = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryType() {
+        
+        queryType_ = 0;
         onChanged();
         return this;
       }
 
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+      private emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter filter_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> sourcePosBuilder_;
+          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> filterBuilder_;
       /**
-       * <code>.Vector source_pos = 8;</code>
-       * @return Whether the sourcePos field is set.
+       * <code>.QueryFilter filter = 2;</code>
+       * @return Whether the filter field is set.
        */
-      public boolean hasSourcePos() {
-        return sourcePosBuilder_ != null || sourcePos_ != null;
+      public boolean hasFilter() {
+        return filterBuilder_ != null || filter_ != null;
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
-       * @return The sourcePos.
+       * <code>.QueryFilter filter = 2;</code>
+       * @return The filter.
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
-        if (sourcePosBuilder_ == null) {
-          return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter() {
+        if (filterBuilder_ == null) {
+          return filter_ == null ? emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
         } else {
-          return sourcePosBuilder_.getMessage();
+          return filterBuilder_.getMessage();
         }
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (sourcePosBuilder_ == null) {
+      public Builder setFilter(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter value) {
+        if (filterBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          sourcePos_ = value;
+          filter_ = value;
           onChanged();
         } else {
-          sourcePosBuilder_.setMessage(value);
+          filterBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public Builder setSourcePos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = builderForValue.build();
+      public Builder setFilter(
+          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder builderForValue) {
+        if (filterBuilder_ == null) {
+          filter_ = builderForValue.build();
           onChanged();
         } else {
-          sourcePosBuilder_.setMessage(builderForValue.build());
+          filterBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public Builder mergeSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (sourcePosBuilder_ == null) {
-          if (sourcePos_ != null) {
-            sourcePos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
+      public Builder mergeFilter(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter value) {
+        if (filterBuilder_ == null) {
+          if (filter_ != null) {
+            filter_ =
+              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
           } else {
-            sourcePos_ = value;
+            filter_ = value;
           }
           onChanged();
         } else {
-          sourcePosBuilder_.mergeFrom(value);
+          filterBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public Builder clearSourcePos() {
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = null;
+      public Builder clearFilter() {
+        if (filterBuilder_ == null) {
+          filter_ = null;
           onChanged();
         } else {
-          sourcePos_ = null;
-          sourcePosBuilder_ = null;
+          filter_ = null;
+          filterBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
+      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder getFilterBuilder() {
         
         onChanged();
-        return getSourcePosFieldBuilder().getBuilder();
+        return getFilterFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-        if (sourcePosBuilder_ != null) {
-          return sourcePosBuilder_.getMessageOrBuilder();
+      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder getFilterOrBuilder() {
+        if (filterBuilder_ != null) {
+          return filterBuilder_.getMessageOrBuilder();
         } else {
-          return sourcePos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+          return filter_ == null ?
+              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
         }
       }
       /**
-       * <code>.Vector source_pos = 8;</code>
+       * <code>.QueryFilter filter = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getSourcePosFieldBuilder() {
-        if (sourcePosBuilder_ == null) {
-          sourcePosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getSourcePos(),
+          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> 
+          getFilterFieldBuilder() {
+        if (filterBuilder_ == null) {
+          filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder>(
+                  getFilter(),
                   getParentForChildren(),
                   isClean());
-          sourcePos_ = null;
+          filter_ = null;
         }
-        return sourcePosBuilder_;
+        return filterBuilder_;
       }
 
       private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int unk3300CLGJBBJDOLN_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> unk3300CLGJBBJDOLNBuilder_;
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        * @return Whether the unk3300CLGJBBJDOLN field is set.
        */
       public boolean hasUnk3300CLGJBBJDOLN() {
         return unk3300CLGJBBJDOLNBuilder_ != null || unk3300CLGJBBJDOLN_ != null;
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        * @return The unk3300CLGJBBJDOLN.
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getUnk3300CLGJBBJDOLN() {
@@ -1856,7 +1589,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public Builder setUnk3300CLGJBBJDOLN(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300CLGJBBJDOLNBuilder_ == null) {
@@ -1872,7 +1605,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public Builder setUnk3300CLGJBBJDOLN(
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder builderForValue) {
@@ -1886,7 +1619,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public Builder mergeUnk3300CLGJBBJDOLN(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (unk3300CLGJBBJDOLNBuilder_ == null) {
@@ -1904,7 +1637,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public Builder clearUnk3300CLGJBBJDOLN() {
         if (unk3300CLGJBBJDOLNBuilder_ == null) {
@@ -1918,7 +1651,7 @@ public final class QueryPathReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder getUnk3300CLGJBBJDOLNBuilder() {
         
@@ -1926,7 +1659,7 @@ public final class QueryPathReqOuterClass {
         return getUnk3300CLGJBBJDOLNFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getUnk3300CLGJBBJDOLNOrBuilder() {
         if (unk3300CLGJBBJDOLNBuilder_ != null) {
@@ -1937,7 +1670,7 @@ public final class QueryPathReqOuterClass {
         }
       }
       /**
-       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 5;</code>
+       * <code>.Vector3Int Unk3300_CLGJBBJDOLN = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> 
@@ -1951,6 +1684,156 @@ public final class QueryPathReqOuterClass {
           unk3300CLGJBBJDOLN_ = null;
         }
         return unk3300CLGJBBJDOLNBuilder_;
+      }
+
+      private int sceneId_ ;
+      /**
+       * <code>uint32 sceneId = 7;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 sceneId = 7;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 sceneId = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> sourcePosBuilder_;
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       * @return Whether the sourcePos field is set.
+       */
+      public boolean hasSourcePos() {
+        return sourcePosBuilder_ != null || sourcePos_ != null;
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       * @return The sourcePos.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
+        if (sourcePosBuilder_ == null) {
+          return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+        } else {
+          return sourcePosBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (sourcePosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sourcePos_ = value;
+          onChanged();
+        } else {
+          sourcePosBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public Builder setSourcePos(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (sourcePosBuilder_ == null) {
+          sourcePos_ = builderForValue.build();
+          onChanged();
+        } else {
+          sourcePosBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public Builder mergeSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (sourcePosBuilder_ == null) {
+          if (sourcePos_ != null) {
+            sourcePos_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
+          } else {
+            sourcePos_ = value;
+          }
+          onChanged();
+        } else {
+          sourcePosBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public Builder clearSourcePos() {
+        if (sourcePosBuilder_ == null) {
+          sourcePos_ = null;
+          onChanged();
+        } else {
+          sourcePos_ = null;
+          sourcePosBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
+        
+        onChanged();
+        return getSourcePosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
+        if (sourcePosBuilder_ != null) {
+          return sourcePosBuilder_.getMessageOrBuilder();
+        } else {
+          return sourcePos_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+        }
+      }
+      /**
+       * <code>.Vector sourcePos = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getSourcePosFieldBuilder() {
+        if (sourcePosBuilder_ == null) {
+          sourcePosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getSourcePos(),
+                  getParentForChildren(),
+                  isClean());
+          sourcePos_ = null;
+        }
+        return sourcePosBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2019,35 +1902,35 @@ public final class QueryPathReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022QueryPathReq.proto\032\021QueryFilter.proto\032" +
-      "\014Vector.proto\032\020Vector3Int.proto\"\353\002\n\014Quer" +
-      "yPathReq\022\034\n\006filter\030\007 \001(\0132\014.QueryFilter\022\020" +
-      "\n\010query_id\030\003 \001(\005\022 \n\017destination_pos\030\006 \003(" +
-      "\0132\007.Vector\022,\n\nquery_type\030\013 \001(\0162\030.QueryPa" +
-      "thReq.OptionType\022(\n\023Unk3300_LHNGPJFOMIK\030" +
-      "\004 \001(\0132\013.Vector3Int\022\020\n\010scene_id\030\002 \001(\r\022\033\n\n" +
-      "source_pos\030\010 \001(\0132\007.Vector\022(\n\023Unk3300_CLG" +
-      "JBBJDOLN\030\005 \001(\0132\013.Vector3Int\"X\n\nOptionTyp" +
-      "e\022\024\n\020OPTION_TYPE_NONE\020\000\022\026\n\022OPTION_TYPE_N" +
-      "ORMAL\020\001\022\034\n\030OPTION_TYPE_FIRST_CAN_GO\020\002B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\022QueryPathReq.proto\032\020Vector3Int.proto\032\020" +
+      "OptionType.proto\032\021QueryFilter.proto\032\014Vec" +
+      "tor.proto\"\377\001\n\014QueryPathReq\022\017\n\007queryId\030\r " +
+      "\001(\005\022\037\n\016destinationPos\030\004 \003(\0132\007.Vector\022(\n\023" +
+      "Unk3300_LHNGPJFOMIK\030\005 \001(\0132\013.Vector3Int\022\036" +
+      "\n\tqueryType\030\014 \001(\0162\013.OptionType\022\034\n\006filter" +
+      "\030\002 \001(\0132\014.QueryFilter\022(\n\023Unk3300_CLGJBBJD" +
+      "OLN\030\017 \001(\0132\013.Vector3Int\022\017\n\007sceneId\030\007 \001(\r\022" +
+      "\032\n\tsourcePos\030\n \001(\0132\007.VectorB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.OptionTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.QueryFilterOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor(),
         });
     internal_static_QueryPathReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_QueryPathReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryPathReq_descriptor,
-        new java.lang.String[] { "Filter", "QueryId", "DestinationPos", "QueryType", "Unk3300LHNGPJFOMIK", "SceneId", "SourcePos", "Unk3300CLGJBBJDOLN", });
+        new java.lang.String[] { "QueryId", "DestinationPos", "Unk3300LHNGPJFOMIK", "QueryType", "Filter", "Unk3300CLGJBBJDOLN", "SceneId", "SourcePos", });
+    emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.OptionTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.QueryFilterOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

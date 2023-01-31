@@ -19,29 +19,29 @@ public final class WidgetGadgetDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      * @return Whether the widgetGadgetData field is set.
      */
     boolean hasWidgetGadgetData();
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      * @return The widgetGadgetData.
      */
     emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData getWidgetGadgetData();
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      */
     emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4276;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum PKEFBEFMGGI {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4282;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code WidgetGadgetDataNotify}
@@ -88,7 +88,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 82: {
               emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder subBuilder = null;
               if (widgetGadgetData_ != null) {
                 subBuilder = widgetGadgetData_.toBuilder();
@@ -133,10 +133,10 @@ public final class WidgetGadgetDataNotifyOuterClass {
               emu.grasscutter.net.proto.WidgetGadgetDataNotifyOuterClass.WidgetGadgetDataNotify.class, emu.grasscutter.net.proto.WidgetGadgetDataNotifyOuterClass.WidgetGadgetDataNotify.Builder.class);
     }
 
-    public static final int WIDGET_GADGET_DATA_FIELD_NUMBER = 3;
+    public static final int WIDGETGADGETDATA_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData widgetGadgetData_;
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      * @return Whether the widgetGadgetData field is set.
      */
     @java.lang.Override
@@ -144,7 +144,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
       return widgetGadgetData_ != null;
     }
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      * @return The widgetGadgetData.
      */
     @java.lang.Override
@@ -152,7 +152,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
       return widgetGadgetData_ == null ? emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.getDefaultInstance() : widgetGadgetData_;
     }
     /**
-     * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+     * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder() {
@@ -174,7 +174,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (widgetGadgetData_ != null) {
-        output.writeMessage(3, getWidgetGadgetData());
+        output.writeMessage(10, getWidgetGadgetData());
       }
       unknownFields.writeTo(output);
     }
@@ -187,7 +187,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
       size = 0;
       if (widgetGadgetData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getWidgetGadgetData());
+          .computeMessageSize(10, getWidgetGadgetData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -221,7 +221,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasWidgetGadgetData()) {
-        hash = (37 * hash) + WIDGET_GADGET_DATA_FIELD_NUMBER;
+        hash = (37 * hash) + WIDGETGADGETDATA_FIELD_NUMBER;
         hash = (53 * hash) + getWidgetGadgetData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -321,13 +321,13 @@ public final class WidgetGadgetDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4276;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum PKEFBEFMGGI {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4282;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code WidgetGadgetDataNotify}
@@ -488,14 +488,14 @@ public final class WidgetGadgetDataNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> widgetGadgetDataBuilder_;
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        * @return Whether the widgetGadgetData field is set.
        */
       public boolean hasWidgetGadgetData() {
         return widgetGadgetDataBuilder_ != null || widgetGadgetData_ != null;
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        * @return The widgetGadgetData.
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData getWidgetGadgetData() {
@@ -506,7 +506,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public Builder setWidgetGadgetData(emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData value) {
         if (widgetGadgetDataBuilder_ == null) {
@@ -522,7 +522,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public Builder setWidgetGadgetData(
           emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder builderForValue) {
@@ -536,7 +536,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public Builder mergeWidgetGadgetData(emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData value) {
         if (widgetGadgetDataBuilder_ == null) {
@@ -554,7 +554,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public Builder clearWidgetGadgetData() {
         if (widgetGadgetDataBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder getWidgetGadgetDataBuilder() {
         
@@ -576,7 +576,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         return getWidgetGadgetDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder() {
         if (widgetGadgetDataBuilder_ != null) {
@@ -587,7 +587,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.WidgetGadgetData widget_gadget_data = 3;</code>
+       * <code>.WidgetGadgetData widgetGadgetData = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> 
@@ -670,10 +670,10 @@ public final class WidgetGadgetDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034WidgetGadgetDataNotify.proto\032\026WidgetGa" +
-      "dgetData.proto\"G\n\026WidgetGadgetDataNotify" +
-      "\022-\n\022widget_gadget_data\030\003 \001(\0132\021.WidgetGad" +
-      "getDataB\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "dgetData.proto\"E\n\026WidgetGadgetDataNotify" +
+      "\022+\n\020widgetGadgetData\030\n \001(\0132\021.WidgetGadge" +
+      "tDataB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

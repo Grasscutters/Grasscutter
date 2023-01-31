@@ -19,17 +19,17 @@ public final class WinterCampGiveFriendItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @return A list containing the limitItemIdList.
      */
     java.util.List<java.lang.Integer> getLimitItemIdListList();
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @return The count of limitItemIdList.
      */
     int getLimitItemIdListCount();
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @param index The index of the element to return.
      * @return The limitItemIdList at the given index.
      */
@@ -43,13 +43,13 @@ public final class WinterCampGiveFriendItemRspOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 8735;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum CKBMMHMFJEK {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 8656;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code WinterCampGiveFriendItemRsp}
@@ -98,7 +98,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 limitItemIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
               limitItemIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -159,10 +159,10 @@ public final class WinterCampGiveFriendItemRspOuterClass {
               emu.grasscutter.net.proto.WinterCampGiveFriendItemRspOuterClass.WinterCampGiveFriendItemRsp.class, emu.grasscutter.net.proto.WinterCampGiveFriendItemRspOuterClass.WinterCampGiveFriendItemRsp.Builder.class);
     }
 
-    public static final int LIMIT_ITEM_ID_LIST_FIELD_NUMBER = 3;
+    public static final int LIMITITEMIDLIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList limitItemIdList_;
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @return A list containing the limitItemIdList.
      */
     @java.lang.Override
@@ -171,14 +171,14 @@ public final class WinterCampGiveFriendItemRspOuterClass {
       return limitItemIdList_;
     }
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @return The count of limitItemIdList.
      */
     public int getLimitItemIdListCount() {
       return limitItemIdList_.size();
     }
     /**
-     * <code>repeated uint32 limit_item_id_list = 3;</code>
+     * <code>repeated uint32 limitItemIdList = 7;</code>
      * @param index The index of the element to return.
      * @return The limitItemIdList at the given index.
      */
@@ -214,7 +214,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getLimitItemIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(limitItemIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < limitItemIdList_.size(); i++) {
@@ -281,7 +281,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getLimitItemIdListCount() > 0) {
-        hash = (37 * hash) + LIMIT_ITEM_ID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + LIMITITEMIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getLimitItemIdListList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -383,13 +383,13 @@ public final class WinterCampGiveFriendItemRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 8735;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum CKBMMHMFJEK {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 8656;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code WinterCampGiveFriendItemRsp}
@@ -565,7 +565,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @return A list containing the limitItemIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -574,14 +574,14 @@ public final class WinterCampGiveFriendItemRspOuterClass {
                  java.util.Collections.unmodifiableList(limitItemIdList_) : limitItemIdList_;
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @return The count of limitItemIdList.
        */
       public int getLimitItemIdListCount() {
         return limitItemIdList_.size();
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @param index The index of the element to return.
        * @return The limitItemIdList at the given index.
        */
@@ -589,7 +589,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
         return limitItemIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @param index The index to set the value at.
        * @param value The limitItemIdList to set.
        * @return This builder for chaining.
@@ -602,7 +602,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @param value The limitItemIdList to add.
        * @return This builder for chaining.
        */
@@ -613,7 +613,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @param values The limitItemIdList to add.
        * @return This builder for chaining.
        */
@@ -626,7 +626,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_item_id_list = 3;</code>
+       * <code>repeated uint32 limitItemIdList = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimitItemIdList() {
@@ -733,10 +733,10 @@ public final class WinterCampGiveFriendItemRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!WinterCampGiveFriendItemRsp.proto\"J\n\033W" +
-      "interCampGiveFriendItemRsp\022\032\n\022limit_item" +
-      "_id_list\030\003 \003(\r\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\n!WinterCampGiveFriendItemRsp.proto\"G\n\033W" +
+      "interCampGiveFriendItemRsp\022\027\n\017limitItemI" +
+      "dList\030\007 \003(\r\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

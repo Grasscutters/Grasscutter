@@ -19,26 +19,26 @@ public final class HomeSceneJumpRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_enter_room_scene = 6;</code>
+     * <code>bool isEnterRoomScene = 1;</code>
      * @return The isEnterRoomScene.
      */
     boolean getIsEnterRoomScene();
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4647;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum BCOGMNPNJPD {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4822;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code HomeSceneJumpRsp}
@@ -85,14 +85,14 @@ public final class HomeSceneJumpRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 48: {
+            case 8: {
 
               isEnterRoomScene_ = input.readBool();
+              break;
+            }
+            case 16: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -127,10 +127,10 @@ public final class HomeSceneJumpRspOuterClass {
               emu.grasscutter.net.proto.HomeSceneJumpRspOuterClass.HomeSceneJumpRsp.class, emu.grasscutter.net.proto.HomeSceneJumpRspOuterClass.HomeSceneJumpRsp.Builder.class);
     }
 
-    public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 6;
+    public static final int ISENTERROOMSCENE_FIELD_NUMBER = 1;
     private boolean isEnterRoomScene_;
     /**
-     * <code>bool is_enter_room_scene = 6;</code>
+     * <code>bool isEnterRoomScene = 1;</code>
      * @return The isEnterRoomScene.
      */
     @java.lang.Override
@@ -138,10 +138,10 @@ public final class HomeSceneJumpRspOuterClass {
       return isEnterRoomScene_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -163,11 +163,11 @@ public final class HomeSceneJumpRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
-      }
       if (isEnterRoomScene_ != false) {
-        output.writeBool(6, isEnterRoomScene_);
+        output.writeBool(1, isEnterRoomScene_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(2, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,13 +178,13 @@ public final class HomeSceneJumpRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
-      }
       if (isEnterRoomScene_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isEnterRoomScene_);
+          .computeBoolSize(1, isEnterRoomScene_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -216,7 +216,7 @@ public final class HomeSceneJumpRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_ENTER_ROOM_SCENE_FIELD_NUMBER;
+      hash = (37 * hash) + ISENTERROOMSCENE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterRoomScene());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -318,13 +318,13 @@ public final class HomeSceneJumpRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4647;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum BCOGMNPNJPD {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4822;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code HomeSceneJumpRsp}
@@ -481,7 +481,7 @@ public final class HomeSceneJumpRspOuterClass {
 
       private boolean isEnterRoomScene_ ;
       /**
-       * <code>bool is_enter_room_scene = 6;</code>
+       * <code>bool isEnterRoomScene = 1;</code>
        * @return The isEnterRoomScene.
        */
       @java.lang.Override
@@ -489,7 +489,7 @@ public final class HomeSceneJumpRspOuterClass {
         return isEnterRoomScene_;
       }
       /**
-       * <code>bool is_enter_room_scene = 6;</code>
+       * <code>bool isEnterRoomScene = 1;</code>
        * @param value The isEnterRoomScene to set.
        * @return This builder for chaining.
        */
@@ -500,7 +500,7 @@ public final class HomeSceneJumpRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_enter_room_scene = 6;</code>
+       * <code>bool isEnterRoomScene = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnterRoomScene() {
@@ -512,7 +512,7 @@ public final class HomeSceneJumpRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -520,7 +520,7 @@ public final class HomeSceneJumpRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -531,7 +531,7 @@ public final class HomeSceneJumpRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -607,10 +607,10 @@ public final class HomeSceneJumpRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026HomeSceneJumpRsp.proto\"@\n\020HomeSceneJum" +
-      "pRsp\022\033\n\023is_enter_room_scene\030\006 \001(\010\022\017\n\007ret" +
-      "code\030\005 \001(\005B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\026HomeSceneJumpRsp.proto\"=\n\020HomeSceneJum" +
+      "pRsp\022\030\n\020isEnterRoomScene\030\001 \001(\010\022\017\n\007retcod" +
+      "e\030\002 \001(\005B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

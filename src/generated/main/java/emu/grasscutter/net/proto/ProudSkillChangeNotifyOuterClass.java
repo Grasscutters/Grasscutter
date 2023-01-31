@@ -19,49 +19,49 @@ public final class ProudSkillChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 13;</code>
+     * <code>uint32 entityId = 14;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>uint64 avatarGuid = 6;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
 
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @return A list containing the proudSkillList.
      */
     java.util.List<java.lang.Integer> getProudSkillListList();
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @return The count of proudSkillList.
      */
     int getProudSkillListCount();
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @param index The index of the element to return.
      * @return The proudSkillList at the given index.
      */
     int getProudSkillList(int index);
 
     /**
-     * <code>uint32 skill_depot_id = 12;</code>
+     * <code>uint32 skillDepotId = 15;</code>
      * @return The skillDepotId.
      */
     int getSkillDepotId();
-
-    /**
-     * <code>uint32 entity_id = 3;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1027;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum HEDMPOEHHBO {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1024;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code ProudSkillChangeNotify}
@@ -110,12 +110,12 @@ public final class ProudSkillChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
-              entityId_ = input.readUInt32();
+              avatarGuid_ = input.readUInt64();
               break;
             }
-            case 40: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 proudSkillList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -123,7 +123,7 @@ public final class ProudSkillChangeNotifyOuterClass {
               proudSkillList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -136,14 +136,14 @@ public final class ProudSkillChangeNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 96: {
+            case 112: {
 
-              skillDepotId_ = input.readUInt32();
+              entityId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
-              avatarGuid_ = input.readUInt64();
+              skillDepotId_ = input.readUInt32();
               break;
             }
             default: {
@@ -181,10 +181,21 @@ public final class ProudSkillChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.class, emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+    public static final int ENTITYID_FIELD_NUMBER = 14;
+    private int entityId_;
+    /**
+     * <code>uint32 entityId = 14;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int AVATARGUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 13;</code>
+     * <code>uint64 avatarGuid = 6;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -192,10 +203,10 @@ public final class ProudSkillChangeNotifyOuterClass {
       return avatarGuid_;
     }
 
-    public static final int PROUD_SKILL_LIST_FIELD_NUMBER = 5;
+    public static final int PROUDSKILLLIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList proudSkillList_;
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @return A list containing the proudSkillList.
      */
     @java.lang.Override
@@ -204,14 +215,14 @@ public final class ProudSkillChangeNotifyOuterClass {
       return proudSkillList_;
     }
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @return The count of proudSkillList.
      */
     public int getProudSkillListCount() {
       return proudSkillList_.size();
     }
     /**
-     * <code>repeated uint32 proud_skill_list = 5;</code>
+     * <code>repeated uint32 proudSkillList = 10;</code>
      * @param index The index of the element to return.
      * @return The proudSkillList at the given index.
      */
@@ -220,26 +231,15 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
     private int proudSkillListMemoizedSerializedSize = -1;
 
-    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 12;
+    public static final int SKILLDEPOTID_FIELD_NUMBER = 15;
     private int skillDepotId_;
     /**
-     * <code>uint32 skill_depot_id = 12;</code>
+     * <code>uint32 skillDepotId = 15;</code>
      * @return The skillDepotId.
      */
     @java.lang.Override
     public int getSkillDepotId() {
       return skillDepotId_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 3;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -257,21 +257,21 @@ public final class ProudSkillChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(6, avatarGuid_);
       }
       if (getProudSkillListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(proudSkillListMemoizedSerializedSize);
       }
       for (int i = 0; i < proudSkillList_.size(); i++) {
         output.writeUInt32NoTag(proudSkillList_.getInt(i));
       }
-      if (skillDepotId_ != 0) {
-        output.writeUInt32(12, skillDepotId_);
+      if (entityId_ != 0) {
+        output.writeUInt32(14, entityId_);
       }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(13, avatarGuid_);
+      if (skillDepotId_ != 0) {
+        output.writeUInt32(15, skillDepotId_);
       }
       unknownFields.writeTo(output);
     }
@@ -282,9 +282,9 @@ public final class ProudSkillChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
+      if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt64Size(6, avatarGuid_);
       }
       {
         int dataSize = 0;
@@ -300,13 +300,13 @@ public final class ProudSkillChangeNotifyOuterClass {
         }
         proudSkillListMemoizedSerializedSize = dataSize;
       }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, entityId_);
+      }
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, skillDepotId_);
-      }
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, avatarGuid_);
+          .computeUInt32Size(15, skillDepotId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -323,14 +323,14 @@ public final class ProudSkillChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify other = (emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify) obj;
 
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
       if (!getProudSkillListList()
           .equals(other.getProudSkillListList())) return false;
       if (getSkillDepotId()
           != other.getSkillDepotId()) return false;
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -342,17 +342,17 @@ public final class ProudSkillChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
       if (getProudSkillListCount() > 0) {
-        hash = (37 * hash) + PROUD_SKILL_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + PROUDSKILLLIST_FIELD_NUMBER;
         hash = (53 * hash) + getProudSkillListList().hashCode();
       }
-      hash = (37 * hash) + SKILL_DEPOT_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SKILLDEPOTID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillDepotId();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -450,13 +450,13 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1027;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum HEDMPOEHHBO {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1024;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code ProudSkillChangeNotify}
@@ -496,13 +496,13 @@ public final class ProudSkillChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        entityId_ = 0;
+
         avatarGuid_ = 0L;
 
         proudSkillList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         skillDepotId_ = 0;
-
-        entityId_ = 0;
 
         return this;
       }
@@ -531,6 +531,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       public emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify buildPartial() {
         emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify result = new emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify(this);
         int from_bitField0_ = bitField0_;
+        result.entityId_ = entityId_;
         result.avatarGuid_ = avatarGuid_;
         if (((bitField0_ & 0x00000001) != 0)) {
           proudSkillList_.makeImmutable();
@@ -538,7 +539,6 @@ public final class ProudSkillChangeNotifyOuterClass {
         }
         result.proudSkillList_ = proudSkillList_;
         result.skillDepotId_ = skillDepotId_;
-        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -587,6 +587,9 @@ public final class ProudSkillChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify other) {
         if (other == emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.getDefaultInstance()) return this;
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
+        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
@@ -602,9 +605,6 @@ public final class ProudSkillChangeNotifyOuterClass {
         }
         if (other.getSkillDepotId() != 0) {
           setSkillDepotId(other.getSkillDepotId());
-        }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -636,9 +636,40 @@ public final class ProudSkillChangeNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int entityId_ ;
+      /**
+       * <code>uint32 entityId = 14;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entityId = 14;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entityId = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 13;</code>
+       * <code>uint64 avatarGuid = 6;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -646,7 +677,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 13;</code>
+       * <code>uint64 avatarGuid = 6;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -657,7 +688,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 13;</code>
+       * <code>uint64 avatarGuid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -675,7 +706,7 @@ public final class ProudSkillChangeNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @return A list containing the proudSkillList.
        */
       public java.util.List<java.lang.Integer>
@@ -684,14 +715,14 @@ public final class ProudSkillChangeNotifyOuterClass {
                  java.util.Collections.unmodifiableList(proudSkillList_) : proudSkillList_;
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @return The count of proudSkillList.
        */
       public int getProudSkillListCount() {
         return proudSkillList_.size();
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @param index The index of the element to return.
        * @return The proudSkillList at the given index.
        */
@@ -699,7 +730,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return proudSkillList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @param index The index to set the value at.
        * @param value The proudSkillList to set.
        * @return This builder for chaining.
@@ -712,7 +743,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @param value The proudSkillList to add.
        * @return This builder for chaining.
        */
@@ -723,7 +754,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @param values The proudSkillList to add.
        * @return This builder for chaining.
        */
@@ -736,7 +767,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 proud_skill_list = 5;</code>
+       * <code>repeated uint32 proudSkillList = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearProudSkillList() {
@@ -748,7 +779,7 @@ public final class ProudSkillChangeNotifyOuterClass {
 
       private int skillDepotId_ ;
       /**
-       * <code>uint32 skill_depot_id = 12;</code>
+       * <code>uint32 skillDepotId = 15;</code>
        * @return The skillDepotId.
        */
       @java.lang.Override
@@ -756,7 +787,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         return skillDepotId_;
       }
       /**
-       * <code>uint32 skill_depot_id = 12;</code>
+       * <code>uint32 skillDepotId = 15;</code>
        * @param value The skillDepotId to set.
        * @return This builder for chaining.
        */
@@ -767,43 +798,12 @@ public final class ProudSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 skill_depot_id = 12;</code>
+       * <code>uint32 skillDepotId = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
         
         skillDepotId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
         onChanged();
         return this;
       }
@@ -874,11 +874,11 @@ public final class ProudSkillChangeNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034ProudSkillChangeNotify.proto\"r\n\026ProudS" +
-      "killChangeNotify\022\023\n\013avatar_guid\030\r \001(\004\022\030\n" +
-      "\020proud_skill_list\030\005 \003(\r\022\026\n\016skill_depot_i" +
-      "d\030\014 \001(\r\022\021\n\tentity_id\030\003 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n\034ProudSkillChangeNotify.proto\"l\n\026ProudS" +
+      "killChangeNotify\022\020\n\010entityId\030\016 \001(\r\022\022\n\nav" +
+      "atarGuid\030\006 \001(\004\022\026\n\016proudSkillList\030\n \003(\r\022\024" +
+      "\n\014skillDepotId\030\017 \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -889,7 +889,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     internal_static_ProudSkillChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProudSkillChangeNotify_descriptor,
-        new java.lang.String[] { "AvatarGuid", "ProudSkillList", "SkillDepotId", "EntityId", });
+        new java.lang.String[] { "EntityId", "AvatarGuid", "ProudSkillList", "SkillDepotId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

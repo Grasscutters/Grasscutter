@@ -19,17 +19,17 @@ public final class GetPlayerSocialDetailRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      * @return Whether the detailData field is set.
      */
     boolean hasDetailData();
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      * @return The detailData.
      */
     emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail getDetailData();
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      */
     emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getDetailDataOrBuilder();
 
@@ -41,13 +41,13 @@ public final class GetPlayerSocialDetailRspOuterClass {
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4057;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum GEDIBCNNOHN {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4014;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code GetPlayerSocialDetailRsp}
@@ -94,7 +94,12 @@ public final class GetPlayerSocialDetailRspOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 112: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 122: {
               emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder subBuilder = null;
               if (detailData_ != null) {
                 subBuilder = detailData_.toBuilder();
@@ -105,11 +110,6 @@ public final class GetPlayerSocialDetailRspOuterClass {
                 detailData_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -144,10 +144,10 @@ public final class GetPlayerSocialDetailRspOuterClass {
               emu.grasscutter.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp.class, emu.grasscutter.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp.Builder.class);
     }
 
-    public static final int DETAIL_DATA_FIELD_NUMBER = 6;
+    public static final int DETAILDATA_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail detailData_;
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      * @return Whether the detailData field is set.
      */
     @java.lang.Override
@@ -155,7 +155,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       return detailData_ != null;
     }
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      * @return The detailData.
      */
     @java.lang.Override
@@ -163,7 +163,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       return detailData_ == null ? emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.getDefaultInstance() : detailData_;
     }
     /**
-     * <code>.SocialDetail detail_data = 6;</code>
+     * <code>.SocialDetail detailData = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getDetailDataOrBuilder() {
@@ -195,11 +195,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (detailData_ != null) {
-        output.writeMessage(6, getDetailData());
-      }
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
+      }
+      if (detailData_ != null) {
+        output.writeMessage(15, getDetailData());
       }
       unknownFields.writeTo(output);
     }
@@ -210,13 +210,13 @@ public final class GetPlayerSocialDetailRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (detailData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getDetailData());
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
+      }
+      if (detailData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getDetailData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,7 +252,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDetailData()) {
-        hash = (37 * hash) + DETAIL_DATA_FIELD_NUMBER;
+        hash = (37 * hash) + DETAILDATA_FIELD_NUMBER;
         hash = (53 * hash) + getDetailData().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -354,13 +354,13 @@ public final class GetPlayerSocialDetailRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4057;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum GEDIBCNNOHN {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4014;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code GetPlayerSocialDetailRsp}
@@ -527,14 +527,14 @@ public final class GetPlayerSocialDetailRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder> detailDataBuilder_;
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        * @return Whether the detailData field is set.
        */
       public boolean hasDetailData() {
         return detailDataBuilder_ != null || detailData_ != null;
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        * @return The detailData.
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail getDetailData() {
@@ -545,7 +545,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         }
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public Builder setDetailData(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail value) {
         if (detailDataBuilder_ == null) {
@@ -561,7 +561,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public Builder setDetailData(
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder builderForValue) {
@@ -575,7 +575,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public Builder mergeDetailData(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail value) {
         if (detailDataBuilder_ == null) {
@@ -593,7 +593,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public Builder clearDetailData() {
         if (detailDataBuilder_ == null) {
@@ -607,7 +607,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder getDetailDataBuilder() {
         
@@ -615,7 +615,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         return getDetailDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getDetailDataOrBuilder() {
         if (detailDataBuilder_ != null) {
@@ -626,7 +626,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         }
       }
       /**
-       * <code>.SocialDetail detail_data = 6;</code>
+       * <code>.SocialDetail detailData = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder> 
@@ -740,10 +740,10 @@ public final class GetPlayerSocialDetailRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036GetPlayerSocialDetailRsp.proto\032\022Social" +
-      "Detail.proto\"O\n\030GetPlayerSocialDetailRsp" +
-      "\022\"\n\013detail_data\030\006 \001(\0132\r.SocialDetail\022\017\n\007" +
-      "retcode\030\016 \001(\005B\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "Detail.proto\"N\n\030GetPlayerSocialDetailRsp" +
+      "\022!\n\ndetailData\030\017 \001(\0132\r.SocialDetail\022\017\n\007r" +
+      "etcode\030\016 \001(\005B\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

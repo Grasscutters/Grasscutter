@@ -19,21 +19,21 @@ public final class BuyBattlePassLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 buy_level = 15;</code>
+     * <code>uint32 buyLevel = 4;</code>
      * @return The buyLevel.
      */
     int getBuyLevel();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2643;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum GAFBPOGLKLK {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 2607;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code BuyBattlePassLevelReq}
@@ -80,7 +80,7 @@ public final class BuyBattlePassLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 32: {
 
               buyLevel_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class BuyBattlePassLevelReqOuterClass {
               emu.grasscutter.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq.class, emu.grasscutter.net.proto.BuyBattlePassLevelReqOuterClass.BuyBattlePassLevelReq.Builder.class);
     }
 
-    public static final int BUY_LEVEL_FIELD_NUMBER = 15;
+    public static final int BUYLEVEL_FIELD_NUMBER = 4;
     private int buyLevel_;
     /**
-     * <code>uint32 buy_level = 15;</code>
+     * <code>uint32 buyLevel = 4;</code>
      * @return The buyLevel.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class BuyBattlePassLevelReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (buyLevel_ != 0) {
-        output.writeUInt32(15, buyLevel_);
+        output.writeUInt32(4, buyLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class BuyBattlePassLevelReqOuterClass {
       size = 0;
       if (buyLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, buyLevel_);
+          .computeUInt32Size(4, buyLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class BuyBattlePassLevelReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BUY_LEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + BUYLEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getBuyLevel();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class BuyBattlePassLevelReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2643;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum GAFBPOGLKLK {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 2607;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code BuyBattlePassLevelReq}
@@ -443,7 +443,7 @@ public final class BuyBattlePassLevelReqOuterClass {
 
       private int buyLevel_ ;
       /**
-       * <code>uint32 buy_level = 15;</code>
+       * <code>uint32 buyLevel = 4;</code>
        * @return The buyLevel.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class BuyBattlePassLevelReqOuterClass {
         return buyLevel_;
       }
       /**
-       * <code>uint32 buy_level = 15;</code>
+       * <code>uint32 buyLevel = 4;</code>
        * @param value The buyLevel to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class BuyBattlePassLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buy_level = 15;</code>
+       * <code>uint32 buyLevel = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuyLevel() {
@@ -538,9 +538,9 @@ public final class BuyBattlePassLevelReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033BuyBattlePassLevelReq.proto\"*\n\025BuyBatt" +
-      "lePassLevelReq\022\021\n\tbuy_level\030\017 \001(\rB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "\n\033BuyBattlePassLevelReq.proto\")\n\025BuyBatt" +
+      "lePassLevelReq\022\020\n\010buyLevel\030\004 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

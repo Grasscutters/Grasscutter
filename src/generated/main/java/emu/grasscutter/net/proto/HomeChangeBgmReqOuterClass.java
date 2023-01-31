@@ -19,21 +19,21 @@ public final class HomeChangeBgmReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 bgm_id = 9;</code>
+     * <code>uint32 bgmId = 12;</code>
      * @return The bgmId.
      */
     int getBgmId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4736;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum ELECAPHKALF {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4469;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code HomeChangeBgmReq}
@@ -80,7 +80,7 @@ public final class HomeChangeBgmReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 96: {
 
               bgmId_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class HomeChangeBgmReqOuterClass {
               emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq.class, emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq.Builder.class);
     }
 
-    public static final int BGM_ID_FIELD_NUMBER = 9;
+    public static final int BGMID_FIELD_NUMBER = 12;
     private int bgmId_;
     /**
-     * <code>uint32 bgm_id = 9;</code>
+     * <code>uint32 bgmId = 12;</code>
      * @return The bgmId.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class HomeChangeBgmReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bgmId_ != 0) {
-        output.writeUInt32(9, bgmId_);
+        output.writeUInt32(12, bgmId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class HomeChangeBgmReqOuterClass {
       size = 0;
       if (bgmId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, bgmId_);
+          .computeUInt32Size(12, bgmId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class HomeChangeBgmReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BGM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + BGMID_FIELD_NUMBER;
       hash = (53 * hash) + getBgmId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class HomeChangeBgmReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4736;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum ELECAPHKALF {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4469;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code HomeChangeBgmReq}
@@ -443,7 +443,7 @@ public final class HomeChangeBgmReqOuterClass {
 
       private int bgmId_ ;
       /**
-       * <code>uint32 bgm_id = 9;</code>
+       * <code>uint32 bgmId = 12;</code>
        * @return The bgmId.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class HomeChangeBgmReqOuterClass {
         return bgmId_;
       }
       /**
-       * <code>uint32 bgm_id = 9;</code>
+       * <code>uint32 bgmId = 12;</code>
        * @param value The bgmId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class HomeChangeBgmReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bgm_id = 9;</code>
+       * <code>uint32 bgmId = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBgmId() {
@@ -538,9 +538,9 @@ public final class HomeChangeBgmReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026HomeChangeBgmReq.proto\"\"\n\020HomeChangeBg" +
-      "mReq\022\016\n\006bgm_id\030\t \001(\rB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\026HomeChangeBgmReq.proto\"!\n\020HomeChangeBg" +
+      "mReq\022\r\n\005bgmId\030\014 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

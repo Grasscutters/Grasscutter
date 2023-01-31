@@ -19,32 +19,32 @@ public final class EnterWorldAreaRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 area_type = 15;</code>
+     * <code>uint32 areaType = 3;</code>
      * @return The areaType.
      */
     int getAreaType();
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 areaId = 6;</code>
      * @return The areaId.
      */
     int getAreaId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 275;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum POGEKCFJEDN {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 250;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code EnterWorldAreaRsp}
@@ -91,19 +91,19 @@ public final class EnterWorldAreaRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
+
+              areaType_ = input.readUInt32();
+              break;
+            }
+            case 48: {
 
               areaId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 96: {
 
               retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              areaType_ = input.readUInt32();
               break;
             }
             default: {
@@ -138,10 +138,10 @@ public final class EnterWorldAreaRspOuterClass {
               emu.grasscutter.net.proto.EnterWorldAreaRspOuterClass.EnterWorldAreaRsp.class, emu.grasscutter.net.proto.EnterWorldAreaRspOuterClass.EnterWorldAreaRsp.Builder.class);
     }
 
-    public static final int AREA_TYPE_FIELD_NUMBER = 15;
+    public static final int AREATYPE_FIELD_NUMBER = 3;
     private int areaType_;
     /**
-     * <code>uint32 area_type = 15;</code>
+     * <code>uint32 areaType = 3;</code>
      * @return The areaType.
      */
     @java.lang.Override
@@ -149,10 +149,10 @@ public final class EnterWorldAreaRspOuterClass {
       return areaType_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -160,10 +160,10 @@ public final class EnterWorldAreaRspOuterClass {
       return retcode_;
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 1;
+    public static final int AREAID_FIELD_NUMBER = 6;
     private int areaId_;
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 areaId = 6;</code>
      * @return The areaId.
      */
     @java.lang.Override
@@ -185,14 +185,14 @@ public final class EnterWorldAreaRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (areaType_ != 0) {
+        output.writeUInt32(3, areaType_);
+      }
       if (areaId_ != 0) {
-        output.writeUInt32(1, areaId_);
+        output.writeUInt32(6, areaId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
-      }
-      if (areaType_ != 0) {
-        output.writeUInt32(15, areaType_);
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -203,17 +203,17 @@ public final class EnterWorldAreaRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (areaType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, areaType_);
+      }
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, areaId_);
+          .computeUInt32Size(6, areaId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
-      }
-      if (areaType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, areaType_);
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -247,11 +247,11 @@ public final class EnterWorldAreaRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AREA_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + AREATYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAreaType();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
+      hash = (37 * hash) + AREAID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -350,13 +350,13 @@ public final class EnterWorldAreaRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 275;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum POGEKCFJEDN {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 250;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code EnterWorldAreaRsp}
@@ -519,7 +519,7 @@ public final class EnterWorldAreaRspOuterClass {
 
       private int areaType_ ;
       /**
-       * <code>uint32 area_type = 15;</code>
+       * <code>uint32 areaType = 3;</code>
        * @return The areaType.
        */
       @java.lang.Override
@@ -527,7 +527,7 @@ public final class EnterWorldAreaRspOuterClass {
         return areaType_;
       }
       /**
-       * <code>uint32 area_type = 15;</code>
+       * <code>uint32 areaType = 3;</code>
        * @param value The areaType to set.
        * @return This builder for chaining.
        */
@@ -538,7 +538,7 @@ public final class EnterWorldAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 area_type = 15;</code>
+       * <code>uint32 areaType = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaType() {
@@ -550,7 +550,7 @@ public final class EnterWorldAreaRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -558,7 +558,7 @@ public final class EnterWorldAreaRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -569,7 +569,7 @@ public final class EnterWorldAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -581,7 +581,7 @@ public final class EnterWorldAreaRspOuterClass {
 
       private int areaId_ ;
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 areaId = 6;</code>
        * @return The areaId.
        */
       @java.lang.Override
@@ -589,7 +589,7 @@ public final class EnterWorldAreaRspOuterClass {
         return areaId_;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 areaId = 6;</code>
        * @param value The areaId to set.
        * @return This builder for chaining.
        */
@@ -600,7 +600,7 @@ public final class EnterWorldAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 areaId = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
@@ -676,10 +676,10 @@ public final class EnterWorldAreaRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027EnterWorldAreaRsp.proto\"H\n\021EnterWorldA" +
-      "reaRsp\022\021\n\tarea_type\030\017 \001(\r\022\017\n\007retcode\030\013 \001" +
-      "(\005\022\017\n\007area_id\030\001 \001(\rB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "\n\027EnterWorldAreaRsp.proto\"F\n\021EnterWorldA" +
+      "reaRsp\022\020\n\010areaType\030\003 \001(\r\022\017\n\007retcode\030\014 \001(" +
+      "\005\022\016\n\006areaId\030\006 \001(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

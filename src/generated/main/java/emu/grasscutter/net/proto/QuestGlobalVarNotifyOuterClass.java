@@ -19,38 +19,38 @@ public final class QuestGlobalVarNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar> 
         getVarListList();
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar getVarList(int index);
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     int getVarListCount();
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder> 
         getVarListOrBuilderList();
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder getVarListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 480;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum JPMJBPBHBDK {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 451;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code QuestGlobalVarNotify}
@@ -99,7 +99,7 @@ public final class QuestGlobalVarNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 varList_ = new java.util.ArrayList<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar>();
                 mutable_bitField0_ |= 0x00000001;
@@ -143,17 +143,17 @@ public final class QuestGlobalVarNotifyOuterClass {
               emu.grasscutter.net.proto.QuestGlobalVarNotifyOuterClass.QuestGlobalVarNotify.class, emu.grasscutter.net.proto.QuestGlobalVarNotifyOuterClass.QuestGlobalVarNotify.Builder.class);
     }
 
-    public static final int VAR_LIST_FIELD_NUMBER = 8;
+    public static final int VARLIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar> varList_;
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar> getVarListList() {
       return varList_;
     }
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder> 
@@ -161,21 +161,21 @@ public final class QuestGlobalVarNotifyOuterClass {
       return varList_;
     }
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     @java.lang.Override
     public int getVarListCount() {
       return varList_.size();
     }
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar getVarList(int index) {
       return varList_.get(index);
     }
     /**
-     * <code>repeated .QuestGlobalVar var_list = 8;</code>
+     * <code>repeated .QuestGlobalVar varList = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder getVarListOrBuilder(
@@ -198,7 +198,7 @@ public final class QuestGlobalVarNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < varList_.size(); i++) {
-        output.writeMessage(8, varList_.get(i));
+        output.writeMessage(12, varList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -211,7 +211,7 @@ public final class QuestGlobalVarNotifyOuterClass {
       size = 0;
       for (int i = 0; i < varList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, varList_.get(i));
+          .computeMessageSize(12, varList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -242,7 +242,7 @@ public final class QuestGlobalVarNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getVarListCount() > 0) {
-        hash = (37 * hash) + VAR_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + VARLIST_FIELD_NUMBER;
         hash = (53 * hash) + getVarListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -342,13 +342,13 @@ public final class QuestGlobalVarNotifyOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 480;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum JPMJBPBHBDK {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 451;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code QuestGlobalVarNotify}
@@ -548,7 +548,7 @@ public final class QuestGlobalVarNotifyOuterClass {
           emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder> varListBuilder_;
 
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar> getVarListList() {
         if (varListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public int getVarListCount() {
         if (varListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar getVarList(int index) {
         if (varListBuilder_ == null) {
@@ -578,7 +578,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder setVarList(
           int index, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar value) {
@@ -595,7 +595,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder setVarList(
           int index, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder builderForValue) {
@@ -609,7 +609,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder addVarList(emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar value) {
         if (varListBuilder_ == null) {
@@ -625,7 +625,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder addVarList(
           int index, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar value) {
@@ -642,7 +642,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder addVarList(
           emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder builderForValue) {
@@ -656,7 +656,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder addVarList(
           int index, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder builderForValue) {
@@ -670,7 +670,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder addAllVarList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar> values) {
@@ -685,7 +685,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder clearVarList() {
         if (varListBuilder_ == null) {
@@ -698,7 +698,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public Builder removeVarList(int index) {
         if (varListBuilder_ == null) {
@@ -711,14 +711,14 @@ public final class QuestGlobalVarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder getVarListBuilder(
           int index) {
         return getVarListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder getVarListOrBuilder(
           int index) {
@@ -728,7 +728,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVarOrBuilder> 
            getVarListOrBuilderList() {
@@ -739,14 +739,14 @@ public final class QuestGlobalVarNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder addVarListBuilder() {
         return getVarListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.getDefaultInstance());
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder addVarListBuilder(
           int index) {
@@ -754,7 +754,7 @@ public final class QuestGlobalVarNotifyOuterClass {
             index, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.getDefaultInstance());
       }
       /**
-       * <code>repeated .QuestGlobalVar var_list = 8;</code>
+       * <code>repeated .QuestGlobalVar varList = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder> 
            getVarListBuilderList() {
@@ -842,9 +842,9 @@ public final class QuestGlobalVarNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032QuestGlobalVarNotify.proto\032\024QuestGloba" +
-      "lVar.proto\"9\n\024QuestGlobalVarNotify\022!\n\010va" +
-      "r_list\030\010 \003(\0132\017.QuestGlobalVarB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "lVar.proto\"8\n\024QuestGlobalVarNotify\022 \n\007va" +
+      "rList\030\014 \003(\0132\017.QuestGlobalVarB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

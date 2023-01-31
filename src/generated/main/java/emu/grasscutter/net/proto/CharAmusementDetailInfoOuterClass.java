@@ -19,25 +19,25 @@ public final class CharAmusementDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData> 
         getStageDataListList();
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData getStageDataList(int index);
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     int getStageDataListCount();
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder> 
         getStageDataListOrBuilderList();
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder getStageDataListOrBuilder(
         int index);
@@ -89,7 +89,7 @@ public final class CharAmusementDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +133,17 @@ public final class CharAmusementDetailInfoOuterClass {
               emu.grasscutter.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo.class, emu.grasscutter.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo.Builder.class);
     }
 
-    public static final int STAGE_DATA_LIST_FIELD_NUMBER = 12;
+    public static final int STAGEDATALIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData> stageDataList_;
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData> getStageDataListList() {
       return stageDataList_;
     }
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder> 
@@ -151,21 +151,21 @@ public final class CharAmusementDetailInfoOuterClass {
       return stageDataList_;
     }
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     @java.lang.Override
     public int getStageDataListCount() {
       return stageDataList_.size();
     }
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData getStageDataList(int index) {
       return stageDataList_.get(index);
     }
     /**
-     * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+     * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder getStageDataListOrBuilder(
@@ -188,7 +188,7 @@ public final class CharAmusementDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageDataList_.size(); i++) {
-        output.writeMessage(12, stageDataList_.get(i));
+        output.writeMessage(1, stageDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +201,7 @@ public final class CharAmusementDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, stageDataList_.get(i));
+          .computeMessageSize(1, stageDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -232,7 +232,7 @@ public final class CharAmusementDetailInfoOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getStageDataListCount() > 0) {
-        hash = (37 * hash) + STAGE_DATA_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + STAGEDATALIST_FIELD_NUMBER;
         hash = (53 * hash) + getStageDataListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -528,7 +528,7 @@ public final class CharAmusementDetailInfoOuterClass {
           emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder> stageDataListBuilder_;
 
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData> getStageDataListList() {
         if (stageDataListBuilder_ == null) {
@@ -538,7 +538,7 @@ public final class CharAmusementDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public int getStageDataListCount() {
         if (stageDataListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class CharAmusementDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData getStageDataList(int index) {
         if (stageDataListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class CharAmusementDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder setStageDataList(
           int index, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData value) {
@@ -575,7 +575,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder setStageDataList(
           int index, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder builderForValue) {
@@ -589,7 +589,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder addStageDataList(emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData value) {
         if (stageDataListBuilder_ == null) {
@@ -605,7 +605,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder addStageDataList(
           int index, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData value) {
@@ -622,7 +622,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder addStageDataList(
           emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder builderForValue) {
@@ -636,7 +636,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder addStageDataList(
           int index, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder builderForValue) {
@@ -650,7 +650,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder addAllStageDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData> values) {
@@ -665,7 +665,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder clearStageDataList() {
         if (stageDataListBuilder_ == null) {
@@ -678,7 +678,7 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public Builder removeStageDataList(int index) {
         if (stageDataListBuilder_ == null) {
@@ -691,14 +691,14 @@ public final class CharAmusementDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder getStageDataListBuilder(
           int index) {
         return getStageDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder getStageDataListOrBuilder(
           int index) {
@@ -708,7 +708,7 @@ public final class CharAmusementDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder> 
            getStageDataListOrBuilderList() {
@@ -719,14 +719,14 @@ public final class CharAmusementDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder addStageDataListBuilder() {
         return getStageDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.getDefaultInstance());
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder addStageDataListBuilder(
           int index) {
@@ -734,7 +734,7 @@ public final class CharAmusementDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.getDefaultInstance());
       }
       /**
-       * <code>repeated .CharAmusementStageData stage_data_list = 12;</code>
+       * <code>repeated .CharAmusementStageData stageDataList = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder> 
            getStageDataListBuilderList() {
@@ -822,10 +822,10 @@ public final class CharAmusementDetailInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035CharAmusementDetailInfo.proto\032\034CharAmu" +
-      "sementStageData.proto\"K\n\027CharAmusementDe" +
-      "tailInfo\0220\n\017stage_data_list\030\014 \003(\0132\027.Char" +
-      "AmusementStageDataB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "sementStageData.proto\"I\n\027CharAmusementDe" +
+      "tailInfo\022.\n\rstageDataList\030\001 \003(\0132\027.CharAm" +
+      "usementStageDataB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

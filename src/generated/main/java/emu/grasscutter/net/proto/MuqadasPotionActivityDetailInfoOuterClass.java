@@ -19,27 +19,27 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> 
-        getMuqadasPotionLevelDataListList();
+        getKmhabponajoList();
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
-    emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getMuqadasPotionLevelDataList(int index);
+    emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getKmhabponajo(int index);
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
-    int getMuqadasPotionLevelDataListCount();
+    int getKmhabponajoCount();
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> 
-        getMuqadasPotionLevelDataListOrBuilderList();
+        getKmhabponajoOrBuilderList();
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
-    emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getMuqadasPotionLevelDataListOrBuilder(
+    emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getKmhabponajoOrBuilder(
         int index);
   }
   /**
@@ -55,7 +55,7 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       super(builder);
     }
     private MuqadasPotionActivityDetailInfo() {
-      muqadasPotionLevelDataList_ = java.util.Collections.emptyList();
+      kmhabponajo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -89,12 +89,12 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                muqadasPotionLevelDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData>();
+                kmhabponajo_ = new java.util.ArrayList<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              muqadasPotionLevelDataList_.add(
+              kmhabponajo_.add(
                   input.readMessage(emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.parser(), extensionRegistry));
               break;
             }
@@ -114,7 +114,7 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          muqadasPotionLevelDataList_ = java.util.Collections.unmodifiableList(muqadasPotionLevelDataList_);
+          kmhabponajo_ = java.util.Collections.unmodifiableList(kmhabponajo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -133,44 +133,44 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo.class, emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo.Builder.class);
     }
 
-    public static final int MUQADAS_POTION_LEVEL_DATA_LIST_FIELD_NUMBER = 5;
-    private java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> muqadasPotionLevelDataList_;
+    public static final int KMHABPONAJO_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> kmhabponajo_;
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> getMuqadasPotionLevelDataListList() {
-      return muqadasPotionLevelDataList_;
+    public java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> getKmhabponajoList() {
+      return kmhabponajo_;
     }
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> 
-        getMuqadasPotionLevelDataListOrBuilderList() {
-      return muqadasPotionLevelDataList_;
+        getKmhabponajoOrBuilderList() {
+      return kmhabponajo_;
     }
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     @java.lang.Override
-    public int getMuqadasPotionLevelDataListCount() {
-      return muqadasPotionLevelDataList_.size();
+    public int getKmhabponajoCount() {
+      return kmhabponajo_.size();
     }
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getMuqadasPotionLevelDataList(int index) {
-      return muqadasPotionLevelDataList_.get(index);
+    public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getKmhabponajo(int index) {
+      return kmhabponajo_.get(index);
     }
     /**
-     * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+     * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getMuqadasPotionLevelDataListOrBuilder(
+    public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getKmhabponajoOrBuilder(
         int index) {
-      return muqadasPotionLevelDataList_.get(index);
+      return kmhabponajo_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -187,8 +187,8 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < muqadasPotionLevelDataList_.size(); i++) {
-        output.writeMessage(5, muqadasPotionLevelDataList_.get(i));
+      for (int i = 0; i < kmhabponajo_.size(); i++) {
+        output.writeMessage(10, kmhabponajo_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -199,9 +199,9 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < muqadasPotionLevelDataList_.size(); i++) {
+      for (int i = 0; i < kmhabponajo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, muqadasPotionLevelDataList_.get(i));
+          .computeMessageSize(10, kmhabponajo_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -218,8 +218,8 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo other = (emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo) obj;
 
-      if (!getMuqadasPotionLevelDataListList()
-          .equals(other.getMuqadasPotionLevelDataListList())) return false;
+      if (!getKmhabponajoList()
+          .equals(other.getKmhabponajoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -231,9 +231,9 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMuqadasPotionLevelDataListCount() > 0) {
-        hash = (37 * hash) + MUQADAS_POTION_LEVEL_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMuqadasPotionLevelDataListList().hashCode();
+      if (getKmhabponajoCount() > 0) {
+        hash = (37 * hash) + KMHABPONAJO_FIELD_NUMBER;
+        hash = (53 * hash) + getKmhabponajoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -363,17 +363,17 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMuqadasPotionLevelDataListFieldBuilder();
+          getKmhabponajoFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          muqadasPotionLevelDataList_ = java.util.Collections.emptyList();
+        if (kmhabponajoBuilder_ == null) {
+          kmhabponajo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          muqadasPotionLevelDataListBuilder_.clear();
+          kmhabponajoBuilder_.clear();
         }
         return this;
       }
@@ -402,14 +402,14 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo result = new emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
-        if (muqadasPotionLevelDataListBuilder_ == null) {
+        if (kmhabponajoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            muqadasPotionLevelDataList_ = java.util.Collections.unmodifiableList(muqadasPotionLevelDataList_);
+            kmhabponajo_ = java.util.Collections.unmodifiableList(kmhabponajo_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.muqadasPotionLevelDataList_ = muqadasPotionLevelDataList_;
+          result.kmhabponajo_ = kmhabponajo_;
         } else {
-          result.muqadasPotionLevelDataList_ = muqadasPotionLevelDataListBuilder_.build();
+          result.kmhabponajo_ = kmhabponajoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -459,29 +459,29 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo.getDefaultInstance()) return this;
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          if (!other.muqadasPotionLevelDataList_.isEmpty()) {
-            if (muqadasPotionLevelDataList_.isEmpty()) {
-              muqadasPotionLevelDataList_ = other.muqadasPotionLevelDataList_;
+        if (kmhabponajoBuilder_ == null) {
+          if (!other.kmhabponajo_.isEmpty()) {
+            if (kmhabponajo_.isEmpty()) {
+              kmhabponajo_ = other.kmhabponajo_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureMuqadasPotionLevelDataListIsMutable();
-              muqadasPotionLevelDataList_.addAll(other.muqadasPotionLevelDataList_);
+              ensureKmhabponajoIsMutable();
+              kmhabponajo_.addAll(other.kmhabponajo_);
             }
             onChanged();
           }
         } else {
-          if (!other.muqadasPotionLevelDataList_.isEmpty()) {
-            if (muqadasPotionLevelDataListBuilder_.isEmpty()) {
-              muqadasPotionLevelDataListBuilder_.dispose();
-              muqadasPotionLevelDataListBuilder_ = null;
-              muqadasPotionLevelDataList_ = other.muqadasPotionLevelDataList_;
+          if (!other.kmhabponajo_.isEmpty()) {
+            if (kmhabponajoBuilder_.isEmpty()) {
+              kmhabponajoBuilder_.dispose();
+              kmhabponajoBuilder_ = null;
+              kmhabponajo_ = other.kmhabponajo_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              muqadasPotionLevelDataListBuilder_ = 
+              kmhabponajoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMuqadasPotionLevelDataListFieldBuilder() : null;
+                   getKmhabponajoFieldBuilder() : null;
             } else {
-              muqadasPotionLevelDataListBuilder_.addAllMessages(other.muqadasPotionLevelDataList_);
+              kmhabponajoBuilder_.addAllMessages(other.kmhabponajo_);
             }
           }
         }
@@ -515,244 +515,244 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> muqadasPotionLevelDataList_ =
+      private java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> kmhabponajo_ =
         java.util.Collections.emptyList();
-      private void ensureMuqadasPotionLevelDataListIsMutable() {
+      private void ensureKmhabponajoIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          muqadasPotionLevelDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData>(muqadasPotionLevelDataList_);
+          kmhabponajo_ = new java.util.ArrayList<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData>(kmhabponajo_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> muqadasPotionLevelDataListBuilder_;
+          emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> kmhabponajoBuilder_;
 
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> getMuqadasPotionLevelDataListList() {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(muqadasPotionLevelDataList_);
+      public java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> getKmhabponajoList() {
+        if (kmhabponajoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(kmhabponajo_);
         } else {
-          return muqadasPotionLevelDataListBuilder_.getMessageList();
+          return kmhabponajoBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public int getMuqadasPotionLevelDataListCount() {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          return muqadasPotionLevelDataList_.size();
+      public int getKmhabponajoCount() {
+        if (kmhabponajoBuilder_ == null) {
+          return kmhabponajo_.size();
         } else {
-          return muqadasPotionLevelDataListBuilder_.getCount();
+          return kmhabponajoBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getMuqadasPotionLevelDataList(int index) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          return muqadasPotionLevelDataList_.get(index);
+      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData getKmhabponajo(int index) {
+        if (kmhabponajoBuilder_ == null) {
+          return kmhabponajo_.get(index);
         } else {
-          return muqadasPotionLevelDataListBuilder_.getMessage(index);
+          return kmhabponajoBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder setMuqadasPotionLevelDataList(
+      public Builder setKmhabponajo(
           int index, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData value) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
+        if (kmhabponajoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.set(index, value);
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.set(index, value);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.setMessage(index, value);
+          kmhabponajoBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder setMuqadasPotionLevelDataList(
+      public Builder setKmhabponajo(
           int index, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder builderForValue) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.set(index, builderForValue.build());
+        if (kmhabponajoBuilder_ == null) {
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.set(index, builderForValue.build());
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.setMessage(index, builderForValue.build());
+          kmhabponajoBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder addMuqadasPotionLevelDataList(emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData value) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
+      public Builder addKmhabponajo(emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData value) {
+        if (kmhabponajoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.add(value);
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.add(value);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.addMessage(value);
+          kmhabponajoBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder addMuqadasPotionLevelDataList(
+      public Builder addKmhabponajo(
           int index, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData value) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
+        if (kmhabponajoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.add(index, value);
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.add(index, value);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.addMessage(index, value);
+          kmhabponajoBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder addMuqadasPotionLevelDataList(
+      public Builder addKmhabponajo(
           emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder builderForValue) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.add(builderForValue.build());
+        if (kmhabponajoBuilder_ == null) {
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.add(builderForValue.build());
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.addMessage(builderForValue.build());
+          kmhabponajoBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder addMuqadasPotionLevelDataList(
+      public Builder addKmhabponajo(
           int index, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder builderForValue) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.add(index, builderForValue.build());
+        if (kmhabponajoBuilder_ == null) {
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.addMessage(index, builderForValue.build());
+          kmhabponajoBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder addAllMuqadasPotionLevelDataList(
+      public Builder addAllKmhabponajo(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData> values) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          ensureMuqadasPotionLevelDataListIsMutable();
+        if (kmhabponajoBuilder_ == null) {
+          ensureKmhabponajoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, muqadasPotionLevelDataList_);
+              values, kmhabponajo_);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.addAllMessages(values);
+          kmhabponajoBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder clearMuqadasPotionLevelDataList() {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          muqadasPotionLevelDataList_ = java.util.Collections.emptyList();
+      public Builder clearKmhabponajo() {
+        if (kmhabponajoBuilder_ == null) {
+          kmhabponajo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.clear();
+          kmhabponajoBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public Builder removeMuqadasPotionLevelDataList(int index) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          ensureMuqadasPotionLevelDataListIsMutable();
-          muqadasPotionLevelDataList_.remove(index);
+      public Builder removeKmhabponajo(int index) {
+        if (kmhabponajoBuilder_ == null) {
+          ensureKmhabponajoIsMutable();
+          kmhabponajo_.remove(index);
           onChanged();
         } else {
-          muqadasPotionLevelDataListBuilder_.remove(index);
+          kmhabponajoBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder getMuqadasPotionLevelDataListBuilder(
+      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder getKmhabponajoBuilder(
           int index) {
-        return getMuqadasPotionLevelDataListFieldBuilder().getBuilder(index);
+        return getKmhabponajoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getMuqadasPotionLevelDataListOrBuilder(
+      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder getKmhabponajoOrBuilder(
           int index) {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          return muqadasPotionLevelDataList_.get(index);  } else {
-          return muqadasPotionLevelDataListBuilder_.getMessageOrBuilder(index);
+        if (kmhabponajoBuilder_ == null) {
+          return kmhabponajo_.get(index);  } else {
+          return kmhabponajoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> 
-           getMuqadasPotionLevelDataListOrBuilderList() {
-        if (muqadasPotionLevelDataListBuilder_ != null) {
-          return muqadasPotionLevelDataListBuilder_.getMessageOrBuilderList();
+           getKmhabponajoOrBuilderList() {
+        if (kmhabponajoBuilder_ != null) {
+          return kmhabponajoBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(muqadasPotionLevelDataList_);
+          return java.util.Collections.unmodifiableList(kmhabponajo_);
         }
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder addMuqadasPotionLevelDataListBuilder() {
-        return getMuqadasPotionLevelDataListFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder addKmhabponajoBuilder() {
+        return getKmhabponajoFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
-      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder addMuqadasPotionLevelDataListBuilder(
+      public emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder addKmhabponajoBuilder(
           int index) {
-        return getMuqadasPotionLevelDataListFieldBuilder().addBuilder(
+        return getKmhabponajoFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .MuqadasPotionLevelData muqadas_potion_level_data_list = 5;</code>
+       * <code>repeated .MuqadasPotionLevelData kmhabponajo = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder> 
-           getMuqadasPotionLevelDataListBuilderList() {
-        return getMuqadasPotionLevelDataListFieldBuilder().getBuilderList();
+           getKmhabponajoBuilderList() {
+        return getKmhabponajoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder> 
-          getMuqadasPotionLevelDataListFieldBuilder() {
-        if (muqadasPotionLevelDataListBuilder_ == null) {
-          muqadasPotionLevelDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getKmhabponajoFieldBuilder() {
+        if (kmhabponajoBuilder_ == null) {
+          kmhabponajoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelDataOrBuilder>(
-                  muqadasPotionLevelDataList_,
+                  kmhabponajo_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          muqadasPotionLevelDataList_ = null;
+          kmhabponajo_ = null;
         }
-        return muqadasPotionLevelDataListBuilder_;
+        return kmhabponajoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -822,11 +822,10 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%MuqadasPotionActivityDetailInfo.proto\032" +
-      "\034MuqadasPotionLevelData.proto\"b\n\037Muqadas" +
-      "PotionActivityDetailInfo\022?\n\036muqadas_poti" +
-      "on_level_data_list\030\005 \003(\0132\027.MuqadasPotion" +
-      "LevelDataB\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\034MuqadasPotionLevelData.proto\"O\n\037Muqadas" +
+      "PotionActivityDetailInfo\022,\n\013kmhabponajo\030" +
+      "\n \003(\0132\027.MuqadasPotionLevelDataB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -838,7 +837,7 @@ public final class MuqadasPotionActivityDetailInfoOuterClass {
     internal_static_MuqadasPotionActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MuqadasPotionActivityDetailInfo_descriptor,
-        new java.lang.String[] { "MuqadasPotionLevelDataList", });
+        new java.lang.String[] { "Kmhabponajo", });
     emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.getDescriptor();
   }
 

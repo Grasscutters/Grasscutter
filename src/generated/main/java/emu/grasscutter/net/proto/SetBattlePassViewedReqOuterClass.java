@@ -19,21 +19,21 @@ public final class SetBattlePassViewedReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 scheduleId = 10;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2608;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum PAPGOGGAKFL {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 2637;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code SetBattlePassViewedReq}
@@ -80,7 +80,7 @@ public final class SetBattlePassViewedReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 80: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -117,10 +117,10 @@ public final class SetBattlePassViewedReqOuterClass {
               emu.grasscutter.net.proto.SetBattlePassViewedReqOuterClass.SetBattlePassViewedReq.class, emu.grasscutter.net.proto.SetBattlePassViewedReqOuterClass.SetBattlePassViewedReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
+    public static final int SCHEDULEID_FIELD_NUMBER = 10;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 scheduleId = 10;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class SetBattlePassViewedReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(9, scheduleId_);
+        output.writeUInt32(10, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class SetBattlePassViewedReqOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, scheduleId_);
+          .computeUInt32Size(10, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +186,7 @@ public final class SetBattlePassViewedReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SCHEDULEID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class SetBattlePassViewedReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2608;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum PAPGOGGAKFL {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 2637;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code SetBattlePassViewedReq}
@@ -443,7 +443,7 @@ public final class SetBattlePassViewedReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 scheduleId = 10;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class SetBattlePassViewedReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 scheduleId = 10;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class SetBattlePassViewedReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 scheduleId = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -538,9 +538,9 @@ public final class SetBattlePassViewedReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034SetBattlePassViewedReq.proto\"-\n\026SetBat" +
-      "tlePassViewedReq\022\023\n\013schedule_id\030\t \001(\rB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\034SetBattlePassViewedReq.proto\",\n\026SetBat" +
+      "tlePassViewedReq\022\022\n\nscheduleId\030\n \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

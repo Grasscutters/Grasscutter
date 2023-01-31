@@ -19,27 +19,27 @@ public final class GCGTCTavernChallengeDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
-     * @return A list containing the unlockLevelIdList.
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
+     * @return A list containing the lidokiohkmh.
      */
-    java.util.List<java.lang.Integer> getUnlockLevelIdListList();
+    java.util.List<java.lang.Integer> getLidokiohkmhList();
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
-     * @return The count of unlockLevelIdList.
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
+     * @return The count of lidokiohkmh.
      */
-    int getUnlockLevelIdListCount();
+    int getLidokiohkmhCount();
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
      * @param index The index of the element to return.
-     * @return The unlockLevelIdList at the given index.
+     * @return The lidokiohkmh at the given index.
      */
-    int getUnlockLevelIdList(int index);
+    int getLidokiohkmh(int index);
 
     /**
-     * <code>uint32 character_id = 4;</code>
-     * @return The characterId.
+     * <code>uint32 caaaccpgkff = 1;</code>
+     * @return The caaaccpgkff.
      */
-    int getCharacterId();
+    int getCaaaccpgkff();
   }
   /**
    * Protobuf type {@code GCGTCTavernChallengeData}
@@ -54,7 +54,7 @@ public final class GCGTCTavernChallengeDataOuterClass {
       super(builder);
     }
     private GCGTCTavernChallengeData() {
-      unlockLevelIdList_ = emptyIntList();
+      lidokiohkmh_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -88,28 +88,28 @@ public final class GCGTCTavernChallengeDataOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
 
-              characterId_ = input.readUInt32();
+              caaaccpgkff_ = input.readUInt32();
               break;
             }
             case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unlockLevelIdList_ = newIntList();
+                lidokiohkmh_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              unlockLevelIdList_.addInt(input.readUInt32());
+              lidokiohkmh_.addInt(input.readUInt32());
               break;
             }
             case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unlockLevelIdList_ = newIntList();
+                lidokiohkmh_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                unlockLevelIdList_.addInt(input.readUInt32());
+                lidokiohkmh_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -130,7 +130,7 @@ public final class GCGTCTavernChallengeDataOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unlockLevelIdList_.makeImmutable(); // C
+          lidokiohkmh_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -149,43 +149,43 @@ public final class GCGTCTavernChallengeDataOuterClass {
               emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.class, emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.Builder.class);
     }
 
-    public static final int UNLOCK_LEVEL_ID_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList unlockLevelIdList_;
+    public static final int LIDOKIOHKMH_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList lidokiohkmh_;
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
-     * @return A list containing the unlockLevelIdList.
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
+     * @return A list containing the lidokiohkmh.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getUnlockLevelIdListList() {
-      return unlockLevelIdList_;
+        getLidokiohkmhList() {
+      return lidokiohkmh_;
     }
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
-     * @return The count of unlockLevelIdList.
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
+     * @return The count of lidokiohkmh.
      */
-    public int getUnlockLevelIdListCount() {
-      return unlockLevelIdList_.size();
+    public int getLidokiohkmhCount() {
+      return lidokiohkmh_.size();
     }
     /**
-     * <code>repeated uint32 unlock_level_id_list = 13;</code>
+     * <code>repeated uint32 lidokiohkmh = 13;</code>
      * @param index The index of the element to return.
-     * @return The unlockLevelIdList at the given index.
+     * @return The lidokiohkmh at the given index.
      */
-    public int getUnlockLevelIdList(int index) {
-      return unlockLevelIdList_.getInt(index);
+    public int getLidokiohkmh(int index) {
+      return lidokiohkmh_.getInt(index);
     }
-    private int unlockLevelIdListMemoizedSerializedSize = -1;
+    private int lidokiohkmhMemoizedSerializedSize = -1;
 
-    public static final int CHARACTER_ID_FIELD_NUMBER = 4;
-    private int characterId_;
+    public static final int CAAACCPGKFF_FIELD_NUMBER = 1;
+    private int caaaccpgkff_;
     /**
-     * <code>uint32 character_id = 4;</code>
-     * @return The characterId.
+     * <code>uint32 caaaccpgkff = 1;</code>
+     * @return The caaaccpgkff.
      */
     @java.lang.Override
-    public int getCharacterId() {
-      return characterId_;
+    public int getCaaaccpgkff() {
+      return caaaccpgkff_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -203,15 +203,15 @@ public final class GCGTCTavernChallengeDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (characterId_ != 0) {
-        output.writeUInt32(4, characterId_);
+      if (caaaccpgkff_ != 0) {
+        output.writeUInt32(1, caaaccpgkff_);
       }
-      if (getUnlockLevelIdListList().size() > 0) {
+      if (getLidokiohkmhList().size() > 0) {
         output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(unlockLevelIdListMemoizedSerializedSize);
+        output.writeUInt32NoTag(lidokiohkmhMemoizedSerializedSize);
       }
-      for (int i = 0; i < unlockLevelIdList_.size(); i++) {
-        output.writeUInt32NoTag(unlockLevelIdList_.getInt(i));
+      for (int i = 0; i < lidokiohkmh_.size(); i++) {
+        output.writeUInt32NoTag(lidokiohkmh_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -222,23 +222,23 @@ public final class GCGTCTavernChallengeDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (characterId_ != 0) {
+      if (caaaccpgkff_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, characterId_);
+          .computeUInt32Size(1, caaaccpgkff_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < unlockLevelIdList_.size(); i++) {
+        for (int i = 0; i < lidokiohkmh_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(unlockLevelIdList_.getInt(i));
+            .computeUInt32SizeNoTag(lidokiohkmh_.getInt(i));
         }
         size += dataSize;
-        if (!getUnlockLevelIdListList().isEmpty()) {
+        if (!getLidokiohkmhList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        unlockLevelIdListMemoizedSerializedSize = dataSize;
+        lidokiohkmhMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -255,10 +255,10 @@ public final class GCGTCTavernChallengeDataOuterClass {
       }
       emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData other = (emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData) obj;
 
-      if (!getUnlockLevelIdListList()
-          .equals(other.getUnlockLevelIdListList())) return false;
-      if (getCharacterId()
-          != other.getCharacterId()) return false;
+      if (!getLidokiohkmhList()
+          .equals(other.getLidokiohkmhList())) return false;
+      if (getCaaaccpgkff()
+          != other.getCaaaccpgkff()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +270,12 @@ public final class GCGTCTavernChallengeDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getUnlockLevelIdListCount() > 0) {
-        hash = (37 * hash) + UNLOCK_LEVEL_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getUnlockLevelIdListList().hashCode();
+      if (getLidokiohkmhCount() > 0) {
+        hash = (37 * hash) + LIDOKIOHKMH_FIELD_NUMBER;
+        hash = (53 * hash) + getLidokiohkmhList().hashCode();
       }
-      hash = (37 * hash) + CHARACTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCharacterId();
+      hash = (37 * hash) + CAAACCPGKFF_FIELD_NUMBER;
+      hash = (53 * hash) + getCaaaccpgkff();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,9 +409,9 @@ public final class GCGTCTavernChallengeDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unlockLevelIdList_ = emptyIntList();
+        lidokiohkmh_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        characterId_ = 0;
+        caaaccpgkff_ = 0;
 
         return this;
       }
@@ -441,11 +441,11 @@ public final class GCGTCTavernChallengeDataOuterClass {
         emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData result = new emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          unlockLevelIdList_.makeImmutable();
+          lidokiohkmh_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.unlockLevelIdList_ = unlockLevelIdList_;
-        result.characterId_ = characterId_;
+        result.lidokiohkmh_ = lidokiohkmh_;
+        result.caaaccpgkff_ = caaaccpgkff_;
         onBuilt();
         return result;
       }
@@ -494,18 +494,18 @@ public final class GCGTCTavernChallengeDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData other) {
         if (other == emu.grasscutter.net.proto.GCGTCTavernChallengeDataOuterClass.GCGTCTavernChallengeData.getDefaultInstance()) return this;
-        if (!other.unlockLevelIdList_.isEmpty()) {
-          if (unlockLevelIdList_.isEmpty()) {
-            unlockLevelIdList_ = other.unlockLevelIdList_;
+        if (!other.lidokiohkmh_.isEmpty()) {
+          if (lidokiohkmh_.isEmpty()) {
+            lidokiohkmh_ = other.lidokiohkmh_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureUnlockLevelIdListIsMutable();
-            unlockLevelIdList_.addAll(other.unlockLevelIdList_);
+            ensureLidokiohkmhIsMutable();
+            lidokiohkmh_.addAll(other.lidokiohkmh_);
           }
           onChanged();
         }
-        if (other.getCharacterId() != 0) {
-          setCharacterId(other.getCharacterId());
+        if (other.getCaaaccpgkff() != 0) {
+          setCaaaccpgkff(other.getCaaaccpgkff());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -537,112 +537,112 @@ public final class GCGTCTavernChallengeDataOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList unlockLevelIdList_ = emptyIntList();
-      private void ensureUnlockLevelIdListIsMutable() {
+      private com.google.protobuf.Internal.IntList lidokiohkmh_ = emptyIntList();
+      private void ensureLidokiohkmhIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          unlockLevelIdList_ = mutableCopy(unlockLevelIdList_);
+          lidokiohkmh_ = mutableCopy(lidokiohkmh_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
-       * @return A list containing the unlockLevelIdList.
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
+       * @return A list containing the lidokiohkmh.
        */
       public java.util.List<java.lang.Integer>
-          getUnlockLevelIdListList() {
+          getLidokiohkmhList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(unlockLevelIdList_) : unlockLevelIdList_;
+                 java.util.Collections.unmodifiableList(lidokiohkmh_) : lidokiohkmh_;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
-       * @return The count of unlockLevelIdList.
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
+       * @return The count of lidokiohkmh.
        */
-      public int getUnlockLevelIdListCount() {
-        return unlockLevelIdList_.size();
+      public int getLidokiohkmhCount() {
+        return lidokiohkmh_.size();
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
        * @param index The index of the element to return.
-       * @return The unlockLevelIdList at the given index.
+       * @return The lidokiohkmh at the given index.
        */
-      public int getUnlockLevelIdList(int index) {
-        return unlockLevelIdList_.getInt(index);
+      public int getLidokiohkmh(int index) {
+        return lidokiohkmh_.getInt(index);
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
        * @param index The index to set the value at.
-       * @param value The unlockLevelIdList to set.
+       * @param value The lidokiohkmh to set.
        * @return This builder for chaining.
        */
-      public Builder setUnlockLevelIdList(
+      public Builder setLidokiohkmh(
           int index, int value) {
-        ensureUnlockLevelIdListIsMutable();
-        unlockLevelIdList_.setInt(index, value);
+        ensureLidokiohkmhIsMutable();
+        lidokiohkmh_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
-       * @param value The unlockLevelIdList to add.
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
+       * @param value The lidokiohkmh to add.
        * @return This builder for chaining.
        */
-      public Builder addUnlockLevelIdList(int value) {
-        ensureUnlockLevelIdListIsMutable();
-        unlockLevelIdList_.addInt(value);
+      public Builder addLidokiohkmh(int value) {
+        ensureLidokiohkmhIsMutable();
+        lidokiohkmh_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
-       * @param values The unlockLevelIdList to add.
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
+       * @param values The lidokiohkmh to add.
        * @return This builder for chaining.
        */
-      public Builder addAllUnlockLevelIdList(
+      public Builder addAllLidokiohkmh(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureUnlockLevelIdListIsMutable();
+        ensureLidokiohkmhIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, unlockLevelIdList_);
+            values, lidokiohkmh_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 13;</code>
+       * <code>repeated uint32 lidokiohkmh = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnlockLevelIdList() {
-        unlockLevelIdList_ = emptyIntList();
+      public Builder clearLidokiohkmh() {
+        lidokiohkmh_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private int characterId_ ;
+      private int caaaccpgkff_ ;
       /**
-       * <code>uint32 character_id = 4;</code>
-       * @return The characterId.
+       * <code>uint32 caaaccpgkff = 1;</code>
+       * @return The caaaccpgkff.
        */
       @java.lang.Override
-      public int getCharacterId() {
-        return characterId_;
+      public int getCaaaccpgkff() {
+        return caaaccpgkff_;
       }
       /**
-       * <code>uint32 character_id = 4;</code>
-       * @param value The characterId to set.
+       * <code>uint32 caaaccpgkff = 1;</code>
+       * @param value The caaaccpgkff to set.
        * @return This builder for chaining.
        */
-      public Builder setCharacterId(int value) {
+      public Builder setCaaaccpgkff(int value) {
         
-        characterId_ = value;
+        caaaccpgkff_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 character_id = 4;</code>
+       * <code>uint32 caaaccpgkff = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCharacterId() {
+      public Builder clearCaaaccpgkff() {
         
-        characterId_ = 0;
+        caaaccpgkff_ = 0;
         onChanged();
         return this;
       }
@@ -713,10 +713,10 @@ public final class GCGTCTavernChallengeDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036GCGTCTavernChallengeData.proto\"N\n\030GCGT" +
-      "CTavernChallengeData\022\034\n\024unlock_level_id_" +
-      "list\030\r \003(\r\022\024\n\014character_id\030\004 \001(\rB\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "\n\036GCGTCTavernChallengeData.proto\"D\n\030GCGT" +
+      "CTavernChallengeData\022\023\n\013lidokiohkmh\030\r \003(" +
+      "\r\022\023\n\013caaaccpgkff\030\001 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -727,7 +727,7 @@ public final class GCGTCTavernChallengeDataOuterClass {
     internal_static_GCGTCTavernChallengeData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGTCTavernChallengeData_descriptor,
-        new java.lang.String[] { "UnlockLevelIdList", "CharacterId", });
+        new java.lang.String[] { "Lidokiohkmh", "Caaaccpgkff", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -31,7 +31,7 @@ public final class ExhibitionDisplayInfoOuterClass {
     int getParam();
 
     /**
-     * <code>uint32 detail_param = 3;</code>
+     * <code>uint32 detailParam = 3;</code>
      * @return The detailParam.
      */
     int getDetailParam();
@@ -150,10 +150,10 @@ public final class ExhibitionDisplayInfoOuterClass {
       return param_;
     }
 
-    public static final int DETAIL_PARAM_FIELD_NUMBER = 3;
+    public static final int DETAILPARAM_FIELD_NUMBER = 3;
     private int detailParam_;
     /**
-     * <code>uint32 detail_param = 3;</code>
+     * <code>uint32 detailParam = 3;</code>
      * @return The detailParam.
      */
     @java.lang.Override
@@ -241,7 +241,7 @@ public final class ExhibitionDisplayInfoOuterClass {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
-      hash = (37 * hash) + DETAIL_PARAM_FIELD_NUMBER;
+      hash = (37 * hash) + DETAILPARAM_FIELD_NUMBER;
       hash = (53 * hash) + getDetailParam();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -561,7 +561,7 @@ public final class ExhibitionDisplayInfoOuterClass {
 
       private int detailParam_ ;
       /**
-       * <code>uint32 detail_param = 3;</code>
+       * <code>uint32 detailParam = 3;</code>
        * @return The detailParam.
        */
       @java.lang.Override
@@ -569,7 +569,7 @@ public final class ExhibitionDisplayInfoOuterClass {
         return detailParam_;
       }
       /**
-       * <code>uint32 detail_param = 3;</code>
+       * <code>uint32 detailParam = 3;</code>
        * @param value The detailParam to set.
        * @return This builder for chaining.
        */
@@ -580,7 +580,7 @@ public final class ExhibitionDisplayInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 detail_param = 3;</code>
+       * <code>uint32 detailParam = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDetailParam() {
@@ -656,10 +656,10 @@ public final class ExhibitionDisplayInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033ExhibitionDisplayInfo.proto\"H\n\025Exhibit" +
+      "\n\033ExhibitionDisplayInfo.proto\"G\n\025Exhibit" +
       "ionDisplayInfo\022\n\n\002id\030\001 \001(\r\022\r\n\005param\030\002 \001(" +
-      "\r\022\024\n\014detail_param\030\003 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\r\022\023\n\013detailParam\030\003 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

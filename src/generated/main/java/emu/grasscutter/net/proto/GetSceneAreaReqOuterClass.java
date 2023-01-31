@@ -19,27 +19,27 @@ public final class GetSceneAreaReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 1;</code>
+     * <code>uint32 sceneId = 6;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>uint32 belong_uid = 6;</code>
+     * <code>uint32 belongUid = 5;</code>
      * @return The belongUid.
      */
     int getBelongUid();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 289;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum PGIBAKBFMPG {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 288;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code GetSceneAreaReq}
@@ -86,14 +86,14 @@ public final class GetSceneAreaReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
-              sceneId_ = input.readUInt32();
+              belongUid_ = input.readUInt32();
               break;
             }
             case 48: {
 
-              belongUid_ = input.readUInt32();
+              sceneId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,10 +128,10 @@ public final class GetSceneAreaReqOuterClass {
               emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.class, emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 1;
+    public static final int SCENEID_FIELD_NUMBER = 6;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 1;</code>
+     * <code>uint32 sceneId = 6;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -139,10 +139,10 @@ public final class GetSceneAreaReqOuterClass {
       return sceneId_;
     }
 
-    public static final int BELONG_UID_FIELD_NUMBER = 6;
+    public static final int BELONGUID_FIELD_NUMBER = 5;
     private int belongUid_;
     /**
-     * <code>uint32 belong_uid = 6;</code>
+     * <code>uint32 belongUid = 5;</code>
      * @return The belongUid.
      */
     @java.lang.Override
@@ -164,11 +164,11 @@ public final class GetSceneAreaReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(1, sceneId_);
-      }
       if (belongUid_ != 0) {
-        output.writeUInt32(6, belongUid_);
+        output.writeUInt32(5, belongUid_);
+      }
+      if (sceneId_ != 0) {
+        output.writeUInt32(6, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,13 +179,13 @@ public final class GetSceneAreaReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, sceneId_);
-      }
       if (belongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, belongUid_);
+          .computeUInt32Size(5, belongUid_);
+      }
+      if (sceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,9 +217,9 @@ public final class GetSceneAreaReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + BELONG_UID_FIELD_NUMBER;
+      hash = (37 * hash) + BELONGUID_FIELD_NUMBER;
       hash = (53 * hash) + getBelongUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -318,14 +318,14 @@ public final class GetSceneAreaReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 289;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum PGIBAKBFMPG {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 288;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code GetSceneAreaReq}
@@ -482,7 +482,7 @@ public final class GetSceneAreaReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 sceneId = 6;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -490,7 +490,7 @@ public final class GetSceneAreaReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 sceneId = 6;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -501,7 +501,7 @@ public final class GetSceneAreaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 sceneId = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -513,7 +513,7 @@ public final class GetSceneAreaReqOuterClass {
 
       private int belongUid_ ;
       /**
-       * <code>uint32 belong_uid = 6;</code>
+       * <code>uint32 belongUid = 5;</code>
        * @return The belongUid.
        */
       @java.lang.Override
@@ -521,7 +521,7 @@ public final class GetSceneAreaReqOuterClass {
         return belongUid_;
       }
       /**
-       * <code>uint32 belong_uid = 6;</code>
+       * <code>uint32 belongUid = 5;</code>
        * @param value The belongUid to set.
        * @return This builder for chaining.
        */
@@ -532,7 +532,7 @@ public final class GetSceneAreaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 belong_uid = 6;</code>
+       * <code>uint32 belongUid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearBelongUid() {
@@ -608,9 +608,9 @@ public final class GetSceneAreaReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025GetSceneAreaReq.proto\"7\n\017GetSceneAreaR" +
-      "eq\022\020\n\010scene_id\030\001 \001(\r\022\022\n\nbelong_uid\030\006 \001(\r" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\025GetSceneAreaReq.proto\"5\n\017GetSceneAreaR" +
+      "eq\022\017\n\007sceneId\030\006 \001(\r\022\021\n\tbelongUid\030\005 \001(\rB\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

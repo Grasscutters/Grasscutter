@@ -19,7 +19,7 @@ public final class ShowEquipOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 item_id = 1;</code>
+     * <code>uint32 itemId = 1;</code>
      * @return The itemId.
      */
     int getItemId();
@@ -207,10 +207,10 @@ public final class ShowEquipOuterClass {
           detailCase_);
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 1;
+    public static final int ITEMID_FIELD_NUMBER = 1;
     private int itemId_;
     /**
-     * <code>uint32 item_id = 1;</code>
+     * <code>uint32 itemId = 1;</code>
      * @return The itemId.
      */
     @java.lang.Override
@@ -365,7 +365,7 @@ public final class ShowEquipOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ITEMID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
       switch (detailCase_) {
         case 2:
@@ -668,7 +668,7 @@ public final class ShowEquipOuterClass {
 
       private int itemId_ ;
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @return The itemId.
        */
       @java.lang.Override
@@ -676,7 +676,7 @@ public final class ShowEquipOuterClass {
         return itemId_;
       }
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @param value The itemId to set.
        * @return This builder for chaining.
        */
@@ -687,7 +687,7 @@ public final class ShowEquipOuterClass {
         return this;
       }
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
@@ -1046,10 +1046,10 @@ public final class ShowEquipOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017ShowEquip.proto\032\017Reliquary.proto\032\014Weap" +
-      "on.proto\"b\n\tShowEquip\022\017\n\007item_id\030\001 \001(\r\022\037" +
-      "\n\treliquary\030\002 \001(\0132\n.ReliquaryH\000\022\031\n\006weapo" +
-      "n\030\003 \001(\0132\007.WeaponH\000B\010\n\006detailB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "on.proto\"a\n\tShowEquip\022\016\n\006itemId\030\001 \001(\r\022\037\n" +
+      "\treliquary\030\002 \001(\0132\n.ReliquaryH\000\022\031\n\006weapon" +
+      "\030\003 \001(\0132\007.WeaponH\000B\010\n\006detailB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

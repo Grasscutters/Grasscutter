@@ -19,7 +19,7 @@ public final class FleurFairFallInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 best_score = 11;</code>
+     * <code>uint32 bestScore = 9;</code>
      * @return The bestScore.
      */
     int getBestScore();
@@ -69,7 +69,7 @@ public final class FleurFairFallInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 72: {
 
               bestScore_ = input.readUInt32();
               break;
@@ -106,10 +106,10 @@ public final class FleurFairFallInfoOuterClass {
               emu.grasscutter.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo.class, emu.grasscutter.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo.Builder.class);
     }
 
-    public static final int BEST_SCORE_FIELD_NUMBER = 11;
+    public static final int BESTSCORE_FIELD_NUMBER = 9;
     private int bestScore_;
     /**
-     * <code>uint32 best_score = 11;</code>
+     * <code>uint32 bestScore = 9;</code>
      * @return The bestScore.
      */
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class FleurFairFallInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bestScore_ != 0) {
-        output.writeUInt32(11, bestScore_);
+        output.writeUInt32(9, bestScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +145,7 @@ public final class FleurFairFallInfoOuterClass {
       size = 0;
       if (bestScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, bestScore_);
+          .computeUInt32Size(9, bestScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -175,7 +175,7 @@ public final class FleurFairFallInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
+      hash = (37 * hash) + BESTSCORE_FIELD_NUMBER;
       hash = (53 * hash) + getBestScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -421,7 +421,7 @@ public final class FleurFairFallInfoOuterClass {
 
       private int bestScore_ ;
       /**
-       * <code>uint32 best_score = 11;</code>
+       * <code>uint32 bestScore = 9;</code>
        * @return The bestScore.
        */
       @java.lang.Override
@@ -429,7 +429,7 @@ public final class FleurFairFallInfoOuterClass {
         return bestScore_;
       }
       /**
-       * <code>uint32 best_score = 11;</code>
+       * <code>uint32 bestScore = 9;</code>
        * @param value The bestScore to set.
        * @return This builder for chaining.
        */
@@ -440,7 +440,7 @@ public final class FleurFairFallInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 best_score = 11;</code>
+       * <code>uint32 bestScore = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
@@ -516,9 +516,9 @@ public final class FleurFairFallInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027FleurFairFallInfo.proto\"\'\n\021FleurFairFa" +
-      "llInfo\022\022\n\nbest_score\030\013 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n\027FleurFairFallInfo.proto\"&\n\021FleurFairFa" +
+      "llInfo\022\021\n\tbestScore\030\t \001(\rB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

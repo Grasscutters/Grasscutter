@@ -19,13 +19,13 @@ public final class BuoyantCombatDailyInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 best_score = 5;</code>
+     * <code>uint32 bestScore = 12;</code>
      * @return The bestScore.
      */
     int getBestScore();
 
     /**
-     * <code>uint32 start_time = 10;</code>
+     * <code>uint32 startTime = 2;</code>
      * @return The startTime.
      */
     int getStartTime();
@@ -75,14 +75,14 @@ public final class BuoyantCombatDailyInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              bestScore_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 16: {
 
               startTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              bestScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +117,10 @@ public final class BuoyantCombatDailyInfoOuterClass {
               emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.class, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder.class);
     }
 
-    public static final int BEST_SCORE_FIELD_NUMBER = 5;
+    public static final int BESTSCORE_FIELD_NUMBER = 12;
     private int bestScore_;
     /**
-     * <code>uint32 best_score = 5;</code>
+     * <code>uint32 bestScore = 12;</code>
      * @return The bestScore.
      */
     @java.lang.Override
@@ -128,10 +128,10 @@ public final class BuoyantCombatDailyInfoOuterClass {
       return bestScore_;
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 10;
+    public static final int STARTTIME_FIELD_NUMBER = 2;
     private int startTime_;
     /**
-     * <code>uint32 start_time = 10;</code>
+     * <code>uint32 startTime = 2;</code>
      * @return The startTime.
      */
     @java.lang.Override
@@ -153,11 +153,11 @@ public final class BuoyantCombatDailyInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bestScore_ != 0) {
-        output.writeUInt32(5, bestScore_);
-      }
       if (startTime_ != 0) {
-        output.writeUInt32(10, startTime_);
+        output.writeUInt32(2, startTime_);
+      }
+      if (bestScore_ != 0) {
+        output.writeUInt32(12, bestScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +168,13 @@ public final class BuoyantCombatDailyInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bestScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, bestScore_);
-      }
       if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, startTime_);
+          .computeUInt32Size(2, startTime_);
+      }
+      if (bestScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, bestScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +206,9 @@ public final class BuoyantCombatDailyInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
+      hash = (37 * hash) + BESTSCORE_FIELD_NUMBER;
       hash = (53 * hash) + getBestScore();
-      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -460,7 +460,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
 
       private int bestScore_ ;
       /**
-       * <code>uint32 best_score = 5;</code>
+       * <code>uint32 bestScore = 12;</code>
        * @return The bestScore.
        */
       @java.lang.Override
@@ -468,7 +468,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         return bestScore_;
       }
       /**
-       * <code>uint32 best_score = 5;</code>
+       * <code>uint32 bestScore = 12;</code>
        * @param value The bestScore to set.
        * @return This builder for chaining.
        */
@@ -479,7 +479,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 best_score = 5;</code>
+       * <code>uint32 bestScore = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
@@ -491,7 +491,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
 
       private int startTime_ ;
       /**
-       * <code>uint32 start_time = 10;</code>
+       * <code>uint32 startTime = 2;</code>
        * @return The startTime.
        */
       @java.lang.Override
@@ -499,7 +499,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         return startTime_;
       }
       /**
-       * <code>uint32 start_time = 10;</code>
+       * <code>uint32 startTime = 2;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
        */
@@ -510,7 +510,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 start_time = 10;</code>
+       * <code>uint32 startTime = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
@@ -586,10 +586,10 @@ public final class BuoyantCombatDailyInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034BuoyantCombatDailyInfo.proto\"@\n\026Buoyan" +
-      "tCombatDailyInfo\022\022\n\nbest_score\030\005 \001(\r\022\022\n\n" +
-      "start_time\030\n \001(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\034BuoyantCombatDailyInfo.proto\">\n\026Buoyan" +
+      "tCombatDailyInfo\022\021\n\tbestScore\030\014 \001(\r\022\021\n\ts" +
+      "tartTime\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

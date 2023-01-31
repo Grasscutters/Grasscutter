@@ -19,27 +19,27 @@ public final class HideAndSeekMapInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @return A list containing the matchLockReasonList.
-     */
-    java.util.List<java.lang.Integer> getMatchLockReasonListList();
-    /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @return The count of matchLockReasonList.
-     */
-    int getMatchLockReasonListCount();
-    /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @param index The index of the element to return.
-     * @return The matchLockReasonList at the given index.
-     */
-    int getMatchLockReasonList(int index);
-
-    /**
-     * <code>uint32 id = 12;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     int getId();
+
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @return A list containing the kccalkjgkkd.
+     */
+    java.util.List<java.lang.Integer> getKccalkjgkkdList();
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @return The count of kccalkjgkkd.
+     */
+    int getKccalkjgkkdCount();
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @param index The index of the element to return.
+     * @return The kccalkjgkkd at the given index.
+     */
+    int getKccalkjgkkd(int index);
   }
   /**
    * Protobuf type {@code HideAndSeekMapInfo}
@@ -54,7 +54,7 @@ public final class HideAndSeekMapInfoOuterClass {
       super(builder);
     }
     private HideAndSeekMapInfo() {
-      matchLockReasonList_ = emptyIntList();
+      kccalkjgkkd_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -88,28 +88,28 @@ public final class HideAndSeekMapInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                matchLockReasonList_ = newIntList();
+                kccalkjgkkd_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              matchLockReasonList_.addInt(input.readUInt32());
+              kccalkjgkkd_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                matchLockReasonList_ = newIntList();
+                kccalkjgkkd_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                matchLockReasonList_.addInt(input.readUInt32());
+                kccalkjgkkd_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
-            case 96: {
+            case 56: {
 
               id_ = input.readUInt32();
               break;
@@ -130,7 +130,7 @@ public final class HideAndSeekMapInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          matchLockReasonList_.makeImmutable(); // C
+          kccalkjgkkd_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -149,44 +149,44 @@ public final class HideAndSeekMapInfoOuterClass {
               emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo.class, emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo.Builder.class);
     }
 
-    public static final int MATCH_LOCK_REASON_LIST_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.IntList matchLockReasonList_;
-    /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @return A list containing the matchLockReasonList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getMatchLockReasonListList() {
-      return matchLockReasonList_;
-    }
-    /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @return The count of matchLockReasonList.
-     */
-    public int getMatchLockReasonListCount() {
-      return matchLockReasonList_.size();
-    }
-    /**
-     * <code>repeated uint32 match_lock_reason_list = 6;</code>
-     * @param index The index of the element to return.
-     * @return The matchLockReasonList at the given index.
-     */
-    public int getMatchLockReasonList(int index) {
-      return matchLockReasonList_.getInt(index);
-    }
-    private int matchLockReasonListMemoizedSerializedSize = -1;
-
-    public static final int ID_FIELD_NUMBER = 12;
+    public static final int ID_FIELD_NUMBER = 7;
     private int id_;
     /**
-     * <code>uint32 id = 12;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     @java.lang.Override
     public int getId() {
       return id_;
     }
+
+    public static final int KCCALKJGKKD_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList kccalkjgkkd_;
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @return A list containing the kccalkjgkkd.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getKccalkjgkkdList() {
+      return kccalkjgkkd_;
+    }
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @return The count of kccalkjgkkd.
+     */
+    public int getKccalkjgkkdCount() {
+      return kccalkjgkkd_.size();
+    }
+    /**
+     * <code>repeated uint32 kccalkjgkkd = 5;</code>
+     * @param index The index of the element to return.
+     * @return The kccalkjgkkd at the given index.
+     */
+    public int getKccalkjgkkd(int index) {
+      return kccalkjgkkd_.getInt(index);
+    }
+    private int kccalkjgkkdMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -203,15 +203,15 @@ public final class HideAndSeekMapInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getMatchLockReasonListList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(matchLockReasonListMemoizedSerializedSize);
+      if (getKccalkjgkkdList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(kccalkjgkkdMemoizedSerializedSize);
       }
-      for (int i = 0; i < matchLockReasonList_.size(); i++) {
-        output.writeUInt32NoTag(matchLockReasonList_.getInt(i));
+      for (int i = 0; i < kccalkjgkkd_.size(); i++) {
+        output.writeUInt32NoTag(kccalkjgkkd_.getInt(i));
       }
       if (id_ != 0) {
-        output.writeUInt32(12, id_);
+        output.writeUInt32(7, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,21 +224,21 @@ public final class HideAndSeekMapInfoOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < matchLockReasonList_.size(); i++) {
+        for (int i = 0; i < kccalkjgkkd_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(matchLockReasonList_.getInt(i));
+            .computeUInt32SizeNoTag(kccalkjgkkd_.getInt(i));
         }
         size += dataSize;
-        if (!getMatchLockReasonListList().isEmpty()) {
+        if (!getKccalkjgkkdList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        matchLockReasonListMemoizedSerializedSize = dataSize;
+        kccalkjgkkdMemoizedSerializedSize = dataSize;
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, id_);
+          .computeUInt32Size(7, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -255,10 +255,10 @@ public final class HideAndSeekMapInfoOuterClass {
       }
       emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo other = (emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo) obj;
 
-      if (!getMatchLockReasonListList()
-          .equals(other.getMatchLockReasonListList())) return false;
       if (getId()
           != other.getId()) return false;
+      if (!getKccalkjgkkdList()
+          .equals(other.getKccalkjgkkdList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +270,12 @@ public final class HideAndSeekMapInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMatchLockReasonListCount() > 0) {
-        hash = (37 * hash) + MATCH_LOCK_REASON_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMatchLockReasonListList().hashCode();
-      }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
+      if (getKccalkjgkkdCount() > 0) {
+        hash = (37 * hash) + KCCALKJGKKD_FIELD_NUMBER;
+        hash = (53 * hash) + getKccalkjgkkdList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,10 +409,10 @@ public final class HideAndSeekMapInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        matchLockReasonList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
 
+        kccalkjgkkd_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -440,12 +440,12 @@ public final class HideAndSeekMapInfoOuterClass {
       public emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo buildPartial() {
         emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo result = new emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo(this);
         int from_bitField0_ = bitField0_;
+        result.id_ = id_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          matchLockReasonList_.makeImmutable();
+          kccalkjgkkd_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.matchLockReasonList_ = matchLockReasonList_;
-        result.id_ = id_;
+        result.kccalkjgkkd_ = kccalkjgkkd_;
         onBuilt();
         return result;
       }
@@ -494,18 +494,18 @@ public final class HideAndSeekMapInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo other) {
         if (other == emu.grasscutter.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo.getDefaultInstance()) return this;
-        if (!other.matchLockReasonList_.isEmpty()) {
-          if (matchLockReasonList_.isEmpty()) {
-            matchLockReasonList_ = other.matchLockReasonList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureMatchLockReasonListIsMutable();
-            matchLockReasonList_.addAll(other.matchLockReasonList_);
-          }
-          onChanged();
-        }
         if (other.getId() != 0) {
           setId(other.getId());
+        }
+        if (!other.kccalkjgkkd_.isEmpty()) {
+          if (kccalkjgkkd_.isEmpty()) {
+            kccalkjgkkd_ = other.kccalkjgkkd_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKccalkjgkkdIsMutable();
+            kccalkjgkkd_.addAll(other.kccalkjgkkd_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -537,88 +537,9 @@ public final class HideAndSeekMapInfoOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList matchLockReasonList_ = emptyIntList();
-      private void ensureMatchLockReasonListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          matchLockReasonList_ = mutableCopy(matchLockReasonList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @return A list containing the matchLockReasonList.
-       */
-      public java.util.List<java.lang.Integer>
-          getMatchLockReasonListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(matchLockReasonList_) : matchLockReasonList_;
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @return The count of matchLockReasonList.
-       */
-      public int getMatchLockReasonListCount() {
-        return matchLockReasonList_.size();
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @param index The index of the element to return.
-       * @return The matchLockReasonList at the given index.
-       */
-      public int getMatchLockReasonList(int index) {
-        return matchLockReasonList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The matchLockReasonList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMatchLockReasonList(
-          int index, int value) {
-        ensureMatchLockReasonListIsMutable();
-        matchLockReasonList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @param value The matchLockReasonList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMatchLockReasonList(int value) {
-        ensureMatchLockReasonListIsMutable();
-        matchLockReasonList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @param values The matchLockReasonList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMatchLockReasonList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMatchLockReasonListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, matchLockReasonList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 match_lock_reason_list = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMatchLockReasonList() {
-        matchLockReasonList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private int id_ ;
       /**
-       * <code>uint32 id = 12;</code>
+       * <code>uint32 id = 7;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -626,7 +547,7 @@ public final class HideAndSeekMapInfoOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 12;</code>
+       * <code>uint32 id = 7;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -637,12 +558,91 @@ public final class HideAndSeekMapInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 12;</code>
+       * <code>uint32 id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         
         id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList kccalkjgkkd_ = emptyIntList();
+      private void ensureKccalkjgkkdIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          kccalkjgkkd_ = mutableCopy(kccalkjgkkd_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @return A list containing the kccalkjgkkd.
+       */
+      public java.util.List<java.lang.Integer>
+          getKccalkjgkkdList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(kccalkjgkkd_) : kccalkjgkkd_;
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @return The count of kccalkjgkkd.
+       */
+      public int getKccalkjgkkdCount() {
+        return kccalkjgkkd_.size();
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @param index The index of the element to return.
+       * @return The kccalkjgkkd at the given index.
+       */
+      public int getKccalkjgkkd(int index) {
+        return kccalkjgkkd_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The kccalkjgkkd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKccalkjgkkd(
+          int index, int value) {
+        ensureKccalkjgkkdIsMutable();
+        kccalkjgkkd_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @param value The kccalkjgkkd to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKccalkjgkkd(int value) {
+        ensureKccalkjgkkdIsMutable();
+        kccalkjgkkd_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @param values The kccalkjgkkd to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllKccalkjgkkd(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureKccalkjgkkdIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, kccalkjgkkd_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 kccalkjgkkd = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKccalkjgkkd() {
+        kccalkjgkkd_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -713,10 +713,9 @@ public final class HideAndSeekMapInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030HideAndSeekMapInfo.proto\"@\n\022HideAndSee" +
-      "kMapInfo\022\036\n\026match_lock_reason_list\030\006 \003(\r" +
-      "\022\n\n\002id\030\014 \001(\rB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "\n\030HideAndSeekMapInfo.proto\"5\n\022HideAndSee" +
+      "kMapInfo\022\n\n\002id\030\007 \001(\r\022\023\n\013kccalkjgkkd\030\005 \003(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -727,7 +726,7 @@ public final class HideAndSeekMapInfoOuterClass {
     internal_static_HideAndSeekMapInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HideAndSeekMapInfo_descriptor,
-        new java.lang.String[] { "MatchLockReasonList", "Id", });
+        new java.lang.String[] { "Id", "Kccalkjgkkd", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

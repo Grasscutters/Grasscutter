@@ -19,37 +19,37 @@ public final class EquipRoguelikeRuneRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @return A list containing the runeList.
      */
     java.util.List<java.lang.Integer> getRuneListList();
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @return The count of runeList.
      */
     int getRuneListCount();
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @param index The index of the element to return.
      * @return The runeList at the given index.
      */
     int getRuneList(int index);
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 8815;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum ANEJCBMBPAE {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 8054;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code EquipRoguelikeRuneRsp}
@@ -98,12 +98,12 @@ public final class EquipRoguelikeRuneRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 runeList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -111,7 +111,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
               runeList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -159,10 +159,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
               emu.grasscutter.net.proto.EquipRoguelikeRuneRspOuterClass.EquipRoguelikeRuneRsp.class, emu.grasscutter.net.proto.EquipRoguelikeRuneRspOuterClass.EquipRoguelikeRuneRsp.Builder.class);
     }
 
-    public static final int RUNE_LIST_FIELD_NUMBER = 6;
+    public static final int RUNELIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList runeList_;
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @return A list containing the runeList.
      */
     @java.lang.Override
@@ -171,14 +171,14 @@ public final class EquipRoguelikeRuneRspOuterClass {
       return runeList_;
     }
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @return The count of runeList.
      */
     public int getRuneListCount() {
       return runeList_.size();
     }
     /**
-     * <code>repeated uint32 rune_list = 6;</code>
+     * <code>repeated uint32 runeList = 13;</code>
      * @param index The index of the element to return.
      * @return The runeList at the given index.
      */
@@ -187,10 +187,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
     }
     private int runeListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -214,10 +214,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (getRuneListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(runeListMemoizedSerializedSize);
       }
       for (int i = 0; i < runeList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       {
         int dataSize = 0;
@@ -281,7 +281,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getRuneListCount() > 0) {
-        hash = (37 * hash) + RUNE_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + RUNELIST_FIELD_NUMBER;
         hash = (53 * hash) + getRuneListList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -383,13 +383,13 @@ public final class EquipRoguelikeRuneRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 8815;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum ANEJCBMBPAE {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 8054;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code EquipRoguelikeRuneRsp}
@@ -565,7 +565,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @return A list containing the runeList.
        */
       public java.util.List<java.lang.Integer>
@@ -574,14 +574,14 @@ public final class EquipRoguelikeRuneRspOuterClass {
                  java.util.Collections.unmodifiableList(runeList_) : runeList_;
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @return The count of runeList.
        */
       public int getRuneListCount() {
         return runeList_.size();
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @param index The index of the element to return.
        * @return The runeList at the given index.
        */
@@ -589,7 +589,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return runeList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @param index The index to set the value at.
        * @param value The runeList to set.
        * @return This builder for chaining.
@@ -602,7 +602,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @param value The runeList to add.
        * @return This builder for chaining.
        */
@@ -613,7 +613,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @param values The runeList to add.
        * @return This builder for chaining.
        */
@@ -626,7 +626,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 rune_list = 6;</code>
+       * <code>repeated uint32 runeList = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRuneList() {
@@ -638,7 +638,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -646,7 +646,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -657,7 +657,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -733,10 +733,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033EquipRoguelikeRuneRsp.proto\";\n\025EquipRo" +
-      "guelikeRuneRsp\022\021\n\trune_list\030\006 \003(\r\022\017\n\007ret" +
-      "code\030\005 \001(\005B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\033EquipRoguelikeRuneRsp.proto\":\n\025EquipRo" +
+      "guelikeRuneRsp\022\020\n\010runeList\030\r \003(\r\022\017\n\007retc" +
+      "ode\030\007 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

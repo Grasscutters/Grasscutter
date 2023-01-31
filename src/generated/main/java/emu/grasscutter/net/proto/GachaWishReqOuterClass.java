@@ -19,33 +19,33 @@ public final class GachaWishReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gacha_type = 3;</code>
+     * <code>uint32 gachaType = 6;</code>
      * @return The gachaType.
      */
     int getGachaType();
 
     /**
-     * <code>uint32 gacha_schedule_id = 12;</code>
+     * <code>uint32 gachaScheduleId = 10;</code>
      * @return The gachaScheduleId.
      */
     int getGachaScheduleId();
 
     /**
-     * <code>uint32 item_id = 9;</code>
+     * <code>uint32 itemId = 9;</code>
      * @return The itemId.
      */
     int getItemId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1600;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum IGAICKAILHD {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 1520;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code GachaWishReq}
@@ -92,7 +92,7 @@ public final class GachaWishReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               gachaType_ = input.readUInt32();
               break;
@@ -102,7 +102,7 @@ public final class GachaWishReqOuterClass {
               itemId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               gachaScheduleId_ = input.readUInt32();
               break;
@@ -139,10 +139,10 @@ public final class GachaWishReqOuterClass {
               emu.grasscutter.net.proto.GachaWishReqOuterClass.GachaWishReq.class, emu.grasscutter.net.proto.GachaWishReqOuterClass.GachaWishReq.Builder.class);
     }
 
-    public static final int GACHA_TYPE_FIELD_NUMBER = 3;
+    public static final int GACHATYPE_FIELD_NUMBER = 6;
     private int gachaType_;
     /**
-     * <code>uint32 gacha_type = 3;</code>
+     * <code>uint32 gachaType = 6;</code>
      * @return The gachaType.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class GachaWishReqOuterClass {
       return gachaType_;
     }
 
-    public static final int GACHA_SCHEDULE_ID_FIELD_NUMBER = 12;
+    public static final int GACHASCHEDULEID_FIELD_NUMBER = 10;
     private int gachaScheduleId_;
     /**
-     * <code>uint32 gacha_schedule_id = 12;</code>
+     * <code>uint32 gachaScheduleId = 10;</code>
      * @return The gachaScheduleId.
      */
     @java.lang.Override
@@ -161,10 +161,10 @@ public final class GachaWishReqOuterClass {
       return gachaScheduleId_;
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 9;
+    public static final int ITEMID_FIELD_NUMBER = 9;
     private int itemId_;
     /**
-     * <code>uint32 item_id = 9;</code>
+     * <code>uint32 itemId = 9;</code>
      * @return The itemId.
      */
     @java.lang.Override
@@ -187,13 +187,13 @@ public final class GachaWishReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gachaType_ != 0) {
-        output.writeUInt32(3, gachaType_);
+        output.writeUInt32(6, gachaType_);
       }
       if (itemId_ != 0) {
         output.writeUInt32(9, itemId_);
       }
       if (gachaScheduleId_ != 0) {
-        output.writeUInt32(12, gachaScheduleId_);
+        output.writeUInt32(10, gachaScheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class GachaWishReqOuterClass {
       size = 0;
       if (gachaType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, gachaType_);
+          .computeUInt32Size(6, gachaType_);
       }
       if (itemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -214,7 +214,7 @@ public final class GachaWishReqOuterClass {
       }
       if (gachaScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gachaScheduleId_);
+          .computeUInt32Size(10, gachaScheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -248,11 +248,11 @@ public final class GachaWishReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GACHA_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + GACHATYPE_FIELD_NUMBER;
       hash = (53 * hash) + getGachaType();
-      hash = (37 * hash) + GACHA_SCHEDULE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + GACHASCHEDULEID_FIELD_NUMBER;
       hash = (53 * hash) + getGachaScheduleId();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ITEMID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -351,14 +351,14 @@ public final class GachaWishReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1600;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum IGAICKAILHD {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 1520;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code GachaWishReq}
@@ -521,7 +521,7 @@ public final class GachaWishReqOuterClass {
 
       private int gachaType_ ;
       /**
-       * <code>uint32 gacha_type = 3;</code>
+       * <code>uint32 gachaType = 6;</code>
        * @return The gachaType.
        */
       @java.lang.Override
@@ -529,7 +529,7 @@ public final class GachaWishReqOuterClass {
         return gachaType_;
       }
       /**
-       * <code>uint32 gacha_type = 3;</code>
+       * <code>uint32 gachaType = 6;</code>
        * @param value The gachaType to set.
        * @return This builder for chaining.
        */
@@ -540,7 +540,7 @@ public final class GachaWishReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gacha_type = 3;</code>
+       * <code>uint32 gachaType = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGachaType() {
@@ -552,7 +552,7 @@ public final class GachaWishReqOuterClass {
 
       private int gachaScheduleId_ ;
       /**
-       * <code>uint32 gacha_schedule_id = 12;</code>
+       * <code>uint32 gachaScheduleId = 10;</code>
        * @return The gachaScheduleId.
        */
       @java.lang.Override
@@ -560,7 +560,7 @@ public final class GachaWishReqOuterClass {
         return gachaScheduleId_;
       }
       /**
-       * <code>uint32 gacha_schedule_id = 12;</code>
+       * <code>uint32 gachaScheduleId = 10;</code>
        * @param value The gachaScheduleId to set.
        * @return This builder for chaining.
        */
@@ -571,7 +571,7 @@ public final class GachaWishReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gacha_schedule_id = 12;</code>
+       * <code>uint32 gachaScheduleId = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearGachaScheduleId() {
@@ -583,7 +583,7 @@ public final class GachaWishReqOuterClass {
 
       private int itemId_ ;
       /**
-       * <code>uint32 item_id = 9;</code>
+       * <code>uint32 itemId = 9;</code>
        * @return The itemId.
        */
       @java.lang.Override
@@ -591,7 +591,7 @@ public final class GachaWishReqOuterClass {
         return itemId_;
       }
       /**
-       * <code>uint32 item_id = 9;</code>
+       * <code>uint32 itemId = 9;</code>
        * @param value The itemId to set.
        * @return This builder for chaining.
        */
@@ -602,7 +602,7 @@ public final class GachaWishReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 item_id = 9;</code>
+       * <code>uint32 itemId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
@@ -678,10 +678,10 @@ public final class GachaWishReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022GachaWishReq.proto\"N\n\014GachaWishReq\022\022\n\n" +
-      "gacha_type\030\003 \001(\r\022\031\n\021gacha_schedule_id\030\014 " +
-      "\001(\r\022\017\n\007item_id\030\t \001(\rB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\022GachaWishReq.proto\"J\n\014GachaWishReq\022\021\n\t" +
+      "gachaType\030\006 \001(\r\022\027\n\017gachaScheduleId\030\n \001(\r" +
+      "\022\016\n\006itemId\030\t \001(\rB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

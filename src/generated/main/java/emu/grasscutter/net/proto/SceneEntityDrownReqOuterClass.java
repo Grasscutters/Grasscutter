@@ -19,21 +19,21 @@ public final class SceneEntityDrownReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 14;</code>
+     * <code>uint32 entityId = 14;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 217;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
+   *enum GOIADJICFEC {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 218;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *	EAJIABGAOCI = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code SceneEntityDrownReq}
@@ -117,10 +117,10 @@ public final class SceneEntityDrownReqOuterClass {
               emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.class, emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 14;
+    public static final int ENTITYID_FIELD_NUMBER = 14;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 14;</code>
+     * <code>uint32 entityId = 14;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -186,7 +186,7 @@ public final class SceneEntityDrownReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -285,14 +285,14 @@ public final class SceneEntityDrownReqOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 217;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
+     *enum GOIADJICFEC {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 218;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *	EAJIABGAOCI = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code SceneEntityDrownReq}
@@ -443,7 +443,7 @@ public final class SceneEntityDrownReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entityId = 14;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -451,7 +451,7 @@ public final class SceneEntityDrownReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entityId = 14;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +462,7 @@ public final class SceneEntityDrownReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entityId = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -538,9 +538,9 @@ public final class SceneEntityDrownReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031SceneEntityDrownReq.proto\"(\n\023SceneEnti" +
-      "tyDrownReq\022\021\n\tentity_id\030\016 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\031SceneEntityDrownReq.proto\"\'\n\023SceneEnti" +
+      "tyDrownReq\022\020\n\010entityId\030\016 \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

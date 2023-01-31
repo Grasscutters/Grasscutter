@@ -19,26 +19,26 @@ public final class HomeChangeEditModeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_enter_edit_mode = 2;</code>
+     * <code>bool isEnterEditMode = 9;</code>
      * @return The isEnterEditMode.
      */
     boolean getIsEnterEditMode();
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4661;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum DBDBLCNDCHO {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4767;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code HomeChangeEditModeRsp}
@@ -85,14 +85,14 @@ public final class HomeChangeEditModeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              isEnterEditMode_ = input.readBool();
-              break;
-            }
-            case 104: {
+            case 24: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              isEnterEditMode_ = input.readBool();
               break;
             }
             default: {
@@ -127,10 +127,10 @@ public final class HomeChangeEditModeRspOuterClass {
               emu.grasscutter.net.proto.HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.class, emu.grasscutter.net.proto.HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.Builder.class);
     }
 
-    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 2;
+    public static final int ISENTEREDITMODE_FIELD_NUMBER = 9;
     private boolean isEnterEditMode_;
     /**
-     * <code>bool is_enter_edit_mode = 2;</code>
+     * <code>bool isEnterEditMode = 9;</code>
      * @return The isEnterEditMode.
      */
     @java.lang.Override
@@ -138,10 +138,10 @@ public final class HomeChangeEditModeRspOuterClass {
       return isEnterEditMode_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -163,11 +163,11 @@ public final class HomeChangeEditModeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isEnterEditMode_ != false) {
-        output.writeBool(2, isEnterEditMode_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(3, retcode_);
+      }
+      if (isEnterEditMode_ != false) {
+        output.writeBool(9, isEnterEditMode_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,13 +178,13 @@ public final class HomeChangeEditModeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isEnterEditMode_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isEnterEditMode_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(3, retcode_);
+      }
+      if (isEnterEditMode_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isEnterEditMode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -216,7 +216,7 @@ public final class HomeChangeEditModeRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_ENTER_EDIT_MODE_FIELD_NUMBER;
+      hash = (37 * hash) + ISENTEREDITMODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterEditMode());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -318,13 +318,13 @@ public final class HomeChangeEditModeRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4661;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum DBDBLCNDCHO {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4767;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code HomeChangeEditModeRsp}
@@ -481,7 +481,7 @@ public final class HomeChangeEditModeRspOuterClass {
 
       private boolean isEnterEditMode_ ;
       /**
-       * <code>bool is_enter_edit_mode = 2;</code>
+       * <code>bool isEnterEditMode = 9;</code>
        * @return The isEnterEditMode.
        */
       @java.lang.Override
@@ -489,7 +489,7 @@ public final class HomeChangeEditModeRspOuterClass {
         return isEnterEditMode_;
       }
       /**
-       * <code>bool is_enter_edit_mode = 2;</code>
+       * <code>bool isEnterEditMode = 9;</code>
        * @param value The isEnterEditMode to set.
        * @return This builder for chaining.
        */
@@ -500,7 +500,7 @@ public final class HomeChangeEditModeRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_enter_edit_mode = 2;</code>
+       * <code>bool isEnterEditMode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnterEditMode() {
@@ -512,7 +512,7 @@ public final class HomeChangeEditModeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -520,7 +520,7 @@ public final class HomeChangeEditModeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -531,7 +531,7 @@ public final class HomeChangeEditModeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -607,10 +607,10 @@ public final class HomeChangeEditModeRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033HomeChangeEditModeRsp.proto\"D\n\025HomeCha" +
-      "ngeEditModeRsp\022\032\n\022is_enter_edit_mode\030\002 \001" +
-      "(\010\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "\n\033HomeChangeEditModeRsp.proto\"A\n\025HomeCha" +
+      "ngeEditModeRsp\022\027\n\017isEnterEditMode\030\t \001(\010\022" +
+      "\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

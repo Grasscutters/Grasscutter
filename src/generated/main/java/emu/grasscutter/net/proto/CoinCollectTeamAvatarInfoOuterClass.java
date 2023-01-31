@@ -19,16 +19,16 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 5;</code>
-     * @return The avatarId.
-     */
-    int getAvatarId();
-
-    /**
-     * <code>uint32 costume_id = 1;</code>
+     * <code>uint32 costumeId = 15;</code>
      * @return The costumeId.
      */
     int getCostumeId();
+
+    /**
+     * <code>uint32 avatarId = 8;</code>
+     * @return The avatarId.
+     */
+    int getAvatarId();
   }
   /**
    * Protobuf type {@code CoinCollectTeamAvatarInfo}
@@ -75,14 +75,14 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              costumeId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+            case 64: {
 
               avatarId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              costumeId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +117,26 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
               emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.class, emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 5;
-    private int avatarId_;
-    /**
-     * <code>uint32 avatar_id = 5;</code>
-     * @return The avatarId.
-     */
-    @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
-    }
-
-    public static final int COSTUME_ID_FIELD_NUMBER = 1;
+    public static final int COSTUMEID_FIELD_NUMBER = 15;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 1;</code>
+     * <code>uint32 costumeId = 15;</code>
      * @return The costumeId.
      */
     @java.lang.Override
     public int getCostumeId() {
       return costumeId_;
+    }
+
+    public static final int AVATARID_FIELD_NUMBER = 8;
+    private int avatarId_;
+    /**
+     * <code>uint32 avatarId = 8;</code>
+     * @return The avatarId.
+     */
+    @java.lang.Override
+    public int getAvatarId() {
+      return avatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +153,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (costumeId_ != 0) {
-        output.writeUInt32(1, costumeId_);
-      }
       if (avatarId_ != 0) {
-        output.writeUInt32(5, avatarId_);
+        output.writeUInt32(8, avatarId_);
+      }
+      if (costumeId_ != 0) {
+        output.writeUInt32(15, costumeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +168,13 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (costumeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, costumeId_);
-      }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, avatarId_);
+          .computeUInt32Size(8, avatarId_);
+      }
+      if (costumeId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, costumeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +191,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       }
       emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo other = (emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo) obj;
 
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
       if (getCostumeId()
           != other.getCostumeId()) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +206,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
-      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
+      hash = (37 * hash) + COSTUMEID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
+      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,9 +343,9 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarId_ = 0;
-
         costumeId_ = 0;
+
+        avatarId_ = 0;
 
         return this;
       }
@@ -373,8 +373,8 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo buildPartial() {
         emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo result = new emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo(this);
-        result.avatarId_ = avatarId_;
         result.costumeId_ = costumeId_;
+        result.avatarId_ = avatarId_;
         onBuilt();
         return result;
       }
@@ -423,11 +423,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo other) {
         if (other == emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.getDefaultInstance()) return this;
-        if (other.getAvatarId() != 0) {
-          setAvatarId(other.getAvatarId());
-        }
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
+        }
+        if (other.getAvatarId() != 0) {
+          setAvatarId(other.getAvatarId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,40 +458,9 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return this;
       }
 
-      private int avatarId_ ;
-      /**
-       * <code>uint32 avatar_id = 5;</code>
-       * @return The avatarId.
-       */
-      @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
-      }
-      /**
-       * <code>uint32 avatar_id = 5;</code>
-       * @param value The avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarId(int value) {
-        
-        avatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 avatar_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarId() {
-        
-        avatarId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int costumeId_ ;
       /**
-       * <code>uint32 costume_id = 1;</code>
+       * <code>uint32 costumeId = 15;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -499,7 +468,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costume_id = 1;</code>
+       * <code>uint32 costumeId = 15;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -510,12 +479,43 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costume_id = 1;</code>
+       * <code>uint32 costumeId = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
         
         costumeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int avatarId_ ;
+      /**
+       * <code>uint32 avatarId = 8;</code>
+       * @return The avatarId.
+       */
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
+      }
+      /**
+       * <code>uint32 avatarId = 8;</code>
+       * @param value The avatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarId(int value) {
+        
+        avatarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 avatarId = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarId() {
+        
+        avatarId_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +586,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\037CoinCollectTeamAvatarInfo.proto\"B\n\031Coi" +
-      "nCollectTeamAvatarInfo\022\021\n\tavatar_id\030\005 \001(" +
-      "\r\022\022\n\ncostume_id\030\001 \001(\rB\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "\n\037CoinCollectTeamAvatarInfo.proto\"@\n\031Coi" +
+      "nCollectTeamAvatarInfo\022\021\n\tcostumeId\030\017 \001(" +
+      "\r\022\020\n\010avatarId\030\010 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +600,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
     internal_static_CoinCollectTeamAvatarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CoinCollectTeamAvatarInfo_descriptor,
-        new java.lang.String[] { "AvatarId", "CostumeId", });
+        new java.lang.String[] { "CostumeId", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
