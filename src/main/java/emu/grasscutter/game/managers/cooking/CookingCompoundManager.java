@@ -38,7 +38,7 @@ public class CookingCompoundManager extends BasePlayerManager {
             if (compound.isDefaultUnlocked()) {
                 defaultUnlockedCompounds.add(id);
             }
-            compoundGroups.computeIfAbsent(compound.getGroupId(), gid -> new HashSet<>()).add(id);
+            compoundGroups.computeIfAbsent(compound.getGroupID(), gid -> new HashSet<>()).add(id);
         });
         //TODO:Because we haven't implemented fishing feature,unlock all compounds related to fish.Besides,it should be bound to player rather than manager.
         unlocked = new HashSet<>(defaultUnlockedCompounds);

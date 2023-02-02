@@ -12,7 +12,7 @@ import java.util.List;
 public class CompoundData extends GameResource {
     @Getter(onMethod = @__(@Override))
     private int id;
-    private int groupId;
+    private int groupID;
     private int rankLevel;
     private boolean isDefaultUnlocked;
     private int costTime;
