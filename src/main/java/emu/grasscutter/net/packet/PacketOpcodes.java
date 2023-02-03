@@ -4,7 +4,6 @@ import java.util.HashSet;
 
 public class PacketOpcodes {
     public static final int NONE = 0;
-
     public static final int AbilityChangeNotify = 1124;
     public static final int AbilityInvocationFailNotify = 1120;
     public static final int AbilityInvocationFixedNotify = 1105;
@@ -2166,6 +2165,5 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3541;
     public static final int WorldRoutineTypeCloseNotify = 3519;
     public static final int WorldRoutineTypeRefreshNotify = 3546;
-	//public static final int 114514 = 114514;
-
+    //public static final int 114514 = 114514;
 }
