@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class PacketOpcodes {
     public static final int NONE = 0;
+
     public static final int AbilityChangeNotify = 1124;
     public static final int AbilityInvocationFailNotify = 1120;
     public static final int AbilityInvocationFixedNotify = 1105;
@@ -843,9 +844,9 @@ public class PacketOpcodes {
     public static final int GetAllH5ActivityInfoReq = 5695;
     public static final int GetAllH5ActivityInfoRsp = 5688;
     public static final int GetAllMailNotify = 1416;
-    public static final int GetAllMailReq = 1424;
+    public static final int GetAllMailReq = 188;
     public static final int GetAllMailResultNotify = 1413;
-    public static final int GetAllMailRsp = 1429;
+    public static final int GetAllMailRsp = 125;
     public static final int GetAllSceneGalleryInfoReq = 5580;
     public static final int GetAllSceneGalleryInfoRsp = 5570;
     public static final int GetAllUnlockNameCardReq = 4018;
@@ -1800,8 +1801,8 @@ public class PacketOpcodes {
     public static final int SetLimitOptimizationNotify = 8763;
     public static final int SetNameCardReq = 4025;
     public static final int SetNameCardRsp = 4058;
-    public static final int SetOpenStateReq = 188;
-    public static final int SetOpenStateRsp = 125;
+    public static final int SetOpenStateReq = 1424;
+    public static final int SetOpenStateRsp = 1429;
     public static final int SetPlayerBirthdayReq = 4078;
     public static final int SetPlayerBirthdayRsp = 4016;
     public static final int SetPlayerBornDataReq = 169;
@@ -2165,5 +2166,6 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3541;
     public static final int WorldRoutineTypeCloseNotify = 3519;
     public static final int WorldRoutineTypeRefreshNotify = 3546;
-    //public static final int 114514 = 114514;
+    //public static final int fuak mihoyo! = 114514;
+
 }
