@@ -2166,6 +2166,6 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3541;
     public static final int WorldRoutineTypeCloseNotify = 3519;
     public static final int WorldRoutineTypeRefreshNotify = 3546;
-    //public static final int fuak mihoyo! = 114514;
+    //public static final int fuck mihoyo! = 114514;
 
 }
