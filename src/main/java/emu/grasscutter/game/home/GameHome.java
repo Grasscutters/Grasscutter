@@ -131,4 +131,27 @@ public class GameHome {
             .map(Int2ObjectMap.Entry::getIntKey)
             .collect(Collectors.toUnmodifiableSet());
     }
+
+    // Same as Player.java addExpDirectly
+    public void addExp(Player player, int count) {
+        exp += count;
+        int reqExp = getExpRequired(level);
+
+        while (exp >= reqExp && reqExp > 0) {
+            exp -= reqExp;
+            level += 1;
+            reqExp = getExpRequired(level);
+
+            // Update client level and exp
+            player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
+        }
+
+        // Update client home
+        onOwnerLogin(player);
+    }
+
+    private int getExpRequired(int level) {
+        HomeWorldLevelData levelData = GameData.getHomeWorldLevelDataMap().get(level);
+        return levelData != null ? levelData.getExp() : 0;
+    }
 }
