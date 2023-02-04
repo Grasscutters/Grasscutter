@@ -133,7 +133,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         // Destroying rocks
         if (target instanceof EntityGadget targetGadget && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
-            if (data.getAction() == ModifierAction.REMOVED) {
+            if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
                 gatherObject.dropItems(this.getPlayer());
                 return;
             }
@@ -151,7 +151,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // This is not how it works but we will keep it for now since healing abilities dont work properly anyways
-        if (data.getAction() == ModifierAction.ADDED && data.getParentAbilityName() != null) {
+        if (data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED && data.getParentAbilityName() != null) {
             // Handle add modifier here
             String modifierString = data.getParentAbilityName().getStr();
             AbilityModifierEntry modifier = GameData.getAbilityModifiers().get(modifierString);
@@ -164,7 +164,7 @@ public final class AbilityManager extends BasePlayerManager {
 
             // Add to meta modifier list
             target.getMetaModifiers().put(head.getInstancedModifierId(), modifierString);
-        } else if (data.getAction() == ModifierAction.REMOVED) {
+        } else if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
             // Handle remove modifier
             String modifierString = target.getMetaModifiers().get(head.getInstancedModifierId());
 

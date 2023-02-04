@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 import com.github.davidmoten.rtreemulti.geometry.Point;
@@ -22,9 +23,7 @@ public class Position implements Serializable {
     @SerializedName(value="z", alternate={"_z", "Z"})
     @Getter @Setter private float z;
 
-    public Position() {
-
-    }
+    public Position() {}
 
     public Position(float x, float y) {
         set(x, y);
@@ -32,6 +31,20 @@ public class Position implements Serializable {
 
     public Position(float x, float y, float z) {
         set(x, y, z);
+    }
+
+    public Position(List<Float> xyz) {
+        switch (xyz.size()) {
+            default:  // Might want to error on excess elements, but maybe we want to extend to 3+3 representation later.
+            case 3:
+                this.z = xyz.get(2);  // Fall-through
+            case 2:
+                this.y = xyz.get(1);  // Fall-through
+            case 1:
+                this.y = xyz.get(0);  // pointless fall-through
+            case 0:
+                break;
+        }
     }
 
     public Position(String p) {

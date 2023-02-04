@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md)
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md)
 
 **Perhatian:** Kami selalu menyambut kontributor untuk proyek ini. Sebelum menambahkan kontribusi Anda, harap baca [Kode Etik](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md) kami.
 
@@ -14,7 +14,7 @@
 * Daftar teman
 * Teleportasi
 * Sistem gacha
-* Co-op *sebahagian* berfungsi
+* Co-op *sebagian* berfungsi
 * Memunculkan monster melalui konsol
 * Fitur inventaris (menerima item/karakter, meng-upgrade item/karakter, dll)
 
@@ -53,9 +53,9 @@
 
       ​**Catatan:** Sertifikat CA biasanya disimpan di `%USERPROFILE%\ .mitmproxy`, atau anda dapat download dari  `http://mitm.it`
 
-      ​	klik dua kali untuk [menginstall](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
+      ​	klik dua kali untuk [menginstall](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) ataupun juga
 
-      - Via command line
+      - melalui command line
 
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
@@ -103,6 +103,6 @@ Anda bisa menemukan output jar di root folder proyek.
 # Quick Troubleshooting
 
 * Jika kompilasi tidak berhasil, periksa instalasi JDK Anda (JDK 17 dan validasi variabel bin PATH JDK)
-* Klien saya tidak terhubung, tidak login, 4206, dll... - Sebagian besar pengaturan daemon proxy Anda adalah *masalahnya*, jika menggunakan
+* Klien saya tidak terhubung, tidak login, 4206, dan lain-lain - Sebagian besar pengaturan daemon proxy Anda adalah *masalahnya*, jika menggunakan
 Fiddler pastikan berjalan pada port lain kecuali 8888
 * Urutan startup: MongoDB > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game

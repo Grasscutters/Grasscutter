@@ -8,26 +8,22 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @ResourceType(name = "ChapterExcelConfigData.json")
 @Getter
-@Setter
+@Setter  // TODO: remove on next API break
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChapterData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     int id;
     int beginQuestId;
     int endQuestId;
     int needPlayerLevel;
 
+    // Why public? TODO: privatise next API break
     public static final Map<Integer, ChapterData> beginQuestChapterMap = new HashMap<>();
     public static final Map<Integer, ChapterData> endQuestChapterMap = new HashMap<>();
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
 
     @Override
     public void onLoad() {

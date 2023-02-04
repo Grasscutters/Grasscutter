@@ -3,10 +3,10 @@ package emu.grasscutter.game.activity.musicgame;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.net.proto.MusicBeatmapListOuterClass;
-import emu.grasscutter.net.proto.MusicBeatmapNoteOuterClass;
-import emu.grasscutter.net.proto.MusicBeatmapOuterClass;
-import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
+import emu.grasscutter.net.proto.UgcMusicRecordOuterClass;
+import emu.grasscutter.net.proto.UgcMusicNoteOuterClass;
+import emu.grasscutter.net.proto.UgcMusicTrackOuterClass;
+import emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -43,40 +43,39 @@ public class MusicGameBeatmap {
         DatabaseHelper.saveMusicGameBeatmap(this);
     }
 
-    public static List<List<BeatmapNote>> parse(List<MusicBeatmapListOuterClass.MusicBeatmapList> beatmapItemListList) {
+    public static List<List<BeatmapNote>> parse(List<UgcMusicTrackOuterClass.UgcMusicTrack> beatmapItemListList) {
         return beatmapItemListList.stream()
-            .map(item -> item.getBeatmapNoteListList().stream()
+            .map(item -> item.getMusicNoteListList().stream()
                 .map(BeatmapNote::parse)
                 .toList())
             .toList();
     }
 
-    public MusicBeatmapOuterClass.MusicBeatmap toProto(){
-        return MusicBeatmapOuterClass.MusicBeatmap.newBuilder()
+    public UgcMusicRecordOuterClass.UgcMusicRecord toProto(){
+        return UgcMusicRecordOuterClass.UgcMusicRecord.newBuilder()
             .setMusicId(musicId)
-            .addAllBeatmapItemList(beatmap.stream()
+            .addAllMusicTrackList(beatmap.stream()
                 .map(this::musicBeatmapListToProto)
                 .toList())
             .build();
     }
 
-    public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toBriefProto(){
+    public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder toBriefProto(){
         var player = DatabaseHelper.getPlayerByUid(authorUid);
 
-        return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
+        return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder()
             .setMusicId(musicId)
-            .setMusicNoteCount(musicNoteCount)
-            .setMusicShareId(musicShareId)
+//            .setMusicNoteCount(musicNoteCount)
+            .setUgcGuid(musicShareId)
             .setMaxScore(maxScore)
-            .setShareTime(createTime)
-            .setAuthorNickname(player.getNickname())
-            .setVersion(1)
-            ;
+//            .setShareTime(createTime)
+            .setCreatorNickname(player.getNickname())
+            .setVersion(1);
     }
 
-    private MusicBeatmapListOuterClass.MusicBeatmapList musicBeatmapListToProto(List<BeatmapNote> beatmapNoteList){
-        return MusicBeatmapListOuterClass.MusicBeatmapList.newBuilder()
-            .addAllBeatmapNoteList(beatmapNoteList.stream()
+    private UgcMusicTrackOuterClass.UgcMusicTrack musicBeatmapListToProto(List<BeatmapNote> beatmapNoteList){
+        return UgcMusicTrackOuterClass.UgcMusicTrack.newBuilder()
+            .addAllMusicNoteList(beatmapNoteList.stream()
                 .map(BeatmapNote::toProto)
                 .toList())
             .build();
@@ -90,15 +89,15 @@ public class MusicGameBeatmap {
         int startTime;
         int endTime;
 
-        public static BeatmapNote parse(MusicBeatmapNoteOuterClass.MusicBeatmapNote note){
+        public static BeatmapNote parse(UgcMusicNoteOuterClass.UgcMusicNote note){
             return BeatmapNote.of()
                 .startTime(note.getStartTime())
                 .endTime(note.getEndTime())
                 .build();
         }
 
-        public MusicBeatmapNoteOuterClass.MusicBeatmapNote toProto(){
-            return MusicBeatmapNoteOuterClass.MusicBeatmapNote.newBuilder()
+        public UgcMusicNoteOuterClass.UgcMusicNote toProto(){
+            return UgcMusicNoteOuterClass.UgcMusicNote.newBuilder()
                 .setStartTime(startTime)
                 .setEndTime(endTime)
                 .build();

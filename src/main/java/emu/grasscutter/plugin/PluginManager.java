@@ -181,7 +181,7 @@ public final class PluginManager {
         // Add the plugin to the list of loaded plugins.
         this.plugins.put(identifier.name, plugin);
         // Create a collection for the plugin's listeners.
-        this.listeners.put(plugin, new LinkedList<>());
+        this.listeners.put(plugin, new ArrayList<>());
 
         // Call the plugin's onLoad method.
         try {
@@ -242,18 +242,14 @@ public final class PluginManager {
      * @param priority The priority to call for.
      */
     private void checkAndFilter(Event event, HandlerPriority priority) {
-        // Create a collection of listeners.
-        List<EventHandler<? extends Event>> listeners = new LinkedList<>();
-
         // Add all listeners from every plugin.
-        this.listeners.values().forEach(listeners::addAll);
-
-        listeners.stream()
+        this.listeners.values().stream()
+            .flatMap(Collection::stream)
             // Filter the listeners by priority.
             .filter(handler -> handler.handles().isInstance(event))
             .filter(handler -> handler.getPriority() == priority)
             // Invoke the event.
-            .toList().forEach(handler -> this.invokeHandler(event, handler));
+            .forEach(handler -> this.invokeHandler(event, handler));
     }
 
     /**

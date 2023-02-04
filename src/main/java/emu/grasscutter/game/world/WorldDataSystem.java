@@ -122,7 +122,7 @@ public class WorldDataSystem extends BaseGameSystem {
             var bossChest = group.searchBossChestInGroup();
             if (bossChest.isPresent()) {
                 builder.setResin(bossChest.get().resin);
-                builder.setBossChestNum(bossChest.get().take_num);
+                builder.setMaxBossChestNum(bossChest.get().take_num);
             }
         }
         return builder.build();

@@ -1,6 +1,6 @@
 package emu.grasscutter.game.player;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +15,8 @@ import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.val;
 
-@Getter(AccessLevel.PRIVATE)
 public class PlayerBuffManager extends BasePlayerManager {
     private int nextBuffUid;
 
@@ -29,7 +26,7 @@ public class PlayerBuffManager extends BasePlayerManager {
     public PlayerBuffManager(Player player) {
         super(player);
         this.buffs = new Int2ObjectOpenHashMap<>();
-        this.pendingBuffs = new LinkedList<>();
+        this.pendingBuffs = new ArrayList<>();
     }
 
     /**
@@ -46,7 +43,7 @@ public class PlayerBuffManager extends BasePlayerManager {
      * @return True if a buff with this group id exists
      */
     public synchronized boolean hasBuff(int groupId) {
-        return this.getBuffs().containsKey(groupId);
+        return this.buffs.containsKey(groupId);
     }
 
     /**
@@ -55,11 +52,11 @@ public class PlayerBuffManager extends BasePlayerManager {
     public synchronized void clearBuffs() {
         // Remove from player
         getPlayer().sendPacket(
-            new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, getBuffs().values())
+            new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, this.buffs.values())
         );
 
         // Clear
-        getBuffs().clear();
+        this.buffs.clear();
     }
 
     /**
@@ -133,13 +130,11 @@ public class PlayerBuffManager extends BasePlayerManager {
         }
 
         // Clear previous buff if it exists
-        if (this.hasBuff(buffData.getGroupId())) {
-            this.removeBuff(buffData.getGroupId());
-        }
+        this.removeBuff(buffData.getGroupId());
 
         // Create and store buff
         PlayerBuff buff = new PlayerBuff(getNextBuffUid(), buffData, duration);
-        getBuffs().put(buff.getGroupId(), buff);
+        this.buffs.put(buff.getGroupId(), buff);
 
         // Packet
         getPlayer().sendPacket(new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF, buff));
@@ -153,7 +148,7 @@ public class PlayerBuffManager extends BasePlayerManager {
      * @return True if a buff was remove
      */
     public synchronized boolean removeBuff(int buffGroupId) {
-        PlayerBuff buff = this.getBuffs().get(buffGroupId);
+        PlayerBuff buff = this.buffs.remove(buffGroupId);
 
         if (buff != null) {
             getPlayer().sendPacket(
@@ -167,28 +162,24 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     public synchronized void onTick() {
         // Skip if no buffs
-        if (getBuffs().size() == 0) return;
+        if (this.buffs.isEmpty()) return;
 
         long currentTime = System.currentTimeMillis();
 
         // Add to pending buffs to remove if buff has expired
-        for (PlayerBuff buff : getBuffs().values()) {
-            if (currentTime > buff.getEndTime()) {
-                this.getPendingBuffs().add(buff);
-            }
-        }
+        this.buffs.values().removeIf(buff -> {
+            if (currentTime <= buff.getEndTime())
+                return false;
+            this.pendingBuffs.add(buff);
+            return true;
+        });
 
-        if (this.getPendingBuffs().size() > 0) {
+        if (this.pendingBuffs.size() > 0) {
             // Send packet
             getPlayer().sendPacket(
                 new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, this.pendingBuffs)
             );
-
-            // Remove buff from player buff map
-            for (PlayerBuff buff : this.getPendingBuffs()) {
-                getBuffs().remove(buff.getGroupId());
-            }
-            this.getPendingBuffs().clear();
+            this.pendingBuffs.clear();
         }
     }
 

@@ -37,10 +37,13 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 200
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 104;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code PlayerLevelRewardUpdateNotify}
@@ -347,10 +350,13 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 200
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 104;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code PlayerLevelRewardUpdateNotify}

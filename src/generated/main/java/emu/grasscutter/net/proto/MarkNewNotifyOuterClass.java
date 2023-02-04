@@ -36,17 +36,20 @@ public final class MarkNewNotifyOuterClass {
     int getIdList(int index);
 
     /**
-     * <code>uint32 mark_new_type = 11;</code>
+     * <code>uint32 mark_new_type = 3;</code>
      * @return The markNewType.
      */
     int getMarkNewType();
   }
   /**
    * <pre>
-   * CmdId: 1275
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1239;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code MarkNewNotify}
@@ -95,6 +98,11 @@ public final class MarkNewNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 24: {
+
+              markNewType_ = input.readUInt32();
+              break;
+            }
             case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 idList_ = newIntList();
@@ -114,11 +122,6 @@ public final class MarkNewNotifyOuterClass {
                 idList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              markNewType_ = input.readUInt32();
               break;
             }
             default: {
@@ -184,10 +187,10 @@ public final class MarkNewNotifyOuterClass {
     }
     private int idListMemoizedSerializedSize = -1;
 
-    public static final int MARK_NEW_TYPE_FIELD_NUMBER = 11;
+    public static final int MARK_NEW_TYPE_FIELD_NUMBER = 3;
     private int markNewType_;
     /**
-     * <code>uint32 mark_new_type = 11;</code>
+     * <code>uint32 mark_new_type = 3;</code>
      * @return The markNewType.
      */
     @java.lang.Override
@@ -210,15 +213,15 @@ public final class MarkNewNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (markNewType_ != 0) {
+        output.writeUInt32(3, markNewType_);
+      }
       if (getIdListList().size() > 0) {
         output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(idListMemoizedSerializedSize);
       }
       for (int i = 0; i < idList_.size(); i++) {
         output.writeUInt32NoTag(idList_.getInt(i));
-      }
-      if (markNewType_ != 0) {
-        output.writeUInt32(11, markNewType_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,6 +232,10 @@ public final class MarkNewNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (markNewType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, markNewType_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < idList_.size(); i++) {
@@ -242,10 +249,6 @@ public final class MarkNewNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         idListMemoizedSerializedSize = dataSize;
-      }
-      if (markNewType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, markNewType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -380,10 +383,13 @@ public final class MarkNewNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1275
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1239;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code MarkNewNotify}
@@ -632,7 +638,7 @@ public final class MarkNewNotifyOuterClass {
 
       private int markNewType_ ;
       /**
-       * <code>uint32 mark_new_type = 11;</code>
+       * <code>uint32 mark_new_type = 3;</code>
        * @return The markNewType.
        */
       @java.lang.Override
@@ -640,7 +646,7 @@ public final class MarkNewNotifyOuterClass {
         return markNewType_;
       }
       /**
-       * <code>uint32 mark_new_type = 11;</code>
+       * <code>uint32 mark_new_type = 3;</code>
        * @param value The markNewType to set.
        * @return This builder for chaining.
        */
@@ -651,7 +657,7 @@ public final class MarkNewNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mark_new_type = 11;</code>
+       * <code>uint32 mark_new_type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarkNewType() {
@@ -728,7 +734,7 @@ public final class MarkNewNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023MarkNewNotify.proto\"7\n\rMarkNewNotify\022\017" +
-      "\n\007id_list\030\007 \003(\r\022\025\n\rmark_new_type\030\013 \001(\rB\033" +
+      "\n\007id_list\030\007 \003(\r\022\025\n\rmark_new_type\030\003 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

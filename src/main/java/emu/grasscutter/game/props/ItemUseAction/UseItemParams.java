@@ -12,6 +12,7 @@ public class UseItemParams {
     public int count = 1;
     public int optionId = 0;
     public boolean isEnterMpDungeonTeam = false;
+    public int usedItemId = 0;
 
     public UseItemParams(Player player, ItemUseTarget itemUseTarget, Avatar targetAvatar, int count, int optionId, boolean isEnterMpDungeonTeam) {
         this.player = player;

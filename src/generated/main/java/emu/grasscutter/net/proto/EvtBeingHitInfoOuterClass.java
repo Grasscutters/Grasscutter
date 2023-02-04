@@ -19,31 +19,31 @@ public final class EvtBeingHitInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 peer_id = 6;</code>
+     * <code>uint32 frame_num = 11;</code>
+     * @return The frameNum.
+     */
+    int getFrameNum();
+
+    /**
+     * <code>uint32 peer_id = 2;</code>
      * @return The peerId.
      */
     int getPeerId();
 
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      * @return Whether the attackResult field is set.
      */
     boolean hasAttackResult();
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      * @return The attackResult.
      */
     emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult getAttackResult();
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      */
     emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder getAttackResultOrBuilder();
-
-    /**
-     * <code>uint32 frame_num = 4;</code>
-     * @return The frameNum.
-     */
-    int getFrameNum();
   }
   /**
    * Protobuf type {@code EvtBeingHitInfo}
@@ -90,17 +90,12 @@ public final class EvtBeingHitInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              frameNum_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+            case 16: {
 
               peerId_ = input.readUInt32();
               break;
             }
-            case 58: {
+            case 50: {
               emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.Builder subBuilder = null;
               if (attackResult_ != null) {
                 subBuilder = attackResult_.toBuilder();
@@ -111,6 +106,11 @@ public final class EvtBeingHitInfoOuterClass {
                 attackResult_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 88: {
+
+              frameNum_ = input.readUInt32();
               break;
             }
             default: {
@@ -145,10 +145,21 @@ public final class EvtBeingHitInfoOuterClass {
               emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.class, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder.class);
     }
 
-    public static final int PEER_ID_FIELD_NUMBER = 6;
+    public static final int FRAME_NUM_FIELD_NUMBER = 11;
+    private int frameNum_;
+    /**
+     * <code>uint32 frame_num = 11;</code>
+     * @return The frameNum.
+     */
+    @java.lang.Override
+    public int getFrameNum() {
+      return frameNum_;
+    }
+
+    public static final int PEER_ID_FIELD_NUMBER = 2;
     private int peerId_;
     /**
-     * <code>uint32 peer_id = 6;</code>
+     * <code>uint32 peer_id = 2;</code>
      * @return The peerId.
      */
     @java.lang.Override
@@ -156,10 +167,10 @@ public final class EvtBeingHitInfoOuterClass {
       return peerId_;
     }
 
-    public static final int ATTACK_RESULT_FIELD_NUMBER = 7;
+    public static final int ATTACK_RESULT_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult attackResult_;
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      * @return Whether the attackResult field is set.
      */
     @java.lang.Override
@@ -167,7 +178,7 @@ public final class EvtBeingHitInfoOuterClass {
       return attackResult_ != null;
     }
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      * @return The attackResult.
      */
     @java.lang.Override
@@ -175,22 +186,11 @@ public final class EvtBeingHitInfoOuterClass {
       return attackResult_ == null ? emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.getDefaultInstance() : attackResult_;
     }
     /**
-     * <code>.AttackResult attack_result = 7;</code>
+     * <code>.AttackResult attack_result = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder getAttackResultOrBuilder() {
       return getAttackResult();
-    }
-
-    public static final int FRAME_NUM_FIELD_NUMBER = 4;
-    private int frameNum_;
-    /**
-     * <code>uint32 frame_num = 4;</code>
-     * @return The frameNum.
-     */
-    @java.lang.Override
-    public int getFrameNum() {
-      return frameNum_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -207,14 +207,14 @@ public final class EvtBeingHitInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (frameNum_ != 0) {
-        output.writeUInt32(4, frameNum_);
-      }
       if (peerId_ != 0) {
-        output.writeUInt32(6, peerId_);
+        output.writeUInt32(2, peerId_);
       }
       if (attackResult_ != null) {
-        output.writeMessage(7, getAttackResult());
+        output.writeMessage(6, getAttackResult());
+      }
+      if (frameNum_ != 0) {
+        output.writeUInt32(11, frameNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,17 +225,17 @@ public final class EvtBeingHitInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (frameNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, frameNum_);
-      }
       if (peerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, peerId_);
+          .computeUInt32Size(2, peerId_);
       }
       if (attackResult_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAttackResult());
+          .computeMessageSize(6, getAttackResult());
+      }
+      if (frameNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, frameNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,6 +252,8 @@ public final class EvtBeingHitInfoOuterClass {
       }
       emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo other = (emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo) obj;
 
+      if (getFrameNum()
+          != other.getFrameNum()) return false;
       if (getPeerId()
           != other.getPeerId()) return false;
       if (hasAttackResult() != other.hasAttackResult()) return false;
@@ -259,8 +261,6 @@ public final class EvtBeingHitInfoOuterClass {
         if (!getAttackResult()
             .equals(other.getAttackResult())) return false;
       }
-      if (getFrameNum()
-          != other.getFrameNum()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class EvtBeingHitInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FRAME_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrameNum();
       hash = (37 * hash) + PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPeerId();
       if (hasAttackResult()) {
         hash = (37 * hash) + ATTACK_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getAttackResult().hashCode();
       }
-      hash = (37 * hash) + FRAME_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrameNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -413,6 +413,8 @@ public final class EvtBeingHitInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        frameNum_ = 0;
+
         peerId_ = 0;
 
         if (attackResultBuilder_ == null) {
@@ -421,8 +423,6 @@ public final class EvtBeingHitInfoOuterClass {
           attackResult_ = null;
           attackResultBuilder_ = null;
         }
-        frameNum_ = 0;
-
         return this;
       }
 
@@ -449,13 +449,13 @@ public final class EvtBeingHitInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo buildPartial() {
         emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo result = new emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo(this);
+        result.frameNum_ = frameNum_;
         result.peerId_ = peerId_;
         if (attackResultBuilder_ == null) {
           result.attackResult_ = attackResult_;
         } else {
           result.attackResult_ = attackResultBuilder_.build();
         }
-        result.frameNum_ = frameNum_;
         onBuilt();
         return result;
       }
@@ -504,14 +504,14 @@ public final class EvtBeingHitInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo other) {
         if (other == emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.getDefaultInstance()) return this;
+        if (other.getFrameNum() != 0) {
+          setFrameNum(other.getFrameNum());
+        }
         if (other.getPeerId() != 0) {
           setPeerId(other.getPeerId());
         }
         if (other.hasAttackResult()) {
           mergeAttackResult(other.getAttackResult());
-        }
-        if (other.getFrameNum() != 0) {
-          setFrameNum(other.getFrameNum());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -542,9 +542,40 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
 
+      private int frameNum_ ;
+      /**
+       * <code>uint32 frame_num = 11;</code>
+       * @return The frameNum.
+       */
+      @java.lang.Override
+      public int getFrameNum() {
+        return frameNum_;
+      }
+      /**
+       * <code>uint32 frame_num = 11;</code>
+       * @param value The frameNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameNum(int value) {
+        
+        frameNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 frame_num = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFrameNum() {
+        
+        frameNum_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int peerId_ ;
       /**
-       * <code>uint32 peer_id = 6;</code>
+       * <code>uint32 peer_id = 2;</code>
        * @return The peerId.
        */
       @java.lang.Override
@@ -552,7 +583,7 @@ public final class EvtBeingHitInfoOuterClass {
         return peerId_;
       }
       /**
-       * <code>uint32 peer_id = 6;</code>
+       * <code>uint32 peer_id = 2;</code>
        * @param value The peerId to set.
        * @return This builder for chaining.
        */
@@ -563,7 +594,7 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 peer_id = 6;</code>
+       * <code>uint32 peer_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
@@ -577,14 +608,14 @@ public final class EvtBeingHitInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult, emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.Builder, emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder> attackResultBuilder_;
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        * @return Whether the attackResult field is set.
        */
       public boolean hasAttackResult() {
         return attackResultBuilder_ != null || attackResult_ != null;
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        * @return The attackResult.
        */
       public emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult getAttackResult() {
@@ -595,7 +626,7 @@ public final class EvtBeingHitInfoOuterClass {
         }
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public Builder setAttackResult(emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult value) {
         if (attackResultBuilder_ == null) {
@@ -611,7 +642,7 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public Builder setAttackResult(
           emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.Builder builderForValue) {
@@ -625,7 +656,7 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public Builder mergeAttackResult(emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult value) {
         if (attackResultBuilder_ == null) {
@@ -643,7 +674,7 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public Builder clearAttackResult() {
         if (attackResultBuilder_ == null) {
@@ -657,7 +688,7 @@ public final class EvtBeingHitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.Builder getAttackResultBuilder() {
         
@@ -665,7 +696,7 @@ public final class EvtBeingHitInfoOuterClass {
         return getAttackResultFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       public emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder getAttackResultOrBuilder() {
         if (attackResultBuilder_ != null) {
@@ -676,7 +707,7 @@ public final class EvtBeingHitInfoOuterClass {
         }
       }
       /**
-       * <code>.AttackResult attack_result = 7;</code>
+       * <code>.AttackResult attack_result = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult, emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.Builder, emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder> 
@@ -690,37 +721,6 @@ public final class EvtBeingHitInfoOuterClass {
           attackResult_ = null;
         }
         return attackResultBuilder_;
-      }
-
-      private int frameNum_ ;
-      /**
-       * <code>uint32 frame_num = 4;</code>
-       * @return The frameNum.
-       */
-      @java.lang.Override
-      public int getFrameNum() {
-        return frameNum_;
-      }
-      /**
-       * <code>uint32 frame_num = 4;</code>
-       * @param value The frameNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFrameNum(int value) {
-        
-        frameNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 frame_num = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFrameNum() {
-        
-        frameNum_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -790,9 +790,9 @@ public final class EvtBeingHitInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025EvtBeingHitInfo.proto\032\022AttackResult.pr" +
-      "oto\"[\n\017EvtBeingHitInfo\022\017\n\007peer_id\030\006 \001(\r\022" +
-      "$\n\rattack_result\030\007 \001(\0132\r.AttackResult\022\021\n" +
-      "\tframe_num\030\004 \001(\rB\033\n\031emu.grasscutter.net." +
+      "oto\"[\n\017EvtBeingHitInfo\022\021\n\tframe_num\030\013 \001(" +
+      "\r\022\017\n\007peer_id\030\002 \001(\r\022$\n\rattack_result\030\006 \001(" +
+      "\0132\r.AttackResultB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -805,7 +805,7 @@ public final class EvtBeingHitInfoOuterClass {
     internal_static_EvtBeingHitInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBeingHitInfo_descriptor,
-        new java.lang.String[] { "PeerId", "AttackResult", "FrameNum", });
+        new java.lang.String[] { "FrameNum", "PeerId", "AttackResult", });
     emu.grasscutter.net.proto.AttackResultOuterClass.getDescriptor();
   }
 

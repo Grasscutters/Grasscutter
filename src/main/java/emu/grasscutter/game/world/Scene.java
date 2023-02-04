@@ -274,15 +274,8 @@ public class Scene {
     }
 
     public void showOtherEntities(Player player) {
-        List<GameEntity> entities = new LinkedList<>();
         GameEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
-
-        for (GameEntity entity : this.getEntities().values()) {
-            if (entity == currentEntity) {
-                continue;
-            }
-            entities.add(entity);
-        }
+        List<GameEntity> entities = this.getEntities().values().stream().filter(entity -> entity != currentEntity).toList();
 
         player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_TYPE_MEET));
     }
@@ -422,8 +415,8 @@ public class Scene {
         }
 
         // Todo
-        List<GameEntity> toAdd = new LinkedList<>();
-        List<GameEntity> toRemove = new LinkedList<>();
+        List<GameEntity> toAdd = new ArrayList<>();
+        List<GameEntity> toRemove = new ArrayList<>();
         var spawnedEntities = this.getSpawnedEntities();
         for (SpawnDataEntry entry : visible) {
             // If spawn entry is in our view and hasnt been spawned/killed yet, we should spawn it

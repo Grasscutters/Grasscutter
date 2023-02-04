@@ -55,27 +55,27 @@ public final class ClientGadgetInfoOuterClass {
     boolean getAsyncLoad();
 
     /**
-     * <code>bool Unk2700_JBOPENAGGAF = 7;</code>
-     * @return The unk2700JBOPENAGGAF.
+     * <code>bool is_peer_id_from_player = 7;</code>
+     * @return The isPeerIdFromPlayer.
      */
-    boolean getUnk2700JBOPENAGGAF();
+    boolean getIsPeerIdFromPlayer();
 
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-     * @return A list containing the unk2700BELOIHEIEAN.
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * @return A list containing the targetEntityIdList.
      */
-    java.util.List<java.lang.Integer> getUnk2700BELOIHEIEANList();
+    java.util.List<java.lang.Integer> getTargetEntityIdListList();
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-     * @return The count of unk2700BELOIHEIEAN.
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * @return The count of targetEntityIdList.
      */
-    int getUnk2700BELOIHEIEANCount();
+    int getTargetEntityIdListCount();
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
      * @param index The index of the element to return.
-     * @return The unk2700BELOIHEIEAN at the given index.
+     * @return The targetEntityIdList at the given index.
      */
-    int getUnk2700BELOIHEIEAN(int index);
+    int getTargetEntityIdList(int index);
   }
   /**
    * Protobuf type {@code ClientGadgetInfo}
@@ -90,7 +90,7 @@ public final class ClientGadgetInfoOuterClass {
       super(builder);
     }
     private ClientGadgetInfo() {
-      unk2700BELOIHEIEAN_ = emptyIntList();
+      targetEntityIdList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -156,26 +156,26 @@ public final class ClientGadgetInfoOuterClass {
             }
             case 56: {
 
-              unk2700JBOPENAGGAF_ = input.readBool();
+              isPeerIdFromPlayer_ = input.readBool();
               break;
             }
             case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk2700BELOIHEIEAN_ = newIntList();
+                targetEntityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              unk2700BELOIHEIEAN_.addInt(input.readUInt32());
+              targetEntityIdList_.addInt(input.readUInt32());
               break;
             }
             case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk2700BELOIHEIEAN_ = newIntList();
+                targetEntityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                unk2700BELOIHEIEAN_.addInt(input.readUInt32());
+                targetEntityIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -196,7 +196,7 @@ public final class ClientGadgetInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk2700BELOIHEIEAN_.makeImmutable(); // C
+          targetEntityIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -281,44 +281,44 @@ public final class ClientGadgetInfoOuterClass {
       return asyncLoad_;
     }
 
-    public static final int UNK2700_JBOPENAGGAF_FIELD_NUMBER = 7;
-    private boolean unk2700JBOPENAGGAF_;
+    public static final int IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER = 7;
+    private boolean isPeerIdFromPlayer_;
     /**
-     * <code>bool Unk2700_JBOPENAGGAF = 7;</code>
-     * @return The unk2700JBOPENAGGAF.
+     * <code>bool is_peer_id_from_player = 7;</code>
+     * @return The isPeerIdFromPlayer.
      */
     @java.lang.Override
-    public boolean getUnk2700JBOPENAGGAF() {
-      return unk2700JBOPENAGGAF_;
+    public boolean getIsPeerIdFromPlayer() {
+      return isPeerIdFromPlayer_;
     }
 
-    public static final int UNK2700_BELOIHEIEAN_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList unk2700BELOIHEIEAN_;
+    public static final int TARGET_ENTITY_ID_LIST_FIELD_NUMBER = 8;
+    private com.google.protobuf.Internal.IntList targetEntityIdList_;
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-     * @return A list containing the unk2700BELOIHEIEAN.
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * @return A list containing the targetEntityIdList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getUnk2700BELOIHEIEANList() {
-      return unk2700BELOIHEIEAN_;
+        getTargetEntityIdListList() {
+      return targetEntityIdList_;
     }
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-     * @return The count of unk2700BELOIHEIEAN.
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
+     * @return The count of targetEntityIdList.
      */
-    public int getUnk2700BELOIHEIEANCount() {
-      return unk2700BELOIHEIEAN_.size();
+    public int getTargetEntityIdListCount() {
+      return targetEntityIdList_.size();
     }
     /**
-     * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
+     * <code>repeated uint32 target_entity_id_list = 8;</code>
      * @param index The index of the element to return.
-     * @return The unk2700BELOIHEIEAN at the given index.
+     * @return The targetEntityIdList at the given index.
      */
-    public int getUnk2700BELOIHEIEAN(int index) {
-      return unk2700BELOIHEIEAN_.getInt(index);
+    public int getTargetEntityIdList(int index) {
+      return targetEntityIdList_.getInt(index);
     }
-    private int unk2700BELOIHEIEANMemoizedSerializedSize = -1;
+    private int targetEntityIdListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -353,15 +353,15 @@ public final class ClientGadgetInfoOuterClass {
       if (asyncLoad_ != false) {
         output.writeBool(6, asyncLoad_);
       }
-      if (unk2700JBOPENAGGAF_ != false) {
-        output.writeBool(7, unk2700JBOPENAGGAF_);
+      if (isPeerIdFromPlayer_ != false) {
+        output.writeBool(7, isPeerIdFromPlayer_);
       }
-      if (getUnk2700BELOIHEIEANList().size() > 0) {
+      if (getTargetEntityIdListList().size() > 0) {
         output.writeUInt32NoTag(66);
-        output.writeUInt32NoTag(unk2700BELOIHEIEANMemoizedSerializedSize);
+        output.writeUInt32NoTag(targetEntityIdListMemoizedSerializedSize);
       }
-      for (int i = 0; i < unk2700BELOIHEIEAN_.size(); i++) {
-        output.writeUInt32NoTag(unk2700BELOIHEIEAN_.getInt(i));
+      for (int i = 0; i < targetEntityIdList_.size(); i++) {
+        output.writeUInt32NoTag(targetEntityIdList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -396,23 +396,23 @@ public final class ClientGadgetInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, asyncLoad_);
       }
-      if (unk2700JBOPENAGGAF_ != false) {
+      if (isPeerIdFromPlayer_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, unk2700JBOPENAGGAF_);
+          .computeBoolSize(7, isPeerIdFromPlayer_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < unk2700BELOIHEIEAN_.size(); i++) {
+        for (int i = 0; i < targetEntityIdList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(unk2700BELOIHEIEAN_.getInt(i));
+            .computeUInt32SizeNoTag(targetEntityIdList_.getInt(i));
         }
         size += dataSize;
-        if (!getUnk2700BELOIHEIEANList().isEmpty()) {
+        if (!getTargetEntityIdListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        unk2700BELOIHEIEANMemoizedSerializedSize = dataSize;
+        targetEntityIdListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -441,10 +441,10 @@ public final class ClientGadgetInfoOuterClass {
           != other.getTargetEntityId()) return false;
       if (getAsyncLoad()
           != other.getAsyncLoad()) return false;
-      if (getUnk2700JBOPENAGGAF()
-          != other.getUnk2700JBOPENAGGAF()) return false;
-      if (!getUnk2700BELOIHEIEANList()
-          .equals(other.getUnk2700BELOIHEIEANList())) return false;
+      if (getIsPeerIdFromPlayer()
+          != other.getIsPeerIdFromPlayer()) return false;
+      if (!getTargetEntityIdListList()
+          .equals(other.getTargetEntityIdListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -470,12 +470,12 @@ public final class ClientGadgetInfoOuterClass {
       hash = (37 * hash) + ASYNC_LOAD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAsyncLoad());
-      hash = (37 * hash) + UNK2700_JBOPENAGGAF_FIELD_NUMBER;
+      hash = (37 * hash) + IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700JBOPENAGGAF());
-      if (getUnk2700BELOIHEIEANCount() > 0) {
-        hash = (37 * hash) + UNK2700_BELOIHEIEAN_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk2700BELOIHEIEANList().hashCode();
+          getIsPeerIdFromPlayer());
+      if (getTargetEntityIdListCount() > 0) {
+        hash = (37 * hash) + TARGET_ENTITY_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetEntityIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -622,9 +622,9 @@ public final class ClientGadgetInfoOuterClass {
 
         asyncLoad_ = false;
 
-        unk2700JBOPENAGGAF_ = false;
+        isPeerIdFromPlayer_ = false;
 
-        unk2700BELOIHEIEAN_ = emptyIntList();
+        targetEntityIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -659,12 +659,12 @@ public final class ClientGadgetInfoOuterClass {
         result.ownerEntityId_ = ownerEntityId_;
         result.targetEntityId_ = targetEntityId_;
         result.asyncLoad_ = asyncLoad_;
-        result.unk2700JBOPENAGGAF_ = unk2700JBOPENAGGAF_;
+        result.isPeerIdFromPlayer_ = isPeerIdFromPlayer_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          unk2700BELOIHEIEAN_.makeImmutable();
+          targetEntityIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.unk2700BELOIHEIEAN_ = unk2700BELOIHEIEAN_;
+        result.targetEntityIdList_ = targetEntityIdList_;
         onBuilt();
         return result;
       }
@@ -731,16 +731,16 @@ public final class ClientGadgetInfoOuterClass {
         if (other.getAsyncLoad() != false) {
           setAsyncLoad(other.getAsyncLoad());
         }
-        if (other.getUnk2700JBOPENAGGAF() != false) {
-          setUnk2700JBOPENAGGAF(other.getUnk2700JBOPENAGGAF());
+        if (other.getIsPeerIdFromPlayer() != false) {
+          setIsPeerIdFromPlayer(other.getIsPeerIdFromPlayer());
         }
-        if (!other.unk2700BELOIHEIEAN_.isEmpty()) {
-          if (unk2700BELOIHEIEAN_.isEmpty()) {
-            unk2700BELOIHEIEAN_ = other.unk2700BELOIHEIEAN_;
+        if (!other.targetEntityIdList_.isEmpty()) {
+          if (targetEntityIdList_.isEmpty()) {
+            targetEntityIdList_ = other.targetEntityIdList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureUnk2700BELOIHEIEANIsMutable();
-            unk2700BELOIHEIEAN_.addAll(other.unk2700BELOIHEIEAN_);
+            ensureTargetEntityIdListIsMutable();
+            targetEntityIdList_.addAll(other.targetEntityIdList_);
           }
           onChanged();
         }
@@ -960,111 +960,111 @@ public final class ClientGadgetInfoOuterClass {
         return this;
       }
 
-      private boolean unk2700JBOPENAGGAF_ ;
+      private boolean isPeerIdFromPlayer_ ;
       /**
-       * <code>bool Unk2700_JBOPENAGGAF = 7;</code>
-       * @return The unk2700JBOPENAGGAF.
+       * <code>bool is_peer_id_from_player = 7;</code>
+       * @return The isPeerIdFromPlayer.
        */
       @java.lang.Override
-      public boolean getUnk2700JBOPENAGGAF() {
-        return unk2700JBOPENAGGAF_;
+      public boolean getIsPeerIdFromPlayer() {
+        return isPeerIdFromPlayer_;
       }
       /**
-       * <code>bool Unk2700_JBOPENAGGAF = 7;</code>
-       * @param value The unk2700JBOPENAGGAF to set.
+       * <code>bool is_peer_id_from_player = 7;</code>
+       * @param value The isPeerIdFromPlayer to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700JBOPENAGGAF(boolean value) {
+      public Builder setIsPeerIdFromPlayer(boolean value) {
         
-        unk2700JBOPENAGGAF_ = value;
+        isPeerIdFromPlayer_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool Unk2700_JBOPENAGGAF = 7;</code>
+       * <code>bool is_peer_id_from_player = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700JBOPENAGGAF() {
+      public Builder clearIsPeerIdFromPlayer() {
         
-        unk2700JBOPENAGGAF_ = false;
+        isPeerIdFromPlayer_ = false;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList unk2700BELOIHEIEAN_ = emptyIntList();
-      private void ensureUnk2700BELOIHEIEANIsMutable() {
+      private com.google.protobuf.Internal.IntList targetEntityIdList_ = emptyIntList();
+      private void ensureTargetEntityIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          unk2700BELOIHEIEAN_ = mutableCopy(unk2700BELOIHEIEAN_);
+          targetEntityIdList_ = mutableCopy(targetEntityIdList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-       * @return A list containing the unk2700BELOIHEIEAN.
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * @return A list containing the targetEntityIdList.
        */
       public java.util.List<java.lang.Integer>
-          getUnk2700BELOIHEIEANList() {
+          getTargetEntityIdListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(unk2700BELOIHEIEAN_) : unk2700BELOIHEIEAN_;
+                 java.util.Collections.unmodifiableList(targetEntityIdList_) : targetEntityIdList_;
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-       * @return The count of unk2700BELOIHEIEAN.
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * @return The count of targetEntityIdList.
        */
-      public int getUnk2700BELOIHEIEANCount() {
-        return unk2700BELOIHEIEAN_.size();
+      public int getTargetEntityIdListCount() {
+        return targetEntityIdList_.size();
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
        * @param index The index of the element to return.
-       * @return The unk2700BELOIHEIEAN at the given index.
+       * @return The targetEntityIdList at the given index.
        */
-      public int getUnk2700BELOIHEIEAN(int index) {
-        return unk2700BELOIHEIEAN_.getInt(index);
+      public int getTargetEntityIdList(int index) {
+        return targetEntityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
        * @param index The index to set the value at.
-       * @param value The unk2700BELOIHEIEAN to set.
+       * @param value The targetEntityIdList to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700BELOIHEIEAN(
+      public Builder setTargetEntityIdList(
           int index, int value) {
-        ensureUnk2700BELOIHEIEANIsMutable();
-        unk2700BELOIHEIEAN_.setInt(index, value);
+        ensureTargetEntityIdListIsMutable();
+        targetEntityIdList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-       * @param value The unk2700BELOIHEIEAN to add.
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * @param value The targetEntityIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addUnk2700BELOIHEIEAN(int value) {
-        ensureUnk2700BELOIHEIEANIsMutable();
-        unk2700BELOIHEIEAN_.addInt(value);
+      public Builder addTargetEntityIdList(int value) {
+        ensureTargetEntityIdListIsMutable();
+        targetEntityIdList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
-       * @param values The unk2700BELOIHEIEAN to add.
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
+       * @param values The targetEntityIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllUnk2700BELOIHEIEAN(
+      public Builder addAllTargetEntityIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureUnk2700BELOIHEIEANIsMutable();
+        ensureTargetEntityIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, unk2700BELOIHEIEAN_);
+            values, targetEntityIdList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 Unk2700_BELOIHEIEAN = 8;</code>
+       * <code>repeated uint32 target_entity_id_list = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700BELOIHEIEAN() {
-        unk2700BELOIHEIEAN_ = emptyIntList();
+      public Builder clearTargetEntityIdList() {
+        targetEntityIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -1136,13 +1136,13 @@ public final class ClientGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ClientGadgetInfo.proto\"\305\001\n\020ClientGadge" +
+      "\n\026ClientGadgetInfo.proto\"\312\001\n\020ClientGadge" +
       "tInfo\022\017\n\007camp_id\030\001 \001(\r\022\021\n\tcamp_type\030\002 \001(" +
       "\r\022\014\n\004guid\030\003 \001(\004\022\027\n\017owner_entity_id\030\004 \001(\r" +
       "\022\030\n\020target_entity_id\030\005 \001(\r\022\022\n\nasync_load" +
-      "\030\006 \001(\010\022\033\n\023Unk2700_JBOPENAGGAF\030\007 \001(\010\022\033\n\023U" +
-      "nk2700_BELOIHEIEAN\030\010 \003(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\030\006 \001(\010\022\036\n\026is_peer_id_from_player\030\007 \001(\010\022\035" +
+      "\n\025target_entity_id_list\030\010 \003(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1153,7 +1153,7 @@ public final class ClientGadgetInfoOuterClass {
     internal_static_ClientGadgetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientGadgetInfo_descriptor,
-        new java.lang.String[] { "CampId", "CampType", "Guid", "OwnerEntityId", "TargetEntityId", "AsyncLoad", "Unk2700JBOPENAGGAF", "Unk2700BELOIHEIEAN", });
+        new java.lang.String[] { "CampId", "CampType", "Guid", "OwnerEntityId", "TargetEntityId", "AsyncLoad", "IsPeerIdFromPlayer", "TargetEntityIdList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

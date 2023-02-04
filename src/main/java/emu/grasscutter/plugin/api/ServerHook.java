@@ -11,8 +11,9 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.Router;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Hooks into the {@link GameServer} class, adding convenient ways to do certain things.
@@ -60,8 +61,17 @@ public final class ServerHook {
      * Gets all online players.
      * @return Players connected to the server.
      */
+    @Deprecated(forRemoval = true)
     public List<Player> getOnlinePlayers() {
-        return new LinkedList<>(this.gameServer.getPlayers().values());
+        return new ArrayList<>(this.gameServer.getPlayers().values());
+    }
+
+    /**
+     * Gets all online players.
+     * @return Players connected to the server.
+     */
+    public Stream<Player> getOnlinePlayersStream() {
+        return this.gameServer.getPlayers().values().stream();
     }
 
     /**

@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,6 +19,7 @@ import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.utils.JsonAdapters.*;
+
 import it.unimi.dsi.fastutil.ints.IntList;
 
 public final class JsonUtils {
@@ -25,6 +27,7 @@ public final class JsonUtils {
         .setPrettyPrinting()
         .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
         .registerTypeAdapter(IntList.class, new IntListAdapter())
+        .registerTypeAdapter(Position.class, new PositionAdapter())
         .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
         .create();
 
@@ -98,6 +101,14 @@ public final class JsonUtils {
     public static <T> T decode(String jsonData, Class<T> classType) {
         try {
             return gson.fromJson(jsonData, classType);
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    public static <T> T decode(String jsonData, Type type) {
+        try {
+            return gson.fromJson(jsonData, type);
         } catch (Exception ignored) {
             return null;
         }

@@ -15,10 +15,10 @@ public class ItemUseCombineItem extends ItemUseInt {
         super(useParam);
         try {
             this.resultId = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
         try {
             this.resultCount = Integer.parseInt(useParam[2]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
     }
 
     @Override

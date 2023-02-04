@@ -2,6 +2,8 @@ package emu.grasscutter.data;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.List;
+import java.util.stream.Stream;
 
 @Retention(RetentionPolicy.RUNTIME) 
 public @interface ResourceType {
@@ -28,5 +30,9 @@ public @interface ResourceType {
 		public int value() {
 			return value;
 		}
+
+        public static List<LoadPriority> getInOrder() {
+            return Stream.of(LoadPriority.values()).sorted((x, y) -> y.value() - x.value()).toList();
+        }
 	}
 }

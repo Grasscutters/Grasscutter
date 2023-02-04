@@ -19,17 +19,17 @@ public final class DelMailReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @return A list containing the mailIdList.
      */
     java.util.List<java.lang.Integer> getMailIdListList();
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @return The count of mailIdList.
      */
     int getMailIdListCount();
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
@@ -37,10 +37,14 @@ public final class DelMailReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1421
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1443;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code DelMailReq}
@@ -89,7 +93,7 @@ public final class DelMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -97,7 +101,7 @@ public final class DelMailReqOuterClass {
               mailIdList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -145,10 +149,10 @@ public final class DelMailReqOuterClass {
               emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq.class, emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq.Builder.class);
     }
 
-    public static final int MAIL_ID_LIST_FIELD_NUMBER = 12;
+    public static final int MAIL_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList mailIdList_;
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @return A list containing the mailIdList.
      */
     @java.lang.Override
@@ -157,14 +161,14 @@ public final class DelMailReqOuterClass {
       return mailIdList_;
     }
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @return The count of mailIdList.
      */
     public int getMailIdListCount() {
       return mailIdList_.size();
     }
     /**
-     * <code>repeated uint32 mail_id_list = 12;</code>
+     * <code>repeated uint32 mail_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
@@ -189,7 +193,7 @@ public final class DelMailReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getMailIdListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(mailIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < mailIdList_.size(); i++) {
@@ -347,10 +351,14 @@ public final class DelMailReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1421
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1443;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code DelMailReq}
@@ -520,7 +528,7 @@ public final class DelMailReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @return A list containing the mailIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -529,14 +537,14 @@ public final class DelMailReqOuterClass {
                  java.util.Collections.unmodifiableList(mailIdList_) : mailIdList_;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @return The count of mailIdList.
        */
       public int getMailIdListCount() {
         return mailIdList_.size();
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @param index The index of the element to return.
        * @return The mailIdList at the given index.
        */
@@ -544,7 +552,7 @@ public final class DelMailReqOuterClass {
         return mailIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The mailIdList to set.
        * @return This builder for chaining.
@@ -557,7 +565,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @param value The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -568,7 +576,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @param values The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -581,7 +589,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 12;</code>
+       * <code>repeated uint32 mail_id_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMailIdList() {
@@ -658,7 +666,7 @@ public final class DelMailReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020DelMailReq.proto\"\"\n\nDelMailReq\022\024\n\014mail" +
-      "_id_list\030\014 \003(\rB\033\n\031emu.grasscutter.net.pr" +
+      "_id_list\030\002 \003(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

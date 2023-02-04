@@ -1074,7 +1074,7 @@ public final class SocialDetailOuterClass {
       for (int i = 0; i < reservedList_.size(); i++) {
         output.writeUInt32NoTag(reservedList_.getInt(i));
       }
-      if (onlineState_ != emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.FRIEND_ONLINE_STATE_FREIEND_DISCONNECT.getNumber()) {
+      if (onlineState_ != emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT.getNumber()) {
         output.writeEnum(9, onlineState_);
       }
       if (param_ != 0) {
@@ -1178,7 +1178,7 @@ public final class SocialDetailOuterClass {
         }
         reservedListMemoizedSerializedSize = dataSize;
       }
-      if (onlineState_ != emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.FRIEND_ONLINE_STATE_FREIEND_DISCONNECT.getNumber()) {
+      if (onlineState_ != emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, onlineState_);
       }

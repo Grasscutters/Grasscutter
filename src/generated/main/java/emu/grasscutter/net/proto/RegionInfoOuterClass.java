@@ -329,6 +329,18 @@ public final class RegionInfoOuterClass {
      * <code>.ResVersionConfig next_res_version_config = 35;</code>
      */
     emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getNextResVersionConfigOrBuilder();
+
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The gameBiz.
+     */
+    java.lang.String getGameBiz();
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The bytes for gameBiz.
+     */
+    com.google.protobuf.ByteString
+        getGameBizBytes();
   }
   /**
    * Protobuf type {@code RegionInfo}
@@ -365,6 +377,7 @@ public final class RegionInfoOuterClass {
       cdkeyUrl_ = "";
       privacyPolicyUrl_ = "";
       nextResourceUrl_ = "";
+      gameBiz_ = "";
     }
 
     @java.lang.Override
@@ -572,6 +585,12 @@ public final class RegionInfoOuterClass {
                 nextResVersionConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 290: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gameBiz_ = s;
               break;
             }
             default: {
@@ -1511,6 +1530,44 @@ public final class RegionInfoOuterClass {
       return getNextResVersionConfig();
     }
 
+    public static final int GAME_BIZ_FIELD_NUMBER = 36;
+    private volatile java.lang.Object gameBiz_;
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The gameBiz.
+     */
+    @java.lang.Override
+    public java.lang.String getGameBiz() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gameBiz_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string game_biz = 36;</code>
+     * @return The bytes for gameBiz.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGameBizBytes() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gameBiz_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1608,6 +1665,9 @@ public final class RegionInfoOuterClass {
       }
       if (nextResVersionConfig_ != null) {
         output.writeMessage(35, getNextResVersionConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 36, gameBiz_);
       }
       unknownFields.writeTo(output);
     }
@@ -1709,6 +1769,9 @@ public final class RegionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(35, getNextResVersionConfig());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, gameBiz_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1786,6 +1849,8 @@ public final class RegionInfoOuterClass {
         if (!getNextResVersionConfig()
             .equals(other.getNextResVersionConfig())) return false;
       }
+      if (!getGameBiz()
+          .equals(other.getGameBiz())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1858,6 +1923,8 @@ public final class RegionInfoOuterClass {
         hash = (37 * hash) + NEXT_RES_VERSION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getNextResVersionConfig().hashCode();
       }
+      hash = (37 * hash) + GAME_BIZ_FIELD_NUMBER;
+      hash = (53 * hash) + getGameBiz().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2055,6 +2122,8 @@ public final class RegionInfoOuterClass {
           nextResVersionConfig_ = null;
           nextResVersionConfigBuilder_ = null;
         }
+        gameBiz_ = "";
+
         return this;
       }
 
@@ -2117,6 +2186,7 @@ public final class RegionInfoOuterClass {
         } else {
           result.nextResVersionConfig_ = nextResVersionConfigBuilder_.build();
         }
+        result.gameBiz_ = gameBiz_;
         onBuilt();
         return result;
       }
@@ -2269,6 +2339,10 @@ public final class RegionInfoOuterClass {
         }
         if (other.hasNextResVersionConfig()) {
           mergeNextResVersionConfig(other.getNextResVersionConfig());
+        }
+        if (!other.getGameBiz().isEmpty()) {
+          gameBiz_ = other.gameBiz_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4290,6 +4364,82 @@ public final class RegionInfoOuterClass {
         }
         return nextResVersionConfigBuilder_;
       }
+
+      private java.lang.Object gameBiz_ = "";
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return The gameBiz.
+       */
+      public java.lang.String getGameBiz() {
+        java.lang.Object ref = gameBiz_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gameBiz_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return The bytes for gameBiz.
+       */
+      public com.google.protobuf.ByteString
+          getGameBizBytes() {
+        java.lang.Object ref = gameBiz_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gameBiz_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @param value The gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBiz(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        gameBiz_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGameBiz() {
+        
+        gameBiz_ = getDefaultInstance().getGameBiz();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 36;</code>
+       * @param value The bytes for gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBizBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        gameBiz_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4358,7 +4508,7 @@ public final class RegionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020RegionInfo.proto\032\026ResVersionConfig.pro" +
-      "to\"\235\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
+      "to\"\257\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
       "\022\027\n\017gateserver_port\030\002 \001(\r\022\030\n\020pay_callbac" +
       "k_url\030\003 \001(\t\022\021\n\tarea_type\030\007 \001(\t\022\024\n\014resour" +
       "ce_url\030\010 \001(\t\022\020\n\010data_url\030\t \001(\t\022\024\n\014feedba" +
@@ -4378,7 +4528,8 @@ public final class RegionInfoOuterClass {
       "cdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030! " +
       "\001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next_r" +
       "es_version_config\030# \001(\0132\021.ResVersionConf" +
-      "igB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "ig\022\020\n\010game_biz\030$ \001(\tB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4390,7 +4541,7 @@ public final class RegionInfoOuterClass {
     internal_static_RegionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegionInfo_descriptor,
-        new java.lang.String[] { "GateserverIp", "GateserverPort", "PayCallbackUrl", "AreaType", "ResourceUrl", "DataUrl", "FeedbackUrl", "BulletinUrl", "ResourceUrlBak", "DataUrlBak", "ClientDataVersion", "HandbookUrl", "ClientSilenceDataVersion", "ClientDataMd5", "ClientSilenceDataMd5", "ResVersionConfig", "SecretKey", "OfficialCommunityUrl", "ClientVersionSuffix", "ClientSilenceVersionSuffix", "UseGateserverDomainName", "GateserverDomainName", "UserCenterUrl", "AccountBindUrl", "CdkeyUrl", "PrivacyPolicyUrl", "NextResourceUrl", "NextResVersionConfig", });
+        new java.lang.String[] { "GateserverIp", "GateserverPort", "PayCallbackUrl", "AreaType", "ResourceUrl", "DataUrl", "FeedbackUrl", "BulletinUrl", "ResourceUrlBak", "DataUrlBak", "ClientDataVersion", "HandbookUrl", "ClientSilenceDataVersion", "ClientDataMd5", "ClientSilenceDataMd5", "ResVersionConfig", "SecretKey", "OfficialCommunityUrl", "ClientVersionSuffix", "ClientSilenceVersionSuffix", "UseGateserverDomainName", "GateserverDomainName", "UserCenterUrl", "AccountBindUrl", "CdkeyUrl", "PrivacyPolicyUrl", "NextResourceUrl", "NextResVersionConfig", "GameBiz", });
     emu.grasscutter.net.proto.ResVersionConfigOuterClass.getDescriptor();
   }
 

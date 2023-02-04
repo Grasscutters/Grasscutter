@@ -14,7 +14,7 @@ public class ItemUseAddServerBuff extends ItemUseInt {
         super(useParam);
         try {
             this.duration = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
     }
 
     @Override

@@ -13,18 +13,15 @@ import java.util.List;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ActivityWatcherData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     int id;
     int rewardID;
     int progress;
     WatcherTrigger triggerConfig;
 
     @Override
-    public int getId() {
-        return this.id;
-    }
-    @Override
     public void onLoad() {
-        triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> !x.isBlank()).toList();
+        triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> (x != null) && !x.isBlank()).toList();
         triggerConfig.watcherTriggerType = WatcherTriggerType.getTypeByName(triggerConfig.triggerType);
     }
 

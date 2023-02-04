@@ -19,57 +19,61 @@ public final class SetWidgetSlotReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>uint32 material_id = 2;</code>
+     * @return The materialId.
+     */
+    int getMaterialId();
+
+    /**
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return A list containing the tagList.
      */
     java.util.List<emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag> getTagListList();
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return The count of tagList.
      */
     int getTagListCount();
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tagList at the given index.
      */
     emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag getTagList(int index);
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return A list containing the enum numeric values on the wire for tagList.
      */
     java.util.List<java.lang.Integer>
     getTagListValueList();
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of tagList at the given index.
      */
     int getTagListValue(int index);
 
     /**
-     * <code>uint32 material_id = 6;</code>
-     * @return The materialId.
-     */
-    int getMaterialId();
-
-    /**
-     * <code>.WidgetSlotOp op = 2;</code>
+     * <code>.WidgetSlotOp op = 14;</code>
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
     /**
-     * <code>.WidgetSlotOp op = 2;</code>
+     * <code>.WidgetSlotOp op = 14;</code>
      * @return The op.
      */
     emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp();
   }
   /**
    * <pre>
-   * CmdId: 4259
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 4255;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code SetWidgetSlotReq}
@@ -120,17 +124,11 @@ public final class SetWidgetSlotReqOuterClass {
               done = true;
               break;
             case 16: {
-              int rawValue = input.readEnum();
-
-              op_ = rawValue;
-              break;
-            }
-            case 48: {
 
               materialId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 104: {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tagList_ = new java.util.ArrayList<java.lang.Integer>();
@@ -139,7 +137,7 @@ public final class SetWidgetSlotReqOuterClass {
               tagList_.add(rawValue);
               break;
             }
-            case 122: {
+            case 106: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
@@ -151,6 +149,12 @@ public final class SetWidgetSlotReqOuterClass {
                 tagList_.add(rawValue);
               }
               input.popLimit(oldLimit);
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              op_ = rawValue;
               break;
             }
             default: {
@@ -188,7 +192,18 @@ public final class SetWidgetSlotReqOuterClass {
               emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq.class, emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq.Builder.class);
     }
 
-    public static final int TAG_LIST_FIELD_NUMBER = 15;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 2;
+    private int materialId_;
+    /**
+     * <code>uint32 material_id = 2;</code>
+     * @return The materialId.
+     */
+    @java.lang.Override
+    public int getMaterialId() {
+      return materialId_;
+    }
+
+    public static final int TAG_LIST_FIELD_NUMBER = 13;
     private java.util.List<java.lang.Integer> tagList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag> tagList_converter_ =
@@ -201,7 +216,7 @@ public final class SetWidgetSlotReqOuterClass {
               }
             };
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return A list containing the tagList.
      */
     @java.lang.Override
@@ -210,7 +225,7 @@ public final class SetWidgetSlotReqOuterClass {
           java.lang.Integer, emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag>(tagList_, tagList_converter_);
     }
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return The count of tagList.
      */
     @java.lang.Override
@@ -218,7 +233,7 @@ public final class SetWidgetSlotReqOuterClass {
       return tagList_.size();
     }
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tagList at the given index.
      */
@@ -227,7 +242,7 @@ public final class SetWidgetSlotReqOuterClass {
       return tagList_converter_.convert(tagList_.get(index));
     }
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @return A list containing the enum numeric values on the wire for tagList.
      */
     @java.lang.Override
@@ -236,7 +251,7 @@ public final class SetWidgetSlotReqOuterClass {
       return tagList_;
     }
     /**
-     * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+     * <code>repeated .WidgetSlotTag tag_list = 13;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of tagList at the given index.
      */
@@ -246,28 +261,17 @@ public final class SetWidgetSlotReqOuterClass {
     }
     private int tagListMemoizedSerializedSize;
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 6;
-    private int materialId_;
-    /**
-     * <code>uint32 material_id = 6;</code>
-     * @return The materialId.
-     */
-    @java.lang.Override
-    public int getMaterialId() {
-      return materialId_;
-    }
-
-    public static final int OP_FIELD_NUMBER = 2;
+    public static final int OP_FIELD_NUMBER = 14;
     private int op_;
     /**
-     * <code>.WidgetSlotOp op = 2;</code>
+     * <code>.WidgetSlotOp op = 14;</code>
      * @return The enum numeric value on the wire for op.
      */
     @java.lang.Override public int getOpValue() {
       return op_;
     }
     /**
-     * <code>.WidgetSlotOp op = 2;</code>
+     * <code>.WidgetSlotOp op = 14;</code>
      * @return The op.
      */
     @java.lang.Override public emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp() {
@@ -291,18 +295,18 @@ public final class SetWidgetSlotReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-        output.writeEnum(2, op_);
-      }
       if (materialId_ != 0) {
-        output.writeUInt32(6, materialId_);
+        output.writeUInt32(2, materialId_);
       }
       if (getTagListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(tagListMemoizedSerializedSize);
       }
       for (int i = 0; i < tagList_.size(); i++) {
         output.writeEnumNoTag(tagList_.get(i));
+      }
+      if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
+        output.writeEnum(14, op_);
       }
       unknownFields.writeTo(output);
     }
@@ -313,13 +317,9 @@ public final class SetWidgetSlotReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, op_);
-      }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, materialId_);
+          .computeUInt32Size(2, materialId_);
       }
       {
         int dataSize = 0;
@@ -332,6 +332,10 @@ public final class SetWidgetSlotReqOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32SizeNoTag(dataSize);
         }tagListMemoizedSerializedSize = dataSize;
+      }
+      if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(14, op_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -348,9 +352,9 @@ public final class SetWidgetSlotReqOuterClass {
       }
       emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq other = (emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq) obj;
 
-      if (!tagList_.equals(other.tagList_)) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
+      if (!tagList_.equals(other.tagList_)) return false;
       if (op_ != other.op_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -363,12 +367,12 @@ public final class SetWidgetSlotReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMaterialId();
       if (getTagListCount() > 0) {
         hash = (37 * hash) + TAG_LIST_FIELD_NUMBER;
         hash = (53 * hash) + tagList_.hashCode();
       }
-      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMaterialId();
       hash = (37 * hash) + OP_FIELD_NUMBER;
       hash = (53 * hash) + op_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -468,10 +472,14 @@ public final class SetWidgetSlotReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4259
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 4255;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code SetWidgetSlotReq}
@@ -511,10 +519,10 @@ public final class SetWidgetSlotReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tagList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         materialId_ = 0;
 
+        tagList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         op_ = 0;
 
         return this;
@@ -544,12 +552,12 @@ public final class SetWidgetSlotReqOuterClass {
       public emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq buildPartial() {
         emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq result = new emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq(this);
         int from_bitField0_ = bitField0_;
+        result.materialId_ = materialId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           tagList_ = java.util.Collections.unmodifiableList(tagList_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tagList_ = tagList_;
-        result.materialId_ = materialId_;
         result.op_ = op_;
         onBuilt();
         return result;
@@ -599,6 +607,9 @@ public final class SetWidgetSlotReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq other) {
         if (other == emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass.SetWidgetSlotReq.getDefaultInstance()) return this;
+        if (other.getMaterialId() != 0) {
+          setMaterialId(other.getMaterialId());
+        }
         if (!other.tagList_.isEmpty()) {
           if (tagList_.isEmpty()) {
             tagList_ = other.tagList_;
@@ -608,9 +619,6 @@ public final class SetWidgetSlotReqOuterClass {
             tagList_.addAll(other.tagList_);
           }
           onChanged();
-        }
-        if (other.getMaterialId() != 0) {
-          setMaterialId(other.getMaterialId());
         }
         if (other.op_ != 0) {
           setOpValue(other.getOpValue());
@@ -645,6 +653,37 @@ public final class SetWidgetSlotReqOuterClass {
       }
       private int bitField0_;
 
+      private int materialId_ ;
+      /**
+       * <code>uint32 material_id = 2;</code>
+       * @return The materialId.
+       */
+      @java.lang.Override
+      public int getMaterialId() {
+        return materialId_;
+      }
+      /**
+       * <code>uint32 material_id = 2;</code>
+       * @param value The materialId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaterialId(int value) {
+        
+        materialId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 material_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaterialId() {
+        
+        materialId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<java.lang.Integer> tagList_ =
         java.util.Collections.emptyList();
       private void ensureTagListIsMutable() {
@@ -654,7 +693,7 @@ public final class SetWidgetSlotReqOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @return A list containing the tagList.
        */
       public java.util.List<emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag> getTagListList() {
@@ -662,14 +701,14 @@ public final class SetWidgetSlotReqOuterClass {
             java.lang.Integer, emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag>(tagList_, tagList_converter_);
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @return The count of tagList.
        */
       public int getTagListCount() {
         return tagList_.size();
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param index The index of the element to return.
        * @return The tagList at the given index.
        */
@@ -677,7 +716,7 @@ public final class SetWidgetSlotReqOuterClass {
         return tagList_converter_.convert(tagList_.get(index));
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The tagList to set.
        * @return This builder for chaining.
@@ -693,7 +732,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param value The tagList to add.
        * @return This builder for chaining.
        */
@@ -707,7 +746,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param values The tagList to add.
        * @return This builder for chaining.
        */
@@ -721,7 +760,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTagList() {
@@ -731,7 +770,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @return A list containing the enum numeric values on the wire for tagList.
        */
       public java.util.List<java.lang.Integer>
@@ -739,7 +778,7 @@ public final class SetWidgetSlotReqOuterClass {
         return java.util.Collections.unmodifiableList(tagList_);
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of tagList at the given index.
        */
@@ -747,7 +786,7 @@ public final class SetWidgetSlotReqOuterClass {
         return tagList_.get(index);
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of tagList at the given index.
        * @return This builder for chaining.
@@ -760,7 +799,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param value The enum numeric value on the wire for tagList to add.
        * @return This builder for chaining.
        */
@@ -771,7 +810,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetSlotTag tag_list = 15;</code>
+       * <code>repeated .WidgetSlotTag tag_list = 13;</code>
        * @param values The enum numeric values on the wire for tagList to add.
        * @return This builder for chaining.
        */
@@ -785,47 +824,16 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
 
-      private int materialId_ ;
-      /**
-       * <code>uint32 material_id = 6;</code>
-       * @return The materialId.
-       */
-      @java.lang.Override
-      public int getMaterialId() {
-        return materialId_;
-      }
-      /**
-       * <code>uint32 material_id = 6;</code>
-       * @param value The materialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaterialId(int value) {
-        
-        materialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 material_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaterialId() {
-        
-        materialId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int op_ = 0;
       /**
-       * <code>.WidgetSlotOp op = 2;</code>
+       * <code>.WidgetSlotOp op = 14;</code>
        * @return The enum numeric value on the wire for op.
        */
       @java.lang.Override public int getOpValue() {
         return op_;
       }
       /**
-       * <code>.WidgetSlotOp op = 2;</code>
+       * <code>.WidgetSlotOp op = 14;</code>
        * @param value The enum numeric value on the wire for op to set.
        * @return This builder for chaining.
        */
@@ -836,7 +844,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetSlotOp op = 2;</code>
+       * <code>.WidgetSlotOp op = 14;</code>
        * @return The op.
        */
       @java.lang.Override
@@ -846,7 +854,7 @@ public final class SetWidgetSlotReqOuterClass {
         return result == null ? emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>.WidgetSlotOp op = 2;</code>
+       * <code>.WidgetSlotOp op = 14;</code>
        * @param value The op to set.
        * @return This builder for chaining.
        */
@@ -860,7 +868,7 @@ public final class SetWidgetSlotReqOuterClass {
         return this;
       }
       /**
-       * <code>.WidgetSlotOp op = 2;</code>
+       * <code>.WidgetSlotOp op = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearOp() {
@@ -938,8 +946,8 @@ public final class SetWidgetSlotReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026SetWidgetSlotReq.proto\032\022WidgetSlotOp.p" +
       "roto\032\023WidgetSlotTag.proto\"d\n\020SetWidgetSl" +
-      "otReq\022 \n\010tag_list\030\017 \003(\0162\016.WidgetSlotTag\022" +
-      "\023\n\013material_id\030\006 \001(\r\022\031\n\002op\030\002 \001(\0162\r.Widge" +
+      "otReq\022\023\n\013material_id\030\002 \001(\r\022 \n\010tag_list\030\r" +
+      " \003(\0162\016.WidgetSlotTag\022\031\n\002op\030\016 \001(\0162\r.Widge" +
       "tSlotOpB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
@@ -954,7 +962,7 @@ public final class SetWidgetSlotReqOuterClass {
     internal_static_SetWidgetSlotReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetWidgetSlotReq_descriptor,
-        new java.lang.String[] { "TagList", "MaterialId", "Op", });
+        new java.lang.String[] { "MaterialId", "TagList", "Op", });
     emu.grasscutter.net.proto.WidgetSlotOpOuterClass.getDescriptor();
     emu.grasscutter.net.proto.WidgetSlotTagOuterClass.getDescriptor();
   }

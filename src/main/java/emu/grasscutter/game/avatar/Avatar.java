@@ -58,6 +58,7 @@ import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
 import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ProtoHelper;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -89,7 +90,7 @@ public class Avatar {
     private float currentEnergy;
 
     @Transient @Getter private final Int2ObjectMap<GameItem> equips;
-    @Transient private final Int2FloatOpenHashMap fightProp;
+    @Transient @Getter private final Int2FloatOpenHashMap fightProperties;
     @Transient @Getter private final Int2FloatOpenHashMap fightPropOverrides;
     @Transient @Getter private Set<String> extraAbilityEmbryos;
 
@@ -115,7 +116,7 @@ public class Avatar {
     @Deprecated // Do not use. Morhpia only!
     public Avatar() {
         this.equips = new Int2ObjectOpenHashMap<>();
-        this.fightProp = new Int2FloatOpenHashMap();
+        this.fightProperties = new Int2FloatOpenHashMap();
         this.fightPropOverrides = new Int2FloatOpenHashMap();
         this.extraAbilityEmbryos = new HashSet<>();
         this.fetters = new ArrayList<>(); // TODO Move to avatar
@@ -276,10 +277,6 @@ public class Avatar {
         }
     }
 
-    public Int2FloatOpenHashMap getFightProperties() {
-        return fightProp;
-    }
-
     public void setFightProperty(FightProperty prop, float value) {
         this.getFightProperties().put(prop.getId(), value);
     }
@@ -399,9 +396,9 @@ public class Avatar {
 
     public void recalcStats(boolean forceSendAbilityChange) {
         // Setup
-        AvatarData data = this.getAvatarData();
-        AvatarPromoteData promoteData = GameData.getAvatarPromoteData(data.getAvatarPromoteId(), this.getPromoteLevel());
-        Int2IntOpenHashMap setMap = new Int2IntOpenHashMap();
+        var data = this.getAvatarData();
+        var promoteData = GameData.getAvatarPromoteData(data.getAvatarPromoteId(), this.getPromoteLevel());
+        var setMap = new Int2IntOpenHashMap();
 
         // Extra ability embryos
         Set<String> prevExtraAbilityEmbryos = this.getExtraAbilityEmbryos();
@@ -579,21 +576,11 @@ public class Avatar {
             // Add any skill strings from this constellation
 
         // Set % stats
-        this.setFightProperty(
-            FightProperty.FIGHT_PROP_MAX_HP,
-            (getFightProperty(FightProperty.FIGHT_PROP_BASE_HP) * (1f + getFightProperty(FightProperty.FIGHT_PROP_HP_PERCENT))) + getFightProperty(FightProperty.FIGHT_PROP_HP)
-        );
-        this.setFightProperty(
-            FightProperty.FIGHT_PROP_CUR_ATTACK,
-            (getFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK) * (1f + getFightProperty(FightProperty.FIGHT_PROP_ATTACK_PERCENT))) + getFightProperty(FightProperty.FIGHT_PROP_ATTACK)
-        );
-        this.setFightProperty(
-            FightProperty.FIGHT_PROP_CUR_DEFENSE,
-            (getFightProperty(FightProperty.FIGHT_PROP_BASE_DEFENSE) * (1f + getFightProperty(FightProperty.FIGHT_PROP_DEFENSE_PERCENT))) + getFightProperty(FightProperty.FIGHT_PROP_DEFENSE)
-        );
+        FightProperty.forEachCompoundProperty(c -> this.setFightProperty(c.getResult(),
+            this.getFightProperty(c.getFlat()) + (this.getFightProperty(c.getBase()) * (1f + this.getFightProperty(c.getPercent())))));
 
         // Reapply all overrides
-        this.fightProp.putAll(this.fightPropOverrides);
+        this.fightProperties.putAll(this.fightPropOverrides);
 
         // Set current hp
         this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent);

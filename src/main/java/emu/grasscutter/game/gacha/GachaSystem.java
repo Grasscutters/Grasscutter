@@ -45,8 +45,6 @@ public class GachaSystem extends BaseGameSystem {
 
     private static final int starglitterId = 221;
     private static final int stardustId = 222;
-    private int[] fallbackItems4Pool2Default = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
-    private int[] fallbackItems5Pool2Default = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
 
     public GachaSystem(GameServer server) {
         super(server);
@@ -69,11 +67,24 @@ public class GachaSystem extends BaseGameSystem {
 
     public synchronized void load() {
         getGachaBanners().clear();
+        int autoScheduleId = 1000;
+        int autoSortId = 9000;
         try {
-            List<GachaBanner> banners = DataLoader.loadList("Banners.json", GachaBanner.class);
+            List<GachaBanner> banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
-                    getGachaBanners().put(banner.getScheduleId(), banner);
+                    banner.onLoad();
+                    if (banner.isDeprecated()) {
+                        Grasscutter.getLogger().error("A Banner has not been loaded because it contains one or more deprecated fields. Remove the fields mentioned above and reload.");
+                    } else if (banner.isDisabled()) {
+                        Grasscutter.getLogger().debug("A Banner has not been loaded because it is disabled.");
+                    } else {
+                        if (banner.scheduleId < 0)
+                            banner.scheduleId = autoScheduleId++;
+                        if (banner.sortId < 0)
+                            banner.sortId = autoSortId--;
+                        getGachaBanners().put(banner.scheduleId, banner);
+                    }
                 }
                 Grasscutter.getLogger().debug("Banners successfully loaded.");
             } else {
@@ -155,7 +166,7 @@ public class GachaSystem extends BaseGameSystem {
     private synchronized int doFallbackRarePull(int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
         if (fallback1.length < 1) {
             if (fallback2.length < 1) {
-                return getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
+                return getRandom((rarity==5)? GachaBanner.DEFAULT_FALLBACK_ITEMS_5_POOL_2 : GachaBanner.DEFAULT_FALLBACK_ITEMS_4_POOL_2);
             } else {
                 return getRandom(fallback2);
             }

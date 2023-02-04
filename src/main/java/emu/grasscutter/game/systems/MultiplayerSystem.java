@@ -4,7 +4,6 @@ import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;

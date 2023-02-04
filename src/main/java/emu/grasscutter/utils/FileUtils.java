@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
+import lombok.val;
 
 import java.io.File;
 import java.io.IOException;
@@ -87,6 +88,22 @@ public final class FileUtils {
             : Path.of(scripts);
     };
 
+    private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
+    private static final Path[] DATA_PATHS = {DATA_USER_PATH, DATA_DEFAULT_PATH};
+    public static Path getDataPathTsjJsonTsv(String filename) {
+        return getDataPathTsjJsonTsv(filename, true);
+    }
+    public static Path getDataPathTsjJsonTsv(String filename, boolean fallback) {
+        val name = getFilenameWithoutExtension(filename);
+        for (val data_path : DATA_PATHS) {
+            for (val ext : TSJ_JSON_TSV) {
+                val path = data_path.resolve(name + "." + ext);
+                if (Files.exists(path)) return path;
+            }
+        }
+        return fallback ? DATA_USER_PATH.resolve(name + ".tsj") : null;  // Maybe they want to write to a new file
+    }
+
     public static Path getDataPath(String path) {
         Path userPath = DATA_USER_PATH.resolve(path);
         if (Files.exists(userPath)) return userPath;
@@ -109,6 +126,22 @@ public final class FileUtils {
 
     public static Path getResourcePath(String path) {
         return RESOURCES_PATH.resolve(path);
+    }
+
+    public static Path getExcelPath(String filename) {
+        return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
+    }
+
+    // Gets path of a resource.
+    // If multiple formats of it exist, priority is TSJ > JSON > TSV
+    // If none exist, return the TSJ path, in case it wants to create a file
+    public static Path getTsjJsonTsv(Path root, String filename) {
+        val name = getFilenameWithoutExtension(filename);
+        for (val ext : TSJ_JSON_TSV) {
+            val path = root.resolve(name + "." + ext);
+            if (Files.exists(path)) return path;
+        }
+        return root.resolve(name + ".tsj");
     }
 
     public static Path getScriptPath(String path) {
@@ -167,14 +200,19 @@ public final class FileUtils {
         }
     }
 
-    @Deprecated  // No current uses of this anyway
-    public static String getFilenameWithoutPath(String fileName) {
-        int i = fileName.lastIndexOf(".");
-        if (i > 0) {
-           return fileName.substring(0, i);
-        } else {
-           return fileName;
-        }
+    @Deprecated  // Misnamed legacy function
+    public static String getFilenameWithoutPath(String filename) {
+        return getFilenameWithoutExtension(filename);
+    }
+    public static String getFilenameWithoutExtension(String filename) {
+        int i = filename.lastIndexOf(".");
+        return (i < 0) ? filename : filename.substring(0, i);
+    }
+
+    public static String getFileExtension(Path path) {
+        val filename = path.toString();
+        int i = filename.lastIndexOf(".");
+        return (i < 0) ? "" : filename.substring(i+1);
     }
 
     public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {

@@ -34,6 +34,9 @@ plugins {
     // Maven
     id 'maven-publish'
     id 'signing'
+
+    // Lombok for delombok'ification
+    id "io.freefair.lombok" version "6.6.1"
 }
 
 compileJava.options.encoding = "UTF-8"
@@ -43,7 +46,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.4.3-dev'
+version = '1.4.6'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -113,7 +116,6 @@ application {
     getMainClass().set('emu.grasscutter.Grasscutter')
 }
 
-
 jar {
     exclude '*.proto'
 
@@ -123,7 +125,7 @@ jar {
 
     archiveBaseName = 'grasscutter'
     if (project.hasProperty('jarFilename')) {
-        archiveFileName = "${jarFilename}.${extension}"
+        archiveFileName = "${jarFilename}.${archiveExtension}"
     }
 
     from {
@@ -209,7 +211,7 @@ protobuf {
         // The artifact spec for the Protobuf Compiler
         artifact = 'com.google.protobuf:protoc:3.18.1'
     }
-//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+
     generatedFilesBaseDir = "$projectDir/src/generated/"
 }
 

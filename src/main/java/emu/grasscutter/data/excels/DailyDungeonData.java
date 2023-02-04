@@ -7,9 +7,11 @@ import emu.grasscutter.data.ResourceType;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 @ResourceType(name = "DailyDungeonConfigData.json")
 public class DailyDungeonData extends GameResource {
+    @Getter(onMethod = @__(@Override))
     private int id;
     private int[] monday;
     private int[] tuesday;
@@ -24,11 +26,6 @@ public class DailyDungeonData extends GameResource {
 
     public DailyDungeonData() {
         this.map = new Int2ObjectOpenHashMap<>();
-    }
-
-    @Override
-    public int getId() {
-        return this.id;
     }
 
     public int[] getDungeonsByDay(int day) {

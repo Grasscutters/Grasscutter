@@ -19,15 +19,21 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 5;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     int getForwardTypeValue();
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 5;</code>
      * @return The forwardType.
      */
     emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
+
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
 
     /**
      * <code>bool is_server_cache = 3;</code>
@@ -36,32 +42,30 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     boolean getIsServerCache();
 
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      * @return Whether the rendererChangedInfo field is set.
      */
     boolean hasRendererChangedInfo();
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      * @return The rendererChangedInfo.
      */
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo getRendererChangedInfo();
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      */
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder();
-
-    /**
-     * <code>uint32 entity_id = 15;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 343
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 375;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code EvtEntityRenderersChangedNotify}
@@ -109,12 +113,23 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
             case 24: {
 
               isServerCache_ = input.readBool();
               break;
             }
-            case 42: {
+            case 40: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            case 122: {
               emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder subBuilder = null;
               if (rendererChangedInfo_ != null) {
                 subBuilder = rendererChangedInfo_.toBuilder();
@@ -125,17 +140,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
                 rendererChangedInfo_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 120: {
-
-              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -170,23 +174,34 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
               emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.class, emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.Builder.class);
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 8;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 5;
     private int forwardType_;
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 5;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     @java.lang.Override public int getForwardTypeValue() {
       return forwardType_;
     }
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 5;</code>
      * @return The forwardType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
       return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
     }
 
     public static final int IS_SERVER_CACHE_FIELD_NUMBER = 3;
@@ -200,10 +215,10 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return isServerCache_;
     }
 
-    public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 5;
+    public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo rendererChangedInfo_;
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      * @return Whether the rendererChangedInfo field is set.
      */
     @java.lang.Override
@@ -211,7 +226,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return rendererChangedInfo_ != null;
     }
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      * @return The rendererChangedInfo.
      */
     @java.lang.Override
@@ -219,22 +234,11 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return rendererChangedInfo_ == null ? emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance() : rendererChangedInfo_;
     }
     /**
-     * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+     * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder() {
       return getRendererChangedInfo();
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 15;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 15;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -251,17 +255,17 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (entityId_ != 0) {
+        output.writeUInt32(1, entityId_);
+      }
       if (isServerCache_ != false) {
         output.writeBool(3, isServerCache_);
       }
-      if (rendererChangedInfo_ != null) {
-        output.writeMessage(5, getRendererChangedInfo());
-      }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(8, forwardType_);
+        output.writeEnum(5, forwardType_);
       }
-      if (entityId_ != 0) {
-        output.writeUInt32(15, entityId_);
+      if (rendererChangedInfo_ != null) {
+        output.writeMessage(15, getRendererChangedInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -272,21 +276,21 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, entityId_);
+      }
       if (isServerCache_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isServerCache_);
       }
-      if (rendererChangedInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getRendererChangedInfo());
-      }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, forwardType_);
+          .computeEnumSize(5, forwardType_);
       }
-      if (entityId_ != 0) {
+      if (rendererChangedInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, entityId_);
+          .computeMessageSize(15, getRendererChangedInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -304,6 +308,8 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify other = (emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify) obj;
 
       if (forwardType_ != other.forwardType_) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (getIsServerCache()
           != other.getIsServerCache()) return false;
       if (hasRendererChangedInfo() != other.hasRendererChangedInfo()) return false;
@@ -311,8 +317,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         if (!getRendererChangedInfo()
             .equals(other.getRendererChangedInfo())) return false;
       }
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -326,6 +330,8 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + IS_SERVER_CACHE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsServerCache());
@@ -333,8 +339,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         hash = (37 * hash) + RENDERER_CHANGED_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getRendererChangedInfo().hashCode();
       }
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -432,10 +436,14 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 343
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 375;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code EvtEntityRenderersChangedNotify}
@@ -477,6 +485,8 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         super.clear();
         forwardType_ = 0;
 
+        entityId_ = 0;
+
         isServerCache_ = false;
 
         if (rendererChangedInfoBuilder_ == null) {
@@ -485,8 +495,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
           rendererChangedInfo_ = null;
           rendererChangedInfoBuilder_ = null;
         }
-        entityId_ = 0;
-
         return this;
       }
 
@@ -514,13 +522,13 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       public emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify buildPartial() {
         emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify result = new emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify(this);
         result.forwardType_ = forwardType_;
+        result.entityId_ = entityId_;
         result.isServerCache_ = isServerCache_;
         if (rendererChangedInfoBuilder_ == null) {
           result.rendererChangedInfo_ = rendererChangedInfo_;
         } else {
           result.rendererChangedInfo_ = rendererChangedInfoBuilder_.build();
         }
-        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -572,14 +580,14 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         if (other.forwardType_ != 0) {
           setForwardTypeValue(other.getForwardTypeValue());
         }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
+        }
         if (other.getIsServerCache() != false) {
           setIsServerCache(other.getIsServerCache());
         }
         if (other.hasRendererChangedInfo()) {
           mergeRendererChangedInfo(other.getRendererChangedInfo());
-        }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -612,14 +620,14 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
 
       private int forwardType_ = 0;
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 5;</code>
        * @return The enum numeric value on the wire for forwardType.
        */
       @java.lang.Override public int getForwardTypeValue() {
         return forwardType_;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 5;</code>
        * @param value The enum numeric value on the wire for forwardType to set.
        * @return This builder for chaining.
        */
@@ -630,7 +638,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 5;</code>
        * @return The forwardType.
        */
       @java.lang.Override
@@ -640,7 +648,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 5;</code>
        * @param value The forwardType to set.
        * @return This builder for chaining.
        */
@@ -654,12 +662,43 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
         
         forwardType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
         onChanged();
         return this;
       }
@@ -699,14 +738,14 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo, emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder, emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder> rendererChangedInfoBuilder_;
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        * @return Whether the rendererChangedInfo field is set.
        */
       public boolean hasRendererChangedInfo() {
         return rendererChangedInfoBuilder_ != null || rendererChangedInfo_ != null;
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        * @return The rendererChangedInfo.
        */
       public emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo getRendererChangedInfo() {
@@ -717,7 +756,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         }
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public Builder setRendererChangedInfo(emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo value) {
         if (rendererChangedInfoBuilder_ == null) {
@@ -733,7 +772,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public Builder setRendererChangedInfo(
           emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder builderForValue) {
@@ -747,7 +786,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public Builder mergeRendererChangedInfo(emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo value) {
         if (rendererChangedInfoBuilder_ == null) {
@@ -765,7 +804,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public Builder clearRendererChangedInfo() {
         if (rendererChangedInfoBuilder_ == null) {
@@ -779,7 +818,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder getRendererChangedInfoBuilder() {
         
@@ -787,7 +826,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         return getRendererChangedInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder() {
         if (rendererChangedInfoBuilder_ != null) {
@@ -798,7 +837,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         }
       }
       /**
-       * <code>.EntityRendererChangedInfo renderer_changed_info = 5;</code>
+       * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo, emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder, emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder> 
@@ -812,37 +851,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
           rendererChangedInfo_ = null;
         }
         return rendererChangedInfoBuilder_;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -914,10 +922,10 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       "\n%EvtEntityRenderersChangedNotify.proto\032" +
       "\037EntityRendererChangedInfo.proto\032\021Forwar" +
       "dType.proto\"\254\001\n\037EvtEntityRenderersChange" +
-      "dNotify\022\"\n\014forward_type\030\010 \001(\0162\014.ForwardT" +
-      "ype\022\027\n\017is_server_cache\030\003 \001(\010\0229\n\025renderer" +
-      "_changed_info\030\005 \001(\0132\032.EntityRendererChan" +
-      "gedInfo\022\021\n\tentity_id\030\017 \001(\rB\033\n\031emu.grassc" +
+      "dNotify\022\"\n\014forward_type\030\005 \001(\0162\014.ForwardT" +
+      "ype\022\021\n\tentity_id\030\001 \001(\r\022\027\n\017is_server_cach" +
+      "e\030\003 \001(\010\0229\n\025renderer_changed_info\030\017 \001(\0132\032" +
+      ".EntityRendererChangedInfoB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -931,7 +939,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     internal_static_EvtEntityRenderersChangedNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtEntityRenderersChangedNotify_descriptor,
-        new java.lang.String[] { "ForwardType", "IsServerCache", "RendererChangedInfo", "EntityId", });
+        new java.lang.String[] { "ForwardType", "EntityId", "IsServerCache", "RendererChangedInfo", });
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
   }

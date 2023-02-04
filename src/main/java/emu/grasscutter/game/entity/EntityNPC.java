@@ -5,14 +5,16 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.data.SceneNPC;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
+import lombok.Getter;
 
 public class EntityNPC extends GameEntity{
-
+    @Getter(onMethod = @__(@Override))
     private final Position position;
+    @Getter(onMethod = @__(@Override))
     private final Position rotation;
     private final SceneNPC metaNpc;
-    private final int suiteId;
+    @Getter private final int suiteId;
 
     public EntityNPC(Scene scene, SceneNPC metaNPC, int blockId, int suiteId) {
         super(scene);
@@ -27,24 +29,7 @@ public class EntityNPC extends GameEntity{
 
     }
 
-    @Override
-    public Int2FloatOpenHashMap getFightProperties() {
-        return null;
-    }
-
-    @Override
-    public Position getPosition() {
-        return position;
-    }
-
-    @Override
-    public Position getRotation() {
-        return rotation;
-    }
-
-    public int getSuiteId() {
-        return suiteId;
-    }
+    @Override public Int2FloatMap getFightProperties() {return null;}
 
     @Override
     public SceneEntityInfoOuterClass.SceneEntityInfo toProto() {

@@ -84,17 +84,17 @@ public final class CombatTypeArgumentOuterClass {
      */
     COMBAT_TYPE_ARGUMENT_LIGHT_CORE_MOVE(15),
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG = 16;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_BEING_HEALED_NTF = 16;</code>
      */
-    COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG(16),
+    COMBAT_TYPE_ARGUMENT_BEING_HEALED_NTF(16),
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF = 17;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_SKILL_ANCHOR_POSITION_NTF = 17;</code>
      */
-    COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF(17),
+    COMBAT_TYPE_ARGUMENT_SKILL_ANCHOR_POSITION_NTF(17),
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN = 18;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_GRAPPLING_HOOK_MOVE = 18;</code>
      */
-    COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN(18),
+    COMBAT_TYPE_ARGUMENT_GRAPPLING_HOOK_MOVE(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -163,17 +163,17 @@ public final class CombatTypeArgumentOuterClass {
      */
     public static final int COMBAT_TYPE_ARGUMENT_LIGHT_CORE_MOVE_VALUE = 15;
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG = 16;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_BEING_HEALED_NTF = 16;</code>
      */
-    public static final int COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG_VALUE = 16;
+    public static final int COMBAT_TYPE_ARGUMENT_BEING_HEALED_NTF_VALUE = 16;
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF = 17;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_SKILL_ANCHOR_POSITION_NTF = 17;</code>
      */
-    public static final int COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF_VALUE = 17;
+    public static final int COMBAT_TYPE_ARGUMENT_SKILL_ANCHOR_POSITION_NTF_VALUE = 17;
     /**
-     * <code>COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN = 18;</code>
+     * <code>COMBAT_TYPE_ARGUMENT_GRAPPLING_HOOK_MOVE = 18;</code>
      */
-    public static final int COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN_VALUE = 18;
+    public static final int COMBAT_TYPE_ARGUMENT_GRAPPLING_HOOK_MOVE_VALUE = 18;
 
 
     public final int getNumber() {
@@ -216,9 +216,9 @@ public final class CombatTypeArgumentOuterClass {
         case 13: return COMBAT_TYPE_ARGUMENT_FIXED_RUSH_MOVE;
         case 14: return COMBAT_TYPE_ARGUMENT_SYNC_TRANSFORM;
         case 15: return COMBAT_TYPE_ARGUMENT_LIGHT_CORE_MOVE;
-        case 16: return COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG;
-        case 17: return COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF;
-        case 18: return COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN;
+        case 16: return COMBAT_TYPE_ARGUMENT_BEING_HEALED_NTF;
+        case 17: return COMBAT_TYPE_ARGUMENT_SKILL_ANCHOR_POSITION_NTF;
+        case 18: return COMBAT_TYPE_ARGUMENT_GRAPPLING_HOOK_MOVE;
         default: return null;
       }
     }
@@ -284,7 +284,7 @@ public final class CombatTypeArgumentOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030CombatTypeArgument.proto*\305\006\n\022CombatTyp" +
+      "\n\030CombatTypeArgument.proto*\310\006\n\022CombatTyp" +
       "eArgument\022\035\n\031COMBAT_TYPE_ARGUMENT_NONE\020\000" +
       "\022&\n\"COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT\020\001" +
       "\022/\n+COMBAT_TYPE_ARGUMENT_ANIMATOR_STATE_" +
@@ -302,11 +302,11 @@ public final class CombatTypeArgumentOuterClass {
       "K\020\014\022(\n$COMBAT_TYPE_ARGUMENT_FIXED_RUSH_M" +
       "OVE\020\r\022\'\n#COMBAT_TYPE_ARGUMENT_SYNC_TRANS" +
       "FORM\020\016\022(\n$COMBAT_TYPE_ARGUMENT_LIGHT_COR" +
-      "E_MOVE\020\017\022,\n(COMBAT_TYPE_ARGUMENT_Unk2700" +
-      "_KPDNFKCMKPG\020\020\022,\n(COMBAT_TYPE_ARGUMENT_U" +
-      "nk2700_KPLOMOIALGF\020\021\022,\n(COMBAT_TYPE_ARGU" +
-      "MENT_Unk3000_BJEHMPLCFHN\020\022B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "E_MOVE\020\017\022)\n%COMBAT_TYPE_ARGUMENT_BEING_H" +
+      "EALED_NTF\020\020\0222\n.COMBAT_TYPE_ARGUMENT_SKIL" +
+      "L_ANCHOR_POSITION_NTF\020\021\022,\n(COMBAT_TYPE_A" +
+      "RGUMENT_GRAPPLING_HOOK_MOVE\020\022B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

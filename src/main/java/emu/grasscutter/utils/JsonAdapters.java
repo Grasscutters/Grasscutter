@@ -10,9 +10,11 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import emu.grasscutter.data.common.DynamicFloat;
+import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.val;
@@ -65,43 +67,85 @@ public class JsonAdapters {
         }
 
         @Override
-        public void write(JsonWriter writer, IntList i) {};
+        public void write(JsonWriter writer, IntList l) throws IOException {
+            writer.beginArray();
+            for (val i : l)  // .forEach() doesn't appreciate exceptions
+                writer.value(i);
+            writer.endArray();
+        };
+    }
+
+    static class PositionAdapter extends TypeAdapter<Position> {
+        @Override
+        public Position read(JsonReader reader) throws IOException {
+            switch (reader.peek()) {
+                case BEGIN_ARRAY:  // "pos": [x,y,z]
+                    reader.beginArray();
+                    val array = new FloatArrayList(3);
+                    while (reader.hasNext())
+                        array.add(reader.nextInt());
+                    reader.endArray();
+                    return new Position(array);
+                case BEGIN_OBJECT:  // "pos": {"x": x, "y": y, "z": z}
+                    float x = 0f;
+                    float y = 0f;
+                    float z = 0f;
+                    reader.beginObject();
+                    for (var next = reader.peek(); next != JsonToken.END_OBJECT; next = reader.peek()) {
+                        val name = reader.nextName();
+                        switch (name) {
+                            case "x", "X", "_x" -> x = (float) reader.nextDouble();
+                            case "y", "Y", "_y" -> y = (float) reader.nextDouble();
+                            case "z", "Z", "_z" -> z = (float) reader.nextDouble();
+                            default -> throw new IOException("Invalid field in Position definition - " + name);
+                        }
+                    }
+                    reader.endObject();
+                    return new Position(x, y, z);
+                default:
+                    throw new IOException("Invalid Position definition - " + reader.peek().name());
+            }
+        }
+
+        @Override
+        public void write(JsonWriter writer, Position i) throws IOException {
+            writer.beginArray();
+            writer.value(i.getX());
+            writer.value(i.getY());
+            writer.value(i.getZ());
+            writer.endArray();
+        };
     }
 
     static class EnumTypeAdapterFactory implements TypeAdapterFactory {
         @SuppressWarnings("unchecked")
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            Class<T> rawType = (Class<T>) type.getRawType();
-            if (!rawType.isEnum()) return null;
-
-            Field id = null;
-            // System.out.println("Looking for enum value field");
-            for (Field f : rawType.getDeclaredFields()) {
-                id = switch (f.getName()) {
-                    case "value", "id" -> f;
-                    default -> null;
-                };
-                if (id != null) break;
-            }
-            if (id == null) {
-                // System.out.println("Not found");
-                return null;
-            }
-            // System.out.println("Enum value field found - " + id.getName());
-
+            Class<T> enumClass = (Class<T>) type.getRawType();
+            if (!enumClass.isEnum()) return null;
+            
+            // Make mappings of (string) names to enum constants
             val map = new HashMap<String, T>();
-            boolean acc = id.isAccessible();
-            id.setAccessible(true);
-            try {
-                for (T constant : rawType.getEnumConstants()) {
-                    map.put(constant.toString(), constant);
-                    map.put(String.valueOf(id.getInt(constant)), constant);
+            val enumConstants = enumClass.getEnumConstants();
+            for (val constant : enumConstants)
+                map.put(constant.toString(), constant);
+
+            // If the enum also has a numeric value, map those to the constants too
+            // System.out.println("Looking for enum value field");
+            for (Field f : enumClass.getDeclaredFields()) {
+                if (switch (f.getName()) {case "value", "id" -> true; default -> false;}) {
+                    // System.out.println("Enum value field found - " + f.getName());
+                    boolean acc = f.isAccessible();
+                    f.setAccessible(true);
+                    try {
+                        for (val constant : enumConstants)
+                            map.put(String.valueOf(f.getInt(constant)), constant);
+                    } catch (IllegalAccessException e) {
+                        // System.out.println("Failed to access enum id field.");
+                    }
+                    f.setAccessible(acc);
+                    break;
                 }
-            } catch (IllegalAccessException e) {
-                // System.out.println("Failed to access enum id field.");
-                return null;
             }
-            id.setAccessible(acc);
 
             return new TypeAdapter<T>() {
                 public T read(JsonReader reader) throws IOException {
@@ -114,7 +158,9 @@ public class JsonAdapters {
                             throw new IOException("Invalid Enum definition - " + reader.peek().name());
                     }
                 }
-                public void write(JsonWriter writer, T value) {}
+                public void write(JsonWriter writer, T value) throws IOException {
+                    writer.value(value.toString());
+                }
             };
         }
     }

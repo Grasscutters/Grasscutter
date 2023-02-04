@@ -19,30 +19,28 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
+import lombok.Getter;
 
 public class EntityClientGadget extends EntityBaseGadget {
-    private final Player owner;
+    @Getter private final Player owner;
 
-    private final Position pos;
-    private final Position rot;
+    @Getter(onMethod = @__(@Override))
+    private int gadgetId;
 
-    private int configId;
-    private int campId;
-    private int campType;
-    private int ownerEntityId;
-    private int targetEntityId;
-    private boolean asyncLoad;
+    @Getter private int campId;
+    @Getter private int campType;
+    @Getter private int ownerEntityId;
+    @Getter private int targetEntityId;
+    @Getter private boolean asyncLoad;
 
-    private int originalOwnerEntityId;
+    @Getter private int originalOwnerEntityId;
 
     public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
-        super(scene);
+        super(scene, new Position(notify.getInitPos()), new Position(notify.getInitEulerAngles()));
         this.owner = player;
         this.id = notify.getEntityId();
-        this.pos = new Position(notify.getInitPos());
-        this.rot = new Position(notify.getInitEulerAngles());
-        this.configId = notify.getConfigId();
+        this.gadgetId = notify.getConfigId();
         this.campId = notify.getCampId();
         this.campType = notify.getCampType();
         this.ownerEntityId = notify.getPropOwnerEntityId();
@@ -59,60 +57,11 @@ public class EntityClientGadget extends EntityBaseGadget {
     }
 
     @Override
-    public int getGadgetId() {
-        return configId;
-    }
-
-    public Player getOwner() {
-        return owner;
-    }
-
-    public int getCampId() {
-        return campId;
-    }
-
-    public int getCampType() {
-        return campType;
-    }
-
-    public int getOwnerEntityId() {
-        return ownerEntityId;
-    }
-
-    public int getTargetEntityId() {
-        return targetEntityId;
-    }
-
-    public boolean isAsyncLoad() {
-        return this.asyncLoad;
-    }
-
-    public int getOriginalOwnerEntityId() {
-        return this.originalOwnerEntityId;
-    }
-
-    @Override
     public void onDeath(int killerId) {
         super.onDeath(killerId); // Invoke super class's onDeath() method.
     }
 
-    @Override
-    public Int2FloatOpenHashMap getFightProperties() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Position getPosition() {
-        // TODO Auto-generated method stub
-        return this.pos;
-    }
-
-    @Override
-    public Position getRotation() {
-        // TODO Auto-generated method stub
-        return this.rot;
-    }
+    @Override public Int2FloatMap getFightProperties() {return null;}
 
     @Override
     public SceneEntityInfo toProto() {

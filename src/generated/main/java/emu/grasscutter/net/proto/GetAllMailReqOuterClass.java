@@ -19,17 +19,21 @@ public final class GetAllMailReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool Unk2700_OPEHLDAGICF = 7;</code>
-     * @return The unk2700OPEHLDAGICF.
+     * <code>bool is_collected = 4;</code>
+     * @return The isCollected.
      */
-    boolean getUnk2700OPEHLDAGICF();
+    boolean getIsCollected();
   }
   /**
    * <pre>
-   * CmdId: 1431
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1427;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code GetAllMailReq}
@@ -76,9 +80,9 @@ public final class GetAllMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 32: {
 
-              unk2700OPEHLDAGICF_ = input.readBool();
+              isCollected_ = input.readBool();
               break;
             }
             default: {
@@ -113,15 +117,15 @@ public final class GetAllMailReqOuterClass {
               emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.class, emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.Builder.class);
     }
 
-    public static final int UNK2700_OPEHLDAGICF_FIELD_NUMBER = 7;
-    private boolean unk2700OPEHLDAGICF_;
+    public static final int IS_COLLECTED_FIELD_NUMBER = 4;
+    private boolean isCollected_;
     /**
-     * <code>bool Unk2700_OPEHLDAGICF = 7;</code>
-     * @return The unk2700OPEHLDAGICF.
+     * <code>bool is_collected = 4;</code>
+     * @return The isCollected.
      */
     @java.lang.Override
-    public boolean getUnk2700OPEHLDAGICF() {
-      return unk2700OPEHLDAGICF_;
+    public boolean getIsCollected() {
+      return isCollected_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -138,8 +142,8 @@ public final class GetAllMailReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk2700OPEHLDAGICF_ != false) {
-        output.writeBool(7, unk2700OPEHLDAGICF_);
+      if (isCollected_ != false) {
+        output.writeBool(4, isCollected_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,9 +154,9 @@ public final class GetAllMailReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk2700OPEHLDAGICF_ != false) {
+      if (isCollected_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, unk2700OPEHLDAGICF_);
+          .computeBoolSize(4, isCollected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -169,8 +173,8 @@ public final class GetAllMailReqOuterClass {
       }
       emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq other = (emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq) obj;
 
-      if (getUnk2700OPEHLDAGICF()
-          != other.getUnk2700OPEHLDAGICF()) return false;
+      if (getIsCollected()
+          != other.getIsCollected()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -182,9 +186,9 @@ public final class GetAllMailReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UNK2700_OPEHLDAGICF_FIELD_NUMBER;
+      hash = (37 * hash) + IS_COLLECTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700OPEHLDAGICF());
+          getIsCollected());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -282,10 +286,14 @@ public final class GetAllMailReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1431
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1427;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code GetAllMailReq}
@@ -325,7 +333,7 @@ public final class GetAllMailReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unk2700OPEHLDAGICF_ = false;
+        isCollected_ = false;
 
         return this;
       }
@@ -353,7 +361,7 @@ public final class GetAllMailReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq buildPartial() {
         emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq result = new emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq(this);
-        result.unk2700OPEHLDAGICF_ = unk2700OPEHLDAGICF_;
+        result.isCollected_ = isCollected_;
         onBuilt();
         return result;
       }
@@ -402,8 +410,8 @@ public final class GetAllMailReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq other) {
         if (other == emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.getDefaultInstance()) return this;
-        if (other.getUnk2700OPEHLDAGICF() != false) {
-          setUnk2700OPEHLDAGICF(other.getUnk2700OPEHLDAGICF());
+        if (other.getIsCollected() != false) {
+          setIsCollected(other.getIsCollected());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -434,33 +442,33 @@ public final class GetAllMailReqOuterClass {
         return this;
       }
 
-      private boolean unk2700OPEHLDAGICF_ ;
+      private boolean isCollected_ ;
       /**
-       * <code>bool Unk2700_OPEHLDAGICF = 7;</code>
-       * @return The unk2700OPEHLDAGICF.
+       * <code>bool is_collected = 4;</code>
+       * @return The isCollected.
        */
       @java.lang.Override
-      public boolean getUnk2700OPEHLDAGICF() {
-        return unk2700OPEHLDAGICF_;
+      public boolean getIsCollected() {
+        return isCollected_;
       }
       /**
-       * <code>bool Unk2700_OPEHLDAGICF = 7;</code>
-       * @param value The unk2700OPEHLDAGICF to set.
+       * <code>bool is_collected = 4;</code>
+       * @param value The isCollected to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700OPEHLDAGICF(boolean value) {
+      public Builder setIsCollected(boolean value) {
         
-        unk2700OPEHLDAGICF_ = value;
+        isCollected_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool Unk2700_OPEHLDAGICF = 7;</code>
+       * <code>bool is_collected = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700OPEHLDAGICF() {
+      public Builder clearIsCollected() {
         
-        unk2700OPEHLDAGICF_ = false;
+        isCollected_ = false;
         onChanged();
         return this;
       }
@@ -531,9 +539,9 @@ public final class GetAllMailReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023GetAllMailReq.proto\",\n\rGetAllMailReq\022\033" +
-      "\n\023Unk2700_OPEHLDAGICF\030\007 \001(\010B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\023GetAllMailReq.proto\"%\n\rGetAllMailReq\022\024" +
+      "\n\014is_collected\030\004 \001(\010B\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -544,7 +552,7 @@ public final class GetAllMailReqOuterClass {
     internal_static_GetAllMailReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAllMailReq_descriptor,
-        new java.lang.String[] { "Unk2700OPEHLDAGICF", });
+        new java.lang.String[] { "IsCollected", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

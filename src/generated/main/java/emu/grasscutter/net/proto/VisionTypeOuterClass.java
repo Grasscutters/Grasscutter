@@ -96,9 +96,9 @@ public final class VisionTypeOuterClass {
      */
     VISION_TYPE_FISH_QTE_SUCC(18),
     /**
-     * <code>VISION_TYPE_Unk2700_EPFKMOIPADB = 19;</code>
+     * <code>VISION_TYPE_CAPTURE_DISAPPEAR = 19;</code>
      */
-    VISION_TYPE_Unk2700_EPFKMOIPADB(19),
+    VISION_TYPE_CAPTURE_DISAPPEAR(19),
     UNRECOGNIZED(-1),
     ;
 
@@ -179,9 +179,9 @@ public final class VisionTypeOuterClass {
      */
     public static final int VISION_TYPE_FISH_QTE_SUCC_VALUE = 18;
     /**
-     * <code>VISION_TYPE_Unk2700_EPFKMOIPADB = 19;</code>
+     * <code>VISION_TYPE_CAPTURE_DISAPPEAR = 19;</code>
      */
-    public static final int VISION_TYPE_Unk2700_EPFKMOIPADB_VALUE = 19;
+    public static final int VISION_TYPE_CAPTURE_DISAPPEAR_VALUE = 19;
 
 
     public final int getNumber() {
@@ -227,7 +227,7 @@ public final class VisionTypeOuterClass {
         case 16: return VISION_TYPE_FISH_REFRESH;
         case 17: return VISION_TYPE_FISH_BIG_SHOCK;
         case 18: return VISION_TYPE_FISH_QTE_SUCC;
-        case 19: return VISION_TYPE_Unk2700_EPFKMOIPADB;
+        case 19: return VISION_TYPE_CAPTURE_DISAPPEAR;
         default: return null;
       }
     }
@@ -293,7 +293,7 @@ public final class VisionTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020VisionType.proto*\260\004\n\nVisionType\022\024\n\020VIS" +
+      "\n\020VisionType.proto*\256\004\n\nVisionType\022\024\n\020VIS" +
       "ION_TYPE_NONE\020\000\022\024\n\020VISION_TYPE_MEET\020\001\022\026\n" +
       "\022VISION_TYPE_REBORN\020\002\022\027\n\023VISION_TYPE_REP" +
       "LACE\020\003\022\037\n\033VISION_TYPE_WAYPOINT_REBORN\020\004\022" +
@@ -306,9 +306,9 @@ public final class VisionTypeOuterClass {
       "ISION_TYPE_REMOVE\020\016\022\036\n\032VISION_TYPE_CHANG" +
       "E_COSTUME\020\017\022\034\n\030VISION_TYPE_FISH_REFRESH\020" +
       "\020\022\036\n\032VISION_TYPE_FISH_BIG_SHOCK\020\021\022\035\n\031VIS" +
-      "ION_TYPE_FISH_QTE_SUCC\020\022\022#\n\037VISION_TYPE_" +
-      "Unk2700_EPFKMOIPADB\020\023B\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "ION_TYPE_FISH_QTE_SUCC\020\022\022!\n\035VISION_TYPE_" +
+      "CAPTURE_DISAPPEAR\020\023B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,23 +19,27 @@ public final class UnlockAvatarTalentReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 talent_id = 13;</code>
+     * <code>uint32 talent_id = 11;</code>
      * @return The talentId.
      */
     int getTalentId();
 
     /**
-     * <code>uint64 avatar_guid = 3;</code>
+     * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1072
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * enum CmdId {
+   *   option allow_alias = true;
+   *   NONE = 0;
+   *   CMD_ID = 1079;
+   *   ENET_CHANNEL_ID = 0;
+   *   ENET_IS_RELIABLE = 1;
+   *   IS_ALLOW_CLIENT = 1;
+   * }
    * </pre>
    *
    * Protobuf type {@code UnlockAvatarTalentReq}
@@ -82,12 +86,12 @@ public final class UnlockAvatarTalentReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 88: {
 
               talentId_ = input.readUInt32();
               break;
@@ -124,10 +128,10 @@ public final class UnlockAvatarTalentReqOuterClass {
               emu.grasscutter.net.proto.UnlockAvatarTalentReqOuterClass.UnlockAvatarTalentReq.class, emu.grasscutter.net.proto.UnlockAvatarTalentReqOuterClass.UnlockAvatarTalentReq.Builder.class);
     }
 
-    public static final int TALENT_ID_FIELD_NUMBER = 13;
+    public static final int TALENT_ID_FIELD_NUMBER = 11;
     private int talentId_;
     /**
-     * <code>uint32 talent_id = 13;</code>
+     * <code>uint32 talent_id = 11;</code>
      * @return The talentId.
      */
     @java.lang.Override
@@ -135,10 +139,10 @@ public final class UnlockAvatarTalentReqOuterClass {
       return talentId_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 3;</code>
+     * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -161,10 +165,10 @@ public final class UnlockAvatarTalentReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(3, avatarGuid_);
+        output.writeUInt64(2, avatarGuid_);
       }
       if (talentId_ != 0) {
-        output.writeUInt32(13, talentId_);
+        output.writeUInt32(11, talentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -177,11 +181,11 @@ public final class UnlockAvatarTalentReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, avatarGuid_);
+          .computeUInt64Size(2, avatarGuid_);
       }
       if (talentId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, talentId_);
+          .computeUInt32Size(11, talentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,10 +319,14 @@ public final class UnlockAvatarTalentReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1072
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * enum CmdId {
+     *   option allow_alias = true;
+     *   NONE = 0;
+     *   CMD_ID = 1079;
+     *   ENET_CHANNEL_ID = 0;
+     *   ENET_IS_RELIABLE = 1;
+     *   IS_ALLOW_CLIENT = 1;
+     * }
      * </pre>
      *
      * Protobuf type {@code UnlockAvatarTalentReq}
@@ -475,7 +483,7 @@ public final class UnlockAvatarTalentReqOuterClass {
 
       private int talentId_ ;
       /**
-       * <code>uint32 talent_id = 13;</code>
+       * <code>uint32 talent_id = 11;</code>
        * @return The talentId.
        */
       @java.lang.Override
@@ -483,7 +491,7 @@ public final class UnlockAvatarTalentReqOuterClass {
         return talentId_;
       }
       /**
-       * <code>uint32 talent_id = 13;</code>
+       * <code>uint32 talent_id = 11;</code>
        * @param value The talentId to set.
        * @return This builder for chaining.
        */
@@ -494,7 +502,7 @@ public final class UnlockAvatarTalentReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 talent_id = 13;</code>
+       * <code>uint32 talent_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTalentId() {
@@ -506,7 +514,7 @@ public final class UnlockAvatarTalentReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 3;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -514,7 +522,7 @@ public final class UnlockAvatarTalentReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 3;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -525,7 +533,7 @@ public final class UnlockAvatarTalentReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 3;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -602,8 +610,8 @@ public final class UnlockAvatarTalentReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033UnlockAvatarTalentReq.proto\"?\n\025UnlockA" +
-      "vatarTalentReq\022\021\n\ttalent_id\030\r \001(\r\022\023\n\013ava" +
-      "tar_guid\030\003 \001(\004B\033\n\031emu.grasscutter.net.pr" +
+      "vatarTalentReq\022\021\n\ttalent_id\030\013 \001(\r\022\023\n\013ava" +
+      "tar_guid\030\002 \001(\004B\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

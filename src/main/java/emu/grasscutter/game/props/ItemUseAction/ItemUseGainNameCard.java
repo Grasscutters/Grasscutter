@@ -13,6 +13,7 @@ public class ItemUseGainNameCard extends ItemUseAction {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        return false;  // TODO: work out if this is actually used and how to get the namecard id
+        params.player.addNameCard(params.usedItemId);
+        return true;
     }
 }
