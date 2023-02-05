@@ -24,6 +24,6 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         // Handle skill notify in other managers.
         player.getStaminaManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
         player.getEnergyManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
-        player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_SKILL,skillId,0);
+        player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_SKILL, skillId, 0);
     }
 }

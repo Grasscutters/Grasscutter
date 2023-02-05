@@ -522,6 +522,7 @@ public class ScriptLib {
             if (player != null) {
                 return EntityType.Avatar.getValue();
             }
+
             return EntityType.None.getValue();
         }
 

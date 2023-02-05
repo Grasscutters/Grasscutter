@@ -22,12 +22,12 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
     public LuaTableJacksonSerializer() {
         if (objectMapper == null) {
             objectMapper = new ObjectMapper();
-            objectMapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER,true);
+            objectMapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true);
             // Some properties in Lua table but not in java field
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             objectMapper.configOverride(List.class).setSetterInfo(JsonSetter.Value.forContentNulls(Nulls.AS_EMPTY));
             SimpleModule luaSerializeModule = new SimpleModule();
-            luaSerializeModule.addSerializer(LuaTable.class,this);
+            luaSerializeModule.addSerializer(LuaTable.class, this);
             objectMapper.registerModule(luaSerializeModule);
         }
     }
@@ -38,6 +38,7 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
             gen.writeNull();
             return;
         }
+
         // Detect table type
         boolean isArray = false;
         LuaValue[] keys = value.keys();
@@ -45,62 +46,66 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
             gen.writeNull();
             return;
         }
+
         int count = 0;
         for (int i = 0; i < keys.length; i++) {
             if (!keys[i].isint() || (i + 1) != keys[i].toint()) {
                 break;
-            }else {
-                 count ++;
+            } else {
+                count++;
             }
         }
+
         if (count == keys.length) {
             isArray = true;
         }
+
         if (isArray) {
             gen.writeStartArray();
             for (LuaValue key : keys) {
                 LuaValue luaValue = value.get(key);
                 if (luaValue.isnil()) {
                     gen.writeNull();
-                }else if (luaValue.isboolean()) {
+                } else if (luaValue.isboolean()) {
                     gen.writeBoolean(luaValue.toboolean());
-                }else if (luaValue.isint()) {
+                } else if (luaValue.isint()) {
                     gen.writeNumber(luaValue.toint());
-                }else if (luaValue.islong()) {
+                } else if (luaValue.islong()) {
                     gen.writeNumber(luaValue.tolong());
-                }else if (luaValue.isnumber()) {
+                } else if (luaValue.isnumber()) {
                     gen.writeNumber(luaValue.tofloat());
-                }else if (luaValue.isstring()) {
+                } else if (luaValue.isstring()) {
                     gen.writeString(luaValue.tojstring());
-                }else if (luaValue.istable()) {
-                    serialize(luaValue.checktable(),gen,serializers);
+                } else if (luaValue.istable()) {
+                    serialize(luaValue.checktable(), gen, serializers);
                 }
             }
             gen.writeEndArray();
-        }else {
+        } else {
             gen.writeStartObject();
             for (LuaValue key : keys) {
                 String keyStr = key.toString();
                 LuaValue luaValue = value.get(key);
                 if (luaValue.isnil()) {
                     gen.writeNullField(keyStr);
-                }else if (luaValue.isboolean()) {
-                    gen.writeBooleanField(keyStr,luaValue.toboolean());
-                }else if (luaValue.isint()) {
-                    gen.writeNumberField(keyStr,luaValue.toint());
-                }else if (luaValue.islong()) {
-                    gen.writeNumberField(keyStr,luaValue.tolong());
-                }else if (luaValue.isnumber()) {
+                } else if (luaValue.isboolean()) {
+                    gen.writeBooleanField(keyStr, luaValue.toboolean());
+                } else if (luaValue.isint()) {
+                    gen.writeNumberField(keyStr, luaValue.toint());
+                } else if (luaValue.islong()) {
+                    gen.writeNumberField(keyStr, luaValue.tolong());
+                } else if (luaValue.isnumber()) {
                     gen.writeNumberField(keyStr, luaValue.tofloat());
-                }else if (luaValue.isstring()) {
-                    gen.writeStringField(keyStr,luaValue.tojstring());
-                }else if (luaValue.istable()) {
+                } else if (luaValue.isstring()) {
+                    gen.writeStringField(keyStr, luaValue.tojstring());
+                } else if (luaValue.istable()) {
                     gen.writeFieldName(keyStr);
-                    serialize(luaValue.checktable(),gen,serializers);
+                    serialize(luaValue.checktable(), gen, serializers);
                 }
             }
             gen.writeEndObject();
         }
+
         gen.flush();
         gen.close();
     }
@@ -114,7 +119,7 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
 
         CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, type);
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToList] className={},data={}",type.getCanonicalName(),jsonNode.toString());
+        Grasscutter.getLogger().trace("[LuaTableToList] className={},data={}", type.getCanonicalName(), jsonNode.toString());
         if (jsonNode.isEmpty()) {
             return list;
         }
@@ -127,14 +132,14 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
-        }else if (jsonNode.isObject()) {
+        } else if (jsonNode.isObject()) {
             Iterator<Map.Entry<String, JsonNode>> fields = jsonNode.fields();
             List<JsonNode> nodes = new ArrayList<>();
             while (fields.hasNext()) {
                 Map.Entry<String, JsonNode> next = fields.next();
                 nodes.add(next.getValue());
             }
-            list = objectMapper.convertValue(nodes,collectionType);
+            list = objectMapper.convertValue(nodes, collectionType);
         }
         return list;
     }
@@ -144,10 +149,11 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
         if (!(obj instanceof LuaTable luaTable) || luaTable.isnil()) {
             return null;
         }
+
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToObject] className={},data={}",type.getCanonicalName(),jsonNode.toString());
+        Grasscutter.getLogger().trace("[LuaTableToObject] className={},data={}", type.getCanonicalName(), jsonNode.toString());
         try {
-            return objectMapper.treeToValue(jsonNode,type);
+            return objectMapper.treeToValue(jsonNode, type);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -163,7 +169,7 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
 
         MapType mapStringType = objectMapper.getTypeFactory().constructMapType(HashMap.class, String.class, type);
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToMap] className={},data={}",type.getCanonicalName(),jsonNode.toString());
+        Grasscutter.getLogger().trace("[LuaTableToMap] className={},data={}", type.getCanonicalName(), jsonNode.toString());
         try {
             Object o = objectMapper.treeToValue(jsonNode, mapStringType);
             if (o != null) {
