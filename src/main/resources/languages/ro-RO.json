@@ -314,7 +314,7 @@
       "index_out_of_range": "Indexul specificat este în afara intervalului.",
       "failed_parse_avatar_id": "Nu a reușit să analizeze id-ul avatarului: %s",
       "avatar_already_in_team": "Avatarul este deja în echipă.",
-      "avatar_not_found": "Avatarul %d nu a fost găsit.",
+      "avatar_not_found": "Avatarul %s nu a fost găsit.",
       "description": "Modifică-ți echipa manual."
     },
     "teleportAll": {

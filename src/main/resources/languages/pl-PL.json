@@ -306,7 +306,7 @@
     "team": {
       "invalid_usage": "Nieprawidłowe użycie komendy.",
       "invalid_index": "Błędny indeks.",
-      "add_too_much": "Można mieć maksymalnie %d postaci w zespole.",
+      "add_too_much": "Można mieć maksymalnie %s postaci w zespole.",
       "failed_to_add_avatar": "Błąd podczas dodawania awatara o ID \"%s\".",
       "failed_to_parse_index": "Błąd podczas przetwarzania indeksu \"%s\".",
       "remove_too_much": "Nie możesz usunąć wszystkich awatarów w zespole.",
@@ -314,7 +314,7 @@
       "index_out_of_range": "Podany indeks nie mieści się w swoim zakresie.",
       "failed_parse_avatar_id": "Błędny ID awatara \"%s\".",
       "avatar_already_in_team": "Podany awatar jest już w zespole wybranego gracza.",
-      "avatar_not_found": "Awatar o ID \"%d\" nie istnieje.",
+      "avatar_not_found": "Awatar o ID \"%s\" nie istnieje.",
       "description": "Modyfikuj zespół wybranego gracza."
     },
     "teleportAll": {
