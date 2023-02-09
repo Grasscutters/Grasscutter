@@ -69,8 +69,11 @@ public class GameHome {
             if (defaultItem != null) {
                 Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
+            } else {
+                // Realm res missing bricks account, use default realm data to allow main house
+                defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
+                return HomeSceneItem.parseFrom(defaultItem, sceneId);
             }
-            return null;
         });
     }
 
@@ -83,6 +86,11 @@ public class GameHome {
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
+    }
+
+    // Tell the client the reward is claimed or realm unlocked
+    public void onClaimReward(Player player){
+        player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
     }
 
     public Player getPlayer() {
@@ -122,5 +130,28 @@ public class GameHome {
             .filter(e -> e.getValue().isDefaultUnlock())
             .map(Int2ObjectMap.Entry::getIntKey)
             .collect(Collectors.toUnmodifiableSet());
+    }
+
+    // Same as Player.java addExpDirectly
+    public void addExp(Player player, int count) {
+        exp += count;
+        int reqExp = getExpRequired(level);
+
+        while (exp >= reqExp && reqExp > 0) {
+            exp -= reqExp;
+            level += 1;
+            reqExp = getExpRequired(level);
+
+            // Update client level and exp
+            player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
+        }
+
+        // Update client home
+        onOwnerLogin(player);
+    }
+
+    private int getExpRequired(int level) {
+        HomeWorldLevelData levelData = GameData.getHomeWorldLevelDataMap().get(level);
+        return levelData != null ? levelData.getExp() : 0;
     }
 }
