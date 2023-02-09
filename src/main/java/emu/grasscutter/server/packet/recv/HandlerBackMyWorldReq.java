@@ -13,7 +13,6 @@ public class HandlerBackMyWorldReq extends PacketHandler {
 
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-
 		Scene scene = session.getPlayer().getScene();
 		int prevScene = scene.getPrevScene();
 
