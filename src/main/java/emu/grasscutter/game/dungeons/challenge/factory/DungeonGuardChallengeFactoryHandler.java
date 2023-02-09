@@ -28,7 +28,7 @@ public class DungeonGuardChallengeFactoryHandler implements ChallengeFactoryHand
                 challengeIndex, // Index
                 List.of(param4, 0),
                 0, // Limit
-                param5,  // Goal
+                param4,  // Goal
                 List.of(new GuardTrigger()));
     }
 }
