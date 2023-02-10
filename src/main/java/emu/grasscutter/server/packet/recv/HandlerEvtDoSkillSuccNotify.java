@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -23,5 +24,6 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         // Handle skill notify in other managers.
         player.getStaminaManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
         player.getEnergyManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
+        player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_SKILL, skillId, 0);
     }
 }

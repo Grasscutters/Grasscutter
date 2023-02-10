@@ -4,6 +4,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
@@ -123,6 +124,9 @@ public class FurnitureManager extends BasePlayerManager {
 
         player.getInventory().addItem(makeData.getFurnitureItemID(), makeData.getCount());
         player.getHome().getFurnitureMakeSlotItemList().remove(slotItem.get());
+
+        // Should be for first craft, but until first craft check exists add exp for each item crafted
+        player.getInventory().addItem(121, makeData.getExp(), ActionReason.FurnitureMakeTake);
 
         player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_SUCC_VALUE, makeId,
                 List.of(ItemParamOuterClass.ItemParam.newBuilder()
