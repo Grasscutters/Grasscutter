@@ -37,6 +37,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class Scene {
+
+    private static final int SECONDS_OF_ONE_DAY = 1440;
+
     @Getter private final World world;
     @Getter private final SceneData sceneData;
     @Getter private final List<Player> players;
@@ -50,6 +53,7 @@ public class Scene {
 
     @Getter @Setter private int autoCloseTime;
     @Getter private int time;
+    private long lastTimeUpdatedTime;
     private long startTime;
 
     @Getter private SceneScriptManager scriptManager;
@@ -65,7 +69,8 @@ public class Scene {
         this.players = new CopyOnWriteArrayList<>();
         this.entities = new ConcurrentHashMap<>();
 
-        this.time = 8 * 60;
+        this.time = new Random().nextInt(24) * 60;
+        this.lastTimeUpdatedTime = System.currentTimeMillis();
         this.startTime = System.currentTimeMillis();
         this.prevScene = 3;
 
@@ -102,7 +107,16 @@ public class Scene {
     }
 
     public void changeTime(int time) {
-        this.time = time % 1440;
+        this.time = time % SECONDS_OF_ONE_DAY;
+        this.lastTimeUpdatedTime = System.currentTimeMillis();
+    }
+
+    public long getSceneElapsedTime() {
+        return System.currentTimeMillis() - this.lastTimeUpdatedTime;
+    }
+
+    public int getTimeForNextScene() {
+        return this.time + (int)((getSceneElapsedTime() / 1000) % SECONDS_OF_ONE_DAY);
     }
 
     public int getSceneTime() {

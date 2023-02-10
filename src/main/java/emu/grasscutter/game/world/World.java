@@ -272,6 +272,7 @@ public class World implements Iterable<Player> {
 
         if (oldScene != null) {
             newScene.setPrevScene(oldScene.getId());
+            newScene.changeTime(oldScene.getTimeForNextScene());
             oldScene.setDontDestroyWhenEmpty(false);
         }
 
