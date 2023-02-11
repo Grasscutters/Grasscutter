@@ -14,9 +14,7 @@ import org.luaj.vm2.ast.Str;
 public class DynamicFloat {
     public static DynamicFloat ZERO = new DynamicFloat(0f);
 
-
     public static class StackOp {
-
         enum Op {CONSTANT, KEY, ADD, SUB, MUL, DIV, NEXBOOLEAN};
         public Op op;
         public float fValue;
@@ -40,6 +38,7 @@ public class DynamicFloat {
             this.op = Op.NEXBOOLEAN;
             this.bValue = Boolean.parseBoolean(String.valueOf(b));
         }
+
         public StackOp(float f) {
             this.op = Op.CONSTANT;
             this.fValue = f;
@@ -53,11 +52,12 @@ public class DynamicFloat {
         this.constant = constant;
     }
 
-    public String toString(boolean nextBoolean){
+    public String toString(boolean nextBoolean) {
         String key = String.valueOf(nextBoolean);
         this.ops = List.of(new StackOp(key));
         return ops.toString();
     }
+
     public DynamicFloat(String key) {
         this.dynamic = true;
         this.ops = List.of(new StackOp(key));
