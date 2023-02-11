@@ -569,6 +569,8 @@ public class TeamManager extends BasePlayerDataManager {
                 }
 
                 entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
+                // Satiation is reset when reviving an avatar
+                player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), 100f);
                 this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
                 return true;
@@ -618,6 +620,7 @@ public class TeamManager extends BasePlayerDataManager {
                 FightProperty.FIGHT_PROP_CUR_HP,
                 entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .4f
             );
+            player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), 100f);
             this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
         }

@@ -29,6 +29,7 @@ import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
 import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.SatiationManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
@@ -164,6 +165,7 @@ public class Player {
     @Getter private transient ActivityManager activityManager;
     @Getter private transient PlayerBuffManager buffManager;
     @Getter private transient PlayerProgressManager progressManager;
+    @Getter private transient SatiationManager satiationManager;
 
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;  // Getter has null-check
@@ -268,6 +270,7 @@ public class Player {
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager=new CookingCompoundManager(this);
+        this.satiationManager = new SatiationManager(this);
     }
 
     // On player creation
@@ -303,6 +306,7 @@ public class Player {
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager=new CookingCompoundManager(this);
+        this.satiationManager = new SatiationManager(this);
     }
 
     public int getUid() {
@@ -1100,6 +1104,9 @@ public class Player {
 
         // Recharge resin.
         this.getResinManager().rechargeResin();
+
+        // Satiation
+        this.getSatiationManager().reduceSatiation();
     }
 
     private synchronized void doDailyReset() {
@@ -1230,6 +1237,7 @@ public class Player {
         this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
 
         this.furnitureManager.onLogin();
+        this.satiationManager.onLoad();
         // Home
         home = GameHome.getByUid(getUid());
         home.onOwnerLogin(this);
