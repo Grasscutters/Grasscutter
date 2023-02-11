@@ -8,26 +8,39 @@ import emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDa
 
 public class PacketAvatarSatiationDataNotify extends BasePacket {
 
-	public PacketAvatarSatiationDataNotify(Avatar avatar, float curSatiation, float satiation) {
+	public PacketAvatarSatiationDataNotify(Avatar avatar, float finishTime) {
 		super(PacketOpcodes.AvatarSatiationDataNotify);
 
-		float total = ((satiation + curSatiation) / 0.3f);
-
-		AvatarSatiationData.Builder avatarSatiation = AvatarSatiationData.newBuilder()
+		AvatarSatiationData avatarSatiation = AvatarSatiationData.newBuilder()
 				.setAvatarGuid(avatar.getGuid())
-				.setFinishTime(total)
-				.setPenaltyFinishTime(0);
+				.setFinishTime(finishTime)
+				.setPenaltyFinishTime(0.00f) // 0 for now, see below
+				.build();
 
 		// Penalty for overeating - 30sec of no satiation decrease
 		// Disable until graphic is consistently shown at correct status
-		// if ((curSatiation + satiation) >= 100) {
-		// avatarSatiation.setPenaltyFinishTime(30);
+		// if ((curSatiation + satiation) >= 10000) {
+		// avatarSatiation.setPenaltyFinishTime(3000);
 		// }
 
-		AvatarSatiationData avatarSatiationData = avatarSatiation.build();
+		AvatarSatiationDataNotify notify = AvatarSatiationDataNotify.newBuilder()
+				.addSatiationDataList(0, avatarSatiation)
+				.build();
+
+		this.setData(notify);
+	}
+
+	public PacketAvatarSatiationDataNotify(Avatar avatar) {
+		super(PacketOpcodes.AvatarSatiationDataNotify);
+
+		var avatarSatiation = AvatarSatiationData.newBuilder()
+				.setAvatarGuid(avatar.getGuid())
+				.setFinishTime((avatar.getSatiation()/30))
+				.setPenaltyFinishTime(avatar.getSatiationPenalty())
+				.build();
 
 		AvatarSatiationDataNotify notify = AvatarSatiationDataNotify.newBuilder()
-				.addSatiationDataList(avatarSatiationData)
+				.addSatiationDataList(avatarSatiation)
 				.build();
 
 		this.setData(notify);

@@ -1,12 +1,17 @@
 package emu.grasscutter.game.managers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
+import emu.grasscutter.server.packet.send.PacketEntityPropNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
 
 public class SatiationManager extends BasePlayerManager {
 
@@ -17,39 +22,47 @@ public class SatiationManager extends BasePlayerManager {
     /********************
      * Change satiation
      ********************/
-    public synchronized boolean addSatiation(Avatar avatar, float satiationIncrease) {
+    public synchronized boolean addSatiation(Avatar avatar, float satiationIncrease, int itemId) {
         // Get satiation values
+        Map<Integer, Long> propMap = new HashMap<>();
         float currentSatiation = avatar.getSatiation();
-        var totalSatiation = currentSatiation + satiationIncrease;
+        // Satiation is max 10000 but can go over in the case of overeating
+        float totalSatiation = (satiationIncrease * 100) + currentSatiation;
+        int intSatiation = Math.round(100 * satiationIncrease);
+        long penaltyTime = 0;
 
         // Check if avatar can eat
-        if (currentSatiation >= 100f) {
+        if (currentSatiation >= 10000) {
             return false;
         }
 
-        // Don't exceed maximum satiation
-        if (totalSatiation > 100f) {
-            // Add penalty for overeating
-            // Disabled until satiation graphic is consistently shown at correct status
-            // if (avatar.getSatiationPenalty() == 0) {
-            // avatar.setSatiationPenalty(30);
-            // }
-            satiationIncrease = 100f - currentSatiation;
-        }
+        // Add penalty for overeating, should always be 30 sec.
+        // Disabled until satiation graphic is consistently shown at correct status
+        // if (avatar.getSatiationPenalty() == 0) {
+        //  penaltyTime = 3000;
+        // }
+
+        // Calc timer for satiation
+        float finishTime = (totalSatiation / 30);
 
         // Add satiation
-        addSatiationDirectly(avatar, satiationIncrease);
+        addSatiationDirectly(avatar, intSatiation);
+        propMap.put(PlayerProperty.PROP_SATIATION_VAL.getId(), Long.valueOf(intSatiation));
+        propMap.put(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), penaltyTime);
 
         // Send packet
-        player.getSession().send(new PacketAvatarSatiationDataNotify(avatar, currentSatiation, satiationIncrease));
+        player.getSession().send(new PacketEntityPropNotify(avatar, PlayerProperty.PROP_SATIATION_VAL,
+                PlayerProperty.PROP_SATIATION_PENALTY_TIME, itemId));
+        player.getSession().send(new PacketAvatarPropNotify(avatar, propMap));
+        player.getSession().send(new PacketAvatarSatiationDataNotify(avatar, finishTime));
         return true;
     }
 
-    public synchronized void addSatiationDirectly(Avatar avatar, float value) {
+    public synchronized void addSatiationDirectly(Avatar avatar, int value) {
         avatar.addSatiation(value);
     }
 
-    public synchronized void removeSatiationDirectly(Avatar avatar, float value) {
+    public synchronized void removeSatiationDirectly(Avatar avatar, int value) {
         avatar.reduceSatiation(value);
     }
 
@@ -63,10 +76,10 @@ public class SatiationManager extends BasePlayerManager {
             var penaltyTime = avatar.getSatiationPenalty();
             if (penaltyTime > 0) {
                 // Penalty reduces one per second
-                avatar.setSatiationPenalty(penaltyTime - 1);
+                avatar.setSatiationPenalty(penaltyTime - 100);
             } else {
                 // Satiation reduction rate is 0.3/s
-                var newSatiation = avatar.reduceSatiation(0.3f);
+                var newSatiation = avatar.reduceSatiation(30);
 
                 // // Send packet
                 // player.getSession().send(new PacketAvatarSatiationDataNotify(avatar,
@@ -86,16 +99,12 @@ public class SatiationManager extends BasePlayerManager {
      * Eating after relogging will update graphic but only until tp/scene change
      * then it will remain empty even if more eating is done or packets are sent.
      */
-    public void onLoad() {
+    public synchronized void onLoad() {
         List<Avatar> avatars = DatabaseHelper.getAvatars(player);
         for (Avatar avatar : avatars) {
 
-            // Update old db fields to float
-            float sat = (avatar.getSatiation() * 1f);
-            avatar.setSatiation(sat);
-            avatar.save();
-
-            player.getSession().send(new PacketAvatarSatiationDataNotify(avatar, sat, 0));
+            player.getSession().send(new PacketAvatarPropNotify(avatar));
+            // player.getSession().send(new PacketAvatarSatiationDataNotify(avatar, sat));
         }
     }
 }
