@@ -27,6 +27,7 @@ public class PacketHomeBasicInfoNotify extends BasePacket {
                 .setCurRoomSceneId(homeScene.getRoomSceneId())
                 .setIsInEditMode(editMode)
                 .setHomeOwnerUid(player.getUid())
+                .setExp(player.getHome().getExp())
                 .setLevel(player.getHome().getLevel())
                 .setOwnerNickName(player.getNickname())
                 // TODO limit shop

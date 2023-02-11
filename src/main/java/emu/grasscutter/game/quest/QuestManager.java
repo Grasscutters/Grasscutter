@@ -272,6 +272,7 @@ public class QuestManager extends BasePlayerManager {
             case QUEST_CONTENT_INTERACT_GADGET:
             case QUEST_CONTENT_TRIGGER_FIRE:
             case QUEST_CONTENT_UNLOCK_TRANS_POINT:
+            case QUEST_CONTENT_SKILL:
                 for (GameMainQuest mainQuest : checkMainQuests) {
                     mainQuest.tryFinishSubQuests(condType, paramStr, params);
                 }

@@ -104,16 +104,22 @@ public class SceneScriptManager {
         currentTriggers.put(eventId, new HashSet<>());
     }
     public void refreshGroup(SceneGroup group, int suiteIndex) {
+        if (group == null) {
+            return;
+        }
+
         var suite = group.getSuiteByIndex(suiteIndex);
         if (suite == null) {
             return;
         }
+
         if (suite.sceneTriggers.size() > 0) {
             for (var trigger : suite.sceneTriggers) {
                 resetTriggers(trigger.event);
                 this.currentTriggers.get(trigger.event).add(trigger);
             }
         }
+
         spawnMonstersInGroup(group, suite);
         spawnGadgetsInGroup(group, suite);
     }

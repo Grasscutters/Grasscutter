@@ -4,6 +4,8 @@ import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Setter
 public class SceneRegion {
@@ -14,6 +16,9 @@ public class SceneRegion {
     public Position size;
     // for SPHERE
     public int radius;
+    public int area_id;
+    public float height;
+    public List<Position> point_array;
 
     public transient SceneGroup group;
     public boolean contains(Position position) {

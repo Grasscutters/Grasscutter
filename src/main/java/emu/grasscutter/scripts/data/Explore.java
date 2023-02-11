@@ -5,8 +5,7 @@ import lombok.ToString;
 
 @ToString
 @Setter
-public class SceneInitConfig {
-	public int suite;
-	public int end_suite;
-	public boolean rand_suite;
+public class Explore {
+    public String name;
+    public int exp;
 }
