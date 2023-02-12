@@ -17,7 +17,7 @@ public class PacketAvatarPropNotify extends BasePacket {
 				.putPropMap(PlayerProperty.PROP_LEVEL.getId(), avatar.getLevel())
 				.putPropMap(PlayerProperty.PROP_EXP.getId(), avatar.getExp())
 				.putPropMap(PlayerProperty.PROP_BREAK_LEVEL.getId(), avatar.getPromoteLevel())
-				.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(), (avatar.getSatiation() * 100l))
+				.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(), avatar.getSatiation())
 				.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), avatar.getSatiationPenalty())
 				.build();
 

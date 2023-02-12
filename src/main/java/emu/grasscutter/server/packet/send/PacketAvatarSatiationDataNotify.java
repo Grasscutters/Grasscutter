@@ -35,7 +35,7 @@ public class PacketAvatarSatiationDataNotify extends BasePacket {
 
 		var avatarSatiation = AvatarSatiationData.newBuilder()
 				.setAvatarGuid(avatar.getGuid())
-				.setFinishTime((avatar.getSatiation()/30))
+				.setFinishTime((avatar.getSatiation() / 30))
 				.setPenaltyFinishTime(avatar.getSatiationPenalty())
 				.build();
 

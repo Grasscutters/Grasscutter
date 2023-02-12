@@ -20,7 +20,7 @@ public class PacketEntityPropNotify extends BasePacket {
 				.putPropMap(PlayerProperty.PROP_BREAK_LEVEL.getId(),
 						ProtoHelper.newPropValue(PlayerProperty.PROP_BREAK_LEVEL, avatar.getPromoteLevel()))
 				.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(),
-						ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, (avatar.getSatiation()*100)))
+						ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, avatar.getSatiation()))
 				.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(),
 						ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_PENALTY_TIME, avatar.getSatiationPenalty()))
 				.build();
