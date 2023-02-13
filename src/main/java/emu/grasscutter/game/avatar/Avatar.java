@@ -207,7 +207,6 @@ public class Avatar {
     public boolean addSatiation(int value) {
         if (this.satiation >= 10000) return false;
         this.satiation += value;
-        this.save();
         return true;
     }
 
@@ -217,7 +216,6 @@ public class Avatar {
         if(this.satiation < 0) {
             this.satiation = 0;
         }
-        this.save();
         return this.satiation;
     }
 

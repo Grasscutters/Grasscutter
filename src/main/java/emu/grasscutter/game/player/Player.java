@@ -1237,7 +1237,6 @@ public class Player {
         this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
 
         this.furnitureManager.onLogin();
-        this.satiationManager.onLoad();
         // Home
         home = GameHome.getByUid(getUid());
         home.onOwnerLogin(this);
