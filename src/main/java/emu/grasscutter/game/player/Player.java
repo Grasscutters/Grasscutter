@@ -1164,13 +1164,12 @@ public class Player {
         // Load from db
         this.getAvatars().loadFromDatabase();
         this.getInventory().loadFromDatabase();
+        this.loadBattlePassManager(); // Call before avatar postLoad to avoid null pointer
         this.getAvatars().postLoad(); // Needs to be called after inventory is handled
 
         this.getFriendsList().loadFromDatabase();
         this.getMailHandler().loadFromDatabase();
         this.getQuestManager().loadFromDatabase();
-
-        this.loadBattlePassManager();
     }
 
     public void onLogin() {
