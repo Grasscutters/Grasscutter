@@ -25,6 +25,16 @@ public class SatiationManager extends BasePlayerManager {
         // Satiation is max 10000 but can go over in the case of overeating
         int satiation = Math.round(satiationIncrease * 100);
 
+        /* 
+         * TODO: Fix graphic only decreasing after relog
+         * Satiation timer is based on client time, on first login that is 0 but jumps
+         *  to actual time after.
+         * Satiation decreases after login, the graphic stops after eating and the satiation
+         *  values return to initial + added after eating despite being reduced and saved to db.
+         * 
+         * Wasn't able to trace to when the issue started and now can't find good resolution
+         */
+
         // Add satiation
         if (!addSatiationDirectly(avatar, satiation)) return false;
         return true;
@@ -51,11 +61,9 @@ public class SatiationManager extends BasePlayerManager {
 
         // Reduce satiation
         for (Avatar avatar : avatarsToUpdate) {
-            var penaltyValue = avatar.getSatiationPenalty();
-            if (penaltyValue > 0) {
+            if (avatar.getSatiationPenalty() > 0) {
                 // Penalty reduction rate is 1/s
-                var newPenalty = avatar.reduceSatiationPenalty(100);
-                if (newPenalty <= 0) {
+                if (avatar.reduceSatiationPenalty(100) <= 0) {
                     // Update
                     avatar.save();
                     updateSingleAvatar(avatar);
@@ -63,8 +71,8 @@ public class SatiationManager extends BasePlayerManager {
             } else {
                 // Satiation reduction rate is 0.3/s
                 avatar.reduceSatiation(30);
+                avatar.save();
             }
-            avatar.save();
         }
     }
 
@@ -73,18 +81,16 @@ public class SatiationManager extends BasePlayerManager {
      ********************/
     public synchronized void onLoad() {
         // Update satiation status
-        var team = player.getTeamManager().getActiveTeam();
         float time = (player.getClientTime() / 1000f);
-        for (EntityAvatar eAvatar : team) {
-            Avatar avatar = eAvatar.getAvatar();
-            player.getSession().send(new PacketAvatarPropNotify(avatar));
-            player.getSession().send(new PacketAvatarSatiationDataNotify(time, avatar));
+        for (EntityAvatar eAvatar : player.getTeamManager().getActiveTeam()) {
+            player.getSession().send(new PacketAvatarPropNotify(eAvatar.getAvatar()));
+            player.getSession().send(new PacketAvatarSatiationDataNotify(time, eAvatar.getAvatar()));
         }
     }
 
     public synchronized void updateSingleAvatar(Avatar avatar) {
-        float time = (player.getClientTime() / 1000f);
         player.getSession().send(new PacketPlayerTimeNotify(player));
+        float time = (player.getClientTime() / 1000f);
         player.getSession().send(new PacketAvatarPropNotify(avatar));
         player.getSession().send(new PacketAvatarSatiationDataNotify(time, avatar));
     }
