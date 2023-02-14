@@ -219,6 +219,15 @@ public class Avatar {
         return this.satiation;
     }
 
+    public float reduceSatiationPenalty(int value) {
+        if (this.satiationPenalty == 0) return 0;
+        this.satiationPenalty -= value;
+        if(this.satiationPenalty < 0) {
+            this.satiationPenalty = 0;
+        }
+        return this.satiationPenalty;
+    }
+
     public GameItem getEquipBySlot(EquipType slot) {
         return this.getEquips().get(slot.getValue());
     }
