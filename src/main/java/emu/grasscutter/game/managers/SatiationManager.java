@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
@@ -13,8 +12,6 @@ import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
-import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
-import emu.grasscutter.server.packet.send.PacketServerTimeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
 
 public class SatiationManager extends BasePlayerManager {
@@ -70,6 +67,7 @@ public class SatiationManager extends BasePlayerManager {
 
     public synchronized void removeSatiationDirectly(Avatar avatar, int value) {
         avatar.reduceSatiation(value);
+        avatar.reduceSatiationPenalty(3000);
         avatar.save();
         // Update avatar to no satiation
         updateSingleAvatar(avatar, 0);
@@ -89,14 +87,10 @@ public class SatiationManager extends BasePlayerManager {
         for (Avatar avatar : avatarsToUpdate) {
             if (avatar.getSatiationPenalty() > 0) {
                 // Penalty reduction rate is 1/s
-                if (avatar.reduceSatiationPenalty(100) <= 0) {
-                    // Update
-                    avatar.save();
-                }
+                avatar.reduceSatiationPenalty(100);
             } else {
                 // Satiation reduction rate is 0.3/s
                 avatar.reduceSatiation(30);
-                avatar.save();
 
                 // Update all packets every tick else it won't work
                 // Surely there is a better way to handle this
@@ -115,8 +109,6 @@ public class SatiationManager extends BasePlayerManager {
     }
 
     private void updateTime() {
-        player.getSession().send(new PacketServerTimeNotify());
-        player.getSession().send(new PacketSceneTimeNotify(player));
         player.getSession().send(new PacketPlayerGameTimeNotify(player));
         player.getSession().send(new PacketPlayerTimeNotify(player));
     }

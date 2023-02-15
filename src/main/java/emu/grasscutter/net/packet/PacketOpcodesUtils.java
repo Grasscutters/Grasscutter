@@ -33,8 +33,6 @@ public class PacketOpcodesUtils {
         // Satiation sends these every tick
         PacketOpcodes.PlayerTimeNotify,
         PacketOpcodes.PlayerGameTimeNotify,
-        PacketOpcodes.ServerTimeNotify,
-        PacketOpcodes.SceneTimeNotify,
         PacketOpcodes.AvatarPropNotify,
         PacketOpcodes.AvatarSatiationDataNotify
     );
