@@ -28,7 +28,15 @@ public class PacketOpcodesUtils {
         PacketOpcodes.WorldPlayerRTTNotify,
         PacketOpcodes.UnionCmdNotify,
         PacketOpcodes.QueryPathReq,
-        PacketOpcodes.QueryPathRsp
+        PacketOpcodes.QueryPathRsp,
+        
+        // Satiation sends these every tick
+        PacketOpcodes.PlayerTimeNotify,
+        PacketOpcodes.PlayerGameTimeNotify,
+        PacketOpcodes.ServerTimeNotify,
+        PacketOpcodes.SceneTimeNotify,
+        PacketOpcodes.AvatarPropNotify,
+        PacketOpcodes.AvatarSatiationDataNotify
     );
 
     static {

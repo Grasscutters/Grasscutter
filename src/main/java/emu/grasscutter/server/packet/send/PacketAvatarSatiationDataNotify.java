@@ -35,8 +35,8 @@ public class PacketAvatarSatiationDataNotify extends BasePacket {
 		var avatarSatiation = AvatarSatiationData.newBuilder()
 				.setAvatarGuid(avatar.getGuid())
 				.setFinishTime(time + (avatar.getSatiation() / 30f))
-				// Need to confirm whether penalty time is added onto finish time or a countdown before it
-				.setPenaltyFinishTime(time + (avatar.getSatiation() / 30f) + (avatar.getSatiationPenalty() / 100f))
+				// Penalty time always ends before finish time
+				.setPenaltyFinishTime(time + (avatar.getSatiationPenalty() / 100f))
 				.build();
 
 		AvatarSatiationDataNotify notify = AvatarSatiationDataNotify.newBuilder()

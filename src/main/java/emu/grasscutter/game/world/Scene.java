@@ -208,7 +208,6 @@ public class Scene {
 
         // Notify the client of any extra skill charges
         teamManager.getActiveTeam().stream().map(EntityAvatar::getAvatar).forEach(Avatar::sendSkillExtraChargeMap);
-        player.getSatiationManager().onLoad();
     }
 
     private void addEntityDirectly(GameEntity entity) {

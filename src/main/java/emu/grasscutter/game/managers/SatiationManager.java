@@ -1,14 +1,20 @@
 package emu.grasscutter.game.managers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
+import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
+import emu.grasscutter.server.packet.send.PacketServerTimeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
 
 public class SatiationManager extends BasePlayerManager {
@@ -23,41 +29,61 @@ public class SatiationManager extends BasePlayerManager {
     public synchronized boolean addSatiation(Avatar avatar, float satiationIncrease, int itemId) {
 
         // Satiation is max 10000 but can go over in the case of overeating
+        Map<Integer, Long> propMap = new HashMap<>();
         int satiation = Math.round(satiationIncrease * 100);
+        float totalSatiation = ((satiationIncrease * 100) + avatar.getSatiation());
 
-        /* 
-         * TODO: Fix graphic only decreasing after relog
-         * Satiation timer is based on client time, on first login that is 0 but jumps
-         *  to actual time after.
-         * Satiation decreases after login, the graphic stops after eating and the satiation
-         *  values return to initial + added after eating despite being reduced and saved to db.
-         * 
-         * Wasn't able to trace to when the issue started and now can't find good resolution
-         */
+        // Update client time
+        updateTime();
+
+        // Calculate times
+        var playerTime = (player.getClientTime() / 1000);
+        float finishTime = playerTime + (totalSatiation / 30);
+
+        // Penalty
+        long penaltyTime = playerTime;
+        long penaltyValue = avatar.getSatiationPenalty();
+        if(totalSatiation + avatar.getSatiation() > 10000 && penaltyValue == 0) {
+            // Penalty is always 30sec
+            penaltyTime += 30;
+            penaltyValue = 3000;
+        }
 
         // Add satiation
         if (!addSatiationDirectly(avatar, satiation)) return false;
+        propMap.put(PlayerProperty.PROP_SATIATION_VAL.getId(), Long.valueOf(satiation));
+        propMap.put(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), penaltyValue);
+
+        // Send packets
+        player.getSession().send(new PacketAvatarPropNotify(avatar, propMap));
+        player.getSession().send(new PacketAvatarSatiationDataNotify(avatar, finishTime, penaltyTime));
         return true;
     }
 
     public synchronized boolean addSatiationDirectly(Avatar avatar, int value) {
-        if (!avatar.addSatiation(value)) return false;
+        if (!avatar.addSatiation(value))
+            return false;
         // Update avatar
         avatar.save();
-        updateSingleAvatar(avatar);
         return true;
     }
 
     public synchronized void removeSatiationDirectly(Avatar avatar, int value) {
         avatar.reduceSatiation(value);
         avatar.save();
-        updateSingleAvatar(avatar);
+        // Update avatar to no satiation
+        updateSingleAvatar(avatar, 0);
     }
 
     public synchronized void reduceSatiation() {
+        /* Satiation may not reduce while paused on official but it will here */
         // Get all avatars with satiation
-        List<Avatar> avatarsToUpdate = DatabaseHelper.getAvatars(player).stream()
-                .filter(e -> e.getSatiation() > 0).toList();
+        List<Avatar> avatarsToUpdate = new ArrayList<>();
+        player.getAvatars().forEach(e -> {
+            if (e.getSatiation() > 0) {
+                avatarsToUpdate.add(e);
+            }
+        });
 
         // Reduce satiation
         for (Avatar avatar : avatarsToUpdate) {
@@ -66,32 +92,33 @@ public class SatiationManager extends BasePlayerManager {
                 if (avatar.reduceSatiationPenalty(100) <= 0) {
                     // Update
                     avatar.save();
-                    updateSingleAvatar(avatar);
                 }
             } else {
                 // Satiation reduction rate is 0.3/s
                 avatar.reduceSatiation(30);
                 avatar.save();
+
+                // Update all packets every tick else it won't work
+                // Surely there is a better way to handle this
+                addSatiation(avatar, 0, 0);
             }
         }
     }
 
     /********************
-     * Player load / login
+     * Player Updates
      ********************/
-    public synchronized void onLoad() {
-        // Update satiation status
-        float time = (player.getClientTime() / 1000f);
-        for (EntityAvatar eAvatar : player.getTeamManager().getActiveTeam()) {
-            player.getSession().send(new PacketAvatarPropNotify(eAvatar.getAvatar()));
-            player.getSession().send(new PacketAvatarSatiationDataNotify(time, eAvatar.getAvatar()));
-        }
-    }
-
-    public synchronized void updateSingleAvatar(Avatar avatar) {
-        player.getSession().send(new PacketPlayerTimeNotify(player));
-        float time = (player.getClientTime() / 1000f);
+    public synchronized void updateSingleAvatar(Avatar avatar, float givenTime) {
+        float time = (player.getClientTime() / 1000) + givenTime;
         player.getSession().send(new PacketAvatarPropNotify(avatar));
         player.getSession().send(new PacketAvatarSatiationDataNotify(time, avatar));
     }
+
+    private void updateTime() {
+        player.getSession().send(new PacketServerTimeNotify());
+        player.getSession().send(new PacketSceneTimeNotify(player));
+        player.getSession().send(new PacketPlayerGameTimeNotify(player));
+        player.getSession().send(new PacketPlayerTimeNotify(player));
+    }
+
 }
