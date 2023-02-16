@@ -419,6 +419,7 @@ public class StaminaManager extends BasePlayerManager {
             }
             return;
         }
+
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
