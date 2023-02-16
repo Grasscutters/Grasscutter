@@ -785,7 +785,7 @@ public class InventorySystem extends BaseGameSystem {
             if (event.isCanceled()) return false;
 
             float satiationIncrease = satiationParams[0] + ((float)satiationParams[1])/params.targetAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-            if (!params.targetAvatar.addSatiation(satiationIncrease)) {  // Make sure avatar can eat
+            if (!params.player.getSatiationManager().addSatiation(params.targetAvatar, satiationIncrease, itemData.getId())) {  // Make sure avatar can eat
                 return false;
             }
         }

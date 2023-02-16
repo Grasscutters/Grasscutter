@@ -26,6 +26,7 @@ import emu.grasscutter.server.packet.send.PacketAddBackupAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTeamAllDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
@@ -569,6 +570,8 @@ public class TeamManager extends BasePlayerDataManager {
                 }
 
                 entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
+                // Satiation is reset when reviving an avatar
+                player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), 15000);
                 this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
                 return true;
@@ -618,6 +621,7 @@ public class TeamManager extends BasePlayerDataManager {
                 FightProperty.FIGHT_PROP_CUR_HP,
                 entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .4f
             );
+            player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), 15000);
             this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
         }
