@@ -15,12 +15,11 @@ public class DynamicFloat {
     public static DynamicFloat ZERO = new DynamicFloat(0f);
 
     public static class StackOp {
-        enum Op {CONSTANT, KEY, ADD, SUB, MUL, DIV, NEXBOOLEAN};
+        enum Op { CONSTANT, KEY, ADD, SUB, MUL, DIV, NEXBOOLEAN };
         public Op op;
         public float fValue;
         public String sValue;
         public boolean bValue;
-
 
         public StackOp(String s) {
             switch (s.toUpperCase()) {
@@ -44,6 +43,7 @@ public class DynamicFloat {
             this.fValue = f;
         }
     }
+
     private List<StackOp> ops;
     private boolean dynamic = false;
     private float constant = 0f;
@@ -93,6 +93,7 @@ public class DynamicFloat {
                 case NEXBOOLEAN ->  fl.push(props.getOrDefault(Optional.of(op.bValue), 0f));
             }
         }
+
         return fl.popFloat();  // well-formed data will always have only one value left at this point
     }
 }
