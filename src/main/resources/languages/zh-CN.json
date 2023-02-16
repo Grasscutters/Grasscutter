@@ -306,7 +306,7 @@
     "team": {
       "invalid_usage": "无效的用法。",
       "invalid_index": "无效的索引。",
-      "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
+      "add_too_much": "服务端仅允许你队伍里至多有 %s 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
       "failed_to_parse_index": "无法解析索引：%s",
       "remove_too_much": "你不能删除那么多角色，你的队伍列表将为空。",
@@ -314,7 +314,7 @@
       "index_out_of_range": "你指定的索引超出了范围。",
       "failed_parse_avatar_id": "无法解析的角色ID：%s",
       "avatar_already_in_team": "角色已经在你的队伍中了。",
-      "avatar_not_found": "无法找到该角色：%d",
+      "avatar_not_found": "无法找到该角色：%s",
       "description": "手动修改你的队伍"
     },
     "teleportAll": {
