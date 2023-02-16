@@ -413,7 +413,13 @@ public class StaminaManager extends BasePlayerManager {
     // Internal handler
 
     private void handleImmediateStamina(GameSession session, @NotNull MotionState motionState) {
-        if (currentState == motionState) return;
+        if (currentState == motionState) {
+            if (motionState.equals(MotionState.MOTION_STATE_CLIMB_JUMP)) {
+                updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
+            }
+            return;
+        }
+
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
