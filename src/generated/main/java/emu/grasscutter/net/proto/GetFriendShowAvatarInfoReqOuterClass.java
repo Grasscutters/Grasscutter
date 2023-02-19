@@ -19,23 +19,12 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4049;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code GetFriendShowAvatarInfoReq}
    */
   public static final class GetFriendShowAvatarInfoReq extends
@@ -80,7 +69,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               uid_ = input.readUInt32();
               break;
@@ -117,10 +106,149 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
               emu.grasscutter.net.proto.GetFriendShowAvatarInfoReqOuterClass.GetFriendShowAvatarInfoReq.class, emu.grasscutter.net.proto.GetFriendShowAvatarInfoReqOuterClass.GetFriendShowAvatarInfoReq.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 1;
+    /**
+     * Protobuf enum {@code GetFriendShowAvatarInfoReq.NBBEJDKKALC}
+     */
+    public enum NBBEJDKKALC
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4079;</code>
+       */
+      PEPPOHPHJOJ(1, 4079),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final NBBEJDKKALC DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final NBBEJDKKALC EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4079;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4079;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NBBEJDKKALC valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NBBEJDKKALC forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4079: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NBBEJDKKALC>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          NBBEJDKKALC> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<NBBEJDKKALC>() {
+              public NBBEJDKKALC findValueByNumber(int number) {
+                return NBBEJDKKALC.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.GetFriendShowAvatarInfoReqOuterClass.GetFriendShowAvatarInfoReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final NBBEJDKKALC[] VALUES = getStaticValuesArray();
+      private static NBBEJDKKALC[] getStaticValuesArray() {
+        return new NBBEJDKKALC[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static NBBEJDKKALC valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private NBBEJDKKALC(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:GetFriendShowAvatarInfoReq.NBBEJDKKALC)
+    }
+
+    public static final int UID_FIELD_NUMBER = 2;
     private int uid_;
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -143,7 +271,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(1, uid_);
+        output.writeUInt32(2, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +284,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, uid_);
+          .computeUInt32Size(2, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,17 +412,6 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4049;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code GetFriendShowAvatarInfoReq}
      */
     public static final class Builder extends
@@ -443,7 +560,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 2;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -451,7 +568,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 2;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -462,7 +579,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -538,9 +655,12 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n GetFriendShowAvatarInfoReq.proto\")\n\032Ge" +
-      "tFriendShowAvatarInfoReq\022\013\n\003uid\030\001 \001(\rB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n GetFriendShowAvatarInfoReq.proto\"\213\001\n\032G" +
+      "etFriendShowAvatarInfoReq\022\013\n\003uid\030\002 \001(\r\"`" +
+      "\n\013NBBEJDKKALC\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\357" +
+      "\037\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013E" +
+      "AJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

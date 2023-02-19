@@ -19,25 +19,25 @@ public final class PlayerWorldLocationInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>uint32 sceneId = 4;</code>
+     * @return The sceneId.
+     */
+    int getSceneId();
+
+    /**
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      * @return Whether the playerLoc field is set.
      */
     boolean hasPlayerLoc();
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      * @return The playerLoc.
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLoc();
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      */
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocOrBuilder();
-
-    /**
-     * <code>uint32 scene_id = 11;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
   }
   /**
    * Protobuf type {@code PlayerWorldLocationInfo}
@@ -84,7 +84,7 @@ public final class PlayerWorldLocationInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
               emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder subBuilder = null;
               if (playerLoc_ != null) {
                 subBuilder = playerLoc_.toBuilder();
@@ -97,7 +97,7 @@ public final class PlayerWorldLocationInfoOuterClass {
 
               break;
             }
-            case 88: {
+            case 32: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -134,10 +134,21 @@ public final class PlayerWorldLocationInfoOuterClass {
               emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.class, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder.class);
     }
 
-    public static final int PLAYER_LOC_FIELD_NUMBER = 3;
+    public static final int SCENEID_FIELD_NUMBER = 4;
+    private int sceneId_;
+    /**
+     * <code>uint32 sceneId = 4;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
+    }
+
+    public static final int PLAYERLOC_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo playerLoc_;
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      * @return Whether the playerLoc field is set.
      */
     @java.lang.Override
@@ -145,7 +156,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       return playerLoc_ != null;
     }
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      * @return The playerLoc.
      */
     @java.lang.Override
@@ -153,22 +164,11 @@ public final class PlayerWorldLocationInfoOuterClass {
       return playerLoc_ == null ? emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.getDefaultInstance() : playerLoc_;
     }
     /**
-     * <code>.PlayerLocationInfo player_loc = 3;</code>
+     * <code>.PlayerLocationInfo playerLoc = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocOrBuilder() {
       return getPlayerLoc();
-    }
-
-    public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_;
-    /**
-     * <code>uint32 scene_id = 11;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -186,10 +186,10 @@ public final class PlayerWorldLocationInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (playerLoc_ != null) {
-        output.writeMessage(3, getPlayerLoc());
+        output.writeMessage(1, getPlayerLoc());
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(11, sceneId_);
+        output.writeUInt32(4, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -202,11 +202,11 @@ public final class PlayerWorldLocationInfoOuterClass {
       size = 0;
       if (playerLoc_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPlayerLoc());
+          .computeMessageSize(1, getPlayerLoc());
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sceneId_);
+          .computeUInt32Size(4, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -223,13 +223,13 @@ public final class PlayerWorldLocationInfoOuterClass {
       }
       emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo other = (emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo) obj;
 
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (hasPlayerLoc() != other.hasPlayerLoc()) return false;
       if (hasPlayerLoc()) {
         if (!getPlayerLoc()
             .equals(other.getPlayerLoc())) return false;
       }
-      if (getSceneId()
-          != other.getSceneId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +241,12 @@ public final class PlayerWorldLocationInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
       if (hasPlayerLoc()) {
-        hash = (37 * hash) + PLAYER_LOC_FIELD_NUMBER;
+        hash = (37 * hash) + PLAYERLOC_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerLoc().hashCode();
       }
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,14 +380,14 @@ public final class PlayerWorldLocationInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        sceneId_ = 0;
+
         if (playerLocBuilder_ == null) {
           playerLoc_ = null;
         } else {
           playerLoc_ = null;
           playerLocBuilder_ = null;
         }
-        sceneId_ = 0;
-
         return this;
       }
 
@@ -414,12 +414,12 @@ public final class PlayerWorldLocationInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo buildPartial() {
         emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo result = new emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo(this);
+        result.sceneId_ = sceneId_;
         if (playerLocBuilder_ == null) {
           result.playerLoc_ = playerLoc_;
         } else {
           result.playerLoc_ = playerLocBuilder_.build();
         }
-        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
       }
@@ -468,11 +468,11 @@ public final class PlayerWorldLocationInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo other) {
         if (other == emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance()) return this;
-        if (other.hasPlayerLoc()) {
-          mergePlayerLoc(other.getPlayerLoc());
-        }
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
+        }
+        if (other.hasPlayerLoc()) {
+          mergePlayerLoc(other.getPlayerLoc());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -503,18 +503,49 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
 
+      private int sceneId_ ;
+      /**
+       * <code>uint32 sceneId = 4;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 sceneId = 4;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 sceneId = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo playerLoc_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> playerLocBuilder_;
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        * @return Whether the playerLoc field is set.
        */
       public boolean hasPlayerLoc() {
         return playerLocBuilder_ != null || playerLoc_ != null;
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        * @return The playerLoc.
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLoc() {
@@ -525,7 +556,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         }
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public Builder setPlayerLoc(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
         if (playerLocBuilder_ == null) {
@@ -541,7 +572,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public Builder setPlayerLoc(
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder builderForValue) {
@@ -555,7 +586,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public Builder mergePlayerLoc(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo value) {
         if (playerLocBuilder_ == null) {
@@ -573,7 +604,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public Builder clearPlayerLoc() {
         if (playerLocBuilder_ == null) {
@@ -587,7 +618,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder getPlayerLocBuilder() {
         
@@ -595,7 +626,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return getPlayerLocFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       public emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocOrBuilder() {
         if (playerLocBuilder_ != null) {
@@ -606,7 +637,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         }
       }
       /**
-       * <code>.PlayerLocationInfo player_loc = 3;</code>
+       * <code>.PlayerLocationInfo playerLoc = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> 
@@ -620,37 +651,6 @@ public final class PlayerWorldLocationInfoOuterClass {
           playerLoc_ = null;
         }
         return playerLocBuilder_;
-      }
-
-      private int sceneId_ ;
-      /**
-       * <code>uint32 scene_id = 11;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 scene_id = 11;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scene_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -720,10 +720,10 @@ public final class PlayerWorldLocationInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035PlayerWorldLocationInfo.proto\032\030PlayerL" +
-      "ocationInfo.proto\"T\n\027PlayerWorldLocation" +
-      "Info\022\'\n\nplayer_loc\030\003 \001(\0132\023.PlayerLocatio" +
-      "nInfo\022\020\n\010scene_id\030\013 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "ocationInfo.proto\"R\n\027PlayerWorldLocation" +
+      "Info\022\017\n\007sceneId\030\004 \001(\r\022&\n\tplayerLoc\030\001 \001(\013" +
+      "2\023.PlayerLocationInfoB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -735,7 +735,7 @@ public final class PlayerWorldLocationInfoOuterClass {
     internal_static_PlayerWorldLocationInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerWorldLocationInfo_descriptor,
-        new java.lang.String[] { "PlayerLoc", "SceneId", });
+        new java.lang.String[] { "SceneId", "PlayerLoc", });
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.getDescriptor();
   }
 

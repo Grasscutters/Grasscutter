@@ -19,28 +19,18 @@ public final class CombineFormulaDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 combine_id = 6;</code>
-     * @return The combineId.
-     */
-    int getCombineId();
-
-    /**
-     * <code>bool is_locked = 8;</code>
+     * <code>bool isLocked = 7;</code>
      * @return The isLocked.
      */
     boolean getIsLocked();
+
+    /**
+     * <code>uint32 combineId = 3;</code>
+     * @return The combineId.
+     */
+    int getCombineId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 665;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code CombineFormulaDataNotify}
    */
   public static final class CombineFormulaDataNotify extends
@@ -85,12 +75,12 @@ public final class CombineFormulaDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 24: {
 
               combineId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 56: {
 
               isLocked_ = input.readBool();
               break;
@@ -127,26 +117,157 @@ public final class CombineFormulaDataNotifyOuterClass {
               emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify.class, emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify.Builder.class);
     }
 
-    public static final int COMBINE_ID_FIELD_NUMBER = 6;
-    private int combineId_;
     /**
-     * <code>uint32 combine_id = 6;</code>
-     * @return The combineId.
+     * Protobuf enum {@code CombineFormulaDataNotify.FBPLDNIMKML}
      */
-    @java.lang.Override
-    public int getCombineId() {
-      return combineId_;
+    public enum FBPLDNIMKML
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 626;</code>
+       */
+      PEPPOHPHJOJ(1, 626),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final FBPLDNIMKML DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 626;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 626;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FBPLDNIMKML valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FBPLDNIMKML forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 626: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FBPLDNIMKML>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          FBPLDNIMKML> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FBPLDNIMKML>() {
+              public FBPLDNIMKML findValueByNumber(int number) {
+                return FBPLDNIMKML.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final FBPLDNIMKML[] VALUES = getStaticValuesArray();
+      private static FBPLDNIMKML[] getStaticValuesArray() {
+        return new FBPLDNIMKML[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static FBPLDNIMKML valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private FBPLDNIMKML(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:CombineFormulaDataNotify.FBPLDNIMKML)
     }
 
-    public static final int IS_LOCKED_FIELD_NUMBER = 8;
+    public static final int ISLOCKED_FIELD_NUMBER = 7;
     private boolean isLocked_;
     /**
-     * <code>bool is_locked = 8;</code>
+     * <code>bool isLocked = 7;</code>
      * @return The isLocked.
      */
     @java.lang.Override
     public boolean getIsLocked() {
       return isLocked_;
+    }
+
+    public static final int COMBINEID_FIELD_NUMBER = 3;
+    private int combineId_;
+    /**
+     * <code>uint32 combineId = 3;</code>
+     * @return The combineId.
+     */
+    @java.lang.Override
+    public int getCombineId() {
+      return combineId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -164,10 +285,10 @@ public final class CombineFormulaDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (combineId_ != 0) {
-        output.writeUInt32(6, combineId_);
+        output.writeUInt32(3, combineId_);
       }
       if (isLocked_ != false) {
-        output.writeBool(8, isLocked_);
+        output.writeBool(7, isLocked_);
       }
       unknownFields.writeTo(output);
     }
@@ -180,11 +301,11 @@ public final class CombineFormulaDataNotifyOuterClass {
       size = 0;
       if (combineId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, combineId_);
+          .computeUInt32Size(3, combineId_);
       }
       if (isLocked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isLocked_);
+          .computeBoolSize(7, isLocked_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -201,10 +322,10 @@ public final class CombineFormulaDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify other = (emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify) obj;
 
-      if (getCombineId()
-          != other.getCombineId()) return false;
       if (getIsLocked()
           != other.getIsLocked()) return false;
+      if (getCombineId()
+          != other.getCombineId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -216,11 +337,11 @@ public final class CombineFormulaDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMBINE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCombineId();
-      hash = (37 * hash) + IS_LOCKED_FIELD_NUMBER;
+      hash = (37 * hash) + ISLOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLocked());
+      hash = (37 * hash) + COMBINEID_FIELD_NUMBER;
+      hash = (53 * hash) + getCombineId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -317,16 +438,6 @@ public final class CombineFormulaDataNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 665;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code CombineFormulaDataNotify}
      */
     public static final class Builder extends
@@ -364,9 +475,9 @@ public final class CombineFormulaDataNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        combineId_ = 0;
-
         isLocked_ = false;
+
+        combineId_ = 0;
 
         return this;
       }
@@ -394,8 +505,8 @@ public final class CombineFormulaDataNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify buildPartial() {
         emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify result = new emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify(this);
-        result.combineId_ = combineId_;
         result.isLocked_ = isLocked_;
+        result.combineId_ = combineId_;
         onBuilt();
         return result;
       }
@@ -444,11 +555,11 @@ public final class CombineFormulaDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify other) {
         if (other == emu.grasscutter.net.proto.CombineFormulaDataNotifyOuterClass.CombineFormulaDataNotify.getDefaultInstance()) return this;
-        if (other.getCombineId() != 0) {
-          setCombineId(other.getCombineId());
-        }
         if (other.getIsLocked() != false) {
           setIsLocked(other.getIsLocked());
+        }
+        if (other.getCombineId() != 0) {
+          setCombineId(other.getCombineId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -479,40 +590,9 @@ public final class CombineFormulaDataNotifyOuterClass {
         return this;
       }
 
-      private int combineId_ ;
-      /**
-       * <code>uint32 combine_id = 6;</code>
-       * @return The combineId.
-       */
-      @java.lang.Override
-      public int getCombineId() {
-        return combineId_;
-      }
-      /**
-       * <code>uint32 combine_id = 6;</code>
-       * @param value The combineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCombineId(int value) {
-        
-        combineId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 combine_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCombineId() {
-        
-        combineId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isLocked_ ;
       /**
-       * <code>bool is_locked = 8;</code>
+       * <code>bool isLocked = 7;</code>
        * @return The isLocked.
        */
       @java.lang.Override
@@ -520,7 +600,7 @@ public final class CombineFormulaDataNotifyOuterClass {
         return isLocked_;
       }
       /**
-       * <code>bool is_locked = 8;</code>
+       * <code>bool isLocked = 7;</code>
        * @param value The isLocked to set.
        * @return This builder for chaining.
        */
@@ -531,12 +611,43 @@ public final class CombineFormulaDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_locked = 8;</code>
+       * <code>bool isLocked = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
         
         isLocked_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int combineId_ ;
+      /**
+       * <code>uint32 combineId = 3;</code>
+       * @return The combineId.
+       */
+      @java.lang.Override
+      public int getCombineId() {
+        return combineId_;
+      }
+      /**
+       * <code>uint32 combineId = 3;</code>
+       * @param value The combineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCombineId(int value) {
+        
+        combineId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 combineId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCombineId() {
+        
+        combineId_ = 0;
         onChanged();
         return this;
       }
@@ -607,9 +718,11 @@ public final class CombineFormulaDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036CombineFormulaDataNotify.proto\"A\n\030Comb" +
-      "ineFormulaDataNotify\022\022\n\ncombine_id\030\006 \001(\r" +
-      "\022\021\n\tis_locked\030\010 \001(\010B\033\n\031emu.grasscutter.n" +
+      "\n\036CombineFormulaDataNotify.proto\"\220\001\n\030Com" +
+      "bineFormulaDataNotify\022\020\n\010isLocked\030\007 \001(\010\022" +
+      "\021\n\tcombineId\030\003 \001(\r\"O\n\013FBPLDNIMKML\022\010\n\004NON" +
+      "E\020\000\022\020\n\013PEPPOHPHJOJ\020\362\004\022\017\n\013DCDNILFDFLB\020\000\022\017" +
+      "\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -621,7 +734,7 @@ public final class CombineFormulaDataNotifyOuterClass {
     internal_static_CombineFormulaDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CombineFormulaDataNotify_descriptor,
-        new java.lang.String[] { "CombineId", "IsLocked", });
+        new java.lang.String[] { "IsLocked", "CombineId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

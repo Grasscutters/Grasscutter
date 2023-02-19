@@ -19,7 +19,7 @@ public final class ShowEquipOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 item_id = 1;</code>
+     * <code>uint32 itemId = 1;</code>
      * @return The itemId.
      */
     int getItemId();
@@ -54,7 +54,7 @@ public final class ShowEquipOuterClass {
      */
     emu.grasscutter.net.proto.WeaponOuterClass.WeaponOrBuilder getWeaponOrBuilder();
 
-    public emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip.DetailCase getDetailCase();
+    public emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip.DCMMPEONFNECase getDCMMPEONFNECase();
   }
   /**
    * Protobuf type {@code ShowEquip}
@@ -108,30 +108,30 @@ public final class ShowEquipOuterClass {
             }
             case 18: {
               emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.Builder subBuilder = null;
-              if (detailCase_ == 2) {
-                subBuilder = ((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_).toBuilder();
+              if (dCMMPEONFNECase_ == 2) {
+                subBuilder = ((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_).toBuilder();
               }
-              detail_ =
+              dCMMPEONFNE_ =
                   input.readMessage(emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_);
-                detail_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_);
+                dCMMPEONFNE_ = subBuilder.buildPartial();
               }
-              detailCase_ = 2;
+              dCMMPEONFNECase_ = 2;
               break;
             }
             case 26: {
               emu.grasscutter.net.proto.WeaponOuterClass.Weapon.Builder subBuilder = null;
-              if (detailCase_ == 3) {
-                subBuilder = ((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_).toBuilder();
+              if (dCMMPEONFNECase_ == 3) {
+                subBuilder = ((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_).toBuilder();
               }
-              detail_ =
+              dCMMPEONFNE_ =
                   input.readMessage(emu.grasscutter.net.proto.WeaponOuterClass.Weapon.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_);
-                detail_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_);
+                dCMMPEONFNE_ = subBuilder.buildPartial();
               }
-              detailCase_ = 3;
+              dCMMPEONFNECase_ = 3;
               break;
             }
             default: {
@@ -166,16 +166,16 @@ public final class ShowEquipOuterClass {
               emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip.class, emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip.Builder.class);
     }
 
-    private int detailCase_ = 0;
-    private java.lang.Object detail_;
-    public enum DetailCase
+    private int dCMMPEONFNECase_ = 0;
+    private java.lang.Object dCMMPEONFNE_;
+    public enum DCMMPEONFNECase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       RELIQUARY(2),
       WEAPON(3),
-      DETAIL_NOT_SET(0);
+      DCMMPEONFNE_NOT_SET(0);
       private final int value;
-      private DetailCase(int value) {
+      private DCMMPEONFNECase(int value) {
         this.value = value;
       }
       /**
@@ -184,15 +184,15 @@ public final class ShowEquipOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static DetailCase valueOf(int value) {
+      public static DCMMPEONFNECase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static DetailCase forNumber(int value) {
+      public static DCMMPEONFNECase forNumber(int value) {
         switch (value) {
           case 2: return RELIQUARY;
           case 3: return WEAPON;
-          case 0: return DETAIL_NOT_SET;
+          case 0: return DCMMPEONFNE_NOT_SET;
           default: return null;
         }
       }
@@ -201,16 +201,16 @@ public final class ShowEquipOuterClass {
       }
     };
 
-    public DetailCase
-    getDetailCase() {
-      return DetailCase.forNumber(
-          detailCase_);
+    public DCMMPEONFNECase
+    getDCMMPEONFNECase() {
+      return DCMMPEONFNECase.forNumber(
+          dCMMPEONFNECase_);
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 1;
+    public static final int ITEMID_FIELD_NUMBER = 1;
     private int itemId_;
     /**
-     * <code>uint32 item_id = 1;</code>
+     * <code>uint32 itemId = 1;</code>
      * @return The itemId.
      */
     @java.lang.Override
@@ -225,7 +225,7 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public boolean hasReliquary() {
-      return detailCase_ == 2;
+      return dCMMPEONFNECase_ == 2;
     }
     /**
      * <code>.Reliquary reliquary = 2;</code>
@@ -233,8 +233,8 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary getReliquary() {
-      if (detailCase_ == 2) {
-         return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_;
+      if (dCMMPEONFNECase_ == 2) {
+         return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_;
       }
       return emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
     }
@@ -243,8 +243,8 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ReliquaryOuterClass.ReliquaryOrBuilder getReliquaryOrBuilder() {
-      if (detailCase_ == 2) {
-         return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_;
+      if (dCMMPEONFNECase_ == 2) {
+         return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_;
       }
       return emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
     }
@@ -256,7 +256,7 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public boolean hasWeapon() {
-      return detailCase_ == 3;
+      return dCMMPEONFNECase_ == 3;
     }
     /**
      * <code>.Weapon weapon = 3;</code>
@@ -264,8 +264,8 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WeaponOuterClass.Weapon getWeapon() {
-      if (detailCase_ == 3) {
-         return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_;
+      if (dCMMPEONFNECase_ == 3) {
+         return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_;
       }
       return emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
     }
@@ -274,8 +274,8 @@ public final class ShowEquipOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WeaponOuterClass.WeaponOrBuilder getWeaponOrBuilder() {
-      if (detailCase_ == 3) {
-         return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_;
+      if (dCMMPEONFNECase_ == 3) {
+         return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_;
       }
       return emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
     }
@@ -297,11 +297,11 @@ public final class ShowEquipOuterClass {
       if (itemId_ != 0) {
         output.writeUInt32(1, itemId_);
       }
-      if (detailCase_ == 2) {
-        output.writeMessage(2, (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_);
+      if (dCMMPEONFNECase_ == 2) {
+        output.writeMessage(2, (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_);
       }
-      if (detailCase_ == 3) {
-        output.writeMessage(3, (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_);
+      if (dCMMPEONFNECase_ == 3) {
+        output.writeMessage(3, (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_);
       }
       unknownFields.writeTo(output);
     }
@@ -316,13 +316,13 @@ public final class ShowEquipOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, itemId_);
       }
-      if (detailCase_ == 2) {
+      if (dCMMPEONFNECase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_);
+          .computeMessageSize(2, (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_);
       }
-      if (detailCase_ == 3) {
+      if (dCMMPEONFNECase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_);
+          .computeMessageSize(3, (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -341,8 +341,8 @@ public final class ShowEquipOuterClass {
 
       if (getItemId()
           != other.getItemId()) return false;
-      if (!getDetailCase().equals(other.getDetailCase())) return false;
-      switch (detailCase_) {
+      if (!getDCMMPEONFNECase().equals(other.getDCMMPEONFNECase())) return false;
+      switch (dCMMPEONFNECase_) {
         case 2:
           if (!getReliquary()
               .equals(other.getReliquary())) return false;
@@ -365,9 +365,9 @@ public final class ShowEquipOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ITEMID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
-      switch (detailCase_) {
+      switch (dCMMPEONFNECase_) {
         case 2:
           hash = (37 * hash) + RELIQUARY_FIELD_NUMBER;
           hash = (53 * hash) + getReliquary().hashCode();
@@ -514,8 +514,8 @@ public final class ShowEquipOuterClass {
         super.clear();
         itemId_ = 0;
 
-        detailCase_ = 0;
-        detail_ = null;
+        dCMMPEONFNECase_ = 0;
+        dCMMPEONFNE_ = null;
         return this;
       }
 
@@ -543,21 +543,21 @@ public final class ShowEquipOuterClass {
       public emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip buildPartial() {
         emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip result = new emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip(this);
         result.itemId_ = itemId_;
-        if (detailCase_ == 2) {
+        if (dCMMPEONFNECase_ == 2) {
           if (reliquaryBuilder_ == null) {
-            result.detail_ = detail_;
+            result.dCMMPEONFNE_ = dCMMPEONFNE_;
           } else {
-            result.detail_ = reliquaryBuilder_.build();
+            result.dCMMPEONFNE_ = reliquaryBuilder_.build();
           }
         }
-        if (detailCase_ == 3) {
+        if (dCMMPEONFNECase_ == 3) {
           if (weaponBuilder_ == null) {
-            result.detail_ = detail_;
+            result.dCMMPEONFNE_ = dCMMPEONFNE_;
           } else {
-            result.detail_ = weaponBuilder_.build();
+            result.dCMMPEONFNE_ = weaponBuilder_.build();
           }
         }
-        result.detailCase_ = detailCase_;
+        result.dCMMPEONFNECase_ = dCMMPEONFNECase_;
         onBuilt();
         return result;
       }
@@ -609,7 +609,7 @@ public final class ShowEquipOuterClass {
         if (other.getItemId() != 0) {
           setItemId(other.getItemId());
         }
-        switch (other.getDetailCase()) {
+        switch (other.getDCMMPEONFNECase()) {
           case RELIQUARY: {
             mergeReliquary(other.getReliquary());
             break;
@@ -618,7 +618,7 @@ public final class ShowEquipOuterClass {
             mergeWeapon(other.getWeapon());
             break;
           }
-          case DETAIL_NOT_SET: {
+          case DCMMPEONFNE_NOT_SET: {
             break;
           }
         }
@@ -650,17 +650,17 @@ public final class ShowEquipOuterClass {
         }
         return this;
       }
-      private int detailCase_ = 0;
-      private java.lang.Object detail_;
-      public DetailCase
-          getDetailCase() {
-        return DetailCase.forNumber(
-            detailCase_);
+      private int dCMMPEONFNECase_ = 0;
+      private java.lang.Object dCMMPEONFNE_;
+      public DCMMPEONFNECase
+          getDCMMPEONFNECase() {
+        return DCMMPEONFNECase.forNumber(
+            dCMMPEONFNECase_);
       }
 
-      public Builder clearDetail() {
-        detailCase_ = 0;
-        detail_ = null;
+      public Builder clearDCMMPEONFNE() {
+        dCMMPEONFNECase_ = 0;
+        dCMMPEONFNE_ = null;
         onChanged();
         return this;
       }
@@ -668,7 +668,7 @@ public final class ShowEquipOuterClass {
 
       private int itemId_ ;
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @return The itemId.
        */
       @java.lang.Override
@@ -676,7 +676,7 @@ public final class ShowEquipOuterClass {
         return itemId_;
       }
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @param value The itemId to set.
        * @return This builder for chaining.
        */
@@ -687,7 +687,7 @@ public final class ShowEquipOuterClass {
         return this;
       }
       /**
-       * <code>uint32 item_id = 1;</code>
+       * <code>uint32 itemId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
@@ -705,7 +705,7 @@ public final class ShowEquipOuterClass {
        */
       @java.lang.Override
       public boolean hasReliquary() {
-        return detailCase_ == 2;
+        return dCMMPEONFNECase_ == 2;
       }
       /**
        * <code>.Reliquary reliquary = 2;</code>
@@ -714,12 +714,12 @@ public final class ShowEquipOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary getReliquary() {
         if (reliquaryBuilder_ == null) {
-          if (detailCase_ == 2) {
-            return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_;
+          if (dCMMPEONFNECase_ == 2) {
+            return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_;
           }
           return emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
         } else {
-          if (detailCase_ == 2) {
+          if (dCMMPEONFNECase_ == 2) {
             return reliquaryBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
@@ -733,12 +733,12 @@ public final class ShowEquipOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          detail_ = value;
+          dCMMPEONFNE_ = value;
           onChanged();
         } else {
           reliquaryBuilder_.setMessage(value);
         }
-        detailCase_ = 2;
+        dCMMPEONFNECase_ = 2;
         return this;
       }
       /**
@@ -747,12 +747,12 @@ public final class ShowEquipOuterClass {
       public Builder setReliquary(
           emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.Builder builderForValue) {
         if (reliquaryBuilder_ == null) {
-          detail_ = builderForValue.build();
+          dCMMPEONFNE_ = builderForValue.build();
           onChanged();
         } else {
           reliquaryBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 2;
+        dCMMPEONFNECase_ = 2;
         return this;
       }
       /**
@@ -760,21 +760,21 @@ public final class ShowEquipOuterClass {
        */
       public Builder mergeReliquary(emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary value) {
         if (reliquaryBuilder_ == null) {
-          if (detailCase_ == 2 &&
-              detail_ != emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.newBuilder((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_)
+          if (dCMMPEONFNECase_ == 2 &&
+              dCMMPEONFNE_ != emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance()) {
+            dCMMPEONFNE_ = emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.newBuilder((emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_)
                 .mergeFrom(value).buildPartial();
           } else {
-            detail_ = value;
+            dCMMPEONFNE_ = value;
           }
           onChanged();
         } else {
-          if (detailCase_ == 2) {
+          if (dCMMPEONFNECase_ == 2) {
             reliquaryBuilder_.mergeFrom(value);
           }
           reliquaryBuilder_.setMessage(value);
         }
-        detailCase_ = 2;
+        dCMMPEONFNECase_ = 2;
         return this;
       }
       /**
@@ -782,15 +782,15 @@ public final class ShowEquipOuterClass {
        */
       public Builder clearReliquary() {
         if (reliquaryBuilder_ == null) {
-          if (detailCase_ == 2) {
-            detailCase_ = 0;
-            detail_ = null;
+          if (dCMMPEONFNECase_ == 2) {
+            dCMMPEONFNECase_ = 0;
+            dCMMPEONFNE_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 2) {
-            detailCase_ = 0;
-            detail_ = null;
+          if (dCMMPEONFNECase_ == 2) {
+            dCMMPEONFNECase_ = 0;
+            dCMMPEONFNE_ = null;
           }
           reliquaryBuilder_.clear();
         }
@@ -807,11 +807,11 @@ public final class ShowEquipOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.ReliquaryOuterClass.ReliquaryOrBuilder getReliquaryOrBuilder() {
-        if ((detailCase_ == 2) && (reliquaryBuilder_ != null)) {
+        if ((dCMMPEONFNECase_ == 2) && (reliquaryBuilder_ != null)) {
           return reliquaryBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 2) {
-            return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_;
+          if (dCMMPEONFNECase_ == 2) {
+            return (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_;
           }
           return emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
         }
@@ -823,17 +823,17 @@ public final class ShowEquipOuterClass {
           emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary, emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.Builder, emu.grasscutter.net.proto.ReliquaryOuterClass.ReliquaryOrBuilder> 
           getReliquaryFieldBuilder() {
         if (reliquaryBuilder_ == null) {
-          if (!(detailCase_ == 2)) {
-            detail_ = emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
+          if (!(dCMMPEONFNECase_ == 2)) {
+            dCMMPEONFNE_ = emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.getDefaultInstance();
           }
           reliquaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary, emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary.Builder, emu.grasscutter.net.proto.ReliquaryOuterClass.ReliquaryOrBuilder>(
-                  (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) detail_,
+                  (emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary) dCMMPEONFNE_,
                   getParentForChildren(),
                   isClean());
-          detail_ = null;
+          dCMMPEONFNE_ = null;
         }
-        detailCase_ = 2;
+        dCMMPEONFNECase_ = 2;
         onChanged();;
         return reliquaryBuilder_;
       }
@@ -846,7 +846,7 @@ public final class ShowEquipOuterClass {
        */
       @java.lang.Override
       public boolean hasWeapon() {
-        return detailCase_ == 3;
+        return dCMMPEONFNECase_ == 3;
       }
       /**
        * <code>.Weapon weapon = 3;</code>
@@ -855,12 +855,12 @@ public final class ShowEquipOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WeaponOuterClass.Weapon getWeapon() {
         if (weaponBuilder_ == null) {
-          if (detailCase_ == 3) {
-            return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_;
+          if (dCMMPEONFNECase_ == 3) {
+            return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_;
           }
           return emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
         } else {
-          if (detailCase_ == 3) {
+          if (dCMMPEONFNECase_ == 3) {
             return weaponBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
@@ -874,12 +874,12 @@ public final class ShowEquipOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          detail_ = value;
+          dCMMPEONFNE_ = value;
           onChanged();
         } else {
           weaponBuilder_.setMessage(value);
         }
-        detailCase_ = 3;
+        dCMMPEONFNECase_ = 3;
         return this;
       }
       /**
@@ -888,12 +888,12 @@ public final class ShowEquipOuterClass {
       public Builder setWeapon(
           emu.grasscutter.net.proto.WeaponOuterClass.Weapon.Builder builderForValue) {
         if (weaponBuilder_ == null) {
-          detail_ = builderForValue.build();
+          dCMMPEONFNE_ = builderForValue.build();
           onChanged();
         } else {
           weaponBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 3;
+        dCMMPEONFNECase_ = 3;
         return this;
       }
       /**
@@ -901,21 +901,21 @@ public final class ShowEquipOuterClass {
        */
       public Builder mergeWeapon(emu.grasscutter.net.proto.WeaponOuterClass.Weapon value) {
         if (weaponBuilder_ == null) {
-          if (detailCase_ == 3 &&
-              detail_ != emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.WeaponOuterClass.Weapon.newBuilder((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_)
+          if (dCMMPEONFNECase_ == 3 &&
+              dCMMPEONFNE_ != emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance()) {
+            dCMMPEONFNE_ = emu.grasscutter.net.proto.WeaponOuterClass.Weapon.newBuilder((emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_)
                 .mergeFrom(value).buildPartial();
           } else {
-            detail_ = value;
+            dCMMPEONFNE_ = value;
           }
           onChanged();
         } else {
-          if (detailCase_ == 3) {
+          if (dCMMPEONFNECase_ == 3) {
             weaponBuilder_.mergeFrom(value);
           }
           weaponBuilder_.setMessage(value);
         }
-        detailCase_ = 3;
+        dCMMPEONFNECase_ = 3;
         return this;
       }
       /**
@@ -923,15 +923,15 @@ public final class ShowEquipOuterClass {
        */
       public Builder clearWeapon() {
         if (weaponBuilder_ == null) {
-          if (detailCase_ == 3) {
-            detailCase_ = 0;
-            detail_ = null;
+          if (dCMMPEONFNECase_ == 3) {
+            dCMMPEONFNECase_ = 0;
+            dCMMPEONFNE_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 3) {
-            detailCase_ = 0;
-            detail_ = null;
+          if (dCMMPEONFNECase_ == 3) {
+            dCMMPEONFNECase_ = 0;
+            dCMMPEONFNE_ = null;
           }
           weaponBuilder_.clear();
         }
@@ -948,11 +948,11 @@ public final class ShowEquipOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.WeaponOuterClass.WeaponOrBuilder getWeaponOrBuilder() {
-        if ((detailCase_ == 3) && (weaponBuilder_ != null)) {
+        if ((dCMMPEONFNECase_ == 3) && (weaponBuilder_ != null)) {
           return weaponBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 3) {
-            return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_;
+          if (dCMMPEONFNECase_ == 3) {
+            return (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_;
           }
           return emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
         }
@@ -964,17 +964,17 @@ public final class ShowEquipOuterClass {
           emu.grasscutter.net.proto.WeaponOuterClass.Weapon, emu.grasscutter.net.proto.WeaponOuterClass.Weapon.Builder, emu.grasscutter.net.proto.WeaponOuterClass.WeaponOrBuilder> 
           getWeaponFieldBuilder() {
         if (weaponBuilder_ == null) {
-          if (!(detailCase_ == 3)) {
-            detail_ = emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
+          if (!(dCMMPEONFNECase_ == 3)) {
+            dCMMPEONFNE_ = emu.grasscutter.net.proto.WeaponOuterClass.Weapon.getDefaultInstance();
           }
           weaponBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.WeaponOuterClass.Weapon, emu.grasscutter.net.proto.WeaponOuterClass.Weapon.Builder, emu.grasscutter.net.proto.WeaponOuterClass.WeaponOrBuilder>(
-                  (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) detail_,
+                  (emu.grasscutter.net.proto.WeaponOuterClass.Weapon) dCMMPEONFNE_,
                   getParentForChildren(),
                   isClean());
-          detail_ = null;
+          dCMMPEONFNE_ = null;
         }
-        detailCase_ = 3;
+        dCMMPEONFNECase_ = 3;
         onChanged();;
         return weaponBuilder_;
       }
@@ -1046,10 +1046,10 @@ public final class ShowEquipOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017ShowEquip.proto\032\017Reliquary.proto\032\014Weap" +
-      "on.proto\"b\n\tShowEquip\022\017\n\007item_id\030\001 \001(\r\022\037" +
-      "\n\treliquary\030\002 \001(\0132\n.ReliquaryH\000\022\031\n\006weapo" +
-      "n\030\003 \001(\0132\007.WeaponH\000B\010\n\006detailB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "on.proto\"f\n\tShowEquip\022\016\n\006itemId\030\001 \001(\r\022\037\n" +
+      "\treliquary\030\002 \001(\0132\n.ReliquaryH\000\022\031\n\006weapon" +
+      "\030\003 \001(\0132\007.WeaponH\000B\r\n\013DCMMPEONFNEB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1062,7 +1062,7 @@ public final class ShowEquipOuterClass {
     internal_static_ShowEquip_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ShowEquip_descriptor,
-        new java.lang.String[] { "ItemId", "Reliquary", "Weapon", "Detail", });
+        new java.lang.String[] { "ItemId", "Reliquary", "Weapon", "DCMMPEONFNE", });
     emu.grasscutter.net.proto.ReliquaryOuterClass.getDescriptor();
     emu.grasscutter.net.proto.WeaponOuterClass.getDescriptor();
   }

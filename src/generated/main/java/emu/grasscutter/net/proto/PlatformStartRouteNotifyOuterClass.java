@@ -19,43 +19,33 @@ public final class PlatformStartRouteNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 12;</code>
+     * <code>uint32 entityId = 2;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>uint32 scene_time = 7;</code>
+     * <code>uint32 sceneTime = 6;</code>
      * @return The sceneTime.
      */
     int getSceneTime();
 
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      * @return Whether the platform field is set.
      */
     boolean hasPlatform();
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      * @return The platform.
      */
     emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo getPlatform();
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      */
     emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder getPlatformOrBuilder();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 208;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code PlatformStartRouteNotify}
    */
   public static final class PlatformStartRouteNotify extends
@@ -100,7 +90,17 @@ public final class PlatformStartRouteNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 16: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              sceneTime_ = input.readUInt32();
+              break;
+            }
+            case 58: {
               emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder subBuilder = null;
               if (platform_ != null) {
                 subBuilder = platform_.toBuilder();
@@ -111,16 +111,6 @@ public final class PlatformStartRouteNotifyOuterClass {
                 platform_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 56: {
-
-              sceneTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -155,10 +145,141 @@ public final class PlatformStartRouteNotifyOuterClass {
               emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.class, emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 12;
+    /**
+     * Protobuf enum {@code PlatformStartRouteNotify.BJHMKILFBJB}
+     */
+    public enum BJHMKILFBJB
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 237;</code>
+       */
+      PEPPOHPHJOJ(1, 237),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final BJHMKILFBJB DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 237;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 237;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BJHMKILFBJB valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static BJHMKILFBJB forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 237: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BJHMKILFBJB>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BJHMKILFBJB> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BJHMKILFBJB>() {
+              public BJHMKILFBJB findValueByNumber(int number) {
+                return BJHMKILFBJB.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final BJHMKILFBJB[] VALUES = getStaticValuesArray();
+      private static BJHMKILFBJB[] getStaticValuesArray() {
+        return new BJHMKILFBJB[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static BJHMKILFBJB valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private BJHMKILFBJB(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:PlatformStartRouteNotify.BJHMKILFBJB)
+    }
+
+    public static final int ENTITYID_FIELD_NUMBER = 2;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 12;</code>
+     * <code>uint32 entityId = 2;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -166,10 +287,10 @@ public final class PlatformStartRouteNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int SCENE_TIME_FIELD_NUMBER = 7;
+    public static final int SCENETIME_FIELD_NUMBER = 6;
     private int sceneTime_;
     /**
-     * <code>uint32 scene_time = 7;</code>
+     * <code>uint32 sceneTime = 6;</code>
      * @return The sceneTime.
      */
     @java.lang.Override
@@ -177,10 +298,10 @@ public final class PlatformStartRouteNotifyOuterClass {
       return sceneTime_;
     }
 
-    public static final int PLATFORM_FIELD_NUMBER = 2;
+    public static final int PLATFORM_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo platform_;
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      * @return Whether the platform field is set.
      */
     @java.lang.Override
@@ -188,7 +309,7 @@ public final class PlatformStartRouteNotifyOuterClass {
       return platform_ != null;
     }
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      * @return The platform.
      */
     @java.lang.Override
@@ -196,7 +317,7 @@ public final class PlatformStartRouteNotifyOuterClass {
       return platform_ == null ? emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.getDefaultInstance() : platform_;
     }
     /**
-     * <code>.PlatformInfo platform = 2;</code>
+     * <code>.PlatformInfo platform = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder getPlatformOrBuilder() {
@@ -217,14 +338,14 @@ public final class PlatformStartRouteNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (platform_ != null) {
-        output.writeMessage(2, getPlatform());
+      if (entityId_ != 0) {
+        output.writeUInt32(2, entityId_);
       }
       if (sceneTime_ != 0) {
-        output.writeUInt32(7, sceneTime_);
+        output.writeUInt32(6, sceneTime_);
       }
-      if (entityId_ != 0) {
-        output.writeUInt32(12, entityId_);
+      if (platform_ != null) {
+        output.writeMessage(7, getPlatform());
       }
       unknownFields.writeTo(output);
     }
@@ -235,17 +356,17 @@ public final class PlatformStartRouteNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (platform_ != null) {
+      if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPlatform());
+          .computeUInt32Size(2, entityId_);
       }
       if (sceneTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, sceneTime_);
+          .computeUInt32Size(6, sceneTime_);
       }
-      if (entityId_ != 0) {
+      if (platform_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, entityId_);
+          .computeMessageSize(7, getPlatform());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -282,9 +403,9 @@ public final class PlatformStartRouteNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + SCENE_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + SCENETIME_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTime();
       if (hasPlatform()) {
         hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
@@ -386,16 +507,6 @@ public final class PlatformStartRouteNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 208;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code PlatformStartRouteNotify}
      */
     public static final class Builder extends
@@ -564,7 +675,7 @@ public final class PlatformStartRouteNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entityId = 2;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -572,7 +683,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entityId = 2;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -583,7 +694,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entityId = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -595,7 +706,7 @@ public final class PlatformStartRouteNotifyOuterClass {
 
       private int sceneTime_ ;
       /**
-       * <code>uint32 scene_time = 7;</code>
+       * <code>uint32 sceneTime = 6;</code>
        * @return The sceneTime.
        */
       @java.lang.Override
@@ -603,7 +714,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return sceneTime_;
       }
       /**
-       * <code>uint32 scene_time = 7;</code>
+       * <code>uint32 sceneTime = 6;</code>
        * @param value The sceneTime to set.
        * @return This builder for chaining.
        */
@@ -614,7 +725,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_time = 7;</code>
+       * <code>uint32 sceneTime = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
@@ -628,14 +739,14 @@ public final class PlatformStartRouteNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo, emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder, emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder> platformBuilder_;
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        * @return Whether the platform field is set.
        */
       public boolean hasPlatform() {
         return platformBuilder_ != null || platform_ != null;
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        * @return The platform.
        */
       public emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo getPlatform() {
@@ -646,7 +757,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         }
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public Builder setPlatform(emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo value) {
         if (platformBuilder_ == null) {
@@ -662,7 +773,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public Builder setPlatform(
           emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder builderForValue) {
@@ -676,7 +787,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public Builder mergePlatform(emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo value) {
         if (platformBuilder_ == null) {
@@ -694,7 +805,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public Builder clearPlatform() {
         if (platformBuilder_ == null) {
@@ -708,7 +819,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder getPlatformBuilder() {
         
@@ -716,7 +827,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         return getPlatformFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       public emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder getPlatformOrBuilder() {
         if (platformBuilder_ != null) {
@@ -727,7 +838,7 @@ public final class PlatformStartRouteNotifyOuterClass {
         }
       }
       /**
-       * <code>.PlatformInfo platform = 2;</code>
+       * <code>.PlatformInfo platform = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo, emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder, emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder> 
@@ -810,9 +921,11 @@ public final class PlatformStartRouteNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036PlatformStartRouteNotify.proto\032\022Platfo" +
-      "rmInfo.proto\"b\n\030PlatformStartRouteNotify" +
-      "\022\021\n\tentity_id\030\014 \001(\r\022\022\n\nscene_time\030\007 \001(\r\022" +
-      "\037\n\010platform\030\002 \001(\0132\r.PlatformInfoB\033\n\031emu." +
+      "rmInfo.proto\"\261\001\n\030PlatformStartRouteNotif" +
+      "y\022\020\n\010entityId\030\002 \001(\r\022\021\n\tsceneTime\030\006 \001(\r\022\037" +
+      "\n\010platform\030\007 \001(\0132\r.PlatformInfo\"O\n\013BJHMK" +
+      "ILFBJB\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\355\001\022\017\n\013DC" +
+      "DNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

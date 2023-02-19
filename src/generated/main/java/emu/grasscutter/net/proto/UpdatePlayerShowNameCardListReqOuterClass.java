@@ -19,34 +19,23 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @return A list containing the showNameCardIdList.
      */
     java.util.List<java.lang.Integer> getShowNameCardIdListList();
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @return The count of showNameCardIdList.
      */
     int getShowNameCardIdListCount();
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @param index The index of the element to return.
      * @return The showNameCardIdList at the given index.
      */
     int getShowNameCardIdList(int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4093;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code UpdatePlayerShowNameCardListReq}
    */
   public static final class UpdatePlayerShowNameCardListReq extends
@@ -93,7 +82,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 showNameCardIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +90,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
               showNameCardIdList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,10 +138,149 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
               emu.grasscutter.net.proto.UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReq.class, emu.grasscutter.net.proto.UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReq.Builder.class);
     }
 
-    public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 11;
+    /**
+     * Protobuf enum {@code UpdatePlayerShowNameCardListReq.JJDGDCDOCFK}
+     */
+    public enum JJDGDCDOCFK
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4063;</code>
+       */
+      PEPPOHPHJOJ(1, 4063),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final JJDGDCDOCFK DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final JJDGDCDOCFK EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4063;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4063;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static JJDGDCDOCFK valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static JJDGDCDOCFK forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4063: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<JJDGDCDOCFK>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          JJDGDCDOCFK> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<JJDGDCDOCFK>() {
+              public JJDGDCDOCFK findValueByNumber(int number) {
+                return JJDGDCDOCFK.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final JJDGDCDOCFK[] VALUES = getStaticValuesArray();
+      private static JJDGDCDOCFK[] getStaticValuesArray() {
+        return new JJDGDCDOCFK[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static JJDGDCDOCFK valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private JJDGDCDOCFK(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:UpdatePlayerShowNameCardListReq.JJDGDCDOCFK)
+    }
+
+    public static final int SHOWNAMECARDIDLIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList showNameCardIdList_;
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @return A list containing the showNameCardIdList.
      */
     @java.lang.Override
@@ -161,14 +289,14 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
       return showNameCardIdList_;
     }
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @return The count of showNameCardIdList.
      */
     public int getShowNameCardIdListCount() {
       return showNameCardIdList_.size();
     }
     /**
-     * <code>repeated uint32 show_name_card_id_list = 11;</code>
+     * <code>repeated uint32 showNameCardIdList = 14;</code>
      * @param index The index of the element to return.
      * @return The showNameCardIdList at the given index.
      */
@@ -193,7 +321,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getShowNameCardIdListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(showNameCardIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < showNameCardIdList_.size(); i++) {
@@ -251,7 +379,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getShowNameCardIdListCount() > 0) {
-        hash = (37 * hash) + SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + SHOWNAMECARDIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getShowNameCardIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -350,17 +478,6 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4093;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code UpdatePlayerShowNameCardListReq}
      */
     public static final class Builder extends
@@ -528,7 +645,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @return A list containing the showNameCardIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -537,14 +654,14 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
                  java.util.Collections.unmodifiableList(showNameCardIdList_) : showNameCardIdList_;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @return The count of showNameCardIdList.
        */
       public int getShowNameCardIdListCount() {
         return showNameCardIdList_.size();
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @param index The index of the element to return.
        * @return The showNameCardIdList at the given index.
        */
@@ -552,7 +669,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
         return showNameCardIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @param index The index to set the value at.
        * @param value The showNameCardIdList to set.
        * @return This builder for chaining.
@@ -565,7 +682,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @param value The showNameCardIdList to add.
        * @return This builder for chaining.
        */
@@ -576,7 +693,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @param values The showNameCardIdList to add.
        * @return This builder for chaining.
        */
@@ -589,7 +706,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 show_name_card_id_list = 11;</code>
+       * <code>repeated uint32 showNameCardIdList = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearShowNameCardIdList() {
@@ -666,9 +783,11 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%UpdatePlayerShowNameCardListReq.proto\"" +
-      "A\n\037UpdatePlayerShowNameCardListReq\022\036\n\026sh" +
-      "ow_name_card_id_list\030\013 \003(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\237\001\n\037UpdatePlayerShowNameCardListReq\022\032\n\022s" +
+      "howNameCardIdList\030\016 \003(\r\"`\n\013JJDGDCDOCFK\022\010" +
+      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\337\037\022\017\n\013DCDNILFDFL" +
+      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020" +
+      "\001B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

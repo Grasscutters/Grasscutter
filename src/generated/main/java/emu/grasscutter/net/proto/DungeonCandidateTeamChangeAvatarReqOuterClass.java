@@ -19,34 +19,23 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @return A list containing the avatarGuidList.
      */
     java.util.List<java.lang.Long> getAvatarGuidListList();
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @return The count of avatarGuidList.
      */
     int getAvatarGuidListCount();
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
     long getAvatarGuidList(int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 982;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code DungeonCandidateTeamChangeAvatarReq}
    */
   public static final class DungeonCandidateTeamChangeAvatarReq extends
@@ -93,7 +82,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +90,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 58: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,10 +138,149 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
               emu.grasscutter.net.proto.DungeonCandidateTeamChangeAvatarReqOuterClass.DungeonCandidateTeamChangeAvatarReq.class, emu.grasscutter.net.proto.DungeonCandidateTeamChangeAvatarReqOuterClass.DungeonCandidateTeamChangeAvatarReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 7;
+    /**
+     * Protobuf enum {@code DungeonCandidateTeamChangeAvatarReq.MHOEJLKIPOE}
+     */
+    public enum MHOEJLKIPOE
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 936;</code>
+       */
+      PEPPOHPHJOJ(1, 936),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final MHOEJLKIPOE DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final MHOEJLKIPOE EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 936;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 936;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MHOEJLKIPOE valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MHOEJLKIPOE forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 936: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MHOEJLKIPOE>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MHOEJLKIPOE> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MHOEJLKIPOE>() {
+              public MHOEJLKIPOE findValueByNumber(int number) {
+                return MHOEJLKIPOE.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.DungeonCandidateTeamChangeAvatarReqOuterClass.DungeonCandidateTeamChangeAvatarReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MHOEJLKIPOE[] VALUES = getStaticValuesArray();
+      private static MHOEJLKIPOE[] getStaticValuesArray() {
+        return new MHOEJLKIPOE[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static MHOEJLKIPOE valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private MHOEJLKIPOE(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:DungeonCandidateTeamChangeAvatarReq.MHOEJLKIPOE)
+    }
+
+    public static final int AVATARGUIDLIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @return A list containing the avatarGuidList.
      */
     @java.lang.Override
@@ -161,14 +289,14 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
       return avatarGuidList_;
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @return The count of avatarGuidList.
      */
     public int getAvatarGuidListCount() {
       return avatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 7;</code>
+     * <code>repeated uint64 avatarGuidList = 5;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
@@ -193,7 +321,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -251,7 +379,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getAvatarGuidListCount() > 0) {
-        hash = (37 * hash) + AVATAR_GUID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + AVATARGUIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarGuidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -350,17 +478,6 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 982;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code DungeonCandidateTeamChangeAvatarReq}
      */
     public static final class Builder extends
@@ -528,7 +645,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @return A list containing the avatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -537,14 +654,14 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuidList_) : avatarGuidList_;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @return The count of avatarGuidList.
        */
       public int getAvatarGuidListCount() {
         return avatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @param index The index of the element to return.
        * @return The avatarGuidList at the given index.
        */
@@ -552,7 +669,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
         return avatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuidList to set.
        * @return This builder for chaining.
@@ -565,7 +682,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @param value The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -576,7 +693,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @param values The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -589,7 +706,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 7;</code>
+       * <code>repeated uint64 avatarGuidList = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuidList() {
@@ -666,9 +783,12 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)DungeonCandidateTeamChangeAvatarReq.pr" +
-      "oto\"?\n#DungeonCandidateTeamChangeAvatarR" +
-      "eq\022\030\n\020avatar_guid_list\030\007 \003(\004B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "oto\"\237\001\n#DungeonCandidateTeamChangeAvatar" +
+      "Req\022\026\n\016avatarGuidList\030\005 \003(\004\"`\n\013MHOEJLKIP" +
+      "OE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\250\007\022\017\n\013DCDNIL" +
+      "FDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020" +
+      "\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

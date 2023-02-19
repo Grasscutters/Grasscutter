@@ -19,23 +19,12 @@ public final class HomeChooseModuleReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 module_id = 14;</code>
+     * <code>uint32 moduleId = 11;</code>
      * @return The moduleId.
      */
     int getModuleId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4456;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code HomeChooseModuleReq}
    */
   public static final class HomeChooseModuleReq extends
@@ -80,7 +69,7 @@ public final class HomeChooseModuleReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 88: {
 
               moduleId_ = input.readUInt32();
               break;
@@ -117,10 +106,149 @@ public final class HomeChooseModuleReqOuterClass {
               emu.grasscutter.net.proto.HomeChooseModuleReqOuterClass.HomeChooseModuleReq.class, emu.grasscutter.net.proto.HomeChooseModuleReqOuterClass.HomeChooseModuleReq.Builder.class);
     }
 
-    public static final int MODULE_ID_FIELD_NUMBER = 14;
+    /**
+     * Protobuf enum {@code HomeChooseModuleReq.MDMDIJDMFJI}
+     */
+    public enum MDMDIJDMFJI
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4654;</code>
+       */
+      PEPPOHPHJOJ(1, 4654),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final MDMDIJDMFJI DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final MDMDIJDMFJI EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4654;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4654;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MDMDIJDMFJI valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MDMDIJDMFJI forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4654: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MDMDIJDMFJI>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MDMDIJDMFJI> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MDMDIJDMFJI>() {
+              public MDMDIJDMFJI findValueByNumber(int number) {
+                return MDMDIJDMFJI.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.HomeChooseModuleReqOuterClass.HomeChooseModuleReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MDMDIJDMFJI[] VALUES = getStaticValuesArray();
+      private static MDMDIJDMFJI[] getStaticValuesArray() {
+        return new MDMDIJDMFJI[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static MDMDIJDMFJI valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private MDMDIJDMFJI(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:HomeChooseModuleReq.MDMDIJDMFJI)
+    }
+
+    public static final int MODULEID_FIELD_NUMBER = 11;
     private int moduleId_;
     /**
-     * <code>uint32 module_id = 14;</code>
+     * <code>uint32 moduleId = 11;</code>
      * @return The moduleId.
      */
     @java.lang.Override
@@ -143,7 +271,7 @@ public final class HomeChooseModuleReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (moduleId_ != 0) {
-        output.writeUInt32(14, moduleId_);
+        output.writeUInt32(11, moduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +284,7 @@ public final class HomeChooseModuleReqOuterClass {
       size = 0;
       if (moduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, moduleId_);
+          .computeUInt32Size(11, moduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +314,7 @@ public final class HomeChooseModuleReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + MODULEID_FIELD_NUMBER;
       hash = (53 * hash) + getModuleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -284,17 +412,6 @@ public final class HomeChooseModuleReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4456;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code HomeChooseModuleReq}
      */
     public static final class Builder extends
@@ -443,7 +560,7 @@ public final class HomeChooseModuleReqOuterClass {
 
       private int moduleId_ ;
       /**
-       * <code>uint32 module_id = 14;</code>
+       * <code>uint32 moduleId = 11;</code>
        * @return The moduleId.
        */
       @java.lang.Override
@@ -451,7 +568,7 @@ public final class HomeChooseModuleReqOuterClass {
         return moduleId_;
       }
       /**
-       * <code>uint32 module_id = 14;</code>
+       * <code>uint32 moduleId = 11;</code>
        * @param value The moduleId to set.
        * @return This builder for chaining.
        */
@@ -462,7 +579,7 @@ public final class HomeChooseModuleReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 module_id = 14;</code>
+       * <code>uint32 moduleId = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
@@ -538,9 +655,12 @@ public final class HomeChooseModuleReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031HomeChooseModuleReq.proto\"(\n\023HomeChoos" +
-      "eModuleReq\022\021\n\tmodule_id\030\016 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\031HomeChooseModuleReq.proto\"\211\001\n\023HomeChoo" +
+      "seModuleReq\022\020\n\010moduleId\030\013 \001(\r\"`\n\013MDMDIJD" +
+      "MFJI\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\256$\022\017\n\013DCDN" +
+      "ILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOC" +
+      "I\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,28 +19,18 @@ public final class DelBackupAvatarTeamRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 backup_avatar_team_id = 9;</code>
+     * <code>uint32 backupAvatarTeamId = 11;</code>
      * @return The backupAvatarTeamId.
      */
     int getBackupAvatarTeamId();
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 1666;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code DelBackupAvatarTeamRsp}
    */
   public static final class DelBackupAvatarTeamRsp extends
@@ -85,14 +75,14 @@ public final class DelBackupAvatarTeamRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
+            case 88: {
 
               backupAvatarTeamId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -127,10 +117,141 @@ public final class DelBackupAvatarTeamRspOuterClass {
               emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.class, emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.Builder.class);
     }
 
-    public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 9;
+    /**
+     * Protobuf enum {@code DelBackupAvatarTeamRsp.HMFPBAACAFA}
+     */
+    public enum HMFPBAACAFA
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 1756;</code>
+       */
+      PEPPOHPHJOJ(1, 1756),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final HMFPBAACAFA DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 1756;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 1756;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static HMFPBAACAFA valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static HMFPBAACAFA forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 1756: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<HMFPBAACAFA>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          HMFPBAACAFA> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<HMFPBAACAFA>() {
+              public HMFPBAACAFA findValueByNumber(int number) {
+                return HMFPBAACAFA.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final HMFPBAACAFA[] VALUES = getStaticValuesArray();
+      private static HMFPBAACAFA[] getStaticValuesArray() {
+        return new HMFPBAACAFA[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static HMFPBAACAFA valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private HMFPBAACAFA(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:DelBackupAvatarTeamRsp.HMFPBAACAFA)
+    }
+
+    public static final int BACKUPAVATARTEAMID_FIELD_NUMBER = 11;
     private int backupAvatarTeamId_;
     /**
-     * <code>uint32 backup_avatar_team_id = 9;</code>
+     * <code>uint32 backupAvatarTeamId = 11;</code>
      * @return The backupAvatarTeamId.
      */
     @java.lang.Override
@@ -138,10 +259,10 @@ public final class DelBackupAvatarTeamRspOuterClass {
       return backupAvatarTeamId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -163,11 +284,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
-      }
       if (backupAvatarTeamId_ != 0) {
-        output.writeUInt32(9, backupAvatarTeamId_);
+        output.writeUInt32(11, backupAvatarTeamId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,13 +299,13 @@ public final class DelBackupAvatarTeamRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
-      }
       if (backupAvatarTeamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, backupAvatarTeamId_);
+          .computeUInt32Size(11, backupAvatarTeamId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -216,7 +337,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + BACKUPAVATARTEAMID_FIELD_NUMBER;
       hash = (53 * hash) + getBackupAvatarTeamId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -316,16 +437,6 @@ public final class DelBackupAvatarTeamRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 1666;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code DelBackupAvatarTeamRsp}
      */
     public static final class Builder extends
@@ -480,7 +591,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
 
       private int backupAvatarTeamId_ ;
       /**
-       * <code>uint32 backup_avatar_team_id = 9;</code>
+       * <code>uint32 backupAvatarTeamId = 11;</code>
        * @return The backupAvatarTeamId.
        */
       @java.lang.Override
@@ -488,7 +599,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return backupAvatarTeamId_;
       }
       /**
-       * <code>uint32 backup_avatar_team_id = 9;</code>
+       * <code>uint32 backupAvatarTeamId = 11;</code>
        * @param value The backupAvatarTeamId to set.
        * @return This builder for chaining.
        */
@@ -499,7 +610,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 backup_avatar_team_id = 9;</code>
+       * <code>uint32 backupAvatarTeamId = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearBackupAvatarTeamId() {
@@ -511,7 +622,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -519,7 +630,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -530,7 +641,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -606,10 +717,12 @@ public final class DelBackupAvatarTeamRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034DelBackupAvatarTeamRsp.proto\"H\n\026DelBac" +
-      "kupAvatarTeamRsp\022\035\n\025backup_avatar_team_i" +
-      "d\030\t \001(\r\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\034DelBackupAvatarTeamRsp.proto\"\226\001\n\026DelBa" +
+      "ckupAvatarTeamRsp\022\032\n\022backupAvatarTeamId\030" +
+      "\013 \001(\r\022\017\n\007retcode\030\014 \001(\005\"O\n\013HMFPBAACAFA\022\010\n" +
+      "\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\334\r\022\017\n\013DCDNILFDFLB" +
+      "\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

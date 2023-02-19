@@ -19,46 +19,36 @@ public final class GetOpActivityInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> 
         getOpActivityInfoListList();
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo getOpActivityInfoList(int index);
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     int getOpActivityInfoListCount();
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder> 
         getOpActivityInfoListOrBuilderList();
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder getOpActivityInfoListOrBuilder(
         int index);
+
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 5130;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code GetOpActivityInfoRsp}
    */
   public static final class GetOpActivityInfoRsp extends
@@ -105,18 +95,18 @@ public final class GetOpActivityInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 66: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 opActivityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               opActivityInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -154,28 +144,148 @@ public final class GetOpActivityInfoRspOuterClass {
               emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp.class, emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
+     * Protobuf enum {@code GetOpActivityInfoRsp.DCNMEGHLADO}
      */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public enum DCNMEGHLADO
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 5155;</code>
+       */
+      PEPPOHPHJOJ(1, 5155),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final DCNMEGHLADO DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 5155;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 5155;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DCNMEGHLADO valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DCNMEGHLADO forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 5155: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DCNMEGHLADO>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DCNMEGHLADO> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DCNMEGHLADO>() {
+              public DCNMEGHLADO findValueByNumber(int number) {
+                return DCNMEGHLADO.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DCNMEGHLADO[] VALUES = getStaticValuesArray();
+      private static DCNMEGHLADO[] getStaticValuesArray() {
+        return new DCNMEGHLADO[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static DCNMEGHLADO valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private DCNMEGHLADO(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:GetOpActivityInfoRsp.DCNMEGHLADO)
     }
 
-    public static final int OP_ACTIVITY_INFO_LIST_FIELD_NUMBER = 8;
+    public static final int OPACTIVITYINFOLIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> opActivityInfoList_;
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> getOpActivityInfoListList() {
       return opActivityInfoList_;
     }
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder> 
@@ -183,26 +293,37 @@ public final class GetOpActivityInfoRspOuterClass {
       return opActivityInfoList_;
     }
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     @java.lang.Override
     public int getOpActivityInfoListCount() {
       return opActivityInfoList_.size();
     }
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo getOpActivityInfoList(int index) {
       return opActivityInfoList_.get(index);
     }
     /**
-     * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+     * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder getOpActivityInfoListOrBuilder(
         int index) {
       return opActivityInfoList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 14;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -219,11 +340,11 @@ public final class GetOpActivityInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
       for (int i = 0; i < opActivityInfoList_.size(); i++) {
-        output.writeMessage(8, opActivityInfoList_.get(i));
+        output.writeMessage(11, opActivityInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -234,13 +355,13 @@ public final class GetOpActivityInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
       for (int i = 0; i < opActivityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, opActivityInfoList_.get(i));
+          .computeMessageSize(11, opActivityInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -257,10 +378,10 @@ public final class GetOpActivityInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp other = (emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getOpActivityInfoListList()
           .equals(other.getOpActivityInfoListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,12 +393,12 @@ public final class GetOpActivityInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getOpActivityInfoListCount() > 0) {
-        hash = (37 * hash) + OP_ACTIVITY_INFO_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + OPACTIVITYINFOLIST_FIELD_NUMBER;
         hash = (53 * hash) + getOpActivityInfoListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,16 +495,6 @@ public final class GetOpActivityInfoRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 5130;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code GetOpActivityInfoRsp}
      */
     public static final class Builder extends
@@ -422,14 +533,14 @@ public final class GetOpActivityInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         if (opActivityInfoListBuilder_ == null) {
           opActivityInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           opActivityInfoListBuilder_.clear();
         }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -457,7 +568,6 @@ public final class GetOpActivityInfoRspOuterClass {
       public emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp buildPartial() {
         emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp result = new emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (opActivityInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             opActivityInfoList_ = java.util.Collections.unmodifiableList(opActivityInfoList_);
@@ -467,6 +577,7 @@ public final class GetOpActivityInfoRspOuterClass {
         } else {
           result.opActivityInfoList_ = opActivityInfoListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -515,9 +626,6 @@ public final class GetOpActivityInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp other) {
         if (other == emu.grasscutter.net.proto.GetOpActivityInfoRspOuterClass.GetOpActivityInfoRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (opActivityInfoListBuilder_ == null) {
           if (!other.opActivityInfoList_.isEmpty()) {
             if (opActivityInfoList_.isEmpty()) {
@@ -543,6 +651,9 @@ public final class GetOpActivityInfoRspOuterClass {
               opActivityInfoListBuilder_.addAllMessages(other.opActivityInfoList_);
             }
           }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -574,37 +685,6 @@ public final class GetOpActivityInfoRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> opActivityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureOpActivityInfoListIsMutable() {
@@ -618,7 +698,7 @@ public final class GetOpActivityInfoRspOuterClass {
           emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder> opActivityInfoListBuilder_;
 
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> getOpActivityInfoListList() {
         if (opActivityInfoListBuilder_ == null) {
@@ -628,7 +708,7 @@ public final class GetOpActivityInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public int getOpActivityInfoListCount() {
         if (opActivityInfoListBuilder_ == null) {
@@ -638,7 +718,7 @@ public final class GetOpActivityInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo getOpActivityInfoList(int index) {
         if (opActivityInfoListBuilder_ == null) {
@@ -648,7 +728,7 @@ public final class GetOpActivityInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder setOpActivityInfoList(
           int index, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo value) {
@@ -665,7 +745,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder setOpActivityInfoList(
           int index, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder builderForValue) {
@@ -679,7 +759,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder addOpActivityInfoList(emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo value) {
         if (opActivityInfoListBuilder_ == null) {
@@ -695,7 +775,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder addOpActivityInfoList(
           int index, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo value) {
@@ -712,7 +792,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder addOpActivityInfoList(
           emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder builderForValue) {
@@ -726,7 +806,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder addOpActivityInfoList(
           int index, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder builderForValue) {
@@ -740,7 +820,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder addAllOpActivityInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo> values) {
@@ -755,7 +835,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder clearOpActivityInfoList() {
         if (opActivityInfoListBuilder_ == null) {
@@ -768,7 +848,7 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public Builder removeOpActivityInfoList(int index) {
         if (opActivityInfoListBuilder_ == null) {
@@ -781,14 +861,14 @@ public final class GetOpActivityInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder getOpActivityInfoListBuilder(
           int index) {
         return getOpActivityInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder getOpActivityInfoListOrBuilder(
           int index) {
@@ -798,7 +878,7 @@ public final class GetOpActivityInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfoOrBuilder> 
            getOpActivityInfoListOrBuilderList() {
@@ -809,14 +889,14 @@ public final class GetOpActivityInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder addOpActivityInfoListBuilder() {
         return getOpActivityInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder addOpActivityInfoListBuilder(
           int index) {
@@ -824,7 +904,7 @@ public final class GetOpActivityInfoRspOuterClass {
             index, emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .OpActivityInfo op_activity_info_list = 8;</code>
+       * <code>repeated .OpActivityInfo opActivityInfoList = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OpActivityInfoOuterClass.OpActivityInfo.Builder> 
            getOpActivityInfoListBuilderList() {
@@ -843,6 +923,37 @@ public final class GetOpActivityInfoRspOuterClass {
           opActivityInfoList_ = null;
         }
         return opActivityInfoListBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -912,10 +1023,12 @@ public final class GetOpActivityInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032GetOpActivityInfoRsp.proto\032\024OpActivity" +
-      "Info.proto\"W\n\024GetOpActivityInfoRsp\022\017\n\007re" +
-      "tcode\030\006 \001(\005\022.\n\025op_activity_info_list\030\010 \003" +
-      "(\0132\017.OpActivityInfoB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "Info.proto\"\245\001\n\024GetOpActivityInfoRsp\022+\n\022o" +
+      "pActivityInfoList\030\013 \003(\0132\017.OpActivityInfo" +
+      "\022\017\n\007retcode\030\016 \001(\005\"O\n\013DCNMEGHLADO\022\010\n\004NONE" +
+      "\020\000\022\020\n\013PEPPOHPHJOJ\020\243(\022\017\n\013DCDNILFDFLB\020\000\022\017\n" +
+      "\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -927,7 +1040,7 @@ public final class GetOpActivityInfoRspOuterClass {
     internal_static_GetOpActivityInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetOpActivityInfoRsp_descriptor,
-        new java.lang.String[] { "Retcode", "OpActivityInfoList", });
+        new java.lang.String[] { "OpActivityInfoList", "Retcode", });
     emu.grasscutter.net.proto.OpActivityInfoOuterClass.getDescriptor();
   }
 

@@ -19,48 +19,38 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.GalleryStopReason reason = 7;</code>
-     * @return The enum numeric value on the wire for reason.
-     */
-    int getReasonValue();
-    /**
-     * <code>.GalleryStopReason reason = 7;</code>
-     * @return The reason.
-     */
-    emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason();
-
-    /**
-     * <code>uint32 gallery_id = 13;</code>
+     * <code>uint32 galleryId = 2;</code>
      * @return The galleryId.
      */
     int getGalleryId();
 
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.GalleryStopReason reason = 9;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+    /**
+     * <code>.GalleryStopReason reason = 9;</code>
+     * @return The reason.
+     */
+    emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason();
+
+    /**
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      * @return Whether the record field is set.
      */
     boolean hasRecord();
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      * @return The record.
      */
     emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord getRecord();
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      */
     emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder getRecordOrBuilder();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4723;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code HomeSeekFurnitureGalleryScoreNotify}
    */
   public static final class HomeSeekFurnitureGalleryScoreNotify extends
@@ -106,7 +96,12 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 16: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
               emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder subBuilder = null;
               if (record_ != null) {
                 subBuilder = record_.toBuilder();
@@ -119,15 +114,10 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
               break;
             }
-            case 56: {
+            case 72: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
-              break;
-            }
-            case 104: {
-
-              galleryId_ = input.readUInt32();
               break;
             }
             default: {
@@ -162,17 +152,159 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
               emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify.class, emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify.Builder.class);
     }
 
-    public static final int REASON_FIELD_NUMBER = 7;
+    /**
+     * Protobuf enum {@code HomeSeekFurnitureGalleryScoreNotify.JJLGLAIDDAN}
+     */
+    public enum JJLGLAIDDAN
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4612;</code>
+       */
+      PEPPOHPHJOJ(1, 4612),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final JJLGLAIDDAN DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4612;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4612;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static JJLGLAIDDAN valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static JJLGLAIDDAN forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4612: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<JJLGLAIDDAN>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          JJLGLAIDDAN> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<JJLGLAIDDAN>() {
+              public JJLGLAIDDAN findValueByNumber(int number) {
+                return JJLGLAIDDAN.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final JJLGLAIDDAN[] VALUES = getStaticValuesArray();
+      private static JJLGLAIDDAN[] getStaticValuesArray() {
+        return new JJLGLAIDDAN[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static JJLGLAIDDAN valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private JJLGLAIDDAN(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:HomeSeekFurnitureGalleryScoreNotify.JJLGLAIDDAN)
+    }
+
+    public static final int GALLERYID_FIELD_NUMBER = 2;
+    private int galleryId_;
+    /**
+     * <code>uint32 galleryId = 2;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
+    }
+
+    public static final int REASON_FIELD_NUMBER = 9;
     private int reason_;
     /**
-     * <code>.GalleryStopReason reason = 7;</code>
+     * <code>.GalleryStopReason reason = 9;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.GalleryStopReason reason = 7;</code>
+     * <code>.GalleryStopReason reason = 9;</code>
      * @return The reason.
      */
     @java.lang.Override public emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
@@ -181,21 +313,10 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 13;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 13;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
-    public static final int RECORD_FIELD_NUMBER = 2;
+    public static final int RECORD_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord record_;
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      * @return Whether the record field is set.
      */
     @java.lang.Override
@@ -203,7 +324,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       return record_ != null;
     }
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      * @return The record.
      */
     @java.lang.Override
@@ -211,7 +332,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       return record_ == null ? emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.getDefaultInstance() : record_;
     }
     /**
-     * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+     * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder getRecordOrBuilder() {
@@ -232,14 +353,14 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (galleryId_ != 0) {
+        output.writeUInt32(2, galleryId_);
+      }
       if (record_ != null) {
-        output.writeMessage(2, getRecord());
+        output.writeMessage(7, getRecord());
       }
       if (reason_ != emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
-        output.writeEnum(7, reason_);
-      }
-      if (galleryId_ != 0) {
-        output.writeUInt32(13, galleryId_);
+        output.writeEnum(9, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -250,17 +371,17 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (galleryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, galleryId_);
+      }
       if (record_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRecord());
+          .computeMessageSize(7, getRecord());
       }
       if (reason_ != emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, reason_);
-      }
-      if (galleryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, galleryId_);
+          .computeEnumSize(9, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -277,9 +398,9 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       }
       emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify other = (emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify) obj;
 
-      if (reason_ != other.reason_) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
+      if (reason_ != other.reason_) return false;
       if (hasRecord() != other.hasRecord()) return false;
       if (hasRecord()) {
         if (!getRecord()
@@ -296,10 +417,10 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GALLERYID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       if (hasRecord()) {
         hash = (37 * hash) + RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getRecord().hashCode();
@@ -400,16 +521,6 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4723;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code HomeSeekFurnitureGalleryScoreNotify}
      */
     public static final class Builder extends
@@ -447,9 +558,9 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        reason_ = 0;
-
         galleryId_ = 0;
+
+        reason_ = 0;
 
         if (recordBuilder_ == null) {
           record_ = null;
@@ -483,8 +594,8 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify buildPartial() {
         emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify result = new emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify(this);
-        result.reason_ = reason_;
         result.galleryId_ = galleryId_;
+        result.reason_ = reason_;
         if (recordBuilder_ == null) {
           result.record_ = record_;
         } else {
@@ -538,11 +649,11 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify other) {
         if (other == emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotify.getDefaultInstance()) return this;
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
-        }
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
+        }
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
         }
         if (other.hasRecord()) {
           mergeRecord(other.getRecord());
@@ -576,16 +687,47 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
 
+      private int galleryId_ ;
+      /**
+       * <code>uint32 galleryId = 2;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 galleryId = 2;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 galleryId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int reason_ = 0;
       /**
-       * <code>.GalleryStopReason reason = 7;</code>
+       * <code>.GalleryStopReason reason = 9;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.GalleryStopReason reason = 7;</code>
+       * <code>.GalleryStopReason reason = 9;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -596,7 +738,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GalleryStopReason reason = 7;</code>
+       * <code>.GalleryStopReason reason = 9;</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -606,7 +748,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.GalleryStopReason reason = 7;</code>
+       * <code>.GalleryStopReason reason = 9;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
@@ -620,7 +762,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GalleryStopReason reason = 7;</code>
+       * <code>.GalleryStopReason reason = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
@@ -630,49 +772,18 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
 
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 13;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 13;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord record_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord, emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder, emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder> recordBuilder_;
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        * @return Whether the record field is set.
        */
       public boolean hasRecord() {
         return recordBuilder_ != null || record_ != null;
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        * @return The record.
        */
       public emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord getRecord() {
@@ -683,7 +794,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         }
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public Builder setRecord(emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord value) {
         if (recordBuilder_ == null) {
@@ -699,7 +810,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public Builder setRecord(
           emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder builderForValue) {
@@ -713,7 +824,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public Builder mergeRecord(emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord value) {
         if (recordBuilder_ == null) {
@@ -731,7 +842,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public Builder clearRecord() {
         if (recordBuilder_ == null) {
@@ -745,7 +856,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder getRecordBuilder() {
         
@@ -753,7 +864,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         return getRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder getRecordOrBuilder() {
         if (recordBuilder_ != null) {
@@ -764,7 +875,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         }
       }
       /**
-       * <code>.HomeSeekFurnitureOneRecord record = 2;</code>
+       * <code>.HomeSeekFurnitureOneRecord record = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord, emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder, emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder> 
@@ -848,11 +959,13 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)HomeSeekFurnitureGalleryScoreNotify.pr" +
       "oto\032\027GalleryStopReason.proto\032 HomeSeekFu" +
-      "rnitureOneRecord.proto\"\212\001\n#HomeSeekFurni" +
-      "tureGalleryScoreNotify\022\"\n\006reason\030\007 \001(\0162\022" +
-      ".GalleryStopReason\022\022\n\ngallery_id\030\r \001(\r\022+" +
-      "\n\006record\030\002 \001(\0132\033.HomeSeekFurnitureOneRec" +
-      "ordB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "rnitureOneRecord.proto\"\332\001\n#HomeSeekFurni" +
+      "tureGalleryScoreNotify\022\021\n\tgalleryId\030\002 \001(" +
+      "\r\022\"\n\006reason\030\t \001(\0162\022.GalleryStopReason\022+\n" +
+      "\006record\030\007 \001(\0132\033.HomeSeekFurnitureOneReco" +
+      "rd\"O\n\013JJLGLAIDDAN\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJ" +
+      "OJ\020\204$\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032" +
+      "\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -865,7 +978,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
     internal_static_HomeSeekFurnitureGalleryScoreNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeSeekFurnitureGalleryScoreNotify_descriptor,
-        new java.lang.String[] { "Reason", "GalleryId", "Record", });
+        new java.lang.String[] { "GalleryId", "Reason", "Record", });
     emu.grasscutter.net.proto.GalleryStopReasonOuterClass.getDescriptor();
     emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.getDescriptor();
   }

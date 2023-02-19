@@ -19,29 +19,18 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 watcher_id = 14;</code>
-     * @return The watcherId.
-     */
-    int getWatcherId();
-
-    /**
-     * <code>uint32 activity_id = 4;</code>
+     * <code>uint32 activityId = 11;</code>
      * @return The activityId.
      */
     int getActivityId();
+
+    /**
+     * <code>uint32 watcherId = 6;</code>
+     * @return The watcherId.
+     */
+    int getWatcherId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2073;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code ActivityTakeWatcherRewardReq}
    */
   public static final class ActivityTakeWatcherRewardReq extends
@@ -86,14 +75,14 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 48: {
 
               watcherId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              activityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,26 +117,165 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
               emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.class, emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.Builder.class);
     }
 
-    public static final int WATCHER_ID_FIELD_NUMBER = 14;
-    private int watcherId_;
     /**
-     * <code>uint32 watcher_id = 14;</code>
-     * @return The watcherId.
+     * Protobuf enum {@code ActivityTakeWatcherRewardReq.PHOMHFCNABE}
      */
-    @java.lang.Override
-    public int getWatcherId() {
-      return watcherId_;
+    public enum PHOMHFCNABE
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 2124;</code>
+       */
+      PEPPOHPHJOJ(1, 2124),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final PHOMHFCNABE DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final PHOMHFCNABE EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 2124;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 2124;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PHOMHFCNABE valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PHOMHFCNABE forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 2124: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PHOMHFCNABE>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PHOMHFCNABE> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PHOMHFCNABE>() {
+              public PHOMHFCNABE findValueByNumber(int number) {
+                return PHOMHFCNABE.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PHOMHFCNABE[] VALUES = getStaticValuesArray();
+      private static PHOMHFCNABE[] getStaticValuesArray() {
+        return new PHOMHFCNABE[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static PHOMHFCNABE valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private PHOMHFCNABE(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ActivityTakeWatcherRewardReq.PHOMHFCNABE)
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 4;
+    public static final int ACTIVITYID_FIELD_NUMBER = 11;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 4;</code>
+     * <code>uint32 activityId = 11;</code>
      * @return The activityId.
      */
     @java.lang.Override
     public int getActivityId() {
       return activityId_;
+    }
+
+    public static final int WATCHERID_FIELD_NUMBER = 6;
+    private int watcherId_;
+    /**
+     * <code>uint32 watcherId = 6;</code>
+     * @return The watcherId.
+     */
+    @java.lang.Override
+    public int getWatcherId() {
+      return watcherId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -164,11 +292,11 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (activityId_ != 0) {
-        output.writeUInt32(4, activityId_);
-      }
       if (watcherId_ != 0) {
-        output.writeUInt32(14, watcherId_);
+        output.writeUInt32(6, watcherId_);
+      }
+      if (activityId_ != 0) {
+        output.writeUInt32(11, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,13 +307,13 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, activityId_);
-      }
       if (watcherId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, watcherId_);
+          .computeUInt32Size(6, watcherId_);
+      }
+      if (activityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -202,10 +330,10 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       }
       emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq other = (emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq) obj;
 
-      if (getWatcherId()
-          != other.getWatcherId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
+      if (getWatcherId()
+          != other.getWatcherId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -217,10 +345,10 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WATCHER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getWatcherId();
-      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+      hash = (37 * hash) + ACTIVITYID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
+      hash = (37 * hash) + WATCHERID_FIELD_NUMBER;
+      hash = (53 * hash) + getWatcherId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -317,17 +445,6 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2073;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code ActivityTakeWatcherRewardReq}
      */
     public static final class Builder extends
@@ -365,9 +482,9 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        watcherId_ = 0;
-
         activityId_ = 0;
+
+        watcherId_ = 0;
 
         return this;
       }
@@ -395,8 +512,8 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq buildPartial() {
         emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq result = new emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq(this);
-        result.watcherId_ = watcherId_;
         result.activityId_ = activityId_;
+        result.watcherId_ = watcherId_;
         onBuilt();
         return result;
       }
@@ -445,11 +562,11 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq other) {
         if (other == emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.getDefaultInstance()) return this;
-        if (other.getWatcherId() != 0) {
-          setWatcherId(other.getWatcherId());
-        }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
+        }
+        if (other.getWatcherId() != 0) {
+          setWatcherId(other.getWatcherId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -480,40 +597,9 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return this;
       }
 
-      private int watcherId_ ;
-      /**
-       * <code>uint32 watcher_id = 14;</code>
-       * @return The watcherId.
-       */
-      @java.lang.Override
-      public int getWatcherId() {
-        return watcherId_;
-      }
-      /**
-       * <code>uint32 watcher_id = 14;</code>
-       * @param value The watcherId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWatcherId(int value) {
-        
-        watcherId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 watcher_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWatcherId() {
-        
-        watcherId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activityId = 11;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -521,7 +607,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activityId = 11;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -532,12 +618,43 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activityId = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
         
         activityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int watcherId_ ;
+      /**
+       * <code>uint32 watcherId = 6;</code>
+       * @return The watcherId.
+       */
+      @java.lang.Override
+      public int getWatcherId() {
+        return watcherId_;
+      }
+      /**
+       * <code>uint32 watcherId = 6;</code>
+       * @param value The watcherId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWatcherId(int value) {
+        
+        watcherId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 watcherId = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWatcherId() {
+        
+        watcherId_ = 0;
         onChanged();
         return this;
       }
@@ -608,10 +725,13 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"ActivityTakeWatcherRewardReq.proto\"G\n\034" +
-      "ActivityTakeWatcherRewardReq\022\022\n\nwatcher_" +
-      "id\030\016 \001(\r\022\023\n\013activity_id\030\004 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\"ActivityTakeWatcherRewardReq.proto\"\247\001\n" +
+      "\034ActivityTakeWatcherRewardReq\022\022\n\nactivit" +
+      "yId\030\013 \001(\r\022\021\n\twatcherId\030\006 \001(\r\"`\n\013PHOMHFCN" +
+      "ABE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\314\020\022\017\n\013DCDNI" +
+      "LFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI" +
+      "\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -622,7 +742,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     internal_static_ActivityTakeWatcherRewardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityTakeWatcherRewardReq_descriptor,
-        new java.lang.String[] { "WatcherId", "ActivityId", });
+        new java.lang.String[] { "ActivityId", "WatcherId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,23 +19,12 @@ public final class WeaponPromoteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 target_weapon_guid = 14;</code>
+     * <code>uint64 targetWeaponGuid = 3;</code>
      * @return The targetWeaponGuid.
      */
     long getTargetWeaponGuid();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 637;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code WeaponPromoteReq}
    */
   public static final class WeaponPromoteReq extends
@@ -80,7 +69,7 @@ public final class WeaponPromoteReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 24: {
 
               targetWeaponGuid_ = input.readUInt64();
               break;
@@ -117,10 +106,149 @@ public final class WeaponPromoteReqOuterClass {
               emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.class, emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.Builder.class);
     }
 
-    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 14;
+    /**
+     * Protobuf enum {@code WeaponPromoteReq.PIFLIBOCGJG}
+     */
+    public enum PIFLIBOCGJG
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 692;</code>
+       */
+      PEPPOHPHJOJ(1, 692),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final PIFLIBOCGJG DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final PIFLIBOCGJG EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 692;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 692;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PIFLIBOCGJG valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PIFLIBOCGJG forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 692: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PIFLIBOCGJG>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PIFLIBOCGJG> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PIFLIBOCGJG>() {
+              public PIFLIBOCGJG findValueByNumber(int number) {
+                return PIFLIBOCGJG.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PIFLIBOCGJG[] VALUES = getStaticValuesArray();
+      private static PIFLIBOCGJG[] getStaticValuesArray() {
+        return new PIFLIBOCGJG[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static PIFLIBOCGJG valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private PIFLIBOCGJG(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:WeaponPromoteReq.PIFLIBOCGJG)
+    }
+
+    public static final int TARGETWEAPONGUID_FIELD_NUMBER = 3;
     private long targetWeaponGuid_;
     /**
-     * <code>uint64 target_weapon_guid = 14;</code>
+     * <code>uint64 targetWeaponGuid = 3;</code>
      * @return The targetWeaponGuid.
      */
     @java.lang.Override
@@ -143,7 +271,7 @@ public final class WeaponPromoteReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetWeaponGuid_ != 0L) {
-        output.writeUInt64(14, targetWeaponGuid_);
+        output.writeUInt64(3, targetWeaponGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +284,7 @@ public final class WeaponPromoteReqOuterClass {
       size = 0;
       if (targetWeaponGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, targetWeaponGuid_);
+          .computeUInt64Size(3, targetWeaponGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,7 +314,7 @@ public final class WeaponPromoteReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_WEAPON_GUID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETWEAPONGUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetWeaponGuid());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -285,17 +413,6 @@ public final class WeaponPromoteReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 637;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code WeaponPromoteReq}
      */
     public static final class Builder extends
@@ -444,7 +561,7 @@ public final class WeaponPromoteReqOuterClass {
 
       private long targetWeaponGuid_ ;
       /**
-       * <code>uint64 target_weapon_guid = 14;</code>
+       * <code>uint64 targetWeaponGuid = 3;</code>
        * @return The targetWeaponGuid.
        */
       @java.lang.Override
@@ -452,7 +569,7 @@ public final class WeaponPromoteReqOuterClass {
         return targetWeaponGuid_;
       }
       /**
-       * <code>uint64 target_weapon_guid = 14;</code>
+       * <code>uint64 targetWeaponGuid = 3;</code>
        * @param value The targetWeaponGuid to set.
        * @return This builder for chaining.
        */
@@ -463,7 +580,7 @@ public final class WeaponPromoteReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 target_weapon_guid = 14;</code>
+       * <code>uint64 targetWeaponGuid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetWeaponGuid() {
@@ -539,9 +656,12 @@ public final class WeaponPromoteReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026WeaponPromoteReq.proto\".\n\020WeaponPromot" +
-      "eReq\022\032\n\022target_weapon_guid\030\016 \001(\004B\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "\n\026WeaponPromoteReq.proto\"\216\001\n\020WeaponPromo" +
+      "teReq\022\030\n\020targetWeaponGuid\030\003 \001(\004\"`\n\013PIFLI" +
+      "BOCGJG\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\264\005\022\017\n\013DC" +
+      "DNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGA" +
+      "OCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

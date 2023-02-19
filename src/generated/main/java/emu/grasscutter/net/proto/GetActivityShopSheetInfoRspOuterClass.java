@@ -19,52 +19,42 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 shop_type = 15;</code>
+     * <code>uint32 shopType = 7;</code>
      * @return The shopType.
      */
     int getShopType();
 
     /**
-     * <code>int32 retcode = 7;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo> 
         getSheetInfoListList();
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo getSheetInfoList(int index);
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     int getSheetInfoListCount();
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder> 
         getSheetInfoListOrBuilderList();
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder getSheetInfoListOrBuilder(
         int index);
+
+    /**
+     * <code>int32 retcode = 5;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 747;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code GetActivityShopSheetInfoRsp}
    */
   public static final class GetActivityShopSheetInfoRsp extends
@@ -111,23 +101,23 @@ public final class GetActivityShopSheetInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 40: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              shopType_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sheetInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               sheetInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              shopType_ = input.readUInt32();
               break;
             }
             default: {
@@ -165,10 +155,141 @@ public final class GetActivityShopSheetInfoRspOuterClass {
               emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp.class, emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp.Builder.class);
     }
 
-    public static final int SHOP_TYPE_FIELD_NUMBER = 15;
+    /**
+     * Protobuf enum {@code GetActivityShopSheetInfoRsp.DAPGPAJCIME}
+     */
+    public enum DAPGPAJCIME
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 770;</code>
+       */
+      PEPPOHPHJOJ(1, 770),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final DAPGPAJCIME DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 770;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 770;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DAPGPAJCIME valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DAPGPAJCIME forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 770: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DAPGPAJCIME>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DAPGPAJCIME> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DAPGPAJCIME>() {
+              public DAPGPAJCIME findValueByNumber(int number) {
+                return DAPGPAJCIME.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DAPGPAJCIME[] VALUES = getStaticValuesArray();
+      private static DAPGPAJCIME[] getStaticValuesArray() {
+        return new DAPGPAJCIME[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static DAPGPAJCIME valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private DAPGPAJCIME(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:GetActivityShopSheetInfoRsp.DAPGPAJCIME)
+    }
+
+    public static final int SHOPTYPE_FIELD_NUMBER = 7;
     private int shopType_;
     /**
-     * <code>uint32 shop_type = 15;</code>
+     * <code>uint32 shopType = 7;</code>
      * @return The shopType.
      */
     @java.lang.Override
@@ -176,28 +297,17 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       return shopType_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 7;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SHEET_INFO_LIST_FIELD_NUMBER = 4;
+    public static final int SHEETINFOLIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo> sheetInfoList_;
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo> getSheetInfoListList() {
       return sheetInfoList_;
     }
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder> 
@@ -205,26 +315,37 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       return sheetInfoList_;
     }
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     @java.lang.Override
     public int getSheetInfoListCount() {
       return sheetInfoList_.size();
     }
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo getSheetInfoList(int index) {
       return sheetInfoList_.get(index);
     }
     /**
-     * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+     * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder getSheetInfoListOrBuilder(
         int index) {
       return sheetInfoList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 5;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 5;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,14 +362,14 @@ public final class GetActivityShopSheetInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < sheetInfoList_.size(); i++) {
-        output.writeMessage(4, sheetInfoList_.get(i));
-      }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (shopType_ != 0) {
-        output.writeUInt32(15, shopType_);
+        output.writeUInt32(7, shopType_);
+      }
+      for (int i = 0; i < sheetInfoList_.size(); i++) {
+        output.writeMessage(10, sheetInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -259,17 +380,17 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < sheetInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, sheetInfoList_.get(i));
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, shopType_);
+          .computeUInt32Size(7, shopType_);
+      }
+      for (int i = 0; i < sheetInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, sheetInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -288,10 +409,10 @@ public final class GetActivityShopSheetInfoRspOuterClass {
 
       if (getShopType()
           != other.getShopType()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getSheetInfoListList()
           .equals(other.getSheetInfoListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -303,14 +424,14 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + SHOPTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getShopType();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getSheetInfoListCount() > 0) {
-        hash = (37 * hash) + SHEET_INFO_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + SHEETINFOLIST_FIELD_NUMBER;
         hash = (53 * hash) + getSheetInfoListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -407,16 +528,6 @@ public final class GetActivityShopSheetInfoRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 747;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code GetActivityShopSheetInfoRsp}
      */
     public static final class Builder extends
@@ -457,14 +568,14 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         super.clear();
         shopType_ = 0;
 
-        retcode_ = 0;
-
         if (sheetInfoListBuilder_ == null) {
           sheetInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           sheetInfoListBuilder_.clear();
         }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -493,7 +604,6 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp result = new emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp(this);
         int from_bitField0_ = bitField0_;
         result.shopType_ = shopType_;
-        result.retcode_ = retcode_;
         if (sheetInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             sheetInfoList_ = java.util.Collections.unmodifiableList(sheetInfoList_);
@@ -503,6 +613,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         } else {
           result.sheetInfoList_ = sheetInfoListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -554,9 +665,6 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         if (other.getShopType() != 0) {
           setShopType(other.getShopType());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (sheetInfoListBuilder_ == null) {
           if (!other.sheetInfoList_.isEmpty()) {
             if (sheetInfoList_.isEmpty()) {
@@ -582,6 +690,9 @@ public final class GetActivityShopSheetInfoRspOuterClass {
               sheetInfoListBuilder_.addAllMessages(other.sheetInfoList_);
             }
           }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -615,7 +726,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
 
       private int shopType_ ;
       /**
-       * <code>uint32 shop_type = 15;</code>
+       * <code>uint32 shopType = 7;</code>
        * @return The shopType.
        */
       @java.lang.Override
@@ -623,7 +734,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return shopType_;
       }
       /**
-       * <code>uint32 shop_type = 15;</code>
+       * <code>uint32 shopType = 7;</code>
        * @param value The shopType to set.
        * @return This builder for chaining.
        */
@@ -634,43 +745,12 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 shop_type = 15;</code>
+       * <code>uint32 shopType = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
         
         shopType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -688,7 +768,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
           emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder> sheetInfoListBuilder_;
 
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo> getSheetInfoListList() {
         if (sheetInfoListBuilder_ == null) {
@@ -698,7 +778,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public int getSheetInfoListCount() {
         if (sheetInfoListBuilder_ == null) {
@@ -708,7 +788,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo getSheetInfoList(int index) {
         if (sheetInfoListBuilder_ == null) {
@@ -718,7 +798,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder setSheetInfoList(
           int index, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo value) {
@@ -735,7 +815,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder setSheetInfoList(
           int index, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder builderForValue) {
@@ -749,7 +829,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder addSheetInfoList(emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo value) {
         if (sheetInfoListBuilder_ == null) {
@@ -765,7 +845,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder addSheetInfoList(
           int index, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo value) {
@@ -782,7 +862,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder addSheetInfoList(
           emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder builderForValue) {
@@ -796,7 +876,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder addSheetInfoList(
           int index, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder builderForValue) {
@@ -810,7 +890,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder addAllSheetInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo> values) {
@@ -825,7 +905,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder clearSheetInfoList() {
         if (sheetInfoListBuilder_ == null) {
@@ -838,7 +918,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public Builder removeSheetInfoList(int index) {
         if (sheetInfoListBuilder_ == null) {
@@ -851,14 +931,14 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder getSheetInfoListBuilder(
           int index) {
         return getSheetInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder getSheetInfoListOrBuilder(
           int index) {
@@ -868,7 +948,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfoOrBuilder> 
            getSheetInfoListOrBuilderList() {
@@ -879,14 +959,14 @@ public final class GetActivityShopSheetInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder addSheetInfoListBuilder() {
         return getSheetInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder addSheetInfoListBuilder(
           int index) {
@@ -894,7 +974,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
             index, emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ActivityShopSheetInfo sheet_info_list = 4;</code>
+       * <code>repeated .ActivityShopSheetInfo sheetInfoList = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo.Builder> 
            getSheetInfoListBuilderList() {
@@ -913,6 +993,37 @@ public final class GetActivityShopSheetInfoRspOuterClass {
           sheetInfoList_ = null;
         }
         return sheetInfoListBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -982,11 +1093,13 @@ public final class GetActivityShopSheetInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!GetActivityShopSheetInfoRsp.proto\032\033Act" +
-      "ivityShopSheetInfo.proto\"r\n\033GetActivityS" +
-      "hopSheetInfoRsp\022\021\n\tshop_type\030\017 \001(\r\022\017\n\007re" +
-      "tcode\030\007 \001(\005\022/\n\017sheet_info_list\030\004 \003(\0132\026.A" +
-      "ctivityShopSheetInfoB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "ivityShopSheetInfo.proto\"\300\001\n\033GetActivity" +
+      "ShopSheetInfoRsp\022\020\n\010shopType\030\007 \001(\r\022-\n\rsh" +
+      "eetInfoList\030\n \003(\0132\026.ActivityShopSheetInf" +
+      "o\022\017\n\007retcode\030\005 \001(\005\"O\n\013DAPGPAJCIME\022\010\n\004NON" +
+      "E\020\000\022\020\n\013PEPPOHPHJOJ\020\202\006\022\017\n\013DCDNILFDFLB\020\000\022\017" +
+      "\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -998,7 +1111,7 @@ public final class GetActivityShopSheetInfoRspOuterClass {
     internal_static_GetActivityShopSheetInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetActivityShopSheetInfoRsp_descriptor,
-        new java.lang.String[] { "ShopType", "Retcode", "SheetInfoList", });
+        new java.lang.String[] { "ShopType", "SheetInfoList", "Retcode", });
     emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.getDescriptor();
   }
 

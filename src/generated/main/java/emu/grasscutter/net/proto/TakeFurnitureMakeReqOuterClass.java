@@ -19,35 +19,24 @@ public final class TakeFurnitureMakeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 index = 12;</code>
+     * <code>uint32 index = 6;</code>
      * @return The index.
      */
     int getIndex();
 
     /**
-     * <code>bool is_fast_finish = 2;</code>
+     * <code>bool isFastFinish = 15;</code>
      * @return The isFastFinish.
      */
     boolean getIsFastFinish();
 
     /**
-     * <code>uint32 make_id = 7;</code>
+     * <code>uint32 makeId = 9;</code>
      * @return The makeId.
      */
     int getMakeId();
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4506;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code TakeFurnitureMakeReq}
    */
   public static final class TakeFurnitureMakeReq extends
@@ -92,19 +81,19 @@ public final class TakeFurnitureMakeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
-              isFastFinish_ = input.readBool();
+              index_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 72: {
 
               makeId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 120: {
 
-              index_ = input.readUInt32();
+              isFastFinish_ = input.readBool();
               break;
             }
             default: {
@@ -139,10 +128,149 @@ public final class TakeFurnitureMakeReqOuterClass {
               emu.grasscutter.net.proto.TakeFurnitureMakeReqOuterClass.TakeFurnitureMakeReq.class, emu.grasscutter.net.proto.TakeFurnitureMakeReqOuterClass.TakeFurnitureMakeReq.Builder.class);
     }
 
-    public static final int INDEX_FIELD_NUMBER = 12;
+    /**
+     * Protobuf enum {@code TakeFurnitureMakeReq.JMDDKPFHPPA}
+     */
+    public enum JMDDKPFHPPA
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 4825;</code>
+       */
+      PEPPOHPHJOJ(1, 4825),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final JMDDKPFHPPA DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final JMDDKPFHPPA EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 4825;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 4825;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static JMDDKPFHPPA valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static JMDDKPFHPPA forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 4825: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<JMDDKPFHPPA>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          JMDDKPFHPPA> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<JMDDKPFHPPA>() {
+              public JMDDKPFHPPA findValueByNumber(int number) {
+                return JMDDKPFHPPA.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TakeFurnitureMakeReqOuterClass.TakeFurnitureMakeReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final JMDDKPFHPPA[] VALUES = getStaticValuesArray();
+      private static JMDDKPFHPPA[] getStaticValuesArray() {
+        return new JMDDKPFHPPA[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static JMDDKPFHPPA valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private JMDDKPFHPPA(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TakeFurnitureMakeReq.JMDDKPFHPPA)
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 6;
     private int index_;
     /**
-     * <code>uint32 index = 12;</code>
+     * <code>uint32 index = 6;</code>
      * @return The index.
      */
     @java.lang.Override
@@ -150,10 +278,10 @@ public final class TakeFurnitureMakeReqOuterClass {
       return index_;
     }
 
-    public static final int IS_FAST_FINISH_FIELD_NUMBER = 2;
+    public static final int ISFASTFINISH_FIELD_NUMBER = 15;
     private boolean isFastFinish_;
     /**
-     * <code>bool is_fast_finish = 2;</code>
+     * <code>bool isFastFinish = 15;</code>
      * @return The isFastFinish.
      */
     @java.lang.Override
@@ -161,10 +289,10 @@ public final class TakeFurnitureMakeReqOuterClass {
       return isFastFinish_;
     }
 
-    public static final int MAKE_ID_FIELD_NUMBER = 7;
+    public static final int MAKEID_FIELD_NUMBER = 9;
     private int makeId_;
     /**
-     * <code>uint32 make_id = 7;</code>
+     * <code>uint32 makeId = 9;</code>
      * @return The makeId.
      */
     @java.lang.Override
@@ -186,14 +314,14 @@ public final class TakeFurnitureMakeReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFastFinish_ != false) {
-        output.writeBool(2, isFastFinish_);
+      if (index_ != 0) {
+        output.writeUInt32(6, index_);
       }
       if (makeId_ != 0) {
-        output.writeUInt32(7, makeId_);
+        output.writeUInt32(9, makeId_);
       }
-      if (index_ != 0) {
-        output.writeUInt32(12, index_);
+      if (isFastFinish_ != false) {
+        output.writeBool(15, isFastFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -204,17 +332,17 @@ public final class TakeFurnitureMakeReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFastFinish_ != false) {
+      if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFastFinish_);
+          .computeUInt32Size(6, index_);
       }
       if (makeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, makeId_);
+          .computeUInt32Size(9, makeId_);
       }
-      if (index_ != 0) {
+      if (isFastFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, index_);
+          .computeBoolSize(15, isFastFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -250,10 +378,10 @@ public final class TakeFurnitureMakeReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (37 * hash) + IS_FAST_FINISH_FIELD_NUMBER;
+      hash = (37 * hash) + ISFASTFINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFastFinish());
-      hash = (37 * hash) + MAKE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + MAKEID_FIELD_NUMBER;
       hash = (53 * hash) + getMakeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -351,17 +479,6 @@ public final class TakeFurnitureMakeReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4506;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code TakeFurnitureMakeReq}
      */
     public static final class Builder extends
@@ -522,7 +639,7 @@ public final class TakeFurnitureMakeReqOuterClass {
 
       private int index_ ;
       /**
-       * <code>uint32 index = 12;</code>
+       * <code>uint32 index = 6;</code>
        * @return The index.
        */
       @java.lang.Override
@@ -530,7 +647,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return index_;
       }
       /**
-       * <code>uint32 index = 12;</code>
+       * <code>uint32 index = 6;</code>
        * @param value The index to set.
        * @return This builder for chaining.
        */
@@ -541,7 +658,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 index = 12;</code>
+       * <code>uint32 index = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
@@ -553,7 +670,7 @@ public final class TakeFurnitureMakeReqOuterClass {
 
       private boolean isFastFinish_ ;
       /**
-       * <code>bool is_fast_finish = 2;</code>
+       * <code>bool isFastFinish = 15;</code>
        * @return The isFastFinish.
        */
       @java.lang.Override
@@ -561,7 +678,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return isFastFinish_;
       }
       /**
-       * <code>bool is_fast_finish = 2;</code>
+       * <code>bool isFastFinish = 15;</code>
        * @param value The isFastFinish to set.
        * @return This builder for chaining.
        */
@@ -572,7 +689,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_fast_finish = 2;</code>
+       * <code>bool isFastFinish = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFastFinish() {
@@ -584,7 +701,7 @@ public final class TakeFurnitureMakeReqOuterClass {
 
       private int makeId_ ;
       /**
-       * <code>uint32 make_id = 7;</code>
+       * <code>uint32 makeId = 9;</code>
        * @return The makeId.
        */
       @java.lang.Override
@@ -592,7 +709,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return makeId_;
       }
       /**
-       * <code>uint32 make_id = 7;</code>
+       * <code>uint32 makeId = 9;</code>
        * @param value The makeId to set.
        * @return This builder for chaining.
        */
@@ -603,7 +720,7 @@ public final class TakeFurnitureMakeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 make_id = 7;</code>
+       * <code>uint32 makeId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearMakeId() {
@@ -679,10 +796,13 @@ public final class TakeFurnitureMakeReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032TakeFurnitureMakeReq.proto\"N\n\024TakeFurn" +
-      "itureMakeReq\022\r\n\005index\030\014 \001(\r\022\026\n\016is_fast_f" +
-      "inish\030\002 \001(\010\022\017\n\007make_id\030\007 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\032TakeFurnitureMakeReq.proto\"\255\001\n\024TakeFur" +
+      "nitureMakeReq\022\r\n\005index\030\006 \001(\r\022\024\n\014isFastFi" +
+      "nish\030\017 \001(\010\022\016\n\006makeId\030\t \001(\r\"`\n\013JMDDKPFHPP" +
+      "A\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\331%\022\017\n\013DCDNILF" +
+      "DFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001" +
+      "\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

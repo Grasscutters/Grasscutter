@@ -19,70 +19,60 @@ public final class TakeBattlePassRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
+        getItemListList();
+    /**
+     * <code>repeated .ItemParam itemList = 3;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
+    /**
+     * <code>repeated .ItemParam itemList = 3;</code>
+     */
+    int getItemListCount();
+    /**
+     * <code>repeated .ItemParam itemList = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemListOrBuilderList();
+    /**
+     * <code>repeated .ItemParam itemList = 3;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
+        int index);
+
+    /**
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> 
         getTakeOptionListList();
     /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
      */
     emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index);
     /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
      */
     int getTakeOptionListCount();
     /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
         getTakeOptionListOrBuilderList();
     /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
      */
     emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(
         int index);
-
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
-        getItemListList();
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
-     */
-    int getItemListCount();
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemListOrBuilderList();
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
-        int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 2631;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code TakeBattlePassRewardRsp}
    */
   public static final class TakeBattlePassRewardRsp extends
@@ -95,8 +85,8 @@ public final class TakeBattlePassRewardRspOuterClass {
       super(builder);
     }
     private TakeBattlePassRewardRsp() {
-      takeOptionList_ = java.util.Collections.emptyList();
       itemList_ = java.util.Collections.emptyList();
+      takeOptionList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -130,24 +120,24 @@ public final class TakeBattlePassRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               itemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 takeOptionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               takeOptionList_.add(
                   input.readMessage(emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.parser(), extensionRegistry));
@@ -168,10 +158,10 @@ public final class TakeBattlePassRewardRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           itemList_ = java.util.Collections.unmodifiableList(itemList_);
         }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           takeOptionList_ = java.util.Collections.unmodifiableList(takeOptionList_);
         }
         this.unknownFields = unknownFields.build();
@@ -191,68 +181,148 @@ public final class TakeBattlePassRewardRspOuterClass {
               emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp.class, emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
+     * Protobuf enum {@code TakeBattlePassRewardRsp.BPPNCLEIKKK}
      */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public enum BPPNCLEIKKK
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 2643;</code>
+       */
+      PEPPOHPHJOJ(1, 2643),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final BPPNCLEIKKK DCDNILFDFLB = NONE;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 2643;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 2643;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BPPNCLEIKKK valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static BPPNCLEIKKK forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 2643: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BPPNCLEIKKK>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BPPNCLEIKKK> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BPPNCLEIKKK>() {
+              public BPPNCLEIKKK findValueByNumber(int number) {
+                return BPPNCLEIKKK.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final BPPNCLEIKKK[] VALUES = getStaticValuesArray();
+      private static BPPNCLEIKKK[] getStaticValuesArray() {
+        return new BPPNCLEIKKK[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
+        };
+      }
+      public static BPPNCLEIKKK valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private BPPNCLEIKKK(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TakeBattlePassRewardRsp.BPPNCLEIKKK)
     }
 
-    public static final int TAKE_OPTION_LIST_FIELD_NUMBER = 7;
-    private java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_;
-    /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
-      return takeOptionList_;
-    }
-    /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
-        getTakeOptionListOrBuilderList() {
-      return takeOptionList_;
-    }
-    /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-     */
-    @java.lang.Override
-    public int getTakeOptionListCount() {
-      return takeOptionList_.size();
-    }
-    /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
-      return takeOptionList_.get(index);
-    }
-    /**
-     * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(
-        int index) {
-      return takeOptionList_.get(index);
-    }
-
-    public static final int ITEM_LIST_FIELD_NUMBER = 4;
+    public static final int ITEMLIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -260,26 +330,77 @@ public final class TakeBattlePassRewardRspOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam itemList = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index) {
       return itemList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 5;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 5;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int TAKEOPTIONLIST_FIELD_NUMBER = 13;
+    private java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_;
+    /**
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
+      return takeOptionList_;
+    }
+    /**
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
+        getTakeOptionListOrBuilderList() {
+      return takeOptionList_;
+    }
+    /**
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+     */
+    @java.lang.Override
+    public int getTakeOptionListCount() {
+      return takeOptionList_.size();
+    }
+    /**
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
+      return takeOptionList_.get(index);
+    }
+    /**
+     * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(
+        int index) {
+      return takeOptionList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -297,13 +418,13 @@ public final class TakeBattlePassRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(4, itemList_.get(i));
+        output.writeMessage(3, itemList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(5, retcode_);
       }
       for (int i = 0; i < takeOptionList_.size(); i++) {
-        output.writeMessage(7, takeOptionList_.get(i));
+        output.writeMessage(13, takeOptionList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -316,15 +437,15 @@ public final class TakeBattlePassRewardRspOuterClass {
       size = 0;
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, itemList_.get(i));
+          .computeMessageSize(3, itemList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       for (int i = 0; i < takeOptionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, takeOptionList_.get(i));
+          .computeMessageSize(13, takeOptionList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -341,12 +462,12 @@ public final class TakeBattlePassRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp other = (emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp) obj;
 
+      if (!getItemListList()
+          .equals(other.getItemListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!getTakeOptionListList()
           .equals(other.getTakeOptionListList())) return false;
-      if (!getItemListList()
-          .equals(other.getItemListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -358,15 +479,15 @@ public final class TakeBattlePassRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getItemListCount() > 0) {
+        hash = (37 * hash) + ITEMLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getItemListList().hashCode();
+      }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       if (getTakeOptionListCount() > 0) {
-        hash = (37 * hash) + TAKE_OPTION_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + TAKEOPTIONLIST_FIELD_NUMBER;
         hash = (53 * hash) + getTakeOptionListList().hashCode();
-      }
-      if (getItemListCount() > 0) {
-        hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getItemListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -464,16 +585,6 @@ public final class TakeBattlePassRewardRspOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 2631;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code TakeBattlePassRewardRsp}
      */
     public static final class Builder extends
@@ -506,26 +617,26 @@ public final class TakeBattlePassRewardRspOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getTakeOptionListFieldBuilder();
           getItemListFieldBuilder();
+          getTakeOptionListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (itemListBuilder_ == null) {
+          itemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          itemListBuilder_.clear();
+        }
         retcode_ = 0;
 
         if (takeOptionListBuilder_ == null) {
           takeOptionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          takeOptionListBuilder_.clear();
-        }
-        if (itemListBuilder_ == null) {
-          itemList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          itemListBuilder_.clear();
+          takeOptionListBuilder_.clear();
         }
         return this;
       }
@@ -554,24 +665,24 @@ public final class TakeBattlePassRewardRspOuterClass {
       public emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp buildPartial() {
         emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp result = new emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        if (takeOptionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            takeOptionList_ = java.util.Collections.unmodifiableList(takeOptionList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.takeOptionList_ = takeOptionList_;
-        } else {
-          result.takeOptionList_ = takeOptionListBuilder_.build();
-        }
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
+        }
+        result.retcode_ = retcode_;
+        if (takeOptionListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            takeOptionList_ = java.util.Collections.unmodifiableList(takeOptionList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.takeOptionList_ = takeOptionList_;
+        } else {
+          result.takeOptionList_ = takeOptionListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -621,40 +732,11 @@ public final class TakeBattlePassRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp other) {
         if (other == emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (takeOptionListBuilder_ == null) {
-          if (!other.takeOptionList_.isEmpty()) {
-            if (takeOptionList_.isEmpty()) {
-              takeOptionList_ = other.takeOptionList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureTakeOptionListIsMutable();
-              takeOptionList_.addAll(other.takeOptionList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.takeOptionList_.isEmpty()) {
-            if (takeOptionListBuilder_.isEmpty()) {
-              takeOptionListBuilder_.dispose();
-              takeOptionListBuilder_ = null;
-              takeOptionList_ = other.takeOptionList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              takeOptionListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTakeOptionListFieldBuilder() : null;
-            } else {
-              takeOptionListBuilder_.addAllMessages(other.takeOptionList_);
-            }
-          }
-        }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -667,12 +749,41 @@ public final class TakeBattlePassRewardRspOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
             } else {
               itemListBuilder_.addAllMessages(other.itemList_);
+            }
+          }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (takeOptionListBuilder_ == null) {
+          if (!other.takeOptionList_.isEmpty()) {
+            if (takeOptionList_.isEmpty()) {
+              takeOptionList_ = other.takeOptionList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureTakeOptionListIsMutable();
+              takeOptionList_.addAll(other.takeOptionList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.takeOptionList_.isEmpty()) {
+            if (takeOptionListBuilder_.isEmpty()) {
+              takeOptionListBuilder_.dispose();
+              takeOptionListBuilder_ = null;
+              takeOptionList_ = other.takeOptionList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              takeOptionListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTakeOptionListFieldBuilder() : null;
+            } else {
+              takeOptionListBuilder_.addAllMessages(other.takeOptionList_);
             }
           }
         }
@@ -706,283 +817,12 @@ public final class TakeBattlePassRewardRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_ =
-        java.util.Collections.emptyList();
-      private void ensureTakeOptionListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          takeOptionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption>(takeOptionList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> takeOptionListBuilder_;
-
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
-        if (takeOptionListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(takeOptionList_);
-        } else {
-          return takeOptionListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public int getTakeOptionListCount() {
-        if (takeOptionListBuilder_ == null) {
-          return takeOptionList_.size();
-        } else {
-          return takeOptionListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
-        if (takeOptionListBuilder_ == null) {
-          return takeOptionList_.get(index);
-        } else {
-          return takeOptionListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder setTakeOptionList(
-          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-        if (takeOptionListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.set(index, value);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder setTakeOptionList(
-          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-        if (takeOptionListBuilder_ == null) {
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          takeOptionListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder addTakeOptionList(emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-        if (takeOptionListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.add(value);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder addTakeOptionList(
-          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-        if (takeOptionListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.add(index, value);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder addTakeOptionList(
-          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-        if (takeOptionListBuilder_ == null) {
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          takeOptionListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder addTakeOptionList(
-          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-        if (takeOptionListBuilder_ == null) {
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          takeOptionListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder addAllTakeOptionList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> values) {
-        if (takeOptionListBuilder_ == null) {
-          ensureTakeOptionListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, takeOptionList_);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder clearTakeOptionList() {
-        if (takeOptionListBuilder_ == null) {
-          takeOptionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public Builder removeTakeOptionList(int index) {
-        if (takeOptionListBuilder_ == null) {
-          ensureTakeOptionListIsMutable();
-          takeOptionList_.remove(index);
-          onChanged();
-        } else {
-          takeOptionListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder getTakeOptionListBuilder(
-          int index) {
-        return getTakeOptionListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(
-          int index) {
-        if (takeOptionListBuilder_ == null) {
-          return takeOptionList_.get(index);  } else {
-          return takeOptionListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
-           getTakeOptionListOrBuilderList() {
-        if (takeOptionListBuilder_ != null) {
-          return takeOptionListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(takeOptionList_);
-        }
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder() {
-        return getTakeOptionListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder(
-          int index) {
-        return getTakeOptionListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .BattlePassRewardTakeOption take_option_list = 7;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder> 
-           getTakeOptionListBuilderList() {
-        return getTakeOptionListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
-          getTakeOptionListFieldBuilder() {
-        if (takeOptionListBuilder_ == null) {
-          takeOptionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder>(
-                  takeOptionList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          takeOptionList_ = null;
-        }
-        return takeOptionListBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -990,7 +830,7 @@ public final class TakeBattlePassRewardRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -1000,7 +840,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -1010,7 +850,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -1020,7 +860,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1037,7 +877,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1051,7 +891,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -1067,7 +907,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1084,7 +924,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1098,7 +938,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1112,7 +952,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -1127,12 +967,12 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -1140,7 +980,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -1153,14 +993,14 @@ public final class TakeBattlePassRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -1170,7 +1010,7 @@ public final class TakeBattlePassRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -1181,14 +1021,14 @@ public final class TakeBattlePassRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -1196,7 +1036,7 @@ public final class TakeBattlePassRewardRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam itemList = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -1209,12 +1049,283 @@ public final class TakeBattlePassRewardRspOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
         }
         return itemListBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_ =
+        java.util.Collections.emptyList();
+      private void ensureTakeOptionListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          takeOptionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption>(takeOptionList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> takeOptionListBuilder_;
+
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
+        if (takeOptionListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(takeOptionList_);
+        } else {
+          return takeOptionListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public int getTakeOptionListCount() {
+        if (takeOptionListBuilder_ == null) {
+          return takeOptionList_.size();
+        } else {
+          return takeOptionListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
+        if (takeOptionListBuilder_ == null) {
+          return takeOptionList_.get(index);
+        } else {
+          return takeOptionListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder setTakeOptionList(
+          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+        if (takeOptionListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.set(index, value);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder setTakeOptionList(
+          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+        if (takeOptionListBuilder_ == null) {
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          takeOptionListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder addTakeOptionList(emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+        if (takeOptionListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.add(value);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder addTakeOptionList(
+          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+        if (takeOptionListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.add(index, value);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder addTakeOptionList(
+          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+        if (takeOptionListBuilder_ == null) {
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          takeOptionListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder addTakeOptionList(
+          int index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+        if (takeOptionListBuilder_ == null) {
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          takeOptionListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder addAllTakeOptionList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> values) {
+        if (takeOptionListBuilder_ == null) {
+          ensureTakeOptionListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, takeOptionList_);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder clearTakeOptionList() {
+        if (takeOptionListBuilder_ == null) {
+          takeOptionList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public Builder removeTakeOptionList(int index) {
+        if (takeOptionListBuilder_ == null) {
+          ensureTakeOptionListIsMutable();
+          takeOptionList_.remove(index);
+          onChanged();
+        } else {
+          takeOptionListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder getTakeOptionListBuilder(
+          int index) {
+        return getTakeOptionListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(
+          int index) {
+        if (takeOptionListBuilder_ == null) {
+          return takeOptionList_.get(index);  } else {
+          return takeOptionListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
+           getTakeOptionListOrBuilderList() {
+        if (takeOptionListBuilder_ != null) {
+          return takeOptionListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(takeOptionList_);
+        }
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder() {
+        return getTakeOptionListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder(
+          int index) {
+        return getTakeOptionListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .BattlePassRewardTakeOption takeOptionList = 13;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder> 
+           getTakeOptionListBuilderList() {
+        return getTakeOptionListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> 
+          getTakeOptionListFieldBuilder() {
+        if (takeOptionListBuilder_ == null) {
+          takeOptionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder>(
+                  takeOptionList_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          takeOptionList_ = null;
+        }
+        return takeOptionListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1283,28 +1394,30 @@ public final class TakeBattlePassRewardRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035TakeBattlePassRewardRsp.proto\032 BattleP" +
-      "assRewardTakeOption.proto\032\017ItemParam.pro" +
-      "to\"\200\001\n\027TakeBattlePassRewardRsp\022\017\n\007retcod" +
-      "e\030\006 \001(\005\0225\n\020take_option_list\030\007 \003(\0132\033.Batt" +
-      "lePassRewardTakeOption\022\035\n\titem_list\030\004 \003(" +
-      "\0132\n.ItemParamB\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "\n\035TakeBattlePassRewardRsp.proto\032\017ItemPar" +
+      "am.proto\032 BattlePassRewardTakeOption.pro" +
+      "to\"\316\001\n\027TakeBattlePassRewardRsp\022\034\n\010itemLi" +
+      "st\030\003 \003(\0132\n.ItemParam\022\017\n\007retcode\030\005 \001(\005\0223\n" +
+      "\016takeOptionList\030\r \003(\0132\033.BattlePassReward" +
+      "TakeOption\"O\n\013BPPNCLEIKKK\022\010\n\004NONE\020\000\022\020\n\013P" +
+      "EPPOHPHJOJ\020\323\024\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOL" +
+      "MPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.getDescriptor(),
         });
     internal_static_TakeBattlePassRewardRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_TakeBattlePassRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeBattlePassRewardRsp_descriptor,
-        new java.lang.String[] { "Retcode", "TakeOptionList", "ItemList", });
-    emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.getDescriptor();
+        new java.lang.String[] { "ItemList", "Retcode", "TakeOptionList", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

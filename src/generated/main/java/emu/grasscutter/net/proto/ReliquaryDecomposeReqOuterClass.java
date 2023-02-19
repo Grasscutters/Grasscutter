@@ -19,46 +19,35 @@ public final class ReliquaryDecomposeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 config_id = 4;</code>
-     * @return The configId.
-     */
-    int getConfigId();
-
-    /**
-     * <code>uint32 target_count = 15;</code>
+     * <code>uint32 targetCount = 5;</code>
      * @return The targetCount.
      */
     int getTargetCount();
 
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>uint32 configId = 13;</code>
+     * @return The configId.
+     */
+    int getConfigId();
+
+    /**
+     * <code>repeated uint64 guidList = 2;</code>
      * @return A list containing the guidList.
      */
     java.util.List<java.lang.Long> getGuidListList();
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>repeated uint64 guidList = 2;</code>
      * @return The count of guidList.
      */
     int getGuidListCount();
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>repeated uint64 guidList = 2;</code>
      * @param index The index of the element to return.
      * @return The guidList at the given index.
      */
     long getGuidList(int index);
   }
   /**
-   * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 631;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   *   IS_ALLOW_CLIENT = 1;
-   * }
-   * </pre>
-   *
    * Protobuf type {@code ReliquaryDecomposeReq}
    */
   public static final class ReliquaryDecomposeReq extends
@@ -105,12 +94,7 @@ public final class ReliquaryDecomposeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 guidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -118,7 +102,7 @@ public final class ReliquaryDecomposeReqOuterClass {
               guidList_.addLong(input.readUInt64());
               break;
             }
-            case 106: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -131,9 +115,14 @@ public final class ReliquaryDecomposeReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 40: {
 
               targetCount_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              configId_ = input.readUInt32();
               break;
             }
             default: {
@@ -171,21 +160,149 @@ public final class ReliquaryDecomposeReqOuterClass {
               emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq.class, emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq.Builder.class);
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 4;
-    private int configId_;
     /**
-     * <code>uint32 config_id = 4;</code>
-     * @return The configId.
+     * Protobuf enum {@code ReliquaryDecomposeReq.EPEIECCGNGJ}
      */
-    @java.lang.Override
-    public int getConfigId() {
-      return configId_;
+    public enum EPEIECCGNGJ
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0, 0),
+      /**
+       * <code>PEPPOHPHJOJ = 640;</code>
+       */
+      PEPPOHPHJOJ(1, 640),
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      NNBKOLMPOEA(3, 1),
+      UNRECOGNIZED(-1, -1),
+      ;
+
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final EPEIECCGNGJ DCDNILFDFLB = NONE;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final EPEIECCGNGJ EAJIABGAOCI = NNBKOLMPOEA;
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>PEPPOHPHJOJ = 640;</code>
+       */
+      public static final int PEPPOHPHJOJ_VALUE = 640;
+      /**
+       * <code>DCDNILFDFLB = 0;</code>
+       */
+      public static final int DCDNILFDFLB_VALUE = 0;
+      /**
+       * <code>NNBKOLMPOEA = 1;</code>
+       */
+      public static final int NNBKOLMPOEA_VALUE = 1;
+      /**
+       * <code>EAJIABGAOCI = 1;</code>
+       */
+      public static final int EAJIABGAOCI_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (index == -1) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EPEIECCGNGJ valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EPEIECCGNGJ forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 640: return PEPPOHPHJOJ;
+          case 1: return NNBKOLMPOEA;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EPEIECCGNGJ>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          EPEIECCGNGJ> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EPEIECCGNGJ>() {
+              public EPEIECCGNGJ findValueByNumber(int number) {
+                return EPEIECCGNGJ.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (index == -1) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final EPEIECCGNGJ[] VALUES = getStaticValuesArray();
+      private static EPEIECCGNGJ[] getStaticValuesArray() {
+        return new EPEIECCGNGJ[] {
+          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
+        };
+      }
+      public static EPEIECCGNGJ valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private EPEIECCGNGJ(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ReliquaryDecomposeReq.EPEIECCGNGJ)
     }
 
-    public static final int TARGET_COUNT_FIELD_NUMBER = 15;
+    public static final int TARGETCOUNT_FIELD_NUMBER = 5;
     private int targetCount_;
     /**
-     * <code>uint32 target_count = 15;</code>
+     * <code>uint32 targetCount = 5;</code>
      * @return The targetCount.
      */
     @java.lang.Override
@@ -193,10 +310,21 @@ public final class ReliquaryDecomposeReqOuterClass {
       return targetCount_;
     }
 
-    public static final int GUID_LIST_FIELD_NUMBER = 13;
+    public static final int CONFIGID_FIELD_NUMBER = 13;
+    private int configId_;
+    /**
+     * <code>uint32 configId = 13;</code>
+     * @return The configId.
+     */
+    @java.lang.Override
+    public int getConfigId() {
+      return configId_;
+    }
+
+    public static final int GUIDLIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.LongList guidList_;
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>repeated uint64 guidList = 2;</code>
      * @return A list containing the guidList.
      */
     @java.lang.Override
@@ -205,14 +333,14 @@ public final class ReliquaryDecomposeReqOuterClass {
       return guidList_;
     }
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>repeated uint64 guidList = 2;</code>
      * @return The count of guidList.
      */
     public int getGuidListCount() {
       return guidList_.size();
     }
     /**
-     * <code>repeated uint64 guid_list = 13;</code>
+     * <code>repeated uint64 guidList = 2;</code>
      * @param index The index of the element to return.
      * @return The guidList at the given index.
      */
@@ -236,18 +364,18 @@ public final class ReliquaryDecomposeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (configId_ != 0) {
-        output.writeUInt32(4, configId_);
-      }
       if (getGuidListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(guidListMemoizedSerializedSize);
       }
       for (int i = 0; i < guidList_.size(); i++) {
         output.writeUInt64NoTag(guidList_.getLong(i));
       }
       if (targetCount_ != 0) {
-        output.writeUInt32(15, targetCount_);
+        output.writeUInt32(5, targetCount_);
+      }
+      if (configId_ != 0) {
+        output.writeUInt32(13, configId_);
       }
       unknownFields.writeTo(output);
     }
@@ -258,10 +386,6 @@ public final class ReliquaryDecomposeReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (configId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, configId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < guidList_.size(); i++) {
@@ -278,7 +402,11 @@ public final class ReliquaryDecomposeReqOuterClass {
       }
       if (targetCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, targetCount_);
+          .computeUInt32Size(5, targetCount_);
+      }
+      if (configId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, configId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -295,10 +423,10 @@ public final class ReliquaryDecomposeReqOuterClass {
       }
       emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq other = (emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq) obj;
 
-      if (getConfigId()
-          != other.getConfigId()) return false;
       if (getTargetCount()
           != other.getTargetCount()) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
       if (!getGuidListList()
           .equals(other.getGuidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -312,12 +440,12 @@ public final class ReliquaryDecomposeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
-      hash = (37 * hash) + TARGET_COUNT_FIELD_NUMBER;
+      hash = (37 * hash) + TARGETCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTargetCount();
+      hash = (37 * hash) + CONFIGID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
       if (getGuidListCount() > 0) {
-        hash = (37 * hash) + GUID_LIST_FIELD_NUMBER;
+        hash = (37 * hash) + GUIDLIST_FIELD_NUMBER;
         hash = (53 * hash) + getGuidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -416,17 +544,6 @@ public final class ReliquaryDecomposeReqOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 631;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     *   IS_ALLOW_CLIENT = 1;
-     * }
-     * </pre>
-     *
      * Protobuf type {@code ReliquaryDecomposeReq}
      */
     public static final class Builder extends
@@ -464,9 +581,9 @@ public final class ReliquaryDecomposeReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        configId_ = 0;
-
         targetCount_ = 0;
+
+        configId_ = 0;
 
         guidList_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -497,8 +614,8 @@ public final class ReliquaryDecomposeReqOuterClass {
       public emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq buildPartial() {
         emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq result = new emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq(this);
         int from_bitField0_ = bitField0_;
-        result.configId_ = configId_;
         result.targetCount_ = targetCount_;
+        result.configId_ = configId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           guidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -552,11 +669,11 @@ public final class ReliquaryDecomposeReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq other) {
         if (other == emu.grasscutter.net.proto.ReliquaryDecomposeReqOuterClass.ReliquaryDecomposeReq.getDefaultInstance()) return this;
-        if (other.getConfigId() != 0) {
-          setConfigId(other.getConfigId());
-        }
         if (other.getTargetCount() != 0) {
           setTargetCount(other.getTargetCount());
+        }
+        if (other.getConfigId() != 0) {
+          setConfigId(other.getConfigId());
         }
         if (!other.guidList_.isEmpty()) {
           if (guidList_.isEmpty()) {
@@ -598,40 +715,9 @@ public final class ReliquaryDecomposeReqOuterClass {
       }
       private int bitField0_;
 
-      private int configId_ ;
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @return The configId.
-       */
-      @java.lang.Override
-      public int getConfigId() {
-        return configId_;
-      }
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @param value The configId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfigId(int value) {
-        
-        configId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfigId() {
-        
-        configId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int targetCount_ ;
       /**
-       * <code>uint32 target_count = 15;</code>
+       * <code>uint32 targetCount = 5;</code>
        * @return The targetCount.
        */
       @java.lang.Override
@@ -639,7 +725,7 @@ public final class ReliquaryDecomposeReqOuterClass {
         return targetCount_;
       }
       /**
-       * <code>uint32 target_count = 15;</code>
+       * <code>uint32 targetCount = 5;</code>
        * @param value The targetCount to set.
        * @return This builder for chaining.
        */
@@ -650,12 +736,43 @@ public final class ReliquaryDecomposeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_count = 15;</code>
+       * <code>uint32 targetCount = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetCount() {
         
         targetCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int configId_ ;
+      /**
+       * <code>uint32 configId = 13;</code>
+       * @return The configId.
+       */
+      @java.lang.Override
+      public int getConfigId() {
+        return configId_;
+      }
+      /**
+       * <code>uint32 configId = 13;</code>
+       * @param value The configId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigId(int value) {
+        
+        configId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 configId = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfigId() {
+        
+        configId_ = 0;
         onChanged();
         return this;
       }
@@ -668,7 +785,7 @@ public final class ReliquaryDecomposeReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @return A list containing the guidList.
        */
       public java.util.List<java.lang.Long>
@@ -677,14 +794,14 @@ public final class ReliquaryDecomposeReqOuterClass {
                  java.util.Collections.unmodifiableList(guidList_) : guidList_;
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @return The count of guidList.
        */
       public int getGuidListCount() {
         return guidList_.size();
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @param index The index of the element to return.
        * @return The guidList at the given index.
        */
@@ -692,7 +809,7 @@ public final class ReliquaryDecomposeReqOuterClass {
         return guidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @param index The index to set the value at.
        * @param value The guidList to set.
        * @return This builder for chaining.
@@ -705,7 +822,7 @@ public final class ReliquaryDecomposeReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @param value The guidList to add.
        * @return This builder for chaining.
        */
@@ -716,7 +833,7 @@ public final class ReliquaryDecomposeReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @param values The guidList to add.
        * @return This builder for chaining.
        */
@@ -729,7 +846,7 @@ public final class ReliquaryDecomposeReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 guid_list = 13;</code>
+       * <code>repeated uint64 guidList = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGuidList() {
@@ -805,10 +922,13 @@ public final class ReliquaryDecomposeReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033ReliquaryDecomposeReq.proto\"S\n\025Reliqua" +
-      "ryDecomposeReq\022\021\n\tconfig_id\030\004 \001(\r\022\024\n\014tar" +
-      "get_count\030\017 \001(\r\022\021\n\tguid_list\030\r \003(\004B\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\033ReliquaryDecomposeReq.proto\"\262\001\n\025Reliqu" +
+      "aryDecomposeReq\022\023\n\013targetCount\030\005 \001(\r\022\020\n\010" +
+      "configId\030\r \001(\r\022\020\n\010guidList\030\002 \003(\004\"`\n\013EPEI" +
+      "ECCGNGJ\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\200\005\022\017\n\013D" +
+      "CDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABG" +
+      "AOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -819,7 +939,7 @@ public final class ReliquaryDecomposeReqOuterClass {
     internal_static_ReliquaryDecomposeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReliquaryDecomposeReq_descriptor,
-        new java.lang.String[] { "ConfigId", "TargetCount", "GuidList", });
+        new java.lang.String[] { "TargetCount", "ConfigId", "GuidList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
