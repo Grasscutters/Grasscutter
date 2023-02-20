@@ -49,7 +49,7 @@ public class Scene {
     @Getter @Setter private boolean dontDestroyWhenEmpty;
 
     @Getter @Setter private int autoCloseTime;
-    @Getter private int time;
+    @Getter @Setter private int time;
     private long startTime;
 
     @Getter private SceneScriptManager scriptManager;
