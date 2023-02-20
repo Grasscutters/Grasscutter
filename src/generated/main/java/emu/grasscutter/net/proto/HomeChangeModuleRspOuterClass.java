@@ -19,26 +19,26 @@ public final class HomeChangeModuleRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 target_module_id = 8;</code>
+     * <code>uint32 targetModuleId = 11;</code>
      * @return The targetModuleId.
      */
     int getTargetModuleId();
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * enum CmdId {
-   *   option allow_alias = true;
-   *   NONE = 0;
-   *   CMD_ID = 4551;
-   *   ENET_CHANNEL_ID = 0;
-   *   ENET_IS_RELIABLE = 1;
-   * }
+   *enum KODHEEBFFHG {
+   *	option allow_alias= true;
+   *	NONE = 0;
+   *	PEPPOHPHJOJ = 4833;
+   *	DCDNILFDFLB = 0;
+   *	NNBKOLMPOEA = 1;
+   *}
    * </pre>
    *
    * Protobuf type {@code HomeChangeModuleRsp}
@@ -85,12 +85,12 @@ public final class HomeChangeModuleRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 88: {
 
               targetModuleId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -127,26 +127,26 @@ public final class HomeChangeModuleRspOuterClass {
               emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.class, emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int TARGET_MODULE_ID_FIELD_NUMBER = 8;
+    public static final int TARGETMODULEID_FIELD_NUMBER = 11;
     private int targetModuleId_;
     /**
-     * <code>uint32 target_module_id = 8;</code>
+     * <code>uint32 targetModuleId = 11;</code>
      * @return The targetModuleId.
      */
     @java.lang.Override
     public int getTargetModuleId() {
       return targetModuleId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -164,10 +164,10 @@ public final class HomeChangeModuleRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetModuleId_ != 0) {
-        output.writeUInt32(8, targetModuleId_);
+        output.writeUInt32(11, targetModuleId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -180,11 +180,11 @@ public final class HomeChangeModuleRspOuterClass {
       size = 0;
       if (targetModuleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, targetModuleId_);
+          .computeUInt32Size(11, targetModuleId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -201,10 +201,10 @@ public final class HomeChangeModuleRspOuterClass {
       }
       emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp other = (emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getTargetModuleId()
           != other.getTargetModuleId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -216,10 +216,10 @@ public final class HomeChangeModuleRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGETMODULEID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetModuleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + TARGET_MODULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetModuleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -317,13 +317,13 @@ public final class HomeChangeModuleRspOuterClass {
     }
     /**
      * <pre>
-     * enum CmdId {
-     *   option allow_alias = true;
-     *   NONE = 0;
-     *   CMD_ID = 4551;
-     *   ENET_CHANNEL_ID = 0;
-     *   ENET_IS_RELIABLE = 1;
-     * }
+     *enum KODHEEBFFHG {
+     *	option allow_alias= true;
+     *	NONE = 0;
+     *	PEPPOHPHJOJ = 4833;
+     *	DCDNILFDFLB = 0;
+     *	NNBKOLMPOEA = 1;
+     *}
      * </pre>
      *
      * Protobuf type {@code HomeChangeModuleRsp}
@@ -363,9 +363,9 @@ public final class HomeChangeModuleRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         targetModuleId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -393,8 +393,8 @@ public final class HomeChangeModuleRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp buildPartial() {
         emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp result = new emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp(this);
-        result.retcode_ = retcode_;
         result.targetModuleId_ = targetModuleId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -443,11 +443,11 @@ public final class HomeChangeModuleRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp other) {
         if (other == emu.grasscutter.net.proto.HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getTargetModuleId() != 0) {
           setTargetModuleId(other.getTargetModuleId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -478,40 +478,9 @@ public final class HomeChangeModuleRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int targetModuleId_ ;
       /**
-       * <code>uint32 target_module_id = 8;</code>
+       * <code>uint32 targetModuleId = 11;</code>
        * @return The targetModuleId.
        */
       @java.lang.Override
@@ -519,7 +488,7 @@ public final class HomeChangeModuleRspOuterClass {
         return targetModuleId_;
       }
       /**
-       * <code>uint32 target_module_id = 8;</code>
+       * <code>uint32 targetModuleId = 11;</code>
        * @param value The targetModuleId to set.
        * @return This builder for chaining.
        */
@@ -530,12 +499,43 @@ public final class HomeChangeModuleRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_module_id = 8;</code>
+       * <code>uint32 targetModuleId = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetModuleId() {
         
         targetModuleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -606,10 +606,10 @@ public final class HomeChangeModuleRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031HomeChangeModuleRsp.proto\"@\n\023HomeChang" +
-      "eModuleRsp\022\017\n\007retcode\030\016 \001(\005\022\030\n\020target_mo" +
-      "dule_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "\n\031HomeChangeModuleRsp.proto\">\n\023HomeChang" +
+      "eModuleRsp\022\026\n\016targetModuleId\030\013 \001(\r\022\017\n\007re" +
+      "tcode\030\r \001(\005B\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -620,7 +620,7 @@ public final class HomeChangeModuleRspOuterClass {
     internal_static_HomeChangeModuleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeChangeModuleRsp_descriptor,
-        new java.lang.String[] { "Retcode", "TargetModuleId", });
+        new java.lang.String[] { "TargetModuleId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
