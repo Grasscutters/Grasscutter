@@ -1107,6 +1107,9 @@ public class Player {
 
         // Satiation
         this.getSatiationManager().reduceSatiation();
+
+        // Home resources
+        this.getHome().updateHourlyResources(this);
     }
 
     private synchronized void doDailyReset() {
