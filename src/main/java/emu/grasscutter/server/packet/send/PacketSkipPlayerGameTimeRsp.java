@@ -2,14 +2,14 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.DKMDNEAEGDFOuterClass;
-import emu.grasscutter.net.proto.PlayerIpRegionNotifyOuterClass;
+import emu.grasscutter.net.proto.SkipPlayerGameTimeReqOuterClass;
+import emu.grasscutter.net.proto.SkipPlayerGameTimeRspOuterClass;
 
 public class PacketSkipPlayerGameTimeRsp extends BasePacket {
-    public PacketSkipPlayerGameTimeRsp(PlayerIpRegionNotifyOuterClass.PlayerIpRegionNotify req) {
-        super(PacketOpcodes.DKMDNEAEGDF);
+    public PacketSkipPlayerGameTimeRsp(SkipPlayerGameTimeReqOuterClass.SkipPlayerGameTimeReq req) {
+        super(PacketOpcodes.SkipPlayerGameTimeRsp);
 
-        var proto = DKMDNEAEGDFOuterClass.DKMDNEAEGDF.newBuilder()
+        var proto = SkipPlayerGameTimeRspOuterClass.SkipPlayerGameTimeRsp.newBuilder()
             .setClientGameTime(req.getClientGameTime())
             .setGameTime(req.getGameTime())
             .build();
