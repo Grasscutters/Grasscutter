@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.excels.AchievementData;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -429,6 +430,12 @@ public final class Language {
         Grasscutter.getLogger().info("Generating TextMaps cache");
         ResourceLoader.loadAll();
         IntSet usedHashes = new IntOpenHashSet();
+        GameData.getAchievementDataMap().values().stream()
+            .filter(AchievementData::isUsed)
+            .forEach(a -> {
+                usedHashes.add((int) a.getTitleTextMapHash());
+                usedHashes.add((int) a.getDescTextMapHash());
+            });
         GameData.getAvatarDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getAvatarSkillDataMap().forEach((k, v) -> {
             usedHashes.add((int) v.getNameTextMapHash());

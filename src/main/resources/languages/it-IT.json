@@ -124,6 +124,21 @@
       "no_account": "Account non trovato.",
       "description": "Modifica account utente"
     },
+    "achievement": {
+      "success": {
+        "grant": "Granted the achievement to %s.",
+        "revoke": "Revoked the achievement from %s.",
+        "progress": "Set progress of %s's achievement to %s.",
+        "grantall": "Granted %s achievements to %s.",
+        "revokeall": "Revoked %s achievements from %s."
+      },
+      "fail": {
+        "achievement_not_found": "Achievement not found.",
+        "already_achieved": "%s has already achieved the achievement.",
+        "not_yet_achieved": "%s hasn't achieved the achievement."
+      },
+      "description": "Grant, Revoke or Progress achievements."
+    },
     "announce": {
       "send_success": "Invia un annuncio con successo, puoi revocarlo /a revoca %s.",
       "refresh_success": "Aggiorna il file di configurazione dell'annuncio con successo. [Totale %s]",
