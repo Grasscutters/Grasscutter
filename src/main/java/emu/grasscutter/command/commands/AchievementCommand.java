@@ -106,7 +106,7 @@ public class AchievementCommand implements CommandHandler {
             .forEach(data -> {
                 var success = achievements.grant(data.getId());
                 if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                    counter.addAndGet(success.getChangedAchievementStateNum());
+                    counter.addAndGet(success.getChangedAchievementStatusNum());
                 }
             });
 
@@ -121,7 +121,7 @@ public class AchievementCommand implements CommandHandler {
             .forEach(data -> {
                 var success = achievements.revoke(data.getId());
                 if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                    counter.addAndGet(success.getChangedAchievementStateNum());
+                    counter.addAndGet(success.getChangedAchievementStatusNum());
                 }
             });
 
