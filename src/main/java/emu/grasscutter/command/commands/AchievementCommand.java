@@ -102,11 +102,8 @@ public class AchievementCommand implements CommandHandler {
         var counter = new AtomicInteger();
         GameData.getAchievementDataMap().values().stream()
             .filter(AchievementData::isUsed)
+            .filter(AchievementData::isParent)
             .forEach(data -> {
-                if (!data.isParent()) {
-                    return;
-                }
-
                 var success = achievements.grant(data.getId());
                 if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
                     counter.addAndGet(success.getAchievementStateChangedNum());
