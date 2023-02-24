@@ -17,8 +17,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -37,6 +42,10 @@ public class GameHome {
 
     int level;
     int exp;
+    int lastUpdatedTime;
+    int nextUpdateTime;
+    int storedCoin;
+    int storedFetterExp;
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
     Set<Integer> unlockedHomeBgmList;
@@ -86,10 +95,12 @@ public class GameHome {
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
+        checkAccumulatedResources(player);
+        player.getSession().send(new PacketHomeResourceNotify(player));
     }
 
     // Tell the client the reward is claimed or realm unlocked
-    public void onClaimReward(Player player){
+    public void onClaimReward(Player player) {
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
     }
 
@@ -150,8 +161,189 @@ public class GameHome {
         onOwnerLogin(player);
     }
 
+    private void checkAccumulatedResources(Player player) {
+        int clientTime = (int) ZonedDateTime.now().toEpochSecond();
+        int owedRewards = 0;
+
+        // Don't owe if previous update hasn't passed
+        if (nextUpdateTime > clientTime) {
+            return;
+        }
+
+        if (lastUpdatedTime == 0) {
+            lastUpdatedTime = clientTime;
+        }
+
+        // Calculate number of owed rewards
+        owedRewards = 1 + ((clientTime - nextUpdateTime) / 3600);
+
+        // Ensure next update is at top of the hour
+        nextUpdateTime = (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
+
+        // Get resources
+        var hourlyResources = getComfortResources(player);
+        var owedCoin = hourlyResources.get(0) * owedRewards;
+        var owedFetter = hourlyResources.get(1) * owedRewards;
+
+        // Update stored amounts
+        storeResources(player, owedCoin, owedFetter);
+    }
+
+    public void takeHomeCoin(Player player) {
+        player.getInventory().addItem(204, storedCoin);
+        storedCoin = 0;
+        save();
+        player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    public void takeHomeFetter(Player player) {
+        List<Integer> invitedAvatars = new ArrayList<>();
+
+        // Outdoors avatars
+        sceneMap.get(player.getCurrentRealmId() + 2000).getBlockItems().forEach((i, e) -> {
+            e.getDeployNPCList().forEach(id -> {
+                invitedAvatars.add(id.getAvatarId());
+            });
+        });
+
+        // Check as realm 5 inside is not in defaults and will be null
+        if (Objects.nonNull(sceneMap.get(player.getCurrentRealmId() + 2200))) {
+            // Indoors avatars
+            sceneMap.get(player.getCurrentRealmId() + 2200).getBlockItems().forEach((i, e) -> {
+                e.getDeployNPCList().forEach(id -> {
+                    invitedAvatars.add(id.getAvatarId());
+                });
+            });
+        }
+
+        // Add exp to all avatars
+        invitedAvatars.forEach(id -> {
+            var avatar = player.getAvatars().getAvatarById(id);
+            player.getServer().getInventorySystem().upgradeAvatarFetterLevel(player, avatar, storedFetterExp);
+        });
+
+        storedFetterExp = 0;
+        save();
+        player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    public void updateHourlyResources(Player player) {
+        int clientTime = (int) ZonedDateTime.now().toEpochSecond();
+
+        // Check if resources can update
+        if (nextUpdateTime > clientTime) {
+            return;
+        }
+
+        // If no update has occurred before
+        if (lastUpdatedTime == 0) {
+            lastUpdatedTime = clientTime;
+        }
+
+        // Update stored resources
+        storeResources(player, 0, 0);
+        lastUpdatedTime = clientTime;
+        nextUpdateTime = (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
+        save();
+
+        // Send packet
+        player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    public void storeResources(Player player, int owedCoin, int owedFetter) {
+        // Get max values
+        var maxCoin = getMaxCoin(level);
+        var maxFetter = getMaxFetter(level);
+        int newCoin = 0;
+        int newFetter = 0;
+
+        // Check if resources are already max
+        if (storedCoin >= maxCoin && storedFetterExp >= maxFetter) {
+            return;
+        }
+
+        // Get resources
+        var hourlyResources = getComfortResources(player);
+
+        // Update home coin
+        if (storedCoin < maxCoin) {
+            // Check if owed or hourly
+            if (owedCoin == 0) {
+                newCoin = storedCoin + hourlyResources.get(0);
+            } else {
+                newCoin = storedCoin + owedCoin;
+            }
+            // Ensure max is not exceeded
+            storedCoin = (maxCoin >= newCoin) ? newCoin : maxCoin;
+        }
+
+        // Update fetter exp
+        if (storedFetterExp < maxFetter) {
+            // Check if owed or hourly
+            if (owedFetter == 0) {
+                newFetter = storedFetterExp + hourlyResources.get(1);
+            } else {
+                newFetter = storedFetterExp + owedFetter;
+            }
+            // Ensure max is not exceeded
+            storedFetterExp = (maxFetter >= newFetter) ? newFetter : maxFetter;
+        }
+
+        save();
+    }
+
+    public List<Integer> getComfortResources(Player player) {
+        List<Integer> allHomesComfort = new ArrayList<>();
+        int highestComfort = 0;
+        // Use HomeComfortInfoNotify data since comfort value isn't stored
+        if (player.getRealmList() == null) {
+            return List.of(0, 0);
+        }
+
+        // Calculate comfort value for each home
+        for (int moduleId : player.getRealmList()) {
+            var homeScene = player.getHome().getHomeSceneItem(moduleId + 2000);
+            allHomesComfort.add(homeScene.calComfort());
+        }
+
+        // Get highest comfort value
+        highestComfort = Collections.max(allHomesComfort);
+
+        // Determine hourly resources
+        if (highestComfort >= 20000) {
+            return List.of(30, 5);
+        } else if (highestComfort >= 15000) {
+            return List.of(28, 5);
+        } else if (highestComfort >= 12000) {
+            return List.of(26, 5);
+        } else if (highestComfort >= 10000) {
+            return List.of(24, 4);
+        } else if (highestComfort >= 8000) {
+            return List.of(22, 4);
+        } else if (highestComfort >= 6000) {
+            return List.of(20, 4);
+        } else if (highestComfort >= 4500) {
+            return List.of(16, 3);
+        } else if (highestComfort >= 3000) {
+            return List.of(12, 3);
+        } else if (highestComfort >= 2000) {
+            return List.of(8, 2);
+        } else
+            return List.of(4, 2);
+    }
+
     private int getExpRequired(int level) {
         HomeWorldLevelData levelData = GameData.getHomeWorldLevelDataMap().get(level);
         return levelData != null ? levelData.getExp() : 0;
+    }
+
+    public int getMaxCoin(int level) {
+        var levelData = GameData.getHomeWorldLevelDataMap().get(level);
+        return levelData != null ? levelData.getHomeCoinStoreLimit() : 0;
+    }
+
+    public int getMaxFetter(int level) {
+        var levelData = GameData.getHomeWorldLevelDataMap().get(level);
+        return levelData != null ? levelData.getHomeFetterExpStoreLimit() : 0;
     }
 }
