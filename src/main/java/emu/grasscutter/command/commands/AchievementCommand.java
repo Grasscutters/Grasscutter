@@ -106,7 +106,7 @@ public class AchievementCommand implements CommandHandler {
             .forEach(data -> {
                 var success = achievements.grant(data.getId());
                 if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                    counter.addAndGet(success.getAchievementStateChangedNum());
+                    counter.addAndGet(success.getChangedAchievementStateNum());
                 }
             });
 
@@ -117,14 +117,11 @@ public class AchievementCommand implements CommandHandler {
         var counter = new AtomicInteger();
         GameData.getAchievementDataMap().values().stream()
             .filter(AchievementData::isUsed)
+            .filter(AchievementData::isParent)
             .forEach(data -> {
-                if (!data.isParent()) {
-                    return;
-                }
-
                 var success = achievements.revoke(data.getId());
                 if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                    counter.addAndGet(success.getAchievementStateChangedNum());
+                    counter.addAndGet(success.getChangedAchievementStateNum());
                 }
             });
 

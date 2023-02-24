@@ -2,15 +2,15 @@ package emu.grasscutter.game.achievement;
 
 public class AchievementControlReturns {
     private final Return ret;
-    private final int achievementStateChangedNum;
+    private final int changedAchievementStateNum;
 
     private AchievementControlReturns(Return ret) {
         this(ret, 0);
     }
 
-    private AchievementControlReturns(Return ret, int achievementStateChangedNum) {
+    private AchievementControlReturns(Return ret, int changedAchievementStateNum) {
         this.ret = ret;
-        this.achievementStateChangedNum = achievementStateChangedNum;
+        this.changedAchievementStateNum = changedAchievementStateNum;
     }
 
     public static AchievementControlReturns success(int achievementStateChangedNum) {
@@ -33,8 +33,8 @@ public class AchievementControlReturns {
         return this.ret;
     }
 
-    public int getAchievementStateChangedNum() {
-        return this.achievementStateChangedNum;
+    public int getChangedAchievementStateNum() {
+        return this.changedAchievementStateNum;
     }
 
     public enum Return {
