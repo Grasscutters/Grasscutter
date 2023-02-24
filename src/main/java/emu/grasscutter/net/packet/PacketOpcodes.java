@@ -1,7 +1,5 @@
 package emu.grasscutter.net.packet;
 
-import java.util.HashSet;
-
 public class PacketOpcodes {
     public static final int NONE = 0;
 
@@ -414,7 +412,6 @@ public class PacketOpcodes {
     public static final int DigActivityChangeGadgetStateRsp = 8810;
     public static final int DigActivityMarkPointChangeNotify = 8508;
     public static final int DisableRoguelikeTrapNotify = 8726;
-    public static final int DKMDNEAEGDF = 166;
     public static final int DoGachaReq = 1587;
     public static final int DoGachaRsp = 1598;
     public static final int DoRoguelikeDungeonCardGachaReq = 8752;
@@ -1456,7 +1453,6 @@ public class PacketOpcodes {
     public static final int PlayerInvestigationAllInfoNotify = 1917;
     public static final int PlayerInvestigationNotify = 1911;
     public static final int PlayerInvestigationTargetNotify = 1930;
-    public static final int PlayerIpRegionNotify = 108;
     public static final int PlayerLevelRewardUpdateNotify = 154;
     public static final int PlayerLoginReq = 187;
     public static final int PlayerLoginRsp = 198;
@@ -1835,6 +1831,8 @@ public class PacketOpcodes {
     public static final int SingleRestartBrickBreakerRsp = 22641;
     public static final int SingleStartBrickBreakerReq = 23861;
     public static final int SingleStartBrickBreakerRsp = 23349;
+    public static final int SkipPlayerGameTimeReq = 108;
+    public static final int SkipPlayerGameTimeRsp = 166;
     public static final int SkyCrystalDetectorDataUpdateNotify = 4265;
     public static final int SocialDataNotify = 4050;
     public static final int SpiceActivityFinishMakeSpiceReq = 8744;
