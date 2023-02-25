@@ -79,7 +79,7 @@ public class AchievementCommand implements CommandHandler {
             parseInt(args.remove(0)).ifPresentOrElse(progress -> {
                 var ret = achievements.progress(integer, progress);
                 switch (ret.getRet()) {
-                    case SUCCESS -> sendSuccessMessage(sender, "progress", targetPlayer.getNickname(), progress);
+                    case SUCCESS -> sendSuccessMessage(sender, "progress", targetPlayer.getNickname(), integer, progress);
                     case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(sender, ret.getRet().getKey());
                 }
             }, () -> this.sendUsageMessage(sender));
