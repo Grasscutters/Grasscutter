@@ -22,6 +22,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.excels.AchievementData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.utils.Language;
@@ -59,6 +60,7 @@ public final class Tools {
         val monsterDataMap = new Int2ObjectRBTreeMap<>(GameData.getMonsterDataMap());
         val sceneDataMap = new Int2ObjectRBTreeMap<>(GameData.getSceneDataMap());
         val questDataMap = new Int2ObjectRBTreeMap<>(GameData.getQuestDataMap());
+        val achievementDataMap = new Int2ObjectRBTreeMap<>(GameData.getAchievementDataMap());
 
         Function<SortedMap<?, ?>, String> getPad = m -> "%" + m.lastKey().toString().length() + "s : ";
 
@@ -145,6 +147,14 @@ public final class Tools {
             padQuestId.formatted(id) + "{0} - {1}",
             mainQuestTitles.get(data.getMainId()),
             data.getDescTextMapHash()));
+        // Achievements
+        h.newSection("Achievements");
+        val padAchievementId = getPad.apply(achievementDataMap);
+        achievementDataMap.values().stream()
+            .filter(AchievementData::isUsed)
+            .forEach(data -> {
+                h.newTranslatedLine(padAchievementId.formatted(data.getId()) + "{0} - {1}", data.getTitleTextMapHash(), data.getDescTextMapHash());
+            });
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {

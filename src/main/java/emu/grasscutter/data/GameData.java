@@ -41,6 +41,8 @@ public class GameData {
 
     // ExcelConfigs
     @Getter private static final ArrayList<CodexReliquaryData> codexReliquaryArrayList = new ArrayList<>();
+    private static final Int2ObjectMap<AchievementData> achievementDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<AchievementGoalData> achievementGoalDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ActivityData> activityDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ActivityShopData> activityShopDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ActivityWatcherData> activityWatcherDataMap = new Int2ObjectOpenHashMap<>();
@@ -232,5 +234,10 @@ public class GameData {
         }
 
         return shopGoods;
+    }
+
+    public static Int2ObjectMap<AchievementData> getAchievementDataMap() {
+        AchievementData.divideIntoGroups();
+        return achievementDataMap;
     }
 }

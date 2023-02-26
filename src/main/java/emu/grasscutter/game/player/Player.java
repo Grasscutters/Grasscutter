@@ -10,6 +10,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
+import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
@@ -168,6 +169,7 @@ public class Player {
     @Getter private transient SatiationManager satiationManager;
 
     // Manager data (Save-able to the database)
+    @Getter private transient Achievements achievements;
     private PlayerProfile playerProfile;  // Getter has null-check
     @Getter private TeamManager teamManager;
     private TowerData towerData;  // Getter has null-check
@@ -973,9 +975,13 @@ public class Player {
                 .setIsShowAvatar(this.isShowAvatars())
                 .addAllShowAvatarInfoList(socialShowAvatarInfoList)
                 .addAllShowNameCardIdList(this.getShowNameCardInfoList())
-                .setFinishAchievementNum(0)
+                .setFinishAchievementNum(this.getFinishedAchievementNum())
                 .setFriendEnterHomeOptionValue(this.getHome() == null ? 0 : this.getHome().getEnterHomeOption());
         return social;
+    }
+
+    public int getFinishedAchievementNum() {
+        return Achievements.getByPlayer(this).getFinishedAchievementNum();
     }
 
     public List<ShowAvatarInfoOuterClass.ShowAvatarInfo> getShowAvatarInfoList() {
@@ -1172,6 +1178,7 @@ public class Player {
         }
 
         // Load from db
+        this.achievements = Achievements.getByPlayer(this);
         this.getAvatars().loadFromDatabase();
         this.getInventory().loadFromDatabase();
         this.loadBattlePassManager(); // Call before avatar postLoad to avoid null pointer
@@ -1224,6 +1231,10 @@ public class Player {
         session.send(new PacketQuestListNotify(this));
         session.send(new PacketCodexDataFullNotify(this));
         session.send(new PacketAllWidgetDataNotify(this));
+
+        //Achievements
+        this.achievements.onLogin(this);
+
         session.send(new PacketWidgetGadgetAllDataNotify());
         session.send(new PacketCombineDataNotify(this.unlockedCombines));
         session.send(new PacketGetChatEmojiCollectionRsp(this.getChatEmojiIdList()));

@@ -124,6 +124,21 @@
       "no_account": "アカウントが見つかりません｡",
       "description": "アカウントを作成、削除、または変更します。"
     },
+    "achievement": {
+      "success": {
+        "grant": "%sにアチーブメントを付与しました。",
+        "revoke": "%sからアチーブメントを剥奪しました。",
+        "progress": "%sのアチーブメント(id: %s)の進捗を%sに設定しました。",
+        "grantall": "%2$sに%1$s個のアチーブメントを付与しました。",
+        "revokeall": "%2$sから%1$s個のアチーブメントを剥奪しました。"
+      },
+      "fail": {
+        "achievement_not_found": "アチーブメントが見つかりませんでした。",
+        "already_achieved": "%sはすでにそのアチーブメントを達成しています。",
+        "not_yet_achieved": "%sはまだそのアチーブメントを達成していません。"
+      },
+      "description": "アチーブメントを付与、剥奪、またはその進捗を設定します。"
+    },
     "announce": {
       "send_success": "アナウンスの送信に成功しました。アナウンスは /a revoke %s で取り消すことができます。",
       "refresh_success": "アナウンス構成ファイルを正常に更新します。 [合計 %s]",

@@ -124,6 +124,21 @@
       "no_account": "Account not found.",
       "description": "Modify user accounts"
     },
+    "achievement": {
+      "success": {
+        "grant": "Granted the achievement to %s.",
+        "revoke": "Revoked the achievement from %s.",
+        "progress": "Set progress of %s's achievement(id: %s) to %s.",
+        "grantall": "Granted %s achievement(s) to %s.",
+        "revokeall": "Revoked %s achievement(s) from %s."
+      },
+      "fail": {
+        "achievement_not_found": "Achievement not found.",
+        "already_achieved": "%s has already achieved the achievement.",
+        "not_yet_achieved": "%s hasn't achieved the achievement yet."
+      },
+      "description": "Grant, Revoke or Progress achievements."
+    },
     "announce": {
       "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
       "refresh_success": "Refresh announcement config file successfully. [Total %s]",

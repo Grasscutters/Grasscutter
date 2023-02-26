@@ -11,6 +11,7 @@ import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
 import emu.grasscutter.game.avatar.Avatar;
@@ -133,6 +134,7 @@ public final class DatabaseHelper {
         }
         int uid = player.getUid();
         // Delete data from collections
+        DatabaseManager.getGameDatabase().getCollection("achievements").deleteMany(eq("uid", uid));
         DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid", uid));
         DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid", uid));
         DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", uid));
@@ -358,5 +360,15 @@ public final class DatabaseHelper {
 
     public static void saveMusicGameBeatmap(MusicGameBeatmap musicGameBeatmap) {
         DatabaseManager.getGameDatastore().save(musicGameBeatmap);
+    }
+
+    public static Achievements getAchievementData(int uid) {
+        return DatabaseManager.getGameDatastore().find(Achievements.class)
+            .filter(Filters.and(Filters.eq("uid", uid)))
+            .first();
+    }
+
+    public static void saveAchievementData(Achievements achievements) {
+        DatabaseManager.getGameDatastore().save(achievements);
     }
 }
