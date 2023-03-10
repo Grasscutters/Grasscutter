@@ -144,7 +144,7 @@ public final class RegionHandler implements Router {
             String platformName = ctx.queryParam("platform");
 
             // Determine the region list to use based on the version and platform.
-            if (("GCPS3.5.0".equals(versionName) && "1".equals(platformName)) || "CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode) || "CNRELAndroid".equals(versionCode)) {
+            if ("CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode) || "CNRELAndroid".equals(versionCode)) {
                 // Use the CN region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
                 event.call();
@@ -152,7 +152,7 @@ public final class RegionHandler implements Router {
 
                 // Respond with the event result.
                 ctx.result(event.getRegionList());
-            } else if (("GCPS3.5.0".equals(versionName) && "2".equals(platformName)) || "OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode) || "OSRELAndroid".equals(versionCode)) {
+            } else if ("OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode) || "OSRELAndroid".equals(versionCode)) {
                 // Use the OS region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
                 event.call();
