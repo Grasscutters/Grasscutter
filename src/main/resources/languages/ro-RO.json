@@ -61,6 +61,8 @@
       "resources_error": "Așejați o copie a 'BinOutput' și 'ExcelBinOutput' în dosarul de resurse.",
       "version": "Versiunea Grasscutter: %s-%s",
       "game_version": "Versiunea de joc: %s",
+      "versioncn": "Connect to Chinese client",
+      "versionos": "Connect to global clients",
       "resources": {
         "loading": "Se încarcă resursele...",
         "finish": "Resursele au fost încărcate."

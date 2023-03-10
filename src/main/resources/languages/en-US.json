@@ -61,6 +61,8 @@
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
       "version": "Grasscutter version: %s-%s",
       "game_version": "Game version: %s",
+      "versioncn": "Connect to Chinese version",
+      "versionos": "Connect to global version",
       "resources": {
         "loading": "Loading resources...",
         "finish": "Finished loading resources."

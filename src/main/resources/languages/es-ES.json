@@ -61,6 +61,8 @@
       "resources_error": "Copia las carpetas 'BinOutput' y 'ExcelBinOutput' en la carpeta resources.",
       "version": "Versión de Grasscutter: %s-%s",
       "game_version": "Versión del juego: %s",
+      "versioncn": "Connect to Chinese client",
+      "versionos": "Connect to global clients",
       "resources": {
         "loading": "Cargando recursos...",
         "finish": "Ha finalizado la carga de recursos."
