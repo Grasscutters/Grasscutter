@@ -61,8 +61,6 @@
       "resources_error": "Поместите копии папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
       "version": "Версия Grasscutter: %s-%s",
       "game_version": "Версия игры: %s",
-      "versioncn": "Connect to Chinese client",
-      "versionos": "Connect to global clients",
       "resources": {
         "loading": "Загружаем ресурсы...",
         "finish": "Загрузка ресурсов завершена."

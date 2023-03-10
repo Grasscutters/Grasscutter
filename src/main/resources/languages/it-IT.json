@@ -61,8 +61,6 @@
       "resources_error": "Inserisci una copia di 'BinOutput' e 'ExcelBinOutput' nella cartella delle risorse.",
       "version": "Versione Grassscutter: %s-%s",
       "game_version": "Versione del gioco: %s",
-      "versioncn": "Connect to Chinese client",
-      "versionos": "Connect to global clients",
       "resources": {
         "loading": "Caricamento risorse...",
         "finish": "Terminato il caricamento delle risorse."

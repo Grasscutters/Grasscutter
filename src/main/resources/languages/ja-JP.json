@@ -61,8 +61,6 @@
       "resources_error": "(BinOutput)と(ExcelBinOutput)のコピーをresourcesフォルダーに配置します。",
       "version": "Grasscutter バージョン: %s-%s",
       "game_version": "ゲームバージョン: %s",
-      "versioncn": "Connect to Chinese client",
-      "versionos": "Connect to global clients",
       "resources": {
         "loading": "resourcesファイルをロード中...",
         "finish": "resourcesファイルのロードが完了｡"

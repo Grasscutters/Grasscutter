@@ -61,8 +61,6 @@
       "resources_error": "Umieść kopię folderów \"BinOutput\" oraz \"ExcelBinOutput\" w folderze \"resources\" i spróbuj ponownie.",
       "version": "Wersja Grasscutter: %s-%s",
       "game_version": "Wersja gry: %s",
-      "versioncn": "Connect to Chinese client",
-      "versionos": "Connect to global clients",
       "resources": {
         "loading": "Ładowanie zasobów...",
         "finish": "Załadowano zasoby."

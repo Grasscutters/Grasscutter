@@ -61,8 +61,6 @@
       "resources_error": "'BinOutput'과 'ExcelBinOutput'을 resources폴더에 복사해주십시오.",
       "version": "Grasscutter 버전: %s-%s",
       "game_version": "게임 버전: %s",
-      "versioncn": "Connect to Chinese client",
-      "versionos": "Connect to global clients",
       "resources": {
         "loading": "리소스 로딩중...",
         "finish": "리소스 로딩완료."
