@@ -16,9 +16,8 @@ import static emu.grasscutter.utils.Language.translate;
  * Handles requests related to authentication. (aka dispatch)
  */
 public final class DispatchHandler implements Router {
-    @Override
-    public void applyRoutes(Javalin javalin) {
-        //OS
+    @Override public void applyRoutes(Javalin javalin) {
+        // OS
         // Username & Password login (from client).
         javalin.post("/hk4e_global/mdk/shield/api/login", DispatchHandler::clientLogin);
         // Cached token login (from registry).
@@ -26,7 +25,7 @@ public final class DispatchHandler implements Router {
         // Combo token login (from session key).
         javalin.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
 
-        //CN
+        // CN
         // Username & Password login (from client).
         javalin.post("/hk4e_cn/mdk/shield/api/login", DispatchHandler::clientLogin);
         // Cached token login (from registry).
@@ -37,21 +36,21 @@ public final class DispatchHandler implements Router {
         // External login (from other clients).
         javalin.get("/authentication/type", ctx -> ctx.result(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));
         javalin.post("/authentication/login", ctx -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
-            .handleLogin(AuthenticationSystem.fromExternalRequest(ctx)));
+                .handleLogin(AuthenticationSystem.fromExternalRequest(ctx)));
         javalin.post("/authentication/register", ctx -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
-            .handleAccountCreation(AuthenticationSystem.fromExternalRequest(ctx)));
+                .handleAccountCreation(AuthenticationSystem.fromExternalRequest(ctx)));
         javalin.post("/authentication/change_password", ctx -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
-            .handlePasswordReset(AuthenticationSystem.fromExternalRequest(ctx)));
+                .handlePasswordReset(AuthenticationSystem.fromExternalRequest(ctx)));
 
         // External login (from OAuth2).
         javalin.post("/hk4e_global/mdk/shield/api/loginByThirdparty", ctx -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
-            .handleLogin(AuthenticationSystem.fromExternalRequest(ctx)));
+                .handleLogin(AuthenticationSystem.fromExternalRequest(ctx)));
         javalin.get("/authentication/openid/redirect", ctx -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
-            .handleTokenProcess(AuthenticationSystem.fromExternalRequest(ctx)));
+                .handleTokenProcess(AuthenticationSystem.fromExternalRequest(ctx)));
         javalin.get("/Api/twitter_login", ctx -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
-            .handleRedirection(AuthenticationSystem.fromExternalRequest(ctx), ClientType.DESKTOP));
+                .handleRedirection(AuthenticationSystem.fromExternalRequest(ctx), ClientType.DESKTOP));
         javalin.get("/sdkTwitterLogin.html", ctx -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
-            .handleRedirection(AuthenticationSystem.fromExternalRequest(ctx), ClientType.MOBILE));
+                .handleRedirection(AuthenticationSystem.fromExternalRequest(ctx), ClientType.MOBILE));
     }
 
     /**
@@ -68,8 +67,8 @@ public final class DispatchHandler implements Router {
 
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()
-            .getPasswordAuthenticator()
-            .authenticate(AuthenticationSystem.fromPasswordRequest(ctx, bodyData));
+                .getPasswordAuthenticator()
+                .authenticate(AuthenticationSystem.fromPasswordRequest(ctx, bodyData));
         // Send response.
         ctx.json(responseData);
 
@@ -91,8 +90,8 @@ public final class DispatchHandler implements Router {
 
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()
-            .getTokenAuthenticator()
-            .authenticate(AuthenticationSystem.fromTokenRequest(ctx, bodyData));
+                .getTokenAuthenticator()
+                .authenticate(AuthenticationSystem.fromTokenRequest(ctx, bodyData));
         // Send response.
         ctx.json(responseData);
 
@@ -117,8 +116,8 @@ public final class DispatchHandler implements Router {
 
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()
-            .getSessionKeyAuthenticator()
-            .authenticate(AuthenticationSystem.fromComboTokenRequest(ctx, bodyData, tokenData));
+                .getSessionKeyAuthenticator()
+                .authenticate(AuthenticationSystem.fromComboTokenRequest(ctx, bodyData, tokenData));
         // Send response.
         ctx.json(responseData);
 
