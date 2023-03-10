@@ -58,8 +58,7 @@ public final class RegionHandler implements Router {
 
         var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
         if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
-            Grasscutter.getLogger()
-                    .error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
+            Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
             System.exit(1);
         } else if (configuredRegions.size() == 0)
             configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
@@ -77,8 +76,7 @@ public final class RegionHandler implements Router {
                     .setName(region.Name).setTitle(region.Title).setType("DEV_PUBLIC")
                     .setDispatchUrl(dispatchDomain + "/query_cur_region/" + region.Name)
                     .build();
-            usedNames.add(region.Name);
-            servers.add(identifier);
+            usedNames.add(region.Name); servers.add(identifier);
 
             // Create a region info object.
             var regionInfo = RegionInfo.newBuilder()
@@ -87,13 +85,11 @@ public final class RegionHandler implements Router {
                     .build();
             // Create an updated region query.
             var updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo).build();
-            regions.put(region.Name,
-                    new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
+            regions.put(region.Name, new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
         });
 
         // Create a config object.
-        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}"
-                .getBytes();
+        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
         Crypto.xor(customConfig, Crypto.DISPATCH_KEY); // XOR the config with the key.
 
         // Create an updated region list.
@@ -108,8 +104,7 @@ public final class RegionHandler implements Router {
 
         // CN
         // Create a config object.
-        byte[] customConfigcn = "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}"
-                .getBytes();
+        byte[] customConfigcn = "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
         Crypto.xor(customConfigcn, Crypto.DISPATCH_KEY); // XOR the config with the key.
 
         // Create an updated region list.
@@ -210,13 +205,11 @@ public final class RegionHandler implements Router {
         String[] versionCode = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "").split("\\.");
         int versionMajor = Integer.parseInt(versionCode[0]);
         int versionMinor = Integer.parseInt(versionCode[1]);
-        int versionFix = Integer.parseInt(versionCode[2]);
+        int versionFix   = Integer.parseInt(versionCode[2]);
 
-        if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50)
-                || (versionMajor == 2 && versionMinor == 8)) {
+        if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50) || (versionMajor == 2 && versionMinor == 8)) {
             try {
-                QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData);
-                event.call();
+                QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
 
                 if (ctx.queryParam("dispatchSeed") == null) {
                     // More love for UA Patch players
@@ -238,17 +231,16 @@ public final class RegionHandler implements Router {
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(Integer.valueOf(key_id)));
                 var regionInfo = Utils.base64Decode(event.getRegionInfo());
 
-                // Encrypt regionInfo in chunks
+                //Encrypt regionInfo in chunks
                 ByteArrayOutputStream encryptedRegionInfoStream = new ByteArrayOutputStream();
 
-                // Thank you so much GH Copilot
+                //Thank you so much GH Copilot
                 int chunkSize = 256 - 11;
                 int regionInfoLength = regionInfo.length;
                 int numChunks = (int) Math.ceil(regionInfoLength / (double) chunkSize);
 
                 for (int i = 0; i < numChunks; i++) {
-                    byte[] chunk = Arrays.copyOfRange(regionInfo, i * chunkSize,
-                            Math.min((i + 1) * chunkSize, regionInfoLength));
+                    byte[] chunk = Arrays.copyOfRange(regionInfo, i * chunkSize, Math.min((i + 1) * chunkSize, regionInfoLength));
                     byte[] encryptedChunk = cipher.doFinal(chunk);
                     encryptedRegionInfoStream.write(encryptedChunk);
                 }
@@ -263,13 +255,14 @@ public final class RegionHandler implements Router {
                 rsp.sign = Utils.base64Encode(privateSignature.sign());
 
                 ctx.json(rsp);
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 Grasscutter.getLogger().error("An error occurred while handling query_cur_region.", e);
             }
-        } else {
+        }
+        else {
             // Invoke event.
-            QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData);
-            event.call();
+            QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
             // Respond with event result.
             ctx.result(event.getRegionInfo());
         }
@@ -300,7 +293,6 @@ public final class RegionHandler implements Router {
 
     /**
      * Gets the current region query.
-     *
      * @return A {@link QueryCurrRegionHttpRsp} object.
      */
     public static QueryCurrRegionHttpRsp getCurrentRegion() {
