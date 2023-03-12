@@ -17,12 +17,21 @@ import static emu.grasscutter.utils.Language.translate;
  */
 public final class DispatchHandler implements Router {
     @Override public void applyRoutes(Javalin javalin) {
+        // OS
         // Username & Password login (from client).
         javalin.post("/hk4e_global/mdk/shield/api/login", DispatchHandler::clientLogin);
         // Cached token login (from registry).
         javalin.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
         // Combo token login (from session key).
         javalin.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
+
+        // CN
+        // Username & Password login (from client).
+        javalin.post("/hk4e_cn/mdk/shield/api/login", DispatchHandler::clientLogin);
+        // Cached token login (from registry).
+        javalin.post("/hk4e_cn/mdk/shield/api/verify", DispatchHandler::tokenLogin);
+        // Combo token login (from session key).
+        javalin.post("/hk4e_cn/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
 
         // External login (from other clients).
         javalin.get("/authentication/type", ctx -> ctx.result(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));

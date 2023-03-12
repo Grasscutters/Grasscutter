@@ -23,7 +23,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+
 import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.Language.translate;
 
 /**
  * Handles requests related to region queries.
@@ -31,6 +34,7 @@ import static emu.grasscutter.config.Configuration.*;
 public final class RegionHandler implements Router {
     private static final Map<String, RegionData> regions = new ConcurrentHashMap<>();
     private static String regionListResponse;
+    private static String regionListResponsecn;
 
     public RegionHandler() {
         try { // Read & initialize region data.
@@ -97,23 +101,88 @@ public final class RegionHandler implements Router {
 
         // Set the region list response.
         regionListResponse = Utils.base64Encode(updatedRegionList.toByteString().toByteArray());
+
+        // CN
+        // Create a config object.
+        byte[] customConfigcn = "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+        Crypto.xor(customConfigcn, Crypto.DISPATCH_KEY); // XOR the config with the key.
+
+        // Create an updated region list.
+        QueryRegionListHttpRsp updatedRegionListcn = QueryRegionListHttpRsp.newBuilder()
+                .addAllRegionList(servers)
+                .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfigcn))
+                .setEnableLoginPc(true).build();
+
+        // Set the region list response.
+        regionListResponsecn = Utils.base64Encode(updatedRegionListcn.toByteString().toByteArray());
     }
 
-    @Override public void applyRoutes(Javalin javalin) {
+    @Override
+    public void applyRoutes(Javalin javalin) {
         javalin.get("/query_region_list", RegionHandler::queryRegionList);
-        javalin.get("/query_cur_region/{region}", RegionHandler::queryCurrentRegion );
+        javalin.get("/query_cur_region/{region}", RegionHandler::queryCurrentRegion);
     }
 
     /**
+     * Handle query region list request.
+     *
+     * @param ctx The context object for handling the request.
      * @route /query_region_list
      */
     private static void queryRegionList(Context ctx) {
-        // Invoke event.
-        QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse); event.call();
-        // Respond with event result.
-        ctx.result(event.getRegionList());
+        // Get logger and query parameters.
+        Logger logger = Grasscutter.getLogger();
+        if (ctx.queryParamMap().containsKey("version") && ctx.queryParamMap().containsKey("platform")) {
+            String versionName = ctx.queryParam("version");
+            String versionCode = versionName.replaceAll("[/.0-9]*", "");
+            String platformName = ctx.queryParam("platform");
 
-        // Log to console.
+            // Determine the region list to use based on the version and platform.
+            if ("CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode)
+                    || "CNRELAndroid".equals(versionCode)) {
+                // Use the CN region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
+                event.call();
+                logger.debug("Connect to Chinese version");
+
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            } else if ("OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode)
+                    || "OSRELAndroid".equals(versionCode)) {
+                // Use the OS region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                event.call();
+                logger.debug("Connect to global version");
+
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            } else {
+                /*
+                 * String regionListResponse = "CP///////////wE=";
+                 * QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                 * event.call();
+                 * ctx.result(event.getRegionList());
+                 * return;
+                 */
+                // Use the default region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                event.call();
+                logger.debug("Connect to global version");
+
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            }
+        } else {
+            // Use the default region list.
+            QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+            event.call();
+            logger.debug("Connect to global version");
+
+            // Respond with the event result.
+            ctx.result(event.getRegionList());
+        }
+        // Log the request to the console.
         Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", ctx.ip()));
     }
 
