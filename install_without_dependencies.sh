@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Grasscutter install script for linux - Simpler version
+# Grasscutter install script for GNU/Linux - Simpler version
 # This installer doesn't ask you to install dependencies, you have to install them manually
 # Made by TurtleIdiot and modified by syktyvkar (and then again modified by Blue)
 
