@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Grasscutter install script for linux
+# Grasscutter install script for GNU/Linux
 # Made by TurtleIdiot
 
 # Stops the installer if any command has a non-zero exit status
