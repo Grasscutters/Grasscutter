@@ -126,18 +126,18 @@
     },
     "achievement": {
       "success": {
-        "grant": "🇺🇸Granted the achievement to %s.",
-        "revoke": "🇺🇸Revoked the achievement from %s.",
-        "progress": "🇺🇸Set progress of %s's achievement(id: %s) to %s.",
-        "grantall": "🇺🇸Granted %s achievement(s) to %s.",
-        "revokeall": "🇺🇸Revoked %s achievement(s) from %s."
+        "grant": "Выдано достижение игроку %s.",
+        "revoke": "Отозвано достижение у игрока %s.",
+        "progress": "Прогресс игрока %s в достижении (id: %s) установлен на %s.",
+        "grantall": "Выдано %s достижение(й) для %s.",
+        "revokeall": "Отозвано %s достижение(й) для %s."
       },
       "fail": {
-        "achievement_not_found": "🇺🇸Achievement not found.",
-        "already_achieved": "🇺🇸%s has already achieved the achievement.",
-        "not_yet_achieved": "🇺🇸%s hasn't achieved the achievement yet."
+        "achievement_not_found": "Достижение не найдено.",
+        "already_achieved": "%s уже имеет это достижение.",
+        "not_yet_achieved": "%s еще не получил это достижение."
       },
-      "description": "🇺🇸Grant, Revoke or Progress achievements."
+      "description": "Предоставление, отмена или прогресс достижений."
     },
     "announce": {
       "send_success": "Объявление было отправлено успешно, вы можете отзвать его с помощью команды /a revoke %s.",
