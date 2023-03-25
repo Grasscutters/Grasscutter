@@ -1,0 +1,3 @@
+[submodule "docs/wiki"]
+	path = docs/wiki
+	url = https://github.com/Grasscutters/Grasscutter.wiki.git
