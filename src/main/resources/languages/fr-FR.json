@@ -9,7 +9,7 @@
       "command_error": "Erreur de commande:"
     },
     "dispatch": {
-      "address_bind": "[Dispatch] Serveur de répartition  \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "address_bind": "[Dispatch] Serveur de répartition démarré à l'adresse \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Serveur de répartition démarré sur le port %s",
       "request": "[Dispatch] Le client %s %s demande : %s",
       "keystore": {
@@ -126,18 +126,18 @@
     },
     "achievement": {
       "success": {
-        "grant": "🇺🇸Granted the achievement to %s.",
-        "revoke": "🇺🇸Revoked the achievement from %s.",
-        "progress": "🇺🇸Set progress of %s's achievement(id: %s) to %s.",
-        "grantall": "🇺🇸Granted %s achievement(s) to %s.",
-        "revokeall": "🇺🇸Revoked %s achievement(s) from %s."
+        "grant": "Le succès à été attribué à %s.",
+        "revoke": "Le succès de %s à été retiré.",
+        "progress": "Le progrès du succès de %s (id: %s) est maintenant %s.",
+        "grantall": "%s succès ont été attibué à %s.",
+        "revokeall": "%s succès ont été retiré de %s."
       },
       "fail": {
-        "achievement_not_found": "🇺🇸Achievement not found.",
-        "already_achieved": "🇺🇸%s has already achieved the achievement.",
-        "not_yet_achieved": "🇺🇸%s hasn't achieved the achievement yet."
+        "achievement_not_found": "Succès introuvable",
+        "already_achieved": "%s à déja ce succès.",
+        "not_yet_achieved": "%s n'a pas encore accompli le succès."
       },
-      "description": "🇺🇸Grant, Revoke or Progress achievements."
+      "description": "Attribue, retire ou modifie le progrès d'un succès"
     },
     "announce": {
       "send_success": "L'annonce à bien été envoyée, vous pouvez la révoquer en utilisant /a revoke %s.",
