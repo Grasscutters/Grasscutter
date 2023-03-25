@@ -14,7 +14,7 @@ import lombok.Getter;
 @ResourceType(name = {"BattlePassMissionExcelConfigData.json"})
 @Getter
 public class BattlePassMissionData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private int addPoint;
     private int scheduleId;

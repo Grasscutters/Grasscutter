@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class InvestigationMonsterData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     int id;
     int cityId;
     List<Integer> monsterIdList;

@@ -20,11 +20,11 @@ import javax.annotation.Nullable;
 public class EntityPlatform extends EntityBaseGadget {
     @Getter
     private final Player owner;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final int gadgetId;
     @Getter
     private final EntityClientGadget gadget;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
     @Nullable
     @Getter

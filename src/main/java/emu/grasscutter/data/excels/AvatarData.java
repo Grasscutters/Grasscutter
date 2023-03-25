@@ -44,7 +44,7 @@ public class AvatarData extends GameResource {
     private float criticalHurt;
 
     private List<PropGrowCurve> propGrowCurves;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
 
     // Transient

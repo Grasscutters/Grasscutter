@@ -40,13 +40,13 @@ import javax.annotation.Nullable;
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
     @Getter private final GadgetData gadgetData;
-    @Getter(onMethod = @__(@Override)) @Setter
+    @Getter(onMethod_ = @Override) @Setter
     private int gadgetId;
 
     @Getter @Setter private int state;
     @Getter @Setter private int pointType;
     @Getter private GadgetContent content;
-    @Getter(onMethod = @__(@Override), lazy = true)
+    @Getter(onMethod_ = @Override, lazy = true)
     private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
     @Getter @Setter private SceneGadget metaGadget;
     @Nullable @Getter

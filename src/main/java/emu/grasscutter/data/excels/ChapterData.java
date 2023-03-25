@@ -15,7 +15,7 @@ import java.util.Map;
 @Setter  // TODO: remove on next API break
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChapterData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     int id;
     int beginQuestId;
     int endQuestId;
