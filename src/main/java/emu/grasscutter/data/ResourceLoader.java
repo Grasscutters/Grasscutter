@@ -7,10 +7,13 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
+import emu.grasscutter.game.quest.RewindData;
+import emu.grasscutter.game.quest.TeleportData;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.TsvUtils;
@@ -30,6 +33,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.util.Map.Entry;
+import javax.script.Bindings;
+import javax.script.CompiledScript;
 
 import static emu.grasscutter.utils.FileUtils.getDataPath;
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
@@ -102,8 +109,78 @@ public class ResourceLoader {
         loadBlossomResources();
         cacheTalentLevelSets();
 
+        // Load special ability in certain scene/dungeon
+        loadConfigLevelEntityData();
+        loadQuestShareConfig();
+
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
         loadedAll = true;
+    }
+
+    private static void loadConfigLevelEntityData(){
+        // Load from BinOutput
+        val pattern = Pattern.compile("ConfigLevelEntity_(.+?)\\.json");
+
+        try {
+            Files.newDirectoryStream(getResourcePath("BinOutput/LevelEntity/"), "ConfigLevelEntity_*.json").forEach(path -> {
+                val matcher = pattern.matcher(path.getFileName().toString());
+                if (!matcher.find()) return;
+                Map<String,ConfigLevelEntity> config;
+
+                try {
+                    config = JsonUtils.loadToMap(path, String.class, ConfigLevelEntity.class);
+                } catch (Exception e) {
+                    Grasscutter.getLogger().error("Error loading player ability embryos:", e);
+                    return;
+                }
+                GameData.getConfigLevelEntityDataMap().putAll(config);
+            });
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Error loading config level entity: no files found");
+            return;
+        }
+
+        if (GameData.getConfigLevelEntityDataMap() == null || GameData.getConfigLevelEntityDataMap().isEmpty()) {
+            Grasscutter.getLogger().error("No config level entity loaded!");
+            return;
+        }
+    }
+
+    private static void loadQuestShareConfig(){
+        // Load from BinOutput
+        val pattern = Pattern.compile("Q(.+?)\\ShareConfig.lua");
+
+        try {
+            Bindings bindings = ScriptLoader.getEngine().createBindings();
+            Files.newDirectoryStream(getResourcePath("Scripts/Quest/Share/"), "Q*ShareConfig.lua").forEach(path -> {
+                val matcher = pattern.matcher(path.getFileName().toString());
+                if (!matcher.find()) return;
+
+                CompiledScript cs = ScriptLoader.getScript("Quest/Share/"+path.getFileName().toString());
+                if (cs == null) return;
+
+                try{
+                    cs.eval(bindings);
+                    // these are Map<String, class>
+                    var teleportDataMap = ScriptLoader.getSerializer().toMap(TeleportData.class, bindings.get("quest_data"));
+                    var rewindDataMap = ScriptLoader.getSerializer().toMap(RewindData.class, bindings.get("rewind_data"));
+                    // convert them to Map<Integer, class> and cache
+                    GameData.getTeleportDataMap().putAll(teleportDataMap.entrySet().stream().collect(Collectors.toMap(entry -> Integer.valueOf(entry.getKey()), Entry::getValue)));
+                    GameData.getRewindDataMap().putAll(rewindDataMap.entrySet().stream().collect(Collectors.toMap(entry -> Integer.valueOf(entry.getKey()), Entry::getValue)));
+
+                } catch (Throwable e){
+                    Grasscutter.getLogger().error("Error while loading Quest Share Config: {}", path.getFileName().toString());
+                }
+            });
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Error loading Quest Share Config: no files found");
+            return;
+        }
+        if (GameData.getTeleportDataMap() == null || GameData.getTeleportDataMap().isEmpty()
+            || GameData.getRewindDataMap() == null || GameData.getRewindDataMap().isEmpty()) {
+            Grasscutter.getLogger().error("No Quest Share Config loaded!");
+            return;
+        }
     }
 
     public static void loadResources() {
