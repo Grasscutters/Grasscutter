@@ -14,7 +14,7 @@ public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
 
         FinishedParentQuestUpdateNotify proto = FinishedParentQuestUpdateNotify.newBuilder()
                 //.addParentQuestList(quest.toProto())
-                .addParentQuestList(quest.toProto(false))
+                .addParentQuestList(quest.toProto(true))
                 .build();
 
         this.setData(proto);
@@ -27,7 +27,7 @@ public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
 
         for (GameMainQuest mainQuest : quests) {
             //proto.addParentQuestList(mainQuest.toProto());
-            proto.addParentQuestList(mainQuest.toProto(false));
+            proto.addParentQuestList(mainQuest.toProto(true));
         }
         proto.build();
         this.setData(proto);
