@@ -5,10 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-
 import emu.grasscutter.game.props.SceneType;
 import lombok.Getter;
-import java.util.List;
 
 @ResourceType(name = "SceneExcelConfigData.json")
 @Getter
@@ -18,6 +16,4 @@ public class SceneData extends GameResource {
     @SerializedName("type")
     private SceneType sceneType;
     private String scriptData;
-    @Getter private String levelEntityConfig;
-    @Getter private List<Integer> specifiedAvatarList;
 }

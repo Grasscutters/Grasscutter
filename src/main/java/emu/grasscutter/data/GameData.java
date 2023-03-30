@@ -10,8 +10,6 @@ import java.util.Optional;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
-import emu.grasscutter.game.quest.RewindData;
-import emu.grasscutter.game.quest.TeleportData;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.excels.*;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
@@ -90,7 +88,6 @@ public class GameData {
     @Getter private static final Int2ObjectMap<MonsterCurveData> monsterCurveDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MonsterData> monsterDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MonsterDescribeData> monsterDescribeDataMap = new Int2ObjectOpenHashMap<>();
-    @Getter private static final Int2ObjectMap<MonsterSpecialNameData> monsterSpecialNameDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MusicGameBasicData> musicGameBasicDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<NpcData> npcDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<OpenStateData> openStateDataMap = new Int2ObjectOpenHashMap<>();
@@ -118,8 +115,6 @@ public class GameData {
     private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<ReliquaryLevelData> reliquaryLevelDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
-    @Getter private static final Int2ObjectMap<RewindData> rewindDataMap = new Int2ObjectOpenHashMap<>();
-    @Getter private static final Int2ObjectMap<TeleportData> teleportDataMap = new Int2ObjectOpenHashMap<>();
     // The following are accessed via getMapByResourceDef, and will show as unused
     private static final Int2ObjectMap<CodexMaterialData> codexMaterialDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<CodexQuestData> codexQuestDataMap = new Int2ObjectOpenHashMap<>();
@@ -131,7 +126,6 @@ public class GameData {
     @Getter private static final List<OpenStateData> openStateList = new ArrayList<>();
     @Getter private static final Map<Integer, List<Integer>> scenePointsPerScene = new HashMap<>();
     @Getter private static final Map<String, ScriptSceneData> scriptSceneDataMap = new HashMap<>();
-    @Getter private static final Map<String, ConfigLevelEntity> configLevelEntityDataMap = new HashMap<>();
     private static Map<Integer, List<Integer>> fetters = new HashMap<>();
     private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
     protected static Int2ObjectMap<IntSet> proudSkillGroupLevels = new Int2ObjectOpenHashMap<>();

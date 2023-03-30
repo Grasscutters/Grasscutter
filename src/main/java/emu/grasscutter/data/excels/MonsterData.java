@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels;
 
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.google.gson.annotations.SerializedName;
@@ -14,12 +13,8 @@ import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.MonsterType;
 import lombok.Getter;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
-@EqualsAndHashCode(callSuper=false)
-@Data
 @Getter
 public class MonsterData extends GameResource {
     static public Set<FightProperty> definedFightProperties = Set.of(FightProperty.FIGHT_PROP_BASE_HP, FightProperty.FIGHT_PROP_BASE_ATTACK, FightProperty.FIGHT_PROP_BASE_DEFENSE, FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT, FightProperty.FIGHT_PROP_FIRE_SUB_HURT, FightProperty.FIGHT_PROP_ELEC_SUB_HURT, FightProperty.FIGHT_PROP_WATER_SUB_HURT, FightProperty.FIGHT_PROP_GRASS_SUB_HURT, FightProperty.FIGHT_PROP_WIND_SUB_HURT, FightProperty.FIGHT_PROP_ROCK_SUB_HURT, FightProperty.FIGHT_PROP_ICE_SUB_HURT);
@@ -65,7 +60,6 @@ public class MonsterData extends GameResource {
     // Transient
     private int weaponId;
     private MonsterDescribeData describeData;
-    private int specialNameId; // will only be set if describe data is available
 
     public float getFightProperty(FightProperty prop) {
         return switch (prop) {
@@ -86,6 +80,8 @@ public class MonsterData extends GameResource {
 
     @Override
     public void onLoad() {
+        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
+
         for (int id : this.equips) {
             if (id == 0) {
                 continue;
@@ -96,18 +92,6 @@ public class MonsterData extends GameResource {
             }
             if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
                 this.weaponId = id;
-            }
-        }
-
-        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-
-        if (this.describeData == null){
-            return;
-        }
-        for(Entry<Integer, MonsterSpecialNameData> entry: GameData.getMonsterSpecialNameDataMap().entrySet()) {
-            if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()){
-                this.specialNameId = entry.getKey();
-                break;
             }
         }
     }

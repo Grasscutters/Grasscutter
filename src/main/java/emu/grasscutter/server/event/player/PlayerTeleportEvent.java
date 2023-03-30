@@ -58,17 +58,6 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
         /**
          * The player has asked to teleport using the command.
          */
-        COMMAND,
-
-
-        /**
-         * A script has asked the teleport.
-         */
-        SCRIPT,
-
-        /**
-         * Client requested transmit.
-         */
-        CLIENT
+        COMMAND
     }
 }

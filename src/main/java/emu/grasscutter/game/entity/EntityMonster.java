@@ -7,7 +7,6 @@ import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.EnvAnimalGatherConfigData;
 import emu.grasscutter.data.excels.MonsterCurveData;
 import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.data.excels.MonsterSpecialNameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityIdType;
@@ -203,12 +202,12 @@ public class EntityMonster extends GameEntity {
                 .addAllAffixList(getMonsterData().getAffix())
                 .setAuthorityPeerId(getWorld().getHostPeerId())
                 .setPoseId(this.getPoseId())
-                .setBlockId(getScene().getId())
-                .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
+                .setBlockId(3001)
+                .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
+                .setSpecialNameId(40);
 
-        if (getMonsterData().getDescribeData() != null){
-            monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleId())
-                .setSpecialNameId(getMonsterData().getSpecialNameId());
+        if (getMonsterData().getDescribeData() != null) {
+            monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleID());
         }
 
         if (this.getMonsterWeaponId() > 0) {
