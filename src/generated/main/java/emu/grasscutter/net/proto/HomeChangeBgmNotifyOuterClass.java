@@ -19,12 +19,17 @@ public final class HomeChangeBgmNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 bgmId = 7;</code>
+     * <code>uint32 bgm_id = 6;</code>
      * @return The bgmId.
      */
     int getBgmId();
   }
   /**
+   * <pre>
+   * Name: HLAEEPDHFMD
+   * CmdId: 4653
+   * </pre>
+   *
    * Protobuf type {@code HomeChangeBgmNotify}
    */
   public static final class HomeChangeBgmNotify extends
@@ -69,7 +74,7 @@ public final class HomeChangeBgmNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
 
               bgmId_ = input.readUInt32();
               break;
@@ -106,141 +111,10 @@ public final class HomeChangeBgmNotifyOuterClass {
               emu.grasscutter.net.proto.HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.class, emu.grasscutter.net.proto.HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeChangeBgmNotify.HMAPKOBFLGN}
-     */
-    public enum HMAPKOBFLGN
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4900;</code>
-       */
-      PEPPOHPHJOJ(1, 4900),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final HMAPKOBFLGN DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4900;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4900;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static HMAPKOBFLGN valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static HMAPKOBFLGN forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4900: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<HMAPKOBFLGN>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          HMAPKOBFLGN> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HMAPKOBFLGN>() {
-              public HMAPKOBFLGN findValueByNumber(int number) {
-                return HMAPKOBFLGN.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final HMAPKOBFLGN[] VALUES = getStaticValuesArray();
-      private static HMAPKOBFLGN[] getStaticValuesArray() {
-        return new HMAPKOBFLGN[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static HMAPKOBFLGN valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private HMAPKOBFLGN(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeChangeBgmNotify.HMAPKOBFLGN)
-    }
-
-    public static final int BGMID_FIELD_NUMBER = 7;
+    public static final int BGM_ID_FIELD_NUMBER = 6;
     private int bgmId_;
     /**
-     * <code>uint32 bgmId = 7;</code>
+     * <code>uint32 bgm_id = 6;</code>
      * @return The bgmId.
      */
     @java.lang.Override
@@ -263,7 +137,7 @@ public final class HomeChangeBgmNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bgmId_ != 0) {
-        output.writeUInt32(7, bgmId_);
+        output.writeUInt32(6, bgmId_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,7 +150,7 @@ public final class HomeChangeBgmNotifyOuterClass {
       size = 0;
       if (bgmId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, bgmId_);
+          .computeUInt32Size(6, bgmId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,7 +180,7 @@ public final class HomeChangeBgmNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BGMID_FIELD_NUMBER;
+      hash = (37 * hash) + BGM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBgmId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -404,6 +278,11 @@ public final class HomeChangeBgmNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HLAEEPDHFMD
+     * CmdId: 4653
+     * </pre>
+     *
      * Protobuf type {@code HomeChangeBgmNotify}
      */
     public static final class Builder extends
@@ -552,7 +431,7 @@ public final class HomeChangeBgmNotifyOuterClass {
 
       private int bgmId_ ;
       /**
-       * <code>uint32 bgmId = 7;</code>
+       * <code>uint32 bgm_id = 6;</code>
        * @return The bgmId.
        */
       @java.lang.Override
@@ -560,7 +439,7 @@ public final class HomeChangeBgmNotifyOuterClass {
         return bgmId_;
       }
       /**
-       * <code>uint32 bgmId = 7;</code>
+       * <code>uint32 bgm_id = 6;</code>
        * @param value The bgmId to set.
        * @return This builder for chaining.
        */
@@ -571,7 +450,7 @@ public final class HomeChangeBgmNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bgmId = 7;</code>
+       * <code>uint32 bgm_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearBgmId() {
@@ -647,10 +526,8 @@ public final class HomeChangeBgmNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031HomeChangeBgmNotify.proto\"u\n\023HomeChang" +
-      "eBgmNotify\022\r\n\005bgmId\030\007 \001(\r\"O\n\013HMAPKOBFLGN" +
-      "\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\244&\022\017\n\013DCDNILFD" +
-      "FLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grassc" +
+      "\n\031HomeChangeBgmNotify.proto\"%\n\023HomeChang" +
+      "eBgmNotify\022\016\n\006bgm_id\030\006 \001(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

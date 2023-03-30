@@ -19,6 +19,11 @@ public final class EndCameraSceneLookNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Name: NJNFDJOHBIO
+   * CmdId: 293
+   * </pre>
+   *
    * Protobuf type {@code EndCameraSceneLookNotify}
    */
   public static final class EndCameraSceneLookNotify extends
@@ -93,137 +98,6 @@ public final class EndCameraSceneLookNotifyOuterClass {
       return emu.grasscutter.net.proto.EndCameraSceneLookNotifyOuterClass.internal_static_EndCameraSceneLookNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.EndCameraSceneLookNotifyOuterClass.EndCameraSceneLookNotify.class, emu.grasscutter.net.proto.EndCameraSceneLookNotifyOuterClass.EndCameraSceneLookNotify.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code EndCameraSceneLookNotify.PMOFGHEIHME}
-     */
-    public enum PMOFGHEIHME
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 227;</code>
-       */
-      PEPPOHPHJOJ(1, 227),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PMOFGHEIHME DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 227;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 227;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PMOFGHEIHME valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PMOFGHEIHME forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 227: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PMOFGHEIHME>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PMOFGHEIHME> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PMOFGHEIHME>() {
-              public PMOFGHEIHME findValueByNumber(int number) {
-                return PMOFGHEIHME.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.EndCameraSceneLookNotifyOuterClass.EndCameraSceneLookNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PMOFGHEIHME[] VALUES = getStaticValuesArray();
-      private static PMOFGHEIHME[] getStaticValuesArray() {
-        return new PMOFGHEIHME[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static PMOFGHEIHME valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PMOFGHEIHME(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:EndCameraSceneLookNotify.PMOFGHEIHME)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -371,6 +245,11 @@ public final class EndCameraSceneLookNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NJNFDJOHBIO
+     * CmdId: 293
+     * </pre>
+     *
      * Protobuf type {@code EndCameraSceneLookNotify}
      */
     public static final class Builder extends
@@ -577,11 +456,9 @@ public final class EndCameraSceneLookNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036EndCameraSceneLookNotify.proto\"k\n\030EndC" +
-      "ameraSceneLookNotify\"O\n\013PMOFGHEIHME\022\010\n\004N" +
-      "ONE\020\000\022\020\n\013PEPPOHPHJOJ\020\343\001\022\017\n\013DCDNILFDFLB\020\000" +
-      "\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "\n\036EndCameraSceneLookNotify.proto\"\032\n\030EndC" +
+      "ameraSceneLookNotifyB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

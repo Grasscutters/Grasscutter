@@ -19,12 +19,17 @@ public final class GetActivityShopSheetInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 shopType = 14;</code>
+     * <code>uint32 shop_type = 7;</code>
      * @return The shopType.
      */
     int getShopType();
   }
   /**
+   * <pre>
+   * Name: FDPHAHHAKNI
+   * CmdId: 772
+   * </pre>
+   *
    * Protobuf type {@code GetActivityShopSheetInfoReq}
    */
   public static final class GetActivityShopSheetInfoReq extends
@@ -69,7 +74,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 56: {
 
               shopType_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class GetActivityShopSheetInfoReqOuterClass {
               emu.grasscutter.net.proto.GetActivityShopSheetInfoReqOuterClass.GetActivityShopSheetInfoReq.class, emu.grasscutter.net.proto.GetActivityShopSheetInfoReqOuterClass.GetActivityShopSheetInfoReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetActivityShopSheetInfoReq.BAGDMNOKKGJ}
-     */
-    public enum BAGDMNOKKGJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 780;</code>
-       */
-      PEPPOHPHJOJ(1, 780),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final BAGDMNOKKGJ DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final BAGDMNOKKGJ EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 780;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 780;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static BAGDMNOKKGJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static BAGDMNOKKGJ forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 780: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BAGDMNOKKGJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BAGDMNOKKGJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BAGDMNOKKGJ>() {
-              public BAGDMNOKKGJ findValueByNumber(int number) {
-                return BAGDMNOKKGJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetActivityShopSheetInfoReqOuterClass.GetActivityShopSheetInfoReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final BAGDMNOKKGJ[] VALUES = getStaticValuesArray();
-      private static BAGDMNOKKGJ[] getStaticValuesArray() {
-        return new BAGDMNOKKGJ[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static BAGDMNOKKGJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private BAGDMNOKKGJ(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetActivityShopSheetInfoReq.BAGDMNOKKGJ)
-    }
-
-    public static final int SHOPTYPE_FIELD_NUMBER = 14;
+    public static final int SHOP_TYPE_FIELD_NUMBER = 7;
     private int shopType_;
     /**
-     * <code>uint32 shopType = 14;</code>
+     * <code>uint32 shop_type = 7;</code>
      * @return The shopType.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shopType_ != 0) {
-        output.writeUInt32(14, shopType_);
+        output.writeUInt32(7, shopType_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
       size = 0;
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, shopType_);
+          .computeUInt32Size(7, shopType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SHOPTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getShopType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class GetActivityShopSheetInfoReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FDPHAHHAKNI
+     * CmdId: 772
+     * </pre>
+     *
      * Protobuf type {@code GetActivityShopSheetInfoReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
 
       private int shopType_ ;
       /**
-       * <code>uint32 shopType = 14;</code>
+       * <code>uint32 shop_type = 7;</code>
        * @return The shopType.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
         return shopType_;
       }
       /**
-       * <code>uint32 shopType = 14;</code>
+       * <code>uint32 shop_type = 7;</code>
        * @param value The shopType to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 shopType = 14;</code>
+       * <code>uint32 shop_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
@@ -655,12 +526,10 @@ public final class GetActivityShopSheetInfoReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!GetActivityShopSheetInfoReq.proto\"\221\001\n\033" +
-      "GetActivityShopSheetInfoReq\022\020\n\010shopType\030" +
-      "\016 \001(\r\"`\n\013BAGDMNOKKGJ\022\010\n\004NONE\020\000\022\020\n\013PEPPOH" +
-      "PHJOJ\020\214\006\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA" +
-      "\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n!GetActivityShopSheetInfoReq.proto\"0\n\033G" +
+      "etActivityShopSheetInfoReq\022\021\n\tshop_type\030" +
+      "\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

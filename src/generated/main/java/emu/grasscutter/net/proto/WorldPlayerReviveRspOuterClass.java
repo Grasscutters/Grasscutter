@@ -25,6 +25,11 @@ public final class WorldPlayerReviveRspOuterClass {
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: EBOELFEFKAI
+   * CmdId: 268
+   * </pre>
+   *
    * Protobuf type {@code WorldPlayerReviveRsp}
    */
   public static final class WorldPlayerReviveRsp extends
@@ -104,137 +109,6 @@ public final class WorldPlayerReviveRspOuterClass {
       return emu.grasscutter.net.proto.WorldPlayerReviveRspOuterClass.internal_static_WorldPlayerReviveRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.WorldPlayerReviveRspOuterClass.WorldPlayerReviveRsp.class, emu.grasscutter.net.proto.WorldPlayerReviveRspOuterClass.WorldPlayerReviveRsp.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code WorldPlayerReviveRsp.CMKMFBOHIFE}
-     */
-    public enum CMKMFBOHIFE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 221;</code>
-       */
-      PEPPOHPHJOJ(1, 221),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CMKMFBOHIFE DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 221;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 221;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CMKMFBOHIFE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CMKMFBOHIFE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 221: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CMKMFBOHIFE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CMKMFBOHIFE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CMKMFBOHIFE>() {
-              public CMKMFBOHIFE findValueByNumber(int number) {
-                return CMKMFBOHIFE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.WorldPlayerReviveRspOuterClass.WorldPlayerReviveRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CMKMFBOHIFE[] VALUES = getStaticValuesArray();
-      private static CMKMFBOHIFE[] getStaticValuesArray() {
-        return new CMKMFBOHIFE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static CMKMFBOHIFE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CMKMFBOHIFE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:WorldPlayerReviveRsp.CMKMFBOHIFE)
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
@@ -404,6 +278,11 @@ public final class WorldPlayerReviveRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: EBOELFEFKAI
+     * CmdId: 268
+     * </pre>
+     *
      * Protobuf type {@code WorldPlayerReviveRsp}
      */
     public static final class Builder extends
@@ -647,11 +526,9 @@ public final class WorldPlayerReviveRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032WorldPlayerReviveRsp.proto\"x\n\024WorldPla" +
-      "yerReviveRsp\022\017\n\007retcode\030\006 \001(\005\"O\n\013CMKMFBO" +
-      "HIFE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\335\001\022\017\n\013DCDN" +
-      "ILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\n\032WorldPlayerReviveRsp.proto\"\'\n\024WorldPla" +
+      "yerReviveRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

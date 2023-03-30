@@ -15,6 +15,10 @@ public final class MotionStateOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: KKAMMHDBPKH
+   * </pre>
+   *
    * Protobuf enum {@code MotionState}
    */
   public enum MotionState

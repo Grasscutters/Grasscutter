@@ -19,12 +19,17 @@ public final class ForgeStartRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: INIMIDEBPCP
+   * CmdId: 671
+   * </pre>
+   *
    * Protobuf type {@code ForgeStartRsp}
    */
   public static final class ForgeStartRsp extends
@@ -69,7 +74,7 @@ public final class ForgeStartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 88: {
 
               retcode_ = input.readInt32();
               break;
@@ -106,141 +111,10 @@ public final class ForgeStartRspOuterClass {
               emu.grasscutter.net.proto.ForgeStartRspOuterClass.ForgeStartRsp.class, emu.grasscutter.net.proto.ForgeStartRspOuterClass.ForgeStartRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ForgeStartRsp.PABBAJPLAIC}
-     */
-    public enum PABBAJPLAIC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 603;</code>
-       */
-      PEPPOHPHJOJ(1, 603),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PABBAJPLAIC DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 603;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 603;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PABBAJPLAIC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PABBAJPLAIC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 603: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PABBAJPLAIC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PABBAJPLAIC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PABBAJPLAIC>() {
-              public PABBAJPLAIC findValueByNumber(int number) {
-                return PABBAJPLAIC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ForgeStartRspOuterClass.ForgeStartRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PABBAJPLAIC[] VALUES = getStaticValuesArray();
-      private static PABBAJPLAIC[] getStaticValuesArray() {
-        return new PABBAJPLAIC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static PABBAJPLAIC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PABBAJPLAIC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ForgeStartRsp.PABBAJPLAIC)
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -263,7 +137,7 @@ public final class ForgeStartRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(11, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,7 +150,7 @@ public final class ForgeStartRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(11, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -404,6 +278,11 @@ public final class ForgeStartRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: INIMIDEBPCP
+     * CmdId: 671
+     * </pre>
+     *
      * Protobuf type {@code ForgeStartRsp}
      */
     public static final class Builder extends
@@ -552,7 +431,7 @@ public final class ForgeStartRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 11;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -560,7 +439,7 @@ public final class ForgeStartRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -571,7 +450,7 @@ public final class ForgeStartRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -647,11 +526,9 @@ public final class ForgeStartRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023ForgeStartRsp.proto\"q\n\rForgeStartRsp\022\017" +
-      "\n\007retcode\030\n \001(\005\"O\n\013PABBAJPLAIC\022\010\n\004NONE\020\000" +
-      "\022\020\n\013PEPPOHPHJOJ\020\333\004\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013N" +
-      "NBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\023ForgeStartRsp.proto\" \n\rForgeStartRsp\022\017" +
+      "\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

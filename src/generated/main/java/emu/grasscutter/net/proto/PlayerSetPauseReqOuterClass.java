@@ -19,12 +19,17 @@ public final class PlayerSetPauseReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isPaused = 11;</code>
+     * <code>bool is_paused = 4;</code>
      * @return The isPaused.
      */
     boolean getIsPaused();
   }
   /**
+   * <pre>
+   * Name: PMEKJCILJAH
+   * CmdId: 102
+   * </pre>
+   *
    * Protobuf type {@code PlayerSetPauseReq}
    */
   public static final class PlayerSetPauseReq extends
@@ -69,7 +74,7 @@ public final class PlayerSetPauseReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 32: {
 
               isPaused_ = input.readBool();
               break;
@@ -106,149 +111,10 @@ public final class PlayerSetPauseReqOuterClass {
               emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq.class, emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PlayerSetPauseReq.OHGOMKFOANB}
-     */
-    public enum OHGOMKFOANB
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 153;</code>
-       */
-      PEPPOHPHJOJ(1, 153),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final OHGOMKFOANB DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final OHGOMKFOANB EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 153;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 153;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OHGOMKFOANB valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OHGOMKFOANB forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 153: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OHGOMKFOANB>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OHGOMKFOANB> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OHGOMKFOANB>() {
-              public OHGOMKFOANB findValueByNumber(int number) {
-                return OHGOMKFOANB.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OHGOMKFOANB[] VALUES = getStaticValuesArray();
-      private static OHGOMKFOANB[] getStaticValuesArray() {
-        return new OHGOMKFOANB[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static OHGOMKFOANB valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private OHGOMKFOANB(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PlayerSetPauseReq.OHGOMKFOANB)
-    }
-
-    public static final int ISPAUSED_FIELD_NUMBER = 11;
+    public static final int IS_PAUSED_FIELD_NUMBER = 4;
     private boolean isPaused_;
     /**
-     * <code>bool isPaused = 11;</code>
+     * <code>bool is_paused = 4;</code>
      * @return The isPaused.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class PlayerSetPauseReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isPaused_ != false) {
-        output.writeBool(11, isPaused_);
+        output.writeBool(4, isPaused_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class PlayerSetPauseReqOuterClass {
       size = 0;
       if (isPaused_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isPaused_);
+          .computeBoolSize(4, isPaused_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class PlayerSetPauseReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISPAUSED_FIELD_NUMBER;
+      hash = (37 * hash) + IS_PAUSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsPaused());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -413,6 +279,11 @@ public final class PlayerSetPauseReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PMEKJCILJAH
+     * CmdId: 102
+     * </pre>
+     *
      * Protobuf type {@code PlayerSetPauseReq}
      */
     public static final class Builder extends
@@ -561,7 +432,7 @@ public final class PlayerSetPauseReqOuterClass {
 
       private boolean isPaused_ ;
       /**
-       * <code>bool isPaused = 11;</code>
+       * <code>bool is_paused = 4;</code>
        * @return The isPaused.
        */
       @java.lang.Override
@@ -569,7 +440,7 @@ public final class PlayerSetPauseReqOuterClass {
         return isPaused_;
       }
       /**
-       * <code>bool isPaused = 11;</code>
+       * <code>bool is_paused = 4;</code>
        * @param value The isPaused to set.
        * @return This builder for chaining.
        */
@@ -580,7 +451,7 @@ public final class PlayerSetPauseReqOuterClass {
         return this;
       }
       /**
-       * <code>bool isPaused = 11;</code>
+       * <code>bool is_paused = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsPaused() {
@@ -656,11 +527,9 @@ public final class PlayerSetPauseReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027PlayerSetPauseReq.proto\"\207\001\n\021PlayerSetP" +
-      "auseReq\022\020\n\010isPaused\030\013 \001(\010\"`\n\013OHGOMKFOANB" +
-      "\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\231\001\022\017\n\013DCDNILFD" +
-      "FLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032" +
-      "\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\027PlayerSetPauseReq.proto\"&\n\021PlayerSetPa" +
+      "useReq\022\021\n\tis_paused\030\004 \001(\010B\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

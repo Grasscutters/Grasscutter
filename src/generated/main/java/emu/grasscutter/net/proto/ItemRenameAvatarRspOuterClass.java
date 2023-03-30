@@ -19,24 +19,29 @@ public final class ItemRenameAvatarRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>uint32 cd_time = 5;</code>
+     * @return The cdTime.
      */
-    int getRetcode();
+    int getCdTime();
 
     /**
-     * <code>uint32 renameId = 8;</code>
+     * <code>uint32 rename_id = 9;</code>
      * @return The renameId.
      */
     int getRenameId();
 
     /**
-     * <code>uint32 cdTime = 7;</code>
-     * @return The cdTime.
+     * <code>int32 retcode = 7;</code>
+     * @return The retcode.
      */
-    int getCdTime();
+    int getRetcode();
   }
   /**
+   * <pre>
+   * Name: GHECAHIKANG
+   * CmdId: 1797
+   * </pre>
+   *
    * Protobuf type {@code ItemRenameAvatarRsp}
    */
   public static final class ItemRenameAvatarRsp extends
@@ -81,19 +86,19 @@ public final class ItemRenameAvatarRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
 
               cdTime_ = input.readUInt32();
               break;
             }
-            case 64: {
-
-              renameId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 56: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              renameId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,152 +133,21 @@ public final class ItemRenameAvatarRspOuterClass {
               emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.class, emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.Builder.class);
     }
 
+    public static final int CD_TIME_FIELD_NUMBER = 5;
+    private int cdTime_;
     /**
-     * Protobuf enum {@code ItemRenameAvatarRsp.BDEOFMOFEEF}
-     */
-    public enum BDEOFMOFEEF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1628;</code>
-       */
-      PEPPOHPHJOJ(1, 1628),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final BDEOFMOFEEF DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1628;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1628;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static BDEOFMOFEEF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static BDEOFMOFEEF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1628: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BDEOFMOFEEF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BDEOFMOFEEF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BDEOFMOFEEF>() {
-              public BDEOFMOFEEF findValueByNumber(int number) {
-                return BDEOFMOFEEF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final BDEOFMOFEEF[] VALUES = getStaticValuesArray();
-      private static BDEOFMOFEEF[] getStaticValuesArray() {
-        return new BDEOFMOFEEF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static BDEOFMOFEEF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private BDEOFMOFEEF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ItemRenameAvatarRsp.BDEOFMOFEEF)
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>uint32 cd_time = 5;</code>
+     * @return The cdTime.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public int getCdTime() {
+      return cdTime_;
     }
 
-    public static final int RENAMEID_FIELD_NUMBER = 8;
+    public static final int RENAME_ID_FIELD_NUMBER = 9;
     private int renameId_;
     /**
-     * <code>uint32 renameId = 8;</code>
+     * <code>uint32 rename_id = 9;</code>
      * @return The renameId.
      */
     @java.lang.Override
@@ -281,15 +155,15 @@ public final class ItemRenameAvatarRspOuterClass {
       return renameId_;
     }
 
-    public static final int CDTIME_FIELD_NUMBER = 7;
-    private int cdTime_;
+    public static final int RETCODE_FIELD_NUMBER = 7;
+    private int retcode_;
     /**
-     * <code>uint32 cdTime = 7;</code>
-     * @return The cdTime.
+     * <code>int32 retcode = 7;</code>
+     * @return The retcode.
      */
     @java.lang.Override
-    public int getCdTime() {
-      return cdTime_;
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -307,13 +181,13 @@ public final class ItemRenameAvatarRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cdTime_ != 0) {
-        output.writeUInt32(7, cdTime_);
-      }
-      if (renameId_ != 0) {
-        output.writeUInt32(8, renameId_);
+        output.writeUInt32(5, cdTime_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(7, retcode_);
+      }
+      if (renameId_ != 0) {
+        output.writeUInt32(9, renameId_);
       }
       unknownFields.writeTo(output);
     }
@@ -326,15 +200,15 @@ public final class ItemRenameAvatarRspOuterClass {
       size = 0;
       if (cdTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, cdTime_);
-      }
-      if (renameId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, renameId_);
+          .computeUInt32Size(5, cdTime_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(7, retcode_);
+      }
+      if (renameId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, renameId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,12 +225,12 @@ public final class ItemRenameAvatarRspOuterClass {
       }
       emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp other = (emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getRenameId()
-          != other.getRenameId()) return false;
       if (getCdTime()
           != other.getCdTime()) return false;
+      if (getRenameId()
+          != other.getRenameId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,12 +242,12 @@ public final class ItemRenameAvatarRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCdTime();
+      hash = (37 * hash) + RENAME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRenameId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + RENAMEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRenameId();
-      hash = (37 * hash) + CDTIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCdTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -470,6 +344,11 @@ public final class ItemRenameAvatarRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GHECAHIKANG
+     * CmdId: 1797
+     * </pre>
+     *
      * Protobuf type {@code ItemRenameAvatarRsp}
      */
     public static final class Builder extends
@@ -507,11 +386,11 @@ public final class ItemRenameAvatarRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
+        cdTime_ = 0;
 
         renameId_ = 0;
 
-        cdTime_ = 0;
+        retcode_ = 0;
 
         return this;
       }
@@ -539,9 +418,9 @@ public final class ItemRenameAvatarRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp buildPartial() {
         emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp result = new emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp(this);
-        result.retcode_ = retcode_;
-        result.renameId_ = renameId_;
         result.cdTime_ = cdTime_;
+        result.renameId_ = renameId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -590,14 +469,14 @@ public final class ItemRenameAvatarRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp other) {
         if (other == emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getCdTime() != 0) {
+          setCdTime(other.getCdTime());
         }
         if (other.getRenameId() != 0) {
           setRenameId(other.getRenameId());
         }
-        if (other.getCdTime() != 0) {
-          setCdTime(other.getCdTime());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -628,71 +507,9 @@ public final class ItemRenameAvatarRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int renameId_ ;
-      /**
-       * <code>uint32 renameId = 8;</code>
-       * @return The renameId.
-       */
-      @java.lang.Override
-      public int getRenameId() {
-        return renameId_;
-      }
-      /**
-       * <code>uint32 renameId = 8;</code>
-       * @param value The renameId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRenameId(int value) {
-        
-        renameId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 renameId = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRenameId() {
-        
-        renameId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int cdTime_ ;
       /**
-       * <code>uint32 cdTime = 7;</code>
+       * <code>uint32 cd_time = 5;</code>
        * @return The cdTime.
        */
       @java.lang.Override
@@ -700,7 +517,7 @@ public final class ItemRenameAvatarRspOuterClass {
         return cdTime_;
       }
       /**
-       * <code>uint32 cdTime = 7;</code>
+       * <code>uint32 cd_time = 5;</code>
        * @param value The cdTime to set.
        * @return This builder for chaining.
        */
@@ -711,12 +528,74 @@ public final class ItemRenameAvatarRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cdTime = 7;</code>
+       * <code>uint32 cd_time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCdTime() {
         
         cdTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int renameId_ ;
+      /**
+       * <code>uint32 rename_id = 9;</code>
+       * @return The renameId.
+       */
+      @java.lang.Override
+      public int getRenameId() {
+        return renameId_;
+      }
+      /**
+       * <code>uint32 rename_id = 9;</code>
+       * @param value The renameId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRenameId(int value) {
+        
+        renameId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 rename_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRenameId() {
+        
+        renameId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -787,11 +666,9 @@ public final class ItemRenameAvatarRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031ItemRenameAvatarRsp.proto\"\231\001\n\023ItemRena" +
-      "meAvatarRsp\022\017\n\007retcode\030\017 \001(\005\022\020\n\010renameId" +
-      "\030\010 \001(\r\022\016\n\006cdTime\030\007 \001(\r\"O\n\013BDEOFMOFEEF\022\010\n" +
-      "\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\334\014\022\017\n\013DCDNILFDFLB" +
-      "\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
+      "\n\031ItemRenameAvatarRsp.proto\"J\n\023ItemRenam" +
+      "eAvatarRsp\022\017\n\007cd_time\030\005 \001(\r\022\021\n\trename_id" +
+      "\030\t \001(\r\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -803,7 +680,7 @@ public final class ItemRenameAvatarRspOuterClass {
     internal_static_ItemRenameAvatarRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ItemRenameAvatarRsp_descriptor,
-        new java.lang.String[] { "Retcode", "RenameId", "CdTime", });
+        new java.lang.String[] { "CdTime", "RenameId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

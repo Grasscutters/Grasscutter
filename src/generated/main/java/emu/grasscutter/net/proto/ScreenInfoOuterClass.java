@@ -19,18 +19,22 @@ public final class ScreenInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 liveId = 1;</code>
+     * <code>uint32 live_id = 1;</code>
      * @return The liveId.
      */
     int getLiveId();
 
     /**
-     * <code>uint32 projectorEntityId = 2;</code>
+     * <code>uint32 projector_entity_id = 2;</code>
      * @return The projectorEntityId.
      */
     int getProjectorEntityId();
   }
   /**
+   * <pre>
+   * Name: HLJEHBEBFMD
+   * </pre>
+   *
    * Protobuf type {@code ScreenInfo}
    */
   public static final class ScreenInfo extends
@@ -117,10 +121,10 @@ public final class ScreenInfoOuterClass {
               emu.grasscutter.net.proto.ScreenInfoOuterClass.ScreenInfo.class, emu.grasscutter.net.proto.ScreenInfoOuterClass.ScreenInfo.Builder.class);
     }
 
-    public static final int LIVEID_FIELD_NUMBER = 1;
+    public static final int LIVE_ID_FIELD_NUMBER = 1;
     private int liveId_;
     /**
-     * <code>uint32 liveId = 1;</code>
+     * <code>uint32 live_id = 1;</code>
      * @return The liveId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class ScreenInfoOuterClass {
       return liveId_;
     }
 
-    public static final int PROJECTORENTITYID_FIELD_NUMBER = 2;
+    public static final int PROJECTOR_ENTITY_ID_FIELD_NUMBER = 2;
     private int projectorEntityId_;
     /**
-     * <code>uint32 projectorEntityId = 2;</code>
+     * <code>uint32 projector_entity_id = 2;</code>
      * @return The projectorEntityId.
      */
     @java.lang.Override
@@ -206,9 +210,9 @@ public final class ScreenInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LIVEID_FIELD_NUMBER;
+      hash = (37 * hash) + LIVE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLiveId();
-      hash = (37 * hash) + PROJECTORENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + PROJECTOR_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectorEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -306,6 +310,10 @@ public final class ScreenInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HLJEHBEBFMD
+     * </pre>
+     *
      * Protobuf type {@code ScreenInfo}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class ScreenInfoOuterClass {
 
       private int liveId_ ;
       /**
-       * <code>uint32 liveId = 1;</code>
+       * <code>uint32 live_id = 1;</code>
        * @return The liveId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class ScreenInfoOuterClass {
         return liveId_;
       }
       /**
-       * <code>uint32 liveId = 1;</code>
+       * <code>uint32 live_id = 1;</code>
        * @param value The liveId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class ScreenInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 liveId = 1;</code>
+       * <code>uint32 live_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLiveId() {
@@ -491,7 +499,7 @@ public final class ScreenInfoOuterClass {
 
       private int projectorEntityId_ ;
       /**
-       * <code>uint32 projectorEntityId = 2;</code>
+       * <code>uint32 projector_entity_id = 2;</code>
        * @return The projectorEntityId.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class ScreenInfoOuterClass {
         return projectorEntityId_;
       }
       /**
-       * <code>uint32 projectorEntityId = 2;</code>
+       * <code>uint32 projector_entity_id = 2;</code>
        * @param value The projectorEntityId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class ScreenInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 projectorEntityId = 2;</code>
+       * <code>uint32 projector_entity_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectorEntityId() {
@@ -586,9 +594,9 @@ public final class ScreenInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020ScreenInfo.proto\"7\n\nScreenInfo\022\016\n\006live" +
-      "Id\030\001 \001(\r\022\031\n\021projectorEntityId\030\002 \001(\rB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\020ScreenInfo.proto\":\n\nScreenInfo\022\017\n\007live" +
+      "_id\030\001 \001(\r\022\033\n\023projector_entity_id\030\002 \001(\rB\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

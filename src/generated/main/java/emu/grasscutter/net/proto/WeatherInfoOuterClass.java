@@ -19,12 +19,16 @@ public final class WeatherInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 weatherAreaId = 1;</code>
+     * <code>uint32 weather_area_id = 1;</code>
      * @return The weatherAreaId.
      */
     int getWeatherAreaId();
   }
   /**
+   * <pre>
+   * Name: CPPKIIBAODF
+   * </pre>
+   *
    * Protobuf type {@code WeatherInfo}
    */
   public static final class WeatherInfo extends
@@ -106,10 +110,10 @@ public final class WeatherInfoOuterClass {
               emu.grasscutter.net.proto.WeatherInfoOuterClass.WeatherInfo.class, emu.grasscutter.net.proto.WeatherInfoOuterClass.WeatherInfo.Builder.class);
     }
 
-    public static final int WEATHERAREAID_FIELD_NUMBER = 1;
+    public static final int WEATHER_AREA_ID_FIELD_NUMBER = 1;
     private int weatherAreaId_;
     /**
-     * <code>uint32 weatherAreaId = 1;</code>
+     * <code>uint32 weather_area_id = 1;</code>
      * @return The weatherAreaId.
      */
     @java.lang.Override
@@ -175,7 +179,7 @@ public final class WeatherInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WEATHERAREAID_FIELD_NUMBER;
+      hash = (37 * hash) + WEATHER_AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWeatherAreaId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -273,6 +277,10 @@ public final class WeatherInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CPPKIIBAODF
+     * </pre>
+     *
      * Protobuf type {@code WeatherInfo}
      */
     public static final class Builder extends
@@ -421,7 +429,7 @@ public final class WeatherInfoOuterClass {
 
       private int weatherAreaId_ ;
       /**
-       * <code>uint32 weatherAreaId = 1;</code>
+       * <code>uint32 weather_area_id = 1;</code>
        * @return The weatherAreaId.
        */
       @java.lang.Override
@@ -429,7 +437,7 @@ public final class WeatherInfoOuterClass {
         return weatherAreaId_;
       }
       /**
-       * <code>uint32 weatherAreaId = 1;</code>
+       * <code>uint32 weather_area_id = 1;</code>
        * @param value The weatherAreaId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +448,7 @@ public final class WeatherInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 weatherAreaId = 1;</code>
+       * <code>uint32 weather_area_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearWeatherAreaId() {
@@ -516,9 +524,9 @@ public final class WeatherInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021WeatherInfo.proto\"$\n\013WeatherInfo\022\025\n\rwe" +
-      "atherAreaId\030\001 \001(\rB\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "\n\021WeatherInfo.proto\"&\n\013WeatherInfo\022\027\n\017we" +
+      "ather_area_id\030\001 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

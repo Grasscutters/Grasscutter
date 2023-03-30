@@ -19,18 +19,23 @@ public final class UnlockTransPointReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pointId = 4;</code>
+     * <code>uint32 point_id = 6;</code>
      * @return The pointId.
      */
     int getPointId();
 
     /**
-     * <code>uint32 sceneId = 6;</code>
+     * <code>uint32 scene_id = 5;</code>
      * @return The sceneId.
      */
     int getSceneId();
   }
   /**
+   * <pre>
+   * Name: NCLHEKKHBAC
+   * CmdId: 3180
+   * </pre>
+   *
    * Protobuf type {@code UnlockTransPointReq}
    */
   public static final class UnlockTransPointReq extends
@@ -75,14 +80,14 @@ public final class UnlockTransPointReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
-              pointId_ = input.readUInt32();
+              sceneId_ = input.readUInt32();
               break;
             }
             case 48: {
 
-              sceneId_ = input.readUInt32();
+              pointId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,147 +122,10 @@ public final class UnlockTransPointReqOuterClass {
               emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReq.class, emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code UnlockTransPointReq.ILJGMGBAMJF}
-     */
-    public enum ILJGMGBAMJF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0),
-      /**
-       * <code>PEPPOHPHJOJ = 3354;</code>
-       */
-      PEPPOHPHJOJ(3354),
-      /**
-       * <code>DCDNILFDFLB = 1;</code>
-       */
-      DCDNILFDFLB(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final ILJGMGBAMJF NNBKOLMPOEA = DCDNILFDFLB;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final ILJGMGBAMJF EAJIABGAOCI = DCDNILFDFLB;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3354;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3354;
-      /**
-       * <code>DCDNILFDFLB = 1;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 1;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ILJGMGBAMJF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ILJGMGBAMJF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 3354: return PEPPOHPHJOJ;
-          case 1: return DCDNILFDFLB;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ILJGMGBAMJF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ILJGMGBAMJF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ILJGMGBAMJF>() {
-              public ILJGMGBAMJF findValueByNumber(int number) {
-                return ILJGMGBAMJF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ILJGMGBAMJF[] VALUES = getStaticValuesArray();
-      private static ILJGMGBAMJF[] getStaticValuesArray() {
-        return new ILJGMGBAMJF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static ILJGMGBAMJF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ILJGMGBAMJF(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:UnlockTransPointReq.ILJGMGBAMJF)
-    }
-
-    public static final int POINTID_FIELD_NUMBER = 4;
+    public static final int POINT_ID_FIELD_NUMBER = 6;
     private int pointId_;
     /**
-     * <code>uint32 pointId = 4;</code>
+     * <code>uint32 point_id = 6;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -265,10 +133,10 @@ public final class UnlockTransPointReqOuterClass {
       return pointId_;
     }
 
-    public static final int SCENEID_FIELD_NUMBER = 6;
+    public static final int SCENE_ID_FIELD_NUMBER = 5;
     private int sceneId_;
     /**
-     * <code>uint32 sceneId = 6;</code>
+     * <code>uint32 scene_id = 5;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -290,11 +158,11 @@ public final class UnlockTransPointReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pointId_ != 0) {
-        output.writeUInt32(4, pointId_);
-      }
       if (sceneId_ != 0) {
-        output.writeUInt32(6, sceneId_);
+        output.writeUInt32(5, sceneId_);
+      }
+      if (pointId_ != 0) {
+        output.writeUInt32(6, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -305,13 +173,13 @@ public final class UnlockTransPointReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, pointId_);
-      }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, sceneId_);
+          .computeUInt32Size(5, sceneId_);
+      }
+      if (pointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -343,9 +211,9 @@ public final class UnlockTransPointReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POINTID_FIELD_NUMBER;
+      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -443,6 +311,11 @@ public final class UnlockTransPointReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NCLHEKKHBAC
+     * CmdId: 3180
+     * </pre>
+     *
      * Protobuf type {@code UnlockTransPointReq}
      */
     public static final class Builder extends
@@ -597,7 +470,7 @@ public final class UnlockTransPointReqOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 pointId = 4;</code>
+       * <code>uint32 point_id = 6;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -605,7 +478,7 @@ public final class UnlockTransPointReqOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 pointId = 4;</code>
+       * <code>uint32 point_id = 6;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -616,7 +489,7 @@ public final class UnlockTransPointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 pointId = 4;</code>
+       * <code>uint32 point_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -628,7 +501,7 @@ public final class UnlockTransPointReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -636,7 +509,7 @@ public final class UnlockTransPointReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -647,7 +520,7 @@ public final class UnlockTransPointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -723,12 +596,10 @@ public final class UnlockTransPointReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031UnlockTransPointReq.proto\"\231\001\n\023UnlockTr" +
-      "ansPointReq\022\017\n\007pointId\030\004 \001(\r\022\017\n\007sceneId\030" +
-      "\006 \001(\r\"`\n\013ILJGMGBAMJF\022\010\n\004NONE\020\000\022\020\n\013PEPPOH" +
-      "PHJOJ\020\232\032\022\017\n\013DCDNILFDFLB\020\001\022\017\n\013NNBKOLMPOEA" +
-      "\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n\031UnlockTransPointReq.proto\"9\n\023UnlockTra" +
+      "nsPointReq\022\020\n\010point_id\030\006 \001(\r\022\020\n\010scene_id" +
+      "\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

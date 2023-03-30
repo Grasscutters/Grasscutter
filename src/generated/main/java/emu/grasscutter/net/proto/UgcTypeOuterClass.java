@@ -15,6 +15,10 @@ public final class UgcTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: MOCGOKGHGNG
+   * </pre>
+   *
    * Protobuf enum {@code UgcType}
    */
   public enum UgcType

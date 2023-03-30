@@ -19,24 +19,28 @@ public final class FishtankFishInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float fishDistanceFromWater = 1;</code>
+     * <code>float fish_distance_from_water = 1;</code>
      * @return The fishDistanceFromWater.
      */
     float getFishDistanceFromWater();
 
     /**
-     * <code>float fishScale = 2;</code>
+     * <code>float fish_scale = 2;</code>
      * @return The fishScale.
      */
     float getFishScale();
 
     /**
-     * <code>float initialRotationY = 3;</code>
+     * <code>float initial_rotation_y = 3;</code>
      * @return The initialRotationY.
      */
     float getInitialRotationY();
   }
   /**
+   * <pre>
+   * Name: DCKPBCPNIDC
+   * </pre>
+   *
    * Protobuf type {@code FishtankFishInfo}
    */
   public static final class FishtankFishInfo extends
@@ -128,10 +132,10 @@ public final class FishtankFishInfoOuterClass {
               emu.grasscutter.net.proto.FishtankFishInfoOuterClass.FishtankFishInfo.class, emu.grasscutter.net.proto.FishtankFishInfoOuterClass.FishtankFishInfo.Builder.class);
     }
 
-    public static final int FISHDISTANCEFROMWATER_FIELD_NUMBER = 1;
+    public static final int FISH_DISTANCE_FROM_WATER_FIELD_NUMBER = 1;
     private float fishDistanceFromWater_;
     /**
-     * <code>float fishDistanceFromWater = 1;</code>
+     * <code>float fish_distance_from_water = 1;</code>
      * @return The fishDistanceFromWater.
      */
     @java.lang.Override
@@ -139,10 +143,10 @@ public final class FishtankFishInfoOuterClass {
       return fishDistanceFromWater_;
     }
 
-    public static final int FISHSCALE_FIELD_NUMBER = 2;
+    public static final int FISH_SCALE_FIELD_NUMBER = 2;
     private float fishScale_;
     /**
-     * <code>float fishScale = 2;</code>
+     * <code>float fish_scale = 2;</code>
      * @return The fishScale.
      */
     @java.lang.Override
@@ -150,10 +154,10 @@ public final class FishtankFishInfoOuterClass {
       return fishScale_;
     }
 
-    public static final int INITIALROTATIONY_FIELD_NUMBER = 3;
+    public static final int INITIAL_ROTATION_Y_FIELD_NUMBER = 3;
     private float initialRotationY_;
     /**
-     * <code>float initialRotationY = 3;</code>
+     * <code>float initial_rotation_y = 3;</code>
      * @return The initialRotationY.
      */
     @java.lang.Override
@@ -240,13 +244,13 @@ public final class FishtankFishInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FISHDISTANCEFROMWATER_FIELD_NUMBER;
+      hash = (37 * hash) + FISH_DISTANCE_FROM_WATER_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getFishDistanceFromWater());
-      hash = (37 * hash) + FISHSCALE_FIELD_NUMBER;
+      hash = (37 * hash) + FISH_SCALE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getFishScale());
-      hash = (37 * hash) + INITIALROTATIONY_FIELD_NUMBER;
+      hash = (37 * hash) + INITIAL_ROTATION_Y_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getInitialRotationY());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,6 +349,10 @@ public final class FishtankFishInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DCKPBCPNIDC
+     * </pre>
+     *
      * Protobuf type {@code FishtankFishInfo}
      */
     public static final class Builder extends
@@ -505,7 +513,7 @@ public final class FishtankFishInfoOuterClass {
 
       private float fishDistanceFromWater_ ;
       /**
-       * <code>float fishDistanceFromWater = 1;</code>
+       * <code>float fish_distance_from_water = 1;</code>
        * @return The fishDistanceFromWater.
        */
       @java.lang.Override
@@ -513,7 +521,7 @@ public final class FishtankFishInfoOuterClass {
         return fishDistanceFromWater_;
       }
       /**
-       * <code>float fishDistanceFromWater = 1;</code>
+       * <code>float fish_distance_from_water = 1;</code>
        * @param value The fishDistanceFromWater to set.
        * @return This builder for chaining.
        */
@@ -524,7 +532,7 @@ public final class FishtankFishInfoOuterClass {
         return this;
       }
       /**
-       * <code>float fishDistanceFromWater = 1;</code>
+       * <code>float fish_distance_from_water = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearFishDistanceFromWater() {
@@ -536,7 +544,7 @@ public final class FishtankFishInfoOuterClass {
 
       private float fishScale_ ;
       /**
-       * <code>float fishScale = 2;</code>
+       * <code>float fish_scale = 2;</code>
        * @return The fishScale.
        */
       @java.lang.Override
@@ -544,7 +552,7 @@ public final class FishtankFishInfoOuterClass {
         return fishScale_;
       }
       /**
-       * <code>float fishScale = 2;</code>
+       * <code>float fish_scale = 2;</code>
        * @param value The fishScale to set.
        * @return This builder for chaining.
        */
@@ -555,7 +563,7 @@ public final class FishtankFishInfoOuterClass {
         return this;
       }
       /**
-       * <code>float fishScale = 2;</code>
+       * <code>float fish_scale = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFishScale() {
@@ -567,7 +575,7 @@ public final class FishtankFishInfoOuterClass {
 
       private float initialRotationY_ ;
       /**
-       * <code>float initialRotationY = 3;</code>
+       * <code>float initial_rotation_y = 3;</code>
        * @return The initialRotationY.
        */
       @java.lang.Override
@@ -575,7 +583,7 @@ public final class FishtankFishInfoOuterClass {
         return initialRotationY_;
       }
       /**
-       * <code>float initialRotationY = 3;</code>
+       * <code>float initial_rotation_y = 3;</code>
        * @param value The initialRotationY to set.
        * @return This builder for chaining.
        */
@@ -586,7 +594,7 @@ public final class FishtankFishInfoOuterClass {
         return this;
       }
       /**
-       * <code>float initialRotationY = 3;</code>
+       * <code>float initial_rotation_y = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialRotationY() {
@@ -662,10 +670,11 @@ public final class FishtankFishInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026FishtankFishInfo.proto\"^\n\020FishtankFish" +
-      "Info\022\035\n\025fishDistanceFromWater\030\001 \001(\002\022\021\n\tf" +
-      "ishScale\030\002 \001(\002\022\030\n\020initialRotationY\030\003 \001(\002" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\026FishtankFishInfo.proto\"d\n\020FishtankFish" +
+      "Info\022 \n\030fish_distance_from_water\030\001 \001(\002\022\022" +
+      "\n\nfish_scale\030\002 \001(\002\022\032\n\022initial_rotation_y" +
+      "\030\003 \001(\002B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

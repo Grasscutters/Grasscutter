@@ -19,21 +19,26 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      * @return Whether the compInfo field is set.
      */
     boolean hasCompInfo();
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      * @return The compInfo.
      */
     emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo getCompInfo();
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      */
     emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder getCompInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: FAFABIGFAMI
+   * CmdId: 4886
+   * </pre>
+   *
    * Protobuf type {@code PlayerHomeCompInfoNotify}
    */
   public static final class PlayerHomeCompInfoNotify extends
@@ -78,7 +83,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 114: {
               emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder subBuilder = null;
               if (compInfo_ != null) {
                 subBuilder = compInfo_.toBuilder();
@@ -123,141 +128,10 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.class, emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PlayerHomeCompInfoNotify.KECOKOCMONG}
-     */
-    public enum KECOKOCMONG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4844;</code>
-       */
-      PEPPOHPHJOJ(1, 4844),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KECOKOCMONG DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4844;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4844;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KECOKOCMONG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KECOKOCMONG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4844: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KECOKOCMONG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KECOKOCMONG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KECOKOCMONG>() {
-              public KECOKOCMONG findValueByNumber(int number) {
-                return KECOKOCMONG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KECOKOCMONG[] VALUES = getStaticValuesArray();
-      private static KECOKOCMONG[] getStaticValuesArray() {
-        return new KECOKOCMONG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static KECOKOCMONG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KECOKOCMONG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PlayerHomeCompInfoNotify.KECOKOCMONG)
-    }
-
-    public static final int COMPINFO_FIELD_NUMBER = 5;
+    public static final int COMP_INFO_FIELD_NUMBER = 14;
     private emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo compInfo_;
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      * @return Whether the compInfo field is set.
      */
     @java.lang.Override
@@ -265,7 +139,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       return compInfo_ != null;
     }
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      * @return The compInfo.
      */
     @java.lang.Override
@@ -273,7 +147,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       return compInfo_ == null ? emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.getDefaultInstance() : compInfo_;
     }
     /**
-     * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+     * <code>.PlayerHomeCompInfo comp_info = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder getCompInfoOrBuilder() {
@@ -295,7 +169,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (compInfo_ != null) {
-        output.writeMessage(5, getCompInfo());
+        output.writeMessage(14, getCompInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -308,7 +182,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       size = 0;
       if (compInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getCompInfo());
+          .computeMessageSize(14, getCompInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -342,7 +216,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasCompInfo()) {
-        hash = (37 * hash) + COMPINFO_FIELD_NUMBER;
+        hash = (37 * hash) + COMP_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCompInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -441,6 +315,11 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FAFABIGFAMI
+     * CmdId: 4886
+     * </pre>
+     *
      * Protobuf type {@code PlayerHomeCompInfoNotify}
      */
     public static final class Builder extends
@@ -599,14 +478,14 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo, emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder, emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder> compInfoBuilder_;
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        * @return Whether the compInfo field is set.
        */
       public boolean hasCompInfo() {
         return compInfoBuilder_ != null || compInfo_ != null;
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        * @return The compInfo.
        */
       public emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo getCompInfo() {
@@ -617,7 +496,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public Builder setCompInfo(emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo value) {
         if (compInfoBuilder_ == null) {
@@ -633,7 +512,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public Builder setCompInfo(
           emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder builderForValue) {
@@ -647,7 +526,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public Builder mergeCompInfo(emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo value) {
         if (compInfoBuilder_ == null) {
@@ -665,7 +544,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public Builder clearCompInfo() {
         if (compInfoBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder getCompInfoBuilder() {
         
@@ -687,7 +566,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         return getCompInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       public emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder getCompInfoOrBuilder() {
         if (compInfoBuilder_ != null) {
@@ -698,7 +577,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.PlayerHomeCompInfo compInfo = 5;</code>
+       * <code>.PlayerHomeCompInfo comp_info = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo, emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder, emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfoOrBuilder> 
@@ -781,12 +660,10 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036PlayerHomeCompInfoNotify.proto\032\030Player" +
-      "HomeCompInfo.proto\"\222\001\n\030PlayerHomeCompInf" +
-      "oNotify\022%\n\010compInfo\030\005 \001(\0132\023.PlayerHomeCo" +
-      "mpInfo\"O\n\013KECOKOCMONG\022\010\n\004NONE\020\000\022\020\n\013PEPPO" +
-      "HPHJOJ\020\354%\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOE" +
-      "A\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "HomeCompInfo.proto\"B\n\030PlayerHomeCompInfo" +
+      "Notify\022&\n\tcomp_info\030\016 \001(\0132\023.PlayerHomeCo" +
+      "mpInfoB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

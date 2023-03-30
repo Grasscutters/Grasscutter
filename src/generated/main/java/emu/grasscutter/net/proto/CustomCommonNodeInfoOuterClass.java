@@ -19,30 +19,34 @@ public final class CustomCommonNodeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 parentIndex = 1;</code>
+     * <code>int32 parent_index = 1;</code>
      * @return The parentIndex.
      */
     int getParentIndex();
 
     /**
-     * <code>uint32 configId = 2;</code>
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     int getConfigId();
 
     /**
-     * <code>string slotIdentifier = 3;</code>
+     * <code>string slot_identifier = 3;</code>
      * @return The slotIdentifier.
      */
     java.lang.String getSlotIdentifier();
     /**
-     * <code>string slotIdentifier = 3;</code>
+     * <code>string slot_identifier = 3;</code>
      * @return The bytes for slotIdentifier.
      */
     com.google.protobuf.ByteString
         getSlotIdentifierBytes();
   }
   /**
+   * <pre>
+   * Name: NLBMAKMGHOE
+   * </pre>
+   *
    * Protobuf type {@code CustomCommonNodeInfo}
    */
   public static final class CustomCommonNodeInfo extends
@@ -136,10 +140,10 @@ public final class CustomCommonNodeInfoOuterClass {
               emu.grasscutter.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.class, emu.grasscutter.net.proto.CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.Builder.class);
     }
 
-    public static final int PARENTINDEX_FIELD_NUMBER = 1;
+    public static final int PARENT_INDEX_FIELD_NUMBER = 1;
     private int parentIndex_;
     /**
-     * <code>int32 parentIndex = 1;</code>
+     * <code>int32 parent_index = 1;</code>
      * @return The parentIndex.
      */
     @java.lang.Override
@@ -147,10 +151,10 @@ public final class CustomCommonNodeInfoOuterClass {
       return parentIndex_;
     }
 
-    public static final int CONFIGID_FIELD_NUMBER = 2;
+    public static final int CONFIG_ID_FIELD_NUMBER = 2;
     private int configId_;
     /**
-     * <code>uint32 configId = 2;</code>
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -158,10 +162,10 @@ public final class CustomCommonNodeInfoOuterClass {
       return configId_;
     }
 
-    public static final int SLOTIDENTIFIER_FIELD_NUMBER = 3;
+    public static final int SLOT_IDENTIFIER_FIELD_NUMBER = 3;
     private volatile java.lang.Object slotIdentifier_;
     /**
-     * <code>string slotIdentifier = 3;</code>
+     * <code>string slot_identifier = 3;</code>
      * @return The slotIdentifier.
      */
     @java.lang.Override
@@ -178,7 +182,7 @@ public final class CustomCommonNodeInfoOuterClass {
       }
     }
     /**
-     * <code>string slotIdentifier = 3;</code>
+     * <code>string slot_identifier = 3;</code>
      * @return The bytes for slotIdentifier.
      */
     @java.lang.Override
@@ -271,11 +275,11 @@ public final class CustomCommonNodeInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARENTINDEX_FIELD_NUMBER;
+      hash = (37 * hash) + PARENT_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getParentIndex();
-      hash = (37 * hash) + CONFIGID_FIELD_NUMBER;
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
-      hash = (37 * hash) + SLOTIDENTIFIER_FIELD_NUMBER;
+      hash = (37 * hash) + SLOT_IDENTIFIER_FIELD_NUMBER;
       hash = (53 * hash) + getSlotIdentifier().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -373,6 +377,10 @@ public final class CustomCommonNodeInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NLBMAKMGHOE
+     * </pre>
+     *
      * Protobuf type {@code CustomCommonNodeInfo}
      */
     public static final class Builder extends
@@ -534,7 +542,7 @@ public final class CustomCommonNodeInfoOuterClass {
 
       private int parentIndex_ ;
       /**
-       * <code>int32 parentIndex = 1;</code>
+       * <code>int32 parent_index = 1;</code>
        * @return The parentIndex.
        */
       @java.lang.Override
@@ -542,7 +550,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return parentIndex_;
       }
       /**
-       * <code>int32 parentIndex = 1;</code>
+       * <code>int32 parent_index = 1;</code>
        * @param value The parentIndex to set.
        * @return This builder for chaining.
        */
@@ -553,7 +561,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return this;
       }
       /**
-       * <code>int32 parentIndex = 1;</code>
+       * <code>int32 parent_index = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearParentIndex() {
@@ -565,7 +573,7 @@ public final class CustomCommonNodeInfoOuterClass {
 
       private int configId_ ;
       /**
-       * <code>uint32 configId = 2;</code>
+       * <code>uint32 config_id = 2;</code>
        * @return The configId.
        */
       @java.lang.Override
@@ -573,7 +581,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return configId_;
       }
       /**
-       * <code>uint32 configId = 2;</code>
+       * <code>uint32 config_id = 2;</code>
        * @param value The configId to set.
        * @return This builder for chaining.
        */
@@ -584,7 +592,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 configId = 2;</code>
+       * <code>uint32 config_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
@@ -596,7 +604,7 @@ public final class CustomCommonNodeInfoOuterClass {
 
       private java.lang.Object slotIdentifier_ = "";
       /**
-       * <code>string slotIdentifier = 3;</code>
+       * <code>string slot_identifier = 3;</code>
        * @return The slotIdentifier.
        */
       public java.lang.String getSlotIdentifier() {
@@ -612,7 +620,7 @@ public final class CustomCommonNodeInfoOuterClass {
         }
       }
       /**
-       * <code>string slotIdentifier = 3;</code>
+       * <code>string slot_identifier = 3;</code>
        * @return The bytes for slotIdentifier.
        */
       public com.google.protobuf.ByteString
@@ -629,7 +637,7 @@ public final class CustomCommonNodeInfoOuterClass {
         }
       }
       /**
-       * <code>string slotIdentifier = 3;</code>
+       * <code>string slot_identifier = 3;</code>
        * @param value The slotIdentifier to set.
        * @return This builder for chaining.
        */
@@ -644,7 +652,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return this;
       }
       /**
-       * <code>string slotIdentifier = 3;</code>
+       * <code>string slot_identifier = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearSlotIdentifier() {
@@ -654,7 +662,7 @@ public final class CustomCommonNodeInfoOuterClass {
         return this;
       }
       /**
-       * <code>string slotIdentifier = 3;</code>
+       * <code>string slot_identifier = 3;</code>
        * @param value The bytes for slotIdentifier to set.
        * @return This builder for chaining.
        */
@@ -736,10 +744,10 @@ public final class CustomCommonNodeInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032CustomCommonNodeInfo.proto\"U\n\024CustomCo" +
-      "mmonNodeInfo\022\023\n\013parentIndex\030\001 \001(\005\022\020\n\010con" +
-      "figId\030\002 \001(\r\022\026\n\016slotIdentifier\030\003 \001(\tB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\032CustomCommonNodeInfo.proto\"X\n\024CustomCo" +
+      "mmonNodeInfo\022\024\n\014parent_index\030\001 \001(\005\022\021\n\tco" +
+      "nfig_id\030\002 \001(\r\022\027\n\017slot_identifier\030\003 \001(\tB\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

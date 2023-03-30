@@ -30,6 +30,13 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
     emu.grasscutter.net.proto.MusicGameUnknown1EnumOuterClass.MusicGameUnknown1Enum getUnknownEnum1();
   }
   /**
+   * <pre>
+   * CmdId: 6302
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * IsAllowClient: true
+   * </pre>
+   *
    * Protobuf type {@code MusicGameStartToPlayOthersBeatmapReq}
    */
   public static final class MusicGameStartToPlayOthersBeatmapReq extends
@@ -287,6 +294,13 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6302
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * IsAllowClient: true
+     * </pre>
+     *
      * Protobuf type {@code MusicGameStartToPlayOthersBeatmapReq}
      */
     public static final class Builder extends

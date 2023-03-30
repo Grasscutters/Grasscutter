@@ -19,18 +19,23 @@ public final class AvatarChangeCostumeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatarGuid = 4;</code>
-     * @return The avatarGuid.
-     */
-    long getAvatarGuid();
-
-    /**
-     * <code>uint32 costumeId = 11;</code>
+     * <code>uint32 costume_id = 7;</code>
      * @return The costumeId.
      */
     int getCostumeId();
+
+    /**
+     * <code>uint64 avatar_guid = 9;</code>
+     * @return The avatarGuid.
+     */
+    long getAvatarGuid();
   }
   /**
+   * <pre>
+   * Name: BKAPIOCCGGM
+   * CmdId: 1611
+   * </pre>
+   *
    * Protobuf type {@code AvatarChangeCostumeReq}
    */
   public static final class AvatarChangeCostumeReq extends
@@ -75,14 +80,14 @@ public final class AvatarChangeCostumeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 88: {
+            case 56: {
 
               costumeId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              avatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -117,165 +122,26 @@ public final class AvatarChangeCostumeReqOuterClass {
               emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq.class, emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarChangeCostumeReq.KCNDOLCKEMD}
-     */
-    public enum KCNDOLCKEMD
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1759;</code>
-       */
-      PEPPOHPHJOJ(1, 1759),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KCNDOLCKEMD DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final KCNDOLCKEMD EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1759;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1759;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KCNDOLCKEMD valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KCNDOLCKEMD forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1759: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KCNDOLCKEMD>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KCNDOLCKEMD> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KCNDOLCKEMD>() {
-              public KCNDOLCKEMD findValueByNumber(int number) {
-                return KCNDOLCKEMD.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KCNDOLCKEMD[] VALUES = getStaticValuesArray();
-      private static KCNDOLCKEMD[] getStaticValuesArray() {
-        return new KCNDOLCKEMD[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static KCNDOLCKEMD valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KCNDOLCKEMD(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarChangeCostumeReq.KCNDOLCKEMD)
-    }
-
-    public static final int AVATARGUID_FIELD_NUMBER = 4;
-    private long avatarGuid_;
-    /**
-     * <code>uint64 avatarGuid = 4;</code>
-     * @return The avatarGuid.
-     */
-    @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
-    }
-
-    public static final int COSTUMEID_FIELD_NUMBER = 11;
+    public static final int COSTUME_ID_FIELD_NUMBER = 7;
     private int costumeId_;
     /**
-     * <code>uint32 costumeId = 11;</code>
+     * <code>uint32 costume_id = 7;</code>
      * @return The costumeId.
      */
     @java.lang.Override
     public int getCostumeId() {
       return costumeId_;
+    }
+
+    public static final int AVATAR_GUID_FIELD_NUMBER = 9;
+    private long avatarGuid_;
+    /**
+     * <code>uint64 avatar_guid = 9;</code>
+     * @return The avatarGuid.
+     */
+    @java.lang.Override
+    public long getAvatarGuid() {
+      return avatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -292,11 +158,11 @@ public final class AvatarChangeCostumeReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(4, avatarGuid_);
-      }
       if (costumeId_ != 0) {
-        output.writeUInt32(11, costumeId_);
+        output.writeUInt32(7, costumeId_);
+      }
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(9, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -307,13 +173,13 @@ public final class AvatarChangeCostumeReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, avatarGuid_);
-      }
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, costumeId_);
+          .computeUInt32Size(7, costumeId_);
+      }
+      if (avatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -330,10 +196,10 @@ public final class AvatarChangeCostumeReqOuterClass {
       }
       emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq other = (emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq) obj;
 
-      if (getAvatarGuid()
-          != other.getAvatarGuid()) return false;
       if (getCostumeId()
           != other.getCostumeId()) return false;
+      if (getAvatarGuid()
+          != other.getAvatarGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -345,11 +211,11 @@ public final class AvatarChangeCostumeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
+      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCostumeId();
+      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (37 * hash) + COSTUMEID_FIELD_NUMBER;
-      hash = (53 * hash) + getCostumeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -446,6 +312,11 @@ public final class AvatarChangeCostumeReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BKAPIOCCGGM
+     * CmdId: 1611
+     * </pre>
+     *
      * Protobuf type {@code AvatarChangeCostumeReq}
      */
     public static final class Builder extends
@@ -483,9 +354,9 @@ public final class AvatarChangeCostumeReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarGuid_ = 0L;
-
         costumeId_ = 0;
+
+        avatarGuid_ = 0L;
 
         return this;
       }
@@ -513,8 +384,8 @@ public final class AvatarChangeCostumeReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq buildPartial() {
         emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq result = new emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq(this);
-        result.avatarGuid_ = avatarGuid_;
         result.costumeId_ = costumeId_;
+        result.avatarGuid_ = avatarGuid_;
         onBuilt();
         return result;
       }
@@ -563,11 +434,11 @@ public final class AvatarChangeCostumeReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq other) {
         if (other == emu.grasscutter.net.proto.AvatarChangeCostumeReqOuterClass.AvatarChangeCostumeReq.getDefaultInstance()) return this;
-        if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
-        }
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
+        }
+        if (other.getAvatarGuid() != 0L) {
+          setAvatarGuid(other.getAvatarGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -598,40 +469,9 @@ public final class AvatarChangeCostumeReqOuterClass {
         return this;
       }
 
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatarGuid = 4;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatarGuid = 4;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatarGuid = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private int costumeId_ ;
       /**
-       * <code>uint32 costumeId = 11;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -639,7 +479,7 @@ public final class AvatarChangeCostumeReqOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costumeId = 11;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -650,12 +490,43 @@ public final class AvatarChangeCostumeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costumeId = 11;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
         
         costumeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 9;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 9;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        
+        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -726,12 +597,10 @@ public final class AvatarChangeCostumeReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034AvatarChangeCostumeReq.proto\"\241\001\n\026Avata" +
-      "rChangeCostumeReq\022\022\n\navatarGuid\030\004 \001(\004\022\021\n" +
-      "\tcostumeId\030\013 \001(\r\"`\n\013KCNDOLCKEMD\022\010\n\004NONE\020" +
-      "\000\022\020\n\013PEPPOHPHJOJ\020\337\r\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013" +
-      "NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\034AvatarChangeCostumeReq.proto\"A\n\026Avatar" +
+      "ChangeCostumeReq\022\022\n\ncostume_id\030\007 \001(\r\022\023\n\013" +
+      "avatar_guid\030\t \001(\004B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -742,7 +611,7 @@ public final class AvatarChangeCostumeReqOuterClass {
     internal_static_AvatarChangeCostumeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarChangeCostumeReq_descriptor,
-        new java.lang.String[] { "AvatarGuid", "CostumeId", });
+        new java.lang.String[] { "CostumeId", "AvatarGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,66 +19,70 @@ public final class AbilityAppliedAbilityOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      * @return Whether the abilityName field is set.
      */
     boolean hasAbilityName();
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      * @return The abilityName.
      */
     emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString getAbilityName();
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      */
     emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityNameOrBuilder();
 
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      * @return Whether the abilityOverride field is set.
      */
     boolean hasAbilityOverride();
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      * @return The abilityOverride.
      */
     emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString getAbilityOverride();
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      */
     emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityOverrideOrBuilder();
 
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> 
         getOverrideMapList();
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getOverrideMap(int index);
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     int getOverrideMapCount();
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
         getOverrideMapOrBuilderList();
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getOverrideMapOrBuilder(
         int index);
 
     /**
-     * <code>uint32 instancedAbilityId = 4;</code>
+     * <code>uint32 instanced_ability_id = 4;</code>
      * @return The instancedAbilityId.
      */
     int getInstancedAbilityId();
   }
   /**
+   * <pre>
+   * Name: JOMDPHKGKJO
+   * </pre>
+   *
    * Protobuf type {@code AbilityAppliedAbility}
    */
   public static final class AbilityAppliedAbility extends
@@ -200,10 +204,10 @@ public final class AbilityAppliedAbilityOuterClass {
               emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility.class, emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility.Builder.class);
     }
 
-    public static final int ABILITYNAME_FIELD_NUMBER = 1;
+    public static final int ABILITY_NAME_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString abilityName_;
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      * @return Whether the abilityName field is set.
      */
     @java.lang.Override
@@ -211,7 +215,7 @@ public final class AbilityAppliedAbilityOuterClass {
       return abilityName_ != null;
     }
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      * @return The abilityName.
      */
     @java.lang.Override
@@ -219,17 +223,17 @@ public final class AbilityAppliedAbilityOuterClass {
       return abilityName_ == null ? emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : abilityName_;
     }
     /**
-     * <code>.AbilityString abilityName = 1;</code>
+     * <code>.AbilityString ability_name = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityNameOrBuilder() {
       return getAbilityName();
     }
 
-    public static final int ABILITYOVERRIDE_FIELD_NUMBER = 2;
+    public static final int ABILITY_OVERRIDE_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString abilityOverride_;
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      * @return Whether the abilityOverride field is set.
      */
     @java.lang.Override
@@ -237,7 +241,7 @@ public final class AbilityAppliedAbilityOuterClass {
       return abilityOverride_ != null;
     }
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      * @return The abilityOverride.
      */
     @java.lang.Override
@@ -245,24 +249,24 @@ public final class AbilityAppliedAbilityOuterClass {
       return abilityOverride_ == null ? emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : abilityOverride_;
     }
     /**
-     * <code>.AbilityString abilityOverride = 2;</code>
+     * <code>.AbilityString ability_override = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityOverrideOrBuilder() {
       return getAbilityOverride();
     }
 
-    public static final int OVERRIDEMAP_FIELD_NUMBER = 3;
+    public static final int OVERRIDE_MAP_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> overrideMap_;
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> getOverrideMapList() {
       return overrideMap_;
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
@@ -270,21 +274,21 @@ public final class AbilityAppliedAbilityOuterClass {
       return overrideMap_;
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     @java.lang.Override
     public int getOverrideMapCount() {
       return overrideMap_.size();
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getOverrideMap(int index) {
       return overrideMap_.get(index);
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+     * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getOverrideMapOrBuilder(
@@ -292,10 +296,10 @@ public final class AbilityAppliedAbilityOuterClass {
       return overrideMap_.get(index);
     }
 
-    public static final int INSTANCEDABILITYID_FIELD_NUMBER = 4;
+    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 4;
     private int instancedAbilityId_;
     /**
-     * <code>uint32 instancedAbilityId = 4;</code>
+     * <code>uint32 instanced_ability_id = 4;</code>
      * @return The instancedAbilityId.
      */
     @java.lang.Override
@@ -395,18 +399,18 @@ public final class AbilityAppliedAbilityOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasAbilityName()) {
-        hash = (37 * hash) + ABILITYNAME_FIELD_NUMBER;
+        hash = (37 * hash) + ABILITY_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityName().hashCode();
       }
       if (hasAbilityOverride()) {
-        hash = (37 * hash) + ABILITYOVERRIDE_FIELD_NUMBER;
+        hash = (37 * hash) + ABILITY_OVERRIDE_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityOverride().hashCode();
       }
       if (getOverrideMapCount() > 0) {
-        hash = (37 * hash) + OVERRIDEMAP_FIELD_NUMBER;
+        hash = (37 * hash) + OVERRIDE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getOverrideMapList().hashCode();
       }
-      hash = (37 * hash) + INSTANCEDABILITYID_FIELD_NUMBER;
+      hash = (37 * hash) + INSTANCED_ABILITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstancedAbilityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -504,6 +508,10 @@ public final class AbilityAppliedAbilityOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JOMDPHKGKJO
+     * </pre>
+     *
      * Protobuf type {@code AbilityAppliedAbility}
      */
     public static final class Builder extends
@@ -726,14 +734,14 @@ public final class AbilityAppliedAbilityOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder> abilityNameBuilder_;
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        * @return Whether the abilityName field is set.
        */
       public boolean hasAbilityName() {
         return abilityNameBuilder_ != null || abilityName_ != null;
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        * @return The abilityName.
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString getAbilityName() {
@@ -744,7 +752,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public Builder setAbilityName(emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityNameBuilder_ == null) {
@@ -760,7 +768,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public Builder setAbilityName(
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
@@ -774,7 +782,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public Builder mergeAbilityName(emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityNameBuilder_ == null) {
@@ -792,7 +800,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public Builder clearAbilityName() {
         if (abilityNameBuilder_ == null) {
@@ -806,7 +814,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder getAbilityNameBuilder() {
         
@@ -814,7 +822,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return getAbilityNameFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityNameOrBuilder() {
         if (abilityNameBuilder_ != null) {
@@ -825,7 +833,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>.AbilityString abilityName = 1;</code>
+       * <code>.AbilityString ability_name = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder> 
@@ -845,14 +853,14 @@ public final class AbilityAppliedAbilityOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder> abilityOverrideBuilder_;
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        * @return Whether the abilityOverride field is set.
        */
       public boolean hasAbilityOverride() {
         return abilityOverrideBuilder_ != null || abilityOverride_ != null;
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        * @return The abilityOverride.
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString getAbilityOverride() {
@@ -863,7 +871,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public Builder setAbilityOverride(emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityOverrideBuilder_ == null) {
@@ -879,7 +887,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public Builder setAbilityOverride(
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
@@ -893,7 +901,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public Builder mergeAbilityOverride(emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityOverrideBuilder_ == null) {
@@ -911,7 +919,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public Builder clearAbilityOverride() {
         if (abilityOverrideBuilder_ == null) {
@@ -925,7 +933,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder getAbilityOverrideBuilder() {
         
@@ -933,7 +941,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return getAbilityOverrideFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityOverrideOrBuilder() {
         if (abilityOverrideBuilder_ != null) {
@@ -944,7 +952,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>.AbilityString abilityOverride = 2;</code>
+       * <code>.AbilityString ability_override = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.Builder, emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder> 
@@ -973,7 +981,7 @@ public final class AbilityAppliedAbilityOuterClass {
           emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> overrideMapBuilder_;
 
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> getOverrideMapList() {
         if (overrideMapBuilder_ == null) {
@@ -983,7 +991,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public int getOverrideMapCount() {
         if (overrideMapBuilder_ == null) {
@@ -993,7 +1001,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getOverrideMap(int index) {
         if (overrideMapBuilder_ == null) {
@@ -1003,7 +1011,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder setOverrideMap(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
@@ -1020,7 +1028,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder setOverrideMap(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1034,7 +1042,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder addOverrideMap(emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
         if (overrideMapBuilder_ == null) {
@@ -1050,7 +1058,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder addOverrideMap(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
@@ -1067,7 +1075,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder addOverrideMap(
           emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1081,7 +1089,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder addOverrideMap(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1095,7 +1103,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder addAllOverrideMap(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> values) {
@@ -1110,7 +1118,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder clearOverrideMap() {
         if (overrideMapBuilder_ == null) {
@@ -1123,7 +1131,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public Builder removeOverrideMap(int index) {
         if (overrideMapBuilder_ == null) {
@@ -1136,14 +1144,14 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder getOverrideMapBuilder(
           int index) {
         return getOverrideMapFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getOverrideMapOrBuilder(
           int index) {
@@ -1153,7 +1161,7 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
            getOverrideMapOrBuilderList() {
@@ -1164,14 +1172,14 @@ public final class AbilityAppliedAbilityOuterClass {
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder addOverrideMapBuilder() {
         return getOverrideMapFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder addOverrideMapBuilder(
           int index) {
@@ -1179,7 +1187,7 @@ public final class AbilityAppliedAbilityOuterClass {
             index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry overrideMap = 3;</code>
+       * <code>repeated .AbilityScalarValueEntry override_map = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder> 
            getOverrideMapBuilderList() {
@@ -1202,7 +1210,7 @@ public final class AbilityAppliedAbilityOuterClass {
 
       private int instancedAbilityId_ ;
       /**
-       * <code>uint32 instancedAbilityId = 4;</code>
+       * <code>uint32 instanced_ability_id = 4;</code>
        * @return The instancedAbilityId.
        */
       @java.lang.Override
@@ -1210,7 +1218,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return instancedAbilityId_;
       }
       /**
-       * <code>uint32 instancedAbilityId = 4;</code>
+       * <code>uint32 instanced_ability_id = 4;</code>
        * @param value The instancedAbilityId to set.
        * @return This builder for chaining.
        */
@@ -1221,7 +1229,7 @@ public final class AbilityAppliedAbilityOuterClass {
         return this;
       }
       /**
-       * <code>uint32 instancedAbilityId = 4;</code>
+       * <code>uint32 instanced_ability_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstancedAbilityId() {
@@ -1297,20 +1305,20 @@ public final class AbilityAppliedAbilityOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033AbilityAppliedAbility.proto\032\023AbilitySt" +
-      "ring.proto\032\035AbilityScalarValueEntry.prot" +
-      "o\"\260\001\n\025AbilityAppliedAbility\022#\n\013abilityNa" +
-      "me\030\001 \001(\0132\016.AbilityString\022\'\n\017abilityOverr" +
-      "ide\030\002 \001(\0132\016.AbilityString\022-\n\013overrideMap" +
-      "\030\003 \003(\0132\030.AbilityScalarValueEntry\022\032\n\022inst" +
-      "ancedAbilityId\030\004 \001(\rB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\033AbilityAppliedAbility.proto\032\035AbilitySc" +
+      "alarValueEntry.proto\032\023AbilityString.prot" +
+      "o\"\265\001\n\025AbilityAppliedAbility\022$\n\014ability_n" +
+      "ame\030\001 \001(\0132\016.AbilityString\022(\n\020ability_ove" +
+      "rride\030\002 \001(\0132\016.AbilityString\022.\n\014override_" +
+      "map\030\003 \003(\0132\030.AbilityScalarValueEntry\022\034\n\024i" +
+      "nstanced_ability_id\030\004 \001(\rB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
         });
     internal_static_AbilityAppliedAbility_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1318,8 +1326,8 @@ public final class AbilityAppliedAbilityOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityAppliedAbility_descriptor,
         new java.lang.String[] { "AbilityName", "AbilityOverride", "OverrideMap", "InstancedAbilityId", });
-    emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

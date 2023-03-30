@@ -19,11 +19,11 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     int getAiCdMapCount();
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     boolean containsAiCdMap(
         int key);
@@ -34,25 +34,30 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
     getAiCdMap();
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo>
     getAiCdMapMap();
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
 
     emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrDefault(
         int key,
         emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo defaultValue);
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
 
     emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo getAiCdMapOrThrow(
         int key);
   }
   /**
+   * <pre>
+   * Name: FMKKKFIOHKJ
+   * CmdId: 325
+   * </pre>
+   *
    * Protobuf type {@code EvtAiSyncSkillCdNotify}
    */
   public static final class EvtAiSyncSkillCdNotify extends
@@ -98,7 +103,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aiCdMap_ = com.google.protobuf.MapField.newMapField(
                     AiCdMapDefaultEntryHolder.defaultEntry);
@@ -140,7 +145,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 11:
+        case 2:
           return internalGetAiCdMap();
         default:
           throw new RuntimeException(
@@ -155,146 +160,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
               emu.grasscutter.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.class, emu.grasscutter.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code EvtAiSyncSkillCdNotify.NOBFEMIJJNE}
-     */
-    public enum NOBFEMIJJNE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 343;</code>
-       */
-      PEPPOHPHJOJ(1, 343),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final NOBFEMIJJNE DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final NOBFEMIJJNE EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 343;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 343;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NOBFEMIJJNE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NOBFEMIJJNE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 343: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NOBFEMIJJNE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NOBFEMIJJNE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NOBFEMIJJNE>() {
-              public NOBFEMIJJNE findValueByNumber(int number) {
-                return NOBFEMIJJNE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final NOBFEMIJJNE[] VALUES = getStaticValuesArray();
-      private static NOBFEMIJJNE[] getStaticValuesArray() {
-        return new NOBFEMIJJNE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static NOBFEMIJJNE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private NOBFEMIJJNE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:EvtAiSyncSkillCdNotify.NOBFEMIJJNE)
-    }
-
-    public static final int AICDMAP_FIELD_NUMBER = 11;
+    public static final int AI_CD_MAP_FIELD_NUMBER = 2;
     private static final class AiCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> defaultEntry =
@@ -321,7 +187,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       return internalGetAiCdMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
 
     @java.lang.Override
@@ -339,7 +205,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       return getAiCdMapMap();
     }
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     @java.lang.Override
 
@@ -347,7 +213,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       return internalGetAiCdMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     @java.lang.Override
 
@@ -360,7 +226,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+     * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
      */
     @java.lang.Override
 
@@ -394,7 +260,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
           output,
           internalGetAiCdMap(),
           AiCdMapDefaultEntryHolder.defaultEntry,
-          11);
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -412,7 +278,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(11, aiCdMap__);
+            .computeMessageSize(2, aiCdMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -443,7 +309,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetAiCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + AICDMAP_FIELD_NUMBER;
+        hash = (37 * hash) + AI_CD_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAiCdMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -542,6 +408,11 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FMKKKFIOHKJ
+     * CmdId: 325
+     * </pre>
+     *
      * Protobuf type {@code EvtAiSyncSkillCdNotify}
      */
     public static final class Builder extends
@@ -557,7 +428,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 11:
+          case 2:
             return internalGetAiCdMap();
           default:
             throw new RuntimeException(
@@ -568,7 +439,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 11:
+          case 2:
             return internalGetMutableAiCdMap();
           default:
             throw new RuntimeException(
@@ -738,7 +609,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return internalGetAiCdMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
 
       @java.lang.Override
@@ -756,7 +627,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return getAiCdMapMap();
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
       @java.lang.Override
 
@@ -764,7 +635,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return internalGetAiCdMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
       @java.lang.Override
 
@@ -777,7 +648,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
       @java.lang.Override
 
@@ -798,7 +669,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
 
       public Builder removeAiCdMap(
@@ -817,7 +688,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return internalGetMutableAiCdMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
       public Builder putAiCdMap(
           int key,
@@ -829,7 +700,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AiSkillCdInfo&gt; aiCdMap = 11;</code>
+       * <code>map&lt;uint32, .AiSkillCdInfo&gt; ai_cd_map = 2;</code>
        */
 
       public Builder putAllAiCdMap(
@@ -911,14 +782,11 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034EvtAiSyncSkillCdNotify.proto\032\023AiSkillC" +
-      "dInfo.proto\"\361\001\n\026EvtAiSyncSkillCdNotify\0225" +
-      "\n\007aiCdMap\030\013 \003(\0132$.EvtAiSyncSkillCdNotify" +
-      ".AiCdMapEntry\032>\n\014AiCdMapEntry\022\013\n\003key\030\001 \001" +
-      "(\r\022\035\n\005value\030\002 \001(\0132\016.AiSkillCdInfo:\0028\001\"`\n" +
-      "\013NOBFEMIJJNE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\327\002" +
-      "\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EA" +
-      "JIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "dInfo.proto\"\221\001\n\026EvtAiSyncSkillCdNotify\0227" +
+      "\n\tai_cd_map\030\002 \003(\0132$.EvtAiSyncSkillCdNoti" +
+      "fy.AiCdMapEntry\032>\n\014AiCdMapEntry\022\013\n\003key\030\001" +
+      " \001(\r\022\035\n\005value\030\002 \001(\0132\016.AiSkillCdInfo:\0028\001B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

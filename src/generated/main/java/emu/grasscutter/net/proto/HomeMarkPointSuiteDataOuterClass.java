@@ -25,6 +25,10 @@ public final class HomeMarkPointSuiteDataOuterClass {
     int getSuiteId();
   }
   /**
+   * <pre>
+   * Name: AJBIHJGCCPM
+   * </pre>
+   *
    * Protobuf type {@code HomeMarkPointSuiteData}
    */
   public static final class HomeMarkPointSuiteData extends
@@ -273,6 +277,10 @@ public final class HomeMarkPointSuiteDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: AJBIHJGCCPM
+     * </pre>
+     *
      * Protobuf type {@code HomeMarkPointSuiteData}
      */
     public static final class Builder extends

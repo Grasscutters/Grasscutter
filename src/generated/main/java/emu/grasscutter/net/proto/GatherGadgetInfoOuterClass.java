@@ -19,18 +19,22 @@ public final class GatherGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 itemId = 1;</code>
+     * <code>uint32 item_id = 1;</code>
      * @return The itemId.
      */
     int getItemId();
 
     /**
-     * <code>bool isForbidGuest = 2;</code>
+     * <code>bool is_forbid_guest = 2;</code>
      * @return The isForbidGuest.
      */
     boolean getIsForbidGuest();
   }
   /**
+   * <pre>
+   * Name: AOPHOBIKEHK
+   * </pre>
+   *
    * Protobuf type {@code GatherGadgetInfo}
    */
   public static final class GatherGadgetInfo extends
@@ -117,10 +121,10 @@ public final class GatherGadgetInfoOuterClass {
               emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo.class, emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo.Builder.class);
     }
 
-    public static final int ITEMID_FIELD_NUMBER = 1;
+    public static final int ITEM_ID_FIELD_NUMBER = 1;
     private int itemId_;
     /**
-     * <code>uint32 itemId = 1;</code>
+     * <code>uint32 item_id = 1;</code>
      * @return The itemId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class GatherGadgetInfoOuterClass {
       return itemId_;
     }
 
-    public static final int ISFORBIDGUEST_FIELD_NUMBER = 2;
+    public static final int IS_FORBID_GUEST_FIELD_NUMBER = 2;
     private boolean isForbidGuest_;
     /**
-     * <code>bool isForbidGuest = 2;</code>
+     * <code>bool is_forbid_guest = 2;</code>
      * @return The isForbidGuest.
      */
     @java.lang.Override
@@ -206,9 +210,9 @@ public final class GatherGadgetInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEMID_FIELD_NUMBER;
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
-      hash = (37 * hash) + ISFORBIDGUEST_FIELD_NUMBER;
+      hash = (37 * hash) + IS_FORBID_GUEST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsForbidGuest());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -307,6 +311,10 @@ public final class GatherGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: AOPHOBIKEHK
+     * </pre>
+     *
      * Protobuf type {@code GatherGadgetInfo}
      */
     public static final class Builder extends
@@ -461,7 +469,7 @@ public final class GatherGadgetInfoOuterClass {
 
       private int itemId_ ;
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @return The itemId.
        */
       @java.lang.Override
@@ -469,7 +477,7 @@ public final class GatherGadgetInfoOuterClass {
         return itemId_;
       }
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @param value The itemId to set.
        * @return This builder for chaining.
        */
@@ -480,7 +488,7 @@ public final class GatherGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
@@ -492,7 +500,7 @@ public final class GatherGadgetInfoOuterClass {
 
       private boolean isForbidGuest_ ;
       /**
-       * <code>bool isForbidGuest = 2;</code>
+       * <code>bool is_forbid_guest = 2;</code>
        * @return The isForbidGuest.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class GatherGadgetInfoOuterClass {
         return isForbidGuest_;
       }
       /**
-       * <code>bool isForbidGuest = 2;</code>
+       * <code>bool is_forbid_guest = 2;</code>
        * @param value The isForbidGuest to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class GatherGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isForbidGuest = 2;</code>
+       * <code>bool is_forbid_guest = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsForbidGuest() {
@@ -587,9 +595,10 @@ public final class GatherGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026GatherGadgetInfo.proto\"9\n\020GatherGadget" +
-      "Info\022\016\n\006itemId\030\001 \001(\r\022\025\n\risForbidGuest\030\002 " +
-      "\001(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\026GatherGadgetInfo.proto\"<\n\020GatherGadget" +
+      "Info\022\017\n\007item_id\030\001 \001(\r\022\027\n\017is_forbid_guest" +
+      "\030\002 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

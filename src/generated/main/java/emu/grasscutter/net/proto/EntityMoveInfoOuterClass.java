@@ -19,45 +19,49 @@ public final class EntityMoveInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entityId = 1;</code>
+     * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      * @return Whether the motionInfo field is set.
      */
     boolean hasMotionInfo();
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      * @return The motionInfo.
      */
     emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo getMotionInfo();
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      */
     emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getMotionInfoOrBuilder();
 
     /**
-     * <code>uint32 sceneTime = 3;</code>
+     * <code>uint32 scene_time = 3;</code>
      * @return The sceneTime.
      */
     int getSceneTime();
 
     /**
-     * <code>uint32 reliableSeq = 4;</code>
+     * <code>uint32 reliable_seq = 4;</code>
      * @return The reliableSeq.
      */
     int getReliableSeq();
 
     /**
-     * <code>bool isReliable = 5;</code>
+     * <code>bool is_reliable = 5;</code>
      * @return The isReliable.
      */
     boolean getIsReliable();
   }
   /**
+   * <pre>
+   * Name: FJCIDHDHCBD
+   * </pre>
+   *
    * Protobuf type {@code EntityMoveInfo}
    */
   public static final class EntityMoveInfo extends
@@ -167,10 +171,10 @@ public final class EntityMoveInfoOuterClass {
               emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.class, emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.Builder.class);
     }
 
-    public static final int ENTITYID_FIELD_NUMBER = 1;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
     private int entityId_;
     /**
-     * <code>uint32 entityId = 1;</code>
+     * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -178,10 +182,10 @@ public final class EntityMoveInfoOuterClass {
       return entityId_;
     }
 
-    public static final int MOTIONINFO_FIELD_NUMBER = 2;
+    public static final int MOTION_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo motionInfo_;
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      * @return Whether the motionInfo field is set.
      */
     @java.lang.Override
@@ -189,7 +193,7 @@ public final class EntityMoveInfoOuterClass {
       return motionInfo_ != null;
     }
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      * @return The motionInfo.
      */
     @java.lang.Override
@@ -197,17 +201,17 @@ public final class EntityMoveInfoOuterClass {
       return motionInfo_ == null ? emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance() : motionInfo_;
     }
     /**
-     * <code>.MotionInfo motionInfo = 2;</code>
+     * <code>.MotionInfo motion_info = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getMotionInfoOrBuilder() {
       return getMotionInfo();
     }
 
-    public static final int SCENETIME_FIELD_NUMBER = 3;
+    public static final int SCENE_TIME_FIELD_NUMBER = 3;
     private int sceneTime_;
     /**
-     * <code>uint32 sceneTime = 3;</code>
+     * <code>uint32 scene_time = 3;</code>
      * @return The sceneTime.
      */
     @java.lang.Override
@@ -215,10 +219,10 @@ public final class EntityMoveInfoOuterClass {
       return sceneTime_;
     }
 
-    public static final int RELIABLESEQ_FIELD_NUMBER = 4;
+    public static final int RELIABLE_SEQ_FIELD_NUMBER = 4;
     private int reliableSeq_;
     /**
-     * <code>uint32 reliableSeq = 4;</code>
+     * <code>uint32 reliable_seq = 4;</code>
      * @return The reliableSeq.
      */
     @java.lang.Override
@@ -226,10 +230,10 @@ public final class EntityMoveInfoOuterClass {
       return reliableSeq_;
     }
 
-    public static final int ISRELIABLE_FIELD_NUMBER = 5;
+    public static final int IS_RELIABLE_FIELD_NUMBER = 5;
     private boolean isReliable_;
     /**
-     * <code>bool isReliable = 5;</code>
+     * <code>bool is_reliable = 5;</code>
      * @return The isReliable.
      */
     @java.lang.Override
@@ -334,17 +338,17 @@ public final class EntityMoveInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       if (hasMotionInfo()) {
-        hash = (37 * hash) + MOTIONINFO_FIELD_NUMBER;
+        hash = (37 * hash) + MOTION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getMotionInfo().hashCode();
       }
-      hash = (37 * hash) + SCENETIME_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTime();
-      hash = (37 * hash) + RELIABLESEQ_FIELD_NUMBER;
+      hash = (37 * hash) + RELIABLE_SEQ_FIELD_NUMBER;
       hash = (53 * hash) + getReliableSeq();
-      hash = (37 * hash) + ISRELIABLE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_RELIABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsReliable());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -443,6 +447,10 @@ public final class EntityMoveInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FJCIDHDHCBD
+     * </pre>
+     *
      * Protobuf type {@code EntityMoveInfo}
      */
     public static final class Builder extends
@@ -623,7 +631,7 @@ public final class EntityMoveInfoOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -631,7 +639,7 @@ public final class EntityMoveInfoOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -642,7 +650,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -656,14 +664,14 @@ public final class EntityMoveInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo, emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo.Builder, emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder> motionInfoBuilder_;
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        * @return Whether the motionInfo field is set.
        */
       public boolean hasMotionInfo() {
         return motionInfoBuilder_ != null || motionInfo_ != null;
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        * @return The motionInfo.
        */
       public emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo getMotionInfo() {
@@ -674,7 +682,7 @@ public final class EntityMoveInfoOuterClass {
         }
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public Builder setMotionInfo(emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo value) {
         if (motionInfoBuilder_ == null) {
@@ -690,7 +698,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public Builder setMotionInfo(
           emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo.Builder builderForValue) {
@@ -704,7 +712,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public Builder mergeMotionInfo(emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo value) {
         if (motionInfoBuilder_ == null) {
@@ -722,7 +730,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public Builder clearMotionInfo() {
         if (motionInfoBuilder_ == null) {
@@ -736,7 +744,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo.Builder getMotionInfoBuilder() {
         
@@ -744,7 +752,7 @@ public final class EntityMoveInfoOuterClass {
         return getMotionInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       public emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getMotionInfoOrBuilder() {
         if (motionInfoBuilder_ != null) {
@@ -755,7 +763,7 @@ public final class EntityMoveInfoOuterClass {
         }
       }
       /**
-       * <code>.MotionInfo motionInfo = 2;</code>
+       * <code>.MotionInfo motion_info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo, emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo.Builder, emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder> 
@@ -773,7 +781,7 @@ public final class EntityMoveInfoOuterClass {
 
       private int sceneTime_ ;
       /**
-       * <code>uint32 sceneTime = 3;</code>
+       * <code>uint32 scene_time = 3;</code>
        * @return The sceneTime.
        */
       @java.lang.Override
@@ -781,7 +789,7 @@ public final class EntityMoveInfoOuterClass {
         return sceneTime_;
       }
       /**
-       * <code>uint32 sceneTime = 3;</code>
+       * <code>uint32 scene_time = 3;</code>
        * @param value The sceneTime to set.
        * @return This builder for chaining.
        */
@@ -792,7 +800,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneTime = 3;</code>
+       * <code>uint32 scene_time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
@@ -804,7 +812,7 @@ public final class EntityMoveInfoOuterClass {
 
       private int reliableSeq_ ;
       /**
-       * <code>uint32 reliableSeq = 4;</code>
+       * <code>uint32 reliable_seq = 4;</code>
        * @return The reliableSeq.
        */
       @java.lang.Override
@@ -812,7 +820,7 @@ public final class EntityMoveInfoOuterClass {
         return reliableSeq_;
       }
       /**
-       * <code>uint32 reliableSeq = 4;</code>
+       * <code>uint32 reliable_seq = 4;</code>
        * @param value The reliableSeq to set.
        * @return This builder for chaining.
        */
@@ -823,7 +831,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reliableSeq = 4;</code>
+       * <code>uint32 reliable_seq = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReliableSeq() {
@@ -835,7 +843,7 @@ public final class EntityMoveInfoOuterClass {
 
       private boolean isReliable_ ;
       /**
-       * <code>bool isReliable = 5;</code>
+       * <code>bool is_reliable = 5;</code>
        * @return The isReliable.
        */
       @java.lang.Override
@@ -843,7 +851,7 @@ public final class EntityMoveInfoOuterClass {
         return isReliable_;
       }
       /**
-       * <code>bool isReliable = 5;</code>
+       * <code>bool is_reliable = 5;</code>
        * @param value The isReliable to set.
        * @return This builder for chaining.
        */
@@ -854,7 +862,7 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isReliable = 5;</code>
+       * <code>bool is_reliable = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsReliable() {
@@ -931,11 +939,11 @@ public final class EntityMoveInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024EntityMoveInfo.proto\032\020MotionInfo.proto" +
-      "\"\177\n\016EntityMoveInfo\022\020\n\010entityId\030\001 \001(\r\022\037\n\n" +
-      "motionInfo\030\002 \001(\0132\013.MotionInfo\022\021\n\tsceneTi" +
-      "me\030\003 \001(\r\022\023\n\013reliableSeq\030\004 \001(\r\022\022\n\nisRelia" +
-      "ble\030\005 \001(\010B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\"\204\001\n\016EntityMoveInfo\022\021\n\tentity_id\030\001 \001(\r\022 " +
+      "\n\013motion_info\030\002 \001(\0132\013.MotionInfo\022\022\n\nscen" +
+      "e_time\030\003 \001(\r\022\024\n\014reliable_seq\030\004 \001(\r\022\023\n\013is" +
+      "_reliable\030\005 \001(\010B\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

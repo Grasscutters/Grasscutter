@@ -15,6 +15,10 @@ public final class EnterTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: FNGKDKJDKHM
+   * </pre>
+   *
    * Protobuf enum {@code EnterType}
    */
   public enum EnterType

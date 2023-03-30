@@ -19,23 +19,27 @@ public final class StatueGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
-     * @return A list containing the nkbgahefmbn.
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+     * @return A list containing the openedStatueUidList.
      */
-    java.util.List<java.lang.Integer> getNkbgahefmbnList();
+    java.util.List<java.lang.Integer> getOpenedStatueUidListList();
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
-     * @return The count of nkbgahefmbn.
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+     * @return The count of openedStatueUidList.
      */
-    int getNkbgahefmbnCount();
+    int getOpenedStatueUidListCount();
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
      * @param index The index of the element to return.
-     * @return The nkbgahefmbn at the given index.
+     * @return The openedStatueUidList at the given index.
      */
-    int getNkbgahefmbn(int index);
+    int getOpenedStatueUidList(int index);
   }
   /**
+   * <pre>
+   * Name: KECNEMONJDE
+   * </pre>
+   *
    * Protobuf type {@code StatueGadgetInfo}
    */
   public static final class StatueGadgetInfo extends
@@ -48,7 +52,7 @@ public final class StatueGadgetInfoOuterClass {
       super(builder);
     }
     private StatueGadgetInfo() {
-      nkbgahefmbn_ = emptyIntList();
+      openedStatueUidList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -84,21 +88,21 @@ public final class StatueGadgetInfoOuterClass {
               break;
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nkbgahefmbn_ = newIntList();
+                openedStatueUidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              nkbgahefmbn_.addInt(input.readUInt32());
+              openedStatueUidList_.addInt(input.readUInt32());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                nkbgahefmbn_ = newIntList();
+                openedStatueUidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                nkbgahefmbn_.addInt(input.readUInt32());
+                openedStatueUidList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -119,7 +123,7 @@ public final class StatueGadgetInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nkbgahefmbn_.makeImmutable(); // C
+          openedStatueUidList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -138,33 +142,33 @@ public final class StatueGadgetInfoOuterClass {
               emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo.class, emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo.Builder.class);
     }
 
-    public static final int NKBGAHEFMBN_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.IntList nkbgahefmbn_;
+    public static final int OPENED_STATUE_UID_LIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList openedStatueUidList_;
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
-     * @return A list containing the nkbgahefmbn.
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+     * @return A list containing the openedStatueUidList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getNkbgahefmbnList() {
-      return nkbgahefmbn_;
+        getOpenedStatueUidListList() {
+      return openedStatueUidList_;
     }
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
-     * @return The count of nkbgahefmbn.
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+     * @return The count of openedStatueUidList.
      */
-    public int getNkbgahefmbnCount() {
-      return nkbgahefmbn_.size();
+    public int getOpenedStatueUidListCount() {
+      return openedStatueUidList_.size();
     }
     /**
-     * <code>repeated uint32 nkbgahefmbn = 1;</code>
+     * <code>repeated uint32 opened_statue_uid_list = 1;</code>
      * @param index The index of the element to return.
-     * @return The nkbgahefmbn at the given index.
+     * @return The openedStatueUidList at the given index.
      */
-    public int getNkbgahefmbn(int index) {
-      return nkbgahefmbn_.getInt(index);
+    public int getOpenedStatueUidList(int index) {
+      return openedStatueUidList_.getInt(index);
     }
-    private int nkbgahefmbnMemoizedSerializedSize = -1;
+    private int openedStatueUidListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -181,12 +185,12 @@ public final class StatueGadgetInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getNkbgahefmbnList().size() > 0) {
+      if (getOpenedStatueUidListList().size() > 0) {
         output.writeUInt32NoTag(10);
-        output.writeUInt32NoTag(nkbgahefmbnMemoizedSerializedSize);
+        output.writeUInt32NoTag(openedStatueUidListMemoizedSerializedSize);
       }
-      for (int i = 0; i < nkbgahefmbn_.size(); i++) {
-        output.writeUInt32NoTag(nkbgahefmbn_.getInt(i));
+      for (int i = 0; i < openedStatueUidList_.size(); i++) {
+        output.writeUInt32NoTag(openedStatueUidList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -199,17 +203,17 @@ public final class StatueGadgetInfoOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < nkbgahefmbn_.size(); i++) {
+        for (int i = 0; i < openedStatueUidList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(nkbgahefmbn_.getInt(i));
+            .computeUInt32SizeNoTag(openedStatueUidList_.getInt(i));
         }
         size += dataSize;
-        if (!getNkbgahefmbnList().isEmpty()) {
+        if (!getOpenedStatueUidListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        nkbgahefmbnMemoizedSerializedSize = dataSize;
+        openedStatueUidListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -226,8 +230,8 @@ public final class StatueGadgetInfoOuterClass {
       }
       emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo other = (emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo) obj;
 
-      if (!getNkbgahefmbnList()
-          .equals(other.getNkbgahefmbnList())) return false;
+      if (!getOpenedStatueUidListList()
+          .equals(other.getOpenedStatueUidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -239,9 +243,9 @@ public final class StatueGadgetInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getNkbgahefmbnCount() > 0) {
-        hash = (37 * hash) + NKBGAHEFMBN_FIELD_NUMBER;
-        hash = (53 * hash) + getNkbgahefmbnList().hashCode();
+      if (getOpenedStatueUidListCount() > 0) {
+        hash = (37 * hash) + OPENED_STATUE_UID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getOpenedStatueUidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -339,6 +343,10 @@ public final class StatueGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KECNEMONJDE
+     * </pre>
+     *
      * Protobuf type {@code StatueGadgetInfo}
      */
     public static final class Builder extends
@@ -376,7 +384,7 @@ public final class StatueGadgetInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        nkbgahefmbn_ = emptyIntList();
+        openedStatueUidList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -406,10 +414,10 @@ public final class StatueGadgetInfoOuterClass {
         emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo result = new emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          nkbgahefmbn_.makeImmutable();
+          openedStatueUidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.nkbgahefmbn_ = nkbgahefmbn_;
+        result.openedStatueUidList_ = openedStatueUidList_;
         onBuilt();
         return result;
       }
@@ -458,13 +466,13 @@ public final class StatueGadgetInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo other) {
         if (other == emu.grasscutter.net.proto.StatueGadgetInfoOuterClass.StatueGadgetInfo.getDefaultInstance()) return this;
-        if (!other.nkbgahefmbn_.isEmpty()) {
-          if (nkbgahefmbn_.isEmpty()) {
-            nkbgahefmbn_ = other.nkbgahefmbn_;
+        if (!other.openedStatueUidList_.isEmpty()) {
+          if (openedStatueUidList_.isEmpty()) {
+            openedStatueUidList_ = other.openedStatueUidList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureNkbgahefmbnIsMutable();
-            nkbgahefmbn_.addAll(other.nkbgahefmbn_);
+            ensureOpenedStatueUidListIsMutable();
+            openedStatueUidList_.addAll(other.openedStatueUidList_);
           }
           onChanged();
         }
@@ -498,80 +506,80 @@ public final class StatueGadgetInfoOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList nkbgahefmbn_ = emptyIntList();
-      private void ensureNkbgahefmbnIsMutable() {
+      private com.google.protobuf.Internal.IntList openedStatueUidList_ = emptyIntList();
+      private void ensureOpenedStatueUidListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          nkbgahefmbn_ = mutableCopy(nkbgahefmbn_);
+          openedStatueUidList_ = mutableCopy(openedStatueUidList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
-       * @return A list containing the nkbgahefmbn.
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+       * @return A list containing the openedStatueUidList.
        */
       public java.util.List<java.lang.Integer>
-          getNkbgahefmbnList() {
+          getOpenedStatueUidListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(nkbgahefmbn_) : nkbgahefmbn_;
+                 java.util.Collections.unmodifiableList(openedStatueUidList_) : openedStatueUidList_;
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
-       * @return The count of nkbgahefmbn.
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+       * @return The count of openedStatueUidList.
        */
-      public int getNkbgahefmbnCount() {
-        return nkbgahefmbn_.size();
+      public int getOpenedStatueUidListCount() {
+        return openedStatueUidList_.size();
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
        * @param index The index of the element to return.
-       * @return The nkbgahefmbn at the given index.
+       * @return The openedStatueUidList at the given index.
        */
-      public int getNkbgahefmbn(int index) {
-        return nkbgahefmbn_.getInt(index);
+      public int getOpenedStatueUidList(int index) {
+        return openedStatueUidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
        * @param index The index to set the value at.
-       * @param value The nkbgahefmbn to set.
+       * @param value The openedStatueUidList to set.
        * @return This builder for chaining.
        */
-      public Builder setNkbgahefmbn(
+      public Builder setOpenedStatueUidList(
           int index, int value) {
-        ensureNkbgahefmbnIsMutable();
-        nkbgahefmbn_.setInt(index, value);
+        ensureOpenedStatueUidListIsMutable();
+        openedStatueUidList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
-       * @param value The nkbgahefmbn to add.
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+       * @param value The openedStatueUidList to add.
        * @return This builder for chaining.
        */
-      public Builder addNkbgahefmbn(int value) {
-        ensureNkbgahefmbnIsMutable();
-        nkbgahefmbn_.addInt(value);
+      public Builder addOpenedStatueUidList(int value) {
+        ensureOpenedStatueUidListIsMutable();
+        openedStatueUidList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
-       * @param values The nkbgahefmbn to add.
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
+       * @param values The openedStatueUidList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllNkbgahefmbn(
+      public Builder addAllOpenedStatueUidList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNkbgahefmbnIsMutable();
+        ensureOpenedStatueUidListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nkbgahefmbn_);
+            values, openedStatueUidList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 nkbgahefmbn = 1;</code>
+       * <code>repeated uint32 opened_statue_uid_list = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNkbgahefmbn() {
-        nkbgahefmbn_ = emptyIntList();
+      public Builder clearOpenedStatueUidList() {
+        openedStatueUidList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -643,9 +651,9 @@ public final class StatueGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026StatueGadgetInfo.proto\"\'\n\020StatueGadget" +
-      "Info\022\023\n\013nkbgahefmbn\030\001 \003(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\n\026StatueGadgetInfo.proto\"2\n\020StatueGadget" +
+      "Info\022\036\n\026opened_statue_uid_list\030\001 \003(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -656,7 +664,7 @@ public final class StatueGadgetInfoOuterClass {
     internal_static_StatueGadgetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StatueGadgetInfo_descriptor,
-        new java.lang.String[] { "Nkbgahefmbn", });
+        new java.lang.String[] { "OpenedStatueUidList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

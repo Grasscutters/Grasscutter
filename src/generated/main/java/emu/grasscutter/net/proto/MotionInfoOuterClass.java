@@ -99,39 +99,43 @@ public final class MotionInfoOuterClass {
         int index);
 
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      * @return Whether the refPos field is set.
      */
     boolean hasRefPos();
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      * @return The refPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getRefPos();
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder();
 
     /**
-     * <code>uint32 refId = 7;</code>
+     * <code>uint32 ref_id = 7;</code>
      * @return The refId.
      */
     int getRefId();
 
     /**
-     * <code>uint32 sceneTime = 8;</code>
+     * <code>uint32 scene_time = 8;</code>
      * @return The sceneTime.
      */
     int getSceneTime();
 
     /**
-     * <code>uint64 intervalVelocity = 9;</code>
+     * <code>uint64 interval_velocity = 9;</code>
      * @return The intervalVelocity.
      */
     long getIntervalVelocity();
   }
   /**
+   * <pre>
+   * Name: BNEGCDIFHLA
+   * </pre>
+   *
    * Protobuf type {@code MotionInfo}
    */
   public static final class MotionInfo extends
@@ -433,10 +437,10 @@ public final class MotionInfoOuterClass {
       return params_.get(index);
     }
 
-    public static final int REFPOS_FIELD_NUMBER = 6;
+    public static final int REF_POS_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector refPos_;
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      * @return Whether the refPos field is set.
      */
     @java.lang.Override
@@ -444,7 +448,7 @@ public final class MotionInfoOuterClass {
       return refPos_ != null;
     }
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      * @return The refPos.
      */
     @java.lang.Override
@@ -452,17 +456,17 @@ public final class MotionInfoOuterClass {
       return refPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : refPos_;
     }
     /**
-     * <code>.Vector refPos = 6;</code>
+     * <code>.Vector ref_pos = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder() {
       return getRefPos();
     }
 
-    public static final int REFID_FIELD_NUMBER = 7;
+    public static final int REF_ID_FIELD_NUMBER = 7;
     private int refId_;
     /**
-     * <code>uint32 refId = 7;</code>
+     * <code>uint32 ref_id = 7;</code>
      * @return The refId.
      */
     @java.lang.Override
@@ -470,10 +474,10 @@ public final class MotionInfoOuterClass {
       return refId_;
     }
 
-    public static final int SCENETIME_FIELD_NUMBER = 8;
+    public static final int SCENE_TIME_FIELD_NUMBER = 8;
     private int sceneTime_;
     /**
-     * <code>uint32 sceneTime = 8;</code>
+     * <code>uint32 scene_time = 8;</code>
      * @return The sceneTime.
      */
     @java.lang.Override
@@ -481,10 +485,10 @@ public final class MotionInfoOuterClass {
       return sceneTime_;
     }
 
-    public static final int INTERVALVELOCITY_FIELD_NUMBER = 9;
+    public static final int INTERVAL_VELOCITY_FIELD_NUMBER = 9;
     private long intervalVelocity_;
     /**
-     * <code>uint64 intervalVelocity = 9;</code>
+     * <code>uint64 interval_velocity = 9;</code>
      * @return The intervalVelocity.
      */
     @java.lang.Override
@@ -652,14 +656,14 @@ public final class MotionInfoOuterClass {
         hash = (53 * hash) + getParamsList().hashCode();
       }
       if (hasRefPos()) {
-        hash = (37 * hash) + REFPOS_FIELD_NUMBER;
+        hash = (37 * hash) + REF_POS_FIELD_NUMBER;
         hash = (53 * hash) + getRefPos().hashCode();
       }
-      hash = (37 * hash) + REFID_FIELD_NUMBER;
+      hash = (37 * hash) + REF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRefId();
-      hash = (37 * hash) + SCENETIME_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTime();
-      hash = (37 * hash) + INTERVALVELOCITY_FIELD_NUMBER;
+      hash = (37 * hash) + INTERVAL_VELOCITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIntervalVelocity());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -758,6 +762,10 @@ public final class MotionInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BNEGCDIFHLA
+     * </pre>
+     *
      * Protobuf type {@code MotionInfo}
      */
     public static final class Builder extends
@@ -1677,14 +1685,14 @@ public final class MotionInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> refPosBuilder_;
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        * @return Whether the refPos field is set.
        */
       public boolean hasRefPos() {
         return refPosBuilder_ != null || refPos_ != null;
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        * @return The refPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getRefPos() {
@@ -1695,7 +1703,7 @@ public final class MotionInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public Builder setRefPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (refPosBuilder_ == null) {
@@ -1711,7 +1719,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public Builder setRefPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1725,7 +1733,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public Builder mergeRefPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (refPosBuilder_ == null) {
@@ -1743,7 +1751,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public Builder clearRefPos() {
         if (refPosBuilder_ == null) {
@@ -1757,7 +1765,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRefPosBuilder() {
         
@@ -1765,7 +1773,7 @@ public final class MotionInfoOuterClass {
         return getRefPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder() {
         if (refPosBuilder_ != null) {
@@ -1776,7 +1784,7 @@ public final class MotionInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector refPos = 6;</code>
+       * <code>.Vector ref_pos = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1794,7 +1802,7 @@ public final class MotionInfoOuterClass {
 
       private int refId_ ;
       /**
-       * <code>uint32 refId = 7;</code>
+       * <code>uint32 ref_id = 7;</code>
        * @return The refId.
        */
       @java.lang.Override
@@ -1802,7 +1810,7 @@ public final class MotionInfoOuterClass {
         return refId_;
       }
       /**
-       * <code>uint32 refId = 7;</code>
+       * <code>uint32 ref_id = 7;</code>
        * @param value The refId to set.
        * @return This builder for chaining.
        */
@@ -1813,7 +1821,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 refId = 7;</code>
+       * <code>uint32 ref_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefId() {
@@ -1825,7 +1833,7 @@ public final class MotionInfoOuterClass {
 
       private int sceneTime_ ;
       /**
-       * <code>uint32 sceneTime = 8;</code>
+       * <code>uint32 scene_time = 8;</code>
        * @return The sceneTime.
        */
       @java.lang.Override
@@ -1833,7 +1841,7 @@ public final class MotionInfoOuterClass {
         return sceneTime_;
       }
       /**
-       * <code>uint32 sceneTime = 8;</code>
+       * <code>uint32 scene_time = 8;</code>
        * @param value The sceneTime to set.
        * @return This builder for chaining.
        */
@@ -1844,7 +1852,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneTime = 8;</code>
+       * <code>uint32 scene_time = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
@@ -1856,7 +1864,7 @@ public final class MotionInfoOuterClass {
 
       private long intervalVelocity_ ;
       /**
-       * <code>uint64 intervalVelocity = 9;</code>
+       * <code>uint64 interval_velocity = 9;</code>
        * @return The intervalVelocity.
        */
       @java.lang.Override
@@ -1864,7 +1872,7 @@ public final class MotionInfoOuterClass {
         return intervalVelocity_;
       }
       /**
-       * <code>uint64 intervalVelocity = 9;</code>
+       * <code>uint64 interval_velocity = 9;</code>
        * @param value The intervalVelocity to set.
        * @return This builder for chaining.
        */
@@ -1875,7 +1883,7 @@ public final class MotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint64 intervalVelocity = 9;</code>
+       * <code>uint64 interval_velocity = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIntervalVelocity() {
@@ -1951,20 +1959,20 @@ public final class MotionInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020MotionInfo.proto\032\014Vector.proto\032\021Motion" +
-      "State.proto\"\333\001\n\nMotionInfo\022\024\n\003pos\030\001 \001(\0132" +
+      "\n\020MotionInfo.proto\032\021MotionState.proto\032\014V" +
+      "ector.proto\"\337\001\n\nMotionInfo\022\024\n\003pos\030\001 \001(\0132" +
       "\007.Vector\022\024\n\003rot\030\002 \001(\0132\007.Vector\022\026\n\005speed\030" +
       "\003 \001(\0132\007.Vector\022\033\n\005state\030\004 \001(\0162\014.MotionSt" +
-      "ate\022\027\n\006params\030\005 \003(\0132\007.Vector\022\027\n\006refPos\030\006" +
-      " \001(\0132\007.Vector\022\r\n\005refId\030\007 \001(\r\022\021\n\tsceneTim" +
-      "e\030\010 \001(\r\022\030\n\020intervalVelocity\030\t \001(\004B\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "ate\022\027\n\006params\030\005 \003(\0132\007.Vector\022\030\n\007ref_pos\030" +
+      "\006 \001(\0132\007.Vector\022\016\n\006ref_id\030\007 \001(\r\022\022\n\nscene_" +
+      "time\030\010 \001(\r\022\031\n\021interval_velocity\030\t \001(\004B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_MotionInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1972,8 +1980,8 @@ public final class MotionInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MotionInfo_descriptor,
         new java.lang.String[] { "Pos", "Rot", "Speed", "State", "Params", "RefPos", "RefId", "SceneTime", "IntervalVelocity", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

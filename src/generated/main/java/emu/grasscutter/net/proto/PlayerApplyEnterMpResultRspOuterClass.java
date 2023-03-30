@@ -19,30 +19,35 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 applyUid = 10;</code>
-     * @return The applyUid.
-     */
-    int getApplyUid();
-
-    /**
-     * <code>bool isAgreed = 9;</code>
+     * <code>bool is_agreed = 14;</code>
      * @return The isAgreed.
      */
     boolean getIsAgreed();
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 param = 4;</code>
+     * <code>uint32 param = 10;</code>
      * @return The param.
      */
     int getParam();
+
+    /**
+     * <code>uint32 apply_uid = 11;</code>
+     * @return The applyUid.
+     */
+    int getApplyUid();
   }
   /**
+   * <pre>
+   * Name: KACGKKELDJE
+   * CmdId: 1815
+   * </pre>
+   *
    * Protobuf type {@code PlayerApplyEnterMpResultRsp}
    */
   public static final class PlayerApplyEnterMpResultRsp extends
@@ -87,24 +92,24 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
+            case 80: {
 
               param_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              isAgreed_ = input.readBool();
-              break;
-            }
-            case 80: {
+            case 88: {
 
               applyUid_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              isAgreed_ = input.readBool();
               break;
             }
             default: {
@@ -139,152 +144,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PlayerApplyEnterMpResultRsp.AGCOEANBGID}
-     */
-    public enum AGCOEANBGID
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1843;</code>
-       */
-      PEPPOHPHJOJ(1, 1843),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final AGCOEANBGID DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1843;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1843;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static AGCOEANBGID valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static AGCOEANBGID forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1843: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<AGCOEANBGID>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          AGCOEANBGID> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AGCOEANBGID>() {
-              public AGCOEANBGID findValueByNumber(int number) {
-                return AGCOEANBGID.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final AGCOEANBGID[] VALUES = getStaticValuesArray();
-      private static AGCOEANBGID[] getStaticValuesArray() {
-        return new AGCOEANBGID[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static AGCOEANBGID valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private AGCOEANBGID(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PlayerApplyEnterMpResultRsp.AGCOEANBGID)
-    }
-
-    public static final int APPLYUID_FIELD_NUMBER = 10;
-    private int applyUid_;
-    /**
-     * <code>uint32 applyUid = 10;</code>
-     * @return The applyUid.
-     */
-    @java.lang.Override
-    public int getApplyUid() {
-      return applyUid_;
-    }
-
-    public static final int ISAGREED_FIELD_NUMBER = 9;
+    public static final int IS_AGREED_FIELD_NUMBER = 14;
     private boolean isAgreed_;
     /**
-     * <code>bool isAgreed = 9;</code>
+     * <code>bool is_agreed = 14;</code>
      * @return The isAgreed.
      */
     @java.lang.Override
@@ -292,10 +155,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       return isAgreed_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -303,15 +166,26 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       return retcode_;
     }
 
-    public static final int PARAM_FIELD_NUMBER = 4;
+    public static final int PARAM_FIELD_NUMBER = 10;
     private int param_;
     /**
-     * <code>uint32 param = 4;</code>
+     * <code>uint32 param = 10;</code>
      * @return The param.
      */
     @java.lang.Override
     public int getParam() {
       return param_;
+    }
+
+    public static final int APPLY_UID_FIELD_NUMBER = 11;
+    private int applyUid_;
+    /**
+     * <code>uint32 apply_uid = 11;</code>
+     * @return The applyUid.
+     */
+    @java.lang.Override
+    public int getApplyUid() {
+      return applyUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -328,17 +202,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
-      }
       if (param_ != 0) {
-        output.writeUInt32(4, param_);
-      }
-      if (isAgreed_ != false) {
-        output.writeBool(9, isAgreed_);
+        output.writeUInt32(10, param_);
       }
       if (applyUid_ != 0) {
-        output.writeUInt32(10, applyUid_);
+        output.writeUInt32(11, applyUid_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
+      }
+      if (isAgreed_ != false) {
+        output.writeBool(14, isAgreed_);
       }
       unknownFields.writeTo(output);
     }
@@ -349,21 +223,21 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
-      }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, param_);
-      }
-      if (isAgreed_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isAgreed_);
+          .computeUInt32Size(10, param_);
       }
       if (applyUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, applyUid_);
+          .computeUInt32Size(11, applyUid_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, retcode_);
+      }
+      if (isAgreed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isAgreed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -380,14 +254,14 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp other = (emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp) obj;
 
-      if (getApplyUid()
-          != other.getApplyUid()) return false;
       if (getIsAgreed()
           != other.getIsAgreed()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getParam()
           != other.getParam()) return false;
+      if (getApplyUid()
+          != other.getApplyUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -399,15 +273,15 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APPLYUID_FIELD_NUMBER;
-      hash = (53 * hash) + getApplyUid();
-      hash = (37 * hash) + ISAGREED_FIELD_NUMBER;
+      hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
+      hash = (37 * hash) + APPLY_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getApplyUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -504,6 +378,11 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KACGKKELDJE
+     * CmdId: 1815
+     * </pre>
+     *
      * Protobuf type {@code PlayerApplyEnterMpResultRsp}
      */
     public static final class Builder extends
@@ -541,13 +420,13 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        applyUid_ = 0;
-
         isAgreed_ = false;
 
         retcode_ = 0;
 
         param_ = 0;
+
+        applyUid_ = 0;
 
         return this;
       }
@@ -575,10 +454,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp buildPartial() {
         emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp result = new emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp(this);
-        result.applyUid_ = applyUid_;
         result.isAgreed_ = isAgreed_;
         result.retcode_ = retcode_;
         result.param_ = param_;
+        result.applyUid_ = applyUid_;
         onBuilt();
         return result;
       }
@@ -627,9 +506,6 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp other) {
         if (other == emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.getDefaultInstance()) return this;
-        if (other.getApplyUid() != 0) {
-          setApplyUid(other.getApplyUid());
-        }
         if (other.getIsAgreed() != false) {
           setIsAgreed(other.getIsAgreed());
         }
@@ -638,6 +514,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         }
         if (other.getParam() != 0) {
           setParam(other.getParam());
+        }
+        if (other.getApplyUid() != 0) {
+          setApplyUid(other.getApplyUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -668,40 +547,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return this;
       }
 
-      private int applyUid_ ;
-      /**
-       * <code>uint32 applyUid = 10;</code>
-       * @return The applyUid.
-       */
-      @java.lang.Override
-      public int getApplyUid() {
-        return applyUid_;
-      }
-      /**
-       * <code>uint32 applyUid = 10;</code>
-       * @param value The applyUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApplyUid(int value) {
-        
-        applyUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 applyUid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearApplyUid() {
-        
-        applyUid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isAgreed_ ;
       /**
-       * <code>bool isAgreed = 9;</code>
+       * <code>bool is_agreed = 14;</code>
        * @return The isAgreed.
        */
       @java.lang.Override
@@ -709,7 +557,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return isAgreed_;
       }
       /**
-       * <code>bool isAgreed = 9;</code>
+       * <code>bool is_agreed = 14;</code>
        * @param value The isAgreed to set.
        * @return This builder for chaining.
        */
@@ -720,7 +568,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return this;
       }
       /**
-       * <code>bool isAgreed = 9;</code>
+       * <code>bool is_agreed = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
@@ -732,7 +580,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -740,7 +588,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -751,7 +599,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -763,7 +611,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       private int param_ ;
       /**
-       * <code>uint32 param = 4;</code>
+       * <code>uint32 param = 10;</code>
        * @return The param.
        */
       @java.lang.Override
@@ -771,7 +619,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return param_;
       }
       /**
-       * <code>uint32 param = 4;</code>
+       * <code>uint32 param = 10;</code>
        * @param value The param to set.
        * @return This builder for chaining.
        */
@@ -782,12 +630,43 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param = 4;</code>
+       * <code>uint32 param = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam() {
         
         param_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int applyUid_ ;
+      /**
+       * <code>uint32 apply_uid = 11;</code>
+       * @return The applyUid.
+       */
+      @java.lang.Override
+      public int getApplyUid() {
+        return applyUid_;
+      }
+      /**
+       * <code>uint32 apply_uid = 11;</code>
+       * @param value The applyUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyUid(int value) {
+        
+        applyUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 apply_uid = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplyUid() {
+        
+        applyUid_ = 0;
         onChanged();
         return this;
       }
@@ -858,12 +737,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!PlayerApplyEnterMpResultRsp.proto\"\262\001\n\033" +
-      "PlayerApplyEnterMpResultRsp\022\020\n\010applyUid\030" +
-      "\n \001(\r\022\020\n\010isAgreed\030\t \001(\010\022\017\n\007retcode\030\002 \001(\005" +
-      "\022\r\n\005param\030\004 \001(\r\"O\n\013AGCOEANBGID\022\010\n\004NONE\020\000" +
-      "\022\020\n\013PEPPOHPHJOJ\020\263\016\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013N" +
-      "NBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
+      "\n!PlayerApplyEnterMpResultRsp.proto\"c\n\033P" +
+      "layerApplyEnterMpResultRsp\022\021\n\tis_agreed\030" +
+      "\016 \001(\010\022\017\n\007retcode\030\014 \001(\005\022\r\n\005param\030\n \001(\r\022\021\n" +
+      "\tapply_uid\030\013 \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -875,7 +752,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerApplyEnterMpResultRsp_descriptor,
-        new java.lang.String[] { "ApplyUid", "IsAgreed", "Retcode", "Param", });
+        new java.lang.String[] { "IsAgreed", "Retcode", "Param", "ApplyUid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

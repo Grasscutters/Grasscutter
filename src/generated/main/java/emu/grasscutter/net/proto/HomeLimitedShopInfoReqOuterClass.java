@@ -19,6 +19,11 @@ public final class HomeLimitedShopInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Name: JFFKPGFDHIC
+   * CmdId: 4476
+   * </pre>
+   *
    * Protobuf type {@code HomeLimitedShopInfoReq}
    */
   public static final class HomeLimitedShopInfoReq extends
@@ -93,145 +98,6 @@ public final class HomeLimitedShopInfoReqOuterClass {
       return emu.grasscutter.net.proto.HomeLimitedShopInfoReqOuterClass.internal_static_HomeLimitedShopInfoReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.HomeLimitedShopInfoReqOuterClass.HomeLimitedShopInfoReq.class, emu.grasscutter.net.proto.HomeLimitedShopInfoReqOuterClass.HomeLimitedShopInfoReq.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code HomeLimitedShopInfoReq.PALECFPFFNN}
-     */
-    public enum PALECFPFFNN
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4686;</code>
-       */
-      PEPPOHPHJOJ(1, 4686),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PALECFPFFNN DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final PALECFPFFNN EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4686;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4686;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PALECFPFFNN valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PALECFPFFNN forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4686: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PALECFPFFNN>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PALECFPFFNN> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PALECFPFFNN>() {
-              public PALECFPFFNN findValueByNumber(int number) {
-                return PALECFPFFNN.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoReqOuterClass.HomeLimitedShopInfoReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PALECFPFFNN[] VALUES = getStaticValuesArray();
-      private static PALECFPFFNN[] getStaticValuesArray() {
-        return new PALECFPFFNN[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static PALECFPFFNN valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PALECFPFFNN(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeLimitedShopInfoReq.PALECFPFFNN)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -379,6 +245,11 @@ public final class HomeLimitedShopInfoReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JFFKPGFDHIC
+     * CmdId: 4476
+     * </pre>
+     *
      * Protobuf type {@code HomeLimitedShopInfoReq}
      */
     public static final class Builder extends
@@ -585,11 +456,9 @@ public final class HomeLimitedShopInfoReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034HomeLimitedShopInfoReq.proto\"z\n\026HomeLi" +
-      "mitedShopInfoReq\"`\n\013PALECFPFFNN\022\010\n\004NONE\020" +
-      "\000\022\020\n\013PEPPOHPHJOJ\020\316$\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013" +
-      "NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\034HomeLimitedShopInfoReq.proto\"\030\n\026HomeLi" +
+      "mitedShopInfoReqB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

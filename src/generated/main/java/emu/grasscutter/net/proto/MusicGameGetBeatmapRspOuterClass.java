@@ -87,6 +87,12 @@ public final class MusicGameGetBeatmapRspOuterClass {
     public emu.grasscutter.net.proto.MusicGameGetBeatmapRspOuterClass.MusicGameGetBeatmapRsp.BriefInfoCase getBriefInfoCase();
   }
   /**
+   * <pre>
+   * CmdId: 6309
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * </pre>
+   *
    * Protobuf type {@code MusicGameGetBeatmapRsp}
    */
   public static final class MusicGameGetBeatmapRsp extends
@@ -651,6 +657,12 @@ public final class MusicGameGetBeatmapRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6309
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * </pre>
+     *
      * Protobuf type {@code MusicGameGetBeatmapRsp}
      */
     public static final class Builder extends

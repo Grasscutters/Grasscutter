@@ -19,12 +19,17 @@ public final class SetNameCardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 nameCardId = 7;</code>
+     * <code>uint32 name_card_id = 13;</code>
      * @return The nameCardId.
      */
     int getNameCardId();
   }
   /**
+   * <pre>
+   * Name: KEOCAIGOMHF
+   * CmdId: 4094
+   * </pre>
+   *
    * Protobuf type {@code SetNameCardReq}
    */
   public static final class SetNameCardReq extends
@@ -69,7 +74,7 @@ public final class SetNameCardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 104: {
 
               nameCardId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class SetNameCardReqOuterClass {
               emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq.class, emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SetNameCardReq.CBFBPJBKJPD}
-     */
-    public enum CBFBPJBKJPD
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4025;</code>
-       */
-      PEPPOHPHJOJ(1, 4025),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CBFBPJBKJPD DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final CBFBPJBKJPD EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4025;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4025;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CBFBPJBKJPD valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CBFBPJBKJPD forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4025: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CBFBPJBKJPD>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CBFBPJBKJPD> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CBFBPJBKJPD>() {
-              public CBFBPJBKJPD findValueByNumber(int number) {
-                return CBFBPJBKJPD.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CBFBPJBKJPD[] VALUES = getStaticValuesArray();
-      private static CBFBPJBKJPD[] getStaticValuesArray() {
-        return new CBFBPJBKJPD[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static CBFBPJBKJPD valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CBFBPJBKJPD(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SetNameCardReq.CBFBPJBKJPD)
-    }
-
-    public static final int NAMECARDID_FIELD_NUMBER = 7;
+    public static final int NAME_CARD_ID_FIELD_NUMBER = 13;
     private int nameCardId_;
     /**
-     * <code>uint32 nameCardId = 7;</code>
+     * <code>uint32 name_card_id = 13;</code>
      * @return The nameCardId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class SetNameCardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (nameCardId_ != 0) {
-        output.writeUInt32(7, nameCardId_);
+        output.writeUInt32(13, nameCardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class SetNameCardReqOuterClass {
       size = 0;
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, nameCardId_);
+          .computeUInt32Size(13, nameCardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class SetNameCardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMECARDID_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class SetNameCardReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KEOCAIGOMHF
+     * CmdId: 4094
+     * </pre>
+     *
      * Protobuf type {@code SetNameCardReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class SetNameCardReqOuterClass {
 
       private int nameCardId_ ;
       /**
-       * <code>uint32 nameCardId = 7;</code>
+       * <code>uint32 name_card_id = 13;</code>
        * @return The nameCardId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class SetNameCardReqOuterClass {
         return nameCardId_;
       }
       /**
-       * <code>uint32 nameCardId = 7;</code>
+       * <code>uint32 name_card_id = 13;</code>
        * @param value The nameCardId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class SetNameCardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 nameCardId = 7;</code>
+       * <code>uint32 name_card_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
@@ -655,11 +526,9 @@ public final class SetNameCardReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024SetNameCardReq.proto\"\206\001\n\016SetNameCardRe" +
-      "q\022\022\n\nnameCardId\030\007 \001(\r\"`\n\013CBFBPJBKJPD\022\010\n\004" +
-      "NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\271\037\022\017\n\013DCDNILFDFLB\020" +
-      "\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\024SetNameCardReq.proto\"&\n\016SetNameCardReq" +
+      "\022\024\n\014name_card_id\030\r \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

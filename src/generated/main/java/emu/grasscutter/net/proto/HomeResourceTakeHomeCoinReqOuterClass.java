@@ -20,14 +20,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
   }
   /**
    * <pre>
-   *enum ALJGALOMLPM {
-   *	option allow_alias= true;
-   *	NONE = 0;
-   *	PEPPOHPHJOJ = 4460;
-   *	DCDNILFDFLB = 0;
-   *	NNBKOLMPOEA = 1;
-   *	EAJIABGAOCI = 1;
-   *}
+   * Name: HOHLNANCKPP
+   * CmdId: 4688
    * </pre>
    *
    * Protobuf type {@code HomeResourceTakeHomeCoinReq}
@@ -252,14 +246,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
     }
     /**
      * <pre>
-     *enum ALJGALOMLPM {
-     *	option allow_alias= true;
-     *	NONE = 0;
-     *	PEPPOHPHJOJ = 4460;
-     *	DCDNILFDFLB = 0;
-     *	NNBKOLMPOEA = 1;
-     *	EAJIABGAOCI = 1;
-     *}
+     * Name: HOHLNANCKPP
+     * CmdId: 4688
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeHomeCoinReq}

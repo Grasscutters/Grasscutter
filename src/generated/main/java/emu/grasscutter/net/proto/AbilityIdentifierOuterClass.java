@@ -19,42 +19,46 @@ public final class AbilityIdentifierOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 modifierOwnerId = 3;</code>
-     * @return The modifierOwnerId.
-     */
-    int getModifierOwnerId();
-
-    /**
-     * <code>uint32 abilityCasterId = 10;</code>
-     * @return The abilityCasterId.
-     */
-    int getAbilityCasterId();
-
-    /**
-     * <code>uint32 instancedAbilityId = 5;</code>
-     * @return The instancedAbilityId.
-     */
-    int getInstancedAbilityId();
-
-    /**
-     * <code>bool isServerbuffModifier = 4;</code>
+     * <code>bool is_serverbuff_modifier = 2;</code>
      * @return The isServerbuffModifier.
      */
     boolean getIsServerbuffModifier();
 
     /**
-     * <code>int32 localId = 8;</code>
+     * <code>uint32 CKGECLBFOCP = 9;</code>
+     * @return The cKGECLBFOCP.
+     */
+    int getCKGECLBFOCP();
+
+    /**
+     * <code>int32 local_id = 12;</code>
      * @return The localId.
      */
     int getLocalId();
 
     /**
-     * <code>uint32 instancedModifierId = 11;</code>
+     * <code>uint32 instanced_modifier_id = 14;</code>
      * @return The instancedModifierId.
      */
     int getInstancedModifierId();
+
+    /**
+     * <code>uint32 instanced_ability_id = 7;</code>
+     * @return The instancedAbilityId.
+     */
+    int getInstancedAbilityId();
+
+    /**
+     * <code>uint32 NJNNPGIMJEN = 13;</code>
+     * @return The nJNNPGIMJEN.
+     */
+    int getNJNNPGIMJEN();
   }
   /**
+   * <pre>
+   * Name: FBHPFOJEMEK
+   * </pre>
+   *
    * Protobuf type {@code AbilityIdentifier}
    */
   public static final class AbilityIdentifier extends
@@ -99,32 +103,32 @@ public final class AbilityIdentifierOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              modifierOwnerId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 16: {
 
               isServerbuffModifier_ = input.readBool();
               break;
             }
-            case 40: {
+            case 56: {
 
               instancedAbilityId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 72: {
+
+              cKGECLBFOCP_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               localId_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 104: {
 
-              abilityCasterId_ = input.readUInt32();
+              nJNNPGIMJEN_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 112: {
 
               instancedModifierId_ = input.readUInt32();
               break;
@@ -161,43 +165,10 @@ public final class AbilityIdentifierOuterClass {
               emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.class, emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.Builder.class);
     }
 
-    public static final int MODIFIEROWNERID_FIELD_NUMBER = 3;
-    private int modifierOwnerId_;
-    /**
-     * <code>uint32 modifierOwnerId = 3;</code>
-     * @return The modifierOwnerId.
-     */
-    @java.lang.Override
-    public int getModifierOwnerId() {
-      return modifierOwnerId_;
-    }
-
-    public static final int ABILITYCASTERID_FIELD_NUMBER = 10;
-    private int abilityCasterId_;
-    /**
-     * <code>uint32 abilityCasterId = 10;</code>
-     * @return The abilityCasterId.
-     */
-    @java.lang.Override
-    public int getAbilityCasterId() {
-      return abilityCasterId_;
-    }
-
-    public static final int INSTANCEDABILITYID_FIELD_NUMBER = 5;
-    private int instancedAbilityId_;
-    /**
-     * <code>uint32 instancedAbilityId = 5;</code>
-     * @return The instancedAbilityId.
-     */
-    @java.lang.Override
-    public int getInstancedAbilityId() {
-      return instancedAbilityId_;
-    }
-
-    public static final int ISSERVERBUFFMODIFIER_FIELD_NUMBER = 4;
+    public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 2;
     private boolean isServerbuffModifier_;
     /**
-     * <code>bool isServerbuffModifier = 4;</code>
+     * <code>bool is_serverbuff_modifier = 2;</code>
      * @return The isServerbuffModifier.
      */
     @java.lang.Override
@@ -205,10 +176,21 @@ public final class AbilityIdentifierOuterClass {
       return isServerbuffModifier_;
     }
 
-    public static final int LOCALID_FIELD_NUMBER = 8;
+    public static final int CKGECLBFOCP_FIELD_NUMBER = 9;
+    private int cKGECLBFOCP_;
+    /**
+     * <code>uint32 CKGECLBFOCP = 9;</code>
+     * @return The cKGECLBFOCP.
+     */
+    @java.lang.Override
+    public int getCKGECLBFOCP() {
+      return cKGECLBFOCP_;
+    }
+
+    public static final int LOCAL_ID_FIELD_NUMBER = 12;
     private int localId_;
     /**
-     * <code>int32 localId = 8;</code>
+     * <code>int32 local_id = 12;</code>
      * @return The localId.
      */
     @java.lang.Override
@@ -216,15 +198,37 @@ public final class AbilityIdentifierOuterClass {
       return localId_;
     }
 
-    public static final int INSTANCEDMODIFIERID_FIELD_NUMBER = 11;
+    public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 14;
     private int instancedModifierId_;
     /**
-     * <code>uint32 instancedModifierId = 11;</code>
+     * <code>uint32 instanced_modifier_id = 14;</code>
      * @return The instancedModifierId.
      */
     @java.lang.Override
     public int getInstancedModifierId() {
       return instancedModifierId_;
+    }
+
+    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 7;
+    private int instancedAbilityId_;
+    /**
+     * <code>uint32 instanced_ability_id = 7;</code>
+     * @return The instancedAbilityId.
+     */
+    @java.lang.Override
+    public int getInstancedAbilityId() {
+      return instancedAbilityId_;
+    }
+
+    public static final int NJNNPGIMJEN_FIELD_NUMBER = 13;
+    private int nJNNPGIMJEN_;
+    /**
+     * <code>uint32 NJNNPGIMJEN = 13;</code>
+     * @return The nJNNPGIMJEN.
+     */
+    @java.lang.Override
+    public int getNJNNPGIMJEN() {
+      return nJNNPGIMJEN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,23 +245,23 @@ public final class AbilityIdentifierOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (modifierOwnerId_ != 0) {
-        output.writeUInt32(3, modifierOwnerId_);
-      }
       if (isServerbuffModifier_ != false) {
-        output.writeBool(4, isServerbuffModifier_);
+        output.writeBool(2, isServerbuffModifier_);
       }
       if (instancedAbilityId_ != 0) {
-        output.writeUInt32(5, instancedAbilityId_);
+        output.writeUInt32(7, instancedAbilityId_);
+      }
+      if (cKGECLBFOCP_ != 0) {
+        output.writeUInt32(9, cKGECLBFOCP_);
       }
       if (localId_ != 0) {
-        output.writeInt32(8, localId_);
+        output.writeInt32(12, localId_);
       }
-      if (abilityCasterId_ != 0) {
-        output.writeUInt32(10, abilityCasterId_);
+      if (nJNNPGIMJEN_ != 0) {
+        output.writeUInt32(13, nJNNPGIMJEN_);
       }
       if (instancedModifierId_ != 0) {
-        output.writeUInt32(11, instancedModifierId_);
+        output.writeUInt32(14, instancedModifierId_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,29 +272,29 @@ public final class AbilityIdentifierOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (modifierOwnerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, modifierOwnerId_);
-      }
       if (isServerbuffModifier_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isServerbuffModifier_);
+          .computeBoolSize(2, isServerbuffModifier_);
       }
       if (instancedAbilityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, instancedAbilityId_);
+          .computeUInt32Size(7, instancedAbilityId_);
+      }
+      if (cKGECLBFOCP_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, cKGECLBFOCP_);
       }
       if (localId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, localId_);
+          .computeInt32Size(12, localId_);
       }
-      if (abilityCasterId_ != 0) {
+      if (nJNNPGIMJEN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, abilityCasterId_);
+          .computeUInt32Size(13, nJNNPGIMJEN_);
       }
       if (instancedModifierId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, instancedModifierId_);
+          .computeUInt32Size(14, instancedModifierId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,18 +311,18 @@ public final class AbilityIdentifierOuterClass {
       }
       emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier other = (emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier) obj;
 
-      if (getModifierOwnerId()
-          != other.getModifierOwnerId()) return false;
-      if (getAbilityCasterId()
-          != other.getAbilityCasterId()) return false;
-      if (getInstancedAbilityId()
-          != other.getInstancedAbilityId()) return false;
       if (getIsServerbuffModifier()
           != other.getIsServerbuffModifier()) return false;
+      if (getCKGECLBFOCP()
+          != other.getCKGECLBFOCP()) return false;
       if (getLocalId()
           != other.getLocalId()) return false;
       if (getInstancedModifierId()
           != other.getInstancedModifierId()) return false;
+      if (getInstancedAbilityId()
+          != other.getInstancedAbilityId()) return false;
+      if (getNJNNPGIMJEN()
+          != other.getNJNNPGIMJEN()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -330,19 +334,19 @@ public final class AbilityIdentifierOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MODIFIEROWNERID_FIELD_NUMBER;
-      hash = (53 * hash) + getModifierOwnerId();
-      hash = (37 * hash) + ABILITYCASTERID_FIELD_NUMBER;
-      hash = (53 * hash) + getAbilityCasterId();
-      hash = (37 * hash) + INSTANCEDABILITYID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstancedAbilityId();
-      hash = (37 * hash) + ISSERVERBUFFMODIFIER_FIELD_NUMBER;
+      hash = (37 * hash) + IS_SERVERBUFF_MODIFIER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsServerbuffModifier());
-      hash = (37 * hash) + LOCALID_FIELD_NUMBER;
+      hash = (37 * hash) + CKGECLBFOCP_FIELD_NUMBER;
+      hash = (53 * hash) + getCKGECLBFOCP();
+      hash = (37 * hash) + LOCAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLocalId();
-      hash = (37 * hash) + INSTANCEDMODIFIERID_FIELD_NUMBER;
+      hash = (37 * hash) + INSTANCED_MODIFIER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstancedModifierId();
+      hash = (37 * hash) + INSTANCED_ABILITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancedAbilityId();
+      hash = (37 * hash) + NJNNPGIMJEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNJNNPGIMJEN();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -439,6 +443,10 @@ public final class AbilityIdentifierOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FBHPFOJEMEK
+     * </pre>
+     *
      * Protobuf type {@code AbilityIdentifier}
      */
     public static final class Builder extends
@@ -476,17 +484,17 @@ public final class AbilityIdentifierOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        modifierOwnerId_ = 0;
-
-        abilityCasterId_ = 0;
-
-        instancedAbilityId_ = 0;
-
         isServerbuffModifier_ = false;
+
+        cKGECLBFOCP_ = 0;
 
         localId_ = 0;
 
         instancedModifierId_ = 0;
+
+        instancedAbilityId_ = 0;
+
+        nJNNPGIMJEN_ = 0;
 
         return this;
       }
@@ -514,12 +522,12 @@ public final class AbilityIdentifierOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier buildPartial() {
         emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier result = new emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier(this);
-        result.modifierOwnerId_ = modifierOwnerId_;
-        result.abilityCasterId_ = abilityCasterId_;
-        result.instancedAbilityId_ = instancedAbilityId_;
         result.isServerbuffModifier_ = isServerbuffModifier_;
+        result.cKGECLBFOCP_ = cKGECLBFOCP_;
         result.localId_ = localId_;
         result.instancedModifierId_ = instancedModifierId_;
+        result.instancedAbilityId_ = instancedAbilityId_;
+        result.nJNNPGIMJEN_ = nJNNPGIMJEN_;
         onBuilt();
         return result;
       }
@@ -568,23 +576,23 @@ public final class AbilityIdentifierOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier other) {
         if (other == emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.getDefaultInstance()) return this;
-        if (other.getModifierOwnerId() != 0) {
-          setModifierOwnerId(other.getModifierOwnerId());
-        }
-        if (other.getAbilityCasterId() != 0) {
-          setAbilityCasterId(other.getAbilityCasterId());
-        }
-        if (other.getInstancedAbilityId() != 0) {
-          setInstancedAbilityId(other.getInstancedAbilityId());
-        }
         if (other.getIsServerbuffModifier() != false) {
           setIsServerbuffModifier(other.getIsServerbuffModifier());
+        }
+        if (other.getCKGECLBFOCP() != 0) {
+          setCKGECLBFOCP(other.getCKGECLBFOCP());
         }
         if (other.getLocalId() != 0) {
           setLocalId(other.getLocalId());
         }
         if (other.getInstancedModifierId() != 0) {
           setInstancedModifierId(other.getInstancedModifierId());
+        }
+        if (other.getInstancedAbilityId() != 0) {
+          setInstancedAbilityId(other.getInstancedAbilityId());
+        }
+        if (other.getNJNNPGIMJEN() != 0) {
+          setNJNNPGIMJEN(other.getNJNNPGIMJEN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -615,102 +623,9 @@ public final class AbilityIdentifierOuterClass {
         return this;
       }
 
-      private int modifierOwnerId_ ;
-      /**
-       * <code>uint32 modifierOwnerId = 3;</code>
-       * @return The modifierOwnerId.
-       */
-      @java.lang.Override
-      public int getModifierOwnerId() {
-        return modifierOwnerId_;
-      }
-      /**
-       * <code>uint32 modifierOwnerId = 3;</code>
-       * @param value The modifierOwnerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModifierOwnerId(int value) {
-        
-        modifierOwnerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 modifierOwnerId = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearModifierOwnerId() {
-        
-        modifierOwnerId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int abilityCasterId_ ;
-      /**
-       * <code>uint32 abilityCasterId = 10;</code>
-       * @return The abilityCasterId.
-       */
-      @java.lang.Override
-      public int getAbilityCasterId() {
-        return abilityCasterId_;
-      }
-      /**
-       * <code>uint32 abilityCasterId = 10;</code>
-       * @param value The abilityCasterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAbilityCasterId(int value) {
-        
-        abilityCasterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 abilityCasterId = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAbilityCasterId() {
-        
-        abilityCasterId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int instancedAbilityId_ ;
-      /**
-       * <code>uint32 instancedAbilityId = 5;</code>
-       * @return The instancedAbilityId.
-       */
-      @java.lang.Override
-      public int getInstancedAbilityId() {
-        return instancedAbilityId_;
-      }
-      /**
-       * <code>uint32 instancedAbilityId = 5;</code>
-       * @param value The instancedAbilityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstancedAbilityId(int value) {
-        
-        instancedAbilityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 instancedAbilityId = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstancedAbilityId() {
-        
-        instancedAbilityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isServerbuffModifier_ ;
       /**
-       * <code>bool isServerbuffModifier = 4;</code>
+       * <code>bool is_serverbuff_modifier = 2;</code>
        * @return The isServerbuffModifier.
        */
       @java.lang.Override
@@ -718,7 +633,7 @@ public final class AbilityIdentifierOuterClass {
         return isServerbuffModifier_;
       }
       /**
-       * <code>bool isServerbuffModifier = 4;</code>
+       * <code>bool is_serverbuff_modifier = 2;</code>
        * @param value The isServerbuffModifier to set.
        * @return This builder for chaining.
        */
@@ -729,7 +644,7 @@ public final class AbilityIdentifierOuterClass {
         return this;
       }
       /**
-       * <code>bool isServerbuffModifier = 4;</code>
+       * <code>bool is_serverbuff_modifier = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsServerbuffModifier() {
@@ -739,9 +654,40 @@ public final class AbilityIdentifierOuterClass {
         return this;
       }
 
+      private int cKGECLBFOCP_ ;
+      /**
+       * <code>uint32 CKGECLBFOCP = 9;</code>
+       * @return The cKGECLBFOCP.
+       */
+      @java.lang.Override
+      public int getCKGECLBFOCP() {
+        return cKGECLBFOCP_;
+      }
+      /**
+       * <code>uint32 CKGECLBFOCP = 9;</code>
+       * @param value The cKGECLBFOCP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCKGECLBFOCP(int value) {
+        
+        cKGECLBFOCP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 CKGECLBFOCP = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCKGECLBFOCP() {
+        
+        cKGECLBFOCP_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int localId_ ;
       /**
-       * <code>int32 localId = 8;</code>
+       * <code>int32 local_id = 12;</code>
        * @return The localId.
        */
       @java.lang.Override
@@ -749,7 +695,7 @@ public final class AbilityIdentifierOuterClass {
         return localId_;
       }
       /**
-       * <code>int32 localId = 8;</code>
+       * <code>int32 local_id = 12;</code>
        * @param value The localId to set.
        * @return This builder for chaining.
        */
@@ -760,7 +706,7 @@ public final class AbilityIdentifierOuterClass {
         return this;
       }
       /**
-       * <code>int32 localId = 8;</code>
+       * <code>int32 local_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLocalId() {
@@ -772,7 +718,7 @@ public final class AbilityIdentifierOuterClass {
 
       private int instancedModifierId_ ;
       /**
-       * <code>uint32 instancedModifierId = 11;</code>
+       * <code>uint32 instanced_modifier_id = 14;</code>
        * @return The instancedModifierId.
        */
       @java.lang.Override
@@ -780,7 +726,7 @@ public final class AbilityIdentifierOuterClass {
         return instancedModifierId_;
       }
       /**
-       * <code>uint32 instancedModifierId = 11;</code>
+       * <code>uint32 instanced_modifier_id = 14;</code>
        * @param value The instancedModifierId to set.
        * @return This builder for chaining.
        */
@@ -791,12 +737,74 @@ public final class AbilityIdentifierOuterClass {
         return this;
       }
       /**
-       * <code>uint32 instancedModifierId = 11;</code>
+       * <code>uint32 instanced_modifier_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstancedModifierId() {
         
         instancedModifierId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int instancedAbilityId_ ;
+      /**
+       * <code>uint32 instanced_ability_id = 7;</code>
+       * @return The instancedAbilityId.
+       */
+      @java.lang.Override
+      public int getInstancedAbilityId() {
+        return instancedAbilityId_;
+      }
+      /**
+       * <code>uint32 instanced_ability_id = 7;</code>
+       * @param value The instancedAbilityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstancedAbilityId(int value) {
+        
+        instancedAbilityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 instanced_ability_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstancedAbilityId() {
+        
+        instancedAbilityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nJNNPGIMJEN_ ;
+      /**
+       * <code>uint32 NJNNPGIMJEN = 13;</code>
+       * @return The nJNNPGIMJEN.
+       */
+      @java.lang.Override
+      public int getNJNNPGIMJEN() {
+        return nJNNPGIMJEN_;
+      }
+      /**
+       * <code>uint32 NJNNPGIMJEN = 13;</code>
+       * @param value The nJNNPGIMJEN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNJNNPGIMJEN(int value) {
+        
+        nJNNPGIMJEN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NJNNPGIMJEN = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNJNNPGIMJEN() {
+        
+        nJNNPGIMJEN_ = 0;
         onChanged();
         return this;
       }
@@ -867,12 +875,12 @@ public final class AbilityIdentifierOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027AbilityIdentifier.proto\"\255\001\n\021AbilityIde" +
-      "ntifier\022\027\n\017modifierOwnerId\030\003 \001(\r\022\027\n\017abil" +
-      "ityCasterId\030\n \001(\r\022\032\n\022instancedAbilityId\030" +
-      "\005 \001(\r\022\034\n\024isServerbuffModifier\030\004 \001(\010\022\017\n\007l" +
-      "ocalId\030\010 \001(\005\022\033\n\023instancedModifierId\030\013 \001(" +
-      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\027AbilityIdentifier.proto\"\254\001\n\021AbilityIde" +
+      "ntifier\022\036\n\026is_serverbuff_modifier\030\002 \001(\010\022" +
+      "\023\n\013CKGECLBFOCP\030\t \001(\r\022\020\n\010local_id\030\014 \001(\005\022\035" +
+      "\n\025instanced_modifier_id\030\016 \001(\r\022\034\n\024instanc" +
+      "ed_ability_id\030\007 \001(\r\022\023\n\013NJNNPGIMJEN\030\r \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -883,7 +891,7 @@ public final class AbilityIdentifierOuterClass {
     internal_static_AbilityIdentifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityIdentifier_descriptor,
-        new java.lang.String[] { "ModifierOwnerId", "AbilityCasterId", "InstancedAbilityId", "IsServerbuffModifier", "LocalId", "InstancedModifierId", });
+        new java.lang.String[] { "IsServerbuffModifier", "CKGECLBFOCP", "LocalId", "InstancedModifierId", "InstancedAbilityId", "NJNNPGIMJEN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

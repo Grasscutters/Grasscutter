@@ -19,21 +19,26 @@ public final class DailyTaskProgressNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      * @return The info.
      */
     emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo getInfo();
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      */
     emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: CAMFJNGDAOP
+   * CmdId: 160
+   * </pre>
+   *
    * Protobuf type {@code DailyTaskProgressNotify}
    */
   public static final class DailyTaskProgressNotify extends
@@ -78,7 +83,7 @@ public final class DailyTaskProgressNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 122: {
               emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -123,141 +128,10 @@ public final class DailyTaskProgressNotifyOuterClass {
               emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.class, emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code DailyTaskProgressNotify.KCIINAGGOAF}
-     */
-    public enum KCIINAGGOAF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 179;</code>
-       */
-      PEPPOHPHJOJ(1, 179),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KCIINAGGOAF DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 179;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 179;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KCIINAGGOAF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KCIINAGGOAF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 179: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KCIINAGGOAF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KCIINAGGOAF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KCIINAGGOAF>() {
-              public KCIINAGGOAF findValueByNumber(int number) {
-                return KCIINAGGOAF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KCIINAGGOAF[] VALUES = getStaticValuesArray();
-      private static KCIINAGGOAF[] getStaticValuesArray() {
-        return new KCIINAGGOAF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static KCIINAGGOAF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KCIINAGGOAF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:DailyTaskProgressNotify.KCIINAGGOAF)
-    }
-
-    public static final int INFO_FIELD_NUMBER = 12;
+    public static final int INFO_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo info_;
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -265,7 +139,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       return info_ != null;
     }
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      * @return The info.
      */
     @java.lang.Override
@@ -273,7 +147,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       return info_ == null ? emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.DailyTaskInfo info = 12;</code>
+     * <code>.DailyTaskInfo info = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder() {
@@ -295,7 +169,7 @@ public final class DailyTaskProgressNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(12, getInfo());
+        output.writeMessage(15, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -308,7 +182,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getInfo());
+          .computeMessageSize(15, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -441,6 +315,11 @@ public final class DailyTaskProgressNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CAMFJNGDAOP
+     * CmdId: 160
+     * </pre>
+     *
      * Protobuf type {@code DailyTaskProgressNotify}
      */
     public static final class Builder extends
@@ -599,14 +478,14 @@ public final class DailyTaskProgressNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        * @return The info.
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo getInfo() {
@@ -617,7 +496,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         }
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public Builder setInfo(emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo value) {
         if (infoBuilder_ == null) {
@@ -633,7 +512,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public Builder setInfo(
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder builderForValue) {
@@ -647,7 +526,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public Builder mergeInfo(emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo value) {
         if (infoBuilder_ == null) {
@@ -665,7 +544,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder getInfoBuilder() {
         
@@ -687,7 +566,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -698,7 +577,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         }
       }
       /**
-       * <code>.DailyTaskInfo info = 12;</code>
+       * <code>.DailyTaskInfo info = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder> 
@@ -781,11 +660,9 @@ public final class DailyTaskProgressNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035DailyTaskProgressNotify.proto\032\023DailyTa" +
-      "skInfo.proto\"\210\001\n\027DailyTaskProgressNotify" +
-      "\022\034\n\004info\030\014 \001(\0132\016.DailyTaskInfo\"O\n\013KCIINA" +
-      "GGOAF\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\263\001\022\017\n\013DCD" +
-      "NILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "skInfo.proto\"7\n\027DailyTaskProgressNotify\022" +
+      "\034\n\004info\030\017 \001(\0132\016.DailyTaskInfoB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

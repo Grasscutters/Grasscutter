@@ -19,12 +19,17 @@ public final class TakePlayerLevelRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 9;</code>
+     * <code>uint32 level = 11;</code>
      * @return The level.
      */
     int getLevel();
   }
   /**
+   * <pre>
+   * Name: NGMPIODHGFN
+   * CmdId: 138
+   * </pre>
+   *
    * Protobuf type {@code TakePlayerLevelRewardReq}
    */
   public static final class TakePlayerLevelRewardReq extends
@@ -69,7 +74,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 88: {
 
               level_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class TakePlayerLevelRewardReqOuterClass {
               emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq.class, emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code TakePlayerLevelRewardReq.OCIIENPKDLB}
-     */
-    public enum OCIIENPKDLB
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 156;</code>
-       */
-      PEPPOHPHJOJ(1, 156),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final OCIIENPKDLB DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final OCIIENPKDLB EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 156;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 156;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OCIIENPKDLB valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OCIIENPKDLB forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 156: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OCIIENPKDLB>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OCIIENPKDLB> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OCIIENPKDLB>() {
-              public OCIIENPKDLB findValueByNumber(int number) {
-                return OCIIENPKDLB.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OCIIENPKDLB[] VALUES = getStaticValuesArray();
-      private static OCIIENPKDLB[] getStaticValuesArray() {
-        return new OCIIENPKDLB[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static OCIIENPKDLB valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private OCIIENPKDLB(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:TakePlayerLevelRewardReq.OCIIENPKDLB)
-    }
-
-    public static final int LEVEL_FIELD_NUMBER = 9;
+    public static final int LEVEL_FIELD_NUMBER = 11;
     private int level_;
     /**
-     * <code>uint32 level = 9;</code>
+     * <code>uint32 level = 11;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (level_ != 0) {
-        output.writeUInt32(9, level_);
+        output.writeUInt32(11, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, level_);
+          .computeUInt32Size(11, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -412,6 +278,11 @@ public final class TakePlayerLevelRewardReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NGMPIODHGFN
+     * CmdId: 138
+     * </pre>
+     *
      * Protobuf type {@code TakePlayerLevelRewardReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
 
       private int level_ ;
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 11;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 11;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -655,12 +526,9 @@ public final class TakePlayerLevelRewardReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036TakePlayerLevelRewardReq.proto\"\213\001\n\030Tak" +
-      "ePlayerLevelRewardReq\022\r\n\005level\030\t \001(\r\"`\n\013" +
-      "OCIIENPKDLB\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\234\001\022" +
-      "\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJ" +
-      "IABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "\n\036TakePlayerLevelRewardReq.proto\")\n\030Take" +
+      "PlayerLevelRewardReq\022\r\n\005level\030\013 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

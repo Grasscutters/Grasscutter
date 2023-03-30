@@ -19,29 +19,33 @@ public final class BattlePassRewardTagOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 8;</code>
+     * <code>uint32 reward_id = 6;</code>
+     * @return The rewardId.
+     */
+    int getRewardId();
+
+    /**
+     * <code>uint32 level = 15;</code>
      * @return The level.
      */
     int getLevel();
 
     /**
-     * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+     * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
      * @return The enum numeric value on the wire for unlockStatus.
      */
     int getUnlockStatusValue();
     /**
-     * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+     * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
      * @return The unlockStatus.
      */
     emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus getUnlockStatus();
-
-    /**
-     * <code>uint32 rewardId = 15;</code>
-     * @return The rewardId.
-     */
-    int getRewardId();
   }
   /**
+   * <pre>
+   * Name: IEMOLLDEMBH
+   * </pre>
+   *
    * Protobuf type {@code BattlePassRewardTag}
    */
   public static final class BattlePassRewardTag extends
@@ -87,12 +91,12 @@ public final class BattlePassRewardTagOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 48: {
 
-              level_ = input.readUInt32();
+              rewardId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 72: {
               int rawValue = input.readEnum();
 
               unlockStatus_ = rawValue;
@@ -100,7 +104,7 @@ public final class BattlePassRewardTagOuterClass {
             }
             case 120: {
 
-              rewardId_ = input.readUInt32();
+              level_ = input.readUInt32();
               break;
             }
             default: {
@@ -135,10 +139,21 @@ public final class BattlePassRewardTagOuterClass {
               emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.class, emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 8;
+    public static final int REWARD_ID_FIELD_NUMBER = 6;
+    private int rewardId_;
+    /**
+     * <code>uint32 reward_id = 6;</code>
+     * @return The rewardId.
+     */
+    @java.lang.Override
+    public int getRewardId() {
+      return rewardId_;
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 15;
     private int level_;
     /**
-     * <code>uint32 level = 8;</code>
+     * <code>uint32 level = 15;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -146,34 +161,23 @@ public final class BattlePassRewardTagOuterClass {
       return level_;
     }
 
-    public static final int UNLOCKSTATUS_FIELD_NUMBER = 13;
+    public static final int UNLOCK_STATUS_FIELD_NUMBER = 9;
     private int unlockStatus_;
     /**
-     * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+     * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
      * @return The enum numeric value on the wire for unlockStatus.
      */
     @java.lang.Override public int getUnlockStatusValue() {
       return unlockStatus_;
     }
     /**
-     * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+     * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
      * @return The unlockStatus.
      */
     @java.lang.Override public emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus getUnlockStatus() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus result = emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.valueOf(unlockStatus_);
       return result == null ? emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.UNRECOGNIZED : result;
-    }
-
-    public static final int REWARDID_FIELD_NUMBER = 15;
-    private int rewardId_;
-    /**
-     * <code>uint32 rewardId = 15;</code>
-     * @return The rewardId.
-     */
-    @java.lang.Override
-    public int getRewardId() {
-      return rewardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -190,14 +194,14 @@ public final class BattlePassRewardTagOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (level_ != 0) {
-        output.writeUInt32(8, level_);
+      if (rewardId_ != 0) {
+        output.writeUInt32(6, rewardId_);
       }
       if (unlockStatus_ != emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_INVALID.getNumber()) {
-        output.writeEnum(13, unlockStatus_);
+        output.writeEnum(9, unlockStatus_);
       }
-      if (rewardId_ != 0) {
-        output.writeUInt32(15, rewardId_);
+      if (level_ != 0) {
+        output.writeUInt32(15, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -208,17 +212,17 @@ public final class BattlePassRewardTagOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (level_ != 0) {
+      if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, level_);
+          .computeUInt32Size(6, rewardId_);
       }
       if (unlockStatus_ != emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(13, unlockStatus_);
+          .computeEnumSize(9, unlockStatus_);
       }
-      if (rewardId_ != 0) {
+      if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, rewardId_);
+          .computeUInt32Size(15, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -235,11 +239,11 @@ public final class BattlePassRewardTagOuterClass {
       }
       emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag other = (emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag) obj;
 
+      if (getRewardId()
+          != other.getRewardId()) return false;
       if (getLevel()
           != other.getLevel()) return false;
       if (unlockStatus_ != other.unlockStatus_) return false;
-      if (getRewardId()
-          != other.getRewardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -251,12 +255,12 @@ public final class BattlePassRewardTagOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardId();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + UNLOCKSTATUS_FIELD_NUMBER;
+      hash = (37 * hash) + UNLOCK_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + unlockStatus_;
-      hash = (37 * hash) + REWARDID_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -353,6 +357,10 @@ public final class BattlePassRewardTagOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: IEMOLLDEMBH
+     * </pre>
+     *
      * Protobuf type {@code BattlePassRewardTag}
      */
     public static final class Builder extends
@@ -390,11 +398,11 @@ public final class BattlePassRewardTagOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        rewardId_ = 0;
+
         level_ = 0;
 
         unlockStatus_ = 0;
-
-        rewardId_ = 0;
 
         return this;
       }
@@ -422,9 +430,9 @@ public final class BattlePassRewardTagOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag buildPartial() {
         emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag result = new emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag(this);
+        result.rewardId_ = rewardId_;
         result.level_ = level_;
         result.unlockStatus_ = unlockStatus_;
-        result.rewardId_ = rewardId_;
         onBuilt();
         return result;
       }
@@ -473,14 +481,14 @@ public final class BattlePassRewardTagOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag other) {
         if (other == emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.getDefaultInstance()) return this;
+        if (other.getRewardId() != 0) {
+          setRewardId(other.getRewardId());
+        }
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
         }
         if (other.unlockStatus_ != 0) {
           setUnlockStatusValue(other.getUnlockStatusValue());
-        }
-        if (other.getRewardId() != 0) {
-          setRewardId(other.getRewardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -511,9 +519,40 @@ public final class BattlePassRewardTagOuterClass {
         return this;
       }
 
+      private int rewardId_ ;
+      /**
+       * <code>uint32 reward_id = 6;</code>
+       * @return The rewardId.
+       */
+      @java.lang.Override
+      public int getRewardId() {
+        return rewardId_;
+      }
+      /**
+       * <code>uint32 reward_id = 6;</code>
+       * @param value The rewardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardId(int value) {
+        
+        rewardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardId() {
+        
+        rewardId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int level_ ;
       /**
-       * <code>uint32 level = 8;</code>
+       * <code>uint32 level = 15;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -521,7 +560,7 @@ public final class BattlePassRewardTagOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 8;</code>
+       * <code>uint32 level = 15;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -532,7 +571,7 @@ public final class BattlePassRewardTagOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 8;</code>
+       * <code>uint32 level = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -544,14 +583,14 @@ public final class BattlePassRewardTagOuterClass {
 
       private int unlockStatus_ = 0;
       /**
-       * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+       * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
        * @return The enum numeric value on the wire for unlockStatus.
        */
       @java.lang.Override public int getUnlockStatusValue() {
         return unlockStatus_;
       }
       /**
-       * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+       * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
        * @param value The enum numeric value on the wire for unlockStatus to set.
        * @return This builder for chaining.
        */
@@ -562,7 +601,7 @@ public final class BattlePassRewardTagOuterClass {
         return this;
       }
       /**
-       * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+       * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
        * @return The unlockStatus.
        */
       @java.lang.Override
@@ -572,7 +611,7 @@ public final class BattlePassRewardTagOuterClass {
         return result == null ? emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.UNRECOGNIZED : result;
       }
       /**
-       * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+       * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
        * @param value The unlockStatus to set.
        * @return This builder for chaining.
        */
@@ -586,43 +625,12 @@ public final class BattlePassRewardTagOuterClass {
         return this;
       }
       /**
-       * <code>.BattlePassUnlockStatus unlockStatus = 13;</code>
+       * <code>.BattlePassUnlockStatus unlock_status = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnlockStatus() {
         
         unlockStatus_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int rewardId_ ;
-      /**
-       * <code>uint32 rewardId = 15;</code>
-       * @return The rewardId.
-       */
-      @java.lang.Override
-      public int getRewardId() {
-        return rewardId_;
-      }
-      /**
-       * <code>uint32 rewardId = 15;</code>
-       * @param value The rewardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardId(int value) {
-        
-        rewardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 rewardId = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardId() {
-        
-        rewardId_ = 0;
         onChanged();
         return this;
       }
@@ -694,10 +702,10 @@ public final class BattlePassRewardTagOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031BattlePassRewardTag.proto\032\034BattlePassU" +
-      "nlockStatus.proto\"e\n\023BattlePassRewardTag" +
-      "\022\r\n\005level\030\010 \001(\r\022-\n\014unlockStatus\030\r \001(\0162\027." +
-      "BattlePassUnlockStatus\022\020\n\010rewardId\030\017 \001(\r" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "nlockStatus.proto\"g\n\023BattlePassRewardTag" +
+      "\022\021\n\treward_id\030\006 \001(\r\022\r\n\005level\030\017 \001(\r\022.\n\run" +
+      "lock_status\030\t \001(\0162\027.BattlePassUnlockStat" +
+      "usB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -709,7 +717,7 @@ public final class BattlePassRewardTagOuterClass {
     internal_static_BattlePassRewardTag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BattlePassRewardTag_descriptor,
-        new java.lang.String[] { "Level", "UnlockStatus", "RewardId", });
+        new java.lang.String[] { "RewardId", "Level", "UnlockStatus", });
     emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor();
   }
 

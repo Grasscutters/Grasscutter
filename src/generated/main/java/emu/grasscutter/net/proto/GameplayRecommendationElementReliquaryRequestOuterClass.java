@@ -19,18 +19,22 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 elementType = 12;</code>
+     * <code>uint32 element_type = 9;</code>
      * @return The elementType.
      */
     int getElementType();
 
     /**
-     * <code>uint32 equipType = 7;</code>
+     * <code>uint32 equip_type = 11;</code>
      * @return The equipType.
      */
     int getEquipType();
   }
   /**
+   * <pre>
+   * Name: HACCJLNLCBK
+   * </pre>
+   *
    * Protobuf type {@code GameplayRecommendationElementReliquaryRequest}
    */
   public static final class GameplayRecommendationElementReliquaryRequest extends
@@ -75,14 +79,14 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              equipType_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 72: {
 
               elementType_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              equipType_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
               emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryRequestOuterClass.GameplayRecommendationElementReliquaryRequest.class, emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryRequestOuterClass.GameplayRecommendationElementReliquaryRequest.Builder.class);
     }
 
-    public static final int ELEMENTTYPE_FIELD_NUMBER = 12;
+    public static final int ELEMENT_TYPE_FIELD_NUMBER = 9;
     private int elementType_;
     /**
-     * <code>uint32 elementType = 12;</code>
+     * <code>uint32 element_type = 9;</code>
      * @return The elementType.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
       return elementType_;
     }
 
-    public static final int EQUIPTYPE_FIELD_NUMBER = 7;
+    public static final int EQUIP_TYPE_FIELD_NUMBER = 11;
     private int equipType_;
     /**
-     * <code>uint32 equipType = 7;</code>
+     * <code>uint32 equip_type = 11;</code>
      * @return The equipType.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (equipType_ != 0) {
-        output.writeUInt32(7, equipType_);
-      }
       if (elementType_ != 0) {
-        output.writeUInt32(12, elementType_);
+        output.writeUInt32(9, elementType_);
+      }
+      if (equipType_ != 0) {
+        output.writeUInt32(11, equipType_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (equipType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, equipType_);
-      }
       if (elementType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, elementType_);
+          .computeUInt32Size(9, elementType_);
+      }
+      if (equipType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, equipType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +210,9 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ELEMENTTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getElementType();
-      hash = (37 * hash) + EQUIPTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + EQUIP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getEquipType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -306,6 +310,10 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HACCJLNLCBK
+     * </pre>
+     *
      * Protobuf type {@code GameplayRecommendationElementReliquaryRequest}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
 
       private int elementType_ ;
       /**
-       * <code>uint32 elementType = 12;</code>
+       * <code>uint32 element_type = 9;</code>
        * @return The elementType.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
         return elementType_;
       }
       /**
-       * <code>uint32 elementType = 12;</code>
+       * <code>uint32 element_type = 9;</code>
        * @param value The elementType to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
         return this;
       }
       /**
-       * <code>uint32 elementType = 12;</code>
+       * <code>uint32 element_type = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearElementType() {
@@ -491,7 +499,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
 
       private int equipType_ ;
       /**
-       * <code>uint32 equipType = 7;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @return The equipType.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
         return equipType_;
       }
       /**
-       * <code>uint32 equipType = 7;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @param value The equipType to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
         return this;
       }
       /**
-       * <code>uint32 equipType = 7;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEquipType() {
@@ -587,10 +595,10 @@ public final class GameplayRecommendationElementReliquaryRequestOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n3GameplayRecommendationElementReliquary" +
-      "Request.proto\"W\n-GameplayRecommendationE" +
-      "lementReliquaryRequest\022\023\n\013elementType\030\014 " +
-      "\001(\r\022\021\n\tequipType\030\007 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "Request.proto\"Y\n-GameplayRecommendationE" +
+      "lementReliquaryRequest\022\024\n\014element_type\030\t" +
+      " \001(\r\022\022\n\nequip_type\030\013 \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

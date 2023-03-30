@@ -19,24 +19,29 @@ public final class TakeoffEquipRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 slot = 3;</code>
+     * <code>uint32 slot = 11;</code>
      * @return The slot.
      */
     int getSlot();
 
     /**
-     * <code>uint64 avatarGuid = 5;</code>
+     * <code>uint64 avatar_guid = 6;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
+
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
+   * <pre>
+   * Name: ELJAPPEFAID
+   * CmdId: 666
+   * </pre>
+   *
    * Protobuf type {@code TakeoffEquipRsp}
    */
   public static final class TakeoffEquipRsp extends
@@ -81,19 +86,19 @@ public final class TakeoffEquipRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
-              slot_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 48: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 120: {
+            case 88: {
 
-              retcode_ = input.readInt32();
+              slot_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,152 +133,10 @@ public final class TakeoffEquipRspOuterClass {
               emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.class, emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code TakeoffEquipRsp.ALEJPJIDAFJ}
-     */
-    public enum ALEJPJIDAFJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 606;</code>
-       */
-      PEPPOHPHJOJ(1, 606),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ALEJPJIDAFJ DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 606;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 606;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ALEJPJIDAFJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ALEJPJIDAFJ forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 606: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ALEJPJIDAFJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ALEJPJIDAFJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ALEJPJIDAFJ>() {
-              public ALEJPJIDAFJ findValueByNumber(int number) {
-                return ALEJPJIDAFJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ALEJPJIDAFJ[] VALUES = getStaticValuesArray();
-      private static ALEJPJIDAFJ[] getStaticValuesArray() {
-        return new ALEJPJIDAFJ[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static ALEJPJIDAFJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ALEJPJIDAFJ(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:TakeoffEquipRsp.ALEJPJIDAFJ)
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SLOT_FIELD_NUMBER = 3;
+    public static final int SLOT_FIELD_NUMBER = 11;
     private int slot_;
     /**
-     * <code>uint32 slot = 3;</code>
+     * <code>uint32 slot = 11;</code>
      * @return The slot.
      */
     @java.lang.Override
@@ -281,15 +144,26 @@ public final class TakeoffEquipRspOuterClass {
       return slot_;
     }
 
-    public static final int AVATARGUID_FIELD_NUMBER = 5;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatarGuid = 5;</code>
+     * <code>uint64 avatar_guid = 6;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
     public long getAvatarGuid() {
       return avatarGuid_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -306,14 +180,14 @@ public final class TakeoffEquipRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (slot_ != 0) {
-        output.writeUInt32(3, slot_);
+      if (retcode_ != 0) {
+        output.writeInt32(1, retcode_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(5, avatarGuid_);
+        output.writeUInt64(6, avatarGuid_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+      if (slot_ != 0) {
+        output.writeUInt32(11, slot_);
       }
       unknownFields.writeTo(output);
     }
@@ -324,17 +198,17 @@ public final class TakeoffEquipRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (slot_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, slot_);
+          .computeInt32Size(1, retcode_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, avatarGuid_);
+          .computeUInt64Size(6, avatarGuid_);
       }
-      if (retcode_ != 0) {
+      if (slot_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeUInt32Size(11, slot_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,12 +225,12 @@ public final class TakeoffEquipRspOuterClass {
       }
       emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp other = (emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getSlot()
           != other.getSlot()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,13 +242,13 @@ public final class TakeoffEquipRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + SLOT_FIELD_NUMBER;
       hash = (53 * hash) + getSlot();
-      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -471,6 +345,11 @@ public final class TakeoffEquipRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ELJAPPEFAID
+     * CmdId: 666
+     * </pre>
+     *
      * Protobuf type {@code TakeoffEquipRsp}
      */
     public static final class Builder extends
@@ -508,11 +387,11 @@ public final class TakeoffEquipRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         slot_ = 0;
 
         avatarGuid_ = 0L;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -540,9 +419,9 @@ public final class TakeoffEquipRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp buildPartial() {
         emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp result = new emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp(this);
-        result.retcode_ = retcode_;
         result.slot_ = slot_;
         result.avatarGuid_ = avatarGuid_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -591,14 +470,14 @@ public final class TakeoffEquipRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp other) {
         if (other == emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getSlot() != 0) {
           setSlot(other.getSlot());
         }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -629,40 +508,9 @@ public final class TakeoffEquipRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int slot_ ;
       /**
-       * <code>uint32 slot = 3;</code>
+       * <code>uint32 slot = 11;</code>
        * @return The slot.
        */
       @java.lang.Override
@@ -670,7 +518,7 @@ public final class TakeoffEquipRspOuterClass {
         return slot_;
       }
       /**
-       * <code>uint32 slot = 3;</code>
+       * <code>uint32 slot = 11;</code>
        * @param value The slot to set.
        * @return This builder for chaining.
        */
@@ -681,7 +529,7 @@ public final class TakeoffEquipRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 slot = 3;</code>
+       * <code>uint32 slot = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSlot() {
@@ -693,7 +541,7 @@ public final class TakeoffEquipRspOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatarGuid = 5;</code>
+       * <code>uint64 avatar_guid = 6;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -701,7 +549,7 @@ public final class TakeoffEquipRspOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatarGuid = 5;</code>
+       * <code>uint64 avatar_guid = 6;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -712,12 +560,43 @@ public final class TakeoffEquipRspOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatarGuid = 5;</code>
+       * <code>uint64 avatar_guid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
         
         avatarGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -788,12 +667,10 @@ public final class TakeoffEquipRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025TakeoffEquipRsp.proto\"\225\001\n\017TakeoffEquip" +
-      "Rsp\022\017\n\007retcode\030\017 \001(\005\022\014\n\004slot\030\003 \001(\r\022\022\n\nav" +
-      "atarGuid\030\005 \001(\004\"O\n\013ALEJPJIDAFJ\022\010\n\004NONE\020\000\022" +
-      "\020\n\013PEPPOHPHJOJ\020\336\004\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NN" +
-      "BKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "\n\025TakeoffEquipRsp.proto\"E\n\017TakeoffEquipR" +
+      "sp\022\014\n\004slot\030\013 \001(\r\022\023\n\013avatar_guid\030\006 \001(\004\022\017\n" +
+      "\007retcode\030\001 \001(\005B\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -804,7 +681,7 @@ public final class TakeoffEquipRspOuterClass {
     internal_static_TakeoffEquipRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeoffEquipRsp_descriptor,
-        new java.lang.String[] { "Retcode", "Slot", "AvatarGuid", });
+        new java.lang.String[] { "Slot", "AvatarGuid", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

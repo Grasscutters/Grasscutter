@@ -19,36 +19,40 @@ public final class InferencePageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pageId = 6;</code>
-     * @return The pageId.
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
-    int getPageId();
-
-    /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> 
+    java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> 
         getUnlockWordListList();
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
-    emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo getUnlockWordList(int index);
+    emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo getUnlockWordList(int index);
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     int getUnlockWordListCount();
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder> 
+    java.util.List<? extends emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder> 
         getUnlockWordListOrBuilderList();
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
-    emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder getUnlockWordListOrBuilder(
+    emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder getUnlockWordListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 page_id = 5;</code>
+     * @return The pageId.
+     */
+    int getPageId();
   }
   /**
+   * <pre>
+   * Name: FNKNODGIEOH
+   * </pre>
+   *
    * Protobuf type {@code InferencePageInfo}
    */
   public static final class InferencePageInfo extends
@@ -95,18 +99,18 @@ public final class InferencePageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 40: {
 
               pageId_ = input.readUInt32();
               break;
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unlockWordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo>();
+                unlockWordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               unlockWordList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -144,55 +148,55 @@ public final class InferencePageInfoOuterClass {
               emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo.class, emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo.Builder.class);
     }
 
-    public static final int PAGEID_FIELD_NUMBER = 6;
-    private int pageId_;
+    public static final int UNLOCK_WORD_LIST_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> unlockWordList_;
     /**
-     * <code>uint32 pageId = 6;</code>
-     * @return The pageId.
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     @java.lang.Override
-    public int getPageId() {
-      return pageId_;
-    }
-
-    public static final int UNLOCKWORDLIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> unlockWordList_;
-    /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> getUnlockWordListList() {
+    public java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> getUnlockWordListList() {
       return unlockWordList_;
     }
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder> 
+    public java.util.List<? extends emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder> 
         getUnlockWordListOrBuilderList() {
       return unlockWordList_;
     }
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     @java.lang.Override
     public int getUnlockWordListCount() {
       return unlockWordList_.size();
     }
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo getUnlockWordList(int index) {
+    public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo getUnlockWordList(int index) {
       return unlockWordList_.get(index);
     }
     /**
-     * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+     * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder getUnlockWordListOrBuilder(
+    public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder getUnlockWordListOrBuilder(
         int index) {
       return unlockWordList_.get(index);
+    }
+
+    public static final int PAGE_ID_FIELD_NUMBER = 5;
+    private int pageId_;
+    /**
+     * <code>uint32 page_id = 5;</code>
+     * @return The pageId.
+     */
+    @java.lang.Override
+    public int getPageId() {
+      return pageId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -210,7 +214,7 @@ public final class InferencePageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pageId_ != 0) {
-        output.writeUInt32(6, pageId_);
+        output.writeUInt32(5, pageId_);
       }
       for (int i = 0; i < unlockWordList_.size(); i++) {
         output.writeMessage(8, unlockWordList_.get(i));
@@ -226,7 +230,7 @@ public final class InferencePageInfoOuterClass {
       size = 0;
       if (pageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, pageId_);
+          .computeUInt32Size(5, pageId_);
       }
       for (int i = 0; i < unlockWordList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -247,10 +251,10 @@ public final class InferencePageInfoOuterClass {
       }
       emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo other = (emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo) obj;
 
-      if (getPageId()
-          != other.getPageId()) return false;
       if (!getUnlockWordListList()
           .equals(other.getUnlockWordListList())) return false;
+      if (getPageId()
+          != other.getPageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -262,12 +266,12 @@ public final class InferencePageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PAGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getPageId();
       if (getUnlockWordListCount() > 0) {
-        hash = (37 * hash) + UNLOCKWORDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + UNLOCK_WORD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUnlockWordListList().hashCode();
       }
+      hash = (37 * hash) + PAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -364,6 +368,10 @@ public final class InferencePageInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FNKNODGIEOH
+     * </pre>
+     *
      * Protobuf type {@code InferencePageInfo}
      */
     public static final class Builder extends
@@ -402,14 +410,14 @@ public final class InferencePageInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pageId_ = 0;
-
         if (unlockWordListBuilder_ == null) {
           unlockWordList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           unlockWordListBuilder_.clear();
         }
+        pageId_ = 0;
+
         return this;
       }
 
@@ -437,7 +445,6 @@ public final class InferencePageInfoOuterClass {
       public emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo buildPartial() {
         emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo result = new emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo(this);
         int from_bitField0_ = bitField0_;
-        result.pageId_ = pageId_;
         if (unlockWordListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             unlockWordList_ = java.util.Collections.unmodifiableList(unlockWordList_);
@@ -447,6 +454,7 @@ public final class InferencePageInfoOuterClass {
         } else {
           result.unlockWordList_ = unlockWordListBuilder_.build();
         }
+        result.pageId_ = pageId_;
         onBuilt();
         return result;
       }
@@ -495,9 +503,6 @@ public final class InferencePageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo other) {
         if (other == emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo.getDefaultInstance()) return this;
-        if (other.getPageId() != 0) {
-          setPageId(other.getPageId());
-        }
         if (unlockWordListBuilder_ == null) {
           if (!other.unlockWordList_.isEmpty()) {
             if (unlockWordList_.isEmpty()) {
@@ -523,6 +528,9 @@ public final class InferencePageInfoOuterClass {
               unlockWordListBuilder_.addAllMessages(other.unlockWordList_);
             }
           }
+        }
+        if (other.getPageId() != 0) {
+          setPageId(other.getPageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -554,53 +562,22 @@ public final class InferencePageInfoOuterClass {
       }
       private int bitField0_;
 
-      private int pageId_ ;
-      /**
-       * <code>uint32 pageId = 6;</code>
-       * @return The pageId.
-       */
-      @java.lang.Override
-      public int getPageId() {
-        return pageId_;
-      }
-      /**
-       * <code>uint32 pageId = 6;</code>
-       * @param value The pageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPageId(int value) {
-        
-        pageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 pageId = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPageId() {
-        
-        pageId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> unlockWordList_ =
+      private java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> unlockWordList_ =
         java.util.Collections.emptyList();
       private void ensureUnlockWordListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          unlockWordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo>(unlockWordList_);
+          unlockWordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo>(unlockWordList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder> unlockWordListBuilder_;
+          emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder> unlockWordListBuilder_;
 
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> getUnlockWordListList() {
+      public java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> getUnlockWordListList() {
         if (unlockWordListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(unlockWordList_);
         } else {
@@ -608,7 +585,7 @@ public final class InferencePageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public int getUnlockWordListCount() {
         if (unlockWordListBuilder_ == null) {
@@ -618,9 +595,9 @@ public final class InferencePageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo getUnlockWordList(int index) {
+      public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo getUnlockWordList(int index) {
         if (unlockWordListBuilder_ == null) {
           return unlockWordList_.get(index);
         } else {
@@ -628,10 +605,10 @@ public final class InferencePageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder setUnlockWordList(
-          int index, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo value) {
+          int index, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo value) {
         if (unlockWordListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -645,10 +622,10 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder setUnlockWordList(
-          int index, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder builderForValue) {
         if (unlockWordListBuilder_ == null) {
           ensureUnlockWordListIsMutable();
           unlockWordList_.set(index, builderForValue.build());
@@ -659,9 +636,9 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public Builder addUnlockWordList(emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo value) {
+      public Builder addUnlockWordList(emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo value) {
         if (unlockWordListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -675,10 +652,10 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder addUnlockWordList(
-          int index, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo value) {
+          int index, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo value) {
         if (unlockWordListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -692,10 +669,10 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder addUnlockWordList(
-          emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder builderForValue) {
         if (unlockWordListBuilder_ == null) {
           ensureUnlockWordListIsMutable();
           unlockWordList_.add(builderForValue.build());
@@ -706,10 +683,10 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder addUnlockWordList(
-          int index, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder builderForValue) {
         if (unlockWordListBuilder_ == null) {
           ensureUnlockWordListIsMutable();
           unlockWordList_.add(index, builderForValue.build());
@@ -720,10 +697,10 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder addAllUnlockWordList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo> values) {
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo> values) {
         if (unlockWordListBuilder_ == null) {
           ensureUnlockWordListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -735,7 +712,7 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder clearUnlockWordList() {
         if (unlockWordListBuilder_ == null) {
@@ -748,7 +725,7 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
       public Builder removeUnlockWordList(int index) {
         if (unlockWordListBuilder_ == null) {
@@ -761,16 +738,16 @@ public final class InferencePageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder getUnlockWordListBuilder(
+      public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder getUnlockWordListBuilder(
           int index) {
         return getUnlockWordListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder getUnlockWordListOrBuilder(
+      public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder getUnlockWordListOrBuilder(
           int index) {
         if (unlockWordListBuilder_ == null) {
           return unlockWordList_.get(index);  } else {
@@ -778,9 +755,9 @@ public final class InferencePageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder> 
+      public java.util.List<? extends emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder> 
            getUnlockWordListOrBuilderList() {
         if (unlockWordListBuilder_ != null) {
           return unlockWordListBuilder_.getMessageOrBuilderList();
@@ -789,33 +766,33 @@ public final class InferencePageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder addUnlockWordListBuilder() {
+      public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder addUnlockWordListBuilder() {
         return getUnlockWordListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.getDefaultInstance());
+            emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder addUnlockWordListBuilder(
+      public emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder addUnlockWordListBuilder(
           int index) {
         return getUnlockWordListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.getDefaultInstance());
+            index, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .InferenceWordInfo unlockWordList = 8;</code>
+       * <code>repeated .InfernceWordInfo unlock_word_list = 8;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder> 
            getUnlockWordListBuilderList() {
         return getUnlockWordListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder> 
+          emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder> 
           getUnlockWordListFieldBuilder() {
         if (unlockWordListBuilder_ == null) {
           unlockWordListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfo.Builder, emu.grasscutter.net.proto.InferenceWordInfoOuterClass.InferenceWordInfoOrBuilder>(
+              emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfoOrBuilder>(
                   unlockWordList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -823,6 +800,37 @@ public final class InferencePageInfoOuterClass {
           unlockWordList_ = null;
         }
         return unlockWordListBuilder_;
+      }
+
+      private int pageId_ ;
+      /**
+       * <code>uint32 page_id = 5;</code>
+       * @return The pageId.
+       */
+      @java.lang.Override
+      public int getPageId() {
+        return pageId_;
+      }
+      /**
+       * <code>uint32 page_id = 5;</code>
+       * @param value The pageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageId(int value) {
+        
+        pageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 page_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPageId() {
+        
+        pageId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -891,24 +899,24 @@ public final class InferencePageInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027InferencePageInfo.proto\032\027InferenceWord" +
-      "Info.proto\"O\n\021InferencePageInfo\022\016\n\006pageI" +
-      "d\030\006 \001(\r\022*\n\016unlockWordList\030\010 \003(\0132\022.Infere" +
-      "nceWordInfoB\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\027InferencePageInfo.proto\032\026InfernceWordI" +
+      "nfo.proto\"Q\n\021InferencePageInfo\022+\n\020unlock" +
+      "_word_list\030\010 \003(\0132\021.InfernceWordInfo\022\017\n\007p" +
+      "age_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.InferenceWordInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.InfernceWordInfoOuterClass.getDescriptor(),
         });
     internal_static_InferencePageInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_InferencePageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InferencePageInfo_descriptor,
-        new java.lang.String[] { "PageId", "UnlockWordList", });
-    emu.grasscutter.net.proto.InferenceWordInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "UnlockWordList", "PageId", });
+    emu.grasscutter.net.proto.InfernceWordInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,42 +19,70 @@ public final class BattlePassProductOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string normalProductId = 4;</code>
+     * <pre>
+     *HBCIEPELAKP
+     * </pre>
+     *
+     * <code>string normal_product_id = 1;</code>
      * @return The normalProductId.
      */
     java.lang.String getNormalProductId();
     /**
-     * <code>string normalProductId = 4;</code>
+     * <pre>
+     *HBCIEPELAKP
+     * </pre>
+     *
+     * <code>string normal_product_id = 1;</code>
      * @return The bytes for normalProductId.
      */
     com.google.protobuf.ByteString
         getNormalProductIdBytes();
 
     /**
-     * <code>string extraProductId = 14;</code>
+     * <pre>
+     *PFDENLGHKKG 
+     * </pre>
+     *
+     * <code>string extra_product_id = 2;</code>
      * @return The extraProductId.
      */
     java.lang.String getExtraProductId();
     /**
-     * <code>string extraProductId = 14;</code>
+     * <pre>
+     *PFDENLGHKKG 
+     * </pre>
+     *
+     * <code>string extra_product_id = 2;</code>
      * @return The bytes for extraProductId.
      */
     com.google.protobuf.ByteString
         getExtraProductIdBytes();
 
     /**
-     * <code>string upgradeProductId = 7;</code>
+     * <pre>
+     *JIIPGPJDHEA 
+     * </pre>
+     *
+     * <code>string upgrade_product_id = 9;</code>
      * @return The upgradeProductId.
      */
     java.lang.String getUpgradeProductId();
     /**
-     * <code>string upgradeProductId = 7;</code>
+     * <pre>
+     *JIIPGPJDHEA 
+     * </pre>
+     *
+     * <code>string upgrade_product_id = 9;</code>
      * @return The bytes for upgradeProductId.
      */
     com.google.protobuf.ByteString
         getUpgradeProductIdBytes();
   }
   /**
+   * <pre>
+   * Name: KKAGAEDPGGK
+   * </pre>
+   *
    * Protobuf type {@code BattlePassProduct}
    */
   public static final class BattlePassProduct extends
@@ -102,22 +130,22 @@ public final class BattlePassProductOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               normalProductId_ = s;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              upgradeProductId_ = s;
-              break;
-            }
-            case 114: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               extraProductId_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              upgradeProductId_ = s;
               break;
             }
             default: {
@@ -152,10 +180,14 @@ public final class BattlePassProductOuterClass {
               emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProduct.class, emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProduct.Builder.class);
     }
 
-    public static final int NORMALPRODUCTID_FIELD_NUMBER = 4;
+    public static final int NORMAL_PRODUCT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object normalProductId_;
     /**
-     * <code>string normalProductId = 4;</code>
+     * <pre>
+     *HBCIEPELAKP
+     * </pre>
+     *
+     * <code>string normal_product_id = 1;</code>
      * @return The normalProductId.
      */
     @java.lang.Override
@@ -172,7 +204,11 @@ public final class BattlePassProductOuterClass {
       }
     }
     /**
-     * <code>string normalProductId = 4;</code>
+     * <pre>
+     *HBCIEPELAKP
+     * </pre>
+     *
+     * <code>string normal_product_id = 1;</code>
      * @return The bytes for normalProductId.
      */
     @java.lang.Override
@@ -190,10 +226,14 @@ public final class BattlePassProductOuterClass {
       }
     }
 
-    public static final int EXTRAPRODUCTID_FIELD_NUMBER = 14;
+    public static final int EXTRA_PRODUCT_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object extraProductId_;
     /**
-     * <code>string extraProductId = 14;</code>
+     * <pre>
+     *PFDENLGHKKG 
+     * </pre>
+     *
+     * <code>string extra_product_id = 2;</code>
      * @return The extraProductId.
      */
     @java.lang.Override
@@ -210,7 +250,11 @@ public final class BattlePassProductOuterClass {
       }
     }
     /**
-     * <code>string extraProductId = 14;</code>
+     * <pre>
+     *PFDENLGHKKG 
+     * </pre>
+     *
+     * <code>string extra_product_id = 2;</code>
      * @return The bytes for extraProductId.
      */
     @java.lang.Override
@@ -228,10 +272,14 @@ public final class BattlePassProductOuterClass {
       }
     }
 
-    public static final int UPGRADEPRODUCTID_FIELD_NUMBER = 7;
+    public static final int UPGRADE_PRODUCT_ID_FIELD_NUMBER = 9;
     private volatile java.lang.Object upgradeProductId_;
     /**
-     * <code>string upgradeProductId = 7;</code>
+     * <pre>
+     *JIIPGPJDHEA 
+     * </pre>
+     *
+     * <code>string upgrade_product_id = 9;</code>
      * @return The upgradeProductId.
      */
     @java.lang.Override
@@ -248,7 +296,11 @@ public final class BattlePassProductOuterClass {
       }
     }
     /**
-     * <code>string upgradeProductId = 7;</code>
+     * <pre>
+     *JIIPGPJDHEA 
+     * </pre>
+     *
+     * <code>string upgrade_product_id = 9;</code>
      * @return The bytes for upgradeProductId.
      */
     @java.lang.Override
@@ -281,13 +333,13 @@ public final class BattlePassProductOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(normalProductId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, normalProductId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeProductId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, upgradeProductId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, normalProductId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extraProductId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, extraProductId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, extraProductId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeProductId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, upgradeProductId_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,13 +351,13 @@ public final class BattlePassProductOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(normalProductId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, normalProductId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeProductId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, upgradeProductId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, normalProductId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extraProductId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, extraProductId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, extraProductId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeProductId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, upgradeProductId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,11 +391,11 @@ public final class BattlePassProductOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NORMALPRODUCTID_FIELD_NUMBER;
+      hash = (37 * hash) + NORMAL_PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNormalProductId().hashCode();
-      hash = (37 * hash) + EXTRAPRODUCTID_FIELD_NUMBER;
+      hash = (37 * hash) + EXTRA_PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExtraProductId().hashCode();
-      hash = (37 * hash) + UPGRADEPRODUCTID_FIELD_NUMBER;
+      hash = (37 * hash) + UPGRADE_PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUpgradeProductId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -441,6 +493,10 @@ public final class BattlePassProductOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KKAGAEDPGGK
+     * </pre>
+     *
      * Protobuf type {@code BattlePassProduct}
      */
     public static final class Builder extends
@@ -604,7 +660,11 @@ public final class BattlePassProductOuterClass {
 
       private java.lang.Object normalProductId_ = "";
       /**
-       * <code>string normalProductId = 4;</code>
+       * <pre>
+       *HBCIEPELAKP
+       * </pre>
+       *
+       * <code>string normal_product_id = 1;</code>
        * @return The normalProductId.
        */
       public java.lang.String getNormalProductId() {
@@ -620,7 +680,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string normalProductId = 4;</code>
+       * <pre>
+       *HBCIEPELAKP
+       * </pre>
+       *
+       * <code>string normal_product_id = 1;</code>
        * @return The bytes for normalProductId.
        */
       public com.google.protobuf.ByteString
@@ -637,7 +701,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string normalProductId = 4;</code>
+       * <pre>
+       *HBCIEPELAKP
+       * </pre>
+       *
+       * <code>string normal_product_id = 1;</code>
        * @param value The normalProductId to set.
        * @return This builder for chaining.
        */
@@ -652,7 +720,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string normalProductId = 4;</code>
+       * <pre>
+       *HBCIEPELAKP
+       * </pre>
+       *
+       * <code>string normal_product_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearNormalProductId() {
@@ -662,7 +734,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string normalProductId = 4;</code>
+       * <pre>
+       *HBCIEPELAKP
+       * </pre>
+       *
+       * <code>string normal_product_id = 1;</code>
        * @param value The bytes for normalProductId to set.
        * @return This builder for chaining.
        */
@@ -680,7 +756,11 @@ public final class BattlePassProductOuterClass {
 
       private java.lang.Object extraProductId_ = "";
       /**
-       * <code>string extraProductId = 14;</code>
+       * <pre>
+       *PFDENLGHKKG 
+       * </pre>
+       *
+       * <code>string extra_product_id = 2;</code>
        * @return The extraProductId.
        */
       public java.lang.String getExtraProductId() {
@@ -696,7 +776,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string extraProductId = 14;</code>
+       * <pre>
+       *PFDENLGHKKG 
+       * </pre>
+       *
+       * <code>string extra_product_id = 2;</code>
        * @return The bytes for extraProductId.
        */
       public com.google.protobuf.ByteString
@@ -713,7 +797,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string extraProductId = 14;</code>
+       * <pre>
+       *PFDENLGHKKG 
+       * </pre>
+       *
+       * <code>string extra_product_id = 2;</code>
        * @param value The extraProductId to set.
        * @return This builder for chaining.
        */
@@ -728,7 +816,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string extraProductId = 14;</code>
+       * <pre>
+       *PFDENLGHKKG 
+       * </pre>
+       *
+       * <code>string extra_product_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearExtraProductId() {
@@ -738,7 +830,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string extraProductId = 14;</code>
+       * <pre>
+       *PFDENLGHKKG 
+       * </pre>
+       *
+       * <code>string extra_product_id = 2;</code>
        * @param value The bytes for extraProductId to set.
        * @return This builder for chaining.
        */
@@ -756,7 +852,11 @@ public final class BattlePassProductOuterClass {
 
       private java.lang.Object upgradeProductId_ = "";
       /**
-       * <code>string upgradeProductId = 7;</code>
+       * <pre>
+       *JIIPGPJDHEA 
+       * </pre>
+       *
+       * <code>string upgrade_product_id = 9;</code>
        * @return The upgradeProductId.
        */
       public java.lang.String getUpgradeProductId() {
@@ -772,7 +872,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string upgradeProductId = 7;</code>
+       * <pre>
+       *JIIPGPJDHEA 
+       * </pre>
+       *
+       * <code>string upgrade_product_id = 9;</code>
        * @return The bytes for upgradeProductId.
        */
       public com.google.protobuf.ByteString
@@ -789,7 +893,11 @@ public final class BattlePassProductOuterClass {
         }
       }
       /**
-       * <code>string upgradeProductId = 7;</code>
+       * <pre>
+       *JIIPGPJDHEA 
+       * </pre>
+       *
+       * <code>string upgrade_product_id = 9;</code>
        * @param value The upgradeProductId to set.
        * @return This builder for chaining.
        */
@@ -804,7 +912,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string upgradeProductId = 7;</code>
+       * <pre>
+       *JIIPGPJDHEA 
+       * </pre>
+       *
+       * <code>string upgrade_product_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpgradeProductId() {
@@ -814,7 +926,11 @@ public final class BattlePassProductOuterClass {
         return this;
       }
       /**
-       * <code>string upgradeProductId = 7;</code>
+       * <pre>
+       *JIIPGPJDHEA 
+       * </pre>
+       *
+       * <code>string upgrade_product_id = 9;</code>
        * @param value The bytes for upgradeProductId to set.
        * @return This builder for chaining.
        */
@@ -896,10 +1012,11 @@ public final class BattlePassProductOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027BattlePassProduct.proto\"^\n\021BattlePassP" +
-      "roduct\022\027\n\017normalProductId\030\004 \001(\t\022\026\n\016extra" +
-      "ProductId\030\016 \001(\t\022\030\n\020upgradeProductId\030\007 \001(" +
-      "\tB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\027BattlePassProduct.proto\"d\n\021BattlePassP" +
+      "roduct\022\031\n\021normal_product_id\030\001 \001(\t\022\030\n\020ext" +
+      "ra_product_id\030\002 \001(\t\022\032\n\022upgrade_product_i" +
+      "d\030\t \001(\tB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

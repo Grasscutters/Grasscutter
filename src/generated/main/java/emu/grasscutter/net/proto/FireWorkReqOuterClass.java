@@ -34,6 +34,13 @@ public final class FireWorkReqOuterClass {
     emu.grasscutter.net.proto.FireWorkDataOuterClass.FireWorkDataOrBuilder getFireWorkDataOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: 6068
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * IsAllowClient: true
+   * </pre>
+   *
    * Protobuf type {@code FireWorkReq}
    */
   public static final class FireWorkReq extends
@@ -310,6 +317,13 @@ public final class FireWorkReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6068
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * IsAllowClient: true
+     * </pre>
+     *
      * Protobuf type {@code FireWorkReq}
      */
     public static final class Builder extends

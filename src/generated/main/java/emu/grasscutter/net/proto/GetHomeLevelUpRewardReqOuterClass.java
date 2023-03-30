@@ -19,21 +19,15 @@ public final class GetHomeLevelUpRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 13;</code>
+     * <code>uint32 level = 4;</code>
      * @return The level.
      */
     int getLevel();
   }
   /**
    * <pre>
-   *enum DPLHJJDEKBD {
-   *	option allow_alias= true;
-   *	NONE = 0;
-   *	PEPPOHPHJOJ = 4588;
-   *	DCDNILFDFLB = 0;
-   *	NNBKOLMPOEA = 1;
-   *	EAJIABGAOCI = 1;
-   *}
+   * Name: CPKFHLMGLON
+   * CmdId: 4821
    * </pre>
    *
    * Protobuf type {@code GetHomeLevelUpRewardReq}
@@ -80,7 +74,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 32: {
 
               level_ = input.readUInt32();
               break;
@@ -117,10 +111,10 @@ public final class GetHomeLevelUpRewardReqOuterClass {
               emu.grasscutter.net.proto.GetHomeLevelUpRewardReqOuterClass.GetHomeLevelUpRewardReq.class, emu.grasscutter.net.proto.GetHomeLevelUpRewardReqOuterClass.GetHomeLevelUpRewardReq.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 13;
+    public static final int LEVEL_FIELD_NUMBER = 4;
     private int level_;
     /**
-     * <code>uint32 level = 13;</code>
+     * <code>uint32 level = 4;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -143,7 +137,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (level_ != 0) {
-        output.writeUInt32(13, level_);
+        output.writeUInt32(4, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +150,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, level_);
+          .computeUInt32Size(4, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -285,14 +279,8 @@ public final class GetHomeLevelUpRewardReqOuterClass {
     }
     /**
      * <pre>
-     *enum DPLHJJDEKBD {
-     *	option allow_alias= true;
-     *	NONE = 0;
-     *	PEPPOHPHJOJ = 4588;
-     *	DCDNILFDFLB = 0;
-     *	NNBKOLMPOEA = 1;
-     *	EAJIABGAOCI = 1;
-     *}
+     * Name: CPKFHLMGLON
+     * CmdId: 4821
      * </pre>
      *
      * Protobuf type {@code GetHomeLevelUpRewardReq}
@@ -443,7 +431,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
 
       private int level_ ;
       /**
-       * <code>uint32 level = 13;</code>
+       * <code>uint32 level = 4;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -451,7 +439,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 13;</code>
+       * <code>uint32 level = 4;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -462,7 +450,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 13;</code>
+       * <code>uint32 level = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -539,7 +527,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GetHomeLevelUpRewardReq.proto\"(\n\027GetHo" +
-      "meLevelUpRewardReq\022\r\n\005level\030\r \001(\rB\033\n\031emu" +
+      "meLevelUpRewardReq\022\r\n\005level\030\004 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

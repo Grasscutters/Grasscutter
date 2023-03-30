@@ -19,18 +19,23 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 applyUid = 4;</code>
+     * <code>uint32 apply_uid = 2;</code>
      * @return The applyUid.
      */
     int getApplyUid();
 
     /**
-     * <code>bool isAgreed = 6;</code>
+     * <code>bool is_agreed = 4;</code>
      * @return The isAgreed.
      */
     boolean getIsAgreed();
   }
   /**
+   * <pre>
+   * Name: JHOENGLMPEF
+   * CmdId: 1836
+   * </pre>
+   *
    * Protobuf type {@code PlayerApplyEnterMpResultReq}
    */
   public static final class PlayerApplyEnterMpResultReq extends
@@ -75,12 +80,12 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 16: {
 
               applyUid_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 32: {
 
               isAgreed_ = input.readBool();
               break;
@@ -117,149 +122,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpResultReqOuterClass.PlayerApplyEnterMpResultReq.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultReqOuterClass.PlayerApplyEnterMpResultReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PlayerApplyEnterMpResultReq.CCMCDMIKHEK}
-     */
-    public enum CCMCDMIKHEK
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1819;</code>
-       */
-      PEPPOHPHJOJ(1, 1819),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CCMCDMIKHEK DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final CCMCDMIKHEK EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1819;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1819;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CCMCDMIKHEK valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CCMCDMIKHEK forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1819: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CCMCDMIKHEK>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CCMCDMIKHEK> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CCMCDMIKHEK>() {
-              public CCMCDMIKHEK findValueByNumber(int number) {
-                return CCMCDMIKHEK.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerApplyEnterMpResultReqOuterClass.PlayerApplyEnterMpResultReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CCMCDMIKHEK[] VALUES = getStaticValuesArray();
-      private static CCMCDMIKHEK[] getStaticValuesArray() {
-        return new CCMCDMIKHEK[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static CCMCDMIKHEK valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CCMCDMIKHEK(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PlayerApplyEnterMpResultReq.CCMCDMIKHEK)
-    }
-
-    public static final int APPLYUID_FIELD_NUMBER = 4;
+    public static final int APPLY_UID_FIELD_NUMBER = 2;
     private int applyUid_;
     /**
-     * <code>uint32 applyUid = 4;</code>
+     * <code>uint32 apply_uid = 2;</code>
      * @return The applyUid.
      */
     @java.lang.Override
@@ -267,10 +133,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       return applyUid_;
     }
 
-    public static final int ISAGREED_FIELD_NUMBER = 6;
+    public static final int IS_AGREED_FIELD_NUMBER = 4;
     private boolean isAgreed_;
     /**
-     * <code>bool isAgreed = 6;</code>
+     * <code>bool is_agreed = 4;</code>
      * @return The isAgreed.
      */
     @java.lang.Override
@@ -293,10 +159,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (applyUid_ != 0) {
-        output.writeUInt32(4, applyUid_);
+        output.writeUInt32(2, applyUid_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(6, isAgreed_);
+        output.writeBool(4, isAgreed_);
       }
       unknownFields.writeTo(output);
     }
@@ -309,11 +175,11 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       size = 0;
       if (applyUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, applyUid_);
+          .computeUInt32Size(2, applyUid_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isAgreed_);
+          .computeBoolSize(4, isAgreed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,9 +211,9 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APPLYUID_FIELD_NUMBER;
+      hash = (37 * hash) + APPLY_UID_FIELD_NUMBER;
       hash = (53 * hash) + getApplyUid();
-      hash = (37 * hash) + ISAGREED_FIELD_NUMBER;
+      hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -446,6 +312,11 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JHOENGLMPEF
+     * CmdId: 1836
+     * </pre>
+     *
      * Protobuf type {@code PlayerApplyEnterMpResultReq}
      */
     public static final class Builder extends
@@ -600,7 +471,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
 
       private int applyUid_ ;
       /**
-       * <code>uint32 applyUid = 4;</code>
+       * <code>uint32 apply_uid = 2;</code>
        * @return The applyUid.
        */
       @java.lang.Override
@@ -608,7 +479,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return applyUid_;
       }
       /**
-       * <code>uint32 applyUid = 4;</code>
+       * <code>uint32 apply_uid = 2;</code>
        * @param value The applyUid to set.
        * @return This builder for chaining.
        */
@@ -619,7 +490,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 applyUid = 4;</code>
+       * <code>uint32 apply_uid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearApplyUid() {
@@ -631,7 +502,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
 
       private boolean isAgreed_ ;
       /**
-       * <code>bool isAgreed = 6;</code>
+       * <code>bool is_agreed = 4;</code>
        * @return The isAgreed.
        */
       @java.lang.Override
@@ -639,7 +510,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return isAgreed_;
       }
       /**
-       * <code>bool isAgreed = 6;</code>
+       * <code>bool is_agreed = 4;</code>
        * @param value The isAgreed to set.
        * @return This builder for chaining.
        */
@@ -650,7 +521,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         return this;
       }
       /**
-       * <code>bool isAgreed = 6;</code>
+       * <code>bool is_agreed = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
@@ -726,12 +597,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!PlayerApplyEnterMpResultReq.proto\"\243\001\n\033" +
-      "PlayerApplyEnterMpResultReq\022\020\n\010applyUid\030" +
-      "\004 \001(\r\022\020\n\010isAgreed\030\006 \001(\010\"`\n\013CCMCDMIKHEK\022\010" +
-      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\233\016\022\017\n\013DCDNILFDFL" +
-      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020" +
-      "\001B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n!PlayerApplyEnterMpResultReq.proto\"C\n\033P" +
+      "layerApplyEnterMpResultReq\022\021\n\tapply_uid\030" +
+      "\002 \001(\r\022\021\n\tis_agreed\030\004 \001(\010B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

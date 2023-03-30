@@ -75,7 +75,7 @@ public final class TrifleItemOuterClass {
      */
     emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder getFurnitureOrBuilder();
 
-    public emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem.NNFJENNPJMKCase getNNFJENNPJMKCase();
+    public emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem.DetailCase getDetailCase();
   }
   /**
    * Protobuf type {@code TrifleItem}
@@ -134,44 +134,44 @@ public final class TrifleItemOuterClass {
             }
             case 42: {
               emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder subBuilder = null;
-              if (nNFJENNPJMKCase_ == 5) {
-                subBuilder = ((emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_).toBuilder();
+              if (detailCase_ == 5) {
+                subBuilder = ((emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_).toBuilder();
               }
-              nNFJENNPJMK_ =
+              detail_ =
                   input.readMessage(emu.grasscutter.net.proto.MaterialOuterClass.Material.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_);
-                nNFJENNPJMK_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_);
+                detail_ = subBuilder.buildPartial();
               }
-              nNFJENNPJMKCase_ = 5;
+              detailCase_ = 5;
               break;
             }
             case 50: {
               emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder subBuilder = null;
-              if (nNFJENNPJMKCase_ == 6) {
-                subBuilder = ((emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_).toBuilder();
+              if (detailCase_ == 6) {
+                subBuilder = ((emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_).toBuilder();
               }
-              nNFJENNPJMK_ =
+              detail_ =
                   input.readMessage(emu.grasscutter.net.proto.EquipOuterClass.Equip.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_);
-                nNFJENNPJMK_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_);
+                detail_ = subBuilder.buildPartial();
               }
-              nNFJENNPJMKCase_ = 6;
+              detailCase_ = 6;
               break;
             }
             case 58: {
               emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder subBuilder = null;
-              if (nNFJENNPJMKCase_ == 7) {
-                subBuilder = ((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_).toBuilder();
+              if (detailCase_ == 7) {
+                subBuilder = ((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_).toBuilder();
               }
-              nNFJENNPJMK_ =
+              detail_ =
                   input.readMessage(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_);
-                nNFJENNPJMK_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_);
+                detail_ = subBuilder.buildPartial();
               }
-              nNFJENNPJMKCase_ = 7;
+              detailCase_ = 7;
               break;
             }
             default: {
@@ -206,17 +206,17 @@ public final class TrifleItemOuterClass {
               emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem.class, emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem.Builder.class);
     }
 
-    private int nNFJENNPJMKCase_ = 0;
-    private java.lang.Object nNFJENNPJMK_;
-    public enum NNFJENNPJMKCase
+    private int detailCase_ = 0;
+    private java.lang.Object detail_;
+    public enum DetailCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       MATERIAL(5),
       EQUIP(6),
       FURNITURE(7),
-      NNFJENNPJMK_NOT_SET(0);
+      DETAIL_NOT_SET(0);
       private final int value;
-      private NNFJENNPJMKCase(int value) {
+      private DetailCase(int value) {
         this.value = value;
       }
       /**
@@ -225,16 +225,16 @@ public final class TrifleItemOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static NNFJENNPJMKCase valueOf(int value) {
+      public static DetailCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static NNFJENNPJMKCase forNumber(int value) {
+      public static DetailCase forNumber(int value) {
         switch (value) {
           case 5: return MATERIAL;
           case 6: return EQUIP;
           case 7: return FURNITURE;
-          case 0: return NNFJENNPJMK_NOT_SET;
+          case 0: return DETAIL_NOT_SET;
           default: return null;
         }
       }
@@ -243,10 +243,10 @@ public final class TrifleItemOuterClass {
       }
     };
 
-    public NNFJENNPJMKCase
-    getNNFJENNPJMKCase() {
-      return NNFJENNPJMKCase.forNumber(
-          nNFJENNPJMKCase_);
+    public DetailCase
+    getDetailCase() {
+      return DetailCase.forNumber(
+          detailCase_);
     }
 
     public static final int ITEMID_FIELD_NUMBER = 1;
@@ -278,7 +278,7 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public boolean hasMaterial() {
-      return nNFJENNPJMKCase_ == 5;
+      return detailCase_ == 5;
     }
     /**
      * <code>.Material material = 5;</code>
@@ -286,8 +286,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialOuterClass.Material getMaterial() {
-      if (nNFJENNPJMKCase_ == 5) {
-         return (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_;
+      if (detailCase_ == 5) {
+         return (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_;
       }
       return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
     }
@@ -296,8 +296,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder getMaterialOrBuilder() {
-      if (nNFJENNPJMKCase_ == 5) {
-         return (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_;
+      if (detailCase_ == 5) {
+         return (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_;
       }
       return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
     }
@@ -309,7 +309,7 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public boolean hasEquip() {
-      return nNFJENNPJMKCase_ == 6;
+      return detailCase_ == 6;
     }
     /**
      * <code>.Equip equip = 6;</code>
@@ -317,8 +317,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EquipOuterClass.Equip getEquip() {
-      if (nNFJENNPJMKCase_ == 6) {
-         return (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_;
+      if (detailCase_ == 6) {
+         return (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_;
       }
       return emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
     }
@@ -327,8 +327,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder getEquipOrBuilder() {
-      if (nNFJENNPJMKCase_ == 6) {
-         return (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_;
+      if (detailCase_ == 6) {
+         return (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_;
       }
       return emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
     }
@@ -340,7 +340,7 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public boolean hasFurniture() {
-      return nNFJENNPJMKCase_ == 7;
+      return detailCase_ == 7;
     }
     /**
      * <code>.Furniture furniture = 7;</code>
@@ -348,8 +348,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FurnitureOuterClass.Furniture getFurniture() {
-      if (nNFJENNPJMKCase_ == 7) {
-         return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_;
+      if (detailCase_ == 7) {
+         return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_;
       }
       return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
     }
@@ -358,8 +358,8 @@ public final class TrifleItemOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder getFurnitureOrBuilder() {
-      if (nNFJENNPJMKCase_ == 7) {
-         return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_;
+      if (detailCase_ == 7) {
+         return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_;
       }
       return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
     }
@@ -384,14 +384,14 @@ public final class TrifleItemOuterClass {
       if (guid_ != 0L) {
         output.writeUInt64(2, guid_);
       }
-      if (nNFJENNPJMKCase_ == 5) {
-        output.writeMessage(5, (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_);
+      if (detailCase_ == 5) {
+        output.writeMessage(5, (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_);
       }
-      if (nNFJENNPJMKCase_ == 6) {
-        output.writeMessage(6, (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_);
+      if (detailCase_ == 6) {
+        output.writeMessage(6, (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_);
       }
-      if (nNFJENNPJMKCase_ == 7) {
-        output.writeMessage(7, (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_);
+      if (detailCase_ == 7) {
+        output.writeMessage(7, (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -410,17 +410,17 @@ public final class TrifleItemOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, guid_);
       }
-      if (nNFJENNPJMKCase_ == 5) {
+      if (detailCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_);
+          .computeMessageSize(5, (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_);
       }
-      if (nNFJENNPJMKCase_ == 6) {
+      if (detailCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_);
+          .computeMessageSize(6, (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_);
       }
-      if (nNFJENNPJMKCase_ == 7) {
+      if (detailCase_ == 7) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_);
+          .computeMessageSize(7, (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -441,8 +441,8 @@ public final class TrifleItemOuterClass {
           != other.getItemId()) return false;
       if (getGuid()
           != other.getGuid()) return false;
-      if (!getNNFJENNPJMKCase().equals(other.getNNFJENNPJMKCase())) return false;
-      switch (nNFJENNPJMKCase_) {
+      if (!getDetailCase().equals(other.getDetailCase())) return false;
+      switch (detailCase_) {
         case 5:
           if (!getMaterial()
               .equals(other.getMaterial())) return false;
@@ -474,7 +474,7 @@ public final class TrifleItemOuterClass {
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGuid());
-      switch (nNFJENNPJMKCase_) {
+      switch (detailCase_) {
         case 5:
           hash = (37 * hash) + MATERIAL_FIELD_NUMBER;
           hash = (53 * hash) + getMaterial().hashCode();
@@ -627,8 +627,8 @@ public final class TrifleItemOuterClass {
 
         guid_ = 0L;
 
-        nNFJENNPJMKCase_ = 0;
-        nNFJENNPJMK_ = null;
+        detailCase_ = 0;
+        detail_ = null;
         return this;
       }
 
@@ -657,28 +657,28 @@ public final class TrifleItemOuterClass {
         emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem result = new emu.grasscutter.net.proto.TrifleItemOuterClass.TrifleItem(this);
         result.itemId_ = itemId_;
         result.guid_ = guid_;
-        if (nNFJENNPJMKCase_ == 5) {
+        if (detailCase_ == 5) {
           if (materialBuilder_ == null) {
-            result.nNFJENNPJMK_ = nNFJENNPJMK_;
+            result.detail_ = detail_;
           } else {
-            result.nNFJENNPJMK_ = materialBuilder_.build();
+            result.detail_ = materialBuilder_.build();
           }
         }
-        if (nNFJENNPJMKCase_ == 6) {
+        if (detailCase_ == 6) {
           if (equipBuilder_ == null) {
-            result.nNFJENNPJMK_ = nNFJENNPJMK_;
+            result.detail_ = detail_;
           } else {
-            result.nNFJENNPJMK_ = equipBuilder_.build();
+            result.detail_ = equipBuilder_.build();
           }
         }
-        if (nNFJENNPJMKCase_ == 7) {
+        if (detailCase_ == 7) {
           if (furnitureBuilder_ == null) {
-            result.nNFJENNPJMK_ = nNFJENNPJMK_;
+            result.detail_ = detail_;
           } else {
-            result.nNFJENNPJMK_ = furnitureBuilder_.build();
+            result.detail_ = furnitureBuilder_.build();
           }
         }
-        result.nNFJENNPJMKCase_ = nNFJENNPJMKCase_;
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
       }
@@ -733,7 +733,7 @@ public final class TrifleItemOuterClass {
         if (other.getGuid() != 0L) {
           setGuid(other.getGuid());
         }
-        switch (other.getNNFJENNPJMKCase()) {
+        switch (other.getDetailCase()) {
           case MATERIAL: {
             mergeMaterial(other.getMaterial());
             break;
@@ -746,7 +746,7 @@ public final class TrifleItemOuterClass {
             mergeFurniture(other.getFurniture());
             break;
           }
-          case NNFJENNPJMK_NOT_SET: {
+          case DETAIL_NOT_SET: {
             break;
           }
         }
@@ -778,17 +778,17 @@ public final class TrifleItemOuterClass {
         }
         return this;
       }
-      private int nNFJENNPJMKCase_ = 0;
-      private java.lang.Object nNFJENNPJMK_;
-      public NNFJENNPJMKCase
-          getNNFJENNPJMKCase() {
-        return NNFJENNPJMKCase.forNumber(
-            nNFJENNPJMKCase_);
+      private int detailCase_ = 0;
+      private java.lang.Object detail_;
+      public DetailCase
+          getDetailCase() {
+        return DetailCase.forNumber(
+            detailCase_);
       }
 
-      public Builder clearNNFJENNPJMK() {
-        nNFJENNPJMKCase_ = 0;
-        nNFJENNPJMK_ = null;
+      public Builder clearDetail() {
+        detailCase_ = 0;
+        detail_ = null;
         onChanged();
         return this;
       }
@@ -864,7 +864,7 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public boolean hasMaterial() {
-        return nNFJENNPJMKCase_ == 5;
+        return detailCase_ == 5;
       }
       /**
        * <code>.Material material = 5;</code>
@@ -873,12 +873,12 @@ public final class TrifleItemOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialOuterClass.Material getMaterial() {
         if (materialBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 5) {
-            return (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_;
+          if (detailCase_ == 5) {
+            return (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_;
           }
           return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
         } else {
-          if (nNFJENNPJMKCase_ == 5) {
+          if (detailCase_ == 5) {
             return materialBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
@@ -892,12 +892,12 @@ public final class TrifleItemOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          nNFJENNPJMK_ = value;
+          detail_ = value;
           onChanged();
         } else {
           materialBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 5;
+        detailCase_ = 5;
         return this;
       }
       /**
@@ -906,12 +906,12 @@ public final class TrifleItemOuterClass {
       public Builder setMaterial(
           emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder builderForValue) {
         if (materialBuilder_ == null) {
-          nNFJENNPJMK_ = builderForValue.build();
+          detail_ = builderForValue.build();
           onChanged();
         } else {
           materialBuilder_.setMessage(builderForValue.build());
         }
-        nNFJENNPJMKCase_ = 5;
+        detailCase_ = 5;
         return this;
       }
       /**
@@ -919,21 +919,21 @@ public final class TrifleItemOuterClass {
        */
       public Builder mergeMaterial(emu.grasscutter.net.proto.MaterialOuterClass.Material value) {
         if (materialBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 5 &&
-              nNFJENNPJMK_ != emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance()) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.MaterialOuterClass.Material.newBuilder((emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_)
+          if (detailCase_ == 5 &&
+              detail_ != emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.MaterialOuterClass.Material.newBuilder((emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_)
                 .mergeFrom(value).buildPartial();
           } else {
-            nNFJENNPJMK_ = value;
+            detail_ = value;
           }
           onChanged();
         } else {
-          if (nNFJENNPJMKCase_ == 5) {
+          if (detailCase_ == 5) {
             materialBuilder_.mergeFrom(value);
           }
           materialBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 5;
+        detailCase_ = 5;
         return this;
       }
       /**
@@ -941,15 +941,15 @@ public final class TrifleItemOuterClass {
        */
       public Builder clearMaterial() {
         if (materialBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 5) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 5) {
+            detailCase_ = 0;
+            detail_ = null;
             onChanged();
           }
         } else {
-          if (nNFJENNPJMKCase_ == 5) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 5) {
+            detailCase_ = 0;
+            detail_ = null;
           }
           materialBuilder_.clear();
         }
@@ -966,11 +966,11 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder getMaterialOrBuilder() {
-        if ((nNFJENNPJMKCase_ == 5) && (materialBuilder_ != null)) {
+        if ((detailCase_ == 5) && (materialBuilder_ != null)) {
           return materialBuilder_.getMessageOrBuilder();
         } else {
-          if (nNFJENNPJMKCase_ == 5) {
-            return (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_;
+          if (detailCase_ == 5) {
+            return (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_;
           }
           return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
         }
@@ -982,17 +982,17 @@ public final class TrifleItemOuterClass {
           emu.grasscutter.net.proto.MaterialOuterClass.Material, emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder, emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder> 
           getMaterialFieldBuilder() {
         if (materialBuilder_ == null) {
-          if (!(nNFJENNPJMKCase_ == 5)) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
+          if (!(detailCase_ == 5)) {
+            detail_ = emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
           }
           materialBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.MaterialOuterClass.Material, emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder, emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder>(
-                  (emu.grasscutter.net.proto.MaterialOuterClass.Material) nNFJENNPJMK_,
+                  (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_,
                   getParentForChildren(),
                   isClean());
-          nNFJENNPJMK_ = null;
+          detail_ = null;
         }
-        nNFJENNPJMKCase_ = 5;
+        detailCase_ = 5;
         onChanged();;
         return materialBuilder_;
       }
@@ -1005,7 +1005,7 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public boolean hasEquip() {
-        return nNFJENNPJMKCase_ == 6;
+        return detailCase_ == 6;
       }
       /**
        * <code>.Equip equip = 6;</code>
@@ -1014,12 +1014,12 @@ public final class TrifleItemOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EquipOuterClass.Equip getEquip() {
         if (equipBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 6) {
-            return (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_;
+          if (detailCase_ == 6) {
+            return (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_;
           }
           return emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
         } else {
-          if (nNFJENNPJMKCase_ == 6) {
+          if (detailCase_ == 6) {
             return equipBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
@@ -1033,12 +1033,12 @@ public final class TrifleItemOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          nNFJENNPJMK_ = value;
+          detail_ = value;
           onChanged();
         } else {
           equipBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 6;
+        detailCase_ = 6;
         return this;
       }
       /**
@@ -1047,12 +1047,12 @@ public final class TrifleItemOuterClass {
       public Builder setEquip(
           emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder builderForValue) {
         if (equipBuilder_ == null) {
-          nNFJENNPJMK_ = builderForValue.build();
+          detail_ = builderForValue.build();
           onChanged();
         } else {
           equipBuilder_.setMessage(builderForValue.build());
         }
-        nNFJENNPJMKCase_ = 6;
+        detailCase_ = 6;
         return this;
       }
       /**
@@ -1060,21 +1060,21 @@ public final class TrifleItemOuterClass {
        */
       public Builder mergeEquip(emu.grasscutter.net.proto.EquipOuterClass.Equip value) {
         if (equipBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 6 &&
-              nNFJENNPJMK_ != emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance()) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.EquipOuterClass.Equip.newBuilder((emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_)
+          if (detailCase_ == 6 &&
+              detail_ != emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.EquipOuterClass.Equip.newBuilder((emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_)
                 .mergeFrom(value).buildPartial();
           } else {
-            nNFJENNPJMK_ = value;
+            detail_ = value;
           }
           onChanged();
         } else {
-          if (nNFJENNPJMKCase_ == 6) {
+          if (detailCase_ == 6) {
             equipBuilder_.mergeFrom(value);
           }
           equipBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 6;
+        detailCase_ = 6;
         return this;
       }
       /**
@@ -1082,15 +1082,15 @@ public final class TrifleItemOuterClass {
        */
       public Builder clearEquip() {
         if (equipBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 6) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 6) {
+            detailCase_ = 0;
+            detail_ = null;
             onChanged();
           }
         } else {
-          if (nNFJENNPJMKCase_ == 6) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 6) {
+            detailCase_ = 0;
+            detail_ = null;
           }
           equipBuilder_.clear();
         }
@@ -1107,11 +1107,11 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder getEquipOrBuilder() {
-        if ((nNFJENNPJMKCase_ == 6) && (equipBuilder_ != null)) {
+        if ((detailCase_ == 6) && (equipBuilder_ != null)) {
           return equipBuilder_.getMessageOrBuilder();
         } else {
-          if (nNFJENNPJMKCase_ == 6) {
-            return (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_;
+          if (detailCase_ == 6) {
+            return (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_;
           }
           return emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
         }
@@ -1123,17 +1123,17 @@ public final class TrifleItemOuterClass {
           emu.grasscutter.net.proto.EquipOuterClass.Equip, emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder, emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder> 
           getEquipFieldBuilder() {
         if (equipBuilder_ == null) {
-          if (!(nNFJENNPJMKCase_ == 6)) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
+          if (!(detailCase_ == 6)) {
+            detail_ = emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
           }
           equipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.EquipOuterClass.Equip, emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder, emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder>(
-                  (emu.grasscutter.net.proto.EquipOuterClass.Equip) nNFJENNPJMK_,
+                  (emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_,
                   getParentForChildren(),
                   isClean());
-          nNFJENNPJMK_ = null;
+          detail_ = null;
         }
-        nNFJENNPJMKCase_ = 6;
+        detailCase_ = 6;
         onChanged();;
         return equipBuilder_;
       }
@@ -1146,7 +1146,7 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public boolean hasFurniture() {
-        return nNFJENNPJMKCase_ == 7;
+        return detailCase_ == 7;
       }
       /**
        * <code>.Furniture furniture = 7;</code>
@@ -1155,12 +1155,12 @@ public final class TrifleItemOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FurnitureOuterClass.Furniture getFurniture() {
         if (furnitureBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 7) {
-            return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_;
+          if (detailCase_ == 7) {
+            return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_;
           }
           return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
         } else {
-          if (nNFJENNPJMKCase_ == 7) {
+          if (detailCase_ == 7) {
             return furnitureBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
@@ -1174,12 +1174,12 @@ public final class TrifleItemOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          nNFJENNPJMK_ = value;
+          detail_ = value;
           onChanged();
         } else {
           furnitureBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 7;
+        detailCase_ = 7;
         return this;
       }
       /**
@@ -1188,12 +1188,12 @@ public final class TrifleItemOuterClass {
       public Builder setFurniture(
           emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder builderForValue) {
         if (furnitureBuilder_ == null) {
-          nNFJENNPJMK_ = builderForValue.build();
+          detail_ = builderForValue.build();
           onChanged();
         } else {
           furnitureBuilder_.setMessage(builderForValue.build());
         }
-        nNFJENNPJMKCase_ = 7;
+        detailCase_ = 7;
         return this;
       }
       /**
@@ -1201,21 +1201,21 @@ public final class TrifleItemOuterClass {
        */
       public Builder mergeFurniture(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture value) {
         if (furnitureBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 7 &&
-              nNFJENNPJMK_ != emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance()) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.newBuilder((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_)
+          if (detailCase_ == 7 &&
+              detail_ != emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.newBuilder((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_)
                 .mergeFrom(value).buildPartial();
           } else {
-            nNFJENNPJMK_ = value;
+            detail_ = value;
           }
           onChanged();
         } else {
-          if (nNFJENNPJMKCase_ == 7) {
+          if (detailCase_ == 7) {
             furnitureBuilder_.mergeFrom(value);
           }
           furnitureBuilder_.setMessage(value);
         }
-        nNFJENNPJMKCase_ = 7;
+        detailCase_ = 7;
         return this;
       }
       /**
@@ -1223,15 +1223,15 @@ public final class TrifleItemOuterClass {
        */
       public Builder clearFurniture() {
         if (furnitureBuilder_ == null) {
-          if (nNFJENNPJMKCase_ == 7) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 7) {
+            detailCase_ = 0;
+            detail_ = null;
             onChanged();
           }
         } else {
-          if (nNFJENNPJMKCase_ == 7) {
-            nNFJENNPJMKCase_ = 0;
-            nNFJENNPJMK_ = null;
+          if (detailCase_ == 7) {
+            detailCase_ = 0;
+            detail_ = null;
           }
           furnitureBuilder_.clear();
         }
@@ -1248,11 +1248,11 @@ public final class TrifleItemOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder getFurnitureOrBuilder() {
-        if ((nNFJENNPJMKCase_ == 7) && (furnitureBuilder_ != null)) {
+        if ((detailCase_ == 7) && (furnitureBuilder_ != null)) {
           return furnitureBuilder_.getMessageOrBuilder();
         } else {
-          if (nNFJENNPJMKCase_ == 7) {
-            return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_;
+          if (detailCase_ == 7) {
+            return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_;
           }
           return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
         }
@@ -1264,17 +1264,17 @@ public final class TrifleItemOuterClass {
           emu.grasscutter.net.proto.FurnitureOuterClass.Furniture, emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder, emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder> 
           getFurnitureFieldBuilder() {
         if (furnitureBuilder_ == null) {
-          if (!(nNFJENNPJMKCase_ == 7)) {
-            nNFJENNPJMK_ = emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
+          if (!(detailCase_ == 7)) {
+            detail_ = emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
           }
           furnitureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.FurnitureOuterClass.Furniture, emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder, emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder>(
-                  (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) nNFJENNPJMK_,
+                  (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_,
                   getParentForChildren(),
                   isClean());
-          nNFJENNPJMK_ = null;
+          detail_ = null;
         }
-        nNFJENNPJMKCase_ = 7;
+        detailCase_ = 7;
         onChanged();;
         return furnitureBuilder_;
       }
@@ -1346,12 +1346,12 @@ public final class TrifleItemOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020TrifleItem.proto\032\016Material.proto\032\013Equi" +
-      "p.proto\032\017Furniture.proto\"\222\001\n\nTrifleItem\022" +
+      "p.proto\032\017Furniture.proto\"\215\001\n\nTrifleItem\022" +
       "\016\n\006itemId\030\001 \001(\r\022\014\n\004guid\030\002 \001(\004\022\035\n\010materia" +
       "l\030\005 \001(\0132\t.MaterialH\000\022\027\n\005equip\030\006 \001(\0132\006.Eq" +
-      "uipH\000\022\037\n\tfurniture\030\007 \001(\0132\n.FurnitureH\000B\r" +
-      "\n\013NNFJENNPJMKB\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "uipH\000\022\037\n\tfurniture\030\007 \001(\0132\n.FurnitureH\000B\010" +
+      "\n\006detailB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1365,7 +1365,7 @@ public final class TrifleItemOuterClass {
     internal_static_TrifleItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrifleItem_descriptor,
-        new java.lang.String[] { "ItemId", "Guid", "Material", "Equip", "Furniture", "NNFJENNPJMK", });
+        new java.lang.String[] { "ItemId", "Guid", "Material", "Equip", "Furniture", "Detail", });
     emu.grasscutter.net.proto.MaterialOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EquipOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FurnitureOuterClass.getDescriptor();

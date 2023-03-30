@@ -31,6 +31,10 @@ public final class HomeMarkPointNPCDataOuterClass {
     int getCostumeId();
   }
   /**
+   * <pre>
+   * Name: DGCNBEDMHFC
+   * </pre>
+   *
    * Protobuf type {@code HomeMarkPointNPCData}
    */
   public static final class HomeMarkPointNPCData extends
@@ -306,6 +310,10 @@ public final class HomeMarkPointNPCDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DGCNBEDMHFC
+     * </pre>
+     *
      * Protobuf type {@code HomeMarkPointNPCData}
      */
     public static final class Builder extends

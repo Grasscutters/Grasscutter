@@ -19,7 +19,11 @@ public final class AttackHitEffectResultOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 Unk3300_KLNGDAMMFIF = 3;</code>
+     * <pre>
+     * NCIHLNFLAAF
+     * </pre>
+     *
+     * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
      * @return The unk3300KLNGDAMMFIF.
      */
     int getUnk3300KLNGDAMMFIF();
@@ -31,7 +35,11 @@ public final class AttackHitEffectResultOuterClass {
     float getAirStrength();
 
     /**
-     * <code>uint32 Unk3300_LCKECJCKKJK = 13;</code>
+     * <pre>
+     * LDDDDFHEMBA
+     * </pre>
+     *
+     * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
      * @return The unk3300LCKECJCKKJK.
      */
     int getUnk3300LCKECJCKKJK();
@@ -55,6 +63,10 @@ public final class AttackHitEffectResultOuterClass {
     float getHitHaltTimeScale();
   }
   /**
+   * <pre>
+   * Name: KPDGACKMNJA
+   * </pre>
+   *
    * Protobuf type {@code AttackHitEffectResult}
    */
   public static final class AttackHitEffectResult extends
@@ -101,7 +113,7 @@ public final class AttackHitEffectResultOuterClass {
               break;
             case 24: {
 
-              unk3300KLNGDAMMFIF_ = input.readUInt32();
+              unk3300LCKECJCKKJK_ = input.readUInt32();
               break;
             }
             case 37: {
@@ -119,9 +131,9 @@ public final class AttackHitEffectResultOuterClass {
               hitHaltTimeScale_ = input.readFloat();
               break;
             }
-            case 104: {
+            case 80: {
 
-              unk3300LCKECJCKKJK_ = input.readUInt32();
+              unk3300KLNGDAMMFIF_ = input.readUInt32();
               break;
             }
             case 125: {
@@ -161,10 +173,14 @@ public final class AttackHitEffectResultOuterClass {
               emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.class, emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.Builder.class);
     }
 
-    public static final int UNK3300_KLNGDAMMFIF_FIELD_NUMBER = 3;
+    public static final int UNK3300_KLNGDAMMFIF_FIELD_NUMBER = 10;
     private int unk3300KLNGDAMMFIF_;
     /**
-     * <code>uint32 Unk3300_KLNGDAMMFIF = 3;</code>
+     * <pre>
+     * NCIHLNFLAAF
+     * </pre>
+     *
+     * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
      * @return The unk3300KLNGDAMMFIF.
      */
     @java.lang.Override
@@ -183,10 +199,14 @@ public final class AttackHitEffectResultOuterClass {
       return airStrength_;
     }
 
-    public static final int UNK3300_LCKECJCKKJK_FIELD_NUMBER = 13;
+    public static final int UNK3300_LCKECJCKKJK_FIELD_NUMBER = 3;
     private int unk3300LCKECJCKKJK_;
     /**
-     * <code>uint32 Unk3300_LCKECJCKKJK = 13;</code>
+     * <pre>
+     * LDDDDFHEMBA
+     * </pre>
+     *
+     * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
      * @return The unk3300LCKECJCKKJK.
      */
     @java.lang.Override
@@ -241,8 +261,8 @@ public final class AttackHitEffectResultOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk3300KLNGDAMMFIF_ != 0) {
-        output.writeUInt32(3, unk3300KLNGDAMMFIF_);
+      if (unk3300LCKECJCKKJK_ != 0) {
+        output.writeUInt32(3, unk3300LCKECJCKKJK_);
       }
       if (retreatStrength_ != 0F) {
         output.writeFloat(4, retreatStrength_);
@@ -253,8 +273,8 @@ public final class AttackHitEffectResultOuterClass {
       if (hitHaltTimeScale_ != 0F) {
         output.writeFloat(7, hitHaltTimeScale_);
       }
-      if (unk3300LCKECJCKKJK_ != 0) {
-        output.writeUInt32(13, unk3300LCKECJCKKJK_);
+      if (unk3300KLNGDAMMFIF_ != 0) {
+        output.writeUInt32(10, unk3300KLNGDAMMFIF_);
       }
       if (hitHaltTime_ != 0F) {
         output.writeFloat(15, hitHaltTime_);
@@ -268,9 +288,9 @@ public final class AttackHitEffectResultOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk3300KLNGDAMMFIF_ != 0) {
+      if (unk3300LCKECJCKKJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, unk3300KLNGDAMMFIF_);
+          .computeUInt32Size(3, unk3300LCKECJCKKJK_);
       }
       if (retreatStrength_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
@@ -284,9 +304,9 @@ public final class AttackHitEffectResultOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, hitHaltTimeScale_);
       }
-      if (unk3300LCKECJCKKJK_ != 0) {
+      if (unk3300KLNGDAMMFIF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, unk3300LCKECJCKKJK_);
+          .computeUInt32Size(10, unk3300KLNGDAMMFIF_);
       }
       if (hitHaltTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
@@ -446,6 +466,10 @@ public final class AttackHitEffectResultOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KPDGACKMNJA
+     * </pre>
+     *
      * Protobuf type {@code AttackHitEffectResult}
      */
     public static final class Builder extends
@@ -624,7 +648,11 @@ public final class AttackHitEffectResultOuterClass {
 
       private int unk3300KLNGDAMMFIF_ ;
       /**
-       * <code>uint32 Unk3300_KLNGDAMMFIF = 3;</code>
+       * <pre>
+       * NCIHLNFLAAF
+       * </pre>
+       *
+       * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
        * @return The unk3300KLNGDAMMFIF.
        */
       @java.lang.Override
@@ -632,7 +660,11 @@ public final class AttackHitEffectResultOuterClass {
         return unk3300KLNGDAMMFIF_;
       }
       /**
-       * <code>uint32 Unk3300_KLNGDAMMFIF = 3;</code>
+       * <pre>
+       * NCIHLNFLAAF
+       * </pre>
+       *
+       * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
        * @param value The unk3300KLNGDAMMFIF to set.
        * @return This builder for chaining.
        */
@@ -643,7 +675,11 @@ public final class AttackHitEffectResultOuterClass {
         return this;
       }
       /**
-       * <code>uint32 Unk3300_KLNGDAMMFIF = 3;</code>
+       * <pre>
+       * NCIHLNFLAAF
+       * </pre>
+       *
+       * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KLNGDAMMFIF() {
@@ -686,7 +722,11 @@ public final class AttackHitEffectResultOuterClass {
 
       private int unk3300LCKECJCKKJK_ ;
       /**
-       * <code>uint32 Unk3300_LCKECJCKKJK = 13;</code>
+       * <pre>
+       * LDDDDFHEMBA
+       * </pre>
+       *
+       * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
        * @return The unk3300LCKECJCKKJK.
        */
       @java.lang.Override
@@ -694,7 +734,11 @@ public final class AttackHitEffectResultOuterClass {
         return unk3300LCKECJCKKJK_;
       }
       /**
-       * <code>uint32 Unk3300_LCKECJCKKJK = 13;</code>
+       * <pre>
+       * LDDDDFHEMBA
+       * </pre>
+       *
+       * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
        * @param value The unk3300LCKECJCKKJK to set.
        * @return This builder for chaining.
        */
@@ -705,7 +749,11 @@ public final class AttackHitEffectResultOuterClass {
         return this;
       }
       /**
-       * <code>uint32 Unk3300_LCKECJCKKJK = 13;</code>
+       * <pre>
+       * LDDDDFHEMBA
+       * </pre>
+       *
+       * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LCKECJCKKJK() {
@@ -875,9 +923,9 @@ public final class AttackHitEffectResultOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033AttackHitEffectResult.proto\"\256\001\n\025Attack" +
-      "HitEffectResult\022\033\n\023Unk3300_KLNGDAMMFIF\030\003" +
+      "HitEffectResult\022\033\n\023Unk3300_KLNGDAMMFIF\030\n" +
       " \001(\r\022\023\n\013airStrength\030\006 \001(\002\022\033\n\023Unk3300_LCK" +
-      "ECJCKKJK\030\r \001(\r\022\023\n\013hitHaltTime\030\017 \001(\002\022\027\n\017r" +
+      "ECJCKKJK\030\003 \001(\r\022\023\n\013hitHaltTime\030\017 \001(\002\022\027\n\017r" +
       "etreatStrength\030\004 \001(\002\022\030\n\020hitHaltTimeScale" +
       "\030\007 \001(\002B\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"

@@ -20,14 +20,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
   }
   /**
    * <pre>
-   *enum HAAKPPLLECB {
-   *	option allow_alias= true;
-   *	NONE = 0;
-   *	PEPPOHPHJOJ = 4525;
-   *	DCDNILFDFLB = 0;
-   *	NNBKOLMPOEA = 1;
-   *	EAJIABGAOCI = 1;
-   *}
+   * Name: EIPCBMAJHAJ
+   * CmdId: 4534
    * </pre>
    *
    * Protobuf type {@code HomeResourceTakeFetterExpReq}
@@ -252,14 +246,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
     }
     /**
      * <pre>
-     *enum HAAKPPLLECB {
-     *	option allow_alias= true;
-     *	NONE = 0;
-     *	PEPPOHPHJOJ = 4525;
-     *	DCDNILFDFLB = 0;
-     *	NNBKOLMPOEA = 1;
-     *	EAJIABGAOCI = 1;
-     *}
+     * Name: EIPCBMAJHAJ
+     * CmdId: 4534
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeFetterExpReq}

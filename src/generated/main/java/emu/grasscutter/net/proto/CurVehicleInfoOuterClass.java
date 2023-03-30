@@ -19,7 +19,7 @@ public final class CurVehicleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entityId = 1;</code>
+     * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
      */
     int getEntityId();
@@ -31,6 +31,10 @@ public final class CurVehicleInfoOuterClass {
     int getPos();
   }
   /**
+   * <pre>
+   * Name: ENGCDOBPPFC
+   * </pre>
+   *
    * Protobuf type {@code CurVehicleInfo}
    */
   public static final class CurVehicleInfo extends
@@ -117,10 +121,10 @@ public final class CurVehicleInfoOuterClass {
               emu.grasscutter.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.class, emu.grasscutter.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.Builder.class);
     }
 
-    public static final int ENTITYID_FIELD_NUMBER = 1;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
     private int entityId_;
     /**
-     * <code>uint32 entityId = 1;</code>
+     * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -206,7 +210,7 @@ public final class CurVehicleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + POS_FIELD_NUMBER;
       hash = (53 * hash) + getPos();
@@ -306,6 +310,10 @@ public final class CurVehicleInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ENGCDOBPPFC
+     * </pre>
+     *
      * Protobuf type {@code CurVehicleInfo}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class CurVehicleInfoOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class CurVehicleInfoOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class CurVehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entityId = 1;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -586,9 +594,9 @@ public final class CurVehicleInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024CurVehicleInfo.proto\"/\n\016CurVehicleInfo" +
-      "\022\020\n\010entityId\030\001 \001(\r\022\013\n\003pos\030\002 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\n\024CurVehicleInfo.proto\"0\n\016CurVehicleInfo" +
+      "\022\021\n\tentity_id\030\001 \001(\r\022\013\n\003pos\030\002 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

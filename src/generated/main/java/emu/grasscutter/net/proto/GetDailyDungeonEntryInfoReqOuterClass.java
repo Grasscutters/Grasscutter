@@ -19,12 +19,17 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 sceneId = 4;</code>
+     * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
      */
     int getSceneId();
   }
   /**
+   * <pre>
+   * Name: JIMNIKFBCCK
+   * CmdId: 997
+   * </pre>
+   *
    * Protobuf type {@code GetDailyDungeonEntryInfoReq}
    */
   public static final class GetDailyDungeonEntryInfoReq extends
@@ -69,7 +74,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
               emu.grasscutter.net.proto.GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.class, emu.grasscutter.net.proto.GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetDailyDungeonEntryInfoReq.FONDNNAPILH}
-     */
-    public enum FONDNNAPILH
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 981;</code>
-       */
-      PEPPOHPHJOJ(1, 981),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final FONDNNAPILH DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final FONDNNAPILH EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 981;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 981;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static FONDNNAPILH valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static FONDNNAPILH forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 981: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<FONDNNAPILH>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          FONDNNAPILH> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<FONDNNAPILH>() {
-              public FONDNNAPILH findValueByNumber(int number) {
-                return FONDNNAPILH.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final FONDNNAPILH[] VALUES = getStaticValuesArray();
-      private static FONDNNAPILH[] getStaticValuesArray() {
-        return new FONDNNAPILH[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static FONDNNAPILH valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private FONDNNAPILH(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetDailyDungeonEntryInfoReq.FONDNNAPILH)
-    }
-
-    public static final int SCENEID_FIELD_NUMBER = 4;
+    public static final int SCENE_ID_FIELD_NUMBER = 7;
     private int sceneId_;
     /**
-     * <code>uint32 sceneId = 4;</code>
+     * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(4, sceneId_);
+        output.writeUInt32(7, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, sceneId_);
+          .computeUInt32Size(7, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JIMNIKFBCCK
+     * CmdId: 997
+     * </pre>
+     *
      * Protobuf type {@code GetDailyDungeonEntryInfoReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 sceneId = 4;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 sceneId = 4;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneId = 4;</code>
+       * <code>uint32 scene_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -655,12 +526,10 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!GetDailyDungeonEntryInfoReq.proto\"\220\001\n\033" +
-      "GetDailyDungeonEntryInfoReq\022\017\n\007sceneId\030\004" +
-      " \001(\r\"`\n\013FONDNNAPILH\022\010\n\004NONE\020\000\022\020\n\013PEPPOHP" +
-      "HJOJ\020\325\007\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020" +
-      "\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\n!GetDailyDungeonEntryInfoReq.proto\"/\n\033G" +
+      "etDailyDungeonEntryInfoReq\022\020\n\010scene_id\030\007" +
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

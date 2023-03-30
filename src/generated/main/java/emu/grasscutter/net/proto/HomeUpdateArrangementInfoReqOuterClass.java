@@ -19,21 +19,26 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      * @return Whether the sceneArrangementInfo field is set.
      */
     boolean hasSceneArrangementInfo();
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      * @return The sceneArrangementInfo.
      */
     emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo getSceneArrangementInfo();
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      */
     emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder getSceneArrangementInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: NDKIGENOPAA
+   * CmdId: 4840
+   * </pre>
+   *
    * Protobuf type {@code HomeUpdateArrangementInfoReq}
    */
   public static final class HomeUpdateArrangementInfoReq extends
@@ -78,7 +83,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 42: {
               emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder subBuilder = null;
               if (sceneArrangementInfo_ != null) {
                 subBuilder = sceneArrangementInfo_.toBuilder();
@@ -123,149 +128,10 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
               emu.grasscutter.net.proto.HomeUpdateArrangementInfoReqOuterClass.HomeUpdateArrangementInfoReq.class, emu.grasscutter.net.proto.HomeUpdateArrangementInfoReqOuterClass.HomeUpdateArrangementInfoReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeUpdateArrangementInfoReq.OGMICEEKMCM}
-     */
-    public enum OGMICEEKMCM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4689;</code>
-       */
-      PEPPOHPHJOJ(1, 4689),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final OGMICEEKMCM DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final OGMICEEKMCM EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4689;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4689;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OGMICEEKMCM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OGMICEEKMCM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4689: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OGMICEEKMCM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OGMICEEKMCM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OGMICEEKMCM>() {
-              public OGMICEEKMCM findValueByNumber(int number) {
-                return OGMICEEKMCM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeUpdateArrangementInfoReqOuterClass.HomeUpdateArrangementInfoReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OGMICEEKMCM[] VALUES = getStaticValuesArray();
-      private static OGMICEEKMCM[] getStaticValuesArray() {
-        return new OGMICEEKMCM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static OGMICEEKMCM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private OGMICEEKMCM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeUpdateArrangementInfoReq.OGMICEEKMCM)
-    }
-
-    public static final int SCENEARRANGEMENTINFO_FIELD_NUMBER = 2;
+    public static final int SCENE_ARRANGEMENT_INFO_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo sceneArrangementInfo_;
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      * @return Whether the sceneArrangementInfo field is set.
      */
     @java.lang.Override
@@ -273,7 +139,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       return sceneArrangementInfo_ != null;
     }
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      * @return The sceneArrangementInfo.
      */
     @java.lang.Override
@@ -281,7 +147,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       return sceneArrangementInfo_ == null ? emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.getDefaultInstance() : sceneArrangementInfo_;
     }
     /**
-     * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+     * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder getSceneArrangementInfoOrBuilder() {
@@ -303,7 +169,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneArrangementInfo_ != null) {
-        output.writeMessage(2, getSceneArrangementInfo());
+        output.writeMessage(5, getSceneArrangementInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -316,7 +182,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       size = 0;
       if (sceneArrangementInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSceneArrangementInfo());
+          .computeMessageSize(5, getSceneArrangementInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -350,7 +216,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSceneArrangementInfo()) {
-        hash = (37 * hash) + SCENEARRANGEMENTINFO_FIELD_NUMBER;
+        hash = (37 * hash) + SCENE_ARRANGEMENT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getSceneArrangementInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -449,6 +315,11 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NDKIGENOPAA
+     * CmdId: 4840
+     * </pre>
+     *
      * Protobuf type {@code HomeUpdateArrangementInfoReq}
      */
     public static final class Builder extends
@@ -607,14 +478,14 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo, emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder, emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder> sceneArrangementInfoBuilder_;
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        * @return Whether the sceneArrangementInfo field is set.
        */
       public boolean hasSceneArrangementInfo() {
         return sceneArrangementInfoBuilder_ != null || sceneArrangementInfo_ != null;
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        * @return The sceneArrangementInfo.
        */
       public emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo getSceneArrangementInfo() {
@@ -625,7 +496,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         }
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public Builder setSceneArrangementInfo(emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo value) {
         if (sceneArrangementInfoBuilder_ == null) {
@@ -641,7 +512,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public Builder setSceneArrangementInfo(
           emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder builderForValue) {
@@ -655,7 +526,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public Builder mergeSceneArrangementInfo(emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo value) {
         if (sceneArrangementInfoBuilder_ == null) {
@@ -673,7 +544,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public Builder clearSceneArrangementInfo() {
         if (sceneArrangementInfoBuilder_ == null) {
@@ -687,7 +558,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder getSceneArrangementInfoBuilder() {
         
@@ -695,7 +566,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         return getSceneArrangementInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder getSceneArrangementInfoOrBuilder() {
         if (sceneArrangementInfoBuilder_ != null) {
@@ -706,7 +577,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         }
       }
       /**
-       * <code>.HomeSceneArrangementInfo sceneArrangementInfo = 2;</code>
+       * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo, emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder, emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder> 
@@ -789,13 +660,10 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"HomeUpdateArrangementInfoReq.proto\032\036Ho" +
-      "meSceneArrangementInfo.proto\"\271\001\n\034HomeUpd" +
-      "ateArrangementInfoReq\0227\n\024sceneArrangemen" +
-      "tInfo\030\002 \001(\0132\031.HomeSceneArrangementInfo\"`" +
-      "\n\013OGMICEEKMCM\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\321" +
-      "$\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013E" +
-      "AJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "meSceneArrangementInfo.proto\"Y\n\034HomeUpda" +
+      "teArrangementInfoReq\0229\n\026scene_arrangemen" +
+      "t_info\030\005 \001(\0132\031.HomeSceneArrangementInfoB" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -15,53 +15,57 @@ public final class RecordUsageOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: NILPIHBMNHG
+   * </pre>
+   *
    * Protobuf enum {@code RecordUsage}
    */
   public enum RecordUsage
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_NONE = 0;</code>
+     * <code>UGC_RECORD_USAGE_NONE = 0;</code>
      */
-    RECORD_USAGE_UGC_RECORD_USAGE_NONE(0),
+    UGC_RECORD_USAGE_NONE(0),
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_IMPORT = 1;</code>
+     * <code>UGC_RECORD_USAGE_IMPORT = 1;</code>
      */
-    RECORD_USAGE_UGC_RECORD_USAGE_IMPORT(1),
+    UGC_RECORD_USAGE_IMPORT(1),
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_PLAY = 2;</code>
+     * <code>UGC_RECORD_USAGE_PLAY = 2;</code>
      */
-    RECORD_USAGE_UGC_RECORD_USAGE_PLAY(2),
+    UGC_RECORD_USAGE_PLAY(2),
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_TRIAL = 3;</code>
+     * <code>UGC_RECORD_USAGE_TRIAL = 3;</code>
      */
-    RECORD_USAGE_UGC_RECORD_USAGE_TRIAL(3),
+    UGC_RECORD_USAGE_TRIAL(3),
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_COMPARE = 4;</code>
+     * <code>UGC_RECORD_USAGE_COMPARE = 4;</code>
      */
-    RECORD_USAGE_UGC_RECORD_USAGE_COMPARE(4),
+    UGC_RECORD_USAGE_COMPARE(4),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_NONE = 0;</code>
+     * <code>UGC_RECORD_USAGE_NONE = 0;</code>
      */
-    public static final int RECORD_USAGE_UGC_RECORD_USAGE_NONE_VALUE = 0;
+    public static final int UGC_RECORD_USAGE_NONE_VALUE = 0;
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_IMPORT = 1;</code>
+     * <code>UGC_RECORD_USAGE_IMPORT = 1;</code>
      */
-    public static final int RECORD_USAGE_UGC_RECORD_USAGE_IMPORT_VALUE = 1;
+    public static final int UGC_RECORD_USAGE_IMPORT_VALUE = 1;
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_PLAY = 2;</code>
+     * <code>UGC_RECORD_USAGE_PLAY = 2;</code>
      */
-    public static final int RECORD_USAGE_UGC_RECORD_USAGE_PLAY_VALUE = 2;
+    public static final int UGC_RECORD_USAGE_PLAY_VALUE = 2;
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_TRIAL = 3;</code>
+     * <code>UGC_RECORD_USAGE_TRIAL = 3;</code>
      */
-    public static final int RECORD_USAGE_UGC_RECORD_USAGE_TRIAL_VALUE = 3;
+    public static final int UGC_RECORD_USAGE_TRIAL_VALUE = 3;
     /**
-     * <code>RECORD_USAGE_UGC_RECORD_USAGE_COMPARE = 4;</code>
+     * <code>UGC_RECORD_USAGE_COMPARE = 4;</code>
      */
-    public static final int RECORD_USAGE_UGC_RECORD_USAGE_COMPARE_VALUE = 4;
+    public static final int UGC_RECORD_USAGE_COMPARE_VALUE = 4;
 
 
     public final int getNumber() {
@@ -88,11 +92,11 @@ public final class RecordUsageOuterClass {
      */
     public static RecordUsage forNumber(int value) {
       switch (value) {
-        case 0: return RECORD_USAGE_UGC_RECORD_USAGE_NONE;
-        case 1: return RECORD_USAGE_UGC_RECORD_USAGE_IMPORT;
-        case 2: return RECORD_USAGE_UGC_RECORD_USAGE_PLAY;
-        case 3: return RECORD_USAGE_UGC_RECORD_USAGE_TRIAL;
-        case 4: return RECORD_USAGE_UGC_RECORD_USAGE_COMPARE;
+        case 0: return UGC_RECORD_USAGE_NONE;
+        case 1: return UGC_RECORD_USAGE_IMPORT;
+        case 2: return UGC_RECORD_USAGE_PLAY;
+        case 3: return UGC_RECORD_USAGE_TRIAL;
+        case 4: return UGC_RECORD_USAGE_COMPARE;
         default: return null;
       }
     }
@@ -158,13 +162,12 @@ public final class RecordUsageOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021RecordUsage.proto*\333\001\n\013RecordUsage\022&\n\"R" +
-      "ECORD_USAGE_UGC_RECORD_USAGE_NONE\020\000\022(\n$R" +
-      "ECORD_USAGE_UGC_RECORD_USAGE_IMPORT\020\001\022&\n" +
-      "\"RECORD_USAGE_UGC_RECORD_USAGE_PLAY\020\002\022\'\n" +
-      "#RECORD_USAGE_UGC_RECORD_USAGE_TRIAL\020\003\022)" +
-      "\n%RECORD_USAGE_UGC_RECORD_USAGE_COMPARE\020" +
-      "\004B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\021RecordUsage.proto*\232\001\n\013RecordUsage\022\031\n\025U" +
+      "GC_RECORD_USAGE_NONE\020\000\022\033\n\027UGC_RECORD_USA" +
+      "GE_IMPORT\020\001\022\031\n\025UGC_RECORD_USAGE_PLAY\020\002\022\032" +
+      "\n\026UGC_RECORD_USAGE_TRIAL\020\003\022\034\n\030UGC_RECORD" +
+      "_USAGE_COMPARE\020\004B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

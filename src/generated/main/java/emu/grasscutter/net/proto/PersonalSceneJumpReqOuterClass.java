@@ -19,12 +19,17 @@ public final class PersonalSceneJumpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pointId = 13;</code>
+     * <code>uint32 point_id = 5;</code>
      * @return The pointId.
      */
     int getPointId();
   }
   /**
+   * <pre>
+   * Name: FFPFJFHEMKG
+   * CmdId: 298
+   * </pre>
+   *
    * Protobuf type {@code PersonalSceneJumpReq}
    */
   public static final class PersonalSceneJumpReq extends
@@ -69,7 +74,7 @@ public final class PersonalSceneJumpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 40: {
 
               pointId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class PersonalSceneJumpReqOuterClass {
               emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.class, emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PersonalSceneJumpReq.HPGMLJDPNEE}
-     */
-    public enum HPGMLJDPNEE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 260;</code>
-       */
-      PEPPOHPHJOJ(1, 260),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final HPGMLJDPNEE DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final HPGMLJDPNEE EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 260;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 260;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static HPGMLJDPNEE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static HPGMLJDPNEE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 260: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<HPGMLJDPNEE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          HPGMLJDPNEE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HPGMLJDPNEE>() {
-              public HPGMLJDPNEE findValueByNumber(int number) {
-                return HPGMLJDPNEE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final HPGMLJDPNEE[] VALUES = getStaticValuesArray();
-      private static HPGMLJDPNEE[] getStaticValuesArray() {
-        return new HPGMLJDPNEE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static HPGMLJDPNEE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private HPGMLJDPNEE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PersonalSceneJumpReq.HPGMLJDPNEE)
-    }
-
-    public static final int POINTID_FIELD_NUMBER = 13;
+    public static final int POINT_ID_FIELD_NUMBER = 5;
     private int pointId_;
     /**
-     * <code>uint32 pointId = 13;</code>
+     * <code>uint32 point_id = 5;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class PersonalSceneJumpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(13, pointId_);
+        output.writeUInt32(5, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class PersonalSceneJumpReqOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, pointId_);
+          .computeUInt32Size(5, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class PersonalSceneJumpReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POINTID_FIELD_NUMBER;
+      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class PersonalSceneJumpReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FFPFJFHEMKG
+     * CmdId: 298
+     * </pre>
+     *
      * Protobuf type {@code PersonalSceneJumpReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class PersonalSceneJumpReqOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 pointId = 13;</code>
+       * <code>uint32 point_id = 5;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class PersonalSceneJumpReqOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 pointId = 13;</code>
+       * <code>uint32 point_id = 5;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class PersonalSceneJumpReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 pointId = 13;</code>
+       * <code>uint32 point_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -655,12 +526,9 @@ public final class PersonalSceneJumpReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032PersonalSceneJumpReq.proto\"\211\001\n\024Persona" +
-      "lSceneJumpReq\022\017\n\007pointId\030\r \001(\r\"`\n\013HPGMLJ" +
-      "DPNEE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\204\002\022\017\n\013DCD" +
-      "NILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAO" +
-      "CI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006p" +
-      "roto3"
+      "\n\032PersonalSceneJumpReq.proto\"(\n\024Personal" +
+      "SceneJumpReq\022\020\n\010point_id\030\005 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

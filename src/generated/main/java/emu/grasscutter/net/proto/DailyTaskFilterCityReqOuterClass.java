@@ -19,12 +19,17 @@ public final class DailyTaskFilterCityReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cityId = 15;</code>
+     * <code>uint32 city_id = 7;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
+   * <pre>
+   * Name: NMHFKMALINE
+   * CmdId: 199
+   * </pre>
+   *
    * Protobuf type {@code DailyTaskFilterCityReq}
    */
   public static final class DailyTaskFilterCityReq extends
@@ -69,7 +74,7 @@ public final class DailyTaskFilterCityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 56: {
 
               cityId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class DailyTaskFilterCityReqOuterClass {
               emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass.DailyTaskFilterCityReq.class, emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass.DailyTaskFilterCityReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code DailyTaskFilterCityReq.KCHAPJCNAJM}
-     */
-    public enum KCHAPJCNAJM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 182;</code>
-       */
-      PEPPOHPHJOJ(1, 182),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KCHAPJCNAJM DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final KCHAPJCNAJM EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 182;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 182;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KCHAPJCNAJM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KCHAPJCNAJM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 182: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KCHAPJCNAJM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KCHAPJCNAJM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KCHAPJCNAJM>() {
-              public KCHAPJCNAJM findValueByNumber(int number) {
-                return KCHAPJCNAJM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass.DailyTaskFilterCityReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KCHAPJCNAJM[] VALUES = getStaticValuesArray();
-      private static KCHAPJCNAJM[] getStaticValuesArray() {
-        return new KCHAPJCNAJM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static KCHAPJCNAJM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KCHAPJCNAJM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:DailyTaskFilterCityReq.KCHAPJCNAJM)
-    }
-
-    public static final int CITYID_FIELD_NUMBER = 15;
+    public static final int CITY_ID_FIELD_NUMBER = 7;
     private int cityId_;
     /**
-     * <code>uint32 cityId = 15;</code>
+     * <code>uint32 city_id = 7;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class DailyTaskFilterCityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(15, cityId_);
+        output.writeUInt32(7, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class DailyTaskFilterCityReqOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, cityId_);
+          .computeUInt32Size(7, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class DailyTaskFilterCityReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CITYID_FIELD_NUMBER;
+      hash = (37 * hash) + CITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class DailyTaskFilterCityReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NMHFKMALINE
+     * CmdId: 199
+     * </pre>
+     *
      * Protobuf type {@code DailyTaskFilterCityReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class DailyTaskFilterCityReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 cityId = 15;</code>
+       * <code>uint32 city_id = 7;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 cityId = 15;</code>
+       * <code>uint32 city_id = 7;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cityId = 15;</code>
+       * <code>uint32 city_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -655,12 +526,9 @@ public final class DailyTaskFilterCityReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034DailyTaskFilterCityReq.proto\"\212\001\n\026Daily" +
-      "TaskFilterCityReq\022\016\n\006cityId\030\017 \001(\r\"`\n\013KCH" +
-      "APJCNAJM\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\266\001\022\017\n\013" +
-      "DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIAB" +
-      "GAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\034DailyTaskFilterCityReq.proto\")\n\026DailyT" +
+      "askFilterCityReq\022\017\n\007city_id\030\007 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

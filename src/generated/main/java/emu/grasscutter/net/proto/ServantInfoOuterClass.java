@@ -19,18 +19,22 @@ public final class ServantInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 masterEntityId = 1;</code>
+     * <code>uint32 master_entity_id = 1;</code>
      * @return The masterEntityId.
      */
     int getMasterEntityId();
 
     /**
-     * <code>uint32 bornSlotIndex = 2;</code>
+     * <code>uint32 born_slot_index = 2;</code>
      * @return The bornSlotIndex.
      */
     int getBornSlotIndex();
   }
   /**
+   * <pre>
+   * Name: HAKHNIFICLC
+   * </pre>
+   *
    * Protobuf type {@code ServantInfo}
    */
   public static final class ServantInfo extends
@@ -117,10 +121,10 @@ public final class ServantInfoOuterClass {
               emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.class, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder.class);
     }
 
-    public static final int MASTERENTITYID_FIELD_NUMBER = 1;
+    public static final int MASTER_ENTITY_ID_FIELD_NUMBER = 1;
     private int masterEntityId_;
     /**
-     * <code>uint32 masterEntityId = 1;</code>
+     * <code>uint32 master_entity_id = 1;</code>
      * @return The masterEntityId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class ServantInfoOuterClass {
       return masterEntityId_;
     }
 
-    public static final int BORNSLOTINDEX_FIELD_NUMBER = 2;
+    public static final int BORN_SLOT_INDEX_FIELD_NUMBER = 2;
     private int bornSlotIndex_;
     /**
-     * <code>uint32 bornSlotIndex = 2;</code>
+     * <code>uint32 born_slot_index = 2;</code>
      * @return The bornSlotIndex.
      */
     @java.lang.Override
@@ -206,9 +210,9 @@ public final class ServantInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MASTERENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + MASTER_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMasterEntityId();
-      hash = (37 * hash) + BORNSLOTINDEX_FIELD_NUMBER;
+      hash = (37 * hash) + BORN_SLOT_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getBornSlotIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -306,6 +310,10 @@ public final class ServantInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HAKHNIFICLC
+     * </pre>
+     *
      * Protobuf type {@code ServantInfo}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class ServantInfoOuterClass {
 
       private int masterEntityId_ ;
       /**
-       * <code>uint32 masterEntityId = 1;</code>
+       * <code>uint32 master_entity_id = 1;</code>
        * @return The masterEntityId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class ServantInfoOuterClass {
         return masterEntityId_;
       }
       /**
-       * <code>uint32 masterEntityId = 1;</code>
+       * <code>uint32 master_entity_id = 1;</code>
        * @param value The masterEntityId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class ServantInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 masterEntityId = 1;</code>
+       * <code>uint32 master_entity_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMasterEntityId() {
@@ -491,7 +499,7 @@ public final class ServantInfoOuterClass {
 
       private int bornSlotIndex_ ;
       /**
-       * <code>uint32 bornSlotIndex = 2;</code>
+       * <code>uint32 born_slot_index = 2;</code>
        * @return The bornSlotIndex.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class ServantInfoOuterClass {
         return bornSlotIndex_;
       }
       /**
-       * <code>uint32 bornSlotIndex = 2;</code>
+       * <code>uint32 born_slot_index = 2;</code>
        * @param value The bornSlotIndex to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class ServantInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bornSlotIndex = 2;</code>
+       * <code>uint32 born_slot_index = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBornSlotIndex() {
@@ -586,9 +594,10 @@ public final class ServantInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ServantInfo.proto\"<\n\013ServantInfo\022\026\n\016ma" +
-      "sterEntityId\030\001 \001(\r\022\025\n\rbornSlotIndex\030\002 \001(" +
-      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\021ServantInfo.proto\"@\n\013ServantInfo\022\030\n\020ma" +
+      "ster_entity_id\030\001 \001(\r\022\027\n\017born_slot_index\030" +
+      "\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

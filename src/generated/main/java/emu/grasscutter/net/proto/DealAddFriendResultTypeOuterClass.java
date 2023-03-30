@@ -15,6 +15,10 @@ public final class DealAddFriendResultTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: HKNICPJLBBF
+   * </pre>
+   *
    * Protobuf enum {@code DealAddFriendResultType}
    */
   public enum DealAddFriendResultType

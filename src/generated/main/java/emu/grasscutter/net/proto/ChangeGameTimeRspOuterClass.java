@@ -19,13 +19,13 @@ public final class ChangeGameTimeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 curGameTime = 15;</code>
+     * <code>uint32 cur_game_time = 13;</code>
      * @return The curGameTime.
      */
     int getCurGameTime();
 
     /**
-     * <code>uint32 extraDays = 5;</code>
+     * <code>uint32 extra_days = 14;</code>
      * @return The extraDays.
      */
     int getExtraDays();
@@ -37,6 +37,11 @@ public final class ChangeGameTimeRspOuterClass {
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: EJICDNGNAAJ
+   * CmdId: 150
+   * </pre>
+   *
    * Protobuf type {@code ChangeGameTimeRsp}
    */
   public static final class ChangeGameTimeRsp extends
@@ -81,19 +86,19 @@ public final class ChangeGameTimeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              extraDays_ = input.readUInt32();
-              break;
-            }
             case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 104: {
 
               curGameTime_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              extraDays_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,141 +133,10 @@ public final class ChangeGameTimeRspOuterClass {
               emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.class, emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ChangeGameTimeRsp.LAFFGLCBMLP}
-     */
-    public enum LAFFGLCBMLP
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 114;</code>
-       */
-      PEPPOHPHJOJ(1, 114),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final LAFFGLCBMLP DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 114;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 114;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static LAFFGLCBMLP valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static LAFFGLCBMLP forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 114: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<LAFFGLCBMLP>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          LAFFGLCBMLP> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<LAFFGLCBMLP>() {
-              public LAFFGLCBMLP findValueByNumber(int number) {
-                return LAFFGLCBMLP.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final LAFFGLCBMLP[] VALUES = getStaticValuesArray();
-      private static LAFFGLCBMLP[] getStaticValuesArray() {
-        return new LAFFGLCBMLP[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static LAFFGLCBMLP valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private LAFFGLCBMLP(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ChangeGameTimeRsp.LAFFGLCBMLP)
-    }
-
-    public static final int CURGAMETIME_FIELD_NUMBER = 15;
+    public static final int CUR_GAME_TIME_FIELD_NUMBER = 13;
     private int curGameTime_;
     /**
-     * <code>uint32 curGameTime = 15;</code>
+     * <code>uint32 cur_game_time = 13;</code>
      * @return The curGameTime.
      */
     @java.lang.Override
@@ -270,10 +144,10 @@ public final class ChangeGameTimeRspOuterClass {
       return curGameTime_;
     }
 
-    public static final int EXTRADAYS_FIELD_NUMBER = 5;
+    public static final int EXTRA_DAYS_FIELD_NUMBER = 14;
     private int extraDays_;
     /**
-     * <code>uint32 extraDays = 5;</code>
+     * <code>uint32 extra_days = 14;</code>
      * @return The extraDays.
      */
     @java.lang.Override
@@ -306,14 +180,14 @@ public final class ChangeGameTimeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (extraDays_ != 0) {
-        output.writeUInt32(5, extraDays_);
-      }
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
       }
       if (curGameTime_ != 0) {
-        output.writeUInt32(15, curGameTime_);
+        output.writeUInt32(13, curGameTime_);
+      }
+      if (extraDays_ != 0) {
+        output.writeUInt32(14, extraDays_);
       }
       unknownFields.writeTo(output);
     }
@@ -324,17 +198,17 @@ public final class ChangeGameTimeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (extraDays_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, extraDays_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
       if (curGameTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, curGameTime_);
+          .computeUInt32Size(13, curGameTime_);
+      }
+      if (extraDays_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, extraDays_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -368,9 +242,9 @@ public final class ChangeGameTimeRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CURGAMETIME_FIELD_NUMBER;
+      hash = (37 * hash) + CUR_GAME_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCurGameTime();
-      hash = (37 * hash) + EXTRADAYS_FIELD_NUMBER;
+      hash = (37 * hash) + EXTRA_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getExtraDays();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -470,6 +344,11 @@ public final class ChangeGameTimeRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: EJICDNGNAAJ
+     * CmdId: 150
+     * </pre>
+     *
      * Protobuf type {@code ChangeGameTimeRsp}
      */
     public static final class Builder extends
@@ -630,7 +509,7 @@ public final class ChangeGameTimeRspOuterClass {
 
       private int curGameTime_ ;
       /**
-       * <code>uint32 curGameTime = 15;</code>
+       * <code>uint32 cur_game_time = 13;</code>
        * @return The curGameTime.
        */
       @java.lang.Override
@@ -638,7 +517,7 @@ public final class ChangeGameTimeRspOuterClass {
         return curGameTime_;
       }
       /**
-       * <code>uint32 curGameTime = 15;</code>
+       * <code>uint32 cur_game_time = 13;</code>
        * @param value The curGameTime to set.
        * @return This builder for chaining.
        */
@@ -649,7 +528,7 @@ public final class ChangeGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 curGameTime = 15;</code>
+       * <code>uint32 cur_game_time = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurGameTime() {
@@ -661,7 +540,7 @@ public final class ChangeGameTimeRspOuterClass {
 
       private int extraDays_ ;
       /**
-       * <code>uint32 extraDays = 5;</code>
+       * <code>uint32 extra_days = 14;</code>
        * @return The extraDays.
        */
       @java.lang.Override
@@ -669,7 +548,7 @@ public final class ChangeGameTimeRspOuterClass {
         return extraDays_;
       }
       /**
-       * <code>uint32 extraDays = 5;</code>
+       * <code>uint32 extra_days = 14;</code>
        * @param value The extraDays to set.
        * @return This builder for chaining.
        */
@@ -680,7 +559,7 @@ public final class ChangeGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 extraDays = 5;</code>
+       * <code>uint32 extra_days = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearExtraDays() {
@@ -787,12 +666,10 @@ public final class ChangeGameTimeRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027ChangeGameTimeRsp.proto\"\234\001\n\021ChangeGame" +
-      "TimeRsp\022\023\n\013curGameTime\030\017 \001(\r\022\021\n\textraDay" +
-      "s\030\005 \001(\r\022\017\n\007retcode\030\007 \001(\005\"N\n\013LAFFGLCBMLP\022" +
-      "\010\n\004NONE\020\000\022\017\n\013PEPPOHPHJOJ\020r\022\017\n\013DCDNILFDFL" +
-      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\027ChangeGameTimeRsp.proto\"O\n\021ChangeGameT" +
+      "imeRsp\022\025\n\rcur_game_time\030\r \001(\r\022\022\n\nextra_d" +
+      "ays\030\016 \001(\r\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

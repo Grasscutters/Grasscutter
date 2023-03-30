@@ -19,7 +19,7 @@ public final class ItemParamOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 itemId = 1;</code>
+     * <code>uint32 item_id = 1;</code>
      * @return The itemId.
      */
     int getItemId();
@@ -31,6 +31,10 @@ public final class ItemParamOuterClass {
     int getCount();
   }
   /**
+   * <pre>
+   * Name: ENOCIMKMJJG
+   * </pre>
+   *
    * Protobuf type {@code ItemParam}
    */
   public static final class ItemParam extends
@@ -117,10 +121,10 @@ public final class ItemParamOuterClass {
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.class, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder.class);
     }
 
-    public static final int ITEMID_FIELD_NUMBER = 1;
+    public static final int ITEM_ID_FIELD_NUMBER = 1;
     private int itemId_;
     /**
-     * <code>uint32 itemId = 1;</code>
+     * <code>uint32 item_id = 1;</code>
      * @return The itemId.
      */
     @java.lang.Override
@@ -206,7 +210,7 @@ public final class ItemParamOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEMID_FIELD_NUMBER;
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
@@ -306,6 +310,10 @@ public final class ItemParamOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ENOCIMKMJJG
+     * </pre>
+     *
      * Protobuf type {@code ItemParam}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class ItemParamOuterClass {
 
       private int itemId_ ;
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @return The itemId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class ItemParamOuterClass {
         return itemId_;
       }
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @param value The itemId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class ItemParamOuterClass {
         return this;
       }
       /**
-       * <code>uint32 itemId = 1;</code>
+       * <code>uint32 item_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
@@ -586,9 +594,9 @@ public final class ItemParamOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017ItemParam.proto\"*\n\tItemParam\022\016\n\006itemId" +
-      "\030\001 \001(\r\022\r\n\005count\030\002 \001(\rB\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "\n\017ItemParam.proto\"+\n\tItemParam\022\017\n\007item_i" +
+      "d\030\001 \001(\r\022\r\n\005count\030\002 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

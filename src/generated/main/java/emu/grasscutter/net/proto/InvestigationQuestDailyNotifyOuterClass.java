@@ -19,6 +19,11 @@ public final class InvestigationQuestDailyNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Name: BIILPLIEGPD
+   * CmdId: 1902
+   * </pre>
+   *
    * Protobuf type {@code InvestigationQuestDailyNotify}
    */
   public static final class InvestigationQuestDailyNotify extends
@@ -93,137 +98,6 @@ public final class InvestigationQuestDailyNotifyOuterClass {
       return emu.grasscutter.net.proto.InvestigationQuestDailyNotifyOuterClass.internal_static_InvestigationQuestDailyNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.InvestigationQuestDailyNotifyOuterClass.InvestigationQuestDailyNotify.class, emu.grasscutter.net.proto.InvestigationQuestDailyNotifyOuterClass.InvestigationQuestDailyNotify.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code InvestigationQuestDailyNotify.AEBDJEDMDOJ}
-     */
-    public enum AEBDJEDMDOJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1910;</code>
-       */
-      PEPPOHPHJOJ(1, 1910),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final AEBDJEDMDOJ DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1910;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1910;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static AEBDJEDMDOJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static AEBDJEDMDOJ forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1910: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<AEBDJEDMDOJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          AEBDJEDMDOJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AEBDJEDMDOJ>() {
-              public AEBDJEDMDOJ findValueByNumber(int number) {
-                return AEBDJEDMDOJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.InvestigationQuestDailyNotifyOuterClass.InvestigationQuestDailyNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final AEBDJEDMDOJ[] VALUES = getStaticValuesArray();
-      private static AEBDJEDMDOJ[] getStaticValuesArray() {
-        return new AEBDJEDMDOJ[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static AEBDJEDMDOJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private AEBDJEDMDOJ(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:InvestigationQuestDailyNotify.AEBDJEDMDOJ)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -371,6 +245,11 @@ public final class InvestigationQuestDailyNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BIILPLIEGPD
+     * CmdId: 1902
+     * </pre>
+     *
      * Protobuf type {@code InvestigationQuestDailyNotify}
      */
     public static final class Builder extends
@@ -577,11 +456,9 @@ public final class InvestigationQuestDailyNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n#InvestigationQuestDailyNotify.proto\"p\n" +
-      "\035InvestigationQuestDailyNotify\"O\n\013AEBDJE" +
-      "DMDOJ\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\366\016\022\017\n\013DCD" +
-      "NILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\n#InvestigationQuestDailyNotify.proto\"\037\n" +
+      "\035InvestigationQuestDailyNotifyB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,7 +19,7 @@ public final class BossChestInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 monsterConfigId = 1;</code>
+     * <code>uint32 monster_config_id = 1;</code>
      * @return The monsterConfigId.
      */
     int getMonsterConfigId();
@@ -31,45 +31,45 @@ public final class BossChestInfoOuterClass {
     int getResin();
 
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @return A list containing the remainUidList.
      */
     java.util.List<java.lang.Integer> getRemainUidListList();
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @return The count of remainUidList.
      */
     int getRemainUidListCount();
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @param index The index of the element to return.
      * @return The remainUidList at the given index.
      */
     int getRemainUidList(int index);
 
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @return A list containing the qualifyUidList.
      */
     java.util.List<java.lang.Integer> getQualifyUidListList();
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @return The count of qualifyUidList.
      */
     int getQualifyUidListCount();
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @param index The index of the element to return.
      * @return The qualifyUidList at the given index.
      */
     int getQualifyUidList(int index);
 
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     int getUidDiscountMapCount();
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     boolean containsUidDiscountMap(
         int key);
@@ -80,25 +80,29 @@ public final class BossChestInfoOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
     getUidDiscountMap();
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo>
     getUidDiscountMapMap();
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
 
     emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrDefault(
         int key,
         emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo defaultValue);
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
 
     emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo getUidDiscountMapOrThrow(
         int key);
   }
   /**
+   * <pre>
+   * Name: CFMDIIMKKFP
+   * </pre>
+   *
    * Protobuf type {@code BossChestInfo}
    */
   public static final class BossChestInfo extends
@@ -261,10 +265,10 @@ public final class BossChestInfoOuterClass {
               emu.grasscutter.net.proto.BossChestInfoOuterClass.BossChestInfo.class, emu.grasscutter.net.proto.BossChestInfoOuterClass.BossChestInfo.Builder.class);
     }
 
-    public static final int MONSTERCONFIGID_FIELD_NUMBER = 1;
+    public static final int MONSTER_CONFIG_ID_FIELD_NUMBER = 1;
     private int monsterConfigId_;
     /**
-     * <code>uint32 monsterConfigId = 1;</code>
+     * <code>uint32 monster_config_id = 1;</code>
      * @return The monsterConfigId.
      */
     @java.lang.Override
@@ -283,10 +287,10 @@ public final class BossChestInfoOuterClass {
       return resin_;
     }
 
-    public static final int REMAINUIDLIST_FIELD_NUMBER = 3;
+    public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList remainUidList_;
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @return A list containing the remainUidList.
      */
     @java.lang.Override
@@ -295,14 +299,14 @@ public final class BossChestInfoOuterClass {
       return remainUidList_;
     }
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @return The count of remainUidList.
      */
     public int getRemainUidListCount() {
       return remainUidList_.size();
     }
     /**
-     * <code>repeated uint32 remainUidList = 3;</code>
+     * <code>repeated uint32 remain_uid_list = 3;</code>
      * @param index The index of the element to return.
      * @return The remainUidList at the given index.
      */
@@ -311,10 +315,10 @@ public final class BossChestInfoOuterClass {
     }
     private int remainUidListMemoizedSerializedSize = -1;
 
-    public static final int QUALIFYUIDLIST_FIELD_NUMBER = 4;
+    public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList qualifyUidList_;
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @return A list containing the qualifyUidList.
      */
     @java.lang.Override
@@ -323,14 +327,14 @@ public final class BossChestInfoOuterClass {
       return qualifyUidList_;
     }
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @return The count of qualifyUidList.
      */
     public int getQualifyUidListCount() {
       return qualifyUidList_.size();
     }
     /**
-     * <code>repeated uint32 qualifyUidList = 4;</code>
+     * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @param index The index of the element to return.
      * @return The qualifyUidList at the given index.
      */
@@ -339,7 +343,7 @@ public final class BossChestInfoOuterClass {
     }
     private int qualifyUidListMemoizedSerializedSize = -1;
 
-    public static final int UIDDISCOUNTMAP_FIELD_NUMBER = 5;
+    public static final int UID_DISCOUNT_MAP_FIELD_NUMBER = 5;
     private static final class UidDiscountMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> defaultEntry =
@@ -366,7 +370,7 @@ public final class BossChestInfoOuterClass {
       return internalGetUidDiscountMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
 
     @java.lang.Override
@@ -384,7 +388,7 @@ public final class BossChestInfoOuterClass {
       return getUidDiscountMapMap();
     }
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
 
@@ -392,7 +396,7 @@ public final class BossChestInfoOuterClass {
       return internalGetUidDiscountMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
 
@@ -405,7 +409,7 @@ public final class BossChestInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+     * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
      */
     @java.lang.Override
 
@@ -552,20 +556,20 @@ public final class BossChestInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MONSTERCONFIGID_FIELD_NUMBER;
+      hash = (37 * hash) + MONSTER_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMonsterConfigId();
       hash = (37 * hash) + RESIN_FIELD_NUMBER;
       hash = (53 * hash) + getResin();
       if (getRemainUidListCount() > 0) {
-        hash = (37 * hash) + REMAINUIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + REMAIN_UID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRemainUidListList().hashCode();
       }
       if (getQualifyUidListCount() > 0) {
-        hash = (37 * hash) + QUALIFYUIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + QUALIFY_UID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getQualifyUidListList().hashCode();
       }
       if (!internalGetUidDiscountMap().getMap().isEmpty()) {
-        hash = (37 * hash) + UIDDISCOUNTMAP_FIELD_NUMBER;
+        hash = (37 * hash) + UID_DISCOUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetUidDiscountMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -664,6 +668,10 @@ public final class BossChestInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CFMDIIMKKFP
+     * </pre>
+     *
      * Protobuf type {@code BossChestInfo}
      */
     public static final class Builder extends
@@ -881,7 +889,7 @@ public final class BossChestInfoOuterClass {
 
       private int monsterConfigId_ ;
       /**
-       * <code>uint32 monsterConfigId = 1;</code>
+       * <code>uint32 monster_config_id = 1;</code>
        * @return The monsterConfigId.
        */
       @java.lang.Override
@@ -889,7 +897,7 @@ public final class BossChestInfoOuterClass {
         return monsterConfigId_;
       }
       /**
-       * <code>uint32 monsterConfigId = 1;</code>
+       * <code>uint32 monster_config_id = 1;</code>
        * @param value The monsterConfigId to set.
        * @return This builder for chaining.
        */
@@ -900,7 +908,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 monsterConfigId = 1;</code>
+       * <code>uint32 monster_config_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMonsterConfigId() {
@@ -949,7 +957,7 @@ public final class BossChestInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @return A list containing the remainUidList.
        */
       public java.util.List<java.lang.Integer>
@@ -958,14 +966,14 @@ public final class BossChestInfoOuterClass {
                  java.util.Collections.unmodifiableList(remainUidList_) : remainUidList_;
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @return The count of remainUidList.
        */
       public int getRemainUidListCount() {
         return remainUidList_.size();
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @param index The index of the element to return.
        * @return The remainUidList at the given index.
        */
@@ -973,7 +981,7 @@ public final class BossChestInfoOuterClass {
         return remainUidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The remainUidList to set.
        * @return This builder for chaining.
@@ -986,7 +994,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @param value The remainUidList to add.
        * @return This builder for chaining.
        */
@@ -997,7 +1005,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @param values The remainUidList to add.
        * @return This builder for chaining.
        */
@@ -1010,7 +1018,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 remainUidList = 3;</code>
+       * <code>repeated uint32 remain_uid_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemainUidList() {
@@ -1028,7 +1036,7 @@ public final class BossChestInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @return A list containing the qualifyUidList.
        */
       public java.util.List<java.lang.Integer>
@@ -1037,14 +1045,14 @@ public final class BossChestInfoOuterClass {
                  java.util.Collections.unmodifiableList(qualifyUidList_) : qualifyUidList_;
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @return The count of qualifyUidList.
        */
       public int getQualifyUidListCount() {
         return qualifyUidList_.size();
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @param index The index of the element to return.
        * @return The qualifyUidList at the given index.
        */
@@ -1052,7 +1060,7 @@ public final class BossChestInfoOuterClass {
         return qualifyUidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The qualifyUidList to set.
        * @return This builder for chaining.
@@ -1065,7 +1073,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @param value The qualifyUidList to add.
        * @return This builder for chaining.
        */
@@ -1076,7 +1084,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @param values The qualifyUidList to add.
        * @return This builder for chaining.
        */
@@ -1089,7 +1097,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 qualifyUidList = 4;</code>
+       * <code>repeated uint32 qualify_uid_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearQualifyUidList() {
@@ -1126,7 +1134,7 @@ public final class BossChestInfoOuterClass {
         return internalGetUidDiscountMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
 
       @java.lang.Override
@@ -1144,7 +1152,7 @@ public final class BossChestInfoOuterClass {
         return getUidDiscountMapMap();
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
 
@@ -1152,7 +1160,7 @@ public final class BossChestInfoOuterClass {
         return internalGetUidDiscountMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
 
@@ -1165,7 +1173,7 @@ public final class BossChestInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       @java.lang.Override
 
@@ -1186,7 +1194,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
 
       public Builder removeUidDiscountMap(
@@ -1205,7 +1213,7 @@ public final class BossChestInfoOuterClass {
         return internalGetMutableUidDiscountMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
       public Builder putUidDiscountMap(
           int key,
@@ -1217,7 +1225,7 @@ public final class BossChestInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uidDiscountMap = 5;</code>
+       * <code>map&lt;uint32, .WeeklyBossResinDiscountInfo&gt; uid_discount_map = 5;</code>
        */
 
       public Builder putAllUidDiscountMap(
@@ -1299,14 +1307,14 @@ public final class BossChestInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023BossChestInfo.proto\032!WeeklyBossResinDi" +
-      "scountInfo.proto\"\367\001\n\rBossChestInfo\022\027\n\017mo" +
-      "nsterConfigId\030\001 \001(\r\022\r\n\005resin\030\002 \001(\r\022\025\n\rre" +
-      "mainUidList\030\003 \003(\r\022\026\n\016qualifyUidList\030\004 \003(" +
-      "\r\022:\n\016uidDiscountMap\030\005 \003(\0132\".BossChestInf" +
-      "o.UidDiscountMapEntry\032S\n\023UidDiscountMapE" +
-      "ntry\022\013\n\003key\030\001 \001(\r\022+\n\005value\030\002 \001(\0132\034.Weekl" +
-      "yBossResinDiscountInfo:\0028\001B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "scountInfo.proto\"\377\001\n\rBossChestInfo\022\031\n\021mo" +
+      "nster_config_id\030\001 \001(\r\022\r\n\005resin\030\002 \001(\r\022\027\n\017" +
+      "remain_uid_list\030\003 \003(\r\022\030\n\020qualify_uid_lis" +
+      "t\030\004 \003(\r\022<\n\020uid_discount_map\030\005 \003(\0132\".Boss" +
+      "ChestInfo.UidDiscountMapEntry\032S\n\023UidDisc" +
+      "ountMapEntry\022\013\n\003key\030\001 \001(\r\022+\n\005value\030\002 \001(\013" +
+      "2\034.WeeklyBossResinDiscountInfo:\0028\001B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,35 +19,39 @@ public final class FishPoolInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 poolId = 1;</code>
+     * <code>uint32 pool_id = 1;</code>
      * @return The poolId.
      */
     int getPoolId();
 
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @return A list containing the fishAreaList.
      */
     java.util.List<java.lang.Integer> getFishAreaListList();
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @return The count of fishAreaList.
      */
     int getFishAreaListCount();
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @param index The index of the element to return.
      * @return The fishAreaList at the given index.
      */
     int getFishAreaList(int index);
 
     /**
-     * <code>uint32 todayFishNum = 3;</code>
+     * <code>uint32 today_fish_num = 3;</code>
      * @return The todayFishNum.
      */
     int getTodayFishNum();
   }
   /**
+   * <pre>
+   * Name: KMDKMJLGNHL
+   * </pre>
+   *
    * Protobuf type {@code FishPoolInfo}
    */
   public static final class FishPoolInfo extends
@@ -160,10 +164,10 @@ public final class FishPoolInfoOuterClass {
               emu.grasscutter.net.proto.FishPoolInfoOuterClass.FishPoolInfo.class, emu.grasscutter.net.proto.FishPoolInfoOuterClass.FishPoolInfo.Builder.class);
     }
 
-    public static final int POOLID_FIELD_NUMBER = 1;
+    public static final int POOL_ID_FIELD_NUMBER = 1;
     private int poolId_;
     /**
-     * <code>uint32 poolId = 1;</code>
+     * <code>uint32 pool_id = 1;</code>
      * @return The poolId.
      */
     @java.lang.Override
@@ -171,10 +175,10 @@ public final class FishPoolInfoOuterClass {
       return poolId_;
     }
 
-    public static final int FISHAREALIST_FIELD_NUMBER = 2;
+    public static final int FISH_AREA_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList fishAreaList_;
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @return A list containing the fishAreaList.
      */
     @java.lang.Override
@@ -183,14 +187,14 @@ public final class FishPoolInfoOuterClass {
       return fishAreaList_;
     }
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @return The count of fishAreaList.
      */
     public int getFishAreaListCount() {
       return fishAreaList_.size();
     }
     /**
-     * <code>repeated uint32 fishAreaList = 2;</code>
+     * <code>repeated uint32 fish_area_list = 2;</code>
      * @param index The index of the element to return.
      * @return The fishAreaList at the given index.
      */
@@ -199,10 +203,10 @@ public final class FishPoolInfoOuterClass {
     }
     private int fishAreaListMemoizedSerializedSize = -1;
 
-    public static final int TODAYFISHNUM_FIELD_NUMBER = 3;
+    public static final int TODAY_FISH_NUM_FIELD_NUMBER = 3;
     private int todayFishNum_;
     /**
-     * <code>uint32 todayFishNum = 3;</code>
+     * <code>uint32 today_fish_num = 3;</code>
      * @return The todayFishNum.
      */
     @java.lang.Override
@@ -301,13 +305,13 @@ public final class FishPoolInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POOLID_FIELD_NUMBER;
+      hash = (37 * hash) + POOL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPoolId();
       if (getFishAreaListCount() > 0) {
-        hash = (37 * hash) + FISHAREALIST_FIELD_NUMBER;
+        hash = (37 * hash) + FISH_AREA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFishAreaListList().hashCode();
       }
-      hash = (37 * hash) + TODAYFISHNUM_FIELD_NUMBER;
+      hash = (37 * hash) + TODAY_FISH_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getTodayFishNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -405,6 +409,10 @@ public final class FishPoolInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KMDKMJLGNHL
+     * </pre>
+     *
      * Protobuf type {@code FishPoolInfo}
      */
     public static final class Builder extends
@@ -578,7 +586,7 @@ public final class FishPoolInfoOuterClass {
 
       private int poolId_ ;
       /**
-       * <code>uint32 poolId = 1;</code>
+       * <code>uint32 pool_id = 1;</code>
        * @return The poolId.
        */
       @java.lang.Override
@@ -586,7 +594,7 @@ public final class FishPoolInfoOuterClass {
         return poolId_;
       }
       /**
-       * <code>uint32 poolId = 1;</code>
+       * <code>uint32 pool_id = 1;</code>
        * @param value The poolId to set.
        * @return This builder for chaining.
        */
@@ -597,7 +605,7 @@ public final class FishPoolInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 poolId = 1;</code>
+       * <code>uint32 pool_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearPoolId() {
@@ -615,7 +623,7 @@ public final class FishPoolInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @return A list containing the fishAreaList.
        */
       public java.util.List<java.lang.Integer>
@@ -624,14 +632,14 @@ public final class FishPoolInfoOuterClass {
                  java.util.Collections.unmodifiableList(fishAreaList_) : fishAreaList_;
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @return The count of fishAreaList.
        */
       public int getFishAreaListCount() {
         return fishAreaList_.size();
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @param index The index of the element to return.
        * @return The fishAreaList at the given index.
        */
@@ -639,7 +647,7 @@ public final class FishPoolInfoOuterClass {
         return fishAreaList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The fishAreaList to set.
        * @return This builder for chaining.
@@ -652,7 +660,7 @@ public final class FishPoolInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @param value The fishAreaList to add.
        * @return This builder for chaining.
        */
@@ -663,7 +671,7 @@ public final class FishPoolInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @param values The fishAreaList to add.
        * @return This builder for chaining.
        */
@@ -676,7 +684,7 @@ public final class FishPoolInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fishAreaList = 2;</code>
+       * <code>repeated uint32 fish_area_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFishAreaList() {
@@ -688,7 +696,7 @@ public final class FishPoolInfoOuterClass {
 
       private int todayFishNum_ ;
       /**
-       * <code>uint32 todayFishNum = 3;</code>
+       * <code>uint32 today_fish_num = 3;</code>
        * @return The todayFishNum.
        */
       @java.lang.Override
@@ -696,7 +704,7 @@ public final class FishPoolInfoOuterClass {
         return todayFishNum_;
       }
       /**
-       * <code>uint32 todayFishNum = 3;</code>
+       * <code>uint32 today_fish_num = 3;</code>
        * @param value The todayFishNum to set.
        * @return This builder for chaining.
        */
@@ -707,7 +715,7 @@ public final class FishPoolInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 todayFishNum = 3;</code>
+       * <code>uint32 today_fish_num = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTodayFishNum() {
@@ -783,10 +791,10 @@ public final class FishPoolInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022FishPoolInfo.proto\"J\n\014FishPoolInfo\022\016\n\006" +
-      "poolId\030\001 \001(\r\022\024\n\014fishAreaList\030\002 \003(\r\022\024\n\014to" +
-      "dayFishNum\030\003 \001(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\022FishPoolInfo.proto\"O\n\014FishPoolInfo\022\017\n\007" +
+      "pool_id\030\001 \001(\r\022\026\n\016fish_area_list\030\002 \003(\r\022\026\n" +
+      "\016today_fish_num\030\003 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

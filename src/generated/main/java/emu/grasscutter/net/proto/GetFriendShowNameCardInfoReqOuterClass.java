@@ -19,12 +19,17 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 9;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
+   * <pre>
+   * Name: KPEKABANIFC
+   * CmdId: 4053
+   * </pre>
+   *
    * Protobuf type {@code GetFriendShowNameCardInfoReq}
    */
   public static final class GetFriendShowNameCardInfoReq extends
@@ -69,7 +74,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 72: {
 
               uid_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
               emu.grasscutter.net.proto.GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.class, emu.grasscutter.net.proto.GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetFriendShowNameCardInfoReq.DCKIDCHAHMI}
-     */
-    public enum DCKIDCHAHMI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4015;</code>
-       */
-      PEPPOHPHJOJ(1, 4015),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final DCKIDCHAHMI DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final DCKIDCHAHMI EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4015;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4015;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DCKIDCHAHMI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static DCKIDCHAHMI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4015: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DCKIDCHAHMI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DCKIDCHAHMI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DCKIDCHAHMI>() {
-              public DCKIDCHAHMI findValueByNumber(int number) {
-                return DCKIDCHAHMI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DCKIDCHAHMI[] VALUES = getStaticValuesArray();
-      private static DCKIDCHAHMI[] getStaticValuesArray() {
-        return new DCKIDCHAHMI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static DCKIDCHAHMI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private DCKIDCHAHMI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetFriendShowNameCardInfoReq.DCKIDCHAHMI)
-    }
-
-    public static final int UID_FIELD_NUMBER = 1;
+    public static final int UID_FIELD_NUMBER = 9;
     private int uid_;
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 9;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(1, uid_);
+        output.writeUInt32(9, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, uid_);
+          .computeUInt32Size(9, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -412,6 +278,11 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KPEKABANIFC
+     * CmdId: 4053
+     * </pre>
+     *
      * Protobuf type {@code GetFriendShowNameCardInfoReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 9;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 9;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -655,12 +526,9 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"GetFriendShowNameCardInfoReq.proto\"\215\001\n" +
-      "\034GetFriendShowNameCardInfoReq\022\013\n\003uid\030\001 \001" +
-      "(\r\"`\n\013DCKIDCHAHMI\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJ" +
-      "OJ\020\257\037\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022" +
-      "\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\n\"GetFriendShowNameCardInfoReq.proto\"+\n\034" +
+      "GetFriendShowNameCardInfoReq\022\013\n\003uid\030\t \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -15,6 +15,10 @@ public final class MapMarkPointTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: KCEHIDGIEEF
+   * </pre>
+   *
    * Protobuf enum {@code MapMarkPointType}
    */
   public enum MapMarkPointType

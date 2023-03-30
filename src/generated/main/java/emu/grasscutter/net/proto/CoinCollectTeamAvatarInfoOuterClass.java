@@ -19,18 +19,22 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 costumeId = 15;</code>
+     * <code>uint32 costume_id = 4;</code>
      * @return The costumeId.
      */
     int getCostumeId();
 
     /**
-     * <code>uint32 avatarId = 8;</code>
+     * <code>uint32 avatar_id = 5;</code>
      * @return The avatarId.
      */
     int getAvatarId();
   }
   /**
+   * <pre>
+   * Name: FBEKLANBDNA
+   * </pre>
+   *
    * Protobuf type {@code CoinCollectTeamAvatarInfo}
    */
   public static final class CoinCollectTeamAvatarInfo extends
@@ -75,14 +79,14 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 32: {
 
               costumeId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              avatarId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
               emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.class, emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.Builder.class);
     }
 
-    public static final int COSTUMEID_FIELD_NUMBER = 15;
+    public static final int COSTUME_ID_FIELD_NUMBER = 4;
     private int costumeId_;
     /**
-     * <code>uint32 costumeId = 15;</code>
+     * <code>uint32 costume_id = 4;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       return costumeId_;
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 8;
+    public static final int AVATAR_ID_FIELD_NUMBER = 5;
     private int avatarId_;
     /**
-     * <code>uint32 avatarId = 8;</code>
+     * <code>uint32 avatar_id = 5;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarId_ != 0) {
-        output.writeUInt32(8, avatarId_);
-      }
       if (costumeId_ != 0) {
-        output.writeUInt32(15, costumeId_);
+        output.writeUInt32(4, costumeId_);
+      }
+      if (avatarId_ != 0) {
+        output.writeUInt32(5, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (avatarId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, avatarId_);
-      }
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, costumeId_);
+          .computeUInt32Size(4, costumeId_);
+      }
+      if (avatarId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +210,9 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COSTUMEID_FIELD_NUMBER;
+      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -306,6 +310,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FBEKLANBDNA
+     * </pre>
+     *
      * Protobuf type {@code CoinCollectTeamAvatarInfo}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
       private int costumeId_ ;
       /**
-       * <code>uint32 costumeId = 15;</code>
+       * <code>uint32 costume_id = 4;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costumeId = 15;</code>
+       * <code>uint32 costume_id = 4;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costumeId = 15;</code>
+       * <code>uint32 costume_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
@@ -491,7 +499,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatarId = 8;</code>
+       * <code>uint32 avatar_id = 5;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatarId = 8;</code>
+       * <code>uint32 avatar_id = 5;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatarId = 8;</code>
+       * <code>uint32 avatar_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -586,10 +594,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\037CoinCollectTeamAvatarInfo.proto\"@\n\031Coi" +
-      "nCollectTeamAvatarInfo\022\021\n\tcostumeId\030\017 \001(" +
-      "\r\022\020\n\010avatarId\030\010 \001(\rB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "\n\037CoinCollectTeamAvatarInfo.proto\"B\n\031Coi" +
+      "nCollectTeamAvatarInfo\022\022\n\ncostume_id\030\004 \001" +
+      "(\r\022\021\n\tavatar_id\030\005 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

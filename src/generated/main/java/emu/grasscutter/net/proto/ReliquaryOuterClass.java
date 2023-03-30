@@ -31,35 +31,39 @@ public final class ReliquaryOuterClass {
     int getExp();
 
     /**
-     * <code>uint32 promoteLevel = 3;</code>
+     * <code>uint32 promote_level = 3;</code>
      * @return The promoteLevel.
      */
     int getPromoteLevel();
 
     /**
-     * <code>uint32 mainPropId = 4;</code>
+     * <code>uint32 main_prop_id = 4;</code>
      * @return The mainPropId.
      */
     int getMainPropId();
 
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @return A list containing the appendPropIdList.
      */
     java.util.List<java.lang.Integer> getAppendPropIdListList();
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @return The count of appendPropIdList.
      */
     int getAppendPropIdListCount();
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The appendPropIdList at the given index.
      */
     int getAppendPropIdList(int index);
   }
   /**
+   * <pre>
+   * Name: HNBHEIDALPL
+   * </pre>
+   *
    * Protobuf type {@code Reliquary}
    */
   public static final class Reliquary extends
@@ -204,10 +208,10 @@ public final class ReliquaryOuterClass {
       return exp_;
     }
 
-    public static final int PROMOTELEVEL_FIELD_NUMBER = 3;
+    public static final int PROMOTE_LEVEL_FIELD_NUMBER = 3;
     private int promoteLevel_;
     /**
-     * <code>uint32 promoteLevel = 3;</code>
+     * <code>uint32 promote_level = 3;</code>
      * @return The promoteLevel.
      */
     @java.lang.Override
@@ -215,10 +219,10 @@ public final class ReliquaryOuterClass {
       return promoteLevel_;
     }
 
-    public static final int MAINPROPID_FIELD_NUMBER = 4;
+    public static final int MAIN_PROP_ID_FIELD_NUMBER = 4;
     private int mainPropId_;
     /**
-     * <code>uint32 mainPropId = 4;</code>
+     * <code>uint32 main_prop_id = 4;</code>
      * @return The mainPropId.
      */
     @java.lang.Override
@@ -226,10 +230,10 @@ public final class ReliquaryOuterClass {
       return mainPropId_;
     }
 
-    public static final int APPENDPROPIDLIST_FIELD_NUMBER = 5;
+    public static final int APPEND_PROP_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList appendPropIdList_;
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @return A list containing the appendPropIdList.
      */
     @java.lang.Override
@@ -238,14 +242,14 @@ public final class ReliquaryOuterClass {
       return appendPropIdList_;
     }
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @return The count of appendPropIdList.
      */
     public int getAppendPropIdListCount() {
       return appendPropIdList_.size();
     }
     /**
-     * <code>repeated uint32 appendPropIdList = 5;</code>
+     * <code>repeated uint32 append_prop_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The appendPropIdList at the given index.
      */
@@ -367,12 +371,12 @@ public final class ReliquaryOuterClass {
       hash = (53 * hash) + getLevel();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
       hash = (53 * hash) + getExp();
-      hash = (37 * hash) + PROMOTELEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + PROMOTE_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getPromoteLevel();
-      hash = (37 * hash) + MAINPROPID_FIELD_NUMBER;
+      hash = (37 * hash) + MAIN_PROP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMainPropId();
       if (getAppendPropIdListCount() > 0) {
-        hash = (37 * hash) + APPENDPROPIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + APPEND_PROP_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAppendPropIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -471,6 +475,10 @@ public final class ReliquaryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HNBHEIDALPL
+     * </pre>
+     *
      * Protobuf type {@code Reliquary}
      */
     public static final class Builder extends
@@ -718,7 +726,7 @@ public final class ReliquaryOuterClass {
 
       private int promoteLevel_ ;
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @return The promoteLevel.
        */
       @java.lang.Override
@@ -726,7 +734,7 @@ public final class ReliquaryOuterClass {
         return promoteLevel_;
       }
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @param value The promoteLevel to set.
        * @return This builder for chaining.
        */
@@ -737,7 +745,7 @@ public final class ReliquaryOuterClass {
         return this;
       }
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPromoteLevel() {
@@ -749,7 +757,7 @@ public final class ReliquaryOuterClass {
 
       private int mainPropId_ ;
       /**
-       * <code>uint32 mainPropId = 4;</code>
+       * <code>uint32 main_prop_id = 4;</code>
        * @return The mainPropId.
        */
       @java.lang.Override
@@ -757,7 +765,7 @@ public final class ReliquaryOuterClass {
         return mainPropId_;
       }
       /**
-       * <code>uint32 mainPropId = 4;</code>
+       * <code>uint32 main_prop_id = 4;</code>
        * @param value The mainPropId to set.
        * @return This builder for chaining.
        */
@@ -768,7 +776,7 @@ public final class ReliquaryOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mainPropId = 4;</code>
+       * <code>uint32 main_prop_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMainPropId() {
@@ -786,7 +794,7 @@ public final class ReliquaryOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @return A list containing the appendPropIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -795,14 +803,14 @@ public final class ReliquaryOuterClass {
                  java.util.Collections.unmodifiableList(appendPropIdList_) : appendPropIdList_;
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @return The count of appendPropIdList.
        */
       public int getAppendPropIdListCount() {
         return appendPropIdList_.size();
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @param index The index of the element to return.
        * @return The appendPropIdList at the given index.
        */
@@ -810,7 +818,7 @@ public final class ReliquaryOuterClass {
         return appendPropIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The appendPropIdList to set.
        * @return This builder for chaining.
@@ -823,7 +831,7 @@ public final class ReliquaryOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @param value The appendPropIdList to add.
        * @return This builder for chaining.
        */
@@ -834,7 +842,7 @@ public final class ReliquaryOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @param values The appendPropIdList to add.
        * @return This builder for chaining.
        */
@@ -847,7 +855,7 @@ public final class ReliquaryOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 appendPropIdList = 5;</code>
+       * <code>repeated uint32 append_prop_id_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAppendPropIdList() {
@@ -923,11 +931,11 @@ public final class ReliquaryOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017Reliquary.proto\"k\n\tReliquary\022\r\n\005level\030" +
-      "\001 \001(\r\022\013\n\003exp\030\002 \001(\r\022\024\n\014promoteLevel\030\003 \001(\r" +
-      "\022\022\n\nmainPropId\030\004 \001(\r\022\030\n\020appendPropIdList" +
-      "\030\005 \003(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "\n\017Reliquary.proto\"q\n\tReliquary\022\r\n\005level\030" +
+      "\001 \001(\r\022\013\n\003exp\030\002 \001(\r\022\025\n\rpromote_level\030\003 \001(" +
+      "\r\022\024\n\014main_prop_id\030\004 \001(\r\022\033\n\023append_prop_i" +
+      "d_list\030\005 \003(\rB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

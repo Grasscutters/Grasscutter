@@ -19,21 +19,26 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      * @return Whether the regionInfo field is set.
      */
     boolean hasRegionInfo();
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      * @return The regionInfo.
      */
     emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo getRegionInfo();
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      */
     emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfoOrBuilder getRegionInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: KKBGBOJPPEN
+   * CmdId: 2190
+   * </pre>
+   *
    * Protobuf type {@code TreasureMapRegionInfoNotify}
    */
   public static final class TreasureMapRegionInfoNotify extends
@@ -123,141 +128,10 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
               emu.grasscutter.net.proto.TreasureMapRegionInfoNotifyOuterClass.TreasureMapRegionInfoNotify.class, emu.grasscutter.net.proto.TreasureMapRegionInfoNotifyOuterClass.TreasureMapRegionInfoNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code TreasureMapRegionInfoNotify.ADDFACKEHCF}
-     */
-    public enum ADDFACKEHCF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2064;</code>
-       */
-      PEPPOHPHJOJ(1, 2064),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ADDFACKEHCF DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2064;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2064;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ADDFACKEHCF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ADDFACKEHCF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2064: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ADDFACKEHCF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ADDFACKEHCF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ADDFACKEHCF>() {
-              public ADDFACKEHCF findValueByNumber(int number) {
-                return ADDFACKEHCF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.TreasureMapRegionInfoNotifyOuterClass.TreasureMapRegionInfoNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ADDFACKEHCF[] VALUES = getStaticValuesArray();
-      private static ADDFACKEHCF[] getStaticValuesArray() {
-        return new ADDFACKEHCF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static ADDFACKEHCF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ADDFACKEHCF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:TreasureMapRegionInfoNotify.ADDFACKEHCF)
-    }
-
-    public static final int REGIONINFO_FIELD_NUMBER = 6;
+    public static final int REGION_INFO_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo regionInfo_;
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      * @return Whether the regionInfo field is set.
      */
     @java.lang.Override
@@ -265,7 +139,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       return regionInfo_ != null;
     }
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      * @return The regionInfo.
      */
     @java.lang.Override
@@ -273,7 +147,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       return regionInfo_ == null ? emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.getDefaultInstance() : regionInfo_;
     }
     /**
-     * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+     * <code>.TreasureMapRegionInfo region_info = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfoOrBuilder getRegionInfoOrBuilder() {
@@ -342,7 +216,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasRegionInfo()) {
-        hash = (37 * hash) + REGIONINFO_FIELD_NUMBER;
+        hash = (37 * hash) + REGION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getRegionInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -441,6 +315,11 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KKBGBOJPPEN
+     * CmdId: 2190
+     * </pre>
+     *
      * Protobuf type {@code TreasureMapRegionInfoNotify}
      */
     public static final class Builder extends
@@ -599,14 +478,14 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo, emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder, emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfoOrBuilder> regionInfoBuilder_;
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        * @return Whether the regionInfo field is set.
        */
       public boolean hasRegionInfo() {
         return regionInfoBuilder_ != null || regionInfo_ != null;
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        * @return The regionInfo.
        */
       public emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo getRegionInfo() {
@@ -617,7 +496,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public Builder setRegionInfo(emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo value) {
         if (regionInfoBuilder_ == null) {
@@ -633,7 +512,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public Builder setRegionInfo(
           emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder builderForValue) {
@@ -647,7 +526,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public Builder mergeRegionInfo(emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo value) {
         if (regionInfoBuilder_ == null) {
@@ -665,7 +544,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public Builder clearRegionInfo() {
         if (regionInfoBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder getRegionInfoBuilder() {
         
@@ -687,7 +566,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         return getRegionInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       public emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfoOrBuilder getRegionInfoOrBuilder() {
         if (regionInfoBuilder_ != null) {
@@ -698,7 +577,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.TreasureMapRegionInfo regionInfo = 6;</code>
+       * <code>.TreasureMapRegionInfo region_info = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo, emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder, emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfoOrBuilder> 
@@ -781,12 +660,10 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!TreasureMapRegionInfoNotify.proto\032\033Tre" +
-      "asureMapRegionInfo.proto\"\232\001\n\033TreasureMap" +
-      "RegionInfoNotify\022*\n\nregionInfo\030\006 \001(\0132\026.T" +
-      "reasureMapRegionInfo\"O\n\013ADDFACKEHCF\022\010\n\004N" +
-      "ONE\020\000\022\020\n\013PEPPOHPHJOJ\020\220\020\022\017\n\013DCDNILFDFLB\020\000" +
-      "\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "asureMapRegionInfo.proto\"J\n\033TreasureMapR" +
+      "egionInfoNotify\022+\n\013region_info\030\006 \001(\0132\026.T" +
+      "reasureMapRegionInfoB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

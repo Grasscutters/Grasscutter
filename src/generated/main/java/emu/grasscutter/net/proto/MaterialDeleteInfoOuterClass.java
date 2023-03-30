@@ -19,7 +19,7 @@ public final class MaterialDeleteInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool hasDeleteConfig = 1;</code>
+     * <code>bool has_delete_config = 1;</code>
      * @return The hasDeleteConfig.
      */
     boolean getHasDeleteConfig();
@@ -69,9 +69,13 @@ public final class MaterialDeleteInfoOuterClass {
      */
     emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDeleteOrBuilder getDelayWeekCountDownDeleteOrBuilder();
 
-    public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.OKADNKAHBGLCase getOKADNKAHBGLCase();
+    public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DeleteInfoCase getDeleteInfoCase();
   }
   /**
+   * <pre>
+   * Name: OEDJPHACFPH
+   * </pre>
+   *
    * Protobuf type {@code MaterialDeleteInfo}
    */
   public static final class MaterialDeleteInfo extends
@@ -123,44 +127,44 @@ public final class MaterialDeleteInfoOuterClass {
             }
             case 18: {
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder subBuilder = null;
-              if (oKADNKAHBGLCase_ == 2) {
-                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_).toBuilder();
+              if (deleteInfoCase_ == 2) {
+                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_).toBuilder();
               }
-              oKADNKAHBGL_ =
+              deleteInfo_ =
                   input.readMessage(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_);
-                oKADNKAHBGL_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_);
+                deleteInfo_ = subBuilder.buildPartial();
               }
-              oKADNKAHBGLCase_ = 2;
+              deleteInfoCase_ = 2;
               break;
             }
             case 26: {
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder subBuilder = null;
-              if (oKADNKAHBGLCase_ == 3) {
-                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_).toBuilder();
+              if (deleteInfoCase_ == 3) {
+                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_).toBuilder();
               }
-              oKADNKAHBGL_ =
+              deleteInfo_ =
                   input.readMessage(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_);
-                oKADNKAHBGL_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_);
+                deleteInfo_ = subBuilder.buildPartial();
               }
-              oKADNKAHBGLCase_ = 3;
+              deleteInfoCase_ = 3;
               break;
             }
             case 34: {
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder subBuilder = null;
-              if (oKADNKAHBGLCase_ == 4) {
-                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_).toBuilder();
+              if (deleteInfoCase_ == 4) {
+                subBuilder = ((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_).toBuilder();
               }
-              oKADNKAHBGL_ =
+              deleteInfo_ =
                   input.readMessage(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_);
-                oKADNKAHBGL_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_);
+                deleteInfo_ = subBuilder.buildPartial();
               }
-              oKADNKAHBGLCase_ = 4;
+              deleteInfoCase_ = 4;
               break;
             }
             default: {
@@ -200,11 +204,11 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       int getDeleteTimeNumMapCount();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       boolean containsDeleteTimeNumMap(
           int key);
@@ -215,31 +219,35 @@ public final class MaterialDeleteInfoOuterClass {
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMapMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       int getDeleteTimeNumMapOrDefault(
           int key,
           int defaultValue);
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       int getDeleteTimeNumMapOrThrow(
           int key);
 
       /**
-       * <code>uint32 configCountDownTime = 2;</code>
+       * <code>uint32 config_count_down_time = 2;</code>
        * @return The configCountDownTime.
        */
       int getConfigCountDownTime();
     }
     /**
+     * <pre>
+     * Name: NLLLEFHCFNB
+     * </pre>
+     *
      * Protobuf type {@code MaterialDeleteInfo.CountDownDelete}
      */
     public static final class CountDownDelete extends
@@ -347,7 +355,7 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder.class);
       }
 
-      public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
+      public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
       private static final class DeleteTimeNumMapDefaultEntryHolder {
         static final com.google.protobuf.MapEntry<
             java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -374,7 +382,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       @java.lang.Override
@@ -392,7 +400,7 @@ public final class MaterialDeleteInfoOuterClass {
         return getDeleteTimeNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -400,7 +408,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -413,7 +421,7 @@ public final class MaterialDeleteInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -428,10 +436,10 @@ public final class MaterialDeleteInfoOuterClass {
         return map.get(key);
       }
 
-      public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 2;
+      public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 2;
       private int configCountDownTime_;
       /**
-       * <code>uint32 configCountDownTime = 2;</code>
+       * <code>uint32 config_count_down_time = 2;</code>
        * @return The configCountDownTime.
        */
       @java.lang.Override
@@ -516,10 +524,10 @@ public final class MaterialDeleteInfoOuterClass {
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         if (!internalGetDeleteTimeNumMap().getMap().isEmpty()) {
-          hash = (37 * hash) + DELETETIMENUMMAP_FIELD_NUMBER;
+          hash = (37 * hash) + DELETE_TIME_NUM_MAP_FIELD_NUMBER;
           hash = (53 * hash) + internalGetDeleteTimeNumMap().hashCode();
         }
-        hash = (37 * hash) + CONFIGCOUNTDOWNTIME_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getConfigCountDownTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -617,6 +625,10 @@ public final class MaterialDeleteInfoOuterClass {
         return builder;
       }
       /**
+       * <pre>
+       * Name: NLLLEFHCFNB
+       * </pre>
+       *
        * Protobuf type {@code MaterialDeleteInfo.CountDownDelete}
        */
       public static final class Builder extends
@@ -819,7 +831,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap().size();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         @java.lang.Override
@@ -837,7 +849,7 @@ public final class MaterialDeleteInfoOuterClass {
           return getDeleteTimeNumMapMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -845,7 +857,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -858,7 +870,7 @@ public final class MaterialDeleteInfoOuterClass {
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -879,7 +891,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         public Builder removeDeleteTimeNumMap(
@@ -898,7 +910,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetMutableDeleteTimeNumMap().getMutableMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         public Builder putDeleteTimeNumMap(
             int key,
@@ -910,7 +922,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         public Builder putAllDeleteTimeNumMap(
@@ -922,7 +934,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configCountDownTime_ ;
         /**
-         * <code>uint32 configCountDownTime = 2;</code>
+         * <code>uint32 config_count_down_time = 2;</code>
          * @return The configCountDownTime.
          */
         @java.lang.Override
@@ -930,7 +942,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configCountDownTime_;
         }
         /**
-         * <code>uint32 configCountDownTime = 2;</code>
+         * <code>uint32 config_count_down_time = 2;</code>
          * @param value The configCountDownTime to set.
          * @return This builder for chaining.
          */
@@ -941,7 +953,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 configCountDownTime = 2;</code>
+         * <code>uint32 config_count_down_time = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigCountDownTime() {
@@ -1008,12 +1020,16 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 deleteTime = 1;</code>
+       * <code>uint32 delete_time = 1;</code>
        * @return The deleteTime.
        */
       int getDeleteTime();
     }
     /**
+     * <pre>
+     * Name: PBANAIDKAMN
+     * </pre>
+     *
      * Protobuf type {@code MaterialDeleteInfo.DateTimeDelete}
      */
     public static final class DateTimeDelete extends
@@ -1095,10 +1111,10 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder.class);
       }
 
-      public static final int DELETETIME_FIELD_NUMBER = 1;
+      public static final int DELETE_TIME_FIELD_NUMBER = 1;
       private int deleteTime_;
       /**
-       * <code>uint32 deleteTime = 1;</code>
+       * <code>uint32 delete_time = 1;</code>
        * @return The deleteTime.
        */
       @java.lang.Override
@@ -1164,7 +1180,7 @@ public final class MaterialDeleteInfoOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + DELETETIME_FIELD_NUMBER;
+        hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -1262,6 +1278,10 @@ public final class MaterialDeleteInfoOuterClass {
         return builder;
       }
       /**
+       * <pre>
+       * Name: PBANAIDKAMN
+       * </pre>
+       *
        * Protobuf type {@code MaterialDeleteInfo.DateTimeDelete}
        */
       public static final class Builder extends
@@ -1410,7 +1430,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int deleteTime_ ;
         /**
-         * <code>uint32 deleteTime = 1;</code>
+         * <code>uint32 delete_time = 1;</code>
          * @return The deleteTime.
          */
         @java.lang.Override
@@ -1418,7 +1438,7 @@ public final class MaterialDeleteInfoOuterClass {
           return deleteTime_;
         }
         /**
-         * <code>uint32 deleteTime = 1;</code>
+         * <code>uint32 delete_time = 1;</code>
          * @param value The deleteTime to set.
          * @return This builder for chaining.
          */
@@ -1429,7 +1449,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 deleteTime = 1;</code>
+         * <code>uint32 delete_time = 1;</code>
          * @return This builder for chaining.
          */
         public Builder clearDeleteTime() {
@@ -1496,11 +1516,11 @@ public final class MaterialDeleteInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       int getDeleteTimeNumMapCount();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       boolean containsDeleteTimeNumMap(
           int key);
@@ -1511,37 +1531,41 @@ public final class MaterialDeleteInfoOuterClass {
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       java.util.Map<java.lang.Integer, java.lang.Integer>
       getDeleteTimeNumMapMap();
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       int getDeleteTimeNumMapOrDefault(
           int key,
           int defaultValue);
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       int getDeleteTimeNumMapOrThrow(
           int key);
 
       /**
-       * <code>uint32 configDelayWeek = 2;</code>
+       * <code>uint32 config_delay_week = 2;</code>
        * @return The configDelayWeek.
        */
       int getConfigDelayWeek();
 
       /**
-       * <code>uint32 configCountDownTime = 3;</code>
+       * <code>uint32 config_count_down_time = 3;</code>
        * @return The configCountDownTime.
        */
       int getConfigCountDownTime();
     }
     /**
+     * <pre>
+     * Name: FFCMPAFJMDA
+     * </pre>
+     *
      * Protobuf type {@code MaterialDeleteInfo.DelayWeekCountDownDelete}
      */
     public static final class DelayWeekCountDownDelete extends
@@ -1654,7 +1678,7 @@ public final class MaterialDeleteInfoOuterClass {
                 emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.class, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder.class);
       }
 
-      public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
+      public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
       private static final class DeleteTimeNumMapDefaultEntryHolder {
         static final com.google.protobuf.MapEntry<
             java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -1681,7 +1705,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
 
       @java.lang.Override
@@ -1699,7 +1723,7 @@ public final class MaterialDeleteInfoOuterClass {
         return getDeleteTimeNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1707,7 +1731,7 @@ public final class MaterialDeleteInfoOuterClass {
         return internalGetDeleteTimeNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1720,7 +1744,7 @@ public final class MaterialDeleteInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1735,10 +1759,10 @@ public final class MaterialDeleteInfoOuterClass {
         return map.get(key);
       }
 
-      public static final int CONFIGDELAYWEEK_FIELD_NUMBER = 2;
+      public static final int CONFIG_DELAY_WEEK_FIELD_NUMBER = 2;
       private int configDelayWeek_;
       /**
-       * <code>uint32 configDelayWeek = 2;</code>
+       * <code>uint32 config_delay_week = 2;</code>
        * @return The configDelayWeek.
        */
       @java.lang.Override
@@ -1746,10 +1770,10 @@ public final class MaterialDeleteInfoOuterClass {
         return configDelayWeek_;
       }
 
-      public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 3;
+      public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 3;
       private int configCountDownTime_;
       /**
-       * <code>uint32 configCountDownTime = 3;</code>
+       * <code>uint32 config_count_down_time = 3;</code>
        * @return The configCountDownTime.
        */
       @java.lang.Override
@@ -1843,12 +1867,12 @@ public final class MaterialDeleteInfoOuterClass {
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         if (!internalGetDeleteTimeNumMap().getMap().isEmpty()) {
-          hash = (37 * hash) + DELETETIMENUMMAP_FIELD_NUMBER;
+          hash = (37 * hash) + DELETE_TIME_NUM_MAP_FIELD_NUMBER;
           hash = (53 * hash) + internalGetDeleteTimeNumMap().hashCode();
         }
-        hash = (37 * hash) + CONFIGDELAYWEEK_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIG_DELAY_WEEK_FIELD_NUMBER;
         hash = (53 * hash) + getConfigDelayWeek();
-        hash = (37 * hash) + CONFIGCOUNTDOWNTIME_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getConfigCountDownTime();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -1946,6 +1970,10 @@ public final class MaterialDeleteInfoOuterClass {
         return builder;
       }
       /**
+       * <pre>
+       * Name: FFCMPAFJMDA
+       * </pre>
+       *
        * Protobuf type {@code MaterialDeleteInfo.DelayWeekCountDownDelete}
        */
       public static final class Builder extends
@@ -2154,7 +2182,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap().size();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         @java.lang.Override
@@ -2172,7 +2200,7 @@ public final class MaterialDeleteInfoOuterClass {
           return getDeleteTimeNumMapMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -2180,7 +2208,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetDeleteTimeNumMap().getMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -2193,7 +2221,7 @@ public final class MaterialDeleteInfoOuterClass {
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         @java.lang.Override
 
@@ -2214,7 +2242,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         public Builder removeDeleteTimeNumMap(
@@ -2233,7 +2261,7 @@ public final class MaterialDeleteInfoOuterClass {
           return internalGetMutableDeleteTimeNumMap().getMutableMap();
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
         public Builder putDeleteTimeNumMap(
             int key,
@@ -2245,7 +2273,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;uint32, uint32&gt; deleteTimeNumMap = 1;</code>
+         * <code>map&lt;uint32, uint32&gt; delete_time_num_map = 1;</code>
          */
 
         public Builder putAllDeleteTimeNumMap(
@@ -2257,7 +2285,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configDelayWeek_ ;
         /**
-         * <code>uint32 configDelayWeek = 2;</code>
+         * <code>uint32 config_delay_week = 2;</code>
          * @return The configDelayWeek.
          */
         @java.lang.Override
@@ -2265,7 +2293,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configDelayWeek_;
         }
         /**
-         * <code>uint32 configDelayWeek = 2;</code>
+         * <code>uint32 config_delay_week = 2;</code>
          * @param value The configDelayWeek to set.
          * @return This builder for chaining.
          */
@@ -2276,7 +2304,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 configDelayWeek = 2;</code>
+         * <code>uint32 config_delay_week = 2;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigDelayWeek() {
@@ -2288,7 +2316,7 @@ public final class MaterialDeleteInfoOuterClass {
 
         private int configCountDownTime_ ;
         /**
-         * <code>uint32 configCountDownTime = 3;</code>
+         * <code>uint32 config_count_down_time = 3;</code>
          * @return The configCountDownTime.
          */
         @java.lang.Override
@@ -2296,7 +2324,7 @@ public final class MaterialDeleteInfoOuterClass {
           return configCountDownTime_;
         }
         /**
-         * <code>uint32 configCountDownTime = 3;</code>
+         * <code>uint32 config_count_down_time = 3;</code>
          * @param value The configCountDownTime to set.
          * @return This builder for chaining.
          */
@@ -2307,7 +2335,7 @@ public final class MaterialDeleteInfoOuterClass {
           return this;
         }
         /**
-         * <code>uint32 configCountDownTime = 3;</code>
+         * <code>uint32 config_count_down_time = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearConfigCountDownTime() {
@@ -2369,17 +2397,17 @@ public final class MaterialDeleteInfoOuterClass {
 
     }
 
-    private int oKADNKAHBGLCase_ = 0;
-    private java.lang.Object oKADNKAHBGL_;
-    public enum OKADNKAHBGLCase
+    private int deleteInfoCase_ = 0;
+    private java.lang.Object deleteInfo_;
+    public enum DeleteInfoCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       COUNT_DOWN_DELETE(2),
       DATE_DELETE(3),
       DELAY_WEEK_COUNT_DOWN_DELETE(4),
-      OKADNKAHBGL_NOT_SET(0);
+      DELETEINFO_NOT_SET(0);
       private final int value;
-      private OKADNKAHBGLCase(int value) {
+      private DeleteInfoCase(int value) {
         this.value = value;
       }
       /**
@@ -2388,16 +2416,16 @@ public final class MaterialDeleteInfoOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static OKADNKAHBGLCase valueOf(int value) {
+      public static DeleteInfoCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static OKADNKAHBGLCase forNumber(int value) {
+      public static DeleteInfoCase forNumber(int value) {
         switch (value) {
           case 2: return COUNT_DOWN_DELETE;
           case 3: return DATE_DELETE;
           case 4: return DELAY_WEEK_COUNT_DOWN_DELETE;
-          case 0: return OKADNKAHBGL_NOT_SET;
+          case 0: return DELETEINFO_NOT_SET;
           default: return null;
         }
       }
@@ -2406,16 +2434,16 @@ public final class MaterialDeleteInfoOuterClass {
       }
     };
 
-    public OKADNKAHBGLCase
-    getOKADNKAHBGLCase() {
-      return OKADNKAHBGLCase.forNumber(
-          oKADNKAHBGLCase_);
+    public DeleteInfoCase
+    getDeleteInfoCase() {
+      return DeleteInfoCase.forNumber(
+          deleteInfoCase_);
     }
 
-    public static final int HASDELETECONFIG_FIELD_NUMBER = 1;
+    public static final int HAS_DELETE_CONFIG_FIELD_NUMBER = 1;
     private boolean hasDeleteConfig_;
     /**
-     * <code>bool hasDeleteConfig = 1;</code>
+     * <code>bool has_delete_config = 1;</code>
      * @return The hasDeleteConfig.
      */
     @java.lang.Override
@@ -2430,7 +2458,7 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasCountDownDelete() {
-      return oKADNKAHBGLCase_ == 2;
+      return deleteInfoCase_ == 2;
     }
     /**
      * <code>.MaterialDeleteInfo.CountDownDelete count_down_delete = 2;</code>
@@ -2438,8 +2466,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete getCountDownDelete() {
-      if (oKADNKAHBGLCase_ == 2) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 2) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
     }
@@ -2448,8 +2476,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDeleteOrBuilder getCountDownDeleteOrBuilder() {
-      if (oKADNKAHBGLCase_ == 2) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 2) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
     }
@@ -2461,7 +2489,7 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasDateDelete() {
-      return oKADNKAHBGLCase_ == 3;
+      return deleteInfoCase_ == 3;
     }
     /**
      * <code>.MaterialDeleteInfo.DateTimeDelete date_delete = 3;</code>
@@ -2469,8 +2497,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete getDateDelete() {
-      if (oKADNKAHBGLCase_ == 3) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 3) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
     }
@@ -2479,8 +2507,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDeleteOrBuilder getDateDeleteOrBuilder() {
-      if (oKADNKAHBGLCase_ == 3) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 3) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
     }
@@ -2492,7 +2520,7 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasDelayWeekCountDownDelete() {
-      return oKADNKAHBGLCase_ == 4;
+      return deleteInfoCase_ == 4;
     }
     /**
      * <code>.MaterialDeleteInfo.DelayWeekCountDownDelete delay_week_count_down_delete = 4;</code>
@@ -2500,8 +2528,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete getDelayWeekCountDownDelete() {
-      if (oKADNKAHBGLCase_ == 4) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 4) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
     }
@@ -2510,8 +2538,8 @@ public final class MaterialDeleteInfoOuterClass {
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDeleteOrBuilder getDelayWeekCountDownDeleteOrBuilder() {
-      if (oKADNKAHBGLCase_ == 4) {
-         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_;
+      if (deleteInfoCase_ == 4) {
+         return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_;
       }
       return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
     }
@@ -2533,14 +2561,14 @@ public final class MaterialDeleteInfoOuterClass {
       if (hasDeleteConfig_ != false) {
         output.writeBool(1, hasDeleteConfig_);
       }
-      if (oKADNKAHBGLCase_ == 2) {
-        output.writeMessage(2, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_);
+      if (deleteInfoCase_ == 2) {
+        output.writeMessage(2, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_);
       }
-      if (oKADNKAHBGLCase_ == 3) {
-        output.writeMessage(3, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_);
+      if (deleteInfoCase_ == 3) {
+        output.writeMessage(3, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_);
       }
-      if (oKADNKAHBGLCase_ == 4) {
-        output.writeMessage(4, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_);
+      if (deleteInfoCase_ == 4) {
+        output.writeMessage(4, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_);
       }
       unknownFields.writeTo(output);
     }
@@ -2555,17 +2583,17 @@ public final class MaterialDeleteInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, hasDeleteConfig_);
       }
-      if (oKADNKAHBGLCase_ == 2) {
+      if (deleteInfoCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_);
+          .computeMessageSize(2, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_);
       }
-      if (oKADNKAHBGLCase_ == 3) {
+      if (deleteInfoCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_);
+          .computeMessageSize(3, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_);
       }
-      if (oKADNKAHBGLCase_ == 4) {
+      if (deleteInfoCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_);
+          .computeMessageSize(4, (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2584,8 +2612,8 @@ public final class MaterialDeleteInfoOuterClass {
 
       if (getHasDeleteConfig()
           != other.getHasDeleteConfig()) return false;
-      if (!getOKADNKAHBGLCase().equals(other.getOKADNKAHBGLCase())) return false;
-      switch (oKADNKAHBGLCase_) {
+      if (!getDeleteInfoCase().equals(other.getDeleteInfoCase())) return false;
+      switch (deleteInfoCase_) {
         case 2:
           if (!getCountDownDelete()
               .equals(other.getCountDownDelete())) return false;
@@ -2612,10 +2640,10 @@ public final class MaterialDeleteInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HASDELETECONFIG_FIELD_NUMBER;
+      hash = (37 * hash) + HAS_DELETE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasDeleteConfig());
-      switch (oKADNKAHBGLCase_) {
+      switch (deleteInfoCase_) {
         case 2:
           hash = (37 * hash) + COUNT_DOWN_DELETE_FIELD_NUMBER;
           hash = (53 * hash) + getCountDownDelete().hashCode();
@@ -2727,6 +2755,10 @@ public final class MaterialDeleteInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: OEDJPHACFPH
+     * </pre>
+     *
      * Protobuf type {@code MaterialDeleteInfo}
      */
     public static final class Builder extends
@@ -2766,8 +2798,8 @@ public final class MaterialDeleteInfoOuterClass {
         super.clear();
         hasDeleteConfig_ = false;
 
-        oKADNKAHBGLCase_ = 0;
-        oKADNKAHBGL_ = null;
+        deleteInfoCase_ = 0;
+        deleteInfo_ = null;
         return this;
       }
 
@@ -2795,28 +2827,28 @@ public final class MaterialDeleteInfoOuterClass {
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo buildPartial() {
         emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo result = new emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo(this);
         result.hasDeleteConfig_ = hasDeleteConfig_;
-        if (oKADNKAHBGLCase_ == 2) {
+        if (deleteInfoCase_ == 2) {
           if (countDownDeleteBuilder_ == null) {
-            result.oKADNKAHBGL_ = oKADNKAHBGL_;
+            result.deleteInfo_ = deleteInfo_;
           } else {
-            result.oKADNKAHBGL_ = countDownDeleteBuilder_.build();
+            result.deleteInfo_ = countDownDeleteBuilder_.build();
           }
         }
-        if (oKADNKAHBGLCase_ == 3) {
+        if (deleteInfoCase_ == 3) {
           if (dateDeleteBuilder_ == null) {
-            result.oKADNKAHBGL_ = oKADNKAHBGL_;
+            result.deleteInfo_ = deleteInfo_;
           } else {
-            result.oKADNKAHBGL_ = dateDeleteBuilder_.build();
+            result.deleteInfo_ = dateDeleteBuilder_.build();
           }
         }
-        if (oKADNKAHBGLCase_ == 4) {
+        if (deleteInfoCase_ == 4) {
           if (delayWeekCountDownDeleteBuilder_ == null) {
-            result.oKADNKAHBGL_ = oKADNKAHBGL_;
+            result.deleteInfo_ = deleteInfo_;
           } else {
-            result.oKADNKAHBGL_ = delayWeekCountDownDeleteBuilder_.build();
+            result.deleteInfo_ = delayWeekCountDownDeleteBuilder_.build();
           }
         }
-        result.oKADNKAHBGLCase_ = oKADNKAHBGLCase_;
+        result.deleteInfoCase_ = deleteInfoCase_;
         onBuilt();
         return result;
       }
@@ -2868,7 +2900,7 @@ public final class MaterialDeleteInfoOuterClass {
         if (other.getHasDeleteConfig() != false) {
           setHasDeleteConfig(other.getHasDeleteConfig());
         }
-        switch (other.getOKADNKAHBGLCase()) {
+        switch (other.getDeleteInfoCase()) {
           case COUNT_DOWN_DELETE: {
             mergeCountDownDelete(other.getCountDownDelete());
             break;
@@ -2881,7 +2913,7 @@ public final class MaterialDeleteInfoOuterClass {
             mergeDelayWeekCountDownDelete(other.getDelayWeekCountDownDelete());
             break;
           }
-          case OKADNKAHBGL_NOT_SET: {
+          case DELETEINFO_NOT_SET: {
             break;
           }
         }
@@ -2913,17 +2945,17 @@ public final class MaterialDeleteInfoOuterClass {
         }
         return this;
       }
-      private int oKADNKAHBGLCase_ = 0;
-      private java.lang.Object oKADNKAHBGL_;
-      public OKADNKAHBGLCase
-          getOKADNKAHBGLCase() {
-        return OKADNKAHBGLCase.forNumber(
-            oKADNKAHBGLCase_);
+      private int deleteInfoCase_ = 0;
+      private java.lang.Object deleteInfo_;
+      public DeleteInfoCase
+          getDeleteInfoCase() {
+        return DeleteInfoCase.forNumber(
+            deleteInfoCase_);
       }
 
-      public Builder clearOKADNKAHBGL() {
-        oKADNKAHBGLCase_ = 0;
-        oKADNKAHBGL_ = null;
+      public Builder clearDeleteInfo() {
+        deleteInfoCase_ = 0;
+        deleteInfo_ = null;
         onChanged();
         return this;
       }
@@ -2931,7 +2963,7 @@ public final class MaterialDeleteInfoOuterClass {
 
       private boolean hasDeleteConfig_ ;
       /**
-       * <code>bool hasDeleteConfig = 1;</code>
+       * <code>bool has_delete_config = 1;</code>
        * @return The hasDeleteConfig.
        */
       @java.lang.Override
@@ -2939,7 +2971,7 @@ public final class MaterialDeleteInfoOuterClass {
         return hasDeleteConfig_;
       }
       /**
-       * <code>bool hasDeleteConfig = 1;</code>
+       * <code>bool has_delete_config = 1;</code>
        * @param value The hasDeleteConfig to set.
        * @return This builder for chaining.
        */
@@ -2950,7 +2982,7 @@ public final class MaterialDeleteInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool hasDeleteConfig = 1;</code>
+       * <code>bool has_delete_config = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasDeleteConfig() {
@@ -2968,7 +3000,7 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public boolean hasCountDownDelete() {
-        return oKADNKAHBGLCase_ == 2;
+        return deleteInfoCase_ == 2;
       }
       /**
        * <code>.MaterialDeleteInfo.CountDownDelete count_down_delete = 2;</code>
@@ -2977,12 +3009,12 @@ public final class MaterialDeleteInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete getCountDownDelete() {
         if (countDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 2) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 2) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
         } else {
-          if (oKADNKAHBGLCase_ == 2) {
+          if (deleteInfoCase_ == 2) {
             return countDownDeleteBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
@@ -2996,12 +3028,12 @@ public final class MaterialDeleteInfoOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          oKADNKAHBGL_ = value;
+          deleteInfo_ = value;
           onChanged();
         } else {
           countDownDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 2;
+        deleteInfoCase_ = 2;
         return this;
       }
       /**
@@ -3010,12 +3042,12 @@ public final class MaterialDeleteInfoOuterClass {
       public Builder setCountDownDelete(
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder builderForValue) {
         if (countDownDeleteBuilder_ == null) {
-          oKADNKAHBGL_ = builderForValue.build();
+          deleteInfo_ = builderForValue.build();
           onChanged();
         } else {
           countDownDeleteBuilder_.setMessage(builderForValue.build());
         }
-        oKADNKAHBGLCase_ = 2;
+        deleteInfoCase_ = 2;
         return this;
       }
       /**
@@ -3023,21 +3055,21 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder mergeCountDownDelete(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete value) {
         if (countDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 2 &&
-              oKADNKAHBGL_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance()) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_)
+          if (deleteInfoCase_ == 2 &&
+              deleteInfo_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance()) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_)
                 .mergeFrom(value).buildPartial();
           } else {
-            oKADNKAHBGL_ = value;
+            deleteInfo_ = value;
           }
           onChanged();
         } else {
-          if (oKADNKAHBGLCase_ == 2) {
+          if (deleteInfoCase_ == 2) {
             countDownDeleteBuilder_.mergeFrom(value);
           }
           countDownDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 2;
+        deleteInfoCase_ = 2;
         return this;
       }
       /**
@@ -3045,15 +3077,15 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder clearCountDownDelete() {
         if (countDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 2) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 2) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
             onChanged();
           }
         } else {
-          if (oKADNKAHBGLCase_ == 2) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 2) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
           }
           countDownDeleteBuilder_.clear();
         }
@@ -3070,11 +3102,11 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDeleteOrBuilder getCountDownDeleteOrBuilder() {
-        if ((oKADNKAHBGLCase_ == 2) && (countDownDeleteBuilder_ != null)) {
+        if ((deleteInfoCase_ == 2) && (countDownDeleteBuilder_ != null)) {
           return countDownDeleteBuilder_.getMessageOrBuilder();
         } else {
-          if (oKADNKAHBGLCase_ == 2) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 2) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
         }
@@ -3086,17 +3118,17 @@ public final class MaterialDeleteInfoOuterClass {
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDeleteOrBuilder> 
           getCountDownDeleteFieldBuilder() {
         if (countDownDeleteBuilder_ == null) {
-          if (!(oKADNKAHBGLCase_ == 2)) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
+          if (!(deleteInfoCase_ == 2)) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.getDefaultInstance();
           }
           countDownDeleteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDeleteOrBuilder>(
-                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) oKADNKAHBGL_,
+                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.CountDownDelete) deleteInfo_,
                   getParentForChildren(),
                   isClean());
-          oKADNKAHBGL_ = null;
+          deleteInfo_ = null;
         }
-        oKADNKAHBGLCase_ = 2;
+        deleteInfoCase_ = 2;
         onChanged();;
         return countDownDeleteBuilder_;
       }
@@ -3109,7 +3141,7 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public boolean hasDateDelete() {
-        return oKADNKAHBGLCase_ == 3;
+        return deleteInfoCase_ == 3;
       }
       /**
        * <code>.MaterialDeleteInfo.DateTimeDelete date_delete = 3;</code>
@@ -3118,12 +3150,12 @@ public final class MaterialDeleteInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete getDateDelete() {
         if (dateDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 3) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 3) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
         } else {
-          if (oKADNKAHBGLCase_ == 3) {
+          if (deleteInfoCase_ == 3) {
             return dateDeleteBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
@@ -3137,12 +3169,12 @@ public final class MaterialDeleteInfoOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          oKADNKAHBGL_ = value;
+          deleteInfo_ = value;
           onChanged();
         } else {
           dateDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 3;
+        deleteInfoCase_ = 3;
         return this;
       }
       /**
@@ -3151,12 +3183,12 @@ public final class MaterialDeleteInfoOuterClass {
       public Builder setDateDelete(
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder builderForValue) {
         if (dateDeleteBuilder_ == null) {
-          oKADNKAHBGL_ = builderForValue.build();
+          deleteInfo_ = builderForValue.build();
           onChanged();
         } else {
           dateDeleteBuilder_.setMessage(builderForValue.build());
         }
-        oKADNKAHBGLCase_ = 3;
+        deleteInfoCase_ = 3;
         return this;
       }
       /**
@@ -3164,21 +3196,21 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder mergeDateDelete(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete value) {
         if (dateDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 3 &&
-              oKADNKAHBGL_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance()) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_)
+          if (deleteInfoCase_ == 3 &&
+              deleteInfo_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance()) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_)
                 .mergeFrom(value).buildPartial();
           } else {
-            oKADNKAHBGL_ = value;
+            deleteInfo_ = value;
           }
           onChanged();
         } else {
-          if (oKADNKAHBGLCase_ == 3) {
+          if (deleteInfoCase_ == 3) {
             dateDeleteBuilder_.mergeFrom(value);
           }
           dateDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 3;
+        deleteInfoCase_ = 3;
         return this;
       }
       /**
@@ -3186,15 +3218,15 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder clearDateDelete() {
         if (dateDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 3) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 3) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
             onChanged();
           }
         } else {
-          if (oKADNKAHBGLCase_ == 3) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 3) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
           }
           dateDeleteBuilder_.clear();
         }
@@ -3211,11 +3243,11 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDeleteOrBuilder getDateDeleteOrBuilder() {
-        if ((oKADNKAHBGLCase_ == 3) && (dateDeleteBuilder_ != null)) {
+        if ((deleteInfoCase_ == 3) && (dateDeleteBuilder_ != null)) {
           return dateDeleteBuilder_.getMessageOrBuilder();
         } else {
-          if (oKADNKAHBGLCase_ == 3) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 3) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
         }
@@ -3227,17 +3259,17 @@ public final class MaterialDeleteInfoOuterClass {
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDeleteOrBuilder> 
           getDateDeleteFieldBuilder() {
         if (dateDeleteBuilder_ == null) {
-          if (!(oKADNKAHBGLCase_ == 3)) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
+          if (!(deleteInfoCase_ == 3)) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.getDefaultInstance();
           }
           dateDeleteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDeleteOrBuilder>(
-                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) oKADNKAHBGL_,
+                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDelete) deleteInfo_,
                   getParentForChildren(),
                   isClean());
-          oKADNKAHBGL_ = null;
+          deleteInfo_ = null;
         }
-        oKADNKAHBGLCase_ = 3;
+        deleteInfoCase_ = 3;
         onChanged();;
         return dateDeleteBuilder_;
       }
@@ -3250,7 +3282,7 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public boolean hasDelayWeekCountDownDelete() {
-        return oKADNKAHBGLCase_ == 4;
+        return deleteInfoCase_ == 4;
       }
       /**
        * <code>.MaterialDeleteInfo.DelayWeekCountDownDelete delay_week_count_down_delete = 4;</code>
@@ -3259,12 +3291,12 @@ public final class MaterialDeleteInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete getDelayWeekCountDownDelete() {
         if (delayWeekCountDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 4) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 4) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
         } else {
-          if (oKADNKAHBGLCase_ == 4) {
+          if (deleteInfoCase_ == 4) {
             return delayWeekCountDownDeleteBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
@@ -3278,12 +3310,12 @@ public final class MaterialDeleteInfoOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          oKADNKAHBGL_ = value;
+          deleteInfo_ = value;
           onChanged();
         } else {
           delayWeekCountDownDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 4;
+        deleteInfoCase_ = 4;
         return this;
       }
       /**
@@ -3292,12 +3324,12 @@ public final class MaterialDeleteInfoOuterClass {
       public Builder setDelayWeekCountDownDelete(
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder builderForValue) {
         if (delayWeekCountDownDeleteBuilder_ == null) {
-          oKADNKAHBGL_ = builderForValue.build();
+          deleteInfo_ = builderForValue.build();
           onChanged();
         } else {
           delayWeekCountDownDeleteBuilder_.setMessage(builderForValue.build());
         }
-        oKADNKAHBGLCase_ = 4;
+        deleteInfoCase_ = 4;
         return this;
       }
       /**
@@ -3305,21 +3337,21 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder mergeDelayWeekCountDownDelete(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete value) {
         if (delayWeekCountDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 4 &&
-              oKADNKAHBGL_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance()) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_)
+          if (deleteInfoCase_ == 4 &&
+              deleteInfo_ != emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance()) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.newBuilder((emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_)
                 .mergeFrom(value).buildPartial();
           } else {
-            oKADNKAHBGL_ = value;
+            deleteInfo_ = value;
           }
           onChanged();
         } else {
-          if (oKADNKAHBGLCase_ == 4) {
+          if (deleteInfoCase_ == 4) {
             delayWeekCountDownDeleteBuilder_.mergeFrom(value);
           }
           delayWeekCountDownDeleteBuilder_.setMessage(value);
         }
-        oKADNKAHBGLCase_ = 4;
+        deleteInfoCase_ = 4;
         return this;
       }
       /**
@@ -3327,15 +3359,15 @@ public final class MaterialDeleteInfoOuterClass {
        */
       public Builder clearDelayWeekCountDownDelete() {
         if (delayWeekCountDownDeleteBuilder_ == null) {
-          if (oKADNKAHBGLCase_ == 4) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 4) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
             onChanged();
           }
         } else {
-          if (oKADNKAHBGLCase_ == 4) {
-            oKADNKAHBGLCase_ = 0;
-            oKADNKAHBGL_ = null;
+          if (deleteInfoCase_ == 4) {
+            deleteInfoCase_ = 0;
+            deleteInfo_ = null;
           }
           delayWeekCountDownDeleteBuilder_.clear();
         }
@@ -3352,11 +3384,11 @@ public final class MaterialDeleteInfoOuterClass {
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDeleteOrBuilder getDelayWeekCountDownDeleteOrBuilder() {
-        if ((oKADNKAHBGLCase_ == 4) && (delayWeekCountDownDeleteBuilder_ != null)) {
+        if ((deleteInfoCase_ == 4) && (delayWeekCountDownDeleteBuilder_ != null)) {
           return delayWeekCountDownDeleteBuilder_.getMessageOrBuilder();
         } else {
-          if (oKADNKAHBGLCase_ == 4) {
-            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_;
+          if (deleteInfoCase_ == 4) {
+            return (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_;
           }
           return emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
         }
@@ -3368,17 +3400,17 @@ public final class MaterialDeleteInfoOuterClass {
           emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDeleteOrBuilder> 
           getDelayWeekCountDownDeleteFieldBuilder() {
         if (delayWeekCountDownDeleteBuilder_ == null) {
-          if (!(oKADNKAHBGLCase_ == 4)) {
-            oKADNKAHBGL_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
+          if (!(deleteInfoCase_ == 4)) {
+            deleteInfo_ = emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.getDefaultInstance();
           }
           delayWeekCountDownDeleteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete.Builder, emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDeleteOrBuilder>(
-                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) oKADNKAHBGL_,
+                  (emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DelayWeekCountDownDelete) deleteInfo_,
                   getParentForChildren(),
                   isClean());
-          oKADNKAHBGL_ = null;
+          deleteInfo_ = null;
         }
-        oKADNKAHBGLCase_ = 4;
+        deleteInfoCase_ = 4;
         onChanged();;
         return delayWeekCountDownDeleteBuilder_;
       }
@@ -3474,26 +3506,27 @@ public final class MaterialDeleteInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030MaterialDeleteInfo.proto\"\336\005\n\022MaterialD" +
-      "eleteInfo\022\027\n\017hasDeleteConfig\030\001 \001(\010\022@\n\021co" +
-      "unt_down_delete\030\002 \001(\0132#.MaterialDeleteIn" +
-      "fo.CountDownDeleteH\000\0229\n\013date_delete\030\003 \001(" +
-      "\0132\".MaterialDeleteInfo.DateTimeDeleteH\000\022" +
-      "T\n\034delay_week_count_down_delete\030\004 \001(\0132,." +
-      "MaterialDeleteInfo.DelayWeekCountDownDel" +
-      "eteH\000\032\274\001\n\017CountDownDelete\022S\n\020deleteTimeN" +
-      "umMap\030\001 \003(\01329.MaterialDeleteInfo.CountDo" +
-      "wnDelete.DeleteTimeNumMapEntry\022\033\n\023config" +
-      "CountDownTime\030\002 \001(\r\0327\n\025DeleteTimeNumMapE" +
-      "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\032$\n\016" +
-      "DateTimeDelete\022\022\n\ndeleteTime\030\001 \001(\r\032\347\001\n\030D" +
-      "elayWeekCountDownDelete\022\\\n\020deleteTimeNum" +
-      "Map\030\001 \003(\0132B.MaterialDeleteInfo.DelayWeek" +
-      "CountDownDelete.DeleteTimeNumMapEntry\022\027\n" +
-      "\017configDelayWeek\030\002 \001(\r\022\033\n\023configCountDow" +
-      "nTime\030\003 \001(\r\0327\n\025DeleteTimeNumMapEntry\022\013\n\003" +
-      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\r\n\013OKADNKAH" +
-      "BGLB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\030MaterialDeleteInfo.proto\"\357\005\n\022MaterialD" +
+      "eleteInfo\022\031\n\021has_delete_config\030\001 \001(\010\022@\n\021" +
+      "count_down_delete\030\002 \001(\0132#.MaterialDelete" +
+      "Info.CountDownDeleteH\000\0229\n\013date_delete\030\003 " +
+      "\001(\0132\".MaterialDeleteInfo.DateTimeDeleteH" +
+      "\000\022T\n\034delay_week_count_down_delete\030\004 \001(\0132" +
+      ",.MaterialDeleteInfo.DelayWeekCountDownD" +
+      "eleteH\000\032\302\001\n\017CountDownDelete\022V\n\023delete_ti" +
+      "me_num_map\030\001 \003(\01329.MaterialDeleteInfo.Co" +
+      "untDownDelete.DeleteTimeNumMapEntry\022\036\n\026c" +
+      "onfig_count_down_time\030\002 \001(\r\0327\n\025DeleteTim" +
+      "eNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r" +
+      ":\0028\001\032%\n\016DateTimeDelete\022\023\n\013delete_time\030\001 " +
+      "\001(\r\032\357\001\n\030DelayWeekCountDownDelete\022_\n\023dele" +
+      "te_time_num_map\030\001 \003(\0132B.MaterialDeleteIn" +
+      "fo.DelayWeekCountDownDelete.DeleteTimeNu" +
+      "mMapEntry\022\031\n\021config_delay_week\030\002 \001(\r\022\036\n\026" +
+      "config_count_down_time\030\003 \001(\r\0327\n\025DeleteTi" +
+      "meNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
+      "\r:\0028\001B\r\n\013delete_infoB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3504,7 +3537,7 @@ public final class MaterialDeleteInfoOuterClass {
     internal_static_MaterialDeleteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MaterialDeleteInfo_descriptor,
-        new java.lang.String[] { "HasDeleteConfig", "CountDownDelete", "DateDelete", "DelayWeekCountDownDelete", "OKADNKAHBGL", });
+        new java.lang.String[] { "HasDeleteConfig", "CountDownDelete", "DateDelete", "DelayWeekCountDownDelete", "DeleteInfo", });
     internal_static_MaterialDeleteInfo_CountDownDelete_descriptor =
       internal_static_MaterialDeleteInfo_descriptor.getNestedTypes().get(0);
     internal_static_MaterialDeleteInfo_CountDownDelete_fieldAccessorTable = new

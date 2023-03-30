@@ -19,18 +19,23 @@ public final class ReliquaryPromoteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 itemGuid = 10;</code>
-     * @return The itemGuid.
-     */
-    long getItemGuid();
-
-    /**
-     * <code>uint64 targetGuid = 12;</code>
+     * <code>uint64 target_guid = 12;</code>
      * @return The targetGuid.
      */
     long getTargetGuid();
+
+    /**
+     * <code>uint64 item_guid = 7;</code>
+     * @return The itemGuid.
+     */
+    long getItemGuid();
   }
   /**
+   * <pre>
+   * Name: COBGEPBLGFF
+   * CmdId: 646
+   * </pre>
+   *
    * Protobuf type {@code ReliquaryPromoteReq}
    */
   public static final class ReliquaryPromoteReq extends
@@ -75,7 +80,7 @@ public final class ReliquaryPromoteReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 56: {
 
               itemGuid_ = input.readUInt64();
               break;
@@ -117,165 +122,26 @@ public final class ReliquaryPromoteReqOuterClass {
               emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq.class, emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ReliquaryPromoteReq.LADFFFPIACA}
-     */
-    public enum LADFFFPIACA
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 618;</code>
-       */
-      PEPPOHPHJOJ(1, 618),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final LADFFFPIACA DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final LADFFFPIACA EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 618;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 618;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static LADFFFPIACA valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static LADFFFPIACA forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 618: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<LADFFFPIACA>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          LADFFFPIACA> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<LADFFFPIACA>() {
-              public LADFFFPIACA findValueByNumber(int number) {
-                return LADFFFPIACA.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final LADFFFPIACA[] VALUES = getStaticValuesArray();
-      private static LADFFFPIACA[] getStaticValuesArray() {
-        return new LADFFFPIACA[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static LADFFFPIACA valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private LADFFFPIACA(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ReliquaryPromoteReq.LADFFFPIACA)
-    }
-
-    public static final int ITEMGUID_FIELD_NUMBER = 10;
-    private long itemGuid_;
-    /**
-     * <code>uint64 itemGuid = 10;</code>
-     * @return The itemGuid.
-     */
-    @java.lang.Override
-    public long getItemGuid() {
-      return itemGuid_;
-    }
-
-    public static final int TARGETGUID_FIELD_NUMBER = 12;
+    public static final int TARGET_GUID_FIELD_NUMBER = 12;
     private long targetGuid_;
     /**
-     * <code>uint64 targetGuid = 12;</code>
+     * <code>uint64 target_guid = 12;</code>
      * @return The targetGuid.
      */
     @java.lang.Override
     public long getTargetGuid() {
       return targetGuid_;
+    }
+
+    public static final int ITEM_GUID_FIELD_NUMBER = 7;
+    private long itemGuid_;
+    /**
+     * <code>uint64 item_guid = 7;</code>
+     * @return The itemGuid.
+     */
+    @java.lang.Override
+    public long getItemGuid() {
+      return itemGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -293,7 +159,7 @@ public final class ReliquaryPromoteReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (itemGuid_ != 0L) {
-        output.writeUInt64(10, itemGuid_);
+        output.writeUInt64(7, itemGuid_);
       }
       if (targetGuid_ != 0L) {
         output.writeUInt64(12, targetGuid_);
@@ -309,7 +175,7 @@ public final class ReliquaryPromoteReqOuterClass {
       size = 0;
       if (itemGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, itemGuid_);
+          .computeUInt64Size(7, itemGuid_);
       }
       if (targetGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -330,10 +196,10 @@ public final class ReliquaryPromoteReqOuterClass {
       }
       emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq other = (emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq) obj;
 
-      if (getItemGuid()
-          != other.getItemGuid()) return false;
       if (getTargetGuid()
           != other.getTargetGuid()) return false;
+      if (getItemGuid()
+          != other.getItemGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -345,12 +211,12 @@ public final class ReliquaryPromoteReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEMGUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getItemGuid());
-      hash = (37 * hash) + TARGETGUID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTargetGuid());
+      hash = (37 * hash) + ITEM_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getItemGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -447,6 +313,11 @@ public final class ReliquaryPromoteReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: COBGEPBLGFF
+     * CmdId: 646
+     * </pre>
+     *
      * Protobuf type {@code ReliquaryPromoteReq}
      */
     public static final class Builder extends
@@ -484,9 +355,9 @@ public final class ReliquaryPromoteReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        itemGuid_ = 0L;
-
         targetGuid_ = 0L;
+
+        itemGuid_ = 0L;
 
         return this;
       }
@@ -514,8 +385,8 @@ public final class ReliquaryPromoteReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq buildPartial() {
         emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq result = new emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq(this);
-        result.itemGuid_ = itemGuid_;
         result.targetGuid_ = targetGuid_;
+        result.itemGuid_ = itemGuid_;
         onBuilt();
         return result;
       }
@@ -564,11 +435,11 @@ public final class ReliquaryPromoteReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq other) {
         if (other == emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq.getDefaultInstance()) return this;
-        if (other.getItemGuid() != 0L) {
-          setItemGuid(other.getItemGuid());
-        }
         if (other.getTargetGuid() != 0L) {
           setTargetGuid(other.getTargetGuid());
+        }
+        if (other.getItemGuid() != 0L) {
+          setItemGuid(other.getItemGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -599,40 +470,9 @@ public final class ReliquaryPromoteReqOuterClass {
         return this;
       }
 
-      private long itemGuid_ ;
-      /**
-       * <code>uint64 itemGuid = 10;</code>
-       * @return The itemGuid.
-       */
-      @java.lang.Override
-      public long getItemGuid() {
-        return itemGuid_;
-      }
-      /**
-       * <code>uint64 itemGuid = 10;</code>
-       * @param value The itemGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemGuid(long value) {
-        
-        itemGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 itemGuid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemGuid() {
-        
-        itemGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private long targetGuid_ ;
       /**
-       * <code>uint64 targetGuid = 12;</code>
+       * <code>uint64 target_guid = 12;</code>
        * @return The targetGuid.
        */
       @java.lang.Override
@@ -640,7 +480,7 @@ public final class ReliquaryPromoteReqOuterClass {
         return targetGuid_;
       }
       /**
-       * <code>uint64 targetGuid = 12;</code>
+       * <code>uint64 target_guid = 12;</code>
        * @param value The targetGuid to set.
        * @return This builder for chaining.
        */
@@ -651,12 +491,43 @@ public final class ReliquaryPromoteReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 targetGuid = 12;</code>
+       * <code>uint64 target_guid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetGuid() {
         
         targetGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long itemGuid_ ;
+      /**
+       * <code>uint64 item_guid = 7;</code>
+       * @return The itemGuid.
+       */
+      @java.lang.Override
+      public long getItemGuid() {
+        return itemGuid_;
+      }
+      /**
+       * <code>uint64 item_guid = 7;</code>
+       * @param value The itemGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemGuid(long value) {
+        
+        itemGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 item_guid = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemGuid() {
+        
+        itemGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -727,12 +598,10 @@ public final class ReliquaryPromoteReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031ReliquaryPromoteReq.proto\"\235\001\n\023Reliquar" +
-      "yPromoteReq\022\020\n\010itemGuid\030\n \001(\004\022\022\n\ntargetG" +
-      "uid\030\014 \001(\004\"`\n\013LADFFFPIACA\022\010\n\004NONE\020\000\022\020\n\013PE" +
-      "PPOHPHJOJ\020\352\004\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLM" +
-      "POEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\031ReliquaryPromoteReq.proto\"=\n\023Reliquary" +
+      "PromoteReq\022\023\n\013target_guid\030\014 \001(\004\022\021\n\titem_" +
+      "guid\030\007 \001(\004B\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +612,7 @@ public final class ReliquaryPromoteReqOuterClass {
     internal_static_ReliquaryPromoteReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReliquaryPromoteReq_descriptor,
-        new java.lang.String[] { "ItemGuid", "TargetGuid", });
+        new java.lang.String[] { "TargetGuid", "ItemGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

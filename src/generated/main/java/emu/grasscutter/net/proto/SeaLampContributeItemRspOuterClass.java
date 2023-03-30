@@ -19,30 +19,35 @@ public final class SeaLampContributeItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 addProgress = 4;</code>
+     * <code>uint32 HNGMFPDIFCG = 7;</code>
+     * @return The hNGMFPDIFCG.
+     */
+    int getHNGMFPDIFCG();
+
+    /**
+     * <code>uint32 NAOHGOGJGGM = 6;</code>
+     * @return The nAOHGOGJGGM.
+     */
+    int getNAOHGOGJGGM();
+
+    /**
+     * <code>uint32 add_progress = 2;</code>
      * @return The addProgress.
      */
     int getAddProgress();
 
     /**
-     * <code>uint32 Unk3300_AIINHBHNHOI = 9;</code>
-     * @return The unk3300AIINHBHNHOI.
-     */
-    int getUnk3300AIINHBHNHOI();
-
-    /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
-
-    /**
-     * <code>uint32 Unk3300_LPHALOGLGAL = 2;</code>
-     * @return The unk3300LPHALOGLGAL.
-     */
-    int getUnk3300LPHALOGLGAL();
   }
   /**
+   * <pre>
+   * Name: ADCIPKGKANK
+   * CmdId: 2138
+   * </pre>
+   *
    * Protobuf type {@code SeaLampContributeItemRsp}
    */
   public static final class SeaLampContributeItemRsp extends
@@ -89,20 +94,20 @@ public final class SeaLampContributeItemRspOuterClass {
               break;
             case 16: {
 
-              unk3300LPHALOGLGAL_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
               addProgress_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 48: {
 
-              unk3300AIINHBHNHOI_ = input.readUInt32();
+              nAOHGOGJGGM_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 56: {
+
+              hNGMFPDIFCG_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -139,141 +144,32 @@ public final class SeaLampContributeItemRspOuterClass {
               emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.class, emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.Builder.class);
     }
 
+    public static final int HNGMFPDIFCG_FIELD_NUMBER = 7;
+    private int hNGMFPDIFCG_;
     /**
-     * Protobuf enum {@code SeaLampContributeItemRsp.EDBJBDCJHCL}
+     * <code>uint32 HNGMFPDIFCG = 7;</code>
+     * @return The hNGMFPDIFCG.
      */
-    public enum EDBJBDCJHCL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2166;</code>
-       */
-      PEPPOHPHJOJ(1, 2166),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final EDBJBDCJHCL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2166;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2166;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static EDBJBDCJHCL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static EDBJBDCJHCL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2166: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<EDBJBDCJHCL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          EDBJBDCJHCL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<EDBJBDCJHCL>() {
-              public EDBJBDCJHCL findValueByNumber(int number) {
-                return EDBJBDCJHCL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final EDBJBDCJHCL[] VALUES = getStaticValuesArray();
-      private static EDBJBDCJHCL[] getStaticValuesArray() {
-        return new EDBJBDCJHCL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static EDBJBDCJHCL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private EDBJBDCJHCL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SeaLampContributeItemRsp.EDBJBDCJHCL)
+    @java.lang.Override
+    public int getHNGMFPDIFCG() {
+      return hNGMFPDIFCG_;
     }
 
-    public static final int ADDPROGRESS_FIELD_NUMBER = 4;
+    public static final int NAOHGOGJGGM_FIELD_NUMBER = 6;
+    private int nAOHGOGJGGM_;
+    /**
+     * <code>uint32 NAOHGOGJGGM = 6;</code>
+     * @return The nAOHGOGJGGM.
+     */
+    @java.lang.Override
+    public int getNAOHGOGJGGM() {
+      return nAOHGOGJGGM_;
+    }
+
+    public static final int ADD_PROGRESS_FIELD_NUMBER = 2;
     private int addProgress_;
     /**
-     * <code>uint32 addProgress = 4;</code>
+     * <code>uint32 add_progress = 2;</code>
      * @return The addProgress.
      */
     @java.lang.Override
@@ -281,37 +177,15 @@ public final class SeaLampContributeItemRspOuterClass {
       return addProgress_;
     }
 
-    public static final int UNK3300_AIINHBHNHOI_FIELD_NUMBER = 9;
-    private int unk3300AIINHBHNHOI_;
-    /**
-     * <code>uint32 Unk3300_AIINHBHNHOI = 9;</code>
-     * @return The unk3300AIINHBHNHOI.
-     */
-    @java.lang.Override
-    public int getUnk3300AIINHBHNHOI() {
-      return unk3300AIINHBHNHOI_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
-    }
-
-    public static final int UNK3300_LPHALOGLGAL_FIELD_NUMBER = 2;
-    private int unk3300LPHALOGLGAL_;
-    /**
-     * <code>uint32 Unk3300_LPHALOGLGAL = 2;</code>
-     * @return The unk3300LPHALOGLGAL.
-     */
-    @java.lang.Override
-    public int getUnk3300LPHALOGLGAL() {
-      return unk3300LPHALOGLGAL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -328,17 +202,17 @@ public final class SeaLampContributeItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk3300LPHALOGLGAL_ != 0) {
-        output.writeUInt32(2, unk3300LPHALOGLGAL_);
-      }
       if (addProgress_ != 0) {
-        output.writeUInt32(4, addProgress_);
+        output.writeUInt32(2, addProgress_);
       }
-      if (unk3300AIINHBHNHOI_ != 0) {
-        output.writeUInt32(9, unk3300AIINHBHNHOI_);
+      if (nAOHGOGJGGM_ != 0) {
+        output.writeUInt32(6, nAOHGOGJGGM_);
+      }
+      if (hNGMFPDIFCG_ != 0) {
+        output.writeUInt32(7, hNGMFPDIFCG_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -349,21 +223,21 @@ public final class SeaLampContributeItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk3300LPHALOGLGAL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, unk3300LPHALOGLGAL_);
-      }
       if (addProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, addProgress_);
+          .computeUInt32Size(2, addProgress_);
       }
-      if (unk3300AIINHBHNHOI_ != 0) {
+      if (nAOHGOGJGGM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, unk3300AIINHBHNHOI_);
+          .computeUInt32Size(6, nAOHGOGJGGM_);
+      }
+      if (hNGMFPDIFCG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, hNGMFPDIFCG_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -380,14 +254,14 @@ public final class SeaLampContributeItemRspOuterClass {
       }
       emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp other = (emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp) obj;
 
+      if (getHNGMFPDIFCG()
+          != other.getHNGMFPDIFCG()) return false;
+      if (getNAOHGOGJGGM()
+          != other.getNAOHGOGJGGM()) return false;
       if (getAddProgress()
           != other.getAddProgress()) return false;
-      if (getUnk3300AIINHBHNHOI()
-          != other.getUnk3300AIINHBHNHOI()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (getUnk3300LPHALOGLGAL()
-          != other.getUnk3300LPHALOGLGAL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -399,14 +273,14 @@ public final class SeaLampContributeItemRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ADDPROGRESS_FIELD_NUMBER;
+      hash = (37 * hash) + HNGMFPDIFCG_FIELD_NUMBER;
+      hash = (53 * hash) + getHNGMFPDIFCG();
+      hash = (37 * hash) + NAOHGOGJGGM_FIELD_NUMBER;
+      hash = (53 * hash) + getNAOHGOGJGGM();
+      hash = (37 * hash) + ADD_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddProgress();
-      hash = (37 * hash) + UNK3300_AIINHBHNHOI_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300AIINHBHNHOI();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + UNK3300_LPHALOGLGAL_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300LPHALOGLGAL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -503,6 +377,11 @@ public final class SeaLampContributeItemRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ADCIPKGKANK
+     * CmdId: 2138
+     * </pre>
+     *
      * Protobuf type {@code SeaLampContributeItemRsp}
      */
     public static final class Builder extends
@@ -540,13 +419,13 @@ public final class SeaLampContributeItemRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        hNGMFPDIFCG_ = 0;
+
+        nAOHGOGJGGM_ = 0;
+
         addProgress_ = 0;
 
-        unk3300AIINHBHNHOI_ = 0;
-
         retcode_ = 0;
-
-        unk3300LPHALOGLGAL_ = 0;
 
         return this;
       }
@@ -574,10 +453,10 @@ public final class SeaLampContributeItemRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp buildPartial() {
         emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp result = new emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp(this);
+        result.hNGMFPDIFCG_ = hNGMFPDIFCG_;
+        result.nAOHGOGJGGM_ = nAOHGOGJGGM_;
         result.addProgress_ = addProgress_;
-        result.unk3300AIINHBHNHOI_ = unk3300AIINHBHNHOI_;
         result.retcode_ = retcode_;
-        result.unk3300LPHALOGLGAL_ = unk3300LPHALOGLGAL_;
         onBuilt();
         return result;
       }
@@ -626,17 +505,17 @@ public final class SeaLampContributeItemRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp other) {
         if (other == emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.getDefaultInstance()) return this;
+        if (other.getHNGMFPDIFCG() != 0) {
+          setHNGMFPDIFCG(other.getHNGMFPDIFCG());
+        }
+        if (other.getNAOHGOGJGGM() != 0) {
+          setNAOHGOGJGGM(other.getNAOHGOGJGGM());
+        }
         if (other.getAddProgress() != 0) {
           setAddProgress(other.getAddProgress());
         }
-        if (other.getUnk3300AIINHBHNHOI() != 0) {
-          setUnk3300AIINHBHNHOI(other.getUnk3300AIINHBHNHOI());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
-        }
-        if (other.getUnk3300LPHALOGLGAL() != 0) {
-          setUnk3300LPHALOGLGAL(other.getUnk3300LPHALOGLGAL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -667,9 +546,71 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
 
+      private int hNGMFPDIFCG_ ;
+      /**
+       * <code>uint32 HNGMFPDIFCG = 7;</code>
+       * @return The hNGMFPDIFCG.
+       */
+      @java.lang.Override
+      public int getHNGMFPDIFCG() {
+        return hNGMFPDIFCG_;
+      }
+      /**
+       * <code>uint32 HNGMFPDIFCG = 7;</code>
+       * @param value The hNGMFPDIFCG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHNGMFPDIFCG(int value) {
+        
+        hNGMFPDIFCG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HNGMFPDIFCG = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHNGMFPDIFCG() {
+        
+        hNGMFPDIFCG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nAOHGOGJGGM_ ;
+      /**
+       * <code>uint32 NAOHGOGJGGM = 6;</code>
+       * @return The nAOHGOGJGGM.
+       */
+      @java.lang.Override
+      public int getNAOHGOGJGGM() {
+        return nAOHGOGJGGM_;
+      }
+      /**
+       * <code>uint32 NAOHGOGJGGM = 6;</code>
+       * @param value The nAOHGOGJGGM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNAOHGOGJGGM(int value) {
+        
+        nAOHGOGJGGM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NAOHGOGJGGM = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNAOHGOGJGGM() {
+        
+        nAOHGOGJGGM_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int addProgress_ ;
       /**
-       * <code>uint32 addProgress = 4;</code>
+       * <code>uint32 add_progress = 2;</code>
        * @return The addProgress.
        */
       @java.lang.Override
@@ -677,7 +618,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return addProgress_;
       }
       /**
-       * <code>uint32 addProgress = 4;</code>
+       * <code>uint32 add_progress = 2;</code>
        * @param value The addProgress to set.
        * @return This builder for chaining.
        */
@@ -688,7 +629,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 addProgress = 4;</code>
+       * <code>uint32 add_progress = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddProgress() {
@@ -698,40 +639,9 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
 
-      private int unk3300AIINHBHNHOI_ ;
-      /**
-       * <code>uint32 Unk3300_AIINHBHNHOI = 9;</code>
-       * @return The unk3300AIINHBHNHOI.
-       */
-      @java.lang.Override
-      public int getUnk3300AIINHBHNHOI() {
-        return unk3300AIINHBHNHOI_;
-      }
-      /**
-       * <code>uint32 Unk3300_AIINHBHNHOI = 9;</code>
-       * @param value The unk3300AIINHBHNHOI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300AIINHBHNHOI(int value) {
-        
-        unk3300AIINHBHNHOI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 Unk3300_AIINHBHNHOI = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300AIINHBHNHOI() {
-        
-        unk3300AIINHBHNHOI_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -739,7 +649,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -750,43 +660,12 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int unk3300LPHALOGLGAL_ ;
-      /**
-       * <code>uint32 Unk3300_LPHALOGLGAL = 2;</code>
-       * @return The unk3300LPHALOGLGAL.
-       */
-      @java.lang.Override
-      public int getUnk3300LPHALOGLGAL() {
-        return unk3300LPHALOGLGAL_;
-      }
-      /**
-       * <code>uint32 Unk3300_LPHALOGLGAL = 2;</code>
-       * @param value The unk3300LPHALOGLGAL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300LPHALOGLGAL(int value) {
-        
-        unk3300LPHALOGLGAL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 Unk3300_LPHALOGLGAL = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300LPHALOGLGAL() {
-        
-        unk3300LPHALOGLGAL_ = 0;
         onChanged();
         return this;
       }
@@ -857,13 +736,11 @@ public final class SeaLampContributeItemRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036SeaLampContributeItemRsp.proto\"\313\001\n\030Sea" +
-      "LampContributeItemRsp\022\023\n\013addProgress\030\004 \001" +
-      "(\r\022\033\n\023Unk3300_AIINHBHNHOI\030\t \001(\r\022\017\n\007retco" +
-      "de\030\014 \001(\005\022\033\n\023Unk3300_LPHALOGLGAL\030\002 \001(\r\"O\n" +
-      "\013EDBJBDCJHCL\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\366\020" +
-      "\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033" +
-      "\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\036SeaLampContributeItemRsp.proto\"k\n\030SeaL" +
+      "ampContributeItemRsp\022\023\n\013HNGMFPDIFCG\030\007 \001(" +
+      "\r\022\023\n\013NAOHGOGJGGM\030\006 \001(\r\022\024\n\014add_progress\030\002" +
+      " \001(\r\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -874,7 +751,7 @@ public final class SeaLampContributeItemRspOuterClass {
     internal_static_SeaLampContributeItemRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SeaLampContributeItemRsp_descriptor,
-        new java.lang.String[] { "AddProgress", "Unk3300AIINHBHNHOI", "Retcode", "Unk3300LPHALOGLGAL", });
+        new java.lang.String[] { "HNGMFPDIFCG", "NAOHGOGJGGM", "AddProgress", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

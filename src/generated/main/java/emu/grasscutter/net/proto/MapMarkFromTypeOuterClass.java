@@ -15,6 +15,10 @@ public final class MapMarkFromTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: NPBCGNLAONB
+   * </pre>
+   *
    * Protobuf enum {@code MapMarkFromType}
    */
   public enum MapMarkFromType

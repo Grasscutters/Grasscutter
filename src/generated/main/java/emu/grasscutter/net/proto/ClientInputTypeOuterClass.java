@@ -15,45 +15,49 @@ public final class ClientInputTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: LMHJMCBLEMN
+   * </pre>
+   *
    * Protobuf enum {@code ClientInputType}
    */
   public enum ClientInputType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CLIENT_INPUT_TYPE_NONE = 0;</code>
+     * <code>CLIENT_INPUT_NONE = 0;</code>
      */
-    CLIENT_INPUT_TYPE_NONE(0),
+    CLIENT_INPUT_NONE(0),
     /**
-     * <code>CLIENT_INPUT_TYPE_KEYBOARD_MOUSE = 1;</code>
+     * <code>CLIENT_INPUT_KEYBORD_MOUSE = 1;</code>
      */
-    CLIENT_INPUT_TYPE_KEYBOARD_MOUSE(1),
+    CLIENT_INPUT_KEYBORD_MOUSE(1),
     /**
-     * <code>CLIENT_INPUT_TYPE_GAMEPAD = 2;</code>
+     * <code>CLIENT_INPUT_GAMEPAD = 2;</code>
      */
-    CLIENT_INPUT_TYPE_GAMEPAD(2),
+    CLIENT_INPUT_GAMEPAD(2),
     /**
-     * <code>CLIENT_INPUT_TYPE_TOUCH_PANEL = 3;</code>
+     * <code>CLIENT_INPUT_TOUCH_PANEL = 3;</code>
      */
-    CLIENT_INPUT_TYPE_TOUCH_PANEL(3),
+    CLIENT_INPUT_TOUCH_PANEL(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>CLIENT_INPUT_TYPE_NONE = 0;</code>
+     * <code>CLIENT_INPUT_NONE = 0;</code>
      */
-    public static final int CLIENT_INPUT_TYPE_NONE_VALUE = 0;
+    public static final int CLIENT_INPUT_NONE_VALUE = 0;
     /**
-     * <code>CLIENT_INPUT_TYPE_KEYBOARD_MOUSE = 1;</code>
+     * <code>CLIENT_INPUT_KEYBORD_MOUSE = 1;</code>
      */
-    public static final int CLIENT_INPUT_TYPE_KEYBOARD_MOUSE_VALUE = 1;
+    public static final int CLIENT_INPUT_KEYBORD_MOUSE_VALUE = 1;
     /**
-     * <code>CLIENT_INPUT_TYPE_GAMEPAD = 2;</code>
+     * <code>CLIENT_INPUT_GAMEPAD = 2;</code>
      */
-    public static final int CLIENT_INPUT_TYPE_GAMEPAD_VALUE = 2;
+    public static final int CLIENT_INPUT_GAMEPAD_VALUE = 2;
     /**
-     * <code>CLIENT_INPUT_TYPE_TOUCH_PANEL = 3;</code>
+     * <code>CLIENT_INPUT_TOUCH_PANEL = 3;</code>
      */
-    public static final int CLIENT_INPUT_TYPE_TOUCH_PANEL_VALUE = 3;
+    public static final int CLIENT_INPUT_TOUCH_PANEL_VALUE = 3;
 
 
     public final int getNumber() {
@@ -80,10 +84,10 @@ public final class ClientInputTypeOuterClass {
      */
     public static ClientInputType forNumber(int value) {
       switch (value) {
-        case 0: return CLIENT_INPUT_TYPE_NONE;
-        case 1: return CLIENT_INPUT_TYPE_KEYBOARD_MOUSE;
-        case 2: return CLIENT_INPUT_TYPE_GAMEPAD;
-        case 3: return CLIENT_INPUT_TYPE_TOUCH_PANEL;
+        case 0: return CLIENT_INPUT_NONE;
+        case 1: return CLIENT_INPUT_KEYBORD_MOUSE;
+        case 2: return CLIENT_INPUT_GAMEPAD;
+        case 3: return CLIENT_INPUT_TOUCH_PANEL;
         default: return null;
       }
     }
@@ -149,12 +153,11 @@ public final class ClientInputTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025ClientInputType.proto*\225\001\n\017ClientInputT" +
-      "ype\022\032\n\026CLIENT_INPUT_TYPE_NONE\020\000\022$\n CLIEN" +
-      "T_INPUT_TYPE_KEYBOARD_MOUSE\020\001\022\035\n\031CLIENT_" +
-      "INPUT_TYPE_GAMEPAD\020\002\022!\n\035CLIENT_INPUT_TYP" +
-      "E_TOUCH_PANEL\020\003B\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "\n\025ClientInputType.proto*\200\001\n\017ClientInputT" +
+      "ype\022\025\n\021CLIENT_INPUT_NONE\020\000\022\036\n\032CLIENT_INP" +
+      "UT_KEYBORD_MOUSE\020\001\022\030\n\024CLIENT_INPUT_GAMEP" +
+      "AD\020\002\022\034\n\030CLIENT_INPUT_TOUCH_PANEL\020\003B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

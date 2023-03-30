@@ -19,18 +19,22 @@ public final class TrialAvatarGrantRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 dglgipiglnd = 1;</code>
-     * @return The dglgipiglnd.
+     * <code>uint32 grant_reason = 1;</code>
+     * @return The grantReason.
      */
-    int getDglgipiglnd();
+    int getGrantReason();
 
     /**
-     * <code>uint32 calgbbolcpn = 2;</code>
-     * @return The calgbbolcpn.
+     * <code>uint32 from_parent_quest_id = 2;</code>
+     * @return The fromParentQuestId.
      */
-    int getCalgbbolcpn();
+    int getFromParentQuestId();
   }
   /**
+   * <pre>
+   * Name: FINJPJBDGIK
+   * </pre>
+   *
    * Protobuf type {@code TrialAvatarGrantRecord}
    */
   public static final class TrialAvatarGrantRecord extends
@@ -77,12 +81,12 @@ public final class TrialAvatarGrantRecordOuterClass {
               break;
             case 8: {
 
-              dglgipiglnd_ = input.readUInt32();
+              grantReason_ = input.readUInt32();
               break;
             }
             case 16: {
 
-              calgbbolcpn_ = input.readUInt32();
+              fromParentQuestId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +121,264 @@ public final class TrialAvatarGrantRecordOuterClass {
               emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.class, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder.class);
     }
 
-    public static final int DGLGIPIGLND_FIELD_NUMBER = 1;
-    private int dglgipiglnd_;
     /**
-     * <code>uint32 dglgipiglnd = 1;</code>
-     * @return The dglgipiglnd.
+     * <pre>
+     * Name: FJBKKFJNBHD
+     * </pre>
+     *
+     * Protobuf enum {@code TrialAvatarGrantRecord.GrantReason}
      */
-    @java.lang.Override
-    public int getDglgipiglnd() {
-      return dglgipiglnd_;
+    public enum GrantReason
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GRANT_REASON_INVALID = 0;</code>
+       */
+      GRANT_REASON_INVALID(0),
+      /**
+       * <code>GRANT_REASON_BY_QUEST = 1;</code>
+       */
+      GRANT_REASON_BY_QUEST(1),
+      /**
+       * <code>GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY = 2;</code>
+       */
+      GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY(2),
+      /**
+       * <code>GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE = 3;</code>
+       */
+      GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE(3),
+      /**
+       * <code>GRANT_REASON_BY_MIST_TRIAL_ACTIVITY = 4;</code>
+       */
+      GRANT_REASON_BY_MIST_TRIAL_ACTIVITY(4),
+      /**
+       * <code>GRANT_REASON_BY_SUMO_ACTIVITY = 5;</code>
+       */
+      GRANT_REASON_BY_SUMO_ACTIVITY(5),
+      /**
+       * <code>GRANT_REASON_BY_POTION_ACTIVITY = 6;</code>
+       */
+      GRANT_REASON_BY_POTION_ACTIVITY(6),
+      /**
+       * <code>GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY = 7;</code>
+       */
+      GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY(7),
+      /**
+       * <code>GRANT_REASON_BY_IRODORI_MASTER = 8;</code>
+       */
+      GRANT_REASON_BY_IRODORI_MASTER(8),
+      /**
+       * <code>GRANT_REASON_BY_GM = 9;</code>
+       */
+      GRANT_REASON_BY_GM(9),
+      /**
+       * <code>GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY = 10;</code>
+       */
+      GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY(10),
+      /**
+       * <code>GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY = 11;</code>
+       */
+      GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY(11),
+      /**
+       * <code>GRANT_REASON_BY_VINTAGE_HUNTING = 12;</code>
+       */
+      GRANT_REASON_BY_VINTAGE_HUNTING(12),
+      /**
+       * <code>GRANT_REASON_BY_CHAR_AMUSEMENT = 13;</code>
+       */
+      GRANT_REASON_BY_CHAR_AMUSEMENT(13),
+      /**
+       * <code>FJBKKFJNBHD_HMLDNDBKNFL = 14;</code>
+       */
+      FJBKKFJNBHD_HMLDNDBKNFL(14),
+      /**
+       * <code>FJBKKFJNBHD_PJDEJIHFCPP = 15;</code>
+       */
+      FJBKKFJNBHD_PJDEJIHFCPP(15),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>GRANT_REASON_INVALID = 0;</code>
+       */
+      public static final int GRANT_REASON_INVALID_VALUE = 0;
+      /**
+       * <code>GRANT_REASON_BY_QUEST = 1;</code>
+       */
+      public static final int GRANT_REASON_BY_QUEST_VALUE = 1;
+      /**
+       * <code>GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY = 2;</code>
+       */
+      public static final int GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY_VALUE = 2;
+      /**
+       * <code>GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE = 3;</code>
+       */
+      public static final int GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE_VALUE = 3;
+      /**
+       * <code>GRANT_REASON_BY_MIST_TRIAL_ACTIVITY = 4;</code>
+       */
+      public static final int GRANT_REASON_BY_MIST_TRIAL_ACTIVITY_VALUE = 4;
+      /**
+       * <code>GRANT_REASON_BY_SUMO_ACTIVITY = 5;</code>
+       */
+      public static final int GRANT_REASON_BY_SUMO_ACTIVITY_VALUE = 5;
+      /**
+       * <code>GRANT_REASON_BY_POTION_ACTIVITY = 6;</code>
+       */
+      public static final int GRANT_REASON_BY_POTION_ACTIVITY_VALUE = 6;
+      /**
+       * <code>GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY = 7;</code>
+       */
+      public static final int GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY_VALUE = 7;
+      /**
+       * <code>GRANT_REASON_BY_IRODORI_MASTER = 8;</code>
+       */
+      public static final int GRANT_REASON_BY_IRODORI_MASTER_VALUE = 8;
+      /**
+       * <code>GRANT_REASON_BY_GM = 9;</code>
+       */
+      public static final int GRANT_REASON_BY_GM_VALUE = 9;
+      /**
+       * <code>GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY = 10;</code>
+       */
+      public static final int GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY_VALUE = 10;
+      /**
+       * <code>GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY = 11;</code>
+       */
+      public static final int GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY_VALUE = 11;
+      /**
+       * <code>GRANT_REASON_BY_VINTAGE_HUNTING = 12;</code>
+       */
+      public static final int GRANT_REASON_BY_VINTAGE_HUNTING_VALUE = 12;
+      /**
+       * <code>GRANT_REASON_BY_CHAR_AMUSEMENT = 13;</code>
+       */
+      public static final int GRANT_REASON_BY_CHAR_AMUSEMENT_VALUE = 13;
+      /**
+       * <code>FJBKKFJNBHD_HMLDNDBKNFL = 14;</code>
+       */
+      public static final int FJBKKFJNBHD_HMLDNDBKNFL_VALUE = 14;
+      /**
+       * <code>FJBKKFJNBHD_PJDEJIHFCPP = 15;</code>
+       */
+      public static final int FJBKKFJNBHD_PJDEJIHFCPP_VALUE = 15;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static GrantReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static GrantReason forNumber(int value) {
+        switch (value) {
+          case 0: return GRANT_REASON_INVALID;
+          case 1: return GRANT_REASON_BY_QUEST;
+          case 2: return GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY;
+          case 3: return GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE;
+          case 4: return GRANT_REASON_BY_MIST_TRIAL_ACTIVITY;
+          case 5: return GRANT_REASON_BY_SUMO_ACTIVITY;
+          case 6: return GRANT_REASON_BY_POTION_ACTIVITY;
+          case 7: return GRANT_REASON_BY_CRYSTAL_LINK_ACTIVITY;
+          case 8: return GRANT_REASON_BY_IRODORI_MASTER;
+          case 9: return GRANT_REASON_BY_GM;
+          case 10: return GRANT_REASON_BY_INSTABLE_SPRAY_ACTIVITY;
+          case 11: return GRANT_REASON_BY_MUQADAS_POTION_ACTIVITY;
+          case 12: return GRANT_REASON_BY_VINTAGE_HUNTING;
+          case 13: return GRANT_REASON_BY_CHAR_AMUSEMENT;
+          case 14: return FJBKKFJNBHD_HMLDNDBKNFL;
+          case 15: return FJBKKFJNBHD_PJDEJIHFCPP;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<GrantReason>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          GrantReason> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<GrantReason>() {
+              public GrantReason findValueByNumber(int number) {
+                return GrantReason.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final GrantReason[] VALUES = values();
+
+      public static GrantReason valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private GrantReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:TrialAvatarGrantRecord.GrantReason)
     }
 
-    public static final int CALGBBOLCPN_FIELD_NUMBER = 2;
-    private int calgbbolcpn_;
+    public static final int GRANT_REASON_FIELD_NUMBER = 1;
+    private int grantReason_;
     /**
-     * <code>uint32 calgbbolcpn = 2;</code>
-     * @return The calgbbolcpn.
+     * <code>uint32 grant_reason = 1;</code>
+     * @return The grantReason.
      */
     @java.lang.Override
-    public int getCalgbbolcpn() {
-      return calgbbolcpn_;
+    public int getGrantReason() {
+      return grantReason_;
+    }
+
+    public static final int FROM_PARENT_QUEST_ID_FIELD_NUMBER = 2;
+    private int fromParentQuestId_;
+    /**
+     * <code>uint32 from_parent_quest_id = 2;</code>
+     * @return The fromParentQuestId.
+     */
+    @java.lang.Override
+    public int getFromParentQuestId() {
+      return fromParentQuestId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +395,11 @@ public final class TrialAvatarGrantRecordOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dglgipiglnd_ != 0) {
-        output.writeUInt32(1, dglgipiglnd_);
+      if (grantReason_ != 0) {
+        output.writeUInt32(1, grantReason_);
       }
-      if (calgbbolcpn_ != 0) {
-        output.writeUInt32(2, calgbbolcpn_);
+      if (fromParentQuestId_ != 0) {
+        output.writeUInt32(2, fromParentQuestId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +410,13 @@ public final class TrialAvatarGrantRecordOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dglgipiglnd_ != 0) {
+      if (grantReason_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dglgipiglnd_);
+          .computeUInt32Size(1, grantReason_);
       }
-      if (calgbbolcpn_ != 0) {
+      if (fromParentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, calgbbolcpn_);
+          .computeUInt32Size(2, fromParentQuestId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +433,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       }
       emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord other = (emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord) obj;
 
-      if (getDglgipiglnd()
-          != other.getDglgipiglnd()) return false;
-      if (getCalgbbolcpn()
-          != other.getCalgbbolcpn()) return false;
+      if (getGrantReason()
+          != other.getGrantReason()) return false;
+      if (getFromParentQuestId()
+          != other.getFromParentQuestId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +448,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DGLGIPIGLND_FIELD_NUMBER;
-      hash = (53 * hash) + getDglgipiglnd();
-      hash = (37 * hash) + CALGBBOLCPN_FIELD_NUMBER;
-      hash = (53 * hash) + getCalgbbolcpn();
+      hash = (37 * hash) + GRANT_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getGrantReason();
+      hash = (37 * hash) + FROM_PARENT_QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFromParentQuestId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +548,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FINJPJBDGIK
+     * </pre>
+     *
      * Protobuf type {@code TrialAvatarGrantRecord}
      */
     public static final class Builder extends
@@ -343,9 +589,9 @@ public final class TrialAvatarGrantRecordOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dglgipiglnd_ = 0;
+        grantReason_ = 0;
 
-        calgbbolcpn_ = 0;
+        fromParentQuestId_ = 0;
 
         return this;
       }
@@ -373,8 +619,8 @@ public final class TrialAvatarGrantRecordOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord buildPartial() {
         emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord result = new emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord(this);
-        result.dglgipiglnd_ = dglgipiglnd_;
-        result.calgbbolcpn_ = calgbbolcpn_;
+        result.grantReason_ = grantReason_;
+        result.fromParentQuestId_ = fromParentQuestId_;
         onBuilt();
         return result;
       }
@@ -423,11 +669,11 @@ public final class TrialAvatarGrantRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord other) {
         if (other == emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.getDefaultInstance()) return this;
-        if (other.getDglgipiglnd() != 0) {
-          setDglgipiglnd(other.getDglgipiglnd());
+        if (other.getGrantReason() != 0) {
+          setGrantReason(other.getGrantReason());
         }
-        if (other.getCalgbbolcpn() != 0) {
-          setCalgbbolcpn(other.getCalgbbolcpn());
+        if (other.getFromParentQuestId() != 0) {
+          setFromParentQuestId(other.getFromParentQuestId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,64 +704,64 @@ public final class TrialAvatarGrantRecordOuterClass {
         return this;
       }
 
-      private int dglgipiglnd_ ;
+      private int grantReason_ ;
       /**
-       * <code>uint32 dglgipiglnd = 1;</code>
-       * @return The dglgipiglnd.
+       * <code>uint32 grant_reason = 1;</code>
+       * @return The grantReason.
        */
       @java.lang.Override
-      public int getDglgipiglnd() {
-        return dglgipiglnd_;
+      public int getGrantReason() {
+        return grantReason_;
       }
       /**
-       * <code>uint32 dglgipiglnd = 1;</code>
-       * @param value The dglgipiglnd to set.
+       * <code>uint32 grant_reason = 1;</code>
+       * @param value The grantReason to set.
        * @return This builder for chaining.
        */
-      public Builder setDglgipiglnd(int value) {
+      public Builder setGrantReason(int value) {
         
-        dglgipiglnd_ = value;
+        grantReason_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 dglgipiglnd = 1;</code>
+       * <code>uint32 grant_reason = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDglgipiglnd() {
+      public Builder clearGrantReason() {
         
-        dglgipiglnd_ = 0;
+        grantReason_ = 0;
         onChanged();
         return this;
       }
 
-      private int calgbbolcpn_ ;
+      private int fromParentQuestId_ ;
       /**
-       * <code>uint32 calgbbolcpn = 2;</code>
-       * @return The calgbbolcpn.
+       * <code>uint32 from_parent_quest_id = 2;</code>
+       * @return The fromParentQuestId.
        */
       @java.lang.Override
-      public int getCalgbbolcpn() {
-        return calgbbolcpn_;
+      public int getFromParentQuestId() {
+        return fromParentQuestId_;
       }
       /**
-       * <code>uint32 calgbbolcpn = 2;</code>
-       * @param value The calgbbolcpn to set.
+       * <code>uint32 from_parent_quest_id = 2;</code>
+       * @param value The fromParentQuestId to set.
        * @return This builder for chaining.
        */
-      public Builder setCalgbbolcpn(int value) {
+      public Builder setFromParentQuestId(int value) {
         
-        calgbbolcpn_ = value;
+        fromParentQuestId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 calgbbolcpn = 2;</code>
+       * <code>uint32 from_parent_quest_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCalgbbolcpn() {
+      public Builder clearFromParentQuestId() {
         
-        calgbbolcpn_ = 0;
+        fromParentQuestId_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +832,25 @@ public final class TrialAvatarGrantRecordOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034TrialAvatarGrantRecord.proto\"B\n\026TrialA" +
-      "vatarGrantRecord\022\023\n\013dglgipiglnd\030\001 \001(\r\022\023\n" +
-      "\013calgbbolcpn\030\002 \001(\rB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\n\034TrialAvatarGrantRecord.proto\"\240\005\n\026Trial" +
+      "AvatarGrantRecord\022\024\n\014grant_reason\030\001 \001(\r\022" +
+      "\034\n\024from_parent_quest_id\030\002 \001(\r\"\321\004\n\013GrantR" +
+      "eason\022\030\n\024GRANT_REASON_INVALID\020\000\022\031\n\025GRANT" +
+      "_REASON_BY_QUEST\020\001\022)\n%GRANT_REASON_BY_TR" +
+      "IAL_AVATAR_ACTIVITY\020\002\022-\n)GRANT_REASON_BY" +
+      "_DUNGEON_ELEMENT_CHALLENGE\020\003\022\'\n#GRANT_RE" +
+      "ASON_BY_MIST_TRIAL_ACTIVITY\020\004\022!\n\035GRANT_R" +
+      "EASON_BY_SUMO_ACTIVITY\020\005\022#\n\037GRANT_REASON" +
+      "_BY_POTION_ACTIVITY\020\006\022)\n%GRANT_REASON_BY" +
+      "_CRYSTAL_LINK_ACTIVITY\020\007\022\"\n\036GRANT_REASON" +
+      "_BY_IRODORI_MASTER\020\010\022\026\n\022GRANT_REASON_BY_" +
+      "GM\020\t\022+\n\'GRANT_REASON_BY_INSTABLE_SPRAY_A" +
+      "CTIVITY\020\n\022+\n\'GRANT_REASON_BY_MUQADAS_POT" +
+      "ION_ACTIVITY\020\013\022#\n\037GRANT_REASON_BY_VINTAG" +
+      "E_HUNTING\020\014\022\"\n\036GRANT_REASON_BY_CHAR_AMUS" +
+      "EMENT\020\r\022\033\n\027FJBKKFJNBHD_HMLDNDBKNFL\020\016\022\033\n\027" +
+      "FJBKKFJNBHD_PJDEJIHFCPP\020\017B\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +861,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     internal_static_TrialAvatarGrantRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrialAvatarGrantRecord_descriptor,
-        new java.lang.String[] { "Dglgipiglnd", "Calgbbolcpn", });
+        new java.lang.String[] { "GrantReason", "FromParentQuestId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -15,6 +15,10 @@ public final class GadgetBornTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: BHLCFGOBHBJ
+   * </pre>
+   *
    * Protobuf enum {@code GadgetBornType}
    */
   public enum GadgetBornType

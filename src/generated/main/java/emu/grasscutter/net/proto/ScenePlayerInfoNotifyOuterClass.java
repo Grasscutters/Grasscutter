@@ -19,30 +19,35 @@ public final class ScenePlayerInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo> 
         getPlayerInfoListList();
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo getPlayerInfoList(int index);
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     int getPlayerInfoListCount();
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder> 
         getPlayerInfoListOrBuilderList();
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder getPlayerInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Name: JGMDCGBILKP
+   * CmdId: 240
+   * </pre>
+   *
    * Protobuf type {@code ScenePlayerInfoNotify}
    */
   public static final class ScenePlayerInfoNotify extends
@@ -89,7 +94,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,148 +138,17 @@ public final class ScenePlayerInfoNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayerInfoNotifyOuterClass.ScenePlayerInfoNotify.class, emu.grasscutter.net.proto.ScenePlayerInfoNotifyOuterClass.ScenePlayerInfoNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ScenePlayerInfoNotify.IOKKMFKCAAI}
-     */
-    public enum IOKKMFKCAAI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 264;</code>
-       */
-      PEPPOHPHJOJ(1, 264),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final IOKKMFKCAAI DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 264;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 264;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IOKKMFKCAAI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IOKKMFKCAAI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 264: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IOKKMFKCAAI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IOKKMFKCAAI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IOKKMFKCAAI>() {
-              public IOKKMFKCAAI findValueByNumber(int number) {
-                return IOKKMFKCAAI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ScenePlayerInfoNotifyOuterClass.ScenePlayerInfoNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IOKKMFKCAAI[] VALUES = getStaticValuesArray();
-      private static IOKKMFKCAAI[] getStaticValuesArray() {
-        return new IOKKMFKCAAI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static IOKKMFKCAAI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private IOKKMFKCAAI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ScenePlayerInfoNotify.IOKKMFKCAAI)
-    }
-
-    public static final int PLAYERINFOLIST_FIELD_NUMBER = 11;
+    public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo> playerInfoList_;
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo> getPlayerInfoListList() {
       return playerInfoList_;
     }
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder> 
@@ -282,21 +156,21 @@ public final class ScenePlayerInfoNotifyOuterClass {
       return playerInfoList_;
     }
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     @java.lang.Override
     public int getPlayerInfoListCount() {
       return playerInfoList_.size();
     }
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo getPlayerInfoList(int index) {
       return playerInfoList_.get(index);
     }
     /**
-     * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+     * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder getPlayerInfoListOrBuilder(
@@ -319,7 +193,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < playerInfoList_.size(); i++) {
-        output.writeMessage(11, playerInfoList_.get(i));
+        output.writeMessage(9, playerInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -332,7 +206,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < playerInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, playerInfoList_.get(i));
+          .computeMessageSize(9, playerInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -363,7 +237,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getPlayerInfoListCount() > 0) {
-        hash = (37 * hash) + PLAYERINFOLIST_FIELD_NUMBER;
+        hash = (37 * hash) + PLAYER_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerInfoListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -462,6 +336,11 @@ public final class ScenePlayerInfoNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JGMDCGBILKP
+     * CmdId: 240
+     * </pre>
+     *
      * Protobuf type {@code ScenePlayerInfoNotify}
      */
     public static final class Builder extends
@@ -659,7 +538,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
           emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder> playerInfoListBuilder_;
 
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo> getPlayerInfoListList() {
         if (playerInfoListBuilder_ == null) {
@@ -669,7 +548,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public int getPlayerInfoListCount() {
         if (playerInfoListBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo getPlayerInfoList(int index) {
         if (playerInfoListBuilder_ == null) {
@@ -689,7 +568,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder setPlayerInfoList(
           int index, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo value) {
@@ -706,7 +585,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder setPlayerInfoList(
           int index, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder builderForValue) {
@@ -720,7 +599,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder addPlayerInfoList(emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo value) {
         if (playerInfoListBuilder_ == null) {
@@ -736,7 +615,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder addPlayerInfoList(
           int index, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo value) {
@@ -753,7 +632,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder addPlayerInfoList(
           emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder builderForValue) {
@@ -767,7 +646,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder addPlayerInfoList(
           int index, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder builderForValue) {
@@ -781,7 +660,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder addAllPlayerInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo> values) {
@@ -796,7 +675,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder clearPlayerInfoList() {
         if (playerInfoListBuilder_ == null) {
@@ -809,7 +688,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public Builder removePlayerInfoList(int index) {
         if (playerInfoListBuilder_ == null) {
@@ -822,14 +701,14 @@ public final class ScenePlayerInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder getPlayerInfoListBuilder(
           int index) {
         return getPlayerInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder getPlayerInfoListOrBuilder(
           int index) {
@@ -839,7 +718,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfoOrBuilder> 
            getPlayerInfoListOrBuilderList() {
@@ -850,14 +729,14 @@ public final class ScenePlayerInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder addPlayerInfoListBuilder() {
         return getPlayerInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder addPlayerInfoListBuilder(
           int index) {
@@ -865,7 +744,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
             index, emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ScenePlayerInfo playerInfoList = 11;</code>
+       * <code>repeated .ScenePlayerInfo player_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo.Builder> 
            getPlayerInfoListBuilderList() {
@@ -953,11 +832,9 @@ public final class ScenePlayerInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ScenePlayerInfoNotify.proto\032\025ScenePlay" +
-      "erInfo.proto\"\222\001\n\025ScenePlayerInfoNotify\022(" +
-      "\n\016playerInfoList\030\013 \003(\0132\020.ScenePlayerInfo" +
-      "\"O\n\013IOKKMFKCAAI\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ" +
-      "\020\210\002\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020" +
-      "\001B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "erInfo.proto\"C\n\025ScenePlayerInfoNotify\022*\n" +
+      "\020player_info_list\030\t \003(\0132\020.ScenePlayerInf" +
+      "oB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -78,6 +78,10 @@ public final class ClientGadgetInfoOuterClass {
     int getTargetEntityIdList(int index);
   }
   /**
+   * <pre>
+   * Name: ANHIPICCPMI
+   * </pre>
+   *
    * Protobuf type {@code ClientGadgetInfo}
    */
   public static final class ClientGadgetInfo extends
@@ -573,6 +577,10 @@ public final class ClientGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ANHIPICCPMI
+     * </pre>
+     *
      * Protobuf type {@code ClientGadgetInfo}
      */
     public static final class Builder extends

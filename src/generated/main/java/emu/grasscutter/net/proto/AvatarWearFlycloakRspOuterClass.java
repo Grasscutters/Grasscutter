@@ -19,24 +19,29 @@ public final class AvatarWearFlycloakRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatarGuid = 3;</code>
+     * <code>uint64 avatar_guid = 11;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
 
     /**
-     * <code>uint32 flycloakId = 1;</code>
+     * <code>uint32 flycloak_id = 9;</code>
      * @return The flycloakId.
      */
     int getFlycloakId();
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: HKINCILJKMB
+   * CmdId: 1745
+   * </pre>
+   *
    * Protobuf type {@code AvatarWearFlycloakRsp}
    */
   public static final class AvatarWearFlycloakRsp extends
@@ -81,17 +86,17 @@ public final class AvatarWearFlycloakRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 72: {
 
               flycloakId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -128,141 +133,10 @@ public final class AvatarWearFlycloakRspOuterClass {
               emu.grasscutter.net.proto.AvatarWearFlycloakRspOuterClass.AvatarWearFlycloakRsp.class, emu.grasscutter.net.proto.AvatarWearFlycloakRspOuterClass.AvatarWearFlycloakRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarWearFlycloakRsp.BKFIFBFODFE}
-     */
-    public enum BKFIFBFODFE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1704;</code>
-       */
-      PEPPOHPHJOJ(1, 1704),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final BKFIFBFODFE DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1704;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1704;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static BKFIFBFODFE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static BKFIFBFODFE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1704: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BKFIFBFODFE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BKFIFBFODFE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BKFIFBFODFE>() {
-              public BKFIFBFODFE findValueByNumber(int number) {
-                return BKFIFBFODFE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarWearFlycloakRspOuterClass.AvatarWearFlycloakRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final BKFIFBFODFE[] VALUES = getStaticValuesArray();
-      private static BKFIFBFODFE[] getStaticValuesArray() {
-        return new BKFIFBFODFE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static BKFIFBFODFE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private BKFIFBFODFE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarWearFlycloakRsp.BKFIFBFODFE)
-    }
-
-    public static final int AVATARGUID_FIELD_NUMBER = 3;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 11;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatarGuid = 3;</code>
+     * <code>uint64 avatar_guid = 11;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -270,10 +144,10 @@ public final class AvatarWearFlycloakRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int FLYCLOAKID_FIELD_NUMBER = 1;
+    public static final int FLYCLOAK_ID_FIELD_NUMBER = 9;
     private int flycloakId_;
     /**
-     * <code>uint32 flycloakId = 1;</code>
+     * <code>uint32 flycloak_id = 9;</code>
      * @return The flycloakId.
      */
     @java.lang.Override
@@ -281,10 +155,10 @@ public final class AvatarWearFlycloakRspOuterClass {
       return flycloakId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -307,13 +181,13 @@ public final class AvatarWearFlycloakRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (flycloakId_ != 0) {
-        output.writeUInt32(1, flycloakId_);
+        output.writeUInt32(9, flycloakId_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(3, avatarGuid_);
+        output.writeUInt64(11, avatarGuid_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -326,15 +200,15 @@ public final class AvatarWearFlycloakRspOuterClass {
       size = 0;
       if (flycloakId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, flycloakId_);
+          .computeUInt32Size(9, flycloakId_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, avatarGuid_);
+          .computeUInt64Size(11, avatarGuid_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -368,10 +242,10 @@ public final class AvatarWearFlycloakRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (37 * hash) + FLYCLOAKID_FIELD_NUMBER;
+      hash = (37 * hash) + FLYCLOAK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFlycloakId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -471,6 +345,11 @@ public final class AvatarWearFlycloakRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HKINCILJKMB
+     * CmdId: 1745
+     * </pre>
+     *
      * Protobuf type {@code AvatarWearFlycloakRsp}
      */
     public static final class Builder extends
@@ -631,7 +510,7 @@ public final class AvatarWearFlycloakRspOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatarGuid = 3;</code>
+       * <code>uint64 avatar_guid = 11;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -639,7 +518,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatarGuid = 3;</code>
+       * <code>uint64 avatar_guid = 11;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -650,7 +529,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatarGuid = 3;</code>
+       * <code>uint64 avatar_guid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -662,7 +541,7 @@ public final class AvatarWearFlycloakRspOuterClass {
 
       private int flycloakId_ ;
       /**
-       * <code>uint32 flycloakId = 1;</code>
+       * <code>uint32 flycloak_id = 9;</code>
        * @return The flycloakId.
        */
       @java.lang.Override
@@ -670,7 +549,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return flycloakId_;
       }
       /**
-       * <code>uint32 flycloakId = 1;</code>
+       * <code>uint32 flycloak_id = 9;</code>
        * @param value The flycloakId to set.
        * @return This builder for chaining.
        */
@@ -681,7 +560,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 flycloakId = 1;</code>
+       * <code>uint32 flycloak_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlycloakId() {
@@ -693,7 +572,7 @@ public final class AvatarWearFlycloakRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -701,7 +580,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -712,7 +591,7 @@ public final class AvatarWearFlycloakRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -788,11 +667,9 @@ public final class AvatarWearFlycloakRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033AvatarWearFlycloakRsp.proto\"\241\001\n\025Avatar" +
-      "WearFlycloakRsp\022\022\n\navatarGuid\030\003 \001(\004\022\022\n\nf" +
-      "lycloakId\030\001 \001(\r\022\017\n\007retcode\030\016 \001(\005\"O\n\013BKFI" +
-      "FBFODFE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\250\r\022\017\n\013D" +
-      "CDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu" +
+      "\n\033AvatarWearFlycloakRsp.proto\"R\n\025AvatarW" +
+      "earFlycloakRsp\022\023\n\013avatar_guid\030\013 \001(\004\022\023\n\013f" +
+      "lycloak_id\030\t \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,24 +19,29 @@ public final class DailyTaskDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isTakenScoreReward = 13;</code>
+     * <code>uint32 score_reward_id = 10;</code>
+     * @return The scoreRewardId.
+     */
+    int getScoreRewardId();
+
+    /**
+     * <code>bool is_taken_score_reward = 6;</code>
      * @return The isTakenScoreReward.
      */
     boolean getIsTakenScoreReward();
 
     /**
-     * <code>uint32 finishedNum = 11;</code>
+     * <code>uint32 finished_num = 4;</code>
      * @return The finishedNum.
      */
     int getFinishedNum();
-
-    /**
-     * <code>uint32 scoreRewardId = 2;</code>
-     * @return The scoreRewardId.
-     */
-    int getScoreRewardId();
   }
   /**
+   * <pre>
+   * Name: MEBMDKGNFIP
+   * CmdId: 111
+   * </pre>
+   *
    * Protobuf type {@code DailyTaskDataNotify}
    */
   public static final class DailyTaskDataNotify extends
@@ -81,19 +86,19 @@ public final class DailyTaskDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              scoreRewardId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 32: {
 
               finishedNum_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 48: {
 
               isTakenScoreReward_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              scoreRewardId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,141 +133,21 @@ public final class DailyTaskDataNotifyOuterClass {
               emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.class, emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.Builder.class);
     }
 
+    public static final int SCORE_REWARD_ID_FIELD_NUMBER = 10;
+    private int scoreRewardId_;
     /**
-     * Protobuf enum {@code DailyTaskDataNotify.CJCCGCLIDDL}
+     * <code>uint32 score_reward_id = 10;</code>
+     * @return The scoreRewardId.
      */
-    public enum CJCCGCLIDDL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 183;</code>
-       */
-      PEPPOHPHJOJ(1, 183),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CJCCGCLIDDL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 183;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 183;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CJCCGCLIDDL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CJCCGCLIDDL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 183: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CJCCGCLIDDL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CJCCGCLIDDL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CJCCGCLIDDL>() {
-              public CJCCGCLIDDL findValueByNumber(int number) {
-                return CJCCGCLIDDL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CJCCGCLIDDL[] VALUES = getStaticValuesArray();
-      private static CJCCGCLIDDL[] getStaticValuesArray() {
-        return new CJCCGCLIDDL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static CJCCGCLIDDL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CJCCGCLIDDL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:DailyTaskDataNotify.CJCCGCLIDDL)
+    @java.lang.Override
+    public int getScoreRewardId() {
+      return scoreRewardId_;
     }
 
-    public static final int ISTAKENSCOREREWARD_FIELD_NUMBER = 13;
+    public static final int IS_TAKEN_SCORE_REWARD_FIELD_NUMBER = 6;
     private boolean isTakenScoreReward_;
     /**
-     * <code>bool isTakenScoreReward = 13;</code>
+     * <code>bool is_taken_score_reward = 6;</code>
      * @return The isTakenScoreReward.
      */
     @java.lang.Override
@@ -270,26 +155,15 @@ public final class DailyTaskDataNotifyOuterClass {
       return isTakenScoreReward_;
     }
 
-    public static final int FINISHEDNUM_FIELD_NUMBER = 11;
+    public static final int FINISHED_NUM_FIELD_NUMBER = 4;
     private int finishedNum_;
     /**
-     * <code>uint32 finishedNum = 11;</code>
+     * <code>uint32 finished_num = 4;</code>
      * @return The finishedNum.
      */
     @java.lang.Override
     public int getFinishedNum() {
       return finishedNum_;
-    }
-
-    public static final int SCOREREWARDID_FIELD_NUMBER = 2;
-    private int scoreRewardId_;
-    /**
-     * <code>uint32 scoreRewardId = 2;</code>
-     * @return The scoreRewardId.
-     */
-    @java.lang.Override
-    public int getScoreRewardId() {
-      return scoreRewardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -306,14 +180,14 @@ public final class DailyTaskDataNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scoreRewardId_ != 0) {
-        output.writeUInt32(2, scoreRewardId_);
-      }
       if (finishedNum_ != 0) {
-        output.writeUInt32(11, finishedNum_);
+        output.writeUInt32(4, finishedNum_);
       }
       if (isTakenScoreReward_ != false) {
-        output.writeBool(13, isTakenScoreReward_);
+        output.writeBool(6, isTakenScoreReward_);
+      }
+      if (scoreRewardId_ != 0) {
+        output.writeUInt32(10, scoreRewardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -324,17 +198,17 @@ public final class DailyTaskDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scoreRewardId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, scoreRewardId_);
-      }
       if (finishedNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, finishedNum_);
+          .computeUInt32Size(4, finishedNum_);
       }
       if (isTakenScoreReward_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isTakenScoreReward_);
+          .computeBoolSize(6, isTakenScoreReward_);
+      }
+      if (scoreRewardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, scoreRewardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,12 +225,12 @@ public final class DailyTaskDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify other = (emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify) obj;
 
+      if (getScoreRewardId()
+          != other.getScoreRewardId()) return false;
       if (getIsTakenScoreReward()
           != other.getIsTakenScoreReward()) return false;
       if (getFinishedNum()
           != other.getFinishedNum()) return false;
-      if (getScoreRewardId()
-          != other.getScoreRewardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,13 +242,13 @@ public final class DailyTaskDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISTAKENSCOREREWARD_FIELD_NUMBER;
+      hash = (37 * hash) + SCORE_REWARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScoreRewardId();
+      hash = (37 * hash) + IS_TAKEN_SCORE_REWARD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTakenScoreReward());
-      hash = (37 * hash) + FINISHEDNUM_FIELD_NUMBER;
+      hash = (37 * hash) + FINISHED_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedNum();
-      hash = (37 * hash) + SCOREREWARDID_FIELD_NUMBER;
-      hash = (53 * hash) + getScoreRewardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -471,6 +345,11 @@ public final class DailyTaskDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MEBMDKGNFIP
+     * CmdId: 111
+     * </pre>
+     *
      * Protobuf type {@code DailyTaskDataNotify}
      */
     public static final class Builder extends
@@ -508,11 +387,11 @@ public final class DailyTaskDataNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        scoreRewardId_ = 0;
+
         isTakenScoreReward_ = false;
 
         finishedNum_ = 0;
-
-        scoreRewardId_ = 0;
 
         return this;
       }
@@ -540,9 +419,9 @@ public final class DailyTaskDataNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify buildPartial() {
         emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify result = new emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify(this);
+        result.scoreRewardId_ = scoreRewardId_;
         result.isTakenScoreReward_ = isTakenScoreReward_;
         result.finishedNum_ = finishedNum_;
-        result.scoreRewardId_ = scoreRewardId_;
         onBuilt();
         return result;
       }
@@ -591,14 +470,14 @@ public final class DailyTaskDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify other) {
         if (other == emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.getDefaultInstance()) return this;
+        if (other.getScoreRewardId() != 0) {
+          setScoreRewardId(other.getScoreRewardId());
+        }
         if (other.getIsTakenScoreReward() != false) {
           setIsTakenScoreReward(other.getIsTakenScoreReward());
         }
         if (other.getFinishedNum() != 0) {
           setFinishedNum(other.getFinishedNum());
-        }
-        if (other.getScoreRewardId() != 0) {
-          setScoreRewardId(other.getScoreRewardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -629,9 +508,40 @@ public final class DailyTaskDataNotifyOuterClass {
         return this;
       }
 
+      private int scoreRewardId_ ;
+      /**
+       * <code>uint32 score_reward_id = 10;</code>
+       * @return The scoreRewardId.
+       */
+      @java.lang.Override
+      public int getScoreRewardId() {
+        return scoreRewardId_;
+      }
+      /**
+       * <code>uint32 score_reward_id = 10;</code>
+       * @param value The scoreRewardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreRewardId(int value) {
+        
+        scoreRewardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score_reward_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScoreRewardId() {
+        
+        scoreRewardId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isTakenScoreReward_ ;
       /**
-       * <code>bool isTakenScoreReward = 13;</code>
+       * <code>bool is_taken_score_reward = 6;</code>
        * @return The isTakenScoreReward.
        */
       @java.lang.Override
@@ -639,7 +549,7 @@ public final class DailyTaskDataNotifyOuterClass {
         return isTakenScoreReward_;
       }
       /**
-       * <code>bool isTakenScoreReward = 13;</code>
+       * <code>bool is_taken_score_reward = 6;</code>
        * @param value The isTakenScoreReward to set.
        * @return This builder for chaining.
        */
@@ -650,7 +560,7 @@ public final class DailyTaskDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool isTakenScoreReward = 13;</code>
+       * <code>bool is_taken_score_reward = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTakenScoreReward() {
@@ -662,7 +572,7 @@ public final class DailyTaskDataNotifyOuterClass {
 
       private int finishedNum_ ;
       /**
-       * <code>uint32 finishedNum = 11;</code>
+       * <code>uint32 finished_num = 4;</code>
        * @return The finishedNum.
        */
       @java.lang.Override
@@ -670,7 +580,7 @@ public final class DailyTaskDataNotifyOuterClass {
         return finishedNum_;
       }
       /**
-       * <code>uint32 finishedNum = 11;</code>
+       * <code>uint32 finished_num = 4;</code>
        * @param value The finishedNum to set.
        * @return This builder for chaining.
        */
@@ -681,43 +591,12 @@ public final class DailyTaskDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 finishedNum = 11;</code>
+       * <code>uint32 finished_num = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishedNum() {
         
         finishedNum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int scoreRewardId_ ;
-      /**
-       * <code>uint32 scoreRewardId = 2;</code>
-       * @return The scoreRewardId.
-       */
-      @java.lang.Override
-      public int getScoreRewardId() {
-        return scoreRewardId_;
-      }
-      /**
-       * <code>uint32 scoreRewardId = 2;</code>
-       * @param value The scoreRewardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScoreRewardId(int value) {
-        
-        scoreRewardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scoreRewardId = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScoreRewardId() {
-        
-        scoreRewardId_ = 0;
         onChanged();
         return this;
       }
@@ -788,13 +667,11 @@ public final class DailyTaskDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031DailyTaskDataNotify.proto\"\256\001\n\023DailyTas" +
-      "kDataNotify\022\032\n\022isTakenScoreReward\030\r \001(\010\022" +
-      "\023\n\013finishedNum\030\013 \001(\r\022\025\n\rscoreRewardId\030\002 " +
-      "\001(\r\"O\n\013CJCCGCLIDDL\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPH" +
-      "JOJ\020\267\001\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001" +
-      "\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      "\n\031DailyTaskDataNotify.proto\"c\n\023DailyTask" +
+      "DataNotify\022\027\n\017score_reward_id\030\n \001(\r\022\035\n\025i" +
+      "s_taken_score_reward\030\006 \001(\010\022\024\n\014finished_n" +
+      "um\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -805,7 +682,7 @@ public final class DailyTaskDataNotifyOuterClass {
     internal_static_DailyTaskDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DailyTaskDataNotify_descriptor,
-        new java.lang.String[] { "IsTakenScoreReward", "FinishedNum", "ScoreRewardId", });
+        new java.lang.String[] { "ScoreRewardId", "IsTakenScoreReward", "FinishedNum", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

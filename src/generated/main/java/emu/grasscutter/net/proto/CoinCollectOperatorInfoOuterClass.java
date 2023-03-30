@@ -19,12 +19,16 @@ public final class CoinCollectOperatorInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 levelId = 1;</code>
+     * <code>uint32 level_id = 1;</code>
      * @return The levelId.
      */
     int getLevelId();
   }
   /**
+   * <pre>
+   * Name: AINGLIBEGNA
+   * </pre>
+   *
    * Protobuf type {@code CoinCollectOperatorInfo}
    */
   public static final class CoinCollectOperatorInfo extends
@@ -106,10 +110,10 @@ public final class CoinCollectOperatorInfoOuterClass {
               emu.grasscutter.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo.class, emu.grasscutter.net.proto.CoinCollectOperatorInfoOuterClass.CoinCollectOperatorInfo.Builder.class);
     }
 
-    public static final int LEVELID_FIELD_NUMBER = 1;
+    public static final int LEVEL_ID_FIELD_NUMBER = 1;
     private int levelId_;
     /**
-     * <code>uint32 levelId = 1;</code>
+     * <code>uint32 level_id = 1;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -175,7 +179,7 @@ public final class CoinCollectOperatorInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVELID_FIELD_NUMBER;
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -273,6 +277,10 @@ public final class CoinCollectOperatorInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: AINGLIBEGNA
+     * </pre>
+     *
      * Protobuf type {@code CoinCollectOperatorInfo}
      */
     public static final class Builder extends
@@ -421,7 +429,7 @@ public final class CoinCollectOperatorInfoOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 levelId = 1;</code>
+       * <code>uint32 level_id = 1;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -429,7 +437,7 @@ public final class CoinCollectOperatorInfoOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 levelId = 1;</code>
+       * <code>uint32 level_id = 1;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +448,7 @@ public final class CoinCollectOperatorInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 levelId = 1;</code>
+       * <code>uint32 level_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -516,9 +524,9 @@ public final class CoinCollectOperatorInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035CoinCollectOperatorInfo.proto\"*\n\027CoinC" +
-      "ollectOperatorInfo\022\017\n\007levelId\030\001 \001(\rB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\035CoinCollectOperatorInfo.proto\"+\n\027CoinC" +
+      "ollectOperatorInfo\022\020\n\010level_id\030\001 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

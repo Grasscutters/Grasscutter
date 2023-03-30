@@ -19,35 +19,39 @@ public final class FetterDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 fetterId = 1;</code>
+     * <code>uint32 fetter_id = 1;</code>
      * @return The fetterId.
      */
     int getFetterId();
 
     /**
-     * <code>uint32 fetterState = 2;</code>
+     * <code>uint32 fetter_state = 2;</code>
      * @return The fetterState.
      */
     int getFetterState();
 
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @return A list containing the condIndexList.
      */
     java.util.List<java.lang.Integer> getCondIndexListList();
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @return The count of condIndexList.
      */
     int getCondIndexListCount();
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @param index The index of the element to return.
      * @return The condIndexList at the given index.
      */
     int getCondIndexList(int index);
   }
   /**
+   * <pre>
+   * Name: EJJOHOJFEHC
+   * </pre>
+   *
    * Protobuf type {@code FetterData}
    */
   public static final class FetterData extends
@@ -160,10 +164,10 @@ public final class FetterDataOuterClass {
               emu.grasscutter.net.proto.FetterDataOuterClass.FetterData.class, emu.grasscutter.net.proto.FetterDataOuterClass.FetterData.Builder.class);
     }
 
-    public static final int FETTERID_FIELD_NUMBER = 1;
+    public static final int FETTER_ID_FIELD_NUMBER = 1;
     private int fetterId_;
     /**
-     * <code>uint32 fetterId = 1;</code>
+     * <code>uint32 fetter_id = 1;</code>
      * @return The fetterId.
      */
     @java.lang.Override
@@ -171,10 +175,10 @@ public final class FetterDataOuterClass {
       return fetterId_;
     }
 
-    public static final int FETTERSTATE_FIELD_NUMBER = 2;
+    public static final int FETTER_STATE_FIELD_NUMBER = 2;
     private int fetterState_;
     /**
-     * <code>uint32 fetterState = 2;</code>
+     * <code>uint32 fetter_state = 2;</code>
      * @return The fetterState.
      */
     @java.lang.Override
@@ -182,10 +186,10 @@ public final class FetterDataOuterClass {
       return fetterState_;
     }
 
-    public static final int CONDINDEXLIST_FIELD_NUMBER = 3;
+    public static final int COND_INDEX_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList condIndexList_;
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @return A list containing the condIndexList.
      */
     @java.lang.Override
@@ -194,14 +198,14 @@ public final class FetterDataOuterClass {
       return condIndexList_;
     }
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @return The count of condIndexList.
      */
     public int getCondIndexListCount() {
       return condIndexList_.size();
     }
     /**
-     * <code>repeated uint32 condIndexList = 3;</code>
+     * <code>repeated uint32 cond_index_list = 3;</code>
      * @param index The index of the element to return.
      * @return The condIndexList at the given index.
      */
@@ -301,12 +305,12 @@ public final class FetterDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FETTERID_FIELD_NUMBER;
+      hash = (37 * hash) + FETTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFetterId();
-      hash = (37 * hash) + FETTERSTATE_FIELD_NUMBER;
+      hash = (37 * hash) + FETTER_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getFetterState();
       if (getCondIndexListCount() > 0) {
-        hash = (37 * hash) + CONDINDEXLIST_FIELD_NUMBER;
+        hash = (37 * hash) + COND_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCondIndexListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -405,6 +409,10 @@ public final class FetterDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: EJJOHOJFEHC
+     * </pre>
+     *
      * Protobuf type {@code FetterData}
      */
     public static final class Builder extends
@@ -578,7 +586,7 @@ public final class FetterDataOuterClass {
 
       private int fetterId_ ;
       /**
-       * <code>uint32 fetterId = 1;</code>
+       * <code>uint32 fetter_id = 1;</code>
        * @return The fetterId.
        */
       @java.lang.Override
@@ -586,7 +594,7 @@ public final class FetterDataOuterClass {
         return fetterId_;
       }
       /**
-       * <code>uint32 fetterId = 1;</code>
+       * <code>uint32 fetter_id = 1;</code>
        * @param value The fetterId to set.
        * @return This builder for chaining.
        */
@@ -597,7 +605,7 @@ public final class FetterDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 fetterId = 1;</code>
+       * <code>uint32 fetter_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearFetterId() {
@@ -609,7 +617,7 @@ public final class FetterDataOuterClass {
 
       private int fetterState_ ;
       /**
-       * <code>uint32 fetterState = 2;</code>
+       * <code>uint32 fetter_state = 2;</code>
        * @return The fetterState.
        */
       @java.lang.Override
@@ -617,7 +625,7 @@ public final class FetterDataOuterClass {
         return fetterState_;
       }
       /**
-       * <code>uint32 fetterState = 2;</code>
+       * <code>uint32 fetter_state = 2;</code>
        * @param value The fetterState to set.
        * @return This builder for chaining.
        */
@@ -628,7 +636,7 @@ public final class FetterDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 fetterState = 2;</code>
+       * <code>uint32 fetter_state = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFetterState() {
@@ -646,7 +654,7 @@ public final class FetterDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @return A list containing the condIndexList.
        */
       public java.util.List<java.lang.Integer>
@@ -655,14 +663,14 @@ public final class FetterDataOuterClass {
                  java.util.Collections.unmodifiableList(condIndexList_) : condIndexList_;
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @return The count of condIndexList.
        */
       public int getCondIndexListCount() {
         return condIndexList_.size();
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @param index The index of the element to return.
        * @return The condIndexList at the given index.
        */
@@ -670,7 +678,7 @@ public final class FetterDataOuterClass {
         return condIndexList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The condIndexList to set.
        * @return This builder for chaining.
@@ -683,7 +691,7 @@ public final class FetterDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @param value The condIndexList to add.
        * @return This builder for chaining.
        */
@@ -694,7 +702,7 @@ public final class FetterDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @param values The condIndexList to add.
        * @return This builder for chaining.
        */
@@ -707,7 +715,7 @@ public final class FetterDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condIndexList = 3;</code>
+       * <code>repeated uint32 cond_index_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCondIndexList() {
@@ -783,10 +791,10 @@ public final class FetterDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020FetterData.proto\"J\n\nFetterData\022\020\n\010fett" +
-      "erId\030\001 \001(\r\022\023\n\013fetterState\030\002 \001(\r\022\025\n\rcondI" +
-      "ndexList\030\003 \003(\rB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "\n\020FetterData.proto\"N\n\nFetterData\022\021\n\tfett" +
+      "er_id\030\001 \001(\r\022\024\n\014fetter_state\030\002 \001(\r\022\027\n\017con" +
+      "d_index_list\030\003 \003(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

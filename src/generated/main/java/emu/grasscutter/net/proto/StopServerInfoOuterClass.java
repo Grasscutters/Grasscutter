@@ -19,13 +19,13 @@ public final class StopServerInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stopBeginTime = 1;</code>
+     * <code>uint32 stop_begin_time = 1;</code>
      * @return The stopBeginTime.
      */
     int getStopBeginTime();
 
     /**
-     * <code>uint32 stopEndTime = 2;</code>
+     * <code>uint32 stop_end_time = 2;</code>
      * @return The stopEndTime.
      */
     int getStopEndTime();
@@ -43,18 +43,22 @@ public final class StopServerInfoOuterClass {
         getUrlBytes();
 
     /**
-     * <code>string contentMsg = 4;</code>
+     * <code>string content_msg = 4;</code>
      * @return The contentMsg.
      */
     java.lang.String getContentMsg();
     /**
-     * <code>string contentMsg = 4;</code>
+     * <code>string content_msg = 4;</code>
      * @return The bytes for contentMsg.
      */
     com.google.protobuf.ByteString
         getContentMsgBytes();
   }
   /**
+   * <pre>
+   * Name: HJLECMBBPOF
+   * </pre>
+   *
    * Protobuf type {@code StopServerInfo}
    */
   public static final class StopServerInfo extends
@@ -155,10 +159,10 @@ public final class StopServerInfoOuterClass {
               emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo.class, emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo.Builder.class);
     }
 
-    public static final int STOPBEGINTIME_FIELD_NUMBER = 1;
+    public static final int STOP_BEGIN_TIME_FIELD_NUMBER = 1;
     private int stopBeginTime_;
     /**
-     * <code>uint32 stopBeginTime = 1;</code>
+     * <code>uint32 stop_begin_time = 1;</code>
      * @return The stopBeginTime.
      */
     @java.lang.Override
@@ -166,10 +170,10 @@ public final class StopServerInfoOuterClass {
       return stopBeginTime_;
     }
 
-    public static final int STOPENDTIME_FIELD_NUMBER = 2;
+    public static final int STOP_END_TIME_FIELD_NUMBER = 2;
     private int stopEndTime_;
     /**
-     * <code>uint32 stopEndTime = 2;</code>
+     * <code>uint32 stop_end_time = 2;</code>
      * @return The stopEndTime.
      */
     @java.lang.Override
@@ -215,10 +219,10 @@ public final class StopServerInfoOuterClass {
       }
     }
 
-    public static final int CONTENTMSG_FIELD_NUMBER = 4;
+    public static final int CONTENT_MSG_FIELD_NUMBER = 4;
     private volatile java.lang.Object contentMsg_;
     /**
-     * <code>string contentMsg = 4;</code>
+     * <code>string content_msg = 4;</code>
      * @return The contentMsg.
      */
     @java.lang.Override
@@ -235,7 +239,7 @@ public final class StopServerInfoOuterClass {
       }
     }
     /**
-     * <code>string contentMsg = 4;</code>
+     * <code>string content_msg = 4;</code>
      * @return The bytes for contentMsg.
      */
     @java.lang.Override
@@ -336,13 +340,13 @@ public final class StopServerInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STOPBEGINTIME_FIELD_NUMBER;
+      hash = (37 * hash) + STOP_BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStopBeginTime();
-      hash = (37 * hash) + STOPENDTIME_FIELD_NUMBER;
+      hash = (37 * hash) + STOP_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStopEndTime();
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
-      hash = (37 * hash) + CONTENTMSG_FIELD_NUMBER;
+      hash = (37 * hash) + CONTENT_MSG_FIELD_NUMBER;
       hash = (53 * hash) + getContentMsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -440,6 +444,10 @@ public final class StopServerInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HJLECMBBPOF
+     * </pre>
+     *
      * Protobuf type {@code StopServerInfo}
      */
     public static final class Builder extends
@@ -608,7 +616,7 @@ public final class StopServerInfoOuterClass {
 
       private int stopBeginTime_ ;
       /**
-       * <code>uint32 stopBeginTime = 1;</code>
+       * <code>uint32 stop_begin_time = 1;</code>
        * @return The stopBeginTime.
        */
       @java.lang.Override
@@ -616,7 +624,7 @@ public final class StopServerInfoOuterClass {
         return stopBeginTime_;
       }
       /**
-       * <code>uint32 stopBeginTime = 1;</code>
+       * <code>uint32 stop_begin_time = 1;</code>
        * @param value The stopBeginTime to set.
        * @return This builder for chaining.
        */
@@ -627,7 +635,7 @@ public final class StopServerInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stopBeginTime = 1;</code>
+       * <code>uint32 stop_begin_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStopBeginTime() {
@@ -639,7 +647,7 @@ public final class StopServerInfoOuterClass {
 
       private int stopEndTime_ ;
       /**
-       * <code>uint32 stopEndTime = 2;</code>
+       * <code>uint32 stop_end_time = 2;</code>
        * @return The stopEndTime.
        */
       @java.lang.Override
@@ -647,7 +655,7 @@ public final class StopServerInfoOuterClass {
         return stopEndTime_;
       }
       /**
-       * <code>uint32 stopEndTime = 2;</code>
+       * <code>uint32 stop_end_time = 2;</code>
        * @param value The stopEndTime to set.
        * @return This builder for chaining.
        */
@@ -658,7 +666,7 @@ public final class StopServerInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stopEndTime = 2;</code>
+       * <code>uint32 stop_end_time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearStopEndTime() {
@@ -746,7 +754,7 @@ public final class StopServerInfoOuterClass {
 
       private java.lang.Object contentMsg_ = "";
       /**
-       * <code>string contentMsg = 4;</code>
+       * <code>string content_msg = 4;</code>
        * @return The contentMsg.
        */
       public java.lang.String getContentMsg() {
@@ -762,7 +770,7 @@ public final class StopServerInfoOuterClass {
         }
       }
       /**
-       * <code>string contentMsg = 4;</code>
+       * <code>string content_msg = 4;</code>
        * @return The bytes for contentMsg.
        */
       public com.google.protobuf.ByteString
@@ -779,7 +787,7 @@ public final class StopServerInfoOuterClass {
         }
       }
       /**
-       * <code>string contentMsg = 4;</code>
+       * <code>string content_msg = 4;</code>
        * @param value The contentMsg to set.
        * @return This builder for chaining.
        */
@@ -794,7 +802,7 @@ public final class StopServerInfoOuterClass {
         return this;
       }
       /**
-       * <code>string contentMsg = 4;</code>
+       * <code>string content_msg = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearContentMsg() {
@@ -804,7 +812,7 @@ public final class StopServerInfoOuterClass {
         return this;
       }
       /**
-       * <code>string contentMsg = 4;</code>
+       * <code>string content_msg = 4;</code>
        * @param value The bytes for contentMsg to set.
        * @return This builder for chaining.
        */
@@ -886,10 +894,10 @@ public final class StopServerInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024StopServerInfo.proto\"]\n\016StopServerInfo" +
-      "\022\025\n\rstopBeginTime\030\001 \001(\r\022\023\n\013stopEndTime\030\002" +
-      " \001(\r\022\013\n\003url\030\003 \001(\t\022\022\n\ncontentMsg\030\004 \001(\tB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\024StopServerInfo.proto\"b\n\016StopServerInfo" +
+      "\022\027\n\017stop_begin_time\030\001 \001(\r\022\025\n\rstop_end_ti" +
+      "me\030\002 \001(\r\022\013\n\003url\030\003 \001(\t\022\023\n\013content_msg\030\004 \001" +
+      "(\tB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

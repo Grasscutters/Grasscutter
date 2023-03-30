@@ -19,12 +19,17 @@ public final class GetShopReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 shopType = 5;</code>
+     * <code>uint32 shop_type = 8;</code>
      * @return The shopType.
      */
     int getShopType();
   }
   /**
+   * <pre>
+   * Name: PCIGEBHJCDG
+   * CmdId: 767
+   * </pre>
+   *
    * Protobuf type {@code GetShopReq}
    */
   public static final class GetShopReq extends
@@ -69,7 +74,7 @@ public final class GetShopReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
 
               shopType_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class GetShopReqOuterClass {
               emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.class, emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetShopReq.OBCAEPEACBM}
-     */
-    public enum OBCAEPEACBM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 705;</code>
-       */
-      PEPPOHPHJOJ(1, 705),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final OBCAEPEACBM DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final OBCAEPEACBM EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 705;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 705;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OBCAEPEACBM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OBCAEPEACBM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 705: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OBCAEPEACBM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OBCAEPEACBM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OBCAEPEACBM>() {
-              public OBCAEPEACBM findValueByNumber(int number) {
-                return OBCAEPEACBM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OBCAEPEACBM[] VALUES = getStaticValuesArray();
-      private static OBCAEPEACBM[] getStaticValuesArray() {
-        return new OBCAEPEACBM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static OBCAEPEACBM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private OBCAEPEACBM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetShopReq.OBCAEPEACBM)
-    }
-
-    public static final int SHOPTYPE_FIELD_NUMBER = 5;
+    public static final int SHOP_TYPE_FIELD_NUMBER = 8;
     private int shopType_;
     /**
-     * <code>uint32 shopType = 5;</code>
+     * <code>uint32 shop_type = 8;</code>
      * @return The shopType.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class GetShopReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shopType_ != 0) {
-        output.writeUInt32(5, shopType_);
+        output.writeUInt32(8, shopType_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class GetShopReqOuterClass {
       size = 0;
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, shopType_);
+          .computeUInt32Size(8, shopType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class GetShopReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SHOPTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getShopType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class GetShopReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PCIGEBHJCDG
+     * CmdId: 767
+     * </pre>
+     *
      * Protobuf type {@code GetShopReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class GetShopReqOuterClass {
 
       private int shopType_ ;
       /**
-       * <code>uint32 shopType = 5;</code>
+       * <code>uint32 shop_type = 8;</code>
        * @return The shopType.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class GetShopReqOuterClass {
         return shopType_;
       }
       /**
-       * <code>uint32 shopType = 5;</code>
+       * <code>uint32 shop_type = 8;</code>
        * @param value The shopType to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class GetShopReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 shopType = 5;</code>
+       * <code>uint32 shop_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
@@ -655,11 +526,9 @@ public final class GetShopReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020GetShopReq.proto\"\200\001\n\nGetShopReq\022\020\n\010sho" +
-      "pType\030\005 \001(\r\"`\n\013OBCAEPEACBM\022\010\n\004NONE\020\000\022\020\n\013" +
-      "PEPPOHPHJOJ\020\301\005\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKO" +
-      "LMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\020GetShopReq.proto\"\037\n\nGetShopReq\022\021\n\tshop" +
+      "_type\030\010 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

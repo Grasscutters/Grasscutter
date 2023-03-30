@@ -19,11 +19,11 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     int getAvatarTeamMapCount();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     boolean containsAvatarTeamMap(
         int key);
@@ -34,42 +34,47 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam>
     getAvatarTeamMap();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam>
     getAvatarTeamMapMap();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
 
     emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
         int key,
         emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
 
     emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrThrow(
         int key);
 
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @return A list containing the tempAvatarGuidList.
      */
     java.util.List<java.lang.Long> getTempAvatarGuidListList();
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @return The count of tempAvatarGuidList.
      */
     int getTempAvatarGuidListCount();
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tempAvatarGuidList at the given index.
      */
     long getTempAvatarGuidList(int index);
   }
   /**
+   * <pre>
+   * Name: JNDHMMALEAP
+   * CmdId: 1744
+   * </pre>
+   *
    * Protobuf type {@code AvatarTeamUpdateNotify}
    */
   public static final class AvatarTeamUpdateNotify extends
@@ -116,7 +121,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarTeamMap_ = com.google.protobuf.MapField.newMapField(
                     AvatarTeamMapDefaultEntryHolder.defaultEntry);
@@ -129,7 +134,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
                   avatarTeamMap__.getKey(), avatarTeamMap__.getValue());
               break;
             }
-            case 64: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tempAvatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
@@ -137,7 +142,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
               tempAvatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 66: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -182,7 +187,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
+        case 4:
           return internalGetAvatarTeamMap();
         default:
           throw new RuntimeException(
@@ -197,138 +202,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify.class, emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarTeamUpdateNotify.KGKBPKDHFNL}
-     */
-    public enum KGKBPKDHFNL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1723;</code>
-       */
-      PEPPOHPHJOJ(1, 1723),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KGKBPKDHFNL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1723;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1723;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KGKBPKDHFNL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KGKBPKDHFNL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1723: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KGKBPKDHFNL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KGKBPKDHFNL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KGKBPKDHFNL>() {
-              public KGKBPKDHFNL findValueByNumber(int number) {
-                return KGKBPKDHFNL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KGKBPKDHFNL[] VALUES = getStaticValuesArray();
-      private static KGKBPKDHFNL[] getStaticValuesArray() {
-        return new KGKBPKDHFNL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static KGKBPKDHFNL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KGKBPKDHFNL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarTeamUpdateNotify.KGKBPKDHFNL)
-    }
-
-    public static final int AVATARTEAMMAP_FIELD_NUMBER = 6;
+    public static final int AVATAR_TEAM_MAP_FIELD_NUMBER = 4;
     private static final class AvatarTeamMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam> defaultEntry =
@@ -355,7 +229,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return internalGetAvatarTeamMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
 
     @java.lang.Override
@@ -373,7 +247,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return getAvatarTeamMapMap();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     @java.lang.Override
 
@@ -381,7 +255,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return internalGetAvatarTeamMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     @java.lang.Override
 
@@ -394,7 +268,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
      */
     @java.lang.Override
 
@@ -409,10 +283,10 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return map.get(key);
     }
 
-    public static final int TEMPAVATARGUIDLIST_FIELD_NUMBER = 8;
+    public static final int TEMP_AVATAR_GUID_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.LongList tempAvatarGuidList_;
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @return A list containing the tempAvatarGuidList.
      */
     @java.lang.Override
@@ -421,14 +295,14 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return tempAvatarGuidList_;
     }
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @return The count of tempAvatarGuidList.
      */
     public int getTempAvatarGuidListCount() {
       return tempAvatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tempAvatarGuidList at the given index.
      */
@@ -457,9 +331,9 @@ public final class AvatarTeamUpdateNotifyOuterClass {
           output,
           internalGetAvatarTeamMap(),
           AvatarTeamMapDefaultEntryHolder.defaultEntry,
-          6);
+          4);
       if (getTempAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(tempAvatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < tempAvatarGuidList_.size(); i++) {
@@ -482,7 +356,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, avatarTeamMap__);
+            .computeMessageSize(4, avatarTeamMap__);
       }
       {
         int dataSize = 0;
@@ -529,11 +403,11 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetAvatarTeamMap().getMap().isEmpty()) {
-        hash = (37 * hash) + AVATARTEAMMAP_FIELD_NUMBER;
+        hash = (37 * hash) + AVATAR_TEAM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAvatarTeamMap().hashCode();
       }
       if (getTempAvatarGuidListCount() > 0) {
-        hash = (37 * hash) + TEMPAVATARGUIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + TEMP_AVATAR_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTempAvatarGuidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -632,6 +506,11 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JNDHMMALEAP
+     * CmdId: 1744
+     * </pre>
+     *
      * Protobuf type {@code AvatarTeamUpdateNotify}
      */
     public static final class Builder extends
@@ -647,7 +526,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 4:
             return internalGetAvatarTeamMap();
           default:
             throw new RuntimeException(
@@ -658,7 +537,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 4:
             return internalGetMutableAvatarTeamMap();
           default:
             throw new RuntimeException(
@@ -845,7 +724,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetAvatarTeamMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
 
       @java.lang.Override
@@ -863,7 +742,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return getAvatarTeamMapMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
       @java.lang.Override
 
@@ -871,7 +750,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetAvatarTeamMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
       @java.lang.Override
 
@@ -884,7 +763,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
       @java.lang.Override
 
@@ -905,7 +784,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
 
       public Builder removeAvatarTeamMap(
@@ -924,7 +803,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetMutableAvatarTeamMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
       public Builder putAvatarTeamMap(
           int key,
@@ -936,7 +815,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatarTeamMap = 6;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 4;</code>
        */
 
       public Builder putAllAvatarTeamMap(
@@ -954,7 +833,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @return A list containing the tempAvatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -963,14 +842,14 @@ public final class AvatarTeamUpdateNotifyOuterClass {
                  java.util.Collections.unmodifiableList(tempAvatarGuidList_) : tempAvatarGuidList_;
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @return The count of tempAvatarGuidList.
        */
       public int getTempAvatarGuidListCount() {
         return tempAvatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @param index The index of the element to return.
        * @return The tempAvatarGuidList at the given index.
        */
@@ -978,7 +857,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return tempAvatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The tempAvatarGuidList to set.
        * @return This builder for chaining.
@@ -991,7 +870,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @param value The tempAvatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -1002,7 +881,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @param values The tempAvatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -1015,7 +894,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 tempAvatarGuidList = 8;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTempAvatarGuidList() {
@@ -1097,14 +976,12 @@ public final class AvatarTeamUpdateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034AvatarTeamUpdateNotify.proto\032\020AvatarTe" +
-      "am.proto\"\213\002\n\026AvatarTeamUpdateNotify\022A\n\ra" +
-      "vatarTeamMap\030\006 \003(\0132*.AvatarTeamUpdateNot" +
-      "ify.AvatarTeamMapEntry\022\032\n\022tempAvatarGuid" +
-      "List\030\010 \003(\004\032A\n\022AvatarTeamMapEntry\022\013\n\003key\030" +
-      "\001 \001(\r\022\032\n\005value\030\002 \001(\0132\013.AvatarTeam:\0028\001\"O\n" +
-      "\013KGKBPKDHFNL\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\273\r" +
-      "\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033" +
-      "\n\031emu.grasscutter.net.protob\006proto3"
+      "am.proto\"\277\001\n\026AvatarTeamUpdateNotify\022C\n\017a" +
+      "vatar_team_map\030\004 \003(\0132*.AvatarTeamUpdateN" +
+      "otify.AvatarTeamMapEntry\022\035\n\025temp_avatar_" +
+      "guid_list\030\r \003(\004\032A\n\022AvatarTeamMapEntry\022\013\n" +
+      "\003key\030\001 \001(\r\022\032\n\005value\030\002 \001(\0132\013.AvatarTeam:\002" +
+      "8\001B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
