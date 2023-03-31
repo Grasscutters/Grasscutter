@@ -5,7 +5,7 @@ import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "TowerLevelExcelConfigData.json")
 public class TowerLevelData extends GameResource {
-	
+
     private int levelId;
     private int levelIndex;
     private int levelGroupId;

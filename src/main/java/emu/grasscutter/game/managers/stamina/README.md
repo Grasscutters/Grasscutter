@@ -1,28 +1,36 @@
 # Stamina Manager
 
 ---
+
 ## UpdateStamina
+
 ```java
 // will use consumption.consumptionType as reason
 public int updateStaminaRelative(GameSession session, Consumption consumption);
 ```
+
 ```java
 public int updateStaminaAbsolute(GameSession session, String reason, int newStamina)
 ```
 
 ---
+
 ## Pause and Resume
+
 ```java
 public void startSustainedStaminaHandler()
 ```
+
 ```java
 public void stopSustainedStaminaHandler()
 ```
 
-
 ---
+
 ## Stamina change listeners and intercepting
+
 ### BeforeUpdateStaminaListener
+
 ```java
 
 import emu.grasscutter.game.managers.StaminaManager.BeforeUpdateStaminaListener;
@@ -44,15 +52,14 @@ private class MyClass implements BeforeUpdateStaminaListener {
     @Override
     public boolean onBeforeUpdateStamina(String reason, Consumption consumption) {
         // Try to intercept if this update is CLIMB_JUMP
-        if (consumption.consumptionType == ConsumptionType.CLIMB_JUMP) {
-            return true;
-        }
+        return consumption.consumptionType == ConsumptionType.CLIMB_JUMP;
         // If it is not CLIMB_JUMP, do not intercept.
-        return false;
     }
 }
 ```
+
 ### AfterUpdateStaminaListener
+
 ```java
 
 import emu.grasscutter.game.managers.StaminaManager.AfterUpdateStaminaListener;

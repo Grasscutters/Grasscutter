@@ -1,18 +1,18 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 @Entity
 public class TeamInfo {
     private String name;
-    private List<Integer> avatars;
+    private final List<Integer> avatars;
 
     public TeamInfo() {
         this.name = "";

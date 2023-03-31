@@ -5,12 +5,12 @@ import emu.grasscutter.utils.Language;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 
-import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
-
 import java.util.List;
 
+import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
+
 final class GachaMappingRequestHandler implements DocumentationHandler {
-    private List<String> gachaJsons;
+    private final List<String> gachaJsons;
 
     GachaMappingRequestHandler() {
         this.gachaJsons = Tools.createGachaMappingJsons();

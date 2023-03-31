@@ -11,7 +11,6 @@ import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
 import emu.grasscutter.utils.FileUtils;
 import lombok.Getter;
-
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
@@ -31,19 +30,23 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
-    @Getter private static ScriptEngine engine;
+    @Getter
+    private static ScriptEngine engine;
     private static ScriptEngineFactory factory;
-    @Getter private static Serializer serializer;
-    @Getter private static ScriptLib scriptLib;
-    @Getter private static LuaValue scriptLibLua;
+    @Getter
+    private static Serializer serializer;
+    @Getter
+    private static ScriptLib scriptLib;
+    @Getter
+    private static LuaValue scriptLibLua;
     /**
      * suggest GC to remove it if the memory is less
      */
-    private static Map<String, SoftReference<CompiledScript>> scriptsCache = new ConcurrentHashMap<>();
+    private static final Map<String, SoftReference<CompiledScript>> scriptsCache = new ConcurrentHashMap<>();
     /**
      * sceneId - SceneMeta
      */
-    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
+    private static final Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
 
     public synchronized static void init() throws Exception {
         if (sm != null) {
@@ -87,7 +90,7 @@ public class ScriptLoader {
     public static <T> Optional<T> tryGet(SoftReference<T> softReference) {
         try {
             return Optional.ofNullable(softReference.get());
-        }catch (NullPointerException npe) {
+        } catch (NullPointerException npe) {
             return Optional.empty();
         }
     }

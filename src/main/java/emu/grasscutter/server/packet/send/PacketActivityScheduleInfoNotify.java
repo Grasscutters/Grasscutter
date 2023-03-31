@@ -11,10 +11,10 @@ import java.util.Collection;
 
 public class PacketActivityScheduleInfoNotify extends BasePacket {
 
-	public PacketActivityScheduleInfoNotify(Collection<ActivityConfigItem> activityConfigItemList) {
-		super(PacketOpcodes.ActivityScheduleInfoNotify);
+    public PacketActivityScheduleInfoNotify(Collection<ActivityConfigItem> activityConfigItemList) {
+        super(PacketOpcodes.ActivityScheduleInfoNotify);
 
-		var proto = ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.newBuilder();
+        var proto = ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.newBuilder();
 
         activityConfigItemList.forEach(item -> {
             proto.addActivityScheduleList(ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
@@ -26,6 +26,6 @@ public class PacketActivityScheduleInfoNotify extends BasePacket {
                 .build());
         });
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

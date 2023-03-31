@@ -46,7 +46,6 @@ public final class TalentCommand implements CommandHandler {
         switch (cmdSwitch) {
             default -> {
                 sendUsageMessage(sender);
-                return;
             }
             case "set" -> {
                 if (args.size() < 3) {

@@ -23,23 +23,24 @@ import java.util.Queue;
 
 public class BlossomActivity {
 
+    private static final int BLOOMING_GADGET_ID = 70210109;
     private final SceneGroup tempSceneGroup;
     private final WorldChallenge challenge;
     private final EntityGadget gadget;
-    private EntityGadget chest;
-    private int step;
     private final int goal;
-    private int generatedCount;
     private final int worldLevel;
-    private boolean pass=false;
     private final List<EntityMonster> activeMonsters = new ArrayList<>();
     private final Queue<Integer> candidateMonsters = new ArrayDeque<>();
-    private static final int BLOOMING_GADGET_ID = 70210109;
+    private EntityGadget chest;
+    private int step;
+    private int generatedCount;
+    private boolean pass = false;
+
     public BlossomActivity(EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
-        this.gadget=entityGadget;
-        this.step=0;
+        this.gadget = entityGadget;
+        this.step = 0;
         this.goal = monsters.size();
         this.candidateMonsters.addAll(monsters);
         this.worldLevel = worldLevel;
@@ -54,9 +55,11 @@ public class BlossomActivity {
         challengeTriggers.add(new KillMonsterTrigger());
         //this.challengeTriggers.add(new InTimeTrigger());
     }
+
     public WorldChallenge getChallenge() {
         return this.challenge;
     }
+
     public void setMonsters(List<EntityMonster> monsters) {
         this.activeMonsters.clear();
         this.activeMonsters.addAll(monsters);
@@ -64,26 +67,30 @@ public class BlossomActivity {
             monster.setGroupId(this.tempSceneGroup.id);
         }
     }
+
     public int getAliveMonstersCount() {
-        int count=0;
-        for (EntityMonster monster: activeMonsters) {
+        int count = 0;
+        for (EntityMonster monster : activeMonsters) {
             if (monster.isAlive()) {
                 count++;
             }
         }
         return count;
     }
+
     public boolean getPass() {
         return pass;
     }
+
     public void start() {
         challenge.start();
     }
+
     public void onTick() {
         Scene scene = gadget.getScene();
         Position pos = gadget.getPosition();
         if (getAliveMonstersCount() <= 2) {
-            if (generatedCount<goal) {
+            if (generatedCount < goal) {
                 step++;
 
                 WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
@@ -93,11 +100,11 @@ public class BlossomActivity {
                 }
 
                 List<EntityMonster> newMonsters = new ArrayList<>();
-                int willSpawn = Utils.randomRange(3,5);
-                if (generatedCount+willSpawn>goal) {
+                int willSpawn = Utils.randomRange(3, 5);
+                if (generatedCount + willSpawn > goal) {
                     willSpawn = goal - generatedCount;
                 }
-                generatedCount+=willSpawn;
+                generatedCount += willSpawn;
                 for (int i = 0; i < willSpawn; i++) {
                     MonsterData monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
                     int level = scene.getEntityLevel(1, worldLevelOverride);
@@ -106,7 +113,7 @@ public class BlossomActivity {
                     newMonsters.add(entity);
                 }
                 setMonsters(newMonsters);
-            }else {
+            } else {
                 if (getAliveMonstersCount() == 0) {
                     this.pass = true;
                     this.challenge.done();
@@ -114,11 +121,13 @@ public class BlossomActivity {
             }
         }
     }
+
     public EntityGadget getGadget() {
         return gadget;
     }
+
     public EntityGadget getChest() {
-        if (chest==null) {
+        if (chest == null) {
             EntityGadget rewardGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
             SceneGadget metaGadget = new SceneGadget();
             metaGadget.boss_chest = new SceneBossChest();

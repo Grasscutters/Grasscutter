@@ -17,7 +17,6 @@ public enum ActivityType {
 
     ;
 
-    private final int value;
     private static final Int2ObjectMap<ActivityType> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, ActivityType> stringMap = new HashMap<>();
 
@@ -27,6 +26,8 @@ public enum ActivityType {
             stringMap.put(e.name(), e);
         });
     }
+
+    private final int value;
 
     public static ActivityType getTypeByValue(int value) {
         return map.getOrDefault(value, NONE);

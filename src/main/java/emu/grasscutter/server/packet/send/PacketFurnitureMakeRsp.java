@@ -9,17 +9,17 @@ import emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass;
 
 public class PacketFurnitureMakeRsp extends BasePacket {
 
-	public PacketFurnitureMakeRsp(GameHome home) {
-		super(PacketOpcodes.FurnitureMakeRsp);
+    public PacketFurnitureMakeRsp(GameHome home) {
+        super(PacketOpcodes.FurnitureMakeRsp);
 
-		var proto = FurnitureMakeRspOuterClass.FurnitureMakeRsp.newBuilder();
+        var proto = FurnitureMakeRspOuterClass.FurnitureMakeRsp.newBuilder();
 
-		proto.setFurnitureMakeSlot(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.newBuilder()
-				.addAllFurnitureMakeDataList(home.getFurnitureMakeSlotItemList().stream()
-						.map(FurnitureMakeSlotItem::toProto)
-						.toList())
-				.build());
+        proto.setFurnitureMakeSlot(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.newBuilder()
+            .addAllFurnitureMakeDataList(home.getFurnitureMakeSlotItemList().stream()
+                .map(FurnitureMakeSlotItem::toProto)
+                .toList())
+            .build());
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

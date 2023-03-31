@@ -19,8 +19,8 @@ public final class HealCommand implements CommandHandler {
         targetPlayer.getTeamManager().getActiveTeam().forEach(entity -> {
             boolean isAlive = entity.isAlive();
             entity.setFightProperty(
-                    FightProperty.FIGHT_PROP_CUR_HP,
-                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
+                FightProperty.FIGHT_PROP_CUR_HP,
+                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
             );
             entity.getWorld().broadcastPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             if (!isAlive) {

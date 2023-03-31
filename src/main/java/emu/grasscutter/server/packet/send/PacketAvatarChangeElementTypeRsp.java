@@ -5,20 +5,20 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarChangeElementTypeRspOuterClass.AvatarChangeElementTypeRsp;
 
 public class PacketAvatarChangeElementTypeRsp extends BasePacket {
-	
-	public PacketAvatarChangeElementTypeRsp() {
-		super(PacketOpcodes.AvatarChangeElementTypeRsp);
-	}
-	
-	public PacketAvatarChangeElementTypeRsp(int retcode) {
-		super(PacketOpcodes.AvatarChangeElementTypeRsp);
-		
-		if (retcode > 0) {
-			AvatarChangeElementTypeRsp proto = AvatarChangeElementTypeRsp.newBuilder()
-					.setRetcode(retcode)
-					.build();
-			
-			this.setData(proto);
-		}
-	}
+
+    public PacketAvatarChangeElementTypeRsp() {
+        super(PacketOpcodes.AvatarChangeElementTypeRsp);
+    }
+
+    public PacketAvatarChangeElementTypeRsp(int retcode) {
+        super(PacketOpcodes.AvatarChangeElementTypeRsp);
+
+        if (retcode > 0) {
+            AvatarChangeElementTypeRsp proto = AvatarChangeElementTypeRsp.newBuilder()
+                .setRetcode(retcode)
+                .build();
+
+            this.setData(proto);
+        }
+    }
 }

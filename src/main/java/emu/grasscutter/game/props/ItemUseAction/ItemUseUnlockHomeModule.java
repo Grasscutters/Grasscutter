@@ -3,13 +3,13 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseUnlockHomeModule extends ItemUseInt {
+    public ItemUseUnlockHomeModule(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_UNLOCK_HOME_MODULE;
-    }
-
-    public ItemUseUnlockHomeModule(String[] useParam) {
-        super(useParam);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class ItemUseUnlockHomeModule extends ItemUseInt {
     }
 
     @Override
-    public boolean postUseItem(UseItemParams params){
+    public boolean postUseItem(UseItemParams params) {
         params.player.addRealmList(this.i);
         return true;
     }

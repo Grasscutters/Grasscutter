@@ -10,7 +10,7 @@ import static emu.grasscutter.Grasscutter.config;
 
 /**
  * A data container for the server's configuration.
- *
+ * <p>
  * Use `import static emu.grasscutter.Configuration.*;`
  * to import all configuration constants.
  */
@@ -26,26 +26,22 @@ public final class Configuration extends ConfigContainer {
     public static final Locale LANGUAGE = config.language.language;
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     public static final String DOCUMENT_LANGUAGE = config.language.document;
-    private static final String DATA_FOLDER = config.folderStructure.data;
-    private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
-    private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
-    private static final String PACKETS_FOLDER = config.folderStructure.packets;
-
     public static final Server SERVER = config.server;
     public static final Database DATABASE = config.databaseInfo;
     public static final Account ACCOUNT = config.account;
-
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
     public static final DebugMode DEBUG_MODE_INFO = config.server.debugMode;
-
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
     public static final Files HTTP_STATIC_FILES = config.server.http.files;
-
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;
+    private static final String DATA_FOLDER = config.folderStructure.data;
+    private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
+    private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
+    private static final String PACKETS_FOLDER = config.folderStructure.packets;
 
     /*
      * Utilities
@@ -91,7 +87,8 @@ public final class Configuration extends ConfigContainer {
 
     /**
      * Fallback method.
-     * @param left Attempt to use.
+     *
+     * @param left  Attempt to use.
      * @param right Use if left is undefined.
      * @return Left or right.
      */
@@ -101,7 +98,8 @@ public final class Configuration extends ConfigContainer {
 
     /**
      * {@link Configuration#lr(Object, Object)} for {@link String}s.
-     * @param left Attempt to use.
+     *
+     * @param left  Attempt to use.
      * @param right Use if left is empty.
      * @return Left or right.
      */
@@ -111,7 +109,8 @@ public final class Configuration extends ConfigContainer {
 
     /**
      * {@link Configuration#lr(Object, Object)} for {@link Integer}s.
-     * @param left Attempt to use.
+     *
+     * @param left  Attempt to use.
      * @param right Use if left is 0.
      * @return Left or right.
      */

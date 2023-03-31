@@ -1,18 +1,6 @@
 package emu.grasscutter.game.inventory;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import org.bson.types.ObjectId;
-
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.PostLoad;
-import dev.morphia.annotations.Transient;
-
+import dev.morphia.annotations.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.common.ItemParamData;
@@ -36,34 +24,72 @@ import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
 import emu.grasscutter.utils.WeightedList;
 import lombok.Getter;
 import lombok.Setter;
+import org.bson.types.ObjectId;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity(value = "items", useDiscriminator = false)
 public class GameItem {
-    @Id private ObjectId id;
-    @Indexed private int ownerId;
-    @Getter @Setter private int itemId;
-    @Getter @Setter private int count;
+    @Id
+    private ObjectId id;
+    @Indexed
+    private int ownerId;
+    @Getter
+    @Setter
+    private int itemId;
+    @Getter
+    @Setter
+    private int count;
 
-    @Transient @Getter private long guid; // Player unique id
-    @Transient @Getter @Setter private ItemData itemData;
+    @Transient
+    @Getter
+    private long guid; // Player unique id
+    @Transient
+    @Getter
+    @Setter
+    private ItemData itemData;
 
     // Equips
-    @Getter @Setter private int level;
-    @Getter @Setter private int exp;
-    @Getter @Setter private int totalExp;
-    @Getter @Setter private int promoteLevel;
-    @Getter @Setter private boolean locked;
+    @Getter
+    @Setter
+    private int level;
+    @Getter
+    @Setter
+    private int exp;
+    @Getter
+    @Setter
+    private int totalExp;
+    @Getter
+    @Setter
+    private int promoteLevel;
+    @Getter
+    @Setter
+    private boolean locked;
 
     // Weapon
-    @Getter private List<Integer> affixes;
-    @Getter @Setter private int refinement = 0;
+    @Getter
+    private List<Integer> affixes;
+    @Getter
+    @Setter
+    private int refinement = 0;
 
     // Relic
-    @Getter @Setter private int mainPropId;
-    @Getter private List<Integer> appendPropIdList;
+    @Getter
+    @Setter
+    private int mainPropId;
+    @Getter
+    private List<Integer> appendPropIdList;
 
-    @Getter @Setter private int equipCharacter;
-    @Transient @Getter @Setter private int weaponEntityId;
+    @Getter
+    @Setter
+    private int equipCharacter;
+    @Transient
+    @Getter
+    @Setter
+    private int weaponEntityId;
 
     public GameItem() {
         // Morphia only
@@ -91,7 +117,7 @@ public class GameItem {
 
         switch (data.getItemType()) {
             case ITEM_VIRTUAL:
-            this.count = count;
+                this.count = count;
                 break;
             case ITEM_WEAPON:
                 this.count = 1;
@@ -122,23 +148,6 @@ public class GameItem {
         }
     }
 
-    public int getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwner(Player player) {
-        this.ownerId = player.getUid();
-        this.guid = player.getNextGameGuid();
-    }
-
-    public ObjectId getObjectId() {
-        return id;
-    }
-
-    public ItemType getItemType() {
-        return this.itemData.getItemType();
-    }
-
     public static int getMinPromoteLevel(int level) {
         if (level > 80) {
             return 6;
@@ -154,6 +163,23 @@ public class GameItem {
             return 1;
         }
         return 0;
+    }
+
+    public int getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwner(Player player) {
+        this.ownerId = player.getUid();
+        this.guid = player.getNextGameGuid();
+    }
+
+    public ObjectId getObjectId() {
+        return id;
+    }
+
+    public ItemType getItemType() {
+        return this.itemData.getItemType();
     }
 
     public int getEquipSlot() {
@@ -270,28 +296,28 @@ public class GameItem {
 
     public SceneWeaponInfo createSceneWeaponInfo() {
         SceneWeaponInfo.Builder weaponInfo = SceneWeaponInfo.newBuilder()
-                .setEntityId(this.getWeaponEntityId())
-                .setItemId(this.getItemId())
-                .setGuid(this.getGuid())
-                .setLevel(this.getLevel())
-                .setGadgetId(this.getItemData().getGadgetId())
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
+            .setEntityId(this.getWeaponEntityId())
+            .setItemId(this.getItemId())
+            .setGuid(this.getGuid())
+            .setLevel(this.getLevel())
+            .setGadgetId(this.getItemData().getGadgetId())
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
 
-                if (this.getAffixes() != null && this.getAffixes().size() > 0) {
-                    for (int affix : this.getAffixes()) {
-                        weaponInfo.putAffixMap(affix, this.getRefinement());
-                    }
-                }
+        if (this.getAffixes() != null && this.getAffixes().size() > 0) {
+            for (int affix : this.getAffixes()) {
+                weaponInfo.putAffixMap(affix, this.getRefinement());
+            }
+        }
 
         return weaponInfo.build();
     }
 
     public SceneReliquaryInfo createSceneReliquaryInfo() {
         SceneReliquaryInfo relicInfo = SceneReliquaryInfo.newBuilder()
-                .setItemId(this.getItemId())
-                .setGuid(this.getGuid())
-                .setLevel(this.getLevel())
-                .build();
+            .setItemId(this.getItemId())
+            .setGuid(this.getGuid())
+            .setLevel(this.getLevel())
+            .build();
 
         return relicInfo;
     }
@@ -324,8 +350,8 @@ public class GameItem {
 
     public Item toProto() {
         Item.Builder proto = Item.newBuilder()
-                .setGuid(this.getGuid())
-                .setItemId(this.getItemId());
+            .setGuid(this.getGuid())
+            .setItemId(this.getItemId());
 
         switch (getItemType()) {
             case ITEM_WEAPON:

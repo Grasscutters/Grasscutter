@@ -14,11 +14,11 @@ import static emu.grasscutter.utils.Language.translate;
  * Allows all users to access any account.
  */
 public final class DefaultAuthentication implements AuthenticationSystem {
-    private Authenticator<LoginResultJson> passwordAuthenticator;
-    private Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
-    private Authenticator<ComboTokenResJson> sessionKeyAuthenticator = new SessionKeyAuthenticator();
-    private ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
-    private OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
+    private final Authenticator<LoginResultJson> passwordAuthenticator;
+    private final Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
+    private final Authenticator<ComboTokenResJson> sessionKeyAuthenticator = new SessionKeyAuthenticator();
+    private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
+    private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
 
     public DefaultAuthentication() {
         if (ACCOUNT.EXPERIMENTAL_RealPassword) {

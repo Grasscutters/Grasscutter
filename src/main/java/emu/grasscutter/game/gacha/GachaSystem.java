@@ -1,13 +1,5 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.io.File;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -39,12 +31,18 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.greenrobot.eventbus.Subscribe;
 
-public class GachaSystem extends BaseGameSystem {
-    private final Int2ObjectMap<GachaBanner> gachaBanners;
-    private WatchService watchService;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
+public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
     private static final int stardustId = 222;
+    private final Int2ObjectMap<GachaBanner> gachaBanners;
+    private WatchService watchService;
 
     public GachaSystem(GameServer server) {
         super(server);
@@ -96,40 +94,6 @@ public class GachaSystem extends BaseGameSystem {
         }
     }
 
-    private class BannerPools {
-        public int[] rateUpItems4;
-        public int[] rateUpItems5;
-        public int[] fallbackItems4Pool1;
-        public int[] fallbackItems4Pool2;
-        public int[] fallbackItems5Pool1;
-        public int[] fallbackItems5Pool2;
-
-        public BannerPools(GachaBanner banner) {
-            rateUpItems4 = banner.getRateUpItems4();
-            rateUpItems5 = banner.getRateUpItems5();
-            fallbackItems4Pool1 = banner.getFallbackItems4Pool1();
-            fallbackItems4Pool2 = banner.getFallbackItems4Pool2();
-            fallbackItems5Pool1 = banner.getFallbackItems5Pool1();
-            fallbackItems5Pool2 = banner.getFallbackItems5Pool2();
-
-            if (banner.isAutoStripRateUpFromFallback()) {
-                fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, rateUpItems4);
-                fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, rateUpItems4);
-                fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, rateUpItems5);
-                fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, rateUpItems5);
-            }
-        }
-
-        public void removeFromAllPools(int[] itemIds) {
-            rateUpItems4 = Utils.setSubtract(rateUpItems4, itemIds);
-            rateUpItems5 = Utils.setSubtract(rateUpItems5, itemIds);
-            fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, itemIds);
-            fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, itemIds);
-            fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, itemIds);
-            fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, itemIds);
-        }
-    }
-
     private synchronized int[] removeC6FromPool(int[] itemPool, Player player) {
         IntList temp = new IntArrayList();
         for (int itemId : itemPool) {
@@ -151,9 +115,9 @@ public class GachaSystem extends BaseGameSystem {
             }
             total += weight;
         }
-        int roll = ThreadLocalRandom.current().nextInt((total < cutoff)? total : cutoff);
+        int roll = ThreadLocalRandom.current().nextInt((total < cutoff) ? total : cutoff);
         int subTotal = 0;
-        for (int i=0; i<weights.length; i++) {
+        for (int i = 0; i < weights.length; i++) {
             subTotal += weights[i];
             if (roll < subTotal) {
                 return i;
@@ -166,7 +130,7 @@ public class GachaSystem extends BaseGameSystem {
     private synchronized int doFallbackRarePull(int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
         if (fallback1.length < 1) {
             if (fallback2.length < 1) {
-                return getRandom((rarity==5)? GachaBanner.DEFAULT_FALLBACK_ITEMS_5_POOL_2 : GachaBanner.DEFAULT_FALLBACK_ITEMS_4_POOL_2);
+                return getRandom((rarity == 5) ? GachaBanner.DEFAULT_FALLBACK_ITEMS_5_POOL_2 : GachaBanner.DEFAULT_FALLBACK_ITEMS_4_POOL_2);
             } else {
                 return getRandom(fallback2);
             }
@@ -175,9 +139,9 @@ public class GachaSystem extends BaseGameSystem {
         } else {  // Both pools are possible, use the pool balancer
             int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
             int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
-            int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
-                case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
-                default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
+            int chosenPool = switch ((pityPool1 >= pityPool2) ? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
+                case 1 -> 1 + drawRoulette(new int[]{pityPool1, pityPool2}, 10000);
+                default -> 2 - drawRoulette(new int[]{pityPool2, pityPool1}, 10000);
             };
             return switch (chosenPool) {
                 case 1:
@@ -321,12 +285,12 @@ public class GachaSystem extends BaseGameSystem {
                     break;
                 default:
                     if (constellation >= 6) {  // C6, give consolation starglitter
-                        addStarglitter = (itemData.getRankLevel()==5)? 25 : 5;
+                        addStarglitter = (itemData.getRankLevel() == 5) ? 25 : 5;
                     } else {  // C0-C5, give constellation item
                         if (banner.isRemoveC6FromPool() && constellation == 5) {  // New C6, remove it from the pools so we don't get C7 in a 10pull
-                            pools.removeFromAllPools(new int[] {itemId});
+                            pools.removeFromAllPools(new int[]{itemId});
                         }
-                        addStarglitter = (itemData.getRankLevel()==5)? 10 : 2;
+                        addStarglitter = (itemData.getRankLevel() == 5) ? 10 : 2;
                         int constItemId = itemId + 100;  // This may not hold true for future characters. Examples of strictly correct constellation item lookup are elsewhere for now.
                         boolean haveConstItem = inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId) == null;
                         gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(haveConstItem));
@@ -404,7 +368,6 @@ public class GachaSystem extends BaseGameSystem {
                 boolean valid = watchKey.reset();
                 if (!valid) {
                     Grasscutter.getLogger().error("Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
-                    return;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -418,8 +381,7 @@ public class GachaSystem extends BaseGameSystem {
         long currentTime = System.currentTimeMillis() / 1000L;
 
         for (GachaBanner banner : getGachaBanners().values()) {
-            if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD))
-            {
+            if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD)) {
                 proto.addGachaInfoList(banner.toProto(player));
             }
         }
@@ -429,5 +391,39 @@ public class GachaSystem extends BaseGameSystem {
 
     public GetGachaInfoRsp toProto(Player player) {
         return createProto(player);
+    }
+
+    private class BannerPools {
+        public int[] rateUpItems4;
+        public int[] rateUpItems5;
+        public int[] fallbackItems4Pool1;
+        public int[] fallbackItems4Pool2;
+        public int[] fallbackItems5Pool1;
+        public int[] fallbackItems5Pool2;
+
+        public BannerPools(GachaBanner banner) {
+            rateUpItems4 = banner.getRateUpItems4();
+            rateUpItems5 = banner.getRateUpItems5();
+            fallbackItems4Pool1 = banner.getFallbackItems4Pool1();
+            fallbackItems4Pool2 = banner.getFallbackItems4Pool2();
+            fallbackItems5Pool1 = banner.getFallbackItems5Pool1();
+            fallbackItems5Pool2 = banner.getFallbackItems5Pool2();
+
+            if (banner.isAutoStripRateUpFromFallback()) {
+                fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, rateUpItems4);
+                fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, rateUpItems4);
+                fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, rateUpItems5);
+                fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, rateUpItems5);
+            }
+        }
+
+        public void removeFromAllPools(int[] itemIds) {
+            rateUpItems4 = Utils.setSubtract(rateUpItems4, itemIds);
+            rateUpItems5 = Utils.setSubtract(rateUpItems5, itemIds);
+            fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, itemIds);
+            fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, itemIds);
+            fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, itemIds);
+            fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, itemIds);
+        }
     }
 }

@@ -20,8 +20,7 @@ public final class LanguageCommand implements CommandHandler {
             String curLangCode = null;
             if (sender != null) {
                 curLangCode = Utils.getLanguageCode(sender.getAccount().getLocale());
-            }
-            else {
+            } else {
                 curLangCode = Grasscutter.getLanguage().getLanguageCode();
             }
             CommandHandler.sendMessage(sender, translate(sender, "commands.language.current_language", curLangCode));
@@ -37,8 +36,7 @@ public final class LanguageCommand implements CommandHandler {
             var account = sender.getAccount();
             account.setLocale(locale);
             account.save();
-        }
-        else {
+        } else {
             Grasscutter.setLanguage(languageInst);
             var config = Grasscutter.getConfig();
             config.language.language = locale;

@@ -1,7 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -16,26 +14,43 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 
+import java.util.List;
+
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class AvatarData extends GameResource {
 
     private String iconName;
-    @Getter private String bodyType;
-    @Getter private String qualityType;
-    @Getter private int chargeEfficiency;
-    @Getter private int initialWeapon;
-    @Getter private WeaponType weaponType;
-    @Getter private String imageName;
-    @Getter private int avatarPromoteId;
-    @Getter private String cutsceneShow;
-    @Getter private int skillDepotId;
-    @Getter private int staminaRecoverSpeed;
-    @Getter private List<String> candSkillDepotIds;
-    @Getter private String avatarIdentityType;
-    @Getter private List<Integer> avatarPromoteRewardLevelList;
-    @Getter private List<Integer> avatarPromoteRewardIdList;
+    @Getter
+    private String bodyType;
+    @Getter
+    private String qualityType;
+    @Getter
+    private int chargeEfficiency;
+    @Getter
+    private int initialWeapon;
+    @Getter
+    private WeaponType weaponType;
+    @Getter
+    private String imageName;
+    @Getter
+    private int avatarPromoteId;
+    @Getter
+    private String cutsceneShow;
+    @Getter
+    private int skillDepotId;
+    @Getter
+    private int staminaRecoverSpeed;
+    @Getter
+    private List<String> candSkillDepotIds;
+    @Getter
+    private String avatarIdentityType;
+    @Getter
+    private List<Integer> avatarPromoteRewardLevelList;
+    @Getter
+    private List<Integer> avatarPromoteRewardIdList;
 
-    @Getter private long nameTextMapHash;
+    @Getter
+    private long nameTextMapHash;
 
     private float hpBase;
     private float attackBase;
@@ -48,18 +63,24 @@ public class AvatarData extends GameResource {
     private int id;
 
     // Transient
-    @Getter private String name;
+    @Getter
+    private String name;
 
     private Int2ObjectMap<String> growthCurveMap;
     private float[] hpGrowthCurve;
     private float[] attackGrowthCurve;
     private float[] defenseGrowthCurve;
-    @Getter private AvatarSkillDepotData skillDepot;
-    @Getter private IntList abilities;
+    @Getter
+    private AvatarSkillDepotData skillDepot;
+    @Getter
+    private IntList abilities;
 
-    @Getter private List<Integer> fetters;
-    @Getter private int nameCardRewardId;
-    @Getter private int nameCardId;
+    @Getter
+    private List<Integer> fetters;
+    @Getter
+    private int nameCardRewardId;
+    @Getter
+    private int nameCardId;
 
     public float getBaseHp(int level) {
         try {
@@ -166,4 +187,3 @@ public class AvatarData extends GameResource {
         }
     }
 }
-

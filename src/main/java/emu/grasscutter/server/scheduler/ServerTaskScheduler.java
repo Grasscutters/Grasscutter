@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * A class to manage all time-based tasks scheduled on the server.
  * This handles both synchronous and asynchronous tasks.
- *
+ * <p>
  * Developers note: A server tick is ONE REAL-TIME SECOND.
  */
 public final class ServerTaskScheduler {
@@ -26,11 +26,11 @@ public final class ServerTaskScheduler {
      */
     public void runTasks() {
         // Skip if there are no tasks.
-        if(this.tasks.size() == 0)
+        if (this.tasks.size() == 0)
             return;
 
         // Run all tasks.
-        for(ServerTask task : this.tasks.values()) {
+        for (ServerTask task : this.tasks.values()) {
             // Check if the task should run.
             if (task.shouldRun()) {
                 // Run the task.
@@ -45,13 +45,13 @@ public final class ServerTaskScheduler {
         }
 
         // Run all async tasks.
-        for(AsyncServerTask task : this.asyncTasks.values()) {
-            if(!task.hasStarted()) {
+        for (AsyncServerTask task : this.asyncTasks.values()) {
+            if (!task.hasStarted()) {
                 // Create a thread for the task.
                 Thread thread = new Thread(task);
                 // Start the thread.
                 thread.start();
-            } else if(task.isFinished()) {
+            } else if (task.isFinished()) {
                 // Cancel the task.
                 this.asyncTasks.remove(task.getTaskId());
                 // Run the task's callback.
@@ -62,6 +62,7 @@ public final class ServerTaskScheduler {
 
     /**
      * Gets a task from the scheduler.
+     *
      * @param taskId The ID of the task to get.
      * @return The task, or null if it does not exist.
      */
@@ -71,6 +72,7 @@ public final class ServerTaskScheduler {
 
     /**
      * Gets an async task from the scheduler.
+     *
      * @param taskId The ID of the task to get.
      * @return The task, or null if it does not exist.
      */
@@ -80,6 +82,7 @@ public final class ServerTaskScheduler {
 
     /**
      * Removes a task from the scheduler.
+     *
      * @param taskId The ID of the task to remove.
      */
     public void cancelTask(int taskId) {
@@ -89,6 +92,7 @@ public final class ServerTaskScheduler {
     /**
      * Schedules a task to be run on a separate thread.
      * The task runs on the next server tick.
+     *
      * @param runnable The runnable to run.
      * @return The ID of the task.
      */
@@ -103,6 +107,7 @@ public final class ServerTaskScheduler {
 
     /**
      * Schedules a task to be run on the next server tick.
+     *
      * @param runnable The runnable to run.
      * @return The ID of the task.
      */
@@ -112,8 +117,9 @@ public final class ServerTaskScheduler {
 
     /**
      * Schedules a task to be run after the amount of ticks has passed.
+     *
      * @param runnable The runnable to run.
-     * @param delay The amount of ticks to wait before running.
+     * @param delay    The amount of ticks to wait before running.
      * @return The ID of the task.
      */
     public int scheduleDelayedTask(Runnable runnable, int delay) {
@@ -122,8 +128,9 @@ public final class ServerTaskScheduler {
 
     /**
      * Schedules a task to be run every amount of ticks.
+     *
      * @param runnable The runnable to run.
-     * @param period The amount of ticks to wait before running again.
+     * @param period   The amount of ticks to wait before running again.
      * @return The ID of the task.
      */
     public int scheduleRepeatingTask(Runnable runnable, int period) {
@@ -132,9 +139,10 @@ public final class ServerTaskScheduler {
 
     /**
      * Schedules a task to be run after the amount of ticks has passed.
+     *
      * @param runnable The runnable to run.
-     * @param period The amount of ticks to wait before running again.
-     * @param delay The amount of ticks to wait before running the first time.
+     * @param period   The amount of ticks to wait before running again.
+     * @param delay    The amount of ticks to wait before running the first time.
      * @return The ID of the task.
      */
     public int scheduleDelayedRepeatingTask(Runnable runnable, int period, int delay) {

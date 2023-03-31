@@ -1,10 +1,22 @@
 package emu.grasscutter.tools;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.excels.AchievementData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.game.inventory.MaterialType;
+import emu.grasscutter.utils.Language;
+import emu.grasscutter.utils.Language.TextStrings;
+import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import lombok.val;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,27 +28,13 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.excels.AchievementData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.Language.TextStrings;
-import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
-import lombok.val;
-
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.Language.getTextMapKey;
 
 public final class Tools {
     /**
      * This generates the GM handbooks with a message by default.
+     *
      * @throws Exception If an error occurs while generating the handbooks.
      */
     public static void createGmHandbooks() throws Exception {
@@ -45,6 +43,7 @@ public final class Tools {
 
     /**
      * Generates a GM handbook for each language.
+     *
      * @param message Should a message be printed to the console?
      * @throws Exception If an error occurs while generating the handbooks.
      */
@@ -52,7 +51,7 @@ public final class Tools {
         val languages = Language.TextStrings.getLanguages();
 
         ResourceLoader.loadAll();
-        val mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
+        val mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
         // val questDescs = new Int2IntRBTreeMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
 
         val avatarDataMap = new Int2ObjectRBTreeMap<>(GameData.getAvatarDataMap());
@@ -70,17 +69,20 @@ public final class Tools {
             void newLine(String line) {
                 handbookBuilders.forEach(b -> b.append(line + "\n"));
             }
+
             void newSection(String title) {
                 newLine("\n\n// " + title);
             }
+
             void newTranslatedLine(String template, TextStrings... textstrings) {
                 for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
                     String s = template;
                     for (int j = 0; j < textstrings.length; j++)
-                        s = s.replace("{"+j+"}", textstrings[j].strings[i]);
+                        s = s.replace("{" + j + "}", textstrings[j].strings[i]);
                     handbookBuilders.get(i).append(s + "\n");
                 }
             }
+
             void newTranslatedLine(String template, long... hashes) {
                 newTranslatedLine(template, LongStream.of(hashes).mapToObj(hash -> getTextMapKey(hash)).toArray(TextStrings[]::new));
             }
@@ -93,7 +95,7 @@ public final class Tools {
         // Commands
         h.newSection("Commands");
         final List<CommandHandler> cmdList = CommandMap.getInstance().getHandlersAsList();
-        final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
+        final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get() + "s : ";
         for (CommandHandler cmd : cmdList) {
             final String label = padCmdLabel.formatted(cmd.getLabel());
             final String descKey = cmd.getDescriptionKey();
@@ -111,24 +113,21 @@ public final class Tools {
         val itemPre = getPad.apply(itemDataMap);
         itemDataMap.forEach((id, data) -> {
             val name = getTextMapKey(data.getNameTextMapHash());
-            switch (data.getMaterialType()) {
-                case MATERIAL_BGM:
-                    val bgmName = Optional.ofNullable(data.getItemUse())
-                        .map(u -> u.get(0))
-                        .map(u -> u.getUseParam())
-                        .filter(u -> u.length > 0)
-                        .map(u -> Integer.parseInt(u[0]))
-                        .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
-                        .map(bgm -> bgm.getBgmNameTextMapHash())
-                        .map(hash -> getTextMapKey(hash));
-                    if (bgmName.isPresent()) {
-                        h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
-                        return;
-                    }  // Fall-through
-                default:
-                    h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
+            if (Objects.requireNonNull(data.getMaterialType()) == MaterialType.MATERIAL_BGM) {
+                val bgmName = Optional.ofNullable(data.getItemUse())
+                    .map(u -> u.get(0))
+                    .map(u -> u.getUseParam())
+                    .filter(u -> u.length > 0)
+                    .map(u -> Integer.parseInt(u[0]))
+                    .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
+                    .map(bgm -> bgm.getBgmNameTextMapHash())
+                    .map(hash -> getTextMapKey(hash));
+                if (bgmName.isPresent()) {
+                    h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
                     return;
+                }  // Fall-through
             }
+            h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
         });
         // Monsters
         h.newSection("Monsters");
@@ -158,7 +157,7 @@ public final class Tools {
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            File GMHandbookOutputpath=new File("./GM Handbook");
+            File GMHandbookOutputpath = new File("./GM Handbook");
             GMHandbookOutputpath.mkdir();
             final String fileName = "./GM Handbook/GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
             try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
@@ -295,10 +294,11 @@ public final class Tools {
         StringBuilder stagedMessage = new StringBuilder();
         stagedMessage.append("The following languages mappings are available, please select one: [default: EN] \n");
 
-        StringBuilder groupedLangList = new StringBuilder(">\t"); String input;
+        StringBuilder groupedLangList = new StringBuilder(">\t");
+        String input;
         int groupedLangCount = 0;
 
-        for (String availableLanguage: availableLangList) {
+        for (String availableLanguage : availableLangList) {
             groupedLangCount++;
             groupedLangList.append(availableLanguage).append("\t");
 
@@ -320,6 +320,7 @@ public final class Tools {
             return input.toUpperCase();
         }
 
-        Grasscutter.getLogger().info("Invalid option. Will use EN (English) as fallback."); return "EN";
+        Grasscutter.getLogger().info("Invalid option. Will use EN (English) as fallback.");
+        return "EN";
     }
 }

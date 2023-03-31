@@ -24,15 +24,8 @@ public final class ServerHook {
     private final HttpServer httpServer;
 
     /**
-     * Gets the server hook instance.
-     * @return A {@link ServerHook} singleton.
-     */
-    public static ServerHook getInstance() {
-        return instance;
-    }
-
-    /**
      * Hooks into a server.
+     *
      * @param gameServer The game server to hook into.
      * @param httpServer The HTTP server to hook into.
      */
@@ -41,6 +34,15 @@ public final class ServerHook {
         this.httpServer = httpServer;
 
         instance = this;
+    }
+
+    /**
+     * Gets the server hook instance.
+     *
+     * @return A {@link ServerHook} singleton.
+     */
+    public static ServerHook getInstance() {
+        return instance;
     }
 
     /**
@@ -59,6 +61,7 @@ public final class ServerHook {
 
     /**
      * Gets all online players.
+     *
      * @return Players connected to the server.
      */
     @Deprecated(forRemoval = true)
@@ -68,6 +71,7 @@ public final class ServerHook {
 
     /**
      * Gets all online players.
+     *
      * @return Players connected to the server.
      */
     public Stream<Player> getOnlinePlayersStream() {
@@ -76,6 +80,7 @@ public final class ServerHook {
 
     /**
      * Registers a command to the {@link emu.grasscutter.command.CommandMap}.
+     *
      * @param handler The command handler.
      */
     public void registerCommand(CommandHandler handler) {
@@ -88,6 +93,7 @@ public final class ServerHook {
 
     /**
      * Adds a router using an instance of a class.
+     *
      * @param router A router instance.
      */
     public void addRouter(Router router) {
@@ -96,6 +102,7 @@ public final class ServerHook {
 
     /**
      * Adds a router using a class.
+     *
      * @param router The class of the router.
      */
     public void addRouter(Class<? extends Router> router) {
@@ -104,6 +111,7 @@ public final class ServerHook {
 
     /**
      * Sets the server's authentication system.
+     *
      * @param authSystem An instance of the authentication system.
      */
     public void setAuthSystem(AuthenticationSystem authSystem) {
@@ -112,6 +120,7 @@ public final class ServerHook {
 
     /**
      * Sets the server's permission handler.
+     *
      * @param permHandler An instance of the permission handler.
      */
     public void setPermissionHandler(PermissionHandler permHandler) {

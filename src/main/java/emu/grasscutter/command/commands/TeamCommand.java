@@ -5,12 +5,11 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
-import java.util.List;
-
-import static emu.grasscutter.config.Configuration.*;
-
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Command(
     label = "team",
@@ -47,7 +46,7 @@ public final class TeamCommand implements CommandHandler {
         }
 
         targetPlayer.getTeamManager().updateTeamEntities(
-                new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
+            new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
@@ -76,7 +75,7 @@ public final class TeamCommand implements CommandHandler {
             return false;
         }
 
-        for (var avatarId: avatarIds) {
+        for (var avatarId : avatarIds) {
             int id = Integer.parseInt(avatarId);
             if (!addAvatar(sender, targetPlayer, id, index))
                 CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_add_avatar", avatarId);
@@ -98,7 +97,7 @@ public final class TeamCommand implements CommandHandler {
         var metaIndexList = args.get(1).split(",");
         var indexes = new HashSet<Integer>();
         var ignoreList = new ArrayList<Integer>();
-        for (var metaIndex: metaIndexList) {
+        for (var metaIndex : metaIndexList) {
             // step 1: parse metaIndex to indexes
             var subIndexes = transformToIndexes(metaIndex, avatarCount);
             if (subIndexes == null) {
@@ -107,7 +106,7 @@ public final class TeamCommand implements CommandHandler {
             }
 
             // step 2: get all of the avatar id through indexes
-            for (var avatarIndex: subIndexes) {
+            for (var avatarIndex : subIndexes) {
                 try {
                     indexes.add(currentTeamAvatars.get(avatarIndex - 1));
                 } catch (Exception e) {

@@ -17,34 +17,40 @@ import static emu.grasscutter.config.Configuration.*;
  * A parser for start-up arguments.
  */
 public final class StartupArguments {
-    private StartupArguments() {
-        // This class is not meant to be instantiated.
-    }
-
     /* A map of parameter -> argument handler. */
     private static final Map<String, Function<String, Boolean>> argumentHandlers = Map.of(
         "-dumppacketids", parameter -> {
-            PacketOpcodesUtils.dumpPacketIds(); return true;
+            PacketOpcodesUtils.dumpPacketIds();
+            return true;
         },
         "-version", StartupArguments::printVersion,
         "-debug", StartupArguments::enableDebug,
         "-lang", parameter -> {
-            Grasscutter.setPreferredLanguage(parameter); return false;
-        },"-game", parameter -> {
-            Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY); return false;
-        },"-dispatch", parameter -> {
-            Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY); return false;
+            Grasscutter.setPreferredLanguage(parameter);
+            return false;
+        }, "-game", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY);
+            return false;
+        }, "-dispatch", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY);
+            return false;
         },
 
         // Aliases.
         "-v", StartupArguments::printVersion,
         "-debugall", parameter -> {
-            StartupArguments.enableDebug("all"); return false;
+            StartupArguments.enableDebug("all");
+            return false;
         }
     );
 
+    private StartupArguments() {
+        // This class is not meant to be instantiated.
+    }
+
     /**
      * Parses the provided start-up arguments.
+     *
      * @param args The application start-up arguments.
      * @return If the application should exit.
      */
@@ -68,15 +74,18 @@ public final class StartupArguments {
 
     /**
      * Prints the server version.
+     *
      * @param parameter Additional parameters.
      * @return True to exit early.
      */
     private static boolean printVersion(String parameter) {
-        System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH); return true;
+        System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
+        return true;
     }
 
     /**
      * Enables debug logging.
+     *
      * @param parameter Additional parameters.
      * @return False to continue execution.
      */

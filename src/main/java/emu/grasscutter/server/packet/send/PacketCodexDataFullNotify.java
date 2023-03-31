@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.Collections;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -9,46 +7,48 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify;
 import emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData;
 
+import java.util.Collections;
+
 public class PacketCodexDataFullNotify extends BasePacket {
     public PacketCodexDataFullNotify(Player player) {
         super(PacketOpcodes.CodexDataFullNotify, true);
 
         //Quests
         CodexTypeData.Builder questTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(1);
+            .setTypeValue(1);
 
         //Weapons
         CodexTypeData.Builder weaponTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(2);
+            .setTypeValue(2);
 
         //Animals
         CodexTypeData.Builder animalTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(3);
+            .setTypeValue(3);
 
         //Materials
         CodexTypeData.Builder materialTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(4);
+            .setTypeValue(4);
 
         //Books
         CodexTypeData.Builder bookTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(5);
+            .setTypeValue(5);
 
         //Tips
         CodexTypeData.Builder pushTipsTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(6);
+            .setTypeValue(6);
 
         //Views
         CodexTypeData.Builder viewTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(7);
+            .setTypeValue(7);
 
         //Reliquary
         CodexTypeData.Builder reliquaryData = CodexTypeData.newBuilder()
-                .setTypeValue(8);
+            .setTypeValue(8);
 
         player.getQuestManager().forEachMainQuest(mainQuest -> {
-            if(mainQuest.isFinished()){
+            if (mainQuest.isFinished()) {
                 var codexQuest = GameData.getCodexQuestDataIdMap().get(mainQuest.getParentQuestId());
-                if(codexQuest != null){
+                if (codexQuest != null) {
                     questTypeData.addCodexIdList(codexQuest.getId()).addAllHaveViewedList(Collections.singleton(true));
                 }
             }
@@ -56,21 +56,21 @@ public class PacketCodexDataFullNotify extends BasePacket {
 
         player.getCodex().getUnlockedWeapon().forEach(weapon -> {
             var codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon);
-            if(codexWeapon != null){
+            if (codexWeapon != null) {
                 weaponTypeData.addCodexIdList(codexWeapon.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
 
         player.getCodex().getUnlockedAnimal().forEach((animal, amount) -> {
             var codexAnimal = GameData.getCodexAnimalDataMap().get(animal);
-            if(codexAnimal != null){
+            if (codexAnimal != null) {
                 animalTypeData.addCodexIdList(codexAnimal.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
 
         player.getCodex().getUnlockedMaterial().forEach(material -> {
             var codexMaterial = GameData.getCodexMaterialDataIdMap().get(material);
-            if(codexMaterial != null){
+            if (codexMaterial != null) {
                 materialTypeData.addCodexIdList(codexMaterial.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
@@ -80,14 +80,14 @@ public class PacketCodexDataFullNotify extends BasePacket {
         });
 
         CodexDataFullNotify.Builder proto = CodexDataFullNotify.newBuilder()
-                .addTypeDataList(questTypeData.build())
-                .addTypeDataList(weaponTypeData)
-                .addTypeDataList(animalTypeData)
-                .addTypeDataList(materialTypeData)
-                .addTypeDataList(bookTypeData)
-                .addTypeDataList(pushTipsTypeData.build())
-                .addTypeDataList(viewTypeData.build())
-                .addTypeDataList(reliquaryData);
+            .addTypeDataList(questTypeData.build())
+            .addTypeDataList(weaponTypeData)
+            .addTypeDataList(animalTypeData)
+            .addTypeDataList(materialTypeData)
+            .addTypeDataList(bookTypeData)
+            .addTypeDataList(pushTipsTypeData.build())
+            .addTypeDataList(viewTypeData.build())
+            .addTypeDataList(reliquaryData);
 
         this.setData(proto);
     }

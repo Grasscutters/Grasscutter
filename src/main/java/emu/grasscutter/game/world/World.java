@@ -1,36 +1,30 @@
 package emu.grasscutter.game.world;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.DungeonData;
+import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.DungeonData;
-import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
-import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
-import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerInfoNotify;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class World implements Iterable<Player> {
     private final GameServer server;
@@ -38,12 +32,12 @@ public class World implements Iterable<Player> {
     private final List<Player> players;
     private final Int2ObjectMap<Scene> scenes;
 
-    private int levelEntityId;
+    private final int levelEntityId;
     private int nextEntityId = 0;
     private int nextPeerId = 0;
     private int worldLevel;
 
-    private boolean isMultiplayer;
+    private final boolean isMultiplayer;
 
     public World(Player player) {
         this(player, false);
@@ -169,10 +163,10 @@ public class World implements Iterable<Player> {
     public synchronized void removePlayer(Player player) {
         // Remove team entities
         player.sendPacket(
-                new PacketDelTeamEntityNotify(
-                        player.getSceneId(),
-                    this.getPlayers().stream().map(p -> p.getTeamManager().getEntityId()).collect(Collectors.toList())
-                )
+            new PacketDelTeamEntityNotify(
+                player.getSceneId(),
+                this.getPlayers().stream().map(p -> p.getTeamManager().getEntityId()).collect(Collectors.toList())
+            )
         );
 
         // Deregister
@@ -224,7 +218,8 @@ public class World implements Iterable<Player> {
         // Call player teleport event.
         PlayerTeleportEvent event = new PlayerTeleportEvent(player, teleportType, player.getPosition(), teleportTo);
         // Call event & check if it was canceled.
-        event.call(); if (event.isCanceled()) {
+        event.call();
+        if (event.isCanceled()) {
             return false; // Teleport was canceled.
         }
 
@@ -310,7 +305,7 @@ public class World implements Iterable<Player> {
             }
 
             // Dont send packets if player is loading into the scene
-            if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() ) {
+            if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue()) {
                 // World player info packets
                 player.getSession().send(new PacketWorldPlayerInfoNotify(this));
                 player.getSession().send(new PacketScenePlayerInfoNotify(this));

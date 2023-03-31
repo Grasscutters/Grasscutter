@@ -15,17 +15,26 @@ import java.util.*;
 
 @Entity
 public class PlayerCodex {
-    @Transient private Player player;
+    @Transient
+    private Player player;
 
     //itemId is not codexId!
-    @Getter private Set<Integer> unlockedWeapon;
-    @Getter private Map<Integer, Integer> unlockedAnimal;
-    @Getter private Set<Integer> unlockedMaterial;
-    @Getter private Set<Integer> unlockedBook;
-    @Getter private Set<Integer> unlockedTip;
-    @Getter private Set<Integer> unlockedView;
-    @Getter private Set<Integer> unlockedReliquary;
-    @Getter private Set<Integer> unlockedReliquarySuitCodex;
+    @Getter
+    private final Set<Integer> unlockedWeapon;
+    @Getter
+    private final Map<Integer, Integer> unlockedAnimal;
+    @Getter
+    private final Set<Integer> unlockedMaterial;
+    @Getter
+    private final Set<Integer> unlockedBook;
+    @Getter
+    private final Set<Integer> unlockedTip;
+    @Getter
+    private final Set<Integer> unlockedView;
+    @Getter
+    private Set<Integer> unlockedReliquary;
+    @Getter
+    private final Set<Integer> unlockedReliquarySuitCodex;
 
     public PlayerCodex() {
         this.unlockedWeapon = new HashSet<>();
@@ -73,15 +82,17 @@ public class PlayerCodex {
                                 }
                             });
                     }
-                    default -> {}
+                    default -> {
+                    }
                 }
             }
             case ITEM_RELIQUARY -> {
-                val reliquaryId = (itemId/10) * 10;  // Normalize to 0-substat form
+                val reliquaryId = (itemId / 10) * 10;  // Normalize to 0-substat form
                 if (this.getUnlockedReliquary().add(reliquaryId))
                     checkUnlockedSuits(reliquaryId);
             }
-            default -> {}
+            default -> {
+            }
         }
     }
 
@@ -118,7 +129,7 @@ public class PlayerCodex {
     private void fixReliquaries() {
         // Migrate older database entries which were using non-canonical forms of itemIds
         val newReliquaries = new HashSet<Integer>();
-        this.unlockedReliquary.forEach(i -> newReliquaries.add((i/10)*10));
+        this.unlockedReliquary.forEach(i -> newReliquaries.add((i / 10) * 10));
         this.unlockedReliquary = newReliquaries;
 
         GameData.getCodexReliquaryArrayList().stream()

@@ -10,10 +10,10 @@ public class PacketEvtAvatarSitDownNotify extends BasePacket {
         super(PacketOpcodes.EvtAvatarSitDownNotify);
 
         EvtAvatarSitDownNotify proto = EvtAvatarSitDownNotify.newBuilder()
-                .setEntityId(notify.getEntityId())
-                .setPosition(notify.getPosition())
-                .setChairId(notify.getChairId())
-                .build();
+            .setEntityId(notify.getEntityId())
+            .setPosition(notify.getPosition())
+            .setChairId(notify.getChairId())
+            .build();
 
         this.setData(proto);
     }

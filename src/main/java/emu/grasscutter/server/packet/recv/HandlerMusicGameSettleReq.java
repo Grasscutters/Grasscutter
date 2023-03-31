@@ -43,7 +43,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
 
             // update activity info
             session.send(new PacketActivityInfoNotify(handler.toProto(playerData.get())));
-        }else {
+        } else {
             handler.setMusicGameCustomBeatmapRecord(playerData.get(),
                 MusicGamePlayerData.CustomBeatmapRecord.of()
                     .musicShareId(req.getUgcGuid())

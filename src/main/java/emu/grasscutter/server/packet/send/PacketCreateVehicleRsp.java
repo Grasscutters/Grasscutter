@@ -1,16 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.entity.EntityVehicle;
 import emu.grasscutter.game.entity.GameEntity;
-
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-
+import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
-import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
-
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
@@ -23,10 +20,10 @@ public class PacketCreateVehicleRsp extends BasePacket {
 
         // Eject vehicle members and Kill previous vehicles if there are any
         List<GameEntity> previousVehicles = player.getScene().getEntities().values().stream()
-                .filter(entity -> entity instanceof EntityVehicle
-                        && ((EntityVehicle) entity).getGadgetId() == vehicleId
-                        && ((EntityVehicle) entity).getOwner().equals(player))
-                .toList();
+            .filter(entity -> entity instanceof EntityVehicle
+                && ((EntityVehicle) entity).getGadgetId() == vehicleId
+                && ((EntityVehicle) entity).getOwner().equals(player))
+            .toList();
 
         previousVehicles.stream().forEach(entity -> {
             List<VehicleMember> vehicleMembers = ((EntityVehicle) entity).getVehicleMembers().stream().toList();

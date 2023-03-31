@@ -2,7 +2,6 @@ package emu.grasscutter;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
@@ -24,11 +23,7 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.StartupArguments;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;
@@ -41,34 +36,47 @@ import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
 import java.util.Calendar;
 
 import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
 public final class Grasscutter {
-    @Getter private static final Logger logger = (Logger) LoggerFactory.getLogger(Grasscutter.class);
-    private static LineReader consoleLineReader = null;
-
-    @Getter @Setter private static Language language;
-
     public static final File configFile = new File("./config.json");
-    @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
-
-    @Getter private static int currentDayOfWeek;
-    @Getter @Setter private static String preferredLanguage;
-
-    @Getter private static HttpServer httpServer;
-    @Getter private static GameServer gameServer;
-    @Getter private static PluginManager pluginManager;
-    @Getter private static CommandMap commandMap;
-
-    @Getter @Setter private static AuthenticationSystem authenticationSystem;
-    @Getter @Setter private static PermissionHandler permissionHandler;
-
     public static final Reflections reflector = new Reflections("emu.grasscutter");
-    @Getter public static ConfigContainer config;
+    @Getter
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(Grasscutter.class);
+    @Getter
+    public static ConfigContainer config;
+    private static LineReader consoleLineReader = null;
+    @Getter
+    @Setter
+    private static Language language;
+    @Setter
+    private static ServerRunMode runModeOverride = null; // Config override for run mode
+    @Getter
+    private static int currentDayOfWeek;
+    @Getter
+    @Setter
+    private static String preferredLanguage;
+    @Getter
+    private static HttpServer httpServer;
+    @Getter
+    private static GameServer gameServer;
+    @Getter
+    private static PluginManager pluginManager;
+    @Getter
+    private static CommandMap commandMap;
+    @Getter
+    @Setter
+    private static AuthenticationSystem authenticationSystem;
+    @Getter
+    @Setter
+    private static PermissionHandler permissionHandler;
 
     static {
         // Declare logback configuration.
@@ -265,7 +273,7 @@ public final class Grasscutter {
     public static void updateDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
         Grasscutter.currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-        Grasscutter.getLogger().debug("Set day of week to "+currentDayOfWeek);
+        Grasscutter.getLogger().debug("Set day of week to " + currentDayOfWeek);
     }
 
     public static void startConsole() {

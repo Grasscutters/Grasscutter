@@ -8,9 +8,9 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
-import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Utils;
@@ -52,25 +52,25 @@ public class GadgetGatherObject extends GadgetContent {
 
     public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
         GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
-                .setItemId(this.getItemId())
-                .setIsForbidGuest(this.isForbidGuest())
-                .build();
+            .setItemId(this.getItemId())
+            .setIsForbidGuest(this.isForbidGuest())
+            .build();
 
         gadgetInfo.setGatherGadget(gatherGadgetInfo);
     }
 
     public void dropItems(Player player) {
         Scene scene = getGadget().getScene();
-        int times = Utils.randomRange(1,2);
+        int times = Utils.randomRange(1, 2);
 
-        for (int i = 0 ; i < times ; i++) {
+        for (int i = 0; i < times; i++) {
             EntityItem item = new EntityItem(
-                    scene,
-                    player,
-                    GameData.getItemDataMap().get(itemId),
-                    getGadget().getPosition().nearby2d(1f).addY(2f),
-                    1,
-                    true);
+                scene,
+                player,
+                GameData.getItemDataMap().get(itemId),
+                getGadget().getPosition().nearby2d(1f).addY(2f),
+                1,
+                true);
 
             scene.addEntity(item);
         }

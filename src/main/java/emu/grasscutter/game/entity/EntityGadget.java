@@ -33,24 +33,32 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Optional;
-
 import javax.annotation.Nullable;
+import java.util.Optional;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
-    @Getter private final GadgetData gadgetData;
-    @Getter(onMethod_ = @Override) @Setter
-    private int gadgetId;
-
-    @Getter @Setter private int state;
-    @Getter @Setter private int pointType;
-    @Getter private GadgetContent content;
+    @Getter
+    private final GadgetData gadgetData;
     @Getter(onMethod_ = @Override, lazy = true)
     private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
-    @Getter @Setter private SceneGadget metaGadget;
-    @Nullable @Getter
-    private ConfigGadget configGadget;
+    @Getter(onMethod_ = @Override)
+    @Setter
+    private int gadgetId;
+    @Getter
+    @Setter
+    private int state;
+    @Getter
+    @Setter
+    private int pointType;
+    @Getter
+    private GadgetContent content;
+    @Getter
+    @Setter
+    private SceneGadget metaGadget;
+    @Nullable
+    @Getter
+    private final ConfigGadget configGadget;
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
         this(scene, gadgetId, pos, null, null);
@@ -133,25 +141,25 @@ public class EntityGadget extends EntityBaseGadget {
     @Override
     public SceneEntityInfo toProto() {
         EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
-                .setBornPos(Vector.newBuilder())
-                .build();
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
+            .setBornPos(Vector.newBuilder())
+            .build();
 
         SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-                .setEntityId(getId())
-                .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-                .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-                .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-                .setEntityClientData(EntityClientData.newBuilder())
-                .setEntityAuthorityInfo(authority)
-                .setLifeState(1);
+            .setEntityId(getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setEntityClientData(EntityClientData.newBuilder())
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(1);
 
         PropPair pair = PropPair.newBuilder()
-                .setType(PlayerProperty.PROP_LEVEL.getId())
-                .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-                .build();
+            .setType(PlayerProperty.PROP_LEVEL.getId())
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+            .build();
         entityInfo.addPropList(pair);
 
         // We do not use the getter to null check because the getter will create a fight prop map if it is null
@@ -160,12 +168,12 @@ public class EntityGadget extends EntityBaseGadget {
         }
 
         SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-                .setGadgetId(this.getGadgetId())
-                .setGroupId(this.getGroupId())
-                .setConfigId(this.getConfigId())
-                .setGadgetState(this.getState())
-                .setIsEnableInteract(true)
-                .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+            .setGadgetId(this.getGadgetId())
+            .setGroupId(this.getGroupId())
+            .setConfigId(this.getConfigId())
+            .setGadgetState(this.getState())
+            .setIsEnableInteract(true)
+            .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);

@@ -1,10 +1,5 @@
 package emu.grasscutter.game.player;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
@@ -14,17 +9,19 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType;
 import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
 import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import lombok.Getter;
 
-public class PlayerBuffManager extends BasePlayerManager {
-    private int nextBuffUid;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
+public class PlayerBuffManager extends BasePlayerManager {
     private final List<PlayerBuff> pendingBuffs;
     private final Int2ObjectMap<PlayerBuff> buffs; // Server buffs
+    private int nextBuffUid;
 
     public PlayerBuffManager(Player player) {
         super(player);
@@ -34,6 +31,7 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Gets a new uid for a server buff
+     *
      * @return New integer buff uid
      */
     private int getNextBuffUid() {
@@ -42,6 +40,7 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Returns true if the player has a buff with this group id
+     *
      * @param groupId Buff group id
      * @return True if a buff with this group id exists
      */
@@ -64,6 +63,7 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Adds a server buff to the player.
+     *
      * @param buffId Server buff id
      * @return True if a buff was added
      */
@@ -73,7 +73,8 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Adds a server buff to the player.
-     * @param buffId Server buff id
+     *
+     * @param buffId   Server buff id
      * @param duration Duration of the buff in seconds. Set to 0 for an infinite buff.
      * @return True if a buff was added
      */
@@ -83,9 +84,10 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Adds a server buff to the player.
-     * @param buffId Server buff id
+     *
+     * @param buffId   Server buff id
      * @param duration Duration of the buff in seconds. Set to 0 for an infinite buff.
-     * @param target Target avatar
+     * @param target   Target avatar
      * @return True if a buff was added
      */
     public synchronized boolean addBuff(int buffId, float duration, Avatar target) {
@@ -102,7 +104,7 @@ public class PlayerBuffManager extends BasePlayerManager {
             .map(onAdded -> {
 
                 var s = false;
-                for (var a: onAdded) {
+                for (var a : onAdded) {
                     Grasscutter.getLogger().debug("onAdded exists");
                     if (Objects.requireNonNull(a.type) == AbilityModifierAction.Type.HealHP) {
                         Grasscutter.getLogger().debug("Attempting heal");
@@ -144,6 +146,7 @@ public class PlayerBuffManager extends BasePlayerManager {
 
     /**
      * Removes a buff by its group id
+     *
      * @param buffGroupId Server buff group id
      * @return True if a buff was remove
      */

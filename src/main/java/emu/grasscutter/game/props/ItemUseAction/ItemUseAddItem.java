@@ -5,16 +5,17 @@ import emu.grasscutter.game.props.ItemUseOp;
 public class ItemUseAddItem extends ItemUseInt {
     private int count = 0;
 
-    @Override
-    public ItemUseOp getItemUseOp() {
-        return ItemUseOp.ITEM_USE_ADD_ITEM;
-    }
-
     public ItemUseAddItem(String[] useParam) {
         super(useParam);
         try {
             this.count = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+        }
+    }
+
+    @Override
+    public ItemUseOp getItemUseOp() {
+        return ItemUseOp.ITEM_USE_ADD_ITEM;
     }
 
     @Override

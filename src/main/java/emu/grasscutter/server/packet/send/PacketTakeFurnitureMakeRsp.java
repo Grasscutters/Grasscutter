@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;
@@ -12,27 +11,27 @@ import java.util.List;
 
 public class PacketTakeFurnitureMakeRsp extends BasePacket {
 
-	public PacketTakeFurnitureMakeRsp(int ret,
-									  int makeId,
-									  List<ItemParamOuterClass.ItemParam> output,
-									  List<FurnitureMakeDataOuterClass.FurnitureMakeData> others) {
-		super(PacketOpcodes.TakeFurnitureMakeRsp);
+    public PacketTakeFurnitureMakeRsp(int ret,
+                                      int makeId,
+                                      List<ItemParamOuterClass.ItemParam> output,
+                                      List<FurnitureMakeDataOuterClass.FurnitureMakeData> others) {
+        super(PacketOpcodes.TakeFurnitureMakeRsp);
 
-		var proto = TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp.newBuilder();
+        var proto = TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp.newBuilder();
 
-		proto.setRetcode(ret)
-				.setMakeId(makeId);
+        proto.setRetcode(ret)
+            .setMakeId(makeId);
 
-		if(output != null){
-			proto.addAllOutputItemList(output);
-		}
+        if (output != null) {
+            proto.addAllOutputItemList(output);
+        }
 
-		if(others != null){
-			proto.setFurnitureMakeSlot(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.newBuilder()
-					.addAllFurnitureMakeDataList(others)
-					.build());
-		}
+        if (others != null) {
+            proto.setFurnitureMakeSlot(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.newBuilder()
+                .addAllFurnitureMakeDataList(others)
+                .build());
+        }
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

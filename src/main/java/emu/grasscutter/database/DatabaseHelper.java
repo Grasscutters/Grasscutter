@@ -1,10 +1,6 @@
 package emu.grasscutter.database;
 
-import java.util.List;
-import java.util.stream.Stream;
-
 import com.mongodb.client.result.DeleteResult;
-
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
 import dev.morphia.query.experimental.filters.Filters;
@@ -23,6 +19,9 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -258,8 +257,8 @@ public final class DatabaseHelper {
 
     public static Friendship getReverseFriendship(Friendship friendship) {
         return DatabaseManager.getGameDatastore().find(Friendship.class).filter(Filters.and(
-                Filters.eq("ownerId", friendship.getFriendId()),
-                Filters.eq("friendId", friendship.getOwnerId())
+            Filters.eq("ownerId", friendship.getFriendId()),
+            Filters.eq("friendId", friendship.getOwnerId())
         )).first();
     }
 
@@ -272,9 +271,9 @@ public final class DatabaseHelper {
             Filters.eq("ownerId", ownerId),
             Filters.eq("gachaType", gachaType)
         ).iterator(new FindOptions()
-                .sort(Sort.descending("transactionDate"))
-                .skip(pageSize * page)
-                .limit(pageSize)
+            .sort(Sort.descending("transactionDate"))
+            .skip(pageSize * page)
+            .limit(pageSize)
         ).toList();
     }
 
@@ -287,7 +286,7 @@ public final class DatabaseHelper {
             Filters.eq("ownerId", ownerId),
             Filters.eq("gachaType", gachaType)
         ).count();
-        return count / 10 + (count % 10 > 0 ? 1 : 0 );
+        return count / 10 + (count % 10 > 0 ? 1 : 0);
     }
 
     public static void saveGachaRecord(GachaRecord gachaRecord) {
@@ -344,7 +343,7 @@ public final class DatabaseHelper {
 
     public static PlayerActivityData getPlayerActivityData(int uid, int activityId) {
         return DatabaseManager.getGameDatastore().find(PlayerActivityData.class)
-            .filter(Filters.and(Filters.eq("uid", uid),Filters.eq("activityId", activityId)))
+            .filter(Filters.and(Filters.eq("uid", uid), Filters.eq("activityId", activityId)))
             .first();
     }
 

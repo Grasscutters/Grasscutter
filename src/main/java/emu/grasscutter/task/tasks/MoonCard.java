@@ -3,7 +3,6 @@ package emu.grasscutter.task.tasks;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.task.Task;
 import emu.grasscutter.task.TaskHandler;
-
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 

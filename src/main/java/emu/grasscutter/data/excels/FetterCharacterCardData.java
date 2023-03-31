@@ -10,9 +10,9 @@ public class FetterCharacterCardData extends GameResource {
     private int rewardId;
 
     @Override
-	public int getId() {
-		return avatarId;
-	}
+    public int getId() {
+        return avatarId;
+    }
 
     public int getRewardId() {
         return rewardId;

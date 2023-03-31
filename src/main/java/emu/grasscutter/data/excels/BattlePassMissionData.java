@@ -1,15 +1,15 @@
 package emu.grasscutter.data.excels;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus;
 import lombok.Getter;
+
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @ResourceType(name = {"BattlePassMissionExcelConfigData.json"})
 @Getter
@@ -48,12 +48,6 @@ public class BattlePassMissionData extends GameResource {
         }
     }
 
-    @Getter
-    public static class TriggerConfig {
-        private WatcherTriggerType triggerType;
-        private String[] paramList;
-    }
-
     public emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission toProto() {
         var protoBuilder = emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.newBuilder();
 
@@ -65,5 +59,11 @@ public class BattlePassMissionData extends GameResource {
             .setMissionType(this.getRefreshType() == null ? 0 : this.getRefreshType().getValue());
 
         return protoBuilder.build();
+    }
+
+    @Getter
+    public static class TriggerConfig {
+        private WatcherTriggerType triggerType;
+        private String[] paramList;
     }
 }

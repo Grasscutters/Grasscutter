@@ -18,115 +18,101 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketVehicleStaminaNotify;
 import emu.grasscutter.utils.Position;
 import org.jetbrains.annotations.NotNull;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import java.util.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class StaminaManager extends BasePlayerManager {
 
+    public final static int GlobalCharacterMaximumStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
+    public final static int GlobalVehicleMaxStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
     // TODO: Skiff state detection?
     private static final Map<String, Set<MotionState>> MotionStatesCategorized = new HashMap<>() {{
         put("CLIMB", Set.of(
-                MotionState.MOTION_STATE_CLIMB, // sustained, when not moving no cost no recover
-                MotionState.MOTION_STATE_STANDBY_TO_CLIMB // NOT OBSERVED, see MOTION_JUMP_UP_WALL_FOR_STANDBY
+            MotionState.MOTION_STATE_CLIMB, // sustained, when not moving no cost no recover
+            MotionState.MOTION_STATE_STANDBY_TO_CLIMB // NOT OBSERVED, see MOTION_JUMP_UP_WALL_FOR_STANDBY
         ));
         put("DASH", Set.of(
-                MotionState.MOTION_STATE_DANGER_DASH, // sustained
-                MotionState.MOTION_STATE_DASH // sustained
+            MotionState.MOTION_STATE_DANGER_DASH, // sustained
+            MotionState.MOTION_STATE_DASH // sustained
         ));
         put("FLY", Set.of(
-                MotionState.MOTION_STATE_FLY, // sustained
-                MotionState.MOTION_STATE_FLY_FAST, // sustained
-                MotionState.MOTION_STATE_FLY_SLOW, // sustained
-                MotionState.MOTION_STATE_POWERED_FLY // sustained, recover
+            MotionState.MOTION_STATE_FLY, // sustained
+            MotionState.MOTION_STATE_FLY_FAST, // sustained
+            MotionState.MOTION_STATE_FLY_SLOW, // sustained
+            MotionState.MOTION_STATE_POWERED_FLY // sustained, recover
         ));
         put("RUN", Set.of(
-                MotionState.MOTION_STATE_DANGER_RUN, // sustained, recover
-                MotionState.MOTION_STATE_RUN // sustained, recover
+            MotionState.MOTION_STATE_DANGER_RUN, // sustained, recover
+            MotionState.MOTION_STATE_RUN // sustained, recover
         ));
         put("SKIFF", Set.of(
-                MotionState.MOTION_STATE_SKIFF_BOARDING, // NOT OBSERVED even when boarding
-                MotionState.MOTION_STATE_SKIFF_DASH, // sustained, observed with waverider entity ID.
-                MotionState.MOTION_STATE_SKIFF_NORMAL, // sustained, OBSERVED when both normal and dashing
-                MotionState.MOTION_STATE_SKIFF_POWERED_DASH // sustained, recover
+            MotionState.MOTION_STATE_SKIFF_BOARDING, // NOT OBSERVED even when boarding
+            MotionState.MOTION_STATE_SKIFF_DASH, // sustained, observed with waverider entity ID.
+            MotionState.MOTION_STATE_SKIFF_NORMAL, // sustained, OBSERVED when both normal and dashing
+            MotionState.MOTION_STATE_SKIFF_POWERED_DASH // sustained, recover
         ));
         put("STANDBY", Set.of(
-                MotionState.MOTION_STATE_DANGER_STANDBY_MOVE, // sustained, recover
-                MotionState.MOTION_STATE_DANGER_STANDBY, // sustained, recover
-                MotionState.MOTION_STATE_LADDER_TO_STANDBY, // NOT OBSERVED
-                MotionState.MOTION_STATE_STANDBY_MOVE, // sustained, recover
-                MotionState.MOTION_STATE_STANDBY // sustained, recover
+            MotionState.MOTION_STATE_DANGER_STANDBY_MOVE, // sustained, recover
+            MotionState.MOTION_STATE_DANGER_STANDBY, // sustained, recover
+            MotionState.MOTION_STATE_LADDER_TO_STANDBY, // NOT OBSERVED
+            MotionState.MOTION_STATE_STANDBY_MOVE, // sustained, recover
+            MotionState.MOTION_STATE_STANDBY // sustained, recover
         ));
         put("SWIM", Set.of(
-                MotionState.MOTION_STATE_SWIM_IDLE, // sustained
-                MotionState.MOTION_STATE_SWIM_DASH, // immediate and sustained
-                MotionState.MOTION_STATE_SWIM_JUMP, // NOT OBSERVED
-                MotionState.MOTION_STATE_SWIM_MOVE // sustained
+            MotionState.MOTION_STATE_SWIM_IDLE, // sustained
+            MotionState.MOTION_STATE_SWIM_DASH, // immediate and sustained
+            MotionState.MOTION_STATE_SWIM_JUMP, // NOT OBSERVED
+            MotionState.MOTION_STATE_SWIM_MOVE // sustained
         ));
         put("WALK", Set.of(
-                MotionState.MOTION_STATE_DANGER_WALK, // sustained, recover
-                MotionState.MOTION_STATE_WALK // sustained, recover
+            MotionState.MOTION_STATE_DANGER_WALK, // sustained, recover
+            MotionState.MOTION_STATE_WALK // sustained, recover
         ));
         put("OTHER", Set.of(
-                MotionState.MOTION_STATE_CLIMB_JUMP, // cost only once if repeated without switching state
-                MotionState.MOTION_STATE_DASH_BEFORE_SHAKE, // immediate one time sprint charge.
-                MotionState.MOTION_STATE_FIGHT, // immediate, if sustained then subsequent will be MOTION_NOTIFY
-                MotionState.MOTION_STATE_JUMP_UP_WALL_FOR_STANDBY, // immediate, observed when RUN/WALK->CLIMB
-                MotionState.MOTION_STATE_NOTIFY, // can be either cost or recover - check previous state and check skill casting
-                MotionState.MOTION_STATE_SIT_IDLE, // sustained, recover
-                MotionState.MOTION_STATE_JUMP // recover
+            MotionState.MOTION_STATE_CLIMB_JUMP, // cost only once if repeated without switching state
+            MotionState.MOTION_STATE_DASH_BEFORE_SHAKE, // immediate one time sprint charge.
+            MotionState.MOTION_STATE_FIGHT, // immediate, if sustained then subsequent will be MOTION_NOTIFY
+            MotionState.MOTION_STATE_JUMP_UP_WALL_FOR_STANDBY, // immediate, observed when RUN/WALK->CLIMB
+            MotionState.MOTION_STATE_NOTIFY, // can be either cost or recover - check previous state and check skill casting
+            MotionState.MOTION_STATE_SIT_IDLE, // sustained, recover
+            MotionState.MOTION_STATE_JUMP // recover
         ));
         put("NOCOST_NORECOVER", Set.of(
-                MotionState.MOTION_STATE_LADDER_SLIP, // NOT OBSERVED
-                MotionState.MOTION_STATE_SLIP, // sustained, no cost no recover
-                MotionState.MOTION_STATE_FLY_IDLE // NOT OBSERVED
+            MotionState.MOTION_STATE_LADDER_SLIP, // NOT OBSERVED
+            MotionState.MOTION_STATE_SLIP, // sustained, no cost no recover
+            MotionState.MOTION_STATE_FLY_IDLE // NOT OBSERVED
         ));
         put("IGNORE", Set.of(
-                // these states have no impact on stamina
-                MotionState.MOTION_STATE_CROUCH_IDLE,
-                MotionState.MOTION_STATE_CROUCH_MOVE,
-                MotionState.MOTION_STATE_CROUCH_ROLL,
-                MotionState.MOTION_STATE_DESTROY_VEHICLE,
-                MotionState.MOTION_STATE_FALL_ON_GROUND,
-                MotionState.MOTION_STATE_FOLLOW_ROUTE,
-                MotionState.MOTION_STATE_FORCE_SET_POS,
-                MotionState.MOTION_STATE_GO_UPSTAIRS,
-                MotionState.MOTION_STATE_JUMP_OFF_WALL,
-                MotionState.MOTION_STATE_LADDER_IDLE,
-                MotionState.MOTION_STATE_LADDER_MOVE,
-                MotionState.MOTION_STATE_LAND_SPEED,
-                MotionState.MOTION_STATE_MOVE_FAIL_ACK,
-                MotionState.MOTION_STATE_NONE,
-                MotionState.MOTION_STATE_NUM,
-                MotionState.MOTION_STATE_QUEST_FORCE_DRAG,
-                MotionState.MOTION_STATE_RESET,
-                MotionState.MOTION_STATE_STANDBY_TO_LADDER,
-                MotionState.MOTION_STATE_WATERFALL
+            // these states have no impact on stamina
+            MotionState.MOTION_STATE_CROUCH_IDLE,
+            MotionState.MOTION_STATE_CROUCH_MOVE,
+            MotionState.MOTION_STATE_CROUCH_ROLL,
+            MotionState.MOTION_STATE_DESTROY_VEHICLE,
+            MotionState.MOTION_STATE_FALL_ON_GROUND,
+            MotionState.MOTION_STATE_FOLLOW_ROUTE,
+            MotionState.MOTION_STATE_FORCE_SET_POS,
+            MotionState.MOTION_STATE_GO_UPSTAIRS,
+            MotionState.MOTION_STATE_JUMP_OFF_WALL,
+            MotionState.MOTION_STATE_LADDER_IDLE,
+            MotionState.MOTION_STATE_LADDER_MOVE,
+            MotionState.MOTION_STATE_LAND_SPEED,
+            MotionState.MOTION_STATE_MOVE_FAIL_ACK,
+            MotionState.MOTION_STATE_NONE,
+            MotionState.MOTION_STATE_NUM,
+            MotionState.MOTION_STATE_QUEST_FORCE_DRAG,
+            MotionState.MOTION_STATE_RESET,
+            MotionState.MOTION_STATE_STANDBY_TO_LADDER,
+            MotionState.MOTION_STATE_WATERFALL
         ));
     }};
-
-    private final Logger logger = Grasscutter.getLogger();
-    public final static int GlobalCharacterMaximumStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
-    public final static int GlobalVehicleMaxStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
-    private Position currentCoordinates = new Position(0, 0, 0);
-    private Position previousCoordinates = new Position(0, 0, 0);
-    private MotionState currentState = MotionState.MOTION_STATE_STANDBY;
-    private MotionState previousState = MotionState.MOTION_STATE_STANDBY;
-    private Timer sustainedStaminaHandlerTimer;
-    private GameSession cachedSession = null;
-    private GameEntity cachedEntity = null;
-    private int staminaRecoverDelay = 0;
-    private final HashMap<String, BeforeUpdateStaminaListener> beforeUpdateStaminaListeners = new HashMap<>();
-    private final HashMap<String, AfterUpdateStaminaListener> afterUpdateStaminaListeners = new HashMap<>();
-    private int lastSkillId = 0;
-    private int lastSkillCasterId = 0;
-    private boolean lastSkillFirstTick = true;
-    private int vehicleId = -1;
-    private int vehicleStamina = GlobalVehicleMaxStamina;
     private static final Set<Integer> TalentMovements = Set.of(10013, 10413);
     private static final HashMap<Integer, Float> ClimbFoodReductionMap = new HashMap<>() {{
         // TODO: get real food id
@@ -155,13 +141,29 @@ public class StaminaManager extends BasePlayerManager {
         put(242301, 0.8f);
         put(542301, 0.8f);
     }};
-
-    public static void initialize() {
-        // TODO: Initialize foods etc.
-    }
+    private final Logger logger = Grasscutter.getLogger();
+    private final HashMap<String, BeforeUpdateStaminaListener> beforeUpdateStaminaListeners = new HashMap<>();
+    private final HashMap<String, AfterUpdateStaminaListener> afterUpdateStaminaListeners = new HashMap<>();
+    private Position currentCoordinates = new Position(0, 0, 0);
+    private Position previousCoordinates = new Position(0, 0, 0);
+    private MotionState currentState = MotionState.MOTION_STATE_STANDBY;
+    private MotionState previousState = MotionState.MOTION_STATE_STANDBY;
+    private Timer sustainedStaminaHandlerTimer;
+    private GameSession cachedSession = null;
+    private GameEntity cachedEntity = null;
+    private int staminaRecoverDelay = 0;
+    private int lastSkillId = 0;
+    private int lastSkillCasterId = 0;
+    private boolean lastSkillFirstTick = true;
+    private int vehicleId = -1;
+    private int vehicleStamina = GlobalVehicleMaxStamina;
 
     public StaminaManager(Player player) {
         super(player);
+    }
+
+    public static void initialize() {
+        // TODO: Initialize foods etc.
     }
 
     // Accessors
@@ -236,7 +238,7 @@ public class StaminaManager extends BasePlayerManager {
         float diffY = currentCoordinates.getY() - previousCoordinates.getY();
         float diffZ = currentCoordinates.getZ() - previousCoordinates.getZ();
         logger.trace("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates +
-                ", " + diffX + ", " + diffY + ", " + diffZ);
+            ", " + diffX + ", " + diffY + ", " + diffZ);
         return Math.abs(diffX) > 0.3 || Math.abs(diffY) > 0.2 || Math.abs(diffZ) > 0.3;
     }
 
@@ -250,15 +252,15 @@ public class StaminaManager extends BasePlayerManager {
             Consumption overriddenConsumption = listener.getValue().onBeforeUpdateStamina(consumption.type.toString(), consumption, isCharacterStamina);
             if ((overriddenConsumption.type != consumption.type) && (overriddenConsumption.amount != consumption.amount)) {
                 logger.debug("Stamina update relative(" +
-                        consumption.type.toString() + ", " + consumption.amount + ") overridden to relative(" +
-                        consumption.type.toString() + ", " + consumption.amount + ") by: " + listener.getKey());
+                    consumption.type.toString() + ", " + consumption.amount + ") overridden to relative(" +
+                    consumption.type.toString() + ", " + consumption.amount + ") by: " + listener.getKey());
                 return currentStamina;
             }
         }
         int maxStamina = isCharacterStamina ? getMaxCharacterStamina() : getMaxVehicleStamina();
         logger.trace((isCharacterStamina ? "C " : "V ") + currentStamina + "/" + maxStamina + "\t" + currentState + "\t" +
-                (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
-                consumption.amount + ")");
+            (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
+            consumption.amount + ")");
         int newStamina = currentStamina + consumption.amount;
         if (newStamina < 0) {
             newStamina = 0;
@@ -275,8 +277,8 @@ public class StaminaManager extends BasePlayerManager {
             int overriddenNewStamina = listener.getValue().onBeforeUpdateStamina(reason, newStamina, isCharacterStamina);
             if (overriddenNewStamina != newStamina) {
                 logger.debug("Stamina update absolute(" +
-                        reason + ", " + newStamina + ") overridden to absolute(" +
-                        reason + ", " + newStamina + ") by: " + listener.getKey());
+                    reason + ", " + newStamina + ") overridden to absolute(" +
+                    reason + ", " + newStamina + ") by: " + listener.getKey());
                 return currentStamina;
             }
         }
@@ -313,7 +315,7 @@ public class StaminaManager extends BasePlayerManager {
     // TODO: Probably move this to Avatar class? since other components may also need to kill avatar.
     public void killAvatar(GameSession session, GameEntity entity, PlayerDieType dieType) {
         session.send(new PacketAvatarLifeStateChangeNotify(player.getTeamManager().getCurrentAvatarEntity().getAvatar(),
-                LifeState.LIFE_DEAD, dieType));
+            LifeState.LIFE_DEAD, dieType));
         session.send(new PacketLifeStateChangeNotify(entity, LifeState.LIFE_DEAD, dieType));
         entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0);
         entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
@@ -352,7 +354,6 @@ public class StaminaManager extends BasePlayerManager {
         Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
         if (currentAvatar.getAvatarData().getWeaponType() == WeaponType.WEAPON_CLAYMORE) {
             // Exclude claymore as their stamina cost starts when MixinStaminaCost gets in
-            return;
         }
         // TODO: Differentiate normal attacks from charged attacks and exclude
         // TODO: Temporary: Exclude non-claymore attacks for now
@@ -422,14 +423,15 @@ public class StaminaManager extends BasePlayerManager {
 
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
+                updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
             case MOTION_STATE_DASH_BEFORE_SHAKE ->
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.SPRINT), true);
+                updateStaminaRelative(session, new Consumption(ConsumptionType.SPRINT), true);
             case MOTION_STATE_CLIMB_JUMP ->
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
+                updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
             case MOTION_STATE_SWIM_DASH ->
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START), true);
-            default -> {}
+                updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START), true);
+            default -> {
+            }
         }
     }
 
@@ -438,88 +440,17 @@ public class StaminaManager extends BasePlayerManager {
         updateStaminaRelative(session, consumption, true);
     }
 
-    private class SustainedStaminaHandler extends TimerTask {
-        public void run() {
-            boolean moving = isPlayerMoving();
-            int currentCharacterStamina = getCurrentCharacterStamina();
-            int maxCharacterStamina = getMaxCharacterStamina();
-            int currentVehicleStamina = getCurrentVehicleStamina();
-            int maxVehicleStamina = getMaxVehicleStamina();
-            if (moving || (currentCharacterStamina < maxCharacterStamina) || (currentVehicleStamina < maxVehicleStamina)) {
-                logger.trace("Player moving: " + moving + ", stamina full: " +
-                        (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
-                boolean isCharacterStamina = true;
-                Consumption consumption;
-                if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
-                    consumption = getClimbConsumption();
-                } else if (MotionStatesCategorized.get("DASH").contains(currentState)) {
-                    consumption = getDashConsumption();
-                } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
-                    consumption = getFlyConsumption();
-                } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.RUN);
-                } else if (MotionStatesCategorized.get("SKIFF").contains(currentState)) {
-                    consumption = getSkiffConsumption();
-                    isCharacterStamina = false;
-                } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.STANDBY);
-                } else if (MotionStatesCategorized.get("SWIM").contains(currentState)) {
-                    consumption = getSwimConsumptions();
-                } else if (MotionStatesCategorized.get("WALK").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.WALK);
-                } else if (MotionStatesCategorized.get("NOCOST_NORECOVER").contains(currentState)) {
-                    consumption = new Consumption();
-                } else if (MotionStatesCategorized.get("OTHER").contains(currentState)) {
-                    consumption = getOtherConsumptions();
-                } else { // ignore
-                    return;
-                }
-
-                if (consumption.amount < 0 && isCharacterStamina) {
-                    // Do not apply reduction factor when recovering stamina
-                    if (player.getTeamManager().getTeamResonances().contains(10301)) {
-                        consumption.amount *= 0.85f;
-                    }
-                }
-                // Delay 1 seconds before starts recovering stamina
-                if (consumption.amount != 0 && cachedSession != null) {
-                    if (consumption.amount < 0) {
-                        staminaRecoverDelay = 0;
-                    }
-                    if (consumption.amount > 0
-                            && consumption.type != ConsumptionType.POWERED_FLY
-                            && consumption.type != ConsumptionType.POWERED_SKIFF) {
-                        // For POWERED_* recover immediately - things like Amber's gliding exam and skiff challenges may require this.
-                        if (staminaRecoverDelay < 5) {
-                            // For others recover after 1 seconds (5 ticks) - as official server does.
-                            staminaRecoverDelay++;
-                            consumption.amount = 0;
-                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
-                        }
-                    }
-                    updateStaminaRelative(cachedSession, consumption, isCharacterStamina);
-                }
-            }
-            previousState = currentState;
-            previousCoordinates = currentCoordinates.clone();
-        }
-    }
-
     private void handleDrowning() {
         // TODO: fix drowning waverider entity
         int stamina = getCurrentCharacterStamina();
         if (stamina < 10) {
             logger.trace(getCurrentCharacterStamina() + "/" +
-                    getMaxCharacterStamina() + "\t" + currentState);
+                getMaxCharacterStamina() + "\t" + currentState);
             if (currentState != MotionState.MOTION_STATE_SWIM_IDLE) {
                 killAvatar(cachedSession, cachedEntity, PlayerDieType.PLAYER_DIE_TYPE_DRAWN);
             }
         }
     }
-
-    // Consumption Calculators
-
-    // Stamina Consumption Reduction: https://genshin-impact.fandom.com/wiki/Stamina
 
     private Consumption getFightConsumption(int skillCasting) {
         // Talent moving
@@ -539,6 +470,10 @@ public class StaminaManager extends BasePlayerManager {
             default -> new Consumption();
         };
     }
+
+    // Consumption Calculators
+
+    // Stamina Consumption Reduction: https://genshin-impact.fandom.com/wiki/Stamina
 
     private Consumption getClimbConsumption() {
         Consumption consumption = new Consumption();
@@ -617,8 +552,6 @@ public class StaminaManager extends BasePlayerManager {
         return new Consumption();
     }
 
-    // Reduction getter
-
     private float getTalentCostReductionFactor(HashMap<Integer, Float> talentReductionMap) {
         // All known talents reductions are not stackable
         float reduction = 1;
@@ -634,6 +567,8 @@ public class StaminaManager extends BasePlayerManager {
         }
         return reduction;
     }
+
+    // Reduction getter
 
     private float getFoodCostReductionFactor(HashMap<Integer, Float> foodReductionMap) {
         // All known food reductions are not stackable
@@ -698,11 +633,76 @@ public class StaminaManager extends BasePlayerManager {
     private Consumption getSwordCost(int skillId) {
         Consumption consumption = new Consumption(ConsumptionType.FIGHT, -2000);
         // Character specific handling
-        switch (skillId) {
-            case 10421:
-                consumption.amount = -2500;
-                break;
+        if (skillId == 10421) {
+            consumption.amount = -2500;
         }
         return consumption;
+    }
+
+    private class SustainedStaminaHandler extends TimerTask {
+        public void run() {
+            boolean moving = isPlayerMoving();
+            int currentCharacterStamina = getCurrentCharacterStamina();
+            int maxCharacterStamina = getMaxCharacterStamina();
+            int currentVehicleStamina = getCurrentVehicleStamina();
+            int maxVehicleStamina = getMaxVehicleStamina();
+            if (moving || (currentCharacterStamina < maxCharacterStamina) || (currentVehicleStamina < maxVehicleStamina)) {
+                logger.trace("Player moving: " + moving + ", stamina full: " +
+                    (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
+                boolean isCharacterStamina = true;
+                Consumption consumption;
+                if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
+                    consumption = getClimbConsumption();
+                } else if (MotionStatesCategorized.get("DASH").contains(currentState)) {
+                    consumption = getDashConsumption();
+                } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
+                    consumption = getFlyConsumption();
+                } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.RUN);
+                } else if (MotionStatesCategorized.get("SKIFF").contains(currentState)) {
+                    consumption = getSkiffConsumption();
+                    isCharacterStamina = false;
+                } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.STANDBY);
+                } else if (MotionStatesCategorized.get("SWIM").contains(currentState)) {
+                    consumption = getSwimConsumptions();
+                } else if (MotionStatesCategorized.get("WALK").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.WALK);
+                } else if (MotionStatesCategorized.get("NOCOST_NORECOVER").contains(currentState)) {
+                    consumption = new Consumption();
+                } else if (MotionStatesCategorized.get("OTHER").contains(currentState)) {
+                    consumption = getOtherConsumptions();
+                } else { // ignore
+                    return;
+                }
+
+                if (consumption.amount < 0 && isCharacterStamina) {
+                    // Do not apply reduction factor when recovering stamina
+                    if (player.getTeamManager().getTeamResonances().contains(10301)) {
+                        consumption.amount *= 0.85f;
+                    }
+                }
+                // Delay 1 seconds before starts recovering stamina
+                if (consumption.amount != 0 && cachedSession != null) {
+                    if (consumption.amount < 0) {
+                        staminaRecoverDelay = 0;
+                    }
+                    if (consumption.amount > 0
+                        && consumption.type != ConsumptionType.POWERED_FLY
+                        && consumption.type != ConsumptionType.POWERED_SKIFF) {
+                        // For POWERED_* recover immediately - things like Amber's gliding exam and skiff challenges may require this.
+                        if (staminaRecoverDelay < 5) {
+                            // For others recover after 1 seconds (5 ticks) - as official server does.
+                            staminaRecoverDelay++;
+                            consumption.amount = 0;
+                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
+                        }
+                    }
+                    updateStaminaRelative(cachedSession, consumption, isCharacterStamina);
+                }
+            }
+            previousState = currentState;
+            previousCoordinates = currentCoordinates.clone();
+        }
     }
 }

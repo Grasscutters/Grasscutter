@@ -20,17 +20,17 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
         PlayerEnterSceneNotify.Builder proto = PlayerEnterSceneNotify.newBuilder()
-                .setSceneId(player.getSceneId())
-                .setPos(player.getPosition().toProto())
-                .setSceneBeginTime(System.currentTimeMillis())
-                .setType(EnterType.ENTER_TYPE_SELF)
-                .setTargetUid(player.getUid())
-                .setEnterSceneToken(player.getEnterSceneToken())
-                .setWorldLevel(player.getWorldLevel())
-                .setEnterReason(EnterReason.Login.getValue())
-                .setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
-                .setWorldType(1)
-                .setSceneTransaction("3-" + player.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
+            .setSceneId(player.getSceneId())
+            .setPos(player.getPosition().toProto())
+            .setSceneBeginTime(System.currentTimeMillis())
+            .setType(EnterType.ENTER_TYPE_SELF)
+            .setTargetUid(player.getUid())
+            .setEnterSceneToken(player.getEnterSceneToken())
+            .setWorldLevel(player.getWorldLevel())
+            .setEnterReason(EnterReason.Login.getValue())
+            .setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
+            .setWorldType(1)
+            .setSceneTransaction("3-" + player.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
 
         this.setData(proto);
     }
@@ -44,7 +44,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         super(PacketOpcodes.PlayerEnterSceneNotify);
 
         // Set previous position
-        if(!(newScene == 3)){ // Hardcoded for now else weird positions will occur
+        if (!(newScene == 3)) { // Hardcoded for now else weird positions will occur
             // Don't update position within same scene or teapot
         } else {
             // Only used for exiting teapot currently
@@ -55,18 +55,18 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
         PlayerEnterSceneNotify.Builder proto = PlayerEnterSceneNotify.newBuilder()
-                .setPrevSceneId(player.getSceneId())
-                .setPrevPos(player.getPosition().toProto())
-                .setSceneId(newScene)
-                .setPos(newPos.toProto())
-                .setSceneBeginTime(System.currentTimeMillis())
-                .setType(type)
-                .setTargetUid(target.getUid())
-                .setEnterSceneToken(player.getEnterSceneToken())
-                .setWorldLevel(target.getWorld().getWorldLevel())
-                .setEnterReason(reason.getValue())
-                .setWorldType(1)
-                .setSceneTransaction(newScene + "-" + target.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
+            .setPrevSceneId(player.getSceneId())
+            .setPrevPos(player.getPosition().toProto())
+            .setSceneId(newScene)
+            .setPos(newPos.toProto())
+            .setSceneBeginTime(System.currentTimeMillis())
+            .setType(type)
+            .setTargetUid(target.getUid())
+            .setEnterSceneToken(player.getEnterSceneToken())
+            .setWorldLevel(target.getWorld().getWorldLevel())
+            .setEnterReason(reason.getValue())
+            .setWorldType(1)
+            .setSceneTransaction(newScene + "-" + target.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
 
         this.setData(proto);
     }

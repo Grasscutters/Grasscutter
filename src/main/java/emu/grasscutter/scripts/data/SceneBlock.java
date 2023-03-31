@@ -13,7 +13,6 @@ import lombok.ToString;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -25,7 +24,7 @@ public class SceneBlock {
     public Position min;
 
     public int sceneId;
-    public Map<Integer,SceneGroup> groups;
+    public Map<Integer, SceneGroup> groups;
     public RTree<SceneGroup, Geometry> sceneGroupIndex;
 
     private transient boolean loaded; // Not an actual variable in the scripts either
@@ -39,8 +38,8 @@ public class SceneBlock {
     }
 
     public boolean contains(Position pos) {
-        return 	pos.getX() <= this.max.getX() && pos.getX() >= this.min.getX() &&
-                pos.getZ() <= this.max.getZ() && pos.getZ() >= this.min.getZ();
+        return pos.getX() <= this.max.getX() && pos.getX() >= this.min.getX() &&
+            pos.getZ() <= this.max.getZ() && pos.getZ() >= this.min.getZ();
     }
 
     public SceneBlock load(int sceneId, Bindings bindings) {
@@ -62,7 +61,7 @@ public class SceneBlock {
 
             // Set groups
             this.groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
-                    .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
+                .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
 
             this.groups.values().forEach(g -> g.block_id = this.id);
             this.sceneGroupIndex = SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());

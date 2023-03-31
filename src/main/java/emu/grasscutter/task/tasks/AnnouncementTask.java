@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public final class AnnouncementTask extends TaskHandler {
 
     static Map<Integer, Integer> intervalMap = new ConcurrentHashMap<>();
+
     @Override
     public void onEnable() {
         Grasscutter.getLogger().debug("[Task] Announcement task enabled.");
@@ -35,7 +36,7 @@ public final class AnnouncementTask extends TaskHandler {
             .filter(i -> current.before(i.getEndTime()))
             .collect(Collectors.toMap(AnnouncementSystem.AnnounceConfigItem::getTemplateId, y -> y));
 
-        announceConfigItems.values().forEach(i -> intervalMap.compute(i.getTemplateId(), (k,v) -> v == null ? 1 : v + 1));
+        announceConfigItems.values().forEach(i -> intervalMap.compute(i.getTemplateId(), (k, v) -> v == null ? 1 : v + 1));
 
         var toSend = intervalMap.entrySet().stream()
             .filter(i -> announceConfigItems.containsKey(i.getKey()))

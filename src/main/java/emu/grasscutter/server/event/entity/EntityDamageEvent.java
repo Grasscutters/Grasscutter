@@ -7,8 +7,9 @@ import emu.grasscutter.server.event.types.EntityEvent;
 import javax.annotation.Nullable;
 
 public final class EntityDamageEvent extends EntityEvent implements Cancellable {
+    @Nullable
+    private final GameEntity damager;
     private float damage;
-    @Nullable private final GameEntity damager;
 
     public EntityDamageEvent(GameEntity entity, float damage, @Nullable GameEntity damager) {
         super(entity);

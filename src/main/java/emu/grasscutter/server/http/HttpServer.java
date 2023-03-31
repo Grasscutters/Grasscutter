@@ -4,9 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.Javalin;
-import io.javalin.core.util.JavalinLogger;
 import io.javalin.http.ContentType;
-
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -53,13 +51,14 @@ public final class HttpServer {
 
     /**
      * Creates an HTTP(S) server.
+     *
      * @return A server instance.
      */
     @SuppressWarnings("resource")
     private static Server createServer() {
         Server server = new Server();
         ServerConnector serverConnector
-                = new ServerConnector(server);
+            = new ServerConnector(server);
 
         if (HTTP_ENCRYPTION.useEncryption) {
             var sslContextFactory = new SslContextFactory.Server();
@@ -97,6 +96,7 @@ public final class HttpServer {
 
     /**
      * Returns the handle for the Express application.
+     *
      * @return A Javalin instance.
      */
     public Javalin getHandle() {
@@ -105,6 +105,7 @@ public final class HttpServer {
 
     /**
      * Initializes the provided class.
+     *
      * @param router The router class.
      * @return Method chaining.
      */
@@ -121,18 +122,20 @@ public final class HttpServer {
             routerInstance.applyRoutes(this.javalin); // Apply routes.
         } catch (Exception exception) {
             Grasscutter.getLogger().warn(translate("messages.dispatch.router_error"), exception);
-        } return this;
+        }
+        return this;
     }
 
     /**
      * Starts listening on the HTTP server.
+     *
      * @throws UnsupportedEncodingException
      */
     public void start() throws UnsupportedEncodingException {
         // Attempt to start the HTTP server.
         if (HTTP_INFO.bindAddress.equals("")) {
             this.javalin.start(HTTP_INFO.bindPort);
-        }else {
+        } else {
             this.javalin.start(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
         }
 
@@ -144,21 +147,22 @@ public final class HttpServer {
      * Handles the '/' (index) endpoint on the Express application.
      */
     public static class DefaultRequestRouter implements Router {
-        @Override public void applyRoutes(Javalin javalin) {
+        @Override
+        public void applyRoutes(Javalin javalin) {
             javalin.get("/", ctx -> {
                 // Send file
                 File file = new File(HTTP_STATIC_FILES.indexFile);
                 if (!file.exists()) {
                     ctx.contentType(ContentType.TEXT_HTML);
                     ctx.result("""
-                            <!DOCTYPE html>
-                            <html>
-                                <head>
-                                    <meta charset="utf8">
-                                </head>
-                                <body>%s</body>
-                            </html>
-                            """.formatted(translate("messages.status.welcome")));
+                        <!DOCTYPE html>
+                        <html>
+                            <head>
+                                <meta charset="utf8">
+                            </head>
+                            <body>%s</body>
+                        </html>
+                        """.formatted(translate("messages.status.welcome")));
                 } else {
                     var filePath = file.getPath();
                     ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
@@ -173,7 +177,8 @@ public final class HttpServer {
      * Handles unhandled endpoints on the Express application.
      */
     public static class UnhandledRequestRouter implements Router {
-        @Override public void applyRoutes(Javalin javalin) {
+        @Override
+        public void applyRoutes(Javalin javalin) {
             javalin.error(404, ctx -> {
                 // Error log
                 if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
@@ -183,17 +188,17 @@ public final class HttpServer {
                 if (!file.exists()) {
                     ctx.contentType(ContentType.TEXT_HTML);
                     ctx.result("""
-                            <!DOCTYPE html>
-                            <html>
-                                <head>
-                                    <meta charset="utf8">
-                                </head>
+                        <!DOCTYPE html>
+                        <html>
+                            <head>
+                                <meta charset="utf8">
+                            </head>
 
-                                <body>
-                                    <img src="https://http.cat/404" />
-                                </body>
-                            </html>
-                            """);
+                            <body>
+                                <img src="https://http.cat/404" />
+                            </body>
+                        </html>
+                        """);
                 } else {
                     var filePath = file.getPath();
                     ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));

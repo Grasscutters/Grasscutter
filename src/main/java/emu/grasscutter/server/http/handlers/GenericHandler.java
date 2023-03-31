@@ -1,20 +1,29 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.objects.WebStaticVersionResponse;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
 
 /**
  * Handles all generic, hard-coded responses.
  */
 public final class GenericHandler implements Router {
-    @Override public void applyRoutes(Javalin javalin) {
+    private static void serverStatus(Context ctx) {
+        int playerCount = Grasscutter.getGameServer().getPlayers().size();
+        int maxPlayer = ACCOUNT.maxPlayer;
+        String version = GameConstants.VERSION;
+
+        ctx.result("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"maxPlayer\":" + maxPlayer + ",\"version\":\"" + version + "\"}}");
+    }
+
+    @Override
+    public void applyRoutes(Javalin javalin) {
         // hk4e-sdk-os.hoyoverse.com
         javalin.get("/hk4e_global/mdk/agreement/api/getAgreementInfos", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
         // hk4e-sdk-os.hoyoverse.com (this could be either GET or POST based on the observation of different clients)
@@ -44,13 +53,5 @@ public final class GenericHandler implements Router {
         javalin.get("/admin/mi18n/plat_oversea/*", new WebStaticVersionResponse());
 
         javalin.get("/status/server", GenericHandler::serverStatus);
-    }
-
-    private static void serverStatus(Context ctx) {
-        int playerCount = Grasscutter.getGameServer().getPlayers().size();
-        int maxPlayer = ACCOUNT.maxPlayer;
-        String version = GameConstants.VERSION;
-
-        ctx.result("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"maxPlayer\":" + maxPlayer + ",\"version\":\"" + version + "\"}}");
     }
 }

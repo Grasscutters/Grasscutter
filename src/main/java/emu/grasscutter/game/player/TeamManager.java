@@ -1,8 +1,5 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.*;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
@@ -22,22 +19,7 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
-import emu.grasscutter.server.packet.send.PacketAddBackupAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarTeamAllDataNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
-import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketDelBackupAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -48,22 +30,42 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 @Entity
 public class TeamManager extends BasePlayerDataManager {
+    @Transient
+    private final List<EntityAvatar> avatars;
+    @Transient
+    @Getter
+    private final Set<EntityBaseGadget> gadgets;
+    @Transient
+    @Getter
+    private final IntSet teamResonances;
+    @Transient
+    @Getter
+    private final IntSet teamResonancesConfig;
     // This needs to be a LinkedHashMap to guarantee insertion order.
-    @Getter private LinkedHashMap<Integer, TeamInfo> teams;
+    @Getter
+    private LinkedHashMap<Integer, TeamInfo> teams;
     private int currentTeamIndex;
-    @Getter @Setter private int currentCharacterIndex;
-
-    @Transient @Getter @Setter private TeamInfo mpTeam;
-    @Transient @Getter @Setter private int entityId;
-    @Transient private final List<EntityAvatar> avatars;
-    @Transient @Getter private final Set<EntityBaseGadget> gadgets;
-    @Transient @Getter private final IntSet teamResonances;
-    @Transient @Getter private final IntSet teamResonancesConfig;
-
-    @Transient private int useTemporarilyTeamIndex = -1;
-    @Transient private List<TeamInfo> temporaryTeam; // Temporary Team for tower
+    @Getter
+    @Setter
+    private int currentCharacterIndex;
+    @Transient
+    @Getter
+    @Setter
+    private TeamInfo mpTeam;
+    @Transient
+    @Getter
+    @Setter
+    private int entityId;
+    @Transient
+    private int useTemporarilyTeamIndex = -1;
+    @Transient
+    private List<TeamInfo> temporaryTeam; // Temporary Team for tower
 
     public TeamManager() {
         this.mpTeam = new TeamInfo();
@@ -454,6 +456,7 @@ public class TeamManager extends BasePlayerDataManager {
         this.temporaryTeam = null;
         this.updateTeamEntities(null);
     }
+
     public synchronized void setCurrentTeam(int teamId) {
         //
         if (this.getPlayer().isInMultiplayer()) {
@@ -630,7 +633,7 @@ public class TeamManager extends BasePlayerDataManager {
         try {
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnPosition()));
             player.getPosition().set(getRespawnPosition());
-        }catch (Exception e) {
+        } catch (Exception e) {
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
             player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
         }
@@ -638,6 +641,7 @@ public class TeamManager extends BasePlayerDataManager {
         // Packets
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
     }
+
     public Position getRespawnPosition() {
         var deathPos = this.getPlayer().getPosition();
         int sceneId = this.getPlayer().getSceneId();
@@ -650,6 +654,7 @@ public class TeamManager extends BasePlayerDataManager {
 
         return respawnPoint.get().getPointData().getTranPos();
     }
+
     public void saveAvatars() {
         // Save all avatars from active team
         for (EntityAvatar entity : this.getActiveTeam()) {
@@ -671,7 +676,7 @@ public class TeamManager extends BasePlayerDataManager {
         // The id of the new custom team is the lowest id in [5,MAX_TEAMS] that is not yet taken.
         int id = -1;
         for (int i = 5; i <= GameConstants.MAX_TEAMS; i++) {
-            if (!this.teams.keySet().contains(i)) {
+            if (!this.teams.containsKey(i)) {
                 id = i;
                 break;
             }

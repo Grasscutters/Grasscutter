@@ -10,22 +10,22 @@ import java.util.List;
 
 public class PacketHomeGetArrangementInfoRsp extends BasePacket {
 
-	public PacketHomeGetArrangementInfoRsp(Player player, List<Integer> sceneIdList) {
-		super(PacketOpcodes.HomeGetArrangementInfoRsp);
+    public PacketHomeGetArrangementInfoRsp(Player player, List<Integer> sceneIdList) {
+        super(PacketOpcodes.HomeGetArrangementInfoRsp);
 
-		var home = player.getHome();
+        var home = player.getHome();
 
-		var homeScenes = sceneIdList.stream()
-				.map(home::getHomeSceneItem)
-				.map(HomeSceneItem::toProto)
-				.toList();
+        var homeScenes = sceneIdList.stream()
+            .map(home::getHomeSceneItem)
+            .map(HomeSceneItem::toProto)
+            .toList();
 
-		home.save();
+        home.save();
 
-		var proto = HomeGetArrangementInfoRspOuterClass.HomeGetArrangementInfoRsp.newBuilder();
+        var proto = HomeGetArrangementInfoRspOuterClass.HomeGetArrangementInfoRsp.newBuilder();
 
-		proto.addAllSceneArrangementInfoList(homeScenes);
+        proto.addAllSceneArrangementInfoList(homeScenes);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

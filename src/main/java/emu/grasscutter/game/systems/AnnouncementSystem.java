@@ -68,9 +68,13 @@ public class AnnouncementSystem extends BaseGameSystem {
         getOnlinePlayers().forEach(i -> i.sendPacket(new PacketServerAnnounceRevokeNotify(tplId)));
     }
 
+    public enum AnnounceType {
+        CENTER, COUNTDOWN
+    }
+
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public class AnnounceConfigItem{
+    public class AnnounceConfigItem {
         int templateId;
         AnnounceType type;
         int frequency;
@@ -92,7 +96,7 @@ public class AnnouncementSystem extends BaseGameSystem {
                 proto.setCenterSystemText(content)
                     .setCenterSystemFrequency(frequency)
                 ;
-            }else {
+            } else {
                 proto.setCountDownText(content)
                     .setCountDownFrequency(frequency)
                 ;
@@ -100,9 +104,5 @@ public class AnnouncementSystem extends BaseGameSystem {
 
             return proto;
         }
-    }
-
-    public enum AnnounceType{
-        CENTER, COUNTDOWN
     }
 }

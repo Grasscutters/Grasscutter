@@ -10,7 +10,8 @@ import lombok.Getter;
  * To listen for one player death, use {@link emu.grasscutter.server.event.entity.EntityDeathEvent}.
  */
 public final class PlayerTeamDeathEvent extends PlayerEvent {
-    @Getter private final EntityAvatar selectedAvatar;
+    @Getter
+    private final EntityAvatar selectedAvatar;
 
     public PlayerTeamDeathEvent(Player player, EntityAvatar selectedAvatar) {
         super(player);

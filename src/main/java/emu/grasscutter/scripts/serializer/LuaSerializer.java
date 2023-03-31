@@ -35,8 +35,8 @@ public class LuaSerializer implements Serializer {
         return serializeMap(type, (LuaTable) obj);
     }
 
-    private <T> Map<String,T> serializeMap(Class<T> type, LuaTable table) {
-        Map<String,T> map = new HashMap<>();
+    private <T> Map<String, T> serializeMap(Class<T> type, LuaTable table) {
+        Map<String, T> map = new HashMap<>();
 
         if (table == null) {
             return map;
@@ -65,7 +65,7 @@ public class LuaSerializer implements Serializer {
                     }
 
                     if (object != null) {
-                        map.put(String.valueOf(k),object);
+                        map.put(String.valueOf(k), object);
                     }
                 } catch (Exception ex) {
 
@@ -197,21 +197,21 @@ public class LuaSerializer implements Serializer {
         var methodNameSet = new HashSet<>(Arrays.stream(methodAccess.getMethodNames()).toList());
 
         Arrays.stream(type.getDeclaredFields())
-                .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
-                .forEach(field -> {
-                    var setter = getSetterName(field.getName());
-                    var index = methodAccess.getIndex(setter);
-                    fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
-                });
+            .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
+            .forEach(field -> {
+                var setter = getSetterName(field.getName());
+                var index = methodAccess.getIndex(setter);
+                fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
+            });
 
         Arrays.stream(type.getFields())
-                .filter(field -> !fieldMetaMap.containsKey(field.getName()))
-                .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
-                .forEach(field -> {
-                    var setter = getSetterName(field.getName());
-                    var index = methodAccess.getIndex(setter);
-                    fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
-                });
+            .filter(field -> !fieldMetaMap.containsKey(field.getName()))
+            .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
+            .forEach(field -> {
+                var setter = getSetterName(field.getName());
+                var index = methodAccess.getIndex(setter);
+                fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
+            });
 
         fieldMetaCache.put(type, fieldMetaMap);
         return fieldMetaMap;
@@ -230,7 +230,7 @@ public class LuaSerializer implements Serializer {
     @Data
     @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    static class FieldMeta{
+    static class FieldMeta {
         String name;
         String setter;
         int index;

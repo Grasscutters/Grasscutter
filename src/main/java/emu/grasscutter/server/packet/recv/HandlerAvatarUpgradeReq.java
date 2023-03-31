@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.AvatarUpgradeReq)
@@ -15,10 +15,10 @@ public class HandlerAvatarUpgradeReq extends PacketHandler {
 
         // Level up avatar
         session.getServer().getInventorySystem().upgradeAvatar(
-                session.getPlayer(),
-                req.getAvatarGuid(),
-                req.getItemId(),
-                req.getCount()
+            session.getPlayer(),
+            req.getAvatarGuid(),
+            req.getItemId(),
+            req.getCount()
         );
     }
 

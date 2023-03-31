@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
-import java.io.File;
+import emu.grasscutter.Grasscutter;
+
 import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
@@ -8,11 +9,9 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
-
-import emu.grasscutter.Grasscutter;
 
 public final class Crypto {
     private static final SecureRandom secureRandom = new SecureRandom();
@@ -45,8 +44,7 @@ public final class Crypto {
 
                     var m = pattern.matcher(path.getFileName().toString());
 
-                    if (m.matches())
-                    {
+                    if (m.matches()) {
                         var key = KeyFactory.getInstance("RSA")
                             .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
 
@@ -54,8 +52,7 @@ public final class Crypto {
                     }
                 }
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
         }
     }

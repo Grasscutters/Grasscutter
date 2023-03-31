@@ -4,10 +4,6 @@ import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseAction {
-    public ItemUseOp getItemUseOp() {
-        return ItemUseOp.ITEM_USE_NONE;
-    }
-
     public static ItemUseAction fromItemUseData(ItemUseData data) {
         var useParam = data.getUseParam();
         return switch (data.getUseOp()) {
@@ -31,7 +27,8 @@ public class ItemUseAction {
             case ITEM_USE_COMBINE_ITEM -> new ItemUseCombineItem(useParam);
             case ITEM_USE_OPEN_RANDOM_CHEST -> new ItemUseOpenRandomChest(useParam);
             // Food effects
-            case ITEM_USE_RELIVE_AVATAR -> new ItemUseReliveAvatar(useParam);  // First action for revival food. Should we worry about race conditions in parallel streams?
+            case ITEM_USE_RELIVE_AVATAR ->
+                new ItemUseReliveAvatar(useParam);  // First action for revival food. Should we worry about race conditions in parallel streams?
             case ITEM_USE_ADD_CUR_HP -> new ItemUseAddCurHp(useParam);
             case ITEM_USE_ADD_CUR_STAMINA -> new ItemUseAddCurStamina(useParam);
             case ITEM_USE_ADD_SERVER_BUFF -> new ItemUseAddServerBuff(useParam);
@@ -48,7 +45,8 @@ public class ItemUseAction {
             // Account things
             case ITEM_USE_ACCEPT_QUEST -> new ItemUseAcceptQuest(useParam);
             case ITEM_USE_GAIN_CARD_PRODUCT -> new ItemUseGainCardProduct(useParam);
-            case ITEM_USE_UNLOCK_PAID_BATTLE_PASS_NORMAL -> new ItemUseUnlockPaidBattlePassNormal(useParam);  // TODO: add paid BP
+            case ITEM_USE_UNLOCK_PAID_BATTLE_PASS_NORMAL ->
+                new ItemUseUnlockPaidBattlePassNormal(useParam);  // TODO: add paid BP
 
             // Unused in current resources
             case ITEM_USE_DEL_SERVER_BUFF -> null;
@@ -63,6 +61,10 @@ public class ItemUseAction {
             case ITEM_USE_ADD_CHANNELLER_SLAB_BUFF -> null;  // [int] minigame buffs
             case ITEM_USE_ADD_REGIONAL_PLAY_VAR -> null;  // [String, int] - coral butterfly effect
         };
+    }
+
+    public ItemUseOp getItemUseOp() {
+        return ItemUseOp.ITEM_USE_NONE;
     }
 
     public boolean useItem(UseItemParams params) {

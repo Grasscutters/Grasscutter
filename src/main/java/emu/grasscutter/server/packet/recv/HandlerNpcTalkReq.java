@@ -3,14 +3,11 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.enums.ParentQuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketNpcTalkRsp;
 
@@ -23,7 +20,7 @@ public class HandlerNpcTalkReq extends PacketHandler {
         //Check if mainQuest exists
         //remove last 2 digits to get a mainQuestId
         int talkId = req.getTalkId();
-        int mainQuestId = talkId/100;
+        int mainQuestId = talkId / 100;
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
 
         if (mainQuestData != null) {

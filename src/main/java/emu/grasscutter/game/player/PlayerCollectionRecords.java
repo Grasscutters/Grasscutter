@@ -1,9 +1,9 @@
 package emu.grasscutter.game.player;
 
+import dev.morphia.annotations.Entity;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import dev.morphia.annotations.Entity;
 
 @Entity(useDiscriminator = false)
 public class PlayerCollectionRecords {
@@ -49,7 +49,8 @@ public class PlayerCollectionRecords {
         private long expiredTime;
 
         @Deprecated // Morphia
-        public CollectionRecord() {}
+        public CollectionRecord() {
+        }
 
         public CollectionRecord(int configId, long expiredTime) {
             this.configId = configId;

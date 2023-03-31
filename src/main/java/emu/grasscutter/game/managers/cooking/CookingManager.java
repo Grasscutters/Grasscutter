@@ -1,10 +1,5 @@
 package emu.grasscutter.game.managers.cooking;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
@@ -21,6 +16,11 @@ import emu.grasscutter.server.packet.send.PacketCookRecipeDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
 import io.netty.util.internal.ThreadLocalRandom;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CookingManager extends BasePlayerManager {
     private static final int MANUAL_PERFECT_COOK_QUALITY = 3;
@@ -94,8 +94,8 @@ public class CookingManager extends BasePlayerManager {
         // Get result item information.
         int qualityIndex =
             quality == 0
-            ? 2
-            : quality - 1;
+                ? 2
+                : quality - 1;
 
         ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);
         ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getItemId());
@@ -146,7 +146,7 @@ public class CookingManager extends BasePlayerManager {
         this.player.sendPacket(new PacketPlayerCookArgsRsp());
     }
 
-     /********************
+    /********************
      * Notify unlocked recipies.
      ********************/
     private void addDefaultUnlocked() {

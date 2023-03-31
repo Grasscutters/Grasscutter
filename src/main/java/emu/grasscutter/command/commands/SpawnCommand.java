@@ -124,8 +124,6 @@ public final class SpawnCommand implements CommandHandler {
         CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.success", param.amount, param.id));
     }
 
-    ;
-
     private EntityItem createItem(ItemData itemData, SpawnParameters param, Position pos) {
         return new EntityItem(param.scene, null, itemData, pos, 1, true);
     }
@@ -188,19 +186,32 @@ public final class SpawnCommand implements CommandHandler {
     }
 
     private static class SpawnParameters {
-        @Setter public int id;
-        @Setter public int lvl = 1;
-        @Setter public int amount = 1;
-        @Setter public int blockId = -1;
-        @Setter public int groupId = -1;
-        @Setter public int configId = -1;
-        @Setter public int state = -1;
-        @Setter public int hp = -1;
-        @Setter public int maxHP = -1;
-        @Setter public int atk = -1;
-        @Setter public int def = -1;
-        @Setter public int ai = -1;
-        @Setter public Position pos = null;
+        @Setter
+        public int id;
+        @Setter
+        public int lvl = 1;
+        @Setter
+        public int amount = 1;
+        @Setter
+        public int blockId = -1;
+        @Setter
+        public int groupId = -1;
+        @Setter
+        public int configId = -1;
+        @Setter
+        public int state = -1;
+        @Setter
+        public int hp = -1;
+        @Setter
+        public int maxHP = -1;
+        @Setter
+        public int atk = -1;
+        @Setter
+        public int def = -1;
+        @Setter
+        public int ai = -1;
+        @Setter
+        public Position pos = null;
         public Scene scene = null;
     }
 }

@@ -1,9 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.IntStream;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.GameResource;
@@ -16,6 +12,10 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.IntStream;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
@@ -73,14 +73,14 @@ public class AvatarSkillDepotData extends GameResource {
             .ifPresent(itemId -> this.talentCostItemId = itemId);
     }
 
+    public IntStream getSkillsAndEnergySkill() {
+        return IntStream.concat(this.skills.stream().mapToInt(i -> i), IntStream.of(this.energySkill))
+            .filter(skillId -> skillId > 0);
+    }
+
     @Getter
     public static class InherentProudSkillOpens {
         private int proudSkillGroupId;
         private int needAvatarPromoteLevel;
-    }
-
-    public IntStream getSkillsAndEnergySkill() {
-        return IntStream.concat(this.skills.stream().mapToInt(i -> i), IntStream.of(this.energySkill))
-                        .filter(skillId -> skillId > 0);
     }
 }

@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels;
 
 import com.google.gson.annotations.SerializedName;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import lombok.Getter;
@@ -14,7 +13,7 @@ public class CodexAnimalData extends GameResource {
     private String type;
     private int describeId;
     private int sortOrder;
-    @SerializedName(value="countType", alternate={"OCCLHPBCDGL"})
+    @SerializedName(value = "countType", alternate = {"OCCLHPBCDGL"})
     private CountType countType;
 
     public enum CountType {

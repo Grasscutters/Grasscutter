@@ -8,8 +8,11 @@ import lombok.Getter;
 import javax.annotation.Nullable;
 
 public final class EntityDeathEvent extends EntityEvent {
-    @Getter private final Location deathLocation;
-    @Getter @Nullable private final GameEntity killer;
+    @Getter
+    private final Location deathLocation;
+    @Getter
+    @Nullable
+    private final GameEntity killer;
 
     public EntityDeathEvent(GameEntity entity, int killerId) {
         super(entity);

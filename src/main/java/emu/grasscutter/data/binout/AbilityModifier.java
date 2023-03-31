@@ -1,22 +1,35 @@
 package emu.grasscutter.data.binout;
 
-import java.io.Serializable;
-
 import com.google.gson.annotations.SerializedName;
-
 import emu.grasscutter.data.common.DynamicFloat;
+
+import java.io.Serializable;
 
 public class AbilityModifier implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
 
-    @SerializedName(value="onAdded", alternate={"KCICDEJLIJD"})
+    @SerializedName(value = "onAdded", alternate = {"KCICDEJLIJD"})
     public AbilityModifierAction[] onAdded;
-    @SerializedName(value="onThinkInterval", alternate={"PBDDACFFPOE"})
+    @SerializedName(value = "onThinkInterval", alternate = {"PBDDACFFPOE"})
     public AbilityModifierAction[] onThinkInterval;
     public AbilityModifierAction[] onRemoved;
     public DynamicFloat duration = DynamicFloat.ZERO;
 
     public static class AbilityModifierAction {
+        @SerializedName("$type")
+        public Type type;
+        public String target;
+        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
+        public DynamicFloat amount = DynamicFloat.ZERO;
+        public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
+        public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+        @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
+        public boolean ignoreAbilityProperty;
+        public String modifierName;
         public enum Type {
             ActCameraRadialBlur, ActCameraShake, AddAvatarSkillInfo, AddChargeBarValue,
             AddClimateMeter, AddElementDurability, AddGlobalValue, AddGlobalValueToTarget,
@@ -71,22 +84,8 @@ public class AbilityModifier implements Serializable {
             TriggerSetPassThrough, TriggerSetRenderersEnable, TriggerSetShadowRamp, TriggerSetVisible,
             TriggerTaunt, TriggerThrowEquipPart, TriggerUGCGadgetMove, TryFindBlinkPoint,
             TryFindBlinkPointByBorn, TryTriggerPlatformStartMove, TurnDirection, TurnDirectionToPos,
-            UpdateReactionDamage, UseSkillEliteSet, WidgetSkillStart;
+            UpdateReactionDamage, UseSkillEliteSet, WidgetSkillStart
         }
-        @SerializedName("$type")
-        public Type type;
-        public String target;
-        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
-        public DynamicFloat amount = DynamicFloat.ZERO;
-        public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
-        public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
-        @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
-        public boolean ignoreAbilityProperty;
-        public String modifierName;
     }
 
     //The following should be implemented into DynamicFloat if older resource formats need to be supported

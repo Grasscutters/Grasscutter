@@ -1,11 +1,5 @@
 package emu.grasscutter.data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
@@ -18,16 +12,26 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class GameDepot {
-    public static final int[] BLOCK_SIZE = new int[]{50,500};//Scales
+    public static final int[] BLOCK_SIZE = new int[]{50, 500};//Scales
 
-    private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
-    private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
-    private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
-    @Getter @Setter private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    @Getter private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
-    @Getter @Setter private static BlossomConfig blossomConfig;
+    @Getter
+    @Setter
+    private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
+    @Getter
+    private static final HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    @Getter
+    @Setter
+    private static BlossomConfig blossomConfig;
 
     public static void load() {
         for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {

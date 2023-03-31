@@ -1,9 +1,5 @@
 package emu.grasscutter.tools;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.GetShopRspOuterClass.GetShopRsp;
 

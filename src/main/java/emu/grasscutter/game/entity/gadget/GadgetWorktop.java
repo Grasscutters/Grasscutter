@@ -1,7 +1,5 @@
 package emu.grasscutter.game.entity.gadget;
 
-import java.util.Arrays;
-
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.worktop.WorktopWorktopOptionHandler;
 import emu.grasscutter.game.player.Player;
@@ -11,6 +9,8 @@ import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopO
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+
+import java.util.Arrays;
 
 public class GadgetWorktop extends GadgetContent {
     private IntSet worktopOptions;
@@ -48,8 +48,8 @@ public class GadgetWorktop extends GadgetContent {
         }
 
         WorktopInfo worktop = WorktopInfo.newBuilder()
-                .addAllOptionList(this.getWorktopOptions())
-                .build();
+            .addAllOptionList(this.getWorktopOptions())
+            .build();
 
         gadgetInfo.setWorktop(worktop);
     }
@@ -57,6 +57,7 @@ public class GadgetWorktop extends GadgetContent {
     public void setOnSelectWorktopOptionEvent(WorktopWorktopOptionHandler handler) {
         this.handler = handler;
     }
+
     public boolean onSelectWorktopOption(SelectWorktopOptionReq req) {
         if (this.handler != null) {
             this.handler.onSelectWorktopOption(this, req.getOptionId());

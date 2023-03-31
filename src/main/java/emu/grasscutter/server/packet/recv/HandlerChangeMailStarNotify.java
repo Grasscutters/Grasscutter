@@ -23,7 +23,7 @@ public class HandlerChangeMailStarNotify extends PacketHandler {
         for (int mailId : req.getMailIdListList()) {
             Mail message = session.getPlayer().getMail(mailId);
 
-            message.importance = req.getIsStar() == true ? 1 : 0;
+            message.importance = req.getIsStar() ? 1 : 0;
 
             session.getPlayer().replaceMailByIndex(mailId, message);
             updatedMail.add(message);

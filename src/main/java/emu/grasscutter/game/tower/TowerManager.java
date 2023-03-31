@@ -14,6 +14,8 @@ import java.util.Map;
 
 public class TowerManager extends BasePlayerManager {
 
+    private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
+
     public TowerManager(Player player) {
         super(player);
     }
@@ -36,11 +38,10 @@ public class TowerManager extends BasePlayerManager {
     public int getCurrentLevel() {
         return getTowerData().currentLevel + 1;
     }
-    private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
 
     public Map<Integer, TowerLevelRecord> getRecordMap() {
         Map<Integer, TowerLevelRecord> recordMap = getTowerData().recordMap;
-        if (recordMap == null || recordMap.size()==0) {
+        if (recordMap == null || recordMap.size() == 0) {
             recordMap = new HashMap<>();
             recordMap.put(1001, new TowerLevelRecord(1001));
             getTowerData().recordMap = recordMap;
@@ -53,10 +54,10 @@ public class TowerManager extends BasePlayerManager {
         getTowerData().currentFloorId = floorData.getFloorId();
         getTowerData().currentLevel = 0;
         getTowerData().currentLevelId = GameData.getTowerLevelDataMap().values().stream()
-                .filter(x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
-                .findFirst()
-                .map(TowerLevelData::getId)
-                .orElse(0);
+            .filter(x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
+            .findFirst()
+            .map(TowerLevelData::getId)
+            .orElse(0);
 
         if (getTowerData().entryScene == 0) {
             getTowerData().entryScene = player.getSceneId();
@@ -75,7 +76,7 @@ public class TowerManager extends BasePlayerManager {
         // use team user choose
         player.getTeamManager().useTemporaryTeam(0);
         player.getServer().getDungeonSystem().handoffDungeon(player, dungeonId,
-                towerDungeonSettleListener);
+            towerDungeonSettleListener);
 
         // make sure user can exit dungeon correctly
         player.getScene().setPrevScene(getTowerData().entryScene);
@@ -91,15 +92,16 @@ public class TowerManager extends BasePlayerManager {
     public void notifyCurLevelRecordChange() {
         player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getTowerData().currentFloorId, getCurrentLevel()));
     }
+
     public void notifyCurLevelRecordChangeWhenDone(int stars) {
         Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
         int currentFloorId = getTowerData().currentFloorId;
         if (!recordMap.containsKey(currentFloorId)) {
             recordMap.put(currentFloorId,
-                    new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(),stars));
-        }else {
+                new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
+        } else {
             recordMap.put(currentFloorId,
-                    recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(),stars));
+                recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
         }
 
         getTowerData().currentLevel++;
@@ -109,16 +111,19 @@ public class TowerManager extends BasePlayerManager {
             var nextFloorId = this.getNextFloorId();
             recordMap.computeIfAbsent(nextFloorId, TowerLevelRecord::new);
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(nextFloorId, 1));
-        }else {
+        } else {
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
         }
     }
+
     public boolean hasNextLevel() {
         return getTowerData().currentLevel < 3;
     }
+
     public int getNextFloorId() {
         return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId);
     }
+
     public boolean hasNextFloor() {
         return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId) > 0;
     }
@@ -133,7 +138,7 @@ public class TowerManager extends BasePlayerManager {
             return false;
         }
         return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor())
-                .getStarCount() >= 6;
+            .getStarCount() >= 6;
     }
 
     public void mirrorTeamSetUp(int teamId) {

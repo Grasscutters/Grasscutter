@@ -25,19 +25,37 @@ import lombok.Getter;
 import lombok.Setter;
 
 public abstract class GameEntity {
-    @Getter protected int id;
-    @Getter private final Scene scene;
-    @Getter @Setter private SpawnDataEntry spawnEntry;
+    @Getter
+    private final Scene scene;
+    @Getter
+    protected int id;
+    @Getter
+    @Setter
+    private SpawnDataEntry spawnEntry;
 
-    @Getter @Setter private int blockId;
-    @Getter @Setter private int configId;
-    @Getter @Setter private int groupId;
+    @Getter
+    @Setter
+    private int blockId;
+    @Getter
+    @Setter
+    private int configId;
+    @Getter
+    @Setter
+    private int groupId;
 
-    @Getter @Setter private MotionState motionState;
-    @Getter @Setter private int lastMoveSceneTimeMs;
-    @Getter @Setter private int lastMoveReliableSeq;
+    @Getter
+    @Setter
+    private MotionState motionState;
+    @Getter
+    @Setter
+    private int lastMoveSceneTimeMs;
+    @Getter
+    @Setter
+    private int lastMoveReliableSeq;
 
-    @Getter @Setter private boolean lockHP;
+    @Getter
+    @Setter
+    private boolean lockHP;
 
     // Abilities
     private Object2FloatMap<String> metaOverrideMap;
@@ -113,11 +131,11 @@ public abstract class GameEntity {
 
     protected MotionInfo getMotionInfo() {
         MotionInfo proto = MotionInfo.newBuilder()
-                .setPos(this.getPosition().toProto())
-                .setRot(this.getRotation().toProto())
-                .setSpeed(Vector.newBuilder())
-                .setState(this.getMotionState())
-                .build();
+            .setPos(this.getPosition().toProto())
+            .setRot(this.getRotation().toProto())
+            .setSpeed(Vector.newBuilder())
+            .setState(this.getMotionState())
+            .build();
 
         return proto;
     }
@@ -183,6 +201,7 @@ public abstract class GameEntity {
 
     /**
      * Move this entity to a new position.
+     *
      * @param position The new position.
      * @param rotation The new rotation.
      */
@@ -194,7 +213,8 @@ public abstract class GameEntity {
 
     /**
      * Called when a player interacts with this entity
-     * @param player Player that is interacting with this entity
+     *
+     * @param player      Player that is interacting with this entity
      * @param interactReq Interact request protobuf data
      */
     public void onInteract(Player player, GadgetInteractReq interactReq) {
@@ -214,6 +234,7 @@ public abstract class GameEntity {
 
     /**
      * Called when this entity dies
+     *
      * @param killerId Entity id of the entity that killed this entity
      */
     public void onDeath(int killerId) {

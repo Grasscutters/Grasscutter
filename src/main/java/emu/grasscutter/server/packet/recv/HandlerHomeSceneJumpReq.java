@@ -11,36 +11,36 @@ import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.HomeSceneJumpReq)
 public class HandlerHomeSceneJumpReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		var req = HomeSceneJumpReqOuterClass.HomeSceneJumpReq.parseFrom(payload);
 
-		int realmId = 2000 + session.getPlayer().getCurrentRealmId();
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var req = HomeSceneJumpReqOuterClass.HomeSceneJumpReq.parseFrom(payload);
 
-		var home = session.getPlayer().getHome();
-		var homeScene = home.getHomeSceneItem(realmId);
-		home.save();
+        int realmId = 2000 + session.getPlayer().getCurrentRealmId();
 
-		Scene scene = session.getPlayer().getWorld().getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
-		Position pos = scene.getScriptManager().getConfig().born_pos;
-		Position rot = home.getSceneMap().get(scene.getId()).getBornRot();
+        var home = session.getPlayer().getHome();
+        var homeScene = home.getHomeSceneItem(realmId);
+        home.save();
 
-		// Make player face correct direction when entering or exiting
-		session.getPlayer().getRotation().set(rot);
+        Scene scene = session.getPlayer().getWorld().getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
+        Position pos = scene.getScriptManager().getConfig().born_pos;
+        Position rot = home.getSceneMap().get(scene.getId()).getBornRot();
 
-		// Make player exit to front of main house
-		if (!req.getIsEnterRoomScene()) {
-			pos = home.getSceneMap().get(realmId).getBornPos();
-		}
+        // Make player face correct direction when entering or exiting
+        session.getPlayer().getRotation().set(rot);
 
-		session.getPlayer().getWorld().transferPlayerToScene(
-				session.getPlayer(),
-				req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
-				pos
-		);
+        // Make player exit to front of main house
+        if (!req.getIsEnterRoomScene()) {
+            pos = home.getSceneMap().get(realmId).getBornPos();
+        }
 
-		session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
-	}
+        session.getPlayer().getWorld().transferPlayerToScene(
+            session.getPlayer(),
+            req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
+            pos
+        );
+
+        session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
+    }
 
 }

@@ -5,6 +5,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
@@ -12,7 +13,6 @@ import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
 import emu.grasscutter.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
@@ -146,7 +146,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
         }
         if (damageFactor > 0) {
             Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
-                    "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
+                "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
         } else {
             Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
         }

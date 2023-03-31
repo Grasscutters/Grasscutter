@@ -44,7 +44,7 @@ public class DungeonSystem extends BaseGameSystem {
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter dungeon {}" ,player.getNickname(),player.getUid(),dungeonId);
+        Grasscutter.getLogger().info("{}({}) is trying to enter dungeon {}", player.getNickname(), player.getUid(), dungeonId);
 
         int sceneId = data.getSceneId();
         player.getScene().setPrevScene(sceneId);
@@ -68,7 +68,7 @@ public class DungeonSystem extends BaseGameSystem {
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter tower dungeon {}" ,player.getNickname(),player.getUid(),dungeonId);
+        Grasscutter.getLogger().info("{}({}) is trying to enter tower dungeon {}", player.getNickname(), player.getUid(), dungeonId);
 
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
             dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
@@ -79,7 +79,7 @@ public class DungeonSystem extends BaseGameSystem {
     public void exitDungeon(Player player) {
         Scene scene = player.getScene();
 
-        if (scene==null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
+        if (scene == null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
             return;
         }
 

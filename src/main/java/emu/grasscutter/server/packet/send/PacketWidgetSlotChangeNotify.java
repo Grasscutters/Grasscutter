@@ -18,13 +18,13 @@ public class PacketWidgetSlotChangeNotify extends BasePacket {
         super(PacketOpcodes.WidgetSlotChangeNotify);
 
         WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto = WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
-                .setOp(op)
-                .setSlot(
-                        WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                                .setIsActive(true)
-                                .build()
-                )
-                .build();
+            .setOp(op)
+            .setSlot(
+                WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
+                    .setIsActive(true)
+                    .build()
+            )
+            .build();
 
         this.setData(proto);
     }
@@ -33,13 +33,13 @@ public class PacketWidgetSlotChangeNotify extends BasePacket {
         super(PacketOpcodes.WidgetSlotChangeNotify);
 
         WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto = WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
-                .setSlot(
-                        WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                                .setIsActive(true)
-                                .setMaterialId(materialId)
-                                .build()
-                )
-                .build();
+            .setSlot(
+                WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
+                    .setIsActive(true)
+                    .setMaterialId(materialId)
+                    .build()
+            )
+            .build();
 
         this.setData(proto);
     }

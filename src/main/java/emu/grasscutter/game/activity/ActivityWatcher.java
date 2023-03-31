@@ -16,8 +16,8 @@ public abstract class ActivityWatcher {
 
     protected abstract boolean isMeet(String... param);
 
-    public void trigger(PlayerActivityData playerActivityData, String... param){
-        if(isMeet(param)){
+    public void trigger(PlayerActivityData playerActivityData, String... param) {
+        if (isMeet(param)) {
             playerActivityData.addWatcherProgress(watcherId);
             playerActivityData.save();
         }

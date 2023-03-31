@@ -31,26 +31,12 @@ import java.util.stream.IntStream;
 
 public class DungeonChallenge extends WorldChallenge {
 
+    private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
     /**
      * has more challenge
      */
     private boolean stage;
     private IntSet rewardedPlayers;
-
-    private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
-
-    public static void initialize() {
-        // Read the data we need for dungeon rewards drops.
-        try {
-            DataLoader.loadList("DungeonDrop.json", DungeonDrop.class).forEach(entry -> {
-                dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
-            });
-            Grasscutter.getLogger().debug("Loaded {} dungeon drop data entries.", dungeonDropData.size());
-        }
-        catch (Exception ex) {
-            Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
-        }
-    }
 
     public DungeonChallenge(Scene scene, SceneGroup group,
                             int challengeId, int challengeIndex,
@@ -59,6 +45,18 @@ public class DungeonChallenge extends WorldChallenge {
                             List<ChallengeTrigger> challengeTriggers) {
         super(scene, group, challengeId, challengeIndex, paramList, timeLimit, goal, challengeTriggers);
         this.setRewardedPlayers(new IntOpenHashSet());
+    }
+
+    public static void initialize() {
+        // Read the data we need for dungeon rewards drops.
+        try {
+            DataLoader.loadList("DungeonDrop.json", DungeonDrop.class).forEach(entry -> {
+                dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
+            });
+            Grasscutter.getLogger().debug("Loaded {} dungeon drop data entries.", dungeonDropData.size());
+        } catch (Exception ex) {
+            Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
+        }
     }
 
     public boolean isStage() {
@@ -91,7 +89,7 @@ public class DungeonChallenge extends WorldChallenge {
             var scene = this.getScene();
             scene.getDungeonSettleListeners().forEach(o -> o.onDungeonSettle(getScene()));
             scene.getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
-                    new ScriptArgs(this.isSuccess() ? 1 : 0));
+                new ScriptArgs(this.isSuccess() ? 1 : 0));
             // Battle pass trigger
             scene.getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
         }
@@ -129,8 +127,7 @@ public class DungeonChallenge extends WorldChallenge {
                 // for the currently existing set of dungeons.
                 if (entry.getItems().size() == 1) {
                     rewards.add(new GameItem(entry.getItems().get(0), amount));
-                }
-                else {
+                } else {
                     for (int i = 0; i < amount; i++) {
                         // int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
                         // int itemId = entry.getItems().get(itemIndex);
@@ -180,8 +177,7 @@ public class DungeonChallenge extends WorldChallenge {
 
             // Roll rewards.
             rewards.addAll(this.rollRewards(true));
-        }
-        else {
+        } else {
             // Spend the resin and only proceed if the transaction succeeds.
             if (!player.getResinManager().useResin(resinCost)) return;
 

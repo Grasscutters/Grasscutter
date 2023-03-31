@@ -1,44 +1,484 @@
 [
-  {"monsterId":28040101,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040102,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040103,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040104,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040105,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040106,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040107,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28040108,"dropDataList":[{"itemId":100084,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28020301,"dropDataList":[{"itemId":100061,"minCount":2,"maxCount":2,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28020302,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28020101,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020102,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020103,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020104,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020105,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020106,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020701,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020702,"dropDataList":[{"itemId":100061,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},  
-  {"monsterId":28020303,"dropDataList":[{"itemId":100094,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28020304,"dropDataList":[{"itemId":100094,"minCount":2,"maxCount":3,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030401,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030402,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030403,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030404,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030405,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030406,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030407,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030408,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030409,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030301,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030302,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030303,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030304,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030305,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030306,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030307,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030308,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030309,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030310,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
-  {"monsterId":28030311,"dropDataList":[{"itemId":100064,"minCount":1,"maxCount":1,"minWeight":0,"maxWeight":10000}]},
+  {
+    "monsterId": 28040101,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040102,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040103,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040104,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040105,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040106,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040107,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28040108,
+    "dropDataList": [
+      {
+        "itemId": 100084,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020301,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 2,
+        "maxCount": 2,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020302,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020101,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020102,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020103,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020104,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020105,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020106,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020701,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020702,
+    "dropDataList": [
+      {
+        "itemId": 100061,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020303,
+    "dropDataList": [
+      {
+        "itemId": 100094,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28020304,
+    "dropDataList": [
+      {
+        "itemId": 100094,
+        "minCount": 2,
+        "maxCount": 3,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030401,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030402,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030403,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030404,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030405,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030406,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030407,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030408,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030409,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030301,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030302,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030303,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030304,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030305,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030306,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030307,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030308,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030309,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030310,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
+  {
+    "monsterId": 28030311,
+    "dropDataList": [
+      {
+        "itemId": 100064,
+        "minCount": 1,
+        "maxCount": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  },
   {
     "monsterId": 21010101,
     "dropDataList": [

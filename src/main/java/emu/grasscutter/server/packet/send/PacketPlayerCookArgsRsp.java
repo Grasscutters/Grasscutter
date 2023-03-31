@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerCookArgsRspOuterClass.PlayerCookArgsRsp;
 
 public class PacketPlayerCookArgsRsp extends BasePacket {
-    
+
     public PacketPlayerCookArgsRsp() {
         super(PacketOpcodes.PlayerCookArgsRsp);
 

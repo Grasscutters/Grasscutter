@@ -5,23 +5,20 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-
 import org.reflections.Reflections;
 
-import java.net.IDN;
 import java.util.*;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
 import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
+    private static final int INVALID_UID = Integer.MIN_VALUE;
+    private static final String consoleId = "console";
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
     private final Map<String, Command> annotations = new TreeMap<>();
     private final Object2IntMap<String> targetPlayerIds = new Object2IntOpenHashMap<>();
-    private static final int INVALID_UID = Integer.MIN_VALUE;
-    private static final String consoleId = "console";
 
     public CommandMap() {
         this(false);
@@ -33,6 +30,20 @@ public final class CommandMap {
 
     public static CommandMap getInstance() {
         return Grasscutter.getCommandMap();
+    }
+
+    private static int getUidFromString(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException ignored) {
+            var account = DatabaseHelper.getAccountByName(input);
+            if (account == null) return INVALID_UID;
+            var player = DatabaseHelper.getPlayerByAccount(account);
+            if (player == null) return INVALID_UID;
+            // We will be immediately fetching the player again after this,
+            // but offline vs online Player safety is more important than saving a lookup
+            return player.getUid();
+        }
     }
 
     /**
@@ -52,11 +63,9 @@ public final class CommandMap {
         this.commands.put(label, command);
 
         // Register aliases.
-        if (annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases()) {
-                this.aliases.put(alias, command);
-                this.annotations.put(alias, annotation);
-            }
+        for (String alias : annotation.aliases()) {
+            this.aliases.put(alias, command);
+            this.annotations.put(alias, annotation);
         }
         return this;
     }
@@ -78,11 +87,9 @@ public final class CommandMap {
         this.commands.remove(label);
 
         // Unregister aliases.
-        if (annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases()) {
-                this.aliases.remove(alias);
-                this.annotations.remove(alias);
-            }
+        for (String alias : annotation.aliases()) {
+            this.aliases.remove(alias);
+            this.annotations.remove(alias);
         }
 
         return this;
@@ -122,20 +129,6 @@ public final class CommandMap {
             handler = this.aliases.get(label);
         }
         return handler;
-    }
-
-    private static int getUidFromString(String input) {
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException ignored) {
-            var account = DatabaseHelper.getAccountByName(input);
-            if (account == null) return INVALID_UID;
-            var player = DatabaseHelper.getPlayerByAccount(account);
-            if (player == null) return INVALID_UID;
-            // We will be immediately fetching the player again after this,
-            // but offline vs online Player safety is more important than saving a lookup
-            return player.getUid();
-        }
     }
 
     private Player getTargetPlayer(String playerId, Player player, Player targetPlayer, List<String> args) {

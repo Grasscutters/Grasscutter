@@ -24,6 +24,7 @@ public class ActivityData extends GameResource {
     public int getId() {
         return this.activityId;
     }
+
     @Override
     public void onLoad() {
         this.watcherDataList = watcherId.stream().map(item -> GameData.getActivityWatcherDataMap().get(item.intValue()))

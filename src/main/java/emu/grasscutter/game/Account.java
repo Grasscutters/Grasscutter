@@ -4,17 +4,18 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
-
-import static emu.grasscutter.config.Configuration.*;
+import org.bson.Document;
 
 import java.util.*;
 import java.util.stream.Stream;
 
-import org.bson.Document;
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.LANGUAGE;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
-    @Id private String id;
+    @Id
+    private String id;
 
     @Indexed(options = @IndexOptions(unique = true))
     @Collation(locale = "simple", caseLevel = true)
@@ -26,7 +27,7 @@ public class Account {
 
     private String token;
     private String sessionKey; // Session token for dispatch server
-    private List<String> permissions;
+    private final List<String> permissions;
     private Locale locale;
 
     private String banReason;
@@ -38,6 +39,30 @@ public class Account {
     public Account() {
         this.permissions = new ArrayList<>();
         this.locale = LANGUAGE;
+    }
+
+    public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
+        String[] wildcardParts = wildcard.split("\\.");
+        if (permissionParts.length < wildcardParts.length) {  // A longer wildcard can never match a shorter permission
+            return false;
+        }
+        for (int i = 0; i < wildcardParts.length; i++) {
+            switch (wildcardParts[i]) {
+                case "**":  // Recursing match
+                    return true;
+                case "*":  // Match only one layer
+                    if (i >= (permissionParts.length - 1)) {
+                        return true;
+                    }
+                    break;
+                default:  // This layer isn't a wildcard, it needs to match exactly
+                    if (!wildcardParts[i].equals(permissionParts[i])) {
+                        return false;
+                    }
+            }
+        }
+        // At this point the wildcard will have matched every layer, but if it is shorter then the permission then this is not a match at this point (no **).
+        return (wildcardParts.length == permissionParts.length);
     }
 
     public String getId() {
@@ -159,31 +184,8 @@ public class Account {
 
     public boolean addPermission(String permission) {
         if (this.permissions.contains(permission)) return false;
-        this.permissions.add(permission); return true;
-    }
-
-    public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
-        String[] wildcardParts = wildcard.split("\\.");
-        if (permissionParts.length < wildcardParts.length) {  // A longer wildcard can never match a shorter permission
-            return false;
-        }
-        for (int i=0; i<wildcardParts.length; i++) {
-            switch (wildcardParts[i]) {
-                case "**":  // Recursing match
-                    return true;
-                case "*":  // Match only one layer
-                    if (i >= (permissionParts.length-1)) {
-                        return true;
-                    }
-                    break;
-                default:  // This layer isn't a wildcard, it needs to match exactly
-                    if (!wildcardParts[i].equals(permissionParts[i])) {
-                        return false;
-                    }
-            }
-        }
-        // At this point the wildcard will have matched every layer, but if it is shorter then the permission then this is not a match at this point (no **).
-        return (wildcardParts.length == permissionParts.length);
+        this.permissions.add(permission);
+        return true;
     }
 
     public boolean hasPermission(String permission) {
@@ -192,8 +194,8 @@ public class Account {
 
         // Add default permissions if it doesn't exist
         List<String> permissions = Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
-                .flatMap(Collection::stream)
-                .distinct().toList();
+            .flatMap(Collection::stream)
+            .distinct().toList();
 
         if (permissions.contains(permission)) return true;
 

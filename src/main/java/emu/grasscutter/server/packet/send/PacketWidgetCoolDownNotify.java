@@ -11,14 +11,14 @@ public class PacketWidgetCoolDownNotify extends BasePacket {
         super(PacketOpcodes.WidgetCoolDownNotify);
 
         WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify proto = WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.newBuilder()
-                .addGroupCoolDownDataList(
-                        WidgetCoolDownDataOuterClass.WidgetCoolDownData.newBuilder()
-                                .setId(id)
-                                .setCoolDownTime(coolDownTime)
-                                .setIsSuccess(isSuccess)
-                                .build()
-                )
-                .build();
+            .addGroupCoolDownDataList(
+                WidgetCoolDownDataOuterClass.WidgetCoolDownData.newBuilder()
+                    .setId(id)
+                    .setCoolDownTime(coolDownTime)
+                    .setIsSuccess(isSuccess)
+                    .build()
+            )
+            .build();
 
         this.setData(proto);
     }

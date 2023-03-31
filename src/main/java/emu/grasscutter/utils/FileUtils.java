@@ -8,7 +8,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,6 +24,8 @@ public final class FileUtils {
     private static final Path PLUGINS_PATH = Path.of(Grasscutter.config.folderStructure.plugins);
     private static final Path RESOURCES_PATH;
     private static final Path SCRIPTS_PATH;
+    private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
+
     static {
         FileSystem fs = null;
         Path path = null;
@@ -36,7 +41,7 @@ public final class FileUtils {
                     path = Path.of(uri);  // Can access directly
                     break;
                 default:
-                Grasscutter.getLogger().error("Invalid URI scheme for class resources: "+uri.getScheme());
+                    Grasscutter.getLogger().error("Invalid URI scheme for class resources: " + uri.getScheme());
                     break;
             }
         } catch (URISyntaxException | IOException e) {
@@ -44,7 +49,7 @@ public final class FileUtils {
             Grasscutter.getLogger().error("Failed to load jar?!");
         } finally {
             DATA_DEFAULT_PATH = path;
-            Grasscutter.getLogger().debug("Setting path for default data: "+path.toAbsolutePath());
+            Grasscutter.getLogger().debug("Setting path for default data: " + path.toAbsolutePath());
         }
 
         // Setup Resources path
@@ -62,16 +67,16 @@ public final class FileUtils {
         if (fs != null) {
             var root = fs.getPath("");
             try (Stream<Path> pathStream = Files.find(root, 3, (p, a) -> {
-                        var filename = p.getFileName();
-                        if (filename == null) return false;
-                        return filename.toString().equals("ExcelBinOutput");
+                var filename = p.getFileName();
+                if (filename == null) return false;
+                return filename.toString().equals("ExcelBinOutput");
             })) {
                 var excelBinOutput = pathStream.findFirst();
                 if (excelBinOutput.isPresent()) {
                     path = excelBinOutput.get().getParent();
                     if (path == null)
                         path = root;
-                    Grasscutter.getLogger().debug("Resources will be loaded from \"" + resources + "/" + path.toString() + "\"");
+                    Grasscutter.getLogger().debug("Resources will be loaded from \"" + resources + "/" + path + "\"");
                 } else {
                     Grasscutter.getLogger().error("Failed to find ExcelBinOutput in resources zip \"" + resources + "\"");
                 }
@@ -86,13 +91,15 @@ public final class FileUtils {
         SCRIPTS_PATH = (scripts.startsWith("resources:"))
             ? RESOURCES_PATH.resolve(scripts.substring("resources:".length()))
             : Path.of(scripts);
-    };
+    }
 
-    private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
+    /* Apply after initialization. */
     private static final Path[] DATA_PATHS = {DATA_USER_PATH, DATA_DEFAULT_PATH};
+
     public static Path getDataPathTsjJsonTsv(String filename) {
         return getDataPathTsjJsonTsv(filename, true);
     }
+
     public static Path getDataPathTsjJsonTsv(String filename, boolean fallback) {
         val name = getFilenameWithoutExtension(filename);
         for (val data_path : DATA_PATHS) {
@@ -204,6 +211,7 @@ public final class FileUtils {
     public static String getFilenameWithoutPath(String filename) {
         return getFilenameWithoutExtension(filename);
     }
+
     public static String getFilenameWithoutExtension(String filename) {
         int i = filename.lastIndexOf(".");
         return (i < 0) ? filename : filename.substring(0, i);
@@ -212,21 +220,21 @@ public final class FileUtils {
     public static String getFileExtension(Path path) {
         val filename = path.toString();
         int i = filename.lastIndexOf(".");
-        return (i < 0) ? "" : filename.substring(i+1);
+        return (i < 0) ? "" : filename.substring(i + 1);
     }
 
     public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {
         try {
             // file walks JAR
             return Files.walk(Path.of(Grasscutter.class.getResource(folder).toURI()))
-                    .filter(Files::isRegularFile)
-                    .collect(Collectors.toList());
+                .filter(Files::isRegularFile)
+                .collect(Collectors.toList());
         } catch (IOException e) {
             // Eclipse puts resources in its bin folder
             try {
                 return Files.walk(Path.of(System.getProperty("user.dir"), folder))
-                        .filter(Files::isRegularFile)
-                        .collect(Collectors.toList());
+                    .filter(Files::isRegularFile)
+                    .collect(Collectors.toList());
             } catch (IOException ignored) {
                 return null;
             }

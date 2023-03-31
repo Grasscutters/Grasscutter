@@ -34,7 +34,7 @@ public class CodexQuestData extends GameResource {
 
     @Override
     public void onLoad() {
-        if(!this.getIsDisuse()) {
+        if (!this.getIsDisuse()) {
             GameData.getCodexQuestDataIdMap().put(this.getParentQuestId(), this);
         }
     }

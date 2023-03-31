@@ -54,7 +54,7 @@ public class MapMarksManager extends BasePlayerManager {
     }
 
     public String getMapMarkKey(Position position) {
-        return "x" + (int)position.getX()+ "z" + (int)position.getZ();
+        return "x" + (int) position.getX() + "z" + (int) position.getZ();
     }
 
     public void removeMapMark(Position position) {

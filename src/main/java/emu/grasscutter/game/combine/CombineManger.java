@@ -36,8 +36,7 @@ public class CombineManger extends BaseGameSystem {
                 reliquaryDecomposeData.put(entry.getConfigId(), entry.getItems());
             });
             Grasscutter.getLogger().debug("Loaded {} reliquary decompose entries.", reliquaryDecomposeData.size());
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load reliquary decompose data.", ex);
         }
     }
@@ -77,12 +76,12 @@ public class CombineManger extends BaseGameSystem {
 
         // make the result
         player.getInventory().addItem(combineData.getResultItemId(),
-                combineData.getResultItemCount() * count);
+            combineData.getResultItemCount() * count);
 
         CombineResult result = new CombineResult();
         result.setMaterial(List.of());
         result.setResult(List.of(new ItemParamData(combineData.getResultItemId(),
-                combineData.getResultItemCount() * count)));
+            combineData.getResultItemCount() * count)));
         // TODO lucky characters
         result.setExtra(List.of());
         result.setBack(List.of());

@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass.EvtCreateGadgetNotify;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.EvtCreateGadgetNotify)
@@ -28,8 +28,7 @@ public class HandlerEvtCreateGadgetNotify extends PacketHandler {
                 new EntitySolarIsotomaClientGadget(session.getPlayer().getScene(), session.getPlayer(), notify);
 
             //Default.
-            default ->
-                new EntityClientGadget(session.getPlayer().getScene(), session.getPlayer(), notify);
+            default -> new EntityClientGadget(session.getPlayer().getScene(), session.getPlayer(), notify);
         };
 
         session.getPlayer().getScene().onPlayerCreateGadget(gadget);

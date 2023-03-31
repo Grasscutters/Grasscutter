@@ -1,18 +1,12 @@
 package emu.grasscutter.game.entity;
 
-import java.util.Optional;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.EnvAnimalGatherConfigData;
 import emu.grasscutter.data.excels.MonsterCurveData;
 import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
@@ -35,8 +29,11 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Optional;
+
 public class EntityMonster extends GameEntity {
-    @Getter private final MonsterData monsterData;
+    @Getter
+    private final MonsterData monsterData;
     @Getter(onMethod_ = @Override)
     private final Int2FloatOpenHashMap fightProperties;
 
@@ -44,11 +41,17 @@ public class EntityMonster extends GameEntity {
     private final Position position;
     @Getter(onMethod_ = @Override)
     private final Position rotation;
-    @Getter private final Position bornPos;
-    @Getter private final int level;
+    @Getter
+    private final Position bornPos;
+    @Getter
+    private final int level;
     private int weaponEntityId;
-    @Getter @Setter private int poseId;
-    @Getter @Setter private int aiId = -1;
+    @Getter
+    @Setter
+    private int poseId;
+    @Getter
+    @Setter
+    private int aiId = -1;
 
     public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
         super(scene);
@@ -173,20 +176,20 @@ public class EntityMonster extends GameEntity {
     @Override
     public SceneEntityInfo toProto() {
         var authority = EntityAuthorityInfo.newBuilder()
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(this.getBornPos().toProto()))
-                .setBornPos(this.getBornPos().toProto())
-                .build();
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(this.getBornPos().toProto()))
+            .setBornPos(this.getBornPos().toProto())
+            .build();
 
         var entityInfo = SceneEntityInfo.newBuilder()
-                .setEntityId(getId())
-                .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
-                .setMotionInfo(this.getMotionInfo())
-                .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-                .setEntityClientData(EntityClientData.newBuilder())
-                .setEntityAuthorityInfo(authority)
-                .setLifeState(this.getLifeState().getValue());
+            .setEntityId(getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
+            .setMotionInfo(this.getMotionInfo())
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setEntityClientData(EntityClientData.newBuilder())
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(this.getLifeState().getValue());
 
         this.addAllFightPropsToEntityInfo(entityInfo);
 
@@ -196,15 +199,15 @@ public class EntityMonster extends GameEntity {
             .build());
 
         var monsterInfo = SceneMonsterInfo.newBuilder()
-                .setMonsterId(getMonsterId())
-                .setGroupId(this.getGroupId())
-                .setConfigId(this.getConfigId())
-                .addAllAffixList(getMonsterData().getAffix())
-                .setAuthorityPeerId(getWorld().getHostPeerId())
-                .setPoseId(this.getPoseId())
-                .setBlockId(3001)
-                .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
-                .setSpecialNameId(40);
+            .setMonsterId(getMonsterId())
+            .setGroupId(this.getGroupId())
+            .setConfigId(this.getConfigId())
+            .addAllAffixList(getMonsterData().getAffix())
+            .setAuthorityPeerId(getWorld().getHostPeerId())
+            .setPoseId(this.getPoseId())
+            .setBlockId(3001)
+            .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
+            .setSpecialNameId(40);
 
         if (getMonsterData().getDescribeData() != null) {
             monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleID());
@@ -212,14 +215,14 @@ public class EntityMonster extends GameEntity {
 
         if (this.getMonsterWeaponId() > 0) {
             SceneWeaponInfo weaponInfo = SceneWeaponInfo.newBuilder()
-                    .setEntityId(this.weaponEntityId)
-                    .setGadgetId(this.getMonsterWeaponId())
-                    .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                    .build();
+                .setEntityId(this.weaponEntityId)
+                .setGadgetId(this.getMonsterWeaponId())
+                .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+                .build();
 
             monsterInfo.addWeaponList(weaponInfo);
         }
-        if (this.aiId!=-1) {
+        if (this.aiId != -1) {
             monsterInfo.setAiConfigId(aiId);
         }
 

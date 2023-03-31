@@ -7,8 +7,8 @@ import emu.grasscutter.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLe
 public class PacketTakePlayerLevelRewardRsp extends BasePacket {
 
     public PacketTakePlayerLevelRewardRsp(int level, int rewardId) {
-		super(PacketOpcodes.TakePlayerLevelRewardRsp);
-        
+        super(PacketOpcodes.TakePlayerLevelRewardRsp);
+
         int retcode = 0;
 
         if (rewardId == 0) {
@@ -16,11 +16,11 @@ public class PacketTakePlayerLevelRewardRsp extends BasePacket {
         }
 
         TakePlayerLevelRewardRsp proto = TakePlayerLevelRewardRsp.newBuilder()
-                .setLevel(level)
-                .setRewardId(rewardId)
-                .setRetcode(retcode)
-                .build();
+            .setLevel(level)
+            .setRewardId(rewardId)
+            .setRetcode(retcode)
+            .build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

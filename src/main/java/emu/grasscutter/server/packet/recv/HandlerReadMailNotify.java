@@ -4,7 +4,6 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.GetAllMailReqOuterClass;
 import emu.grasscutter.net.proto.ReadMailNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;

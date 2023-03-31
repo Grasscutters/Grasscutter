@@ -10,9 +10,9 @@ public class PacketHomeChangeModuleRsp extends BasePacket {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
         HomeChangeModuleRspOuterClass.HomeChangeModuleRsp proto = HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
-                .setRetcode(0)
-                .setTargetModuleId(targetModuleId)
-                .build();
+            .setRetcode(0)
+            .setTargetModuleId(targetModuleId)
+            .build();
 
         this.setData(proto);
     }

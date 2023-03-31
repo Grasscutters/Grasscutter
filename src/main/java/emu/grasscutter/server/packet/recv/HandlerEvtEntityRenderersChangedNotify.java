@@ -4,16 +4,14 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass;
-import emu.grasscutter.net.proto.ForwardTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEvtEntityRenderersChangedNotify;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerLocationNotify;
 
 @Opcodes(PacketOpcodes.EvtEntityRenderersChangedNotify)
 public class HandlerEvtEntityRenderersChangedNotify extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.parseFrom(payload);
 
         switch (req.getForwardType()) {
@@ -25,6 +23,6 @@ public class HandlerEvtEntityRenderersChangedNotify extends PacketHandler {
                 session.getPlayer().getScene().getWorld().getHost().sendPacket(new PacketEvtEntityRenderersChangedNotify(req));
         }
 
-	}
+    }
 
 }

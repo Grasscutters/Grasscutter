@@ -5,7 +5,6 @@ import emu.grasscutter.game.activity.GameActivity;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
-import emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass;
 import emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass;
 import emu.grasscutter.utils.JsonUtils;
 
@@ -62,6 +61,7 @@ public class MusicGameActivityHandler extends ActivityHandler {
 
         return newRecord.getMaxScore() > saveRecord.getMaxScore();
     }
+
     public void setMusicGameCustomBeatmapRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.CustomBeatmapRecord newRecord) {
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
         musicGamePlayerData.getOthersCustomBeatmapRecord().put(newRecord.getMusicShareId(), newRecord);

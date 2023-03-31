@@ -24,28 +24,31 @@ import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class SceneScriptManager {
+    public static final ExecutorService eventExecutor;
+
+    static {
+        eventExecutor = new ThreadPoolExecutor(4, 4,
+            60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
+            FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
+    }
+
     private final Scene scene;
     private final Map<String, Integer> variables;
-    private SceneMeta meta;
-    private boolean isInit;
     /**
      * current triggers controlled by RefreshGroup
      */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
     private final Map<Integer, EntityRegion> regions; // <EntityId-Region>
-    private final Map<Integer,SceneGroup> sceneGroups;
-    private ScriptMonsterTideService scriptMonsterTideService;
-    private ScriptMonsterSpawnService scriptMonsterSpawnService;
+    private final Map<Integer, SceneGroup> sceneGroups;
     /**
      * blockid - loaded groupSet
      */
     private final Map<Integer, Set<SceneGroup>> loadedGroupSetPerBlock;
-    public static final ExecutorService eventExecutor;
-    static {
-        eventExecutor = new ThreadPoolExecutor(4, 4,
-                60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
-                FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
-    }
+    private SceneMeta meta;
+    private boolean isInit;
+    private ScriptMonsterTideService scriptMonsterTideService;
+    private final ScriptMonsterSpawnService scriptMonsterSpawnService;
+
     public SceneScriptManager(Scene scene) {
         this.scene = scene;
         this.currentTriggers = new ConcurrentHashMap<>();
@@ -87,22 +90,28 @@ public class SceneScriptManager {
     public Set<SceneTrigger> getTriggersByEvent(int eventId) {
         return currentTriggers.computeIfAbsent(eventId, e -> new HashSet<>());
     }
+
     public void registerTrigger(List<SceneTrigger> triggers) {
         triggers.forEach(this::registerTrigger);
     }
+
     public void registerTrigger(SceneTrigger trigger) {
         getTriggersByEvent(trigger.event).add(trigger);
         Grasscutter.getLogger().debug("Registered trigger {}", trigger.name);
     }
+
     public void deregisterTrigger(List<SceneTrigger> triggers) {
         triggers.forEach(this::deregisterTrigger);
     }
+
     public void deregisterTrigger(SceneTrigger trigger) {
         getTriggersByEvent(trigger.event).remove(trigger);
     }
+
     public void resetTriggers(int eventId) {
         currentTriggers.put(eventId, new HashSet<>());
     }
+
     public void refreshGroup(SceneGroup group, int suiteIndex) {
         if (group == null) {
             return;
@@ -123,6 +132,7 @@ public class SceneScriptManager {
         spawnMonstersInGroup(group, suite);
         spawnGadgetsInGroup(group, suite);
     }
+
     public EntityRegion getRegionById(int id) {
         return regions.get(id);
     }
@@ -131,10 +141,12 @@ public class SceneScriptManager {
         regions.put(region.getId(), region);
         Grasscutter.getLogger().debug("Registered region {} from group {}", region.getMetaRegion().config_id, region.getGroupId());
     }
+
     public void registerRegionInGroupSuite(SceneGroup group, SceneSuite suite) {
         suite.sceneRegions.stream().map(region -> new EntityRegion(this.getScene(), region))
             .forEach(this::registerRegion);
     }
+
     public synchronized void deregisterRegion(SceneRegion region) {
         var instance = regions.values().stream()
             .filter(r -> r.getConfigId() == region.config_id)
@@ -209,7 +221,7 @@ public class SceneScriptManager {
                 targetID = players.get(0).getUid();
 
             if (region.hasNewEntities()) {
-                Grasscutter.getLogger().trace("Call EVENT_ENTER_REGION_{}",region.getMetaRegion().config_id);
+                Grasscutter.getLogger().trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
                 callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.getConfigId())
                     .setSourceEntityId(region.getId())
                     .setTargetEntityId(targetID)
@@ -241,12 +253,14 @@ public class SceneScriptManager {
             .filter(Objects::nonNull)
             .toList();
     }
+
     public List<EntityMonster> getMonstersInGroupSuite(SceneGroup group, SceneSuite suite) {
         return suite.sceneMonsters.stream()
             .map(mob -> createMonster(group.id, group.block_id, mob))
             .filter(Objects::nonNull)
             .toList();
     }
+
     public void addGroupSuite(SceneGroup group, SceneSuite suite) {
         // we added trigger first
         registerTrigger(suite.sceneTriggers);
@@ -258,6 +272,7 @@ public class SceneScriptManager {
 
         registerRegionInGroupSuite(group, suite);
     }
+
     public void removeGroupSuite(SceneGroup group, SceneSuite suite) {
         deregisterTrigger(suite.sceneTriggers);
         removeMonstersInGroup(group, suite);
@@ -274,9 +289,9 @@ public class SceneScriptManager {
         }
 
         var toCreate = gadgets.stream()
-                .map(g -> createGadget(g.group.id, group.block_id, g))
-                .filter(Objects::nonNull)
-                .toList();
+            .map(g -> createGadget(g.group.id, group.block_id, g))
+            .filter(Objects::nonNull)
+            .toList();
         this.addEntities(toCreate);
     }
 
@@ -285,24 +300,27 @@ public class SceneScriptManager {
             return;
         }
         this.addEntities(suite.sceneMonsters.stream()
-                .map(mob -> createMonster(group.id, group.block_id, mob)).toList());
+            .map(mob -> createMonster(group.id, group.block_id, mob)).toList());
     }
 
     public void startMonsterTideInGroup(SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
         this.scriptMonsterTideService =
-                new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
+            new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
 
     }
+
     public void unloadCurrentMonsterTide() {
         if (this.getScriptMonsterTideService() == null) {
             return;
         }
         this.getScriptMonsterTideService().unload();
     }
+
     public void spawnMonstersByConfigId(SceneGroup group, int configId, int delayTime) {
         // TODO delay
         getScene().addEntity(createMonster(group.id, group.block_id, group.monsters.get(configId)));
     }
+
     // Events
     public void callEvent(int eventType, ScriptArgs params) {
         /**
@@ -322,7 +340,9 @@ public class SceneScriptManager {
                 List<SceneTrigger> relevantTriggersList = this.getTriggersByEvent(eventType).stream()
                     .filter(p -> p.condition.contains(String.valueOf(params.param1))).toList();
                 relevantTriggers = new HashSet<>(relevantTriggersList);
-            } else {relevantTriggers = this.getTriggersByEvent(eventType);}
+            } else {
+                relevantTriggers = this.getTriggersByEvent(eventType);
+            }
             for (SceneTrigger trigger : relevantTriggers) {
                 try {
                     ScriptLoader.getScriptLib().setCurrentGroup(trigger.currentGroup);
@@ -346,11 +366,11 @@ public class SceneScriptManager {
                         Grasscutter.getLogger().debug("Condition Trigger {} returned {}", trigger.condition, ret);
                     }
                     //TODO some ret do not bool
-                }finally {
+                } finally {
                     ScriptLoader.getScriptLib().removeCurrentGroup();
                 }
             }
-        }finally {
+        } finally {
             // make sure it is removed
             ScriptLoader.getScriptLib().removeSceneScriptManager();
         }
@@ -379,8 +399,8 @@ public class SceneScriptManager {
     public LuaValue safetyCall(String name, LuaValue func, LuaValue args) {
         try {
             return func.call(ScriptLoader.getScriptLibLua(), args);
-        }catch (LuaError error) {
-            ScriptLib.logger.error("[LUA] call trigger failed {},{}",name,args,error);
+        } catch (LuaError error) {
+            ScriptLib.logger.error("[LUA] call trigger failed {},{}", name, args, error);
             return LuaValue.valueOf(-1);
         }
     }
@@ -421,9 +441,11 @@ public class SceneScriptManager {
 
         return entity;
     }
+
     public EntityNPC createNPC(SceneNPC npc, int blockId, int suiteId) {
         return new EntityNPC(getScene(), npc, blockId, suiteId);
     }
+
     public EntityMonster createMonster(int groupId, int blockId, SceneMonster monster) {
         if (monster == null) {
             return null;
@@ -457,7 +479,7 @@ public class SceneScriptManager {
         entity.setPoseId(monster.pose_id);
 
         this.getScriptMonsterSpawnService()
-                .onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
+            .onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
 
         return entity;
     }
@@ -477,27 +499,29 @@ public class SceneScriptManager {
     public RTree<SceneBlock, Geometry> getBlocksIndex() {
         return meta.sceneBlockIndex;
     }
+
     public void removeMonstersInGroup(SceneGroup group, SceneSuite suite) {
         var configSet = suite.sceneMonsters.stream()
-                .map(m -> m.config_id)
-                .collect(Collectors.toSet());
+            .map(m -> m.config_id)
+            .collect(Collectors.toSet());
         var toRemove = getScene().getEntities().values().stream()
-                .filter(e -> e instanceof EntityMonster)
-                .filter(e -> e.getGroupId() == group.id)
-                .filter(e -> configSet.contains(e.getConfigId()))
-                .toList();
+            .filter(e -> e instanceof EntityMonster)
+            .filter(e -> e.getGroupId() == group.id)
+            .filter(e -> configSet.contains(e.getConfigId()))
+            .toList();
 
         getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
     }
+
     public void removeGadgetsInGroup(SceneGroup group, SceneSuite suite) {
         var configSet = suite.sceneGadgets.stream()
-                .map(m -> m.config_id)
-                .collect(Collectors.toSet());
+            .map(m -> m.config_id)
+            .collect(Collectors.toSet());
         var toRemove = getScene().getEntities().values().stream()
-                .filter(e -> e instanceof EntityGadget)
-                .filter(e -> e.getGroupId() == group.id)
-                .filter(e -> configSet.contains(e.getConfigId()))
-                .toList();
+            .filter(e -> e instanceof EntityGadget)
+            .filter(e -> e.getGroupId() == group.id)
+            .filter(e -> configSet.contains(e.getConfigId()))
+            .toList();
 
         getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
     }

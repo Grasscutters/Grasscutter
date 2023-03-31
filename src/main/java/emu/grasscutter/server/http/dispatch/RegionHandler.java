@@ -3,10 +3,10 @@ package emu.grasscutter.server.http.dispatch;
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
-import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
+import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
+import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.Router;
@@ -15,18 +15,19 @@ import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+import org.slf4j.Logger;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-
 import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.Language.translate;
 
 /**
  * Handles requests related to region queries.
@@ -45,86 +46,6 @@ public final class RegionHandler implements Router {
     }
 
     /**
-     * Configures region data according to configuration.
-     */
-    private void initialize() {
-        String dispatchDomain = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
-                + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
-                + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort);
-
-        // Create regions.
-        List<RegionSimpleInfo> servers = new ArrayList<>();
-        List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
-
-        var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
-        if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
-            Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
-            System.exit(1);
-        } else if (configuredRegions.size() == 0)
-            configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
-                    lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress),
-                    lr(GAME_INFO.accessPort, GAME_INFO.bindPort)));
-
-        configuredRegions.forEach(region -> {
-            if (usedNames.contains(region.Name)) {
-                Grasscutter.getLogger().error("Region name already in use.");
-                return;
-            }
-
-            // Create a region identifier.
-            var identifier = RegionSimpleInfo.newBuilder()
-                    .setName(region.Name).setTitle(region.Title).setType("DEV_PUBLIC")
-                    .setDispatchUrl(dispatchDomain + "/query_cur_region/" + region.Name)
-                    .build();
-            usedNames.add(region.Name); servers.add(identifier);
-
-            // Create a region info object.
-            var regionInfo = RegionInfo.newBuilder()
-                    .setGateserverIp(region.Ip).setGateserverPort(region.Port)
-                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
-                    .build();
-            // Create an updated region query.
-            var updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo).build();
-            regions.put(region.Name, new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
-        });
-
-        // Create a config object.
-        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
-        Crypto.xor(customConfig, Crypto.DISPATCH_KEY); // XOR the config with the key.
-
-        // Create an updated region list.
-        QueryRegionListHttpRsp updatedRegionList = QueryRegionListHttpRsp.newBuilder()
-                .addAllRegionList(servers)
-                .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
-                .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
-                .setEnableLoginPc(true).build();
-
-        // Set the region list response.
-        regionListResponse = Utils.base64Encode(updatedRegionList.toByteString().toByteArray());
-
-        // CN
-        // Create a config object.
-        byte[] customConfigcn = "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
-        Crypto.xor(customConfigcn, Crypto.DISPATCH_KEY); // XOR the config with the key.
-
-        // Create an updated region list.
-        QueryRegionListHttpRsp updatedRegionListcn = QueryRegionListHttpRsp.newBuilder()
-                .addAllRegionList(servers)
-                .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
-                .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfigcn))
-                .setEnableLoginPc(true).build();
-
-        // Set the region list response.
-        regionListResponsecn = Utils.base64Encode(updatedRegionListcn.toByteString().toByteArray());
-    }
-
-    @Override
-    public void applyRoutes(Javalin javalin) {
-        javalin.get("/query_region_list", RegionHandler::queryRegionList);
-        javalin.get("/query_cur_region/{region}", RegionHandler::queryCurrentRegion);
-    }
-
-    /**
      * Handle query region list request.
      *
      * @param ctx The context object for handling the request.
@@ -140,7 +61,7 @@ public final class RegionHandler implements Router {
 
             // Determine the region list to use based on the version and platform.
             if ("CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode)
-                    || "CNRELAndroid".equals(versionCode)) {
+                || "CNRELAndroid".equals(versionCode)) {
                 // Use the CN region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
                 event.call();
@@ -149,7 +70,7 @@ public final class RegionHandler implements Router {
                 // Respond with the event result.
                 ctx.result(event.getRegionList());
             } else if ("OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode)
-                    || "OSRELAndroid".equals(versionCode)) {
+                || "OSRELAndroid".equals(versionCode)) {
                 // Use the OS region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
                 event.call();
@@ -205,11 +126,12 @@ public final class RegionHandler implements Router {
         String[] versionCode = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "").split("\\.");
         int versionMajor = Integer.parseInt(versionCode[0]);
         int versionMinor = Integer.parseInt(versionCode[1]);
-        int versionFix   = Integer.parseInt(versionCode[2]);
+        int versionFix = Integer.parseInt(versionCode[2]);
 
         if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50) || (versionMajor == 2 && versionMinor == 8)) {
             try {
-                QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
+                QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData);
+                event.call();
 
                 if (ctx.queryParam("dispatchSeed") == null) {
                     // More love for UA Patch players
@@ -255,19 +177,108 @@ public final class RegionHandler implements Router {
                 rsp.sign = Utils.base64Encode(privateSignature.sign());
 
                 ctx.json(rsp);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Grasscutter.getLogger().error("An error occurred while handling query_cur_region.", e);
             }
-        }
-        else {
+        } else {
             // Invoke event.
-            QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
+            QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData);
+            event.call();
             // Respond with event result.
             ctx.result(event.getRegionInfo());
         }
         // Log to console.
         Grasscutter.getLogger().info(String.format("Client %s request: query_cur_region/%s", ctx.ip(), regionName));
+    }
+
+    /**
+     * Gets the current region query.
+     *
+     * @return A {@link QueryCurrRegionHttpRsp} object.
+     */
+    public static QueryCurrRegionHttpRsp getCurrentRegion() {
+        return SERVER.runMode == ServerRunMode.HYBRID ? regions.get("os_usa").getRegionQuery() : null;
+    }
+
+    /**
+     * Configures region data according to configuration.
+     */
+    private void initialize() {
+        String dispatchDomain = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
+            + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
+            + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort);
+
+        // Create regions.
+        List<RegionSimpleInfo> servers = new ArrayList<>();
+        List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
+
+        var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
+        if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
+            Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
+            System.exit(1);
+        } else if (configuredRegions.size() == 0)
+            configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
+                lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress),
+                lr(GAME_INFO.accessPort, GAME_INFO.bindPort)));
+
+        configuredRegions.forEach(region -> {
+            if (usedNames.contains(region.Name)) {
+                Grasscutter.getLogger().error("Region name already in use.");
+                return;
+            }
+
+            // Create a region identifier.
+            var identifier = RegionSimpleInfo.newBuilder()
+                .setName(region.Name).setTitle(region.Title).setType("DEV_PUBLIC")
+                .setDispatchUrl(dispatchDomain + "/query_cur_region/" + region.Name)
+                .build();
+            usedNames.add(region.Name);
+            servers.add(identifier);
+
+            // Create a region info object.
+            var regionInfo = RegionInfo.newBuilder()
+                .setGateserverIp(region.Ip).setGateserverPort(region.Port)
+                .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                .build();
+            // Create an updated region query.
+            var updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo).build();
+            regions.put(region.Name, new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
+        });
+
+        // Create a config object.
+        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+        Crypto.xor(customConfig, Crypto.DISPATCH_KEY); // XOR the config with the key.
+
+        // Create an updated region list.
+        QueryRegionListHttpRsp updatedRegionList = QueryRegionListHttpRsp.newBuilder()
+            .addAllRegionList(servers)
+            .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+            .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
+            .setEnableLoginPc(true).build();
+
+        // Set the region list response.
+        regionListResponse = Utils.base64Encode(updatedRegionList.toByteString().toByteArray());
+
+        // CN
+        // Create a config object.
+        byte[] customConfigcn = "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+        Crypto.xor(customConfigcn, Crypto.DISPATCH_KEY); // XOR the config with the key.
+
+        // Create an updated region list.
+        QueryRegionListHttpRsp updatedRegionListcn = QueryRegionListHttpRsp.newBuilder()
+            .addAllRegionList(servers)
+            .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+            .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfigcn))
+            .setEnableLoginPc(true).build();
+
+        // Set the region list response.
+        regionListResponsecn = Utils.base64Encode(updatedRegionListcn.toByteString().toByteArray());
+    }
+
+    @Override
+    public void applyRoutes(Javalin javalin) {
+        javalin.get("/query_region_list", RegionHandler::queryRegionList);
+        javalin.get("/query_cur_region/{region}", RegionHandler::queryCurrentRegion);
     }
 
     /**
@@ -289,13 +300,5 @@ public final class RegionHandler implements Router {
         public String getBase64() {
             return this.base64;
         }
-    }
-
-    /**
-     * Gets the current region query.
-     * @return A {@link QueryCurrRegionHttpRsp} object.
-     */
-    public static QueryCurrRegionHttpRsp getCurrentRegion() {
-        return SERVER.runMode == ServerRunMode.HYBRID ? regions.get("os_usa").getRegionQuery() : null;
     }
 }

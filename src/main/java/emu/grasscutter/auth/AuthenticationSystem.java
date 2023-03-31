@@ -16,7 +16,62 @@ import javax.annotation.Nullable;
 public interface AuthenticationSystem {
 
     /**
+     * Generates an authentication request from a {@link LoginAccountRequestJson} object.
+     *
+     * @param ctx      The Javalin context.
+     * @param jsonData The JSON data.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromPasswordRequest(Context ctx, LoginAccountRequestJson jsonData) {
+        return AuthenticationRequest.builder()
+            .context(ctx)
+            .passwordRequest(jsonData)
+            .build();
+    }
+
+    /**
+     * Generates an authentication request from a {@link LoginTokenRequestJson} object.
+     *
+     * @param ctx      The Javalin context.
+     * @param jsonData The JSON data.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromTokenRequest(Context ctx, LoginTokenRequestJson jsonData) {
+        return AuthenticationRequest.builder()
+            .context(ctx)
+            .tokenRequest(jsonData)
+            .build();
+    }
+
+    /**
+     * Generates an authentication request from a {@link ComboTokenReqJson} object.
+     *
+     * @param ctx      The Javalin context.
+     * @param jsonData The JSON data.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromComboTokenRequest(Context ctx, ComboTokenReqJson jsonData,
+                                                       ComboTokenReqJson.LoginTokenData tokenData) {
+        return AuthenticationRequest.builder()
+            .context(ctx)
+            .sessionKeyRequest(jsonData)
+            .sessionKeyData(tokenData)
+            .build();
+    }
+
+    /**
+     * Generates an authentication request from a {@link Context} object.
+     *
+     * @param ctx The Javalin context.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromExternalRequest(Context ctx) {
+        return AuthenticationRequest.builder().context(ctx).build();
+    }
+
+    /**
      * Called when a user requests to make an account.
+     *
      * @param username The provided username.
      * @param password The provided password. (SHA-256'ed)
      */
@@ -24,12 +79,14 @@ public interface AuthenticationSystem {
 
     /**
      * Called when a user requests to reset their password.
+     *
      * @param username The username of the account to reset.
      */
     void resetPassword(String username);
 
     /**
      * Called by plugins to internally verify a user's identity.
+     *
      * @param details A unique identifier to identify the user. (For example: a JWT token)
      * @return The user's account if the verification was successful, null if the user was unable to be verified.
      */
@@ -37,30 +94,35 @@ public interface AuthenticationSystem {
 
     /**
      * This is the authenticator used for password authentication.
+     *
      * @return An authenticator.
      */
     Authenticator<LoginResultJson> getPasswordAuthenticator();
 
     /**
      * This is the authenticator used for token authentication.
+     *
      * @return An authenticator.
      */
     Authenticator<LoginResultJson> getTokenAuthenticator();
 
     /**
      * This is the authenticator used for session authentication.
+     *
      * @return An authenticator.
      */
     Authenticator<ComboTokenResJson> getSessionKeyAuthenticator();
 
     /**
      * This is the authenticator used for handling external authentication requests.
+     *
      * @return An authenticator.
      */
     ExternalAuthenticator getExternalAuthenticator();
 
     /**
      * This is the authenticator used for handling OAuth authentication requests.
+     *
      * @return An authenticator.
      */
     OAuthAuthenticator getOAuthAuthenticator();
@@ -68,63 +130,19 @@ public interface AuthenticationSystem {
     /**
      * A data container that holds relevant data for authenticating a client.
      */
-    @Builder @AllArgsConstructor @Getter
+    @Builder
+    @AllArgsConstructor
+    @Getter
     class AuthenticationRequest {
         private final Context context;
 
-        @Nullable private final LoginAccountRequestJson passwordRequest;
-        @Nullable private final LoginTokenRequestJson tokenRequest;
-        @Nullable private final ComboTokenReqJson sessionKeyRequest;
-        @Nullable private final ComboTokenReqJson.LoginTokenData sessionKeyData;
-    }
-
-    /**
-     * Generates an authentication request from a {@link LoginAccountRequestJson} object.
-     * @param ctx The Javalin context.
-     * @param jsonData The JSON data.
-     * @return An authentication request.
-     */
-    static AuthenticationRequest fromPasswordRequest(Context ctx, LoginAccountRequestJson jsonData) {
-        return AuthenticationRequest.builder()
-                .context(ctx)
-                .passwordRequest(jsonData)
-                .build();
-    }
-
-    /**
-     * Generates an authentication request from a {@link LoginTokenRequestJson} object.
-     * @param ctx The Javalin context.
-     * @param jsonData The JSON data.
-     * @return An authentication request.
-     */
-    static AuthenticationRequest fromTokenRequest(Context ctx, LoginTokenRequestJson jsonData) {
-        return AuthenticationRequest.builder()
-                .context(ctx)
-                .tokenRequest(jsonData)
-                .build();
-    }
-
-    /**
-     * Generates an authentication request from a {@link ComboTokenReqJson} object.
-     * @param ctx The Javalin context.
-     * @param jsonData The JSON data.
-     * @return An authentication request.
-     */
-    static AuthenticationRequest fromComboTokenRequest(Context ctx, ComboTokenReqJson jsonData,
-                                                       ComboTokenReqJson.LoginTokenData tokenData) {
-        return AuthenticationRequest.builder()
-                .context(ctx)
-                .sessionKeyRequest(jsonData)
-                .sessionKeyData(tokenData)
-                .build();
-    }
-
-    /**
-     * Generates an authentication request from a {@link Context} object.
-     * @param ctx The Javalin context.
-     * @return An authentication request.
-     */
-    static AuthenticationRequest fromExternalRequest(Context ctx) {
-        return AuthenticationRequest.builder().context(ctx).build();
+        @Nullable
+        private final LoginAccountRequestJson passwordRequest;
+        @Nullable
+        private final LoginTokenRequestJson tokenRequest;
+        @Nullable
+        private final ComboTokenReqJson sessionKeyRequest;
+        @Nullable
+        private final ComboTokenReqJson.LoginTokenData sessionKeyData;
     }
 }

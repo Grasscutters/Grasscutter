@@ -6,7 +6,8 @@ import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 

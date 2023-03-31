@@ -1,7 +1,6 @@
 package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
-
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.reflections.Reflections;
@@ -110,14 +109,14 @@ public final class TaskMap {
         try {
             Scheduler scheduler = schedulerFactory.getScheduler();
             JobDetail job = JobBuilder
-                        .newJob(task.getClass())
-                        .withIdentity(taskName)
-                        .build();
+                .newJob(task.getClass())
+                .withIdentity(taskName)
+                .build();
 
             Trigger convTrigger = TriggerBuilder.newTrigger()
-                        .withIdentity(annotation.triggerName())
-                        .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
-                        .build();
+                .withIdentity(annotation.triggerName())
+                .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
+                .build();
 
             scheduler.scheduleJob(job, convTrigger);
 

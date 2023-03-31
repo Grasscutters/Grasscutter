@@ -10,7 +10,7 @@ public class PacketSetUpLunchBoxWidgetRsp extends BasePacket {
     public PacketSetUpLunchBoxWidgetRsp(LunchBoxDataOuterClass.LunchBoxData lunchBoxData) {
         super(PacketOpcodes.SetUpLunchBoxWidgetRsp);
         var rsp
-                = SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRsp.newBuilder();
+            = SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRsp.newBuilder();
         rsp.setLunchBoxData(lunchBoxData);
 
         setData(rsp.build());

@@ -1,10 +1,5 @@
 package emu.grasscutter.game.managers.forging;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
@@ -19,13 +14,13 @@ import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueMan
 import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
-import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
-import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
-import emu.grasscutter.server.packet.send.PacketForgeQueueDataNotify;
-import emu.grasscutter.server.packet.send.PacketForgeQueueManipulateRsp;
-import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ForgingManager extends BasePlayerManager {
 
@@ -34,8 +29,8 @@ public class ForgingManager extends BasePlayerManager {
     }
 
     /**********
-        Blueprint unlocking.
-    **********/
+     Blueprint unlocking.
+     **********/
     public boolean unlockForgingBlueprint(int id) {
         // Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
         if (!this.player.getUnlockedForgingBlueprints().add(id)) {
@@ -46,15 +41,15 @@ public class ForgingManager extends BasePlayerManager {
     }
 
     /**********
-        Communicate forging information to the client.
-    **********/
+     Communicate forging information to the client.
+     **********/
     private synchronized int determineNumberOfQueues() {
         int adventureRank = player.getLevel();
         return
             (adventureRank >= 15) ? 4
-            : (adventureRank >= 10) ? 3
-            : (adventureRank >= 5) ? 2
-            : 1;
+                : (adventureRank >= 10) ? 3
+                : (adventureRank >= 5) ? 2
+                : 1;
     }
 
     private synchronized Map<Integer, ForgeQueueData> determineCurrentForgeQueueData() {
@@ -101,12 +96,13 @@ public class ForgingManager extends BasePlayerManager {
     }
 
     /**********
-        Initiate forging process.
-    **********/
+     Initiate forging process.
+     **********/
     private synchronized void sendForgeQueueDataNotify() {
         var queueData = this.determineCurrentForgeQueueData();
         this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
     }
+
     private synchronized void sendForgeQueueDataNotify(boolean hasRemoved) {
         var queueData = this.determineCurrentForgeQueueData();
 
@@ -169,8 +165,8 @@ public class ForgingManager extends BasePlayerManager {
     }
 
     /**********
-        Forge queue manipulation (obtaining results and cancelling forges).
-    **********/
+     Forge queue manipulation (obtaining results and cancelling forges).
+     **********/
     private synchronized void obtainItems(int queueId) {
         // Determine how many items are finished.
         int currentTime = Utils.getCurrentSeconds();
@@ -280,8 +276,8 @@ public class ForgingManager extends BasePlayerManager {
     }
 
     /**********
-        Periodic forging updates.
-    **********/
+     Periodic forging updates.
+     **********/
     public synchronized void sendPlayerForgingUpdate() {
         int currentTime = Utils.getCurrentSeconds();
 
@@ -293,7 +289,7 @@ public class ForgingManager extends BasePlayerManager {
         }
 
         boolean hasChanges = this.player.getActiveForges().stream()
-                                    .anyMatch(forge -> forge.updateChanged(currentTime));
+            .anyMatch(forge -> forge.updateChanged(currentTime));
 
         if (!hasChanges) {
             return;

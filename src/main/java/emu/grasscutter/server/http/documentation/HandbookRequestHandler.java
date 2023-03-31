@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
@@ -14,6 +12,7 @@ import emu.grasscutter.utils.Language;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -42,7 +41,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             Matcher matcher = localePattern.matcher(acceptLanguage);
             if (matcher.find()) {
                 String lang = matcher.group(0);
-                langIdx = Language.TextStrings.MAP_GC_LANGUAGES.getOrDefault(lang,0);
+                langIdx = Language.TextStrings.MAP_GC_LANGUAGES.getOrDefault(lang, 0);
             }
         }
 
@@ -62,7 +61,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
         final List<Language> languages = Language.TextStrings.getLanguages();
         final List<StringBuilder> sbs = new ArrayList<>(NUM_LANGUAGES);
         for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
-            sbs.add(new StringBuilder(""));
+            sbs.add(new StringBuilder());
 
         // Commands table
         CommandMap.getInstance().getHandlersAsList().forEach(cmd -> {
@@ -71,7 +70,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
                 sbs.get(langIdx).append("<tr><td><code>" + label + "</code></td><td>" + languages.get(langIdx).get(descKey) + "</td></tr>\n");
         });
-        sbs.forEach(sb -> sb.setLength(sb.length()-1));  // Remove trailing \n
+        sbs.forEach(sb -> sb.setLength(sb.length() - 1));  // Remove trailing \n
         final List<String> cmdsTable = sbs.stream().map(StringBuilder::toString).toList();
 
         // Avatars table
@@ -83,7 +82,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
                 sbs.get(langIdx).append("<tr><td><code>" + id + "</code></td><td>" + name.get(langIdx) + "</td></tr>\n");
         });
-        sbs.forEach(sb -> sb.setLength(sb.length()-1));  // Remove trailing \n
+        sbs.forEach(sb -> sb.setLength(sb.length() - 1));  // Remove trailing \n
         final List<String> avatarsTable = sbs.stream().map(StringBuilder::toString).toList();
 
         // Items table
@@ -95,7 +94,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
                 sbs.get(langIdx).append("<tr><td><code>" + id + "</code></td><td>" + name.get(langIdx) + "</td></tr>\n");
         });
-        sbs.forEach(sb -> sb.setLength(sb.length()-1));  // Remove trailing \n
+        sbs.forEach(sb -> sb.setLength(sb.length() - 1));  // Remove trailing \n
         final List<String> itemsTable = sbs.stream().map(StringBuilder::toString).toList();
 
         // Scenes table
@@ -105,7 +104,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
                 sbs.get(langIdx).append("<tr><td><code>" + id + "</code></td><td>" + data.getScriptData() + "</td></tr>\n");
         });
-        sbs.forEach(sb -> sb.setLength(sb.length()-1));  // Remove trailing \n
+        sbs.forEach(sb -> sb.setLength(sb.length() - 1));  // Remove trailing \n
         final List<String> scenesTable = sbs.stream().map(StringBuilder::toString).toList();
 
         // Monsters table
@@ -116,7 +115,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
                 sbs.get(langIdx).append("<tr><td><code>" + id + "</code></td><td>" + name.get(langIdx) + "</td></tr>\n");
         });
-        sbs.forEach(sb -> sb.setLength(sb.length()-1));  // Remove trailing \n
+        sbs.forEach(sb -> sb.setLength(sb.length() - 1));  // Remove trailing \n
         final List<String> monstersTable = sbs.stream().map(StringBuilder::toString).toList();
 
         // Add translated title etc. to the page.

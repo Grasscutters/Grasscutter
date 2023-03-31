@@ -6,17 +6,14 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import org.bson.types.ObjectId;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bson.types.ObjectId;
-
 @Entity(value = "mail", useDiscriminator = false)
 public class Mail {
-	@Id private ObjectId id;
-	@Indexed private int ownerUid;
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
@@ -25,7 +22,12 @@ public class Mail {
     public boolean isRead;
     public boolean isAttachmentGot;
     public int stateValue;
-    @Transient private boolean shouldDelete;
+    @Id
+    private ObjectId id;
+    @Indexed
+    private int ownerUid;
+    @Transient
+    private boolean shouldDelete;
 
     public Mail() {
         this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
@@ -51,18 +53,26 @@ public class Mail {
     }
 
     public ObjectId getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public int getOwnerUid() {
-		return ownerUid;
-	}
+    public int getOwnerUid() {
+        return ownerUid;
+    }
 
-	public void setOwnerUid(int ownerUid) {
-		this.ownerUid = ownerUid;
-	}
+    public void setOwnerUid(int ownerUid) {
+        this.ownerUid = ownerUid;
+    }
 
-	@Entity
+    public void save() {
+        if (this.expireTime * 1000 < System.currentTimeMillis()) {
+            DatabaseHelper.deleteMail(this);
+        } else {
+            DatabaseHelper.saveMail(this);
+        }
+    }
+
+    @Entity
     public static class MailContent {
         public String title;
         public String content;
@@ -105,7 +115,9 @@ public class Mail {
             this(itemId, 1);
         }
 
-        public MailItem(int itemId, int itemCount) { this(itemId, itemCount, 1); }
+        public MailItem(int itemId, int itemCount) {
+            this(itemId, itemCount, 1);
+        }
 
         public MailItem(int itemId, int itemCount, int itemLevel) {
             this.itemId = itemId;
@@ -113,12 +125,4 @@ public class Mail {
             this.itemLevel = itemLevel;
         }
     }
-
-	public void save() {
-		if (this.expireTime * 1000 < System.currentTimeMillis()) {
-			DatabaseHelper.deleteMail(this);
-		} else {
-			DatabaseHelper.saveMail(this);
-		}
-	}
 }

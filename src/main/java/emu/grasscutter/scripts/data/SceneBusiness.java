@@ -6,5 +6,5 @@ import lombok.ToString;
 @ToString
 @Setter
 public class SceneBusiness {
-	public int type;
+    public int type;
 }

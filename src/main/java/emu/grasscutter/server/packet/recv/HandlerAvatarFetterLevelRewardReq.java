@@ -6,21 +6,20 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFetterLevelRewardReqOuterClass.AvatarFetterLevelRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterLevelRewardRsp;
-import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
-import emu.grasscutter.net.packet.PacketHandler;
 
 @Opcodes(PacketOpcodes.AvatarFetterLevelRewardReq)
 public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		AvatarFetterLevelRewardReq req = AvatarFetterLevelRewardReq.parseFrom(payload);
+        AvatarFetterLevelRewardReq req = AvatarFetterLevelRewardReq.parseFrom(payload);
         if (req.getFetterLevel() < 10) {
             // You don't have a full level of fetter level, why do you want to get a divorce certificate?
             session.send(new PacketAvatarFetterLevelRewardRsp(req.getAvatarGuid(), req.getFetterLevel()));
@@ -50,5 +49,5 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
             session.send(new PacketAvatarDataNotify(avatar.getPlayer()));
             session.send(new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
         }
-	}
+    }
 }

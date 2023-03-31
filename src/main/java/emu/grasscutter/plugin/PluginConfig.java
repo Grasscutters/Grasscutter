@@ -11,6 +11,7 @@ public final class PluginConfig {
 
     /**
      * Attempts to validate this config instance.
+     *
      * @return True if the config is valid, false otherwise.
      */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")

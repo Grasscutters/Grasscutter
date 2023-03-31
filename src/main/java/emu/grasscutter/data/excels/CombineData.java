@@ -54,7 +54,7 @@ public class CombineData extends GameResource {
     public int getSubCombineType() {
         return subCombineType;
     }
-    
+
     public int getResultItemId() {
         return resultItemId;
     }
@@ -80,4 +80,3 @@ public class CombineData extends GameResource {
     }
 
 }
-

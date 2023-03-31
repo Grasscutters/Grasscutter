@@ -34,16 +34,24 @@ import java.util.List;
 
 public class EntityVehicle extends EntityBaseGadget {
 
-    @Getter private final Player owner;
+    @Getter
+    private final Player owner;
     @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
 
-    @Getter private final int pointId;
-    @Getter private final int gadgetId;
+    @Getter
+    private final int pointId;
+    @Getter
+    private final int gadgetId;
 
-    @Getter @Setter private float curStamina;
-    @Getter private List<VehicleMember> vehicleMembers;
-    @Nullable @Getter private ConfigGadget configGadget;
+    @Getter
+    @Setter
+    private float curStamina;
+    @Getter
+    private final List<VehicleMember> vehicleMembers;
+    @Nullable
+    @Getter
+    private ConfigGadget configGadget;
 
     public EntityVehicle(Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
         super(scene, pos, rot);
@@ -73,36 +81,36 @@ public class EntityVehicle extends EntityBaseGadget {
     public SceneEntityInfo toProto() {
 
         VehicleInfo vehicle = VehicleInfo.newBuilder()
-                .setOwnerUid(this.owner.getUid())
-                .setCurStamina(getCurStamina())
-                .build();
+            .setOwnerUid(this.owner.getUid())
+            .setCurStamina(getCurStamina())
+            .build();
 
         EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(getPosition().toProto()))
-                .setBornPos(getPosition().toProto())
-                .build();
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(getPosition().toProto()))
+            .setBornPos(getPosition().toProto())
+            .build();
 
         SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-                .setGadgetId(this.getGadgetId())
-                .setAuthorityPeerId(this.getOwner().getPeerId())
-                .setIsEnableInteract(true)
-                .setVehicleInfo(vehicle);
+            .setGadgetId(this.getGadgetId())
+            .setAuthorityPeerId(this.getOwner().getPeerId())
+            .setIsEnableInteract(true)
+            .setVehicleInfo(vehicle);
 
         SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-                .setEntityId(getId())
-                .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-                .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-                .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-                .setGadget(gadgetInfo)
-                .setEntityAuthorityInfo(authority)
-                .setLifeState(1);
+            .setEntityId(getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setGadget(gadgetInfo)
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(1);
 
         PropPair pair = PropPair.newBuilder()
-                .setType(PlayerProperty.PROP_LEVEL.getId())
-                .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 47))
-                .build();
+            .setType(PlayerProperty.PROP_LEVEL.getId())
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 47))
+            .build();
 
         this.addAllFightPropsToEntityInfo(entityInfo);
         entityInfo.addPropList(pair);

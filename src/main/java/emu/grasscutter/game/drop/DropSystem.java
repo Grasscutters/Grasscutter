@@ -49,6 +49,7 @@ public class DropSystem extends BaseGameSystem {
             Grasscutter.getLogger().error("Unable to load drop data.", e);
         }
     }
+
     private void addDropEntity(DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {
         if (!dd.isGive() && (itemData.getItemType() != ItemType.ITEM_VIRTUAL || itemData.getGadgetId() != 0)) {
             EntityItem entity = new EntityItem(dropScene, target, itemData, pos, num, dd.isShare());

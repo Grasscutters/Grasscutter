@@ -29,16 +29,10 @@ import static emu.grasscutter.utils.Language.translate;
  * Handles all gacha-related HTTP requests.
  */
 public final class GachaHandler implements Router {
-    @Getter private static final Path gachaMappingsPath = FileUtils.getDataUserPath("gacha/mappings.js");
+    @Getter
+    private static final Path gachaMappingsPath = FileUtils.getDataUserPath("gacha/mappings.js");
     @Deprecated(forRemoval = true)
     public static final String gachaMappings = gachaMappingsPath.toString();
-
-    @Override public void applyRoutes(Javalin javalin) {
-        javalin.get("/gacha", GachaHandler::gachaRecords);
-        javalin.get("/gacha/details", GachaHandler::gachaDetails);
-
-        javalin._conf.addSinglePageRoot("/gacha/mappings", gachaMappingsPath.toString(), Location.EXTERNAL);  // TODO: This ***must*** be changed to take the Path not a String. This might involve upgrading Javalin.
-    }
 
     private static void gachaRecords(Context ctx) {
         String sessionKey = ctx.queryParam("s");
@@ -98,10 +92,10 @@ public final class GachaHandler implements Router {
 
         // Add translated title etc. to the page.
         template = template.replace("{{TITLE}}", translate(player, "gacha.details.title"))
-                .replace("{{AVAILABLE_FIVE_STARS}}", translate(player, "gacha.details.available_five_stars"))
-                .replace("{{AVAILABLE_FOUR_STARS}}", translate(player, "gacha.details.available_four_stars"))
-                .replace("{{AVAILABLE_THREE_STARS}}", translate(player, "gacha.details.available_three_stars"))
-                .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
+            .replace("{{AVAILABLE_FIVE_STARS}}", translate(player, "gacha.details.available_five_stars"))
+            .replace("{{AVAILABLE_FOUR_STARS}}", translate(player, "gacha.details.available_four_stars"))
+            .replace("{{AVAILABLE_THREE_STARS}}", translate(player, "gacha.details.available_three_stars"))
+            .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
 
         // Get the banner info for the banner we want.
         int scheduleId = Integer.parseInt(ctx.queryParam("scheduleId"));
@@ -134,5 +128,13 @@ public final class GachaHandler implements Router {
         // Done.
         ctx.contentType(ContentType.TEXT_HTML);
         ctx.result(template);
+    }
+
+    @Override
+    public void applyRoutes(Javalin javalin) {
+        javalin.get("/gacha", GachaHandler::gachaRecords);
+        javalin.get("/gacha/details", GachaHandler::gachaDetails);
+
+        javalin._conf.addSinglePageRoot("/gacha/mappings", gachaMappingsPath.toString(), Location.EXTERNAL);  // TODO: This ***must*** be changed to take the Path not a String. This might involve upgrading Javalin.
     }
 }

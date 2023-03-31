@@ -3,13 +3,13 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseUnlockForge extends ItemUseInt {
+    public ItemUseUnlockForge(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_UNLOCK_FORGE;
-    }
-
-    public ItemUseUnlockForge(String[] useParam) {
-        super(useParam);
     }
 
     @Override

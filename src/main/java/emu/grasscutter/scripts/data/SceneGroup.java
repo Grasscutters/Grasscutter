@@ -10,7 +10,6 @@ import org.luaj.vm2.LuaValue;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -25,7 +24,7 @@ public class SceneGroup {
     public int refresh_id;
     public Position pos;
 
-    public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
+    public Map<Integer, SceneMonster> monsters; // <ConfigId, Monster>
     public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
     public Map<String, SceneTrigger> triggers;
     public Map<Integer, SceneRegion> regions;
@@ -39,6 +38,7 @@ public class SceneGroup {
     private transient boolean loaded; // Not an actual variable in the scripts either
     private transient CompiledScript script;
     private transient Bindings bindings;
+
     public static SceneGroup of(int groupId) {
         var group = new SceneGroup();
         group.id = groupId;
@@ -96,15 +96,15 @@ public class SceneGroup {
 
             // Set
             this.monsters = ScriptLoader.getSerializer().toList(SceneMonster.class, this.bindings.get("monsters")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+                .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.monsters.values().forEach(m -> m.group = this);
 
             this.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, this.bindings.get("gadgets")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+                .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.gadgets.values().forEach(m -> m.group = this);
 
             this.triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, this.bindings.get("triggers")).stream()
-                    .collect(Collectors.toMap(x -> x.name, y -> y, (a, b) -> a));
+                .collect(Collectors.toMap(x -> x.name, y -> y, (a, b) -> a));
             this.triggers.values().forEach(t -> t.currentGroup = this);
 
             this.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, this.bindings.get("suites"));
@@ -140,9 +140,9 @@ public class SceneGroup {
 
     public Optional<SceneBossChest> searchBossChestInGroup() {
         return this.gadgets.values().stream()
-                .filter(g -> g.boss_chest != null && g.boss_chest.monster_config_id > 0)
-                .map(g -> g.boss_chest)
-                .findFirst();
+            .filter(g -> g.boss_chest != null && g.boss_chest.monster_config_id > 0)
+            .map(g -> g.boss_chest)
+            .findFirst();
     }
 
 }

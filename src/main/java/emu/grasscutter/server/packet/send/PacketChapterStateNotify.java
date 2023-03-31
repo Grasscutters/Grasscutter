@@ -7,8 +7,8 @@ import emu.grasscutter.net.proto.ChapterStateOuterClass;
 
 public class PacketChapterStateNotify extends BasePacket {
 
-	public PacketChapterStateNotify(int id, ChapterStateOuterClass.ChapterState state) {
-		super(PacketOpcodes.ChapterStateNotify);
+    public PacketChapterStateNotify(int id, ChapterStateOuterClass.ChapterState state) {
+        super(PacketOpcodes.ChapterStateNotify);
 
         var proto = ChapterStateNotifyOuterClass.ChapterStateNotify.newBuilder();
 
@@ -16,5 +16,5 @@ public class PacketChapterStateNotify extends BasePacket {
             .setChapterState(state);
 
         this.setData(proto);
-	}
+    }
 }

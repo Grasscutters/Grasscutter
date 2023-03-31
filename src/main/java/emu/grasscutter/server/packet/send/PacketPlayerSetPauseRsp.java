@@ -5,9 +5,9 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 
 public class PacketPlayerSetPauseRsp extends BasePacket {
 
-	public PacketPlayerSetPauseRsp(int clientSequence) {
-		super(PacketOpcodes.PlayerSetPauseRsp);
-		
-		this.buildHeader(clientSequence);
-	}
+    public PacketPlayerSetPauseRsp(int clientSequence) {
+        super(PacketOpcodes.PlayerSetPauseRsp);
+
+        this.buildHeader(clientSequence);
+    }
 }

@@ -1,9 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -14,49 +10,14 @@ import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
-    static enum PseudoProp {
-        NONE,
-        WORLD_LEVEL,
-        TOWER_LEVEL,
-        BP_LEVEL,
-        GOD_MODE,
-        UNLIMITED_STAMINA,
-        UNLIMITED_ENERGY,
-        SET_OPENSTATE,
-        UNSET_OPENSTATE,
-        UNLOCK_MAP
-    }
-
-    static class Prop {
-        String name;
-        PlayerProperty prop;
-        PseudoProp pseudoProp;
-
-        public Prop(PlayerProperty prop) {
-            this(prop.toString(), prop, PseudoProp.NONE);
-        }
-
-        public Prop(String name) {
-            this(name, PlayerProperty.PROP_NONE, PseudoProp.NONE);
-        }
-
-        public Prop(String name, PseudoProp pseudoProp) {
-            this(name, PlayerProperty.PROP_NONE, pseudoProp);
-        }
-
-        public Prop(String name, PlayerProperty prop) {
-            this(name, prop, PseudoProp.NONE);
-        }
-
-        public Prop(String name, PlayerProperty prop, PseudoProp pseudoProp) {
-            this.name = name;
-            this.prop = prop;
-            this.pseudoProp = pseudoProp;
-        }
-    }
-
+    // List of map areas. Unfortunately, there is no readily available source for them in excels or bins.
+    private static final List<Integer> sceneAreas = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 100, 101, 102, 103, 200, 210, 300, 400, 401, 402, 403);
     Map<String, Prop> props;
 
     public SetPropCommand() {
@@ -146,7 +107,8 @@ public final class SetPropCommand implements CommandHandler {
             case WORLD_LEVEL -> targetPlayer.setWorldLevel(value);
             case BP_LEVEL -> targetPlayer.getBattlePassManager().setLevel(value);
             case TOWER_LEVEL -> this.setTowerLevel(sender, targetPlayer, value);
-            case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY -> this.setBool(sender, targetPlayer, prop.pseudoProp, value);
+            case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY ->
+                this.setBool(sender, targetPlayer, prop.pseudoProp, value);
             case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
             case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
             case UNLOCK_MAP -> unlockMap(targetPlayer);
@@ -185,9 +147,7 @@ public final class SetPropCommand implements CommandHandler {
         }
         // Remove records for each floor past our target
         for (int floor : floorIds.subList(topFloor, floorIds.size())) {
-            if (recordMap.containsKey(floor)) {
-                recordMap.remove(floor);
-            }
+            recordMap.remove(floor);
         }
         // Six stars required on Floor 8 to unlock Floor 9+
         if (topFloor > 8) {
@@ -230,8 +190,6 @@ public final class SetPropCommand implements CommandHandler {
         return true;
     }
 
-    // List of map areas. Unfortunately, there is no readily available source for them in excels or bins.
-    final static private List<Integer> sceneAreas = List.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20,21,22,23,24,25,26,27,28,29,32,100,101,102,103,200,210,300,400,401,402,403);
     private boolean unlockMap(Player targetPlayer) {
         // Unlock.
         GameData.getScenePointsPerScene().forEach((sceneId, scenePoints) -> {
@@ -247,5 +205,46 @@ public final class SetPropCommand implements CommandHandler {
         targetPlayer.sendPacket(new PacketScenePointUnlockNotify(playerScene, targetPlayer.getUnlockedScenePoints(playerScene)));
         targetPlayer.sendPacket(new PacketSceneAreaUnlockNotify(playerScene, targetPlayer.getUnlockedSceneAreas(playerScene)));
         return true;
+    }
+
+    enum PseudoProp {
+        NONE,
+        WORLD_LEVEL,
+        TOWER_LEVEL,
+        BP_LEVEL,
+        GOD_MODE,
+        UNLIMITED_STAMINA,
+        UNLIMITED_ENERGY,
+        SET_OPENSTATE,
+        UNSET_OPENSTATE,
+        UNLOCK_MAP
+    }
+
+    static class Prop {
+        String name;
+        PlayerProperty prop;
+        PseudoProp pseudoProp;
+
+        public Prop(PlayerProperty prop) {
+            this(prop.toString(), prop, PseudoProp.NONE);
+        }
+
+        public Prop(String name) {
+            this(name, PlayerProperty.PROP_NONE, PseudoProp.NONE);
+        }
+
+        public Prop(String name, PseudoProp pseudoProp) {
+            this(name, PlayerProperty.PROP_NONE, pseudoProp);
+        }
+
+        public Prop(String name, PlayerProperty prop) {
+            this(name, prop, PseudoProp.NONE);
+        }
+
+        public Prop(String name, PlayerProperty prop, PseudoProp pseudoProp) {
+            this.name = name;
+            this.prop = prop;
+            this.pseudoProp = pseudoProp;
+        }
     }
 }

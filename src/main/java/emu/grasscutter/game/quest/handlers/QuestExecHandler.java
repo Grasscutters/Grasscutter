@@ -5,6 +5,6 @@ import emu.grasscutter.game.quest.GameQuest;
 
 public abstract class QuestExecHandler {
 
-	public abstract boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr);
+    public abstract boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr);
 
 }

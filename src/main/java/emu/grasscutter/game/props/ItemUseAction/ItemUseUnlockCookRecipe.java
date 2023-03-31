@@ -3,13 +3,13 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseUnlockCookRecipe extends ItemUseInt {
+    public ItemUseUnlockCookRecipe(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_UNLOCK_COOK_RECIPE;
-    }
-
-    public ItemUseUnlockCookRecipe(String[] useParam) {
-        super(useParam);
     }
 
     @Override

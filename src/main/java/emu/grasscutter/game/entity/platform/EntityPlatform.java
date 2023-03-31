@@ -26,11 +26,11 @@ public class EntityPlatform extends EntityBaseGadget {
     private final EntityClientGadget gadget;
     @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
+    @Getter
+    private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
     @Nullable
     @Getter
     private ConfigGadget configGadget;
-    @Getter
-    private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
     @Getter
     @Setter
     private boolean isStarted;

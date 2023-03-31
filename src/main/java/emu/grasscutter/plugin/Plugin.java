@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +24,9 @@ public abstract class Plugin {
 
     /**
      * This method is reflected into.
-     *
+     * <p>
      * Set plugin variables.
+     *
      * @param identifier The plugin's identifier.
      */
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
@@ -42,12 +42,12 @@ public abstract class Plugin {
 
         if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
             Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
-            return;
         }
     }
 
     /**
      * The plugin's identifier instance.
+     *
      * @return An instance of {@link PluginIdentifier}.
      */
     public final PluginIdentifier getIdentifier() {
@@ -77,6 +77,7 @@ public abstract class Plugin {
 
     /**
      * Returns the server that initialized the plugin.
+     *
      * @return A server instance.
      */
     public final GameServer getServer() {
@@ -85,6 +86,7 @@ public abstract class Plugin {
 
     /**
      * Returns an input stream for a resource in the JAR file.
+     *
      * @param resourceName The name of the resource.
      * @return An input stream.
      */
@@ -94,6 +96,7 @@ public abstract class Plugin {
 
     /**
      * Returns a directory where plugins can store data files.
+     *
      * @return A directory on the file system.
      */
     public final File getDataFolder() {
@@ -102,6 +105,7 @@ public abstract class Plugin {
 
     /**
      * Returns the server hook.
+     *
      * @return A server hook singleton.
      */
     public final ServerHook getHandle() {
@@ -110,6 +114,7 @@ public abstract class Plugin {
 
     /**
      * Returns the plugin's logger.
+     *
      * @return A SLF4J logger.
      */
     public final Logger getLogger() {
@@ -117,9 +122,14 @@ public abstract class Plugin {
     }
 
     /* Called when the plugin is first loaded. */
-    public void onLoad() { }
+    public void onLoad() {
+    }
+
     /* Called after (most of) the server enables. */
-    public void onEnable() { }
+    public void onEnable() {
+    }
+
     /* Called before the server disables. */
-    public void onDisable() { }
+    public void onDisable() {
+    }
 }

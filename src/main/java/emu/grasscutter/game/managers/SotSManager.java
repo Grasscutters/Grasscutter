@@ -21,11 +21,10 @@ public class SotSManager extends BasePlayerManager {
 
     // NOTE: Spring volume balance *1  = fight prop HP *100
 
-    private final Logger logger = Grasscutter.getLogger();
-    private Timer autoRecoverTimer;
-    private final boolean enablePriorityHealing = false;
-
     public final static int GlobalMaximumSpringVolume = PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax();
+    private final Logger logger = Grasscutter.getLogger();
+    private final boolean enablePriorityHealing = false;
+    private Timer autoRecoverTimer;
 
     public SotSManager(Player player) {
         super(player);
@@ -107,33 +106,6 @@ public class SotSManager extends BasePlayerManager {
         });
     }
 
-    private class AutoRecoverTimerTick extends TimerTask {
-        // autoRecover checks player setting to see if auto recover is enabled, and refill HP to the predefined level.
-        public void run() {
-            refillSpringVolume();
-
-            logger.trace("isAutoRecoveryEnabled: " + getIsAutoRecoveryEnabled() + "\tautoRecoverPercentage: " + getAutoRecoveryPercentage());
-
-            if (getIsAutoRecoveryEnabled()) {
-                List<EntityAvatar> activeTeam = player.getTeamManager().getActiveTeam();
-                // When the statue does not have enough remaining volume:
-                //      Enhanced experience: Enable priority healing
-                //                              The current active character will get healed first, then sequential.
-                //      Vanilla experience: Disable priority healing
-                //                              Sequential healing based on character index.
-                int priorityIndex = enablePriorityHealing ? player.getTeamManager().getCurrentCharacterIndex() : -1;
-                if (priorityIndex >= 0) {
-                    checkAndHealAvatar(activeTeam.get(priorityIndex));
-                }
-                for (int i = 0; i < activeTeam.size(); i++) {
-                    if (i != priorityIndex) {
-                        checkAndHealAvatar(activeTeam.get(i));
-                    }
-                }
-            }
-        }
-    }
-
     public void checkAndHealAvatar(EntityAvatar entity) {
         int maxHP = (int) (entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * 100);
         int currentHP = (int) (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) * 100);
@@ -157,8 +129,8 @@ public class SotSManager extends BasePlayerManager {
                 logger.trace("Healing avatar " + entity.getAvatar().getAvatarData().getName() + " +" + needHP);
                 player.getTeamManager().healAvatar(entity.getAvatar(), 0, needHP);
                 player.getSession().send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
-                        ((float) needHP / 100), List.of(3), PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER,
-                        ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE));
+                    ((float) needHP / 100), List.of(3), PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER,
+                    ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE));
                 player.getSession().send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 
             }
@@ -186,6 +158,33 @@ public class SotSManager extends BasePlayerManager {
             currentVolume = Math.min(currentVolume + volumeRefilled, maxVolume);
             logger.trace("Statue remaining HP volume: " + currentVolume);
             setCurrentVolume(currentVolume);
+        }
+    }
+
+    private class AutoRecoverTimerTick extends TimerTask {
+        // autoRecover checks player setting to see if auto recover is enabled, and refill HP to the predefined level.
+        public void run() {
+            refillSpringVolume();
+
+            logger.trace("isAutoRecoveryEnabled: " + getIsAutoRecoveryEnabled() + "\tautoRecoverPercentage: " + getAutoRecoveryPercentage());
+
+            if (getIsAutoRecoveryEnabled()) {
+                List<EntityAvatar> activeTeam = player.getTeamManager().getActiveTeam();
+                // When the statue does not have enough remaining volume:
+                //      Enhanced experience: Enable priority healing
+                //                              The current active character will get healed first, then sequential.
+                //      Vanilla experience: Disable priority healing
+                //                              Sequential healing based on character index.
+                int priorityIndex = enablePriorityHealing ? player.getTeamManager().getCurrentCharacterIndex() : -1;
+                if (priorityIndex >= 0) {
+                    checkAndHealAvatar(activeTeam.get(priorityIndex));
+                }
+                for (int i = 0; i < activeTeam.size(); i++) {
+                    if (i != priorityIndex) {
+                        checkAndHealAvatar(activeTeam.get(i));
+                    }
+                }
+            }
         }
     }
 }

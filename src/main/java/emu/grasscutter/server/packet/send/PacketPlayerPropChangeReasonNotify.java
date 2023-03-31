@@ -15,11 +15,11 @@ public class PacketPlayerPropChangeReasonNotify extends BasePacket {
         this.buildHeader(0);
 
         PlayerPropChangeReasonNotify proto = PlayerPropChangeReasonNotify.newBuilder()
-                .setPropType(prop.getId())
-                .setReason(changeReason)
-                .setOldValue(oldValue)
-                .setCurValue(newValue)
-                .build();
+            .setPropType(prop.getId())
+            .setReason(changeReason)
+            .setOldValue(oldValue)
+            .setCurValue(newValue)
+            .build();
 
         this.setData(proto);
     }

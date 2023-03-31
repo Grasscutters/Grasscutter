@@ -20,8 +20,8 @@ public class PacketServerAnnounceNotify extends BasePacket {
         this.setData(proto);
     }
 
-	public PacketServerAnnounceNotify(String msg, int configId) {
-		super(PacketOpcodes.ServerAnnounceNotify);
+    public PacketServerAnnounceNotify(String msg, int configId) {
+        super(PacketOpcodes.ServerAnnounceNotify);
 
         var proto = ServerAnnounceNotifyOuterClass.ServerAnnounceNotify.newBuilder();
 
@@ -34,5 +34,5 @@ public class PacketServerAnnounceNotify extends BasePacket {
             .build());
 
         this.setData(proto);
-	}
+    }
 }

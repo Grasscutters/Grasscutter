@@ -9,10 +9,10 @@ import emu.grasscutter.server.packet.send.PacketGetShopRsp;
 
 @Opcodes(PacketOpcodes.GetShopReq)
 public class HandlerGetShopReq extends PacketHandler {
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		GetShopReq req = GetShopReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        GetShopReq req = GetShopReq.parseFrom(payload);
 
-		session.send(new PacketGetShopRsp(session.getPlayer(), req.getShopType()));
-	}
+        session.send(new PacketGetShopRsp(session.getPlayer(), req.getShopType()));
+    }
 }

@@ -9,8 +9,8 @@ public class PacketSceneAreaUnlockNotify extends BasePacket {
         super(PacketOpcodes.SceneAreaUnlockNotify);
 
         SceneAreaUnlockNotify.Builder p = SceneAreaUnlockNotify.newBuilder()
-                .setSceneId(sceneId)
-                .addAreaList(areaId);
+            .setSceneId(sceneId)
+            .addAreaList(areaId);
 
         this.setData(p);
     }
@@ -19,8 +19,8 @@ public class PacketSceneAreaUnlockNotify extends BasePacket {
         super(PacketOpcodes.SceneAreaUnlockNotify);
 
         SceneAreaUnlockNotify.Builder p = SceneAreaUnlockNotify.newBuilder()
-                .setSceneId(sceneId)
-                .addAllAreaList(areaIds);
+            .setSceneId(sceneId)
+            .addAllAreaList(areaIds);
 
         this.setData(p);
     }

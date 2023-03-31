@@ -8,8 +8,6 @@ import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 
-import java.util.Arrays;
-
 @QuestValue(QuestTrigger.QUEST_EXEC_REFRESH_GROUP_SUITE)
 public class ExecRefreshGroupSuite extends QuestExecHandler {
 
@@ -28,7 +26,7 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
             .build());
 
         // refresh immediately if player is in this scene
-        if(quest.getOwner().getScene().getId() == sceneId){
+        if (quest.getOwner().getScene().getId() == sceneId) {
             scriptManager.refreshGroup(scriptManager.getGroupById(groupId), suiteId);
             quest.getOwner().sendPacket(new PacketGroupSuiteNotify(groupId, suiteId));
         }

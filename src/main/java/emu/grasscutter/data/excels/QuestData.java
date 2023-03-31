@@ -1,8 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -13,6 +10,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+
+import java.util.List;
 
 @ResourceType(name = "QuestExcelConfigData.json")
 @Getter
@@ -42,8 +41,11 @@ public class QuestData extends GameResource {
     public int getId() {
         return subId;
     }
+
     //Added getSubId() for clarity
-    public int getSubId() {return subId;}
+    public int getSubId() {
+        return subId;
+    }
 
     public int getMainId() {
         return mainId;
@@ -100,17 +102,6 @@ public class QuestData extends GameResource {
     }
 
     @Data
-    @FieldDefaults(level = AccessLevel.PRIVATE)
-    public class QuestExecParam {
-        @SerializedName("_type")
-        QuestTrigger type;
-        @SerializedName("_param")
-        String[] param;
-        @SerializedName("_count")
-        String count;
-    }
-
-    @Data
     public static class QuestCondition {
         @SerializedName("_type")
         private QuestTrigger type;
@@ -128,5 +119,16 @@ public class QuestData extends GameResource {
         private String type;
         private List<String> param;
         private int guideScene;
+    }
+
+    @Data
+    @FieldDefaults(level = AccessLevel.PRIVATE)
+    public class QuestExecParam {
+        @SerializedName("_type")
+        QuestTrigger type;
+        @SerializedName("_param")
+        String[] param;
+        @SerializedName("_count")
+        String count;
     }
 }

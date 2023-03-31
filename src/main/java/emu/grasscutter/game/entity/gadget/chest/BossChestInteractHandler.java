@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BossChestInteractHandler implements ChestInteractHandler{
+public class BossChestInteractHandler implements ChestInteractHandler {
     @Override
     public boolean isTwoStep() {
         return true;
@@ -19,12 +19,12 @@ public class BossChestInteractHandler implements ChestInteractHandler{
 
     @Override
     public boolean onInteract(GadgetChest chest, Player player) {
-        return this.onInteract(chest,player,false);
+        return this.onInteract(chest, player, false);
     }
 
-    public boolean onInteract(GadgetChest chest, Player player,boolean useCondensedResin) {
-        var blossomRewards = player.getScene().getBlossomManager().onReward(player,chest.getGadget(),useCondensedResin);
-        if (blossomRewards!=null) {
+    public boolean onInteract(GadgetChest chest, Player player, boolean useCondensedResin) {
+        var blossomRewards = player.getScene().getBlossomManager().onReward(player, chest.getGadget(), useCondensedResin);
+        if (blossomRewards != null) {
             player.getInventory().addItems(blossomRewards, ActionReason.OpenWorldBossChest);
             player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(blossomRewards));
             return true;

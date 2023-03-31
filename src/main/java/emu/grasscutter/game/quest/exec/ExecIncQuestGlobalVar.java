@@ -10,7 +10,7 @@ import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 public class ExecIncQuestGlobalVar extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
-        quest.getOwner().getQuestManager().incQuestGlobalVarValue(Integer.valueOf(paramStr[0]),Integer.valueOf(paramStr[1]));
+        quest.getOwner().getQuestManager().incQuestGlobalVarValue(Integer.valueOf(paramStr[0]), Integer.valueOf(paramStr[1]));
         return true;
     }
 }

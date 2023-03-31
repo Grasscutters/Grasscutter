@@ -11,11 +11,11 @@ import emu.grasscutter.server.packet.send.PacketUnlockPersonalLineRsp;
 @Opcodes(PacketOpcodes.UnlockPersonalLineReq)
 public class HandlerUnlockPersonalLineReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq.parseFrom(payload);
         var data = GameData.getPersonalLineDataMap().get(req.getPersonalLineId());
-        if(data == null){
+        if (data == null) {
             return;
         }
 
@@ -23,6 +23,6 @@ public class HandlerUnlockPersonalLineReq extends PacketHandler {
         session.getPlayer().useLegendaryKey(1);
 
         session.send(new PacketUnlockPersonalLineRsp(data.getId(), 1, data.getChapterId()));
-	}
+    }
 
 }

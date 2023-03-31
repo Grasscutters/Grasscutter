@@ -71,7 +71,6 @@ public final class SendMailCommand implements CommandHandler {
                     case "stop" -> {
                         mailBeingConstructed.remove(senderId);
                         CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_cancel"));
-                        return;
                     }
                     case "finish" -> {
                         if (mailBuilder.constructionStage == 3) {
@@ -89,11 +88,9 @@ public final class SendMailCommand implements CommandHandler {
                         } else {
                             CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.not_composition_end", getConstructionArgs(mailBuilder.constructionStage, sender)));
                         }
-                        return;
                     }
                     case "help" -> {
                         CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.please_use", getConstructionArgs(mailBuilder.constructionStage, sender)));
-                        return;
                     }
                     default -> {
                         switch (mailBuilder.constructionStage) {

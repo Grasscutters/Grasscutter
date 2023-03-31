@@ -11,14 +11,13 @@ import emu.grasscutter.server.packet.send.PacketPullPrivateChatRsp;
 import emu.grasscutter.server.packet.send.PacketPullRecentChatRsp;
 import emu.grasscutter.utils.Utils;
 
-import java.util.regex.Pattern;
-
-import static emu.grasscutter.config.Configuration.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public class ChatSystem implements ChatSystemHandler {
     static final String PREFIXES = "[/!]";
@@ -52,8 +51,8 @@ public class ChatSystem implements ChatSystemHandler {
      ********************/
     private void putInHistory(int uid, int partnerId, ChatInfo info) {
         this.history.computeIfAbsent(uid, x -> new HashMap<>())
-                    .computeIfAbsent(partnerId, x -> new ArrayList<>())
-                    .add(info);
+            .computeIfAbsent(partnerId, x -> new ArrayList<>())
+            .add(info);
     }
 
     public void clearHistoryOnLogout(Player player) {
@@ -62,7 +61,7 @@ public class ChatSystem implements ChatSystemHandler {
 
     public void handlePullPrivateChatReq(Player player, int partnerId) {
         var chatHistory = this.history.computeIfAbsent(player.getUid(), x -> new HashMap<>())
-                                .computeIfAbsent(partnerId, x -> new ArrayList<>());
+            .computeIfAbsent(partnerId, x -> new ArrayList<>());
         player.sendPacket(new PacketPullPrivateChatRsp(chatHistory));
     }
 
@@ -102,6 +101,7 @@ public class ChatSystem implements ChatSystemHandler {
         // Send.
         target.sendPacket(packet);
     }
+
     public void sendPrivateMessageFromServer(int targetUid, int emote) {
         // Get target.
         Player target = getServer().getPlayerByUid(targetUid);
@@ -181,6 +181,7 @@ public class ChatSystem implements ChatSystemHandler {
         // Create and send chat packet
         player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, message));
     }
+
     public void sendTeamMessage(Player player, int channel, int icon) {
         // Create and send chat packet
         player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, icon));

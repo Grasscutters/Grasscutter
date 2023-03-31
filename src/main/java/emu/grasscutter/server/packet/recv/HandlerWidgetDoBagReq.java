@@ -27,7 +27,8 @@ public class HandlerWidgetDoBagReq extends PacketHandler {
                 session.send(new PacketWidgetCoolDownNotify(15, System.currentTimeMillis() + 5000L, true));
             }
             case 220047 -> this.spawnVehicle(session, 70800058, pos, rot);
-            default -> {}
+            default -> {
+            }
         }
         session.send(new PacketWidgetDoBagRsp());
     }

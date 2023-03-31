@@ -16,7 +16,7 @@ public class HandlerHomeChooseModuleReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HomeChooseModuleReqOuterClass.HomeChooseModuleReq req =
-                HomeChooseModuleReqOuterClass.HomeChooseModuleReq.parseFrom(payload);
+            HomeChooseModuleReqOuterClass.HomeChooseModuleReq.parseFrom(payload);
         session.getPlayer().addRealmList(req.getModuleId());
         session.getPlayer().setCurrentRealmId(req.getModuleId());
         session.send(new PacketHomeChooseModuleRsp(req.getModuleId()));

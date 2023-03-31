@@ -18,7 +18,7 @@ public class AchievementData extends GameResource {
     private static final AtomicBoolean isDivided = new AtomicBoolean();
     private int goalId;
     private int preStageAchievementId;
-    private Set<Integer> groupAchievementIdList = new HashSet<>();
+    private final Set<Integer> groupAchievementIdList = new HashSet<>();
     private boolean isParent;
     private long titleTextMapHash;
     private long descTextMapHash;
@@ -28,26 +28,6 @@ public class AchievementData extends GameResource {
     private BattlePassMissionData.TriggerConfig triggerConfig;
     private int progress;
     private boolean isDisuse;
-
-    public boolean hasPreStageAchievement() {
-        return this.preStageAchievementId != 0;
-    }
-
-    public boolean hasGroupAchievements() {
-        return !this.groupAchievementIdList.isEmpty();
-    }
-
-    public boolean isUsed() {
-        return !this.isDisuse;
-    }
-
-    public Set<Integer> getGroupAchievementIdList() {
-        return this.groupAchievementIdList.stream().collect(Collectors.toUnmodifiableSet());
-    }
-
-    public Set<Integer> getExcludedGroupAchievementIdList() {
-        return this.groupAchievementIdList.stream().filter(integer -> integer != this.getId()).collect(Collectors.toUnmodifiableSet());
-    }
 
     public static void divideIntoGroups() {
         if (isDivided.get()) {
@@ -92,5 +72,25 @@ public class AchievementData extends GameResource {
         }
 
         map.values().stream().filter(a -> !a.hasGroupAchievements() && a.isUsed()).forEach(a -> a.isParent = true);
+    }
+
+    public boolean hasPreStageAchievement() {
+        return this.preStageAchievementId != 0;
+    }
+
+    public boolean hasGroupAchievements() {
+        return !this.groupAchievementIdList.isEmpty();
+    }
+
+    public boolean isUsed() {
+        return !this.isDisuse;
+    }
+
+    public Set<Integer> getGroupAchievementIdList() {
+        return this.groupAchievementIdList.stream().collect(Collectors.toUnmodifiableSet());
+    }
+
+    public Set<Integer> getExcludedGroupAchievementIdList() {
+        return this.groupAchievementIdList.stream().filter(integer -> integer != this.getId()).collect(Collectors.toUnmodifiableSet());
     }
 }

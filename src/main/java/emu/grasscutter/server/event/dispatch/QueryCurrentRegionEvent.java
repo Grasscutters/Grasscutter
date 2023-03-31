@@ -11,11 +11,11 @@ public final class QueryCurrentRegionEvent extends ServerEvent {
         this.regionInfo = regionInfo;
     }
 
-    public void setRegionInfo(String regionInfo) {
-        this.regionInfo = regionInfo;
-    }
-
     public String getRegionInfo() {
         return this.regionInfo;
+    }
+
+    public void setRegionInfo(String regionInfo) {
+        this.regionInfo = regionInfo;
     }
 }

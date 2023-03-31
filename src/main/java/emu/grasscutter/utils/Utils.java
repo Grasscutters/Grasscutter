@@ -1,14 +1,5 @@
 package emu.grasscutter.utils;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.time.*;
-import java.time.temporal.TemporalAdjusters;
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
@@ -17,10 +8,20 @@ import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-
 import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.time.DayOfWeek;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.temporal.TemporalAdjusters;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.Language.translate;
@@ -28,6 +29,7 @@ import static emu.grasscutter.utils.Language.translate;
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
     public static final Random random = new Random();
+    private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 
     public static int randomRange(int min, int max) {
         return random.nextInt(max - min + 1) + min;
@@ -75,7 +77,6 @@ public final class Utils {
         b.release();
     }
 
-    private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
     public static String bytesToHex(byte[] bytes) {
         if (bytes == null) return "";
         char[] hexChars = new char[bytes.length * 2];
@@ -108,6 +109,7 @@ public final class Utils {
 
     /**
      * Creates a string with the path to a file.
+     *
      * @param path The path to the file.
      * @return A path using the operating system's file separator.
      */
@@ -117,6 +119,7 @@ public final class Utils {
 
     /**
      * Checks if a file exists on the file system.
+     *
      * @param path The path to the file.
      * @return True if the file exists, false otherwise.
      */
@@ -126,6 +129,7 @@ public final class Utils {
 
     /**
      * Creates a folder on the file system.
+     *
      * @param path The path to the folder.
      * @return True if the folder was created, false otherwise.
      */
@@ -135,7 +139,8 @@ public final class Utils {
 
     /**
      * Copies a file from the archive's resources to the file system.
-     * @param resource The path to the resource.
+     *
+     * @param resource    The path to the resource.
      * @param destination The path to copy the resource to.
      * @return True if the file was copied, false otherwise.
      */
@@ -156,6 +161,7 @@ public final class Utils {
 
     /**
      * Logs an object to the console.
+     *
      * @param object The object to log.
      */
     public static void logObject(Object object) {
@@ -176,7 +182,8 @@ public final class Utils {
         if (!Files.exists(getResourcePath(""))) {
             logger.info(translate("messages.status.create_resources"));
             logger.info(translate("messages.status.resources_error"));
-            createFolder(config.folderStructure.resources); exit = true;
+            createFolder(config.folderStructure.resources);
+            exit = true;
         }
 
         // Check for BinOutput + ExcelBinOutput.
@@ -198,11 +205,12 @@ public final class Utils {
 
     /**
      * Gets the timestamp of the next hour.
+     *
      * @return The timestamp in UNIX seconds.
      */
     public static int getNextTimestampOfThisHour(int hour, String timeZone, int param) {
         ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
-        for (int i = 0; i < param; i ++) {
+        for (int i = 0; i < param; i++) {
             if (zonedDateTime.getHour() < hour) {
                 zonedDateTime = zonedDateTime.withHour(hour).withMinute(0).withSecond(0);
             } else {
@@ -214,6 +222,7 @@ public final class Utils {
 
     /**
      * Gets the timestamp of the next hour in a week.
+     *
      * @return The timestamp in UNIX seconds.
      */
     public static int getNextTimestampOfThisHourInNextWeek(int hour, String timeZone, int param) {
@@ -230,6 +239,7 @@ public final class Utils {
 
     /**
      * Gets the timestamp of the next hour in a month.
+     *
      * @return The timestamp in UNIX seconds.
      */
     public static int getNextTimestampOfThisHourInNextMonth(int hour, String timeZone, int param) {
@@ -246,6 +256,7 @@ public final class Utils {
 
     /**
      * Retrieves a string from an input stream.
+     *
      * @param stream The input stream.
      * @return The string.
      */
@@ -254,19 +265,23 @@ public final class Utils {
 
         StringBuilder stringBuilder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-            String line; while ((line = reader.readLine()) != null) {
+            String line;
+            while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
-            } stream.close();
+            }
+            stream.close();
         } catch (IOException e) {
             Grasscutter.getLogger().warn("Failed to read from input stream.");
         } catch (NullPointerException ignored) {
             return "empty";
-        } return stringBuilder.toString();
+        }
+        return stringBuilder.toString();
     }
 
     /**
      * Performs a linear interpolation using a table of fixed points to create an effective piecewise f(x) = y function.
-     * @param x The x value.
+     *
+     * @param x       The x value.
      * @param xyArray Array of points in [[x0,y0], ... [xN, yN]] format
      * @return f(x) = y
      */
@@ -274,22 +289,22 @@ public final class Utils {
         try {
             if (x <= xyArray[0][0]) {  // Clamp to first point
                 return xyArray[0][1];
-            } else if (x >= xyArray[xyArray.length-1][0]) {  // Clamp to last point
-                return xyArray[xyArray.length-1][1];
+            } else if (x >= xyArray[xyArray.length - 1][0]) {  // Clamp to last point
+                return xyArray[xyArray.length - 1][1];
             }
             // At this point we're guaranteed to have two lerp points, and pity be somewhere between them.
-            for (int i=0; i < xyArray.length-1; i++) {
-                if (x == xyArray[i+1][0]) {
-                    return xyArray[i+1][1];
+            for (int i = 0; i < xyArray.length - 1; i++) {
+                if (x == xyArray[i + 1][0]) {
+                    return xyArray[i + 1][1];
                 }
-                if (x < xyArray[i+1][0]) {
+                if (x < xyArray[i + 1][0]) {
                     // We are between [i] and [i+1], interpolation time!
                     // Using floats would be slightly cleaner but we can just as easily use ints if we're careful with order of operations.
                     int position = x - xyArray[i][0];
-                    int fullDist = xyArray[i+1][0] - xyArray[i][0];
+                    int fullDist = xyArray[i + 1][0] - xyArray[i][0];
                     int prevValue = xyArray[i][1];
-                    int fullDelta = xyArray[i+1][1] - prevValue;
-                    return prevValue + ( (position * fullDelta) / fullDist );
+                    int fullDelta = xyArray[i + 1][1] - prevValue;
+                    return prevValue + ((position * fullDelta) / fullDist);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
@@ -300,7 +315,8 @@ public final class Utils {
 
     /**
      * Checks if an int is in an int[]
-     * @param key int to look for
+     *
+     * @param key   int to look for
      * @param array int[] to look in
      * @return key in array
      */
@@ -315,7 +331,8 @@ public final class Utils {
 
     /**
      * Return a copy of minuend without any elements found in subtrahend.
-     * @param minuend The array we want elements from
+     *
+     * @param minuend    The array we want elements from
      * @param subtrahend The array whose elements we don't want
      * @return The array with only the elements we want, in the order that minuend had them
      */
@@ -331,6 +348,7 @@ public final class Utils {
 
     /**
      * Gets the language code from a given locale.
+     *
      * @param locale A locale.
      * @return A string in the format of 'XX-XX'.
      */
@@ -340,6 +358,7 @@ public final class Utils {
 
     /**
      * Base64 encodes a given byte array.
+     *
      * @param toEncode An array of bytes.
      * @return A base64 encoded string.
      */
@@ -349,6 +368,7 @@ public final class Utils {
 
     /**
      * Base64 decodes a given string.
+     *
      * @param toDecode A base64 encoded string.
      * @return An array of bytes.
      */

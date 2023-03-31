@@ -1,8 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -10,23 +7,40 @@ import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {
     private int proudSkillId;
-    @Getter private int proudSkillGroupId;
-    @Getter private int level;
-    @Getter private int coinCost;
-    @Getter private int breakLevel;
-    @Getter private int proudSkillType;
-    @Getter private String openConfig;
-    @Getter private List<ItemParamData> costItems;
-    @Getter private List<String> filterConds;
-    @Getter private List<String> lifeEffectParams;
-    @Getter private FightPropData[] addProps;
-    @Getter private float[] paramList;
-    @Getter private long[] paramDescList;
-    @Getter private long nameTextMapHash;
-    @Transient private Iterable<ItemParamData> totalCostItems;
+    @Getter
+    private int proudSkillGroupId;
+    @Getter
+    private int level;
+    @Getter
+    private int coinCost;
+    @Getter
+    private int breakLevel;
+    @Getter
+    private int proudSkillType;
+    @Getter
+    private String openConfig;
+    @Getter
+    private List<ItemParamData> costItems;
+    @Getter
+    private List<String> filterConds;
+    @Getter
+    private List<String> lifeEffectParams;
+    @Getter
+    private FightPropData[] addProps;
+    @Getter
+    private float[] paramList;
+    @Getter
+    private long[] paramDescList;
+    @Getter
+    private long nameTextMapHash;
+    @Transient
+    private Iterable<ItemParamData> totalCostItems;
 
     @Override
     public int getId() {

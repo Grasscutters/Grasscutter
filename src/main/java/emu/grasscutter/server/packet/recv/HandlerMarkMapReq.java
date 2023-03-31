@@ -9,9 +9,9 @@ import emu.grasscutter.server.game.GameSession;
 @Opcodes(PacketOpcodes.MarkMapReq)
 public class HandlerMarkMapReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		MarkMapReq req = MarkMapReq.parseFrom(payload);
-		session.getPlayer().getMapMarksManager().handleMapMarkReq(req);
-	}
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        MarkMapReq req = MarkMapReq.parseFrom(payload);
+        session.getPlayer().getMapMarksManager().handleMapMarkReq(req);
+    }
 }

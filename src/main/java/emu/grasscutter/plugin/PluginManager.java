@@ -1,20 +1,27 @@
 package emu.grasscutter.plugin;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.server.event.*;
+import emu.grasscutter.server.event.Event;
+import emu.grasscutter.server.event.EventHandler;
+import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import javax.annotation.Nullable;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 import static emu.grasscutter.utils.Language.translate;
-
-import java.io.*;
-import java.lang.reflect.Method;
-import java.net.*;
-import java.util.*;
-import java.util.jar.*;
 
 /**
  * Manages the server's plugins and the event system.
@@ -27,15 +34,6 @@ public final class PluginManager {
 
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
-    }
-
-    /* Data about an unloaded plugin. */
-    @AllArgsConstructor @Getter
-    static class PluginData {
-        private Plugin plugin;
-        private PluginIdentifier identifier;
-        private URLClassLoader classLoader;
-        private String[] dependencies;
     }
 
     /**
@@ -130,7 +128,8 @@ public final class PluginManager {
         }
 
         // Load plugins with dependencies.
-        int depth = 0; final int maxDepth = 30;
+        int depth = 0;
+        final int maxDepth = 30;
         while (!dependencies.isEmpty()) {
             // Check if the depth is too high.
             if (depth >= maxDepth) {
@@ -154,7 +153,8 @@ public final class PluginManager {
                 // Load the plugin.
                 this.loadPlugin(pluginData.getPlugin(), pluginData.getIdentifier(), pluginData.getClassLoader());
             } catch (Exception exception) {
-                Grasscutter.getLogger().error(translate("plugin.failed_to_load"), exception); depth++;
+                Grasscutter.getLogger().error(translate("plugin.failed_to_load"), exception);
+                depth++;
             }
         }
     }
@@ -218,7 +218,7 @@ public final class PluginManager {
     /**
      * Registers a plugin's event listener.
      *
-     * @param plugin The plugin registering the listener.
+     * @param plugin   The plugin registering the listener.
      * @param listener The event listener.
      */
     public void registerListener(Plugin plugin, EventHandler<? extends Event> listener) {
@@ -305,5 +305,15 @@ public final class PluginManager {
         if (!event.isCanceled() ||
             (event.isCanceled() && handler.ignoresCanceled())
         ) handler.getCallback().consume((T) event);
+    }
+
+    /* Data about an unloaded plugin. */
+    @AllArgsConstructor
+    @Getter
+    static class PluginData {
+        private Plugin plugin;
+        private PluginIdentifier identifier;
+        private URLClassLoader classLoader;
+        private String[] dependencies;
     }
 }

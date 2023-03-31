@@ -19,7 +19,7 @@ public abstract class Event {
      * Cancels the event if possible.
      */
     public void cancel() {
-        if(this instanceof Cancellable)
+        if (this instanceof Cancellable)
             this.cancelled = true;
     }
 

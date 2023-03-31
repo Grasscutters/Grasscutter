@@ -1,17 +1,16 @@
 package emu.grasscutter.game.props;
 
-import java.util.stream.Stream;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public enum ServerBuffType {
-    SERVER_BUFF_NONE (0),
-    SERVER_BUFF_AVATAR (1),
-    SERVER_BUFF_TEAM (2),
-    SERVER_BUFF_TOWER (3);
+import java.util.stream.Stream;
 
-    private final int value;
+public enum ServerBuffType {
+    SERVER_BUFF_NONE(0),
+    SERVER_BUFF_AVATAR(1),
+    SERVER_BUFF_TEAM(2),
+    SERVER_BUFF_TOWER(3);
+
     private static final Int2ObjectMap<ServerBuffType> map = new Int2ObjectOpenHashMap<>();
 
     static {
@@ -20,15 +19,17 @@ public enum ServerBuffType {
         });
     }
 
-    private ServerBuffType(int value) {
-        this.value = value;
-    }
+    private final int value;
 
-    public int getValue() {
-        return value;
+    ServerBuffType(int value) {
+        this.value = value;
     }
 
     public static ServerBuffType getTypeByValue(int value) {
         return map.getOrDefault(value, SERVER_BUFF_NONE);
+    }
+
+    public int getValue() {
+        return value;
     }
 }

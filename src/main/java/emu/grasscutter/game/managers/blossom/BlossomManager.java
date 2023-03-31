@@ -1,8 +1,5 @@
 package emu.grasscutter.game.managers.blossom;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -23,17 +20,57 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 
-public class BlossomManager {
-    public BlossomManager(Scene scene) {
-        this.scene = scene;
-    }
+import java.util.ArrayList;
+import java.util.List;
 
+public class BlossomManager {
     private final Scene scene;
     private final List<BlossomActivity> blossomActivities = new ArrayList<>();
     private final List<BlossomActivity> activeChests = new ArrayList<>();
     private final List<EntityGadget> createdEntity = new ArrayList<>();
-
     private final List<SpawnDataEntry> blossomConsumed = new ArrayList<>();
+
+    public BlossomManager(Scene scene) {
+        this.scene = scene;
+    }
+
+    private static Integer getPreviewReward(BlossomType type, int worldLevel) {
+        // TODO: blossoms should be based on their city
+        if (type == null) {
+            Grasscutter.getLogger().error("Illegal blossom type {}", type);
+            return null;
+        }
+
+        int blossomChestId = type.getBlossomChestId();
+        var dataMap = GameData.getBlossomRefreshExcelConfigDataMap();
+        for (var data : dataMap.values()) {
+            if (blossomChestId == data.getBlossomChestId()) {
+                var dropVecList = data.getDropVec();
+                if (worldLevel > dropVecList.length) {
+                    Grasscutter.getLogger().error("Illegal world level {}", worldLevel);
+                    return null;
+                }
+                return dropVecList[worldLevel].getPreviewReward();
+            }
+        }
+        Grasscutter.getLogger().error("Cannot find blossom type {}", type);
+        return null;
+    }
+
+    private static RewardPreviewData getRewardList(BlossomType type, int worldLevel) {
+        Integer previewReward = getPreviewReward(type, worldLevel);
+        if (previewReward == null) return null;
+        return GameData.getRewardPreviewDataMap().get((int) previewReward);
+    }
+
+    public static IntList getRandomMonstersID(int difficulty, int count) {
+        IntList result = new IntArrayList();
+        List<Integer> monsters = GameDepot.getBlossomConfig().getMonsterIdsPerDifficulty().get(difficulty);
+        for (int i = 0; i < count; i++) {
+            result.add((int) monsters.get(Utils.randomRange(0, monsters.size() - 1)));
+        }
+        return result;
+    }
 
     public void onTick() {
         synchronized (blossomActivities) {
@@ -69,7 +106,7 @@ public class BlossomManager {
             return;
         }
         var id = gadget.getGadgetId();
-        if (BlossomType.valueOf(id)==null) {
+        if (BlossomType.valueOf(id) == null) {
             return;
         }
         gadget.buildContent();
@@ -87,27 +124,27 @@ public class BlossomManager {
                     }
                 }
 
-                int volume=0;
+                int volume = 0;
                 IntList monsters = new IntArrayList();
                 while (true) {
                     var remain = GameDepot.getBlossomConfig().getMonsterFightingVolume() - volume;
-                    if (remain<=0) {
+                    if (remain <= 0) {
                         break;
                     }
-                    var rand = Utils.randomRange(1,100);
-                    if (rand>85 && remain>=50) {//15% ,generate strong monster
-                        monsters.addAll(getRandomMonstersID(2,1));
-                        volume+=50;
-                    }else if (rand>50 && remain>=20) {//35% ,generate normal monster
-                        monsters.addAll(getRandomMonstersID(1,1));
-                        volume+=20;
-                    }else {//50% ,generate weak monster
-                        monsters.addAll(getRandomMonstersID(0,1));
-                        volume+=10;
+                    var rand = Utils.randomRange(1, 100);
+                    if (rand > 85 && remain >= 50) {//15% ,generate strong monster
+                        monsters.addAll(getRandomMonstersID(2, 1));
+                        volume += 50;
+                    } else if (rand > 50 && remain >= 20) {//35% ,generate normal monster
+                        monsters.addAll(getRandomMonstersID(1, 1));
+                        volume += 20;
+                    } else {//50% ,generate weak monster
+                        monsters.addAll(getRandomMonstersID(0, 1));
+                        volume += 10;
                     }
                 }
 
-                Grasscutter.getLogger().info("Blossom Monsters:"+monsters);
+                Grasscutter.getLogger().info("Blossom Monsters:" + monsters);
 
                 activity = new BlossomActivity(entityGadget, monsters, -1, worldLevel);
                 blossomActivities.add(activity);
@@ -158,35 +195,6 @@ public class BlossomManager {
         return scene.getWorld().getWorldLevel();
     }
 
-    private static Integer getPreviewReward(BlossomType type, int worldLevel) {
-        // TODO: blossoms should be based on their city
-        if (type == null) {
-            Grasscutter.getLogger().error("Illegal blossom type {}",type);
-            return null;
-        }
-
-        int blossomChestId = type.getBlossomChestId();
-        var dataMap = GameData.getBlossomRefreshExcelConfigDataMap();
-        for (var data : dataMap.values()) {
-            if (blossomChestId == data.getBlossomChestId()) {
-                var dropVecList = data.getDropVec();
-                if (worldLevel > dropVecList.length) {
-                    Grasscutter.getLogger().error("Illegal world level {}", worldLevel);
-                    return null;
-                }
-                return dropVecList[worldLevel].getPreviewReward();
-            }
-        }
-        Grasscutter.getLogger().error("Cannot find blossom type {}",type);
-        return null;
-    }
-
-    private static RewardPreviewData getRewardList(BlossomType type, int worldLevel) {
-        Integer previewReward = getPreviewReward(type, worldLevel);
-        if (previewReward == null) return null;
-        return GameData.getRewardPreviewDataMap().get((int) previewReward);
-    }
-
     public List<GameItem> onReward(Player player, EntityGadget chest, boolean useCondensedResin) {
         var resinManager = player.getResinManager();
         synchronized (activeChests) {
@@ -202,7 +210,7 @@ public class BlossomManager {
                         var type = BlossomType.valueOf(gadget.getGadgetId());
                         RewardPreviewData blossomRewards = getRewardList(type, worldLevel);
                         if (blossomRewards == null) {
-                            Grasscutter.getLogger().error("Blossom could not support world level : "+worldLevel);
+                            Grasscutter.getLogger().error("Blossom could not support world level : " + worldLevel);
                             return null;
                         }
                         var rewards = blossomRewards.getPreviewItems();
@@ -211,7 +219,7 @@ public class BlossomManager {
                             if (useCondensedResin) {
                                 rewardCount += blossomReward.getCount();  // Double!
                             }
-                            items.add(new GameItem(blossomReward.getItemId(),rewardCount));
+                            items.add(new GameItem(blossomReward.getItemId(), rewardCount));
                         }
                         it.remove();
                         recycleGadgetEntity(List.of(gadget));
@@ -223,14 +231,5 @@ public class BlossomManager {
             }
         }
         return null;
-    }
-
-    public static IntList getRandomMonstersID(int difficulty,int count) {
-      IntList result = new IntArrayList();
-      List<Integer> monsters = GameDepot.getBlossomConfig().getMonsterIdsPerDifficulty().get(difficulty);
-        for (int i=0; i<count; i++) {
-            result.add((int) monsters.get(Utils.randomRange(0, monsters.size()-1)));
-        }
-        return result;
     }
 }

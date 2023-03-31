@@ -84,7 +84,7 @@ public class DataLoader {
         }
     }
 
-    public static <T1,T2> Map<T1,T2> loadMap(String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
+    public static <T1, T2> Map<T1, T2> loadMap(String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
         try (InputStreamReader reader = loadReader(resourcePath)) {
             return JsonUtils.loadToMap(reader, keyType, valueType);
         }
@@ -92,7 +92,7 @@ public class DataLoader {
 
     public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType) throws IOException {
         val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
-        Grasscutter.getLogger().debug("Loading data table from: "+path);
+        Grasscutter.getLogger().debug("Loading data table from: " + path);
         return switch (FileUtils.getFileExtension(path)) {
             case "json" -> JsonUtils.loadToList(path, classType);
             case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);

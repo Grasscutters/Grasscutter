@@ -29,28 +29,22 @@ public final class ClearCommand implements CommandHandler {
         Map.entry(rankRegex, ClearItemParameters::setRank)
     );
 
-    private static class ClearItemParameters {
-        @Setter public int lvl = 1;
-        @Setter public int refinement = 1;
-        @Setter public int rank = 4;
-    }
-
     private Stream<GameItem> getOther(ItemType type, Inventory playerInventory, ClearItemParameters param) {
         return playerInventory.getItems().values().stream()
-                .filter(item -> item.getItemType() == type)
-                .filter(item -> item.getItemData().getRankLevel() <= param.rank)
-                .filter(item -> !item.isLocked() && !item.isEquipped());
+            .filter(item -> item.getItemType() == type)
+            .filter(item -> item.getItemData().getRankLevel() <= param.rank)
+            .filter(item -> !item.isLocked() && !item.isEquipped());
     }
 
     private Stream<GameItem> getWeapons(Inventory playerInventory, ClearItemParameters param) {
         return getOther(ItemType.ITEM_WEAPON, playerInventory, param)
-                .filter(item -> item.getLevel() <= param.lvl)
-                .filter(item -> item.getRefinement() < param.refinement);
+            .filter(item -> item.getLevel() <= param.lvl)
+            .filter(item -> item.getRefinement() < param.refinement);
     }
 
     private Stream<GameItem> getRelics(Inventory playerInventory, ClearItemParameters param) {
         return getOther(ItemType.ITEM_RELIQUARY, playerInventory, param)
-                .filter(item -> item.getLevel() <= param.lvl + 1);
+            .filter(item -> item.getLevel() <= param.lvl + 1);
     }
 
     @Override
@@ -96,5 +90,14 @@ public final class ClearCommand implements CommandHandler {
                 CommandHandler.sendTranslatedMessage(sender, "commands.clear.everything", playerString);
             }
         }
+    }
+
+    private static class ClearItemParameters {
+        @Setter
+        public int lvl = 1;
+        @Setter
+        public int refinement = 1;
+        @Setter
+        public int rank = 4;
     }
 }

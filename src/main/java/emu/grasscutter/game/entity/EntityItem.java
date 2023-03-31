@@ -29,9 +29,12 @@ import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.Getter;
 
 public class EntityItem extends EntityBaseGadget {
-    @Getter private final GameItem item;
-    @Getter private final long guid;
-    @Getter private final boolean share;
+    @Getter
+    private final GameItem item;
+    @Getter
+    private final long guid;
+    @Getter
+    private final boolean share;
 
     public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
         this(scene, player, itemData, pos, count, true);
@@ -61,7 +64,10 @@ public class EntityItem extends EntityBaseGadget {
         return this.getItemData().getGadgetId();
     }
 
-    @Override public Int2FloatMap getFightProperties() {return null;}
+    @Override
+    public Int2FloatMap getFightProperties() {
+        return null;
+    }
 
     @Override
     public void onInteract(Player player, GadgetInteractReq interactReq) {
@@ -90,33 +96,33 @@ public class EntityItem extends EntityBaseGadget {
     @Override
     public SceneEntityInfo toProto() {
         EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
-                .setBornPos(Vector.newBuilder())
-                .build();
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
+            .setBornPos(Vector.newBuilder())
+            .build();
 
         SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-                .setEntityId(getId())
-                .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-                .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-                .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-                .setEntityClientData(EntityClientData.newBuilder())
-                .setEntityAuthorityInfo(authority)
-                .setLifeState(1);
+            .setEntityId(getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setEntityClientData(EntityClientData.newBuilder())
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(1);
 
         PropPair pair = PropPair.newBuilder()
-                .setType(PlayerProperty.PROP_LEVEL.getId())
-                .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-                .build();
+            .setType(PlayerProperty.PROP_LEVEL.getId())
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+            .build();
         entityInfo.addPropList(pair);
 
         SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-                .setGadgetId(this.getItemData().getGadgetId())
-                .setTrifleItem(this.getItem().toProto())
-                .setBornType(GadgetBornType.GADGET_BORN_TYPE_IN_AIR)
-                .setAuthorityPeerId(this.getWorld().getHostPeerId())
-                .setIsEnableInteract(true);
+            .setGadgetId(this.getItemData().getGadgetId())
+            .setTrifleItem(this.getItem().toProto())
+            .setBornType(GadgetBornType.GADGET_BORN_TYPE_IN_AIR)
+            .setAuthorityPeerId(this.getWorld().getHostPeerId())
+            .setIsEnableInteract(true);
 
         entityInfo.setGadget(gadgetInfo);
 

@@ -6,15 +6,15 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFightPropNotifyOuterClass.AvatarFightPropNotify;
 
 public class PacketAvatarFightPropNotify extends BasePacket {
-	
-	public PacketAvatarFightPropNotify(Avatar avatar) {
-		super(PacketOpcodes.AvatarFightPropNotify);
-		
-		AvatarFightPropNotify proto = AvatarFightPropNotify.newBuilder()
-				.setAvatarGuid(avatar.getGuid())
-				.putAllFightPropMap(avatar.getFightProperties())
-				.build();
-		
-		this.setData(proto);
-	}
+
+    public PacketAvatarFightPropNotify(Avatar avatar) {
+        super(PacketOpcodes.AvatarFightPropNotify);
+
+        AvatarFightPropNotify proto = AvatarFightPropNotify.newBuilder()
+            .setAvatarGuid(avatar.getGuid())
+            .putAllFightPropMap(avatar.getFightProperties())
+            .build();
+
+        this.setData(proto);
+    }
 }

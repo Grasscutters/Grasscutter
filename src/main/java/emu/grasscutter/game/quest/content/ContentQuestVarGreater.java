@@ -13,7 +13,7 @@ public class ContentQuestVarGreater extends QuestBaseHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
         int questVarValue = quest.getMainQuest().getQuestVars()[params[0]];
-        Grasscutter.getLogger().debug("questVar {} : {}", params[0],questVarValue);
+        Grasscutter.getLogger().debug("questVar {} : {}", params[0], questVarValue);
         return questVarValue > params[1];
     }
 }

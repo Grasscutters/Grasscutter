@@ -9,9 +9,9 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 @QuestValue(QuestTrigger.QUEST_CONTENT_LUA_NOTIFY)
 public class ContentLuaNotify extends QuestBaseHandler {
 
-	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-		return condition.getParamStr().equals(paramStr);
-	}
+    @Override
+    public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
+        return condition.getParamStr().equals(paramStr);
+    }
 
 }

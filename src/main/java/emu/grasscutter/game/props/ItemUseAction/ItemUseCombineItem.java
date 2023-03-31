@@ -6,19 +6,21 @@ public class ItemUseCombineItem extends ItemUseInt {
     private int resultId = 0;
     private int resultCount = 1;
 
-    @Override
-    public ItemUseOp getItemUseOp() {
-        return ItemUseOp.ITEM_USE_COMBINE_ITEM;
-    }
-
     public ItemUseCombineItem(String[] useParam) {
         super(useParam);
         try {
             this.resultId = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+        }
         try {
             this.resultCount = Integer.parseInt(useParam[2]);
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+        }
+    }
+
+    @Override
+    public ItemUseOp getItemUseOp() {
+        return ItemUseOp.ITEM_USE_COMBINE_ITEM;
     }
 
     @Override

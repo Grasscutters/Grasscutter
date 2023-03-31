@@ -2,8 +2,8 @@ package emu.grasscutter.game.entity.platform;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.ConfigGadget;
-import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;

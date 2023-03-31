@@ -1,10 +1,5 @@
 package emu.grasscutter.utils;
 
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
@@ -12,16 +7,17 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-
 import emu.grasscutter.data.common.DynamicFloat;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.val;
 
-import static com.google.gson.stream.JsonToken.BEGIN_ARRAY;
-import static com.google.gson.stream.JsonToken.BEGIN_OBJECT;
-import static emu.grasscutter.utils.JsonUtils.gson;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 
 public class JsonAdapters {
     static class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -42,7 +38,8 @@ public class JsonAdapters {
                             case STRING -> new DynamicFloat.StackOp(reader.nextString());
                             case NUMBER -> new DynamicFloat.StackOp((float) reader.nextDouble());
                             case BOOLEAN -> new DynamicFloat.StackOp(reader.nextBoolean());
-                            default -> throw new IOException("Invalid DynamicFloat definition - " + reader.peek().name());
+                            default ->
+                                throw new IOException("Invalid DynamicFloat definition - " + reader.peek().name());
                         });
                     }
                     reader.endArray();
@@ -53,24 +50,24 @@ public class JsonAdapters {
         }
 
         @Override
-        public void write(JsonWriter writer, DynamicFloat f) {};
+        public void write(JsonWriter writer, DynamicFloat f) {
+        }
+
     }
 
     static class IntListAdapter extends TypeAdapter<IntList> {
         @Override
         public IntList read(JsonReader reader) throws IOException {
-            switch (reader.peek()) {
-                case BEGIN_ARRAY:
-                    reader.beginArray();
-                    val i = new IntArrayList();
-                    while (reader.hasNext())
-                        i.add(reader.nextInt());
-                    reader.endArray();
-                    i.trim();  // We might have a ton of these from resources and almost all of them immutable, don't overprovision!
-                    return i;
-                default:
-                    throw new IOException("Invalid IntList definition - " + reader.peek().name());
+            if (Objects.requireNonNull(reader.peek()) == JsonToken.BEGIN_ARRAY) {
+                reader.beginArray();
+                val i = new IntArrayList();
+                while (reader.hasNext())
+                    i.add(reader.nextInt());
+                reader.endArray();
+                i.trim();  // We might have a ton of these from resources and almost all of them immutable, don't overprovision!
+                return i;
             }
+            throw new IOException("Invalid IntList definition - " + reader.peek().name());
         }
 
         @Override
@@ -79,7 +76,8 @@ public class JsonAdapters {
             for (val i : l)  // .forEach() doesn't appreciate exceptions
                 writer.value(i);
             writer.endArray();
-        };
+        }
+
     }
 
     static class PositionAdapter extends TypeAdapter<Position> {
@@ -121,7 +119,8 @@ public class JsonAdapters {
             writer.value(i.getY());
             writer.value(i.getZ());
             writer.endArray();
-        };
+        }
+
     }
 
     static class EnumTypeAdapterFactory implements TypeAdapterFactory {
@@ -139,7 +138,10 @@ public class JsonAdapters {
             // If the enum also has a numeric value, map those to the constants too
             // System.out.println("Looking for enum value field");
             for (Field f : enumClass.getDeclaredFields()) {
-                if (switch (f.getName()) {case "value", "id" -> true; default -> false;}) {
+                if (switch (f.getName()) {
+                    case "value", "id" -> true;
+                    default -> false;
+                }) {
                     // System.out.println("Enum value field found - " + f.getName());
                     boolean acc = f.isAccessible();
                     f.setAccessible(true);
@@ -165,6 +167,7 @@ public class JsonAdapters {
                             throw new IOException("Invalid Enum definition - " + reader.peek().name());
                     }
                 }
+
                 public void write(JsonWriter writer, T value) throws IOException {
                     writer.value(value.toString());
                 }

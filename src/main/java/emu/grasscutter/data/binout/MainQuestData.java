@@ -3,6 +3,7 @@ package emu.grasscutter.data.binout;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.quest.enums.QuestType;
 import lombok.Data;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -47,6 +48,7 @@ public class MainQuestData {
     public SubQuestData[] getSubQuests() {
         return subQuests;
     }
+
     public List<TalkData> getTalks() {
         return talks;
     }
@@ -62,12 +64,15 @@ public class MainQuestData {
     }
 
 
-    @Data @Entity
+    @Data
+    @Entity
     public static class TalkData {
         private int id;
         private String heroTalk;
 
-        public TalkData() {}
+        public TalkData() {
+        }
+
         public TalkData(int id, String heroTalk) {
             this.id = id;
             this.heroTalk = heroTalk;

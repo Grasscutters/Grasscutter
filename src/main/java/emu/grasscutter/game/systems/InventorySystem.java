@@ -1,15 +1,5 @@
 package emu.grasscutter.game.systems;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Stream;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -23,11 +13,11 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseAction.ItemUseAddExp;
 import emu.grasscutter.game.props.ItemUseAction.ItemUseAddReliquaryExp;
 import emu.grasscutter.game.props.ItemUseAction.ItemUseAddWeaponExp;
 import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.event.player.PlayerUseFoodEvent;
@@ -35,15 +25,15 @@ import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
-import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
-import it.unimi.dsi.fastutil.ints.Int2IntMap;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.val;
+
+import java.util.*;
+import java.util.stream.Stream;
 
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
+
     {
         // Use a sorted map, use exp as key to sort by exp
         // We want to have weaponRefundMaterials as (id, exp) in descending exp order
@@ -55,7 +45,7 @@ public class InventorySystem extends BaseGameSystem {
             if (actions == null) return;
             for (var action : actions) {
                 if (action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_WEAPON_EXP) {
-                    temp.putIfAbsent((int) ((ItemUseAddWeaponExp) action).getExp(), (int) id);
+                    temp.putIfAbsent(((ItemUseAddWeaponExp) action).getExp(), (int) id);
                     return;
                 }
             }
@@ -65,6 +55,42 @@ public class InventorySystem extends BaseGameSystem {
 
     public InventorySystem(GameServer server) {
         super(server);
+    }
+
+    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int id) {
+        // Try to accept itemId OR avatarId
+        int avatarId = 0;
+        if (GameData.getAvatarDataMap().containsKey(id)) {
+            avatarId = id;
+        } else {
+            avatarId = Optional.ofNullable(GameData.getItemDataMap().get(id))
+                .map(itemData -> itemData.getItemUseActions())
+                .flatMap(actions ->
+                    actions.stream()
+                        .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_GAIN_AVATAR)
+                        .map(action -> ((emu.grasscutter.game.props.ItemUseAction.ItemUseGainAvatar) action).getI())
+                        .findFirst())
+                .orElse(0);
+        }
+
+        if (avatarId == 0)
+            return -2;  // Not an Avatar
+
+        Avatar avatar = player.getAvatars().getAvatarById(avatarId);
+        if (avatar == null)
+            return -1;  // Doesn't have
+
+        // Constellation
+        int constLevel = avatar.getCoreProudSkillLevel();
+        val avatarData = avatar.getSkillDepot();
+        if (avatarData == null) {
+            Grasscutter.getLogger().error("Attempted to check constellation level for UID" + player.getUid() + "'s avatar " + avatarId + " but avatar has no skillDepot!");
+            return 0;
+        }
+        int constItemId = avatarData.getTalentCostItemId();
+        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
+        constLevel += Optional.ofNullable(constItem).map(GameItem::getCount).orElse(0);
+        return constLevel;
     }
 
     public void lockEquip(Player player, long targetEquipGuid, boolean isLocked) {
@@ -275,7 +301,6 @@ public class InventorySystem extends BaseGameSystem {
         return getLeftoverOres(expGain);
     }
 
-
     public void upgradeWeapon(Player player, long targetGuid, List<Long> foodWeaponGuidList, List<ItemParam> itemParamList) {
         GameItem weapon = player.getInventory().getItemByGuid(targetGuid);
 
@@ -478,7 +503,7 @@ public class InventorySystem extends BaseGameSystem {
         ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
         if (nextPromoteData.getCoinCost() > 0) {
             costs = Arrays.copyOf(costs, costs.length + 1);
-            costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
+            costs[costs.length - 1] = new ItemParamData(202, nextPromoteData.getCoinCost());
         }
         if (!player.getInventory().payItems(costs)) {
             return;
@@ -523,7 +548,7 @@ public class InventorySystem extends BaseGameSystem {
         ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
         if (nextPromoteData.getCoinCost() > 0) {
             costs = Arrays.copyOf(costs, costs.length + 1);
-            costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
+            costs[costs.length - 1] = new ItemParamData(202, nextPromoteData.getCoinCost());
         }
         if (!player.getInventory().payItems(costs)) {
             return;
@@ -544,7 +569,7 @@ public class InventorySystem extends BaseGameSystem {
                     avatar.getProudSkillList().add(proudSkillId);
                     player.sendPacket(new PacketProudSkillChangeNotify(avatar));
                 })
-        );
+            );
 
         // Packets
         player.sendPacket(new PacketAvatarPropNotify(avatar));
@@ -590,7 +615,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Payment check
         int moraCost = expGain / 5;
-        ItemParamData[] costItems = new ItemParamData[] {new ItemParamData(itemId, count), new ItemParamData(202, moraCost)};
+        ItemParamData[] costItems = new ItemParamData[]{new ItemParamData(itemId, count), new ItemParamData(202, moraCost)};
         if (!player.getInventory().payItems(costItems)) {
             return;
         }
@@ -764,7 +789,8 @@ public class InventorySystem extends BaseGameSystem {
         // Ensure targeting conditions are satisfied
         val target = Optional.ofNullable(params.targetAvatar);
         switch (params.itemUseTarget) {
-            case ITEM_USE_TARGET_NONE -> {}
+            case ITEM_USE_TARGET_NONE -> {
+            }
             case ITEM_USE_TARGET_SPECIFY_AVATAR -> {
                 if (target.isEmpty()) return false;
             }
@@ -774,17 +800,20 @@ public class InventorySystem extends BaseGameSystem {
             case ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR -> {
                 if (target.map(a -> a.getAsEntity().isAlive()).orElse(true)) return false;
             }
-            case ITEM_USE_TARGET_CUR_AVATAR -> {}
-            case ITEM_USE_TARGET_CUR_TEAM -> {}
+            case ITEM_USE_TARGET_CUR_AVATAR -> {
+            }
+            case ITEM_USE_TARGET_CUR_TEAM -> {
+            }
         }
 
         int[] satiationParams = itemData.getSatiationParams();
         if (satiationParams != null && satiationParams.length > 0 && target.isPresent()) {
             // Invoke and call player use food event.
-            var event = new PlayerUseFoodEvent(params.player, itemData, params.targetAvatar.getAsEntity()); event.call();
+            var event = new PlayerUseFoodEvent(params.player, itemData, params.targetAvatar.getAsEntity());
+            event.call();
             if (event.isCanceled()) return false;
 
-            float satiationIncrease = satiationParams[0] + ((float)satiationParams[1])/params.targetAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            float satiationIncrease = satiationParams[0] + ((float) satiationParams[1]) / params.targetAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             if (!params.player.getSatiationManager().addSatiation(params.targetAvatar, satiationIncrease, itemData.getId())) {  // Make sure avatar can eat
                 return false;
             }
@@ -795,43 +824,7 @@ public class InventorySystem extends BaseGameSystem {
         Grasscutter.getLogger().debug("Using - actions - {}", actions);
         if (actions == null) return true;  // Maybe returning false would be more appropriate?
         return actions.stream()
-                .map(use -> use.useItem(params))
-                .reduce(false, (a,b) -> a || b);  // Don't short-circuit!!!
-    }
-
-    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int id) {
-        // Try to accept itemId OR avatarId
-        int avatarId = 0;
-        if (GameData.getAvatarDataMap().containsKey(id)) {
-            avatarId = id;
-        } else {
-            avatarId = Optional.ofNullable(GameData.getItemDataMap().get(id))
-                .map(itemData -> itemData.getItemUseActions())
-                .flatMap(actions ->
-                    actions.stream()
-                        .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_GAIN_AVATAR)
-                        .map(action -> ((emu.grasscutter.game.props.ItemUseAction.ItemUseGainAvatar) action).getI())
-                        .findFirst())
-                .orElse(0);
-        }
-
-        if (avatarId == 0)
-            return -2;  // Not an Avatar
-
-        Avatar avatar = player.getAvatars().getAvatarById(avatarId);
-        if (avatar == null)
-            return -1;  // Doesn't have
-
-        // Constellation
-        int constLevel = avatar.getCoreProudSkillLevel();
-        val avatarData = avatar.getSkillDepot();
-        if (avatarData == null) {
-            Grasscutter.getLogger().error("Attempted to check constellation level for UID"+player.getUid()+"'s avatar "+avatarId+" but avatar has no skillDepot!");
-            return 0;
-        }
-        int constItemId = avatarData.getTalentCostItemId();
-        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
-        constLevel += Optional.ofNullable(constItem).map(GameItem::getCount).orElse(0);
-        return constLevel;
+            .map(use -> use.useItem(params))
+            .reduce(false, (a, b) -> a || b);  // Don't short-circuit!!!
     }
 }

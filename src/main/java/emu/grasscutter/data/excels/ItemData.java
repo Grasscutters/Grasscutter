@@ -1,33 +1,35 @@
 package emu.grasscutter.data.excels;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
-import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.inventory.EquipType;
+import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseTarget;
-import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 @ResourceType(name = {"MaterialExcelConfigData.json",
-        "WeaponExcelConfigData.json",
-        "ReliquaryExcelConfigData.json",
-        "HomeWorldFurnitureExcelConfigData.json"
+    "WeaponExcelConfigData.json",
+    "ReliquaryExcelConfigData.json",
+    "HomeWorldFurnitureExcelConfigData.json"
 })
 @Getter
 public class ItemData extends GameResource {
     // Main
     @Getter(onMethod_ = @Override)
     private int id;
-    private int stackLimit = 1;
+    private final int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
     private String effectName;
@@ -39,7 +41,7 @@ public class ItemData extends GameResource {
     private int[] destroyReturnMaterialCount;
 
     // Enums
-    private ItemType itemType = ItemType.ITEM_NONE;
+    private final ItemType itemType = ItemType.ITEM_NONE;
     private MaterialType materialType = MaterialType.MATERIAL_NONE;
     private EquipType equipType = EquipType.EQUIP_NONE;
     private String effectType;
@@ -50,10 +52,10 @@ public class ItemData extends GameResource {
     private int[] satiationParams;
 
     // Usable item
-    private ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
+    private final ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
     private List<ItemUseData> itemUse;
     private List<ItemUseAction> itemUseActions;
-    private boolean useOnGain = false;
+    private final boolean useOnGain = false;
 
     // Relic
     private int mainPropDepotId;
@@ -82,7 +84,7 @@ public class ItemData extends GameResource {
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
 
-    @SerializedName(value="roomSceneId", alternate={"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
+    @SerializedName(value = "roomSceneId", alternate = {"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
     private int roomSceneId;
 
     // Custom
@@ -128,10 +130,10 @@ public class ItemData extends GameResource {
 
         if (this.itemUse != null && !this.itemUse.isEmpty()) {
             this.itemUseActions = this.itemUse.stream()
-                                    .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
-                                    .map(ItemUseAction::fromItemUseData)
-                                    .filter(Objects::nonNull)
-                                    .toList();
+                .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
+                .map(ItemUseAction::fromItemUseData)
+                .filter(Objects::nonNull)
+                .toList();
         }
     }
 

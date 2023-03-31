@@ -34,12 +34,12 @@ public final class ListCommand implements CommandHandler {
                 if (finalNeedUID) {
                     if (sender != null) {
                         playerSet.append(" <color=green>(")
-                                .append(player.getUid())
-                                .append(")</color>");
+                            .append(player.getUid())
+                            .append(")</color>");
                     } else {
                         playerSet.append(" (")
-                                .append(player.getUid())
-                                .append(")");
+                            .append(player.getUid())
+                            .append(")");
                     }
                 }
 

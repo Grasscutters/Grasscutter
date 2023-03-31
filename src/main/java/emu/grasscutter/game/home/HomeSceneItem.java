@@ -28,18 +28,19 @@ public class HomeSceneItem {
     int homeBgmId;
     HomeFurnitureItem mainHouse;
     int tmpVersion;
+
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
         return HomeSceneItem.of()
-                .sceneId(sceneId)
-                .blockItems(defaultItem.getHomeBlockLists().stream()
-                        .map(HomeBlockItem::parseFrom)
-                        .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
-                .bornPos(defaultItem.getBornPos())
-                .bornRot(defaultItem.getBornRot() == null ? new Position() : defaultItem.getBornRot())
-                .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
-                .mainHouse(defaultItem.getMainhouse() == null ? null :
-                        HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
-                .build();
+            .sceneId(sceneId)
+            .blockItems(defaultItem.getHomeBlockLists().stream()
+                .map(HomeBlockItem::parseFrom)
+                .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
+            .bornPos(defaultItem.getBornPos())
+            .bornRot(defaultItem.getBornRot() == null ? new Position() : defaultItem.getBornRot())
+            .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
+            .mainHouse(defaultItem.getMainhouse() == null ? null :
+                HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
+            .build();
     }
 
     public void update(HomeSceneArrangementInfo arrangementInfo) {
@@ -70,8 +71,8 @@ public class HomeSceneItem {
 
     public int calComfort() {
         return this.blockItems.values().stream()
-                .mapToInt(HomeBlockItem::calComfort)
-                .sum();
+            .mapToInt(HomeBlockItem::calComfort)
+            .sum();
     }
 
     public HomeSceneArrangementInfo toProto() {
@@ -79,13 +80,13 @@ public class HomeSceneItem {
         blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
 
         proto.setComfortValue(calComfort())
-                .setBornPos(bornPos.toProto())
-                .setBornRot(bornRot.toProto())
-                .setDjinnPos(djinnPos.toProto())
-                .setIsSetBornPos(true)
-                .setSceneId(sceneId)
-                .setBgmId(homeBgmId)
-                .setTmpVersion(tmpVersion);
+            .setBornPos(bornPos.toProto())
+            .setBornRot(bornRot.toProto())
+            .setDjinnPos(djinnPos.toProto())
+            .setIsSetBornPos(true)
+            .setSceneId(sceneId)
+            .setBgmId(homeBgmId)
+            .setTmpVersion(tmpVersion);
 
         if (mainHouse != null) {
             proto.setMainHouse(mainHouse.toProto());

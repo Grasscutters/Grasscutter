@@ -5,14 +5,14 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarGainFlycloakNotifyOuterClass.AvatarGainFlycloakNotify;
 
 public class PacketAvatarGainFlycloakNotify extends BasePacket {
-	
-	public PacketAvatarGainFlycloakNotify(int flycloak) {
-		super(PacketOpcodes.AvatarGainFlycloakNotify);
 
-		AvatarGainFlycloakNotify proto = AvatarGainFlycloakNotify.newBuilder()
-				.setFlycloakId(flycloak)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketAvatarGainFlycloakNotify(int flycloak) {
+        super(PacketOpcodes.AvatarGainFlycloakNotify);
+
+        AvatarGainFlycloakNotify proto = AvatarGainFlycloakNotify.newBuilder()
+            .setFlycloakId(flycloak)
+            .build();
+
+        this.setData(proto);
+    }
 }

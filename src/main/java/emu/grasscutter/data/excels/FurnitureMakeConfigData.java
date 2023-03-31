@@ -31,7 +31,7 @@ public class FurnitureMakeConfigData extends GameResource {
     @Override
     public void onLoad() {
         this.materialItems = materialItems.stream()
-                .filter(x -> x.getId() > 0)
-                .toList();
+            .filter(x -> x.getId() > 0)
+            .toList();
     }
 }

@@ -13,8 +13,8 @@ public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
         super(PacketOpcodes.FinishedParentQuestUpdateNotify);
 
         FinishedParentQuestUpdateNotify proto = FinishedParentQuestUpdateNotify.newBuilder()
-                .addParentQuestList(quest.toProto())
-                .build();
+            .addParentQuestList(quest.toProto())
+            .build();
 
         this.setData(proto);
     }

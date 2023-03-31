@@ -12,10 +12,10 @@ public class PacketAvatarDataNotify extends BasePacket {
         super(PacketOpcodes.AvatarDataNotify, true);
 
         AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
-                .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
-                .setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
-                .addAllOwnedFlycloakList(player.getFlyCloakList())
-                .addAllOwnedCostumeList(player.getCostumeList());
+            .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
+            .setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
+            .addAllOwnedFlycloakList(player.getFlyCloakList())
+            .addAllOwnedCostumeList(player.getCostumeList());
 
         player.getAvatars().forEach(avatar -> proto.addAvatarList(avatar.toProto()));
 

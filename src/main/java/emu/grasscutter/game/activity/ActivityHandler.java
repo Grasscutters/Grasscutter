@@ -27,18 +27,19 @@ public abstract class ActivityHandler {
     Map<WatcherTriggerType, List<ActivityWatcher>> watchersMap = new HashMap<>();
 
     abstract public void onProtoBuild(PlayerActivityData playerActivityData, ActivityInfoOuterClass.ActivityInfo.Builder activityInfo);
+
     abstract public void onInitPlayerActivityData(PlayerActivityData playerActivityData);
 
-    public void initWatchers(Map<WatcherTriggerType, ConstructorAccess<?>> activityWatcherTypeMap){
+    public void initWatchers(Map<WatcherTriggerType, ConstructorAccess<?>> activityWatcherTypeMap) {
         activityData = GameData.getActivityDataMap().get(activityConfigItem.getActivityId());
 
         // add watcher to map by id
         activityData.getWatcherDataList().forEach(watcherData -> {
             var watcherType = activityWatcherTypeMap.get(watcherData.getTriggerConfig().getWatcherTriggerType());
             ActivityWatcher watcher;
-            if(watcherType != null){
+            if (watcherType != null) {
                 watcher = (ActivityWatcher) watcherType.newInstance();
-            }else{
+            } else {
                 watcher = new DefaultWatcher();
             }
 
@@ -50,14 +51,14 @@ public abstract class ActivityHandler {
         });
     }
 
-    private Map<Integer, PlayerActivityData.WatcherInfo> initWatchersDataForPlayer(){
+    private Map<Integer, PlayerActivityData.WatcherInfo> initWatchersDataForPlayer() {
         return watchersMap.values().stream()
             .flatMap(Collection::stream)
             .map(PlayerActivityData.WatcherInfo::init)
             .collect(Collectors.toMap(PlayerActivityData.WatcherInfo::getWatcherId, y -> y));
     }
 
-    public PlayerActivityData initPlayerActivityData(Player player){
+    public PlayerActivityData initPlayerActivityData(Player player) {
         PlayerActivityData playerActivityData = PlayerActivityData.of()
             .activityId(activityConfigItem.getActivityId())
             .uid(player.getUid())
@@ -68,7 +69,7 @@ public abstract class ActivityHandler {
         return playerActivityData;
     }
 
-    public ActivityInfoOuterClass.ActivityInfo toProto(PlayerActivityData playerActivityData){
+    public ActivityInfoOuterClass.ActivityInfo toProto(PlayerActivityData playerActivityData) {
         var proto = ActivityInfoOuterClass.ActivityInfo.newBuilder();
         proto.setActivityId(activityConfigItem.getActivityId())
             .setActivityType(activityConfigItem.getActivityType())
@@ -78,7 +79,7 @@ public abstract class ActivityHandler {
             .setEndTime(DateHelper.getUnixTime(activityConfigItem.getEndTime()))
             .addAllMeetCondList(activityConfigItem.getMeetCondList());
 
-        if (playerActivityData != null){
+        if (playerActivityData != null) {
             proto.addAllWatcherInfoList(playerActivityData.getAllWatcherInfoList());
         }
 

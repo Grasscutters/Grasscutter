@@ -54,9 +54,9 @@ public class WorldDataSystem extends BaseGameSystem {
 
     public RewardPreviewData getRewardByBossId(int monsterId) {
         var investigationMonsterData = GameData.getInvestigationMonsterDataMap().values().parallelStream()
-                .filter(imd -> imd.getMonsterIdList() != null && !imd.getMonsterIdList().isEmpty())
-                .filter(imd -> imd.getMonsterIdList().get(0) == monsterId)
-                .findFirst();
+            .filter(imd -> imd.getMonsterIdList() != null && !imd.getMonsterIdList().isEmpty())
+            .filter(imd -> imd.getMonsterIdList().get(0) == monsterId)
+            .findFirst();
 
         if (investigationMonsterData.isEmpty()) {
             return null;
@@ -84,6 +84,7 @@ public class WorldDataSystem extends BaseGameSystem {
         }
         return level;
     }
+
     private InvestigationMonsterOuterClass.InvestigationMonster getInvestigationMonster(Player player, InvestigationMonsterData imd) {
         if (imd.getGroupIdList().isEmpty() || imd.getMonsterIdList().isEmpty()) {
             return null;
@@ -99,8 +100,8 @@ public class WorldDataSystem extends BaseGameSystem {
         }
 
         var monster = group.monsters.values().stream()
-                .filter(x -> x.monster_id == monsterId)
-                .findFirst();
+            .filter(x -> x.monster_id == monsterId)
+            .findFirst();
         if (monster.isEmpty()) {
             return null;
         }
@@ -108,15 +109,15 @@ public class WorldDataSystem extends BaseGameSystem {
         var builder = InvestigationMonsterOuterClass.InvestigationMonster.newBuilder();
 
         builder.setId(imd.getId())
-                .setCityId(imd.getCityId())
-                .setSceneId(imd.getCityData().getSceneId())
-                .setGroupId(groupId)
-                .setMonsterId(monsterId)
-                .setLevel(getMonsterLevel(monster.get(), player.getWorld()))
-                .setIsAlive(true)
-                .setNextRefreshTime(Integer.MAX_VALUE)
-                .setRefreshInterval(Integer.MAX_VALUE)
-                .setPos(monster.get().pos.toProto());
+            .setCityId(imd.getCityId())
+            .setSceneId(imd.getCityData().getSceneId())
+            .setGroupId(groupId)
+            .setMonsterId(monsterId)
+            .setLevel(getMonsterLevel(monster.get(), player.getWorld()))
+            .setIsAlive(true)
+            .setNextRefreshTime(Integer.MAX_VALUE)
+            .setRefreshInterval(Integer.MAX_VALUE)
+            .setPos(monster.get().pos.toProto());
 
         if ("Boss".equals(imd.getMonsterCategory())) {
             var bossChest = group.searchBossChestInGroup();
@@ -136,11 +137,11 @@ public class WorldDataSystem extends BaseGameSystem {
         }
 
         return GameData.getInvestigationMonsterDataMap().values()
-                .parallelStream()
-                .filter(imd -> imd.getCityId() == cityId)
-                .map(imd -> this.getInvestigationMonster(player, imd))
-                .filter(Objects::nonNull)
-                .toList();
+            .parallelStream()
+            .filter(imd -> imd.getCityId() == cityId)
+            .map(imd -> this.getInvestigationMonster(player, imd))
+            .filter(Objects::nonNull)
+            .toList();
     }
 
 }

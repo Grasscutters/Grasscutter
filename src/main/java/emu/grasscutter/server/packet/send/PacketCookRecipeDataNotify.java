@@ -10,9 +10,9 @@ public class PacketCookRecipeDataNotify extends BasePacket {
         super(PacketOpcodes.CookRecipeDataNotify);
 
         CookRecipeDataNotify proto = CookRecipeDataNotify.newBuilder()
-                .setRecipeData(recipe)
-                .build();
-        
+            .setRecipeData(recipe)
+            .build();
+
         this.setData(proto);
     }
 
@@ -20,9 +20,9 @@ public class PacketCookRecipeDataNotify extends BasePacket {
         super(PacketOpcodes.CookRecipeDataNotify);
 
         CookRecipeDataNotify proto = CookRecipeDataNotify.newBuilder()
-                .setRecipeData(CookRecipeData.newBuilder().setRecipeId(recipeId))
-                .build();
-        
+            .setRecipeData(CookRecipeData.newBuilder().setRecipeId(recipeId))
+            .build();
+
         this.setData(proto);
     }
 }

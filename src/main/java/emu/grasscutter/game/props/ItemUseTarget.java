@@ -1,19 +1,18 @@
 package emu.grasscutter.game.props;
 
-import java.util.stream.Stream;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public enum ItemUseTarget {
-    ITEM_USE_TARGET_NONE (0),
-    ITEM_USE_TARGET_CUR_AVATAR (1),
-    ITEM_USE_TARGET_CUR_TEAM (2),
-    ITEM_USE_TARGET_SPECIFY_AVATAR (3),
-    ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR (4),
-    ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR (5);
+import java.util.stream.Stream;
 
-    private final int value;
+public enum ItemUseTarget {
+    ITEM_USE_TARGET_NONE(0),
+    ITEM_USE_TARGET_CUR_AVATAR(1),
+    ITEM_USE_TARGET_CUR_TEAM(2),
+    ITEM_USE_TARGET_SPECIFY_AVATAR(3),
+    ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR(4),
+    ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR(5);
+
     private static final Int2ObjectMap<ItemUseTarget> map = new Int2ObjectOpenHashMap<>();
 
     static {
@@ -22,15 +21,17 @@ public enum ItemUseTarget {
         });
     }
 
-    private ItemUseTarget(int value) {
-        this.value = value;
-    }
+    private final int value;
 
-    public int getValue() {
-        return value;
+    ItemUseTarget(int value) {
+        this.value = value;
     }
 
     public static ItemUseTarget getTypeByValue(int value) {
         return map.getOrDefault(value, ITEM_USE_TARGET_NONE);
+    }
+
+    public int getValue() {
+        return value;
     }
 }

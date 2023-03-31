@@ -12,12 +12,12 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Getter
-public class EntityRegion extends GameEntity{
+public class EntityRegion extends GameEntity {
     private final Position position;
-    private boolean hasNewEntities;
-    private boolean entityLeave;
     private final Set<Integer> entities; // Ids of entities inside this region
     private final SceneRegion metaRegion;
+    private boolean hasNewEntities;
+    private boolean entityLeave;
 
     public EntityRegion(Scene scene, SceneRegion region) {
         super(scene);
@@ -55,13 +55,29 @@ public class EntityRegion extends GameEntity{
         this.getEntities().remove(entity.getId());
         this.entityLeave = true;
     }
-    public boolean entityLeave() {return this.entityLeave;}
-    public void resetEntityLeave() {this.entityLeave = false;}
-    @Override public Int2FloatMap getFightProperties() {return null;}
 
-    @Override public Position getPosition() {return position;}
+    public boolean entityLeave() {
+        return this.entityLeave;
+    }
 
-    @Override public Position getRotation() {return null;}
+    public void resetEntityLeave() {
+        this.entityLeave = false;
+    }
+
+    @Override
+    public Int2FloatMap getFightProperties() {
+        return null;
+    }
+
+    @Override
+    public Position getPosition() {
+        return position;
+    }
+
+    @Override
+    public Position getRotation() {
+        return null;
+    }
 
     @Override
     public SceneEntityInfoOuterClass.SceneEntityInfo toProto() {

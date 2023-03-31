@@ -13,7 +13,7 @@ public class PacketCombineRsp extends BasePacket {
         super(PacketOpcodes.CombineRsp);
 
         CombineRspOuterClass.CombineRsp proto = CombineRspOuterClass.CombineRsp.newBuilder()
-                .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE).build();
+            .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE).build();
 
 
         this.setData(proto);
@@ -23,7 +23,7 @@ public class PacketCombineRsp extends BasePacket {
         super(PacketOpcodes.CombineRsp);
 
         CombineRspOuterClass.CombineRsp proto = CombineRspOuterClass.CombineRsp.newBuilder()
-                .setRetcode(retcode).build();
+            .setRetcode(retcode).build();
 
 
         this.setData(proto);
@@ -39,20 +39,19 @@ public class PacketCombineRsp extends BasePacket {
         super(PacketOpcodes.CombineRsp);
 
         CombineRspOuterClass.CombineRsp proto = CombineRspOuterClass.CombineRsp.newBuilder()
-                .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
-                .setCombineId(combineReq.getCombineId())
-                .setCombineCount(combineReq.getCombineCount())
-                .setAvatarGuid(combineReq.getAvatarGuid())
-                .addAllCostItemList(costItemList)
-                .addAllResultItemList(resultItemList)
-                .addAllTotalRandomItemList(totalRandomItemList)
-                .addAllTotalReturnItemList(totalReturnItemList)
-                .addAllTotalExtraItemList(totalExtraItemList)
-                .build();
+            .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
+            .setCombineId(combineReq.getCombineId())
+            .setCombineCount(combineReq.getCombineCount())
+            .setAvatarGuid(combineReq.getAvatarGuid())
+            .addAllCostItemList(costItemList)
+            .addAllResultItemList(resultItemList)
+            .addAllTotalRandomItemList(totalRandomItemList)
+            .addAllTotalReturnItemList(totalReturnItemList)
+            .addAllTotalExtraItemList(totalExtraItemList)
+            .build();
 
         this.setData(proto);
     }
-
 
 
 }

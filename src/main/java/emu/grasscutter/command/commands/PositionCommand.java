@@ -15,6 +15,6 @@ public final class PositionCommand implements CommandHandler {
         Position pos = targetPlayer.getPosition();
         Position rot = targetPlayer.getRotation();
         CommandHandler.sendTranslatedMessage(sender, "commands.position.success",
-                pos.getX(), pos.getY(), pos.getZ(), rot.getX(), rot.getY(), rot.getZ(), targetPlayer.getSceneId());
+            pos.getX(), pos.getY(), pos.getZ(), rot.getX(), rot.getY(), rot.getZ(), targetPlayer.getSceneId());
     }
 }

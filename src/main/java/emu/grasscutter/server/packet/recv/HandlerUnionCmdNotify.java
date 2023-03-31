@@ -1,15 +1,15 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.config.Configuration.SERVER;
-
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.UnionCmdNotifyOuterClass.UnionCmdNotify;
 import emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.Grasscutter.ServerDebugMode;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @Opcodes(PacketOpcodes.UnionCmdNotify)
 public class HandlerUnionCmdNotify extends PacketHandler {
@@ -21,7 +21,7 @@ public class HandlerUnionCmdNotify extends PacketHandler {
             byte[] cmdPayload = cmd.getBody().toByteArray();
             if (GAME_INFO.logPackets == ServerDebugMode.WHITELIST && SERVER.debugWhitelist.contains(cmd.getMessageId())) {
                 session.logPacket("RECV in Union", cmdOpcode, cmdPayload);
-            } else if (GAME_INFO.logPackets ==  ServerDebugMode.BLACKLIST && !SERVER.debugBlacklist.contains(cmd.getMessageId())) {
+            } else if (GAME_INFO.logPackets == ServerDebugMode.BLACKLIST && !SERVER.debugBlacklist.contains(cmd.getMessageId())) {
                 session.logPacket("RECV in Union", cmdOpcode, cmdPayload);
             }
             //debugLevel ALL ignores UnionCmdNotify, so we will also ignore the contained opcodes

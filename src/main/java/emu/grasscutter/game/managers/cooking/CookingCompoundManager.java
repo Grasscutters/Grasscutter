@@ -115,7 +115,7 @@ public class CookingCompoundManager extends BasePlayerManager {
                     GameItem item = allRewards.get(i.getId());
                     item.setCount(item.getCount() + i.getCount() * quantity);
                 } else {
-                    allRewards.put(i.getId(), new GameItem(i.getId(), i.getCount()*quantity));
+                    allRewards.put(i.getId(), new GameItem(i.getId(), i.getCount() * quantity));
                 }
             }
             success = true;
@@ -130,6 +130,6 @@ public class CookingCompoundManager extends BasePlayerManager {
     }
 
     public void onPlayerLogin() {
-        player.sendPacket(new PacketCompoundDataNotify(unlocked,getCompoundQueueData()));
+        player.sendPacket(new PacketCompoundDataNotify(unlocked, getCompoundQueueData()));
     }
 }

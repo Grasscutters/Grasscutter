@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNo
 
 public class PacketVehicleStaminaNotify extends BasePacket {
 
-	public PacketVehicleStaminaNotify(int vehicleId, float newStamina) {
-		super(PacketOpcodes.VehicleStaminaNotify);
-		VehicleStaminaNotify.Builder proto = VehicleStaminaNotify.newBuilder();
+    public PacketVehicleStaminaNotify(int vehicleId, float newStamina) {
+        super(PacketOpcodes.VehicleStaminaNotify);
+        VehicleStaminaNotify.Builder proto = VehicleStaminaNotify.newBuilder();
 
-		proto.setEntityId(vehicleId);
-		proto.setCurStamina(newStamina);
+        proto.setEntityId(vehicleId);
+        proto.setCurStamina(newStamina);
 
-		this.setData(proto.build());
-	}
+        this.setData(proto.build());
+    }
 }

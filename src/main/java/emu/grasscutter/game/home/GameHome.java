@@ -1,10 +1,6 @@
 package emu.grasscutter.game.home;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.IndexOptions;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.HomeWorldLevelData;
@@ -19,12 +15,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -38,7 +29,8 @@ public class GameHome {
 
     @Indexed(options = @IndexOptions(unique = true))
     long ownerUid;
-    @Transient Player player;
+    @Transient
+    Player player;
 
     int level;
     int exp;
@@ -51,10 +43,6 @@ public class GameHome {
     Set<Integer> unlockedHomeBgmList;
     int enterHomeOption;
 
-    public void save() {
-        DatabaseHelper.saveHome(this);
-    }
-
     public static GameHome getByUid(Integer uid) {
         var home = DatabaseHelper.getHomeByUid(uid);
         if (home == null) {
@@ -65,11 +53,15 @@ public class GameHome {
 
     public static GameHome create(Integer uid) {
         return GameHome.of()
-                .ownerUid(uid)
-                .level(1)
-                .sceneMap(new ConcurrentHashMap<>())
-                .unlockedHomeBgmList(new HashSet<>())
-                .build();
+            .ownerUid(uid)
+            .level(1)
+            .sceneMap(new ConcurrentHashMap<>())
+            .unlockedHomeBgmList(new HashSet<>())
+            .build();
+    }
+
+    public void save() {
+        DatabaseHelper.saveHome(this);
     }
 
     public HomeSceneItem getHomeSceneItem(int sceneId) {

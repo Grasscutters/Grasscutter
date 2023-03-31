@@ -19,13 +19,34 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter
 public class ActivityManager extends BasePlayerManager {
     private static final Map<Integer, ActivityConfigItem> activityConfigItemMap;
-    @Getter private static final Map<Integer, ActivityConfigItem> scheduleActivityConfigMap;
-    private final Map<Integer, PlayerActivityData> playerActivityDataMap;
+    @Getter
+    private static final Map<Integer, ActivityConfigItem> scheduleActivityConfigMap;
 
     static {
         activityConfigItemMap = new HashMap<>();
         scheduleActivityConfigMap = new HashMap<>();
         loadActivityConfigData();
+    }
+
+    private final Map<Integer, PlayerActivityData> playerActivityDataMap;
+
+    public ActivityManager(Player player) {
+        super(player);
+
+        playerActivityDataMap = new ConcurrentHashMap<>();
+        // load data for player
+        activityConfigItemMap.values().forEach(item -> {
+            var data = PlayerActivityData.getByPlayer(player, item.getActivityId());
+            if (data == null) {
+                data = item.getActivityHandler().initPlayerActivityData(player);
+                data.save();
+            }
+            data.setPlayer(player);
+            data.setActivityHandler(item.getActivityHandler());
+            playerActivityDataMap.put(item.getActivityId(), data);
+        });
+
+        player.sendPacket(new PacketActivityScheduleInfoNotify(activityConfigItemMap.values()));
     }
 
     private static void loadActivityConfigData() {
@@ -55,7 +76,7 @@ public class ActivityManager extends BasePlayerManager {
 
                 if (activityHandlerType != null) {
                     activityHandler = (ActivityHandler) activityHandlerType.newInstance();
-                }else {
+                } else {
                     activityHandler = new DefaultActivityHandler();
                 }
                 activityHandler.setActivityConfigItem(item);
@@ -71,25 +92,6 @@ public class ActivityManager extends BasePlayerManager {
             Grasscutter.getLogger().error("Unable to load activities config.", e);
         }
 
-    }
-
-    public ActivityManager(Player player) {
-        super(player);
-
-        playerActivityDataMap = new ConcurrentHashMap<>();
-        // load data for player
-        activityConfigItemMap.values().forEach(item -> {
-            var data = PlayerActivityData.getByPlayer(player, item.getActivityId());
-            if (data == null) {
-                data = item.getActivityHandler().initPlayerActivityData(player);
-                data.save();
-            }
-            data.setPlayer(player);
-            data.setActivityHandler(item.getActivityHandler());
-            playerActivityDataMap.put(item.getActivityId(), data);
-        });
-
-        player.sendPacket(new PacketActivityScheduleInfoNotify(activityConfigItemMap.values()));
     }
 
     /**
@@ -124,8 +126,9 @@ public class ActivityManager extends BasePlayerManager {
             .findFirst();
     }
 
+    @SuppressWarnings("unchecked")
     public <T extends ActivityHandler> Optional<T> getActivityHandlerAs(ActivityType type, Class<T> clazz) {
-        return getActivityHandler(type).map(x -> (T)x);
+        return getActivityHandler(type).map(x -> (T) x);
     }
 
     public Optional<Integer> getActivityIdByActivityType(ActivityType type) {
@@ -133,13 +136,15 @@ public class ActivityManager extends BasePlayerManager {
             .map(ActivityHandler::getActivityConfigItem)
             .map(ActivityConfigItem::getActivityId);
     }
+
     public Optional<PlayerActivityData> getPlayerActivityDataByActivityType(ActivityType type) {
         return getActivityIdByActivityType(type)
             .map(playerActivityDataMap::get);
     }
+
     public Optional<ActivityInfoOuterClass.ActivityInfo> getInfoProtoByActivityType(ActivityType type) {
-       return getActivityIdByActivityType(type)
-           .map(this::getInfoProtoByActivityId);
+        return getActivityIdByActivityType(type)
+            .map(this::getInfoProtoByActivityId);
     }
 
 }

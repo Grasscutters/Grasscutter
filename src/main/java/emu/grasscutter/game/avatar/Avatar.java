@@ -1,41 +1,12 @@
 package emu.grasscutter.game.avatar;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Stream;
-import java.util.Set;
-
-import org.bson.types.ObjectId;
-
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.PostLoad;
-import dev.morphia.annotations.PrePersist;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.AvatarPromoteData;
-import emu.grasscutter.data.excels.AvatarSkillData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
-import emu.grasscutter.data.excels.AvatarTalentData;
-import emu.grasscutter.data.excels.EquipAffixData;
-import emu.grasscutter.data.excels.ProudSkillData;
-import emu.grasscutter.data.excels.ReliquaryAffixData;
-import emu.grasscutter.data.excels.ReliquaryLevelData;
-import emu.grasscutter.data.excels.ReliquaryMainPropData;
-import emu.grasscutter.data.excels.ReliquarySetData;
-import emu.grasscutter.data.excels.WeaponCurveData;
-import emu.grasscutter.data.excels.WeaponPromoteData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.excels.ItemData.WeaponProperty;
 import emu.grasscutter.database.DatabaseHelper;
@@ -44,11 +15,7 @@ import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FetterState;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
 import emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo;
@@ -58,60 +25,105 @@ import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
 import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ProtoHelper;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
+import org.bson.types.ObjectId;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
-    @Id private ObjectId id;
-    @Indexed @Getter private int ownerId;	// Id of player that this avatar belongs to
-
-    @Transient private Player owner;
-    @Transient @Getter private AvatarData data;
-    @Transient @Getter private AvatarSkillDepotData skillDepot;
-    @Transient @Getter private long guid;	// Player unique id
-    @Getter private int avatarId;			// Id of avatar
-
-    @Getter @Setter private int level = 1;
-    @Getter @Setter private int exp;
-    @Getter @Setter private int promoteLevel;
-    @Getter @Setter private int satiation; // Fullness
-    @Getter @Setter private int satiationPenalty; // When eating too much
-    @Getter @Setter private float currentHp;
+    @Transient
+    @Getter
+    private final Int2ObjectMap<GameItem> equips;
+    @Transient
+    @Getter
+    private final Int2FloatOpenHashMap fightProperties;
+    @Transient
+    @Getter
+    private final Int2FloatOpenHashMap fightPropOverrides;
+    @Id
+    private ObjectId id;
+    @Indexed
+    @Getter
+    private int ownerId;    // Id of player that this avatar belongs to
+    @Transient
+    private Player owner;
+    @Transient
+    @Getter
+    private AvatarData data;
+    @Transient
+    @Getter
+    private AvatarSkillDepotData skillDepot;
+    @Transient
+    @Getter
+    private long guid;    // Player unique id
+    @Getter
+    private int avatarId;            // Id of avatar
+    @Getter
+    @Setter
+    private int level = 1;
+    @Getter
+    @Setter
+    private int exp;
+    @Getter
+    @Setter
+    private int promoteLevel;
+    @Getter
+    @Setter
+    private int satiation; // Fullness
+    @Getter
+    @Setter
+    private int satiationPenalty; // When eating too much
+    @Getter
+    @Setter
+    private float currentHp;
     private float currentEnergy;
-
-    @Transient @Getter private final Int2ObjectMap<GameItem> equips;
-    @Transient @Getter private final Int2FloatOpenHashMap fightProperties;
-    @Transient @Getter private final Int2FloatOpenHashMap fightPropOverrides;
-    @Transient @Getter private Set<String> extraAbilityEmbryos;
+    @Transient
+    @Getter
+    private Set<String> extraAbilityEmbryos;
 
     private List<Integer> fetters;
 
-    private Map<Integer, Integer> skillLevelMap = new Int2IntArrayMap(7); // Talent levels
-    @Transient @Getter private Map<Integer, Integer> skillExtraChargeMap = new Int2IntArrayMap(2); // Charges
-    @Transient private Map<Integer, Integer> proudSkillBonusMap = new Int2IntArrayMap(2); // Talent bonus levels (from const)
-    @Getter private int skillDepotId;
+    private final Map<Integer, Integer> skillLevelMap = new Int2IntArrayMap(7); // Talent levels
+    @Transient
+    @Getter
+    private final Map<Integer, Integer> skillExtraChargeMap = new Int2IntArrayMap(2); // Charges
+    @Transient
+    private final Map<Integer, Integer> proudSkillBonusMap = new Int2IntArrayMap(2); // Talent bonus levels (from const)
+    @Getter
+    private int skillDepotId;
     private Set<Integer> talentIdList; // Constellation id list
-    @Getter private Set<Integer> proudSkillList; // Character passives
+    @Getter
+    private Set<Integer> proudSkillList; // Character passives
 
-    @Getter @Setter private int flyCloak;
-    @Getter @Setter private int costume;
-    @Getter private int bornTime;
+    @Getter
+    @Setter
+    private int flyCloak;
+    @Getter
+    @Setter
+    private int costume;
+    @Getter
+    private int bornTime;
 
-    @Getter @Setter private int fetterLevel = 1;
-    @Getter @Setter private int fetterExp;
+    @Getter
+    @Setter
+    private int fetterLevel = 1;
+    @Getter
+    @Setter
+    private int fetterExp;
 
-    @Getter @Setter private int nameCardRewardId;
-    @Getter @Setter private int nameCardId;
+    @Getter
+    @Setter
+    private int nameCardRewardId;
+    @Getter
+    @Setter
+    private int nameCardId;
 
     @Deprecated // Do not use. Morhpia only!
     public Avatar() {
@@ -149,10 +161,8 @@ public class Avatar {
         this.setSkillDepotData(switch (this.avatarId) {
             case GameConstants.MAIN_CHARACTER_MALE ->
                 GameData.getAvatarSkillDepotDataMap().get(504);  // Hack to start with anemo skills
-            case GameConstants.MAIN_CHARACTER_FEMALE ->
-                GameData.getAvatarSkillDepotDataMap().get(704);
-            default ->
-                data.getSkillDepot();
+            case GameConstants.MAIN_CHARACTER_FEMALE -> GameData.getAvatarSkillDepotDataMap().get(704);
+            default -> data.getSkillDepot();
         });
 
         // Set stats
@@ -162,6 +172,23 @@ public class Avatar {
         this.currentEnergy = 0f;
         // Load handler
         this.onLoad();
+    }
+
+    static public int getMinPromoteLevel(int level) {
+        if (level > 80) {
+            return 6;
+        } else if (level > 70) {
+            return 5;
+        } else if (level > 60) {
+            return 4;
+        } else if (level > 50) {
+            return 3;
+        } else if (level > 40) {
+            return 2;
+        } else if (level > 20) {
+            return 1;
+        }
+        return 0;
     }
 
     public Player getPlayer() {
@@ -187,23 +214,6 @@ public class Avatar {
         this.guid = player.getNextGameGuid();
     }
 
-    static public int getMinPromoteLevel(int level) {
-        if (level > 80) {
-            return 6;
-        } else if (level > 70) {
-            return 5;
-        } else if (level > 60) {
-            return 4;
-        } else if (level > 50) {
-            return 3;
-        } else if (level > 40) {
-            return 2;
-        } else if (level > 20) {
-            return 1;
-        }
-        return 0;
-    }
-
     public boolean addSatiation(int value) {
         if (this.satiation >= 10000) return false;
         this.satiation += value;
@@ -213,7 +223,7 @@ public class Avatar {
     public float reduceSatiation(int value) {
         if (this.satiation == 0) return 0;
         this.satiation -= value;
-        if(this.satiation < 0) {
+        if (this.satiation < 0) {
             this.satiation = 0;
         }
         return this.satiation;
@@ -222,7 +232,7 @@ public class Avatar {
     public float reduceSatiationPenalty(int value) {
         if (this.satiationPenalty == 0) return 0;
         this.satiationPenalty -= value;
-        if(this.satiationPenalty < 0) {
+        if (this.satiationPenalty < 0) {
             this.satiationPenalty = 0;
         }
         return this.satiationPenalty;
@@ -263,12 +273,12 @@ public class Avatar {
         this.recalcStats();
     }
 
-    public void setFetterList(List<Integer> fetterList) {
-        this.fetters = fetterList;
-    }
-
     public List<Integer> getFetterList() {
         return fetters;
+    }
+
+    public void setFetterList(List<Integer> fetterList) {
+        this.fetters = fetterList;
     }
 
     public void setCurrentEnergy() {
@@ -591,7 +601,7 @@ public class Avatar {
             .map(AvatarTalentData::getOpenConfig)
             .filter(Objects::nonNull)
             .forEach(this::addToExtraAbilityEmbryos);
-            // Add any skill strings from this constellation
+        // Add any skill strings from this constellation
 
         // Set % stats
         FightProperty.forEachCompoundProperty(c -> this.setFightProperty(c.getResult(),
@@ -724,7 +734,7 @@ public class Avatar {
     }
 
     private int addProudSkillLevelBonus(int proudSkillGroupId, int bonus) {
-        return this.proudSkillBonusMap.compute(proudSkillGroupId, (k,v) -> (v==null) ? bonus : v + bonus);
+        return this.proudSkillBonusMap.compute(proudSkillGroupId, (k, v) -> (v == null) ? bonus : v + bonus);
     }
 
     public boolean upgradeSkill(int skillId) {
@@ -771,14 +781,17 @@ public class Avatar {
     public boolean unlockConstellation() {
         return this.unlockConstellation(false);
     }
+
     public boolean unlockConstellation(boolean skipPayment) {
         int currentTalentLevel = this.getCoreProudSkillLevel();
         int talentId = this.skillDepot.getTalents().get(currentTalentLevel);
         return this.unlockConstellation(talentId, skipPayment);
     }
+
     public boolean unlockConstellation(int talentId) {
         return unlockConstellation(talentId, false);
     }
+
     public boolean unlockConstellation(int talentId, boolean skipPayment) {
         // Get talent
         AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentId);
@@ -852,7 +865,7 @@ public class Avatar {
     public AvatarInfo toProto() {
         int fetterLevel = this.getFetterLevel();
         AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-                .setExpLevel(fetterLevel);
+            .setExpLevel(fetterLevel);
 
         if (fetterLevel != 10) {
             avatarFetter.setExpNumber(this.getFetterExp());
@@ -873,21 +886,21 @@ public class Avatar {
         }
 
         AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()
-                .setAvatarId(this.getAvatarId())
-                .setGuid(this.getGuid())
-                .setLifeState(1)
-                .addAllTalentIdList(this.getTalentIdList())
-                .putAllFightPropMap(this.getFightProperties())
-                .setSkillDepotId(this.getSkillDepotId())
-                .setCoreProudSkillLevel(this.getCoreProudSkillLevel())
-                .putAllSkillLevelMap(this.getSkillLevelMap())
-                .addAllInherentProudSkillList(this.getProudSkillList())
-                .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
-                .setAvatarType(1)
-                .setBornTime(this.getBornTime())
-                .setFetterInfo(avatarFetter)
-                .setWearingFlycloakId(this.getFlyCloak())
-                .setCostumeId(this.getCostume());
+            .setAvatarId(this.getAvatarId())
+            .setGuid(this.getGuid())
+            .setLifeState(1)
+            .addAllTalentIdList(this.getTalentIdList())
+            .putAllFightPropMap(this.getFightProperties())
+            .setSkillDepotId(this.getSkillDepotId())
+            .setCoreProudSkillLevel(this.getCoreProudSkillLevel())
+            .putAllSkillLevelMap(this.getSkillLevelMap())
+            .addAllInherentProudSkillList(this.getProudSkillList())
+            .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
+            .setAvatarType(1)
+            .setBornTime(this.getBornTime())
+            .setFetterInfo(avatarFetter)
+            .setWearingFlycloakId(this.getFlyCloak())
+            .setCostumeId(this.getCostume());
 
         this.getSkillExtraChargeMap().forEach((skillId, count) ->
             avatarInfo.putSkillMap(skillId, AvatarSkillInfo.newBuilder().setMaxChargeCount(count).build()));
@@ -906,19 +919,19 @@ public class Avatar {
     // used only in character showcase
     public ShowAvatarInfo toShowAvatarInfoProto() {
         AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-                .setExpLevel(this.getFetterLevel());
+            .setExpLevel(this.getFetterLevel());
 
         ShowAvatarInfo.Builder showAvatarInfo = ShowAvatarInfoOuterClass.ShowAvatarInfo.newBuilder()
-                .setAvatarId(avatarId)
-                .addAllTalentIdList(this.getTalentIdList())
-                .putAllFightPropMap(this.getFightProperties())
-                .setSkillDepotId(this.getSkillDepotId())
-                .setCoreProudSkillLevel(this.getCoreProudSkillLevel())
-                .addAllInherentProudSkillList(this.getProudSkillList())
-                .putAllSkillLevelMap(this.getSkillLevelMap())
-                .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
-                .setFetterInfo(avatarFetter)
-                .setCostumeId(this.getCostume());
+            .setAvatarId(avatarId)
+            .addAllTalentIdList(this.getTalentIdList())
+            .putAllFightPropMap(this.getFightProperties())
+            .setSkillDepotId(this.getSkillDepotId())
+            .setCoreProudSkillLevel(this.getCoreProudSkillLevel())
+            .addAllInherentProudSkillList(this.getProudSkillList())
+            .putAllSkillLevelMap(this.getSkillLevelMap())
+            .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
+            .setFetterInfo(avatarFetter)
+            .setCostumeId(this.getCostume());
 
         showAvatarInfo.putPropMap(PlayerProperty.PROP_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, this.getLevel()));
         showAvatarInfo.putPropMap(PlayerProperty.PROP_EXP.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_EXP, this.getExp()));
@@ -931,12 +944,12 @@ public class Avatar {
         for (GameItem item : this.getEquips().values()) {
             if (item.getItemType() == ItemType.ITEM_RELIQUARY) {
                 showAvatarInfo.addEquipList(ShowEquip.newBuilder()
-                        .setItemId(item.getItemId())
-                        .setReliquary(item.toReliquaryProto()));
+                    .setItemId(item.getItemId())
+                    .setReliquary(item.toReliquaryProto()));
             } else if (item.getItemType() == ItemType.ITEM_WEAPON) {
                 showAvatarInfo.addEquipList(ShowEquip.newBuilder()
-                        .setItemId(item.getItemId())
-                        .setWeapon(item.toWeaponProto()));
+                    .setItemId(item.getItemId())
+                    .setWeapon(item.toWeaponProto()));
             }
         }
 

@@ -1,13 +1,13 @@
 package emu.grasscutter.command.commands;
 
-import java.util.List;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
+
+import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 

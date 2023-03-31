@@ -28,10 +28,10 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
@@ -44,7 +44,7 @@ import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.config.Configuration.GAME_INFO;
 import static emu.grasscutter.utils.Language.translate;
 
 @Getter
@@ -90,7 +90,7 @@ public final class GameServer extends KcpServer {
         channelConfig.setUseConvChannel(true);
         channelConfig.setAckNoDelay(false);
 
-        this.init(GameSessionManager.getListener(),channelConfig,address);
+        this.init(GameSessionManager.getListener(), channelConfig, address);
 
         DungeonChallenge.initialize();
         EnergyManager.initialize();
@@ -131,6 +131,19 @@ public final class GameServer extends KcpServer {
         Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
     }
 
+    private static InetSocketAddress getAdapterInetSocketAddress() {
+        InetSocketAddress inetSocketAddress;
+        if (GAME_INFO.bindAddress.equals("")) {
+            inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
+        } else {
+            inetSocketAddress = new InetSocketAddress(
+                GAME_INFO.bindAddress,
+                GAME_INFO.bindPort
+            );
+        }
+        return inetSocketAddress;
+    }
+
     @Deprecated
     public ChatSystemHandler getChatManager() {
         return chatManager;
@@ -147,19 +160,6 @@ public final class GameServer extends KcpServer {
 
     public void setChatSystem(ChatSystemHandler chatManager) {
         this.chatManager = chatManager;
-    }
-
-    private static InetSocketAddress getAdapterInetSocketAddress() {
-        InetSocketAddress inetSocketAddress;
-        if (GAME_INFO.bindAddress.equals("")) {
-            inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
-        }else {
-            inetSocketAddress=new InetSocketAddress(
-                    GAME_INFO.bindAddress,
-                    GAME_INFO.bindPort
-            );
-        }
-        return inetSocketAddress;
     }
 
     public void registerPlayer(Player player) {
@@ -261,7 +261,8 @@ public final class GameServer extends KcpServer {
     }
 
     public void onServerShutdown() {
-        ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
+        ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
+        event.call();
 
         // Kick and save all players
         List<Player> list = new ArrayList<>(this.getPlayers().size());

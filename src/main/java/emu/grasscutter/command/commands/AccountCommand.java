@@ -45,7 +45,7 @@ public final class AccountCommand implements CommandHandler {
                 int uid = 0;
                 String password = "";
 
-                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     if (args.size() < 3) {
                         CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires a password argument");
                         CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
@@ -58,7 +58,7 @@ public final class AccountCommand implements CommandHandler {
                             uid = Integer.parseInt(args.get(3));
                         } catch (NumberFormatException ignored) {
                             CommandHandler.sendMessage(sender, translate(sender, "commands.account.invalid"));
-                            if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                            if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                                 CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
                                 CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
                             }
@@ -81,7 +81,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.account.exists"));
                     return;
                 } else {
-                    if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                    if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                         account.setPassword(BCrypt.withDefaults().hashToString(12, password.toCharArray()));
                     }
                     account.addPermission("*");
@@ -103,7 +103,7 @@ public final class AccountCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.account.delete"));
                 return;
             case "resetpass":
-                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword != true) {
+                if (!Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     CommandHandler.sendMessage(sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
                     return;
                 }
@@ -127,7 +127,6 @@ public final class AccountCommand implements CommandHandler {
                 toUpdate.setPassword(BCrypt.withDefaults().hashToString(12, args.get(2).toCharArray()));
                 toUpdate.save();
                 CommandHandler.sendMessage(sender, "Password Updated.");
-                return;
         }
     }
 

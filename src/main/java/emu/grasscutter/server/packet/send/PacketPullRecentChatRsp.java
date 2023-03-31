@@ -1,14 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PullRecentChatRspOuterClass.PullRecentChatRsp;
-import emu.grasscutter.utils.Utils;
-
-import static emu.grasscutter.config.Configuration.*;
 
 import java.util.List;
 

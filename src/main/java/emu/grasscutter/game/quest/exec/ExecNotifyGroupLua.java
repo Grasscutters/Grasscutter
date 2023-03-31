@@ -2,14 +2,12 @@ package emu.grasscutter.game.quest.exec;
 
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
-import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 
 @QuestValue(QuestTrigger.QUEST_EXEC_NOTIFY_GROUP_LUA)
 public class ExecNotifyGroupLua extends QuestExecHandler {
@@ -21,7 +19,7 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
 
         var scriptManager = quest.getOwner().getScene().getScriptManager();
 
-        if(quest.getOwner().getScene().getId() == sceneId){
+        if (quest.getOwner().getScene().getId() == sceneId) {
             scriptManager.callEvent(
                 quest.getState() == QuestState.QUEST_STATE_FINISHED ?
                     EventType.EVENT_QUEST_FINISH : EventType.EVENT_QUEST_START

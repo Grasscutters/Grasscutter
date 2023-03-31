@@ -1,25 +1,22 @@
 package emu.grasscutter.net.packet;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
 import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.utils.Crypto;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 public class BasePacket {
     private static final int const1 = 17767; // 0x4567
     private static final int const2 = -30293; // 0x89ab
-
+    public boolean shouldEncrypt = true;
     private int opcode;
     private boolean shouldBuildHeader = false;
-
     private byte[] header;
     private byte[] data;
-
     // Encryption
     private boolean useDispatchKey;
-    public boolean shouldEncrypt = true;
 
     public BasePacket(int opcode) {
         this.opcode = opcode;

@@ -1,41 +1,41 @@
 package emu.grasscutter.game.quest;
 
-import java.beans.Transient;
-import java.util.*;
-import java.util.function.Consumer;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.excels.QuestData;
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.ParentQuestState;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import jdk.jshell.spi.ExecutionControl;
 import lombok.Getter;
+
+import java.util.*;
+import java.util.function.Consumer;
 
 public class QuestManager extends BasePlayerManager {
 
-    @Getter private final Player player;
-    @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
-    @Getter private List<GameQuest> addToQuestListUpdateNotify;
+    private static final Set<Integer> newPlayerMainQuests = Set.of(303, 318, 348, 349, 350, 351, 416, 500,
+        501, 502, 503, 504, 505, 506, 507, 508, 509, 20000, 20507, 20509, 21004, 21005, 21010, 21011, 21016, 21017,
+        21020, 21021, 21025, 40063, 70121, 70124, 70511, 71010, 71012, 71013, 71015, 71016, 71017, 71555);
+    @Getter
+    private final Player player;
+    @Getter
+    private final Int2ObjectMap<GameMainQuest> mainQuests;
     /*
         On SetPlayerBornDataReq, the server sends FinishedParentQuestNotify, with this exact
         parentQuestList. Captured on Game version 2.7
         Note: quest 40063 is already set to finished, with childQuest 4006406's state set to 3
     */
-
-    private static Set<Integer> newPlayerMainQuests = Set.of(303,318,348,349,350,351,416,500,
-        501,502,503,504,505,506,507,508,509,20000,20507,20509,21004,21005,21010,21011,21016,21017,
-        21020,21021,21025,40063,70121,70124,70511,71010,71012,71013,71015,71016,71017,71555);
+    @Getter
+    private final List<GameQuest> addToQuestListUpdateNotify;
 
     /*
         On SetPlayerBornDataReq, the server sends ServerCondMeetQuestListUpdateNotify, with this exact
@@ -62,16 +62,17 @@ public class QuestManager extends BasePlayerManager {
 
     */
 
-        public static long getQuestKey(int mainQuestId) {
-        QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
-        return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
-    }
     public QuestManager(Player player) {
 
         super(player);
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
         this.addToQuestListUpdateNotify = new ArrayList<>();
+    }
+
+    public static long getQuestKey(int mainQuestId) {
+        QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
+        return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
     }
 
     public void onNewPlayerCreate() {
@@ -98,7 +99,7 @@ public class QuestManager extends BasePlayerManager {
     private List<GameMainQuest> addMultMainQuests(Set<Integer> mainQuestIds) {
         List<GameMainQuest> newQuests = new ArrayList<>();
         for (Integer id : mainQuestIds) {
-            getMainQuests().put(id.intValue(),new GameMainQuest(this.player, id));
+            getMainQuests().put(id.intValue(), new GameMainQuest(this.player, id));
             getMainQuestById(id).save();
             newQuests.add(getMainQuestById(id));
         }
@@ -109,24 +110,26 @@ public class QuestManager extends BasePlayerManager {
         Looking through mainQuests 72201-72208 and 72174, we can infer that a questGlobalVar's default value is 0
     */
     public Integer getQuestGlobalVarValue(Integer variable) {
-        return getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
+        return getPlayer().getQuestGlobalVariables().getOrDefault(variable, 0);
     }
 
     public void setQuestGlobalVarValue(Integer variable, Integer value) {
-        Integer previousValue = getPlayer().getQuestGlobalVariables().put(variable,value);
-        Grasscutter.getLogger().debug("Changed questGlobalVar {} value from {} to {}", variable, previousValue==null ? 0: previousValue, value);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().put(variable, value);
+        Grasscutter.getLogger().debug("Changed questGlobalVar {} value from {} to {}", variable, previousValue == null ? 0 : previousValue, value);
     }
+
     public void incQuestGlobalVarValue(Integer variable, Integer inc) {
         //
-        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
-        getPlayer().getQuestGlobalVariables().put(variable,previousValue + inc);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable, 0);
+        getPlayer().getQuestGlobalVariables().put(variable, previousValue + inc);
         Grasscutter.getLogger().debug("Incremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue + inc);
     }
+
     //In MainQuest 998, dec is passed as a positive integer
     public void decQuestGlobalVarValue(Integer variable, Integer dec) {
         //
-        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
-        getPlayer().getQuestGlobalVariables().put(variable,previousValue - dec);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable, 0);
+        getPlayer().getQuestGlobalVariables().put(variable, previousValue - dec);
         Grasscutter.getLogger().debug("Decremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue - dec);
     }
 
@@ -213,6 +216,7 @@ public class QuestManager extends BasePlayerManager {
 
         return quest;
     }
+
     public void startMainQuest(int mainQuestId) {
         var mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
 
@@ -225,6 +229,7 @@ public class QuestManager extends BasePlayerManager {
             .map(MainQuestData.SubQuestData::getSubId)
             .ifPresent(this::addQuest);
     }
+
     public void triggerEvent(QuestTrigger condType, int... params) {
         triggerEvent(condType, "", params);
     }
@@ -312,6 +317,7 @@ public class QuestManager extends BasePlayerManager {
             .filter(i -> i.getScene() == sceneId)
             .toList();
     }
+
     public void loadFromDatabase() {
         List<GameMainQuest> quests = DatabaseHelper.getAllQuests(getPlayer());
 

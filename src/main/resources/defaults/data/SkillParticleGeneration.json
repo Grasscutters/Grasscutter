@@ -1,556 +1,556 @@
 [
-	{
-		"avatarId": 10000002,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 50
-			},
-			{
-				"value": 5,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000003,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 33
-			},
-			{
-				"value": 3,
-				"chance": 67
-			}
-		]
-	},
-	{
-		"avatarId": 10000005,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 67
-			},
-			{
-				"value": 4,
-				"chance": 33
-			}
-		]
-	},
-	{
-		"avatarId": 10000006,
-		"amountList": [
-			{
-				"value": 5,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000007,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 67
-			},
-			{
-				"value": 4,
-				"chance": 33
-			}
-		]
-	},
-	{
-		"avatarId": 10000014,
-		"amountList": [
-			{
-				"value": 0,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000015,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 33
-			},
-			{
-				"value": 3,
-				"chance": 67
-			}
-		]
-	},
-	{
-		"avatarId": 10000016,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 33
-			},
-			{
-				"value": 2,
-				"chance": 67
-			}
-		]
-	},
-	{
-		"avatarId": 10000020,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000021,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000022,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000023,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000024,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000025,
-		"amountList": [
-			{
-				"value": 5,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000026,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000027,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 33
-			},
-			{
-				"value": 4,
-				"chance": 67
-			}
-		]
-	},
-	{
-		"avatarId": 10000029,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000030,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000031,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000032,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 75
-			},
-			{
-				"value": 3,
-				"chance": 25
-			}
-		]
-	},
-	{
-		"avatarId": 10000033,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000034,
-		"amountList": [
-			{
-				"value": 0,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000035,
-		"amountList": [
-			{
-				"value": 0,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000036,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000037,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000038,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000039,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000041,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 67
-			},
-			{
-				"value": 4,
-				"chance": 33
-			}
-		]
-	},
-	{
-		"avatarId": 10000042,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 50
-			},
-			{
-				"value": 3,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000043,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000044,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000045,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000046,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 50
-			},
-			{
-				"value": 3,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000047,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 50
-			},
-			{
-				"value": 4,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000048,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000049,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000050,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 50
-			},
-			{
-				"value": 4,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000051,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 50
-			},
-			{
-				"value": 2,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000052,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000053,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000054,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000055,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000056,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000057,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 50
-			},
-			{
-				"value": 4,
-				"chance": 50
-			}
-		]
-	},
-	{
-		"avatarId": 10000058,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000060,
-		"amountList": [
-			{
-				"value": 4,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000062,
-		"amountList": [
-			{
-				"value": 5,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000063,
-		"amountList": [
-			{
-				"value": 3,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000064,
-		"amountList": [
-			{
-				"value": 2,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000065,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 100
-			}
-		]
-	},
-	{
-		"avatarId": 10000066,
-		"amountList": [
-			{
-				"value": 1,
-				"chance": 50
-			},
-			{
-				"value": 2,
-				"chance": 50
-			}
-		]
-    },
-    {
-        "avatarId": 10000067,
-        "amountList": [
-            {
-                "value": 3,
-                "chance": 100
-            }
-        ]
-    },
-    {
-        "avatarId": 10000068,
-        "amountList": [
-            {
-                "value": 2,
-                "chance": 100
-            }
-        ]
-    },
-    {
-        "avatarId": 10000069,
-        "amountList": [
-            {
-                "value": 3,
-                "chance": 50
-            },
-            {
-                "value": 4,
-                "chance": 50
-            }
-        ]
-    }
+  {
+    "avatarId": 10000002,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 50
+      },
+      {
+        "value": 5,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000003,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 33
+      },
+      {
+        "value": 3,
+        "chance": 67
+      }
+    ]
+  },
+  {
+    "avatarId": 10000005,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 67
+      },
+      {
+        "value": 4,
+        "chance": 33
+      }
+    ]
+  },
+  {
+    "avatarId": 10000006,
+    "amountList": [
+      {
+        "value": 5,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000007,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 67
+      },
+      {
+        "value": 4,
+        "chance": 33
+      }
+    ]
+  },
+  {
+    "avatarId": 10000014,
+    "amountList": [
+      {
+        "value": 0,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000015,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 33
+      },
+      {
+        "value": 3,
+        "chance": 67
+      }
+    ]
+  },
+  {
+    "avatarId": 10000016,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 33
+      },
+      {
+        "value": 2,
+        "chance": 67
+      }
+    ]
+  },
+  {
+    "avatarId": 10000020,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000021,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000022,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000023,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000024,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000025,
+    "amountList": [
+      {
+        "value": 5,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000026,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000027,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 33
+      },
+      {
+        "value": 4,
+        "chance": 67
+      }
+    ]
+  },
+  {
+    "avatarId": 10000029,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000030,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000031,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000032,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 75
+      },
+      {
+        "value": 3,
+        "chance": 25
+      }
+    ]
+  },
+  {
+    "avatarId": 10000033,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000034,
+    "amountList": [
+      {
+        "value": 0,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000035,
+    "amountList": [
+      {
+        "value": 0,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000036,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000037,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000038,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000039,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000041,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 67
+      },
+      {
+        "value": 4,
+        "chance": 33
+      }
+    ]
+  },
+  {
+    "avatarId": 10000042,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 50
+      },
+      {
+        "value": 3,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000043,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000044,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000045,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000046,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 50
+      },
+      {
+        "value": 3,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000047,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 50
+      },
+      {
+        "value": 4,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000048,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000049,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000050,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 50
+      },
+      {
+        "value": 4,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000051,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 50
+      },
+      {
+        "value": 2,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000052,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000053,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000054,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000055,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000056,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000057,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 50
+      },
+      {
+        "value": 4,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000058,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000060,
+    "amountList": [
+      {
+        "value": 4,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000062,
+    "amountList": [
+      {
+        "value": 5,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000063,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000064,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000065,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000066,
+    "amountList": [
+      {
+        "value": 1,
+        "chance": 50
+      },
+      {
+        "value": 2,
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "avatarId": 10000067,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000068,
+    "amountList": [
+      {
+        "value": 2,
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "avatarId": 10000069,
+    "amountList": [
+      {
+        "value": 3,
+        "chance": 50
+      },
+      {
+        "value": 4,
+        "chance": 50
+      }
+    ]
+  }
 ]

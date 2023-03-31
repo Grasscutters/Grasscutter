@@ -5,14 +5,14 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DeleteFriendNotifyOuterClass.DeleteFriendNotify;
 
 public class PacketDeleteFriendNotify extends BasePacket {
-	
-	public PacketDeleteFriendNotify(int targetUid) {
-		super(PacketOpcodes.DeleteFriendNotify);
 
-		DeleteFriendNotify proto = DeleteFriendNotify.newBuilder()
-				.setTargetUid(targetUid)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketDeleteFriendNotify(int targetUid) {
+        super(PacketOpcodes.DeleteFriendNotify);
+
+        DeleteFriendNotify proto = DeleteFriendNotify.newBuilder()
+            .setTargetUid(targetUid)
+            .build();
+
+        this.setData(proto);
+    }
 }

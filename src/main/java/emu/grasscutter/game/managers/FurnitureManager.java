@@ -68,18 +68,18 @@ public class FurnitureManager extends BasePlayerManager {
         }
 
         var furnitureSlot = FurnitureMakeSlotItem.of()
-                .avatarId(avatarId)
-                .makeId(makeId)
-                .beginTime(Utils.getCurrentSeconds())
-                .durTime(makeData.getMakeTime())
-                .build();
+            .avatarId(avatarId)
+            .makeId(makeId)
+            .beginTime(Utils.getCurrentSeconds())
+            .durTime(makeData.getMakeTime())
+            .build();
 
         // add furniture make task
         player.getHome().getFurnitureMakeSlotItemList().add(furnitureSlot);
         player.getSession().send(new PacketFurnitureMakeStartRsp(Retcode.RET_SUCC_VALUE,
-                player.getHome().getFurnitureMakeSlotItemList().stream()
-                        .map(FurnitureMakeSlotItem::toProto)
-                        .toList()
+            player.getHome().getFurnitureMakeSlotItemList().stream()
+                .map(FurnitureMakeSlotItem::toProto)
+                .toList()
         ));
 
         player.getHome().save();
@@ -102,8 +102,8 @@ public class FurnitureManager extends BasePlayerManager {
         }
 
         var slotItem = player.getHome().getFurnitureMakeSlotItemList().stream()
-                .filter(x -> x.getIndex() == index && x.getMakeId() == makeId)
-                .findFirst();
+            .filter(x -> x.getIndex() == index && x.getMakeId() == makeId)
+            .findFirst();
 
         if (slotItem.isEmpty()) {
             player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_FURNITURE_MAKE_NO_MAKE_DATA_VALUE, makeId, null, null));
@@ -111,7 +111,7 @@ public class FurnitureManager extends BasePlayerManager {
         }
 
         // pay the speedup item
-        if (isFastFinish && !player.getInventory().payItem(107013,1)) {
+        if (isFastFinish && !player.getInventory().payItem(107013, 1)) {
             player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_FURNITURE_MAKE_UNFINISH_VALUE, makeId, null, null));
             return;
         }
@@ -129,14 +129,14 @@ public class FurnitureManager extends BasePlayerManager {
         player.getInventory().addItem(121, makeData.getExp(), ActionReason.FurnitureMakeTake);
 
         player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_SUCC_VALUE, makeId,
-                List.of(ItemParamOuterClass.ItemParam.newBuilder()
-                                .setItemId(makeData.getFurnitureItemID())
-                                .setCount(makeData.getCount())
-                        .build()),
-                player.getHome().getFurnitureMakeSlotItemList().stream()
-                        .map(FurnitureMakeSlotItem::toProto)
-                        .toList()
-                ));
+            List.of(ItemParamOuterClass.ItemParam.newBuilder()
+                .setItemId(makeData.getFurnitureItemID())
+                .setCount(makeData.getCount())
+                .build()),
+            player.getHome().getFurnitureMakeSlotItemList().stream()
+                .map(FurnitureMakeSlotItem::toProto)
+                .toList()
+        ));
         player.getHome().save();
     }
 }

@@ -1,9 +1,5 @@
 package emu.grasscutter.server.game;
 
-import java.io.File;
-import java.net.InetSocketAddress;
-import java.nio.file.Path;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
@@ -20,21 +16,34 @@ import io.netty.buffer.Unpooled;
 import lombok.Getter;
 import lombok.Setter;
 
-import static emu.grasscutter.config.Configuration.*;
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.nio.file.Path;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
 public class GameSession implements GameSessionManager.KcpChannel {
     private final GameServer server;
     private GameSessionManager.KcpTunnel tunnel;
 
-    @Getter @Setter private Account account;
-    @Getter private Player player;
+    @Getter
+    @Setter
+    private Account account;
+    @Getter
+    private Player player;
 
-    @Setter private boolean useSecretKey;
-    @Getter @Setter private SessionState state;
+    @Setter
+    private boolean useSecretKey;
+    @Getter
+    @Setter
+    private SessionState state;
 
-    @Getter private int clientTime;
-    @Getter private long lastPingTime;
+    @Getter
+    private int clientTime;
+    @Getter
+    private long lastPingTime;
     private int lastClientSeq = 10;
 
     public GameSession(GameServer server) {

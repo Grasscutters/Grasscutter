@@ -11,16 +11,16 @@ import emu.grasscutter.server.packet.send.PacketGetFriendShowAvatarInfoRsp;
 @Opcodes(PacketOpcodes.GetFriendShowAvatarInfoReq)
 public class HandlerGetFriendShowAvatarInfoReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		GetFriendShowAvatarInfoReq req = GetFriendShowAvatarInfoReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        GetFriendShowAvatarInfoReq req = GetFriendShowAvatarInfoReq.parseFrom(payload);
 
-		int targetUid = req.getUid();
-		Player targetPlayer = session.getServer().getPlayerByUid(targetUid, true);
+        int targetUid = req.getUid();
+        Player targetPlayer = session.getServer().getPlayerByUid(targetUid, true);
 
-		if (targetPlayer.isShowAvatars()) {
-			session.send(new PacketGetFriendShowAvatarInfoRsp(targetUid, targetPlayer.getShowAvatarInfoList()));
-		}
-	}
+        if (targetPlayer.isShowAvatars()) {
+            session.send(new PacketGetFriendShowAvatarInfoRsp(targetUid, targetPlayer.getShowAvatarInfoList()));
+        }
+    }
 
 }

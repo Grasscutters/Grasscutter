@@ -6,8 +6,8 @@ import emu.grasscutter.net.proto.UnlockPersonalLineRspOuterClass;
 
 public class PacketUnlockPersonalLineRsp extends BasePacket {
 
-	public PacketUnlockPersonalLineRsp(int id, int level, int chapterId) {
-		super(PacketOpcodes.UnlockPersonalLineRsp);
+    public PacketUnlockPersonalLineRsp(int id, int level, int chapterId) {
+        super(PacketOpcodes.UnlockPersonalLineRsp);
 
         var proto = UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp.newBuilder();
 
@@ -16,5 +16,5 @@ public class PacketUnlockPersonalLineRsp extends BasePacket {
             .setChapterId(chapterId);
 
         this.setData(proto);
-	}
+    }
 }

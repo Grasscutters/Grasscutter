@@ -7,7 +7,7 @@ import lombok.Getter;
 
 import java.util.List;
 
-@ResourceType(name = {"CompoundExcelConfigData.json"},loadPriority = ResourceType.LoadPriority.LOW)
+@ResourceType(name = {"CompoundExcelConfigData.json"}, loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 public class CompoundData extends GameResource {
     @Getter(onMethod_ = @Override)

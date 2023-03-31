@@ -1,17 +1,5 @@
 package emu.grasscutter.game.battlepass;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.bson.types.ObjectId;
-
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
@@ -32,32 +20,50 @@ import emu.grasscutter.game.props.BattlePassMissionStatus;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle;
-import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
 import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption;
 import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule;
+import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
 import emu.grasscutter.server.packet.send.PacketBattlePassCurScheduleUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
-
 import lombok.Getter;
+import org.bson.types.ObjectId;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Entity(value = "battlepass", useDiscriminator = false)
 public class BattlePassManager extends BasePlayerDataManager {
-    @Id @Getter private ObjectId id;
+    @Id
+    @Getter
+    private ObjectId id;
 
-    @Indexed private int ownerUid;
-    @Getter private int point;
-    @Getter private int cyclePoints; // Weekly maximum cap
-    @Getter private int level;
+    @Indexed
+    private int ownerUid;
+    @Getter
+    private int point;
+    @Getter
+    private int cyclePoints; // Weekly maximum cap
+    @Getter
+    private int level;
 
-    @Getter private boolean viewed;
+    @Getter
+    private boolean viewed;
     private boolean paid;
 
     private Map<Integer, BattlePassMission> missions;
     private Map<Integer, BattlePassReward> takenRewards;
 
     @Deprecated // Morphia only
-    public BattlePassManager() {}
+    public BattlePassManager() {
+    }
 
     public BattlePassManager(Player player) {
         super(player);
@@ -219,8 +225,7 @@ public class BattlePassManager extends BasePlayerDataManager {
                 GameItem rewardItem = new GameItem(GameData.getItemDataMap().get(r.getItemId()), r.getItemCount());
                 rewardItems.add(rewardItem);
             }
-        }
-        else {
+        } else {
             Grasscutter.getLogger().error("Invalid chest type for BP reward.");
         }
     }
@@ -246,8 +251,7 @@ public class BattlePassManager extends BasePlayerDataManager {
                 rewardList.add(option);
             } else if (this.isPaid() && rewardData.getPaidRewardIdList().contains(option.getTag().getRewardId())) {
                 rewardList.add(option);
-            }
-            else {
+            } else {
                 Grasscutter.getLogger().info("Not in rewards list: {}", option.getTag().getRewardId());
             }
         }
@@ -360,20 +364,20 @@ public class BattlePassManager extends BasePlayerDataManager {
         var nextSundayTime = LocalDateTime.of(nextSundayDate.getYear(), nextSundayDate.getMonthValue(), nextSundayDate.getDayOfMonth(), 23, 59, 59);
 
         BattlePassSchedule.Builder schedule = BattlePassSchedule.newBuilder()
-                .setScheduleId(2700)
-                .setLevel(this.getLevel())
-                .setPoint(this.getPoint())
+            .setScheduleId(2700)
+            .setLevel(this.getLevel())
+            .setPoint(this.getPoint())
+            .setBeginTime(0)
+            .setEndTime(2059483200)
+            .setIsViewed(this.isViewed())
+            .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
+            .setPaidPlatformFlags(2) // Not bought on Playstation.
+            .setCurCyclePoints(this.getCyclePoints())
+            .setCurCycle(BattlePassCycle.newBuilder()
                 .setBeginTime(0)
-                .setEndTime(2059483200)
-                .setIsViewed(this.isViewed())
-                .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
-                .setPaidPlatformFlags(2) // Not bought on Playstation.
-                .setCurCyclePoints(this.getCyclePoints())
-                .setCurCycle(BattlePassCycle.newBuilder()
-                    .setBeginTime(0)
-                    .setEndTime((int)nextSundayTime.atZone(ZoneId.systemDefault()).toEpochSecond())
-                    .setCycleIdx(3)
-                );
+                .setEndTime((int) nextSundayTime.atZone(ZoneId.systemDefault()).toEpochSecond())
+                .setCycleIdx(3)
+            );
 
         for (BattlePassReward reward : getTakenRewards().values()) {
             schedule.addRewardTakenList(reward.toProto());

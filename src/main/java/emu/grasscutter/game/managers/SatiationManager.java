@@ -1,16 +1,16 @@
 package emu.grasscutter.game.managers;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SatiationManager extends BasePlayerManager {
 
@@ -38,7 +38,7 @@ public class SatiationManager extends BasePlayerManager {
         // Penalty
         long penaltyTime = playerTime;
         long penaltyValue = avatar.getSatiationPenalty();
-        if(totalSatiation + avatar.getSatiation() > 10000 && penaltyValue == 0) {
+        if (totalSatiation + avatar.getSatiation() > 10000 && penaltyValue == 0) {
             // Penalty is always 30sec
             penaltyTime += 30;
             penaltyValue = 3000;

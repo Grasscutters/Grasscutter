@@ -9,7 +9,7 @@ public class WeightedList<E> {
     private double total = 0;
 
     public WeightedList() {
-        
+
     }
 
     public WeightedList<E> add(double weight, E result) {
@@ -24,7 +24,7 @@ public class WeightedList<E> {
         return map.higherEntry(value).getValue();
     }
 
-	public int size() {
-		return map.size();
-	}
+    public int size() {
+        return map.size();
+    }
 }

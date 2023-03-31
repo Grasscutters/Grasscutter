@@ -1,28 +1,30 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
-import java.util.Optional;
-
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.systems.InventorySystem;
+
+import java.util.Optional;
 
 public class ItemUseGainAvatar extends ItemUseInt {
     private int level = 1;
     private int constellation = 0;
 
-    @Override
-    public ItemUseOp getItemUseOp() {
-        return ItemUseOp.ITEM_USE_GAIN_AVATAR;
-    }
-
     public ItemUseGainAvatar(String[] useParam) {
         super(useParam);
         try {
             this.level = Integer.parseInt(useParam[1]);
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+        }
         try {
             this.constellation = Integer.parseInt(useParam[2]);
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+        }
+    }
+
+    @Override
+    public ItemUseOp getItemUseOp() {
+        return ItemUseOp.ITEM_USE_GAIN_AVATAR;
     }
 
     @Override

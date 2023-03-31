@@ -11,18 +11,17 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ShopSystem extends BaseGameSystem {
-    private final Int2ObjectMap<List<ShopInfo>> shopData;
-    private final Int2ObjectMap<List<ItemParamData>> shopChestData;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
+public class ShopSystem extends BaseGameSystem {
     private static final int REFRESH_HOUR = 4; // In GMT+8 server
     private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
+    private final Int2ObjectMap<List<ShopInfo>> shopData;
+    private final Int2ObjectMap<List<ItemParamData>> shopChestData;
 
     public ShopSystem(GameServer server) {
         super(server);
@@ -31,21 +30,24 @@ public class ShopSystem extends BaseGameSystem {
         this.load();
     }
 
+    public static int getShopNextRefreshTime(ShopInfo shopInfo) {
+        return switch (shopInfo.getShopRefreshType()) {
+            case SHOP_REFRESH_DAILY ->
+                Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+            case SHOP_REFRESH_WEEKLY ->
+                Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+            case SHOP_REFRESH_MONTHLY ->
+                Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+            default -> 0;
+        };
+    }
+
     public Int2ObjectMap<List<ShopInfo>> getShopData() {
         return shopData;
     }
 
     public List<ItemParamData> getShopChestData(int chestId) {
         return this.shopChestData.get(chestId);
-    }
-
-    public static int getShopNextRefreshTime(ShopInfo shopInfo) {
-        return switch (shopInfo.getShopRefreshType()) {
-            case SHOP_REFRESH_DAILY -> Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-            case SHOP_REFRESH_WEEKLY ->  Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-            case SHOP_REFRESH_MONTHLY -> Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-            default -> 0;
-        };
     }
 
     private void loadShop() {

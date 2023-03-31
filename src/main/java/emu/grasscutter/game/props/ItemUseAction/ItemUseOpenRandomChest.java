@@ -5,13 +5,13 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseOpenRandomChest extends ItemUseInt {
+    public ItemUseOpenRandomChest(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_OPEN_RANDOM_CHEST;
-    }
-
-    public ItemUseOpenRandomChest(String[] useParam) {
-        super(useParam);
     }
 
     @Override

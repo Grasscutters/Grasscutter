@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass;
 
 public class PacketServerAnnounceRevokeNotify extends BasePacket {
 
-	public PacketServerAnnounceRevokeNotify(int tplId) {
-		super(PacketOpcodes.ServerAnnounceRevokeNotify);
+    public PacketServerAnnounceRevokeNotify(int tplId) {
+        super(PacketOpcodes.ServerAnnounceRevokeNotify);
 
         var proto = ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.newBuilder();
 
         proto.addConfigIdList(tplId);
 
         this.setData(proto);
-	}
+    }
 }

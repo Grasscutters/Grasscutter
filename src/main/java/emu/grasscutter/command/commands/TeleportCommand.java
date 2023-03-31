@@ -36,7 +36,7 @@ public final class TeleportCommand implements CommandHandler {
             case 4:
                 try {
                     sceneId = Integer.parseInt(args.get(3));
-                }catch (NumberFormatException ignored) {
+                } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
                 }  // Fallthrough
             case 3:
@@ -60,7 +60,7 @@ public final class TeleportCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success",
-                    targetPlayer.getNickname(), x, y, z, sceneId)
+                targetPlayer.getNickname(), x, y, z, sceneId)
             );
         }
 

@@ -7,8 +7,8 @@ import emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass;
 
 public class PacketActivityUpdateWatcherNotify extends BasePacket {
 
-	public PacketActivityUpdateWatcherNotify(int activityId, PlayerActivityData.WatcherInfo watcherInfo) {
-		super(PacketOpcodes.ActivityUpdateWatcherNotify);
+    public PacketActivityUpdateWatcherNotify(int activityId, PlayerActivityData.WatcherInfo watcherInfo) {
+        super(PacketOpcodes.ActivityUpdateWatcherNotify);
 
         var proto = ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify.newBuilder();
 
@@ -16,5 +16,5 @@ public class PacketActivityUpdateWatcherNotify extends BasePacket {
             .setWatcherInfo(watcherInfo.toProto());
 
         this.setData(proto);
-	}
+    }
 }

@@ -5,7 +5,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
 
-public class GadgetObject extends GadgetContent{
+public class GadgetObject extends GadgetContent {
     public GadgetObject(EntityGadget gadget) {
         super(gadget);
     }

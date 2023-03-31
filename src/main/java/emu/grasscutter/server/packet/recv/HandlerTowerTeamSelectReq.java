@@ -11,16 +11,16 @@ import emu.grasscutter.server.packet.send.PacketTowerTeamSelectRsp;
 @Opcodes(PacketOpcodes.TowerTeamSelectReq)
 public class HandlerTowerTeamSelectReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		TowerTeamSelectReq req = TowerTeamSelectReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        TowerTeamSelectReq req = TowerTeamSelectReq.parseFrom(payload);
 
-		var towerTeams = req.getTowerTeamListList().stream()
-				.map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
-				.toList();
+        var towerTeams = req.getTowerTeamListList().stream()
+            .map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
+            .toList();
 
-		session.getPlayer().getTowerManager().teamSelect(req.getFloorId(), towerTeams);
+        session.getPlayer().getTowerManager().teamSelect(req.getFloorId(), towerTeams);
 
-		session.send(new PacketTowerTeamSelectRsp());
-	}
+        session.send(new PacketTowerTeamSelectRsp());
+    }
 }

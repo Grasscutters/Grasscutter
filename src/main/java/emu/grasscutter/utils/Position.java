@@ -1,29 +1,36 @@
 package emu.grasscutter.utils;
 
-import java.io.Serializable;
-import java.util.List;
-
-import com.google.gson.annotations.SerializedName;
 import com.github.davidmoten.rtreemulti.geometry.Point;
+import com.google.gson.annotations.SerializedName;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+import java.util.List;
+
 @Entity
 public class Position implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
 
-    @SerializedName(value="x", alternate={"_x", "X"})
-    @Getter @Setter private float x;
+    @SerializedName(value = "x", alternate = {"_x", "X"})
+    @Getter
+    @Setter
+    private float x;
 
-    @SerializedName(value="y", alternate={"_y", "Y"})
-    @Getter @Setter private float y;
+    @SerializedName(value = "y", alternate = {"_y", "Y"})
+    @Getter
+    @Setter
+    private float y;
 
-    @SerializedName(value="z", alternate={"_z", "Z"})
-    @Getter @Setter private float z;
+    @SerializedName(value = "z", alternate = {"_z", "Z"})
+    @Getter
+    @Setter
+    private float z;
 
-    public Position() {}
+    public Position() {
+    }
 
     public Position(float x, float y) {
         set(x, y);
@@ -117,8 +124,9 @@ public class Position implements Serializable {
         return this;
     }
 
-    /** In radians
-     * */
+    /**
+     * In radians
+     */
     public Position translate(float dist, float angle) {
         this.x += dist * Math.sin(angle);
         this.y += dist * Math.cos(angle);
@@ -135,10 +143,10 @@ public class Position implements Serializable {
     }
 
     public double computeDistance(Position b) {
-        double detX = getX()-b.getX();
-        double detY = getY()-b.getY();
-        double detZ = getZ()-b.getZ();
-        return Math.sqrt(detX*detX+detY*detY+detZ*detZ);
+        double detX = getX() - b.getX();
+        double detY = getY() - b.getY();
+        double detZ = getZ() - b.getZ();
+        return Math.sqrt(detX * detX + detY * detY + detZ * detZ);
     }
 
     public Position nearby2d(float range) {
@@ -147,6 +155,7 @@ public class Position implements Serializable {
         position.x += Utils.randomFloatRange(-range, range);
         return position;
     }
+
     public Position translateWithDegrees(float dist, float angle) {
         angle = (float) Math.toRadians(angle);
         this.x += dist * Math.sin(angle);
@@ -171,16 +180,18 @@ public class Position implements Serializable {
             .setZ(this.getZ())
             .build();
     }
+
     public Point toPoint() {
-        return Point.create(x,y,z);
+        return Point.create(x, y, z);
     }
 
     /**
      * To XYZ array for Spatial Index
      */
     public double[] toDoubleArray() {
-        return new double[]{ x, y, z};
+        return new double[]{x, y, z};
     }
+
     /**
      * To XZ array for Spatial Index (Blocks)
      */

@@ -23,6 +23,7 @@ public class PacketPlayerCompoundMaterialRsp extends BasePacket {
 
     /**
      * Builder for failed message.
+     *
      * @param retcode error code
      */
     public PacketPlayerCompoundMaterialRsp(int retcode) {

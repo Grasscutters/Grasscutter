@@ -37,14 +37,17 @@ public class PlayerActivityData {
      * the detail data of each type of activity (Json format)
      */
     String detail;
-    @Transient Player player;
-    @Transient ActivityHandler activityHandler;
-    public void save() {
-        DatabaseHelper.savePlayerActivityData(this);
-    }
+    @Transient
+    Player player;
+    @Transient
+    ActivityHandler activityHandler;
 
     public static PlayerActivityData getByPlayer(Player player, int activityId) {
         return DatabaseHelper.getPlayerActivityData(player.getUid(), activityId);
+    }
+
+    public void save() {
+        DatabaseHelper.savePlayerActivityData(this);
     }
 
     public synchronized void addWatcherProgress(int watcherId) {
@@ -100,15 +103,11 @@ public class PlayerActivityData {
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
     @Builder(builderMethodName = "of")
-    public static class WatcherInfo{
+    public static class WatcherInfo {
         int watcherId;
         int totalProgress;
         int curProgress;
         boolean isTakenReward;
-
-        public ActivityWatcherData getMetadata() {
-            return GameData.getActivityWatcherDataMap().get(watcherId);
-        }
 
         public static WatcherInfo init(ActivityWatcher watcher) {
             return WatcherInfo.of()
@@ -116,6 +115,10 @@ public class PlayerActivityData {
                 .totalProgress(watcher.getActivityWatcherData().getProgress())
                 .isTakenReward(false)
                 .build();
+        }
+
+        public ActivityWatcherData getMetadata() {
+            return GameData.getActivityWatcherDataMap().get(watcherId);
         }
 
         public ActivityWatcherInfoOuterClass.ActivityWatcherInfo toProto() {

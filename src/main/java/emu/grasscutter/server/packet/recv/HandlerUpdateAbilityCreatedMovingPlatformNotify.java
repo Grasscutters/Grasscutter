@@ -23,8 +23,10 @@ public class HandlerUpdateAbilityCreatedMovingPlatformNotify extends PacketHandl
         var scene = ((EntityPlatform) entity).getOwner().getScene();
 
         switch (notify.getOpType()) {
-            case OP_TYPE_ACTIVATE -> scene.broadcastPacket(new PacketPlatformStartRouteNotify((EntityPlatform) entity, scene));
-            case OP_TYPE_DEACTIVATE -> scene.broadcastPacket(new PacketPlatformStopRouteNotify((EntityPlatform) entity, scene));
+            case OP_TYPE_ACTIVATE ->
+                scene.broadcastPacket(new PacketPlatformStartRouteNotify((EntityPlatform) entity, scene));
+            case OP_TYPE_DEACTIVATE ->
+                scene.broadcastPacket(new PacketPlatformStopRouteNotify((EntityPlatform) entity, scene));
         }
     }
 }

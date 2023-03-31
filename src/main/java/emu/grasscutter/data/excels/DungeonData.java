@@ -9,17 +9,23 @@ import lombok.Getter;
 public class DungeonData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
-    @Getter private int sceneId;
-    @Getter private int showLevel;
+    @Getter
+    private int sceneId;
+    @Getter
+    private int showLevel;
     private int passRewardPreviewID;
     private String involveType; // TODO enum
 
     private RewardPreviewData previewData;
 
-    @Getter private int statueCostID;
-    @Getter private int statueCostCount;
+    @Getter
+    private int statueCostID;
+    @Getter
+    private int statueCostCount;
 
-    public RewardPreviewData getRewardPreview() {return previewData;}
+    public RewardPreviewData getRewardPreview() {
+        return previewData;
+    }
 
     @Override
     public void onLoad() {

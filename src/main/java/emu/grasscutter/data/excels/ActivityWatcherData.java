@@ -27,7 +27,7 @@ public class ActivityWatcherData extends GameResource {
 
     @Getter
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public static class WatcherTrigger{
+    public static class WatcherTrigger {
         String triggerType;
         List<String> paramList;
 

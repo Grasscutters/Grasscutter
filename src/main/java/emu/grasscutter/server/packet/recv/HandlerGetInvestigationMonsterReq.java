@@ -15,9 +15,9 @@ public class HandlerGetInvestigationMonsterReq extends PacketHandler {
         var req = GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.parseFrom(payload);
 
         session.send(new PacketGetInvestigationMonsterRsp(
-                session.getPlayer(),
-                session.getServer().getWorldDataSystem(),
-                req.getCityIdListList()));
+            session.getPlayer(),
+            session.getServer().getWorldDataSystem(),
+            req.getCityIdListList()));
 
     }
 
