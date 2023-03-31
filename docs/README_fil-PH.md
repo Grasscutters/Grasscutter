@@ -3,9 +3,9 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
+[EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
 
-**Atensyon:** Ang mga kontributor ay laging welcome sa proyektong ito. Bago mag-bigay ng kontribusyon, basahin muna ng mabuti ang [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md). 
+**Atensyon:** Ang mga kontributor ay laging welcome sa proyektong ito. Bago mag-bigay ng kontribusyon, basahin muna ng mabuti ang [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## Ang mga kasalukuyang features
 
@@ -39,7 +39,7 @@
 1. Get `grasscutter.jar`
    - I-download mo sa [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) o sa [actions](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) o [bumuo ng iyong sariling server](#building).
 2. Gawa ka ng `resources` folder sa directory kung nasaan ang grasscutter.jar at ilagay ang `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders sa loob ng resources folder *(Tingnan mo ang [wiki](https://github.com/Grasscutters/Grasscutter/wiki) para malaman mo kung saan mo makukuha yan)*
-3. Paandarin ang Grasscutter gamit ang command na `java -jar grasscutter.jar`. **Siguraduhin mo na ang mongodb service ay naka-open din.** 
+3. Paandarin ang Grasscutter gamit ang command na `java -jar grasscutter.jar`. **Siguraduhin mo na ang mongodb service ay naka-open din.**
 
 ### Connecting with the client
 
@@ -101,6 +101,6 @@ Pag-katapos mong i-compile, check mo yung project directory at makikita mo yung 
 
 # Quick Troubleshooting
 
-* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable). 
+* Kung hindi nag-compile, paki-check ung JDK installation mo (JDK 17 at JDK's bin PATH variable).
 * Hindi ako maka-connect, ayaw mag-login, 4206, etc... - Mostly ang proxy setup mo ang may kasalanan niyan, kung gamit mo ay Fiddler, paki-sigurado na naka-set ung port sa kahit ano except sa 8888.
 * Ang pagkakasunud-sunod: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game

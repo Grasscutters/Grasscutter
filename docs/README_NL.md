@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
+[EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
 
 **Aantekening:** We verwelkomen altijd bijdragers aan het project. Lees onze [Gedragscode](https://github.com/Grasscutters/Grasscutter/blob/development/README_NL.md#bijdragen-aan-het-project) zorgvuldig door voordat u uw bijdrage toevoegt.
 
@@ -124,4 +124,3 @@ Let op: we hebben een gedragscode, volg deze alsjeblieft in al je interacties me
 1. Zorg ervoor dat alle installatie- of build-afhankelijkheden verwijderd zijn voor het einde van de laag wanneer u een build doet.
 2. 2. Werk de README.md en wiki bij met details van wijzigingen aan de interface, inclusief nieuwe omgevingsvariabelen, blootgestelde poorten, nuttige bestandslocaties en containerparameters.
 3. Schrijf met detail op je pull request beschrijving wat je hebt gecommit, om het makkelijker te maken voor de medewerkers om een changelog te maken.
-
