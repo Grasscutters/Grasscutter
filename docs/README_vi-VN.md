@@ -37,7 +37,7 @@
 **Ghi chú:** Nếu bạn đã cập nhật từ phiên bản cũ hơn, hãy xóa `config.json` để tạo lại.
 
 1. Tải `grasscutter.jar`
-    - Tài về từ [releases (bản phát hành)](https://github.com/Grasscutters/Grasscutter/releases/latest) hoặc [actions (các hoạt động)](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) hoặc [tự tạo của chính bạn](#tự-tạo-server--building-).
+    - Tài về từ [releases (bản phát hành)](https://github.com/Grasscutters/Grasscutter/releases/latest) hoặc [actions (các hoạt động)](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) hoặc [tự tạo của chính bạn](#tự-tạo-server-building).
 2. Tạo một thư mục `resources` trong cùng thư mục với Grasscutter.jar và chuyển các thư mục `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` của bạn đến `resources` _(Xem [wiki](https://github.com/Grasscutters/Grasscutter/wiki) để biết cách lấy các thư mục đó)_
 3. Chạy Grasscutter với câu lệnh `java -jar grasscutter.jar`. **Hãy chắc rằng mongodb của bạn đã được chạy**
 
