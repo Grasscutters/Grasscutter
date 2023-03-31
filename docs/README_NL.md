@@ -38,7 +38,7 @@
 **Note:** Als u vanaf een oudere versie heeft geupdate, verwijder dan `config.json` om het te regenereren.
 
 1. Verkrijg `grasscutter.jar`
-   - Download van [actions](https://github.com/Grasscutters/Grasscutter/actions) of [bouw de jar zelf](https://github.com/Grasscutters/Grasscutter/blob/development/README_NL.md#building)
+   - Download van [actions](https://github.com/Grasscutters/Grasscutter/actions) of [bouw de jar zelf](#Bouwen)
 2. Maak een `resources` map aan in de directory waar grasscutter.jar staat en verplaats je `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` mappen daarheen *(Check de [wiki](https://github.com/Grasscutters/Grasscutter/wiki) voor meer details hoe je die krijgt.)*
 3. Start Grasscutter met `java -jar grasscutter.jar`. **Zorg ervoor dat de mongodb service ook draait.**
 

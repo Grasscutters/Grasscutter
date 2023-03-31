@@ -38,7 +38,7 @@
 **＊:** もしサーバーをアップデートしたい場合は`config.json`を削除してから再生成してください。
 
 1. `grasscutter.jar`を入手する
-   - [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) か [action](https://github.com/Grasscutters/Grasscutter/actions) からダウンロードするか、[自分でビルド](https://github.com/Grasscutters/Grasscutter#building)してください｡
+   - [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) か [action](https://github.com/Grasscutters/Grasscutter/actions) からダウンロードするか、[自分でビルド](#ビルド)してください｡
 2. `grasscutter.jar` があるディレクトリに `resources` フォルダーを作成し、そこに `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` を移動してください *(`resources` フォルダの中身の入手方法については [wiki](https://github.com/Grasscutters/Grasscutter/wiki) を参照してください.)*
 3. コマンドプロンプトに`java -jar grasscutter.jar`を入力しGrasscutterを起動してください。**このときMongoDBも実行する必要があります。**
 
