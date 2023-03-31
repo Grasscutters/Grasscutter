@@ -7,8 +7,8 @@ on:
       - "src/main/**.java"
       - "**.json"
       - "build.gradle"
-      - "format_whitespace.py"
-      - "manage_languages.py"
+      - "scripts/format_whitespace.py"
+      - "scripts/manage_languages.py"
     branches:
       - "development"
 jobs:
@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Run Whitespace Linter
-        run: python format_whitespace.py
+        run: python scripts/format_whitespace.py
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git stash
@@ -37,7 +37,7 @@ jobs:
         run: git add -u && git commit -m 'Fix whitespace [skip actions]' || true
 
       - name: Update Languages
-        run: python manage_languages.py -u
+        run: python scripts/manage_languages.py -u
 
       - name: Commit any language changes
         run: git add -u && git commit -m 'Update languages [skip actions]' || true
