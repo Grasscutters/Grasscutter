@@ -1,6 +1,6 @@
-*.java text=auto
-*.json text=auto
-*.md text=auto
-*.properties text=auto
-*.py text=auto
-*.sh text=auto
+*.java text=lf
+*.json text=lf
+*.md text=lf
+*.properties text=lf
+*.py text=lf
+*.sh text=lf
