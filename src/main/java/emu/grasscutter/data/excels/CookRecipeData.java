@@ -11,7 +11,7 @@ import lombok.Getter;
 @ResourceType(name = {"CookRecipeExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
 @Getter
 public class CookRecipeData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
 
     private int rankLevel;

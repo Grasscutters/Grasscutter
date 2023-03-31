@@ -35,7 +35,7 @@ import java.util.List;
 public class EntityVehicle extends EntityBaseGadget {
 
     @Getter private final Player owner;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
 
     @Getter private final int pointId;

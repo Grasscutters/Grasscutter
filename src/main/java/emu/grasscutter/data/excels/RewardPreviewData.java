@@ -12,7 +12,7 @@ import emu.grasscutter.data.common.ItemParamStringData;
 
 @ResourceType(name = "RewardPreviewExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class RewardPreviewData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private ItemParamStringData[] previewItems;
     private ItemParamData[] previewItemsArray;

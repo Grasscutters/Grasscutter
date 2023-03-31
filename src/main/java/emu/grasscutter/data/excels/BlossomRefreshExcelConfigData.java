@@ -9,7 +9,7 @@ import lombok.Getter;
 @ResourceType(name = "BlossomRefreshExcelConfigData.json")
 @Getter
 public class BlossomRefreshExcelConfigData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     // Map details
     private long nameTextMapHash;

@@ -25,7 +25,7 @@ import lombok.Getter;
 public class EntityClientGadget extends EntityBaseGadget {
     @Getter private final Player owner;
 
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int gadgetId;
 
     @Getter private int campId;

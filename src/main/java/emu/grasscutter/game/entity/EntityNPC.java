@@ -9,9 +9,9 @@ import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.Getter;
 
 public class EntityNPC extends GameEntity{
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position position;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position rotation;
     private final SceneNPC metaNpc;
     @Getter private final int suiteId;

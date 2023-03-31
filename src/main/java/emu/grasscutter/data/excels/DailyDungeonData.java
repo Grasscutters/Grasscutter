@@ -11,7 +11,7 @@ import lombok.Getter;
 
 @ResourceType(name = "DailyDungeonConfigData.json")
 public class DailyDungeonData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private int[] monday;
     private int[] tuesday;

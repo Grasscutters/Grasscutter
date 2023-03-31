@@ -10,7 +10,7 @@ import lombok.Getter;
 @ResourceType(name = "ReliquaryAffixExcelConfigData.json")
 @Getter
 public class ReliquaryAffixData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
 
     private int depotId;
