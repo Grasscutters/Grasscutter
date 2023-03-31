@@ -19,12 +19,17 @@ public final class PostEnterSceneReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 enterSceneToken = 1;</code>
+     * <code>uint32 enter_scene_token = 15;</code>
      * @return The enterSceneToken.
      */
     int getEnterSceneToken();
   }
   /**
+   * <pre>
+   * Name: MAKDDKAOEIO
+   * CmdId: 3446
+   * </pre>
+   *
    * Protobuf type {@code PostEnterSceneReq}
    */
   public static final class PostEnterSceneReq extends
@@ -69,7 +74,7 @@ public final class PostEnterSceneReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 120: {
 
               enterSceneToken_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class PostEnterSceneReqOuterClass {
               emu.grasscutter.net.proto.PostEnterSceneReqOuterClass.PostEnterSceneReq.class, emu.grasscutter.net.proto.PostEnterSceneReqOuterClass.PostEnterSceneReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PostEnterSceneReq.CHODOJJFKBH}
-     */
-    public enum CHODOJJFKBH
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 3212;</code>
-       */
-      PEPPOHPHJOJ(1, 3212),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CHODOJJFKBH DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final CHODOJJFKBH EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3212;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3212;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CHODOJJFKBH valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CHODOJJFKBH forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 3212: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CHODOJJFKBH>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CHODOJJFKBH> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CHODOJJFKBH>() {
-              public CHODOJJFKBH findValueByNumber(int number) {
-                return CHODOJJFKBH.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PostEnterSceneReqOuterClass.PostEnterSceneReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CHODOJJFKBH[] VALUES = getStaticValuesArray();
-      private static CHODOJJFKBH[] getStaticValuesArray() {
-        return new CHODOJJFKBH[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static CHODOJJFKBH valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CHODOJJFKBH(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PostEnterSceneReq.CHODOJJFKBH)
-    }
-
-    public static final int ENTERSCENETOKEN_FIELD_NUMBER = 1;
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 15;
     private int enterSceneToken_;
     /**
-     * <code>uint32 enterSceneToken = 1;</code>
+     * <code>uint32 enter_scene_token = 15;</code>
      * @return The enterSceneToken.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class PostEnterSceneReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (enterSceneToken_ != 0) {
-        output.writeUInt32(1, enterSceneToken_);
+        output.writeUInt32(15, enterSceneToken_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class PostEnterSceneReqOuterClass {
       size = 0;
       if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, enterSceneToken_);
+          .computeUInt32Size(15, enterSceneToken_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class PostEnterSceneReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTERSCENETOKEN_FIELD_NUMBER;
+      hash = (37 * hash) + ENTER_SCENE_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getEnterSceneToken();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class PostEnterSceneReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MAKDDKAOEIO
+     * CmdId: 3446
+     * </pre>
+     *
      * Protobuf type {@code PostEnterSceneReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class PostEnterSceneReqOuterClass {
 
       private int enterSceneToken_ ;
       /**
-       * <code>uint32 enterSceneToken = 1;</code>
+       * <code>uint32 enter_scene_token = 15;</code>
        * @return The enterSceneToken.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class PostEnterSceneReqOuterClass {
         return enterSceneToken_;
       }
       /**
-       * <code>uint32 enterSceneToken = 1;</code>
+       * <code>uint32 enter_scene_token = 15;</code>
        * @param value The enterSceneToken to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class PostEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 enterSceneToken = 1;</code>
+       * <code>uint32 enter_scene_token = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnterSceneToken() {
@@ -655,12 +526,9 @@ public final class PostEnterSceneReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027PostEnterSceneReq.proto\"\216\001\n\021PostEnterS" +
-      "ceneReq\022\027\n\017enterSceneToken\030\001 \001(\r\"`\n\013CHOD" +
-      "OJJFKBH\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\214\031\022\017\n\013D" +
-      "CDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABG" +
-      "AOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\027PostEnterSceneReq.proto\".\n\021PostEnterSc" +
+      "eneReq\022\031\n\021enter_scene_token\030\017 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

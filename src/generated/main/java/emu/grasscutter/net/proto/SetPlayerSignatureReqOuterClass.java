@@ -31,6 +31,11 @@ public final class SetPlayerSignatureReqOuterClass {
         getSignatureBytes();
   }
   /**
+   * <pre>
+   * Name: BOLIJBHHIAA
+   * CmdId: 4029
+   * </pre>
+   *
    * Protobuf type {@code SetPlayerSignatureReq}
    */
   public static final class SetPlayerSignatureReq extends
@@ -112,145 +117,6 @@ public final class SetPlayerSignatureReqOuterClass {
       return emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.internal_static_SetPlayerSignatureReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq.class, emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code SetPlayerSignatureReq.BCBOELNAOJK}
-     */
-    public enum BCBOELNAOJK
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4013;</code>
-       */
-      PEPPOHPHJOJ(1, 4013),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final BCBOELNAOJK DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final BCBOELNAOJK EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4013;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4013;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static BCBOELNAOJK valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static BCBOELNAOJK forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4013: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BCBOELNAOJK>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BCBOELNAOJK> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BCBOELNAOJK>() {
-              public BCBOELNAOJK findValueByNumber(int number) {
-                return BCBOELNAOJK.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final BCBOELNAOJK[] VALUES = getStaticValuesArray();
-      private static BCBOELNAOJK[] getStaticValuesArray() {
-        return new BCBOELNAOJK[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static BCBOELNAOJK valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private BCBOELNAOJK(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SetPlayerSignatureReq.BCBOELNAOJK)
     }
 
     public static final int SIGNATURE_FIELD_NUMBER = 15;
@@ -446,6 +312,11 @@ public final class SetPlayerSignatureReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BOLIJBHHIAA
+     * CmdId: 4029
+     * </pre>
+     *
      * Protobuf type {@code SetPlayerSignatureReq}
      */
     public static final class Builder extends
@@ -735,12 +606,9 @@ public final class SetPlayerSignatureReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033SetPlayerSignatureReq.proto\"\214\001\n\025SetPla" +
-      "yerSignatureReq\022\021\n\tsignature\030\017 \001(\t\"`\n\013BC" +
-      "BOELNAOJK\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\255\037\022\017\n" +
-      "\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIA" +
-      "BGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "\n\033SetPlayerSignatureReq.proto\"*\n\025SetPlay" +
+      "erSignatureReq\022\021\n\tsignature\030\017 \001(\tB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

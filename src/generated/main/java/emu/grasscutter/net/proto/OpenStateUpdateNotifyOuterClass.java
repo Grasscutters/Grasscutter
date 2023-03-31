@@ -19,11 +19,11 @@ public final class OpenStateUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     int getOpenStateMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     boolean containsOpenStateMap(
         int key);
@@ -34,25 +34,30 @@ public final class OpenStateUpdateNotifyOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getOpenStateMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getOpenStateMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
 
     int getOpenStateMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
 
     int getOpenStateMapOrThrow(
         int key);
   }
   /**
+   * <pre>
+   * Name: JEAIDHCCOGP
+   * CmdId: 174
+   * </pre>
+   *
    * Protobuf type {@code OpenStateUpdateNotify}
    */
   public static final class OpenStateUpdateNotify extends
@@ -98,7 +103,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 openStateMap_ = com.google.protobuf.MapField.newMapField(
                     OpenStateMapDefaultEntryHolder.defaultEntry);
@@ -140,7 +145,7 @@ public final class OpenStateUpdateNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 9:
+        case 6:
           return internalGetOpenStateMap();
         default:
           throw new RuntimeException(
@@ -155,138 +160,7 @@ public final class OpenStateUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.class, emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code OpenStateUpdateNotify.FPCOHDNDFFP}
-     */
-    public enum FPCOHDNDFFP
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 158;</code>
-       */
-      PEPPOHPHJOJ(1, 158),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final FPCOHDNDFFP DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 158;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 158;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static FPCOHDNDFFP valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static FPCOHDNDFFP forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 158: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<FPCOHDNDFFP>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          FPCOHDNDFFP> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<FPCOHDNDFFP>() {
-              public FPCOHDNDFFP findValueByNumber(int number) {
-                return FPCOHDNDFFP.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final FPCOHDNDFFP[] VALUES = getStaticValuesArray();
-      private static FPCOHDNDFFP[] getStaticValuesArray() {
-        return new FPCOHDNDFFP[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static FPCOHDNDFFP valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private FPCOHDNDFFP(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:OpenStateUpdateNotify.FPCOHDNDFFP)
-    }
-
-    public static final int OPENSTATEMAP_FIELD_NUMBER = 9;
+    public static final int OPEN_STATE_MAP_FIELD_NUMBER = 6;
     private static final class OpenStateMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -313,7 +187,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       return internalGetOpenStateMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
 
     @java.lang.Override
@@ -331,7 +205,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       return getOpenStateMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     @java.lang.Override
 
@@ -339,7 +213,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       return internalGetOpenStateMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     @java.lang.Override
 
@@ -352,7 +226,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+     * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
      */
     @java.lang.Override
 
@@ -386,7 +260,7 @@ public final class OpenStateUpdateNotifyOuterClass {
           output,
           internalGetOpenStateMap(),
           OpenStateMapDefaultEntryHolder.defaultEntry,
-          9);
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -404,7 +278,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, openStateMap__);
+            .computeMessageSize(6, openStateMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -435,7 +309,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetOpenStateMap().getMap().isEmpty()) {
-        hash = (37 * hash) + OPENSTATEMAP_FIELD_NUMBER;
+        hash = (37 * hash) + OPEN_STATE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetOpenStateMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -534,6 +408,11 @@ public final class OpenStateUpdateNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JEAIDHCCOGP
+     * CmdId: 174
+     * </pre>
+     *
      * Protobuf type {@code OpenStateUpdateNotify}
      */
     public static final class Builder extends
@@ -549,7 +428,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 9:
+          case 6:
             return internalGetOpenStateMap();
           default:
             throw new RuntimeException(
@@ -560,7 +439,7 @@ public final class OpenStateUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 9:
+          case 6:
             return internalGetMutableOpenStateMap();
           default:
             throw new RuntimeException(
@@ -730,7 +609,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return internalGetOpenStateMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
 
       @java.lang.Override
@@ -748,7 +627,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return getOpenStateMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
       @java.lang.Override
 
@@ -756,7 +635,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return internalGetOpenStateMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
       @java.lang.Override
 
@@ -769,7 +648,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
       @java.lang.Override
 
@@ -790,7 +669,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
 
       public Builder removeOpenStateMap(
@@ -809,7 +688,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return internalGetMutableOpenStateMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
       public Builder putOpenStateMap(
           int key,
@@ -821,7 +700,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; openStateMap = 9;</code>
+       * <code>map&lt;uint32, uint32&gt; open_state_map = 6;</code>
        */
 
       public Builder putAllOpenStateMap(
@@ -902,14 +781,12 @@ public final class OpenStateUpdateNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033OpenStateUpdateNotify.proto\"\335\001\n\025OpenSt" +
-      "ateUpdateNotify\022>\n\014openStateMap\030\t \003(\0132(." +
-      "OpenStateUpdateNotify.OpenStateMapEntry\032" +
-      "3\n\021OpenStateMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005val" +
-      "ue\030\002 \001(\r:\0028\001\"O\n\013FPCOHDNDFFP\022\010\n\004NONE\020\000\022\020\n" +
-      "\013PEPPOHPHJOJ\020\236\001\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBK" +
-      "OLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "\n\033OpenStateUpdateNotify.proto\"\216\001\n\025OpenSt" +
+      "ateUpdateNotify\022@\n\016open_state_map\030\006 \003(\0132" +
+      "(.OpenStateUpdateNotify.OpenStateMapEntr" +
+      "y\0323\n\021OpenStateMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v" +
+      "alue\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

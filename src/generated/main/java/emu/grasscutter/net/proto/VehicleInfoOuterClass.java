@@ -19,42 +19,46 @@ public final class VehicleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember> 
         getMemberListList();
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember getMemberList(int index);
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     int getMemberListCount();
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder> 
         getMemberListOrBuilderList();
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 ownerUid = 2;</code>
+     * <code>uint32 owner_uid = 2;</code>
      * @return The ownerUid.
      */
     int getOwnerUid();
 
     /**
-     * <code>float curStamina = 3;</code>
+     * <code>float cur_stamina = 3;</code>
      * @return The curStamina.
      */
     float getCurStamina();
   }
   /**
+   * <pre>
+   * Name: CDPOOGDCAEF
+   * </pre>
+   *
    * Protobuf type {@code VehicleInfo}
    */
   public static final class VehicleInfo extends
@@ -155,17 +159,17 @@ public final class VehicleInfoOuterClass {
               emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo.class, emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo.Builder.class);
     }
 
-    public static final int MEMBERLIST_FIELD_NUMBER = 1;
+    public static final int MEMBER_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember> memberList_;
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember> getMemberListList() {
       return memberList_;
     }
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder> 
@@ -173,21 +177,21 @@ public final class VehicleInfoOuterClass {
       return memberList_;
     }
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     @java.lang.Override
     public int getMemberListCount() {
       return memberList_.size();
     }
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember getMemberList(int index) {
       return memberList_.get(index);
     }
     /**
-     * <code>repeated .VehicleMember memberList = 1;</code>
+     * <code>repeated .VehicleMember member_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberListOrBuilder(
@@ -195,10 +199,10 @@ public final class VehicleInfoOuterClass {
       return memberList_.get(index);
     }
 
-    public static final int OWNERUID_FIELD_NUMBER = 2;
+    public static final int OWNER_UID_FIELD_NUMBER = 2;
     private int ownerUid_;
     /**
-     * <code>uint32 ownerUid = 2;</code>
+     * <code>uint32 owner_uid = 2;</code>
      * @return The ownerUid.
      */
     @java.lang.Override
@@ -206,10 +210,10 @@ public final class VehicleInfoOuterClass {
       return ownerUid_;
     }
 
-    public static final int CURSTAMINA_FIELD_NUMBER = 3;
+    public static final int CUR_STAMINA_FIELD_NUMBER = 3;
     private float curStamina_;
     /**
-     * <code>float curStamina = 3;</code>
+     * <code>float cur_stamina = 3;</code>
      * @return The curStamina.
      */
     @java.lang.Override
@@ -295,12 +299,12 @@ public final class VehicleInfoOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getMemberListCount() > 0) {
-        hash = (37 * hash) + MEMBERLIST_FIELD_NUMBER;
+        hash = (37 * hash) + MEMBER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMemberListList().hashCode();
       }
-      hash = (37 * hash) + OWNERUID_FIELD_NUMBER;
+      hash = (37 * hash) + OWNER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerUid();
-      hash = (37 * hash) + CURSTAMINA_FIELD_NUMBER;
+      hash = (37 * hash) + CUR_STAMINA_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCurStamina());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -399,6 +403,10 @@ public final class VehicleInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CDPOOGDCAEF
+     * </pre>
+     *
      * Protobuf type {@code VehicleInfo}
      */
     public static final class Builder extends
@@ -608,7 +616,7 @@ public final class VehicleInfoOuterClass {
           emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder> memberListBuilder_;
 
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember> getMemberListList() {
         if (memberListBuilder_ == null) {
@@ -618,7 +626,7 @@ public final class VehicleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public int getMemberListCount() {
         if (memberListBuilder_ == null) {
@@ -628,7 +636,7 @@ public final class VehicleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember getMemberList(int index) {
         if (memberListBuilder_ == null) {
@@ -638,7 +646,7 @@ public final class VehicleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder setMemberList(
           int index, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember value) {
@@ -655,7 +663,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder setMemberList(
           int index, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder builderForValue) {
@@ -669,7 +677,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder addMemberList(emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember value) {
         if (memberListBuilder_ == null) {
@@ -685,7 +693,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder addMemberList(
           int index, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember value) {
@@ -702,7 +710,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder addMemberList(
           emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder builderForValue) {
@@ -716,7 +724,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder addMemberList(
           int index, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder builderForValue) {
@@ -730,7 +738,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder addAllMemberList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember> values) {
@@ -745,7 +753,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder clearMemberList() {
         if (memberListBuilder_ == null) {
@@ -758,7 +766,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public Builder removeMemberList(int index) {
         if (memberListBuilder_ == null) {
@@ -771,14 +779,14 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder getMemberListBuilder(
           int index) {
         return getMemberListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberListOrBuilder(
           int index) {
@@ -788,7 +796,7 @@ public final class VehicleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMemberOrBuilder> 
            getMemberListOrBuilderList() {
@@ -799,14 +807,14 @@ public final class VehicleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder addMemberListBuilder() {
         return getMemberListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.getDefaultInstance());
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder addMemberListBuilder(
           int index) {
@@ -814,7 +822,7 @@ public final class VehicleInfoOuterClass {
             index, emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.getDefaultInstance());
       }
       /**
-       * <code>repeated .VehicleMember memberList = 1;</code>
+       * <code>repeated .VehicleMember member_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder> 
            getMemberListBuilderList() {
@@ -837,7 +845,7 @@ public final class VehicleInfoOuterClass {
 
       private int ownerUid_ ;
       /**
-       * <code>uint32 ownerUid = 2;</code>
+       * <code>uint32 owner_uid = 2;</code>
        * @return The ownerUid.
        */
       @java.lang.Override
@@ -845,7 +853,7 @@ public final class VehicleInfoOuterClass {
         return ownerUid_;
       }
       /**
-       * <code>uint32 ownerUid = 2;</code>
+       * <code>uint32 owner_uid = 2;</code>
        * @param value The ownerUid to set.
        * @return This builder for chaining.
        */
@@ -856,7 +864,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 ownerUid = 2;</code>
+       * <code>uint32 owner_uid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
@@ -868,7 +876,7 @@ public final class VehicleInfoOuterClass {
 
       private float curStamina_ ;
       /**
-       * <code>float curStamina = 3;</code>
+       * <code>float cur_stamina = 3;</code>
        * @return The curStamina.
        */
       @java.lang.Override
@@ -876,7 +884,7 @@ public final class VehicleInfoOuterClass {
         return curStamina_;
       }
       /**
-       * <code>float curStamina = 3;</code>
+       * <code>float cur_stamina = 3;</code>
        * @param value The curStamina to set.
        * @return This builder for chaining.
        */
@@ -887,7 +895,7 @@ public final class VehicleInfoOuterClass {
         return this;
       }
       /**
-       * <code>float curStamina = 3;</code>
+       * <code>float cur_stamina = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurStamina() {
@@ -964,10 +972,10 @@ public final class VehicleInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021VehicleInfo.proto\032\023VehicleMember.proto" +
-      "\"W\n\013VehicleInfo\022\"\n\nmemberList\030\001 \003(\0132\016.Ve" +
-      "hicleMember\022\020\n\010ownerUid\030\002 \001(\r\022\022\n\ncurStam" +
-      "ina\030\003 \001(\002B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\"Z\n\013VehicleInfo\022#\n\013member_list\030\001 \003(\0132\016.V" +
+      "ehicleMember\022\021\n\towner_uid\030\002 \001(\r\022\023\n\013cur_s" +
+      "tamina\030\003 \001(\002B\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,18 +19,23 @@ public final class GetSceneAreaReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 sceneId = 6;</code>
+     * <code>uint32 scene_id = 8;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>uint32 belongUid = 5;</code>
+     * <code>uint32 belong_uid = 4;</code>
      * @return The belongUid.
      */
     int getBelongUid();
   }
   /**
+   * <pre>
+   * Name: CDJAAKPLLLE
+   * CmdId: 244
+   * </pre>
+   *
    * Protobuf type {@code GetSceneAreaReq}
    */
   public static final class GetSceneAreaReq extends
@@ -75,12 +80,12 @@ public final class GetSceneAreaReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 32: {
 
               belongUid_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 64: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -117,149 +122,10 @@ public final class GetSceneAreaReqOuterClass {
               emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.class, emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetSceneAreaReq.PGIBAKBFMPG}
-     */
-    public enum PGIBAKBFMPG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 288;</code>
-       */
-      PEPPOHPHJOJ(1, 288),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PGIBAKBFMPG DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final PGIBAKBFMPG EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 288;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 288;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PGIBAKBFMPG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PGIBAKBFMPG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 288: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PGIBAKBFMPG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PGIBAKBFMPG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PGIBAKBFMPG>() {
-              public PGIBAKBFMPG findValueByNumber(int number) {
-                return PGIBAKBFMPG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PGIBAKBFMPG[] VALUES = getStaticValuesArray();
-      private static PGIBAKBFMPG[] getStaticValuesArray() {
-        return new PGIBAKBFMPG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static PGIBAKBFMPG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PGIBAKBFMPG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetSceneAreaReq.PGIBAKBFMPG)
-    }
-
-    public static final int SCENEID_FIELD_NUMBER = 6;
+    public static final int SCENE_ID_FIELD_NUMBER = 8;
     private int sceneId_;
     /**
-     * <code>uint32 sceneId = 6;</code>
+     * <code>uint32 scene_id = 8;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -267,10 +133,10 @@ public final class GetSceneAreaReqOuterClass {
       return sceneId_;
     }
 
-    public static final int BELONGUID_FIELD_NUMBER = 5;
+    public static final int BELONG_UID_FIELD_NUMBER = 4;
     private int belongUid_;
     /**
-     * <code>uint32 belongUid = 5;</code>
+     * <code>uint32 belong_uid = 4;</code>
      * @return The belongUid.
      */
     @java.lang.Override
@@ -293,10 +159,10 @@ public final class GetSceneAreaReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (belongUid_ != 0) {
-        output.writeUInt32(5, belongUid_);
+        output.writeUInt32(4, belongUid_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(6, sceneId_);
+        output.writeUInt32(8, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -309,11 +175,11 @@ public final class GetSceneAreaReqOuterClass {
       size = 0;
       if (belongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, belongUid_);
+          .computeUInt32Size(4, belongUid_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, sceneId_);
+          .computeUInt32Size(8, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,9 +211,9 @@ public final class GetSceneAreaReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + BELONGUID_FIELD_NUMBER;
+      hash = (37 * hash) + BELONG_UID_FIELD_NUMBER;
       hash = (53 * hash) + getBelongUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -445,6 +311,11 @@ public final class GetSceneAreaReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CDJAAKPLLLE
+     * CmdId: 244
+     * </pre>
+     *
      * Protobuf type {@code GetSceneAreaReq}
      */
     public static final class Builder extends
@@ -599,7 +470,7 @@ public final class GetSceneAreaReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 8;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -607,7 +478,7 @@ public final class GetSceneAreaReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 8;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -618,7 +489,7 @@ public final class GetSceneAreaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneId = 6;</code>
+       * <code>uint32 scene_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -630,7 +501,7 @@ public final class GetSceneAreaReqOuterClass {
 
       private int belongUid_ ;
       /**
-       * <code>uint32 belongUid = 5;</code>
+       * <code>uint32 belong_uid = 4;</code>
        * @return The belongUid.
        */
       @java.lang.Override
@@ -638,7 +509,7 @@ public final class GetSceneAreaReqOuterClass {
         return belongUid_;
       }
       /**
-       * <code>uint32 belongUid = 5;</code>
+       * <code>uint32 belong_uid = 4;</code>
        * @param value The belongUid to set.
        * @return This builder for chaining.
        */
@@ -649,7 +520,7 @@ public final class GetSceneAreaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 belongUid = 5;</code>
+       * <code>uint32 belong_uid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBelongUid() {
@@ -725,12 +596,9 @@ public final class GetSceneAreaReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025GetSceneAreaReq.proto\"\227\001\n\017GetSceneArea" +
-      "Req\022\017\n\007sceneId\030\006 \001(\r\022\021\n\tbelongUid\030\005 \001(\r\"" +
-      "`\n\013PGIBAKBFMPG\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020" +
-      "\240\002\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013" +
-      "EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "\n\025GetSceneAreaReq.proto\"7\n\017GetSceneAreaR" +
+      "eq\022\020\n\010scene_id\030\010 \001(\r\022\022\n\nbelong_uid\030\004 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

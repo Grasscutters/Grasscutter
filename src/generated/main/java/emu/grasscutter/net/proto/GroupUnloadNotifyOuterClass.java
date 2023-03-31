@@ -19,23 +19,28 @@ public final class GroupUnloadNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @return A list containing the groupList.
      */
     java.util.List<java.lang.Integer> getGroupListList();
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @return The count of groupList.
      */
     int getGroupListCount();
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @param index The index of the element to return.
      * @return The groupList at the given index.
      */
     int getGroupList(int index);
   }
   /**
+   * <pre>
+   * Name: MKCHJPNLPKA
+   * CmdId: 3167
+   * </pre>
+   *
    * Protobuf type {@code GroupUnloadNotify}
    */
   public static final class GroupUnloadNotify extends
@@ -82,7 +87,7 @@ public final class GroupUnloadNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class GroupUnloadNotifyOuterClass {
               groupList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class GroupUnloadNotifyOuterClass {
               emu.grasscutter.net.proto.GroupUnloadNotifyOuterClass.GroupUnloadNotify.class, emu.grasscutter.net.proto.GroupUnloadNotifyOuterClass.GroupUnloadNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GroupUnloadNotify.MEIILILBNFF}
-     */
-    public enum MEIILILBNFF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 3144;</code>
-       */
-      PEPPOHPHJOJ(1, 3144),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final MEIILILBNFF DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3144;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3144;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MEIILILBNFF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MEIILILBNFF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 3144: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MEIILILBNFF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MEIILILBNFF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MEIILILBNFF>() {
-              public MEIILILBNFF findValueByNumber(int number) {
-                return MEIILILBNFF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GroupUnloadNotifyOuterClass.GroupUnloadNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final MEIILILBNFF[] VALUES = getStaticValuesArray();
-      private static MEIILILBNFF[] getStaticValuesArray() {
-        return new MEIILILBNFF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static MEIILILBNFF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private MEIILILBNFF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GroupUnloadNotify.MEIILILBNFF)
-    }
-
-    public static final int GROUPLIST_FIELD_NUMBER = 6;
+    public static final int GROUP_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList groupList_;
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @return A list containing the groupList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class GroupUnloadNotifyOuterClass {
       return groupList_;
     }
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @return The count of groupList.
      */
     public int getGroupListCount() {
       return groupList_.size();
     }
     /**
-     * <code>repeated uint32 groupList = 6;</code>
+     * <code>repeated uint32 group_list = 13;</code>
      * @param index The index of the element to return.
      * @return The groupList at the given index.
      */
@@ -313,7 +187,7 @@ public final class GroupUnloadNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getGroupListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(groupListMemoizedSerializedSize);
       }
       for (int i = 0; i < groupList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class GroupUnloadNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getGroupListCount() > 0) {
-        hash = (37 * hash) + GROUPLIST_FIELD_NUMBER;
+        hash = (37 * hash) + GROUP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGroupListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class GroupUnloadNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MKCHJPNLPKA
+     * CmdId: 3167
+     * </pre>
+     *
      * Protobuf type {@code GroupUnloadNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class GroupUnloadNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @return A list containing the groupList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class GroupUnloadNotifyOuterClass {
                  java.util.Collections.unmodifiableList(groupList_) : groupList_;
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @return The count of groupList.
        */
       public int getGroupListCount() {
         return groupList_.size();
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @param index The index of the element to return.
        * @return The groupList at the given index.
        */
@@ -661,7 +540,7 @@ public final class GroupUnloadNotifyOuterClass {
         return groupList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The groupList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class GroupUnloadNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @param value The groupList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class GroupUnloadNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @param values The groupList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class GroupUnloadNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 groupList = 6;</code>
+       * <code>repeated uint32 group_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupList() {
@@ -774,10 +653,8 @@ public final class GroupUnloadNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027GroupUnloadNotify.proto\"w\n\021GroupUnload" +
-      "Notify\022\021\n\tgroupList\030\006 \003(\r\"O\n\013MEIILILBNFF" +
-      "\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\310\030\022\017\n\013DCDNILFD" +
-      "FLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grassc" +
+      "\n\027GroupUnloadNotify.proto\"\'\n\021GroupUnload" +
+      "Notify\022\022\n\ngroup_list\030\r \003(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

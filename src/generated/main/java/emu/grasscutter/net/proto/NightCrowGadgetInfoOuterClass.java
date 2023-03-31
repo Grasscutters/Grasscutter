@@ -19,23 +19,27 @@ public final class NightCrowGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @return A list containing the argumentList.
      */
     java.util.List<java.lang.Integer> getArgumentListList();
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @return The count of argumentList.
      */
     int getArgumentListCount();
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @param index The index of the element to return.
      * @return The argumentList at the given index.
      */
     int getArgumentList(int index);
   }
   /**
+   * <pre>
+   * Name: NCIMBEDOIIL
+   * </pre>
+   *
    * Protobuf type {@code NightCrowGadgetInfo}
    */
   public static final class NightCrowGadgetInfo extends
@@ -138,10 +142,10 @@ public final class NightCrowGadgetInfoOuterClass {
               emu.grasscutter.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.class, emu.grasscutter.net.proto.NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.Builder.class);
     }
 
-    public static final int ARGUMENTLIST_FIELD_NUMBER = 1;
+    public static final int ARGUMENT_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList argumentList_;
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @return A list containing the argumentList.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class NightCrowGadgetInfoOuterClass {
       return argumentList_;
     }
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @return The count of argumentList.
      */
     public int getArgumentListCount() {
       return argumentList_.size();
     }
     /**
-     * <code>repeated uint32 argumentList = 1;</code>
+     * <code>repeated uint32 argument_list = 1;</code>
      * @param index The index of the element to return.
      * @return The argumentList at the given index.
      */
@@ -240,7 +244,7 @@ public final class NightCrowGadgetInfoOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getArgumentListCount() > 0) {
-        hash = (37 * hash) + ARGUMENTLIST_FIELD_NUMBER;
+        hash = (37 * hash) + ARGUMENT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getArgumentListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class NightCrowGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NCIMBEDOIIL
+     * </pre>
+     *
      * Protobuf type {@code NightCrowGadgetInfo}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class NightCrowGadgetInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @return A list containing the argumentList.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class NightCrowGadgetInfoOuterClass {
                  java.util.Collections.unmodifiableList(argumentList_) : argumentList_;
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @return The count of argumentList.
        */
       public int getArgumentListCount() {
         return argumentList_.size();
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @param index The index of the element to return.
        * @return The argumentList at the given index.
        */
@@ -530,7 +538,7 @@ public final class NightCrowGadgetInfoOuterClass {
         return argumentList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The argumentList to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class NightCrowGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @param value The argumentList to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class NightCrowGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @param values The argumentList to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class NightCrowGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 argumentList = 1;</code>
+       * <code>repeated uint32 argument_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearArgumentList() {
@@ -643,9 +651,9 @@ public final class NightCrowGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031NightCrowGadgetInfo.proto\"+\n\023NightCrow" +
-      "GadgetInfo\022\024\n\014argumentList\030\001 \003(\rB\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "\n\031NightCrowGadgetInfo.proto\",\n\023NightCrow" +
+      "GadgetInfo\022\025\n\rargument_list\030\001 \003(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

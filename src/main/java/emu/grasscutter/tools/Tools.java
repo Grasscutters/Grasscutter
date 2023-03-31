@@ -269,7 +269,7 @@ public final class Tools {
 
         Files.createDirectories(location.getParent());
         Files.writeString(location, sb);
-        Grasscutter.getLogger().info("Mappings generated to " + location);
+        Grasscutter.getLogger().debug("Mappings generated to " + location);
     }
 
     public static List<String> getAvailableLanguage() {

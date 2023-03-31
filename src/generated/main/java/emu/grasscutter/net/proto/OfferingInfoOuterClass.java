@@ -19,12 +19,16 @@ public final class OfferingInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 offeringId = 1;</code>
+     * <code>uint32 offering_id = 1;</code>
      * @return The offeringId.
      */
     int getOfferingId();
   }
   /**
+   * <pre>
+   * Name: FCKEMAGNIFF
+   * </pre>
+   *
    * Protobuf type {@code OfferingInfo}
    */
   public static final class OfferingInfo extends
@@ -106,10 +110,10 @@ public final class OfferingInfoOuterClass {
               emu.grasscutter.net.proto.OfferingInfoOuterClass.OfferingInfo.class, emu.grasscutter.net.proto.OfferingInfoOuterClass.OfferingInfo.Builder.class);
     }
 
-    public static final int OFFERINGID_FIELD_NUMBER = 1;
+    public static final int OFFERING_ID_FIELD_NUMBER = 1;
     private int offeringId_;
     /**
-     * <code>uint32 offeringId = 1;</code>
+     * <code>uint32 offering_id = 1;</code>
      * @return The offeringId.
      */
     @java.lang.Override
@@ -175,7 +179,7 @@ public final class OfferingInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OFFERINGID_FIELD_NUMBER;
+      hash = (37 * hash) + OFFERING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOfferingId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -273,6 +277,10 @@ public final class OfferingInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FCKEMAGNIFF
+     * </pre>
+     *
      * Protobuf type {@code OfferingInfo}
      */
     public static final class Builder extends
@@ -421,7 +429,7 @@ public final class OfferingInfoOuterClass {
 
       private int offeringId_ ;
       /**
-       * <code>uint32 offeringId = 1;</code>
+       * <code>uint32 offering_id = 1;</code>
        * @return The offeringId.
        */
       @java.lang.Override
@@ -429,7 +437,7 @@ public final class OfferingInfoOuterClass {
         return offeringId_;
       }
       /**
-       * <code>uint32 offeringId = 1;</code>
+       * <code>uint32 offering_id = 1;</code>
        * @param value The offeringId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +448,7 @@ public final class OfferingInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 offeringId = 1;</code>
+       * <code>uint32 offering_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearOfferingId() {
@@ -516,9 +524,9 @@ public final class OfferingInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022OfferingInfo.proto\"\"\n\014OfferingInfo\022\022\n\n" +
-      "offeringId\030\001 \001(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\022OfferingInfo.proto\"#\n\014OfferingInfo\022\023\n\013" +
+      "offering_id\030\001 \001(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

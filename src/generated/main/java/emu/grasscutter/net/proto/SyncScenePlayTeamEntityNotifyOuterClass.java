@@ -19,36 +19,41 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 sceneId = 1;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> 
         getEntityInfoListList();
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo getEntityInfoList(int index);
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     int getEntityInfoListCount();
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder> 
         getEntityInfoListOrBuilderList();
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder getEntityInfoListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 scene_id = 14;</code>
+     * @return The sceneId.
+     */
+    int getSceneId();
   }
   /**
+   * <pre>
+   * Name: GFENDIBMJBG
+   * CmdId: 3362
+   * </pre>
+   *
    * Protobuf type {@code SyncScenePlayTeamEntityNotify}
    */
   public static final class SyncScenePlayTeamEntityNotify extends
@@ -95,18 +100,18 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               entityInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              sceneId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,159 +149,17 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
               emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.class, emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SyncScenePlayTeamEntityNotify.NNDMFHOFFGI}
-     */
-    public enum NNDMFHOFFGI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 3227;</code>
-       */
-      PEPPOHPHJOJ(1, 3227),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final NNDMFHOFFGI DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3227;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3227;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NNDMFHOFFGI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NNDMFHOFFGI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 3227: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NNDMFHOFFGI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NNDMFHOFFGI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NNDMFHOFFGI>() {
-              public NNDMFHOFFGI findValueByNumber(int number) {
-                return NNDMFHOFFGI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final NNDMFHOFFGI[] VALUES = getStaticValuesArray();
-      private static NNDMFHOFFGI[] getStaticValuesArray() {
-        return new NNDMFHOFFGI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static NNDMFHOFFGI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private NNDMFHOFFGI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SyncScenePlayTeamEntityNotify.NNDMFHOFFGI)
-    }
-
-    public static final int SCENEID_FIELD_NUMBER = 1;
-    private int sceneId_;
-    /**
-     * <code>uint32 sceneId = 1;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
-    public static final int ENTITYINFOLIST_FIELD_NUMBER = 14;
+    public static final int ENTITY_INFO_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> entityInfoList_;
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> getEntityInfoListList() {
       return entityInfoList_;
     }
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder> 
@@ -304,26 +167,37 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       return entityInfoList_;
     }
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     @java.lang.Override
     public int getEntityInfoListCount() {
       return entityInfoList_.size();
     }
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo getEntityInfoList(int index) {
       return entityInfoList_.get(index);
     }
     /**
-     * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+     * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder getEntityInfoListOrBuilder(
         int index) {
       return entityInfoList_.get(index);
+    }
+
+    public static final int SCENE_ID_FIELD_NUMBER = 14;
+    private int sceneId_;
+    /**
+     * <code>uint32 scene_id = 14;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -340,11 +214,11 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(1, sceneId_);
-      }
       for (int i = 0; i < entityInfoList_.size(); i++) {
-        output.writeMessage(14, entityInfoList_.get(i));
+        output.writeMessage(12, entityInfoList_.get(i));
+      }
+      if (sceneId_ != 0) {
+        output.writeUInt32(14, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -355,13 +229,13 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, sceneId_);
-      }
       for (int i = 0; i < entityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, entityInfoList_.get(i));
+          .computeMessageSize(12, entityInfoList_.get(i));
+      }
+      if (sceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,10 +252,10 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify other = (emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify) obj;
 
-      if (getSceneId()
-          != other.getSceneId()) return false;
       if (!getEntityInfoListList()
           .equals(other.getEntityInfoListList())) return false;
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -393,12 +267,12 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
       if (getEntityInfoListCount() > 0) {
-        hash = (37 * hash) + ENTITYINFOLIST_FIELD_NUMBER;
+        hash = (37 * hash) + ENTITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEntityInfoListList().hashCode();
       }
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -495,6 +369,11 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GFENDIBMJBG
+     * CmdId: 3362
+     * </pre>
+     *
      * Protobuf type {@code SyncScenePlayTeamEntityNotify}
      */
     public static final class Builder extends
@@ -533,14 +412,14 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sceneId_ = 0;
-
         if (entityInfoListBuilder_ == null) {
           entityInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           entityInfoListBuilder_.clear();
         }
+        sceneId_ = 0;
+
         return this;
       }
 
@@ -568,7 +447,6 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       public emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify buildPartial() {
         emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify result = new emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify(this);
         int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
         if (entityInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             entityInfoList_ = java.util.Collections.unmodifiableList(entityInfoList_);
@@ -578,6 +456,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         } else {
           result.entityInfoList_ = entityInfoListBuilder_.build();
         }
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
       }
@@ -626,9 +505,6 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify other) {
         if (other == emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify.getDefaultInstance()) return this;
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
         if (entityInfoListBuilder_ == null) {
           if (!other.entityInfoList_.isEmpty()) {
             if (entityInfoList_.isEmpty()) {
@@ -654,6 +530,9 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
               entityInfoListBuilder_.addAllMessages(other.entityInfoList_);
             }
           }
+        }
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -685,37 +564,6 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int sceneId_ ;
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> entityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureEntityInfoListIsMutable() {
@@ -729,7 +577,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
           emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder> entityInfoListBuilder_;
 
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> getEntityInfoListList() {
         if (entityInfoListBuilder_ == null) {
@@ -739,7 +587,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public int getEntityInfoListCount() {
         if (entityInfoListBuilder_ == null) {
@@ -749,7 +597,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo getEntityInfoList(int index) {
         if (entityInfoListBuilder_ == null) {
@@ -759,7 +607,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder setEntityInfoList(
           int index, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo value) {
@@ -776,7 +624,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder setEntityInfoList(
           int index, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder builderForValue) {
@@ -790,7 +638,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder addEntityInfoList(emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo value) {
         if (entityInfoListBuilder_ == null) {
@@ -806,7 +654,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder addEntityInfoList(
           int index, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo value) {
@@ -823,7 +671,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder addEntityInfoList(
           emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder builderForValue) {
@@ -837,7 +685,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder addEntityInfoList(
           int index, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder builderForValue) {
@@ -851,7 +699,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder addAllEntityInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo> values) {
@@ -866,7 +714,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder clearEntityInfoList() {
         if (entityInfoListBuilder_ == null) {
@@ -879,7 +727,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public Builder removeEntityInfoList(int index) {
         if (entityInfoListBuilder_ == null) {
@@ -892,14 +740,14 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder getEntityInfoListBuilder(
           int index) {
         return getEntityInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder getEntityInfoListOrBuilder(
           int index) {
@@ -909,7 +757,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfoOrBuilder> 
            getEntityInfoListOrBuilderList() {
@@ -920,14 +768,14 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder addEntityInfoListBuilder() {
         return getEntityInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder addEntityInfoListBuilder(
           int index) {
@@ -935,7 +783,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
             index, emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayTeamEntityInfo entityInfoList = 14;</code>
+       * <code>repeated .PlayTeamEntityInfo entity_info_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.Builder> 
            getEntityInfoListBuilderList() {
@@ -954,6 +802,37 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
           entityInfoList_ = null;
         }
         return entityInfoListBuilder_;
+      }
+
+      private int sceneId_ ;
+      /**
+       * <code>uint32 scene_id = 14;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 scene_id = 14;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 scene_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1023,12 +902,10 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#SyncScenePlayTeamEntityNotify.proto\032\030P" +
-      "layTeamEntityInfo.proto\"\256\001\n\035SyncScenePla" +
-      "yTeamEntityNotify\022\017\n\007sceneId\030\001 \001(\r\022+\n\016en" +
-      "tityInfoList\030\016 \003(\0132\023.PlayTeamEntityInfo\"" +
-      "O\n\013NNDMFHOFFGI\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020" +
-      "\233\031\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "layTeamEntityInfo.proto\"`\n\035SyncScenePlay" +
+      "TeamEntityNotify\022-\n\020entity_info_list\030\014 \003" +
+      "(\0132\023.PlayTeamEntityInfo\022\020\n\010scene_id\030\016 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1040,7 +917,7 @@ public final class SyncScenePlayTeamEntityNotifyOuterClass {
     internal_static_SyncScenePlayTeamEntityNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SyncScenePlayTeamEntityNotify_descriptor,
-        new java.lang.String[] { "SceneId", "EntityInfoList", });
+        new java.lang.String[] { "EntityInfoList", "SceneId", });
     emu.grasscutter.net.proto.PlayTeamEntityInfoOuterClass.getDescriptor();
   }
 

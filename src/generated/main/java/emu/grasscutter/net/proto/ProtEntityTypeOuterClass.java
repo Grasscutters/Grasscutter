@@ -15,6 +15,10 @@ public final class ProtEntityTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: APHMIMMPMDI
+   * </pre>
+   *
    * Protobuf enum {@code ProtEntityType}
    */
   public enum ProtEntityType

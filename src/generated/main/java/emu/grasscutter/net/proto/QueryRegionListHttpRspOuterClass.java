@@ -67,6 +67,10 @@ public final class QueryRegionListHttpRspOuterClass {
     boolean getEnableLoginPc();
   }
   /**
+   * <pre>
+   * Name: CKKPDOAODLN
+   * </pre>
+   *
    * Protobuf type {@code QueryRegionListHttpRsp}
    */
   public static final class QueryRegionListHttpRsp extends
@@ -466,6 +470,10 @@ public final class QueryRegionListHttpRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CKKPDOAODLN
+     * </pre>
+     *
      * Protobuf type {@code QueryRegionListHttpRsp}
      */
     public static final class Builder extends

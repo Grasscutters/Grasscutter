@@ -19,23 +19,28 @@ public final class TakeAchievementGoalRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @return A list containing the idList.
      */
     java.util.List<java.lang.Integer> getIdListList();
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @return The count of idList.
      */
     int getIdListCount();
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The idList at the given index.
      */
     int getIdList(int index);
   }
   /**
+   * <pre>
+   * Name: CMFHEBMCELG
+   * CmdId: 2686
+   * </pre>
+   *
    * Protobuf type {@code TakeAchievementGoalRewardReq}
    */
   public static final class TakeAchievementGoalRewardReq extends
@@ -82,7 +87,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 idList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
               idList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,149 +143,10 @@ public final class TakeAchievementGoalRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeAchievementGoalRewardReqOuterClass.TakeAchievementGoalRewardReq.class, emu.grasscutter.net.proto.TakeAchievementGoalRewardReqOuterClass.TakeAchievementGoalRewardReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code TakeAchievementGoalRewardReq.DOKFANBCKNJ}
-     */
-    public enum DOKFANBCKNJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2669;</code>
-       */
-      PEPPOHPHJOJ(1, 2669),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final DOKFANBCKNJ DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final DOKFANBCKNJ EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2669;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2669;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DOKFANBCKNJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static DOKFANBCKNJ forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2669: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DOKFANBCKNJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DOKFANBCKNJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DOKFANBCKNJ>() {
-              public DOKFANBCKNJ findValueByNumber(int number) {
-                return DOKFANBCKNJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.TakeAchievementGoalRewardReqOuterClass.TakeAchievementGoalRewardReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DOKFANBCKNJ[] VALUES = getStaticValuesArray();
-      private static DOKFANBCKNJ[] getStaticValuesArray() {
-        return new DOKFANBCKNJ[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static DOKFANBCKNJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private DOKFANBCKNJ(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:TakeAchievementGoalRewardReq.DOKFANBCKNJ)
-    }
-
-    public static final int IDLIST_FIELD_NUMBER = 7;
+    public static final int ID_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList idList_;
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @return A list containing the idList.
      */
     @java.lang.Override
@@ -289,14 +155,14 @@ public final class TakeAchievementGoalRewardReqOuterClass {
       return idList_;
     }
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @return The count of idList.
      */
     public int getIdListCount() {
       return idList_.size();
     }
     /**
-     * <code>repeated uint32 idList = 7;</code>
+     * <code>repeated uint32 id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The idList at the given index.
      */
@@ -321,7 +187,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getIdListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(idListMemoizedSerializedSize);
       }
       for (int i = 0; i < idList_.size(); i++) {
@@ -379,7 +245,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getIdListCount() > 0) {
-        hash = (37 * hash) + IDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -478,6 +344,11 @@ public final class TakeAchievementGoalRewardReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CMFHEBMCELG
+     * CmdId: 2686
+     * </pre>
+     *
      * Protobuf type {@code TakeAchievementGoalRewardReq}
      */
     public static final class Builder extends
@@ -645,7 +516,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @return A list containing the idList.
        */
       public java.util.List<java.lang.Integer>
@@ -654,14 +525,14 @@ public final class TakeAchievementGoalRewardReqOuterClass {
                  java.util.Collections.unmodifiableList(idList_) : idList_;
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @return The count of idList.
        */
       public int getIdListCount() {
         return idList_.size();
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @param index The index of the element to return.
        * @return The idList at the given index.
        */
@@ -669,7 +540,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
         return idList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @param index The index to set the value at.
        * @param value The idList to set.
        * @return This builder for chaining.
@@ -682,7 +553,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @param value The idList to add.
        * @return This builder for chaining.
        */
@@ -693,7 +564,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @param values The idList to add.
        * @return This builder for chaining.
        */
@@ -706,7 +577,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 idList = 7;</code>
+       * <code>repeated uint32 id_list = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIdList() {
@@ -782,12 +653,10 @@ public final class TakeAchievementGoalRewardReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"TakeAchievementGoalRewardReq.proto\"\220\001\n" +
-      "\034TakeAchievementGoalRewardReq\022\016\n\006idList\030" +
-      "\007 \003(\r\"`\n\013DOKFANBCKNJ\022\010\n\004NONE\020\000\022\020\n\013PEPPOH" +
-      "PHJOJ\020\355\024\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA" +
-      "\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n\"TakeAchievementGoalRewardReq.proto\"/\n\034" +
+      "TakeAchievementGoalRewardReq\022\017\n\007id_list\030" +
+      "\n \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

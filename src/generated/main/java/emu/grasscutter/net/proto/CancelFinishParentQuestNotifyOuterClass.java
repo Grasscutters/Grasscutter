@@ -19,12 +19,17 @@ public final class CancelFinishParentQuestNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 parentQuestId = 10;</code>
+     * <code>uint32 parent_quest_id = 7;</code>
      * @return The parentQuestId.
      */
     int getParentQuestId();
   }
   /**
+   * <pre>
+   * Name: BHNAKHDCBOL
+   * CmdId: 402
+   * </pre>
+   *
    * Protobuf type {@code CancelFinishParentQuestNotify}
    */
   public static final class CancelFinishParentQuestNotify extends
@@ -69,7 +74,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 56: {
 
               parentQuestId_ = input.readUInt32();
               break;
@@ -106,141 +111,10 @@ public final class CancelFinishParentQuestNotifyOuterClass {
               emu.grasscutter.net.proto.CancelFinishParentQuestNotifyOuterClass.CancelFinishParentQuestNotify.class, emu.grasscutter.net.proto.CancelFinishParentQuestNotifyOuterClass.CancelFinishParentQuestNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code CancelFinishParentQuestNotify.IEDHEJEMNLC}
-     */
-    public enum IEDHEJEMNLC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 453;</code>
-       */
-      PEPPOHPHJOJ(1, 453),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final IEDHEJEMNLC DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 453;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 453;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IEDHEJEMNLC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IEDHEJEMNLC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 453: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IEDHEJEMNLC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IEDHEJEMNLC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IEDHEJEMNLC>() {
-              public IEDHEJEMNLC findValueByNumber(int number) {
-                return IEDHEJEMNLC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.CancelFinishParentQuestNotifyOuterClass.CancelFinishParentQuestNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IEDHEJEMNLC[] VALUES = getStaticValuesArray();
-      private static IEDHEJEMNLC[] getStaticValuesArray() {
-        return new IEDHEJEMNLC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static IEDHEJEMNLC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private IEDHEJEMNLC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:CancelFinishParentQuestNotify.IEDHEJEMNLC)
-    }
-
-    public static final int PARENTQUESTID_FIELD_NUMBER = 10;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 7;
     private int parentQuestId_;
     /**
-     * <code>uint32 parentQuestId = 10;</code>
+     * <code>uint32 parent_quest_id = 7;</code>
      * @return The parentQuestId.
      */
     @java.lang.Override
@@ -263,7 +137,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (parentQuestId_ != 0) {
-        output.writeUInt32(10, parentQuestId_);
+        output.writeUInt32(7, parentQuestId_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,7 +150,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
       size = 0;
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, parentQuestId_);
+          .computeUInt32Size(7, parentQuestId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,7 +180,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARENTQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getParentQuestId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -404,6 +278,11 @@ public final class CancelFinishParentQuestNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BHNAKHDCBOL
+     * CmdId: 402
+     * </pre>
+     *
      * Protobuf type {@code CancelFinishParentQuestNotify}
      */
     public static final class Builder extends
@@ -552,7 +431,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
 
       private int parentQuestId_ ;
       /**
-       * <code>uint32 parentQuestId = 10;</code>
+       * <code>uint32 parent_quest_id = 7;</code>
        * @return The parentQuestId.
        */
       @java.lang.Override
@@ -560,7 +439,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
         return parentQuestId_;
       }
       /**
-       * <code>uint32 parentQuestId = 10;</code>
+       * <code>uint32 parent_quest_id = 7;</code>
        * @param value The parentQuestId to set.
        * @return This builder for chaining.
        */
@@ -571,7 +450,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 parentQuestId = 10;</code>
+       * <code>uint32 parent_quest_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
@@ -647,11 +526,9 @@ public final class CancelFinishParentQuestNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n#CancelFinishParentQuestNotify.proto\"\207\001" +
-      "\n\035CancelFinishParentQuestNotify\022\025\n\rparen" +
-      "tQuestId\030\n \001(\r\"O\n\013IEDHEJEMNLC\022\010\n\004NONE\020\000\022" +
-      "\020\n\013PEPPOHPHJOJ\020\305\003\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NN" +
-      "BKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.p" +
+      "\n#CancelFinishParentQuestNotify.proto\"8\n" +
+      "\035CancelFinishParentQuestNotify\022\027\n\017parent" +
+      "_quest_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

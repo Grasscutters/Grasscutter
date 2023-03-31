@@ -19,6 +19,11 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Name: MGJECLOLHFM
+   * CmdId: 8170
+   * </pre>
+   *
    * Protobuf type {@code FindHilichurlAcceptQuestNotify}
    */
   public static final class FindHilichurlAcceptQuestNotify extends
@@ -93,137 +98,6 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
       return emu.grasscutter.net.proto.FindHilichurlAcceptQuestNotifyOuterClass.internal_static_FindHilichurlAcceptQuestNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.FindHilichurlAcceptQuestNotifyOuterClass.FindHilichurlAcceptQuestNotify.class, emu.grasscutter.net.proto.FindHilichurlAcceptQuestNotifyOuterClass.FindHilichurlAcceptQuestNotify.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code FindHilichurlAcceptQuestNotify.POCGDCLDDMI}
-     */
-    public enum POCGDCLDDMI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 8522;</code>
-       */
-      PEPPOHPHJOJ(1, 8522),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final POCGDCLDDMI DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 8522;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 8522;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static POCGDCLDDMI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static POCGDCLDDMI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 8522: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<POCGDCLDDMI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          POCGDCLDDMI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<POCGDCLDDMI>() {
-              public POCGDCLDDMI findValueByNumber(int number) {
-                return POCGDCLDDMI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.FindHilichurlAcceptQuestNotifyOuterClass.FindHilichurlAcceptQuestNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final POCGDCLDDMI[] VALUES = getStaticValuesArray();
-      private static POCGDCLDDMI[] getStaticValuesArray() {
-        return new POCGDCLDDMI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static POCGDCLDDMI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private POCGDCLDDMI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:FindHilichurlAcceptQuestNotify.POCGDCLDDMI)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -371,6 +245,11 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MGJECLOLHFM
+     * CmdId: 8170
+     * </pre>
+     *
      * Protobuf type {@code FindHilichurlAcceptQuestNotify}
      */
     public static final class Builder extends
@@ -577,11 +456,9 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n$FindHilichurlAcceptQuestNotify.proto\"q" +
-      "\n\036FindHilichurlAcceptQuestNotify\"O\n\013POCG" +
-      "DCLDDMI\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\312B\022\017\n\013D" +
-      "CDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "\n$FindHilichurlAcceptQuestNotify.proto\" " +
+      "\n\036FindHilichurlAcceptQuestNotifyB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

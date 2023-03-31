@@ -19,12 +19,17 @@ public final class HomeChangeBgmReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 bgmId = 12;</code>
+     * <code>uint32 bgm_id = 8;</code>
      * @return The bgmId.
      */
     int getBgmId();
   }
   /**
+   * <pre>
+   * Name: CNGHODHBILL
+   * CmdId: 4806
+   * </pre>
+   *
    * Protobuf type {@code HomeChangeBgmReq}
    */
   public static final class HomeChangeBgmReq extends
@@ -69,7 +74,7 @@ public final class HomeChangeBgmReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 64: {
 
               bgmId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class HomeChangeBgmReqOuterClass {
               emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq.class, emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeChangeBgmReq.ELECAPHKALF}
-     */
-    public enum ELECAPHKALF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4469;</code>
-       */
-      PEPPOHPHJOJ(1, 4469),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ELECAPHKALF DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final ELECAPHKALF EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4469;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4469;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ELECAPHKALF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ELECAPHKALF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4469: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ELECAPHKALF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ELECAPHKALF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ELECAPHKALF>() {
-              public ELECAPHKALF findValueByNumber(int number) {
-                return ELECAPHKALF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ELECAPHKALF[] VALUES = getStaticValuesArray();
-      private static ELECAPHKALF[] getStaticValuesArray() {
-        return new ELECAPHKALF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static ELECAPHKALF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ELECAPHKALF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeChangeBgmReq.ELECAPHKALF)
-    }
-
-    public static final int BGMID_FIELD_NUMBER = 12;
+    public static final int BGM_ID_FIELD_NUMBER = 8;
     private int bgmId_;
     /**
-     * <code>uint32 bgmId = 12;</code>
+     * <code>uint32 bgm_id = 8;</code>
      * @return The bgmId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class HomeChangeBgmReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bgmId_ != 0) {
-        output.writeUInt32(12, bgmId_);
+        output.writeUInt32(8, bgmId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class HomeChangeBgmReqOuterClass {
       size = 0;
       if (bgmId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, bgmId_);
+          .computeUInt32Size(8, bgmId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class HomeChangeBgmReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BGMID_FIELD_NUMBER;
+      hash = (37 * hash) + BGM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBgmId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class HomeChangeBgmReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CNGHODHBILL
+     * CmdId: 4806
+     * </pre>
+     *
      * Protobuf type {@code HomeChangeBgmReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class HomeChangeBgmReqOuterClass {
 
       private int bgmId_ ;
       /**
-       * <code>uint32 bgmId = 12;</code>
+       * <code>uint32 bgm_id = 8;</code>
        * @return The bgmId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class HomeChangeBgmReqOuterClass {
         return bgmId_;
       }
       /**
-       * <code>uint32 bgmId = 12;</code>
+       * <code>uint32 bgm_id = 8;</code>
        * @param value The bgmId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class HomeChangeBgmReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bgmId = 12;</code>
+       * <code>uint32 bgm_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearBgmId() {
@@ -655,11 +526,9 @@ public final class HomeChangeBgmReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026HomeChangeBgmReq.proto\"\203\001\n\020HomeChangeB" +
-      "gmReq\022\r\n\005bgmId\030\014 \001(\r\"`\n\013ELECAPHKALF\022\010\n\004N" +
-      "ONE\020\000\022\020\n\013PEPPOHPHJOJ\020\365\"\022\017\n\013DCDNILFDFLB\020\000" +
-      "\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033" +
-      "\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\026HomeChangeBgmReq.proto\"\"\n\020HomeChangeBg" +
+      "mReq\022\016\n\006bgm_id\030\010 \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -30,35 +30,39 @@ public final class FoundationInfoOuterClass {
     emu.grasscutter.net.proto.FoundationStatusOuterClass.FoundationStatus getStatus();
 
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @return A list containing the uidList.
      */
     java.util.List<java.lang.Integer> getUidListList();
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @return The count of uidList.
      */
     int getUidListCount();
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
     int getUidList(int index);
 
     /**
-     * <code>uint32 currentBuildingId = 3;</code>
+     * <code>uint32 current_building_id = 3;</code>
      * @return The currentBuildingId.
      */
     int getCurrentBuildingId();
 
     /**
-     * <code>uint32 lockedByUid = 4;</code>
+     * <code>uint32 locked_by_uid = 4;</code>
      * @return The lockedByUid.
      */
     int getLockedByUid();
   }
   /**
+   * <pre>
+   * Name: BHEIJJMBINN
+   * </pre>
+   *
    * Protobuf type {@code FoundationInfo}
    */
   public static final class FoundationInfo extends
@@ -197,10 +201,10 @@ public final class FoundationInfoOuterClass {
       return result == null ? emu.grasscutter.net.proto.FoundationStatusOuterClass.FoundationStatus.UNRECOGNIZED : result;
     }
 
-    public static final int UIDLIST_FIELD_NUMBER = 2;
+    public static final int UID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList uidList_;
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @return A list containing the uidList.
      */
     @java.lang.Override
@@ -209,14 +213,14 @@ public final class FoundationInfoOuterClass {
       return uidList_;
     }
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @return The count of uidList.
      */
     public int getUidListCount() {
       return uidList_.size();
     }
     /**
-     * <code>repeated uint32 uidList = 2;</code>
+     * <code>repeated uint32 uid_list = 2;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
@@ -225,10 +229,10 @@ public final class FoundationInfoOuterClass {
     }
     private int uidListMemoizedSerializedSize = -1;
 
-    public static final int CURRENTBUILDINGID_FIELD_NUMBER = 3;
+    public static final int CURRENT_BUILDING_ID_FIELD_NUMBER = 3;
     private int currentBuildingId_;
     /**
-     * <code>uint32 currentBuildingId = 3;</code>
+     * <code>uint32 current_building_id = 3;</code>
      * @return The currentBuildingId.
      */
     @java.lang.Override
@@ -236,10 +240,10 @@ public final class FoundationInfoOuterClass {
       return currentBuildingId_;
     }
 
-    public static final int LOCKEDBYUID_FIELD_NUMBER = 4;
+    public static final int LOCKED_BY_UID_FIELD_NUMBER = 4;
     private int lockedByUid_;
     /**
-     * <code>uint32 lockedByUid = 4;</code>
+     * <code>uint32 locked_by_uid = 4;</code>
      * @return The lockedByUid.
      */
     @java.lang.Override
@@ -349,12 +353,12 @@ public final class FoundationInfoOuterClass {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       if (getUidListCount() > 0) {
-        hash = (37 * hash) + UIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + UID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUidListList().hashCode();
       }
-      hash = (37 * hash) + CURRENTBUILDINGID_FIELD_NUMBER;
+      hash = (37 * hash) + CURRENT_BUILDING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentBuildingId();
-      hash = (37 * hash) + LOCKEDBYUID_FIELD_NUMBER;
+      hash = (37 * hash) + LOCKED_BY_UID_FIELD_NUMBER;
       hash = (53 * hash) + getLockedByUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -452,6 +456,10 @@ public final class FoundationInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BHEIJJMBINN
+     * </pre>
+     *
      * Protobuf type {@code FoundationInfo}
      */
     public static final class Builder extends
@@ -691,7 +699,7 @@ public final class FoundationInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @return A list containing the uidList.
        */
       public java.util.List<java.lang.Integer>
@@ -700,14 +708,14 @@ public final class FoundationInfoOuterClass {
                  java.util.Collections.unmodifiableList(uidList_) : uidList_;
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @return The count of uidList.
        */
       public int getUidListCount() {
         return uidList_.size();
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @param index The index of the element to return.
        * @return The uidList at the given index.
        */
@@ -715,7 +723,7 @@ public final class FoundationInfoOuterClass {
         return uidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The uidList to set.
        * @return This builder for chaining.
@@ -728,7 +736,7 @@ public final class FoundationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @param value The uidList to add.
        * @return This builder for chaining.
        */
@@ -739,7 +747,7 @@ public final class FoundationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @param values The uidList to add.
        * @return This builder for chaining.
        */
@@ -752,7 +760,7 @@ public final class FoundationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uidList = 2;</code>
+       * <code>repeated uint32 uid_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUidList() {
@@ -764,7 +772,7 @@ public final class FoundationInfoOuterClass {
 
       private int currentBuildingId_ ;
       /**
-       * <code>uint32 currentBuildingId = 3;</code>
+       * <code>uint32 current_building_id = 3;</code>
        * @return The currentBuildingId.
        */
       @java.lang.Override
@@ -772,7 +780,7 @@ public final class FoundationInfoOuterClass {
         return currentBuildingId_;
       }
       /**
-       * <code>uint32 currentBuildingId = 3;</code>
+       * <code>uint32 current_building_id = 3;</code>
        * @param value The currentBuildingId to set.
        * @return This builder for chaining.
        */
@@ -783,7 +791,7 @@ public final class FoundationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 currentBuildingId = 3;</code>
+       * <code>uint32 current_building_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrentBuildingId() {
@@ -795,7 +803,7 @@ public final class FoundationInfoOuterClass {
 
       private int lockedByUid_ ;
       /**
-       * <code>uint32 lockedByUid = 4;</code>
+       * <code>uint32 locked_by_uid = 4;</code>
        * @return The lockedByUid.
        */
       @java.lang.Override
@@ -803,7 +811,7 @@ public final class FoundationInfoOuterClass {
         return lockedByUid_;
       }
       /**
-       * <code>uint32 lockedByUid = 4;</code>
+       * <code>uint32 locked_by_uid = 4;</code>
        * @param value The lockedByUid to set.
        * @return This builder for chaining.
        */
@@ -814,7 +822,7 @@ public final class FoundationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 lockedByUid = 4;</code>
+       * <code>uint32 locked_by_uid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLockedByUid() {
@@ -891,11 +899,11 @@ public final class FoundationInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024FoundationInfo.proto\032\026FoundationStatus" +
-      ".proto\"t\n\016FoundationInfo\022!\n\006status\030\001 \001(\016" +
-      "2\021.FoundationStatus\022\017\n\007uidList\030\002 \003(\r\022\031\n\021" +
-      "currentBuildingId\030\003 \001(\r\022\023\n\013lockedByUid\030\004" +
-      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      ".proto\"y\n\016FoundationInfo\022!\n\006status\030\001 \001(\016" +
+      "2\021.FoundationStatus\022\020\n\010uid_list\030\002 \003(\r\022\033\n" +
+      "\023current_building_id\030\003 \001(\r\022\025\n\rlocked_by_" +
+      "uid\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

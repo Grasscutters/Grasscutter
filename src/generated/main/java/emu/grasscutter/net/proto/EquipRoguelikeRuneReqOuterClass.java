@@ -19,23 +19,28 @@ public final class EquipRoguelikeRuneReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @return A list containing the runeList.
      */
     java.util.List<java.lang.Integer> getRuneListList();
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @return The count of runeList.
      */
     int getRuneListCount();
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @param index The index of the element to return.
      * @return The runeList at the given index.
      */
     int getRuneList(int index);
   }
   /**
+   * <pre>
+   * Name: GIIEHGKMAEO
+   * CmdId: 8526
+   * </pre>
+   *
    * Protobuf type {@code EquipRoguelikeRuneReq}
    */
   public static final class EquipRoguelikeRuneReq extends
@@ -82,7 +87,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 runeList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
               runeList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,149 +143,10 @@ public final class EquipRoguelikeRuneReqOuterClass {
               emu.grasscutter.net.proto.EquipRoguelikeRuneReqOuterClass.EquipRoguelikeRuneReq.class, emu.grasscutter.net.proto.EquipRoguelikeRuneReqOuterClass.EquipRoguelikeRuneReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code EquipRoguelikeRuneReq.MKMHOALPDNO}
-     */
-    public enum MKMHOALPDNO
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 8377;</code>
-       */
-      PEPPOHPHJOJ(1, 8377),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final MKMHOALPDNO DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final MKMHOALPDNO EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 8377;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 8377;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MKMHOALPDNO valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MKMHOALPDNO forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 8377: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MKMHOALPDNO>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MKMHOALPDNO> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MKMHOALPDNO>() {
-              public MKMHOALPDNO findValueByNumber(int number) {
-                return MKMHOALPDNO.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.EquipRoguelikeRuneReqOuterClass.EquipRoguelikeRuneReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final MKMHOALPDNO[] VALUES = getStaticValuesArray();
-      private static MKMHOALPDNO[] getStaticValuesArray() {
-        return new MKMHOALPDNO[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static MKMHOALPDNO valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private MKMHOALPDNO(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:EquipRoguelikeRuneReq.MKMHOALPDNO)
-    }
-
-    public static final int RUNELIST_FIELD_NUMBER = 15;
+    public static final int RUNE_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList runeList_;
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @return A list containing the runeList.
      */
     @java.lang.Override
@@ -289,14 +155,14 @@ public final class EquipRoguelikeRuneReqOuterClass {
       return runeList_;
     }
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @return The count of runeList.
      */
     public int getRuneListCount() {
       return runeList_.size();
     }
     /**
-     * <code>repeated uint32 runeList = 15;</code>
+     * <code>repeated uint32 rune_list = 14;</code>
      * @param index The index of the element to return.
      * @return The runeList at the given index.
      */
@@ -321,7 +187,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getRuneListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(runeListMemoizedSerializedSize);
       }
       for (int i = 0; i < runeList_.size(); i++) {
@@ -379,7 +245,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getRuneListCount() > 0) {
-        hash = (37 * hash) + RUNELIST_FIELD_NUMBER;
+        hash = (37 * hash) + RUNE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRuneListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -478,6 +344,11 @@ public final class EquipRoguelikeRuneReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GIIEHGKMAEO
+     * CmdId: 8526
+     * </pre>
+     *
      * Protobuf type {@code EquipRoguelikeRuneReq}
      */
     public static final class Builder extends
@@ -645,7 +516,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @return A list containing the runeList.
        */
       public java.util.List<java.lang.Integer>
@@ -654,14 +525,14 @@ public final class EquipRoguelikeRuneReqOuterClass {
                  java.util.Collections.unmodifiableList(runeList_) : runeList_;
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @return The count of runeList.
        */
       public int getRuneListCount() {
         return runeList_.size();
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @param index The index of the element to return.
        * @return The runeList at the given index.
        */
@@ -669,7 +540,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
         return runeList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The runeList to set.
        * @return This builder for chaining.
@@ -682,7 +553,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @param value The runeList to add.
        * @return This builder for chaining.
        */
@@ -693,7 +564,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @param values The runeList to add.
        * @return This builder for chaining.
        */
@@ -706,7 +577,7 @@ public final class EquipRoguelikeRuneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 runeList = 15;</code>
+       * <code>repeated uint32 rune_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRuneList() {
@@ -782,12 +653,9 @@ public final class EquipRoguelikeRuneReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033EquipRoguelikeRuneReq.proto\"\213\001\n\025EquipR" +
-      "oguelikeRuneReq\022\020\n\010runeList\030\017 \003(\r\"`\n\013MKM" +
-      "HOALPDNO\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\271A\022\017\n\013" +
-      "DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIAB" +
-      "GAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\033EquipRoguelikeRuneReq.proto\"*\n\025EquipRo" +
+      "guelikeRuneReq\022\021\n\trune_list\030\016 \003(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

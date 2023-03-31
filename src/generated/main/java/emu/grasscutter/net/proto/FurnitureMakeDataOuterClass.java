@@ -19,42 +19,46 @@ public final class FurnitureMakeDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 durTime = 5;</code>
-     * @return The durTime.
+     * <code>uint32 avatar_id = 5;</code>
+     * @return The avatarId.
      */
-    int getDurTime();
+    int getAvatarId();
 
     /**
-     * <code>uint32 makeId = 6;</code>
-     * @return The makeId.
-     */
-    int getMakeId();
-
-    /**
-     * <code>fixed32 beginTime = 13;</code>
+     * <code>uint32 begin_time = 3;</code>
      * @return The beginTime.
      */
     int getBeginTime();
 
     /**
-     * <code>fixed32 accelerateTime = 9;</code>
+     * <code>uint32 durTime = 15;</code>
+     * @return The durTime.
+     */
+    int getDurTime();
+
+    /**
+     * <code>uint32 accelerateTime = 6;</code>
      * @return The accelerateTime.
      */
     int getAccelerateTime();
 
     /**
-     * <code>uint32 index = 10;</code>
+     * <code>uint32 index = 12;</code>
      * @return The index.
      */
     int getIndex();
 
     /**
-     * <code>uint32 avatarId = 1;</code>
-     * @return The avatarId.
+     * <code>uint32 make_id = 4;</code>
+     * @return The makeId.
      */
-    int getAvatarId();
+    int getMakeId();
   }
   /**
+   * <pre>
+   * Name: MIEFECKEOMK
+   * </pre>
+   *
    * Protobuf type {@code FurnitureMakeData}
    */
   public static final class FurnitureMakeData extends
@@ -99,34 +103,34 @@ public final class FurnitureMakeDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
-              avatarId_ = input.readUInt32();
+              beginTime_ = input.readUInt32();
               break;
             }
-            case 40: {
-
-              durTime_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+            case 32: {
 
               makeId_ = input.readUInt32();
               break;
             }
-            case 77: {
+            case 40: {
 
-              accelerateTime_ = input.readFixed32();
+              avatarId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 48: {
+
+              accelerateTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               index_ = input.readUInt32();
               break;
             }
-            case 109: {
+            case 120: {
 
-              beginTime_ = input.readFixed32();
+              durTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -161,32 +165,21 @@ public final class FurnitureMakeDataOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData.class, emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData.Builder.class);
     }
 
-    public static final int DURTIME_FIELD_NUMBER = 5;
-    private int durTime_;
+    public static final int AVATAR_ID_FIELD_NUMBER = 5;
+    private int avatarId_;
     /**
-     * <code>uint32 durTime = 5;</code>
-     * @return The durTime.
+     * <code>uint32 avatar_id = 5;</code>
+     * @return The avatarId.
      */
     @java.lang.Override
-    public int getDurTime() {
-      return durTime_;
+    public int getAvatarId() {
+      return avatarId_;
     }
 
-    public static final int MAKEID_FIELD_NUMBER = 6;
-    private int makeId_;
-    /**
-     * <code>uint32 makeId = 6;</code>
-     * @return The makeId.
-     */
-    @java.lang.Override
-    public int getMakeId() {
-      return makeId_;
-    }
-
-    public static final int BEGINTIME_FIELD_NUMBER = 13;
+    public static final int BEGIN_TIME_FIELD_NUMBER = 3;
     private int beginTime_;
     /**
-     * <code>fixed32 beginTime = 13;</code>
+     * <code>uint32 begin_time = 3;</code>
      * @return The beginTime.
      */
     @java.lang.Override
@@ -194,10 +187,21 @@ public final class FurnitureMakeDataOuterClass {
       return beginTime_;
     }
 
-    public static final int ACCELERATETIME_FIELD_NUMBER = 9;
+    public static final int DURTIME_FIELD_NUMBER = 15;
+    private int durTime_;
+    /**
+     * <code>uint32 durTime = 15;</code>
+     * @return The durTime.
+     */
+    @java.lang.Override
+    public int getDurTime() {
+      return durTime_;
+    }
+
+    public static final int ACCELERATETIME_FIELD_NUMBER = 6;
     private int accelerateTime_;
     /**
-     * <code>fixed32 accelerateTime = 9;</code>
+     * <code>uint32 accelerateTime = 6;</code>
      * @return The accelerateTime.
      */
     @java.lang.Override
@@ -205,10 +209,10 @@ public final class FurnitureMakeDataOuterClass {
       return accelerateTime_;
     }
 
-    public static final int INDEX_FIELD_NUMBER = 10;
+    public static final int INDEX_FIELD_NUMBER = 12;
     private int index_;
     /**
-     * <code>uint32 index = 10;</code>
+     * <code>uint32 index = 12;</code>
      * @return The index.
      */
     @java.lang.Override
@@ -216,15 +220,15 @@ public final class FurnitureMakeDataOuterClass {
       return index_;
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 1;
-    private int avatarId_;
+    public static final int MAKE_ID_FIELD_NUMBER = 4;
+    private int makeId_;
     /**
-     * <code>uint32 avatarId = 1;</code>
-     * @return The avatarId.
+     * <code>uint32 make_id = 4;</code>
+     * @return The makeId.
      */
     @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
+    public int getMakeId() {
+      return makeId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,23 +245,23 @@ public final class FurnitureMakeDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarId_ != 0) {
-        output.writeUInt32(1, avatarId_);
-      }
-      if (durTime_ != 0) {
-        output.writeUInt32(5, durTime_);
+      if (beginTime_ != 0) {
+        output.writeUInt32(3, beginTime_);
       }
       if (makeId_ != 0) {
-        output.writeUInt32(6, makeId_);
+        output.writeUInt32(4, makeId_);
+      }
+      if (avatarId_ != 0) {
+        output.writeUInt32(5, avatarId_);
       }
       if (accelerateTime_ != 0) {
-        output.writeFixed32(9, accelerateTime_);
+        output.writeUInt32(6, accelerateTime_);
       }
       if (index_ != 0) {
-        output.writeUInt32(10, index_);
+        output.writeUInt32(12, index_);
       }
-      if (beginTime_ != 0) {
-        output.writeFixed32(13, beginTime_);
+      if (durTime_ != 0) {
+        output.writeUInt32(15, durTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,29 +272,29 @@ public final class FurnitureMakeDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (avatarId_ != 0) {
+      if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, avatarId_);
-      }
-      if (durTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, durTime_);
+          .computeUInt32Size(3, beginTime_);
       }
       if (makeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, makeId_);
+          .computeUInt32Size(4, makeId_);
+      }
+      if (avatarId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, avatarId_);
       }
       if (accelerateTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(9, accelerateTime_);
+          .computeUInt32Size(6, accelerateTime_);
       }
       if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, index_);
+          .computeUInt32Size(12, index_);
       }
-      if (beginTime_ != 0) {
+      if (durTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(13, beginTime_);
+          .computeUInt32Size(15, durTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,18 +311,18 @@ public final class FurnitureMakeDataOuterClass {
       }
       emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData other = (emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData) obj;
 
-      if (getDurTime()
-          != other.getDurTime()) return false;
-      if (getMakeId()
-          != other.getMakeId()) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
       if (getBeginTime()
           != other.getBeginTime()) return false;
+      if (getDurTime()
+          != other.getDurTime()) return false;
       if (getAccelerateTime()
           != other.getAccelerateTime()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
+      if (getMakeId()
+          != other.getMakeId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -330,18 +334,18 @@ public final class FurnitureMakeDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
+      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBeginTime();
       hash = (37 * hash) + DURTIME_FIELD_NUMBER;
       hash = (53 * hash) + getDurTime();
-      hash = (37 * hash) + MAKEID_FIELD_NUMBER;
-      hash = (53 * hash) + getMakeId();
-      hash = (37 * hash) + BEGINTIME_FIELD_NUMBER;
-      hash = (53 * hash) + getBeginTime();
       hash = (37 * hash) + ACCELERATETIME_FIELD_NUMBER;
       hash = (53 * hash) + getAccelerateTime();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
+      hash = (37 * hash) + MAKE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMakeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +442,10 @@ public final class FurnitureMakeDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MIEFECKEOMK
+     * </pre>
+     *
      * Protobuf type {@code FurnitureMakeData}
      */
     public static final class Builder extends
@@ -475,17 +483,17 @@ public final class FurnitureMakeDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        durTime_ = 0;
-
-        makeId_ = 0;
+        avatarId_ = 0;
 
         beginTime_ = 0;
+
+        durTime_ = 0;
 
         accelerateTime_ = 0;
 
         index_ = 0;
 
-        avatarId_ = 0;
+        makeId_ = 0;
 
         return this;
       }
@@ -513,12 +521,12 @@ public final class FurnitureMakeDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData buildPartial() {
         emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData result = new emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData(this);
-        result.durTime_ = durTime_;
-        result.makeId_ = makeId_;
+        result.avatarId_ = avatarId_;
         result.beginTime_ = beginTime_;
+        result.durTime_ = durTime_;
         result.accelerateTime_ = accelerateTime_;
         result.index_ = index_;
-        result.avatarId_ = avatarId_;
+        result.makeId_ = makeId_;
         onBuilt();
         return result;
       }
@@ -567,14 +575,14 @@ public final class FurnitureMakeDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData other) {
         if (other == emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData.getDefaultInstance()) return this;
-        if (other.getDurTime() != 0) {
-          setDurTime(other.getDurTime());
-        }
-        if (other.getMakeId() != 0) {
-          setMakeId(other.getMakeId());
+        if (other.getAvatarId() != 0) {
+          setAvatarId(other.getAvatarId());
         }
         if (other.getBeginTime() != 0) {
           setBeginTime(other.getBeginTime());
+        }
+        if (other.getDurTime() != 0) {
+          setDurTime(other.getDurTime());
         }
         if (other.getAccelerateTime() != 0) {
           setAccelerateTime(other.getAccelerateTime());
@@ -582,8 +590,8 @@ public final class FurnitureMakeDataOuterClass {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
-        if (other.getAvatarId() != 0) {
-          setAvatarId(other.getAvatarId());
+        if (other.getMakeId() != 0) {
+          setMakeId(other.getMakeId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -614,71 +622,40 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
 
-      private int durTime_ ;
+      private int avatarId_ ;
       /**
-       * <code>uint32 durTime = 5;</code>
-       * @return The durTime.
+       * <code>uint32 avatar_id = 5;</code>
+       * @return The avatarId.
        */
       @java.lang.Override
-      public int getDurTime() {
-        return durTime_;
+      public int getAvatarId() {
+        return avatarId_;
       }
       /**
-       * <code>uint32 durTime = 5;</code>
-       * @param value The durTime to set.
+       * <code>uint32 avatar_id = 5;</code>
+       * @param value The avatarId to set.
        * @return This builder for chaining.
        */
-      public Builder setDurTime(int value) {
+      public Builder setAvatarId(int value) {
         
-        durTime_ = value;
+        avatarId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 durTime = 5;</code>
+       * <code>uint32 avatar_id = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDurTime() {
+      public Builder clearAvatarId() {
         
-        durTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int makeId_ ;
-      /**
-       * <code>uint32 makeId = 6;</code>
-       * @return The makeId.
-       */
-      @java.lang.Override
-      public int getMakeId() {
-        return makeId_;
-      }
-      /**
-       * <code>uint32 makeId = 6;</code>
-       * @param value The makeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMakeId(int value) {
-        
-        makeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 makeId = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMakeId() {
-        
-        makeId_ = 0;
+        avatarId_ = 0;
         onChanged();
         return this;
       }
 
       private int beginTime_ ;
       /**
-       * <code>fixed32 beginTime = 13;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @return The beginTime.
        */
       @java.lang.Override
@@ -686,7 +663,7 @@ public final class FurnitureMakeDataOuterClass {
         return beginTime_;
       }
       /**
-       * <code>fixed32 beginTime = 13;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @param value The beginTime to set.
        * @return This builder for chaining.
        */
@@ -697,7 +674,7 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
       /**
-       * <code>fixed32 beginTime = 13;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
@@ -707,9 +684,40 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
 
+      private int durTime_ ;
+      /**
+       * <code>uint32 durTime = 15;</code>
+       * @return The durTime.
+       */
+      @java.lang.Override
+      public int getDurTime() {
+        return durTime_;
+      }
+      /**
+       * <code>uint32 durTime = 15;</code>
+       * @param value The durTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDurTime(int value) {
+        
+        durTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 durTime = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDurTime() {
+        
+        durTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int accelerateTime_ ;
       /**
-       * <code>fixed32 accelerateTime = 9;</code>
+       * <code>uint32 accelerateTime = 6;</code>
        * @return The accelerateTime.
        */
       @java.lang.Override
@@ -717,7 +725,7 @@ public final class FurnitureMakeDataOuterClass {
         return accelerateTime_;
       }
       /**
-       * <code>fixed32 accelerateTime = 9;</code>
+       * <code>uint32 accelerateTime = 6;</code>
        * @param value The accelerateTime to set.
        * @return This builder for chaining.
        */
@@ -728,7 +736,7 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
       /**
-       * <code>fixed32 accelerateTime = 9;</code>
+       * <code>uint32 accelerateTime = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccelerateTime() {
@@ -740,7 +748,7 @@ public final class FurnitureMakeDataOuterClass {
 
       private int index_ ;
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @return The index.
        */
       @java.lang.Override
@@ -748,7 +756,7 @@ public final class FurnitureMakeDataOuterClass {
         return index_;
       }
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @param value The index to set.
        * @return This builder for chaining.
        */
@@ -759,7 +767,7 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
@@ -769,33 +777,33 @@ public final class FurnitureMakeDataOuterClass {
         return this;
       }
 
-      private int avatarId_ ;
+      private int makeId_ ;
       /**
-       * <code>uint32 avatarId = 1;</code>
-       * @return The avatarId.
+       * <code>uint32 make_id = 4;</code>
+       * @return The makeId.
        */
       @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
+      public int getMakeId() {
+        return makeId_;
       }
       /**
-       * <code>uint32 avatarId = 1;</code>
-       * @param value The avatarId to set.
+       * <code>uint32 make_id = 4;</code>
+       * @param value The makeId to set.
        * @return This builder for chaining.
        */
-      public Builder setAvatarId(int value) {
+      public Builder setMakeId(int value) {
         
-        avatarId_ = value;
+        makeId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 avatarId = 1;</code>
+       * <code>uint32 make_id = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAvatarId() {
+      public Builder clearMakeId() {
         
-        avatarId_ = 0;
+        makeId_ = 0;
         onChanged();
         return this;
       }
@@ -866,11 +874,11 @@ public final class FurnitureMakeDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027FurnitureMakeData.proto\"\200\001\n\021FurnitureM" +
-      "akeData\022\017\n\007durTime\030\005 \001(\r\022\016\n\006makeId\030\006 \001(\r" +
-      "\022\021\n\tbeginTime\030\r \001(\007\022\026\n\016accelerateTime\030\t " +
-      "\001(\007\022\r\n\005index\030\n \001(\r\022\020\n\010avatarId\030\001 \001(\rB\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "\n\027FurnitureMakeData.proto\"\203\001\n\021FurnitureM" +
+      "akeData\022\021\n\tavatar_id\030\005 \001(\r\022\022\n\nbegin_time" +
+      "\030\003 \001(\r\022\017\n\007durTime\030\017 \001(\r\022\026\n\016accelerateTim" +
+      "e\030\006 \001(\r\022\r\n\005index\030\014 \001(\r\022\017\n\007make_id\030\004 \001(\rB" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -881,7 +889,7 @@ public final class FurnitureMakeDataOuterClass {
     internal_static_FurnitureMakeData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FurnitureMakeData_descriptor,
-        new java.lang.String[] { "DurTime", "MakeId", "BeginTime", "AccelerateTime", "Index", "AvatarId", });
+        new java.lang.String[] { "AvatarId", "BeginTime", "DurTime", "AccelerateTime", "Index", "MakeId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,51 +19,55 @@ public final class TrialAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trialAvatarId = 1;</code>
+     * <code>uint32 trial_avatar_id = 1;</code>
      * @return The trialAvatarId.
      */
     int getTrialAvatarId();
 
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item> 
         getTrialEquipListList();
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     emu.grasscutter.net.proto.ItemOuterClass.Item getTrialEquipList(int index);
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     int getTrialEquipListCount();
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder> 
         getTrialEquipListOrBuilderList();
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder getTrialEquipListOrBuilder(
         int index);
 
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      * @return Whether the grantRecord field is set.
      */
     boolean hasGrantRecord();
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      * @return The grantRecord.
      */
     emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord getGrantRecord();
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      */
     emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder getGrantRecordOrBuilder();
   }
   /**
+   * <pre>
+   * Name: LCCNADFOJME
+   * </pre>
+   *
    * Protobuf type {@code TrialAvatarInfo}
    */
   public static final class TrialAvatarInfo extends
@@ -172,10 +176,10 @@ public final class TrialAvatarInfoOuterClass {
               emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo.class, emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo.Builder.class);
     }
 
-    public static final int TRIALAVATARID_FIELD_NUMBER = 1;
+    public static final int TRIAL_AVATAR_ID_FIELD_NUMBER = 1;
     private int trialAvatarId_;
     /**
-     * <code>uint32 trialAvatarId = 1;</code>
+     * <code>uint32 trial_avatar_id = 1;</code>
      * @return The trialAvatarId.
      */
     @java.lang.Override
@@ -183,17 +187,17 @@ public final class TrialAvatarInfoOuterClass {
       return trialAvatarId_;
     }
 
-    public static final int TRIALEQUIPLIST_FIELD_NUMBER = 2;
+    public static final int TRIAL_EQUIP_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item> trialEquipList_;
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item> getTrialEquipListList() {
       return trialEquipList_;
     }
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder> 
@@ -201,21 +205,21 @@ public final class TrialAvatarInfoOuterClass {
       return trialEquipList_;
     }
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     @java.lang.Override
     public int getTrialEquipListCount() {
       return trialEquipList_.size();
     }
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemOuterClass.Item getTrialEquipList(int index) {
       return trialEquipList_.get(index);
     }
     /**
-     * <code>repeated .Item trialEquipList = 2;</code>
+     * <code>repeated .Item trial_equip_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder getTrialEquipListOrBuilder(
@@ -223,10 +227,10 @@ public final class TrialAvatarInfoOuterClass {
       return trialEquipList_.get(index);
     }
 
-    public static final int GRANTRECORD_FIELD_NUMBER = 3;
+    public static final int GRANT_RECORD_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord grantRecord_;
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      * @return Whether the grantRecord field is set.
      */
     @java.lang.Override
@@ -234,7 +238,7 @@ public final class TrialAvatarInfoOuterClass {
       return grantRecord_ != null;
     }
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      * @return The grantRecord.
      */
     @java.lang.Override
@@ -242,7 +246,7 @@ public final class TrialAvatarInfoOuterClass {
       return grantRecord_ == null ? emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.getDefaultInstance() : grantRecord_;
     }
     /**
-     * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+     * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder getGrantRecordOrBuilder() {
@@ -328,14 +332,14 @@ public final class TrialAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRIALAVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + TRIAL_AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTrialAvatarId();
       if (getTrialEquipListCount() > 0) {
-        hash = (37 * hash) + TRIALEQUIPLIST_FIELD_NUMBER;
+        hash = (37 * hash) + TRIAL_EQUIP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTrialEquipListList().hashCode();
       }
       if (hasGrantRecord()) {
-        hash = (37 * hash) + GRANTRECORD_FIELD_NUMBER;
+        hash = (37 * hash) + GRANT_RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getGrantRecord().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -434,6 +438,10 @@ public final class TrialAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: LCCNADFOJME
+     * </pre>
+     *
      * Protobuf type {@code TrialAvatarInfo}
      */
     public static final class Builder extends
@@ -640,7 +648,7 @@ public final class TrialAvatarInfoOuterClass {
 
       private int trialAvatarId_ ;
       /**
-       * <code>uint32 trialAvatarId = 1;</code>
+       * <code>uint32 trial_avatar_id = 1;</code>
        * @return The trialAvatarId.
        */
       @java.lang.Override
@@ -648,7 +656,7 @@ public final class TrialAvatarInfoOuterClass {
         return trialAvatarId_;
       }
       /**
-       * <code>uint32 trialAvatarId = 1;</code>
+       * <code>uint32 trial_avatar_id = 1;</code>
        * @param value The trialAvatarId to set.
        * @return This builder for chaining.
        */
@@ -659,7 +667,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trialAvatarId = 1;</code>
+       * <code>uint32 trial_avatar_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarId() {
@@ -682,7 +690,7 @@ public final class TrialAvatarInfoOuterClass {
           emu.grasscutter.net.proto.ItemOuterClass.Item, emu.grasscutter.net.proto.ItemOuterClass.Item.Builder, emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder> trialEquipListBuilder_;
 
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item> getTrialEquipListList() {
         if (trialEquipListBuilder_ == null) {
@@ -692,7 +700,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public int getTrialEquipListCount() {
         if (trialEquipListBuilder_ == null) {
@@ -702,7 +710,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ItemOuterClass.Item getTrialEquipList(int index) {
         if (trialEquipListBuilder_ == null) {
@@ -712,7 +720,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder setTrialEquipList(
           int index, emu.grasscutter.net.proto.ItemOuterClass.Item value) {
@@ -729,7 +737,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder setTrialEquipList(
           int index, emu.grasscutter.net.proto.ItemOuterClass.Item.Builder builderForValue) {
@@ -743,7 +751,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder addTrialEquipList(emu.grasscutter.net.proto.ItemOuterClass.Item value) {
         if (trialEquipListBuilder_ == null) {
@@ -759,7 +767,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder addTrialEquipList(
           int index, emu.grasscutter.net.proto.ItemOuterClass.Item value) {
@@ -776,7 +784,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder addTrialEquipList(
           emu.grasscutter.net.proto.ItemOuterClass.Item.Builder builderForValue) {
@@ -790,7 +798,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder addTrialEquipList(
           int index, emu.grasscutter.net.proto.ItemOuterClass.Item.Builder builderForValue) {
@@ -804,7 +812,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder addAllTrialEquipList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemOuterClass.Item> values) {
@@ -819,7 +827,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder clearTrialEquipList() {
         if (trialEquipListBuilder_ == null) {
@@ -832,7 +840,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public Builder removeTrialEquipList(int index) {
         if (trialEquipListBuilder_ == null) {
@@ -845,14 +853,14 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ItemOuterClass.Item.Builder getTrialEquipListBuilder(
           int index) {
         return getTrialEquipListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder getTrialEquipListOrBuilder(
           int index) {
@@ -862,7 +870,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemOuterClass.ItemOrBuilder> 
            getTrialEquipListOrBuilderList() {
@@ -873,14 +881,14 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ItemOuterClass.Item.Builder addTrialEquipListBuilder() {
         return getTrialEquipListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemOuterClass.Item.getDefaultInstance());
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ItemOuterClass.Item.Builder addTrialEquipListBuilder(
           int index) {
@@ -888,7 +896,7 @@ public final class TrialAvatarInfoOuterClass {
             index, emu.grasscutter.net.proto.ItemOuterClass.Item.getDefaultInstance());
       }
       /**
-       * <code>repeated .Item trialEquipList = 2;</code>
+       * <code>repeated .Item trial_equip_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item.Builder> 
            getTrialEquipListBuilderList() {
@@ -913,14 +921,14 @@ public final class TrialAvatarInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder> grantRecordBuilder_;
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        * @return Whether the grantRecord field is set.
        */
       public boolean hasGrantRecord() {
         return grantRecordBuilder_ != null || grantRecord_ != null;
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        * @return The grantRecord.
        */
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord getGrantRecord() {
@@ -931,7 +939,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public Builder setGrantRecord(emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord value) {
         if (grantRecordBuilder_ == null) {
@@ -947,7 +955,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public Builder setGrantRecord(
           emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder builderForValue) {
@@ -961,7 +969,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public Builder mergeGrantRecord(emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord value) {
         if (grantRecordBuilder_ == null) {
@@ -979,7 +987,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public Builder clearGrantRecord() {
         if (grantRecordBuilder_ == null) {
@@ -993,7 +1001,7 @@ public final class TrialAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder getGrantRecordBuilder() {
         
@@ -1001,7 +1009,7 @@ public final class TrialAvatarInfoOuterClass {
         return getGrantRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder getGrantRecordOrBuilder() {
         if (grantRecordBuilder_ != null) {
@@ -1012,7 +1020,7 @@ public final class TrialAvatarInfoOuterClass {
         }
       }
       /**
-       * <code>.TrialAvatarGrantRecord grantRecord = 3;</code>
+       * <code>.TrialAvatarGrantRecord grant_record = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder> 
@@ -1094,18 +1102,18 @@ public final class TrialAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025TrialAvatarInfo.proto\032\034TrialAvatarGran" +
-      "tRecord.proto\032\nItem.proto\"u\n\017TrialAvatar" +
-      "Info\022\025\n\rtrialAvatarId\030\001 \001(\r\022\035\n\016trialEqui" +
-      "pList\030\002 \003(\0132\005.Item\022,\n\013grantRecord\030\003 \001(\0132" +
-      "\027.TrialAvatarGrantRecordB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\025TrialAvatarInfo.proto\032\nItem.proto\032\034Tri" +
+      "alAvatarGrantRecord.proto\"z\n\017TrialAvatar" +
+      "Info\022\027\n\017trial_avatar_id\030\001 \001(\r\022\037\n\020trial_e" +
+      "quip_list\030\002 \003(\0132\005.Item\022-\n\014grant_record\030\003" +
+      " \001(\0132\027.TrialAvatarGrantRecordB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ItemOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.getDescriptor(),
         });
     internal_static_TrialAvatarInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1113,8 +1121,8 @@ public final class TrialAvatarInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrialAvatarInfo_descriptor,
         new java.lang.String[] { "TrialAvatarId", "TrialEquipList", "GrantRecord", });
-    emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ItemOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

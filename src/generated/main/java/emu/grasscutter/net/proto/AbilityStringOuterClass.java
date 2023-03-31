@@ -49,6 +49,10 @@ public final class AbilityStringOuterClass {
     public emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString.TypeCase getTypeCase();
   }
   /**
+   * <pre>
+   * Name: ALGGELGLCLJ
+   * </pre>
+   *
    * Protobuf type {@code AbilityString}
    */
   public static final class AbilityString extends
@@ -435,6 +439,10 @@ public final class AbilityStringOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ALGGELGLCLJ
+     * </pre>
+     *
      * Protobuf type {@code AbilityString}
      */
     public static final class Builder extends

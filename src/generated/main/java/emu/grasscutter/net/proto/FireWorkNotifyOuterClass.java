@@ -43,6 +43,12 @@ public final class FireWorkNotifyOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * CmdId: 6079
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * </pre>
+   *
    * Protobuf type {@code FireWorkNotify}
    */
   public static final class FireWorkNotify extends
@@ -331,6 +337,12 @@ public final class FireWorkNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6079
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * </pre>
+     *
      * Protobuf type {@code FireWorkNotify}
      */
     public static final class Builder extends

@@ -19,23 +19,27 @@ public final class ChatEmojiCollectionDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @return A list containing the emojiIdList.
      */
     java.util.List<java.lang.Integer> getEmojiIdListList();
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @return The count of emojiIdList.
      */
     int getEmojiIdListCount();
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @param index The index of the element to return.
      * @return The emojiIdList at the given index.
      */
     int getEmojiIdList(int index);
   }
   /**
+   * <pre>
+   * Name: PJOPDHANLEM
+   * </pre>
+   *
    * Protobuf type {@code ChatEmojiCollectionData}
    */
   public static final class ChatEmojiCollectionData extends
@@ -138,10 +142,10 @@ public final class ChatEmojiCollectionDataOuterClass {
               emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.class, emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.Builder.class);
     }
 
-    public static final int EMOJIIDLIST_FIELD_NUMBER = 1;
+    public static final int EMOJI_ID_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList emojiIdList_;
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @return A list containing the emojiIdList.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class ChatEmojiCollectionDataOuterClass {
       return emojiIdList_;
     }
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @return The count of emojiIdList.
      */
     public int getEmojiIdListCount() {
       return emojiIdList_.size();
     }
     /**
-     * <code>repeated uint32 emojiIdList = 1;</code>
+     * <code>repeated uint32 emoji_id_list = 1;</code>
      * @param index The index of the element to return.
      * @return The emojiIdList at the given index.
      */
@@ -240,7 +244,7 @@ public final class ChatEmojiCollectionDataOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getEmojiIdListCount() > 0) {
-        hash = (37 * hash) + EMOJIIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + EMOJI_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEmojiIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class ChatEmojiCollectionDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PJOPDHANLEM
+     * </pre>
+     *
      * Protobuf type {@code ChatEmojiCollectionData}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class ChatEmojiCollectionDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @return A list containing the emojiIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class ChatEmojiCollectionDataOuterClass {
                  java.util.Collections.unmodifiableList(emojiIdList_) : emojiIdList_;
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @return The count of emojiIdList.
        */
       public int getEmojiIdListCount() {
         return emojiIdList_.size();
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @param index The index of the element to return.
        * @return The emojiIdList at the given index.
        */
@@ -530,7 +538,7 @@ public final class ChatEmojiCollectionDataOuterClass {
         return emojiIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The emojiIdList to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class ChatEmojiCollectionDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @param value The emojiIdList to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class ChatEmojiCollectionDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @param values The emojiIdList to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class ChatEmojiCollectionDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 emojiIdList = 1;</code>
+       * <code>repeated uint32 emoji_id_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEmojiIdList() {
@@ -643,9 +651,9 @@ public final class ChatEmojiCollectionDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035ChatEmojiCollectionData.proto\".\n\027ChatE" +
-      "mojiCollectionData\022\023\n\013emojiIdList\030\001 \003(\rB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\035ChatEmojiCollectionData.proto\"0\n\027ChatE" +
+      "mojiCollectionData\022\025\n\remoji_id_list\030\001 \003(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

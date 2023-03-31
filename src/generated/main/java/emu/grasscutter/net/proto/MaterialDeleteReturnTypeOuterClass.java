@@ -15,29 +15,33 @@ public final class MaterialDeleteReturnTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: AFGHMMDBPMD
+   * </pre>
+   *
    * Protobuf enum {@code MaterialDeleteReturnType}
    */
   public enum MaterialDeleteReturnType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>MATERIAL_DELETE_RETURN_TYPE_BAG = 0;</code>
+     * <code>MATERIAL_DELETE_RETURN_BAG = 0;</code>
      */
-    MATERIAL_DELETE_RETURN_TYPE_BAG(0),
+    MATERIAL_DELETE_RETURN_BAG(0),
     /**
-     * <code>MATERIAL_DELETE_RETURN_TYPE_SEED = 1;</code>
+     * <code>MATERIAL_DELETE_RETURN_SEED = 1;</code>
      */
-    MATERIAL_DELETE_RETURN_TYPE_SEED(1),
+    MATERIAL_DELETE_RETURN_SEED(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>MATERIAL_DELETE_RETURN_TYPE_BAG = 0;</code>
+     * <code>MATERIAL_DELETE_RETURN_BAG = 0;</code>
      */
-    public static final int MATERIAL_DELETE_RETURN_TYPE_BAG_VALUE = 0;
+    public static final int MATERIAL_DELETE_RETURN_BAG_VALUE = 0;
     /**
-     * <code>MATERIAL_DELETE_RETURN_TYPE_SEED = 1;</code>
+     * <code>MATERIAL_DELETE_RETURN_SEED = 1;</code>
      */
-    public static final int MATERIAL_DELETE_RETURN_TYPE_SEED_VALUE = 1;
+    public static final int MATERIAL_DELETE_RETURN_SEED_VALUE = 1;
 
 
     public final int getNumber() {
@@ -64,8 +68,8 @@ public final class MaterialDeleteReturnTypeOuterClass {
      */
     public static MaterialDeleteReturnType forNumber(int value) {
       switch (value) {
-        case 0: return MATERIAL_DELETE_RETURN_TYPE_BAG;
-        case 1: return MATERIAL_DELETE_RETURN_TYPE_SEED;
+        case 0: return MATERIAL_DELETE_RETURN_BAG;
+        case 1: return MATERIAL_DELETE_RETURN_SEED;
         default: return null;
       }
     }
@@ -131,11 +135,11 @@ public final class MaterialDeleteReturnTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036MaterialDeleteReturnType.proto*e\n\030Mate" +
-      "rialDeleteReturnType\022#\n\037MATERIAL_DELETE_" +
-      "RETURN_TYPE_BAG\020\000\022$\n MATERIAL_DELETE_RET" +
-      "URN_TYPE_SEED\020\001B\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "\n\036MaterialDeleteReturnType.proto*[\n\030Mate" +
+      "rialDeleteReturnType\022\036\n\032MATERIAL_DELETE_" +
+      "RETURN_BAG\020\000\022\037\n\033MATERIAL_DELETE_RETURN_S" +
+      "EED\020\001B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

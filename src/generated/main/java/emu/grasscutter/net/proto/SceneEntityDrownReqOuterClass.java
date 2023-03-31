@@ -19,12 +19,17 @@ public final class SceneEntityDrownReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entityId = 14;</code>
+     * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
+   * <pre>
+   * Name: PLAPOIKJPOD
+   * CmdId: 246
+   * </pre>
+   *
    * Protobuf type {@code SceneEntityDrownReq}
    */
   public static final class SceneEntityDrownReq extends
@@ -69,7 +74,7 @@ public final class SceneEntityDrownReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 96: {
 
               entityId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class SceneEntityDrownReqOuterClass {
               emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.class, emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SceneEntityDrownReq.GOIADJICFEC}
-     */
-    public enum GOIADJICFEC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 218;</code>
-       */
-      PEPPOHPHJOJ(1, 218),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final GOIADJICFEC DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final GOIADJICFEC EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 218;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 218;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static GOIADJICFEC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static GOIADJICFEC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 218: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<GOIADJICFEC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          GOIADJICFEC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<GOIADJICFEC>() {
-              public GOIADJICFEC findValueByNumber(int number) {
-                return GOIADJICFEC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final GOIADJICFEC[] VALUES = getStaticValuesArray();
-      private static GOIADJICFEC[] getStaticValuesArray() {
-        return new GOIADJICFEC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static GOIADJICFEC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private GOIADJICFEC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SceneEntityDrownReq.GOIADJICFEC)
-    }
-
-    public static final int ENTITYID_FIELD_NUMBER = 14;
+    public static final int ENTITY_ID_FIELD_NUMBER = 12;
     private int entityId_;
     /**
-     * <code>uint32 entityId = 14;</code>
+     * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class SceneEntityDrownReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(14, entityId_);
+        output.writeUInt32(12, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class SceneEntityDrownReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, entityId_);
+          .computeUInt32Size(12, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class SceneEntityDrownReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class SceneEntityDrownReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PLAPOIKJPOD
+     * CmdId: 246
+     * </pre>
+     *
      * Protobuf type {@code SceneEntityDrownReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class SceneEntityDrownReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entityId = 14;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class SceneEntityDrownReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entityId = 14;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class SceneEntityDrownReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entityId = 14;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -655,12 +526,9 @@ public final class SceneEntityDrownReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031SceneEntityDrownReq.proto\"\211\001\n\023SceneEnt" +
-      "ityDrownReq\022\020\n\010entityId\030\016 \001(\r\"`\n\013GOIADJI" +
-      "CFEC\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\332\001\022\017\n\013DCDN" +
-      "ILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOC" +
-      "I\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n\031SceneEntityDrownReq.proto\"(\n\023SceneEnti" +
+      "tyDrownReq\022\021\n\tentity_id\030\014 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

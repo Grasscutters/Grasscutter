@@ -19,18 +19,23 @@ public final class SceneEntityDrownRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entityId = 15;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: DLOBNCCPPIH
+   * CmdId: 284
+   * </pre>
+   *
    * Protobuf type {@code SceneEntityDrownRsp}
    */
   public static final class SceneEntityDrownRsp extends
@@ -75,7 +80,7 @@ public final class SceneEntityDrownRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -117,141 +122,10 @@ public final class SceneEntityDrownRspOuterClass {
               emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp.class, emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SceneEntityDrownRsp.BDPGJMMMEBO}
-     */
-    public enum BDPGJMMMEBO
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 275;</code>
-       */
-      PEPPOHPHJOJ(1, 275),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final BDPGJMMMEBO DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 275;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 275;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static BDPGJMMMEBO valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static BDPGJMMMEBO forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 275: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BDPGJMMMEBO>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BDPGJMMMEBO> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BDPGJMMMEBO>() {
-              public BDPGJMMMEBO findValueByNumber(int number) {
-                return BDPGJMMMEBO.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final BDPGJMMMEBO[] VALUES = getStaticValuesArray();
-      private static BDPGJMMMEBO[] getStaticValuesArray() {
-        return new BDPGJMMMEBO[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static BDPGJMMMEBO valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private BDPGJMMMEBO(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SceneEntityDrownRsp.BDPGJMMMEBO)
-    }
-
-    public static final int ENTITYID_FIELD_NUMBER = 15;
+    public static final int ENTITY_ID_FIELD_NUMBER = 15;
     private int entityId_;
     /**
-     * <code>uint32 entityId = 15;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -259,10 +133,10 @@ public final class SceneEntityDrownRspOuterClass {
       return entityId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -285,7 +159,7 @@ public final class SceneEntityDrownRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(14, retcode_);
       }
       if (entityId_ != 0) {
         output.writeUInt32(15, entityId_);
@@ -301,7 +175,7 @@ public final class SceneEntityDrownRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -337,7 +211,7 @@ public final class SceneEntityDrownRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -437,6 +311,11 @@ public final class SceneEntityDrownRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DLOBNCCPPIH
+     * CmdId: 284
+     * </pre>
+     *
      * Protobuf type {@code SceneEntityDrownRsp}
      */
     public static final class Builder extends
@@ -591,7 +470,7 @@ public final class SceneEntityDrownRspOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entityId = 15;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -599,7 +478,7 @@ public final class SceneEntityDrownRspOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entityId = 15;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -610,7 +489,7 @@ public final class SceneEntityDrownRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entityId = 15;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -622,7 +501,7 @@ public final class SceneEntityDrownRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -630,7 +509,7 @@ public final class SceneEntityDrownRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -641,7 +520,7 @@ public final class SceneEntityDrownRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -717,12 +596,10 @@ public final class SceneEntityDrownRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031SceneEntityDrownRsp.proto\"\211\001\n\023SceneEnt" +
-      "ityDrownRsp\022\020\n\010entityId\030\017 \001(\r\022\017\n\007retcode" +
-      "\030\r \001(\005\"O\n\013BDPGJMMMEBO\022\010\n\004NONE\020\000\022\020\n\013PEPPO" +
-      "HPHJOJ\020\223\002\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOE" +
-      "A\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n\031SceneEntityDrownRsp.proto\"9\n\023SceneEnti" +
+      "tyDrownRsp\022\021\n\tentity_id\030\017 \001(\r\022\017\n\007retcode" +
+      "\030\016 \001(\005B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

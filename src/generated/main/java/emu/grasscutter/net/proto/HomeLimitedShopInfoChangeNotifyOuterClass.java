@@ -19,30 +19,35 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> 
         getGoodsListList();
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods getGoodsList(int index);
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     int getGoodsListCount();
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> 
         getGoodsListOrBuilderList();
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Name: EKNBJFLCGCH
+   * CmdId: 4722
+   * </pre>
+   *
    * Protobuf type {@code HomeLimitedShopInfoChangeNotify}
    */
   public static final class HomeLimitedShopInfoChangeNotify extends
@@ -89,7 +94,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 goodsList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,148 +138,17 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
               emu.grasscutter.net.proto.HomeLimitedShopInfoChangeNotifyOuterClass.HomeLimitedShopInfoChangeNotify.class, emu.grasscutter.net.proto.HomeLimitedShopInfoChangeNotifyOuterClass.HomeLimitedShopInfoChangeNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeLimitedShopInfoChangeNotify.ALMFKCPBAGI}
-     */
-    public enum ALMFKCPBAGI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4552;</code>
-       */
-      PEPPOHPHJOJ(1, 4552),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ALMFKCPBAGI DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4552;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4552;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ALMFKCPBAGI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ALMFKCPBAGI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4552: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ALMFKCPBAGI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ALMFKCPBAGI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ALMFKCPBAGI>() {
-              public ALMFKCPBAGI findValueByNumber(int number) {
-                return ALMFKCPBAGI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoChangeNotifyOuterClass.HomeLimitedShopInfoChangeNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ALMFKCPBAGI[] VALUES = getStaticValuesArray();
-      private static ALMFKCPBAGI[] getStaticValuesArray() {
-        return new ALMFKCPBAGI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static ALMFKCPBAGI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ALMFKCPBAGI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeLimitedShopInfoChangeNotify.ALMFKCPBAGI)
-    }
-
-    public static final int GOODSLIST_FIELD_NUMBER = 1;
+    public static final int GOODS_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> goodsList_;
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> getGoodsListList() {
       return goodsList_;
     }
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> 
@@ -282,21 +156,21 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
       return goodsList_;
     }
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     @java.lang.Override
     public int getGoodsListCount() {
       return goodsList_.size();
     }
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods getGoodsList(int index) {
       return goodsList_.get(index);
     }
     /**
-     * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+     * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsListOrBuilder(
@@ -319,7 +193,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < goodsList_.size(); i++) {
-        output.writeMessage(1, goodsList_.get(i));
+        output.writeMessage(3, goodsList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -332,7 +206,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
       size = 0;
       for (int i = 0; i < goodsList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, goodsList_.get(i));
+          .computeMessageSize(3, goodsList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -363,7 +237,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getGoodsListCount() > 0) {
-        hash = (37 * hash) + GOODSLIST_FIELD_NUMBER;
+        hash = (37 * hash) + GOODS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGoodsListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -462,6 +336,11 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: EKNBJFLCGCH
+     * CmdId: 4722
+     * </pre>
+     *
      * Protobuf type {@code HomeLimitedShopInfoChangeNotify}
      */
     public static final class Builder extends
@@ -659,7 +538,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
           emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> goodsListBuilder_;
 
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> getGoodsListList() {
         if (goodsListBuilder_ == null) {
@@ -669,7 +548,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public int getGoodsListCount() {
         if (goodsListBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods getGoodsList(int index) {
         if (goodsListBuilder_ == null) {
@@ -689,7 +568,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder setGoodsList(
           int index, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods value) {
@@ -706,7 +585,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder setGoodsList(
           int index, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder builderForValue) {
@@ -720,7 +599,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder addGoodsList(emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods value) {
         if (goodsListBuilder_ == null) {
@@ -736,7 +615,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder addGoodsList(
           int index, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods value) {
@@ -753,7 +632,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder addGoodsList(
           emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder builderForValue) {
@@ -767,7 +646,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder addGoodsList(
           int index, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder builderForValue) {
@@ -781,7 +660,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder addAllGoodsList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> values) {
@@ -796,7 +675,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder clearGoodsList() {
         if (goodsListBuilder_ == null) {
@@ -809,7 +688,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public Builder removeGoodsList(int index) {
         if (goodsListBuilder_ == null) {
@@ -822,14 +701,14 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder getGoodsListBuilder(
           int index) {
         return getGoodsListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsListOrBuilder(
           int index) {
@@ -839,7 +718,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> 
            getGoodsListOrBuilderList() {
@@ -850,14 +729,14 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder addGoodsListBuilder() {
         return getGoodsListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder addGoodsListBuilder(
           int index) {
@@ -865,7 +744,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
             index, emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeLimitedShopGoods goodsList = 1;</code>
+       * <code>repeated .HomeLimitedShopGoods goods_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder> 
            getGoodsListBuilderList() {
@@ -953,12 +832,10 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%HomeLimitedShopInfoChangeNotify.proto\032" +
-      "\032HomeLimitedShopGoods.proto\"\234\001\n\037HomeLimi" +
-      "tedShopInfoChangeNotify\022(\n\tgoodsList\030\001 \003" +
-      "(\0132\025.HomeLimitedShopGoods\"O\n\013ALMFKCPBAGI" +
-      "\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\310#\022\017\n\013DCDNILFD" +
-      "FLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\032HomeLimitedShopGoods.proto\"L\n\037HomeLimit" +
+      "edShopInfoChangeNotify\022)\n\ngoods_list\030\003 \003" +
+      "(\0132\025.HomeLimitedShopGoodsB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,29 +19,34 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>uint32 city_id = 9;</code>
+     * @return The cityId.
+     */
+    int getCityId();
+
+    /**
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @return A list containing the parentQuestList.
      */
     java.util.List<java.lang.Integer> getParentQuestListList();
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @return The count of parentQuestList.
      */
     int getParentQuestListCount();
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @param index The index of the element to return.
      * @return The parentQuestList at the given index.
      */
     int getParentQuestList(int index);
-
-    /**
-     * <code>uint32 cityId = 9;</code>
-     * @return The cityId.
-     */
-    int getCityId();
   }
   /**
+   * <pre>
+   * Name: MDCHJKNHJIM
+   * CmdId: 2834
+   * </pre>
+   *
    * Protobuf type {@code TakeCityReputationParentQuestReq}
    */
   public static final class TakeCityReputationParentQuestReq extends
@@ -88,7 +93,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parentQuestList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -96,7 +101,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
               parentQuestList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,149 +154,21 @@ public final class TakeCityReputationParentQuestReqOuterClass {
               emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq.class, emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq.Builder.class);
     }
 
+    public static final int CITY_ID_FIELD_NUMBER = 9;
+    private int cityId_;
     /**
-     * Protobuf enum {@code TakeCityReputationParentQuestReq.PJJGGGLIDDD}
+     * <code>uint32 city_id = 9;</code>
+     * @return The cityId.
      */
-    public enum PJJGGGLIDDD
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2874;</code>
-       */
-      PEPPOHPHJOJ(1, 2874),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PJJGGGLIDDD DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final PJJGGGLIDDD EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2874;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2874;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PJJGGGLIDDD valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PJJGGGLIDDD forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2874: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PJJGGGLIDDD>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PJJGGGLIDDD> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PJJGGGLIDDD>() {
-              public PJJGGGLIDDD findValueByNumber(int number) {
-                return PJJGGGLIDDD.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PJJGGGLIDDD[] VALUES = getStaticValuesArray();
-      private static PJJGGGLIDDD[] getStaticValuesArray() {
-        return new PJJGGGLIDDD[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static PJJGGGLIDDD valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PJJGGGLIDDD(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:TakeCityReputationParentQuestReq.PJJGGGLIDDD)
+    @java.lang.Override
+    public int getCityId() {
+      return cityId_;
     }
 
-    public static final int PARENTQUESTLIST_FIELD_NUMBER = 1;
+    public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList parentQuestList_;
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @return A list containing the parentQuestList.
      */
     @java.lang.Override
@@ -300,14 +177,14 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       return parentQuestList_;
     }
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @return The count of parentQuestList.
      */
     public int getParentQuestListCount() {
       return parentQuestList_.size();
     }
     /**
-     * <code>repeated uint32 parentQuestList = 1;</code>
+     * <code>repeated uint32 parent_quest_list = 5;</code>
      * @param index The index of the element to return.
      * @return The parentQuestList at the given index.
      */
@@ -315,17 +192,6 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       return parentQuestList_.getInt(index);
     }
     private int parentQuestListMemoizedSerializedSize = -1;
-
-    public static final int CITYID_FIELD_NUMBER = 9;
-    private int cityId_;
-    /**
-     * <code>uint32 cityId = 9;</code>
-     * @return The cityId.
-     */
-    @java.lang.Override
-    public int getCityId() {
-      return cityId_;
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -343,7 +209,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getParentQuestListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(parentQuestListMemoizedSerializedSize);
       }
       for (int i = 0; i < parentQuestList_.size(); i++) {
@@ -394,10 +260,10 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       }
       emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq other = (emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq) obj;
 
-      if (!getParentQuestListList()
-          .equals(other.getParentQuestListList())) return false;
       if (getCityId()
           != other.getCityId()) return false;
+      if (!getParentQuestListList()
+          .equals(other.getParentQuestListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -409,12 +275,12 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCityId();
       if (getParentQuestListCount() > 0) {
-        hash = (37 * hash) + PARENTQUESTLIST_FIELD_NUMBER;
+        hash = (37 * hash) + PARENT_QUEST_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParentQuestListList().hashCode();
       }
-      hash = (37 * hash) + CITYID_FIELD_NUMBER;
-      hash = (53 * hash) + getCityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -511,6 +377,11 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MDCHJKNHJIM
+     * CmdId: 2834
+     * </pre>
+     *
      * Protobuf type {@code TakeCityReputationParentQuestReq}
      */
     public static final class Builder extends
@@ -548,10 +419,10 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        parentQuestList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         cityId_ = 0;
 
+        parentQuestList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -579,12 +450,12 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       public emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq buildPartial() {
         emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq result = new emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq(this);
         int from_bitField0_ = bitField0_;
+        result.cityId_ = cityId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           parentQuestList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.parentQuestList_ = parentQuestList_;
-        result.cityId_ = cityId_;
         onBuilt();
         return result;
       }
@@ -633,6 +504,9 @@ public final class TakeCityReputationParentQuestReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq other) {
         if (other == emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq.getDefaultInstance()) return this;
+        if (other.getCityId() != 0) {
+          setCityId(other.getCityId());
+        }
         if (!other.parentQuestList_.isEmpty()) {
           if (parentQuestList_.isEmpty()) {
             parentQuestList_ = other.parentQuestList_;
@@ -642,9 +516,6 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             parentQuestList_.addAll(other.parentQuestList_);
           }
           onChanged();
-        }
-        if (other.getCityId() != 0) {
-          setCityId(other.getCityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -676,6 +547,37 @@ public final class TakeCityReputationParentQuestReqOuterClass {
       }
       private int bitField0_;
 
+      private int cityId_ ;
+      /**
+       * <code>uint32 city_id = 9;</code>
+       * @return The cityId.
+       */
+      @java.lang.Override
+      public int getCityId() {
+        return cityId_;
+      }
+      /**
+       * <code>uint32 city_id = 9;</code>
+       * @param value The cityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCityId(int value) {
+        
+        cityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 city_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCityId() {
+        
+        cityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.IntList parentQuestList_ = emptyIntList();
       private void ensureParentQuestListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -684,7 +586,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @return A list containing the parentQuestList.
        */
       public java.util.List<java.lang.Integer>
@@ -693,14 +595,14 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                  java.util.Collections.unmodifiableList(parentQuestList_) : parentQuestList_;
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @return The count of parentQuestList.
        */
       public int getParentQuestListCount() {
         return parentQuestList_.size();
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @param index The index of the element to return.
        * @return The parentQuestList at the given index.
        */
@@ -708,7 +610,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         return parentQuestList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The parentQuestList to set.
        * @return This builder for chaining.
@@ -721,7 +623,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @param value The parentQuestList to add.
        * @return This builder for chaining.
        */
@@ -732,7 +634,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @param values The parentQuestList to add.
        * @return This builder for chaining.
        */
@@ -745,43 +647,12 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parentQuestList = 1;</code>
+       * <code>repeated uint32 parent_quest_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearParentQuestList() {
         parentQuestList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int cityId_ ;
-      /**
-       * <code>uint32 cityId = 9;</code>
-       * @return The cityId.
-       */
-      @java.lang.Override
-      public int getCityId() {
-        return cityId_;
-      }
-      /**
-       * <code>uint32 cityId = 9;</code>
-       * @param value The cityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCityId(int value) {
-        
-        cityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cityId = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCityId() {
-        
-        cityId_ = 0;
         onChanged();
         return this;
       }
@@ -853,12 +724,9 @@ public final class TakeCityReputationParentQuestReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&TakeCityReputationParentQuestReq.proto" +
-      "\"\255\001\n TakeCityReputationParentQuestReq\022\027\n" +
-      "\017parentQuestList\030\001 \003(\r\022\016\n\006cityId\030\t \001(\r\"`" +
-      "\n\013PJJGGGLIDDD\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\272" +
-      "\026\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013E" +
-      "AJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\"N\n TakeCityReputationParentQuestReq\022\017\n\007" +
+      "city_id\030\t \001(\r\022\031\n\021parent_quest_list\030\005 \003(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -869,7 +737,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
     internal_static_TakeCityReputationParentQuestReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeCityReputationParentQuestReq_descriptor,
-        new java.lang.String[] { "ParentQuestList", "CityId", });
+        new java.lang.String[] { "CityId", "ParentQuestList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

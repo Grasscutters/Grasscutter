@@ -19,23 +19,28 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @return A list containing the unlockedCityList.
      */
     java.util.List<java.lang.Integer> getUnlockedCityListList();
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @return The count of unlockedCityList.
      */
     int getUnlockedCityListCount();
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockedCityList at the given index.
      */
     int getUnlockedCityList(int index);
   }
   /**
+   * <pre>
+   * Name: ICNBAPCCAKO
+   * CmdId: 180
+   * </pre>
+   *
    * Protobuf type {@code DailyTaskUnlockedCitiesNotify}
    */
   public static final class DailyTaskUnlockedCitiesNotify extends
@@ -82,7 +87,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 unlockedCityList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
               unlockedCityList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
               emu.grasscutter.net.proto.DailyTaskUnlockedCitiesNotifyOuterClass.DailyTaskUnlockedCitiesNotify.class, emu.grasscutter.net.proto.DailyTaskUnlockedCitiesNotifyOuterClass.DailyTaskUnlockedCitiesNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code DailyTaskUnlockedCitiesNotify.PGKOMCHPHJP}
-     */
-    public enum PGKOMCHPHJP
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 176;</code>
-       */
-      PEPPOHPHJOJ(1, 176),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PGKOMCHPHJP DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 176;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 176;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PGKOMCHPHJP valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PGKOMCHPHJP forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 176: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PGKOMCHPHJP>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PGKOMCHPHJP> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PGKOMCHPHJP>() {
-              public PGKOMCHPHJP findValueByNumber(int number) {
-                return PGKOMCHPHJP.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DailyTaskUnlockedCitiesNotifyOuterClass.DailyTaskUnlockedCitiesNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PGKOMCHPHJP[] VALUES = getStaticValuesArray();
-      private static PGKOMCHPHJP[] getStaticValuesArray() {
-        return new PGKOMCHPHJP[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static PGKOMCHPHJP valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PGKOMCHPHJP(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:DailyTaskUnlockedCitiesNotify.PGKOMCHPHJP)
-    }
-
-    public static final int UNLOCKEDCITYLIST_FIELD_NUMBER = 6;
+    public static final int UNLOCKED_CITY_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList unlockedCityList_;
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @return A list containing the unlockedCityList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       return unlockedCityList_;
     }
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @return The count of unlockedCityList.
      */
     public int getUnlockedCityListCount() {
       return unlockedCityList_.size();
     }
     /**
-     * <code>repeated uint32 unlockedCityList = 6;</code>
+     * <code>repeated uint32 unlocked_city_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockedCityList at the given index.
      */
@@ -313,7 +187,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getUnlockedCityListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(unlockedCityListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedCityList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getUnlockedCityListCount() > 0) {
-        hash = (37 * hash) + UNLOCKEDCITYLIST_FIELD_NUMBER;
+        hash = (37 * hash) + UNLOCKED_CITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUnlockedCityListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ICNBAPCCAKO
+     * CmdId: 180
+     * </pre>
+     *
      * Protobuf type {@code DailyTaskUnlockedCitiesNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @return A list containing the unlockedCityList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
                  java.util.Collections.unmodifiableList(unlockedCityList_) : unlockedCityList_;
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @return The count of unlockedCityList.
        */
       public int getUnlockedCityListCount() {
         return unlockedCityList_.size();
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @param index The index of the element to return.
        * @return The unlockedCityList at the given index.
        */
@@ -661,7 +540,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
         return unlockedCityList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The unlockedCityList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @param value The unlockedCityList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @param values The unlockedCityList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockedCityList = 6;</code>
+       * <code>repeated uint32 unlocked_city_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnlockedCityList() {
@@ -774,17 +653,14 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n#DailyTaskUnlockedCitiesNotify.proto\032\014u" +
-      "int32.proto\"\212\001\n\035DailyTaskUnlockedCitiesN" +
-      "otify\022\030\n\020unlockedCityList\030\006 \003(\r\"O\n\013PGKOM" +
-      "CHPHJP\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\260\001\022\017\n\013DC" +
-      "DNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "\n#DailyTaskUnlockedCitiesNotify.proto\";\n" +
+      "\035DailyTaskUnlockedCitiesNotify\022\032\n\022unlock" +
+      "ed_city_list\030\007 \003(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.Uint32.getDescriptor(),
         });
     internal_static_DailyTaskUnlockedCitiesNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -792,7 +668,6 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DailyTaskUnlockedCitiesNotify_descriptor,
         new java.lang.String[] { "UnlockedCityList", });
-    emu.grasscutter.net.proto.Uint32.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

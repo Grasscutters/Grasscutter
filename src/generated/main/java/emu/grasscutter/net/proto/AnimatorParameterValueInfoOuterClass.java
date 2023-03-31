@@ -19,7 +19,7 @@ public final class AnimatorParameterValueInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 paraType = 1;</code>
+     * <code>uint32 para_type = 1;</code>
      * @return The paraType.
      */
     int getParaType();
@@ -57,9 +57,13 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     boolean getBoolVal();
 
-    public emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.MMJOJNNFGCNCase getMMJOJNNFGCNCase();
+    public emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.ParaValCase getParaValCase();
   }
   /**
+   * <pre>
+   * Name: NNHECDNAAAO
+   * </pre>
+   *
    * Protobuf type {@code AnimatorParameterValueInfo}
    */
   public static final class AnimatorParameterValueInfo extends
@@ -110,18 +114,18 @@ public final class AnimatorParameterValueInfoOuterClass {
               break;
             }
             case 16: {
-              mMJOJNNFGCNCase_ = 2;
-              mMJOJNNFGCN_ = input.readInt32();
+              paraValCase_ = 2;
+              paraVal_ = input.readInt32();
               break;
             }
             case 29: {
-              mMJOJNNFGCNCase_ = 3;
-              mMJOJNNFGCN_ = input.readFloat();
+              paraValCase_ = 3;
+              paraVal_ = input.readFloat();
               break;
             }
             case 32: {
-              mMJOJNNFGCNCase_ = 4;
-              mMJOJNNFGCN_ = input.readBool();
+              paraValCase_ = 4;
+              paraVal_ = input.readBool();
               break;
             }
             default: {
@@ -156,17 +160,17 @@ public final class AnimatorParameterValueInfoOuterClass {
               emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.class, emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo.Builder.class);
     }
 
-    private int mMJOJNNFGCNCase_ = 0;
-    private java.lang.Object mMJOJNNFGCN_;
-    public enum MMJOJNNFGCNCase
+    private int paraValCase_ = 0;
+    private java.lang.Object paraVal_;
+    public enum ParaValCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       INT_VAL(2),
       FLOAT_VAL(3),
       BOOL_VAL(4),
-      MMJOJNNFGCN_NOT_SET(0);
+      PARAVAL_NOT_SET(0);
       private final int value;
-      private MMJOJNNFGCNCase(int value) {
+      private ParaValCase(int value) {
         this.value = value;
       }
       /**
@@ -175,16 +179,16 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static MMJOJNNFGCNCase valueOf(int value) {
+      public static ParaValCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static MMJOJNNFGCNCase forNumber(int value) {
+      public static ParaValCase forNumber(int value) {
         switch (value) {
           case 2: return INT_VAL;
           case 3: return FLOAT_VAL;
           case 4: return BOOL_VAL;
-          case 0: return MMJOJNNFGCN_NOT_SET;
+          case 0: return PARAVAL_NOT_SET;
           default: return null;
         }
       }
@@ -193,16 +197,16 @@ public final class AnimatorParameterValueInfoOuterClass {
       }
     };
 
-    public MMJOJNNFGCNCase
-    getMMJOJNNFGCNCase() {
-      return MMJOJNNFGCNCase.forNumber(
-          mMJOJNNFGCNCase_);
+    public ParaValCase
+    getParaValCase() {
+      return ParaValCase.forNumber(
+          paraValCase_);
     }
 
-    public static final int PARATYPE_FIELD_NUMBER = 1;
+    public static final int PARA_TYPE_FIELD_NUMBER = 1;
     private int paraType_;
     /**
-     * <code>uint32 paraType = 1;</code>
+     * <code>uint32 para_type = 1;</code>
      * @return The paraType.
      */
     @java.lang.Override
@@ -217,7 +221,7 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasIntVal() {
-      return mMJOJNNFGCNCase_ == 2;
+      return paraValCase_ == 2;
     }
     /**
      * <code>int32 int_val = 2;</code>
@@ -225,8 +229,8 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public int getIntVal() {
-      if (mMJOJNNFGCNCase_ == 2) {
-        return (java.lang.Integer) mMJOJNNFGCN_;
+      if (paraValCase_ == 2) {
+        return (java.lang.Integer) paraVal_;
       }
       return 0;
     }
@@ -238,7 +242,7 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasFloatVal() {
-      return mMJOJNNFGCNCase_ == 3;
+      return paraValCase_ == 3;
     }
     /**
      * <code>float float_val = 3;</code>
@@ -246,8 +250,8 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public float getFloatVal() {
-      if (mMJOJNNFGCNCase_ == 3) {
-        return (java.lang.Float) mMJOJNNFGCN_;
+      if (paraValCase_ == 3) {
+        return (java.lang.Float) paraVal_;
       }
       return 0F;
     }
@@ -259,7 +263,7 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public boolean hasBoolVal() {
-      return mMJOJNNFGCNCase_ == 4;
+      return paraValCase_ == 4;
     }
     /**
      * <code>bool bool_val = 4;</code>
@@ -267,8 +271,8 @@ public final class AnimatorParameterValueInfoOuterClass {
      */
     @java.lang.Override
     public boolean getBoolVal() {
-      if (mMJOJNNFGCNCase_ == 4) {
-        return (java.lang.Boolean) mMJOJNNFGCN_;
+      if (paraValCase_ == 4) {
+        return (java.lang.Boolean) paraVal_;
       }
       return false;
     }
@@ -290,17 +294,17 @@ public final class AnimatorParameterValueInfoOuterClass {
       if (paraType_ != 0) {
         output.writeUInt32(1, paraType_);
       }
-      if (mMJOJNNFGCNCase_ == 2) {
+      if (paraValCase_ == 2) {
         output.writeInt32(
-            2, (int)((java.lang.Integer) mMJOJNNFGCN_));
+            2, (int)((java.lang.Integer) paraVal_));
       }
-      if (mMJOJNNFGCNCase_ == 3) {
+      if (paraValCase_ == 3) {
         output.writeFloat(
-            3, (float)((java.lang.Float) mMJOJNNFGCN_));
+            3, (float)((java.lang.Float) paraVal_));
       }
-      if (mMJOJNNFGCNCase_ == 4) {
+      if (paraValCase_ == 4) {
         output.writeBool(
-            4, (boolean)((java.lang.Boolean) mMJOJNNFGCN_));
+            4, (boolean)((java.lang.Boolean) paraVal_));
       }
       unknownFields.writeTo(output);
     }
@@ -315,20 +319,20 @@ public final class AnimatorParameterValueInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, paraType_);
       }
-      if (mMJOJNNFGCNCase_ == 2) {
+      if (paraValCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(
-              2, (int)((java.lang.Integer) mMJOJNNFGCN_));
+              2, (int)((java.lang.Integer) paraVal_));
       }
-      if (mMJOJNNFGCNCase_ == 3) {
+      if (paraValCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(
-              3, (float)((java.lang.Float) mMJOJNNFGCN_));
+              3, (float)((java.lang.Float) paraVal_));
       }
-      if (mMJOJNNFGCNCase_ == 4) {
+      if (paraValCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(
-              4, (boolean)((java.lang.Boolean) mMJOJNNFGCN_));
+              4, (boolean)((java.lang.Boolean) paraVal_));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,8 +351,8 @@ public final class AnimatorParameterValueInfoOuterClass {
 
       if (getParaType()
           != other.getParaType()) return false;
-      if (!getMMJOJNNFGCNCase().equals(other.getMMJOJNNFGCNCase())) return false;
-      switch (mMJOJNNFGCNCase_) {
+      if (!getParaValCase().equals(other.getParaValCase())) return false;
+      switch (paraValCase_) {
         case 2:
           if (getIntVal()
               != other.getIntVal()) return false;
@@ -376,9 +380,9 @@ public final class AnimatorParameterValueInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARATYPE_FIELD_NUMBER;
+      hash = (37 * hash) + PARA_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getParaType();
-      switch (mMJOJNNFGCNCase_) {
+      switch (paraValCase_) {
         case 2:
           hash = (37 * hash) + INT_VAL_FIELD_NUMBER;
           hash = (53 * hash) + getIntVal();
@@ -492,6 +496,10 @@ public final class AnimatorParameterValueInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NNHECDNAAAO
+     * </pre>
+     *
      * Protobuf type {@code AnimatorParameterValueInfo}
      */
     public static final class Builder extends
@@ -531,8 +539,8 @@ public final class AnimatorParameterValueInfoOuterClass {
         super.clear();
         paraType_ = 0;
 
-        mMJOJNNFGCNCase_ = 0;
-        mMJOJNNFGCN_ = null;
+        paraValCase_ = 0;
+        paraVal_ = null;
         return this;
       }
 
@@ -560,16 +568,16 @@ public final class AnimatorParameterValueInfoOuterClass {
       public emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo buildPartial() {
         emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo result = new emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo(this);
         result.paraType_ = paraType_;
-        if (mMJOJNNFGCNCase_ == 2) {
-          result.mMJOJNNFGCN_ = mMJOJNNFGCN_;
+        if (paraValCase_ == 2) {
+          result.paraVal_ = paraVal_;
         }
-        if (mMJOJNNFGCNCase_ == 3) {
-          result.mMJOJNNFGCN_ = mMJOJNNFGCN_;
+        if (paraValCase_ == 3) {
+          result.paraVal_ = paraVal_;
         }
-        if (mMJOJNNFGCNCase_ == 4) {
-          result.mMJOJNNFGCN_ = mMJOJNNFGCN_;
+        if (paraValCase_ == 4) {
+          result.paraVal_ = paraVal_;
         }
-        result.mMJOJNNFGCNCase_ = mMJOJNNFGCNCase_;
+        result.paraValCase_ = paraValCase_;
         onBuilt();
         return result;
       }
@@ -621,7 +629,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         if (other.getParaType() != 0) {
           setParaType(other.getParaType());
         }
-        switch (other.getMMJOJNNFGCNCase()) {
+        switch (other.getParaValCase()) {
           case INT_VAL: {
             setIntVal(other.getIntVal());
             break;
@@ -634,7 +642,7 @@ public final class AnimatorParameterValueInfoOuterClass {
             setBoolVal(other.getBoolVal());
             break;
           }
-          case MMJOJNNFGCN_NOT_SET: {
+          case PARAVAL_NOT_SET: {
             break;
           }
         }
@@ -666,17 +674,17 @@ public final class AnimatorParameterValueInfoOuterClass {
         }
         return this;
       }
-      private int mMJOJNNFGCNCase_ = 0;
-      private java.lang.Object mMJOJNNFGCN_;
-      public MMJOJNNFGCNCase
-          getMMJOJNNFGCNCase() {
-        return MMJOJNNFGCNCase.forNumber(
-            mMJOJNNFGCNCase_);
+      private int paraValCase_ = 0;
+      private java.lang.Object paraVal_;
+      public ParaValCase
+          getParaValCase() {
+        return ParaValCase.forNumber(
+            paraValCase_);
       }
 
-      public Builder clearMMJOJNNFGCN() {
-        mMJOJNNFGCNCase_ = 0;
-        mMJOJNNFGCN_ = null;
+      public Builder clearParaVal() {
+        paraValCase_ = 0;
+        paraVal_ = null;
         onChanged();
         return this;
       }
@@ -684,7 +692,7 @@ public final class AnimatorParameterValueInfoOuterClass {
 
       private int paraType_ ;
       /**
-       * <code>uint32 paraType = 1;</code>
+       * <code>uint32 para_type = 1;</code>
        * @return The paraType.
        */
       @java.lang.Override
@@ -692,7 +700,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         return paraType_;
       }
       /**
-       * <code>uint32 paraType = 1;</code>
+       * <code>uint32 para_type = 1;</code>
        * @param value The paraType to set.
        * @return This builder for chaining.
        */
@@ -703,7 +711,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 paraType = 1;</code>
+       * <code>uint32 para_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearParaType() {
@@ -718,15 +726,15 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return Whether the intVal field is set.
        */
       public boolean hasIntVal() {
-        return mMJOJNNFGCNCase_ == 2;
+        return paraValCase_ == 2;
       }
       /**
        * <code>int32 int_val = 2;</code>
        * @return The intVal.
        */
       public int getIntVal() {
-        if (mMJOJNNFGCNCase_ == 2) {
-          return (java.lang.Integer) mMJOJNNFGCN_;
+        if (paraValCase_ == 2) {
+          return (java.lang.Integer) paraVal_;
         }
         return 0;
       }
@@ -736,8 +744,8 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIntVal(int value) {
-        mMJOJNNFGCNCase_ = 2;
-        mMJOJNNFGCN_ = value;
+        paraValCase_ = 2;
+        paraVal_ = value;
         onChanged();
         return this;
       }
@@ -746,9 +754,9 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIntVal() {
-        if (mMJOJNNFGCNCase_ == 2) {
-          mMJOJNNFGCNCase_ = 0;
-          mMJOJNNFGCN_ = null;
+        if (paraValCase_ == 2) {
+          paraValCase_ = 0;
+          paraVal_ = null;
           onChanged();
         }
         return this;
@@ -759,15 +767,15 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return Whether the floatVal field is set.
        */
       public boolean hasFloatVal() {
-        return mMJOJNNFGCNCase_ == 3;
+        return paraValCase_ == 3;
       }
       /**
        * <code>float float_val = 3;</code>
        * @return The floatVal.
        */
       public float getFloatVal() {
-        if (mMJOJNNFGCNCase_ == 3) {
-          return (java.lang.Float) mMJOJNNFGCN_;
+        if (paraValCase_ == 3) {
+          return (java.lang.Float) paraVal_;
         }
         return 0F;
       }
@@ -777,8 +785,8 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFloatVal(float value) {
-        mMJOJNNFGCNCase_ = 3;
-        mMJOJNNFGCN_ = value;
+        paraValCase_ = 3;
+        paraVal_ = value;
         onChanged();
         return this;
       }
@@ -787,9 +795,9 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloatVal() {
-        if (mMJOJNNFGCNCase_ == 3) {
-          mMJOJNNFGCNCase_ = 0;
-          mMJOJNNFGCN_ = null;
+        if (paraValCase_ == 3) {
+          paraValCase_ = 0;
+          paraVal_ = null;
           onChanged();
         }
         return this;
@@ -800,15 +808,15 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return Whether the boolVal field is set.
        */
       public boolean hasBoolVal() {
-        return mMJOJNNFGCNCase_ == 4;
+        return paraValCase_ == 4;
       }
       /**
        * <code>bool bool_val = 4;</code>
        * @return The boolVal.
        */
       public boolean getBoolVal() {
-        if (mMJOJNNFGCNCase_ == 4) {
-          return (java.lang.Boolean) mMJOJNNFGCN_;
+        if (paraValCase_ == 4) {
+          return (java.lang.Boolean) paraVal_;
         }
         return false;
       }
@@ -818,8 +826,8 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBoolVal(boolean value) {
-        mMJOJNNFGCNCase_ = 4;
-        mMJOJNNFGCN_ = value;
+        paraValCase_ = 4;
+        paraVal_ = value;
         onChanged();
         return this;
       }
@@ -828,9 +836,9 @@ public final class AnimatorParameterValueInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBoolVal() {
-        if (mMJOJNNFGCNCase_ == 4) {
-          mMJOJNNFGCNCase_ = 0;
-          mMJOJNNFGCN_ = null;
+        if (paraValCase_ == 4) {
+          paraValCase_ = 0;
+          paraVal_ = null;
           onChanged();
         }
         return this;
@@ -902,11 +910,11 @@ public final class AnimatorParameterValueInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n AnimatorParameterValueInfo.proto\"y\n\032An" +
-      "imatorParameterValueInfo\022\020\n\010paraType\030\001 \001" +
-      "(\r\022\021\n\007int_val\030\002 \001(\005H\000\022\023\n\tfloat_val\030\003 \001(\002" +
-      "H\000\022\022\n\010bool_val\030\004 \001(\010H\000B\r\n\013MMJOJNNFGCNB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n AnimatorParameterValueInfo.proto\"v\n\032An" +
+      "imatorParameterValueInfo\022\021\n\tpara_type\030\001 " +
+      "\001(\r\022\021\n\007int_val\030\002 \001(\005H\000\022\023\n\tfloat_val\030\003 \001(" +
+      "\002H\000\022\022\n\010bool_val\030\004 \001(\010H\000B\t\n\007paraValB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -917,7 +925,7 @@ public final class AnimatorParameterValueInfoOuterClass {
     internal_static_AnimatorParameterValueInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AnimatorParameterValueInfo_descriptor,
-        new java.lang.String[] { "ParaType", "IntVal", "FloatVal", "BoolVal", "MMJOJNNFGCN", });
+        new java.lang.String[] { "ParaType", "IntVal", "FloatVal", "BoolVal", "ParaVal", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

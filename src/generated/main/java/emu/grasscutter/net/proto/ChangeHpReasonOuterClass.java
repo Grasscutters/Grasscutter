@@ -15,6 +15,10 @@ public final class ChangeHpReasonOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: GFDBMHNEOFL
+   * </pre>
+   *
    * Protobuf enum {@code ChangeHpReason}
    */
   public enum ChangeHpReason

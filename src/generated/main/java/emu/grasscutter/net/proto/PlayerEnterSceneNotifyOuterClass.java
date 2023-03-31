@@ -19,142 +19,147 @@ public final class PlayerEnterSceneNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isFirstLoginEnterScene = 10;</code>
-     * @return The isFirstLoginEnterScene.
+     * <code>uint32 target_uid = 6;</code>
+     * @return The targetUid.
      */
-    boolean getIsFirstLoginEnterScene();
+    int getTargetUid();
 
     /**
-     * <code>uint32 enterSceneToken = 2;</code>
-     * @return The enterSceneToken.
+     * <code>.Vector prev_pos = 15;</code>
+     * @return Whether the prevPos field is set.
      */
-    int getEnterSceneToken();
+    boolean hasPrevPos();
+    /**
+     * <code>.Vector prev_pos = 15;</code>
+     * @return The prevPos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPrevPos();
+    /**
+     * <code>.Vector prev_pos = 15;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder();
 
     /**
-     * <code>uint32 prevSceneId = 4;</code>
-     * @return The prevSceneId.
-     */
-    int getPrevSceneId();
-
-    /**
-     * <code>uint32 worldType = 1090;</code>
+     * <code>uint32 world_type = 95;</code>
      * @return The worldType.
      */
     int getWorldType();
 
     /**
-     * <code>bool isSkipUi = 317;</code>
-     * @return The isSkipUi.
+     * <code>uint32 enter_reason = 1508;</code>
+     * @return The enterReason.
      */
-    boolean getIsSkipUi();
+    int getEnterReason();
 
     /**
-     * <code>uint32 sceneId = 3;</code>
-     * @return The sceneId.
+     * <code>.EnterType type = 7;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    int getSceneId();
+    int getTypeValue();
+    /**
+     * <code>.EnterType type = 7;</code>
+     * @return The type.
+     */
+    emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType();
 
     /**
-     * <code>.Vector pos = 13;</code>
-     * @return Whether the pos field is set.
+     * <code>uint32 enter_scene_token = 11;</code>
+     * @return The enterSceneToken.
      */
-    boolean hasPos();
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
-    /**
-     * <code>.Vector pos = 13;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+    int getEnterSceneToken();
 
     /**
-     * <code>uint32 worldLevel = 5;</code>
+     * <code>bool is_first_login_enter_scene = 292;</code>
+     * @return The isFirstLoginEnterScene.
+     */
+    boolean getIsFirstLoginEnterScene();
+
+    /**
+     * <code>uint32 world_level = 12;</code>
      * @return The worldLevel.
      */
     int getWorldLevel();
 
     /**
-     * <code>string sceneTransaction = 647;</code>
+     * <code>bool is_skip_ui = 5;</code>
+     * @return The isSkipUi.
+     */
+    boolean getIsSkipUi();
+
+    /**
+     * <code>string scene_transaction = 1465;</code>
      * @return The sceneTransaction.
      */
     java.lang.String getSceneTransaction();
     /**
-     * <code>string sceneTransaction = 647;</code>
+     * <code>string scene_transaction = 1465;</code>
      * @return The bytes for sceneTransaction.
      */
     com.google.protobuf.ByteString
         getSceneTransactionBytes();
 
     /**
-     * <code>uint32 enterReason = 74;</code>
-     * @return The enterReason.
+     * <code>.Vector pos = 4;</code>
+     * @return Whether the pos field is set.
      */
-    int getEnterReason();
+    boolean hasPos();
+    /**
+     * <code>.Vector pos = 4;</code>
+     * @return The pos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+    /**
+     * <code>.Vector pos = 4;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>.EnterType type = 9;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>uint32 prev_scene_id = 1;</code>
+     * @return The prevSceneId.
      */
-    int getTypeValue();
-    /**
-     * <code>.EnterType type = 9;</code>
-     * @return The type.
-     */
-    emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType();
+    int getPrevSceneId();
 
     /**
-     * <code>uint32 dungeonId = 11;</code>
-     * @return The dungeonId.
-     */
-    int getDungeonId();
-
-    /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @return A list containing the sceneTagIdList.
      */
     java.util.List<java.lang.Integer> getSceneTagIdListList();
     /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @return The count of sceneTagIdList.
      */
     int getSceneTagIdListCount();
     /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The sceneTagIdList at the given index.
      */
     int getSceneTagIdList(int index);
 
     /**
-     * <code>.Vector prevPos = 12;</code>
-     * @return Whether the prevPos field is set.
+     * <code>uint32 scene_id = 10;</code>
+     * @return The sceneId.
      */
-    boolean hasPrevPos();
-    /**
-     * <code>.Vector prevPos = 12;</code>
-     * @return The prevPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPrevPos();
-    /**
-     * <code>.Vector prevPos = 12;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder();
+    int getSceneId();
 
     /**
-     * <code>uint64 sceneBeginTime = 15;</code>
+     * <code>uint32 dungeon_id = 8;</code>
+     * @return The dungeonId.
+     */
+    int getDungeonId();
+
+    /**
+     * <code>uint64 scene_begin_time = 9;</code>
      * @return The sceneBeginTime.
      */
     long getSceneBeginTime();
-
-    /**
-     * <code>uint32 targetUid = 1;</code>
-     * @return The targetUid.
-     */
-    int getTargetUid();
   }
   /**
+   * <pre>
+   * Name: IDHDDCPMNCK
+   * CmdId: 267
+   * </pre>
+   *
    * Protobuf type {@code PlayerEnterSceneNotify}
    */
   public static final class PlayerEnterSceneNotify extends
@@ -167,8 +172,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
       super(builder);
     }
     private PlayerEnterSceneNotify() {
-      sceneTransaction_ = "";
       type_ = 0;
+      sceneTransaction_ = "";
       sceneTagIdList_ = emptyIntList();
     }
 
@@ -205,80 +210,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
               break;
             case 8: {
 
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              enterSceneToken_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
               prevSceneId_ = input.readUInt32();
               break;
             }
-            case 40: {
-
-              worldLevel_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sceneTagIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 80: {
-
-              isFirstLoginEnterScene_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (prevPos_ != null) {
-                subBuilder = prevPos_.toBuilder();
-              }
-              prevPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(prevPos_);
-                prevPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
+            case 34: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -291,30 +226,100 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
               break;
             }
-            case 120: {
-
-              sceneBeginTime_ = input.readUInt64();
-              break;
-            }
-            case 592: {
-
-              enterReason_ = input.readUInt32();
-              break;
-            }
-            case 2536: {
+            case 40: {
 
               isSkipUi_ = input.readBool();
               break;
             }
-            case 5178: {
+            case 48: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 64: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              sceneBeginTime_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              enterSceneToken_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              worldLevel_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                sceneTagIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              sceneTagIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                sceneTagIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                sceneTagIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 122: {
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (prevPos_ != null) {
+                subBuilder = prevPos_.toBuilder();
+              }
+              prevPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(prevPos_);
+                prevPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 760: {
+
+              worldType_ = input.readUInt32();
+              break;
+            }
+            case 2336: {
+
+              isFirstLoginEnterScene_ = input.readBool();
+              break;
+            }
+            case 11722: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sceneTransaction_ = s;
               break;
             }
-            case 8720: {
+            case 12064: {
 
-              worldType_ = input.readUInt32();
+              enterReason_ = input.readUInt32();
               break;
             }
             default: {
@@ -352,174 +357,47 @@ public final class PlayerEnterSceneNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.class, emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.Builder.class);
     }
 
+    public static final int TARGET_UID_FIELD_NUMBER = 6;
+    private int targetUid_;
     /**
-     * Protobuf enum {@code PlayerEnterSceneNotify.JPDEBPGMBPE}
-     */
-    public enum JPDEBPGMBPE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 205;</code>
-       */
-      PEPPOHPHJOJ(1, 205),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final JPDEBPGMBPE DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 205;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 205;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JPDEBPGMBPE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JPDEBPGMBPE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 205: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JPDEBPGMBPE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JPDEBPGMBPE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JPDEBPGMBPE>() {
-              public JPDEBPGMBPE findValueByNumber(int number) {
-                return JPDEBPGMBPE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JPDEBPGMBPE[] VALUES = getStaticValuesArray();
-      private static JPDEBPGMBPE[] getStaticValuesArray() {
-        return new JPDEBPGMBPE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static JPDEBPGMBPE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private JPDEBPGMBPE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PlayerEnterSceneNotify.JPDEBPGMBPE)
-    }
-
-    public static final int ISFIRSTLOGINENTERSCENE_FIELD_NUMBER = 10;
-    private boolean isFirstLoginEnterScene_;
-    /**
-     * <code>bool isFirstLoginEnterScene = 10;</code>
-     * @return The isFirstLoginEnterScene.
+     * <code>uint32 target_uid = 6;</code>
+     * @return The targetUid.
      */
     @java.lang.Override
-    public boolean getIsFirstLoginEnterScene() {
-      return isFirstLoginEnterScene_;
+    public int getTargetUid() {
+      return targetUid_;
     }
 
-    public static final int ENTERSCENETOKEN_FIELD_NUMBER = 2;
-    private int enterSceneToken_;
+    public static final int PREV_POS_FIELD_NUMBER = 15;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector prevPos_;
     /**
-     * <code>uint32 enterSceneToken = 2;</code>
-     * @return The enterSceneToken.
+     * <code>.Vector prev_pos = 15;</code>
+     * @return Whether the prevPos field is set.
      */
     @java.lang.Override
-    public int getEnterSceneToken() {
-      return enterSceneToken_;
+    public boolean hasPrevPos() {
+      return prevPos_ != null;
     }
-
-    public static final int PREVSCENEID_FIELD_NUMBER = 4;
-    private int prevSceneId_;
     /**
-     * <code>uint32 prevSceneId = 4;</code>
-     * @return The prevSceneId.
+     * <code>.Vector prev_pos = 15;</code>
+     * @return The prevPos.
      */
     @java.lang.Override
-    public int getPrevSceneId() {
-      return prevSceneId_;
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPrevPos() {
+      return prevPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : prevPos_;
+    }
+    /**
+     * <code>.Vector prev_pos = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
+      return getPrevPos();
     }
 
-    public static final int WORLDTYPE_FIELD_NUMBER = 1090;
+    public static final int WORLD_TYPE_FIELD_NUMBER = 95;
     private int worldType_;
     /**
-     * <code>uint32 worldType = 1090;</code>
+     * <code>uint32 world_type = 95;</code>
      * @return The worldType.
      */
     @java.lang.Override
@@ -527,58 +405,62 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return worldType_;
     }
 
-    public static final int ISSKIPUI_FIELD_NUMBER = 317;
-    private boolean isSkipUi_;
+    public static final int ENTER_REASON_FIELD_NUMBER = 1508;
+    private int enterReason_;
     /**
-     * <code>bool isSkipUi = 317;</code>
-     * @return The isSkipUi.
+     * <code>uint32 enter_reason = 1508;</code>
+     * @return The enterReason.
      */
     @java.lang.Override
-    public boolean getIsSkipUi() {
-      return isSkipUi_;
+    public int getEnterReason() {
+      return enterReason_;
     }
 
-    public static final int SCENEID_FIELD_NUMBER = 3;
-    private int sceneId_;
+    public static final int TYPE_FIELD_NUMBER = 7;
+    private int type_;
     /**
-     * <code>uint32 sceneId = 3;</code>
-     * @return The sceneId.
+     * <code>.EnterType type = 7;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.EnterType type = 7;</code>
+     * @return The type.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType result = emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
+      return result == null ? emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
     }
 
-    public static final int POS_FIELD_NUMBER = 13;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 11;
+    private int enterSceneToken_;
     /**
-     * <code>.Vector pos = 13;</code>
-     * @return Whether the pos field is set.
+     * <code>uint32 enter_scene_token = 11;</code>
+     * @return The enterSceneToken.
      */
     @java.lang.Override
-    public boolean hasPos() {
-      return pos_ != null;
-    }
-    /**
-     * <code>.Vector pos = 13;</code>
-     * @return The pos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-    }
-    /**
-     * <code>.Vector pos = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+    public int getEnterSceneToken() {
+      return enterSceneToken_;
     }
 
-    public static final int WORLDLEVEL_FIELD_NUMBER = 5;
+    public static final int IS_FIRST_LOGIN_ENTER_SCENE_FIELD_NUMBER = 292;
+    private boolean isFirstLoginEnterScene_;
+    /**
+     * <code>bool is_first_login_enter_scene = 292;</code>
+     * @return The isFirstLoginEnterScene.
+     */
+    @java.lang.Override
+    public boolean getIsFirstLoginEnterScene() {
+      return isFirstLoginEnterScene_;
+    }
+
+    public static final int WORLD_LEVEL_FIELD_NUMBER = 12;
     private int worldLevel_;
     /**
-     * <code>uint32 worldLevel = 5;</code>
+     * <code>uint32 world_level = 12;</code>
      * @return The worldLevel.
      */
     @java.lang.Override
@@ -586,10 +468,21 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return worldLevel_;
     }
 
-    public static final int SCENETRANSACTION_FIELD_NUMBER = 647;
+    public static final int IS_SKIP_UI_FIELD_NUMBER = 5;
+    private boolean isSkipUi_;
+    /**
+     * <code>bool is_skip_ui = 5;</code>
+     * @return The isSkipUi.
+     */
+    @java.lang.Override
+    public boolean getIsSkipUi() {
+      return isSkipUi_;
+    }
+
+    public static final int SCENE_TRANSACTION_FIELD_NUMBER = 1465;
     private volatile java.lang.Object sceneTransaction_;
     /**
-     * <code>string sceneTransaction = 647;</code>
+     * <code>string scene_transaction = 1465;</code>
      * @return The sceneTransaction.
      */
     @java.lang.Override
@@ -606,7 +499,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
     }
     /**
-     * <code>string sceneTransaction = 647;</code>
+     * <code>string scene_transaction = 1465;</code>
      * @return The bytes for sceneTransaction.
      */
     @java.lang.Override
@@ -624,51 +517,47 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
     }
 
-    public static final int ENTERREASON_FIELD_NUMBER = 74;
-    private int enterReason_;
+    public static final int POS_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
-     * <code>uint32 enterReason = 74;</code>
-     * @return The enterReason.
+     * <code>.Vector pos = 4;</code>
+     * @return Whether the pos field is set.
      */
     @java.lang.Override
-    public int getEnterReason() {
-      return enterReason_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 9;
-    private int type_;
-    /**
-     * <code>.EnterType type = 9;</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public boolean hasPos() {
+      return pos_ != null;
     }
     /**
-     * <code>.EnterType type = 9;</code>
-     * @return The type.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType result = emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
-      return result == null ? emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
-    }
-
-    public static final int DUNGEONID_FIELD_NUMBER = 11;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeonId = 11;</code>
-     * @return The dungeonId.
+     * <code>.Vector pos = 4;</code>
+     * @return The pos.
      */
     @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>.Vector pos = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+      return getPos();
     }
 
-    public static final int SCENETAGIDLIST_FIELD_NUMBER = 8;
+    public static final int PREV_SCENE_ID_FIELD_NUMBER = 1;
+    private int prevSceneId_;
+    /**
+     * <code>uint32 prev_scene_id = 1;</code>
+     * @return The prevSceneId.
+     */
+    @java.lang.Override
+    public int getPrevSceneId() {
+      return prevSceneId_;
+    }
+
+    public static final int SCENE_TAG_ID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList sceneTagIdList_;
     /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @return A list containing the sceneTagIdList.
      */
     @java.lang.Override
@@ -677,14 +566,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return sceneTagIdList_;
     }
     /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @return The count of sceneTagIdList.
      */
     public int getSceneTagIdListCount() {
       return sceneTagIdList_.size();
     }
     /**
-     * <code>repeated uint32 sceneTagIdList = 8;</code>
+     * <code>repeated uint32 scene_tag_id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The sceneTagIdList at the given index.
      */
@@ -693,52 +582,37 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
     private int sceneTagIdListMemoizedSerializedSize = -1;
 
-    public static final int PREVPOS_FIELD_NUMBER = 12;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector prevPos_;
+    public static final int SCENE_ID_FIELD_NUMBER = 10;
+    private int sceneId_;
     /**
-     * <code>.Vector prevPos = 12;</code>
-     * @return Whether the prevPos field is set.
+     * <code>uint32 scene_id = 10;</code>
+     * @return The sceneId.
      */
     @java.lang.Override
-    public boolean hasPrevPos() {
-      return prevPos_ != null;
-    }
-    /**
-     * <code>.Vector prevPos = 12;</code>
-     * @return The prevPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPrevPos() {
-      return prevPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : prevPos_;
-    }
-    /**
-     * <code>.Vector prevPos = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
-      return getPrevPos();
+    public int getSceneId() {
+      return sceneId_;
     }
 
-    public static final int SCENEBEGINTIME_FIELD_NUMBER = 15;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 8;
+    private int dungeonId_;
+    /**
+     * <code>uint32 dungeon_id = 8;</code>
+     * @return The dungeonId.
+     */
+    @java.lang.Override
+    public int getDungeonId() {
+      return dungeonId_;
+    }
+
+    public static final int SCENE_BEGIN_TIME_FIELD_NUMBER = 9;
     private long sceneBeginTime_;
     /**
-     * <code>uint64 sceneBeginTime = 15;</code>
+     * <code>uint64 scene_begin_time = 9;</code>
      * @return The sceneBeginTime.
      */
     @java.lang.Override
     public long getSceneBeginTime() {
       return sceneBeginTime_;
-    }
-
-    public static final int TARGETUID_FIELD_NUMBER = 1;
-    private int targetUid_;
-    /**
-     * <code>uint32 targetUid = 1;</code>
-     * @return The targetUid.
-     */
-    @java.lang.Override
-    public int getTargetUid() {
-      return targetUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -756,57 +630,57 @@ public final class PlayerEnterSceneNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (targetUid_ != 0) {
-        output.writeUInt32(1, targetUid_);
+      if (prevSceneId_ != 0) {
+        output.writeUInt32(1, prevSceneId_);
       }
-      if (enterSceneToken_ != 0) {
-        output.writeUInt32(2, enterSceneToken_);
+      if (pos_ != null) {
+        output.writeMessage(4, getPos());
+      }
+      if (isSkipUi_ != false) {
+        output.writeBool(5, isSkipUi_);
+      }
+      if (targetUid_ != 0) {
+        output.writeUInt32(6, targetUid_);
+      }
+      if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
+        output.writeEnum(7, type_);
+      }
+      if (dungeonId_ != 0) {
+        output.writeUInt32(8, dungeonId_);
+      }
+      if (sceneBeginTime_ != 0L) {
+        output.writeUInt64(9, sceneBeginTime_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(3, sceneId_);
+        output.writeUInt32(10, sceneId_);
       }
-      if (prevSceneId_ != 0) {
-        output.writeUInt32(4, prevSceneId_);
+      if (enterSceneToken_ != 0) {
+        output.writeUInt32(11, enterSceneToken_);
       }
       if (worldLevel_ != 0) {
-        output.writeUInt32(5, worldLevel_);
+        output.writeUInt32(12, worldLevel_);
       }
       if (getSceneTagIdListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(sceneTagIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < sceneTagIdList_.size(); i++) {
         output.writeUInt32NoTag(sceneTagIdList_.getInt(i));
       }
-      if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
-        output.writeEnum(9, type_);
-      }
-      if (isFirstLoginEnterScene_ != false) {
-        output.writeBool(10, isFirstLoginEnterScene_);
-      }
-      if (dungeonId_ != 0) {
-        output.writeUInt32(11, dungeonId_);
-      }
       if (prevPos_ != null) {
-        output.writeMessage(12, getPrevPos());
-      }
-      if (pos_ != null) {
-        output.writeMessage(13, getPos());
-      }
-      if (sceneBeginTime_ != 0L) {
-        output.writeUInt64(15, sceneBeginTime_);
-      }
-      if (enterReason_ != 0) {
-        output.writeUInt32(74, enterReason_);
-      }
-      if (isSkipUi_ != false) {
-        output.writeBool(317, isSkipUi_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 647, sceneTransaction_);
+        output.writeMessage(15, getPrevPos());
       }
       if (worldType_ != 0) {
-        output.writeUInt32(1090, worldType_);
+        output.writeUInt32(95, worldType_);
+      }
+      if (isFirstLoginEnterScene_ != false) {
+        output.writeBool(292, isFirstLoginEnterScene_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1465, sceneTransaction_);
+      }
+      if (enterReason_ != 0) {
+        output.writeUInt32(1508, enterReason_);
       }
       unknownFields.writeTo(output);
     }
@@ -817,25 +691,45 @@ public final class PlayerEnterSceneNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (prevSceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, prevSceneId_);
+      }
+      if (pos_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPos());
+      }
+      if (isSkipUi_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, isSkipUi_);
+      }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, targetUid_);
+          .computeUInt32Size(6, targetUid_);
       }
-      if (enterSceneToken_ != 0) {
+      if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, enterSceneToken_);
+          .computeEnumSize(7, type_);
+      }
+      if (dungeonId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, dungeonId_);
+      }
+      if (sceneBeginTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, sceneBeginTime_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, sceneId_);
+          .computeUInt32Size(10, sceneId_);
       }
-      if (prevSceneId_ != 0) {
+      if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, prevSceneId_);
+          .computeUInt32Size(11, enterSceneToken_);
       }
       if (worldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, worldLevel_);
+          .computeUInt32Size(12, worldLevel_);
       }
       {
         int dataSize = 0;
@@ -851,44 +745,24 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
         sceneTagIdListMemoizedSerializedSize = dataSize;
       }
-      if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, type_);
-      }
-      if (isFirstLoginEnterScene_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFirstLoginEnterScene_);
-      }
-      if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, dungeonId_);
-      }
       if (prevPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getPrevPos());
-      }
-      if (pos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getPos());
-      }
-      if (sceneBeginTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, sceneBeginTime_);
-      }
-      if (enterReason_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(74, enterReason_);
-      }
-      if (isSkipUi_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(317, isSkipUi_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(647, sceneTransaction_);
+          .computeMessageSize(15, getPrevPos());
       }
       if (worldType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1090, worldType_);
+          .computeUInt32Size(95, worldType_);
+      }
+      if (isFirstLoginEnterScene_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(292, isFirstLoginEnterScene_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1465, sceneTransaction_);
+      }
+      if (enterReason_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1508, enterReason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -905,43 +779,43 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
       emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify other = (emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify) obj;
 
-      if (getIsFirstLoginEnterScene()
-          != other.getIsFirstLoginEnterScene()) return false;
-      if (getEnterSceneToken()
-          != other.getEnterSceneToken()) return false;
-      if (getPrevSceneId()
-          != other.getPrevSceneId()) return false;
-      if (getWorldType()
-          != other.getWorldType()) return false;
-      if (getIsSkipUi()
-          != other.getIsSkipUi()) return false;
-      if (getSceneId()
-          != other.getSceneId()) return false;
-      if (hasPos() != other.hasPos()) return false;
-      if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
-      }
-      if (getWorldLevel()
-          != other.getWorldLevel()) return false;
-      if (!getSceneTransaction()
-          .equals(other.getSceneTransaction())) return false;
-      if (getEnterReason()
-          != other.getEnterReason()) return false;
-      if (type_ != other.type_) return false;
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
-      if (!getSceneTagIdListList()
-          .equals(other.getSceneTagIdListList())) return false;
+      if (getTargetUid()
+          != other.getTargetUid()) return false;
       if (hasPrevPos() != other.hasPrevPos()) return false;
       if (hasPrevPos()) {
         if (!getPrevPos()
             .equals(other.getPrevPos())) return false;
       }
+      if (getWorldType()
+          != other.getWorldType()) return false;
+      if (getEnterReason()
+          != other.getEnterReason()) return false;
+      if (type_ != other.type_) return false;
+      if (getEnterSceneToken()
+          != other.getEnterSceneToken()) return false;
+      if (getIsFirstLoginEnterScene()
+          != other.getIsFirstLoginEnterScene()) return false;
+      if (getWorldLevel()
+          != other.getWorldLevel()) return false;
+      if (getIsSkipUi()
+          != other.getIsSkipUi()) return false;
+      if (!getSceneTransaction()
+          .equals(other.getSceneTransaction())) return false;
+      if (hasPos() != other.hasPos()) return false;
+      if (hasPos()) {
+        if (!getPos()
+            .equals(other.getPos())) return false;
+      }
+      if (getPrevSceneId()
+          != other.getPrevSceneId()) return false;
+      if (!getSceneTagIdListList()
+          .equals(other.getSceneTagIdListList())) return false;
+      if (getSceneId()
+          != other.getSceneId()) return false;
+      if (getDungeonId()
+          != other.getDungeonId()) return false;
       if (getSceneBeginTime()
           != other.getSceneBeginTime()) return false;
-      if (getTargetUid()
-          != other.getTargetUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -953,47 +827,47 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISFIRSTLOGINENTERSCENE_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUid();
+      if (hasPrevPos()) {
+        hash = (37 * hash) + PREV_POS_FIELD_NUMBER;
+        hash = (53 * hash) + getPrevPos().hashCode();
+      }
+      hash = (37 * hash) + WORLD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getWorldType();
+      hash = (37 * hash) + ENTER_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterReason();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + ENTER_SCENE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterSceneToken();
+      hash = (37 * hash) + IS_FIRST_LOGIN_ENTER_SCENE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFirstLoginEnterScene());
-      hash = (37 * hash) + ENTERSCENETOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getEnterSceneToken();
-      hash = (37 * hash) + PREVSCENEID_FIELD_NUMBER;
-      hash = (53 * hash) + getPrevSceneId();
-      hash = (37 * hash) + WORLDTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getWorldType();
-      hash = (37 * hash) + ISSKIPUI_FIELD_NUMBER;
+      hash = (37 * hash) + WORLD_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getWorldLevel();
+      hash = (37 * hash) + IS_SKIP_UI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSkipUi());
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
+      hash = (37 * hash) + SCENE_TRANSACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneTransaction().hashCode();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + WORLDLEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getWorldLevel();
-      hash = (37 * hash) + SCENETRANSACTION_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneTransaction().hashCode();
-      hash = (37 * hash) + ENTERREASON_FIELD_NUMBER;
-      hash = (53 * hash) + getEnterReason();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + DUNGEONID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
+      hash = (37 * hash) + PREV_SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPrevSceneId();
       if (getSceneTagIdListCount() > 0) {
-        hash = (37 * hash) + SCENETAGIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + SCENE_TAG_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSceneTagIdListList().hashCode();
       }
-      if (hasPrevPos()) {
-        hash = (37 * hash) + PREVPOS_FIELD_NUMBER;
-        hash = (53 * hash) + getPrevPos().hashCode();
-      }
-      hash = (37 * hash) + SCENEBEGINTIME_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
+      hash = (37 * hash) + SCENE_BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSceneBeginTime());
-      hash = (37 * hash) + TARGETUID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1090,6 +964,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: IDHDDCPMNCK
+     * CmdId: 267
+     * </pre>
+     *
      * Protobuf type {@code PlayerEnterSceneNotify}
      */
     public static final class Builder extends
@@ -1127,17 +1006,29 @@ public final class PlayerEnterSceneNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isFirstLoginEnterScene_ = false;
+        targetUid_ = 0;
+
+        if (prevPosBuilder_ == null) {
+          prevPos_ = null;
+        } else {
+          prevPos_ = null;
+          prevPosBuilder_ = null;
+        }
+        worldType_ = 0;
+
+        enterReason_ = 0;
+
+        type_ = 0;
 
         enterSceneToken_ = 0;
 
-        prevSceneId_ = 0;
+        isFirstLoginEnterScene_ = false;
 
-        worldType_ = 0;
+        worldLevel_ = 0;
 
         isSkipUi_ = false;
 
-        sceneId_ = 0;
+        sceneTransaction_ = "";
 
         if (posBuilder_ == null) {
           pos_ = null;
@@ -1145,27 +1036,15 @@ public final class PlayerEnterSceneNotifyOuterClass {
           pos_ = null;
           posBuilder_ = null;
         }
-        worldLevel_ = 0;
-
-        sceneTransaction_ = "";
-
-        enterReason_ = 0;
-
-        type_ = 0;
-
-        dungeonId_ = 0;
+        prevSceneId_ = 0;
 
         sceneTagIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (prevPosBuilder_ == null) {
-          prevPos_ = null;
-        } else {
-          prevPos_ = null;
-          prevPosBuilder_ = null;
-        }
-        sceneBeginTime_ = 0L;
+        sceneId_ = 0;
 
-        targetUid_ = 0;
+        dungeonId_ = 0;
+
+        sceneBeginTime_ = 0L;
 
         return this;
       }
@@ -1194,34 +1073,34 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify buildPartial() {
         emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify result = new emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify(this);
         int from_bitField0_ = bitField0_;
-        result.isFirstLoginEnterScene_ = isFirstLoginEnterScene_;
-        result.enterSceneToken_ = enterSceneToken_;
-        result.prevSceneId_ = prevSceneId_;
-        result.worldType_ = worldType_;
-        result.isSkipUi_ = isSkipUi_;
-        result.sceneId_ = sceneId_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.worldLevel_ = worldLevel_;
-        result.sceneTransaction_ = sceneTransaction_;
-        result.enterReason_ = enterReason_;
-        result.type_ = type_;
-        result.dungeonId_ = dungeonId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.sceneTagIdList_ = sceneTagIdList_;
+        result.targetUid_ = targetUid_;
         if (prevPosBuilder_ == null) {
           result.prevPos_ = prevPos_;
         } else {
           result.prevPos_ = prevPosBuilder_.build();
         }
+        result.worldType_ = worldType_;
+        result.enterReason_ = enterReason_;
+        result.type_ = type_;
+        result.enterSceneToken_ = enterSceneToken_;
+        result.isFirstLoginEnterScene_ = isFirstLoginEnterScene_;
+        result.worldLevel_ = worldLevel_;
+        result.isSkipUi_ = isSkipUi_;
+        result.sceneTransaction_ = sceneTransaction_;
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.prevSceneId_ = prevSceneId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          sceneTagIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.sceneTagIdList_ = sceneTagIdList_;
+        result.sceneId_ = sceneId_;
+        result.dungeonId_ = dungeonId_;
         result.sceneBeginTime_ = sceneBeginTime_;
-        result.targetUid_ = targetUid_;
         onBuilt();
         return result;
       }
@@ -1270,33 +1149,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify other) {
         if (other == emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.getDefaultInstance()) return this;
-        if (other.getIsFirstLoginEnterScene() != false) {
-          setIsFirstLoginEnterScene(other.getIsFirstLoginEnterScene());
+        if (other.getTargetUid() != 0) {
+          setTargetUid(other.getTargetUid());
         }
-        if (other.getEnterSceneToken() != 0) {
-          setEnterSceneToken(other.getEnterSceneToken());
-        }
-        if (other.getPrevSceneId() != 0) {
-          setPrevSceneId(other.getPrevSceneId());
+        if (other.hasPrevPos()) {
+          mergePrevPos(other.getPrevPos());
         }
         if (other.getWorldType() != 0) {
           setWorldType(other.getWorldType());
-        }
-        if (other.getIsSkipUi() != false) {
-          setIsSkipUi(other.getIsSkipUi());
-        }
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
-        if (other.hasPos()) {
-          mergePos(other.getPos());
-        }
-        if (other.getWorldLevel() != 0) {
-          setWorldLevel(other.getWorldLevel());
-        }
-        if (!other.getSceneTransaction().isEmpty()) {
-          sceneTransaction_ = other.sceneTransaction_;
-          onChanged();
         }
         if (other.getEnterReason() != 0) {
           setEnterReason(other.getEnterReason());
@@ -1304,8 +1164,27 @@ public final class PlayerEnterSceneNotifyOuterClass {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
+        if (other.getEnterSceneToken() != 0) {
+          setEnterSceneToken(other.getEnterSceneToken());
+        }
+        if (other.getIsFirstLoginEnterScene() != false) {
+          setIsFirstLoginEnterScene(other.getIsFirstLoginEnterScene());
+        }
+        if (other.getWorldLevel() != 0) {
+          setWorldLevel(other.getWorldLevel());
+        }
+        if (other.getIsSkipUi() != false) {
+          setIsSkipUi(other.getIsSkipUi());
+        }
+        if (!other.getSceneTransaction().isEmpty()) {
+          sceneTransaction_ = other.sceneTransaction_;
+          onChanged();
+        }
+        if (other.hasPos()) {
+          mergePos(other.getPos());
+        }
+        if (other.getPrevSceneId() != 0) {
+          setPrevSceneId(other.getPrevSceneId());
         }
         if (!other.sceneTagIdList_.isEmpty()) {
           if (sceneTagIdList_.isEmpty()) {
@@ -1317,14 +1196,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
           }
           onChanged();
         }
-        if (other.hasPrevPos()) {
-          mergePrevPos(other.getPrevPos());
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
+        }
+        if (other.getDungeonId() != 0) {
+          setDungeonId(other.getDungeonId());
         }
         if (other.getSceneBeginTime() != 0L) {
           setSceneBeginTime(other.getSceneBeginTime());
-        }
-        if (other.getTargetUid() != 0) {
-          setTargetUid(other.getTargetUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1356,609 +1235,33 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
       private int bitField0_;
 
-      private boolean isFirstLoginEnterScene_ ;
+      private int targetUid_ ;
       /**
-       * <code>bool isFirstLoginEnterScene = 10;</code>
-       * @return The isFirstLoginEnterScene.
+       * <code>uint32 target_uid = 6;</code>
+       * @return The targetUid.
        */
       @java.lang.Override
-      public boolean getIsFirstLoginEnterScene() {
-        return isFirstLoginEnterScene_;
+      public int getTargetUid() {
+        return targetUid_;
       }
       /**
-       * <code>bool isFirstLoginEnterScene = 10;</code>
-       * @param value The isFirstLoginEnterScene to set.
+       * <code>uint32 target_uid = 6;</code>
+       * @param value The targetUid to set.
        * @return This builder for chaining.
        */
-      public Builder setIsFirstLoginEnterScene(boolean value) {
+      public Builder setTargetUid(int value) {
         
-        isFirstLoginEnterScene_ = value;
+        targetUid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool isFirstLoginEnterScene = 10;</code>
+       * <code>uint32 target_uid = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsFirstLoginEnterScene() {
+      public Builder clearTargetUid() {
         
-        isFirstLoginEnterScene_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int enterSceneToken_ ;
-      /**
-       * <code>uint32 enterSceneToken = 2;</code>
-       * @return The enterSceneToken.
-       */
-      @java.lang.Override
-      public int getEnterSceneToken() {
-        return enterSceneToken_;
-      }
-      /**
-       * <code>uint32 enterSceneToken = 2;</code>
-       * @param value The enterSceneToken to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnterSceneToken(int value) {
-        
-        enterSceneToken_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 enterSceneToken = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnterSceneToken() {
-        
-        enterSceneToken_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int prevSceneId_ ;
-      /**
-       * <code>uint32 prevSceneId = 4;</code>
-       * @return The prevSceneId.
-       */
-      @java.lang.Override
-      public int getPrevSceneId() {
-        return prevSceneId_;
-      }
-      /**
-       * <code>uint32 prevSceneId = 4;</code>
-       * @param value The prevSceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPrevSceneId(int value) {
-        
-        prevSceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 prevSceneId = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPrevSceneId() {
-        
-        prevSceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int worldType_ ;
-      /**
-       * <code>uint32 worldType = 1090;</code>
-       * @return The worldType.
-       */
-      @java.lang.Override
-      public int getWorldType() {
-        return worldType_;
-      }
-      /**
-       * <code>uint32 worldType = 1090;</code>
-       * @param value The worldType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWorldType(int value) {
-        
-        worldType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 worldType = 1090;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWorldType() {
-        
-        worldType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isSkipUi_ ;
-      /**
-       * <code>bool isSkipUi = 317;</code>
-       * @return The isSkipUi.
-       */
-      @java.lang.Override
-      public boolean getIsSkipUi() {
-        return isSkipUi_;
-      }
-      /**
-       * <code>bool isSkipUi = 317;</code>
-       * @param value The isSkipUi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSkipUi(boolean value) {
-        
-        isSkipUi_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool isSkipUi = 317;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSkipUi() {
-        
-        isSkipUi_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int sceneId_ ;
-      /**
-       * <code>uint32 sceneId = 3;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 sceneId = 3;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 sceneId = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
-      /**
-       * <code>.Vector pos = 13;</code>
-       * @return Whether the pos field is set.
-       */
-      public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       * @return The pos.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-        if (posBuilder_ == null) {
-          return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-        } else {
-          return posBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (posBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          pos_ = value;
-          onChanged();
-        } else {
-          posBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public Builder setPos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (posBuilder_ == null) {
-          pos_ = builderForValue.build();
-          onChanged();
-        } else {
-          posBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
-          } else {
-            pos_ = value;
-          }
-          onChanged();
-        } else {
-          posBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
-          posBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
-        onChanged();
-        return getPosFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-        if (posBuilder_ != null) {
-          return posBuilder_.getMessageOrBuilder();
-        } else {
-          return pos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-        }
-      }
-      /**
-       * <code>.Vector pos = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getPosFieldBuilder() {
-        if (posBuilder_ == null) {
-          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getPos(),
-                  getParentForChildren(),
-                  isClean());
-          pos_ = null;
-        }
-        return posBuilder_;
-      }
-
-      private int worldLevel_ ;
-      /**
-       * <code>uint32 worldLevel = 5;</code>
-       * @return The worldLevel.
-       */
-      @java.lang.Override
-      public int getWorldLevel() {
-        return worldLevel_;
-      }
-      /**
-       * <code>uint32 worldLevel = 5;</code>
-       * @param value The worldLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWorldLevel(int value) {
-        
-        worldLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 worldLevel = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWorldLevel() {
-        
-        worldLevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sceneTransaction_ = "";
-      /**
-       * <code>string sceneTransaction = 647;</code>
-       * @return The sceneTransaction.
-       */
-      public java.lang.String getSceneTransaction() {
-        java.lang.Object ref = sceneTransaction_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sceneTransaction_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string sceneTransaction = 647;</code>
-       * @return The bytes for sceneTransaction.
-       */
-      public com.google.protobuf.ByteString
-          getSceneTransactionBytes() {
-        java.lang.Object ref = sceneTransaction_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sceneTransaction_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string sceneTransaction = 647;</code>
-       * @param value The sceneTransaction to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneTransaction(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sceneTransaction_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sceneTransaction = 647;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneTransaction() {
-        
-        sceneTransaction_ = getDefaultInstance().getSceneTransaction();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sceneTransaction = 647;</code>
-       * @param value The bytes for sceneTransaction to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneTransactionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sceneTransaction_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int enterReason_ ;
-      /**
-       * <code>uint32 enterReason = 74;</code>
-       * @return The enterReason.
-       */
-      @java.lang.Override
-      public int getEnterReason() {
-        return enterReason_;
-      }
-      /**
-       * <code>uint32 enterReason = 74;</code>
-       * @param value The enterReason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnterReason(int value) {
-        
-        enterReason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 enterReason = 74;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnterReason() {
-        
-        enterReason_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <code>.EnterType type = 9;</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <code>.EnterType type = 9;</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.EnterType type = 9;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType result = emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
-        return result == null ? emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.EnterType type = 9;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.EnterType type = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeonId = 11;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeonId = 11;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeonId = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList sceneTagIdList_ = emptyIntList();
-      private void ensureSceneTagIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_ = mutableCopy(sceneTagIdList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @return A list containing the sceneTagIdList.
-       */
-      public java.util.List<java.lang.Integer>
-          getSceneTagIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(sceneTagIdList_) : sceneTagIdList_;
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @return The count of sceneTagIdList.
-       */
-      public int getSceneTagIdListCount() {
-        return sceneTagIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @param index The index of the element to return.
-       * @return The sceneTagIdList at the given index.
-       */
-      public int getSceneTagIdList(int index) {
-        return sceneTagIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The sceneTagIdList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneTagIdList(
-          int index, int value) {
-        ensureSceneTagIdListIsMutable();
-        sceneTagIdList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @param value The sceneTagIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addSceneTagIdList(int value) {
-        ensureSceneTagIdListIsMutable();
-        sceneTagIdList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @param values The sceneTagIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllSceneTagIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureSceneTagIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, sceneTagIdList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 sceneTagIdList = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneTagIdList() {
-        sceneTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        targetUid_ = 0;
         onChanged();
         return this;
       }
@@ -1967,14 +1270,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> prevPosBuilder_;
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        * @return Whether the prevPos field is set.
        */
       public boolean hasPrevPos() {
         return prevPosBuilder_ != null || prevPos_ != null;
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        * @return The prevPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPrevPos() {
@@ -1985,7 +1288,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public Builder setPrevPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (prevPosBuilder_ == null) {
@@ -2001,7 +1304,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public Builder setPrevPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -2015,7 +1318,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public Builder mergePrevPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (prevPosBuilder_ == null) {
@@ -2033,7 +1336,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public Builder clearPrevPos() {
         if (prevPosBuilder_ == null) {
@@ -2047,7 +1350,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPrevPosBuilder() {
         
@@ -2055,7 +1358,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return getPrevPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
         if (prevPosBuilder_ != null) {
@@ -2066,7 +1369,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector prevPos = 12;</code>
+       * <code>.Vector prev_pos = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -2082,9 +1385,616 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return prevPosBuilder_;
       }
 
+      private int worldType_ ;
+      /**
+       * <code>uint32 world_type = 95;</code>
+       * @return The worldType.
+       */
+      @java.lang.Override
+      public int getWorldType() {
+        return worldType_;
+      }
+      /**
+       * <code>uint32 world_type = 95;</code>
+       * @param value The worldType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorldType(int value) {
+        
+        worldType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 world_type = 95;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorldType() {
+        
+        worldType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int enterReason_ ;
+      /**
+       * <code>uint32 enter_reason = 1508;</code>
+       * @return The enterReason.
+       */
+      @java.lang.Override
+      public int getEnterReason() {
+        return enterReason_;
+      }
+      /**
+       * <code>uint32 enter_reason = 1508;</code>
+       * @param value The enterReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnterReason(int value) {
+        
+        enterReason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 enter_reason = 1508;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnterReason() {
+        
+        enterReason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.EnterType type = 7;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.EnterType type = 7;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.EnterType type = 7;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType getType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType result = emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
+        return result == null ? emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.EnterType type = 7;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.EnterType type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int enterSceneToken_ ;
+      /**
+       * <code>uint32 enter_scene_token = 11;</code>
+       * @return The enterSceneToken.
+       */
+      @java.lang.Override
+      public int getEnterSceneToken() {
+        return enterSceneToken_;
+      }
+      /**
+       * <code>uint32 enter_scene_token = 11;</code>
+       * @param value The enterSceneToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnterSceneToken(int value) {
+        
+        enterSceneToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 enter_scene_token = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnterSceneToken() {
+        
+        enterSceneToken_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFirstLoginEnterScene_ ;
+      /**
+       * <code>bool is_first_login_enter_scene = 292;</code>
+       * @return The isFirstLoginEnterScene.
+       */
+      @java.lang.Override
+      public boolean getIsFirstLoginEnterScene() {
+        return isFirstLoginEnterScene_;
+      }
+      /**
+       * <code>bool is_first_login_enter_scene = 292;</code>
+       * @param value The isFirstLoginEnterScene to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFirstLoginEnterScene(boolean value) {
+        
+        isFirstLoginEnterScene_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_first_login_enter_scene = 292;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFirstLoginEnterScene() {
+        
+        isFirstLoginEnterScene_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int worldLevel_ ;
+      /**
+       * <code>uint32 world_level = 12;</code>
+       * @return The worldLevel.
+       */
+      @java.lang.Override
+      public int getWorldLevel() {
+        return worldLevel_;
+      }
+      /**
+       * <code>uint32 world_level = 12;</code>
+       * @param value The worldLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorldLevel(int value) {
+        
+        worldLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 world_level = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorldLevel() {
+        
+        worldLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isSkipUi_ ;
+      /**
+       * <code>bool is_skip_ui = 5;</code>
+       * @return The isSkipUi.
+       */
+      @java.lang.Override
+      public boolean getIsSkipUi() {
+        return isSkipUi_;
+      }
+      /**
+       * <code>bool is_skip_ui = 5;</code>
+       * @param value The isSkipUi to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSkipUi(boolean value) {
+        
+        isSkipUi_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_skip_ui = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSkipUi() {
+        
+        isSkipUi_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sceneTransaction_ = "";
+      /**
+       * <code>string scene_transaction = 1465;</code>
+       * @return The sceneTransaction.
+       */
+      public java.lang.String getSceneTransaction() {
+        java.lang.Object ref = sceneTransaction_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sceneTransaction_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string scene_transaction = 1465;</code>
+       * @return The bytes for sceneTransaction.
+       */
+      public com.google.protobuf.ByteString
+          getSceneTransactionBytes() {
+        java.lang.Object ref = sceneTransaction_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sceneTransaction_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string scene_transaction = 1465;</code>
+       * @param value The sceneTransaction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneTransaction(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sceneTransaction_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scene_transaction = 1465;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneTransaction() {
+        
+        sceneTransaction_ = getDefaultInstance().getSceneTransaction();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scene_transaction = 1465;</code>
+       * @param value The bytes for sceneTransaction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneTransactionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sceneTransaction_ = value;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
+      /**
+       * <code>.Vector pos = 4;</code>
+       * @return Whether the pos field is set.
+       */
+      public boolean hasPos() {
+        return posBuilder_ != null || pos_ != null;
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       * @return The pos.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+        if (posBuilder_ == null) {
+          return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+        } else {
+          return posBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (posBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pos_ = value;
+          onChanged();
+        } else {
+          posBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public Builder setPos(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (posBuilder_ == null) {
+          pos_ = builderForValue.build();
+          onChanged();
+        } else {
+          posBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (posBuilder_ == null) {
+          if (pos_ != null) {
+            pos_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          } else {
+            pos_ = value;
+          }
+          onChanged();
+        } else {
+          posBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public Builder clearPos() {
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
+          posBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
+        
+        onChanged();
+        return getPosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+        if (posBuilder_ != null) {
+          return posBuilder_.getMessageOrBuilder();
+        } else {
+          return pos_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+        }
+      }
+      /**
+       * <code>.Vector pos = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getPosFieldBuilder() {
+        if (posBuilder_ == null) {
+          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getPos(),
+                  getParentForChildren(),
+                  isClean());
+          pos_ = null;
+        }
+        return posBuilder_;
+      }
+
+      private int prevSceneId_ ;
+      /**
+       * <code>uint32 prev_scene_id = 1;</code>
+       * @return The prevSceneId.
+       */
+      @java.lang.Override
+      public int getPrevSceneId() {
+        return prevSceneId_;
+      }
+      /**
+       * <code>uint32 prev_scene_id = 1;</code>
+       * @param value The prevSceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrevSceneId(int value) {
+        
+        prevSceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 prev_scene_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrevSceneId() {
+        
+        prevSceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList sceneTagIdList_ = emptyIntList();
+      private void ensureSceneTagIdListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sceneTagIdList_ = mutableCopy(sceneTagIdList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @return A list containing the sceneTagIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getSceneTagIdListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(sceneTagIdList_) : sceneTagIdList_;
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @return The count of sceneTagIdList.
+       */
+      public int getSceneTagIdListCount() {
+        return sceneTagIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @param index The index of the element to return.
+       * @return The sceneTagIdList at the given index.
+       */
+      public int getSceneTagIdList(int index) {
+        return sceneTagIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @param index The index to set the value at.
+       * @param value The sceneTagIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneTagIdList(
+          int index, int value) {
+        ensureSceneTagIdListIsMutable();
+        sceneTagIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @param value The sceneTagIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSceneTagIdList(int value) {
+        ensureSceneTagIdListIsMutable();
+        sceneTagIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @param values The sceneTagIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSceneTagIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSceneTagIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, sceneTagIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 scene_tag_id_list = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneTagIdList() {
+        sceneTagIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int sceneId_ ;
+      /**
+       * <code>uint32 scene_id = 10;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 scene_id = 10;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 scene_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dungeonId_ ;
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @return The dungeonId.
+       */
+      @java.lang.Override
+      public int getDungeonId() {
+        return dungeonId_;
+      }
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @param value The dungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonId(int value) {
+        
+        dungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonId() {
+        
+        dungeonId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long sceneBeginTime_ ;
       /**
-       * <code>uint64 sceneBeginTime = 15;</code>
+       * <code>uint64 scene_begin_time = 9;</code>
        * @return The sceneBeginTime.
        */
       @java.lang.Override
@@ -2092,7 +2002,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return sceneBeginTime_;
       }
       /**
-       * <code>uint64 sceneBeginTime = 15;</code>
+       * <code>uint64 scene_begin_time = 9;</code>
        * @param value The sceneBeginTime to set.
        * @return This builder for chaining.
        */
@@ -2103,43 +2013,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint64 sceneBeginTime = 15;</code>
+       * <code>uint64 scene_begin_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneBeginTime() {
         
         sceneBeginTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int targetUid_ ;
-      /**
-       * <code>uint32 targetUid = 1;</code>
-       * @return The targetUid.
-       */
-      @java.lang.Override
-      public int getTargetUid() {
-        return targetUid_;
-      }
-      /**
-       * <code>uint32 targetUid = 1;</code>
-       * @param value The targetUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetUid(int value) {
-        
-        targetUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 targetUid = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetUid() {
-        
-        targetUid_ = 0;
         onChanged();
         return this;
       }
@@ -2210,36 +2089,34 @@ public final class PlayerEnterSceneNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034PlayerEnterSceneNotify.proto\032\014Vector.p" +
-      "roto\032\017EnterType.proto\"\323\003\n\026PlayerEnterSce" +
-      "neNotify\022\036\n\026isFirstLoginEnterScene\030\n \001(\010" +
-      "\022\027\n\017enterSceneToken\030\002 \001(\r\022\023\n\013prevSceneId" +
-      "\030\004 \001(\r\022\022\n\tworldType\030\302\010 \001(\r\022\021\n\010isSkipUi\030\275" +
-      "\002 \001(\010\022\017\n\007sceneId\030\003 \001(\r\022\024\n\003pos\030\r \001(\0132\007.Ve" +
-      "ctor\022\022\n\nworldLevel\030\005 \001(\r\022\031\n\020sceneTransac" +
-      "tion\030\207\005 \001(\t\022\023\n\013enterReason\030J \001(\r\022\030\n\004type" +
-      "\030\t \001(\0162\n.EnterType\022\021\n\tdungeonId\030\013 \001(\r\022\026\n" +
-      "\016sceneTagIdList\030\010 \003(\r\022\030\n\007prevPos\030\014 \001(\0132\007" +
-      ".Vector\022\026\n\016sceneBeginTime\030\017 \001(\004\022\021\n\ttarge" +
-      "tUid\030\001 \001(\r\"O\n\013JPDEBPGMBPE\022\010\n\004NONE\020\000\022\020\n\013P" +
-      "EPPOHPHJOJ\020\315\001\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOL" +
-      "MPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\034PlayerEnterSceneNotify.proto\032\017EnterTyp" +
+      "e.proto\032\014Vector.proto\"\231\003\n\026PlayerEnterSce" +
+      "neNotify\022\022\n\ntarget_uid\030\006 \001(\r\022\031\n\010prev_pos" +
+      "\030\017 \001(\0132\007.Vector\022\022\n\nworld_type\030_ \001(\r\022\025\n\014e" +
+      "nter_reason\030\344\013 \001(\r\022\030\n\004type\030\007 \001(\0162\n.Enter" +
+      "Type\022\031\n\021enter_scene_token\030\013 \001(\r\022#\n\032is_fi" +
+      "rst_login_enter_scene\030\244\002 \001(\010\022\023\n\013world_le" +
+      "vel\030\014 \001(\r\022\022\n\nis_skip_ui\030\005 \001(\010\022\032\n\021scene_t" +
+      "ransaction\030\271\013 \001(\t\022\024\n\003pos\030\004 \001(\0132\007.Vector\022" +
+      "\025\n\rprev_scene_id\030\001 \001(\r\022\031\n\021scene_tag_id_l" +
+      "ist\030\016 \003(\r\022\020\n\010scene_id\030\n \001(\r\022\022\n\ndungeon_i" +
+      "d\030\010 \001(\r\022\030\n\020scene_begin_time\030\t \001(\004B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EnterTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_PlayerEnterSceneNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerEnterSceneNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerEnterSceneNotify_descriptor,
-        new java.lang.String[] { "IsFirstLoginEnterScene", "EnterSceneToken", "PrevSceneId", "WorldType", "IsSkipUi", "SceneId", "Pos", "WorldLevel", "SceneTransaction", "EnterReason", "Type", "DungeonId", "SceneTagIdList", "PrevPos", "SceneBeginTime", "TargetUid", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+        new java.lang.String[] { "TargetUid", "PrevPos", "WorldType", "EnterReason", "Type", "EnterSceneToken", "IsFirstLoginEnterScene", "WorldLevel", "IsSkipUi", "SceneTransaction", "Pos", "PrevSceneId", "SceneTagIdList", "SceneId", "DungeonId", "SceneBeginTime", });
     emu.grasscutter.net.proto.EnterTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

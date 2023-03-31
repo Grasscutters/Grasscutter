@@ -19,23 +19,28 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @return A list containing the allUnlockedBgmIdList.
      */
     java.util.List<java.lang.Integer> getAllUnlockedBgmIdListList();
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @return The count of allUnlockedBgmIdList.
      */
     int getAllUnlockedBgmIdListCount();
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The allUnlockedBgmIdList at the given index.
      */
     int getAllUnlockedBgmIdList(int index);
   }
   /**
+   * <pre>
+   * Name: CKMGNHJBJBA
+   * CmdId: 4544
+   * </pre>
+   *
    * Protobuf type {@code HomeAllUnlockedBgmIdListNotify}
    */
   public static final class HomeAllUnlockedBgmIdListNotify extends
@@ -82,7 +87,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 allUnlockedBgmIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
               allUnlockedBgmIdList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
               emu.grasscutter.net.proto.HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotify.class, emu.grasscutter.net.proto.HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeAllUnlockedBgmIdListNotify.FCNFGMDBOPG}
-     */
-    public enum FCNFGMDBOPG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4563;</code>
-       */
-      PEPPOHPHJOJ(1, 4563),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final FCNFGMDBOPG DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4563;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4563;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static FCNFGMDBOPG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static FCNFGMDBOPG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4563: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<FCNFGMDBOPG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          FCNFGMDBOPG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<FCNFGMDBOPG>() {
-              public FCNFGMDBOPG findValueByNumber(int number) {
-                return FCNFGMDBOPG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final FCNFGMDBOPG[] VALUES = getStaticValuesArray();
-      private static FCNFGMDBOPG[] getStaticValuesArray() {
-        return new FCNFGMDBOPG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static FCNFGMDBOPG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private FCNFGMDBOPG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeAllUnlockedBgmIdListNotify.FCNFGMDBOPG)
-    }
-
-    public static final int ALLUNLOCKEDBGMIDLIST_FIELD_NUMBER = 13;
+    public static final int ALL_UNLOCKED_BGM_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList allUnlockedBgmIdList_;
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @return A list containing the allUnlockedBgmIdList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
       return allUnlockedBgmIdList_;
     }
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @return The count of allUnlockedBgmIdList.
      */
     public int getAllUnlockedBgmIdListCount() {
       return allUnlockedBgmIdList_.size();
     }
     /**
-     * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+     * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The allUnlockedBgmIdList at the given index.
      */
@@ -313,7 +187,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAllUnlockedBgmIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(allUnlockedBgmIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < allUnlockedBgmIdList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getAllUnlockedBgmIdListCount() > 0) {
-        hash = (37 * hash) + ALLUNLOCKEDBGMIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + ALL_UNLOCKED_BGM_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAllUnlockedBgmIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CKMGNHJBJBA
+     * CmdId: 4544
+     * </pre>
+     *
      * Protobuf type {@code HomeAllUnlockedBgmIdListNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @return A list containing the allUnlockedBgmIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
                  java.util.Collections.unmodifiableList(allUnlockedBgmIdList_) : allUnlockedBgmIdList_;
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @return The count of allUnlockedBgmIdList.
        */
       public int getAllUnlockedBgmIdListCount() {
         return allUnlockedBgmIdList_.size();
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @param index The index of the element to return.
        * @return The allUnlockedBgmIdList at the given index.
        */
@@ -661,7 +540,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
         return allUnlockedBgmIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The allUnlockedBgmIdList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @param value The allUnlockedBgmIdList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @param values The allUnlockedBgmIdList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 allUnlockedBgmIdList = 13;</code>
+       * <code>repeated uint32 all_unlocked_bgm_id_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllUnlockedBgmIdList() {
@@ -774,12 +653,10 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n$HomeAllUnlockedBgmIdListNotify.proto\"\217" +
-      "\001\n\036HomeAllUnlockedBgmIdListNotify\022\034\n\024all" +
-      "UnlockedBgmIdList\030\r \003(\r\"O\n\013FCNFGMDBOPG\022\010" +
-      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\323#\022\017\n\013DCDNILFDFL" +
-      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n$HomeAllUnlockedBgmIdListNotify.proto\"B" +
+      "\n\036HomeAllUnlockedBgmIdListNotify\022 \n\030all_" +
+      "unlocked_bgm_id_list\030\006 \003(\rB\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,12 +19,17 @@ public final class AvatarPromoteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 guid = 1;</code>
+     * <code>uint64 guid = 8;</code>
      * @return The guid.
      */
     long getGuid();
   }
   /**
+   * <pre>
+   * Name: GLAFOKOICGN
+   * CmdId: 1799
+   * </pre>
+   *
    * Protobuf type {@code AvatarPromoteReq}
    */
   public static final class AvatarPromoteReq extends
@@ -69,7 +74,7 @@ public final class AvatarPromoteReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 64: {
 
               guid_ = input.readUInt64();
               break;
@@ -106,149 +111,10 @@ public final class AvatarPromoteReqOuterClass {
               emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq.class, emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarPromoteReq.GECCHDOHJLM}
-     */
-    public enum GECCHDOHJLM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1715;</code>
-       */
-      PEPPOHPHJOJ(1, 1715),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final GECCHDOHJLM DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final GECCHDOHJLM EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1715;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1715;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static GECCHDOHJLM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static GECCHDOHJLM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1715: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<GECCHDOHJLM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          GECCHDOHJLM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<GECCHDOHJLM>() {
-              public GECCHDOHJLM findValueByNumber(int number) {
-                return GECCHDOHJLM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final GECCHDOHJLM[] VALUES = getStaticValuesArray();
-      private static GECCHDOHJLM[] getStaticValuesArray() {
-        return new GECCHDOHJLM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static GECCHDOHJLM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private GECCHDOHJLM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarPromoteReq.GECCHDOHJLM)
-    }
-
-    public static final int GUID_FIELD_NUMBER = 1;
+    public static final int GUID_FIELD_NUMBER = 8;
     private long guid_;
     /**
-     * <code>uint64 guid = 1;</code>
+     * <code>uint64 guid = 8;</code>
      * @return The guid.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class AvatarPromoteReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (guid_ != 0L) {
-        output.writeUInt64(1, guid_);
+        output.writeUInt64(8, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class AvatarPromoteReqOuterClass {
       size = 0;
       if (guid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, guid_);
+          .computeUInt64Size(8, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -413,6 +279,11 @@ public final class AvatarPromoteReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GLAFOKOICGN
+     * CmdId: 1799
+     * </pre>
+     *
      * Protobuf type {@code AvatarPromoteReq}
      */
     public static final class Builder extends
@@ -561,7 +432,7 @@ public final class AvatarPromoteReqOuterClass {
 
       private long guid_ ;
       /**
-       * <code>uint64 guid = 1;</code>
+       * <code>uint64 guid = 8;</code>
        * @return The guid.
        */
       @java.lang.Override
@@ -569,7 +440,7 @@ public final class AvatarPromoteReqOuterClass {
         return guid_;
       }
       /**
-       * <code>uint64 guid = 1;</code>
+       * <code>uint64 guid = 8;</code>
        * @param value The guid to set.
        * @return This builder for chaining.
        */
@@ -580,7 +451,7 @@ public final class AvatarPromoteReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 guid = 1;</code>
+       * <code>uint64 guid = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
@@ -656,11 +527,9 @@ public final class AvatarPromoteReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026AvatarPromoteReq.proto\"\202\001\n\020AvatarPromo" +
-      "teReq\022\014\n\004guid\030\001 \001(\004\"`\n\013GECCHDOHJLM\022\010\n\004NO" +
-      "NE\020\000\022\020\n\013PEPPOHPHJOJ\020\263\r\022\017\n\013DCDNILFDFLB\020\000\022" +
-      "\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\026AvatarPromoteReq.proto\" \n\020AvatarPromot" +
+      "eReq\022\014\n\004guid\030\010 \001(\004B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

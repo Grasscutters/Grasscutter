@@ -427,7 +427,7 @@ public final class Language {
         };
 
         // Regenerate cache
-        Grasscutter.getLogger().info("Generating TextMaps cache");
+        Grasscutter.getLogger().debug("Generating TextMaps cache");
         ResourceLoader.loadAll();
         IntSet usedHashes = new IntOpenHashSet();
         GameData.getAchievementDataMap().values().stream()

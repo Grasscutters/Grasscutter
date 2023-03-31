@@ -19,18 +19,22 @@ public final class CrystalLinkAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isTrial = 9;</code>
+     * <code>bool is_trial = 9;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
 
     /**
-     * <code>uint64 avatarId = 7;</code>
+     * <code>uint64 avatar_id = 10;</code>
      * @return The avatarId.
      */
     long getAvatarId();
   }
   /**
+   * <pre>
+   * Name: PICNEBDLCOA
+   * </pre>
+   *
    * Protobuf type {@code CrystalLinkAvatarInfo}
    */
   public static final class CrystalLinkAvatarInfo extends
@@ -75,14 +79,14 @@ public final class CrystalLinkAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              avatarId_ = input.readUInt64();
-              break;
-            }
             case 72: {
 
               isTrial_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              avatarId_ = input.readUInt64();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class CrystalLinkAvatarInfoOuterClass {
               emu.grasscutter.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo.class, emu.grasscutter.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo.Builder.class);
     }
 
-    public static final int ISTRIAL_FIELD_NUMBER = 9;
+    public static final int IS_TRIAL_FIELD_NUMBER = 9;
     private boolean isTrial_;
     /**
-     * <code>bool isTrial = 9;</code>
+     * <code>bool is_trial = 9;</code>
      * @return The isTrial.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class CrystalLinkAvatarInfoOuterClass {
       return isTrial_;
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 7;
+    public static final int AVATAR_ID_FIELD_NUMBER = 10;
     private long avatarId_;
     /**
-     * <code>uint64 avatarId = 7;</code>
+     * <code>uint64 avatar_id = 10;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class CrystalLinkAvatarInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarId_ != 0L) {
-        output.writeUInt64(7, avatarId_);
-      }
       if (isTrial_ != false) {
         output.writeBool(9, isTrial_);
+      }
+      if (avatarId_ != 0L) {
+        output.writeUInt64(10, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class CrystalLinkAvatarInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (avatarId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, avatarId_);
-      }
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, isTrial_);
+      }
+      if (avatarId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(10, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,10 +210,10 @@ public final class CrystalLinkAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISTRIAL_FIELD_NUMBER;
+      hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrial());
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -308,6 +312,10 @@ public final class CrystalLinkAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PICNEBDLCOA
+     * </pre>
+     *
      * Protobuf type {@code CrystalLinkAvatarInfo}
      */
     public static final class Builder extends
@@ -462,7 +470,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
 
       private boolean isTrial_ ;
       /**
-       * <code>bool isTrial = 9;</code>
+       * <code>bool is_trial = 9;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -470,7 +478,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool isTrial = 9;</code>
+       * <code>bool is_trial = 9;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -481,7 +489,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isTrial = 9;</code>
+       * <code>bool is_trial = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
@@ -493,7 +501,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
 
       private long avatarId_ ;
       /**
-       * <code>uint64 avatarId = 7;</code>
+       * <code>uint64 avatar_id = 10;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -501,7 +509,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint64 avatarId = 7;</code>
+       * <code>uint64 avatar_id = 10;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -512,7 +520,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatarId = 7;</code>
+       * <code>uint64 avatar_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -588,10 +596,10 @@ public final class CrystalLinkAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033CrystalLinkAvatarInfo.proto\":\n\025Crystal" +
-      "LinkAvatarInfo\022\017\n\007isTrial\030\t \001(\010\022\020\n\010avata" +
-      "rId\030\007 \001(\004B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\n\033CrystalLinkAvatarInfo.proto\"<\n\025Crystal" +
+      "LinkAvatarInfo\022\020\n\010is_trial\030\t \001(\010\022\021\n\tavat" +
+      "ar_id\030\n \001(\004B\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

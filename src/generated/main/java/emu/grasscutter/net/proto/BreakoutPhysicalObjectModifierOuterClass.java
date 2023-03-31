@@ -49,28 +49,28 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     int getParam3();
 
     /**
-     * <code>int32 ondeciihanm = 6;</code>
-     * @return The ondeciihanm.
+     * <code>int32 param4 = 6;</code>
+     * @return The param4.
      */
-    int getOndeciihanm();
+    int getParam4();
 
     /**
-     * <code>int32 bcobaoidmmc = 7;</code>
-     * @return The bcobaoidmmc.
+     * <code>int32 param5 = 7;</code>
+     * @return The param5.
      */
-    int getBcobaoidmmc();
+    int getParam5();
 
     /**
-     * <code>int32 bcmmggaidek = 8;</code>
-     * @return The bcmmggaidek.
+     * <code>int32 param6 = 8;</code>
+     * @return The param6.
      */
-    int getBcmmggaidek();
+    int getParam6();
 
     /**
-     * <code>bool dgbbbnffmlb = 9;</code>
-     * @return The dgbbbnffmlb.
+     * <code>bool bool1 = 9;</code>
+     * @return The bool1.
      */
-    boolean getDgbbbnffmlb();
+    boolean getBool1();
 
     /**
      * <code>int32 duration = 10;</code>
@@ -79,7 +79,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     int getDuration();
 
     /**
-     * <code>int32 endTime = 11;</code>
+     * <code>int32 end_time = 11;</code>
      * @return The endTime.
      */
     int getEndTime();
@@ -91,16 +91,16 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     int getCombo();
 
     /**
-     * <code>uint32 peerId = 13;</code>
+     * <code>uint32 peer_id = 13;</code>
      * @return The peerId.
      */
     int getPeerId();
 
     /**
-     * <code>uint32 hichllhajdp = 14;</code>
-     * @return The hichllhajdp.
+     * <code>uint32 skill_type = 14;</code>
+     * @return The skillType.
      */
-    int getHichllhajdp();
+    int getSkillType();
 
     /**
      * <code>uint32 level = 15;</code>
@@ -109,12 +109,16 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     int getLevel();
 
     /**
-     * <code>uint32 nfheenapfmf = 16;</code>
-     * @return The nfheenapfmf.
+     * <code>uint32 choose_player_count = 16;</code>
+     * @return The choosePlayerCount.
      */
-    int getNfheenapfmf();
+    int getChoosePlayerCount();
   }
   /**
+   * <pre>
+   * Name: AAMJIFFJBPA
+   * </pre>
+   *
    * Protobuf type {@code BreakoutPhysicalObjectModifier}
    */
   public static final class BreakoutPhysicalObjectModifier extends
@@ -186,22 +190,22 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
             }
             case 48: {
 
-              ondeciihanm_ = input.readInt32();
+              param4_ = input.readInt32();
               break;
             }
             case 56: {
 
-              bcobaoidmmc_ = input.readInt32();
+              param5_ = input.readInt32();
               break;
             }
             case 64: {
 
-              bcmmggaidek_ = input.readInt32();
+              param6_ = input.readInt32();
               break;
             }
             case 72: {
 
-              dgbbbnffmlb_ = input.readBool();
+              bool1_ = input.readBool();
               break;
             }
             case 80: {
@@ -226,7 +230,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
             }
             case 112: {
 
-              hichllhajdp_ = input.readUInt32();
+              skillType_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -236,7 +240,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
             }
             case 128: {
 
-              nfheenapfmf_ = input.readUInt32();
+              choosePlayerCount_ = input.readUInt32();
               break;
             }
             default: {
@@ -326,48 +330,48 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return param3_;
     }
 
-    public static final int ONDECIIHANM_FIELD_NUMBER = 6;
-    private int ondeciihanm_;
+    public static final int PARAM4_FIELD_NUMBER = 6;
+    private int param4_;
     /**
-     * <code>int32 ondeciihanm = 6;</code>
-     * @return The ondeciihanm.
+     * <code>int32 param4 = 6;</code>
+     * @return The param4.
      */
     @java.lang.Override
-    public int getOndeciihanm() {
-      return ondeciihanm_;
+    public int getParam4() {
+      return param4_;
     }
 
-    public static final int BCOBAOIDMMC_FIELD_NUMBER = 7;
-    private int bcobaoidmmc_;
+    public static final int PARAM5_FIELD_NUMBER = 7;
+    private int param5_;
     /**
-     * <code>int32 bcobaoidmmc = 7;</code>
-     * @return The bcobaoidmmc.
+     * <code>int32 param5 = 7;</code>
+     * @return The param5.
      */
     @java.lang.Override
-    public int getBcobaoidmmc() {
-      return bcobaoidmmc_;
+    public int getParam5() {
+      return param5_;
     }
 
-    public static final int BCMMGGAIDEK_FIELD_NUMBER = 8;
-    private int bcmmggaidek_;
+    public static final int PARAM6_FIELD_NUMBER = 8;
+    private int param6_;
     /**
-     * <code>int32 bcmmggaidek = 8;</code>
-     * @return The bcmmggaidek.
+     * <code>int32 param6 = 8;</code>
+     * @return The param6.
      */
     @java.lang.Override
-    public int getBcmmggaidek() {
-      return bcmmggaidek_;
+    public int getParam6() {
+      return param6_;
     }
 
-    public static final int DGBBBNFFMLB_FIELD_NUMBER = 9;
-    private boolean dgbbbnffmlb_;
+    public static final int BOOL1_FIELD_NUMBER = 9;
+    private boolean bool1_;
     /**
-     * <code>bool dgbbbnffmlb = 9;</code>
-     * @return The dgbbbnffmlb.
+     * <code>bool bool1 = 9;</code>
+     * @return The bool1.
      */
     @java.lang.Override
-    public boolean getDgbbbnffmlb() {
-      return dgbbbnffmlb_;
+    public boolean getBool1() {
+      return bool1_;
     }
 
     public static final int DURATION_FIELD_NUMBER = 10;
@@ -381,10 +385,10 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return duration_;
     }
 
-    public static final int ENDTIME_FIELD_NUMBER = 11;
+    public static final int END_TIME_FIELD_NUMBER = 11;
     private int endTime_;
     /**
-     * <code>int32 endTime = 11;</code>
+     * <code>int32 end_time = 11;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -403,10 +407,10 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return combo_;
     }
 
-    public static final int PEERID_FIELD_NUMBER = 13;
+    public static final int PEER_ID_FIELD_NUMBER = 13;
     private int peerId_;
     /**
-     * <code>uint32 peerId = 13;</code>
+     * <code>uint32 peer_id = 13;</code>
      * @return The peerId.
      */
     @java.lang.Override
@@ -414,15 +418,15 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return peerId_;
     }
 
-    public static final int HICHLLHAJDP_FIELD_NUMBER = 14;
-    private int hichllhajdp_;
+    public static final int SKILL_TYPE_FIELD_NUMBER = 14;
+    private int skillType_;
     /**
-     * <code>uint32 hichllhajdp = 14;</code>
-     * @return The hichllhajdp.
+     * <code>uint32 skill_type = 14;</code>
+     * @return The skillType.
      */
     @java.lang.Override
-    public int getHichllhajdp() {
-      return hichllhajdp_;
+    public int getSkillType() {
+      return skillType_;
     }
 
     public static final int LEVEL_FIELD_NUMBER = 15;
@@ -436,15 +440,15 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return level_;
     }
 
-    public static final int NFHEENAPFMF_FIELD_NUMBER = 16;
-    private int nfheenapfmf_;
+    public static final int CHOOSE_PLAYER_COUNT_FIELD_NUMBER = 16;
+    private int choosePlayerCount_;
     /**
-     * <code>uint32 nfheenapfmf = 16;</code>
-     * @return The nfheenapfmf.
+     * <code>uint32 choose_player_count = 16;</code>
+     * @return The choosePlayerCount.
      */
     @java.lang.Override
-    public int getNfheenapfmf() {
-      return nfheenapfmf_;
+    public int getChoosePlayerCount() {
+      return choosePlayerCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -476,17 +480,17 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       if (param3_ != 0) {
         output.writeInt32(5, param3_);
       }
-      if (ondeciihanm_ != 0) {
-        output.writeInt32(6, ondeciihanm_);
+      if (param4_ != 0) {
+        output.writeInt32(6, param4_);
       }
-      if (bcobaoidmmc_ != 0) {
-        output.writeInt32(7, bcobaoidmmc_);
+      if (param5_ != 0) {
+        output.writeInt32(7, param5_);
       }
-      if (bcmmggaidek_ != 0) {
-        output.writeInt32(8, bcmmggaidek_);
+      if (param6_ != 0) {
+        output.writeInt32(8, param6_);
       }
-      if (dgbbbnffmlb_ != false) {
-        output.writeBool(9, dgbbbnffmlb_);
+      if (bool1_ != false) {
+        output.writeBool(9, bool1_);
       }
       if (duration_ != 0) {
         output.writeInt32(10, duration_);
@@ -500,14 +504,14 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       if (peerId_ != 0) {
         output.writeUInt32(13, peerId_);
       }
-      if (hichllhajdp_ != 0) {
-        output.writeUInt32(14, hichllhajdp_);
+      if (skillType_ != 0) {
+        output.writeUInt32(14, skillType_);
       }
       if (level_ != 0) {
         output.writeUInt32(15, level_);
       }
-      if (nfheenapfmf_ != 0) {
-        output.writeUInt32(16, nfheenapfmf_);
+      if (choosePlayerCount_ != 0) {
+        output.writeUInt32(16, choosePlayerCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -538,21 +542,21 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, param3_);
       }
-      if (ondeciihanm_ != 0) {
+      if (param4_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, ondeciihanm_);
+          .computeInt32Size(6, param4_);
       }
-      if (bcobaoidmmc_ != 0) {
+      if (param5_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, bcobaoidmmc_);
+          .computeInt32Size(7, param5_);
       }
-      if (bcmmggaidek_ != 0) {
+      if (param6_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, bcmmggaidek_);
+          .computeInt32Size(8, param6_);
       }
-      if (dgbbbnffmlb_ != false) {
+      if (bool1_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, dgbbbnffmlb_);
+          .computeBoolSize(9, bool1_);
       }
       if (duration_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -570,17 +574,17 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, peerId_);
       }
-      if (hichllhajdp_ != 0) {
+      if (skillType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, hichllhajdp_);
+          .computeUInt32Size(14, skillType_);
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, level_);
       }
-      if (nfheenapfmf_ != 0) {
+      if (choosePlayerCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16, nfheenapfmf_);
+          .computeUInt32Size(16, choosePlayerCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -607,14 +611,14 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
           != other.getParam2()) return false;
       if (getParam3()
           != other.getParam3()) return false;
-      if (getOndeciihanm()
-          != other.getOndeciihanm()) return false;
-      if (getBcobaoidmmc()
-          != other.getBcobaoidmmc()) return false;
-      if (getBcmmggaidek()
-          != other.getBcmmggaidek()) return false;
-      if (getDgbbbnffmlb()
-          != other.getDgbbbnffmlb()) return false;
+      if (getParam4()
+          != other.getParam4()) return false;
+      if (getParam5()
+          != other.getParam5()) return false;
+      if (getParam6()
+          != other.getParam6()) return false;
+      if (getBool1()
+          != other.getBool1()) return false;
       if (getDuration()
           != other.getDuration()) return false;
       if (getEndTime()
@@ -623,12 +627,12 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
           != other.getCombo()) return false;
       if (getPeerId()
           != other.getPeerId()) return false;
-      if (getHichllhajdp()
-          != other.getHichllhajdp()) return false;
+      if (getSkillType()
+          != other.getSkillType()) return false;
       if (getLevel()
           != other.getLevel()) return false;
-      if (getNfheenapfmf()
-          != other.getNfheenapfmf()) return false;
+      if (getChoosePlayerCount()
+          != other.getChoosePlayerCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -650,29 +654,29 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       hash = (53 * hash) + getParam2();
       hash = (37 * hash) + PARAM3_FIELD_NUMBER;
       hash = (53 * hash) + getParam3();
-      hash = (37 * hash) + ONDECIIHANM_FIELD_NUMBER;
-      hash = (53 * hash) + getOndeciihanm();
-      hash = (37 * hash) + BCOBAOIDMMC_FIELD_NUMBER;
-      hash = (53 * hash) + getBcobaoidmmc();
-      hash = (37 * hash) + BCMMGGAIDEK_FIELD_NUMBER;
-      hash = (53 * hash) + getBcmmggaidek();
-      hash = (37 * hash) + DGBBBNFFMLB_FIELD_NUMBER;
+      hash = (37 * hash) + PARAM4_FIELD_NUMBER;
+      hash = (53 * hash) + getParam4();
+      hash = (37 * hash) + PARAM5_FIELD_NUMBER;
+      hash = (53 * hash) + getParam5();
+      hash = (37 * hash) + PARAM6_FIELD_NUMBER;
+      hash = (53 * hash) + getParam6();
+      hash = (37 * hash) + BOOL1_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDgbbbnffmlb());
+          getBool1());
       hash = (37 * hash) + DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getDuration();
-      hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
       hash = (37 * hash) + COMBO_FIELD_NUMBER;
       hash = (53 * hash) + getCombo();
-      hash = (37 * hash) + PEERID_FIELD_NUMBER;
+      hash = (37 * hash) + PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPeerId();
-      hash = (37 * hash) + HICHLLHAJDP_FIELD_NUMBER;
-      hash = (53 * hash) + getHichllhajdp();
+      hash = (37 * hash) + SKILL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getSkillType();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + NFHEENAPFMF_FIELD_NUMBER;
-      hash = (53 * hash) + getNfheenapfmf();
+      hash = (37 * hash) + CHOOSE_PLAYER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getChoosePlayerCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -769,6 +773,10 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: AAMJIFFJBPA
+     * </pre>
+     *
      * Protobuf type {@code BreakoutPhysicalObjectModifier}
      */
     public static final class Builder extends
@@ -816,13 +824,13 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
 
         param3_ = 0;
 
-        ondeciihanm_ = 0;
+        param4_ = 0;
 
-        bcobaoidmmc_ = 0;
+        param5_ = 0;
 
-        bcmmggaidek_ = 0;
+        param6_ = 0;
 
-        dgbbbnffmlb_ = false;
+        bool1_ = false;
 
         duration_ = 0;
 
@@ -832,11 +840,11 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
 
         peerId_ = 0;
 
-        hichllhajdp_ = 0;
+        skillType_ = 0;
 
         level_ = 0;
 
-        nfheenapfmf_ = 0;
+        choosePlayerCount_ = 0;
 
         return this;
       }
@@ -869,17 +877,17 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         result.param1_ = param1_;
         result.param2_ = param2_;
         result.param3_ = param3_;
-        result.ondeciihanm_ = ondeciihanm_;
-        result.bcobaoidmmc_ = bcobaoidmmc_;
-        result.bcmmggaidek_ = bcmmggaidek_;
-        result.dgbbbnffmlb_ = dgbbbnffmlb_;
+        result.param4_ = param4_;
+        result.param5_ = param5_;
+        result.param6_ = param6_;
+        result.bool1_ = bool1_;
         result.duration_ = duration_;
         result.endTime_ = endTime_;
         result.combo_ = combo_;
         result.peerId_ = peerId_;
-        result.hichllhajdp_ = hichllhajdp_;
+        result.skillType_ = skillType_;
         result.level_ = level_;
-        result.nfheenapfmf_ = nfheenapfmf_;
+        result.choosePlayerCount_ = choosePlayerCount_;
         onBuilt();
         return result;
       }
@@ -943,17 +951,17 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         if (other.getParam3() != 0) {
           setParam3(other.getParam3());
         }
-        if (other.getOndeciihanm() != 0) {
-          setOndeciihanm(other.getOndeciihanm());
+        if (other.getParam4() != 0) {
+          setParam4(other.getParam4());
         }
-        if (other.getBcobaoidmmc() != 0) {
-          setBcobaoidmmc(other.getBcobaoidmmc());
+        if (other.getParam5() != 0) {
+          setParam5(other.getParam5());
         }
-        if (other.getBcmmggaidek() != 0) {
-          setBcmmggaidek(other.getBcmmggaidek());
+        if (other.getParam6() != 0) {
+          setParam6(other.getParam6());
         }
-        if (other.getDgbbbnffmlb() != false) {
-          setDgbbbnffmlb(other.getDgbbbnffmlb());
+        if (other.getBool1() != false) {
+          setBool1(other.getBool1());
         }
         if (other.getDuration() != 0) {
           setDuration(other.getDuration());
@@ -967,14 +975,14 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         if (other.getPeerId() != 0) {
           setPeerId(other.getPeerId());
         }
-        if (other.getHichllhajdp() != 0) {
-          setHichllhajdp(other.getHichllhajdp());
+        if (other.getSkillType() != 0) {
+          setSkillType(other.getSkillType());
         }
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
         }
-        if (other.getNfheenapfmf() != 0) {
-          setNfheenapfmf(other.getNfheenapfmf());
+        if (other.getChoosePlayerCount() != 0) {
+          setChoosePlayerCount(other.getChoosePlayerCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1160,126 +1168,126 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return this;
       }
 
-      private int ondeciihanm_ ;
+      private int param4_ ;
       /**
-       * <code>int32 ondeciihanm = 6;</code>
-       * @return The ondeciihanm.
+       * <code>int32 param4 = 6;</code>
+       * @return The param4.
        */
       @java.lang.Override
-      public int getOndeciihanm() {
-        return ondeciihanm_;
+      public int getParam4() {
+        return param4_;
       }
       /**
-       * <code>int32 ondeciihanm = 6;</code>
-       * @param value The ondeciihanm to set.
+       * <code>int32 param4 = 6;</code>
+       * @param value The param4 to set.
        * @return This builder for chaining.
        */
-      public Builder setOndeciihanm(int value) {
+      public Builder setParam4(int value) {
         
-        ondeciihanm_ = value;
+        param4_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 ondeciihanm = 6;</code>
+       * <code>int32 param4 = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOndeciihanm() {
+      public Builder clearParam4() {
         
-        ondeciihanm_ = 0;
+        param4_ = 0;
         onChanged();
         return this;
       }
 
-      private int bcobaoidmmc_ ;
+      private int param5_ ;
       /**
-       * <code>int32 bcobaoidmmc = 7;</code>
-       * @return The bcobaoidmmc.
+       * <code>int32 param5 = 7;</code>
+       * @return The param5.
        */
       @java.lang.Override
-      public int getBcobaoidmmc() {
-        return bcobaoidmmc_;
+      public int getParam5() {
+        return param5_;
       }
       /**
-       * <code>int32 bcobaoidmmc = 7;</code>
-       * @param value The bcobaoidmmc to set.
+       * <code>int32 param5 = 7;</code>
+       * @param value The param5 to set.
        * @return This builder for chaining.
        */
-      public Builder setBcobaoidmmc(int value) {
+      public Builder setParam5(int value) {
         
-        bcobaoidmmc_ = value;
+        param5_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 bcobaoidmmc = 7;</code>
+       * <code>int32 param5 = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBcobaoidmmc() {
+      public Builder clearParam5() {
         
-        bcobaoidmmc_ = 0;
+        param5_ = 0;
         onChanged();
         return this;
       }
 
-      private int bcmmggaidek_ ;
+      private int param6_ ;
       /**
-       * <code>int32 bcmmggaidek = 8;</code>
-       * @return The bcmmggaidek.
+       * <code>int32 param6 = 8;</code>
+       * @return The param6.
        */
       @java.lang.Override
-      public int getBcmmggaidek() {
-        return bcmmggaidek_;
+      public int getParam6() {
+        return param6_;
       }
       /**
-       * <code>int32 bcmmggaidek = 8;</code>
-       * @param value The bcmmggaidek to set.
+       * <code>int32 param6 = 8;</code>
+       * @param value The param6 to set.
        * @return This builder for chaining.
        */
-      public Builder setBcmmggaidek(int value) {
+      public Builder setParam6(int value) {
         
-        bcmmggaidek_ = value;
+        param6_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 bcmmggaidek = 8;</code>
+       * <code>int32 param6 = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBcmmggaidek() {
+      public Builder clearParam6() {
         
-        bcmmggaidek_ = 0;
+        param6_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean dgbbbnffmlb_ ;
+      private boolean bool1_ ;
       /**
-       * <code>bool dgbbbnffmlb = 9;</code>
-       * @return The dgbbbnffmlb.
+       * <code>bool bool1 = 9;</code>
+       * @return The bool1.
        */
       @java.lang.Override
-      public boolean getDgbbbnffmlb() {
-        return dgbbbnffmlb_;
+      public boolean getBool1() {
+        return bool1_;
       }
       /**
-       * <code>bool dgbbbnffmlb = 9;</code>
-       * @param value The dgbbbnffmlb to set.
+       * <code>bool bool1 = 9;</code>
+       * @param value The bool1 to set.
        * @return This builder for chaining.
        */
-      public Builder setDgbbbnffmlb(boolean value) {
+      public Builder setBool1(boolean value) {
         
-        dgbbbnffmlb_ = value;
+        bool1_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool dgbbbnffmlb = 9;</code>
+       * <code>bool bool1 = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDgbbbnffmlb() {
+      public Builder clearBool1() {
         
-        dgbbbnffmlb_ = false;
+        bool1_ = false;
         onChanged();
         return this;
       }
@@ -1317,7 +1325,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
 
       private int endTime_ ;
       /**
-       * <code>int32 endTime = 11;</code>
+       * <code>int32 end_time = 11;</code>
        * @return The endTime.
        */
       @java.lang.Override
@@ -1325,7 +1333,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return endTime_;
       }
       /**
-       * <code>int32 endTime = 11;</code>
+       * <code>int32 end_time = 11;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
        */
@@ -1336,7 +1344,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return this;
       }
       /**
-       * <code>int32 endTime = 11;</code>
+       * <code>int32 end_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -1379,7 +1387,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
 
       private int peerId_ ;
       /**
-       * <code>uint32 peerId = 13;</code>
+       * <code>uint32 peer_id = 13;</code>
        * @return The peerId.
        */
       @java.lang.Override
@@ -1387,7 +1395,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return peerId_;
       }
       /**
-       * <code>uint32 peerId = 13;</code>
+       * <code>uint32 peer_id = 13;</code>
        * @param value The peerId to set.
        * @return This builder for chaining.
        */
@@ -1398,7 +1406,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return this;
       }
       /**
-       * <code>uint32 peerId = 13;</code>
+       * <code>uint32 peer_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
@@ -1408,33 +1416,33 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return this;
       }
 
-      private int hichllhajdp_ ;
+      private int skillType_ ;
       /**
-       * <code>uint32 hichllhajdp = 14;</code>
-       * @return The hichllhajdp.
+       * <code>uint32 skill_type = 14;</code>
+       * @return The skillType.
        */
       @java.lang.Override
-      public int getHichllhajdp() {
-        return hichllhajdp_;
+      public int getSkillType() {
+        return skillType_;
       }
       /**
-       * <code>uint32 hichllhajdp = 14;</code>
-       * @param value The hichllhajdp to set.
+       * <code>uint32 skill_type = 14;</code>
+       * @param value The skillType to set.
        * @return This builder for chaining.
        */
-      public Builder setHichllhajdp(int value) {
+      public Builder setSkillType(int value) {
         
-        hichllhajdp_ = value;
+        skillType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 hichllhajdp = 14;</code>
+       * <code>uint32 skill_type = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHichllhajdp() {
+      public Builder clearSkillType() {
         
-        hichllhajdp_ = 0;
+        skillType_ = 0;
         onChanged();
         return this;
       }
@@ -1470,33 +1478,33 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         return this;
       }
 
-      private int nfheenapfmf_ ;
+      private int choosePlayerCount_ ;
       /**
-       * <code>uint32 nfheenapfmf = 16;</code>
-       * @return The nfheenapfmf.
+       * <code>uint32 choose_player_count = 16;</code>
+       * @return The choosePlayerCount.
        */
       @java.lang.Override
-      public int getNfheenapfmf() {
-        return nfheenapfmf_;
+      public int getChoosePlayerCount() {
+        return choosePlayerCount_;
       }
       /**
-       * <code>uint32 nfheenapfmf = 16;</code>
-       * @param value The nfheenapfmf to set.
+       * <code>uint32 choose_player_count = 16;</code>
+       * @param value The choosePlayerCount to set.
        * @return This builder for chaining.
        */
-      public Builder setNfheenapfmf(int value) {
+      public Builder setChoosePlayerCount(int value) {
         
-        nfheenapfmf_ = value;
+        choosePlayerCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 nfheenapfmf = 16;</code>
+       * <code>uint32 choose_player_count = 16;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNfheenapfmf() {
+      public Builder clearChoosePlayerCount() {
         
-        nfheenapfmf_ = 0;
+        choosePlayerCount_ = 0;
         onChanged();
         return this;
       }
@@ -1567,16 +1575,16 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n$BreakoutPhysicalObjectModifier.proto\"\271" +
+      "\n$BreakoutPhysicalObjectModifier.proto\"\255" +
       "\002\n\036BreakoutPhysicalObjectModifier\022\014\n\004typ" +
       "e\030\001 \001(\r\022\n\n\002id\030\002 \001(\r\022\016\n\006param1\030\003 \001(\005\022\016\n\006p" +
-      "aram2\030\004 \001(\005\022\016\n\006param3\030\005 \001(\005\022\023\n\013ondeciiha" +
-      "nm\030\006 \001(\005\022\023\n\013bcobaoidmmc\030\007 \001(\005\022\023\n\013bcmmgga" +
-      "idek\030\010 \001(\005\022\023\n\013dgbbbnffmlb\030\t \001(\010\022\020\n\010durat" +
-      "ion\030\n \001(\005\022\017\n\007endTime\030\013 \001(\005\022\r\n\005combo\030\014 \001(" +
-      "\r\022\016\n\006peerId\030\r \001(\r\022\023\n\013hichllhajdp\030\016 \001(\r\022\r" +
-      "\n\005level\030\017 \001(\r\022\023\n\013nfheenapfmf\030\020 \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "aram2\030\004 \001(\005\022\016\n\006param3\030\005 \001(\005\022\016\n\006param4\030\006 " +
+      "\001(\005\022\016\n\006param5\030\007 \001(\005\022\016\n\006param6\030\010 \001(\005\022\r\n\005b" +
+      "ool1\030\t \001(\010\022\020\n\010duration\030\n \001(\005\022\020\n\010end_time" +
+      "\030\013 \001(\005\022\r\n\005combo\030\014 \001(\r\022\017\n\007peer_id\030\r \001(\r\022\022" +
+      "\n\nskill_type\030\016 \001(\r\022\r\n\005level\030\017 \001(\r\022\033\n\023cho" +
+      "ose_player_count\030\020 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1587,7 +1595,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     internal_static_BreakoutPhysicalObjectModifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BreakoutPhysicalObjectModifier_descriptor,
-        new java.lang.String[] { "Type", "Id", "Param1", "Param2", "Param3", "Ondeciihanm", "Bcobaoidmmc", "Bcmmggaidek", "Dgbbbnffmlb", "Duration", "EndTime", "Combo", "PeerId", "Hichllhajdp", "Level", "Nfheenapfmf", });
+        new java.lang.String[] { "Type", "Id", "Param1", "Param2", "Param3", "Param4", "Param5", "Param6", "Bool1", "Duration", "EndTime", "Combo", "PeerId", "SkillType", "Level", "ChoosePlayerCount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

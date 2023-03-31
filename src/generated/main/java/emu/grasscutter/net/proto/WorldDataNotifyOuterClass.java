@@ -19,11 +19,11 @@ public final class WorldDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     int getWorldPropMapCount();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     boolean containsWorldPropMap(
         int key);
@@ -34,25 +34,30 @@ public final class WorldDataNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getWorldPropMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
     getWorldPropMapMap();
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
 
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
         int key,
         emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue);
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
 
     emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
         int key);
   }
   /**
+   * <pre>
+   * Name: DHGGDMHKKBO
+   * CmdId: 3357
+   * </pre>
+   *
    * Protobuf type {@code WorldDataNotify}
    */
   public static final class WorldDataNotify extends
@@ -98,7 +103,7 @@ public final class WorldDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 worldPropMap_ = com.google.protobuf.MapField.newMapField(
                     WorldPropMapDefaultEntryHolder.defaultEntry);
@@ -140,7 +145,7 @@ public final class WorldDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 3:
+        case 1:
           return internalGetWorldPropMap();
         default:
           throw new RuntimeException(
@@ -156,57 +161,45 @@ public final class WorldDataNotifyOuterClass {
     }
 
     /**
-     * Protobuf enum {@code WorldDataNotify.HGHHBKAGAAH}
+     * <pre>
+     * Name: EHJNPOBJKHF
+     * </pre>
+     *
+     * Protobuf enum {@code WorldDataNotify.EHJNPOBJKHF}
      */
-    public enum HGHHBKAGAAH
+    public enum EHJNPOBJKHF
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>NONE = 0;</code>
+       * <code>EHJNPOBJKHF_HOKCOAJJKKL = 0;</code>
        */
-      NONE(0, 0),
+      EHJNPOBJKHF_HOKCOAJJKKL(0),
       /**
-       * <code>PEPPOHPHJOJ = 3244;</code>
+       * <code>EHJNPOBJKHF_OAKLEOLDOPG = 1;</code>
        */
-      PEPPOHPHJOJ(1, 3244),
+      EHJNPOBJKHF_OAKLEOLDOPG(1),
       /**
-       * <code>NNBKOLMPOEA = 1;</code>
+       * <code>EHJNPOBJKHF_DEHLKIAJEMF = 2;</code>
        */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
+      EHJNPOBJKHF_DEHLKIAJEMF(2),
+      UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>DCDNILFDFLB = 0;</code>
+       * <code>EHJNPOBJKHF_HOKCOAJJKKL = 0;</code>
        */
-      public static final HGHHBKAGAAH DCDNILFDFLB = NONE;
+      public static final int EHJNPOBJKHF_HOKCOAJJKKL_VALUE = 0;
       /**
-       * <code>EAJIABGAOCI = 1;</code>
+       * <code>EHJNPOBJKHF_OAKLEOLDOPG = 1;</code>
        */
-      public static final HGHHBKAGAAH EAJIABGAOCI = NNBKOLMPOEA;
+      public static final int EHJNPOBJKHF_OAKLEOLDOPG_VALUE = 1;
       /**
-       * <code>NONE = 0;</code>
+       * <code>EHJNPOBJKHF_DEHLKIAJEMF = 2;</code>
        */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3244;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3244;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
+      public static final int EHJNPOBJKHF_DEHLKIAJEMF_VALUE = 2;
 
 
       public final int getNumber() {
-        if (index == -1) {
+        if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
               "Can't get the number of an unknown enum value.");
         }
@@ -219,7 +212,7 @@ public final class WorldDataNotifyOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static HGHHBKAGAAH valueOf(int value) {
+      public static EHJNPOBJKHF valueOf(int value) {
         return forNumber(value);
       }
 
@@ -227,34 +220,34 @@ public final class WorldDataNotifyOuterClass {
        * @param value The numeric wire value of the corresponding enum entry.
        * @return The enum associated with the given numeric wire value.
        */
-      public static HGHHBKAGAAH forNumber(int value) {
+      public static EHJNPOBJKHF forNumber(int value) {
         switch (value) {
-          case 0: return NONE;
-          case 3244: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
+          case 0: return EHJNPOBJKHF_HOKCOAJJKKL;
+          case 1: return EHJNPOBJKHF_OAKLEOLDOPG;
+          case 2: return EHJNPOBJKHF_DEHLKIAJEMF;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<HGHHBKAGAAH>
+      public static com.google.protobuf.Internal.EnumLiteMap<EHJNPOBJKHF>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          HGHHBKAGAAH> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HGHHBKAGAAH>() {
-              public HGHHBKAGAAH findValueByNumber(int number) {
-                return HGHHBKAGAAH.forNumber(number);
+          EHJNPOBJKHF> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EHJNPOBJKHF>() {
+              public EHJNPOBJKHF findValueByNumber(int number) {
+                return EHJNPOBJKHF.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (index == -1) {
+        if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalStateException(
               "Can't get the descriptor of an unrecognized enum value.");
         }
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -265,13 +258,9 @@ public final class WorldDataNotifyOuterClass {
         return emu.grasscutter.net.proto.WorldDataNotifyOuterClass.WorldDataNotify.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final HGHHBKAGAAH[] VALUES = getStaticValuesArray();
-      private static HGHHBKAGAAH[] getStaticValuesArray() {
-        return new HGHHBKAGAAH[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static HGHHBKAGAAH valueOf(
+      private static final EHJNPOBJKHF[] VALUES = values();
+
+      public static EHJNPOBJKHF valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -283,18 +272,16 @@ public final class WorldDataNotifyOuterClass {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private HGHHBKAGAAH(int index, int value) {
-        this.index = index;
+      private EHJNPOBJKHF(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:WorldDataNotify.HGHHBKAGAAH)
+      // @@protoc_insertion_point(enum_scope:WorldDataNotify.EHJNPOBJKHF)
     }
 
-    public static final int WORLDPROPMAP_FIELD_NUMBER = 3;
+    public static final int WORLD_PROP_MAP_FIELD_NUMBER = 1;
     private static final class WorldPropMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue> defaultEntry =
@@ -321,7 +308,7 @@ public final class WorldDataNotifyOuterClass {
       return internalGetWorldPropMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
 
     @java.lang.Override
@@ -339,7 +326,7 @@ public final class WorldDataNotifyOuterClass {
       return getWorldPropMapMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     @java.lang.Override
 
@@ -347,7 +334,7 @@ public final class WorldDataNotifyOuterClass {
       return internalGetWorldPropMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     @java.lang.Override
 
@@ -360,7 +347,7 @@ public final class WorldDataNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+     * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
      */
     @java.lang.Override
 
@@ -394,7 +381,7 @@ public final class WorldDataNotifyOuterClass {
           output,
           internalGetWorldPropMap(),
           WorldPropMapDefaultEntryHolder.defaultEntry,
-          3);
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -412,7 +399,7 @@ public final class WorldDataNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, worldPropMap__);
+            .computeMessageSize(1, worldPropMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -443,7 +430,7 @@ public final class WorldDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetWorldPropMap().getMap().isEmpty()) {
-        hash = (37 * hash) + WORLDPROPMAP_FIELD_NUMBER;
+        hash = (37 * hash) + WORLD_PROP_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetWorldPropMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -542,6 +529,11 @@ public final class WorldDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DHGGDMHKKBO
+     * CmdId: 3357
+     * </pre>
+     *
      * Protobuf type {@code WorldDataNotify}
      */
     public static final class Builder extends
@@ -557,7 +549,7 @@ public final class WorldDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 3:
+          case 1:
             return internalGetWorldPropMap();
           default:
             throw new RuntimeException(
@@ -568,7 +560,7 @@ public final class WorldDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 3:
+          case 1:
             return internalGetMutableWorldPropMap();
           default:
             throw new RuntimeException(
@@ -738,7 +730,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetWorldPropMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
 
       @java.lang.Override
@@ -756,7 +748,7 @@ public final class WorldDataNotifyOuterClass {
         return getWorldPropMapMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
       @java.lang.Override
 
@@ -764,7 +756,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetWorldPropMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
       @java.lang.Override
 
@@ -777,7 +769,7 @@ public final class WorldDataNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
       @java.lang.Override
 
@@ -798,7 +790,7 @@ public final class WorldDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
 
       public Builder removeWorldPropMap(
@@ -817,7 +809,7 @@ public final class WorldDataNotifyOuterClass {
         return internalGetMutableWorldPropMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
       public Builder putWorldPropMap(
           int key,
@@ -829,7 +821,7 @@ public final class WorldDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .PropValue&gt; worldPropMap = 3;</code>
+       * <code>map&lt;uint32, .PropValue&gt; world_prop_map = 1;</code>
        */
 
       public Builder putAllWorldPropMap(
@@ -911,13 +903,14 @@ public final class WorldDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025WorldDataNotify.proto\032\017PropValue.proto" +
-      "\"\356\001\n\017WorldDataNotify\0228\n\014worldPropMap\030\003 \003" +
-      "(\0132\".WorldDataNotify.WorldPropMapEntry\032?" +
-      "\n\021WorldPropMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005valu" +
-      "e\030\002 \001(\0132\n.PropValue:\0028\001\"`\n\013HGHHBKAGAAH\022\010" +
-      "\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\254\031\022\017\n\013DCDNILFDFL" +
-      "B\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020" +
-      "\001B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\"\364\001\n\017WorldDataNotify\022:\n\016world_prop_map\030\001" +
+      " \003(\0132\".WorldDataNotify.WorldPropMapEntry" +
+      "\032?\n\021WorldPropMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005va" +
+      "lue\030\002 \001(\0132\n.PropValue:\0028\001\"d\n\013EHJNPOBJKHF" +
+      "\022\033\n\027EHJNPOBJKHF_HOKCOAJJKKL\020\000\022\033\n\027EHJNPOB" +
+      "JKHF_OAKLEOLDOPG\020\001\022\033\n\027EHJNPOBJKHF_DEHLKI" +
+      "AJEMF\020\002B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

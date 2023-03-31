@@ -15,6 +15,10 @@ public final class FoundationStatusOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: NKAECBFOIGF
+   * </pre>
+   *
    * Protobuf enum {@code FoundationStatus}
    */
   public enum FoundationStatus

@@ -19,23 +19,28 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @return A list containing the configIdList.
      */
     java.util.List<java.lang.Integer> getConfigIdListList();
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @return The count of configIdList.
      */
     int getConfigIdListCount();
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The configIdList at the given index.
      */
     int getConfigIdList(int index);
   }
   /**
+   * <pre>
+   * Name: BPDFEOJAHNK
+   * CmdId: 2103
+   * </pre>
+   *
    * Protobuf type {@code ServerAnnounceRevokeNotify}
    */
   public static final class ServerAnnounceRevokeNotify extends
@@ -82,7 +87,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 configIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
               configIdList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
               emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.class, emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ServerAnnounceRevokeNotify.JAAICAGMEPA}
-     */
-    public enum JAAICAGMEPA
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2140;</code>
-       */
-      PEPPOHPHJOJ(1, 2140),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final JAAICAGMEPA DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2140;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2140;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JAAICAGMEPA valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JAAICAGMEPA forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2140: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JAAICAGMEPA>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JAAICAGMEPA> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JAAICAGMEPA>() {
-              public JAAICAGMEPA findValueByNumber(int number) {
-                return JAAICAGMEPA.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JAAICAGMEPA[] VALUES = getStaticValuesArray();
-      private static JAAICAGMEPA[] getStaticValuesArray() {
-        return new JAAICAGMEPA[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static JAAICAGMEPA valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private JAAICAGMEPA(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ServerAnnounceRevokeNotify.JAAICAGMEPA)
-    }
-
-    public static final int CONFIGIDLIST_FIELD_NUMBER = 12;
+    public static final int CONFIG_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList configIdList_;
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @return A list containing the configIdList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       return configIdList_;
     }
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @return The count of configIdList.
      */
     public int getConfigIdListCount() {
       return configIdList_.size();
     }
     /**
-     * <code>repeated uint32 configIdList = 12;</code>
+     * <code>repeated uint32 config_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The configIdList at the given index.
      */
@@ -313,7 +187,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getConfigIdListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(configIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < configIdList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getConfigIdListCount() > 0) {
-        hash = (37 * hash) + CONFIGIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + CONFIG_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getConfigIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BPDFEOJAHNK
+     * CmdId: 2103
+     * </pre>
+     *
      * Protobuf type {@code ServerAnnounceRevokeNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @return A list containing the configIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
                  java.util.Collections.unmodifiableList(configIdList_) : configIdList_;
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @return The count of configIdList.
        */
       public int getConfigIdListCount() {
         return configIdList_.size();
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @param index The index of the element to return.
        * @return The configIdList at the given index.
        */
@@ -661,7 +540,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return configIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The configIdList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @param value The configIdList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @param values The configIdList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 configIdList = 12;</code>
+       * <code>repeated uint32 config_id_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigIdList() {
@@ -774,11 +653,9 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n ServerAnnounceRevokeNotify.proto\"\203\001\n\032S" +
-      "erverAnnounceRevokeNotify\022\024\n\014configIdLis" +
-      "t\030\014 \003(\r\"O\n\013JAAICAGMEPA\022\010\n\004NONE\020\000\022\020\n\013PEPP" +
-      "OHPHJOJ\020\334\020\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPO" +
-      "EA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006p" +
+      "\n ServerAnnounceRevokeNotify.proto\"4\n\032Se" +
+      "rverAnnounceRevokeNotify\022\026\n\016config_id_li" +
+      "st\030\006 \003(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

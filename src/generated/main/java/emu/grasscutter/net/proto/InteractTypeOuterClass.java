@@ -15,6 +15,10 @@ public final class InteractTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: CHKGDGODKAA
+   * </pre>
+   *
    * Protobuf enum {@code InteractType}
    */
   public enum InteractType

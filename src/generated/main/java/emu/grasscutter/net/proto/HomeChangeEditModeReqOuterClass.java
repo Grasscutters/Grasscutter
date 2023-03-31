@@ -19,12 +19,17 @@ public final class HomeChangeEditModeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isEnterEditMode = 2;</code>
+     * <code>bool is_enter_edit_mode = 15;</code>
      * @return The isEnterEditMode.
      */
     boolean getIsEnterEditMode();
   }
   /**
+   * <pre>
+   * Name: IGOBNECJKBF
+   * CmdId: 4533
+   * </pre>
+   *
    * Protobuf type {@code HomeChangeEditModeReq}
    */
   public static final class HomeChangeEditModeReq extends
@@ -69,7 +74,7 @@ public final class HomeChangeEditModeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 120: {
 
               isEnterEditMode_ = input.readBool();
               break;
@@ -106,149 +111,10 @@ public final class HomeChangeEditModeReqOuterClass {
               emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.class, emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeChangeEditModeReq.OMEOHHNAGLP}
-     */
-    public enum OMEOHHNAGLP
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4702;</code>
-       */
-      PEPPOHPHJOJ(1, 4702),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final OMEOHHNAGLP DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final OMEOHHNAGLP EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4702;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4702;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OMEOHHNAGLP valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OMEOHHNAGLP forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4702: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OMEOHHNAGLP>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OMEOHHNAGLP> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OMEOHHNAGLP>() {
-              public OMEOHHNAGLP findValueByNumber(int number) {
-                return OMEOHHNAGLP.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OMEOHHNAGLP[] VALUES = getStaticValuesArray();
-      private static OMEOHHNAGLP[] getStaticValuesArray() {
-        return new OMEOHHNAGLP[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static OMEOHHNAGLP valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private OMEOHHNAGLP(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeChangeEditModeReq.OMEOHHNAGLP)
-    }
-
-    public static final int ISENTEREDITMODE_FIELD_NUMBER = 2;
+    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 15;
     private boolean isEnterEditMode_;
     /**
-     * <code>bool isEnterEditMode = 2;</code>
+     * <code>bool is_enter_edit_mode = 15;</code>
      * @return The isEnterEditMode.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class HomeChangeEditModeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnterEditMode_ != false) {
-        output.writeBool(2, isEnterEditMode_);
+        output.writeBool(15, isEnterEditMode_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class HomeChangeEditModeReqOuterClass {
       size = 0;
       if (isEnterEditMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isEnterEditMode_);
+          .computeBoolSize(15, isEnterEditMode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class HomeChangeEditModeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISENTEREDITMODE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_ENTER_EDIT_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterEditMode());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -413,6 +279,11 @@ public final class HomeChangeEditModeReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: IGOBNECJKBF
+     * CmdId: 4533
+     * </pre>
+     *
      * Protobuf type {@code HomeChangeEditModeReq}
      */
     public static final class Builder extends
@@ -561,7 +432,7 @@ public final class HomeChangeEditModeReqOuterClass {
 
       private boolean isEnterEditMode_ ;
       /**
-       * <code>bool isEnterEditMode = 2;</code>
+       * <code>bool is_enter_edit_mode = 15;</code>
        * @return The isEnterEditMode.
        */
       @java.lang.Override
@@ -569,7 +440,7 @@ public final class HomeChangeEditModeReqOuterClass {
         return isEnterEditMode_;
       }
       /**
-       * <code>bool isEnterEditMode = 2;</code>
+       * <code>bool is_enter_edit_mode = 15;</code>
        * @param value The isEnterEditMode to set.
        * @return This builder for chaining.
        */
@@ -580,7 +451,7 @@ public final class HomeChangeEditModeReqOuterClass {
         return this;
       }
       /**
-       * <code>bool isEnterEditMode = 2;</code>
+       * <code>bool is_enter_edit_mode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnterEditMode() {
@@ -656,12 +527,9 @@ public final class HomeChangeEditModeReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033HomeChangeEditModeReq.proto\"\222\001\n\025HomeCh" +
-      "angeEditModeReq\022\027\n\017isEnterEditMode\030\002 \001(\010" +
-      "\"`\n\013OMEOHHNAGLP\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ" +
-      "\020\336$\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n" +
-      "\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\n\033HomeChangeEditModeReq.proto\"3\n\025HomeCha" +
+      "ngeEditModeReq\022\032\n\022is_enter_edit_mode\030\017 \001" +
+      "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

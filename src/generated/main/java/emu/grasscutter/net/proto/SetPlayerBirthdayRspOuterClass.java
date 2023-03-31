@@ -19,27 +19,32 @@ public final class SetPlayerBirthdayRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      * @return Whether the birthday field is set.
      */
     boolean hasBirthday();
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      * @return The birthday.
      */
     emu.grasscutter.net.proto.BirthdayOuterClass.Birthday getBirthday();
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      */
     emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder();
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: LIDFLIOHLDF
+   * CmdId: 4042
+   * </pre>
+   *
    * Protobuf type {@code SetPlayerBirthdayRsp}
    */
   public static final class SetPlayerBirthdayRsp extends
@@ -84,12 +89,12 @@ public final class SetPlayerBirthdayRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 106: {
+            case 90: {
               emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder subBuilder = null;
               if (birthday_ != null) {
                 subBuilder = birthday_.toBuilder();
@@ -134,141 +139,10 @@ public final class SetPlayerBirthdayRspOuterClass {
               emu.grasscutter.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp.class, emu.grasscutter.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SetPlayerBirthdayRsp.NEBEAFHDGOM}
-     */
-    public enum NEBEAFHDGOM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4016;</code>
-       */
-      PEPPOHPHJOJ(1, 4016),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final NEBEAFHDGOM DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4016;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4016;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NEBEAFHDGOM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NEBEAFHDGOM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4016: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NEBEAFHDGOM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NEBEAFHDGOM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NEBEAFHDGOM>() {
-              public NEBEAFHDGOM findValueByNumber(int number) {
-                return NEBEAFHDGOM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final NEBEAFHDGOM[] VALUES = getStaticValuesArray();
-      private static NEBEAFHDGOM[] getStaticValuesArray() {
-        return new NEBEAFHDGOM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static NEBEAFHDGOM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private NEBEAFHDGOM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SetPlayerBirthdayRsp.NEBEAFHDGOM)
-    }
-
-    public static final int BIRTHDAY_FIELD_NUMBER = 13;
+    public static final int BIRTHDAY_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.BirthdayOuterClass.Birthday birthday_;
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      * @return Whether the birthday field is set.
      */
     @java.lang.Override
@@ -276,7 +150,7 @@ public final class SetPlayerBirthdayRspOuterClass {
       return birthday_ != null;
     }
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      * @return The birthday.
      */
     @java.lang.Override
@@ -284,17 +158,17 @@ public final class SetPlayerBirthdayRspOuterClass {
       return birthday_ == null ? emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance() : birthday_;
     }
     /**
-     * <code>.Birthday birthday = 13;</code>
+     * <code>.Birthday birthday = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
       return getBirthday();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -317,10 +191,10 @@ public final class SetPlayerBirthdayRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(9, retcode_);
       }
       if (birthday_ != null) {
-        output.writeMessage(13, getBirthday());
+        output.writeMessage(11, getBirthday());
       }
       unknownFields.writeTo(output);
     }
@@ -333,11 +207,11 @@ public final class SetPlayerBirthdayRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       if (birthday_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getBirthday());
+          .computeMessageSize(11, getBirthday());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -474,6 +348,11 @@ public final class SetPlayerBirthdayRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: LIDFLIOHLDF
+     * CmdId: 4042
+     * </pre>
+     *
      * Protobuf type {@code SetPlayerBirthdayRsp}
      */
     public static final class Builder extends
@@ -638,14 +517,14 @@ public final class SetPlayerBirthdayRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday, emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder, emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder> birthdayBuilder_;
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        * @return Whether the birthday field is set.
        */
       public boolean hasBirthday() {
         return birthdayBuilder_ != null || birthday_ != null;
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        * @return The birthday.
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.Birthday getBirthday() {
@@ -656,7 +535,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         }
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public Builder setBirthday(emu.grasscutter.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
@@ -672,7 +551,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public Builder setBirthday(
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder builderForValue) {
@@ -686,7 +565,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public Builder mergeBirthday(emu.grasscutter.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
@@ -704,7 +583,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public Builder clearBirthday() {
         if (birthdayBuilder_ == null) {
@@ -718,7 +597,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return this;
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder getBirthdayBuilder() {
         
@@ -726,7 +605,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return getBirthdayFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       public emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
         if (birthdayBuilder_ != null) {
@@ -737,7 +616,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         }
       }
       /**
-       * <code>.Birthday birthday = 13;</code>
+       * <code>.Birthday birthday = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BirthdayOuterClass.Birthday, emu.grasscutter.net.proto.BirthdayOuterClass.Birthday.Builder, emu.grasscutter.net.proto.BirthdayOuterClass.BirthdayOrBuilder> 
@@ -755,7 +634,7 @@ public final class SetPlayerBirthdayRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -763,7 +642,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -774,7 +653,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -851,11 +730,9 @@ public final class SetPlayerBirthdayRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032SetPlayerBirthdayRsp.proto\032\016Birthday.p" +
-      "roto\"\225\001\n\024SetPlayerBirthdayRsp\022\033\n\010birthda" +
-      "y\030\r \001(\0132\t.Birthday\022\017\n\007retcode\030\007 \001(\005\"O\n\013N" +
-      "EBEAFHDGOM\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\260\037\022\017" +
-      "\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "roto\"D\n\024SetPlayerBirthdayRsp\022\033\n\010birthday" +
+      "\030\013 \001(\0132\t.Birthday\022\017\n\007retcode\030\t \001(\005B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

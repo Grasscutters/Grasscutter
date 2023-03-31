@@ -31,17 +31,17 @@ public final class WeaponOuterClass {
     int getExp();
 
     /**
-     * <code>uint32 promoteLevel = 3;</code>
+     * <code>uint32 promote_level = 3;</code>
      * @return The promoteLevel.
      */
     int getPromoteLevel();
 
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     int getAffixMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     boolean containsAffixMap(
         int key);
@@ -52,25 +52,29 @@ public final class WeaponOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAffixMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAffixMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
 
     int getAffixMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
 
     int getAffixMapOrThrow(
         int key);
   }
   /**
+   * <pre>
+   * Name: OCBPLJBJHLF
+   * </pre>
+   *
    * Protobuf type {@code Weapon}
    */
   public static final class Weapon extends
@@ -210,10 +214,10 @@ public final class WeaponOuterClass {
       return exp_;
     }
 
-    public static final int PROMOTELEVEL_FIELD_NUMBER = 3;
+    public static final int PROMOTE_LEVEL_FIELD_NUMBER = 3;
     private int promoteLevel_;
     /**
-     * <code>uint32 promoteLevel = 3;</code>
+     * <code>uint32 promote_level = 3;</code>
      * @return The promoteLevel.
      */
     @java.lang.Override
@@ -221,7 +225,7 @@ public final class WeaponOuterClass {
       return promoteLevel_;
     }
 
-    public static final int AFFIXMAP_FIELD_NUMBER = 4;
+    public static final int AFFIX_MAP_FIELD_NUMBER = 4;
     private static final class AffixMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -248,7 +252,7 @@ public final class WeaponOuterClass {
       return internalGetAffixMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
 
     @java.lang.Override
@@ -266,7 +270,7 @@ public final class WeaponOuterClass {
       return getAffixMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     @java.lang.Override
 
@@ -274,7 +278,7 @@ public final class WeaponOuterClass {
       return internalGetAffixMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     @java.lang.Override
 
@@ -287,7 +291,7 @@ public final class WeaponOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
      */
     @java.lang.Override
 
@@ -400,10 +404,10 @@ public final class WeaponOuterClass {
       hash = (53 * hash) + getLevel();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
       hash = (53 * hash) + getExp();
-      hash = (37 * hash) + PROMOTELEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + PROMOTE_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getPromoteLevel();
       if (!internalGetAffixMap().getMap().isEmpty()) {
-        hash = (37 * hash) + AFFIXMAP_FIELD_NUMBER;
+        hash = (37 * hash) + AFFIX_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAffixMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -502,6 +506,10 @@ public final class WeaponOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: OCBPLJBJHLF
+     * </pre>
+     *
      * Protobuf type {@code Weapon}
      */
     public static final class Builder extends
@@ -753,7 +761,7 @@ public final class WeaponOuterClass {
 
       private int promoteLevel_ ;
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @return The promoteLevel.
        */
       @java.lang.Override
@@ -761,7 +769,7 @@ public final class WeaponOuterClass {
         return promoteLevel_;
       }
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @param value The promoteLevel to set.
        * @return This builder for chaining.
        */
@@ -772,7 +780,7 @@ public final class WeaponOuterClass {
         return this;
       }
       /**
-       * <code>uint32 promoteLevel = 3;</code>
+       * <code>uint32 promote_level = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPromoteLevel() {
@@ -809,7 +817,7 @@ public final class WeaponOuterClass {
         return internalGetAffixMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
 
       @java.lang.Override
@@ -827,7 +835,7 @@ public final class WeaponOuterClass {
         return getAffixMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
       @java.lang.Override
 
@@ -835,7 +843,7 @@ public final class WeaponOuterClass {
         return internalGetAffixMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
       @java.lang.Override
 
@@ -848,7 +856,7 @@ public final class WeaponOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
       @java.lang.Override
 
@@ -869,7 +877,7 @@ public final class WeaponOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
 
       public Builder removeAffixMap(
@@ -888,7 +896,7 @@ public final class WeaponOuterClass {
         return internalGetMutableAffixMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
       public Builder putAffixMap(
           int key,
@@ -900,7 +908,7 @@ public final class WeaponOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; affixMap = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; affix_map = 4;</code>
        */
 
       public Builder putAllAffixMap(
@@ -981,12 +989,12 @@ public final class WeaponOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Weapon.proto\"\224\001\n\006Weapon\022\r\n\005level\030\001 \001(\r" +
-      "\022\013\n\003exp\030\002 \001(\r\022\024\n\014promoteLevel\030\003 \001(\r\022\'\n\010a" +
-      "ffixMap\030\004 \003(\0132\025.Weapon.AffixMapEntry\032/\n\r" +
-      "AffixMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
-      "\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006prot" +
-      "o3"
+      "\n\014Weapon.proto\"\226\001\n\006Weapon\022\r\n\005level\030\001 \001(\r" +
+      "\022\013\n\003exp\030\002 \001(\r\022\025\n\rpromote_level\030\003 \001(\r\022(\n\t" +
+      "affix_map\030\004 \003(\0132\025.Weapon.AffixMapEntry\032/" +
+      "\n\rAffixMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 " +
+      "\001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

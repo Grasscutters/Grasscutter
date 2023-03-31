@@ -15,6 +15,10 @@ public final class PlatformTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: EILHMHEJAPN
+   * </pre>
+   *
    * Protobuf enum {@code PlatformType}
    */
   public enum PlatformType

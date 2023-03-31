@@ -19,24 +19,29 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isFinish = 2;</code>
+     * <code>bool is_finish = 15;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>uint32 exploreTime = 3;</code>
-     * @return The exploreTime.
-     */
-    int getExploreTime();
-
-    /**
-     * <code>uint32 curRound = 12;</code>
+     * <code>uint32 cur_round = 2;</code>
      * @return The curRound.
      */
     int getCurRound();
+
+    /**
+     * <code>uint32 explore_time = 9;</code>
+     * @return The exploreTime.
+     */
+    int getExploreTime();
   }
   /**
+   * <pre>
+   * Name: GHDOPNGBFKP
+   * CmdId: 8220
+   * </pre>
+   *
    * Protobuf type {@code RogueDiaryDungeonSettleNotify}
    */
   public static final class RogueDiaryDungeonSettleNotify extends
@@ -83,17 +88,17 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
               break;
             case 16: {
 
-              isFinish_ = input.readBool();
+              curRound_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 72: {
 
               exploreTime_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 120: {
 
-              curRound_ = input.readUInt32();
+              isFinish_ = input.readBool();
               break;
             }
             default: {
@@ -128,149 +133,10 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
               emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify.class, emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code RogueDiaryDungeonSettleNotify.PBPFGDHOOMD}
-     */
-    public enum PBPFGDHOOMD
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 8224;</code>
-       */
-      PEPPOHPHJOJ(1, 8224),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final PBPFGDHOOMD DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final PBPFGDHOOMD EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 8224;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 8224;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PBPFGDHOOMD valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PBPFGDHOOMD forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 8224: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PBPFGDHOOMD>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          PBPFGDHOOMD> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PBPFGDHOOMD>() {
-              public PBPFGDHOOMD findValueByNumber(int number) {
-                return PBPFGDHOOMD.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final PBPFGDHOOMD[] VALUES = getStaticValuesArray();
-      private static PBPFGDHOOMD[] getStaticValuesArray() {
-        return new PBPFGDHOOMD[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static PBPFGDHOOMD valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private PBPFGDHOOMD(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:RogueDiaryDungeonSettleNotify.PBPFGDHOOMD)
-    }
-
-    public static final int ISFINISH_FIELD_NUMBER = 2;
+    public static final int IS_FINISH_FIELD_NUMBER = 15;
     private boolean isFinish_;
     /**
-     * <code>bool isFinish = 2;</code>
+     * <code>bool is_finish = 15;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -278,26 +144,26 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       return isFinish_;
     }
 
-    public static final int EXPLORETIME_FIELD_NUMBER = 3;
-    private int exploreTime_;
-    /**
-     * <code>uint32 exploreTime = 3;</code>
-     * @return The exploreTime.
-     */
-    @java.lang.Override
-    public int getExploreTime() {
-      return exploreTime_;
-    }
-
-    public static final int CURROUND_FIELD_NUMBER = 12;
+    public static final int CUR_ROUND_FIELD_NUMBER = 2;
     private int curRound_;
     /**
-     * <code>uint32 curRound = 12;</code>
+     * <code>uint32 cur_round = 2;</code>
      * @return The curRound.
      */
     @java.lang.Override
     public int getCurRound() {
       return curRound_;
+    }
+
+    public static final int EXPLORE_TIME_FIELD_NUMBER = 9;
+    private int exploreTime_;
+    /**
+     * <code>uint32 explore_time = 9;</code>
+     * @return The exploreTime.
+     */
+    @java.lang.Override
+    public int getExploreTime() {
+      return exploreTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -314,14 +180,14 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinish_ != false) {
-        output.writeBool(2, isFinish_);
+      if (curRound_ != 0) {
+        output.writeUInt32(2, curRound_);
       }
       if (exploreTime_ != 0) {
-        output.writeUInt32(3, exploreTime_);
+        output.writeUInt32(9, exploreTime_);
       }
-      if (curRound_ != 0) {
-        output.writeUInt32(12, curRound_);
+      if (isFinish_ != false) {
+        output.writeBool(15, isFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -332,17 +198,17 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinish_ != false) {
+      if (curRound_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFinish_);
+          .computeUInt32Size(2, curRound_);
       }
       if (exploreTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, exploreTime_);
+          .computeUInt32Size(9, exploreTime_);
       }
-      if (curRound_ != 0) {
+      if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, curRound_);
+          .computeBoolSize(15, isFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -361,10 +227,10 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
 
       if (getIsFinish()
           != other.getIsFinish()) return false;
-      if (getExploreTime()
-          != other.getExploreTime()) return false;
       if (getCurRound()
           != other.getCurRound()) return false;
+      if (getExploreTime()
+          != other.getExploreTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -376,13 +242,13 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISFINISH_FIELD_NUMBER;
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
-      hash = (37 * hash) + EXPLORETIME_FIELD_NUMBER;
-      hash = (53 * hash) + getExploreTime();
-      hash = (37 * hash) + CURROUND_FIELD_NUMBER;
+      hash = (37 * hash) + CUR_ROUND_FIELD_NUMBER;
       hash = (53 * hash) + getCurRound();
+      hash = (37 * hash) + EXPLORE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExploreTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -479,6 +345,11 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GHDOPNGBFKP
+     * CmdId: 8220
+     * </pre>
+     *
      * Protobuf type {@code RogueDiaryDungeonSettleNotify}
      */
     public static final class Builder extends
@@ -518,9 +389,9 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         super.clear();
         isFinish_ = false;
 
-        exploreTime_ = 0;
-
         curRound_ = 0;
+
+        exploreTime_ = 0;
 
         return this;
       }
@@ -549,8 +420,8 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       public emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify buildPartial() {
         emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify result = new emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify(this);
         result.isFinish_ = isFinish_;
-        result.exploreTime_ = exploreTime_;
         result.curRound_ = curRound_;
+        result.exploreTime_ = exploreTime_;
         onBuilt();
         return result;
       }
@@ -602,11 +473,11 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
-        if (other.getExploreTime() != 0) {
-          setExploreTime(other.getExploreTime());
-        }
         if (other.getCurRound() != 0) {
           setCurRound(other.getCurRound());
+        }
+        if (other.getExploreTime() != 0) {
+          setExploreTime(other.getExploreTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -639,7 +510,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
 
       private boolean isFinish_ ;
       /**
-       * <code>bool isFinish = 2;</code>
+       * <code>bool is_finish = 15;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -647,7 +518,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool isFinish = 2;</code>
+       * <code>bool is_finish = 15;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -658,7 +529,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool isFinish = 2;</code>
+       * <code>bool is_finish = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -668,40 +539,9 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         return this;
       }
 
-      private int exploreTime_ ;
-      /**
-       * <code>uint32 exploreTime = 3;</code>
-       * @return The exploreTime.
-       */
-      @java.lang.Override
-      public int getExploreTime() {
-        return exploreTime_;
-      }
-      /**
-       * <code>uint32 exploreTime = 3;</code>
-       * @param value The exploreTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExploreTime(int value) {
-        
-        exploreTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 exploreTime = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExploreTime() {
-        
-        exploreTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int curRound_ ;
       /**
-       * <code>uint32 curRound = 12;</code>
+       * <code>uint32 cur_round = 2;</code>
        * @return The curRound.
        */
       @java.lang.Override
@@ -709,7 +549,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         return curRound_;
       }
       /**
-       * <code>uint32 curRound = 12;</code>
+       * <code>uint32 cur_round = 2;</code>
        * @param value The curRound to set.
        * @return This builder for chaining.
        */
@@ -720,12 +560,43 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 curRound = 12;</code>
+       * <code>uint32 cur_round = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurRound() {
         
         curRound_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int exploreTime_ ;
+      /**
+       * <code>uint32 explore_time = 9;</code>
+       * @return The exploreTime.
+       */
+      @java.lang.Override
+      public int getExploreTime() {
+        return exploreTime_;
+      }
+      /**
+       * <code>uint32 explore_time = 9;</code>
+       * @param value The exploreTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExploreTime(int value) {
+        
+        exploreTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 explore_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExploreTime() {
+        
+        exploreTime_ = 0;
         onChanged();
         return this;
       }
@@ -796,13 +667,11 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n#RogueDiaryDungeonSettleNotify.proto\"\272\001" +
-      "\n\035RogueDiaryDungeonSettleNotify\022\020\n\010isFin" +
-      "ish\030\002 \001(\010\022\023\n\013exploreTime\030\003 \001(\r\022\020\n\010curRou" +
-      "nd\030\014 \001(\r\"`\n\013PBPFGDHOOMD\022\010\n\004NONE\020\000\022\020\n\013PEP" +
-      "POHPHJOJ\020\240@\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMP" +
-      "OEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n#RogueDiaryDungeonSettleNotify.proto\"[\n" +
+      "\035RogueDiaryDungeonSettleNotify\022\021\n\tis_fin" +
+      "ish\030\017 \001(\010\022\021\n\tcur_round\030\002 \001(\r\022\024\n\014explore_" +
+      "time\030\t \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -813,7 +682,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     internal_static_RogueDiaryDungeonSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueDiaryDungeonSettleNotify_descriptor,
-        new java.lang.String[] { "IsFinish", "ExploreTime", "CurRound", });
+        new java.lang.String[] { "IsFinish", "CurRound", "ExploreTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

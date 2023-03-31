@@ -19,168 +19,172 @@ public final class HomeSceneArrangementInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Vector djinnPos = 15;</code>
-     * @return Whether the djinnPos field is set.
-     */
-    boolean hasDjinnPos();
-    /**
-     * <code>.Vector djinnPos = 15;</code>
-     * @return The djinnPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos();
-    /**
-     * <code>.Vector djinnPos = 15;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder();
-
-    /**
-     * <code>uint32 sceneId = 1;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
-     * <code>bool isSetBornPos = 5;</code>
-     * @return The isSetBornPos.
-     */
-    boolean getIsSetBornPos();
-
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     * @return Whether the bornPos field is set.
-     */
-    boolean hasBornPos();
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     * @return The bornPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos();
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder();
-
-    /**
-     * <code>uint32 comfortValue = 9;</code>
+     * <code>uint32 comfort_value = 4;</code>
      * @return The comfortValue.
      */
     int getComfortValue();
 
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>.Vector djinn_pos = 12;</code>
+     * @return Whether the djinnPos field is set.
+     */
+    boolean hasDjinnPos();
+    /**
+     * <code>.Vector djinn_pos = 12;</code>
+     * @return The djinnPos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos();
+    /**
+     * <code>.Vector djinn_pos = 12;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder();
+
+    /**
+     * <code>bool is_set_born_pos = 10;</code>
+     * @return The isSetBornPos.
+     */
+    boolean getIsSetBornPos();
+
+    /**
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> 
-        getUnk3300GCHNAMHBPHGList();
+        getUnk3300CMBCIBBCMOKList();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300GCHNAMHBPHG(int index);
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300CMBCIBBCMOK(int index);
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
-    int getUnk3300GCHNAMHBPHGCount();
+    int getUnk3300CMBCIBBCMOKCount();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-        getUnk3300GCHNAMHBPHGOrBuilderList();
+        getUnk3300CMBCIBBCMOKOrBuilderList();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300GCHNAMHBPHGOrBuilder(
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300CMBCIBBCMOKOrBuilder(
         int index);
 
     /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     * @return Whether the mainHouse field is set.
-     */
-    boolean hasMainHouse();
-    /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     * @return The mainHouse.
-     */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse();
-    /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder();
-
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     * @return Whether the bornRot field is set.
-     */
-    boolean hasBornRot();
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     * @return The bornRot.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot();
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder();
-
-    /**
-     * <code>uint32 tmpVersion = 4;</code>
-     * @return The tmpVersion.
-     */
-    int getTmpVersion();
-
-    /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> 
-        getUnk3300HPCHPODNBPHList();
+        getUnk3300EOHAHHFDAPIList();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300HPCHPODNBPH(int index);
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300EOHAHHFDAPI(int index);
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
-    int getUnk3300HPCHPODNBPHCount();
+    int getUnk3300EOHAHHFDAPICount();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-        getUnk3300HPCHPODNBPHOrBuilderList();
+        getUnk3300EOHAHHFDAPIOrBuilderList();
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300HPCHPODNBPHOrBuilder(
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300EOHAHHFDAPIOrBuilder(
         int index);
 
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>uint32 bgm_id = 11;</code>
+     * @return The bgmId.
+     */
+    int getBgmId();
+
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     * @return Whether the bornPos field is set.
+     */
+    boolean hasBornPos();
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     * @return The bornPos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos();
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder();
+
+    /**
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> 
         getBlockArrangementInfoListList();
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo getBlockArrangementInfoList(int index);
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     int getBlockArrangementInfoListCount();
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder> 
         getBlockArrangementInfoListOrBuilderList();
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder getBlockArrangementInfoListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 bgmId = 12;</code>
-     * @return The bgmId.
+     * <code>uint32 tmp_version = 3;</code>
+     * @return The tmpVersion.
      */
-    int getBgmId();
+    int getTmpVersion();
+
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     * @return Whether the mainHouse field is set.
+     */
+    boolean hasMainHouse();
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     * @return The mainHouse.
+     */
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse();
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     */
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder();
+
+    /**
+     * <code>uint32 scene_id = 2;</code>
+     * @return The sceneId.
+     */
+    int getSceneId();
+
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     * @return Whether the bornRot field is set.
+     */
+    boolean hasBornRot();
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     * @return The bornRot.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot();
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder();
   }
   /**
+   * <pre>
+   * Name: FNABEPABCNG
+   * </pre>
+   *
    * Protobuf type {@code HomeSceneArrangementInfo}
    */
   public static final class HomeSceneArrangementInfo extends
@@ -193,8 +197,8 @@ public final class HomeSceneArrangementInfoOuterClass {
       super(builder);
     }
     private HomeSceneArrangementInfo() {
-      unk3300GCHNAMHBPHG_ = java.util.Collections.emptyList();
-      unk3300HPCHPODNBPH_ = java.util.Collections.emptyList();
+      unk3300CMBCIBBCMOK_ = java.util.Collections.emptyList();
+      unk3300EOHAHHFDAPI_ = java.util.Collections.emptyList();
       blockArrangementInfoList_ = java.util.Collections.emptyList();
     }
 
@@ -229,71 +233,7 @@ public final class HomeSceneArrangementInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                blockArrangementInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              blockArrangementInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-
-              tmpVersion_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              isSetBornPos_ = input.readBool();
-              break;
-            }
-            case 50: {
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder subBuilder = null;
-              if (mainHouse_ != null) {
-                subBuilder = mainHouse_.toBuilder();
-              }
-              mainHouse_ = input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mainHouse_);
-                mainHouse_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300HPCHPODNBPH_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300HPCHPODNBPH_.add(
-                  input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (bornRot_ != null) {
-                subBuilder = bornRot_.toBuilder();
-              }
-              bornRot_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bornRot_);
-                bornRot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              comfortValue_ = input.readUInt32();
-              break;
-            }
-            case 82: {
+            case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (bornPos_ != null) {
                 subBuilder = bornPos_.toBuilder();
@@ -306,21 +246,63 @@ public final class HomeSceneArrangementInfoOuterClass {
 
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300GCHNAMHBPHG_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
-                mutable_bitField0_ |= 0x00000001;
+            case 16: {
+
+              sceneId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              tmpVersion_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              comfortValue_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (bornRot_ != null) {
+                subBuilder = bornRot_.toBuilder();
               }
-              unk3300GCHNAMHBPHG_.add(
+              bornRot_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bornRot_);
+                bornRot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unk3300EOHAHHFDAPI_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unk3300EOHAHHFDAPI_.add(
                   input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
               break;
             }
-            case 96: {
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                blockArrangementInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              blockArrangementInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+
+              isSetBornPos_ = input.readBool();
+              break;
+            }
+            case 88: {
 
               bgmId_ = input.readUInt32();
               break;
             }
-            case 122: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (djinnPos_ != null) {
                 subBuilder = djinnPos_.toBuilder();
@@ -329,6 +311,28 @@ public final class HomeSceneArrangementInfoOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(djinnPos_);
                 djinnPos_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unk3300CMBCIBBCMOK_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unk3300CMBCIBBCMOK_.add(
+                  input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder subBuilder = null;
+              if (mainHouse_ != null) {
+                subBuilder = mainHouse_.toBuilder();
+              }
+              mainHouse_ = input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mainHouse_);
+                mainHouse_ = subBuilder.buildPartial();
               }
 
               break;
@@ -348,14 +352,14 @@ public final class HomeSceneArrangementInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          unk3300EOHAHHFDAPI_ = java.util.Collections.unmodifiableList(unk3300EOHAHHFDAPI_);
+        }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           blockArrangementInfoList_ = java.util.Collections.unmodifiableList(blockArrangementInfoList_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300HPCHPODNBPH_ = java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300GCHNAMHBPHG_ = java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
+          unk3300CMBCIBBCMOK_ = java.util.Collections.unmodifiableList(unk3300CMBCIBBCMOK_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -374,84 +378,10 @@ public final class HomeSceneArrangementInfoOuterClass {
               emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.class, emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder.class);
     }
 
-    public static final int DJINNPOS_FIELD_NUMBER = 15;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
-    /**
-     * <code>.Vector djinnPos = 15;</code>
-     * @return Whether the djinnPos field is set.
-     */
-    @java.lang.Override
-    public boolean hasDjinnPos() {
-      return djinnPos_ != null;
-    }
-    /**
-     * <code>.Vector djinnPos = 15;</code>
-     * @return The djinnPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
-      return djinnPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
-    }
-    /**
-     * <code>.Vector djinnPos = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
-      return getDjinnPos();
-    }
-
-    public static final int SCENEID_FIELD_NUMBER = 1;
-    private int sceneId_;
-    /**
-     * <code>uint32 sceneId = 1;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
-    public static final int ISSETBORNPOS_FIELD_NUMBER = 5;
-    private boolean isSetBornPos_;
-    /**
-     * <code>bool isSetBornPos = 5;</code>
-     * @return The isSetBornPos.
-     */
-    @java.lang.Override
-    public boolean getIsSetBornPos() {
-      return isSetBornPos_;
-    }
-
-    public static final int BORNPOS_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector bornPos_;
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     * @return Whether the bornPos field is set.
-     */
-    @java.lang.Override
-    public boolean hasBornPos() {
-      return bornPos_ != null;
-    }
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     * @return The bornPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos() {
-      return bornPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornPos_;
-    }
-    /**
-     * <code>.Vector bornPos = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
-      return getBornPos();
-    }
-
-    public static final int COMFORTVALUE_FIELD_NUMBER = 9;
+    public static final int COMFORT_VALUE_FIELD_NUMBER = 4;
     private int comfortValue_;
     /**
-     * <code>uint32 comfortValue = 9;</code>
+     * <code>uint32 comfort_value = 4;</code>
      * @return The comfortValue.
      */
     @java.lang.Override
@@ -459,160 +389,171 @@ public final class HomeSceneArrangementInfoOuterClass {
       return comfortValue_;
     }
 
-    public static final int UNK3300_GCHNAMHBPHG_FIELD_NUMBER = 11;
-    private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300GCHNAMHBPHG_;
+    public static final int DJINN_POS_FIELD_NUMBER = 12;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>.Vector djinn_pos = 12;</code>
+     * @return Whether the djinnPos field is set.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300GCHNAMHBPHGList() {
-      return unk3300GCHNAMHBPHG_;
+    public boolean hasDjinnPos() {
+      return djinnPos_ != null;
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>.Vector djinn_pos = 12;</code>
+     * @return The djinnPos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
+      return djinnPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
+    }
+    /**
+     * <code>.Vector djinn_pos = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
+      return getDjinnPos();
+    }
+
+    public static final int IS_SET_BORN_POS_FIELD_NUMBER = 10;
+    private boolean isSetBornPos_;
+    /**
+     * <code>bool is_set_born_pos = 10;</code>
+     * @return The isSetBornPos.
+     */
+    @java.lang.Override
+    public boolean getIsSetBornPos() {
+      return isSetBornPos_;
+    }
+
+    public static final int UNK3300_CMBCIBBCMOK_FIELD_NUMBER = 14;
+    private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300CMBCIBBCMOK_;
+    /**
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300CMBCIBBCMOKList() {
+      return unk3300CMBCIBBCMOK_;
+    }
+    /**
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-        getUnk3300GCHNAMHBPHGOrBuilderList() {
-      return unk3300GCHNAMHBPHG_;
+        getUnk3300CMBCIBBCMOKOrBuilderList() {
+      return unk3300CMBCIBBCMOK_;
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     @java.lang.Override
-    public int getUnk3300GCHNAMHBPHGCount() {
-      return unk3300GCHNAMHBPHG_.size();
+    public int getUnk3300CMBCIBBCMOKCount() {
+      return unk3300CMBCIBBCMOK_.size();
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300GCHNAMHBPHG(int index) {
-      return unk3300GCHNAMHBPHG_.get(index);
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300CMBCIBBCMOK(int index) {
+      return unk3300CMBCIBBCMOK_.get(index);
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300GCHNAMHBPHGOrBuilder(
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300CMBCIBBCMOKOrBuilder(
         int index) {
-      return unk3300GCHNAMHBPHG_.get(index);
+      return unk3300CMBCIBBCMOK_.get(index);
     }
 
-    public static final int MAINHOUSE_FIELD_NUMBER = 6;
-    private emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData mainHouse_;
+    public static final int UNK3300_EOHAHHFDAPI_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300EOHAHHFDAPI_;
     /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     * @return Whether the mainHouse field is set.
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     @java.lang.Override
-    public boolean hasMainHouse() {
-      return mainHouse_ != null;
+    public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300EOHAHHFDAPIList() {
+      return unk3300EOHAHHFDAPI_;
     }
     /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     * @return The mainHouse.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse() {
-      return mainHouse_ == null ? emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
-    }
-    /**
-     * <code>.HomeFurnitureData mainHouse = 6;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder() {
-      return getMainHouse();
-    }
-
-    public static final int BORNROT_FIELD_NUMBER = 8;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector bornRot_;
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     * @return Whether the bornRot field is set.
-     */
-    @java.lang.Override
-    public boolean hasBornRot() {
-      return bornRot_ != null;
-    }
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     * @return The bornRot.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot() {
-      return bornRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
-    }
-    /**
-     * <code>.Vector bornRot = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder() {
-      return getBornRot();
-    }
-
-    public static final int TMPVERSION_FIELD_NUMBER = 4;
-    private int tmpVersion_;
-    /**
-     * <code>uint32 tmpVersion = 4;</code>
-     * @return The tmpVersion.
-     */
-    @java.lang.Override
-    public int getTmpVersion() {
-      return tmpVersion_;
-    }
-
-    public static final int UNK3300_HPCHPODNBPH_FIELD_NUMBER = 7;
-    private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300HPCHPODNBPH_;
-    /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300HPCHPODNBPHList() {
-      return unk3300HPCHPODNBPH_;
-    }
-    /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-        getUnk3300HPCHPODNBPHOrBuilderList() {
-      return unk3300HPCHPODNBPH_;
+        getUnk3300EOHAHHFDAPIOrBuilderList() {
+      return unk3300EOHAHHFDAPI_;
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     @java.lang.Override
-    public int getUnk3300HPCHPODNBPHCount() {
-      return unk3300HPCHPODNBPH_.size();
+    public int getUnk3300EOHAHHFDAPICount() {
+      return unk3300EOHAHHFDAPI_.size();
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300HPCHPODNBPH(int index) {
-      return unk3300HPCHPODNBPH_.get(index);
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300EOHAHHFDAPI(int index) {
+      return unk3300EOHAHHFDAPI_.get(index);
     }
     /**
-     * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
+     * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300HPCHPODNBPHOrBuilder(
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300EOHAHHFDAPIOrBuilder(
         int index) {
-      return unk3300HPCHPODNBPH_.get(index);
+      return unk3300EOHAHHFDAPI_.get(index);
     }
 
-    public static final int BLOCKARRANGEMENTINFOLIST_FIELD_NUMBER = 3;
+    public static final int BGM_ID_FIELD_NUMBER = 11;
+    private int bgmId_;
+    /**
+     * <code>uint32 bgm_id = 11;</code>
+     * @return The bgmId.
+     */
+    @java.lang.Override
+    public int getBgmId() {
+      return bgmId_;
+    }
+
+    public static final int BORN_POS_FIELD_NUMBER = 1;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector bornPos_;
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     * @return Whether the bornPos field is set.
+     */
+    @java.lang.Override
+    public boolean hasBornPos() {
+      return bornPos_ != null;
+    }
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     * @return The bornPos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos() {
+      return bornPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornPos_;
+    }
+    /**
+     * <code>.Vector born_pos = 1;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
+      return getBornPos();
+    }
+
+    public static final int BLOCK_ARRANGEMENT_INFO_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> blockArrangementInfoList_;
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> getBlockArrangementInfoListList() {
       return blockArrangementInfoList_;
     }
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder> 
@@ -620,21 +561,21 @@ public final class HomeSceneArrangementInfoOuterClass {
       return blockArrangementInfoList_;
     }
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     @java.lang.Override
     public int getBlockArrangementInfoListCount() {
       return blockArrangementInfoList_.size();
     }
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo getBlockArrangementInfoList(int index) {
       return blockArrangementInfoList_.get(index);
     }
     /**
-     * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+     * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder getBlockArrangementInfoListOrBuilder(
@@ -642,15 +583,78 @@ public final class HomeSceneArrangementInfoOuterClass {
       return blockArrangementInfoList_.get(index);
     }
 
-    public static final int BGMID_FIELD_NUMBER = 12;
-    private int bgmId_;
+    public static final int TMP_VERSION_FIELD_NUMBER = 3;
+    private int tmpVersion_;
     /**
-     * <code>uint32 bgmId = 12;</code>
-     * @return The bgmId.
+     * <code>uint32 tmp_version = 3;</code>
+     * @return The tmpVersion.
      */
     @java.lang.Override
-    public int getBgmId() {
-      return bgmId_;
+    public int getTmpVersion() {
+      return tmpVersion_;
+    }
+
+    public static final int MAIN_HOUSE_FIELD_NUMBER = 15;
+    private emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData mainHouse_;
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     * @return Whether the mainHouse field is set.
+     */
+    @java.lang.Override
+    public boolean hasMainHouse() {
+      return mainHouse_ != null;
+    }
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     * @return The mainHouse.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse() {
+      return mainHouse_ == null ? emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
+    }
+    /**
+     * <code>.HomeFurnitureData main_house = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder() {
+      return getMainHouse();
+    }
+
+    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    private int sceneId_;
+    /**
+     * <code>uint32 scene_id = 2;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
+    }
+
+    public static final int BORN_ROT_FIELD_NUMBER = 7;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector bornRot_;
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     * @return Whether the bornRot field is set.
+     */
+    @java.lang.Override
+    public boolean hasBornRot() {
+      return bornRot_ != null;
+    }
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     * @return The bornRot.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot() {
+      return bornRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
+    }
+    /**
+     * <code>.Vector born_rot = 7;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder() {
+      return getBornRot();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -667,41 +671,41 @@ public final class HomeSceneArrangementInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(1, sceneId_);
+      if (bornPos_ != null) {
+        output.writeMessage(1, getBornPos());
       }
-      for (int i = 0; i < blockArrangementInfoList_.size(); i++) {
-        output.writeMessage(3, blockArrangementInfoList_.get(i));
+      if (sceneId_ != 0) {
+        output.writeUInt32(2, sceneId_);
       }
       if (tmpVersion_ != 0) {
-        output.writeUInt32(4, tmpVersion_);
-      }
-      if (isSetBornPos_ != false) {
-        output.writeBool(5, isSetBornPos_);
-      }
-      if (mainHouse_ != null) {
-        output.writeMessage(6, getMainHouse());
-      }
-      for (int i = 0; i < unk3300HPCHPODNBPH_.size(); i++) {
-        output.writeMessage(7, unk3300HPCHPODNBPH_.get(i));
-      }
-      if (bornRot_ != null) {
-        output.writeMessage(8, getBornRot());
+        output.writeUInt32(3, tmpVersion_);
       }
       if (comfortValue_ != 0) {
-        output.writeUInt32(9, comfortValue_);
+        output.writeUInt32(4, comfortValue_);
       }
-      if (bornPos_ != null) {
-        output.writeMessage(10, getBornPos());
+      if (bornRot_ != null) {
+        output.writeMessage(7, getBornRot());
       }
-      for (int i = 0; i < unk3300GCHNAMHBPHG_.size(); i++) {
-        output.writeMessage(11, unk3300GCHNAMHBPHG_.get(i));
+      for (int i = 0; i < unk3300EOHAHHFDAPI_.size(); i++) {
+        output.writeMessage(8, unk3300EOHAHHFDAPI_.get(i));
+      }
+      for (int i = 0; i < blockArrangementInfoList_.size(); i++) {
+        output.writeMessage(9, blockArrangementInfoList_.get(i));
+      }
+      if (isSetBornPos_ != false) {
+        output.writeBool(10, isSetBornPos_);
       }
       if (bgmId_ != 0) {
-        output.writeUInt32(12, bgmId_);
+        output.writeUInt32(11, bgmId_);
       }
       if (djinnPos_ != null) {
-        output.writeMessage(15, getDjinnPos());
+        output.writeMessage(12, getDjinnPos());
+      }
+      for (int i = 0; i < unk3300CMBCIBBCMOK_.size(); i++) {
+        output.writeMessage(14, unk3300CMBCIBBCMOK_.get(i));
+      }
+      if (mainHouse_ != null) {
+        output.writeMessage(15, getMainHouse());
       }
       unknownFields.writeTo(output);
     }
@@ -712,53 +716,53 @@ public final class HomeSceneArrangementInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (bornPos_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBornPos());
+      }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, sceneId_);
-      }
-      for (int i = 0; i < blockArrangementInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, blockArrangementInfoList_.get(i));
+          .computeUInt32Size(2, sceneId_);
       }
       if (tmpVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, tmpVersion_);
-      }
-      if (isSetBornPos_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isSetBornPos_);
-      }
-      if (mainHouse_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getMainHouse());
-      }
-      for (int i = 0; i < unk3300HPCHPODNBPH_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, unk3300HPCHPODNBPH_.get(i));
-      }
-      if (bornRot_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getBornRot());
+          .computeUInt32Size(3, tmpVersion_);
       }
       if (comfortValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, comfortValue_);
+          .computeUInt32Size(4, comfortValue_);
       }
-      if (bornPos_ != null) {
+      if (bornRot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getBornPos());
+          .computeMessageSize(7, getBornRot());
       }
-      for (int i = 0; i < unk3300GCHNAMHBPHG_.size(); i++) {
+      for (int i = 0; i < unk3300EOHAHHFDAPI_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, unk3300GCHNAMHBPHG_.get(i));
+          .computeMessageSize(8, unk3300EOHAHHFDAPI_.get(i));
+      }
+      for (int i = 0; i < blockArrangementInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, blockArrangementInfoList_.get(i));
+      }
+      if (isSetBornPos_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isSetBornPos_);
       }
       if (bgmId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, bgmId_);
+          .computeUInt32Size(11, bgmId_);
       }
       if (djinnPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getDjinnPos());
+          .computeMessageSize(12, getDjinnPos());
+      }
+      for (int i = 0; i < unk3300CMBCIBBCMOK_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, unk3300CMBCIBBCMOK_.get(i));
+      }
+      if (mainHouse_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getMainHouse());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -775,42 +779,42 @@ public final class HomeSceneArrangementInfoOuterClass {
       }
       emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo other = (emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo) obj;
 
+      if (getComfortValue()
+          != other.getComfortValue()) return false;
       if (hasDjinnPos() != other.hasDjinnPos()) return false;
       if (hasDjinnPos()) {
         if (!getDjinnPos()
             .equals(other.getDjinnPos())) return false;
       }
-      if (getSceneId()
-          != other.getSceneId()) return false;
       if (getIsSetBornPos()
           != other.getIsSetBornPos()) return false;
+      if (!getUnk3300CMBCIBBCMOKList()
+          .equals(other.getUnk3300CMBCIBBCMOKList())) return false;
+      if (!getUnk3300EOHAHHFDAPIList()
+          .equals(other.getUnk3300EOHAHHFDAPIList())) return false;
+      if (getBgmId()
+          != other.getBgmId()) return false;
       if (hasBornPos() != other.hasBornPos()) return false;
       if (hasBornPos()) {
         if (!getBornPos()
             .equals(other.getBornPos())) return false;
       }
-      if (getComfortValue()
-          != other.getComfortValue()) return false;
-      if (!getUnk3300GCHNAMHBPHGList()
-          .equals(other.getUnk3300GCHNAMHBPHGList())) return false;
+      if (!getBlockArrangementInfoListList()
+          .equals(other.getBlockArrangementInfoListList())) return false;
+      if (getTmpVersion()
+          != other.getTmpVersion()) return false;
       if (hasMainHouse() != other.hasMainHouse()) return false;
       if (hasMainHouse()) {
         if (!getMainHouse()
             .equals(other.getMainHouse())) return false;
       }
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (hasBornRot() != other.hasBornRot()) return false;
       if (hasBornRot()) {
         if (!getBornRot()
             .equals(other.getBornRot())) return false;
       }
-      if (getTmpVersion()
-          != other.getTmpVersion()) return false;
-      if (!getUnk3300HPCHPODNBPHList()
-          .equals(other.getUnk3300HPCHPODNBPHList())) return false;
-      if (!getBlockArrangementInfoListList()
-          .equals(other.getBlockArrangementInfoListList())) return false;
-      if (getBgmId()
-          != other.getBgmId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -822,45 +826,45 @@ public final class HomeSceneArrangementInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COMFORT_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getComfortValue();
       if (hasDjinnPos()) {
-        hash = (37 * hash) + DJINNPOS_FIELD_NUMBER;
+        hash = (37 * hash) + DJINN_POS_FIELD_NUMBER;
         hash = (53 * hash) + getDjinnPos().hashCode();
       }
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + ISSETBORNPOS_FIELD_NUMBER;
+      hash = (37 * hash) + IS_SET_BORN_POS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSetBornPos());
+      if (getUnk3300CMBCIBBCMOKCount() > 0) {
+        hash = (37 * hash) + UNK3300_CMBCIBBCMOK_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3300CMBCIBBCMOKList().hashCode();
+      }
+      if (getUnk3300EOHAHHFDAPICount() > 0) {
+        hash = (37 * hash) + UNK3300_EOHAHHFDAPI_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3300EOHAHHFDAPIList().hashCode();
+      }
+      hash = (37 * hash) + BGM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBgmId();
       if (hasBornPos()) {
-        hash = (37 * hash) + BORNPOS_FIELD_NUMBER;
+        hash = (37 * hash) + BORN_POS_FIELD_NUMBER;
         hash = (53 * hash) + getBornPos().hashCode();
       }
-      hash = (37 * hash) + COMFORTVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getComfortValue();
-      if (getUnk3300GCHNAMHBPHGCount() > 0) {
-        hash = (37 * hash) + UNK3300_GCHNAMHBPHG_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk3300GCHNAMHBPHGList().hashCode();
-      }
-      if (hasMainHouse()) {
-        hash = (37 * hash) + MAINHOUSE_FIELD_NUMBER;
-        hash = (53 * hash) + getMainHouse().hashCode();
-      }
-      if (hasBornRot()) {
-        hash = (37 * hash) + BORNROT_FIELD_NUMBER;
-        hash = (53 * hash) + getBornRot().hashCode();
-      }
-      hash = (37 * hash) + TMPVERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getTmpVersion();
-      if (getUnk3300HPCHPODNBPHCount() > 0) {
-        hash = (37 * hash) + UNK3300_HPCHPODNBPH_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk3300HPCHPODNBPHList().hashCode();
-      }
       if (getBlockArrangementInfoListCount() > 0) {
-        hash = (37 * hash) + BLOCKARRANGEMENTINFOLIST_FIELD_NUMBER;
+        hash = (37 * hash) + BLOCK_ARRANGEMENT_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBlockArrangementInfoListList().hashCode();
       }
-      hash = (37 * hash) + BGMID_FIELD_NUMBER;
-      hash = (53 * hash) + getBgmId();
+      hash = (37 * hash) + TMP_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getTmpVersion();
+      if (hasMainHouse()) {
+        hash = (37 * hash) + MAIN_HOUSE_FIELD_NUMBER;
+        hash = (53 * hash) + getMainHouse().hashCode();
+      }
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
+      if (hasBornRot()) {
+        hash = (37 * hash) + BORN_ROT_FIELD_NUMBER;
+        hash = (53 * hash) + getBornRot().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -957,6 +961,10 @@ public final class HomeSceneArrangementInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FNABEPABCNG
+     * </pre>
+     *
      * Protobuf type {@code HomeSceneArrangementInfo}
      */
     public static final class Builder extends
@@ -989,23 +997,37 @@ public final class HomeSceneArrangementInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getUnk3300GCHNAMHBPHGFieldBuilder();
-          getUnk3300HPCHPODNBPHFieldBuilder();
+          getUnk3300CMBCIBBCMOKFieldBuilder();
+          getUnk3300EOHAHHFDAPIFieldBuilder();
           getBlockArrangementInfoListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        comfortValue_ = 0;
+
         if (djinnPosBuilder_ == null) {
           djinnPos_ = null;
         } else {
           djinnPos_ = null;
           djinnPosBuilder_ = null;
         }
-        sceneId_ = 0;
-
         isSetBornPos_ = false;
+
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          unk3300CMBCIBBCMOK_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.clear();
+        }
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          unk3300EOHAHHFDAPI_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.clear();
+        }
+        bgmId_ = 0;
 
         if (bornPosBuilder_ == null) {
           bornPos_ = null;
@@ -1013,42 +1035,28 @@ public final class HomeSceneArrangementInfoOuterClass {
           bornPos_ = null;
           bornPosBuilder_ = null;
         }
-        comfortValue_ = 0;
-
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          unk3300GCHNAMHBPHG_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.clear();
-        }
-        if (mainHouseBuilder_ == null) {
-          mainHouse_ = null;
-        } else {
-          mainHouse_ = null;
-          mainHouseBuilder_ = null;
-        }
-        if (bornRotBuilder_ == null) {
-          bornRot_ = null;
-        } else {
-          bornRot_ = null;
-          bornRotBuilder_ = null;
-        }
-        tmpVersion_ = 0;
-
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          unk3300HPCHPODNBPH_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          unk3300HPCHPODNBPHBuilder_.clear();
-        }
         if (blockArrangementInfoListBuilder_ == null) {
           blockArrangementInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           blockArrangementInfoListBuilder_.clear();
         }
-        bgmId_ = 0;
+        tmpVersion_ = 0;
 
+        if (mainHouseBuilder_ == null) {
+          mainHouse_ = null;
+        } else {
+          mainHouse_ = null;
+          mainHouseBuilder_ = null;
+        }
+        sceneId_ = 0;
+
+        if (bornRotBuilder_ == null) {
+          bornRot_ = null;
+        } else {
+          bornRot_ = null;
+          bornRotBuilder_ = null;
+        }
         return this;
       }
 
@@ -1076,47 +1084,36 @@ public final class HomeSceneArrangementInfoOuterClass {
       public emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo buildPartial() {
         emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo result = new emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo(this);
         int from_bitField0_ = bitField0_;
+        result.comfortValue_ = comfortValue_;
         if (djinnPosBuilder_ == null) {
           result.djinnPos_ = djinnPos_;
         } else {
           result.djinnPos_ = djinnPosBuilder_.build();
         }
-        result.sceneId_ = sceneId_;
         result.isSetBornPos_ = isSetBornPos_;
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            unk3300CMBCIBBCMOK_ = java.util.Collections.unmodifiableList(unk3300CMBCIBBCMOK_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.unk3300CMBCIBBCMOK_ = unk3300CMBCIBBCMOK_;
+        } else {
+          result.unk3300CMBCIBBCMOK_ = unk3300CMBCIBBCMOKBuilder_.build();
+        }
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            unk3300EOHAHHFDAPI_ = java.util.Collections.unmodifiableList(unk3300EOHAHHFDAPI_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.unk3300EOHAHHFDAPI_ = unk3300EOHAHHFDAPI_;
+        } else {
+          result.unk3300EOHAHHFDAPI_ = unk3300EOHAHHFDAPIBuilder_.build();
+        }
+        result.bgmId_ = bgmId_;
         if (bornPosBuilder_ == null) {
           result.bornPos_ = bornPos_;
         } else {
           result.bornPos_ = bornPosBuilder_.build();
-        }
-        result.comfortValue_ = comfortValue_;
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            unk3300GCHNAMHBPHG_ = java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.unk3300GCHNAMHBPHG_ = unk3300GCHNAMHBPHG_;
-        } else {
-          result.unk3300GCHNAMHBPHG_ = unk3300GCHNAMHBPHGBuilder_.build();
-        }
-        if (mainHouseBuilder_ == null) {
-          result.mainHouse_ = mainHouse_;
-        } else {
-          result.mainHouse_ = mainHouseBuilder_.build();
-        }
-        if (bornRotBuilder_ == null) {
-          result.bornRot_ = bornRot_;
-        } else {
-          result.bornRot_ = bornRotBuilder_.build();
-        }
-        result.tmpVersion_ = tmpVersion_;
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            unk3300HPCHPODNBPH_ = java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.unk3300HPCHPODNBPH_ = unk3300HPCHPODNBPH_;
-        } else {
-          result.unk3300HPCHPODNBPH_ = unk3300HPCHPODNBPHBuilder_.build();
         }
         if (blockArrangementInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
@@ -1127,7 +1124,18 @@ public final class HomeSceneArrangementInfoOuterClass {
         } else {
           result.blockArrangementInfoList_ = blockArrangementInfoListBuilder_.build();
         }
-        result.bgmId_ = bgmId_;
+        result.tmpVersion_ = tmpVersion_;
+        if (mainHouseBuilder_ == null) {
+          result.mainHouse_ = mainHouse_;
+        } else {
+          result.mainHouse_ = mainHouseBuilder_.build();
+        }
+        result.sceneId_ = sceneId_;
+        if (bornRotBuilder_ == null) {
+          result.bornRot_ = bornRot_;
+        } else {
+          result.bornRot_ = bornRotBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1176,81 +1184,72 @@ public final class HomeSceneArrangementInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo other) {
         if (other == emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.getDefaultInstance()) return this;
+        if (other.getComfortValue() != 0) {
+          setComfortValue(other.getComfortValue());
+        }
         if (other.hasDjinnPos()) {
           mergeDjinnPos(other.getDjinnPos());
-        }
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
         }
         if (other.getIsSetBornPos() != false) {
           setIsSetBornPos(other.getIsSetBornPos());
         }
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          if (!other.unk3300CMBCIBBCMOK_.isEmpty()) {
+            if (unk3300CMBCIBBCMOK_.isEmpty()) {
+              unk3300CMBCIBBCMOK_ = other.unk3300CMBCIBBCMOK_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUnk3300CMBCIBBCMOKIsMutable();
+              unk3300CMBCIBBCMOK_.addAll(other.unk3300CMBCIBBCMOK_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.unk3300CMBCIBBCMOK_.isEmpty()) {
+            if (unk3300CMBCIBBCMOKBuilder_.isEmpty()) {
+              unk3300CMBCIBBCMOKBuilder_.dispose();
+              unk3300CMBCIBBCMOKBuilder_ = null;
+              unk3300CMBCIBBCMOK_ = other.unk3300CMBCIBBCMOK_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              unk3300CMBCIBBCMOKBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUnk3300CMBCIBBCMOKFieldBuilder() : null;
+            } else {
+              unk3300CMBCIBBCMOKBuilder_.addAllMessages(other.unk3300CMBCIBBCMOK_);
+            }
+          }
+        }
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          if (!other.unk3300EOHAHHFDAPI_.isEmpty()) {
+            if (unk3300EOHAHHFDAPI_.isEmpty()) {
+              unk3300EOHAHHFDAPI_ = other.unk3300EOHAHHFDAPI_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureUnk3300EOHAHHFDAPIIsMutable();
+              unk3300EOHAHHFDAPI_.addAll(other.unk3300EOHAHHFDAPI_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.unk3300EOHAHHFDAPI_.isEmpty()) {
+            if (unk3300EOHAHHFDAPIBuilder_.isEmpty()) {
+              unk3300EOHAHHFDAPIBuilder_.dispose();
+              unk3300EOHAHHFDAPIBuilder_ = null;
+              unk3300EOHAHHFDAPI_ = other.unk3300EOHAHHFDAPI_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              unk3300EOHAHHFDAPIBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUnk3300EOHAHHFDAPIFieldBuilder() : null;
+            } else {
+              unk3300EOHAHHFDAPIBuilder_.addAllMessages(other.unk3300EOHAHHFDAPI_);
+            }
+          }
+        }
+        if (other.getBgmId() != 0) {
+          setBgmId(other.getBgmId());
+        }
         if (other.hasBornPos()) {
           mergeBornPos(other.getBornPos());
-        }
-        if (other.getComfortValue() != 0) {
-          setComfortValue(other.getComfortValue());
-        }
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (!other.unk3300GCHNAMHBPHG_.isEmpty()) {
-            if (unk3300GCHNAMHBPHG_.isEmpty()) {
-              unk3300GCHNAMHBPHG_ = other.unk3300GCHNAMHBPHG_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureUnk3300GCHNAMHBPHGIsMutable();
-              unk3300GCHNAMHBPHG_.addAll(other.unk3300GCHNAMHBPHG_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.unk3300GCHNAMHBPHG_.isEmpty()) {
-            if (unk3300GCHNAMHBPHGBuilder_.isEmpty()) {
-              unk3300GCHNAMHBPHGBuilder_.dispose();
-              unk3300GCHNAMHBPHGBuilder_ = null;
-              unk3300GCHNAMHBPHG_ = other.unk3300GCHNAMHBPHG_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              unk3300GCHNAMHBPHGBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnk3300GCHNAMHBPHGFieldBuilder() : null;
-            } else {
-              unk3300GCHNAMHBPHGBuilder_.addAllMessages(other.unk3300GCHNAMHBPHG_);
-            }
-          }
-        }
-        if (other.hasMainHouse()) {
-          mergeMainHouse(other.getMainHouse());
-        }
-        if (other.hasBornRot()) {
-          mergeBornRot(other.getBornRot());
-        }
-        if (other.getTmpVersion() != 0) {
-          setTmpVersion(other.getTmpVersion());
-        }
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (!other.unk3300HPCHPODNBPH_.isEmpty()) {
-            if (unk3300HPCHPODNBPH_.isEmpty()) {
-              unk3300HPCHPODNBPH_ = other.unk3300HPCHPODNBPH_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureUnk3300HPCHPODNBPHIsMutable();
-              unk3300HPCHPODNBPH_.addAll(other.unk3300HPCHPODNBPH_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.unk3300HPCHPODNBPH_.isEmpty()) {
-            if (unk3300HPCHPODNBPHBuilder_.isEmpty()) {
-              unk3300HPCHPODNBPHBuilder_.dispose();
-              unk3300HPCHPODNBPHBuilder_ = null;
-              unk3300HPCHPODNBPH_ = other.unk3300HPCHPODNBPH_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              unk3300HPCHPODNBPHBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnk3300HPCHPODNBPHFieldBuilder() : null;
-            } else {
-              unk3300HPCHPODNBPHBuilder_.addAllMessages(other.unk3300HPCHPODNBPH_);
-            }
-          }
         }
         if (blockArrangementInfoListBuilder_ == null) {
           if (!other.blockArrangementInfoList_.isEmpty()) {
@@ -1278,8 +1277,17 @@ public final class HomeSceneArrangementInfoOuterClass {
             }
           }
         }
-        if (other.getBgmId() != 0) {
-          setBgmId(other.getBgmId());
+        if (other.getTmpVersion() != 0) {
+          setTmpVersion(other.getTmpVersion());
+        }
+        if (other.hasMainHouse()) {
+          mergeMainHouse(other.getMainHouse());
+        }
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
+        }
+        if (other.hasBornRot()) {
+          mergeBornRot(other.getBornRot());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1311,18 +1319,49 @@ public final class HomeSceneArrangementInfoOuterClass {
       }
       private int bitField0_;
 
+      private int comfortValue_ ;
+      /**
+       * <code>uint32 comfort_value = 4;</code>
+       * @return The comfortValue.
+       */
+      @java.lang.Override
+      public int getComfortValue() {
+        return comfortValue_;
+      }
+      /**
+       * <code>uint32 comfort_value = 4;</code>
+       * @param value The comfortValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComfortValue(int value) {
+        
+        comfortValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 comfort_value = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearComfortValue() {
+        
+        comfortValue_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> djinnPosBuilder_;
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        * @return Whether the djinnPos field is set.
        */
       public boolean hasDjinnPos() {
         return djinnPosBuilder_ != null || djinnPos_ != null;
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        * @return The djinnPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
@@ -1333,7 +1372,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public Builder setDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (djinnPosBuilder_ == null) {
@@ -1349,7 +1388,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public Builder setDjinnPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1363,7 +1402,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public Builder mergeDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (djinnPosBuilder_ == null) {
@@ -1381,7 +1420,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public Builder clearDjinnPos() {
         if (djinnPosBuilder_ == null) {
@@ -1395,7 +1434,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDjinnPosBuilder() {
         
@@ -1403,7 +1442,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return getDjinnPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
         if (djinnPosBuilder_ != null) {
@@ -1414,7 +1453,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector djinnPos = 15;</code>
+       * <code>.Vector djinn_pos = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1430,40 +1469,9 @@ public final class HomeSceneArrangementInfoOuterClass {
         return djinnPosBuilder_;
       }
 
-      private int sceneId_ ;
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 sceneId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isSetBornPos_ ;
       /**
-       * <code>bool isSetBornPos = 5;</code>
+       * <code>bool is_set_born_pos = 10;</code>
        * @return The isSetBornPos.
        */
       @java.lang.Override
@@ -1471,7 +1479,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return isSetBornPos_;
       }
       /**
-       * <code>bool isSetBornPos = 5;</code>
+       * <code>bool is_set_born_pos = 10;</code>
        * @param value The isSetBornPos to set.
        * @return This builder for chaining.
        */
@@ -1482,7 +1490,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isSetBornPos = 5;</code>
+       * <code>bool is_set_born_pos = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSetBornPos() {
@@ -1492,18 +1500,529 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
 
+      private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300CMBCIBBCMOK_ =
+        java.util.Collections.emptyList();
+      private void ensureUnk3300CMBCIBBCMOKIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          unk3300CMBCIBBCMOK_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300CMBCIBBCMOK_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> unk3300CMBCIBBCMOKBuilder_;
+
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300CMBCIBBCMOKList() {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unk3300CMBCIBBCMOK_);
+        } else {
+          return unk3300CMBCIBBCMOKBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public int getUnk3300CMBCIBBCMOKCount() {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          return unk3300CMBCIBBCMOK_.size();
+        } else {
+          return unk3300CMBCIBBCMOKBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300CMBCIBBCMOK(int index) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          return unk3300CMBCIBBCMOK_.get(index);
+        } else {
+          return unk3300CMBCIBBCMOKBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder setUnk3300CMBCIBBCMOK(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.set(index, value);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder setUnk3300CMBCIBBCMOK(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder addUnk3300CMBCIBBCMOK(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.add(value);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder addUnk3300CMBCIBBCMOK(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.add(index, value);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder addUnk3300CMBCIBBCMOK(
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder addUnk3300CMBCIBBCMOK(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder addAllUnk3300CMBCIBBCMOK(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> values) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unk3300CMBCIBBCMOK_);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder clearUnk3300CMBCIBBCMOK() {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          unk3300CMBCIBBCMOK_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public Builder removeUnk3300CMBCIBBCMOK(int index) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          ensureUnk3300CMBCIBBCMOKIsMutable();
+          unk3300CMBCIBBCMOK_.remove(index);
+          onChanged();
+        } else {
+          unk3300CMBCIBBCMOKBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getUnk3300CMBCIBBCMOKBuilder(
+          int index) {
+        return getUnk3300CMBCIBBCMOKFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300CMBCIBBCMOKOrBuilder(
+          int index) {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          return unk3300CMBCIBBCMOK_.get(index);  } else {
+          return unk3300CMBCIBBCMOKBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
+           getUnk3300CMBCIBBCMOKOrBuilderList() {
+        if (unk3300CMBCIBBCMOKBuilder_ != null) {
+          return unk3300CMBCIBBCMOKBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unk3300CMBCIBBCMOK_);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300CMBCIBBCMOKBuilder() {
+        return getUnk3300CMBCIBBCMOKFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300CMBCIBBCMOKBuilder(
+          int index) {
+        return getUnk3300CMBCIBBCMOKFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_CMBCIBBCMOK = 14;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder> 
+           getUnk3300CMBCIBBCMOKBuilderList() {
+        return getUnk3300CMBCIBBCMOKFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
+          getUnk3300CMBCIBBCMOKFieldBuilder() {
+        if (unk3300CMBCIBBCMOKBuilder_ == null) {
+          unk3300CMBCIBBCMOKBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
+                  unk3300CMBCIBBCMOK_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          unk3300CMBCIBBCMOK_ = null;
+        }
+        return unk3300CMBCIBBCMOKBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300EOHAHHFDAPI_ =
+        java.util.Collections.emptyList();
+      private void ensureUnk3300EOHAHHFDAPIIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          unk3300EOHAHHFDAPI_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300EOHAHHFDAPI_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> unk3300EOHAHHFDAPIBuilder_;
+
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300EOHAHHFDAPIList() {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unk3300EOHAHHFDAPI_);
+        } else {
+          return unk3300EOHAHHFDAPIBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public int getUnk3300EOHAHHFDAPICount() {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          return unk3300EOHAHHFDAPI_.size();
+        } else {
+          return unk3300EOHAHHFDAPIBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300EOHAHHFDAPI(int index) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          return unk3300EOHAHHFDAPI_.get(index);
+        } else {
+          return unk3300EOHAHHFDAPIBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder setUnk3300EOHAHHFDAPI(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.set(index, value);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder setUnk3300EOHAHHFDAPI(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder addUnk3300EOHAHHFDAPI(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.add(value);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder addUnk3300EOHAHHFDAPI(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.add(index, value);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder addUnk3300EOHAHHFDAPI(
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder addUnk3300EOHAHHFDAPI(
+          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder addAllUnk3300EOHAHHFDAPI(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> values) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unk3300EOHAHHFDAPI_);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder clearUnk3300EOHAHHFDAPI() {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          unk3300EOHAHHFDAPI_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public Builder removeUnk3300EOHAHHFDAPI(int index) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          ensureUnk3300EOHAHHFDAPIIsMutable();
+          unk3300EOHAHHFDAPI_.remove(index);
+          onChanged();
+        } else {
+          unk3300EOHAHHFDAPIBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getUnk3300EOHAHHFDAPIBuilder(
+          int index) {
+        return getUnk3300EOHAHHFDAPIFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300EOHAHHFDAPIOrBuilder(
+          int index) {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          return unk3300EOHAHHFDAPI_.get(index);  } else {
+          return unk3300EOHAHHFDAPIBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
+           getUnk3300EOHAHHFDAPIOrBuilderList() {
+        if (unk3300EOHAHHFDAPIBuilder_ != null) {
+          return unk3300EOHAHHFDAPIBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unk3300EOHAHHFDAPI_);
+        }
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300EOHAHHFDAPIBuilder() {
+        return getUnk3300EOHAHHFDAPIFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300EOHAHHFDAPIBuilder(
+          int index) {
+        return getUnk3300EOHAHHFDAPIFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HomeFurnitureData Unk3300_EOHAHHFDAPI = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder> 
+           getUnk3300EOHAHHFDAPIBuilderList() {
+        return getUnk3300EOHAHHFDAPIFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
+          getUnk3300EOHAHHFDAPIFieldBuilder() {
+        if (unk3300EOHAHHFDAPIBuilder_ == null) {
+          unk3300EOHAHHFDAPIBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
+                  unk3300EOHAHHFDAPI_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          unk3300EOHAHHFDAPI_ = null;
+        }
+        return unk3300EOHAHHFDAPIBuilder_;
+      }
+
+      private int bgmId_ ;
+      /**
+       * <code>uint32 bgm_id = 11;</code>
+       * @return The bgmId.
+       */
+      @java.lang.Override
+      public int getBgmId() {
+        return bgmId_;
+      }
+      /**
+       * <code>uint32 bgm_id = 11;</code>
+       * @param value The bgmId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBgmId(int value) {
+        
+        bgmId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 bgm_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBgmId() {
+        
+        bgmId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector bornPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> bornPosBuilder_;
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        * @return Whether the bornPos field is set.
        */
       public boolean hasBornPos() {
         return bornPosBuilder_ != null || bornPos_ != null;
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        * @return The bornPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornPos() {
@@ -1514,7 +2033,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public Builder setBornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
@@ -1530,7 +2049,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public Builder setBornPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1544,7 +2063,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public Builder mergeBornPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
@@ -1562,7 +2081,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public Builder clearBornPos() {
         if (bornPosBuilder_ == null) {
@@ -1576,7 +2095,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getBornPosBuilder() {
         
@@ -1584,7 +2103,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return getBornPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
         if (bornPosBuilder_ != null) {
@@ -1595,7 +2114,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector bornPos = 10;</code>
+       * <code>.Vector born_pos = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1611,786 +2130,6 @@ public final class HomeSceneArrangementInfoOuterClass {
         return bornPosBuilder_;
       }
 
-      private int comfortValue_ ;
-      /**
-       * <code>uint32 comfortValue = 9;</code>
-       * @return The comfortValue.
-       */
-      @java.lang.Override
-      public int getComfortValue() {
-        return comfortValue_;
-      }
-      /**
-       * <code>uint32 comfortValue = 9;</code>
-       * @param value The comfortValue to set.
-       * @return This builder for chaining.
-       */
-      public Builder setComfortValue(int value) {
-        
-        comfortValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 comfortValue = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearComfortValue() {
-        
-        comfortValue_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300GCHNAMHBPHG_ =
-        java.util.Collections.emptyList();
-      private void ensureUnk3300GCHNAMHBPHGIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          unk3300GCHNAMHBPHG_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300GCHNAMHBPHG_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> unk3300GCHNAMHBPHGBuilder_;
-
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300GCHNAMHBPHGList() {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
-        } else {
-          return unk3300GCHNAMHBPHGBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public int getUnk3300GCHNAMHBPHGCount() {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          return unk3300GCHNAMHBPHG_.size();
-        } else {
-          return unk3300GCHNAMHBPHGBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300GCHNAMHBPHG(int index) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          return unk3300GCHNAMHBPHG_.get(index);
-        } else {
-          return unk3300GCHNAMHBPHGBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder setUnk3300GCHNAMHBPHG(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.set(index, value);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder setUnk3300GCHNAMHBPHG(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder addUnk3300GCHNAMHBPHG(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.add(value);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder addUnk3300GCHNAMHBPHG(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.add(index, value);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder addUnk3300GCHNAMHBPHG(
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.add(builderForValue.build());
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder addUnk3300GCHNAMHBPHG(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder addAllUnk3300GCHNAMHBPHG(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> values) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unk3300GCHNAMHBPHG_);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder clearUnk3300GCHNAMHBPHG() {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          unk3300GCHNAMHBPHG_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public Builder removeUnk3300GCHNAMHBPHG(int index) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          ensureUnk3300GCHNAMHBPHGIsMutable();
-          unk3300GCHNAMHBPHG_.remove(index);
-          onChanged();
-        } else {
-          unk3300GCHNAMHBPHGBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getUnk3300GCHNAMHBPHGBuilder(
-          int index) {
-        return getUnk3300GCHNAMHBPHGFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300GCHNAMHBPHGOrBuilder(
-          int index) {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          return unk3300GCHNAMHBPHG_.get(index);  } else {
-          return unk3300GCHNAMHBPHGBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-           getUnk3300GCHNAMHBPHGOrBuilderList() {
-        if (unk3300GCHNAMHBPHGBuilder_ != null) {
-          return unk3300GCHNAMHBPHGBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300GCHNAMHBPHGBuilder() {
-        return getUnk3300GCHNAMHBPHGFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300GCHNAMHBPHGBuilder(
-          int index) {
-        return getUnk3300GCHNAMHBPHGFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 11;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder> 
-           getUnk3300GCHNAMHBPHGBuilderList() {
-        return getUnk3300GCHNAMHBPHGFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-          getUnk3300GCHNAMHBPHGFieldBuilder() {
-        if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          unk3300GCHNAMHBPHGBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
-                  unk3300GCHNAMHBPHG_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          unk3300GCHNAMHBPHG_ = null;
-        }
-        return unk3300GCHNAMHBPHGBuilder_;
-      }
-
-      private emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData mainHouse_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> mainHouseBuilder_;
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       * @return Whether the mainHouse field is set.
-       */
-      public boolean hasMainHouse() {
-        return mainHouseBuilder_ != null || mainHouse_ != null;
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       * @return The mainHouse.
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse() {
-        if (mainHouseBuilder_ == null) {
-          return mainHouse_ == null ? emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
-        } else {
-          return mainHouseBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public Builder setMainHouse(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (mainHouseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mainHouse_ = value;
-          onChanged();
-        } else {
-          mainHouseBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public Builder setMainHouse(
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (mainHouseBuilder_ == null) {
-          mainHouse_ = builderForValue.build();
-          onChanged();
-        } else {
-          mainHouseBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public Builder mergeMainHouse(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (mainHouseBuilder_ == null) {
-          if (mainHouse_ != null) {
-            mainHouse_ =
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.newBuilder(mainHouse_).mergeFrom(value).buildPartial();
-          } else {
-            mainHouse_ = value;
-          }
-          onChanged();
-        } else {
-          mainHouseBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public Builder clearMainHouse() {
-        if (mainHouseBuilder_ == null) {
-          mainHouse_ = null;
-          onChanged();
-        } else {
-          mainHouse_ = null;
-          mainHouseBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getMainHouseBuilder() {
-        
-        onChanged();
-        return getMainHouseFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder() {
-        if (mainHouseBuilder_ != null) {
-          return mainHouseBuilder_.getMessageOrBuilder();
-        } else {
-          return mainHouse_ == null ?
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
-        }
-      }
-      /**
-       * <code>.HomeFurnitureData mainHouse = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-          getMainHouseFieldBuilder() {
-        if (mainHouseBuilder_ == null) {
-          mainHouseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
-                  getMainHouse(),
-                  getParentForChildren(),
-                  isClean());
-          mainHouse_ = null;
-        }
-        return mainHouseBuilder_;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector bornRot_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> bornRotBuilder_;
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       * @return Whether the bornRot field is set.
-       */
-      public boolean hasBornRot() {
-        return bornRotBuilder_ != null || bornRot_ != null;
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       * @return The bornRot.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot() {
-        if (bornRotBuilder_ == null) {
-          return bornRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
-        } else {
-          return bornRotBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public Builder setBornRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (bornRotBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bornRot_ = value;
-          onChanged();
-        } else {
-          bornRotBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public Builder setBornRot(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (bornRotBuilder_ == null) {
-          bornRot_ = builderForValue.build();
-          onChanged();
-        } else {
-          bornRotBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public Builder mergeBornRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (bornRotBuilder_ == null) {
-          if (bornRot_ != null) {
-            bornRot_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(bornRot_).mergeFrom(value).buildPartial();
-          } else {
-            bornRot_ = value;
-          }
-          onChanged();
-        } else {
-          bornRotBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public Builder clearBornRot() {
-        if (bornRotBuilder_ == null) {
-          bornRot_ = null;
-          onChanged();
-        } else {
-          bornRot_ = null;
-          bornRotBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getBornRotBuilder() {
-        
-        onChanged();
-        return getBornRotFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder() {
-        if (bornRotBuilder_ != null) {
-          return bornRotBuilder_.getMessageOrBuilder();
-        } else {
-          return bornRot_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
-        }
-      }
-      /**
-       * <code>.Vector bornRot = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getBornRotFieldBuilder() {
-        if (bornRotBuilder_ == null) {
-          bornRotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getBornRot(),
-                  getParentForChildren(),
-                  isClean());
-          bornRot_ = null;
-        }
-        return bornRotBuilder_;
-      }
-
-      private int tmpVersion_ ;
-      /**
-       * <code>uint32 tmpVersion = 4;</code>
-       * @return The tmpVersion.
-       */
-      @java.lang.Override
-      public int getTmpVersion() {
-        return tmpVersion_;
-      }
-      /**
-       * <code>uint32 tmpVersion = 4;</code>
-       * @param value The tmpVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTmpVersion(int value) {
-        
-        tmpVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 tmpVersion = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTmpVersion() {
-        
-        tmpVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300HPCHPODNBPH_ =
-        java.util.Collections.emptyList();
-      private void ensureUnk3300HPCHPODNBPHIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          unk3300HPCHPODNBPH_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300HPCHPODNBPH_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> unk3300HPCHPODNBPHBuilder_;
-
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> getUnk3300HPCHPODNBPHList() {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-        } else {
-          return unk3300HPCHPODNBPHBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public int getUnk3300HPCHPODNBPHCount() {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          return unk3300HPCHPODNBPH_.size();
-        } else {
-          return unk3300HPCHPODNBPHBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getUnk3300HPCHPODNBPH(int index) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          return unk3300HPCHPODNBPH_.get(index);
-        } else {
-          return unk3300HPCHPODNBPHBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder setUnk3300HPCHPODNBPH(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.set(index, value);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder setUnk3300HPCHPODNBPH(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder addUnk3300HPCHPODNBPH(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.add(value);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder addUnk3300HPCHPODNBPH(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.add(index, value);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder addUnk3300HPCHPODNBPH(
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.add(builderForValue.build());
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder addUnk3300HPCHPODNBPH(
-          int index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder addAllUnk3300HPCHPODNBPH(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> values) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unk3300HPCHPODNBPH_);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder clearUnk3300HPCHPODNBPH() {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          unk3300HPCHPODNBPH_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public Builder removeUnk3300HPCHPODNBPH(int index) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          ensureUnk3300HPCHPODNBPHIsMutable();
-          unk3300HPCHPODNBPH_.remove(index);
-          onChanged();
-        } else {
-          unk3300HPCHPODNBPHBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getUnk3300HPCHPODNBPHBuilder(
-          int index) {
-        return getUnk3300HPCHPODNBPHFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getUnk3300HPCHPODNBPHOrBuilder(
-          int index) {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          return unk3300HPCHPODNBPH_.get(index);  } else {
-          return unk3300HPCHPODNBPHBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-           getUnk3300HPCHPODNBPHOrBuilderList() {
-        if (unk3300HPCHPODNBPHBuilder_ != null) {
-          return unk3300HPCHPODNBPHBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-        }
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300HPCHPODNBPHBuilder() {
-        return getUnk3300HPCHPODNBPHFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder addUnk3300HPCHPODNBPHBuilder(
-          int index) {
-        return getUnk3300HPCHPODNBPHFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 7;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder> 
-           getUnk3300HPCHPODNBPHBuilderList() {
-        return getUnk3300HPCHPODNBPHFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
-          getUnk3300HPCHPODNBPHFieldBuilder() {
-        if (unk3300HPCHPODNBPHBuilder_ == null) {
-          unk3300HPCHPODNBPHBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
-                  unk3300HPCHPODNBPH_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          unk3300HPCHPODNBPH_ = null;
-        }
-        return unk3300HPCHPODNBPHBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> blockArrangementInfoList_ =
         java.util.Collections.emptyList();
       private void ensureBlockArrangementInfoListIsMutable() {
@@ -2404,7 +2143,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder> blockArrangementInfoListBuilder_;
 
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> getBlockArrangementInfoListList() {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2414,7 +2153,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public int getBlockArrangementInfoListCount() {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2424,7 +2163,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo getBlockArrangementInfoList(int index) {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2434,7 +2173,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder setBlockArrangementInfoList(
           int index, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo value) {
@@ -2451,7 +2190,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder setBlockArrangementInfoList(
           int index, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder builderForValue) {
@@ -2465,7 +2204,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder addBlockArrangementInfoList(emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo value) {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2481,7 +2220,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder addBlockArrangementInfoList(
           int index, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo value) {
@@ -2498,7 +2237,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder addBlockArrangementInfoList(
           emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder builderForValue) {
@@ -2512,7 +2251,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder addBlockArrangementInfoList(
           int index, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder builderForValue) {
@@ -2526,7 +2265,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder addAllBlockArrangementInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> values) {
@@ -2541,7 +2280,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder clearBlockArrangementInfoList() {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2554,7 +2293,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public Builder removeBlockArrangementInfoList(int index) {
         if (blockArrangementInfoListBuilder_ == null) {
@@ -2567,14 +2306,14 @@ public final class HomeSceneArrangementInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder getBlockArrangementInfoListBuilder(
           int index) {
         return getBlockArrangementInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder getBlockArrangementInfoListOrBuilder(
           int index) {
@@ -2584,7 +2323,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder> 
            getBlockArrangementInfoListOrBuilderList() {
@@ -2595,14 +2334,14 @@ public final class HomeSceneArrangementInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder addBlockArrangementInfoListBuilder() {
         return getBlockArrangementInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder addBlockArrangementInfoListBuilder(
           int index) {
@@ -2610,7 +2349,7 @@ public final class HomeSceneArrangementInfoOuterClass {
             index, emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeBlockArrangementInfo blockArrangementInfoList = 3;</code>
+       * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder> 
            getBlockArrangementInfoListBuilderList() {
@@ -2631,35 +2370,304 @@ public final class HomeSceneArrangementInfoOuterClass {
         return blockArrangementInfoListBuilder_;
       }
 
-      private int bgmId_ ;
+      private int tmpVersion_ ;
       /**
-       * <code>uint32 bgmId = 12;</code>
-       * @return The bgmId.
+       * <code>uint32 tmp_version = 3;</code>
+       * @return The tmpVersion.
        */
       @java.lang.Override
-      public int getBgmId() {
-        return bgmId_;
+      public int getTmpVersion() {
+        return tmpVersion_;
       }
       /**
-       * <code>uint32 bgmId = 12;</code>
-       * @param value The bgmId to set.
+       * <code>uint32 tmp_version = 3;</code>
+       * @param value The tmpVersion to set.
        * @return This builder for chaining.
        */
-      public Builder setBgmId(int value) {
+      public Builder setTmpVersion(int value) {
         
-        bgmId_ = value;
+        tmpVersion_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 bgmId = 12;</code>
+       * <code>uint32 tmp_version = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBgmId() {
+      public Builder clearTmpVersion() {
         
-        bgmId_ = 0;
+        tmpVersion_ = 0;
         onChanged();
         return this;
+      }
+
+      private emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData mainHouse_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> mainHouseBuilder_;
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       * @return Whether the mainHouse field is set.
+       */
+      public boolean hasMainHouse() {
+        return mainHouseBuilder_ != null || mainHouse_ != null;
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       * @return The mainHouse.
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData getMainHouse() {
+        if (mainHouseBuilder_ == null) {
+          return mainHouse_ == null ? emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
+        } else {
+          return mainHouseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public Builder setMainHouse(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (mainHouseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mainHouse_ = value;
+          onChanged();
+        } else {
+          mainHouseBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public Builder setMainHouse(
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
+        if (mainHouseBuilder_ == null) {
+          mainHouse_ = builderForValue.build();
+          onChanged();
+        } else {
+          mainHouseBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public Builder mergeMainHouse(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
+        if (mainHouseBuilder_ == null) {
+          if (mainHouse_ != null) {
+            mainHouse_ =
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.newBuilder(mainHouse_).mergeFrom(value).buildPartial();
+          } else {
+            mainHouse_ = value;
+          }
+          onChanged();
+        } else {
+          mainHouseBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public Builder clearMainHouse() {
+        if (mainHouseBuilder_ == null) {
+          mainHouse_ = null;
+          onChanged();
+        } else {
+          mainHouse_ = null;
+          mainHouseBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getMainHouseBuilder() {
+        
+        onChanged();
+        return getMainHouseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      public emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder() {
+        if (mainHouseBuilder_ != null) {
+          return mainHouseBuilder_.getMessageOrBuilder();
+        } else {
+          return mainHouse_ == null ?
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
+        }
+      }
+      /**
+       * <code>.HomeFurnitureData main_house = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder> 
+          getMainHouseFieldBuilder() {
+        if (mainHouseBuilder_ == null) {
+          mainHouseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
+                  getMainHouse(),
+                  getParentForChildren(),
+                  isClean());
+          mainHouse_ = null;
+        }
+        return mainHouseBuilder_;
+      }
+
+      private int sceneId_ ;
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector bornRot_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> bornRotBuilder_;
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       * @return Whether the bornRot field is set.
+       */
+      public boolean hasBornRot() {
+        return bornRotBuilder_ != null || bornRot_ != null;
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       * @return The bornRot.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getBornRot() {
+        if (bornRotBuilder_ == null) {
+          return bornRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
+        } else {
+          return bornRotBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public Builder setBornRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (bornRotBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bornRot_ = value;
+          onChanged();
+        } else {
+          bornRotBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public Builder setBornRot(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (bornRotBuilder_ == null) {
+          bornRot_ = builderForValue.build();
+          onChanged();
+        } else {
+          bornRotBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public Builder mergeBornRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (bornRotBuilder_ == null) {
+          if (bornRot_ != null) {
+            bornRot_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(bornRot_).mergeFrom(value).buildPartial();
+          } else {
+            bornRot_ = value;
+          }
+          onChanged();
+        } else {
+          bornRotBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public Builder clearBornRot() {
+        if (bornRotBuilder_ == null) {
+          bornRot_ = null;
+          onChanged();
+        } else {
+          bornRot_ = null;
+          bornRotBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getBornRotBuilder() {
+        
+        onChanged();
+        return getBornRotFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder() {
+        if (bornRotBuilder_ != null) {
+          return bornRotBuilder_.getMessageOrBuilder();
+        } else {
+          return bornRot_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
+        }
+      }
+      /**
+       * <code>.Vector born_rot = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getBornRotFieldBuilder() {
+        if (bornRotBuilder_ == null) {
+          bornRotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getBornRot(),
+                  getParentForChildren(),
+                  isClean());
+          bornRot_ = null;
+        }
+        return bornRotBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2728,37 +2736,37 @@ public final class HomeSceneArrangementInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036HomeSceneArrangementInfo.proto\032\014Vector" +
-      ".proto\032\027HomeFurnitureData.proto\032\036HomeBlo" +
-      "ckArrangementInfo.proto\"\217\003\n\030HomeSceneArr" +
-      "angementInfo\022\031\n\010djinnPos\030\017 \001(\0132\007.Vector\022" +
-      "\017\n\007sceneId\030\001 \001(\r\022\024\n\014isSetBornPos\030\005 \001(\010\022\030" +
-      "\n\007bornPos\030\n \001(\0132\007.Vector\022\024\n\014comfortValue" +
-      "\030\t \001(\r\022/\n\023Unk3300_GCHNAMHBPHG\030\013 \003(\0132\022.Ho" +
-      "meFurnitureData\022%\n\tmainHouse\030\006 \001(\0132\022.Hom" +
-      "eFurnitureData\022\030\n\007bornRot\030\010 \001(\0132\007.Vector" +
-      "\022\022\n\ntmpVersion\030\004 \001(\r\022/\n\023Unk3300_HPCHPODN" +
-      "BPH\030\007 \003(\0132\022.HomeFurnitureData\022;\n\030blockAr" +
-      "rangementInfoList\030\003 \003(\0132\031.HomeBlockArran" +
-      "gementInfo\022\r\n\005bgmId\030\014 \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\n\036HomeSceneArrangementInfo.proto\032\036HomeBl" +
+      "ockArrangementInfo.proto\032\027HomeFurnitureD" +
+      "ata.proto\032\014Vector.proto\"\235\003\n\030HomeSceneArr" +
+      "angementInfo\022\025\n\rcomfort_value\030\004 \001(\r\022\032\n\td" +
+      "jinn_pos\030\014 \001(\0132\007.Vector\022\027\n\017is_set_born_p" +
+      "os\030\n \001(\010\022/\n\023Unk3300_CMBCIBBCMOK\030\016 \003(\0132\022." +
+      "HomeFurnitureData\022/\n\023Unk3300_EOHAHHFDAPI" +
+      "\030\010 \003(\0132\022.HomeFurnitureData\022\016\n\006bgm_id\030\013 \001" +
+      "(\r\022\031\n\010born_pos\030\001 \001(\0132\007.Vector\022>\n\033block_a" +
+      "rrangement_info_list\030\t \003(\0132\031.HomeBlockAr" +
+      "rangementInfo\022\023\n\013tmp_version\030\003 \001(\r\022&\n\nma" +
+      "in_house\030\017 \001(\0132\022.HomeFurnitureData\022\020\n\010sc" +
+      "ene_id\030\002 \001(\r\022\031\n\010born_rot\030\007 \001(\0132\007.VectorB" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_HomeSceneArrangementInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_HomeSceneArrangementInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeSceneArrangementInfo_descriptor,
-        new java.lang.String[] { "DjinnPos", "SceneId", "IsSetBornPos", "BornPos", "ComfortValue", "Unk3300GCHNAMHBPHG", "MainHouse", "BornRot", "TmpVersion", "Unk3300HPCHPODNBPH", "BlockArrangementInfoList", "BgmId", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.getDescriptor();
+        new java.lang.String[] { "ComfortValue", "DjinnPos", "IsSetBornPos", "Unk3300CMBCIBBCMOK", "Unk3300EOHAHHFDAPI", "BgmId", "BornPos", "BlockArrangementInfoList", "TmpVersion", "MainHouse", "SceneId", "BornRot", });
     emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

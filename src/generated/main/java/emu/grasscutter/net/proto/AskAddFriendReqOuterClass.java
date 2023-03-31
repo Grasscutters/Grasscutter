@@ -19,12 +19,17 @@ public final class AskAddFriendReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 targetUid = 10;</code>
+     * <code>uint32 target_uid = 12;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
+   * <pre>
+   * Name: GENFFKJKIDB
+   * CmdId: 4014
+   * </pre>
+   *
    * Protobuf type {@code AskAddFriendReq}
    */
   public static final class AskAddFriendReq extends
@@ -69,7 +74,7 @@ public final class AskAddFriendReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 96: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class AskAddFriendReqOuterClass {
               emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.class, emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AskAddFriendReq.CCLLNOCJFNI}
-     */
-    public enum CCLLNOCJFNI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4020;</code>
-       */
-      PEPPOHPHJOJ(1, 4020),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final CCLLNOCJFNI DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final CCLLNOCJFNI EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4020;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4020;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static CCLLNOCJFNI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static CCLLNOCJFNI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4020: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<CCLLNOCJFNI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          CCLLNOCJFNI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<CCLLNOCJFNI>() {
-              public CCLLNOCJFNI findValueByNumber(int number) {
-                return CCLLNOCJFNI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final CCLLNOCJFNI[] VALUES = getStaticValuesArray();
-      private static CCLLNOCJFNI[] getStaticValuesArray() {
-        return new CCLLNOCJFNI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static CCLLNOCJFNI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private CCLLNOCJFNI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AskAddFriendReq.CCLLNOCJFNI)
-    }
-
-    public static final int TARGETUID_FIELD_NUMBER = 10;
+    public static final int TARGET_UID_FIELD_NUMBER = 12;
     private int targetUid_;
     /**
-     * <code>uint32 targetUid = 10;</code>
+     * <code>uint32 target_uid = 12;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class AskAddFriendReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(10, targetUid_);
+        output.writeUInt32(12, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class AskAddFriendReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, targetUid_);
+          .computeUInt32Size(12, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class AskAddFriendReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGETUID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class AskAddFriendReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: GENFFKJKIDB
+     * CmdId: 4014
+     * </pre>
+     *
      * Protobuf type {@code AskAddFriendReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class AskAddFriendReqOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 targetUid = 10;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class AskAddFriendReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 targetUid = 10;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class AskAddFriendReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 targetUid = 10;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -655,11 +526,9 @@ public final class AskAddFriendReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025AskAddFriendReq.proto\"\206\001\n\017AskAddFriend" +
-      "Req\022\021\n\ttargetUid\030\n \001(\r\"`\n\013CCLLNOCJFNI\022\010\n" +
-      "\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\264\037\022\017\n\013DCDNILFDFLB" +
-      "\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\025AskAddFriendReq.proto\"%\n\017AskAddFriendR" +
+      "eq\022\022\n\ntarget_uid\030\014 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

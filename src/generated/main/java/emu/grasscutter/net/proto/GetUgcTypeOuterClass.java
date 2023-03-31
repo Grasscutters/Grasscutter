@@ -15,14 +15,18 @@ public final class GetUgcTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: BAOPAIMJBJG
+   * </pre>
+   *
    * Protobuf enum {@code GetUgcType}
    */
   public enum GetUgcType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>GET_UGC_TYPE_NONE = 0;</code>
+     * <code>GET_UGC_NONE = 0;</code>
      */
-    GET_UGC_TYPE_NONE(0),
+    GET_UGC_NONE(0),
     /**
      * <code>GET_UGC_TYPE_MINE = 1;</code>
      */
@@ -35,9 +39,9 @@ public final class GetUgcTypeOuterClass {
     ;
 
     /**
-     * <code>GET_UGC_TYPE_NONE = 0;</code>
+     * <code>GET_UGC_NONE = 0;</code>
      */
-    public static final int GET_UGC_TYPE_NONE_VALUE = 0;
+    public static final int GET_UGC_NONE_VALUE = 0;
     /**
      * <code>GET_UGC_TYPE_MINE = 1;</code>
      */
@@ -72,7 +76,7 @@ public final class GetUgcTypeOuterClass {
      */
     public static GetUgcType forNumber(int value) {
       switch (value) {
-        case 0: return GET_UGC_TYPE_NONE;
+        case 0: return GET_UGC_NONE;
         case 1: return GET_UGC_TYPE_MINE;
         case 2: return GET_UGC_TYPE_PUBLISH;
         default: return null;
@@ -140,10 +144,10 @@ public final class GetUgcTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020GetUgcType.proto*T\n\nGetUgcType\022\025\n\021GET_" +
-      "UGC_TYPE_NONE\020\000\022\025\n\021GET_UGC_TYPE_MINE\020\001\022\030" +
-      "\n\024GET_UGC_TYPE_PUBLISH\020\002B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\020GetUgcType.proto*O\n\nGetUgcType\022\020\n\014GET_" +
+      "UGC_NONE\020\000\022\025\n\021GET_UGC_TYPE_MINE\020\001\022\030\n\024GET" +
+      "_UGC_TYPE_PUBLISH\020\002B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

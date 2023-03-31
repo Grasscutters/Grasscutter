@@ -19,18 +19,22 @@ public final class FightPropPairOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 propType = 1;</code>
+     * <code>uint32 prop_type = 1;</code>
      * @return The propType.
      */
     int getPropType();
 
     /**
-     * <code>float propValue = 2;</code>
+     * <code>float prop_value = 2;</code>
      * @return The propValue.
      */
     float getPropValue();
   }
   /**
+   * <pre>
+   * Name: KOMONGMKKND
+   * </pre>
+   *
    * Protobuf type {@code FightPropPair}
    */
   public static final class FightPropPair extends
@@ -117,10 +121,10 @@ public final class FightPropPairOuterClass {
               emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair.class, emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair.Builder.class);
     }
 
-    public static final int PROPTYPE_FIELD_NUMBER = 1;
+    public static final int PROP_TYPE_FIELD_NUMBER = 1;
     private int propType_;
     /**
-     * <code>uint32 propType = 1;</code>
+     * <code>uint32 prop_type = 1;</code>
      * @return The propType.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class FightPropPairOuterClass {
       return propType_;
     }
 
-    public static final int PROPVALUE_FIELD_NUMBER = 2;
+    public static final int PROP_VALUE_FIELD_NUMBER = 2;
     private float propValue_;
     /**
-     * <code>float propValue = 2;</code>
+     * <code>float prop_value = 2;</code>
      * @return The propValue.
      */
     @java.lang.Override
@@ -207,9 +211,9 @@ public final class FightPropPairOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PROPTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + PROP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPropType();
-      hash = (37 * hash) + PROPVALUE_FIELD_NUMBER;
+      hash = (37 * hash) + PROP_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPropValue());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -308,6 +312,10 @@ public final class FightPropPairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KOMONGMKKND
+     * </pre>
+     *
      * Protobuf type {@code FightPropPair}
      */
     public static final class Builder extends
@@ -462,7 +470,7 @@ public final class FightPropPairOuterClass {
 
       private int propType_ ;
       /**
-       * <code>uint32 propType = 1;</code>
+       * <code>uint32 prop_type = 1;</code>
        * @return The propType.
        */
       @java.lang.Override
@@ -470,7 +478,7 @@ public final class FightPropPairOuterClass {
         return propType_;
       }
       /**
-       * <code>uint32 propType = 1;</code>
+       * <code>uint32 prop_type = 1;</code>
        * @param value The propType to set.
        * @return This builder for chaining.
        */
@@ -481,7 +489,7 @@ public final class FightPropPairOuterClass {
         return this;
       }
       /**
-       * <code>uint32 propType = 1;</code>
+       * <code>uint32 prop_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearPropType() {
@@ -493,7 +501,7 @@ public final class FightPropPairOuterClass {
 
       private float propValue_ ;
       /**
-       * <code>float propValue = 2;</code>
+       * <code>float prop_value = 2;</code>
        * @return The propValue.
        */
       @java.lang.Override
@@ -501,7 +509,7 @@ public final class FightPropPairOuterClass {
         return propValue_;
       }
       /**
-       * <code>float propValue = 2;</code>
+       * <code>float prop_value = 2;</code>
        * @param value The propValue to set.
        * @return This builder for chaining.
        */
@@ -512,7 +520,7 @@ public final class FightPropPairOuterClass {
         return this;
       }
       /**
-       * <code>float propValue = 2;</code>
+       * <code>float prop_value = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPropValue() {
@@ -588,9 +596,9 @@ public final class FightPropPairOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023FightPropPair.proto\"4\n\rFightPropPair\022\020" +
-      "\n\010propType\030\001 \001(\r\022\021\n\tpropValue\030\002 \001(\002B\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\023FightPropPair.proto\"6\n\rFightPropPair\022\021" +
+      "\n\tprop_type\030\001 \001(\r\022\022\n\nprop_value\030\002 \001(\002B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

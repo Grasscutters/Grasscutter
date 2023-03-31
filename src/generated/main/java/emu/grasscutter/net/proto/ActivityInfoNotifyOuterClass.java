@@ -19,21 +19,26 @@ public final class ActivityInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      * @return Whether the activityInfo field is set.
      */
     boolean hasActivityInfo();
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      * @return The activityInfo.
      */
     emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo getActivityInfo();
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      */
     emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder getActivityInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: BKCOKLBOIIF
+   * CmdId: 2134
+   * </pre>
+   *
    * Protobuf type {@code ActivityInfoNotify}
    */
   public static final class ActivityInfoNotify extends
@@ -78,7 +83,7 @@ public final class ActivityInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 74: {
               emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder subBuilder = null;
               if (activityInfo_ != null) {
                 subBuilder = activityInfo_.toBuilder();
@@ -123,149 +128,10 @@ public final class ActivityInfoNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify.class, emu.grasscutter.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ActivityInfoNotify.KBFOADCMONG}
-     */
-    public enum KBFOADCMONG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 2136;</code>
-       */
-      PEPPOHPHJOJ(1, 2136),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KBFOADCMONG DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final KBFOADCMONG EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 2136;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 2136;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KBFOADCMONG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KBFOADCMONG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 2136: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KBFOADCMONG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KBFOADCMONG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KBFOADCMONG>() {
-              public KBFOADCMONG findValueByNumber(int number) {
-                return KBFOADCMONG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KBFOADCMONG[] VALUES = getStaticValuesArray();
-      private static KBFOADCMONG[] getStaticValuesArray() {
-        return new KBFOADCMONG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static KBFOADCMONG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KBFOADCMONG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ActivityInfoNotify.KBFOADCMONG)
-    }
-
-    public static final int ACTIVITYINFO_FIELD_NUMBER = 3;
+    public static final int ACTIVITY_INFO_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo activityInfo_;
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      * @return Whether the activityInfo field is set.
      */
     @java.lang.Override
@@ -273,7 +139,7 @@ public final class ActivityInfoNotifyOuterClass {
       return activityInfo_ != null;
     }
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      * @return The activityInfo.
      */
     @java.lang.Override
@@ -281,7 +147,7 @@ public final class ActivityInfoNotifyOuterClass {
       return activityInfo_ == null ? emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance() : activityInfo_;
     }
     /**
-     * <code>.ActivityInfo activityInfo = 3;</code>
+     * <code>.ActivityInfo activity_info = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder getActivityInfoOrBuilder() {
@@ -303,7 +169,7 @@ public final class ActivityInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (activityInfo_ != null) {
-        output.writeMessage(3, getActivityInfo());
+        output.writeMessage(9, getActivityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -316,7 +182,7 @@ public final class ActivityInfoNotifyOuterClass {
       size = 0;
       if (activityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getActivityInfo());
+          .computeMessageSize(9, getActivityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -350,7 +216,7 @@ public final class ActivityInfoNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasActivityInfo()) {
-        hash = (37 * hash) + ACTIVITYINFO_FIELD_NUMBER;
+        hash = (37 * hash) + ACTIVITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getActivityInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -449,6 +315,11 @@ public final class ActivityInfoNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BKCOKLBOIIF
+     * CmdId: 2134
+     * </pre>
+     *
      * Protobuf type {@code ActivityInfoNotify}
      */
     public static final class Builder extends
@@ -607,14 +478,14 @@ public final class ActivityInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder> activityInfoBuilder_;
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        * @return Whether the activityInfo field is set.
        */
       public boolean hasActivityInfo() {
         return activityInfoBuilder_ != null || activityInfo_ != null;
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        * @return The activityInfo.
        */
       public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo getActivityInfo() {
@@ -625,7 +496,7 @@ public final class ActivityInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public Builder setActivityInfo(emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo value) {
         if (activityInfoBuilder_ == null) {
@@ -641,7 +512,7 @@ public final class ActivityInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public Builder setActivityInfo(
           emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder builderForValue) {
@@ -655,7 +526,7 @@ public final class ActivityInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public Builder mergeActivityInfo(emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo value) {
         if (activityInfoBuilder_ == null) {
@@ -673,7 +544,7 @@ public final class ActivityInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public Builder clearActivityInfo() {
         if (activityInfoBuilder_ == null) {
@@ -687,7 +558,7 @@ public final class ActivityInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder getActivityInfoBuilder() {
         
@@ -695,7 +566,7 @@ public final class ActivityInfoNotifyOuterClass {
         return getActivityInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder getActivityInfoOrBuilder() {
         if (activityInfoBuilder_ != null) {
@@ -706,7 +577,7 @@ public final class ActivityInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.ActivityInfo activityInfo = 3;</code>
+       * <code>.ActivityInfo activity_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder> 
@@ -789,12 +660,9 @@ public final class ActivityInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ActivityInfoNotify.proto\032\022ActivityInfo" +
-      ".proto\"\233\001\n\022ActivityInfoNotify\022#\n\014activit" +
-      "yInfo\030\003 \001(\0132\r.ActivityInfo\"`\n\013KBFOADCMON" +
-      "G\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\330\020\022\017\n\013DCDNILF" +
-      "DFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001" +
-      "\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      ".proto\":\n\022ActivityInfoNotify\022$\n\ractivity" +
+      "_info\030\t \001(\0132\r.ActivityInfoB\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

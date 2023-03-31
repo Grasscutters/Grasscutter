@@ -15,6 +15,10 @@ public final class MonsterBornTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: COJKOLLOBJB
+   * </pre>
+   *
    * Protobuf enum {@code MonsterBornType}
    */
   public enum MonsterBornType

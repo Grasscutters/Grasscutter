@@ -19,18 +19,23 @@ public final class SetNameCardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 nameCardId = 14;</code>
+     * <code>uint32 name_card_id = 6;</code>
      * @return The nameCardId.
      */
     int getNameCardId();
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: FCLKGJCCCHF
+   * CmdId: 4074
+   * </pre>
+   *
    * Protobuf type {@code SetNameCardRsp}
    */
   public static final class SetNameCardRsp extends
@@ -75,14 +80,14 @@ public final class SetNameCardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
+            case 48: {
 
               nameCardId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -117,149 +122,10 @@ public final class SetNameCardRspOuterClass {
               emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.class, emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SetNameCardRsp.ICIPJFFEHFM}
-     */
-    public enum ICIPJFFEHFM
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4058;</code>
-       */
-      PEPPOHPHJOJ(1, 4058),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ICIPJFFEHFM DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final ICIPJFFEHFM EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4058;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4058;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ICIPJFFEHFM valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ICIPJFFEHFM forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4058: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ICIPJFFEHFM>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ICIPJFFEHFM> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ICIPJFFEHFM>() {
-              public ICIPJFFEHFM findValueByNumber(int number) {
-                return ICIPJFFEHFM.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ICIPJFFEHFM[] VALUES = getStaticValuesArray();
-      private static ICIPJFFEHFM[] getStaticValuesArray() {
-        return new ICIPJFFEHFM[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static ICIPJFFEHFM valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ICIPJFFEHFM(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SetNameCardRsp.ICIPJFFEHFM)
-    }
-
-    public static final int NAMECARDID_FIELD_NUMBER = 14;
+    public static final int NAME_CARD_ID_FIELD_NUMBER = 6;
     private int nameCardId_;
     /**
-     * <code>uint32 nameCardId = 14;</code>
+     * <code>uint32 name_card_id = 6;</code>
      * @return The nameCardId.
      */
     @java.lang.Override
@@ -267,10 +133,10 @@ public final class SetNameCardRspOuterClass {
       return nameCardId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -292,11 +158,11 @@ public final class SetNameCardRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
-      }
       if (nameCardId_ != 0) {
-        output.writeUInt32(14, nameCardId_);
+        output.writeUInt32(6, nameCardId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -307,13 +173,13 @@ public final class SetNameCardRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
-      }
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, nameCardId_);
+          .computeUInt32Size(6, nameCardId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,7 +211,7 @@ public final class SetNameCardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMECARDID_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -445,6 +311,11 @@ public final class SetNameCardRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FCLKGJCCCHF
+     * CmdId: 4074
+     * </pre>
+     *
      * Protobuf type {@code SetNameCardRsp}
      */
     public static final class Builder extends
@@ -599,7 +470,7 @@ public final class SetNameCardRspOuterClass {
 
       private int nameCardId_ ;
       /**
-       * <code>uint32 nameCardId = 14;</code>
+       * <code>uint32 name_card_id = 6;</code>
        * @return The nameCardId.
        */
       @java.lang.Override
@@ -607,7 +478,7 @@ public final class SetNameCardRspOuterClass {
         return nameCardId_;
       }
       /**
-       * <code>uint32 nameCardId = 14;</code>
+       * <code>uint32 name_card_id = 6;</code>
        * @param value The nameCardId to set.
        * @return This builder for chaining.
        */
@@ -618,7 +489,7 @@ public final class SetNameCardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 nameCardId = 14;</code>
+       * <code>uint32 name_card_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
@@ -630,7 +501,7 @@ public final class SetNameCardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -638,7 +509,7 @@ public final class SetNameCardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -649,7 +520,7 @@ public final class SetNameCardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -725,12 +596,9 @@ public final class SetNameCardRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024SetNameCardRsp.proto\"\227\001\n\016SetNameCardRs" +
-      "p\022\022\n\nnameCardId\030\016 \001(\r\022\017\n\007retcode\030\007 \001(\005\"`" +
-      "\n\013ICIPJFFEHFM\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\332" +
-      "\037\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013E" +
-      "AJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "\n\024SetNameCardRsp.proto\"7\n\016SetNameCardRsp" +
+      "\022\024\n\014name_card_id\030\006 \001(\r\022\017\n\007retcode\030\014 \001(\005B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

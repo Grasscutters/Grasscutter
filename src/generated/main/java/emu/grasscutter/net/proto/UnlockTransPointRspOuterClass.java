@@ -19,12 +19,17 @@ public final class UnlockTransPointRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * Name: NEKAJEGPNFH
+   * CmdId: 3311
+   * </pre>
+   *
    * Protobuf type {@code UnlockTransPointRsp}
    */
   public static final class UnlockTransPointRsp extends
@@ -69,7 +74,7 @@ public final class UnlockTransPointRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -106,139 +111,10 @@ public final class UnlockTransPointRspOuterClass {
               emu.grasscutter.net.proto.UnlockTransPointRspOuterClass.UnlockTransPointRsp.class, emu.grasscutter.net.proto.UnlockTransPointRspOuterClass.UnlockTransPointRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code UnlockTransPointRsp.KKBODGHFJLF}
-     */
-    public enum KKBODGHFJLF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0),
-      /**
-       * <code>PEPPOHPHJOJ = 3057;</code>
-       */
-      PEPPOHPHJOJ(3057),
-      /**
-       * <code>DCDNILFDFLB = 1;</code>
-       */
-      DCDNILFDFLB(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final KKBODGHFJLF NNBKOLMPOEA = DCDNILFDFLB;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 3057;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 3057;
-      /**
-       * <code>DCDNILFDFLB = 1;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 1;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KKBODGHFJLF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KKBODGHFJLF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 3057: return PEPPOHPHJOJ;
-          case 1: return DCDNILFDFLB;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KKBODGHFJLF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KKBODGHFJLF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KKBODGHFJLF>() {
-              public KKBODGHFJLF findValueByNumber(int number) {
-                return KKBODGHFJLF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.UnlockTransPointRspOuterClass.UnlockTransPointRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KKBODGHFJLF[] VALUES = getStaticValuesArray();
-      private static KKBODGHFJLF[] getStaticValuesArray() {
-        return new KKBODGHFJLF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static KKBODGHFJLF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private KKBODGHFJLF(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:UnlockTransPointRsp.KKBODGHFJLF)
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -261,7 +137,7 @@ public final class UnlockTransPointRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -274,7 +150,7 @@ public final class UnlockTransPointRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -402,6 +278,11 @@ public final class UnlockTransPointRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NEKAJEGPNFH
+     * CmdId: 3311
+     * </pre>
+     *
      * Protobuf type {@code UnlockTransPointRsp}
      */
     public static final class Builder extends
@@ -550,7 +431,7 @@ public final class UnlockTransPointRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -558,7 +439,7 @@ public final class UnlockTransPointRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -569,7 +450,7 @@ public final class UnlockTransPointRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -645,11 +526,9 @@ public final class UnlockTransPointRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031UnlockTransPointRsp.proto\"w\n\023UnlockTra" +
-      "nsPointRsp\022\017\n\007retcode\030\003 \001(\005\"O\n\013KKBODGHFJ" +
-      "LF\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\361\027\022\017\n\013DCDNIL" +
-      "FDFLB\020\001\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\031UnlockTransPointRsp.proto\"&\n\023UnlockTra" +
+      "nsPointRsp\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

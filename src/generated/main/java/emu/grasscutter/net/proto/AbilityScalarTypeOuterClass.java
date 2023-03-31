@@ -15,14 +15,18 @@ public final class AbilityScalarTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: MLNEEGJPBCO
+   * </pre>
+   *
    * Protobuf enum {@code AbilityScalarType}
    */
   public enum AbilityScalarType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ABILITY_SCALAR_TYPE_UNKNOWN = 0;</code>
+     * <code>ABILITY_SCALAR_TYPE_UNKNOW = 0;</code>
      */
-    ABILITY_SCALAR_TYPE_UNKNOWN(0),
+    ABILITY_SCALAR_TYPE_UNKNOW(0),
     /**
      * <code>ABILITY_SCALAR_TYPE_FLOAT = 1;</code>
      */
@@ -51,9 +55,9 @@ public final class AbilityScalarTypeOuterClass {
     ;
 
     /**
-     * <code>ABILITY_SCALAR_TYPE_UNKNOWN = 0;</code>
+     * <code>ABILITY_SCALAR_TYPE_UNKNOW = 0;</code>
      */
-    public static final int ABILITY_SCALAR_TYPE_UNKNOWN_VALUE = 0;
+    public static final int ABILITY_SCALAR_TYPE_UNKNOW_VALUE = 0;
     /**
      * <code>ABILITY_SCALAR_TYPE_FLOAT = 1;</code>
      */
@@ -104,7 +108,7 @@ public final class AbilityScalarTypeOuterClass {
      */
     public static AbilityScalarType forNumber(int value) {
       switch (value) {
-        case 0: return ABILITY_SCALAR_TYPE_UNKNOWN;
+        case 0: return ABILITY_SCALAR_TYPE_UNKNOW;
         case 1: return ABILITY_SCALAR_TYPE_FLOAT;
         case 2: return ABILITY_SCALAR_TYPE_INT;
         case 3: return ABILITY_SCALAR_TYPE_BOOL;
@@ -176,14 +180,14 @@ public final class AbilityScalarTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027AbilityScalarType.proto*\355\001\n\021AbilitySca" +
-      "larType\022\037\n\033ABILITY_SCALAR_TYPE_UNKNOWN\020\000" +
-      "\022\035\n\031ABILITY_SCALAR_TYPE_FLOAT\020\001\022\033\n\027ABILI" +
-      "TY_SCALAR_TYPE_INT\020\002\022\034\n\030ABILITY_SCALAR_T" +
-      "YPE_BOOL\020\003\022\037\n\033ABILITY_SCALAR_TYPE_TRIGGE" +
-      "R\020\004\022\036\n\032ABILITY_SCALAR_TYPE_STRING\020\005\022\034\n\030A" +
-      "BILITY_SCALAR_TYPE_UINT\020\006B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\n\027AbilityScalarType.proto*\354\001\n\021AbilitySca" +
+      "larType\022\036\n\032ABILITY_SCALAR_TYPE_UNKNOW\020\000\022" +
+      "\035\n\031ABILITY_SCALAR_TYPE_FLOAT\020\001\022\033\n\027ABILIT" +
+      "Y_SCALAR_TYPE_INT\020\002\022\034\n\030ABILITY_SCALAR_TY" +
+      "PE_BOOL\020\003\022\037\n\033ABILITY_SCALAR_TYPE_TRIGGER" +
+      "\020\004\022\036\n\032ABILITY_SCALAR_TYPE_STRING\020\005\022\034\n\030AB" +
+      "ILITY_SCALAR_TYPE_UINT\020\006B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,23 +19,27 @@ public final class SalvageBundleChallengeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @return A list containing the finishedBundleList.
      */
     java.util.List<java.lang.Integer> getFinishedBundleListList();
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @return The count of finishedBundleList.
      */
     int getFinishedBundleListCount();
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @param index The index of the element to return.
      * @return The finishedBundleList at the given index.
      */
     int getFinishedBundleList(int index);
   }
   /**
+   * <pre>
+   * Name: CLCLGFMLOOG
+   * </pre>
+   *
    * Protobuf type {@code SalvageBundleChallengeInfo}
    */
   public static final class SalvageBundleChallengeInfo extends
@@ -82,7 +86,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishedBundleList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
               finishedBundleList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class SalvageBundleChallengeInfoOuterClass {
               emu.grasscutter.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.class, emu.grasscutter.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder.class);
     }
 
-    public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 11;
+    public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList finishedBundleList_;
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @return A list containing the finishedBundleList.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class SalvageBundleChallengeInfoOuterClass {
       return finishedBundleList_;
     }
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @return The count of finishedBundleList.
      */
     public int getFinishedBundleListCount() {
       return finishedBundleList_.size();
     }
     /**
-     * <code>repeated uint32 finished_bundle_list = 11;</code>
+     * <code>repeated uint32 finished_bundle_list = 13;</code>
      * @param index The index of the element to return.
      * @return The finishedBundleList at the given index.
      */
@@ -182,7 +186,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getFinishedBundleListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(finishedBundleListMemoizedSerializedSize);
       }
       for (int i = 0; i < finishedBundleList_.size(); i++) {
@@ -339,6 +343,10 @@ public final class SalvageBundleChallengeInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CLCLGFMLOOG
+     * </pre>
+     *
      * Protobuf type {@code SalvageBundleChallengeInfo}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @return A list containing the finishedBundleList.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class SalvageBundleChallengeInfoOuterClass {
                  java.util.Collections.unmodifiableList(finishedBundleList_) : finishedBundleList_;
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @return The count of finishedBundleList.
        */
       public int getFinishedBundleListCount() {
         return finishedBundleList_.size();
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @param index The index of the element to return.
        * @return The finishedBundleList at the given index.
        */
@@ -530,7 +538,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
         return finishedBundleList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The finishedBundleList to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @param value The finishedBundleList to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @param values The finishedBundleList to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_bundle_list = 11;</code>
+       * <code>repeated uint32 finished_bundle_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishedBundleList() {
@@ -645,7 +653,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n SalvageBundleChallengeInfo.proto\":\n\032Sa" +
       "lvageBundleChallengeInfo\022\034\n\024finished_bun" +
-      "dle_list\030\013 \003(\rB\033\n\031emu.grasscutter.net.pr" +
+      "dle_list\030\r \003(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

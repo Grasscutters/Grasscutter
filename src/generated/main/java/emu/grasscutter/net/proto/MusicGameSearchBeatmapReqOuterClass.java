@@ -36,6 +36,13 @@ public final class MusicGameSearchBeatmapReqOuterClass {
     long getMusicShareId();
   }
   /**
+   * <pre>
+   * CmdId: 6343
+   * EnetChannelId: 0
+   * EnetIsReliable: true
+   * IsAllowClient: true
+   * </pre>
+   *
    * Protobuf type {@code MusicGameSearchBeatmapReq}
    */
   public static final class MusicGameSearchBeatmapReq extends
@@ -321,6 +328,13 @@ public final class MusicGameSearchBeatmapReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6343
+     * EnetChannelId: 0
+     * EnetIsReliable: true
+     * IsAllowClient: true
+     * </pre>
+     *
      * Protobuf type {@code MusicGameSearchBeatmapReq}
      */
     public static final class Builder extends

@@ -19,29 +19,33 @@ public final class WorktopInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @return A list containing the optionList.
      */
     java.util.List<java.lang.Integer> getOptionListList();
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @return The count of optionList.
      */
     int getOptionListCount();
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
     int getOptionList(int index);
 
     /**
-     * <code>bool isGuestCanOperate = 2;</code>
+     * <code>bool is_guest_can_operate = 2;</code>
      * @return The isGuestCanOperate.
      */
     boolean getIsGuestCanOperate();
   }
   /**
+   * <pre>
+   * Name: OKMBKEFJCCF
+   * </pre>
+   *
    * Protobuf type {@code WorktopInfo}
    */
   public static final class WorktopInfo extends
@@ -149,10 +153,10 @@ public final class WorktopInfoOuterClass {
               emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo.class, emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo.Builder.class);
     }
 
-    public static final int OPTIONLIST_FIELD_NUMBER = 1;
+    public static final int OPTION_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList optionList_;
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @return A list containing the optionList.
      */
     @java.lang.Override
@@ -161,14 +165,14 @@ public final class WorktopInfoOuterClass {
       return optionList_;
     }
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @return The count of optionList.
      */
     public int getOptionListCount() {
       return optionList_.size();
     }
     /**
-     * <code>repeated uint32 optionList = 1;</code>
+     * <code>repeated uint32 option_list = 1;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
@@ -177,10 +181,10 @@ public final class WorktopInfoOuterClass {
     }
     private int optionListMemoizedSerializedSize = -1;
 
-    public static final int ISGUESTCANOPERATE_FIELD_NUMBER = 2;
+    public static final int IS_GUEST_CAN_OPERATE_FIELD_NUMBER = 2;
     private boolean isGuestCanOperate_;
     /**
-     * <code>bool isGuestCanOperate = 2;</code>
+     * <code>bool is_guest_can_operate = 2;</code>
      * @return The isGuestCanOperate.
      */
     @java.lang.Override
@@ -271,10 +275,10 @@ public final class WorktopInfoOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getOptionListCount() > 0) {
-        hash = (37 * hash) + OPTIONLIST_FIELD_NUMBER;
+        hash = (37 * hash) + OPTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOptionListList().hashCode();
       }
-      hash = (37 * hash) + ISGUESTCANOPERATE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_GUEST_CAN_OPERATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGuestCanOperate());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -373,6 +377,10 @@ public final class WorktopInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: OKMBKEFJCCF
+     * </pre>
+     *
      * Protobuf type {@code WorktopInfo}
      */
     public static final class Builder extends
@@ -546,7 +554,7 @@ public final class WorktopInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @return A list containing the optionList.
        */
       public java.util.List<java.lang.Integer>
@@ -555,14 +563,14 @@ public final class WorktopInfoOuterClass {
                  java.util.Collections.unmodifiableList(optionList_) : optionList_;
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @return The count of optionList.
        */
       public int getOptionListCount() {
         return optionList_.size();
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @param index The index of the element to return.
        * @return The optionList at the given index.
        */
@@ -570,7 +578,7 @@ public final class WorktopInfoOuterClass {
         return optionList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The optionList to set.
        * @return This builder for chaining.
@@ -583,7 +591,7 @@ public final class WorktopInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @param value The optionList to add.
        * @return This builder for chaining.
        */
@@ -594,7 +602,7 @@ public final class WorktopInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @param values The optionList to add.
        * @return This builder for chaining.
        */
@@ -607,7 +615,7 @@ public final class WorktopInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 optionList = 1;</code>
+       * <code>repeated uint32 option_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearOptionList() {
@@ -619,7 +627,7 @@ public final class WorktopInfoOuterClass {
 
       private boolean isGuestCanOperate_ ;
       /**
-       * <code>bool isGuestCanOperate = 2;</code>
+       * <code>bool is_guest_can_operate = 2;</code>
        * @return The isGuestCanOperate.
        */
       @java.lang.Override
@@ -627,7 +635,7 @@ public final class WorktopInfoOuterClass {
         return isGuestCanOperate_;
       }
       /**
-       * <code>bool isGuestCanOperate = 2;</code>
+       * <code>bool is_guest_can_operate = 2;</code>
        * @param value The isGuestCanOperate to set.
        * @return This builder for chaining.
        */
@@ -638,7 +646,7 @@ public final class WorktopInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isGuestCanOperate = 2;</code>
+       * <code>bool is_guest_can_operate = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsGuestCanOperate() {
@@ -714,9 +722,10 @@ public final class WorktopInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021WorktopInfo.proto\"<\n\013WorktopInfo\022\022\n\nop" +
-      "tionList\030\001 \003(\r\022\031\n\021isGuestCanOperate\030\002 \001(" +
-      "\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\021WorktopInfo.proto\"@\n\013WorktopInfo\022\023\n\013op" +
+      "tion_list\030\001 \003(\r\022\034\n\024is_guest_can_operate\030" +
+      "\002 \001(\010B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

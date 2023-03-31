@@ -19,38 +19,33 @@ public final class AvatarSatiationDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData> 
         getSatiationDataListList();
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData getSatiationDataList(int index);
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     int getSatiationDataListCount();
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder> 
         getSatiationDataListOrBuilderList();
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder getSatiationDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   *enum JKBKGEDKLLG {
-   *	option allow_alias= true;
-   *	NONE = 0;
-   *	PEPPOHPHJOJ = 1722;
-   *	DCDNILFDFLB = 0;
-   *	NNBKOLMPOEA = 1;
-   *}
+   * Name: GILFMIFBHII
+   * CmdId: 1655
    * </pre>
    *
    * Protobuf type {@code AvatarSatiationDataNotify}
@@ -99,7 +94,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 satiationDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -143,17 +138,17 @@ public final class AvatarSatiationDataNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarSatiationDataNotifyOuterClass.AvatarSatiationDataNotify.class, emu.grasscutter.net.proto.AvatarSatiationDataNotifyOuterClass.AvatarSatiationDataNotify.Builder.class);
     }
 
-    public static final int SATIATIONDATALIST_FIELD_NUMBER = 9;
+    public static final int SATIATION_DATA_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData> satiationDataList_;
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData> getSatiationDataListList() {
       return satiationDataList_;
     }
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder> 
@@ -161,21 +156,21 @@ public final class AvatarSatiationDataNotifyOuterClass {
       return satiationDataList_;
     }
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     @java.lang.Override
     public int getSatiationDataListCount() {
       return satiationDataList_.size();
     }
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData getSatiationDataList(int index) {
       return satiationDataList_.get(index);
     }
     /**
-     * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+     * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder getSatiationDataListOrBuilder(
@@ -198,7 +193,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < satiationDataList_.size(); i++) {
-        output.writeMessage(9, satiationDataList_.get(i));
+        output.writeMessage(3, satiationDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -211,7 +206,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < satiationDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, satiationDataList_.get(i));
+          .computeMessageSize(3, satiationDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -242,7 +237,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getSatiationDataListCount() > 0) {
-        hash = (37 * hash) + SATIATIONDATALIST_FIELD_NUMBER;
+        hash = (37 * hash) + SATIATION_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSatiationDataListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -342,13 +337,8 @@ public final class AvatarSatiationDataNotifyOuterClass {
     }
     /**
      * <pre>
-     *enum JKBKGEDKLLG {
-     *	option allow_alias= true;
-     *	NONE = 0;
-     *	PEPPOHPHJOJ = 1722;
-     *	DCDNILFDFLB = 0;
-     *	NNBKOLMPOEA = 1;
-     *}
+     * Name: GILFMIFBHII
+     * CmdId: 1655
      * </pre>
      *
      * Protobuf type {@code AvatarSatiationDataNotify}
@@ -548,7 +538,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
           emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder> satiationDataListBuilder_;
 
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData> getSatiationDataListList() {
         if (satiationDataListBuilder_ == null) {
@@ -558,7 +548,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public int getSatiationDataListCount() {
         if (satiationDataListBuilder_ == null) {
@@ -568,7 +558,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData getSatiationDataList(int index) {
         if (satiationDataListBuilder_ == null) {
@@ -578,7 +568,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder setSatiationDataList(
           int index, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData value) {
@@ -595,7 +585,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder setSatiationDataList(
           int index, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder builderForValue) {
@@ -609,7 +599,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder addSatiationDataList(emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData value) {
         if (satiationDataListBuilder_ == null) {
@@ -625,7 +615,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder addSatiationDataList(
           int index, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData value) {
@@ -642,7 +632,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder addSatiationDataList(
           emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder builderForValue) {
@@ -656,7 +646,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder addSatiationDataList(
           int index, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder builderForValue) {
@@ -670,7 +660,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder addAllSatiationDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData> values) {
@@ -685,7 +675,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder clearSatiationDataList() {
         if (satiationDataListBuilder_ == null) {
@@ -698,7 +688,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public Builder removeSatiationDataList(int index) {
         if (satiationDataListBuilder_ == null) {
@@ -711,14 +701,14 @@ public final class AvatarSatiationDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder getSatiationDataListBuilder(
           int index) {
         return getSatiationDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder getSatiationDataListOrBuilder(
           int index) {
@@ -728,7 +718,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationDataOrBuilder> 
            getSatiationDataListOrBuilderList() {
@@ -739,14 +729,14 @@ public final class AvatarSatiationDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder addSatiationDataListBuilder() {
         return getSatiationDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.getDefaultInstance());
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder addSatiationDataListBuilder(
           int index) {
@@ -754,7 +744,7 @@ public final class AvatarSatiationDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.getDefaultInstance());
       }
       /**
-       * <code>repeated .AvatarSatiationData satiationDataList = 9;</code>
+       * <code>repeated .AvatarSatiationData satiation_data_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder> 
            getSatiationDataListBuilderList() {
@@ -842,10 +832,10 @@ public final class AvatarSatiationDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037AvatarSatiationDataNotify.proto\032\031Avata" +
-      "rSatiationData.proto\"L\n\031AvatarSatiationD" +
-      "ataNotify\022/\n\021satiationDataList\030\t \003(\0132\024.A" +
-      "vatarSatiationDataB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "rSatiationData.proto\"N\n\031AvatarSatiationD" +
+      "ataNotify\0221\n\023satiation_data_list\030\003 \003(\0132\024" +
+      ".AvatarSatiationDataB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

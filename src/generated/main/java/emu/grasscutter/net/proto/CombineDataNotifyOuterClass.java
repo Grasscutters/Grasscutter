@@ -19,23 +19,28 @@ public final class CombineDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @return A list containing the combineIdList.
      */
     java.util.List<java.lang.Integer> getCombineIdListList();
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @return The count of combineIdList.
      */
     int getCombineIdListCount();
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The combineIdList at the given index.
      */
     int getCombineIdList(int index);
   }
   /**
+   * <pre>
+   * Name: JNBJGBNCBAK
+   * CmdId: 690
+   * </pre>
+   *
    * Protobuf type {@code CombineDataNotify}
    */
   public static final class CombineDataNotify extends
@@ -82,7 +87,7 @@ public final class CombineDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 combineIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class CombineDataNotifyOuterClass {
               combineIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class CombineDataNotifyOuterClass {
               emu.grasscutter.net.proto.CombineDataNotifyOuterClass.CombineDataNotify.class, emu.grasscutter.net.proto.CombineDataNotifyOuterClass.CombineDataNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code CombineDataNotify.NDHNHHMBEFA}
-     */
-    public enum NDHNHHMBEFA
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 665;</code>
-       */
-      PEPPOHPHJOJ(1, 665),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final NDHNHHMBEFA DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 665;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 665;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NDHNHHMBEFA valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NDHNHHMBEFA forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 665: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NDHNHHMBEFA>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NDHNHHMBEFA> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NDHNHHMBEFA>() {
-              public NDHNHHMBEFA findValueByNumber(int number) {
-                return NDHNHHMBEFA.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.CombineDataNotifyOuterClass.CombineDataNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final NDHNHHMBEFA[] VALUES = getStaticValuesArray();
-      private static NDHNHHMBEFA[] getStaticValuesArray() {
-        return new NDHNHHMBEFA[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static NDHNHHMBEFA valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private NDHNHHMBEFA(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:CombineDataNotify.NDHNHHMBEFA)
-    }
-
-    public static final int COMBINEIDLIST_FIELD_NUMBER = 4;
+    public static final int COMBINE_ID_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList combineIdList_;
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @return A list containing the combineIdList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class CombineDataNotifyOuterClass {
       return combineIdList_;
     }
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @return The count of combineIdList.
      */
     public int getCombineIdListCount() {
       return combineIdList_.size();
     }
     /**
-     * <code>repeated uint32 combineIdList = 4;</code>
+     * <code>repeated uint32 combine_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The combineIdList at the given index.
      */
@@ -313,7 +187,7 @@ public final class CombineDataNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getCombineIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(combineIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < combineIdList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class CombineDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getCombineIdListCount() > 0) {
-        hash = (37 * hash) + COMBINEIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + COMBINE_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCombineIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class CombineDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JNBJGBNCBAK
+     * CmdId: 690
+     * </pre>
+     *
      * Protobuf type {@code CombineDataNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class CombineDataNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @return A list containing the combineIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class CombineDataNotifyOuterClass {
                  java.util.Collections.unmodifiableList(combineIdList_) : combineIdList_;
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @return The count of combineIdList.
        */
       public int getCombineIdListCount() {
         return combineIdList_.size();
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @param index The index of the element to return.
        * @return The combineIdList at the given index.
        */
@@ -661,7 +540,7 @@ public final class CombineDataNotifyOuterClass {
         return combineIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @param index The index to set the value at.
        * @param value The combineIdList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class CombineDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @param value The combineIdList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class CombineDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @param values The combineIdList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class CombineDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combineIdList = 4;</code>
+       * <code>repeated uint32 combine_id_list = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCombineIdList() {
@@ -774,11 +653,9 @@ public final class CombineDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027CombineDataNotify.proto\"{\n\021CombineData" +
-      "Notify\022\025\n\rcombineIdList\030\004 \003(\r\"O\n\013NDHNHHM" +
-      "BEFA\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\231\005\022\017\n\013DCDN" +
-      "ILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\n\027CombineDataNotify.proto\",\n\021CombineData" +
+      "Notify\022\027\n\017combine_id_list\030\017 \003(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

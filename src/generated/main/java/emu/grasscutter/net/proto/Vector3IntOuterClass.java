@@ -37,6 +37,10 @@ public final class Vector3IntOuterClass {
     int getZ();
   }
   /**
+   * <pre>
+   * Name: HEJPIHANNLH
+   * </pre>
+   *
    * Protobuf type {@code Vector3Int}
    */
   public static final class Vector3Int extends
@@ -339,6 +343,10 @@ public final class Vector3IntOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: HEJPIHANNLH
+     * </pre>
+     *
      * Protobuf type {@code Vector3Int}
      */
     public static final class Builder extends

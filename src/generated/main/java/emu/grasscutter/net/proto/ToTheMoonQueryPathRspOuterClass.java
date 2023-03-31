@@ -19,44 +19,52 @@ public final class ToTheMoonQueryPathRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 queryId = 11;</code>
-     * @return The queryId.
-     */
-    int getQueryId();
-
-    /**
-     * <code>.PathStatusType queryStatus = 15;</code>
+     * <pre>
+     * Name: LENHOCLEKHC &gt; PathStatusType
+     * </pre>
+     *
+     * <code>.PathStatusType query_status = 6;</code>
      * @return The enum numeric value on the wire for queryStatus.
      */
     int getQueryStatusValue();
     /**
-     * <code>.PathStatusType queryStatus = 15;</code>
+     * <pre>
+     * Name: LENHOCLEKHC &gt; PathStatusType
+     * </pre>
+     *
+     * <code>.PathStatusType query_status = 6;</code>
      * @return The queryStatus.
      */
     emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType getQueryStatus();
 
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>repeated int64 index = 5;</code>
      * @return A list containing the index.
      */
     java.util.List<java.lang.Long> getIndexList();
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>repeated int64 index = 5;</code>
      * @return The count of index.
      */
     int getIndexCount();
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>repeated int64 index = 5;</code>
      * @param index The index of the element to return.
      * @return The index at the given index.
      */
     long getIndex(int index);
 
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
+     * <code>int32 query_id = 9;</code>
+     * @return The queryId.
      */
-    int getRetcode();
+    int getQueryId();
 
     /**
      * <code>repeated .Vector corners = 3;</code>
@@ -83,23 +91,28 @@ public final class ToTheMoonQueryPathRspOuterClass {
         int index);
 
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @return A list containing the level.
      */
     java.util.List<java.lang.Integer> getLevelList();
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @return The count of level.
      */
     int getLevelCount();
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @param index The index of the element to return.
      * @return The level at the given index.
      */
     int getLevel(int index);
   }
   /**
+   * <pre>
+   * Name: FFFLALIGOHD
+   * CmdId: 6175
+   * </pre>
+   *
    * Protobuf type {@code ToTheMoonQueryPathRsp}
    */
   public static final class ToTheMoonQueryPathRsp extends
@@ -149,11 +162,6 @@ public final class ToTheMoonQueryPathRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 corners_ = new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
@@ -163,7 +171,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
               break;
             }
-            case 80: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 index_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -171,7 +179,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
               index_.addLong(input.readInt64());
               break;
             }
-            case 82: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -184,12 +192,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 88: {
+            case 48: {
+              int rawValue = input.readEnum();
 
-              queryId_ = input.readInt32();
+              queryStatus_ = rawValue;
               break;
             }
-            case 104: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 level_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -197,7 +206,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
               level_.addInt(input.readInt32());
               break;
             }
-            case 106: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -210,10 +219,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
-              int rawValue = input.readEnum();
+            case 72: {
 
-              queryStatus_ = rawValue;
+              queryId_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -257,159 +270,25 @@ public final class ToTheMoonQueryPathRspOuterClass {
               emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp.class, emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ToTheMoonQueryPathRsp.DEPALAPFJJF}
-     */
-    public enum DEPALAPFJJF
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 6155;</code>
-       */
-      PEPPOHPHJOJ(1, 6155),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final DEPALAPFJJF DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 6155;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 6155;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DEPALAPFJJF valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static DEPALAPFJJF forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 6155: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DEPALAPFJJF>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DEPALAPFJJF> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DEPALAPFJJF>() {
-              public DEPALAPFJJF findValueByNumber(int number) {
-                return DEPALAPFJJF.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DEPALAPFJJF[] VALUES = getStaticValuesArray();
-      private static DEPALAPFJJF[] getStaticValuesArray() {
-        return new DEPALAPFJJF[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static DEPALAPFJJF valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private DEPALAPFJJF(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathRsp.DEPALAPFJJF)
-    }
-
-    public static final int QUERYID_FIELD_NUMBER = 11;
-    private int queryId_;
-    /**
-     * <code>int32 queryId = 11;</code>
-     * @return The queryId.
-     */
-    @java.lang.Override
-    public int getQueryId() {
-      return queryId_;
-    }
-
-    public static final int QUERYSTATUS_FIELD_NUMBER = 15;
+    public static final int QUERY_STATUS_FIELD_NUMBER = 6;
     private int queryStatus_;
     /**
-     * <code>.PathStatusType queryStatus = 15;</code>
+     * <pre>
+     * Name: LENHOCLEKHC &gt; PathStatusType
+     * </pre>
+     *
+     * <code>.PathStatusType query_status = 6;</code>
      * @return The enum numeric value on the wire for queryStatus.
      */
     @java.lang.Override public int getQueryStatusValue() {
       return queryStatus_;
     }
     /**
-     * <code>.PathStatusType queryStatus = 15;</code>
+     * <pre>
+     * Name: LENHOCLEKHC &gt; PathStatusType
+     * </pre>
+     *
+     * <code>.PathStatusType query_status = 6;</code>
      * @return The queryStatus.
      */
     @java.lang.Override public emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType getQueryStatus() {
@@ -418,10 +297,21 @@ public final class ToTheMoonQueryPathRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.UNRECOGNIZED : result;
     }
 
-    public static final int INDEX_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.LongList index_;
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>repeated int64 index = 5;</code>
      * @return A list containing the index.
      */
     @java.lang.Override
@@ -430,14 +320,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
       return index_;
     }
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>repeated int64 index = 5;</code>
      * @return The count of index.
      */
     public int getIndexCount() {
       return index_.size();
     }
     /**
-     * <code>repeated int64 index = 10;</code>
+     * <code>repeated int64 index = 5;</code>
      * @param index The index of the element to return.
      * @return The index at the given index.
      */
@@ -446,15 +336,15 @@ public final class ToTheMoonQueryPathRspOuterClass {
     }
     private int indexMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    public static final int QUERY_ID_FIELD_NUMBER = 9;
+    private int queryId_;
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
+     * <code>int32 query_id = 9;</code>
+     * @return The queryId.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public int getQueryId() {
+      return queryId_;
     }
 
     public static final int CORNERS_FIELD_NUMBER = 3;
@@ -497,10 +387,10 @@ public final class ToTheMoonQueryPathRspOuterClass {
       return corners_.get(index);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 13;
+    public static final int LEVEL_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList level_;
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @return A list containing the level.
      */
     @java.lang.Override
@@ -509,14 +399,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
       return level_;
     }
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @return The count of level.
      */
     public int getLevelCount() {
       return level_.size();
     }
     /**
-     * <code>repeated int32 level = 13;</code>
+     * <code>repeated int32 level = 7;</code>
      * @param index The index of the element to return.
      * @return The level at the given index.
      */
@@ -540,31 +430,31 @@ public final class ToTheMoonQueryPathRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       for (int i = 0; i < corners_.size(); i++) {
         output.writeMessage(3, corners_.get(i));
       }
       if (getIndexList().size() > 0) {
-        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(indexMemoizedSerializedSize);
       }
       for (int i = 0; i < index_.size(); i++) {
         output.writeInt64NoTag(index_.getLong(i));
       }
-      if (queryId_ != 0) {
-        output.writeInt32(11, queryId_);
+      if (queryStatus_ != emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.PATH_STATUS_TYPE_FAIL.getNumber()) {
+        output.writeEnum(6, queryStatus_);
       }
       if (getLevelList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(levelMemoizedSerializedSize);
       }
       for (int i = 0; i < level_.size(); i++) {
         output.writeInt32NoTag(level_.getInt(i));
       }
-      if (queryStatus_ != emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.PATH_STATUS_TYPE_FAIL.getNumber()) {
-        output.writeEnum(15, queryStatus_);
+      if (queryId_ != 0) {
+        output.writeInt32(9, queryId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -575,10 +465,6 @@ public final class ToTheMoonQueryPathRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       for (int i = 0; i < corners_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, corners_.get(i));
@@ -597,9 +483,9 @@ public final class ToTheMoonQueryPathRspOuterClass {
         }
         indexMemoizedSerializedSize = dataSize;
       }
-      if (queryId_ != 0) {
+      if (queryStatus_ != emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.PATH_STATUS_TYPE_FAIL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, queryId_);
+          .computeEnumSize(6, queryStatus_);
       }
       {
         int dataSize = 0;
@@ -615,9 +501,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
         }
         levelMemoizedSerializedSize = dataSize;
       }
-      if (queryStatus_ != emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.PATH_STATUS_TYPE_FAIL.getNumber()) {
+      if (queryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, queryStatus_);
+          .computeInt32Size(9, queryId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -634,13 +524,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
       }
       emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp other = (emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp) obj;
 
-      if (getQueryId()
-          != other.getQueryId()) return false;
       if (queryStatus_ != other.queryStatus_) return false;
-      if (!getIndexList()
-          .equals(other.getIndexList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (!getIndexList()
+          .equals(other.getIndexList())) return false;
+      if (getQueryId()
+          != other.getQueryId()) return false;
       if (!getCornersList()
           .equals(other.getCornersList())) return false;
       if (!getLevelList()
@@ -656,16 +546,16 @@ public final class ToTheMoonQueryPathRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QUERYID_FIELD_NUMBER;
-      hash = (53 * hash) + getQueryId();
-      hash = (37 * hash) + QUERYSTATUS_FIELD_NUMBER;
+      hash = (37 * hash) + QUERY_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + queryStatus_;
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       if (getIndexCount() > 0) {
         hash = (37 * hash) + INDEX_FIELD_NUMBER;
         hash = (53 * hash) + getIndexList().hashCode();
       }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryId();
       if (getCornersCount() > 0) {
         hash = (37 * hash) + CORNERS_FIELD_NUMBER;
         hash = (53 * hash) + getCornersList().hashCode();
@@ -770,6 +660,11 @@ public final class ToTheMoonQueryPathRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FFFLALIGOHD
+     * CmdId: 6175
+     * </pre>
+     *
      * Protobuf type {@code ToTheMoonQueryPathRsp}
      */
     public static final class Builder extends
@@ -808,13 +703,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        queryId_ = 0;
-
         queryStatus_ = 0;
+
+        retcode_ = 0;
 
         index_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        retcode_ = 0;
+        queryId_ = 0;
 
         if (cornersBuilder_ == null) {
           corners_ = java.util.Collections.emptyList();
@@ -851,14 +746,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
       public emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp buildPartial() {
         emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp result = new emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp(this);
         int from_bitField0_ = bitField0_;
-        result.queryId_ = queryId_;
         result.queryStatus_ = queryStatus_;
+        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           index_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.index_ = index_;
-        result.retcode_ = retcode_;
+        result.queryId_ = queryId_;
         if (cornersBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             corners_ = java.util.Collections.unmodifiableList(corners_);
@@ -921,11 +816,11 @@ public final class ToTheMoonQueryPathRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp other) {
         if (other == emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp.getDefaultInstance()) return this;
-        if (other.getQueryId() != 0) {
-          setQueryId(other.getQueryId());
-        }
         if (other.queryStatus_ != 0) {
           setQueryStatusValue(other.getQueryStatusValue());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (!other.index_.isEmpty()) {
           if (index_.isEmpty()) {
@@ -937,8 +832,8 @@ public final class ToTheMoonQueryPathRspOuterClass {
           }
           onChanged();
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getQueryId() != 0) {
+          setQueryId(other.getQueryId());
         }
         if (cornersBuilder_ == null) {
           if (!other.corners_.isEmpty()) {
@@ -1006,47 +901,24 @@ public final class ToTheMoonQueryPathRspOuterClass {
       }
       private int bitField0_;
 
-      private int queryId_ ;
-      /**
-       * <code>int32 queryId = 11;</code>
-       * @return The queryId.
-       */
-      @java.lang.Override
-      public int getQueryId() {
-        return queryId_;
-      }
-      /**
-       * <code>int32 queryId = 11;</code>
-       * @param value The queryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryId(int value) {
-        
-        queryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 queryId = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQueryId() {
-        
-        queryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int queryStatus_ = 0;
       /**
-       * <code>.PathStatusType queryStatus = 15;</code>
+       * <pre>
+       * Name: LENHOCLEKHC &gt; PathStatusType
+       * </pre>
+       *
+       * <code>.PathStatusType query_status = 6;</code>
        * @return The enum numeric value on the wire for queryStatus.
        */
       @java.lang.Override public int getQueryStatusValue() {
         return queryStatus_;
       }
       /**
-       * <code>.PathStatusType queryStatus = 15;</code>
+       * <pre>
+       * Name: LENHOCLEKHC &gt; PathStatusType
+       * </pre>
+       *
+       * <code>.PathStatusType query_status = 6;</code>
        * @param value The enum numeric value on the wire for queryStatus to set.
        * @return This builder for chaining.
        */
@@ -1057,7 +929,11 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>.PathStatusType queryStatus = 15;</code>
+       * <pre>
+       * Name: LENHOCLEKHC &gt; PathStatusType
+       * </pre>
+       *
+       * <code>.PathStatusType query_status = 6;</code>
        * @return The queryStatus.
        */
       @java.lang.Override
@@ -1067,7 +943,11 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return result == null ? emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.PathStatusType queryStatus = 15;</code>
+       * <pre>
+       * Name: LENHOCLEKHC &gt; PathStatusType
+       * </pre>
+       *
+       * <code>.PathStatusType query_status = 6;</code>
        * @param value The queryStatus to set.
        * @return This builder for chaining.
        */
@@ -1081,12 +961,47 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>.PathStatusType queryStatus = 15;</code>
+       * <pre>
+       * Name: LENHOCLEKHC &gt; PathStatusType
+       * </pre>
+       *
+       * <code>.PathStatusType query_status = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearQueryStatus() {
         
         queryStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -1099,7 +1014,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
          }
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @return A list containing the index.
        */
       public java.util.List<java.lang.Long>
@@ -1108,14 +1023,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
                  java.util.Collections.unmodifiableList(index_) : index_;
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @return The count of index.
        */
       public int getIndexCount() {
         return index_.size();
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @param index The index of the element to return.
        * @return The index at the given index.
        */
@@ -1123,7 +1038,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return index_.getLong(index);
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @param index The index to set the value at.
        * @param value The index to set.
        * @return This builder for chaining.
@@ -1136,7 +1051,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @param value The index to add.
        * @return This builder for chaining.
        */
@@ -1147,7 +1062,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @param values The index to add.
        * @return This builder for chaining.
        */
@@ -1160,7 +1075,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 index = 10;</code>
+       * <code>repeated int64 index = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
@@ -1170,33 +1085,33 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
+      private int queryId_ ;
       /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
+       * <code>int32 query_id = 9;</code>
+       * @return The queryId.
        */
       @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      public int getQueryId() {
+        return queryId_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
+       * <code>int32 query_id = 9;</code>
+       * @param value The queryId to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder setQueryId(int value) {
         
-        retcode_ = value;
+        queryId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 query_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder clearQueryId() {
         
-        retcode_ = 0;
+        queryId_ = 0;
         onChanged();
         return this;
       }
@@ -1449,7 +1364,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
          }
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @return A list containing the level.
        */
       public java.util.List<java.lang.Integer>
@@ -1458,14 +1373,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
                  java.util.Collections.unmodifiableList(level_) : level_;
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @return The count of level.
        */
       public int getLevelCount() {
         return level_.size();
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @param index The index of the element to return.
        * @return The level at the given index.
        */
@@ -1473,7 +1388,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return level_.getInt(index);
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @param index The index to set the value at.
        * @param value The level to set.
        * @return This builder for chaining.
@@ -1486,7 +1401,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @param value The level to add.
        * @return This builder for chaining.
        */
@@ -1497,7 +1412,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @param values The level to add.
        * @return This builder for chaining.
        */
@@ -1510,7 +1425,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 level = 13;</code>
+       * <code>repeated int32 level = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -1587,14 +1502,12 @@ public final class ToTheMoonQueryPathRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ToTheMoonQueryPathRsp.proto\032\024PathStatu" +
-      "sType.proto\032\014Vector.proto\"\350\001\n\025ToTheMoonQ" +
-      "ueryPathRsp\022\017\n\007queryId\030\013 \001(\005\022$\n\013querySta" +
-      "tus\030\017 \001(\0162\017.PathStatusType\022\r\n\005index\030\n \003(" +
-      "\003\022\017\n\007retcode\030\001 \001(\005\022\030\n\007corners\030\003 \003(\0132\007.Ve" +
-      "ctor\022\r\n\005level\030\r \003(\005\"O\n\013DEPALAPFJJF\022\010\n\004NO" +
-      "NE\020\000\022\020\n\013PEPPOHPHJOJ\020\2130\022\017\n\013DCDNILFDFLB\020\000\022" +
-      "\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "sType.proto\032\014Vector.proto\"\231\001\n\025ToTheMoonQ" +
+      "ueryPathRsp\022%\n\014query_status\030\006 \001(\0162\017.Path" +
+      "StatusType\022\017\n\007retcode\030\r \001(\005\022\r\n\005index\030\005 \003" +
+      "(\003\022\020\n\010query_id\030\t \001(\005\022\030\n\007corners\030\003 \003(\0132\007." +
+      "Vector\022\r\n\005level\030\007 \003(\005B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1607,7 +1520,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
     internal_static_ToTheMoonQueryPathRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ToTheMoonQueryPathRsp_descriptor,
-        new java.lang.String[] { "QueryId", "QueryStatus", "Index", "Retcode", "Corners", "Level", });
+        new java.lang.String[] { "QueryStatus", "Retcode", "Index", "QueryId", "Corners", "Level", });
     emu.grasscutter.net.proto.PathStatusTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }

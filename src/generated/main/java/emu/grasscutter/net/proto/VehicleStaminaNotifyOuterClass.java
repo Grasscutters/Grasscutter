@@ -19,18 +19,23 @@ public final class VehicleStaminaNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entityId = 12;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>float curStamina = 15;</code>
+     * <code>float cur_stamina = 12;</code>
      * @return The curStamina.
      */
     float getCurStamina();
   }
   /**
+   * <pre>
+   * Name: DEFEKFDPJCK
+   * CmdId: 826
+   * </pre>
+   *
    * Protobuf type {@code VehicleStaminaNotify}
    */
   public static final class VehicleStaminaNotify extends
@@ -75,14 +80,14 @@ public final class VehicleStaminaNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 125: {
+            case 101: {
 
               curStamina_ = input.readFloat();
+              break;
+            }
+            case 112: {
+
+              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,141 +122,10 @@ public final class VehicleStaminaNotifyOuterClass {
               emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.class, emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code VehicleStaminaNotify.IKJDMAHDGOL}
-     */
-    public enum IKJDMAHDGOL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 851;</code>
-       */
-      PEPPOHPHJOJ(1, 851),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final IKJDMAHDGOL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 851;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 851;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IKJDMAHDGOL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IKJDMAHDGOL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 851: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IKJDMAHDGOL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IKJDMAHDGOL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IKJDMAHDGOL>() {
-              public IKJDMAHDGOL findValueByNumber(int number) {
-                return IKJDMAHDGOL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IKJDMAHDGOL[] VALUES = getStaticValuesArray();
-      private static IKJDMAHDGOL[] getStaticValuesArray() {
-        return new IKJDMAHDGOL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static IKJDMAHDGOL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private IKJDMAHDGOL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:VehicleStaminaNotify.IKJDMAHDGOL)
-    }
-
-    public static final int ENTITYID_FIELD_NUMBER = 12;
+    public static final int ENTITY_ID_FIELD_NUMBER = 14;
     private int entityId_;
     /**
-     * <code>uint32 entityId = 12;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -259,10 +133,10 @@ public final class VehicleStaminaNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int CURSTAMINA_FIELD_NUMBER = 15;
+    public static final int CUR_STAMINA_FIELD_NUMBER = 12;
     private float curStamina_;
     /**
-     * <code>float curStamina = 15;</code>
+     * <code>float cur_stamina = 12;</code>
      * @return The curStamina.
      */
     @java.lang.Override
@@ -284,11 +158,11 @@ public final class VehicleStaminaNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (entityId_ != 0) {
-        output.writeUInt32(12, entityId_);
-      }
       if (curStamina_ != 0F) {
-        output.writeFloat(15, curStamina_);
+        output.writeFloat(12, curStamina_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(14, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,13 +173,13 @@ public final class VehicleStaminaNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, entityId_);
-      }
       if (curStamina_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(15, curStamina_);
+          .computeFloatSize(12, curStamina_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -338,9 +212,9 @@ public final class VehicleStaminaNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITYID_FIELD_NUMBER;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + CURSTAMINA_FIELD_NUMBER;
+      hash = (37 * hash) + CUR_STAMINA_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCurStamina());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -439,6 +313,11 @@ public final class VehicleStaminaNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DEFEKFDPJCK
+     * CmdId: 826
+     * </pre>
+     *
      * Protobuf type {@code VehicleStaminaNotify}
      */
     public static final class Builder extends
@@ -593,7 +472,7 @@ public final class VehicleStaminaNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entityId = 12;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -601,7 +480,7 @@ public final class VehicleStaminaNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entityId = 12;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -612,7 +491,7 @@ public final class VehicleStaminaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entityId = 12;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -624,7 +503,7 @@ public final class VehicleStaminaNotifyOuterClass {
 
       private float curStamina_ ;
       /**
-       * <code>float curStamina = 15;</code>
+       * <code>float cur_stamina = 12;</code>
        * @return The curStamina.
        */
       @java.lang.Override
@@ -632,7 +511,7 @@ public final class VehicleStaminaNotifyOuterClass {
         return curStamina_;
       }
       /**
-       * <code>float curStamina = 15;</code>
+       * <code>float cur_stamina = 12;</code>
        * @param value The curStamina to set.
        * @return This builder for chaining.
        */
@@ -643,7 +522,7 @@ public final class VehicleStaminaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>float curStamina = 15;</code>
+       * <code>float cur_stamina = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurStamina() {
@@ -719,11 +598,9 @@ public final class VehicleStaminaNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032VehicleStaminaNotify.proto\"\215\001\n\024Vehicle" +
-      "StaminaNotify\022\020\n\010entityId\030\014 \001(\r\022\022\n\ncurSt" +
-      "amina\030\017 \001(\002\"O\n\013IKJDMAHDGOL\022\010\n\004NONE\020\000\022\020\n\013" +
-      "PEPPOHPHJOJ\020\323\006\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKO" +
-      "LMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.prot" +
+      "\n\032VehicleStaminaNotify.proto\">\n\024VehicleS" +
+      "taminaNotify\022\021\n\tentity_id\030\016 \001(\r\022\023\n\013cur_s" +
+      "tamina\030\014 \001(\002B\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

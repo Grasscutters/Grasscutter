@@ -19,24 +19,29 @@ public final class SetPlayerBornDataReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string nickName = 10;</code>
+     * <code>string nick_name = 1;</code>
      * @return The nickName.
      */
     java.lang.String getNickName();
     /**
-     * <code>string nickName = 10;</code>
+     * <code>string nick_name = 1;</code>
      * @return The bytes for nickName.
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
 
     /**
-     * <code>uint32 avatarId = 15;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     int getAvatarId();
   }
   /**
+   * <pre>
+   * Name: DPPHDAIPLBC
+   * CmdId: 127
+   * </pre>
+   *
    * Protobuf type {@code SetPlayerBornDataReq}
    */
   public static final class SetPlayerBornDataReq extends
@@ -82,13 +87,13 @@ public final class SetPlayerBornDataReqOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickName_ = s;
               break;
             }
-            case 120: {
+            case 64: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -125,149 +130,10 @@ public final class SetPlayerBornDataReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.class, emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SetPlayerBornDataReq.JJMALAPLECC}
-     */
-    public enum JJMALAPLECC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 169;</code>
-       */
-      PEPPOHPHJOJ(1, 169),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final JJMALAPLECC DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final JJMALAPLECC EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 169;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 169;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JJMALAPLECC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JJMALAPLECC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 169: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JJMALAPLECC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JJMALAPLECC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JJMALAPLECC>() {
-              public JJMALAPLECC findValueByNumber(int number) {
-                return JJMALAPLECC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JJMALAPLECC[] VALUES = getStaticValuesArray();
-      private static JJMALAPLECC[] getStaticValuesArray() {
-        return new JJMALAPLECC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static JJMALAPLECC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private JJMALAPLECC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SetPlayerBornDataReq.JJMALAPLECC)
-    }
-
-    public static final int NICKNAME_FIELD_NUMBER = 10;
+    public static final int NICK_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object nickName_;
     /**
-     * <code>string nickName = 10;</code>
+     * <code>string nick_name = 1;</code>
      * @return The nickName.
      */
     @java.lang.Override
@@ -284,7 +150,7 @@ public final class SetPlayerBornDataReqOuterClass {
       }
     }
     /**
-     * <code>string nickName = 10;</code>
+     * <code>string nick_name = 1;</code>
      * @return The bytes for nickName.
      */
     @java.lang.Override
@@ -302,10 +168,10 @@ public final class SetPlayerBornDataReqOuterClass {
       }
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 15;
+    public static final int AVATAR_ID_FIELD_NUMBER = 8;
     private int avatarId_;
     /**
-     * <code>uint32 avatarId = 15;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -328,10 +194,10 @@ public final class SetPlayerBornDataReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickName_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(15, avatarId_);
+        output.writeUInt32(8, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -343,11 +209,11 @@ public final class SetPlayerBornDataReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nickName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nickName_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, avatarId_);
+          .computeUInt32Size(8, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,9 +245,9 @@ public final class SetPlayerBornDataReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (37 * hash) + NICK_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -479,6 +345,11 @@ public final class SetPlayerBornDataReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DPPHDAIPLBC
+     * CmdId: 127
+     * </pre>
+     *
      * Protobuf type {@code SetPlayerBornDataReq}
      */
     public static final class Builder extends
@@ -634,7 +505,7 @@ public final class SetPlayerBornDataReqOuterClass {
 
       private java.lang.Object nickName_ = "";
       /**
-       * <code>string nickName = 10;</code>
+       * <code>string nick_name = 1;</code>
        * @return The nickName.
        */
       public java.lang.String getNickName() {
@@ -650,7 +521,7 @@ public final class SetPlayerBornDataReqOuterClass {
         }
       }
       /**
-       * <code>string nickName = 10;</code>
+       * <code>string nick_name = 1;</code>
        * @return The bytes for nickName.
        */
       public com.google.protobuf.ByteString
@@ -667,7 +538,7 @@ public final class SetPlayerBornDataReqOuterClass {
         }
       }
       /**
-       * <code>string nickName = 10;</code>
+       * <code>string nick_name = 1;</code>
        * @param value The nickName to set.
        * @return This builder for chaining.
        */
@@ -682,7 +553,7 @@ public final class SetPlayerBornDataReqOuterClass {
         return this;
       }
       /**
-       * <code>string nickName = 10;</code>
+       * <code>string nick_name = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
@@ -692,7 +563,7 @@ public final class SetPlayerBornDataReqOuterClass {
         return this;
       }
       /**
-       * <code>string nickName = 10;</code>
+       * <code>string nick_name = 1;</code>
        * @param value The bytes for nickName to set.
        * @return This builder for chaining.
        */
@@ -710,7 +581,7 @@ public final class SetPlayerBornDataReqOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatarId = 15;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -718,7 +589,7 @@ public final class SetPlayerBornDataReqOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatarId = 15;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -729,7 +600,7 @@ public final class SetPlayerBornDataReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatarId = 15;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -805,12 +676,10 @@ public final class SetPlayerBornDataReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032SetPlayerBornDataReq.proto\"\234\001\n\024SetPlay" +
-      "erBornDataReq\022\020\n\010nickName\030\n \001(\t\022\020\n\010avata" +
-      "rId\030\017 \001(\r\"`\n\013JJMALAPLECC\022\010\n\004NONE\020\000\022\020\n\013PE" +
-      "PPOHPHJOJ\020\251\001\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLM" +
-      "POEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\032SetPlayerBornDataReq.proto\"<\n\024SetPlaye" +
+      "rBornDataReq\022\021\n\tnick_name\030\001 \001(\t\022\021\n\tavata" +
+      "r_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

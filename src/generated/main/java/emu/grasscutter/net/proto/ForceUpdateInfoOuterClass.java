@@ -19,11 +19,19 @@ public final class ForceUpdateInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *AGLGNFAKDMP
+     * </pre>
+     *
      * <code>string force_update_url = 1;</code>
      * @return The forceUpdateUrl.
      */
     java.lang.String getForceUpdateUrl();
     /**
+     * <pre>
+     *AGLGNFAKDMP
+     * </pre>
+     *
      * <code>string force_update_url = 1;</code>
      * @return The bytes for forceUpdateUrl.
      */
@@ -31,6 +39,10 @@ public final class ForceUpdateInfoOuterClass {
         getForceUpdateUrlBytes();
   }
   /**
+   * <pre>
+   * Name: MAABOGBOJFC
+   * </pre>
+   *
    * Protobuf type {@code ForceUpdateInfo}
    */
   public static final class ForceUpdateInfo extends
@@ -117,6 +129,10 @@ public final class ForceUpdateInfoOuterClass {
     public static final int FORCE_UPDATE_URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object forceUpdateUrl_;
     /**
+     * <pre>
+     *AGLGNFAKDMP
+     * </pre>
+     *
      * <code>string force_update_url = 1;</code>
      * @return The forceUpdateUrl.
      */
@@ -134,6 +150,10 @@ public final class ForceUpdateInfoOuterClass {
       }
     }
     /**
+     * <pre>
+     *AGLGNFAKDMP
+     * </pre>
+     *
      * <code>string force_update_url = 1;</code>
      * @return The bytes for forceUpdateUrl.
      */
@@ -307,6 +327,10 @@ public final class ForceUpdateInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MAABOGBOJFC
+     * </pre>
+     *
      * Protobuf type {@code ForceUpdateInfo}
      */
     public static final class Builder extends
@@ -456,6 +480,10 @@ public final class ForceUpdateInfoOuterClass {
 
       private java.lang.Object forceUpdateUrl_ = "";
       /**
+       * <pre>
+       *AGLGNFAKDMP
+       * </pre>
+       *
        * <code>string force_update_url = 1;</code>
        * @return The forceUpdateUrl.
        */
@@ -472,6 +500,10 @@ public final class ForceUpdateInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *AGLGNFAKDMP
+       * </pre>
+       *
        * <code>string force_update_url = 1;</code>
        * @return The bytes for forceUpdateUrl.
        */
@@ -489,6 +521,10 @@ public final class ForceUpdateInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *AGLGNFAKDMP
+       * </pre>
+       *
        * <code>string force_update_url = 1;</code>
        * @param value The forceUpdateUrl to set.
        * @return This builder for chaining.
@@ -504,6 +540,10 @@ public final class ForceUpdateInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *AGLGNFAKDMP
+       * </pre>
+       *
        * <code>string force_update_url = 1;</code>
        * @return This builder for chaining.
        */
@@ -514,6 +554,10 @@ public final class ForceUpdateInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *AGLGNFAKDMP
+       * </pre>
+       *
        * <code>string force_update_url = 1;</code>
        * @param value The bytes for forceUpdateUrl to set.
        * @return This builder for chaining.

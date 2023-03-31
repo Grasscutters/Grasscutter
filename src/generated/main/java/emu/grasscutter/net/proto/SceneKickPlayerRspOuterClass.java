@@ -19,18 +19,23 @@ public final class SceneKickPlayerRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 targetUid = 3;</code>
+     * <code>uint32 target_uid = 14;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
+   * <pre>
+   * Name: KIBABKJFHFK
+   * CmdId: 231
+   * </pre>
+   *
    * Protobuf type {@code SceneKickPlayerRsp}
    */
   public static final class SceneKickPlayerRsp extends
@@ -75,14 +80,14 @@ public final class SceneKickPlayerRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 48: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              targetUid_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,141 +122,10 @@ public final class SceneKickPlayerRspOuterClass {
               emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.class, emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code SceneKickPlayerRsp.KCBEAACBEPG}
-     */
-    public enum KCBEAACBEPG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 240;</code>
-       */
-      PEPPOHPHJOJ(1, 240),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final KCBEAACBEPG DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 240;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 240;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KCBEAACBEPG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static KCBEAACBEPG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 240: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<KCBEAACBEPG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          KCBEAACBEPG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<KCBEAACBEPG>() {
-              public KCBEAACBEPG findValueByNumber(int number) {
-                return KCBEAACBEPG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final KCBEAACBEPG[] VALUES = getStaticValuesArray();
-      private static KCBEAACBEPG[] getStaticValuesArray() {
-        return new KCBEAACBEPG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static KCBEAACBEPG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private KCBEAACBEPG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SceneKickPlayerRsp.KCBEAACBEPG)
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -259,10 +133,10 @@ public final class SceneKickPlayerRspOuterClass {
       return retcode_;
     }
 
-    public static final int TARGETUID_FIELD_NUMBER = 3;
+    public static final int TARGET_UID_FIELD_NUMBER = 14;
     private int targetUid_;
     /**
-     * <code>uint32 targetUid = 3;</code>
+     * <code>uint32 target_uid = 14;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -284,11 +158,11 @@ public final class SceneKickPlayerRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (targetUid_ != 0) {
-        output.writeUInt32(3, targetUid_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(6, retcode_);
+      }
+      if (targetUid_ != 0) {
+        output.writeUInt32(14, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,13 +173,13 @@ public final class SceneKickPlayerRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, targetUid_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(6, retcode_);
+      }
+      if (targetUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,7 +213,7 @@ public final class SceneKickPlayerRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + TARGETUID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -437,6 +311,11 @@ public final class SceneKickPlayerRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KIBABKJFHFK
+     * CmdId: 231
+     * </pre>
+     *
      * Protobuf type {@code SceneKickPlayerRsp}
      */
     public static final class Builder extends
@@ -591,7 +470,7 @@ public final class SceneKickPlayerRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -599,7 +478,7 @@ public final class SceneKickPlayerRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -610,7 +489,7 @@ public final class SceneKickPlayerRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -622,7 +501,7 @@ public final class SceneKickPlayerRspOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 targetUid = 3;</code>
+       * <code>uint32 target_uid = 14;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -630,7 +509,7 @@ public final class SceneKickPlayerRspOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 targetUid = 3;</code>
+       * <code>uint32 target_uid = 14;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -641,7 +520,7 @@ public final class SceneKickPlayerRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 targetUid = 3;</code>
+       * <code>uint32 target_uid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -717,12 +596,10 @@ public final class SceneKickPlayerRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030SceneKickPlayerRsp.proto\"\211\001\n\022SceneKick" +
-      "PlayerRsp\022\017\n\007retcode\030\r \001(\005\022\021\n\ttargetUid\030" +
-      "\003 \001(\r\"O\n\013KCBEAACBEPG\022\010\n\004NONE\020\000\022\020\n\013PEPPOH" +
-      "PHJOJ\020\360\001\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA" +
-      "\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "\n\030SceneKickPlayerRsp.proto\"9\n\022SceneKickP" +
+      "layerRsp\022\017\n\007retcode\030\006 \001(\005\022\022\n\ntarget_uid\030" +
+      "\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

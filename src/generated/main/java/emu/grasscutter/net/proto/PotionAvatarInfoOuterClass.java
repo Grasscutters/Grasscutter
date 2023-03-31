@@ -19,18 +19,22 @@ public final class PotionAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatarId = 10;</code>
+     * <code>uint64 avatar_id = 11;</code>
      * @return The avatarId.
      */
     long getAvatarId();
 
     /**
-     * <code>bool isTrial = 3;</code>
+     * <code>bool is_trial = 7;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
   }
   /**
+   * <pre>
+   * Name: CODEKPJKIOA
+   * </pre>
+   *
    * Protobuf type {@code PotionAvatarInfo}
    */
   public static final class PotionAvatarInfo extends
@@ -75,12 +79,12 @@ public final class PotionAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
 
               isTrial_ = input.readBool();
               break;
             }
-            case 80: {
+            case 88: {
 
               avatarId_ = input.readUInt64();
               break;
@@ -117,10 +121,10 @@ public final class PotionAvatarInfoOuterClass {
               emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfo.class, emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfo.Builder.class);
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 10;
+    public static final int AVATAR_ID_FIELD_NUMBER = 11;
     private long avatarId_;
     /**
-     * <code>uint64 avatarId = 10;</code>
+     * <code>uint64 avatar_id = 11;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class PotionAvatarInfoOuterClass {
       return avatarId_;
     }
 
-    public static final int ISTRIAL_FIELD_NUMBER = 3;
+    public static final int IS_TRIAL_FIELD_NUMBER = 7;
     private boolean isTrial_;
     /**
-     * <code>bool isTrial = 3;</code>
+     * <code>bool is_trial = 7;</code>
      * @return The isTrial.
      */
     @java.lang.Override
@@ -154,10 +158,10 @@ public final class PotionAvatarInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isTrial_ != false) {
-        output.writeBool(3, isTrial_);
+        output.writeBool(7, isTrial_);
       }
       if (avatarId_ != 0L) {
-        output.writeUInt64(10, avatarId_);
+        output.writeUInt64(11, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +174,11 @@ public final class PotionAvatarInfoOuterClass {
       size = 0;
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isTrial_);
+          .computeBoolSize(7, isTrial_);
       }
       if (avatarId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, avatarId_);
+          .computeUInt64Size(11, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,10 +210,10 @@ public final class PotionAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarId());
-      hash = (37 * hash) + ISTRIAL_FIELD_NUMBER;
+      hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrial());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -308,6 +312,10 @@ public final class PotionAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CODEKPJKIOA
+     * </pre>
+     *
      * Protobuf type {@code PotionAvatarInfo}
      */
     public static final class Builder extends
@@ -462,7 +470,7 @@ public final class PotionAvatarInfoOuterClass {
 
       private long avatarId_ ;
       /**
-       * <code>uint64 avatarId = 10;</code>
+       * <code>uint64 avatar_id = 11;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -470,7 +478,7 @@ public final class PotionAvatarInfoOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint64 avatarId = 10;</code>
+       * <code>uint64 avatar_id = 11;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -481,7 +489,7 @@ public final class PotionAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatarId = 10;</code>
+       * <code>uint64 avatar_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -493,7 +501,7 @@ public final class PotionAvatarInfoOuterClass {
 
       private boolean isTrial_ ;
       /**
-       * <code>bool isTrial = 3;</code>
+       * <code>bool is_trial = 7;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -501,7 +509,7 @@ public final class PotionAvatarInfoOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool isTrial = 3;</code>
+       * <code>bool is_trial = 7;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -512,7 +520,7 @@ public final class PotionAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool isTrial = 3;</code>
+       * <code>bool is_trial = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
@@ -588,9 +596,9 @@ public final class PotionAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026PotionAvatarInfo.proto\"5\n\020PotionAvatar" +
-      "Info\022\020\n\010avatarId\030\n \001(\004\022\017\n\007isTrial\030\003 \001(\010B" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\026PotionAvatarInfo.proto\"7\n\020PotionAvatar" +
+      "Info\022\021\n\tavatar_id\030\013 \001(\004\022\020\n\010is_trial\030\007 \001(" +
+      "\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

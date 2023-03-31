@@ -19,60 +19,64 @@ public final class ShopConcertProductOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string productId = 1;</code>
+     * <code>string product_id = 1;</code>
      * @return The productId.
      */
     java.lang.String getProductId();
     /**
-     * <code>string productId = 1;</code>
+     * <code>string product_id = 1;</code>
      * @return The bytes for productId.
      */
     com.google.protobuf.ByteString
         getProductIdBytes();
 
     /**
-     * <code>string priceTier = 2;</code>
+     * <code>string price_tier = 2;</code>
      * @return The priceTier.
      */
     java.lang.String getPriceTier();
     /**
-     * <code>string priceTier = 2;</code>
+     * <code>string price_tier = 2;</code>
      * @return The bytes for priceTier.
      */
     com.google.protobuf.ByteString
         getPriceTierBytes();
 
     /**
-     * <code>uint32 obtainCount = 3;</code>
+     * <code>uint32 obtain_count = 3;</code>
      * @return The obtainCount.
      */
     int getObtainCount();
 
     /**
-     * <code>uint32 obtainLimit = 4;</code>
+     * <code>uint32 obtain_limit = 4;</code>
      * @return The obtainLimit.
      */
     int getObtainLimit();
 
     /**
-     * <code>uint32 beginTime = 5;</code>
+     * <code>uint32 begin_time = 5;</code>
      * @return The beginTime.
      */
     int getBeginTime();
 
     /**
-     * <code>uint32 endTime = 6;</code>
+     * <code>uint32 end_time = 6;</code>
      * @return The endTime.
      */
     int getEndTime();
 
     /**
-     * <code>uint32 buyTimes = 7;</code>
+     * <code>uint32 buy_times = 7;</code>
      * @return The buyTimes.
      */
     int getBuyTimes();
   }
   /**
+   * <pre>
+   * Name: FIMJMLPLPAC
+   * </pre>
+   *
    * Protobuf type {@code ShopConcertProduct}
    */
   public static final class ShopConcertProduct extends
@@ -188,10 +192,10 @@ public final class ShopConcertProductOuterClass {
               emu.grasscutter.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.class, emu.grasscutter.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.Builder.class);
     }
 
-    public static final int PRODUCTID_FIELD_NUMBER = 1;
+    public static final int PRODUCT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object productId_;
     /**
-     * <code>string productId = 1;</code>
+     * <code>string product_id = 1;</code>
      * @return The productId.
      */
     @java.lang.Override
@@ -208,7 +212,7 @@ public final class ShopConcertProductOuterClass {
       }
     }
     /**
-     * <code>string productId = 1;</code>
+     * <code>string product_id = 1;</code>
      * @return The bytes for productId.
      */
     @java.lang.Override
@@ -226,10 +230,10 @@ public final class ShopConcertProductOuterClass {
       }
     }
 
-    public static final int PRICETIER_FIELD_NUMBER = 2;
+    public static final int PRICE_TIER_FIELD_NUMBER = 2;
     private volatile java.lang.Object priceTier_;
     /**
-     * <code>string priceTier = 2;</code>
+     * <code>string price_tier = 2;</code>
      * @return The priceTier.
      */
     @java.lang.Override
@@ -246,7 +250,7 @@ public final class ShopConcertProductOuterClass {
       }
     }
     /**
-     * <code>string priceTier = 2;</code>
+     * <code>string price_tier = 2;</code>
      * @return The bytes for priceTier.
      */
     @java.lang.Override
@@ -264,10 +268,10 @@ public final class ShopConcertProductOuterClass {
       }
     }
 
-    public static final int OBTAINCOUNT_FIELD_NUMBER = 3;
+    public static final int OBTAIN_COUNT_FIELD_NUMBER = 3;
     private int obtainCount_;
     /**
-     * <code>uint32 obtainCount = 3;</code>
+     * <code>uint32 obtain_count = 3;</code>
      * @return The obtainCount.
      */
     @java.lang.Override
@@ -275,10 +279,10 @@ public final class ShopConcertProductOuterClass {
       return obtainCount_;
     }
 
-    public static final int OBTAINLIMIT_FIELD_NUMBER = 4;
+    public static final int OBTAIN_LIMIT_FIELD_NUMBER = 4;
     private int obtainLimit_;
     /**
-     * <code>uint32 obtainLimit = 4;</code>
+     * <code>uint32 obtain_limit = 4;</code>
      * @return The obtainLimit.
      */
     @java.lang.Override
@@ -286,10 +290,10 @@ public final class ShopConcertProductOuterClass {
       return obtainLimit_;
     }
 
-    public static final int BEGINTIME_FIELD_NUMBER = 5;
+    public static final int BEGIN_TIME_FIELD_NUMBER = 5;
     private int beginTime_;
     /**
-     * <code>uint32 beginTime = 5;</code>
+     * <code>uint32 begin_time = 5;</code>
      * @return The beginTime.
      */
     @java.lang.Override
@@ -297,10 +301,10 @@ public final class ShopConcertProductOuterClass {
       return beginTime_;
     }
 
-    public static final int ENDTIME_FIELD_NUMBER = 6;
+    public static final int END_TIME_FIELD_NUMBER = 6;
     private int endTime_;
     /**
-     * <code>uint32 endTime = 6;</code>
+     * <code>uint32 end_time = 6;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -308,10 +312,10 @@ public final class ShopConcertProductOuterClass {
       return endTime_;
     }
 
-    public static final int BUYTIMES_FIELD_NUMBER = 7;
+    public static final int BUY_TIMES_FIELD_NUMBER = 7;
     private int buyTimes_;
     /**
-     * <code>uint32 buyTimes = 7;</code>
+     * <code>uint32 buy_times = 7;</code>
      * @return The buyTimes.
      */
     @java.lang.Override
@@ -429,19 +433,19 @@ public final class ShopConcertProductOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCTID_FIELD_NUMBER;
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProductId().hashCode();
-      hash = (37 * hash) + PRICETIER_FIELD_NUMBER;
+      hash = (37 * hash) + PRICE_TIER_FIELD_NUMBER;
       hash = (53 * hash) + getPriceTier().hashCode();
-      hash = (37 * hash) + OBTAINCOUNT_FIELD_NUMBER;
+      hash = (37 * hash) + OBTAIN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getObtainCount();
-      hash = (37 * hash) + OBTAINLIMIT_FIELD_NUMBER;
+      hash = (37 * hash) + OBTAIN_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getObtainLimit();
-      hash = (37 * hash) + BEGINTIME_FIELD_NUMBER;
+      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBeginTime();
-      hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (37 * hash) + BUYTIMES_FIELD_NUMBER;
+      hash = (37 * hash) + BUY_TIMES_FIELD_NUMBER;
       hash = (53 * hash) + getBuyTimes();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -539,6 +543,10 @@ public final class ShopConcertProductOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FIMJMLPLPAC
+     * </pre>
+     *
      * Protobuf type {@code ShopConcertProduct}
      */
     public static final class Builder extends
@@ -725,7 +733,7 @@ public final class ShopConcertProductOuterClass {
 
       private java.lang.Object productId_ = "";
       /**
-       * <code>string productId = 1;</code>
+       * <code>string product_id = 1;</code>
        * @return The productId.
        */
       public java.lang.String getProductId() {
@@ -741,7 +749,7 @@ public final class ShopConcertProductOuterClass {
         }
       }
       /**
-       * <code>string productId = 1;</code>
+       * <code>string product_id = 1;</code>
        * @return The bytes for productId.
        */
       public com.google.protobuf.ByteString
@@ -758,7 +766,7 @@ public final class ShopConcertProductOuterClass {
         }
       }
       /**
-       * <code>string productId = 1;</code>
+       * <code>string product_id = 1;</code>
        * @param value The productId to set.
        * @return This builder for chaining.
        */
@@ -773,7 +781,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>string productId = 1;</code>
+       * <code>string product_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
@@ -783,7 +791,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>string productId = 1;</code>
+       * <code>string product_id = 1;</code>
        * @param value The bytes for productId to set.
        * @return This builder for chaining.
        */
@@ -801,7 +809,7 @@ public final class ShopConcertProductOuterClass {
 
       private java.lang.Object priceTier_ = "";
       /**
-       * <code>string priceTier = 2;</code>
+       * <code>string price_tier = 2;</code>
        * @return The priceTier.
        */
       public java.lang.String getPriceTier() {
@@ -817,7 +825,7 @@ public final class ShopConcertProductOuterClass {
         }
       }
       /**
-       * <code>string priceTier = 2;</code>
+       * <code>string price_tier = 2;</code>
        * @return The bytes for priceTier.
        */
       public com.google.protobuf.ByteString
@@ -834,7 +842,7 @@ public final class ShopConcertProductOuterClass {
         }
       }
       /**
-       * <code>string priceTier = 2;</code>
+       * <code>string price_tier = 2;</code>
        * @param value The priceTier to set.
        * @return This builder for chaining.
        */
@@ -849,7 +857,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>string priceTier = 2;</code>
+       * <code>string price_tier = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
@@ -859,7 +867,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>string priceTier = 2;</code>
+       * <code>string price_tier = 2;</code>
        * @param value The bytes for priceTier to set.
        * @return This builder for chaining.
        */
@@ -877,7 +885,7 @@ public final class ShopConcertProductOuterClass {
 
       private int obtainCount_ ;
       /**
-       * <code>uint32 obtainCount = 3;</code>
+       * <code>uint32 obtain_count = 3;</code>
        * @return The obtainCount.
        */
       @java.lang.Override
@@ -885,7 +893,7 @@ public final class ShopConcertProductOuterClass {
         return obtainCount_;
       }
       /**
-       * <code>uint32 obtainCount = 3;</code>
+       * <code>uint32 obtain_count = 3;</code>
        * @param value The obtainCount to set.
        * @return This builder for chaining.
        */
@@ -896,7 +904,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>uint32 obtainCount = 3;</code>
+       * <code>uint32 obtain_count = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearObtainCount() {
@@ -908,7 +916,7 @@ public final class ShopConcertProductOuterClass {
 
       private int obtainLimit_ ;
       /**
-       * <code>uint32 obtainLimit = 4;</code>
+       * <code>uint32 obtain_limit = 4;</code>
        * @return The obtainLimit.
        */
       @java.lang.Override
@@ -916,7 +924,7 @@ public final class ShopConcertProductOuterClass {
         return obtainLimit_;
       }
       /**
-       * <code>uint32 obtainLimit = 4;</code>
+       * <code>uint32 obtain_limit = 4;</code>
        * @param value The obtainLimit to set.
        * @return This builder for chaining.
        */
@@ -927,7 +935,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>uint32 obtainLimit = 4;</code>
+       * <code>uint32 obtain_limit = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearObtainLimit() {
@@ -939,7 +947,7 @@ public final class ShopConcertProductOuterClass {
 
       private int beginTime_ ;
       /**
-       * <code>uint32 beginTime = 5;</code>
+       * <code>uint32 begin_time = 5;</code>
        * @return The beginTime.
        */
       @java.lang.Override
@@ -947,7 +955,7 @@ public final class ShopConcertProductOuterClass {
         return beginTime_;
       }
       /**
-       * <code>uint32 beginTime = 5;</code>
+       * <code>uint32 begin_time = 5;</code>
        * @param value The beginTime to set.
        * @return This builder for chaining.
        */
@@ -958,7 +966,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>uint32 beginTime = 5;</code>
+       * <code>uint32 begin_time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
@@ -970,7 +978,7 @@ public final class ShopConcertProductOuterClass {
 
       private int endTime_ ;
       /**
-       * <code>uint32 endTime = 6;</code>
+       * <code>uint32 end_time = 6;</code>
        * @return The endTime.
        */
       @java.lang.Override
@@ -978,7 +986,7 @@ public final class ShopConcertProductOuterClass {
         return endTime_;
       }
       /**
-       * <code>uint32 endTime = 6;</code>
+       * <code>uint32 end_time = 6;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
        */
@@ -989,7 +997,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>uint32 endTime = 6;</code>
+       * <code>uint32 end_time = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -1001,7 +1009,7 @@ public final class ShopConcertProductOuterClass {
 
       private int buyTimes_ ;
       /**
-       * <code>uint32 buyTimes = 7;</code>
+       * <code>uint32 buy_times = 7;</code>
        * @return The buyTimes.
        */
       @java.lang.Override
@@ -1009,7 +1017,7 @@ public final class ShopConcertProductOuterClass {
         return buyTimes_;
       }
       /**
-       * <code>uint32 buyTimes = 7;</code>
+       * <code>uint32 buy_times = 7;</code>
        * @param value The buyTimes to set.
        * @return This builder for chaining.
        */
@@ -1020,7 +1028,7 @@ public final class ShopConcertProductOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buyTimes = 7;</code>
+       * <code>uint32 buy_times = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuyTimes() {
@@ -1096,12 +1104,12 @@ public final class ShopConcertProductOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030ShopConcertProduct.proto\"\232\001\n\022ShopConce" +
-      "rtProduct\022\021\n\tproductId\030\001 \001(\t\022\021\n\tpriceTie" +
-      "r\030\002 \001(\t\022\023\n\013obtainCount\030\003 \001(\r\022\023\n\013obtainLi" +
-      "mit\030\004 \001(\r\022\021\n\tbeginTime\030\005 \001(\r\022\017\n\007endTime\030" +
-      "\006 \001(\r\022\020\n\010buyTimes\030\007 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n\030ShopConcertProduct.proto\"\241\001\n\022ShopConce" +
+      "rtProduct\022\022\n\nproduct_id\030\001 \001(\t\022\022\n\nprice_t" +
+      "ier\030\002 \001(\t\022\024\n\014obtain_count\030\003 \001(\r\022\024\n\014obtai" +
+      "n_limit\030\004 \001(\r\022\022\n\nbegin_time\030\005 \001(\r\022\020\n\010end" +
+      "_time\030\006 \001(\r\022\021\n\tbuy_times\030\007 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

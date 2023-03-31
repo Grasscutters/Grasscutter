@@ -19,23 +19,28 @@ public final class ClosedItemNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @return A list containing the itemIdList.
      */
     java.util.List<java.lang.Integer> getItemIdListList();
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @return The count of itemIdList.
      */
     int getItemIdListCount();
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The itemIdList at the given index.
      */
     int getItemIdList(int index);
   }
   /**
+   * <pre>
+   * Name: JMJFPPIJEGA
+   * CmdId: 689
+   * </pre>
+   *
    * Protobuf type {@code ClosedItemNotify}
    */
   public static final class ClosedItemNotify extends
@@ -82,7 +87,7 @@ public final class ClosedItemNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class ClosedItemNotifyOuterClass {
               itemIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,141 +143,10 @@ public final class ClosedItemNotifyOuterClass {
               emu.grasscutter.net.proto.ClosedItemNotifyOuterClass.ClosedItemNotify.class, emu.grasscutter.net.proto.ClosedItemNotifyOuterClass.ClosedItemNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ClosedItemNotify.EBJOICAJNPJ}
-     */
-    public enum EBJOICAJNPJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 612;</code>
-       */
-      PEPPOHPHJOJ(1, 612),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final EBJOICAJNPJ DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 612;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 612;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static EBJOICAJNPJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static EBJOICAJNPJ forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 612: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<EBJOICAJNPJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          EBJOICAJNPJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<EBJOICAJNPJ>() {
-              public EBJOICAJNPJ findValueByNumber(int number) {
-                return EBJOICAJNPJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ClosedItemNotifyOuterClass.ClosedItemNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final EBJOICAJNPJ[] VALUES = getStaticValuesArray();
-      private static EBJOICAJNPJ[] getStaticValuesArray() {
-        return new EBJOICAJNPJ[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static EBJOICAJNPJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private EBJOICAJNPJ(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ClosedItemNotify.EBJOICAJNPJ)
-    }
-
-    public static final int ITEMIDLIST_FIELD_NUMBER = 6;
+    public static final int ITEM_ID_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList itemIdList_;
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @return A list containing the itemIdList.
      */
     @java.lang.Override
@@ -281,14 +155,14 @@ public final class ClosedItemNotifyOuterClass {
       return itemIdList_;
     }
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @return The count of itemIdList.
      */
     public int getItemIdListCount() {
       return itemIdList_.size();
     }
     /**
-     * <code>repeated uint32 itemIdList = 6;</code>
+     * <code>repeated uint32 item_id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The itemIdList at the given index.
      */
@@ -313,7 +187,7 @@ public final class ClosedItemNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getItemIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(itemIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < itemIdList_.size(); i++) {
@@ -371,7 +245,7 @@ public final class ClosedItemNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getItemIdListCount() > 0) {
-        hash = (37 * hash) + ITEMIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + ITEM_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -470,6 +344,11 @@ public final class ClosedItemNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JMJFPPIJEGA
+     * CmdId: 689
+     * </pre>
+     *
      * Protobuf type {@code ClosedItemNotify}
      */
     public static final class Builder extends
@@ -637,7 +516,7 @@ public final class ClosedItemNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @return A list containing the itemIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -646,14 +525,14 @@ public final class ClosedItemNotifyOuterClass {
                  java.util.Collections.unmodifiableList(itemIdList_) : itemIdList_;
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @return The count of itemIdList.
        */
       public int getItemIdListCount() {
         return itemIdList_.size();
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @param index The index of the element to return.
        * @return The itemIdList at the given index.
        */
@@ -661,7 +540,7 @@ public final class ClosedItemNotifyOuterClass {
         return itemIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @param index The index to set the value at.
        * @param value The itemIdList to set.
        * @return This builder for chaining.
@@ -674,7 +553,7 @@ public final class ClosedItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @param value The itemIdList to add.
        * @return This builder for chaining.
        */
@@ -685,7 +564,7 @@ public final class ClosedItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @param values The itemIdList to add.
        * @return This builder for chaining.
        */
@@ -698,7 +577,7 @@ public final class ClosedItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 itemIdList = 6;</code>
+       * <code>repeated uint32 item_id_list = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemIdList() {
@@ -774,11 +653,9 @@ public final class ClosedItemNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ClosedItemNotify.proto\"w\n\020ClosedItemNo" +
-      "tify\022\022\n\nitemIdList\030\006 \003(\r\"O\n\013EBJOICAJNPJ\022" +
-      "\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\344\004\022\017\n\013DCDNILFDF" +
-      "LB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\n\026ClosedItemNotify.proto\"(\n\020ClosedItemNo" +
+      "tify\022\024\n\014item_id_list\030\n \003(\rB\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

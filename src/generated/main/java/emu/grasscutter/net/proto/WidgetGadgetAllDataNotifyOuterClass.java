@@ -19,30 +19,35 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> 
         getWidgetGadgetDataList();
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData getWidgetGadgetData(int index);
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     int getWidgetGadgetDataCount();
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> 
         getWidgetGadgetDataOrBuilderList();
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Name: EDHIDALBDJA
+   * CmdId: 4280
+   * </pre>
+   *
    * Protobuf type {@code WidgetGadgetAllDataNotify}
    */
   public static final class WidgetGadgetAllDataNotify extends
@@ -89,7 +94,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 widgetGadgetData_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,148 +138,17 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
               emu.grasscutter.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify.class, emu.grasscutter.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code WidgetGadgetAllDataNotify.HOFILGKEMCN}
-     */
-    public enum HOFILGKEMCN
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4259;</code>
-       */
-      PEPPOHPHJOJ(1, 4259),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final HOFILGKEMCN DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4259;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4259;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static HOFILGKEMCN valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static HOFILGKEMCN forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4259: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<HOFILGKEMCN>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          HOFILGKEMCN> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HOFILGKEMCN>() {
-              public HOFILGKEMCN findValueByNumber(int number) {
-                return HOFILGKEMCN.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final HOFILGKEMCN[] VALUES = getStaticValuesArray();
-      private static HOFILGKEMCN[] getStaticValuesArray() {
-        return new HOFILGKEMCN[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static HOFILGKEMCN valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private HOFILGKEMCN(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:WidgetGadgetAllDataNotify.HOFILGKEMCN)
-    }
-
-    public static final int WIDGETGADGETDATA_FIELD_NUMBER = 4;
+    public static final int WIDGET_GADGET_DATA_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> widgetGadgetData_;
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> getWidgetGadgetDataList() {
       return widgetGadgetData_;
     }
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> 
@@ -282,21 +156,21 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       return widgetGadgetData_;
     }
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     @java.lang.Override
     public int getWidgetGadgetDataCount() {
       return widgetGadgetData_.size();
     }
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData getWidgetGadgetData(int index) {
       return widgetGadgetData_.get(index);
     }
     /**
-     * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+     * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder(
@@ -319,7 +193,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < widgetGadgetData_.size(); i++) {
-        output.writeMessage(4, widgetGadgetData_.get(i));
+        output.writeMessage(5, widgetGadgetData_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -332,7 +206,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < widgetGadgetData_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, widgetGadgetData_.get(i));
+          .computeMessageSize(5, widgetGadgetData_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -363,7 +237,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getWidgetGadgetDataCount() > 0) {
-        hash = (37 * hash) + WIDGETGADGETDATA_FIELD_NUMBER;
+        hash = (37 * hash) + WIDGET_GADGET_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getWidgetGadgetDataList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -462,6 +336,11 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: EDHIDALBDJA
+     * CmdId: 4280
+     * </pre>
+     *
      * Protobuf type {@code WidgetGadgetAllDataNotify}
      */
     public static final class Builder extends
@@ -659,7 +538,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
           emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> widgetGadgetDataBuilder_;
 
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> getWidgetGadgetDataList() {
         if (widgetGadgetDataBuilder_ == null) {
@@ -669,7 +548,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public int getWidgetGadgetDataCount() {
         if (widgetGadgetDataBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData getWidgetGadgetData(int index) {
         if (widgetGadgetDataBuilder_ == null) {
@@ -689,7 +568,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder setWidgetGadgetData(
           int index, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData value) {
@@ -706,7 +585,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder setWidgetGadgetData(
           int index, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder builderForValue) {
@@ -720,7 +599,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder addWidgetGadgetData(emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData value) {
         if (widgetGadgetDataBuilder_ == null) {
@@ -736,7 +615,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder addWidgetGadgetData(
           int index, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData value) {
@@ -753,7 +632,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder addWidgetGadgetData(
           emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder builderForValue) {
@@ -767,7 +646,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder addWidgetGadgetData(
           int index, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder builderForValue) {
@@ -781,7 +660,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder addAllWidgetGadgetData(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> values) {
@@ -796,7 +675,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder clearWidgetGadgetData() {
         if (widgetGadgetDataBuilder_ == null) {
@@ -809,7 +688,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public Builder removeWidgetGadgetData(int index) {
         if (widgetGadgetDataBuilder_ == null) {
@@ -822,14 +701,14 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder getWidgetGadgetDataBuilder(
           int index) {
         return getWidgetGadgetDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder getWidgetGadgetDataOrBuilder(
           int index) {
@@ -839,7 +718,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetDataOrBuilder> 
            getWidgetGadgetDataOrBuilderList() {
@@ -850,14 +729,14 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder addWidgetGadgetDataBuilder() {
         return getWidgetGadgetDataFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder addWidgetGadgetDataBuilder(
           int index) {
@@ -865,7 +744,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetGadgetData widgetGadgetData = 4;</code>
+       * <code>repeated .WidgetGadgetData widget_gadget_data = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder> 
            getWidgetGadgetDataBuilderList() {
@@ -953,11 +832,9 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037WidgetGadgetAllDataNotify.proto\032\026Widge" +
-      "tGadgetData.proto\"\231\001\n\031WidgetGadgetAllDat" +
-      "aNotify\022+\n\020widgetGadgetData\030\004 \003(\0132\021.Widg" +
-      "etGadgetData\"O\n\013HOFILGKEMCN\022\010\n\004NONE\020\000\022\020\n" +
-      "\013PEPPOHPHJOJ\020\243!\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBK" +
-      "OLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pro" +
+      "tGadgetData.proto\"J\n\031WidgetGadgetAllData" +
+      "Notify\022-\n\022widget_gadget_data\030\005 \003(\0132\021.Wid" +
+      "getGadgetDataB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

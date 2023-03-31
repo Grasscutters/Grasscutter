@@ -19,12 +19,17 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatarGuid = 15;</code>
+     * <code>uint64 avatar_guid = 14;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
+   * <pre>
+   * Name: MIEMEMKNFDE
+   * CmdId: 1641
+   * </pre>
+   *
    * Protobuf type {@code AvatarExpeditionGetRewardReq}
    */
   public static final class AvatarExpeditionGetRewardReq extends
@@ -69,7 +74,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 112: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -106,149 +111,10 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq.class, emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarExpeditionGetRewardReq.ELDPCKGGBFB}
-     */
-    public enum ELDPCKGGBFB
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1712;</code>
-       */
-      PEPPOHPHJOJ(1, 1712),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ELDPCKGGBFB DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final ELDPCKGGBFB EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1712;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1712;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ELDPCKGGBFB valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ELDPCKGGBFB forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1712: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ELDPCKGGBFB>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ELDPCKGGBFB> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ELDPCKGGBFB>() {
-              public ELDPCKGGBFB findValueByNumber(int number) {
-                return ELDPCKGGBFB.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ELDPCKGGBFB[] VALUES = getStaticValuesArray();
-      private static ELDPCKGGBFB[] getStaticValuesArray() {
-        return new ELDPCKGGBFB[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static ELDPCKGGBFB valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ELDPCKGGBFB(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarExpeditionGetRewardReq.ELDPCKGGBFB)
-    }
-
-    public static final int AVATARGUID_FIELD_NUMBER = 15;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatarGuid = 15;</code>
+     * <code>uint64 avatar_guid = 14;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(15, avatarGuid_);
+        output.writeUInt64(14, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, avatarGuid_);
+          .computeUInt64Size(14, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARGUID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -413,6 +279,11 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MIEMEMKNFDE
+     * CmdId: 1641
+     * </pre>
+     *
      * Protobuf type {@code AvatarExpeditionGetRewardReq}
      */
     public static final class Builder extends
@@ -561,7 +432,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatarGuid = 15;</code>
+       * <code>uint64 avatar_guid = 14;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -569,7 +440,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatarGuid = 15;</code>
+       * <code>uint64 avatar_guid = 14;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -580,7 +451,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatarGuid = 15;</code>
+       * <code>uint64 avatar_guid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -656,12 +527,10 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"AvatarExpeditionGetRewardReq.proto\"\224\001\n" +
-      "\034AvatarExpeditionGetRewardReq\022\022\n\navatarG" +
-      "uid\030\017 \001(\004\"`\n\013ELDPCKGGBFB\022\010\n\004NONE\020\000\022\020\n\013PE" +
-      "PPOHPHJOJ\020\260\r\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLM" +
-      "POEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\"AvatarExpeditionGetRewardReq.proto\"3\n\034" +
+      "AvatarExpeditionGetRewardReq\022\023\n\013avatar_g" +
+      "uid\030\016 \001(\004B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

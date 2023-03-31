@@ -15,117 +15,121 @@ public final class GalleryStopReasonOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Name: LLJAMLLPIIF
+   * </pre>
+   *
    * Protobuf enum {@code GalleryStopReason}
    */
   public enum GalleryStopReason
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>GALLERY_STOP_REASON_NONE = 0;</code>
+     * <code>GALLERY_STOP_NONE = 0;</code>
      */
-    GALLERY_STOP_REASON_NONE(0),
+    GALLERY_STOP_NONE(0),
     /**
-     * <code>GALLERY_STOP_REASON_TIMEUP = 1;</code>
+     * <code>GALLERY_STOP_TIMEUP = 1;</code>
      */
-    GALLERY_STOP_REASON_TIMEUP(1),
+    GALLERY_STOP_TIMEUP(1),
     /**
-     * <code>GALLERY_STOP_REASON_CLIENT_INTERRUPT = 2;</code>
+     * <code>GALLERY_STOP_CLIENT_INTERRUPT = 2;</code>
      */
-    GALLERY_STOP_REASON_CLIENT_INTERRUPT(2),
+    GALLERY_STOP_CLIENT_INTERRUPT(2),
     /**
-     * <code>GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS = 3;</code>
+     * <code>GALLERY_STOP_LUA_INTERRUPT_SUCCESS = 3;</code>
      */
-    GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS(3),
+    GALLERY_STOP_LUA_INTERRUPT_SUCCESS(3),
     /**
-     * <code>GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL = 4;</code>
+     * <code>GALLERY_STOP_LUA_INTERRUPT_FAIL = 4;</code>
      */
-    GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL(4),
+    GALLERY_STOP_LUA_INTERRUPT_FAIL(4),
     /**
-     * <code>GALLERY_STOP_REASON_OWNER_LEAVE_SCENE = 5;</code>
+     * <code>GALLERY_STOP_OWNER_LEAVE_SCENE = 5;</code>
      */
-    GALLERY_STOP_REASON_OWNER_LEAVE_SCENE(5),
+    GALLERY_STOP_OWNER_LEAVE_SCENE(5),
     /**
-     * <code>GALLERY_STOP_REASON_PLAY_INIT_FAILED = 6;</code>
+     * <code>GALLERY_STOP_PLAY_INIT_FAILED = 6;</code>
      */
-    GALLERY_STOP_REASON_PLAY_INIT_FAILED(6),
+    GALLERY_STOP_PLAY_INIT_FAILED(6),
     /**
-     * <code>GALLERY_STOP_REASON_OTHER_PLAYER_ENTER = 7;</code>
+     * <code>GALLERY_STOP_OTHER_PLAYER_ENTER = 7;</code>
      */
-    GALLERY_STOP_REASON_OTHER_PLAYER_ENTER(7),
+    GALLERY_STOP_OTHER_PLAYER_ENTER(7),
     /**
-     * <code>GALLERY_STOP_REASON_AVATAR_DIE = 8;</code>
+     * <code>GALLERY_STOP_AVATAR_DIE = 8;</code>
      */
-    GALLERY_STOP_REASON_AVATAR_DIE(8),
+    GALLERY_STOP_AVATAR_DIE(8),
     /**
-     * <code>GALLERY_STOP_REASON_FINISHED = 9;</code>
+     * <code>GALLERY_STOP_FINISHED = 9;</code>
      */
-    GALLERY_STOP_REASON_FINISHED(9),
+    GALLERY_STOP_FINISHED(9),
     /**
-     * <code>GALLERY_STOP_REASON_FUNGUS_ALL_DIE = 10;</code>
+     * <code>GALLERY_STOP_FUNGUS_ALL_DIE = 10;</code>
      */
-    GALLERY_STOP_REASON_FUNGUS_ALL_DIE(10),
+    GALLERY_STOP_FUNGUS_ALL_DIE(10),
     /**
-     * <code>GALLERY_STOP_REASON_LIFE_COUNT_ZERO = 11;</code>
+     * <code>GALLERY_STOP_LIFE_COUNT_ZERO = 11;</code>
      */
-    GALLERY_STOP_REASON_LIFE_COUNT_ZERO(11),
+    GALLERY_STOP_LIFE_COUNT_ZERO(11),
     /**
-     * <code>GALLERY_STOP_REASON_Unk3300_DFPLGCGIIDM = 12;</code>
+     * <code>GALLERY_STOP_REASON_PALOHPNAIMF = 12;</code>
      */
-    GALLERY_STOP_REASON_Unk3300_DFPLGCGIIDM(12),
+    GALLERY_STOP_REASON_PALOHPNAIMF(12),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>GALLERY_STOP_REASON_NONE = 0;</code>
+     * <code>GALLERY_STOP_NONE = 0;</code>
      */
-    public static final int GALLERY_STOP_REASON_NONE_VALUE = 0;
+    public static final int GALLERY_STOP_NONE_VALUE = 0;
     /**
-     * <code>GALLERY_STOP_REASON_TIMEUP = 1;</code>
+     * <code>GALLERY_STOP_TIMEUP = 1;</code>
      */
-    public static final int GALLERY_STOP_REASON_TIMEUP_VALUE = 1;
+    public static final int GALLERY_STOP_TIMEUP_VALUE = 1;
     /**
-     * <code>GALLERY_STOP_REASON_CLIENT_INTERRUPT = 2;</code>
+     * <code>GALLERY_STOP_CLIENT_INTERRUPT = 2;</code>
      */
-    public static final int GALLERY_STOP_REASON_CLIENT_INTERRUPT_VALUE = 2;
+    public static final int GALLERY_STOP_CLIENT_INTERRUPT_VALUE = 2;
     /**
-     * <code>GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS = 3;</code>
+     * <code>GALLERY_STOP_LUA_INTERRUPT_SUCCESS = 3;</code>
      */
-    public static final int GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS_VALUE = 3;
+    public static final int GALLERY_STOP_LUA_INTERRUPT_SUCCESS_VALUE = 3;
     /**
-     * <code>GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL = 4;</code>
+     * <code>GALLERY_STOP_LUA_INTERRUPT_FAIL = 4;</code>
      */
-    public static final int GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL_VALUE = 4;
+    public static final int GALLERY_STOP_LUA_INTERRUPT_FAIL_VALUE = 4;
     /**
-     * <code>GALLERY_STOP_REASON_OWNER_LEAVE_SCENE = 5;</code>
+     * <code>GALLERY_STOP_OWNER_LEAVE_SCENE = 5;</code>
      */
-    public static final int GALLERY_STOP_REASON_OWNER_LEAVE_SCENE_VALUE = 5;
+    public static final int GALLERY_STOP_OWNER_LEAVE_SCENE_VALUE = 5;
     /**
-     * <code>GALLERY_STOP_REASON_PLAY_INIT_FAILED = 6;</code>
+     * <code>GALLERY_STOP_PLAY_INIT_FAILED = 6;</code>
      */
-    public static final int GALLERY_STOP_REASON_PLAY_INIT_FAILED_VALUE = 6;
+    public static final int GALLERY_STOP_PLAY_INIT_FAILED_VALUE = 6;
     /**
-     * <code>GALLERY_STOP_REASON_OTHER_PLAYER_ENTER = 7;</code>
+     * <code>GALLERY_STOP_OTHER_PLAYER_ENTER = 7;</code>
      */
-    public static final int GALLERY_STOP_REASON_OTHER_PLAYER_ENTER_VALUE = 7;
+    public static final int GALLERY_STOP_OTHER_PLAYER_ENTER_VALUE = 7;
     /**
-     * <code>GALLERY_STOP_REASON_AVATAR_DIE = 8;</code>
+     * <code>GALLERY_STOP_AVATAR_DIE = 8;</code>
      */
-    public static final int GALLERY_STOP_REASON_AVATAR_DIE_VALUE = 8;
+    public static final int GALLERY_STOP_AVATAR_DIE_VALUE = 8;
     /**
-     * <code>GALLERY_STOP_REASON_FINISHED = 9;</code>
+     * <code>GALLERY_STOP_FINISHED = 9;</code>
      */
-    public static final int GALLERY_STOP_REASON_FINISHED_VALUE = 9;
+    public static final int GALLERY_STOP_FINISHED_VALUE = 9;
     /**
-     * <code>GALLERY_STOP_REASON_FUNGUS_ALL_DIE = 10;</code>
+     * <code>GALLERY_STOP_FUNGUS_ALL_DIE = 10;</code>
      */
-    public static final int GALLERY_STOP_REASON_FUNGUS_ALL_DIE_VALUE = 10;
+    public static final int GALLERY_STOP_FUNGUS_ALL_DIE_VALUE = 10;
     /**
-     * <code>GALLERY_STOP_REASON_LIFE_COUNT_ZERO = 11;</code>
+     * <code>GALLERY_STOP_LIFE_COUNT_ZERO = 11;</code>
      */
-    public static final int GALLERY_STOP_REASON_LIFE_COUNT_ZERO_VALUE = 11;
+    public static final int GALLERY_STOP_LIFE_COUNT_ZERO_VALUE = 11;
     /**
-     * <code>GALLERY_STOP_REASON_Unk3300_DFPLGCGIIDM = 12;</code>
+     * <code>GALLERY_STOP_REASON_PALOHPNAIMF = 12;</code>
      */
-    public static final int GALLERY_STOP_REASON_Unk3300_DFPLGCGIIDM_VALUE = 12;
+    public static final int GALLERY_STOP_REASON_PALOHPNAIMF_VALUE = 12;
 
 
     public final int getNumber() {
@@ -152,19 +156,19 @@ public final class GalleryStopReasonOuterClass {
      */
     public static GalleryStopReason forNumber(int value) {
       switch (value) {
-        case 0: return GALLERY_STOP_REASON_NONE;
-        case 1: return GALLERY_STOP_REASON_TIMEUP;
-        case 2: return GALLERY_STOP_REASON_CLIENT_INTERRUPT;
-        case 3: return GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS;
-        case 4: return GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL;
-        case 5: return GALLERY_STOP_REASON_OWNER_LEAVE_SCENE;
-        case 6: return GALLERY_STOP_REASON_PLAY_INIT_FAILED;
-        case 7: return GALLERY_STOP_REASON_OTHER_PLAYER_ENTER;
-        case 8: return GALLERY_STOP_REASON_AVATAR_DIE;
-        case 9: return GALLERY_STOP_REASON_FINISHED;
-        case 10: return GALLERY_STOP_REASON_FUNGUS_ALL_DIE;
-        case 11: return GALLERY_STOP_REASON_LIFE_COUNT_ZERO;
-        case 12: return GALLERY_STOP_REASON_Unk3300_DFPLGCGIIDM;
+        case 0: return GALLERY_STOP_NONE;
+        case 1: return GALLERY_STOP_TIMEUP;
+        case 2: return GALLERY_STOP_CLIENT_INTERRUPT;
+        case 3: return GALLERY_STOP_LUA_INTERRUPT_SUCCESS;
+        case 4: return GALLERY_STOP_LUA_INTERRUPT_FAIL;
+        case 5: return GALLERY_STOP_OWNER_LEAVE_SCENE;
+        case 6: return GALLERY_STOP_PLAY_INIT_FAILED;
+        case 7: return GALLERY_STOP_OTHER_PLAYER_ENTER;
+        case 8: return GALLERY_STOP_AVATAR_DIE;
+        case 9: return GALLERY_STOP_FINISHED;
+        case 10: return GALLERY_STOP_FUNGUS_ALL_DIE;
+        case 11: return GALLERY_STOP_LIFE_COUNT_ZERO;
+        case 12: return GALLERY_STOP_REASON_PALOHPNAIMF;
         default: return null;
       }
     }
@@ -230,22 +234,19 @@ public final class GalleryStopReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027GalleryStopReason.proto*\233\004\n\021GallerySto" +
-      "pReason\022\034\n\030GALLERY_STOP_REASON_NONE\020\000\022\036\n" +
-      "\032GALLERY_STOP_REASON_TIMEUP\020\001\022(\n$GALLERY" +
-      "_STOP_REASON_CLIENT_INTERRUPT\020\002\022-\n)GALLE" +
-      "RY_STOP_REASON_LUA_INTERRUPT_SUCCESS\020\003\022*" +
-      "\n&GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL" +
-      "\020\004\022)\n%GALLERY_STOP_REASON_OWNER_LEAVE_SC" +
-      "ENE\020\005\022(\n$GALLERY_STOP_REASON_PLAY_INIT_F" +
-      "AILED\020\006\022*\n&GALLERY_STOP_REASON_OTHER_PLA" +
-      "YER_ENTER\020\007\022\"\n\036GALLERY_STOP_REASON_AVATA" +
-      "R_DIE\020\010\022 \n\034GALLERY_STOP_REASON_FINISHED\020" +
-      "\t\022&\n\"GALLERY_STOP_REASON_FUNGUS_ALL_DIE\020" +
-      "\n\022\'\n#GALLERY_STOP_REASON_LIFE_COUNT_ZERO" +
-      "\020\013\022+\n\'GALLERY_STOP_REASON_Unk3300_DFPLGC" +
-      "GIIDM\020\014B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n\027GalleryStopReason.proto*\277\003\n\021GallerySto" +
+      "pReason\022\025\n\021GALLERY_STOP_NONE\020\000\022\027\n\023GALLER" +
+      "Y_STOP_TIMEUP\020\001\022!\n\035GALLERY_STOP_CLIENT_I" +
+      "NTERRUPT\020\002\022&\n\"GALLERY_STOP_LUA_INTERRUPT" +
+      "_SUCCESS\020\003\022#\n\037GALLERY_STOP_LUA_INTERRUPT" +
+      "_FAIL\020\004\022\"\n\036GALLERY_STOP_OWNER_LEAVE_SCEN" +
+      "E\020\005\022!\n\035GALLERY_STOP_PLAY_INIT_FAILED\020\006\022#" +
+      "\n\037GALLERY_STOP_OTHER_PLAYER_ENTER\020\007\022\033\n\027G" +
+      "ALLERY_STOP_AVATAR_DIE\020\010\022\031\n\025GALLERY_STOP" +
+      "_FINISHED\020\t\022\037\n\033GALLERY_STOP_FUNGUS_ALL_D" +
+      "IE\020\n\022 \n\034GALLERY_STOP_LIFE_COUNT_ZERO\020\013\022#" +
+      "\n\037GALLERY_STOP_REASON_PALOHPNAIMF\020\014B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

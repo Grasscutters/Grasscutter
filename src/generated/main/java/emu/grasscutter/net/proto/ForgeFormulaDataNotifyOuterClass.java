@@ -19,18 +19,23 @@ public final class ForgeFormulaDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isLocked = 1;</code>
-     * @return The isLocked.
-     */
-    boolean getIsLocked();
-
-    /**
-     * <code>uint32 forgeId = 12;</code>
+     * <code>uint32 forge_id = 12;</code>
      * @return The forgeId.
      */
     int getForgeId();
+
+    /**
+     * <code>bool is_locked = 2;</code>
+     * @return The isLocked.
+     */
+    boolean getIsLocked();
   }
   /**
+   * <pre>
+   * Name: PDNKADLJIEC
+   * CmdId: 606
+   * </pre>
+   *
    * Protobuf type {@code ForgeFormulaDataNotify}
    */
   public static final class ForgeFormulaDataNotify extends
@@ -75,7 +80,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               isLocked_ = input.readBool();
               break;
@@ -117,157 +122,26 @@ public final class ForgeFormulaDataNotifyOuterClass {
               emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.class, emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ForgeFormulaDataNotify.MAAICENINJL}
-     */
-    public enum MAAICENINJL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 661;</code>
-       */
-      PEPPOHPHJOJ(1, 661),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final MAAICENINJL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 661;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 661;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MAAICENINJL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MAAICENINJL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 661: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MAAICENINJL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MAAICENINJL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MAAICENINJL>() {
-              public MAAICENINJL findValueByNumber(int number) {
-                return MAAICENINJL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final MAAICENINJL[] VALUES = getStaticValuesArray();
-      private static MAAICENINJL[] getStaticValuesArray() {
-        return new MAAICENINJL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static MAAICENINJL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private MAAICENINJL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ForgeFormulaDataNotify.MAAICENINJL)
-    }
-
-    public static final int ISLOCKED_FIELD_NUMBER = 1;
-    private boolean isLocked_;
-    /**
-     * <code>bool isLocked = 1;</code>
-     * @return The isLocked.
-     */
-    @java.lang.Override
-    public boolean getIsLocked() {
-      return isLocked_;
-    }
-
-    public static final int FORGEID_FIELD_NUMBER = 12;
+    public static final int FORGE_ID_FIELD_NUMBER = 12;
     private int forgeId_;
     /**
-     * <code>uint32 forgeId = 12;</code>
+     * <code>uint32 forge_id = 12;</code>
      * @return The forgeId.
      */
     @java.lang.Override
     public int getForgeId() {
       return forgeId_;
+    }
+
+    public static final int IS_LOCKED_FIELD_NUMBER = 2;
+    private boolean isLocked_;
+    /**
+     * <code>bool is_locked = 2;</code>
+     * @return The isLocked.
+     */
+    @java.lang.Override
+    public boolean getIsLocked() {
+      return isLocked_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -285,7 +159,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isLocked_ != false) {
-        output.writeBool(1, isLocked_);
+        output.writeBool(2, isLocked_);
       }
       if (forgeId_ != 0) {
         output.writeUInt32(12, forgeId_);
@@ -301,7 +175,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
       size = 0;
       if (isLocked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isLocked_);
+          .computeBoolSize(2, isLocked_);
       }
       if (forgeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -322,10 +196,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify other = (emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify) obj;
 
-      if (getIsLocked()
-          != other.getIsLocked()) return false;
       if (getForgeId()
           != other.getForgeId()) return false;
+      if (getIsLocked()
+          != other.getIsLocked()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,11 +211,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISLOCKED_FIELD_NUMBER;
+      hash = (37 * hash) + FORGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getForgeId();
+      hash = (37 * hash) + IS_LOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLocked());
-      hash = (37 * hash) + FORGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getForgeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +312,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: PDNKADLJIEC
+     * CmdId: 606
+     * </pre>
+     *
      * Protobuf type {@code ForgeFormulaDataNotify}
      */
     public static final class Builder extends
@@ -475,9 +354,9 @@ public final class ForgeFormulaDataNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isLocked_ = false;
-
         forgeId_ = 0;
+
+        isLocked_ = false;
 
         return this;
       }
@@ -505,8 +384,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify buildPartial() {
         emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify result = new emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify(this);
-        result.isLocked_ = isLocked_;
         result.forgeId_ = forgeId_;
+        result.isLocked_ = isLocked_;
         onBuilt();
         return result;
       }
@@ -555,11 +434,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify other) {
         if (other == emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.getDefaultInstance()) return this;
-        if (other.getIsLocked() != false) {
-          setIsLocked(other.getIsLocked());
-        }
         if (other.getForgeId() != 0) {
           setForgeId(other.getForgeId());
+        }
+        if (other.getIsLocked() != false) {
+          setIsLocked(other.getIsLocked());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -590,40 +469,9 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return this;
       }
 
-      private boolean isLocked_ ;
-      /**
-       * <code>bool isLocked = 1;</code>
-       * @return The isLocked.
-       */
-      @java.lang.Override
-      public boolean getIsLocked() {
-        return isLocked_;
-      }
-      /**
-       * <code>bool isLocked = 1;</code>
-       * @param value The isLocked to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsLocked(boolean value) {
-        
-        isLocked_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool isLocked = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsLocked() {
-        
-        isLocked_ = false;
-        onChanged();
-        return this;
-      }
-
       private int forgeId_ ;
       /**
-       * <code>uint32 forgeId = 12;</code>
+       * <code>uint32 forge_id = 12;</code>
        * @return The forgeId.
        */
       @java.lang.Override
@@ -631,7 +479,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return forgeId_;
       }
       /**
-       * <code>uint32 forgeId = 12;</code>
+       * <code>uint32 forge_id = 12;</code>
        * @param value The forgeId to set.
        * @return This builder for chaining.
        */
@@ -642,12 +490,43 @@ public final class ForgeFormulaDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 forgeId = 12;</code>
+       * <code>uint32 forge_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearForgeId() {
         
         forgeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isLocked_ ;
+      /**
+       * <code>bool is_locked = 2;</code>
+       * @return The isLocked.
+       */
+      @java.lang.Override
+      public boolean getIsLocked() {
+        return isLocked_;
+      }
+      /**
+       * <code>bool is_locked = 2;</code>
+       * @param value The isLocked to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsLocked(boolean value) {
+        
+        isLocked_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_locked = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsLocked() {
+        
+        isLocked_ = false;
         onChanged();
         return this;
       }
@@ -718,11 +597,9 @@ public final class ForgeFormulaDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034ForgeFormulaDataNotify.proto\"\214\001\n\026Forge" +
-      "FormulaDataNotify\022\020\n\010isLocked\030\001 \001(\010\022\017\n\007f" +
-      "orgeId\030\014 \001(\r\"O\n\013MAAICENINJL\022\010\n\004NONE\020\000\022\020\n" +
-      "\013PEPPOHPHJOJ\020\225\005\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBK" +
-      "OLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pro" +
+      "\n\034ForgeFormulaDataNotify.proto\"=\n\026ForgeF" +
+      "ormulaDataNotify\022\020\n\010forge_id\030\014 \001(\r\022\021\n\tis" +
+      "_locked\030\002 \001(\010B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -734,7 +611,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
     internal_static_ForgeFormulaDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ForgeFormulaDataNotify_descriptor,
-        new java.lang.String[] { "IsLocked", "ForgeId", });
+        new java.lang.String[] { "ForgeId", "IsLocked", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

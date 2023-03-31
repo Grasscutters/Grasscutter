@@ -19,18 +19,22 @@ public final class ProfilePictureOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatarId = 1;</code>
+     * <code>uint32 avatar_id = 1;</code>
      * @return The avatarId.
      */
     int getAvatarId();
 
     /**
-     * <code>uint32 costumeId = 2;</code>
+     * <code>uint32 costume_id = 2;</code>
      * @return The costumeId.
      */
     int getCostumeId();
   }
   /**
+   * <pre>
+   * Name: ILGNCKHBGFO
+   * </pre>
+   *
    * Protobuf type {@code ProfilePicture}
    */
   public static final class ProfilePicture extends
@@ -117,10 +121,10 @@ public final class ProfilePictureOuterClass {
               emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.class, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder.class);
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 1;
+    public static final int AVATAR_ID_FIELD_NUMBER = 1;
     private int avatarId_;
     /**
-     * <code>uint32 avatarId = 1;</code>
+     * <code>uint32 avatar_id = 1;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class ProfilePictureOuterClass {
       return avatarId_;
     }
 
-    public static final int COSTUMEID_FIELD_NUMBER = 2;
+    public static final int COSTUME_ID_FIELD_NUMBER = 2;
     private int costumeId_;
     /**
-     * <code>uint32 costumeId = 2;</code>
+     * <code>uint32 costume_id = 2;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -206,9 +210,9 @@ public final class ProfilePictureOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
-      hash = (37 * hash) + COSTUMEID_FIELD_NUMBER;
+      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -306,6 +310,10 @@ public final class ProfilePictureOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: ILGNCKHBGFO
+     * </pre>
+     *
      * Protobuf type {@code ProfilePicture}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class ProfilePictureOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatarId = 1;</code>
+       * <code>uint32 avatar_id = 1;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class ProfilePictureOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatarId = 1;</code>
+       * <code>uint32 avatar_id = 1;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class ProfilePictureOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatarId = 1;</code>
+       * <code>uint32 avatar_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -491,7 +499,7 @@ public final class ProfilePictureOuterClass {
 
       private int costumeId_ ;
       /**
-       * <code>uint32 costumeId = 2;</code>
+       * <code>uint32 costume_id = 2;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class ProfilePictureOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costumeId = 2;</code>
+       * <code>uint32 costume_id = 2;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class ProfilePictureOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costumeId = 2;</code>
+       * <code>uint32 costume_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
@@ -586,9 +594,9 @@ public final class ProfilePictureOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ProfilePicture.proto\"5\n\016ProfilePicture" +
-      "\022\020\n\010avatarId\030\001 \001(\r\022\021\n\tcostumeId\030\002 \001(\rB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\024ProfilePicture.proto\"7\n\016ProfilePicture" +
+      "\022\021\n\tavatar_id\030\001 \001(\r\022\022\n\ncostume_id\030\002 \001(\rB" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

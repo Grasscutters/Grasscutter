@@ -19,12 +19,17 @@ public final class DungeonWayPointActivateReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 wayPointId = 11;</code>
+     * <code>uint32 way_point_id = 1;</code>
      * @return The wayPointId.
      */
     int getWayPointId();
   }
   /**
+   * <pre>
+   * Name: BEMKEMNHKGB
+   * CmdId: 982
+   * </pre>
+   *
    * Protobuf type {@code DungeonWayPointActivateReq}
    */
   public static final class DungeonWayPointActivateReq extends
@@ -69,7 +74,7 @@ public final class DungeonWayPointActivateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
 
               wayPointId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class DungeonWayPointActivateReqOuterClass {
               emu.grasscutter.net.proto.DungeonWayPointActivateReqOuterClass.DungeonWayPointActivateReq.class, emu.grasscutter.net.proto.DungeonWayPointActivateReqOuterClass.DungeonWayPointActivateReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code DungeonWayPointActivateReq.DDOKEPKPODC}
-     */
-    public enum DDOKEPKPODC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 970;</code>
-       */
-      PEPPOHPHJOJ(1, 970),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final DDOKEPKPODC DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final DDOKEPKPODC EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 970;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 970;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DDOKEPKPODC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static DDOKEPKPODC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 970: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DDOKEPKPODC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DDOKEPKPODC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DDOKEPKPODC>() {
-              public DDOKEPKPODC findValueByNumber(int number) {
-                return DDOKEPKPODC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DungeonWayPointActivateReqOuterClass.DungeonWayPointActivateReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DDOKEPKPODC[] VALUES = getStaticValuesArray();
-      private static DDOKEPKPODC[] getStaticValuesArray() {
-        return new DDOKEPKPODC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static DDOKEPKPODC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private DDOKEPKPODC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:DungeonWayPointActivateReq.DDOKEPKPODC)
-    }
-
-    public static final int WAYPOINTID_FIELD_NUMBER = 11;
+    public static final int WAY_POINT_ID_FIELD_NUMBER = 1;
     private int wayPointId_;
     /**
-     * <code>uint32 wayPointId = 11;</code>
+     * <code>uint32 way_point_id = 1;</code>
      * @return The wayPointId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class DungeonWayPointActivateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (wayPointId_ != 0) {
-        output.writeUInt32(11, wayPointId_);
+        output.writeUInt32(1, wayPointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class DungeonWayPointActivateReqOuterClass {
       size = 0;
       if (wayPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, wayPointId_);
+          .computeUInt32Size(1, wayPointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class DungeonWayPointActivateReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WAYPOINTID_FIELD_NUMBER;
+      hash = (37 * hash) + WAY_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWayPointId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class DungeonWayPointActivateReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BEMKEMNHKGB
+     * CmdId: 982
+     * </pre>
+     *
      * Protobuf type {@code DungeonWayPointActivateReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class DungeonWayPointActivateReqOuterClass {
 
       private int wayPointId_ ;
       /**
-       * <code>uint32 wayPointId = 11;</code>
+       * <code>uint32 way_point_id = 1;</code>
        * @return The wayPointId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class DungeonWayPointActivateReqOuterClass {
         return wayPointId_;
       }
       /**
-       * <code>uint32 wayPointId = 11;</code>
+       * <code>uint32 way_point_id = 1;</code>
        * @param value The wayPointId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class DungeonWayPointActivateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wayPointId = 11;</code>
+       * <code>uint32 way_point_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearWayPointId() {
@@ -655,12 +526,10 @@ public final class DungeonWayPointActivateReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n DungeonWayPointActivateReq.proto\"\222\001\n\032D" +
-      "ungeonWayPointActivateReq\022\022\n\nwayPointId\030" +
-      "\013 \001(\r\"`\n\013DDOKEPKPODC\022\010\n\004NONE\020\000\022\020\n\013PEPPOH" +
-      "PHJOJ\020\312\007\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA" +
-      "\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n DungeonWayPointActivateReq.proto\"2\n\032Du" +
+      "ngeonWayPointActivateReq\022\024\n\014way_point_id" +
+      "\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

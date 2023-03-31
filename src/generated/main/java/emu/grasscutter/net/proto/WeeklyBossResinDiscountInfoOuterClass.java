@@ -19,30 +19,34 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 discountNum = 1;</code>
+     * <code>uint32 discount_num = 1;</code>
      * @return The discountNum.
      */
     int getDiscountNum();
 
     /**
-     * <code>uint32 discountNumLimit = 2;</code>
+     * <code>uint32 discount_num_limit = 2;</code>
      * @return The discountNumLimit.
      */
     int getDiscountNumLimit();
 
     /**
-     * <code>uint32 resinCost = 3;</code>
+     * <code>uint32 resin_cost = 3;</code>
      * @return The resinCost.
      */
     int getResinCost();
 
     /**
-     * <code>uint32 originalResinCost = 4;</code>
+     * <code>uint32 original_resin_cost = 4;</code>
      * @return The originalResinCost.
      */
     int getOriginalResinCost();
   }
   /**
+   * <pre>
+   * Name: JADEEKLDMOG
+   * </pre>
+   *
    * Protobuf type {@code WeeklyBossResinDiscountInfo}
    */
   public static final class WeeklyBossResinDiscountInfo extends
@@ -139,10 +143,10 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
               emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.class, emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder.class);
     }
 
-    public static final int DISCOUNTNUM_FIELD_NUMBER = 1;
+    public static final int DISCOUNT_NUM_FIELD_NUMBER = 1;
     private int discountNum_;
     /**
-     * <code>uint32 discountNum = 1;</code>
+     * <code>uint32 discount_num = 1;</code>
      * @return The discountNum.
      */
     @java.lang.Override
@@ -150,10 +154,10 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       return discountNum_;
     }
 
-    public static final int DISCOUNTNUMLIMIT_FIELD_NUMBER = 2;
+    public static final int DISCOUNT_NUM_LIMIT_FIELD_NUMBER = 2;
     private int discountNumLimit_;
     /**
-     * <code>uint32 discountNumLimit = 2;</code>
+     * <code>uint32 discount_num_limit = 2;</code>
      * @return The discountNumLimit.
      */
     @java.lang.Override
@@ -161,10 +165,10 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       return discountNumLimit_;
     }
 
-    public static final int RESINCOST_FIELD_NUMBER = 3;
+    public static final int RESIN_COST_FIELD_NUMBER = 3;
     private int resinCost_;
     /**
-     * <code>uint32 resinCost = 3;</code>
+     * <code>uint32 resin_cost = 3;</code>
      * @return The resinCost.
      */
     @java.lang.Override
@@ -172,10 +176,10 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       return resinCost_;
     }
 
-    public static final int ORIGINALRESINCOST_FIELD_NUMBER = 4;
+    public static final int ORIGINAL_RESIN_COST_FIELD_NUMBER = 4;
     private int originalResinCost_;
     /**
-     * <code>uint32 originalResinCost = 4;</code>
+     * <code>uint32 original_resin_cost = 4;</code>
      * @return The originalResinCost.
      */
     @java.lang.Override
@@ -268,13 +272,13 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DISCOUNTNUM_FIELD_NUMBER;
+      hash = (37 * hash) + DISCOUNT_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getDiscountNum();
-      hash = (37 * hash) + DISCOUNTNUMLIMIT_FIELD_NUMBER;
+      hash = (37 * hash) + DISCOUNT_NUM_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getDiscountNumLimit();
-      hash = (37 * hash) + RESINCOST_FIELD_NUMBER;
+      hash = (37 * hash) + RESIN_COST_FIELD_NUMBER;
       hash = (53 * hash) + getResinCost();
-      hash = (37 * hash) + ORIGINALRESINCOST_FIELD_NUMBER;
+      hash = (37 * hash) + ORIGINAL_RESIN_COST_FIELD_NUMBER;
       hash = (53 * hash) + getOriginalResinCost();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -372,6 +376,10 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: JADEEKLDMOG
+     * </pre>
+     *
      * Protobuf type {@code WeeklyBossResinDiscountInfo}
      */
     public static final class Builder extends
@@ -538,7 +546,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
 
       private int discountNum_ ;
       /**
-       * <code>uint32 discountNum = 1;</code>
+       * <code>uint32 discount_num = 1;</code>
        * @return The discountNum.
        */
       @java.lang.Override
@@ -546,7 +554,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return discountNum_;
       }
       /**
-       * <code>uint32 discountNum = 1;</code>
+       * <code>uint32 discount_num = 1;</code>
        * @param value The discountNum to set.
        * @return This builder for chaining.
        */
@@ -557,7 +565,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 discountNum = 1;</code>
+       * <code>uint32 discount_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountNum() {
@@ -569,7 +577,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
 
       private int discountNumLimit_ ;
       /**
-       * <code>uint32 discountNumLimit = 2;</code>
+       * <code>uint32 discount_num_limit = 2;</code>
        * @return The discountNumLimit.
        */
       @java.lang.Override
@@ -577,7 +585,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return discountNumLimit_;
       }
       /**
-       * <code>uint32 discountNumLimit = 2;</code>
+       * <code>uint32 discount_num_limit = 2;</code>
        * @param value The discountNumLimit to set.
        * @return This builder for chaining.
        */
@@ -588,7 +596,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 discountNumLimit = 2;</code>
+       * <code>uint32 discount_num_limit = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountNumLimit() {
@@ -600,7 +608,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
 
       private int resinCost_ ;
       /**
-       * <code>uint32 resinCost = 3;</code>
+       * <code>uint32 resin_cost = 3;</code>
        * @return The resinCost.
        */
       @java.lang.Override
@@ -608,7 +616,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return resinCost_;
       }
       /**
-       * <code>uint32 resinCost = 3;</code>
+       * <code>uint32 resin_cost = 3;</code>
        * @param value The resinCost to set.
        * @return This builder for chaining.
        */
@@ -619,7 +627,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 resinCost = 3;</code>
+       * <code>uint32 resin_cost = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearResinCost() {
@@ -631,7 +639,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
 
       private int originalResinCost_ ;
       /**
-       * <code>uint32 originalResinCost = 4;</code>
+       * <code>uint32 original_resin_cost = 4;</code>
        * @return The originalResinCost.
        */
       @java.lang.Override
@@ -639,7 +647,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return originalResinCost_;
       }
       /**
-       * <code>uint32 originalResinCost = 4;</code>
+       * <code>uint32 original_resin_cost = 4;</code>
        * @param value The originalResinCost to set.
        * @return This builder for chaining.
        */
@@ -650,7 +658,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 originalResinCost = 4;</code>
+       * <code>uint32 original_resin_cost = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearOriginalResinCost() {
@@ -726,11 +734,12 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!WeeklyBossResinDiscountInfo.proto\"z\n\033W" +
-      "eeklyBossResinDiscountInfo\022\023\n\013discountNu" +
-      "m\030\001 \001(\r\022\030\n\020discountNumLimit\030\002 \001(\r\022\021\n\tres" +
-      "inCost\030\003 \001(\r\022\031\n\021originalResinCost\030\004 \001(\rB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n!WeeklyBossResinDiscountInfo.proto\"\200\001\n\033" +
+      "WeeklyBossResinDiscountInfo\022\024\n\014discount_" +
+      "num\030\001 \001(\r\022\032\n\022discount_num_limit\030\002 \001(\r\022\022\n" +
+      "\nresin_cost\030\003 \001(\r\022\033\n\023original_resin_cost" +
+      "\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

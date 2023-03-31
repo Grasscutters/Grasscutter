@@ -19,12 +19,17 @@ public final class AvatarGainCostumeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 costumeId = 6;</code>
+     * <code>uint32 costume_id = 13;</code>
      * @return The costumeId.
      */
     int getCostumeId();
   }
   /**
+   * <pre>
+   * Name: FIMCPLKLILH
+   * CmdId: 1701
+   * </pre>
+   *
    * Protobuf type {@code AvatarGainCostumeNotify}
    */
   public static final class AvatarGainCostumeNotify extends
@@ -69,7 +74,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
 
               costumeId_ = input.readUInt32();
               break;
@@ -106,141 +111,10 @@ public final class AvatarGainCostumeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarGainCostumeNotifyOuterClass.AvatarGainCostumeNotify.class, emu.grasscutter.net.proto.AvatarGainCostumeNotifyOuterClass.AvatarGainCostumeNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarGainCostumeNotify.GMAECEBKKBE}
-     */
-    public enum GMAECEBKKBE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1714;</code>
-       */
-      PEPPOHPHJOJ(1, 1714),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final GMAECEBKKBE DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1714;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1714;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static GMAECEBKKBE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static GMAECEBKKBE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1714: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<GMAECEBKKBE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          GMAECEBKKBE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<GMAECEBKKBE>() {
-              public GMAECEBKKBE findValueByNumber(int number) {
-                return GMAECEBKKBE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarGainCostumeNotifyOuterClass.AvatarGainCostumeNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final GMAECEBKKBE[] VALUES = getStaticValuesArray();
-      private static GMAECEBKKBE[] getStaticValuesArray() {
-        return new GMAECEBKKBE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static GMAECEBKKBE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private GMAECEBKKBE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarGainCostumeNotify.GMAECEBKKBE)
-    }
-
-    public static final int COSTUMEID_FIELD_NUMBER = 6;
+    public static final int COSTUME_ID_FIELD_NUMBER = 13;
     private int costumeId_;
     /**
-     * <code>uint32 costumeId = 6;</code>
+     * <code>uint32 costume_id = 13;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -263,7 +137,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (costumeId_ != 0) {
-        output.writeUInt32(6, costumeId_);
+        output.writeUInt32(13, costumeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,7 +150,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
       size = 0;
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, costumeId_);
+          .computeUInt32Size(13, costumeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,7 +180,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COSTUMEID_FIELD_NUMBER;
+      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -404,6 +278,11 @@ public final class AvatarGainCostumeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: FIMCPLKLILH
+     * CmdId: 1701
+     * </pre>
+     *
      * Protobuf type {@code AvatarGainCostumeNotify}
      */
     public static final class Builder extends
@@ -552,7 +431,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
 
       private int costumeId_ ;
       /**
-       * <code>uint32 costumeId = 6;</code>
+       * <code>uint32 costume_id = 13;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -560,7 +439,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costumeId = 6;</code>
+       * <code>uint32 costume_id = 13;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -571,7 +450,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costumeId = 6;</code>
+       * <code>uint32 costume_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
@@ -647,10 +526,8 @@ public final class AvatarGainCostumeNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035AvatarGainCostumeNotify.proto\"}\n\027Avata" +
-      "rGainCostumeNotify\022\021\n\tcostumeId\030\006 \001(\r\"O\n" +
-      "\013GMAECEBKKBE\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\262\r" +
-      "\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033" +
+      "\n\035AvatarGainCostumeNotify.proto\"-\n\027Avata" +
+      "rGainCostumeNotify\022\022\n\ncostume_id\030\r \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

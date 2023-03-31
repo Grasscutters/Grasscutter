@@ -19,12 +19,17 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 teamId = 6;</code>
+     * <code>uint32 team_id = 13;</code>
      * @return The teamId.
      */
     int getTeamId();
   }
   /**
+   * <pre>
+   * Name: LKHOIDIJEOL
+   * CmdId: 1650
+   * </pre>
+   *
    * Protobuf type {@code ChooseCurAvatarTeamReq}
    */
   public static final class ChooseCurAvatarTeamReq extends
@@ -69,7 +74,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
 
               teamId_ = input.readUInt32();
               break;
@@ -106,149 +111,10 @@ public final class ChooseCurAvatarTeamReqOuterClass {
               emu.grasscutter.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.class, emu.grasscutter.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ChooseCurAvatarTeamReq.DMNPHACHDEO}
-     */
-    public enum DMNPHACHDEO
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1680;</code>
-       */
-      PEPPOHPHJOJ(1, 1680),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final DMNPHACHDEO DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final DMNPHACHDEO EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1680;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1680;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DMNPHACHDEO valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static DMNPHACHDEO forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1680: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DMNPHACHDEO>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DMNPHACHDEO> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DMNPHACHDEO>() {
-              public DMNPHACHDEO findValueByNumber(int number) {
-                return DMNPHACHDEO.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DMNPHACHDEO[] VALUES = getStaticValuesArray();
-      private static DMNPHACHDEO[] getStaticValuesArray() {
-        return new DMNPHACHDEO[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static DMNPHACHDEO valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private DMNPHACHDEO(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ChooseCurAvatarTeamReq.DMNPHACHDEO)
-    }
-
-    public static final int TEAMID_FIELD_NUMBER = 6;
+    public static final int TEAM_ID_FIELD_NUMBER = 13;
     private int teamId_;
     /**
-     * <code>uint32 teamId = 6;</code>
+     * <code>uint32 team_id = 13;</code>
      * @return The teamId.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (teamId_ != 0) {
-        output.writeUInt32(6, teamId_);
+        output.writeUInt32(13, teamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       size = 0;
       if (teamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, teamId_);
+          .computeUInt32Size(13, teamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TEAMID_FIELD_NUMBER;
+      hash = (37 * hash) + TEAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTeamId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -412,6 +278,11 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: LKHOIDIJEOL
+     * CmdId: 1650
+     * </pre>
+     *
      * Protobuf type {@code ChooseCurAvatarTeamReq}
      */
     public static final class Builder extends
@@ -560,7 +431,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
       private int teamId_ ;
       /**
-       * <code>uint32 teamId = 6;</code>
+       * <code>uint32 team_id = 13;</code>
        * @return The teamId.
        */
       @java.lang.Override
@@ -568,7 +439,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         return teamId_;
       }
       /**
-       * <code>uint32 teamId = 6;</code>
+       * <code>uint32 team_id = 13;</code>
        * @param value The teamId to set.
        * @return This builder for chaining.
        */
@@ -579,7 +450,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 teamId = 6;</code>
+       * <code>uint32 team_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTeamId() {
@@ -655,12 +526,9 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034ChooseCurAvatarTeamReq.proto\"\212\001\n\026Choos" +
-      "eCurAvatarTeamReq\022\016\n\006teamId\030\006 \001(\r\"`\n\013DMN" +
-      "PHACHDEO\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\220\r\022\017\n\013" +
-      "DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIAB" +
-      "GAOCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\034ChooseCurAvatarTeamReq.proto\")\n\026Choose" +
+      "CurAvatarTeamReq\022\017\n\007team_id\030\r \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

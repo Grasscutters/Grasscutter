@@ -19,23 +19,28 @@ public final class GetMailItemReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @return A list containing the mailIdList.
      */
     java.util.List<java.lang.Integer> getMailIdListList();
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @return The count of mailIdList.
      */
     int getMailIdListCount();
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
     int getMailIdList(int index);
   }
   /**
+   * <pre>
+   * Name: KONOGCPNPKC
+   * CmdId: 1464
+   * </pre>
+   *
    * Protobuf type {@code GetMailItemReq}
    */
   public static final class GetMailItemReq extends
@@ -82,7 +87,7 @@ public final class GetMailItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ public final class GetMailItemReqOuterClass {
               mailIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,149 +143,10 @@ public final class GetMailItemReqOuterClass {
               emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.class, emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code GetMailItemReq.MCKPHKABHAC}
-     */
-    public enum MCKPHKABHAC
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1498;</code>
-       */
-      PEPPOHPHJOJ(1, 1498),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final MCKPHKABHAC DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final MCKPHKABHAC EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1498;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1498;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MCKPHKABHAC valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MCKPHKABHAC forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1498: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MCKPHKABHAC>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MCKPHKABHAC> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MCKPHKABHAC>() {
-              public MCKPHKABHAC findValueByNumber(int number) {
-                return MCKPHKABHAC.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final MCKPHKABHAC[] VALUES = getStaticValuesArray();
-      private static MCKPHKABHAC[] getStaticValuesArray() {
-        return new MCKPHKABHAC[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static MCKPHKABHAC valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private MCKPHKABHAC(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetMailItemReq.MCKPHKABHAC)
-    }
-
-    public static final int MAILIDLIST_FIELD_NUMBER = 4;
+    public static final int MAIL_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList mailIdList_;
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @return A list containing the mailIdList.
      */
     @java.lang.Override
@@ -289,14 +155,14 @@ public final class GetMailItemReqOuterClass {
       return mailIdList_;
     }
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @return The count of mailIdList.
      */
     public int getMailIdListCount() {
       return mailIdList_.size();
     }
     /**
-     * <code>repeated uint32 mailIdList = 4;</code>
+     * <code>repeated uint32 mail_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
@@ -321,7 +187,7 @@ public final class GetMailItemReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getMailIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(mailIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < mailIdList_.size(); i++) {
@@ -379,7 +245,7 @@ public final class GetMailItemReqOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getMailIdListCount() > 0) {
-        hash = (37 * hash) + MAILIDLIST_FIELD_NUMBER;
+        hash = (37 * hash) + MAIL_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMailIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -478,6 +344,11 @@ public final class GetMailItemReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: KONOGCPNPKC
+     * CmdId: 1464
+     * </pre>
+     *
      * Protobuf type {@code GetMailItemReq}
      */
     public static final class Builder extends
@@ -645,7 +516,7 @@ public final class GetMailItemReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @return A list containing the mailIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -654,14 +525,14 @@ public final class GetMailItemReqOuterClass {
                  java.util.Collections.unmodifiableList(mailIdList_) : mailIdList_;
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @return The count of mailIdList.
        */
       public int getMailIdListCount() {
         return mailIdList_.size();
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @param index The index of the element to return.
        * @return The mailIdList at the given index.
        */
@@ -669,7 +540,7 @@ public final class GetMailItemReqOuterClass {
         return mailIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The mailIdList to set.
        * @return This builder for chaining.
@@ -682,7 +553,7 @@ public final class GetMailItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @param value The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -693,7 +564,7 @@ public final class GetMailItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @param values The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -706,7 +577,7 @@ public final class GetMailItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mailIdList = 4;</code>
+       * <code>repeated uint32 mail_id_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMailIdList() {
@@ -782,11 +653,9 @@ public final class GetMailItemReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024GetMailItemReq.proto\"\206\001\n\016GetMailItemRe" +
-      "q\022\022\n\nmailIdList\030\004 \003(\r\"`\n\013MCKPHKABHAC\022\010\n\004" +
-      "NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\332\013\022\017\n\013DCDNILFDFLB\020" +
-      "\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\024GetMailItemReq.proto\"&\n\016GetMailItemReq" +
+      "\022\024\n\014mail_id_list\030\005 \003(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

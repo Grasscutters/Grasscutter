@@ -19,24 +19,28 @@ public final class EntityClientDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 windChangeSceneTime = 1;</code>
+     * <code>uint32 wind_change_scene_time = 1;</code>
      * @return The windChangeSceneTime.
      */
     int getWindChangeSceneTime();
 
     /**
-     * <code>float windmillSyncAngle = 2;</code>
+     * <code>float windmill_sync_angle = 2;</code>
      * @return The windmillSyncAngle.
      */
     float getWindmillSyncAngle();
 
     /**
-     * <code>int32 windChangeTargetLevel = 3;</code>
+     * <code>int32 wind_change_target_level = 3;</code>
      * @return The windChangeTargetLevel.
      */
     int getWindChangeTargetLevel();
   }
   /**
+   * <pre>
+   * Name: LGAFMFIJKIE
+   * </pre>
+   *
    * Protobuf type {@code EntityClientData}
    */
   public static final class EntityClientData extends
@@ -128,10 +132,10 @@ public final class EntityClientDataOuterClass {
               emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.class, emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData.Builder.class);
     }
 
-    public static final int WINDCHANGESCENETIME_FIELD_NUMBER = 1;
+    public static final int WIND_CHANGE_SCENE_TIME_FIELD_NUMBER = 1;
     private int windChangeSceneTime_;
     /**
-     * <code>uint32 windChangeSceneTime = 1;</code>
+     * <code>uint32 wind_change_scene_time = 1;</code>
      * @return The windChangeSceneTime.
      */
     @java.lang.Override
@@ -139,10 +143,10 @@ public final class EntityClientDataOuterClass {
       return windChangeSceneTime_;
     }
 
-    public static final int WINDMILLSYNCANGLE_FIELD_NUMBER = 2;
+    public static final int WINDMILL_SYNC_ANGLE_FIELD_NUMBER = 2;
     private float windmillSyncAngle_;
     /**
-     * <code>float windmillSyncAngle = 2;</code>
+     * <code>float windmill_sync_angle = 2;</code>
      * @return The windmillSyncAngle.
      */
     @java.lang.Override
@@ -150,10 +154,10 @@ public final class EntityClientDataOuterClass {
       return windmillSyncAngle_;
     }
 
-    public static final int WINDCHANGETARGETLEVEL_FIELD_NUMBER = 3;
+    public static final int WIND_CHANGE_TARGET_LEVEL_FIELD_NUMBER = 3;
     private int windChangeTargetLevel_;
     /**
-     * <code>int32 windChangeTargetLevel = 3;</code>
+     * <code>int32 wind_change_target_level = 3;</code>
      * @return The windChangeTargetLevel.
      */
     @java.lang.Override
@@ -238,12 +242,12 @@ public final class EntityClientDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WINDCHANGESCENETIME_FIELD_NUMBER;
+      hash = (37 * hash) + WIND_CHANGE_SCENE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getWindChangeSceneTime();
-      hash = (37 * hash) + WINDMILLSYNCANGLE_FIELD_NUMBER;
+      hash = (37 * hash) + WINDMILL_SYNC_ANGLE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getWindmillSyncAngle());
-      hash = (37 * hash) + WINDCHANGETARGETLEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + WIND_CHANGE_TARGET_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getWindChangeTargetLevel();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -341,6 +345,10 @@ public final class EntityClientDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: LGAFMFIJKIE
+     * </pre>
+     *
      * Protobuf type {@code EntityClientData}
      */
     public static final class Builder extends
@@ -501,7 +509,7 @@ public final class EntityClientDataOuterClass {
 
       private int windChangeSceneTime_ ;
       /**
-       * <code>uint32 windChangeSceneTime = 1;</code>
+       * <code>uint32 wind_change_scene_time = 1;</code>
        * @return The windChangeSceneTime.
        */
       @java.lang.Override
@@ -509,7 +517,7 @@ public final class EntityClientDataOuterClass {
         return windChangeSceneTime_;
       }
       /**
-       * <code>uint32 windChangeSceneTime = 1;</code>
+       * <code>uint32 wind_change_scene_time = 1;</code>
        * @param value The windChangeSceneTime to set.
        * @return This builder for chaining.
        */
@@ -520,7 +528,7 @@ public final class EntityClientDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 windChangeSceneTime = 1;</code>
+       * <code>uint32 wind_change_scene_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearWindChangeSceneTime() {
@@ -532,7 +540,7 @@ public final class EntityClientDataOuterClass {
 
       private float windmillSyncAngle_ ;
       /**
-       * <code>float windmillSyncAngle = 2;</code>
+       * <code>float windmill_sync_angle = 2;</code>
        * @return The windmillSyncAngle.
        */
       @java.lang.Override
@@ -540,7 +548,7 @@ public final class EntityClientDataOuterClass {
         return windmillSyncAngle_;
       }
       /**
-       * <code>float windmillSyncAngle = 2;</code>
+       * <code>float windmill_sync_angle = 2;</code>
        * @param value The windmillSyncAngle to set.
        * @return This builder for chaining.
        */
@@ -551,7 +559,7 @@ public final class EntityClientDataOuterClass {
         return this;
       }
       /**
-       * <code>float windmillSyncAngle = 2;</code>
+       * <code>float windmill_sync_angle = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearWindmillSyncAngle() {
@@ -563,7 +571,7 @@ public final class EntityClientDataOuterClass {
 
       private int windChangeTargetLevel_ ;
       /**
-       * <code>int32 windChangeTargetLevel = 3;</code>
+       * <code>int32 wind_change_target_level = 3;</code>
        * @return The windChangeTargetLevel.
        */
       @java.lang.Override
@@ -571,7 +579,7 @@ public final class EntityClientDataOuterClass {
         return windChangeTargetLevel_;
       }
       /**
-       * <code>int32 windChangeTargetLevel = 3;</code>
+       * <code>int32 wind_change_target_level = 3;</code>
        * @param value The windChangeTargetLevel to set.
        * @return This builder for chaining.
        */
@@ -582,7 +590,7 @@ public final class EntityClientDataOuterClass {
         return this;
       }
       /**
-       * <code>int32 windChangeTargetLevel = 3;</code>
+       * <code>int32 wind_change_target_level = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearWindChangeTargetLevel() {
@@ -658,11 +666,11 @@ public final class EntityClientDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026EntityClientData.proto\"i\n\020EntityClient" +
-      "Data\022\033\n\023windChangeSceneTime\030\001 \001(\r\022\031\n\021win" +
-      "dmillSyncAngle\030\002 \001(\002\022\035\n\025windChangeTarget" +
-      "Level\030\003 \001(\005B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\026EntityClientData.proto\"q\n\020EntityClient" +
+      "Data\022\036\n\026wind_change_scene_time\030\001 \001(\r\022\033\n\023" +
+      "windmill_sync_angle\030\002 \001(\002\022 \n\030wind_change" +
+      "_target_level\030\003 \001(\005B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

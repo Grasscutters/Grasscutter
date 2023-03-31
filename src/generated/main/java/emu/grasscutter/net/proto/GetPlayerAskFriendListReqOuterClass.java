@@ -19,6 +19,11 @@ public final class GetPlayerAskFriendListReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Name: CDNEAPKKHHL
+   * CmdId: 4079
+   * </pre>
+   *
    * Protobuf type {@code GetPlayerAskFriendListReq}
    */
   public static final class GetPlayerAskFriendListReq extends
@@ -93,145 +98,6 @@ public final class GetPlayerAskFriendListReqOuterClass {
       return emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.internal_static_GetPlayerAskFriendListReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq.class, emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code GetPlayerAskFriendListReq.ANNFFFNCCFG}
-     */
-    public enum ANNFFFNCCFG
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4037;</code>
-       */
-      PEPPOHPHJOJ(1, 4037),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final ANNFFFNCCFG DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final ANNFFFNCCFG EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4037;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4037;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ANNFFFNCCFG valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ANNFFFNCCFG forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4037: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ANNFFFNCCFG>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ANNFFFNCCFG> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ANNFFFNCCFG>() {
-              public ANNFFFNCCFG findValueByNumber(int number) {
-                return ANNFFFNCCFG.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ANNFFFNCCFG[] VALUES = getStaticValuesArray();
-      private static ANNFFFNCCFG[] getStaticValuesArray() {
-        return new ANNFFFNCCFG[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static ANNFFFNCCFG valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private ANNFFFNCCFG(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:GetPlayerAskFriendListReq.ANNFFFNCCFG)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -379,6 +245,11 @@ public final class GetPlayerAskFriendListReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: CDNEAPKKHHL
+     * CmdId: 4079
+     * </pre>
+     *
      * Protobuf type {@code GetPlayerAskFriendListReq}
      */
     public static final class Builder extends
@@ -585,11 +456,9 @@ public final class GetPlayerAskFriendListReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\037GetPlayerAskFriendListReq.proto\"}\n\031Get" +
-      "PlayerAskFriendListReq\"`\n\013ANNFFFNCCFG\022\010\n" +
-      "\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\305\037\022\017\n\013DCDNILFDFLB" +
-      "\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\037GetPlayerAskFriendListReq.proto\"\033\n\031Get" +
+      "PlayerAskFriendListReqB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

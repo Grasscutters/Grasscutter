@@ -19,18 +19,23 @@ public final class ExitTransPointRegionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pointId = 2;</code>
+     * <code>uint32 point_id = 3;</code>
      * @return The pointId.
      */
     int getPointId();
 
     /**
-     * <code>uint32 sceneId = 8;</code>
+     * <code>uint32 scene_id = 10;</code>
      * @return The sceneId.
      */
     int getSceneId();
   }
   /**
+   * <pre>
+   * Name: DLNOJLIAACE
+   * CmdId: 266
+   * </pre>
+   *
    * Protobuf type {@code ExitTransPointRegionNotify}
    */
   public static final class ExitTransPointRegionNotify extends
@@ -75,12 +80,12 @@ public final class ExitTransPointRegionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 80: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -117,149 +122,10 @@ public final class ExitTransPointRegionNotifyOuterClass {
               emu.grasscutter.net.proto.ExitTransPointRegionNotifyOuterClass.ExitTransPointRegionNotify.class, emu.grasscutter.net.proto.ExitTransPointRegionNotifyOuterClass.ExitTransPointRegionNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code ExitTransPointRegionNotify.AHMONCNKABI}
-     */
-    public enum AHMONCNKABI
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 206;</code>
-       */
-      PEPPOHPHJOJ(1, 206),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final AHMONCNKABI DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final AHMONCNKABI EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 206;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 206;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static AHMONCNKABI valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static AHMONCNKABI forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 206: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<AHMONCNKABI>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          AHMONCNKABI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AHMONCNKABI>() {
-              public AHMONCNKABI findValueByNumber(int number) {
-                return AHMONCNKABI.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ExitTransPointRegionNotifyOuterClass.ExitTransPointRegionNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final AHMONCNKABI[] VALUES = getStaticValuesArray();
-      private static AHMONCNKABI[] getStaticValuesArray() {
-        return new AHMONCNKABI[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static AHMONCNKABI valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private AHMONCNKABI(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ExitTransPointRegionNotify.AHMONCNKABI)
-    }
-
-    public static final int POINTID_FIELD_NUMBER = 2;
+    public static final int POINT_ID_FIELD_NUMBER = 3;
     private int pointId_;
     /**
-     * <code>uint32 pointId = 2;</code>
+     * <code>uint32 point_id = 3;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -267,10 +133,10 @@ public final class ExitTransPointRegionNotifyOuterClass {
       return pointId_;
     }
 
-    public static final int SCENEID_FIELD_NUMBER = 8;
+    public static final int SCENE_ID_FIELD_NUMBER = 10;
     private int sceneId_;
     /**
-     * <code>uint32 sceneId = 8;</code>
+     * <code>uint32 scene_id = 10;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -293,10 +159,10 @@ public final class ExitTransPointRegionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(2, pointId_);
+        output.writeUInt32(3, pointId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+        output.writeUInt32(10, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -309,11 +175,11 @@ public final class ExitTransPointRegionNotifyOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, pointId_);
+          .computeUInt32Size(3, pointId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
+          .computeUInt32Size(10, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,9 +211,9 @@ public final class ExitTransPointRegionNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POINTID_FIELD_NUMBER;
+      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (37 * hash) + SCENEID_FIELD_NUMBER;
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -445,6 +311,11 @@ public final class ExitTransPointRegionNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DLNOJLIAACE
+     * CmdId: 266
+     * </pre>
+     *
      * Protobuf type {@code ExitTransPointRegionNotify}
      */
     public static final class Builder extends
@@ -599,7 +470,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 pointId = 2;</code>
+       * <code>uint32 point_id = 3;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -607,7 +478,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 pointId = 2;</code>
+       * <code>uint32 point_id = 3;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -618,7 +489,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 pointId = 2;</code>
+       * <code>uint32 point_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -630,7 +501,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 sceneId = 8;</code>
+       * <code>uint32 scene_id = 10;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -638,7 +509,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 sceneId = 8;</code>
+       * <code>uint32 scene_id = 10;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -649,7 +520,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sceneId = 8;</code>
+       * <code>uint32 scene_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -725,12 +596,10 @@ public final class ExitTransPointRegionNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n ExitTransPointRegionNotify.proto\"\240\001\n\032E" +
-      "xitTransPointRegionNotify\022\017\n\007pointId\030\002 \001" +
-      "(\r\022\017\n\007sceneId\030\010 \001(\r\"`\n\013AHMONCNKABI\022\010\n\004NO" +
-      "NE\020\000\022\020\n\013PEPPOHPHJOJ\020\316\001\022\017\n\013DCDNILFDFLB\020\000\022" +
-      "\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGAOCI\020\001\032\002\020\001B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n ExitTransPointRegionNotify.proto\"@\n\032Ex" +
+      "itTransPointRegionNotify\022\020\n\010point_id\030\003 \001" +
+      "(\r\022\020\n\010scene_id\030\n \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

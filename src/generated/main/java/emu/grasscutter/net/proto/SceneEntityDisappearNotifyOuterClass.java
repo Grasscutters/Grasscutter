@@ -19,40 +19,45 @@ public final class SceneEntityDisappearNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>uint32 param = 15;</code>
+     * @return The param.
+     */
+    int getParam();
+
+    /**
+     * <code>repeated uint32 entity_list = 14;</code>
      * @return A list containing the entityList.
      */
     java.util.List<java.lang.Integer> getEntityListList();
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>repeated uint32 entity_list = 14;</code>
      * @return The count of entityList.
      */
     int getEntityListCount();
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>repeated uint32 entity_list = 14;</code>
      * @param index The index of the element to return.
      * @return The entityList at the given index.
      */
     int getEntityList(int index);
 
     /**
-     * <code>uint32 param = 10;</code>
-     * @return The param.
-     */
-    int getParam();
-
-    /**
-     * <code>.VisionType disappearType = 7;</code>
+     * <code>.VisionType disappear_type = 8;</code>
      * @return The enum numeric value on the wire for disappearType.
      */
     int getDisappearTypeValue();
     /**
-     * <code>.VisionType disappearType = 7;</code>
+     * <code>.VisionType disappear_type = 8;</code>
      * @return The disappearType.
      */
     emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType getDisappearType();
   }
   /**
+   * <pre>
+   * Name: DPLGLLKDHHD
+   * CmdId: 272
+   * </pre>
+   *
    * Protobuf type {@code SceneEntityDisappearNotify}
    */
   public static final class SceneEntityDisappearNotify extends
@@ -100,18 +105,13 @@ public final class SceneEntityDisappearNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 64: {
               int rawValue = input.readEnum();
 
               disappearType_ = rawValue;
               break;
             }
-            case 80: {
-
-              param_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -119,7 +119,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
               entityList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -130,6 +130,11 @@ public final class SceneEntityDisappearNotifyOuterClass {
                 entityList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 120: {
+
+              param_ = input.readUInt32();
               break;
             }
             default: {
@@ -167,141 +172,21 @@ public final class SceneEntityDisappearNotifyOuterClass {
               emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify.class, emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify.Builder.class);
     }
 
+    public static final int PARAM_FIELD_NUMBER = 15;
+    private int param_;
     /**
-     * Protobuf enum {@code SceneEntityDisappearNotify.JBIJGLIONLH}
+     * <code>uint32 param = 15;</code>
+     * @return The param.
      */
-    public enum JBIJGLIONLH
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 280;</code>
-       */
-      PEPPOHPHJOJ(1, 280),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final JBIJGLIONLH DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 280;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 280;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JBIJGLIONLH valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JBIJGLIONLH forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 280: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JBIJGLIONLH>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JBIJGLIONLH> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JBIJGLIONLH>() {
-              public JBIJGLIONLH findValueByNumber(int number) {
-                return JBIJGLIONLH.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JBIJGLIONLH[] VALUES = getStaticValuesArray();
-      private static JBIJGLIONLH[] getStaticValuesArray() {
-        return new JBIJGLIONLH[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static JBIJGLIONLH valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private JBIJGLIONLH(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SceneEntityDisappearNotify.JBIJGLIONLH)
+    @java.lang.Override
+    public int getParam() {
+      return param_;
     }
 
-    public static final int ENTITYLIST_FIELD_NUMBER = 13;
+    public static final int ENTITY_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList entityList_;
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>repeated uint32 entity_list = 14;</code>
      * @return A list containing the entityList.
      */
     @java.lang.Override
@@ -310,14 +195,14 @@ public final class SceneEntityDisappearNotifyOuterClass {
       return entityList_;
     }
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>repeated uint32 entity_list = 14;</code>
      * @return The count of entityList.
      */
     public int getEntityListCount() {
       return entityList_.size();
     }
     /**
-     * <code>repeated uint32 entityList = 13;</code>
+     * <code>repeated uint32 entity_list = 14;</code>
      * @param index The index of the element to return.
      * @return The entityList at the given index.
      */
@@ -326,28 +211,17 @@ public final class SceneEntityDisappearNotifyOuterClass {
     }
     private int entityListMemoizedSerializedSize = -1;
 
-    public static final int PARAM_FIELD_NUMBER = 10;
-    private int param_;
-    /**
-     * <code>uint32 param = 10;</code>
-     * @return The param.
-     */
-    @java.lang.Override
-    public int getParam() {
-      return param_;
-    }
-
-    public static final int DISAPPEARTYPE_FIELD_NUMBER = 7;
+    public static final int DISAPPEAR_TYPE_FIELD_NUMBER = 8;
     private int disappearType_;
     /**
-     * <code>.VisionType disappearType = 7;</code>
+     * <code>.VisionType disappear_type = 8;</code>
      * @return The enum numeric value on the wire for disappearType.
      */
     @java.lang.Override public int getDisappearTypeValue() {
       return disappearType_;
     }
     /**
-     * <code>.VisionType disappearType = 7;</code>
+     * <code>.VisionType disappear_type = 8;</code>
      * @return The disappearType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType getDisappearType() {
@@ -372,17 +246,17 @@ public final class SceneEntityDisappearNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (disappearType_ != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
-        output.writeEnum(7, disappearType_);
-      }
-      if (param_ != 0) {
-        output.writeUInt32(10, param_);
+        output.writeEnum(8, disappearType_);
       }
       if (getEntityListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(entityListMemoizedSerializedSize);
       }
       for (int i = 0; i < entityList_.size(); i++) {
         output.writeUInt32NoTag(entityList_.getInt(i));
+      }
+      if (param_ != 0) {
+        output.writeUInt32(15, param_);
       }
       unknownFields.writeTo(output);
     }
@@ -395,11 +269,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
       size = 0;
       if (disappearType_ != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, disappearType_);
-      }
-      if (param_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, param_);
+          .computeEnumSize(8, disappearType_);
       }
       {
         int dataSize = 0;
@@ -414,6 +284,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         entityListMemoizedSerializedSize = dataSize;
+      }
+      if (param_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, param_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -430,10 +304,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify other = (emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify) obj;
 
-      if (!getEntityListList()
-          .equals(other.getEntityListList())) return false;
       if (getParam()
           != other.getParam()) return false;
+      if (!getEntityListList()
+          .equals(other.getEntityListList())) return false;
       if (disappearType_ != other.disappearType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -446,13 +320,13 @@ public final class SceneEntityDisappearNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getEntityListCount() > 0) {
-        hash = (37 * hash) + ENTITYLIST_FIELD_NUMBER;
-        hash = (53 * hash) + getEntityListList().hashCode();
-      }
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
-      hash = (37 * hash) + DISAPPEARTYPE_FIELD_NUMBER;
+      if (getEntityListCount() > 0) {
+        hash = (37 * hash) + ENTITY_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityListList().hashCode();
+      }
+      hash = (37 * hash) + DISAPPEAR_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + disappearType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -550,6 +424,11 @@ public final class SceneEntityDisappearNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DPLGLLKDHHD
+     * CmdId: 272
+     * </pre>
+     *
      * Protobuf type {@code SceneEntityDisappearNotify}
      */
     public static final class Builder extends
@@ -587,10 +466,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         param_ = 0;
 
+        entityList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         disappearType_ = 0;
 
         return this;
@@ -620,12 +499,12 @@ public final class SceneEntityDisappearNotifyOuterClass {
       public emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify buildPartial() {
         emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify result = new emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify(this);
         int from_bitField0_ = bitField0_;
+        result.param_ = param_;
         if (((bitField0_ & 0x00000001) != 0)) {
           entityList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entityList_ = entityList_;
-        result.param_ = param_;
         result.disappearType_ = disappearType_;
         onBuilt();
         return result;
@@ -675,6 +554,9 @@ public final class SceneEntityDisappearNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify other) {
         if (other == emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify.getDefaultInstance()) return this;
+        if (other.getParam() != 0) {
+          setParam(other.getParam());
+        }
         if (!other.entityList_.isEmpty()) {
           if (entityList_.isEmpty()) {
             entityList_ = other.entityList_;
@@ -684,9 +566,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
             entityList_.addAll(other.entityList_);
           }
           onChanged();
-        }
-        if (other.getParam() != 0) {
-          setParam(other.getParam());
         }
         if (other.disappearType_ != 0) {
           setDisappearTypeValue(other.getDisappearTypeValue());
@@ -721,6 +600,37 @@ public final class SceneEntityDisappearNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int param_ ;
+      /**
+       * <code>uint32 param = 15;</code>
+       * @return The param.
+       */
+      @java.lang.Override
+      public int getParam() {
+        return param_;
+      }
+      /**
+       * <code>uint32 param = 15;</code>
+       * @param value The param to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam(int value) {
+        
+        param_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam() {
+        
+        param_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.IntList entityList_ = emptyIntList();
       private void ensureEntityListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -729,7 +639,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @return A list containing the entityList.
        */
       public java.util.List<java.lang.Integer>
@@ -738,14 +648,14 @@ public final class SceneEntityDisappearNotifyOuterClass {
                  java.util.Collections.unmodifiableList(entityList_) : entityList_;
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @return The count of entityList.
        */
       public int getEntityListCount() {
         return entityList_.size();
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @param index The index of the element to return.
        * @return The entityList at the given index.
        */
@@ -753,7 +663,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return entityList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The entityList to set.
        * @return This builder for chaining.
@@ -766,7 +676,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @param value The entityList to add.
        * @return This builder for chaining.
        */
@@ -777,7 +687,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @param values The entityList to add.
        * @return This builder for chaining.
        */
@@ -790,7 +700,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entityList = 13;</code>
+       * <code>repeated uint32 entity_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityList() {
@@ -800,47 +710,16 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
 
-      private int param_ ;
-      /**
-       * <code>uint32 param = 10;</code>
-       * @return The param.
-       */
-      @java.lang.Override
-      public int getParam() {
-        return param_;
-      }
-      /**
-       * <code>uint32 param = 10;</code>
-       * @param value The param to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam(int value) {
-        
-        param_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam() {
-        
-        param_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int disappearType_ = 0;
       /**
-       * <code>.VisionType disappearType = 7;</code>
+       * <code>.VisionType disappear_type = 8;</code>
        * @return The enum numeric value on the wire for disappearType.
        */
       @java.lang.Override public int getDisappearTypeValue() {
         return disappearType_;
       }
       /**
-       * <code>.VisionType disappearType = 7;</code>
+       * <code>.VisionType disappear_type = 8;</code>
        * @param value The enum numeric value on the wire for disappearType to set.
        * @return This builder for chaining.
        */
@@ -851,7 +730,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.VisionType disappearType = 7;</code>
+       * <code>.VisionType disappear_type = 8;</code>
        * @return The disappearType.
        */
       @java.lang.Override
@@ -861,7 +740,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.VisionType disappearType = 7;</code>
+       * <code>.VisionType disappear_type = 8;</code>
        * @param value The disappearType to set.
        * @return This builder for chaining.
        */
@@ -875,7 +754,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.VisionType disappearType = 7;</code>
+       * <code>.VisionType disappear_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDisappearType() {
@@ -952,11 +831,9 @@ public final class SceneEntityDisappearNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n SceneEntityDisappearNotify.proto\032\020Visi" +
-      "onType.proto\"\264\001\n\032SceneEntityDisappearNot" +
-      "ify\022\022\n\nentityList\030\r \003(\r\022\r\n\005param\030\n \001(\r\022\"" +
-      "\n\rdisappearType\030\007 \001(\0162\013.VisionType\"O\n\013JB" +
-      "IJGLIONLH\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\230\002\022\017\n" +
-      "\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\032\002\020\001B\033\n\031e" +
+      "onType.proto\"e\n\032SceneEntityDisappearNoti" +
+      "fy\022\r\n\005param\030\017 \001(\r\022\023\n\013entity_list\030\016 \003(\r\022#" +
+      "\n\016disappear_type\030\010 \001(\0162\013.VisionTypeB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -969,7 +846,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
     internal_static_SceneEntityDisappearNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityDisappearNotify_descriptor,
-        new java.lang.String[] { "EntityList", "Param", "DisappearType", });
+        new java.lang.String[] { "Param", "EntityList", "DisappearType", });
     emu.grasscutter.net.proto.VisionTypeOuterClass.getDescriptor();
   }
 

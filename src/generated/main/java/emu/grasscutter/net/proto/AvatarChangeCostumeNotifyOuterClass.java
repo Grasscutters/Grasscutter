@@ -19,21 +19,26 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      * @return Whether the entityInfo field is set.
      */
     boolean hasEntityInfo();
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      * @return The entityInfo.
      */
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityInfo();
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      */
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder();
   }
   /**
+   * <pre>
+   * Name: DDPDLNJBKAP
+   * CmdId: 1759
+   * </pre>
+   *
    * Protobuf type {@code AvatarChangeCostumeNotify}
    */
   public static final class AvatarChangeCostumeNotify extends
@@ -78,7 +83,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 26: {
               emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder subBuilder = null;
               if (entityInfo_ != null) {
                 subBuilder = entityInfo_.toBuilder();
@@ -123,141 +128,10 @@ public final class AvatarChangeCostumeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.class, emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code AvatarChangeCostumeNotify.IJBEGDIBHOL}
-     */
-    public enum IJBEGDIBHOL
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 1648;</code>
-       */
-      PEPPOHPHJOJ(1, 1648),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final IJBEGDIBHOL DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 1648;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 1648;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IJBEGDIBHOL valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IJBEGDIBHOL forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 1648: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IJBEGDIBHOL>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IJBEGDIBHOL> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IJBEGDIBHOL>() {
-              public IJBEGDIBHOL findValueByNumber(int number) {
-                return IJBEGDIBHOL.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IJBEGDIBHOL[] VALUES = getStaticValuesArray();
-      private static IJBEGDIBHOL[] getStaticValuesArray() {
-        return new IJBEGDIBHOL[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static IJBEGDIBHOL valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private IJBEGDIBHOL(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:AvatarChangeCostumeNotify.IJBEGDIBHOL)
-    }
-
-    public static final int ENTITYINFO_FIELD_NUMBER = 13;
+    public static final int ENTITY_INFO_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo entityInfo_;
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      * @return Whether the entityInfo field is set.
      */
     @java.lang.Override
@@ -265,7 +139,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return entityInfo_ != null;
     }
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      * @return The entityInfo.
      */
     @java.lang.Override
@@ -273,7 +147,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return entityInfo_ == null ? emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.getDefaultInstance() : entityInfo_;
     }
     /**
-     * <code>.SceneEntityInfo entityInfo = 13;</code>
+     * <code>.SceneEntityInfo entity_info = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder() {
@@ -295,7 +169,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityInfo_ != null) {
-        output.writeMessage(13, getEntityInfo());
+        output.writeMessage(3, getEntityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -308,7 +182,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       size = 0;
       if (entityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getEntityInfo());
+          .computeMessageSize(3, getEntityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -342,7 +216,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasEntityInfo()) {
-        hash = (37 * hash) + ENTITYINFO_FIELD_NUMBER;
+        hash = (37 * hash) + ENTITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEntityInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -441,6 +315,11 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DDPDLNJBKAP
+     * CmdId: 1759
+     * </pre>
+     *
      * Protobuf type {@code AvatarChangeCostumeNotify}
      */
     public static final class Builder extends
@@ -599,14 +478,14 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder> entityInfoBuilder_;
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        * @return Whether the entityInfo field is set.
        */
       public boolean hasEntityInfo() {
         return entityInfoBuilder_ != null || entityInfo_ != null;
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        * @return The entityInfo.
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityInfo() {
@@ -617,7 +496,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public Builder setEntityInfo(emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
         if (entityInfoBuilder_ == null) {
@@ -633,7 +512,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public Builder setEntityInfo(
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder builderForValue) {
@@ -647,7 +526,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public Builder mergeEntityInfo(emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
         if (entityInfoBuilder_ == null) {
@@ -665,7 +544,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public Builder clearEntityInfo() {
         if (entityInfoBuilder_ == null) {
@@ -679,7 +558,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder getEntityInfoBuilder() {
         
@@ -687,7 +566,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return getEntityInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder() {
         if (entityInfoBuilder_ != null) {
@@ -698,7 +577,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneEntityInfo entityInfo = 13;</code>
+       * <code>.SceneEntityInfo entity_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder> 
@@ -781,12 +660,10 @@ public final class AvatarChangeCostumeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037AvatarChangeCostumeNotify.proto\032\025Scene" +
-      "EntityInfo.proto\"\222\001\n\031AvatarChangeCostume" +
-      "Notify\022$\n\nentityInfo\030\r \001(\0132\020.SceneEntity" +
-      "Info\"O\n\013IJBEGDIBHOL\022\010\n\004NONE\020\000\022\020\n\013PEPPOHP" +
-      "HJOJ\020\360\014\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020" +
-      "\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006prot" +
-      "o3"
+      "EntityInfo.proto\"B\n\031AvatarChangeCostumeN" +
+      "otify\022%\n\013entity_info\030\003 \001(\0132\020.SceneEntity" +
+      "InfoB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

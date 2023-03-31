@@ -19,12 +19,17 @@ public final class HomeSceneJumpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isEnterRoomScene = 13;</code>
+     * <code>bool is_enter_room_scene = 9;</code>
      * @return The isEnterRoomScene.
      */
     boolean getIsEnterRoomScene();
   }
   /**
+   * <pre>
+   * Name: DGGGGCPKFNL
+   * CmdId: 4665
+   * </pre>
+   *
    * Protobuf type {@code HomeSceneJumpReq}
    */
   public static final class HomeSceneJumpReq extends
@@ -69,7 +74,7 @@ public final class HomeSceneJumpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 72: {
 
               isEnterRoomScene_ = input.readBool();
               break;
@@ -106,149 +111,10 @@ public final class HomeSceneJumpReqOuterClass {
               emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass.HomeSceneJumpReq.class, emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass.HomeSceneJumpReq.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code HomeSceneJumpReq.MHLLCKNENMB}
-     */
-    public enum MHLLCKNENMB
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 4826;</code>
-       */
-      PEPPOHPHJOJ(1, 4826),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final MHLLCKNENMB DCDNILFDFLB = NONE;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final MHLLCKNENMB EAJIABGAOCI = NNBKOLMPOEA;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 4826;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 4826;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-      /**
-       * <code>EAJIABGAOCI = 1;</code>
-       */
-      public static final int EAJIABGAOCI_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MHLLCKNENMB valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MHLLCKNENMB forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 4826: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MHLLCKNENMB>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MHLLCKNENMB> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MHLLCKNENMB>() {
-              public MHLLCKNENMB findValueByNumber(int number) {
-                return MHLLCKNENMB.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass.HomeSceneJumpReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final MHLLCKNENMB[] VALUES = getStaticValuesArray();
-      private static MHLLCKNENMB[] getStaticValuesArray() {
-        return new MHLLCKNENMB[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, EAJIABGAOCI, 
-        };
-      }
-      public static MHLLCKNENMB valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private MHLLCKNENMB(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:HomeSceneJumpReq.MHLLCKNENMB)
-    }
-
-    public static final int ISENTERROOMSCENE_FIELD_NUMBER = 13;
+    public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 9;
     private boolean isEnterRoomScene_;
     /**
-     * <code>bool isEnterRoomScene = 13;</code>
+     * <code>bool is_enter_room_scene = 9;</code>
      * @return The isEnterRoomScene.
      */
     @java.lang.Override
@@ -271,7 +137,7 @@ public final class HomeSceneJumpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnterRoomScene_ != false) {
-        output.writeBool(13, isEnterRoomScene_);
+        output.writeBool(9, isEnterRoomScene_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,7 +150,7 @@ public final class HomeSceneJumpReqOuterClass {
       size = 0;
       if (isEnterRoomScene_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isEnterRoomScene_);
+          .computeBoolSize(9, isEnterRoomScene_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,7 +180,7 @@ public final class HomeSceneJumpReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISENTERROOMSCENE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_ENTER_ROOM_SCENE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterRoomScene());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -413,6 +279,11 @@ public final class HomeSceneJumpReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: DGGGGCPKFNL
+     * CmdId: 4665
+     * </pre>
+     *
      * Protobuf type {@code HomeSceneJumpReq}
      */
     public static final class Builder extends
@@ -561,7 +432,7 @@ public final class HomeSceneJumpReqOuterClass {
 
       private boolean isEnterRoomScene_ ;
       /**
-       * <code>bool isEnterRoomScene = 13;</code>
+       * <code>bool is_enter_room_scene = 9;</code>
        * @return The isEnterRoomScene.
        */
       @java.lang.Override
@@ -569,7 +440,7 @@ public final class HomeSceneJumpReqOuterClass {
         return isEnterRoomScene_;
       }
       /**
-       * <code>bool isEnterRoomScene = 13;</code>
+       * <code>bool is_enter_room_scene = 9;</code>
        * @param value The isEnterRoomScene to set.
        * @return This builder for chaining.
        */
@@ -580,7 +451,7 @@ public final class HomeSceneJumpReqOuterClass {
         return this;
       }
       /**
-       * <code>bool isEnterRoomScene = 13;</code>
+       * <code>bool is_enter_room_scene = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnterRoomScene() {
@@ -656,12 +527,9 @@ public final class HomeSceneJumpReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026HomeSceneJumpReq.proto\"\216\001\n\020HomeSceneJu" +
-      "mpReq\022\030\n\020isEnterRoomScene\030\r \001(\010\"`\n\013MHLLC" +
-      "KNENMB\022\010\n\004NONE\020\000\022\020\n\013PEPPOHPHJOJ\020\332%\022\017\n\013DC" +
-      "DNILFDFLB\020\000\022\017\n\013NNBKOLMPOEA\020\001\022\017\n\013EAJIABGA" +
-      "OCI\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\n\026HomeSceneJumpReq.proto\"/\n\020HomeSceneJum" +
+      "pReq\022\033\n\023is_enter_room_scene\030\t \001(\010B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

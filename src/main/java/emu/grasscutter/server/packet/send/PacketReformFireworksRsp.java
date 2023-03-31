@@ -1,3 +1,6 @@
+// removed due to proto not existing
+
+/*
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
@@ -12,3 +15,4 @@ public class PacketReformFireworksRsp extends BasePacket {
         this.setData(proto);
     }
 }
+*/

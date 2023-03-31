@@ -31,6 +31,10 @@ public final class Uint32PairOuterClass {
     int getValue();
   }
   /**
+   * <pre>
+   * Name: MNNNCKCAGLP
+   * </pre>
+   *
    * Protobuf type {@code Uint32Pair}
    */
   public static final class Uint32Pair extends
@@ -306,6 +310,10 @@ public final class Uint32PairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: MNNNCKCAGLP
+     * </pre>
+     *
      * Protobuf type {@code Uint32Pair}
      */
     public static final class Builder extends

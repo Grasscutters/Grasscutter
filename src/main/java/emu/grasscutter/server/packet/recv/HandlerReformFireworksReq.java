@@ -1,3 +1,5 @@
+// removed due to proto not existing
+/*
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
@@ -19,3 +21,4 @@ public class HandlerReformFireworksReq extends PacketHandler {
         session.send(new PacketReformFireworksRsp());
     }
 }
+*/
