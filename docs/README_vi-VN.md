@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
+[EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
 
 **Chú ý:** Chúng tôi luôn chào đón những người đóng góp cho dự án. Trước khi đóng góp, xin vui lòng đọc kỹ ["các quy tắc" (Code of Conduct)](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md) của chúng tôi .
 
@@ -37,7 +37,7 @@
 **Ghi chú:** Nếu bạn đã cập nhật từ phiên bản cũ hơn, hãy xóa `config.json` để tạo lại.
 
 1. Tải `grasscutter.jar`
-    - Tài về từ [releases (bản phát hành)](https://github.com/Grasscutters/Grasscutter/releases/latest) hoặc [actions (các hoạt động)](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) hoặc [tự tạo của chính bạn](#building).
+    - Tài về từ [releases (bản phát hành)](https://github.com/Grasscutters/Grasscutter/releases/latest) hoặc [actions (các hoạt động)](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) hoặc [tự tạo của chính bạn](#tự-tạo-server--building-).
 2. Tạo một thư mục `resources` trong cùng thư mục với Grasscutter.jar và chuyển các thư mục `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` của bạn đến `resources` _(Xem [wiki](https://github.com/Grasscutters/Grasscutter/wiki) để biết cách lấy các thư mục đó)_
 3. Chạy Grasscutter với câu lệnh `java -jar grasscutter.jar`. **Hãy chắc rằng mongodb của bạn đã được chạy**
 
