@@ -2,9 +2,12 @@ package emu.grasscutter.game.player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.excels.BuffData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.FightProperty;
@@ -97,27 +100,24 @@ public class PlayerBuffManager extends BasePlayerManager {
             .map(data -> data.modifiers.get(buffData.getModifierName()))
             .map(modifier -> modifier.onAdded)
             .map(onAdded -> {
-                System.out.println("onAdded exists");
-                boolean s = false;
+
+                var s = false;
                 for (var a: onAdded) {
-                    switch (a.type) {
-                        case HealHP:
-                            System.out.println("Attempting heal");
-                            if (target == null) break;
-                            float maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                            float amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
-                            target.getAsEntity().heal(amount);
-                            s = true;
-                            System.out.printf("Healed {}", amount);
-                            break;
-                        default:
-                            break;
+                    Grasscutter.getLogger().debug("onAdded exists");
+                    if (Objects.requireNonNull(a.type) == AbilityModifierAction.Type.HealHP) {
+                        Grasscutter.getLogger().debug("Attempting heal");
+                        if (target == null) continue;
+                        var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+                        var amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
+                        target.getAsEntity().heal(amount);
+                        s = true;
+                        Grasscutter.getLogger().debug("Healed {}", amount);
                     }
                 }
                 return s;
             })
             .orElse(false);
-        System.out.println("Oh no");
+        Grasscutter.getLogger().debug("Oh no");
 
         // Set duration
         if (duration < 0f) {

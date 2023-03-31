@@ -176,7 +176,7 @@ public class LuaSerializer implements Serializer {
                 }
             }
         } catch (Exception e) {
-            Grasscutter.getLogger().info(ScriptUtils.toMap(table).toString());
+            Grasscutter.getLogger().debug(ScriptUtils.toMap(table).toString());
             e.printStackTrace();
         }
 

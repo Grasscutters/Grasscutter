@@ -128,7 +128,7 @@ public class DataLoader {
             if (root.toFile().mkdirs())
                 Grasscutter.getLogger().info("Created data folder '" + root + "'");
 
-            Grasscutter.getLogger().info("Creating default '" + name + "' data");
+            Grasscutter.getLogger().debug("Creating default '" + name + "' data");
             FileUtils.copyResource("/defaults/data/" + name, filePath.toString());
         }
     }
@@ -137,7 +137,7 @@ public class DataLoader {
         var path = GachaHandler.getGachaMappingsPath();
         if (!Files.exists(path)) {
             try {
-                Grasscutter.getLogger().info("Creating default '" + path.toString() + "' data");
+                Grasscutter.getLogger().debug("Creating default '" + path + "' data");
                 Tools.createGachaMappings(path);
             } catch (Exception exception) {
                 Grasscutter.getLogger().warn("Failed to create gacha mappings. \n" + exception);
