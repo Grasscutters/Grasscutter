@@ -20,7 +20,7 @@ import lombok.Getter;
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
 public class AvatarSkillDepotData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private int energySkill;
     private int attackModeSkill;

@@ -37,12 +37,12 @@ import lombok.Setter;
 
 public class EntityMonster extends GameEntity {
     @Getter private final MonsterData monsterData;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Int2FloatOpenHashMap fightProperties;
 
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position position;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position rotation;
     @Getter private final Position bornPos;
     @Getter private final int level;

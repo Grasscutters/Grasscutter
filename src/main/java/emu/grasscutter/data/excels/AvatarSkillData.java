@@ -9,7 +9,7 @@ import lombok.Getter;
 @ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 @Getter
 public class AvatarSkillData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private float cdTime;
     private int costElemVal;

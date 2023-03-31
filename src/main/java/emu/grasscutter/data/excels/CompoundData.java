@@ -10,7 +10,7 @@ import java.util.List;
 @ResourceType(name = {"CompoundExcelConfigData.json"},loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 public class CompoundData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private int groupID;
     private int rankLevel;

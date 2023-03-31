@@ -11,7 +11,7 @@ import lombok.Getter;
 @ResourceType(name = {"ForgeExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
 @Getter
 public class ForgeData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private int playerLevel;
     private int forgeType;

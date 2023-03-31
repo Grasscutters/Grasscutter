@@ -8,7 +8,7 @@ import lombok.Getter;
 @ResourceType(name = "GadgetExcelConfigData.json")
 @Getter
 public class GadgetData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
 
     private EntityType type;

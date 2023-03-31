@@ -8,7 +8,7 @@ import lombok.Getter;
 @ResourceType(name = "MonsterDescribeExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
 public class MonsterDescribeData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     private long nameTextMapHash;
     private int titleID;

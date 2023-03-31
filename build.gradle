@@ -93,8 +93,8 @@ dependencies {
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
-    implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
-    implementation group:  'com.github.davidmoten', name : 'rtree-multi', version: '0.1'
+    implementation group: 'com.esotericsoftware', name: 'reflectasm', version: '1.11.9'
+    implementation group: 'com.github.davidmoten', name: 'rtree-multi', version: '0.1'
 
     implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
@@ -181,8 +181,8 @@ publishing {
     }
     repositories {
         maven {
-            if(version.endsWith('-dev')) {
-                println ("Publishing to 4benj-maven")
+            if (version.endsWith('-dev')) {
+                println("Publishing to 4benj-maven")
                 url 'https://repo.4benj.com/releases'
                 name '4benj-maven'
                 credentials {
@@ -190,7 +190,7 @@ publishing {
                     password System.getenv('benj_maven_token')
                 }
             } else {
-                println ("Publishing to sonatype")
+                println("Publishing to sonatype")
                 def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
                 def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
                 url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
@@ -222,7 +222,7 @@ sourceSets {
             srcDir 'src/generated'
         }
         java {
-            srcDir 'src/java'
+            srcDir 'src/generated/main/java'
         }
     }
 }
@@ -238,23 +238,25 @@ idea {
 
 eclipse {
     classpath {
-        file.whenMerged { cp ->
-            cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
+        file.whenMerged { cp -> cp.entries.add(new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null))
         }
     }
 }
 
 signing {
-    if(!version.endsWith('-dev')) {
+    if (!version.endsWith('-dev')) {
         sign publishing.publications.mavenJava
     }
 }
 
 javadoc {
     options.encoding = 'UTF-8'
-    if(JavaVersion.current().isJava9Compatible()) {
+    if (JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
+    // Add this to avoid warning caused by lack of comments in proto generated java files
+    options.addStringOption('Xdoclint:none', '-quiet')
+    exclude '**/*.md'
 }
 
 task injectGitHash {
@@ -266,8 +268,7 @@ task injectGitHash {
         }
     }
 
-    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text =
-        """package emu.grasscutter;
+    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """package emu.grasscutter;
 
 public final class BuildConfig {
     public static final String VERSION = \"${version}\";
@@ -278,4 +279,17 @@ public final class BuildConfig {
 
 processResources {
     dependsOn "generateProto"
+}
+
+sourcesJar {
+    dependsOn "generateProto"
+}
+
+delombok {
+    dependsOn "generateProto"
+}
+
+// For terminal interacting in IDEA running
+run {
+    standardInput = System.in
 }

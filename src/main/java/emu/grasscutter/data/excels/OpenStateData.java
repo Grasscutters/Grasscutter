@@ -10,7 +10,7 @@ import java.util.List;
 
 @ResourceType(name = "OpenStateConfigData.json", loadPriority = ResourceType.LoadPriority.HIGHEST)
 public class OpenStateData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
     @Getter private boolean defaultState;
     @Getter private boolean allowClientOpen;

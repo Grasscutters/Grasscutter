@@ -9,7 +9,7 @@ import lombok.Getter;
 @ResourceType(name = {"AnimalCodexExcelConfigData.json"})
 @Getter
 public class CodexAnimalData extends GameResource {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int Id;
     private String type;
     private int describeId;
