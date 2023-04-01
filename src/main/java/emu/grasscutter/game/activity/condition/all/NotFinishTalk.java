@@ -1,0 +1,22 @@
+package emu.grasscutter.game.activity.condition.all;
+
+import emu.grasscutter.game.activity.ActivityConfigItem;
+import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.condition.ActivityCondition;
+import emu.grasscutter.game.activity.condition.ActivityConditionBaseHandler;
+
+import static emu.grasscutter.game.activity.condition.ActivityConditions.NEW_ACTIVITY_COND_NOT_FINISH_TALK;
+
+@ActivityCondition(NEW_ACTIVITY_COND_NOT_FINISH_TALK)
+public class NotFinishTalk extends ActivityConditionBaseHandler {
+    @Override
+    public boolean execute(PlayerActivityData activityData, ActivityConfigItem activityConfig, int... params) {
+        return activityData
+            .getPlayer()
+            .getQuestManager()
+            .getMainQuests()
+            .int2ObjectEntrySet()
+            .stream()
+            .noneMatch(q -> q.getValue().getTalks().get(params[0]) != null); //FIXME taken from ContentCompleteTalk
+    }
+}
