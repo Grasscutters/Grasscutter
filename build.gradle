@@ -37,7 +37,6 @@ spotless {
     java {
         importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
         googleJavaFormat('1.15.0') // Use Google's Java formatter.
-            .reflowLongStrings() // Reflow long strings.
         formatAnnotations() // Reformat annotations.
         endWithNewline() // Ensure files end with a newline.
         indentWithTabs(2); indentWithSpaces(4) // Use 4 spaces for indentation.
