@@ -18,14 +18,14 @@ public final class UgcMusicNoteOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 start_time = 15;</code>
+         * <code>uint32 start_time = 12;</code>
          *
          * @return The startTime.
          */
         int getStartTime();
 
         /**
-         * <code>uint32 end_time = 8;</code>
+         * <code>uint32 end_time = 5;</code>
          *
          * @return The endTime.
          */
@@ -35,7 +35,7 @@ public final class UgcMusicNoteOuterClass {
      *
      *
      * <pre>
-     * Name: KELICPOLEGO
+     * 3.2
      * </pre>
      *
      * Protobuf type {@code UgcMusicNote}
@@ -81,12 +81,12 @@ public final class UgcMusicNoteOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 64:
+                        case 40:
                             {
                                 endTime_ = input.readUInt32();
                                 break;
                             }
-                        case 120:
+                        case 96:
                             {
                                 startTime_ = input.readUInt32();
                                 break;
@@ -125,10 +125,10 @@ public final class UgcMusicNoteOuterClass {
                             emu.grasscutter.net.proto.UgcMusicNoteOuterClass.UgcMusicNote.Builder.class);
         }
 
-        public static final int START_TIME_FIELD_NUMBER = 15;
+        public static final int START_TIME_FIELD_NUMBER = 12;
         private int startTime_;
         /**
-         * <code>uint32 start_time = 15;</code>
+         * <code>uint32 start_time = 12;</code>
          *
          * @return The startTime.
          */
@@ -137,10 +137,10 @@ public final class UgcMusicNoteOuterClass {
             return startTime_;
         }
 
-        public static final int END_TIME_FIELD_NUMBER = 8;
+        public static final int END_TIME_FIELD_NUMBER = 5;
         private int endTime_;
         /**
-         * <code>uint32 end_time = 8;</code>
+         * <code>uint32 end_time = 5;</code>
          *
          * @return The endTime.
          */
@@ -164,10 +164,10 @@ public final class UgcMusicNoteOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (endTime_ != 0) {
-                output.writeUInt32(8, endTime_);
+                output.writeUInt32(5, endTime_);
             }
             if (startTime_ != 0) {
-                output.writeUInt32(15, startTime_);
+                output.writeUInt32(12, startTime_);
             }
             unknownFields.writeTo(output);
         }
@@ -179,10 +179,10 @@ public final class UgcMusicNoteOuterClass {
 
             size = 0;
             if (endTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, endTime_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, endTime_);
             }
             if (startTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, startTime_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, startTime_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -323,7 +323,7 @@ public final class UgcMusicNoteOuterClass {
          *
          *
          * <pre>
-         * Name: KELICPOLEGO
+         * 3.2
          * </pre>
          *
          * Protobuf type {@code UgcMusicNote}
@@ -492,7 +492,7 @@ public final class UgcMusicNoteOuterClass {
 
             private int startTime_;
             /**
-             * <code>uint32 start_time = 15;</code>
+             * <code>uint32 start_time = 12;</code>
              *
              * @return The startTime.
              */
@@ -501,7 +501,7 @@ public final class UgcMusicNoteOuterClass {
                 return startTime_;
             }
             /**
-             * <code>uint32 start_time = 15;</code>
+             * <code>uint32 start_time = 12;</code>
              *
              * @param value The startTime to set.
              * @return This builder for chaining.
@@ -513,7 +513,7 @@ public final class UgcMusicNoteOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 start_time = 15;</code>
+             * <code>uint32 start_time = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -526,7 +526,7 @@ public final class UgcMusicNoteOuterClass {
 
             private int endTime_;
             /**
-             * <code>uint32 end_time = 8;</code>
+             * <code>uint32 end_time = 5;</code>
              *
              * @return The endTime.
              */
@@ -535,7 +535,7 @@ public final class UgcMusicNoteOuterClass {
                 return endTime_;
             }
             /**
-             * <code>uint32 end_time = 8;</code>
+             * <code>uint32 end_time = 5;</code>
              *
              * @param value The endTime to set.
              * @return This builder for chaining.
@@ -547,7 +547,7 @@ public final class UgcMusicNoteOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 end_time = 8;</code>
+             * <code>uint32 end_time = 5;</code>
              *
              * @return This builder for chaining.
              */
@@ -627,7 +627,7 @@ public final class UgcMusicNoteOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\022UgcMusicNote.proto\"4\n\014UgcMusicNote\022\022\n\n"
-                    + "start_time\030\017 \001(\r\022\020\n\010end_time\030\010 \001(\rB\033\n\031em"
+                    + "start_time\030\014 \001(\r\022\020\n\010end_time\030\005 \001(\rB\033\n\031em"
                     + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =

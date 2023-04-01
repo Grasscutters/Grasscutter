@@ -1,6 +1,6 @@
 package emu.grasscutter.net.packet;
 
-public class PacketOpcodes {
+public final class PacketOpcodes {
 
     // Empty
     public static final int NONE = 0;

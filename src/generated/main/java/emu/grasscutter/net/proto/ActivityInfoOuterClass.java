@@ -340,33 +340,51 @@ public final class ActivityInfoOuterClass {
          * event gc
          * </pre>
          *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         *
+         * @return Whether the trialAvatarInfo field is set.
+         */
+        boolean hasTrialAvatarInfo();
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         *
+         * @return The trialAvatarInfo.
+         */
+        emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass.TrialAvatarActivityDetailInfo
+                getTrialAvatarInfo();
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         */
+        emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                        .TrialAvatarActivityDetailInfoOrBuilder
+                getTrialAvatarInfoOrBuilder();
+
+        /**
          * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
          *
          * @return Whether the musicGameInfo field is set.
          */
         boolean hasMusicGameInfo();
         /**
-         *
-         *
-         * <pre>
-         * event gc
-         * </pre>
-         *
          * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
          *
          * @return The musicGameInfo.
          */
         emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo
                 getMusicGameInfo();
-        /**
-         *
-         *
-         * <pre>
-         * event gc
-         * </pre>
-         *
-         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-         */
+        /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
         emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                         .MusicGameActivityDetailInfoOrBuilder
                 getMusicGameInfoOrBuilder();
@@ -498,6 +516,33 @@ public final class ActivityInfoOuterClass {
                         case 80:
                             {
                                 cJDFLBKBNPL_ = input.readBool();
+                                break;
+                            }
+                        case 98:
+                            {
+                                emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                .TrialAvatarActivityDetailInfo.Builder
+                                        subBuilder = null;
+                                if (detailCase_ == 12) {
+                                    subBuilder =
+                                            ((emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                                    .TrialAvatarActivityDetailInfo)
+                                                            detail_)
+                                                    .toBuilder();
+                                }
+                                detail_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                        .TrialAvatarActivityDetailInfo.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(
+                                            (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                            .TrialAvatarActivityDetailInfo)
+                                                    detail_);
+                                    detail_ = subBuilder.buildPartial();
+                                }
+                                detailCase_ = 12;
                                 break;
                             }
                         case 104:
@@ -771,6 +816,7 @@ public final class ActivityInfoOuterClass {
                 implements
                         com.google.protobuf.Internal.EnumLite,
                         com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            TRIAL_AVATAR_INFO(12),
             MUSIC_GAME_INFO(1966),
             DETAIL_NOT_SET(0);
             private final int value;
@@ -790,6 +836,8 @@ public final class ActivityInfoOuterClass {
 
             public static DetailCase forNumber(int value) {
                 switch (value) {
+                    case 12:
+                        return TRIAL_AVATAR_INFO;
                     case 1966:
                         return MUSIC_GAME_INFO;
                     case 0:
@@ -1388,7 +1436,7 @@ public final class ActivityInfoOuterClass {
             return eFJOLIOFLBG_;
         }
 
-        public static final int MUSIC_GAME_INFO_FIELD_NUMBER = 1966;
+        public static final int TRIAL_AVATAR_INFO_FIELD_NUMBER = 12;
         /**
          *
          *
@@ -1396,6 +1444,61 @@ public final class ActivityInfoOuterClass {
          * event gc
          * </pre>
          *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         *
+         * @return Whether the trialAvatarInfo field is set.
+         */
+        @java.lang.Override
+        public boolean hasTrialAvatarInfo() {
+            return detailCase_ == 12;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         *
+         * @return The trialAvatarInfo.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                        .TrialAvatarActivityDetailInfo
+                getTrialAvatarInfo() {
+            if (detailCase_ == 12) {
+                return (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                .TrialAvatarActivityDetailInfo)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                    .TrialAvatarActivityDetailInfo.getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                        .TrialAvatarActivityDetailInfoOrBuilder
+                getTrialAvatarInfoOrBuilder() {
+            if (detailCase_ == 12) {
+                return (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                .TrialAvatarActivityDetailInfo)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                    .TrialAvatarActivityDetailInfo.getDefaultInstance();
+        }
+
+        public static final int MUSIC_GAME_INFO_FIELD_NUMBER = 1966;
+        /**
          * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
          *
          * @return Whether the musicGameInfo field is set.
@@ -1405,12 +1508,6 @@ public final class ActivityInfoOuterClass {
             return detailCase_ == 1966;
         }
         /**
-         *
-         *
-         * <pre>
-         * event gc
-         * </pre>
-         *
          * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
          *
          * @return The musicGameInfo.
@@ -1427,15 +1524,7 @@ public final class ActivityInfoOuterClass {
             return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                     .MusicGameActivityDetailInfo.getDefaultInstance();
         }
-        /**
-         *
-         *
-         * <pre>
-         * event gc
-         * </pre>
-         *
-         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-         */
+        /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                         .MusicGameActivityDetailInfoOrBuilder
@@ -1491,6 +1580,13 @@ public final class ActivityInfoOuterClass {
             }
             if (cJDFLBKBNPL_ != false) {
                 output.writeBool(10, cJDFLBKBNPL_);
+            }
+            if (detailCase_ == 12) {
+                output.writeMessage(
+                        12,
+                        (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                        .TrialAvatarActivityDetailInfo)
+                                detail_);
             }
             if (getExpireCondListList().size() > 0) {
                 output.writeUInt32NoTag(106);
@@ -1603,6 +1699,14 @@ public final class ActivityInfoOuterClass {
             }
             if (cJDFLBKBNPL_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, cJDFLBKBNPL_);
+            }
+            if (detailCase_ == 12) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                12,
+                                (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                .TrialAvatarActivityDetailInfo)
+                                        detail_);
             }
             {
                 int dataSize = 0;
@@ -1751,6 +1855,9 @@ public final class ActivityInfoOuterClass {
             if (getEFJOLIOFLBG() != other.getEFJOLIOFLBG()) return false;
             if (!getDetailCase().equals(other.getDetailCase())) return false;
             switch (detailCase_) {
+                case 12:
+                    if (!getTrialAvatarInfo().equals(other.getTrialAvatarInfo())) return false;
+                    break;
                 case 1966:
                     if (!getMusicGameInfo().equals(other.getMusicGameInfo())) return false;
                     break;
@@ -1833,6 +1940,10 @@ public final class ActivityInfoOuterClass {
             hash = (37 * hash) + EFJOLIOFLBG_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEFJOLIOFLBG());
             switch (detailCase_) {
+                case 12:
+                    hash = (37 * hash) + TRIAL_AVATAR_INFO_FIELD_NUMBER;
+                    hash = (53 * hash) + getTrialAvatarInfo().hashCode();
+                    break;
                 case 1966:
                     hash = (37 * hash) + MUSIC_GAME_INFO_FIELD_NUMBER;
                     hash = (53 * hash) + getMusicGameInfo().hashCode();
@@ -2159,6 +2270,13 @@ public final class ActivityInfoOuterClass {
                 result.firstDayStartTime_ = firstDayStartTime_;
                 result.curScore_ = curScore_;
                 result.eFJOLIOFLBG_ = eFJOLIOFLBG_;
+                if (detailCase_ == 12) {
+                    if (trialAvatarInfoBuilder_ == null) {
+                        result.detail_ = detail_;
+                    } else {
+                        result.detail_ = trialAvatarInfoBuilder_.build();
+                    }
+                }
                 if (detailCase_ == 1966) {
                     if (musicGameInfoBuilder_ == null) {
                         result.detail_ = detail_;
@@ -2366,6 +2484,11 @@ public final class ActivityInfoOuterClass {
                     setEFJOLIOFLBG(other.getEFJOLIOFLBG());
                 }
                 switch (other.getDetailCase()) {
+                    case TRIAL_AVATAR_INFO:
+                        {
+                            mergeTrialAvatarInfo(other.getTrialAvatarInfo());
+                            break;
+                        }
                     case MUSIC_GAME_INFO:
                         {
                             mergeMusicGameInfo(other.getMusicGameInfo());
@@ -4126,6 +4249,254 @@ public final class ActivityInfoOuterClass {
             }
 
             private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo,
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo.Builder,
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfoOrBuilder>
+                    trialAvatarInfoBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             *
+             * @return Whether the trialAvatarInfo field is set.
+             */
+            @java.lang.Override
+            public boolean hasTrialAvatarInfo() {
+                return detailCase_ == 12;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             *
+             * @return The trialAvatarInfo.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfo
+                    getTrialAvatarInfo() {
+                if (trialAvatarInfoBuilder_ == null) {
+                    if (detailCase_ == 12) {
+                        return (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                        .TrialAvatarActivityDetailInfo)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfo.getDefaultInstance();
+                } else {
+                    if (detailCase_ == 12) {
+                        return trialAvatarInfoBuilder_.getMessage();
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfo.getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            public Builder setTrialAvatarInfo(
+                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo
+                            value) {
+                if (trialAvatarInfoBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    detail_ = value;
+                    onChanged();
+                } else {
+                    trialAvatarInfoBuilder_.setMessage(value);
+                }
+                detailCase_ = 12;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            public Builder setTrialAvatarInfo(
+                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo.Builder
+                            builderForValue) {
+                if (trialAvatarInfoBuilder_ == null) {
+                    detail_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    trialAvatarInfoBuilder_.setMessage(builderForValue.build());
+                }
+                detailCase_ = 12;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            public Builder mergeTrialAvatarInfo(
+                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo
+                            value) {
+                if (trialAvatarInfoBuilder_ == null) {
+                    if (detailCase_ == 12
+                            && detail_
+                                    != emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                            .TrialAvatarActivityDetailInfo.getDefaultInstance()) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                        .TrialAvatarActivityDetailInfo.newBuilder(
+                                                (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                                .TrialAvatarActivityDetailInfo)
+                                                        detail_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        detail_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (detailCase_ == 12) {
+                        trialAvatarInfoBuilder_.mergeFrom(value);
+                    }
+                    trialAvatarInfoBuilder_.setMessage(value);
+                }
+                detailCase_ = 12;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            public Builder clearTrialAvatarInfo() {
+                if (trialAvatarInfoBuilder_ == null) {
+                    if (detailCase_ == 12) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (detailCase_ == 12) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                    }
+                    trialAvatarInfoBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            public emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfo.Builder
+                    getTrialAvatarInfoBuilder() {
+                return getTrialAvatarInfoFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfoOrBuilder
+                    getTrialAvatarInfoOrBuilder() {
+                if ((detailCase_ == 12) && (trialAvatarInfoBuilder_ != null)) {
+                    return trialAvatarInfoBuilder_.getMessageOrBuilder();
+                } else {
+                    if (detailCase_ == 12) {
+                        return (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                        .TrialAvatarActivityDetailInfo)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                            .TrialAvatarActivityDetailInfo.getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.TrialAvatarActivityDetailInfo trial_avatar_info = 12;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo,
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfo.Builder,
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                    .TrialAvatarActivityDetailInfoOrBuilder>
+                    getTrialAvatarInfoFieldBuilder() {
+                if (trialAvatarInfoBuilder_ == null) {
+                    if (!(detailCase_ == 12)) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                        .TrialAvatarActivityDetailInfo.getDefaultInstance();
+                    }
+                    trialAvatarInfoBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                            .TrialAvatarActivityDetailInfo,
+                                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                            .TrialAvatarActivityDetailInfo.Builder,
+                                    emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                            .TrialAvatarActivityDetailInfoOrBuilder>(
+                                    (emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass
+                                                    .TrialAvatarActivityDetailInfo)
+                                            detail_,
+                                    getParentForChildren(),
+                                    isClean());
+                    detail_ = null;
+                }
+                detailCase_ = 12;
+                onChanged();
+                ;
+                return trialAvatarInfoBuilder_;
+            }
+
+            private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                                     .MusicGameActivityDetailInfo,
                             emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
@@ -4134,12 +4505,6 @@ public final class ActivityInfoOuterClass {
                                     .MusicGameActivityDetailInfoOrBuilder>
                     musicGameInfoBuilder_;
             /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
              * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
              *
              * @return Whether the musicGameInfo field is set.
@@ -4149,12 +4514,6 @@ public final class ActivityInfoOuterClass {
                 return detailCase_ == 1966;
             }
             /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
              * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
              *
              * @return The musicGameInfo.
@@ -4179,15 +4538,7 @@ public final class ActivityInfoOuterClass {
                             .MusicGameActivityDetailInfo.getDefaultInstance();
                 }
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             public Builder setMusicGameInfo(
                     emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                                     .MusicGameActivityDetailInfo
@@ -4204,15 +4555,7 @@ public final class ActivityInfoOuterClass {
                 detailCase_ = 1966;
                 return this;
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             public Builder setMusicGameInfo(
                     emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                                     .MusicGameActivityDetailInfo.Builder
@@ -4226,15 +4569,7 @@ public final class ActivityInfoOuterClass {
                 detailCase_ = 1966;
                 return this;
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             public Builder mergeMusicGameInfo(
                     emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                                     .MusicGameActivityDetailInfo
@@ -4265,15 +4600,7 @@ public final class ActivityInfoOuterClass {
                 detailCase_ = 1966;
                 return this;
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             public Builder clearMusicGameInfo() {
                 if (musicGameInfoBuilder_ == null) {
                     if (detailCase_ == 1966) {
@@ -4290,29 +4617,13 @@ public final class ActivityInfoOuterClass {
                 }
                 return this;
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                             .MusicGameActivityDetailInfo.Builder
                     getMusicGameInfoBuilder() {
                 return getMusicGameInfoFieldBuilder().getBuilder();
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                             .MusicGameActivityDetailInfoOrBuilder
@@ -4329,15 +4640,7 @@ public final class ActivityInfoOuterClass {
                             .MusicGameActivityDetailInfo.getDefaultInstance();
                 }
             }
-            /**
-             *
-             *
-             * <pre>
-             * event gc
-             * </pre>
-             *
-             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-             */
+            /** <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
                                     .MusicGameActivityDetailInfo,
@@ -4451,30 +4754,33 @@ public final class ActivityInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\022ActivityInfo.proto\032\032ActivityPushTipsDa"
                     + "ta.proto\032\031ActivityWatcherInfo.proto\032!Mus"
-                    + "icGameActivityDetailInfo.proto\"\360\006\n\014Activ"
-                    + "ityInfo\022\024\n\013ANGGLPJEBLE\030\266\003 \001(\r\022\023\n\013schedul"
-                    + "e_id\030\016 \001(\r\022\023\n\013FLFGIDFALEK\030\017 \001(\010\022\024\n\013LPOCN"
-                    + "CICJHM\030\345\003 \001(\r\022>\n\021activity_coin_map\030\277\005 \003("
-                    + "\0132\".ActivityInfo.ActivityCoinMapEntry\022\026\n"
-                    + "\016meet_cond_list\030\002 \003(\r\022\020\n\010end_time\030\004 \001(\r\022"
-                    + "\024\n\013GLOONPBGOHM\030\263\n \001(\010\022<\n\034activity_push_t"
-                    + "ips_data_list\030\243\016 \003(\0132\025.ActivityPushTipsD"
-                    + "ata\022\030\n\020expire_cond_list\030\r \003(\r\022\023\n\013is_fini"
-                    + "shed\030\006 \001(\010\022\032\n\021taken_reward_list\030\376\006 \003(\r\022/"
-                    + "\n\021watcher_info_list\030\010 \003(\0132\024.ActivityWatc"
-                    + "herInfo\022\025\n\ractivity_type\030\005 \001(\r\022\023\n\013activi"
-                    + "ty_id\030\007 \001(\r\022\023\n\013CJDFLBKBNPL\030\n \001(\010\022=\n\021wish"
-                    + "_gift_num_map\030\263\013 \003(\0132!.ActivityInfo.Wish"
-                    + "GiftNumMapEntry\022\024\n\013OEBHLKFBCOG\030\270\005 \001(\010\022\024\n"
-                    + "\013LGKOJCGDGBH\030\310\r \001(\010\022\022\n\nbegin_time\030\t \001(\r\022"
-                    + "\024\n\013DDBJAKPEPLC\030\212\006 \003(\r\022\035\n\024first_day_start"
-                    + "_time\030\215\r \001(\r\022\022\n\tcur_score\030\355\007 \001(\r\022\024\n\013EFJO"
-                    + "LIOFLBG\030\202\004 \001(\010\0228\n\017music_game_info\030\256\017 \001(\013"
-                    + "2\034.MusicGameActivityDetailInfoH\000\0326\n\024Acti"
-                    + "vityCoinMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002"
-                    + " \001(\r:\0028\001\0325\n\023WishGiftNumMapEntry\022\013\n\003key\030\001"
-                    + " \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006detailB\033\n\031emu"
-                    + ".grasscutter.net.protob\006proto3"
+                    + "icGameActivityDetailInfo.proto\032#TrialAva"
+                    + "tarActivityDetailInfo.proto\"\255\007\n\014Activity"
+                    + "Info\022\024\n\013ANGGLPJEBLE\030\266\003 \001(\r\022\023\n\013schedule_i"
+                    + "d\030\016 \001(\r\022\023\n\013FLFGIDFALEK\030\017 \001(\010\022\024\n\013LPOCNCIC"
+                    + "JHM\030\345\003 \001(\r\022>\n\021activity_coin_map\030\277\005 \003(\0132\""
+                    + ".ActivityInfo.ActivityCoinMapEntry\022\026\n\016me"
+                    + "et_cond_list\030\002 \003(\r\022\020\n\010end_time\030\004 \001(\r\022\024\n\013"
+                    + "GLOONPBGOHM\030\263\n \001(\010\022<\n\034activity_push_tips"
+                    + "_data_list\030\243\016 \003(\0132\025.ActivityPushTipsData"
+                    + "\022\030\n\020expire_cond_list\030\r \003(\r\022\023\n\013is_finishe"
+                    + "d\030\006 \001(\010\022\032\n\021taken_reward_list\030\376\006 \003(\r\022/\n\021w"
+                    + "atcher_info_list\030\010 \003(\0132\024.ActivityWatcher"
+                    + "Info\022\025\n\ractivity_type\030\005 \001(\r\022\023\n\013activity_"
+                    + "id\030\007 \001(\r\022\023\n\013CJDFLBKBNPL\030\n \001(\010\022=\n\021wish_gi"
+                    + "ft_num_map\030\263\013 \003(\0132!.ActivityInfo.WishGif"
+                    + "tNumMapEntry\022\024\n\013OEBHLKFBCOG\030\270\005 \001(\010\022\024\n\013LG"
+                    + "KOJCGDGBH\030\310\r \001(\010\022\022\n\nbegin_time\030\t \001(\r\022\024\n\013"
+                    + "DDBJAKPEPLC\030\212\006 \003(\r\022\035\n\024first_day_start_ti"
+                    + "me\030\215\r \001(\r\022\022\n\tcur_score\030\355\007 \001(\r\022\024\n\013EFJOLIO"
+                    + "FLBG\030\202\004 \001(\010\022;\n\021trial_avatar_info\030\014 \001(\0132\036"
+                    + ".TrialAvatarActivityDetailInfoH\000\0228\n\017musi"
+                    + "c_game_info\030\256\017 \001(\0132\034.MusicGameActivityDe"
+                    + "tailInfoH\000\0326\n\024ActivityCoinMapEntry\022\013\n\003ke"
+                    + "y\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0325\n\023WishGiftNu"
+                    + "mMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028"
+                    + "\001B\010\n\006detailB\033\n\031emu.grasscutter.net.proto"
+                    + "b\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -4483,6 +4789,7 @@ public final class ActivityInfoOuterClass {
                             emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass.getDescriptor(),
                         });
         internal_static_ActivityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_ActivityInfo_fieldAccessorTable =
@@ -4513,6 +4820,7 @@ public final class ActivityInfoOuterClass {
                             "FirstDayStartTime",
                             "CurScore",
                             "EFJOLIOFLBG",
+                            "TrialAvatarInfo",
                             "MusicGameInfo",
                             "Detail",
                         });
@@ -4535,6 +4843,7 @@ public final class ActivityInfoOuterClass {
         emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor();
         emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor();
         emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.TrialAvatarActivityDetailInfoOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)
