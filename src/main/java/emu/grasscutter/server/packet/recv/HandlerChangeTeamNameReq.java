@@ -15,5 +15,4 @@ public class HandlerChangeTeamNameReq extends PacketHandler {
 
         session.getPlayer().getTeamManager().setTeamName(req.getTeamId(), req.getTeamName());
     }
-
 }

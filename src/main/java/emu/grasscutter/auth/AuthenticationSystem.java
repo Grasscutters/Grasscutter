@@ -3,60 +3,50 @@ package emu.grasscutter.auth;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
 import io.javalin.http.Context;
+import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.annotation.Nullable;
-
-/**
- * Defines an authenticator for the server.
- * Can be changed by plugins.
- */
+/** Defines an authenticator for the server. Can be changed by plugins. */
 public interface AuthenticationSystem {
 
     /**
      * Generates an authentication request from a {@link LoginAccountRequestJson} object.
      *
-     * @param ctx      The Javalin context.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
     static AuthenticationRequest fromPasswordRequest(Context ctx, LoginAccountRequestJson jsonData) {
-        return AuthenticationRequest.builder()
-            .context(ctx)
-            .passwordRequest(jsonData)
-            .build();
+        return AuthenticationRequest.builder().context(ctx).passwordRequest(jsonData).build();
     }
 
     /**
      * Generates an authentication request from a {@link LoginTokenRequestJson} object.
      *
-     * @param ctx      The Javalin context.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
     static AuthenticationRequest fromTokenRequest(Context ctx, LoginTokenRequestJson jsonData) {
-        return AuthenticationRequest.builder()
-            .context(ctx)
-            .tokenRequest(jsonData)
-            .build();
+        return AuthenticationRequest.builder().context(ctx).tokenRequest(jsonData).build();
     }
 
     /**
      * Generates an authentication request from a {@link ComboTokenReqJson} object.
      *
-     * @param ctx      The Javalin context.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromComboTokenRequest(Context ctx, ComboTokenReqJson jsonData,
-                                                       ComboTokenReqJson.LoginTokenData tokenData) {
+    static AuthenticationRequest fromComboTokenRequest(
+            Context ctx, ComboTokenReqJson jsonData, ComboTokenReqJson.LoginTokenData tokenData) {
         return AuthenticationRequest.builder()
-            .context(ctx)
-            .sessionKeyRequest(jsonData)
-            .sessionKeyData(tokenData)
-            .build();
+                .context(ctx)
+                .sessionKeyRequest(jsonData)
+                .sessionKeyData(tokenData)
+                .build();
     }
 
     /**
@@ -88,7 +78,8 @@ public interface AuthenticationSystem {
      * Called by plugins to internally verify a user's identity.
      *
      * @param details A unique identifier to identify the user. (For example: a JWT token)
-     * @return The user's account if the verification was successful, null if the user was unable to be verified.
+     * @return The user's account if the verification was successful, null if the user was unable to
+     *     be verified.
      */
     Account verifyUser(String details);
 
@@ -127,22 +118,16 @@ public interface AuthenticationSystem {
      */
     OAuthAuthenticator getOAuthAuthenticator();
 
-    /**
-     * A data container that holds relevant data for authenticating a client.
-     */
+    /** A data container that holds relevant data for authenticating a client. */
     @Builder
     @AllArgsConstructor
     @Getter
     class AuthenticationRequest {
         private final Context context;
 
-        @Nullable
-        private final LoginAccountRequestJson passwordRequest;
-        @Nullable
-        private final LoginTokenRequestJson tokenRequest;
-        @Nullable
-        private final ComboTokenReqJson sessionKeyRequest;
-        @Nullable
-        private final ComboTokenReqJson.LoginTokenData sessionKeyData;
+        @Nullable private final LoginAccountRequestJson passwordRequest;
+        @Nullable private final LoginTokenRequestJson tokenRequest;
+        @Nullable private final ComboTokenReqJson sessionKeyRequest;
+        @Nullable private final ComboTokenReqJson.LoginTokenData sessionKeyData;
     }
 }

@@ -2,7 +2,6 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.stream.Stream;
 
 public enum ServerBuffType {
@@ -14,9 +13,11 @@ public enum ServerBuffType {
     private static final Int2ObjectMap<ServerBuffType> map = new Int2ObjectOpenHashMap<>();
 
     static {
-        Stream.of(values()).forEach(e -> {
-            map.put(e.getValue(), e);
-        });
+        Stream.of(values())
+                .forEach(
+                        e -> {
+                            map.put(e.getValue(), e);
+                        });
     }
 
     private final int value;

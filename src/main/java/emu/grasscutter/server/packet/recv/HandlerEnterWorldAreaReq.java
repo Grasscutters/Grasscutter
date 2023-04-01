@@ -17,7 +17,6 @@ public class HandlerEnterWorldAreaReq extends PacketHandler {
         EnterWorldAreaReq enterWorld = EnterWorldAreaReq.parseFrom(payload);
 
         session.send(new PacketEnterWorldAreaRsp(head.getClientSequenceId(), enterWorld));
-        //session.send(new PacketScenePlayerLocationNotify(session.getPlayer()));
+        // session.send(new PacketScenePlayerLocationNotify(session.getPlayer()));
     }
-
 }

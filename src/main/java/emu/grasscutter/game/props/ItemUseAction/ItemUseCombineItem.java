@@ -25,7 +25,7 @@ public class ItemUseCombineItem extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        if (params.count != this.i) return false;  // Wrong amount of fragments supplied!
+        if (params.count != this.i) return false; // Wrong amount of fragments supplied!
         return params.player.getInventory().addItem(this.resultId, this.resultCount);
     }
 }

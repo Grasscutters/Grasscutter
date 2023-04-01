@@ -2,10 +2,9 @@ package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.quest.enums.QuestType;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Objects;
+import lombok.Data;
 
 public class MainQuestData {
     private int id;
@@ -63,15 +62,13 @@ public class MainQuestData {
         private int order;
     }
 
-
     @Data
     @Entity
     public static class TalkData {
         private int id;
         private String heroTalk;
 
-        public TalkData() {
-        }
+        public TalkData() {}
 
         public TalkData(int id, String heroTalk) {
             this.id = id;

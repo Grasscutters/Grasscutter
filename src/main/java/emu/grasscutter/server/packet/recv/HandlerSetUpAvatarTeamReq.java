@@ -13,7 +13,9 @@ public class HandlerSetUpAvatarTeamReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         SetUpAvatarTeamReq req = SetUpAvatarTeamReq.parseFrom(payload);
 
-        session.getPlayer().getTeamManager().setupAvatarTeam(req.getTeamId(), req.getAvatarTeamGuidListList());
+        session
+                .getPlayer()
+                .getTeamManager()
+                .setupAvatarTeam(req.getTeamId(), req.getAvatarTeamGuidListList());
     }
-
 }

@@ -11,7 +11,8 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentQuestVarLess extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
         int questVarValue = quest.getMainQuest().getQuestVars()[params[0]];
         Grasscutter.getLogger().debug("questVar {} : {}", params[0], questVarValue);
         return questVarValue < params[1];

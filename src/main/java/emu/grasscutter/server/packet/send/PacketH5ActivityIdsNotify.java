@@ -9,8 +9,7 @@ public class PacketH5ActivityIdsNotify extends BasePacket {
     public PacketH5ActivityIdsNotify() {
         super(PacketOpcodes.H5ActivityIdsNotify);
 
-        H5ActivityIdsNotify proto = H5ActivityIdsNotify.newBuilder()
-            .build();
+        H5ActivityIdsNotify proto = H5ActivityIdsNotify.newBuilder().build();
 
         this.setData(proto);
     }

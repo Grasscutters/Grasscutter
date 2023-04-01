@@ -10,9 +10,8 @@ public class PacketSetPlayerNameRsp extends BasePacket {
     public PacketSetPlayerNameRsp(Player player) {
         super(PacketOpcodes.SetPlayerNameRsp);
 
-        SetPlayerNameRsp proto = SetPlayerNameRsp.newBuilder()
-            .setNickName(player.getNickname())
-            .build();
+        SetPlayerNameRsp proto =
+                SetPlayerNameRsp.newBuilder().setNickName(player.getNickname()).build();
 
         this.setData(proto);
     }

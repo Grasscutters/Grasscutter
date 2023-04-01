@@ -20,10 +20,11 @@ public class PacketVehicleInteractRsp extends BasePacket {
         if (vehicle instanceof EntityVehicle) {
             proto.setEntityId(vehicle.getId());
 
-            VehicleMember vehicleMember = VehicleMember.newBuilder()
-                .setUid(player.getUid())
-                .setAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
-                .build();
+            VehicleMember vehicleMember =
+                    VehicleMember.newBuilder()
+                            .setUid(player.getUid())
+                            .setAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
+                            .build();
 
             proto.setInteractType(interactType);
             proto.setMember(vehicleMember);
@@ -35,14 +36,14 @@ public class PacketVehicleInteractRsp extends BasePacket {
                 case VEHICLE_INTERACT_TYPE_OUT -> {
                     ((EntityVehicle) vehicle).getVehicleMembers().remove(vehicleMember);
                 }
-                default -> {
-                }
+                default -> {}
             }
         }
         this.setData(proto.build());
     }
 
-    public PacketVehicleInteractRsp(EntityVehicle vehicle, VehicleMember vehicleMember, VehicleInteractType interactType) {
+    public PacketVehicleInteractRsp(
+            EntityVehicle vehicle, VehicleMember vehicleMember, VehicleInteractType interactType) {
         super(PacketOpcodes.VehicleInteractRsp);
         VehicleInteractRsp.Builder proto = VehicleInteractRsp.newBuilder();
 
@@ -58,8 +59,7 @@ public class PacketVehicleInteractRsp extends BasePacket {
                 case VEHICLE_INTERACT_TYPE_OUT -> {
                     vehicle.getVehicleMembers().remove(vehicleMember);
                 }
-                default -> {
-                }
+                default -> {}
             }
         }
         this.setData(proto.build());

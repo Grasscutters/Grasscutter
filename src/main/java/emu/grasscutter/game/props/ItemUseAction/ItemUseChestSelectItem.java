@@ -31,7 +31,8 @@ public class ItemUseChestSelectItem extends ItemUseSelectItems {
 
     @Override
     protected int getItemCount(int index) {
-        if ((optionItemCounts == null) || (index < 0) || (index > optionItemCounts.length)) return INVALID;
+        if ((optionItemCounts == null) || (index < 0) || (index > optionItemCounts.length))
+            return INVALID;
         return this.optionItemCounts[index];
     }
 }

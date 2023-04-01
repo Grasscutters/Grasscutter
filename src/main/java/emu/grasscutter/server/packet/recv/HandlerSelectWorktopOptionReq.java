@@ -25,14 +25,16 @@ public class HandlerSelectWorktopOptionReq extends PacketHandler {
                 return;
             }
             session.getPlayer().getScene().selectWorktopOptionWith(req);
-            session.getPlayer().getScene().getScriptManager().callEvent(
-                EventType.EVENT_SELECT_OPTION,
-                new ScriptArgs(entity.getConfigId(), req.getOptionId())
-            );
+            session
+                    .getPlayer()
+                    .getScene()
+                    .getScriptManager()
+                    .callEvent(
+                            EventType.EVENT_SELECT_OPTION,
+                            new ScriptArgs(entity.getConfigId(), req.getOptionId()));
         } finally {
             // Always send packet
             session.send(new PacketSelectWorktopOptionRsp(req.getGadgetEntityId(), req.getOptionId()));
         }
     }
-
 }

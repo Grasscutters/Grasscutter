@@ -3,25 +3,20 @@ package emu.grasscutter.game.gacha;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
-import org.bson.types.ObjectId;
-
 import java.util.Date;
+import org.bson.types.ObjectId;
 
 @Entity(value = "gachas", useDiscriminator = false)
 public class GachaRecord {
-    @Id
-    private ObjectId id;
+    @Id private ObjectId id;
 
-    @Indexed
-    private int ownerId;
+    @Indexed private int ownerId;
 
     private Date transactionDate;
     private int itemID;
-    @Indexed
-    private int gachaType;
+    @Indexed private int gachaType;
 
-    public GachaRecord() {
-    }
+    public GachaRecord() {}
 
     public GachaRecord(int itemId, int ownerId, int gachaType) {
         this.transactionDate = new Date();
@@ -77,5 +72,4 @@ public class GachaRecord {
     public String toJsonString() {
         return "{\"time\": " + this.transactionDate.getTime() + ",\"item\":" + this.itemID + "}";
     }
-
 }

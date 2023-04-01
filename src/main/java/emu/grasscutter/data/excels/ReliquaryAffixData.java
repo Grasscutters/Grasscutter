@@ -14,8 +14,10 @@ public class ReliquaryAffixData extends GameResource {
 
     private int depotId;
     private int groupId;
+
     @SerializedName("propType")
     private FightProperty fightProp;
+
     private float propValue;
     private int weight;
     private int upgradeWeight;

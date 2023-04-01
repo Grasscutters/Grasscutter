@@ -11,12 +11,14 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentTriggerFire extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
         if (quest.getTriggers().containsKey(quest.getTriggerNameById(params[0]))) {
-            //We don't want to put a new key here
+            // We don't want to put a new key here
             return quest.getTriggers().get(quest.getTriggerNameById(params[0]));
         } else {
-            Grasscutter.getLogger().error("quest {} doesn't have trigger {}", quest.getSubQuestId(), params[0]);
+            Grasscutter.getLogger()
+                    .error("quest {} doesn't have trigger {}", quest.getSubQuestId(), params[0]);
             return false;
         }
     }

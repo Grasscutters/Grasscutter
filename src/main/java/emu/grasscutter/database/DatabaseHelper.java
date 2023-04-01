@@ -1,5 +1,7 @@
 package emu.grasscutter.database;
 
+import static com.mongodb.client.model.Filters.eq;
+
 import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
@@ -19,11 +21,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-
 import java.util.List;
 import java.util.stream.Stream;
-
-import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
     public static Account createAccount(String username) {
@@ -88,39 +87,65 @@ public final class DatabaseHelper {
     }
 
     public static Account getAccountByName(String username) {
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("username", username)).first();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("username", username))
+                .first();
     }
 
     public static Account getAccountByToken(String token) {
         if (token == null) return null;
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("token", token)).first();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("token", token))
+                .first();
     }
 
     public static Account getAccountBySessionKey(String sessionKey) {
         if (sessionKey == null) return null;
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("sessionKey", sessionKey)).first();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("sessionKey", sessionKey))
+                .first();
     }
 
     public static Account getAccountById(String uid) {
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("_id", uid)).first();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("_id", uid))
+                .first();
     }
 
     public static Account getAccountByPlayerId(int playerId) {
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("reservedPlayerId", playerId)).first();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("reservedPlayerId", playerId))
+                .first();
     }
 
     public static boolean checkIfAccountExists(String name) {
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("username", name)).count() > 0;
+        return DatabaseManager.getAccountDatastore()
+                        .find(Account.class)
+                        .filter(Filters.eq("username", name))
+                        .count()
+                > 0;
     }
 
     public static boolean checkIfAccountExists(int reservedUid) {
-        return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("reservedPlayerId", reservedUid)).count() > 0;
+        return DatabaseManager.getAccountDatastore()
+                        .find(Account.class)
+                        .filter(Filters.eq("reservedPlayerId", reservedUid))
+                        .count()
+                > 0;
     }
 
     public static synchronized void deleteAccount(Account target) {
-        // To delete an account, we need to also delete all the other documents in the database that reference the account.
-        // This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
-        // database in an inconsistent state, but unfortunately Mongo only supports that when we have a replica set ...
+        // To delete an account, we need to also delete all the other documents in the database that
+        // reference the account.
+        // This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way
+        // does not leave the
+        // database in an inconsistent state, but unfortunately Mongo only supports that when we have a
+        // replica set ...
 
         Player player = Grasscutter.getGameServer().getPlayerByAccountId(target.getId());
 
@@ -153,7 +178,10 @@ public final class DatabaseHelper {
         DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", uid)).delete();
 
         // Finally, delete the account itself.
-        DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("id", target.getId())).delete();
+        DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(Filters.eq("id", target.getId()))
+                .delete();
     }
 
     public static <T> Stream<T> getByGameClass(Class<T> classType) {
@@ -166,20 +194,33 @@ public final class DatabaseHelper {
     }
 
     public static Player getPlayerByUid(int id) {
-        return DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("_id", id)).first();
+        return DatabaseManager.getGameDatastore()
+                .find(Player.class)
+                .filter(Filters.eq("_id", id))
+                .first();
     }
 
     @Deprecated
     public static Player getPlayerByAccount(Account account) {
-        return DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("accountId", account.getId())).first();
+        return DatabaseManager.getGameDatastore()
+                .find(Player.class)
+                .filter(Filters.eq("accountId", account.getId()))
+                .first();
     }
 
     public static Player getPlayerByAccount(Account account, Class<? extends Player> playerClass) {
-        return DatabaseManager.getGameDatastore().find(playerClass).filter(Filters.eq("accountId", account.getId())).first();
+        return DatabaseManager.getGameDatastore()
+                .find(playerClass)
+                .filter(Filters.eq("accountId", account.getId()))
+                .first();
     }
 
     public static boolean checkIfPlayerExists(int uid) {
-        return DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("_id", uid)).count() > 0;
+        return DatabaseManager.getGameDatastore()
+                        .find(Player.class)
+                        .filter(Filters.eq("_id", uid))
+                        .count()
+                > 0;
     }
 
     public static synchronized Player generatePlayerUid(Player character, int reservedId) {
@@ -191,8 +232,7 @@ public final class DatabaseHelper {
         } else {
             do {
                 id = DatabaseManager.getNextId(character);
-            }
-            while (checkIfPlayerExists(id));
+            } while (checkIfPlayerExists(id));
             character.setUid(id);
         }
         // Save to database
@@ -208,8 +248,7 @@ public final class DatabaseHelper {
         } else {
             do {
                 id = DatabaseManager.getNextId(Player.class);
-            }
-            while (checkIfPlayerExists(id));
+            } while (checkIfPlayerExists(id));
         }
         return id;
     }
@@ -223,7 +262,11 @@ public final class DatabaseHelper {
     }
 
     public static List<Avatar> getAvatars(Player player) {
-        return DatabaseManager.getGameDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(Avatar.class)
+                .filter(Filters.eq("ownerId", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static void saveItem(GameItem item) {
@@ -236,15 +279,27 @@ public final class DatabaseHelper {
     }
 
     public static List<GameItem> getInventoryItems(Player player) {
-        return DatabaseManager.getGameDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(GameItem.class)
+                .filter(Filters.eq("ownerId", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static List<Friendship> getFriends(Player player) {
-        return DatabaseManager.getGameDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(Friendship.class)
+                .filter(Filters.eq("ownerId", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static List<Friendship> getReverseFriends(Player player) {
-        return DatabaseManager.getGameDatastore().find(Friendship.class).filter(Filters.eq("friendId", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(Friendship.class)
+                .filter(Filters.eq("friendId", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static void saveFriendship(Friendship friendship) {
@@ -256,25 +311,30 @@ public final class DatabaseHelper {
     }
 
     public static Friendship getReverseFriendship(Friendship friendship) {
-        return DatabaseManager.getGameDatastore().find(Friendship.class).filter(Filters.and(
-            Filters.eq("ownerId", friendship.getFriendId()),
-            Filters.eq("friendId", friendship.getOwnerId())
-        )).first();
+        return DatabaseManager.getGameDatastore()
+                .find(Friendship.class)
+                .filter(
+                        Filters.and(
+                                Filters.eq("ownerId", friendship.getFriendId()),
+                                Filters.eq("friendId", friendship.getOwnerId())))
+                .first();
     }
 
     public static List<GachaRecord> getGachaRecords(int ownerId, int page, int gachaType) {
         return getGachaRecords(ownerId, page, gachaType, 10);
     }
 
-    public static List<GachaRecord> getGachaRecords(int ownerId, int page, int gachaType, int pageSize) {
-        return DatabaseManager.getGameDatastore().find(GachaRecord.class).filter(
-            Filters.eq("ownerId", ownerId),
-            Filters.eq("gachaType", gachaType)
-        ).iterator(new FindOptions()
-            .sort(Sort.descending("transactionDate"))
-            .skip(pageSize * page)
-            .limit(pageSize)
-        ).toList();
+    public static List<GachaRecord> getGachaRecords(
+            int ownerId, int page, int gachaType, int pageSize) {
+        return DatabaseManager.getGameDatastore()
+                .find(GachaRecord.class)
+                .filter(Filters.eq("ownerId", ownerId), Filters.eq("gachaType", gachaType))
+                .iterator(
+                        new FindOptions()
+                                .sort(Sort.descending("transactionDate"))
+                                .skip(pageSize * page)
+                                .limit(pageSize))
+                .toList();
     }
 
     public static long getGachaRecordsMaxPage(int ownerId, int page, int gachaType) {
@@ -282,10 +342,11 @@ public final class DatabaseHelper {
     }
 
     public static long getGachaRecordsMaxPage(int ownerId, int page, int gachaType, int pageSize) {
-        long count = DatabaseManager.getGameDatastore().find(GachaRecord.class).filter(
-            Filters.eq("ownerId", ownerId),
-            Filters.eq("gachaType", gachaType)
-        ).count();
+        long count =
+                DatabaseManager.getGameDatastore()
+                        .find(GachaRecord.class)
+                        .filter(Filters.eq("ownerId", ownerId), Filters.eq("gachaType", gachaType))
+                        .count();
         return count / 10 + (count % 10 > 0 ? 1 : 0);
     }
 
@@ -294,7 +355,11 @@ public final class DatabaseHelper {
     }
 
     public static List<Mail> getAllMail(Player player) {
-        return DatabaseManager.getGameDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(Mail.class)
+                .filter(Filters.eq("ownerUid", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static void saveMail(Mail mail) {
@@ -307,7 +372,11 @@ public final class DatabaseHelper {
     }
 
     public static List<GameMainQuest> getAllQuests(Player player) {
-        return DatabaseManager.getGameDatastore().find(GameMainQuest.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+        return DatabaseManager.getGameDatastore()
+                .find(GameMainQuest.class)
+                .filter(Filters.eq("ownerUid", player.getUid()))
+                .stream()
+                .toList();
     }
 
     public static void saveQuest(GameMainQuest quest) {
@@ -319,7 +388,10 @@ public final class DatabaseHelper {
     }
 
     public static GameHome getHomeByUid(int id) {
-        return DatabaseManager.getGameDatastore().find(GameHome.class).filter(Filters.eq("ownerUid", id)).first();
+        return DatabaseManager.getGameDatastore()
+                .find(GameHome.class)
+                .filter(Filters.eq("ownerUid", id))
+                .first();
     }
 
     public static void saveHome(GameHome gameHome) {
@@ -327,7 +399,11 @@ public final class DatabaseHelper {
     }
 
     public static BattlePassManager loadBattlePass(Player player) {
-        BattlePassManager manager = DatabaseManager.getGameDatastore().find(BattlePassManager.class).filter(Filters.eq("ownerUid", player.getUid())).first();
+        BattlePassManager manager =
+                DatabaseManager.getGameDatastore()
+                        .find(BattlePassManager.class)
+                        .filter(Filters.eq("ownerUid", player.getUid()))
+                        .first();
         if (manager == null) {
             manager = new BattlePassManager(player);
             manager.save();
@@ -342,9 +418,10 @@ public final class DatabaseHelper {
     }
 
     public static PlayerActivityData getPlayerActivityData(int uid, int activityId) {
-        return DatabaseManager.getGameDatastore().find(PlayerActivityData.class)
-            .filter(Filters.and(Filters.eq("uid", uid), Filters.eq("activityId", activityId)))
-            .first();
+        return DatabaseManager.getGameDatastore()
+                .find(PlayerActivityData.class)
+                .filter(Filters.and(Filters.eq("uid", uid), Filters.eq("activityId", activityId)))
+                .first();
     }
 
     public static void savePlayerActivityData(PlayerActivityData playerActivityData) {
@@ -352,9 +429,10 @@ public final class DatabaseHelper {
     }
 
     public static MusicGameBeatmap getMusicGameBeatmap(long musicShareId) {
-        return DatabaseManager.getGameDatastore().find(MusicGameBeatmap.class)
-            .filter(Filters.eq("musicShareId", musicShareId))
-            .first();
+        return DatabaseManager.getGameDatastore()
+                .find(MusicGameBeatmap.class)
+                .filter(Filters.eq("musicShareId", musicShareId))
+                .first();
     }
 
     public static void saveMusicGameBeatmap(MusicGameBeatmap musicGameBeatmap) {
@@ -362,9 +440,10 @@ public final class DatabaseHelper {
     }
 
     public static Achievements getAchievementData(int uid) {
-        return DatabaseManager.getGameDatastore().find(Achievements.class)
-            .filter(Filters.and(Filters.eq("uid", uid)))
-            .first();
+        return DatabaseManager.getGameDatastore()
+                .find(Achievements.class)
+                .filter(Filters.and(Filters.eq("uid", uid)))
+                .first();
     }
 
     public static void saveAchievementData(Achievements achievements) {

@@ -11,9 +11,7 @@ public class PacketUnlockPersonalLineRsp extends BasePacket {
 
         var proto = UnlockPersonalLineRspOuterClass.UnlockPersonalLineRsp.newBuilder();
 
-        proto.setPersonalLineId(id)
-            .setLevel(level)
-            .setChapterId(chapterId);
+        proto.setPersonalLineId(id).setLevel(level).setChapterId(chapterId);
 
         this.setData(proto);
     }

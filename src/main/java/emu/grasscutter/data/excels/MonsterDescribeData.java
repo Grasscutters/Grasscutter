@@ -10,6 +10,7 @@ import lombok.Getter;
 public class MonsterDescribeData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     private long nameTextMapHash;
     private int titleID;
     private int specialNameLabID;

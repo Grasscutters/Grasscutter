@@ -8,15 +8,26 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.MonsterType;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.Set;
+import lombok.Getter;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter
 public class MonsterData extends GameResource {
-    static public Set<FightProperty> definedFightProperties = Set.of(FightProperty.FIGHT_PROP_BASE_HP, FightProperty.FIGHT_PROP_BASE_ATTACK, FightProperty.FIGHT_PROP_BASE_DEFENSE, FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT, FightProperty.FIGHT_PROP_FIRE_SUB_HURT, FightProperty.FIGHT_PROP_ELEC_SUB_HURT, FightProperty.FIGHT_PROP_WATER_SUB_HURT, FightProperty.FIGHT_PROP_GRASS_SUB_HURT, FightProperty.FIGHT_PROP_WIND_SUB_HURT, FightProperty.FIGHT_PROP_ROCK_SUB_HURT, FightProperty.FIGHT_PROP_ICE_SUB_HURT);
+    public static Set<FightProperty> definedFightProperties =
+            Set.of(
+                    FightProperty.FIGHT_PROP_BASE_HP,
+                    FightProperty.FIGHT_PROP_BASE_ATTACK,
+                    FightProperty.FIGHT_PROP_BASE_DEFENSE,
+                    FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT,
+                    FightProperty.FIGHT_PROP_FIRE_SUB_HURT,
+                    FightProperty.FIGHT_PROP_ELEC_SUB_HURT,
+                    FightProperty.FIGHT_PROP_WATER_SUB_HURT,
+                    FightProperty.FIGHT_PROP_GRASS_SUB_HURT,
+                    FightProperty.FIGHT_PROP_WIND_SUB_HURT,
+                    FightProperty.FIGHT_PROP_ROCK_SUB_HURT,
+                    FightProperty.FIGHT_PROP_ICE_SUB_HURT);
 
     @Getter(onMethod_ = @Override)
     private int id;
@@ -39,8 +50,10 @@ public class MonsterData extends GameResource {
 
     @SerializedName("hpBase")
     private float baseHp;
+
     @SerializedName("attackBase")
     private float baseAttack;
+
     @SerializedName("defenseBase")
     private float baseDefense;
 

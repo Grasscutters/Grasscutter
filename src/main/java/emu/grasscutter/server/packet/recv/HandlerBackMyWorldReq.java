@@ -21,13 +21,15 @@ public class HandlerBackMyWorldReq extends PacketHandler {
             prevScene = 3;
         }
 
-        session.getPlayer().getWorld().transferPlayerToScene(
-            session.getPlayer(),
-            prevScene,
-            TeleportType.WAYPOINT,
-            session.getPlayer().getPrevPos());
+        session
+                .getPlayer()
+                .getWorld()
+                .transferPlayerToScene(
+                        session.getPlayer(),
+                        prevScene,
+                        TeleportType.WAYPOINT,
+                        session.getPlayer().getPrevPos());
 
         session.send(new PacketBackMyWorldRsp());
     }
-
 }

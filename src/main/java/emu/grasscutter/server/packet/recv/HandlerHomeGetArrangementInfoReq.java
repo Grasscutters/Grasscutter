@@ -14,7 +14,7 @@ public class HandlerHomeGetArrangementInfoReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = HomeGetArrangementInfoReqOuterClass.HomeGetArrangementInfoReq.parseFrom(payload);
 
-        session.send(new PacketHomeGetArrangementInfoRsp(session.getPlayer(), req.getSceneIdListList()));
+        session.send(
+                new PacketHomeGetArrangementInfoRsp(session.getPlayer(), req.getSceneIdListList()));
     }
-
 }

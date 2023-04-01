@@ -1,7 +1,6 @@
 package emu.grasscutter.game.combine;
 
 import emu.grasscutter.data.common.ItemParamData;
-
 import java.util.List;
 
 public class CombineResult {
@@ -41,5 +40,4 @@ public class CombineResult {
     public void setBack(List<ItemParamData> back) {
         this.back = back;
     }
-
 }

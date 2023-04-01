@@ -18,7 +18,5 @@ public class AvatarFlycloakData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-
-    }
+    public void onLoad() {}
 }

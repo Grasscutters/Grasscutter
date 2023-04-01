@@ -7,6 +7,5 @@ public class Packet extends BasePacket {
 
     public Packet() {
         super(PacketOpcodes.NONE);
-
     }
 }

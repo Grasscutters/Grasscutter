@@ -10,9 +10,7 @@ public class PacketSetPlayerBirthdayRsp extends BasePacket {
     public PacketSetPlayerBirthdayRsp(int retCode) {
         super(PacketOpcodes.SetPlayerBirthdayRsp);
 
-        SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder()
-            .setRetcode(retCode)
-            .build();
+        SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder().setRetcode(retCode).build();
 
         this.setData(proto);
     }
@@ -20,9 +18,8 @@ public class PacketSetPlayerBirthdayRsp extends BasePacket {
     public PacketSetPlayerBirthdayRsp(Player player) {
         super(PacketOpcodes.SetPlayerBirthdayRsp);
 
-        SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder()
-            .setBirthday(player.getBirthday().toProto())
-            .build();
+        SetPlayerBirthdayRsp proto =
+                SetPlayerBirthdayRsp.newBuilder().setBirthday(player.getBirthday().toProto()).build();
 
         this.setData(proto);
     }

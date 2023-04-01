@@ -3,12 +3,10 @@ package emu.grasscutter.server.event.entity;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.EntityEvent;
-
 import javax.annotation.Nullable;
 
 public final class EntityDamageEvent extends EntityEvent implements Cancellable {
-    @Nullable
-    private final GameEntity damager;
+    @Nullable private final GameEntity damager;
     private float damage;
 
     public EntityDamageEvent(GameEntity entity, float damage, @Nullable GameEntity damager) {
@@ -26,8 +24,7 @@ public final class EntityDamageEvent extends EntityEvent implements Cancellable 
         this.damage = damage;
     }
 
-    @Nullable
-    public GameEntity getDamager() {
+    @Nullable public GameEntity getDamager() {
         return this.damager;
     }
 }

@@ -11,10 +11,11 @@ public class PacketLifeStateChangeNotify extends BasePacket {
     public PacketLifeStateChangeNotify(GameEntity target, LifeState lifeState) {
         super(PacketOpcodes.LifeStateChangeNotify);
 
-        LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()
-            .setEntityId(target.getId())
-            .setLifeState(lifeState.getValue())
-            .build();
+        LifeStateChangeNotify proto =
+                LifeStateChangeNotify.newBuilder()
+                        .setEntityId(target.getId())
+                        .setLifeState(lifeState.getValue())
+                        .build();
 
         this.setData(proto);
     }
@@ -22,11 +23,12 @@ public class PacketLifeStateChangeNotify extends BasePacket {
     public PacketLifeStateChangeNotify(GameEntity attacker, GameEntity target, LifeState lifeState) {
         super(PacketOpcodes.LifeStateChangeNotify);
 
-        LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()
-            .setEntityId(target.getId())
-            .setLifeState(lifeState.getValue())
-            .setSourceEntityId(attacker.getId())
-            .build();
+        LifeStateChangeNotify proto =
+                LifeStateChangeNotify.newBuilder()
+                        .setEntityId(target.getId())
+                        .setLifeState(lifeState.getValue())
+                        .setSourceEntityId(attacker.getId())
+                        .build();
 
         this.setData(proto);
     }
@@ -34,25 +36,30 @@ public class PacketLifeStateChangeNotify extends BasePacket {
     public PacketLifeStateChangeNotify(int attackerId, GameEntity target, LifeState lifeState) {
         super(PacketOpcodes.LifeStateChangeNotify);
 
-        LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()
-            .setEntityId(target.getId())
-            .setLifeState(lifeState.getValue())
-            .setSourceEntityId(attackerId)
-            .build();
+        LifeStateChangeNotify proto =
+                LifeStateChangeNotify.newBuilder()
+                        .setEntityId(target.getId())
+                        .setLifeState(lifeState.getValue())
+                        .setSourceEntityId(attackerId)
+                        .build();
 
         this.setData(proto);
     }
 
-    public PacketLifeStateChangeNotify(GameEntity entity, LifeState lifeState, PlayerDieType dieType) {
+    public PacketLifeStateChangeNotify(
+            GameEntity entity, LifeState lifeState, PlayerDieType dieType) {
         this(entity, lifeState, null, "", dieType);
     }
 
-    public PacketLifeStateChangeNotify(GameEntity entity, LifeState lifeState, GameEntity sourceEntity,
-                                       String attackTag, PlayerDieType dieType) {
+    public PacketLifeStateChangeNotify(
+            GameEntity entity,
+            LifeState lifeState,
+            GameEntity sourceEntity,
+            String attackTag,
+            PlayerDieType dieType) {
         super(PacketOpcodes.LifeStateChangeNotify);
 
         LifeStateChangeNotify.Builder proto = LifeStateChangeNotify.newBuilder();
-
 
         proto.setEntityId(entity.getId());
         proto.setLifeState(lifeState.getValue());

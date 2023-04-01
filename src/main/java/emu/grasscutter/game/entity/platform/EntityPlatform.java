@@ -12,33 +12,34 @@ import emu.grasscutter.net.proto.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.annotation.Nullable;
-
 public class EntityPlatform extends EntityBaseGadget {
-    @Getter
-    private final Player owner;
+    @Getter private final Player owner;
+
     @Getter(onMethod_ = @Override)
     private final int gadgetId;
-    @Getter
-    private final EntityClientGadget gadget;
+
+    @Getter private final EntityClientGadget gadget;
+
     @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
-    @Getter
-    private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
-    @Nullable
-    @Getter
-    private ConfigGadget configGadget;
-    @Getter
-    @Setter
-    private boolean isStarted;
-    @Getter
-    @Setter
-    private boolean isActive;
 
-    public EntityPlatform(EntityClientGadget gadget, Scene scene, Player player, int gadgetId, Position pos, Position rot, MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType) {
+    @Getter private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
+    @Nullable @Getter private ConfigGadget configGadget;
+    @Getter @Setter private boolean isStarted;
+    @Getter @Setter private boolean isActive;
+
+    public EntityPlatform(
+            EntityClientGadget gadget,
+            Scene scene,
+            Player player,
+            int gadgetId,
+            Position pos,
+            Position rot,
+            MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType) {
         super(scene, pos, rot);
         this.gadget = gadget;
         this.owner = player;
@@ -56,20 +57,23 @@ public class EntityPlatform extends EntityBaseGadget {
 
     @Override
     public SceneEntityInfoOuterClass.SceneEntityInfo toProto() {
-        var platform = PlatformInfoOuterClass.PlatformInfo.newBuilder()
-            .setMovingPlatformType(movingPlatformType)
-            .build();
+        var platform =
+                PlatformInfoOuterClass.PlatformInfo.newBuilder()
+                        .setMovingPlatformType(movingPlatformType)
+                        .build();
 
-        var gadgetInfo = SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder()
-            .setGadgetId(getGadgetId())
-            .setAuthorityPeerId(getOwner().getPeerId())
-            .setPlatform(platform);
+        var gadgetInfo =
+                SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder()
+                        .setGadgetId(getGadgetId())
+                        .setAuthorityPeerId(getOwner().getPeerId())
+                        .setPlatform(platform);
 
-        var entityInfo = SceneEntityInfoOuterClass.SceneEntityInfo.newBuilder()
-            .setEntityId(getId())
-            .setEntityType(ProtEntityTypeOuterClass.ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-            .setGadget(gadgetInfo)
-            .setLifeState(1);
+        var entityInfo =
+                SceneEntityInfoOuterClass.SceneEntityInfo.newBuilder()
+                        .setEntityId(getId())
+                        .setEntityType(ProtEntityTypeOuterClass.ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+                        .setGadget(gadgetInfo)
+                        .setLifeState(1);
 
         this.addAllFightPropsToEntityInfo(entityInfo);
         return entityInfo.build();
@@ -77,21 +81,21 @@ public class EntityPlatform extends EntityBaseGadget {
 
     public PlatformInfoOuterClass.PlatformInfo onStartRoute() {
         return PlatformInfoOuterClass.PlatformInfo.newBuilder()
-            .setStartSceneTime(getScene().getSceneTime())
-            .setIsStarted(true)
-            .setPosOffset(getPosition().toProto())
-            .setMovingPlatformType(getMovingPlatformType())
-            .setIsActive(true)
-            .build();
+                .setStartSceneTime(getScene().getSceneTime())
+                .setIsStarted(true)
+                .setPosOffset(getPosition().toProto())
+                .setMovingPlatformType(getMovingPlatformType())
+                .setIsActive(true)
+                .build();
     }
 
     public PlatformInfoOuterClass.PlatformInfo onStopRoute() {
         var sceneTime = getScene().getSceneTime();
         return PlatformInfoOuterClass.PlatformInfo.newBuilder()
-            .setStartSceneTime(sceneTime)
-            .setStopSceneTime(sceneTime)
-            .setPosOffset(getPosition().toProto())
-            .setMovingPlatformType(getMovingPlatformType())
-            .build();
+                .setStartSceneTime(sceneTime)
+                .setStopSceneTime(sceneTime)
+                .setPosOffset(getPosition().toProto())
+                .setMovingPlatformType(getMovingPlatformType())
+                .build();
     }
 }

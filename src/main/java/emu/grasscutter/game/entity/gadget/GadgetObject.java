@@ -16,7 +16,5 @@ public class GadgetObject extends GadgetContent {
     }
 
     @Override
-    public void onBuildProto(SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder gadgetInfo) {
-
-    }
+    public void onBuildProto(SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder gadgetInfo) {}
 }

@@ -20,5 +20,4 @@ public class HandlerPingReq extends PacketHandler {
 
         session.send(new PacketPingRsp(head.getClientSequenceId(), ping.getClientTime()));
     }
-
 }

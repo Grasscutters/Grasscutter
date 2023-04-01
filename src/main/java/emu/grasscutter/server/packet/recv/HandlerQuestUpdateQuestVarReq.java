@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass;
 import emu.grasscutter.net.proto.QuestVarOpOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarRsp;
-
 import java.util.List;
 
 @Opcodes(PacketOpcodes.QuestUpdateQuestVarReq)
@@ -16,9 +15,11 @@ public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        //Client sends packets. One with the value, and one with the index and the new value to set/inc/dec
+        // Client sends packets. One with the value, and one with the index and the new value to
+        // set/inc/dec
         var req = QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq.parseFrom(payload);
-        GameMainQuest mainQuest = session.getPlayer().getQuestManager().getMainQuestById(req.getQuestId() / 100);
+        GameMainQuest mainQuest =
+                session.getPlayer().getQuestManager().getMainQuestById(req.getQuestId() / 100);
         List<QuestVarOpOuterClass.QuestVarOp> questVars = req.getQuestVarOpListList();
         if (mainQuest.getQuestVarsUpdate().size() == 0) {
             for (QuestVarOpOuterClass.QuestVarOp questVar : questVars) {
@@ -35,11 +36,10 @@ public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
                 } else {
                     mainQuest.setQuestVar(questVar.getIndex(), mainQuest.getQuestVarsUpdate().get(0));
                 }
-                //remove the first element from the update list
+                // remove the first element from the update list
                 mainQuest.getQuestVarsUpdate().remove(0);
             }
         }
         session.send(new PacketQuestUpdateQuestVarRsp(req.getQuestId()));
     }
-
 }

@@ -4,16 +4,17 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-
 import java.util.Calendar;
+import lombok.Getter;
 
 @ResourceType(name = "DailyDungeonConfigData.json")
 public class DailyDungeonData extends GameResource {
     private static final int[] empty = new int[0];
     private final Int2ObjectMap<int[]> map;
+
     @Getter(onMethod_ = @Override)
     private int id;
+
     private int[] monday;
     private int[] tuesday;
     private int[] wednesday;

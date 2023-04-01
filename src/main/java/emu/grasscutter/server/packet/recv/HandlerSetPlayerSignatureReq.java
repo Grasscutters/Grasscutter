@@ -20,5 +20,4 @@ public class HandlerSetPlayerSignatureReq extends PacketHandler {
             session.send(new PacketSetPlayerSignatureRsp(session.getPlayer()));
         }
     }
-
 }

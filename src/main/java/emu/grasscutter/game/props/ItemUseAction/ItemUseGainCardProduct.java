@@ -3,8 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseGainCardProduct extends ItemUseAction {
-    public ItemUseGainCardProduct(String[] useParam) {
-    }
+    public ItemUseGainCardProduct(String[] useParam) {}
 
     @Override
     public ItemUseOp getItemUseOp() {

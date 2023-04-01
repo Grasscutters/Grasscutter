@@ -9,9 +9,8 @@ public class PacketUnlockTransPointRsp extends BasePacket {
     public PacketUnlockTransPointRsp(Retcode retcode) {
         super(PacketOpcodes.UnlockTransPointRsp);
 
-        UnlockTransPointRsp proto = UnlockTransPointRsp.newBuilder()
-            .setRetcode(retcode.getNumber())
-            .build();
+        UnlockTransPointRsp proto =
+                UnlockTransPointRsp.newBuilder().setRetcode(retcode.getNumber()).build();
 
         this.setData(proto);
     }

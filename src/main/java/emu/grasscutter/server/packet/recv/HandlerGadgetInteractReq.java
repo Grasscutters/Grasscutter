@@ -14,8 +14,10 @@ public class HandlerGadgetInteractReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         GadgetInteractReq req = GadgetInteractReq.parseFrom(payload);
 
-        session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_INTERACT_GADGET, req.getGadgetId());
+        session
+                .getPlayer()
+                .getQuestManager()
+                .triggerEvent(QuestTrigger.QUEST_CONTENT_INTERACT_GADGET, req.getGadgetId());
         session.getPlayer().interactWith(req.getGadgetEntityId(), req);
     }
-
 }

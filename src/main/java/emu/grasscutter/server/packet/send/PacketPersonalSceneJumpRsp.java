@@ -10,10 +10,8 @@ public class PacketPersonalSceneJumpRsp extends BasePacket {
     public PacketPersonalSceneJumpRsp(int sceneId, Position pos) {
         super(PacketOpcodes.PersonalSceneJumpRsp);
 
-        PersonalSceneJumpRsp proto = PersonalSceneJumpRsp.newBuilder()
-            .setDestSceneId(sceneId)
-            .setDestPos(pos.toProto())
-            .build();
+        PersonalSceneJumpRsp proto =
+                PersonalSceneJumpRsp.newBuilder().setDestSceneId(sceneId).setDestPos(pos.toProto()).build();
 
         this.setData(proto);
     }

@@ -13,7 +13,9 @@ public class HandlerTakeFurnitureMakeReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = TakeFurnitureMakeReqOuterClass.TakeFurnitureMakeReq.parseFrom(payload);
 
-        session.getPlayer().getFurnitureManager().take(req.getIndex(), req.getMakeId(), req.getIsFastFinish());
+        session
+                .getPlayer()
+                .getFurnitureManager()
+                .take(req.getIndex(), req.getMakeId(), req.getIsFastFinish());
     }
-
 }

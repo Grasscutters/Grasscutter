@@ -13,34 +13,29 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityUpdateWatcherNotify;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Entity("activities")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(builderMethodName = "of")
 public class PlayerActivityData {
-    @Id
-    String id;
+    @Id String id;
     int uid;
     int activityId;
     Map<Integer, WatcherInfo> watcherInfoMap;
-    /**
-     * the detail data of each type of activity (Json format)
-     */
+    /** the detail data of each type of activity (Json format) */
     String detail;
-    @Transient
-    Player player;
-    @Transient
-    ActivityHandler activityHandler;
+
+    @Transient Player player;
+    @Transient ActivityHandler activityHandler;
 
     public static PlayerActivityData getByPlayer(Player player, int activityId) {
         return DatabaseHelper.getPlayerActivityData(player.getUid(), activityId);
@@ -65,9 +60,7 @@ public class PlayerActivityData {
     }
 
     public List<ActivityWatcherInfoOuterClass.ActivityWatcherInfo> getAllWatcherInfoList() {
-        return watcherInfoMap.values().stream()
-            .map(WatcherInfo::toProto)
-            .toList();
+        return watcherInfoMap.values().stream().map(WatcherInfo::toProto).toList();
     }
 
     public void setDetail(Object detail) {
@@ -80,10 +73,11 @@ public class PlayerActivityData {
             return;
         }
 
-        var reward = Optional.of(watcher)
-            .map(WatcherInfo::getMetadata)
-            .map(ActivityWatcherData::getRewardID)
-            .map(id -> GameData.getRewardDataMap().get(id.intValue()));
+        var reward =
+                Optional.of(watcher)
+                        .map(WatcherInfo::getMetadata)
+                        .map(ActivityWatcherData::getRewardID)
+                        .map(id -> GameData.getRewardDataMap().get(id.intValue()));
 
         if (reward.isEmpty()) {
             return;
@@ -111,10 +105,10 @@ public class PlayerActivityData {
 
         public static WatcherInfo init(ActivityWatcher watcher) {
             return WatcherInfo.of()
-                .watcherId(watcher.getWatcherId())
-                .totalProgress(watcher.getActivityWatcherData().getProgress())
-                .isTakenReward(false)
-                .build();
+                    .watcherId(watcher.getWatcherId())
+                    .totalProgress(watcher.getActivityWatcherData().getProgress())
+                    .isTakenReward(false)
+                    .build();
         }
 
         public ActivityWatcherData getMetadata() {
@@ -123,11 +117,11 @@ public class PlayerActivityData {
 
         public ActivityWatcherInfoOuterClass.ActivityWatcherInfo toProto() {
             return ActivityWatcherInfoOuterClass.ActivityWatcherInfo.newBuilder()
-                .setWatcherId(watcherId)
-                .setCurProgress(curProgress)
-                .setTotalProgress(totalProgress)
-                .setIsTakenReward(isTakenReward)
-                .build();
+                    .setWatcherId(watcherId)
+                    .setCurProgress(curProgress)
+                    .setTotalProgress(totalProgress)
+                    .setIsTakenReward(isTakenReward)
+                    .build();
         }
     }
 }

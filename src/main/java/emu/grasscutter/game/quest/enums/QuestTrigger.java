@@ -2,7 +2,6 @@ package emu.grasscutter.game.quest.enums;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -235,14 +234,16 @@ public enum QuestTrigger {
 
     static {
         Stream.of(values())
-            .filter(e -> e.name().startsWith("QUEST_CONTENT_"))
-            .forEach(e -> {
-                contentMap.put(e.getValue(), e);
-                contentStringMap.put(e.name(), e);
-            });
+                .filter(e -> e.name().startsWith("QUEST_CONTENT_"))
+                .forEach(
+                        e -> {
+                            contentMap.put(e.getValue(), e);
+                            contentStringMap.put(e.name(), e);
+                        });
     }
 
     private final int value;
+
     QuestTrigger(int id) {
         this.value = id;
     }

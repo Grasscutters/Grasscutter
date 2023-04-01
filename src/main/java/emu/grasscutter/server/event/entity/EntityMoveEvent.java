@@ -9,7 +9,8 @@ public final class EntityMoveEvent extends EntityEvent {
     private final Position position, rotation;
     private final MotionState motionState;
 
-    public EntityMoveEvent(GameEntity entity, Position position, Position rotation, MotionState motionState) {
+    public EntityMoveEvent(
+            GameEntity entity, Position position, Position rotation, MotionState motionState) {
         super(entity);
 
         this.position = position;

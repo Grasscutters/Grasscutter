@@ -6,15 +6,9 @@ import lombok.Setter;
 
 @Entity
 public class PlayerGachaBannerInfo {
-    @Getter
-    @Setter
-    private int totalPulls = 0;
-    @Getter
-    @Setter
-    private int pity5 = 0;
-    @Getter
-    @Setter
-    private int pity4 = 0;
+    @Getter @Setter private int totalPulls = 0;
+    @Getter @Setter private int pity5 = 0;
+    @Getter @Setter private int pity4 = 0;
     private int failedFeaturedItemPulls = 0;
     private int failedFeatured4ItemPulls = 0;
     private int pity5Pool1 = 0;
@@ -22,12 +16,8 @@ public class PlayerGachaBannerInfo {
     private int pity4Pool1 = 0;
     private int pity4Pool2 = 0;
 
-    @Getter
-    @Setter
-    private int failedChosenItemPulls = 0;
-    @Getter
-    @Setter
-    private int wishItemId = 0;
+    @Getter @Setter private int failedChosenItemPulls = 0;
+    @Getter @Setter private int wishItemId = 0;
 
     public void addTotalPulls(int amount) {
         this.totalPulls += amount;
@@ -48,7 +38,7 @@ public class PlayerGachaBannerInfo {
     public int getFailedFeaturedItemPulls(int rarity) {
         return switch (rarity) {
             case 4 -> failedFeatured4ItemPulls;
-            default -> failedFeaturedItemPulls;  // 5
+            default -> failedFeaturedItemPulls; // 5
         };
     }
 
@@ -56,7 +46,7 @@ public class PlayerGachaBannerInfo {
         if (rarity == 4) {
             failedFeatured4ItemPulls = amount;
         } else {
-            failedFeaturedItemPulls = amount;  // 5
+            failedFeaturedItemPulls = amount; // 5
         }
     }
 
@@ -64,7 +54,7 @@ public class PlayerGachaBannerInfo {
         if (rarity == 4) {
             failedFeatured4ItemPulls += amount;
         } else {
-            failedFeaturedItemPulls += amount;  // 5
+            failedFeaturedItemPulls += amount; // 5
         }
     }
 

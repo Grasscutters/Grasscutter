@@ -12,5 +12,4 @@ public class HandlerPlayerQuitDungeonReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         session.getPlayer().getServer().getDungeonSystem().exitDungeon(session.getPlayer());
     }
-
 }

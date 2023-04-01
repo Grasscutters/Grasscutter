@@ -6,7 +6,5 @@ public abstract class GameResource {
         return 0;
     }
 
-    public void onLoad() {
-
-    }
+    public void onLoad() {}
 }

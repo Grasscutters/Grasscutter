@@ -18,5 +18,4 @@ public class HandlerEntityAiSyncNotify extends PacketHandler {
             session.getPlayer().getScene().broadcastPacket(new PacketEntityAiSyncNotify(notify));
         }
     }
-
 }

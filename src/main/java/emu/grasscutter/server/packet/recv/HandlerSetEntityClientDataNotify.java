@@ -25,5 +25,4 @@ public class HandlerSetEntityClientDataNotify extends PacketHandler {
 
         session.getPlayer().getScene().broadcastPacket(packet);
     }
-
 }

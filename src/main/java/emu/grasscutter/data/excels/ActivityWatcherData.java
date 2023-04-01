@@ -3,25 +3,28 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
-@ResourceType(name = "NewActivityWatcherConfigData.json", loadPriority = ResourceType.LoadPriority.HIGH)
+@ResourceType(
+        name = "NewActivityWatcherConfigData.json",
+        loadPriority = ResourceType.LoadPriority.HIGH)
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ActivityWatcherData extends GameResource {
     @Getter(onMethod_ = @Override)
     int id;
+
     int rewardID;
     int progress;
     WatcherTrigger triggerConfig;
 
     @Override
     public void onLoad() {
-        triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> (x != null) && !x.isBlank()).toList();
+        triggerConfig.paramList =
+                triggerConfig.paramList.stream().filter(x -> (x != null) && !x.isBlank()).toList();
         triggerConfig.watcherTriggerType = WatcherTriggerType.getTypeByName(triggerConfig.triggerType);
     }
 
@@ -33,5 +36,4 @@ public class ActivityWatcherData extends GameResource {
 
         transient WatcherTriggerType watcherTriggerType;
     }
-
 }

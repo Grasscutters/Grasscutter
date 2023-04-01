@@ -1,21 +1,21 @@
 package emu.grasscutter.server.http.objects;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
-
 import java.io.IOException;
 import java.io.InputStream;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public class WebStaticVersionResponse implements Handler {
 
     private static void getPageResources(String path, Context ctx) {
         try (InputStream filestream = FileUtils.readResourceAsStream(path)) {
-            ContentType fromExtension = ContentType.getContentTypeByExtension(path.substring(path.lastIndexOf(".") + 1));
+            ContentType fromExtension =
+                    ContentType.getContentTypeByExtension(path.substring(path.lastIndexOf(".") + 1));
             ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);
             ctx.result(filestream.readAllBytes());
         } catch (Exception e) {

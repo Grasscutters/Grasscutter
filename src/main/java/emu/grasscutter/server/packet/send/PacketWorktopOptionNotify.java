@@ -11,8 +11,8 @@ public class PacketWorktopOptionNotify extends BasePacket {
     public PacketWorktopOptionNotify(EntityGadget gadget) {
         super(PacketOpcodes.WorktopOptionNotify);
 
-        WorktopOptionNotify.Builder proto = WorktopOptionNotify.newBuilder()
-            .setGadgetEntityId(gadget.getId());
+        WorktopOptionNotify.Builder proto =
+                WorktopOptionNotify.newBuilder().setGadgetEntityId(gadget.getId());
 
         if (gadget.getContent() instanceof GadgetWorktop worktop) {
             proto.addAllOptionList(worktop.getWorktopOptions());

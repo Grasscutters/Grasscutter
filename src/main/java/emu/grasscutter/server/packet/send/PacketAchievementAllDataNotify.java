@@ -11,10 +11,14 @@ public class PacketAchievementAllDataNotify extends BasePacket {
         super(PacketOpcodes.AchievementAllDataNotify);
 
         var achievements = player.getAchievements();
-        var notify = AchievementAllDataNotifyOuterClass.AchievementAllDataNotify.newBuilder()
-            .addAllAchievementList(achievements.getAchievementList().values().stream().map(Achievement::toProto).toList())
-            .addAllRewardTakenGoalIdList(achievements.getTakenGoalRewardIdList())
-            .build();
+        var notify =
+                AchievementAllDataNotifyOuterClass.AchievementAllDataNotify.newBuilder()
+                        .addAllAchievementList(
+                                achievements.getAchievementList().values().stream()
+                                        .map(Achievement::toProto)
+                                        .toList())
+                        .addAllRewardTakenGoalIdList(achievements.getTakenGoalRewardIdList())
+                        .build();
 
         this.setData(notify);
     }

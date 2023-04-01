@@ -10,12 +10,13 @@ public class PacketDungeonChallengeBeginNotify extends BasePacket {
     public PacketDungeonChallengeBeginNotify(WorldChallenge challenge) {
         super(PacketOpcodes.DungeonChallengeBeginNotify, true);
 
-        DungeonChallengeBeginNotify proto = DungeonChallengeBeginNotify.newBuilder()
-            .setChallengeId(challenge.getChallengeId())
-            .setChallengeIndex(challenge.getChallengeIndex())
-            .setGroupId(challenge.getGroup().id)
-            .addAllParamList(challenge.getParamList())
-            .build();
+        DungeonChallengeBeginNotify proto =
+                DungeonChallengeBeginNotify.newBuilder()
+                        .setChallengeId(challenge.getChallengeId())
+                        .setChallengeIndex(challenge.getChallengeIndex())
+                        .setGroupId(challenge.getGroup().id)
+                        .addAllParamList(challenge.getParamList())
+                        .build();
 
         this.setData(proto);
     }

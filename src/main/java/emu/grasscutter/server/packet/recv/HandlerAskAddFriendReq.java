@@ -15,5 +15,4 @@ public class HandlerAskAddFriendReq extends PacketHandler {
 
         session.getPlayer().getFriendsList().sendFriendRequest(req.getTargetUid());
     }
-
 }

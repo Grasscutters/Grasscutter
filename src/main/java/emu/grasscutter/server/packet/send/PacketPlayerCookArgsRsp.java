@@ -9,8 +9,7 @@ public class PacketPlayerCookArgsRsp extends BasePacket {
     public PacketPlayerCookArgsRsp() {
         super(PacketOpcodes.PlayerCookArgsRsp);
 
-        PlayerCookArgsRsp proto = PlayerCookArgsRsp.newBuilder()
-            .build();
+        PlayerCookArgsRsp proto = PlayerCookArgsRsp.newBuilder().build();
 
         this.setData(proto);
     }

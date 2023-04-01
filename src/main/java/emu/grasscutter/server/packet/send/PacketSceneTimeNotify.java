@@ -10,11 +10,12 @@ public class PacketSceneTimeNotify extends BasePacket {
     public PacketSceneTimeNotify(Player player) {
         super(PacketOpcodes.SceneTimeNotify);
 
-        SceneTimeNotify proto = SceneTimeNotify.newBuilder()
-            .setIsPaused(player.isPaused())
-            .setSceneId(player.getSceneId())
-            .setSceneTime(player.getScene().getSceneTime())
-            .build();
+        SceneTimeNotify proto =
+                SceneTimeNotify.newBuilder()
+                        .setIsPaused(player.isPaused())
+                        .setSceneId(player.getSceneId())
+                        .setSceneTime(player.getScene().getSceneTime())
+                        .build();
 
         this.setData(proto);
     }

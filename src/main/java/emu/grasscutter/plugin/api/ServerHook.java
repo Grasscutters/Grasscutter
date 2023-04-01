@@ -10,14 +10,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.Router;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * Hooks into the {@link GameServer} class, adding convenient ways to do certain things.
- */
+/** Hooks into the {@link GameServer} class, adding convenient ways to do certain things. */
 public final class ServerHook {
     private static ServerHook instance;
     private final GameServer gameServer;

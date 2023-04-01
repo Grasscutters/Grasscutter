@@ -10,7 +10,10 @@ public class PacketGetAuthkeyRsp extends BasePacket {
     public PacketGetAuthkeyRsp() {
         super(PacketOpcodes.GetAuthkeyRsp);
 
-        GetAuthkeyRsp proto = GetAuthkeyRsp.newBuilder().setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE).build();
+        GetAuthkeyRsp proto =
+                GetAuthkeyRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+                        .build();
 
         this.setData(proto);
     }

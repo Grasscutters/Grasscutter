@@ -3,7 +3,6 @@ package emu.grasscutter.game.entity.gadget.chest;
 import emu.grasscutter.game.entity.gadget.GadgetChest;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.ChestReward;
-
 import java.util.Random;
 
 public class NormalChestInteractHandler implements ChestInteractHandler {
@@ -27,14 +26,23 @@ public class NormalChestInteractHandler implements ChestInteractHandler {
         player.getInventory().addItem(202, (int) mora);
 
         for (int i = 0; i < chestReward.getContent().size(); i++) {
-            chest.getGadget().getScene().addItemEntity(chestReward.getContent().get(i).getItemId(), chestReward.getContent().get(i).getCount(), chest.getGadget());
+            chest
+                    .getGadget()
+                    .getScene()
+                    .addItemEntity(
+                            chestReward.getContent().get(i).getItemId(),
+                            chestReward.getContent().get(i).getCount(),
+                            chest.getGadget());
         }
 
         var random = new Random(System.currentTimeMillis());
         for (int i = 0; i < chestReward.getRandomCount(); i++) {
             var index = random.nextInt(chestReward.getRandomContent().size());
             var item = chestReward.getRandomContent().get(index);
-            chest.getGadget().getScene().addItemEntity(item.getItemId(), item.getCount(), chest.getGadget());
+            chest
+                    .getGadget()
+                    .getScene()
+                    .addItemEntity(item.getItemId(), item.getCount(), chest.getGadget());
         }
 
         return true;

@@ -6,7 +6,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.TowerScheduleData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +33,10 @@ public class TowerSystem extends BaseGameSystem {
     public TowerScheduleData getCurrentTowerScheduleData() {
         var data = GameData.getTowerScheduleDataMap().get(towerScheduleConfig.getScheduleId());
         if (data == null) {
-            Grasscutter.getLogger().error("Could not get current tower schedule data by schedule id {}, please check your resource files",
-                towerScheduleConfig.getScheduleId());
+            Grasscutter.getLogger()
+                    .error(
+                            "Could not get current tower schedule data by schedule id {}, please check your resource files",
+                            towerScheduleConfig.getScheduleId());
         }
 
         return data;
@@ -81,6 +82,8 @@ public class TowerSystem extends BaseGameSystem {
     }
 
     public Integer getLastEntranceFloor() {
-        return getCurrentTowerScheduleData().getEntranceFloorId().get(getCurrentTowerScheduleData().getEntranceFloorId().size() - 1);
+        return getCurrentTowerScheduleData()
+                .getEntranceFloorId()
+                .get(getCurrentTowerScheduleData().getEntranceFloorId().size() - 1);
     }
 }

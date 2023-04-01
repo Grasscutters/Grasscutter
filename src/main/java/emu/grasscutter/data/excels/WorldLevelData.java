@@ -18,7 +18,5 @@ public class WorldLevelData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-
-    }
+    public void onLoad() {}
 }

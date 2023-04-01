@@ -23,7 +23,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,18 +30,22 @@ import java.util.stream.IntStream;
 
 public class DungeonChallenge extends WorldChallenge {
 
-    private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
-    /**
-     * has more challenge
-     */
+    private static final Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData =
+            new Int2ObjectOpenHashMap<>();
+    /** has more challenge */
     private boolean stage;
+
     private IntSet rewardedPlayers;
 
-    public DungeonChallenge(Scene scene, SceneGroup group,
-                            int challengeId, int challengeIndex,
-                            List<Integer> paramList,
-                            int timeLimit, int goal,
-                            List<ChallengeTrigger> challengeTriggers) {
+    public DungeonChallenge(
+            Scene scene,
+            SceneGroup group,
+            int challengeId,
+            int challengeIndex,
+            List<Integer> paramList,
+            int timeLimit,
+            int goal,
+            List<ChallengeTrigger> challengeTriggers) {
         super(scene, group, challengeId, challengeIndex, paramList, timeLimit, goal, challengeTriggers);
         this.setRewardedPlayers(new IntOpenHashSet());
     }
@@ -50,9 +53,11 @@ public class DungeonChallenge extends WorldChallenge {
     public static void initialize() {
         // Read the data we need for dungeon rewards drops.
         try {
-            DataLoader.loadList("DungeonDrop.json", DungeonDrop.class).forEach(entry -> {
-                dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
-            });
+            DataLoader.loadList("DungeonDrop.json", DungeonDrop.class)
+                    .forEach(
+                            entry -> {
+                                dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
+                            });
             Grasscutter.getLogger().debug("Loaded {} dungeon drop data entries.", dungeonDropData.size());
         } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
@@ -88,10 +93,16 @@ public class DungeonChallenge extends WorldChallenge {
         if (!stage) {
             var scene = this.getScene();
             scene.getDungeonSettleListeners().forEach(o -> o.onDungeonSettle(getScene()));
-            scene.getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
-                new ScriptArgs(this.isSuccess() ? 1 : 0));
+            scene
+                    .getScriptManager()
+                    .callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
             // Battle pass trigger
-            scene.getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
+            scene
+                    .getPlayers()
+                    .forEach(
+                            p ->
+                                    p.getBattlePassManager()
+                                            .triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
         }
     }
 
@@ -122,8 +133,10 @@ public class DungeonChallenge extends WorldChallenge {
 
                 // Roll items for this group.
                 // Here, we have to handle stacking, or the client will not display results correctly.
-                // For now, we use the following logic: If the possible drop item are a list of multiple items,
-                // we roll them separately. If not, we stack them. This should work out in practice, at least
+                // For now, we use the following logic: If the possible drop item are a list of multiple
+                // items,
+                // we roll them separately. If not, we stack them. This should work out in practice, at
+                // least
                 // for the currently existing set of dungeons.
                 if (entry.getItems().size() == 1) {
                     rewards.add(new GameItem(entry.getItems().get(0), amount));
@@ -131,7 +144,8 @@ public class DungeonChallenge extends WorldChallenge {
                     for (int i = 0; i < amount; i++) {
                         // int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
                         // int itemId = entry.getItems().get(itemIndex);
-                        int itemId = Utils.drawRandomListElement(entry.getItems(), entry.getItemProbabilities());
+                        int itemId =
+                                Utils.drawRandomListElement(entry.getItems(), entry.getItemProbabilities());
                         rewards.add(new GameItem(itemId, 1));
                     }
                 }
@@ -139,7 +153,8 @@ public class DungeonChallenge extends WorldChallenge {
         }
         // Otherwise, we fall back to the preview data.
         else {
-            Grasscutter.getLogger().info("No drop data found or dungeon {}, falling back to preview data ...", dungeonId);
+            Grasscutter.getLogger()
+                    .info("No drop data found or dungeon {}, falling back to preview data ...", dungeonId);
             for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
                 rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
             }
@@ -152,7 +167,10 @@ public class DungeonChallenge extends WorldChallenge {
         DungeonData dungeonData = getScene().getDungeonData();
         int resinCost = dungeonData.getStatueCostCount() != 0 ? dungeonData.getStatueCostCount() : 20;
 
-        if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
+        if (!isSuccess()
+                || dungeonData == null
+                || dungeonData.getRewardPreview() == null
+                || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
             return;
         }
 
@@ -164,7 +182,8 @@ public class DungeonChallenge extends WorldChallenge {
         // Get rewards.
         List<GameItem> rewards = new ArrayList<>();
 
-        if (request.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE) {
+        if (request.getResinCostType()
+                == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE) {
             // Check if condensed resin is usable here.
             // For this, we use the following logic for now:
             // The normal resin cost of the dungeon has to be 20.

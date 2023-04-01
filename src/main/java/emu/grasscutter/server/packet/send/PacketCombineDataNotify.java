@@ -9,9 +9,8 @@ public class PacketCombineDataNotify extends BasePacket {
     public PacketCombineDataNotify(Iterable<Integer> unlockedCombines) {
         super(PacketOpcodes.CombineDataNotify);
 
-        CombineDataNotify proto = CombineDataNotify.newBuilder()
-            .addAllCombineIdList(unlockedCombines)
-            .build();
+        CombineDataNotify proto =
+                CombineDataNotify.newBuilder().addAllCombineIdList(unlockedCombines).build();
 
         this.setData(proto);
     }

@@ -15,5 +15,4 @@ public class HandlerDeleteFriendReq extends PacketHandler {
 
         session.getPlayer().getFriendsList().deleteFriend(req.getTargetUid());
     }
-
 }

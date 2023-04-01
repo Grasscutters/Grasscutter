@@ -10,9 +10,7 @@ public class PacketSceneKickPlayerRsp extends BasePacket {
     public PacketSceneKickPlayerRsp(int targetUid) {
         super(PacketOpcodes.SceneKickPlayerRsp);
 
-        SceneKickPlayerRsp proto = SceneKickPlayerRsp.newBuilder()
-            .setTargetUid(targetUid)
-            .build();
+        SceneKickPlayerRsp proto = SceneKickPlayerRsp.newBuilder().setTargetUid(targetUid).build();
 
         this.setData(proto);
     }
@@ -20,9 +18,10 @@ public class PacketSceneKickPlayerRsp extends BasePacket {
     public PacketSceneKickPlayerRsp() {
         super(PacketOpcodes.SceneKickPlayerRsp);
 
-        SceneKickPlayerRsp proto = SceneKickPlayerRsp.newBuilder()
-            .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
-            .build();
+        SceneKickPlayerRsp proto =
+                SceneKickPlayerRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+                        .build();
 
         this.setData(proto);
     }

@@ -1,5 +1,8 @@
 package emu.grasscutter;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.Language.translate;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.auth.AuthenticationSystem;
@@ -24,6 +27,12 @@ import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
+import java.util.Calendar;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;
@@ -35,21 +44,10 @@ import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nullable;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.util.Calendar;
-
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.Language.translate;
-
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
     public static final Reflections reflector = new Reflections("emu.grasscutter");
-    @Getter private static final Logger logger =
-        (Logger) LoggerFactory.getLogger(Grasscutter.class);
+    @Getter private static final Logger logger = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 
     @Getter public static ConfigContainer config;
 
@@ -165,13 +163,10 @@ public final class Grasscutter {
         Grasscutter.startConsole();
     }
 
-    /**
-     * Server shutdown event.
-     */
+    /** Server shutdown event. */
     private static void onShutdown() {
         // Disable all plugins.
-        if (pluginManager != null)
-            pluginManager.disablePlugins();
+        if (pluginManager != null) pluginManager.disablePlugins();
     }
 
     /*
@@ -187,9 +182,7 @@ public final class Grasscutter {
      * Methods for the configuration system component.
      */
 
-    /**
-     * Attempts to load the configuration from a file.
-     */
+    /** Attempts to load the configuration from a file. */
     public static void loadConfig() {
         // Check if config.json exists. If not, we generate a new config.
         if (!configFile.exists()) {
@@ -203,7 +196,9 @@ public final class Grasscutter {
         try {
             config = JsonUtils.loadToClass(configFile.toPath(), ConfigContainer.class);
         } catch (Exception exception) {
-            getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
+            getLogger()
+                    .error(
+                            "There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
             System.exit(1);
         }
     }
@@ -251,9 +246,7 @@ public final class Grasscutter {
                 }
             }
 
-            consoleLineReader = LineReaderBuilder.builder()
-                .terminal(terminal)
-                .build();
+            consoleLineReader = LineReaderBuilder.builder().terminal(terminal).build();
         }
 
         return consoleLineReader;
@@ -314,10 +307,16 @@ public final class Grasscutter {
      */
 
     public enum ServerRunMode {
-        HYBRID, DISPATCH_ONLY, GAME_ONLY
+        HYBRID,
+        DISPATCH_ONLY,
+        GAME_ONLY
     }
 
     public enum ServerDebugMode {
-        ALL, MISSING, WHITELIST, BLACKLIST, NONE
+        ALL,
+        MISSING,
+        WHITELIST,
+        BLACKLIST,
+        NONE
     }
 }

@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify;
 import emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType;
-
 import java.util.Collection;
 
 public class PacketStoreItemChangeNotify extends BasePacket {
@@ -17,9 +16,10 @@ public class PacketStoreItemChangeNotify extends BasePacket {
     public PacketStoreItemChangeNotify(GameItem item) {
         this();
 
-        StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-            .setStoreType(StoreType.STORE_TYPE_PACK)
-            .addItemList(item.toProto());
+        StoreItemChangeNotify.Builder proto =
+                StoreItemChangeNotify.newBuilder()
+                        .setStoreType(StoreType.STORE_TYPE_PACK)
+                        .addItemList(item.toProto());
 
         this.setData(proto);
     }
@@ -27,8 +27,8 @@ public class PacketStoreItemChangeNotify extends BasePacket {
     public PacketStoreItemChangeNotify(Collection<GameItem> items) {
         this();
 
-        StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-            .setStoreType(StoreType.STORE_TYPE_PACK);
+        StoreItemChangeNotify.Builder proto =
+                StoreItemChangeNotify.newBuilder().setStoreType(StoreType.STORE_TYPE_PACK);
 
         items.forEach(item -> proto.addItemList(item.toProto()));
 

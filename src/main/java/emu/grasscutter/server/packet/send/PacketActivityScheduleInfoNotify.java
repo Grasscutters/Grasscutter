@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ActivityScheduleInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass;
 import emu.grasscutter.utils.DateHelper;
-
 import java.util.Collection;
 
 public class PacketActivityScheduleInfoNotify extends BasePacket {
@@ -16,15 +15,17 @@ public class PacketActivityScheduleInfoNotify extends BasePacket {
 
         var proto = ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.newBuilder();
 
-        activityConfigItemList.forEach(item -> {
-            proto.addActivityScheduleList(ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
-                .setActivityId(item.getActivityId())
-                .setScheduleId(item.getScheduleId())
-                .setIsOpen(true)
-                .setBeginTime(DateHelper.getUnixTime(item.getBeginTime()))
-                .setEndTime(DateHelper.getUnixTime(item.getEndTime()))
-                .build());
-        });
+        activityConfigItemList.forEach(
+                item -> {
+                    proto.addActivityScheduleList(
+                            ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
+                                    .setActivityId(item.getActivityId())
+                                    .setScheduleId(item.getScheduleId())
+                                    .setIsOpen(true)
+                                    .setBeginTime(DateHelper.getUnixTime(item.getBeginTime()))
+                                    .setEndTime(DateHelper.getUnixTime(item.getEndTime()))
+                                    .build());
+                });
 
         this.setData(proto);
     }

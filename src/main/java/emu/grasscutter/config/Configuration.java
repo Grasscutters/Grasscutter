@@ -1,18 +1,15 @@
 package emu.grasscutter.config;
 
-import emu.grasscutter.utils.FileUtils;
+import static emu.grasscutter.Grasscutter.config;
 
+import emu.grasscutter.utils.FileUtils;
 import java.nio.file.Path;
 import java.util.Locale;
 
-import static emu.grasscutter.Grasscutter.config;
-
-
 /**
  * A data container for the server's configuration.
- * <p>
- * Use `import static emu.grasscutter.Configuration.*;`
- * to import all configuration constants.
+ *
+ * <p>Use `import static emu.grasscutter.Configuration.*;` to import all configuration constants.
  */
 public final class Configuration extends ConfigContainer {
 
@@ -37,7 +34,8 @@ public final class Configuration extends ConfigContainer {
     public static final Policies HTTP_POLICIES = config.server.http.policies;
     public static final Files HTTP_STATIC_FILES = config.server.http.files;
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
-    public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;
+    public static final GameOptions.InventoryLimits INVENTORY_LIMITS =
+            config.server.game.gameOptions.inventoryLimits;
     private static final String DATA_FOLDER = config.folderStructure.data;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
@@ -88,7 +86,7 @@ public final class Configuration extends ConfigContainer {
     /**
      * Fallback method.
      *
-     * @param left  Attempt to use.
+     * @param left Attempt to use.
      * @param right Use if left is undefined.
      * @return Left or right.
      */
@@ -99,7 +97,7 @@ public final class Configuration extends ConfigContainer {
     /**
      * {@link Configuration#lr(Object, Object)} for {@link String}s.
      *
-     * @param left  Attempt to use.
+     * @param left Attempt to use.
      * @param right Use if left is empty.
      * @return Left or right.
      */
@@ -110,7 +108,7 @@ public final class Configuration extends ConfigContainer {
     /**
      * {@link Configuration#lr(Object, Object)} for {@link Integer}s.
      *
-     * @param left  Attempt to use.
+     * @param left Attempt to use.
      * @param right Use if left is 0.
      * @return Left or right.
      */

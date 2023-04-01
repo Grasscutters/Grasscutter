@@ -6,10 +6,9 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import lombok.Getter;
-
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.Getter;
 
 @Getter
 public class EntityRegion extends GameEntity {
@@ -81,9 +80,7 @@ public class EntityRegion extends GameEntity {
 
     @Override
     public SceneEntityInfoOuterClass.SceneEntityInfo toProto() {
-        /**
-         * The Region Entity would not be sent to client.
-         */
+        /** The Region Entity would not be sent to client. */
         return null;
     }
 

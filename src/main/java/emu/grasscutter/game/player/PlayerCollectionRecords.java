@@ -1,7 +1,6 @@
 package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +18,9 @@ public class PlayerCollectionRecords {
     public void addRecord(int configId, long expiredMillisecond) {
         Map<Integer, CollectionRecord> records;
         synchronized (records = getRecords()) {
-            records.put(configId, new CollectionRecord(configId, expiredMillisecond + System.currentTimeMillis()));
+            records.put(
+                    configId,
+                    new CollectionRecord(configId, expiredMillisecond + System.currentTimeMillis()));
         }
     }
 
@@ -49,8 +50,7 @@ public class PlayerCollectionRecords {
         private long expiredTime;
 
         @Deprecated // Morphia
-        public CollectionRecord() {
-        }
+        public CollectionRecord() {}
 
         public CollectionRecord(int configId, long expiredTime) {
             this.configId = configId;

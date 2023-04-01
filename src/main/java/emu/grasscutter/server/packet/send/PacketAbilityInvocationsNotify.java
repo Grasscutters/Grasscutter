@@ -4,7 +4,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityInvocationsNotifyOuterClass.AbilityInvocationsNotify;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
-
 import java.util.List;
 
 public class PacketAbilityInvocationsNotify extends BasePacket {
@@ -12,9 +11,8 @@ public class PacketAbilityInvocationsNotify extends BasePacket {
     public PacketAbilityInvocationsNotify(AbilityInvokeEntry entry) {
         super(PacketOpcodes.AbilityInvocationsNotify, true);
 
-        AbilityInvocationsNotify proto = AbilityInvocationsNotify.newBuilder()
-            .addInvokes(entry)
-            .build();
+        AbilityInvocationsNotify proto =
+                AbilityInvocationsNotify.newBuilder().addInvokes(entry).build();
 
         this.setData(proto);
     }
@@ -22,11 +20,9 @@ public class PacketAbilityInvocationsNotify extends BasePacket {
     public PacketAbilityInvocationsNotify(List<AbilityInvokeEntry> entries) {
         super(PacketOpcodes.AbilityInvocationsNotify, true);
 
-        AbilityInvocationsNotify proto = AbilityInvocationsNotify.newBuilder()
-            .addAllInvokes(entries)
-            .build();
+        AbilityInvocationsNotify proto =
+                AbilityInvocationsNotify.newBuilder().addAllInvokes(entries).build();
 
         this.setData(proto);
     }
-
 }

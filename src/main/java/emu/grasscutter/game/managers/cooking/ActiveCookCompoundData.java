@@ -3,14 +3,11 @@ package emu.grasscutter.game.managers.cooking;
 import dev.morphia.annotations.Entity;
 import lombok.Getter;
 
-
 @Entity
 public class ActiveCookCompoundData {
     private final int costTime;
-    @Getter
-    private final int compoundId;
-    @Getter
-    private int totalCount;
+    @Getter private final int compoundId;
+    @Getter private int totalCount;
     private int startTime;
 
     public ActiveCookCompoundData(int compoundId, int processTime, int count, int startTime) {
@@ -30,10 +27,7 @@ public class ActiveCookCompoundData {
         return totalCount - getOutputCount(currentTime);
     }
 
-    /**
-     * Get the timestamp of next output.
-     * If all finished,return 0
-     */
+    /** Get the timestamp of next output. If all finished,return 0 */
     public int getOutputTime(int currentTime) {
         int cnt = getOutputCount(currentTime);
         if (cnt == totalCount) return 0;

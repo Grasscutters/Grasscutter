@@ -13,11 +13,14 @@ public class PacketQuestListNotify extends BasePacket {
 
         QuestListNotify.Builder proto = QuestListNotify.newBuilder();
 
-        player.getQuestManager().forEachQuest(quest -> {
-            if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
-                proto.addQuestList(quest.toProto());
-            }
-        });
+        player
+                .getQuestManager()
+                .forEachQuest(
+                        quest -> {
+                            if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
+                                proto.addQuestList(quest.toProto());
+                            }
+                        });
 
         this.setData(proto);
     }

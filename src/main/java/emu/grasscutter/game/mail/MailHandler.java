@@ -7,7 +7,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.packet.send.PacketDelMailRsp;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,11 +38,18 @@ public class MailHandler extends BasePlayerManager {
 
         this.mail.add(message);
 
-        Grasscutter.getLogger().debug("Mail sent to user [" + this.getPlayer().getUid() + ":" + this.getPlayer().getNickname() + "]!");
+        Grasscutter.getLogger()
+                .debug(
+                        "Mail sent to user ["
+                                + this.getPlayer().getUid()
+                                + ":"
+                                + this.getPlayer().getNickname()
+                                + "]!");
 
         if (this.getPlayer().isOnline()) {
             this.getPlayer().sendPacket(new PacketMailChangeNotify(this.getPlayer(), message));
-        } // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
+        } // TODO: setup a way for the mail notification to show up when someone receives mail when they
+        // were offline
     }
 
     public boolean deleteMail(int mailId) {

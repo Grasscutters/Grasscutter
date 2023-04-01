@@ -19,11 +19,10 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
 
         var scriptManager = quest.getOwner().getScene().getScriptManager();
 
-        quest.getMainQuest().getQuestGroupSuites().add(QuestGroupSuite.of()
-            .scene(sceneId)
-            .group(groupId)
-            .suite(suiteId)
-            .build());
+        quest
+                .getMainQuest()
+                .getQuestGroupSuites()
+                .add(QuestGroupSuite.of().scene(sceneId).group(groupId).suite(suiteId).build());
 
         // refresh immediately if player is in this scene
         if (quest.getOwner().getScene().getId() == sceneId) {
@@ -33,5 +32,4 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
 
         return true;
     }
-
 }

@@ -10,9 +10,8 @@ public class PacketGetWorldMpInfoRsp extends BasePacket {
     public PacketGetWorldMpInfoRsp(World world) {
         super(PacketOpcodes.GetWorldMpInfoRsp);
 
-        GetWorldMpInfoRsp proto = GetWorldMpInfoRsp.newBuilder()
-            .setIsInMpMode(world.isMultiplayer())
-            .build();
+        GetWorldMpInfoRsp proto =
+                GetWorldMpInfoRsp.newBuilder().setIsInMpMode(world.isMultiplayer()).build();
 
         this.setData(proto);
     }

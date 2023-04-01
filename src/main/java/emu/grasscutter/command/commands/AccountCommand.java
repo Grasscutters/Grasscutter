@@ -1,5 +1,7 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
@@ -8,19 +10,17 @@ import emu.grasscutter.config.Configuration;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
 @Command(
-    label = "account",
-    usage = {
-        "create <username> [<UID>]",  // Only with EXPERIMENTAL_RealPassword == false
-        "delete <username>",
-        "create <username> <password> [<UID>]",  // Only with EXPERIMENTAL_RealPassword == true
-        "resetpass <username> <password>"},  // Only with EXPERIMENTAL_RealPassword == true
-    targetRequirement = Command.TargetRequirement.NONE)
+        label = "account",
+        usage = {
+            "create <username> [<UID>]", // Only with EXPERIMENTAL_RealPassword == false
+            "delete <username>",
+            "create <username> <password> [<UID>]", // Only with EXPERIMENTAL_RealPassword == true
+            "resetpass <username> <password>"
+        }, // Only with EXPERIMENTAL_RealPassword == true
+        targetRequirement = Command.TargetRequirement.NONE)
 public final class AccountCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -47,7 +47,8 @@ public final class AccountCommand implements CommandHandler {
 
                 if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     if (args.size() < 3) {
-                        CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires a password argument");
+                        CommandHandler.sendMessage(
+                                sender, "EXPERIMENTAL_RealPassword requires a password argument");
                         CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
                         return;
                     }
@@ -59,8 +60,11 @@ public final class AccountCommand implements CommandHandler {
                         } catch (NumberFormatException ignored) {
                             CommandHandler.sendMessage(sender, translate(sender, "commands.account.invalid"));
                             if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
-                                CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
-                                CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
+                                CommandHandler.sendMessage(
+                                        sender,
+                                        "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
+                                CommandHandler.sendMessage(
+                                        sender, "Usage: account create <username> <password> [uid]");
                             }
                             return;
                         }
@@ -87,7 +91,8 @@ public final class AccountCommand implements CommandHandler {
                     account.addPermission("*");
                     account.save(); // Save account to database.
 
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));
+                    CommandHandler.sendMessage(
+                            sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));
                 }
                 return;
             case "delete":
@@ -104,7 +109,8 @@ public final class AccountCommand implements CommandHandler {
                 return;
             case "resetpass":
                 if (!Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
-                    CommandHandler.sendMessage(sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
+                    CommandHandler.sendMessage(
+                            sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
                     return;
                 }
 

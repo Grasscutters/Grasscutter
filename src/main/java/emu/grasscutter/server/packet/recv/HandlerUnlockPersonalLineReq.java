@@ -24,5 +24,4 @@ public class HandlerUnlockPersonalLineReq extends PacketHandler {
 
         session.send(new PacketUnlockPersonalLineRsp(data.getId(), 1, data.getChapterId()));
     }
-
 }

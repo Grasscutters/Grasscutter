@@ -15,9 +15,10 @@ public class HandlerTowerTeamSelectReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         TowerTeamSelectReq req = TowerTeamSelectReq.parseFrom(payload);
 
-        var towerTeams = req.getTowerTeamListList().stream()
-            .map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
-            .toList();
+        var towerTeams =
+                req.getTowerTeamListList().stream()
+                        .map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
+                        .toList();
 
         session.getPlayer().getTowerManager().teamSelect(req.getFloorId(), towerTeams);
 

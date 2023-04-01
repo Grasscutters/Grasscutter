@@ -2,9 +2,7 @@ package emu.grasscutter.auth;
 
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 
-/**
- * Handles authentication via OAuth routes.
- */
+/** Handles authentication via OAuth routes. */
 public interface OAuthAuthenticator {
 
     /**
@@ -28,11 +26,9 @@ public interface OAuthAuthenticator {
      */
     void handleTokenProcess(AuthenticationRequest request);
 
-    /**
-     * The type of the client.
-     * Used for handling redirection.
-     */
+    /** The type of the client. Used for handling redirection. */
     enum ClientType {
-        DESKTOP, MOBILE
+        DESKTOP,
+        MOBILE
     }
 }

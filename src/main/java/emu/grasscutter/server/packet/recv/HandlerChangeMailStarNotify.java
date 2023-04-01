@@ -7,7 +7,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChangeMailStarNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,8 @@ public class HandlerChangeMailStarNotify extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        ChangeMailStarNotifyOuterClass.ChangeMailStarNotify req = ChangeMailStarNotifyOuterClass.ChangeMailStarNotify.parseFrom(payload);
+        ChangeMailStarNotifyOuterClass.ChangeMailStarNotify req =
+                ChangeMailStarNotifyOuterClass.ChangeMailStarNotify.parseFrom(payload);
 
         List<Mail> updatedMail = new ArrayList<>();
 

@@ -12,9 +12,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.utils.Position;
 
-/**
- * Hooks into the {@link Player} class, adding convenient ways to do certain things.
- */
+/** Hooks into the {@link Player} class, adding convenient ways to do certain things. */
 public final class PlayerHook {
     private final Player player;
 
@@ -27,10 +25,7 @@ public final class PlayerHook {
         this.player = player;
     }
 
-    /**
-     * Kicks a player from the server.
-     * TODO: Refactor to kick using a packet.
-     */
+    /** Kicks a player from the server. TODO: Refactor to kick using a packet. */
     public void kick() {
         this.player.getSession().close();
     }
@@ -50,7 +45,8 @@ public final class PlayerHook {
      * @param property The property that was updated.
      */
     public void updateFightProperty(FightProperty property) {
-        this.broadcastPacketToWorld(new PacketAvatarFightPropUpdateNotify(this.getCurrentAvatar(), property));
+        this.broadcastPacketToWorld(
+                new PacketAvatarFightPropUpdateNotify(this.getCurrentAvatar(), property));
     }
 
     /**
@@ -82,17 +78,19 @@ public final class PlayerHook {
     }
 
     /**
-     * Teleports a player to a position.
-     * This will **not** transfer the player to another scene.
+     * Teleports a player to a position. This will **not** transfer the player to another scene.
      *
      * @param position The position to teleport the player to.
      */
     public void teleport(Position position) {
         this.player.getPosition().set(position);
-        this.player.sendPacket(new PacketPlayerEnterSceneNotify(this.player,
-            EnterType.ENTER_TYPE_JUMP, EnterReason.TransPoint,
-            this.player.getSceneId(), position
-        ));
+        this.player.sendPacket(
+                new PacketPlayerEnterSceneNotify(
+                        this.player,
+                        EnterType.ENTER_TYPE_JUMP,
+                        EnterReason.TransPoint,
+                        this.player.getSceneId(),
+                        position));
     }
 
     /**

@@ -4,14 +4,12 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 
 @Command(
-    label = "unban",
-    permission = "server.ban",
-    targetRequirement = Command.TargetRequirement.PLAYER
-)
+        label = "unban",
+        permission = "server.ban",
+        targetRequirement = Command.TargetRequirement.PLAYER)
 public final class UnBanCommand implements CommandHandler {
 
     private boolean unBanAccount(Player targetPlayer) {

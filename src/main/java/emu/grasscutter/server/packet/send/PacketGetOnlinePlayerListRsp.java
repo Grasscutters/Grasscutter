@@ -5,14 +5,14 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetOnlinePlayerListRspOuterClass.GetOnlinePlayerListRsp;
-
 import java.util.List;
 
 public class PacketGetOnlinePlayerListRsp extends BasePacket {
     public PacketGetOnlinePlayerListRsp(Player session) {
         super(PacketOpcodes.GetOnlinePlayerListRsp);
 
-        List<Player> players = Grasscutter.getGameServer().getPlayers().values().stream().limit(50).toList();
+        List<Player> players =
+                Grasscutter.getGameServer().getPlayers().values().stream().limit(50).toList();
 
         GetOnlinePlayerListRsp.Builder proto = GetOnlinePlayerListRsp.newBuilder();
 

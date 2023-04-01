@@ -18,5 +18,4 @@ public class HandlerWearEquipReq extends PacketHandler {
             session.send(new PacketWearEquipRsp(req.getAvatarGuid(), req.getEquipGuid()));
         }
     }
-
 }

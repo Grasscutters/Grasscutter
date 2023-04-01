@@ -7,14 +7,14 @@ import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TowerManager extends BasePlayerManager {
 
-    private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
+    private static final List<DungeonSettleListener> towerDungeonSettleListener =
+            List.of(new TowerDungeonSettleListener());
 
     public TowerManager(Player player) {
         super(player);
@@ -32,9 +32,7 @@ public class TowerManager extends BasePlayerManager {
         return getTowerData().currentLevelId + getTowerData().currentLevel;
     }
 
-    /**
-     * form 1-3
-     */
+    /** form 1-3 */
     public int getCurrentLevel() {
         return getTowerData().currentLevel + 1;
     }
@@ -53,11 +51,13 @@ public class TowerManager extends BasePlayerManager {
         var floorData = GameData.getTowerFloorDataMap().get(floor);
         getTowerData().currentFloorId = floorData.getFloorId();
         getTowerData().currentLevel = 0;
-        getTowerData().currentLevelId = GameData.getTowerLevelDataMap().values().stream()
-            .filter(x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
-            .findFirst()
-            .map(TowerLevelData::getId)
-            .orElse(0);
+        getTowerData().currentLevelId =
+                GameData.getTowerLevelDataMap().values().stream()
+                        .filter(
+                                x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
+                        .findFirst()
+                        .map(TowerLevelData::getId)
+                        .orElse(0);
 
         if (getTowerData().entryScene == 0) {
             getTowerData().entryScene = player.getSceneId();
@@ -65,7 +65,6 @@ public class TowerManager extends BasePlayerManager {
 
         player.getTeamManager().setupTemporaryTeam(towerTeams);
     }
-
 
     public void enterLevel(int enterPointId) {
         var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
@@ -75,33 +74,44 @@ public class TowerManager extends BasePlayerManager {
         notifyCurLevelRecordChange();
         // use team user choose
         player.getTeamManager().useTemporaryTeam(0);
-        player.getServer().getDungeonSystem().handoffDungeon(player, dungeonId,
-            towerDungeonSettleListener);
+        player
+                .getServer()
+                .getDungeonSystem()
+                .handoffDungeon(player, dungeonId, towerDungeonSettleListener);
 
         // make sure user can exit dungeon correctly
         player.getScene().setPrevScene(getTowerData().entryScene);
         player.getScene().setPrevScenePoint(enterPointId);
 
-        player.getSession().send(new PacketTowerEnterLevelRsp(getTowerData().currentFloorId, getCurrentLevel()));
+        player
+                .getSession()
+                .send(new PacketTowerEnterLevelRsp(getTowerData().currentFloorId, getCurrentLevel()));
         // stop using skill
         player.getSession().send(new PacketCanUseSkillNotify(false));
         // notify the cond of stars
-        player.getSession().send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel()));
+        player
+                .getSession()
+                .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel()));
     }
 
     public void notifyCurLevelRecordChange() {
-        player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getTowerData().currentFloorId, getCurrentLevel()));
+        player
+                .getSession()
+                .send(
+                        new PacketTowerCurLevelRecordChangeNotify(
+                                getTowerData().currentFloorId, getCurrentLevel()));
     }
 
     public void notifyCurLevelRecordChangeWhenDone(int stars) {
         Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
         int currentFloorId = getTowerData().currentFloorId;
         if (!recordMap.containsKey(currentFloorId)) {
-            recordMap.put(currentFloorId,
-                new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
+            recordMap.put(
+                    currentFloorId,
+                    new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
         } else {
-            recordMap.put(currentFloorId,
-                recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
+            recordMap.put(
+                    currentFloorId, recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
         }
 
         getTowerData().currentLevel++;
@@ -112,7 +122,9 @@ public class TowerManager extends BasePlayerManager {
             recordMap.computeIfAbsent(nextFloorId, TowerLevelRecord::new);
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(nextFloorId, 1));
         } else {
-            player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
+            player
+                    .getSession()
+                    .send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
         }
     }
 
@@ -137,8 +149,8 @@ public class TowerManager extends BasePlayerManager {
         if (!recordMap.containsKey(player.getServer().getTowerSystem().getLastEntranceFloor())) {
             return false;
         }
-        return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor())
-            .getStarCount() >= 6;
+        return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor()).getStarCount()
+                >= 6;
     }
 
     public void mirrorTeamSetUp(int teamId) {

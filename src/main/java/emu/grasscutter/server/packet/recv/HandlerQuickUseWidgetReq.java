@@ -41,7 +41,7 @@ public class HandlerQuickUseWidgetReq extends PacketHandler {
                     proto.setRetcode(0);
                 }
                 proto.setMaterialId(materialId);
-                inventory.removeItem(item, 1);// decrease count
+                inventory.removeItem(item, 1); // decrease count
                 BasePacket rsp = new BasePacket(PacketOpcodes.QuickUseWidgetRsp);
                 rsp.setData(proto);
                 session.send(rsp);

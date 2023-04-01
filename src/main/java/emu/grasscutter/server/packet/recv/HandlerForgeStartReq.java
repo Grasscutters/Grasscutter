@@ -11,8 +11,8 @@ public class HandlerForgeStartReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        ForgeStartReqOuterClass.ForgeStartReq req = ForgeStartReqOuterClass.ForgeStartReq.parseFrom(payload);
+        ForgeStartReqOuterClass.ForgeStartReq req =
+                ForgeStartReqOuterClass.ForgeStartReq.parseFrom(payload);
         session.getPlayer().getForgingManager().handleForgeStartReq(req);
     }
-
 }

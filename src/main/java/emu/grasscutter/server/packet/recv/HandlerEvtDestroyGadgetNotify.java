@@ -15,5 +15,4 @@ public class HandlerEvtDestroyGadgetNotify extends PacketHandler {
 
         session.getPlayer().getScene().onPlayerDestroyGadget(notify.getEntityId());
     }
-
 }

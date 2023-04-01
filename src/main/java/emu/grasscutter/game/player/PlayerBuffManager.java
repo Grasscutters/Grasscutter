@@ -11,12 +11,11 @@ import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
 import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import lombok.Getter;
 
 public class PlayerBuffManager extends BasePlayerManager {
     private final List<PlayerBuff> pendingBuffs;
@@ -48,14 +47,15 @@ public class PlayerBuffManager extends BasePlayerManager {
         return this.buffs.containsKey(groupId);
     }
 
-    /**
-     * Clears all player buffs
-     */
+    /** Clears all player buffs */
     public synchronized void clearBuffs() {
         // Remove from player
-        getPlayer().sendPacket(
-            new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, this.buffs.values())
-        );
+        getPlayer()
+                .sendPacket(
+                        new PacketServerBuffChangeNotify(
+                                getPlayer(),
+                                ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF,
+                                this.buffs.values()));
 
         // Clear
         this.buffs.clear();
@@ -74,7 +74,7 @@ public class PlayerBuffManager extends BasePlayerManager {
     /**
      * Adds a server buff to the player.
      *
-     * @param buffId   Server buff id
+     * @param buffId Server buff id
      * @param duration Duration of the buff in seconds. Set to 0 for an infinite buff.
      * @return True if a buff was added
      */
@@ -85,9 +85,9 @@ public class PlayerBuffManager extends BasePlayerManager {
     /**
      * Adds a server buff to the player.
      *
-     * @param buffId   Server buff id
+     * @param buffId Server buff id
      * @param duration Duration of the buff in seconds. Set to 0 for an infinite buff.
-     * @param target   Target avatar
+     * @param target Target avatar
      * @return True if a buff was added
      */
     public synchronized boolean addBuff(int buffId, float duration, Avatar target) {
@@ -98,27 +98,28 @@ public class PlayerBuffManager extends BasePlayerManager {
         boolean success = false;
 
         // Perform onAdded actions
-        success |= Optional.ofNullable(GameData.getAbilityData(buffData.getAbilityName()))
-            .map(data -> data.modifiers.get(buffData.getModifierName()))
-            .map(modifier -> modifier.onAdded)
-            .map(onAdded -> {
-
-                var s = false;
-                for (var a : onAdded) {
-                    Grasscutter.getLogger().debug("onAdded exists");
-                    if (Objects.requireNonNull(a.type) == AbilityModifierAction.Type.HealHP) {
-                        Grasscutter.getLogger().debug("Attempting heal");
-                        if (target == null) continue;
-                        var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                        var amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
-                        target.getAsEntity().heal(amount);
-                        s = true;
-                        Grasscutter.getLogger().debug("Healed {}", amount);
-                    }
-                }
-                return s;
-            })
-            .orElse(false);
+        success |=
+                Optional.ofNullable(GameData.getAbilityData(buffData.getAbilityName()))
+                        .map(data -> data.modifiers.get(buffData.getModifierName()))
+                        .map(modifier -> modifier.onAdded)
+                        .map(
+                                onAdded -> {
+                                    var s = false;
+                                    for (var a : onAdded) {
+                                        Grasscutter.getLogger().debug("onAdded exists");
+                                        if (Objects.requireNonNull(a.type) == AbilityModifierAction.Type.HealHP) {
+                                            Grasscutter.getLogger().debug("Attempting heal");
+                                            if (target == null) continue;
+                                            var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+                                            var amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
+                                            target.getAsEntity().heal(amount);
+                                            s = true;
+                                            Grasscutter.getLogger().debug("Healed {}", amount);
+                                        }
+                                    }
+                                    return s;
+                                })
+                        .orElse(false);
         Grasscutter.getLogger().debug("Oh no");
 
         // Set duration
@@ -139,7 +140,10 @@ public class PlayerBuffManager extends BasePlayerManager {
         this.buffs.put(buff.getGroupId(), buff);
 
         // Packet
-        getPlayer().sendPacket(new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF, buff));
+        getPlayer()
+                .sendPacket(
+                        new PacketServerBuffChangeNotify(
+                                getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF, buff));
 
         return true;
     }
@@ -154,9 +158,10 @@ public class PlayerBuffManager extends BasePlayerManager {
         PlayerBuff buff = this.buffs.remove(buffGroupId);
 
         if (buff != null) {
-            getPlayer().sendPacket(
-                new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, buff)
-            );
+            getPlayer()
+                    .sendPacket(
+                            new PacketServerBuffChangeNotify(
+                                    getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, buff));
             return true;
         }
 
@@ -170,18 +175,23 @@ public class PlayerBuffManager extends BasePlayerManager {
         long currentTime = System.currentTimeMillis();
 
         // Add to pending buffs to remove if buff has expired
-        this.buffs.values().removeIf(buff -> {
-            if (currentTime <= buff.getEndTime())
-                return false;
-            this.pendingBuffs.add(buff);
-            return true;
-        });
+        this.buffs
+                .values()
+                .removeIf(
+                        buff -> {
+                            if (currentTime <= buff.getEndTime()) return false;
+                            this.pendingBuffs.add(buff);
+                            return true;
+                        });
 
         if (this.pendingBuffs.size() > 0) {
             // Send packet
-            getPlayer().sendPacket(
-                new PacketServerBuffChangeNotify(getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, this.pendingBuffs)
-            );
+            getPlayer()
+                    .sendPacket(
+                            new PacketServerBuffChangeNotify(
+                                    getPlayer(),
+                                    ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF,
+                                    this.pendingBuffs));
             this.pendingBuffs.clear();
         }
     }
@@ -204,11 +214,11 @@ public class PlayerBuffManager extends BasePlayerManager {
 
         public ServerBuff toProto() {
             return ServerBuff.newBuilder()
-                .setServerBuffUid(this.getUid())
-                .setServerBuffId(this.getBuffData().getId())
-                .setServerBuffType(this.getBuffData().getServerBuffType().getValue())
-                .setInstancedModifierId(1)
-                .build();
+                    .setServerBuffUid(this.getUid())
+                    .setServerBuffId(this.getBuffData().getId())
+                    .setServerBuffType(this.getBuffData().getServerBuffType().getValue())
+                    .setInstancedModifierId(1)
+                    .build();
         }
     }
 }

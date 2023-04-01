@@ -16,7 +16,7 @@ public class HandlerPlayerForceExitReq extends PacketHandler {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1000);// disconnect after 1 seconds
+                    Thread.sleep(1000); // disconnect after 1 seconds
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

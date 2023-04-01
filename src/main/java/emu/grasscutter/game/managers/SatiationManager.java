@@ -8,7 +8,6 @@ import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,8 +55,7 @@ public class SatiationManager extends BasePlayerManager {
     }
 
     public synchronized boolean addSatiationDirectly(Avatar avatar, int value) {
-        if (!avatar.addSatiation(value))
-            return false;
+        if (!avatar.addSatiation(value)) return false;
         // Update avatar
         avatar.save();
         return true;
@@ -74,28 +72,31 @@ public class SatiationManager extends BasePlayerManager {
     public synchronized void reduceSatiation() {
         /* Satiation may not reduce while paused on official but it will here */
         // Get all avatars with satiation
-        player.getAvatars().forEach(avatar -> {
-            // Ensure avatar isn't stuck in penalty
-            if (avatar.getSatiationPenalty() > 0 && avatar.getSatiation() == 0) {
-                avatar.reduceSatiationPenalty(3000);
-            }
+        player
+                .getAvatars()
+                .forEach(
+                        avatar -> {
+                            // Ensure avatar isn't stuck in penalty
+                            if (avatar.getSatiationPenalty() > 0 && avatar.getSatiation() == 0) {
+                                avatar.reduceSatiationPenalty(3000);
+                            }
 
-            // Reduce satiation
-            if (avatar.getSatiation() > 0) {
-                // Reduce penalty first
-                if (avatar.getSatiationPenalty() > 0) {
-                    // Penalty reduction rate is 1/s
-                    avatar.reduceSatiationPenalty(100);
-                } else {
-                    // Satiation reduction rate is 0.3/s
-                    avatar.reduceSatiation(30);
+                            // Reduce satiation
+                            if (avatar.getSatiation() > 0) {
+                                // Reduce penalty first
+                                if (avatar.getSatiationPenalty() > 0) {
+                                    // Penalty reduction rate is 1/s
+                                    avatar.reduceSatiationPenalty(100);
+                                } else {
+                                    // Satiation reduction rate is 0.3/s
+                                    avatar.reduceSatiation(30);
 
-                    // Update all packets every tick else it won't work
-                    // Surely there is a better way to handle this
-                    addSatiation(avatar, 0, 0);
-                }
-            }
-        });
+                                    // Update all packets every tick else it won't work
+                                    // Surely there is a better way to handle this
+                                    addSatiation(avatar, 0, 0);
+                                }
+                            }
+                        });
     }
 
     /********************
@@ -111,5 +112,4 @@ public class SatiationManager extends BasePlayerManager {
         player.getSession().send(new PacketPlayerGameTimeNotify(player));
         player.getSession().send(new PacketPlayerTimeNotify(player));
     }
-
 }

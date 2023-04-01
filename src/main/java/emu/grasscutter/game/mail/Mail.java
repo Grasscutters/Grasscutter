@@ -6,11 +6,10 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import org.bson.types.ObjectId;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import org.bson.types.ObjectId;
 
 @Entity(value = "mail", useDiscriminator = false)
 public class Mail {
@@ -22,15 +21,16 @@ public class Mail {
     public boolean isRead;
     public boolean isAttachmentGot;
     public int stateValue;
-    @Id
-    private ObjectId id;
-    @Indexed
-    private int ownerUid;
-    @Transient
-    private boolean shouldDelete;
+    @Id private ObjectId id;
+    @Indexed private int ownerUid;
+    @Transient private boolean shouldDelete;
 
     public Mail() {
-        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
+        this(
+                new MailContent(),
+                new ArrayList<MailItem>(),
+                (int) Instant.now().getEpochSecond()
+                        + 604800); // TODO: add expire time to send mail command
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
@@ -41,7 +41,12 @@ public class Mail {
         this(mailContent, itemList, expireTime, importance, 1);
     }
 
-    public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime, int importance, int state) {
+    public Mail(
+            MailContent mailContent,
+            List<MailItem> itemList,
+            long expireTime,
+            int importance,
+            int state) {
         this.mailContent = mailContent;
         this.itemList = itemList;
         this.sendTime = (int) Instant.now().getEpochSecond();

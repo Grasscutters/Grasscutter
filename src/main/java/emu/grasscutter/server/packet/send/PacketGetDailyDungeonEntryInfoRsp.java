@@ -15,19 +15,23 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 
         var resp = GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
 
-        for (var info : GameData.getDungeonEntryDataMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
-            resp.addDailyDungeonInfoList(info);
+        for (var info :
+                GameData.getDungeonEntryDataMap().values().parallelStream()
+                        .filter(d -> d.getSceneId() == sceneID)
+                        .map(this::getDungonEntryInfo)
+                        .toList()) resp.addDailyDungeonInfoList(info);
 
         this.setData(resp.build());
     }
 
-    private DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo getDungonEntryInfo(DungeonEntryData data) {
+    private DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo getDungonEntryInfo(
+            DungeonEntryData data) {
         var dungeonEntryId = data.getDungeonEntryId();
         var id = data.getId();
 
         // TODO
-        DungeonEntryInfoOuterClass.DungeonEntryInfo dungeonEntryInfo
-            = DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder().setDungeonId(130).build();
+        DungeonEntryInfoOuterClass.DungeonEntryInfo dungeonEntryInfo =
+                DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder().setDungeonId(130).build();
 
         var builder = DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo.newBuilder();
 
@@ -36,5 +40,4 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
         builder.setRecommendDungeonEntryInfo(dungeonEntryInfo);
         return builder.build();
     }
-
 }

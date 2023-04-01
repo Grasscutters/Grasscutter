@@ -31,15 +31,29 @@ public class SceneTrigger {
 
     @Override
     public String toString() {
-        return "SceneTrigger{" +
-            "name='" + name + '\'' +
-            ", config_id=" + config_id +
-            ", event=" + event +
-            ", source='" + source + '\'' +
-            ", condition='" + condition + '\'' +
-            ", action='" + action + '\'' +
-            ", forbid_guest='" + forbid_guest + '\'' +
-            ", trigger_count='" + trigger_count + '\'' +
-            '}';
+        return "SceneTrigger{"
+                + "name='"
+                + name
+                + '\''
+                + ", config_id="
+                + config_id
+                + ", event="
+                + event
+                + ", source='"
+                + source
+                + '\''
+                + ", condition='"
+                + condition
+                + '\''
+                + ", action='"
+                + action
+                + '\''
+                + ", forbid_guest='"
+                + forbid_guest
+                + '\''
+                + ", trigger_count='"
+                + trigger_count
+                + '\''
+                + '}';
     }
 }

@@ -7,7 +7,6 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.scripts.listener.ScriptMonsterListener;
-
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -23,8 +22,12 @@ public class ScriptMonsterTideService {
     private final OnMonsterCreated onMonsterCreated = new OnMonsterCreated();
     private final OnMonsterDead onMonsterDead = new OnMonsterDead();
 
-    public ScriptMonsterTideService(SceneScriptManager sceneScriptManager,
-                                    SceneGroup group, int tideCount, int monsterSceneLimit, Integer[] ordersConfigId) {
+    public ScriptMonsterTideService(
+            SceneScriptManager sceneScriptManager,
+            SceneGroup group,
+            int tideCount,
+            int monsterSceneLimit,
+            Integer[] ordersConfigId) {
         this.sceneScriptManager = sceneScriptManager;
         this.currentGroup = group;
         this.monsterSceneLimit = monsterSceneLimit;
@@ -33,11 +36,14 @@ public class ScriptMonsterTideService {
         this.monsterAlive = new AtomicInteger(0);
         this.monsterConfigOrders = new ConcurrentLinkedQueue<>(List.of(ordersConfigId));
 
-        this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterCreatedListener(onMonsterCreated);
+        this.sceneScriptManager
+                .getScriptMonsterSpawnService()
+                .addMonsterCreatedListener(onMonsterCreated);
         this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterDeadListener(onMonsterDead);
         // spawn the first turn
         for (int i = 0; i < this.monsterSceneLimit; i++) {
-            sceneScriptManager.addEntity(this.sceneScriptManager.createMonster(group.id, group.block_id, getNextMonster()));
+            sceneScriptManager.addEntity(
+                    this.sceneScriptManager.createMonster(group.id, group.block_id, getNextMonster()));
         }
     }
 
@@ -51,7 +57,9 @@ public class ScriptMonsterTideService {
     }
 
     public void unload() {
-        this.sceneScriptManager.getScriptMonsterSpawnService().removeMonsterCreatedListener(onMonsterCreated);
+        this.sceneScriptManager
+                .getScriptMonsterSpawnService()
+                .removeMonsterCreatedListener(onMonsterCreated);
         this.sceneScriptManager.getScriptMonsterSpawnService().removeMonsterDeadListener(onMonsterDead);
     }
 
@@ -78,12 +86,14 @@ public class ScriptMonsterTideService {
             monsterKillCount.incrementAndGet();
             if (monsterTideCount.get() > 0) {
                 // add more
-                sceneScriptManager.addEntity(sceneScriptManager.createMonster(currentGroup.id, currentGroup.block_id, getNextMonster()));
+                sceneScriptManager.addEntity(
+                        sceneScriptManager.createMonster(
+                                currentGroup.id, currentGroup.block_id, getNextMonster()));
             }
             // spawn the last turn of monsters
             // fix the 5-2
-            sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(monsterKillCount.get()));
+            sceneScriptManager.callEvent(
+                    EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(monsterKillCount.get()));
         }
-
     }
 }

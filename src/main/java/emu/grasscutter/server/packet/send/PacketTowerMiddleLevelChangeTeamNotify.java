@@ -10,8 +10,8 @@ public class PacketTowerMiddleLevelChangeTeamNotify extends BasePacket {
         super(PacketOpcodes.TowerMiddleLevelChangeTeamNotify);
 
         TowerMiddleLevelChangeTeamNotifyOuterClass.TowerMiddleLevelChangeTeamNotify proto =
-            TowerMiddleLevelChangeTeamNotifyOuterClass.TowerMiddleLevelChangeTeamNotify.newBuilder()
-                .build();
+                TowerMiddleLevelChangeTeamNotifyOuterClass.TowerMiddleLevelChangeTeamNotify.newBuilder()
+                        .build();
 
         this.setData(proto);
     }

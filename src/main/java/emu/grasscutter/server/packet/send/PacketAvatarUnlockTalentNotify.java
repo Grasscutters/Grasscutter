@@ -10,12 +10,13 @@ public class PacketAvatarUnlockTalentNotify extends BasePacket {
     public PacketAvatarUnlockTalentNotify(Avatar avatar, int talentId) {
         super(PacketOpcodes.AvatarUnlockTalentNotify);
 
-        AvatarUnlockTalentNotify proto = AvatarUnlockTalentNotify.newBuilder()
-            .setAvatarGuid(avatar.getGuid())
-            .setEntityId(avatar.getEntityId())
-            .setTalentId(talentId)
-            .setSkillDepotId(avatar.getSkillDepotId())
-            .build();
+        AvatarUnlockTalentNotify proto =
+                AvatarUnlockTalentNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setEntityId(avatar.getEntityId())
+                        .setTalentId(talentId)
+                        .setSkillDepotId(avatar.getSkillDepotId())
+                        .build();
 
         this.setData(proto);
     }

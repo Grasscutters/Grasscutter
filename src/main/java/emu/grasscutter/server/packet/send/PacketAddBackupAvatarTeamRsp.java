@@ -9,9 +9,8 @@ public class PacketAddBackupAvatarTeamRsp extends BasePacket {
     public PacketAddBackupAvatarTeamRsp(Retcode retcode) {
         super(PacketOpcodes.AddBackupAvatarTeamRsp);
 
-        AddBackupAvatarTeamRsp proto = AddBackupAvatarTeamRsp.newBuilder()
-            .setRetcode(retcode.getNumber())
-            .build();
+        AddBackupAvatarTeamRsp proto =
+                AddBackupAvatarTeamRsp.newBuilder().setRetcode(retcode.getNumber()).build();
 
         this.setData(proto);
     }

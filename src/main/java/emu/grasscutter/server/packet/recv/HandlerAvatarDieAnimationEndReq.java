@@ -15,5 +15,4 @@ public class HandlerAvatarDieAnimationEndReq extends PacketHandler {
 
         session.getPlayer().getTeamManager().onAvatarDie(req.getDieGuid());
     }
-
 }

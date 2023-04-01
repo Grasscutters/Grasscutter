@@ -1,10 +1,9 @@
 package emu.grasscutter.data.binout;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
+import lombok.Data;
 
 @Data
 public class ScriptSceneData {
@@ -12,10 +11,8 @@ public class ScriptSceneData {
 
     @Data
     public static class ScriptObject {
-        //private SceneGroup groups;
+        // private SceneGroup groups;
         @SerializedName("dummy_points")
         private Map<String, List<Float>> dummyPoints;
-
-
     }
 }

@@ -13,7 +13,9 @@ import emu.grasscutter.server.packet.send.PacketPlatformStopRouteNotify;
 public class HandlerUpdateAbilityCreatedMovingPlatformNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var notify = UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotify.parseFrom(payload);
+        var notify =
+                UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotify
+                        .parseFrom(payload);
         var entity = session.getPlayer().getScene().getEntityById(notify.getEntityId());
 
         if (!(entity instanceof EntityPlatform)) {
@@ -23,10 +25,10 @@ public class HandlerUpdateAbilityCreatedMovingPlatformNotify extends PacketHandl
         var scene = ((EntityPlatform) entity).getOwner().getScene();
 
         switch (notify.getOpType()) {
-            case OP_TYPE_ACTIVATE ->
-                scene.broadcastPacket(new PacketPlatformStartRouteNotify((EntityPlatform) entity, scene));
-            case OP_TYPE_DEACTIVATE ->
-                scene.broadcastPacket(new PacketPlatformStopRouteNotify((EntityPlatform) entity, scene));
+            case OP_TYPE_ACTIVATE -> scene.broadcastPacket(
+                    new PacketPlatformStartRouteNotify((EntityPlatform) entity, scene));
+            case OP_TYPE_DEACTIVATE -> scene.broadcastPacket(
+                    new PacketPlatformStopRouteNotify((EntityPlatform) entity, scene));
         }
     }
 }

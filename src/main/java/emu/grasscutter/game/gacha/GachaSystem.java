@@ -1,5 +1,7 @@
 package emu.grasscutter.game.gacha;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -29,14 +31,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import org.greenrobot.eventbus.Subscribe;
-
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import org.greenrobot.eventbus.Subscribe;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
@@ -55,7 +54,7 @@ public class GachaSystem extends BaseGameSystem {
         return gachaBanners;
     }
 
-    public int randomRange(int min, int max) {  // Both are inclusive
+    public int randomRange(int min, int max) { // Both are inclusive
         return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
     }
 
@@ -73,14 +72,14 @@ public class GachaSystem extends BaseGameSystem {
                 for (GachaBanner banner : banners) {
                     banner.onLoad();
                     if (banner.isDeprecated()) {
-                        Grasscutter.getLogger().error("A Banner has not been loaded because it contains one or more deprecated fields. Remove the fields mentioned above and reload.");
+                        Grasscutter.getLogger()
+                                .error(
+                                        "A Banner has not been loaded because it contains one or more deprecated fields. Remove the fields mentioned above and reload.");
                     } else if (banner.isDisabled()) {
                         Grasscutter.getLogger().debug("A Banner has not been loaded because it is disabled.");
                     } else {
-                        if (banner.scheduleId < 0)
-                            banner.scheduleId = autoScheduleId++;
-                        if (banner.sortId < 0)
-                            banner.sortId = autoSortId--;
+                        if (banner.scheduleId < 0) banner.scheduleId = autoScheduleId++;
+                        if (banner.sortId < 0) banner.sortId = autoSortId--;
                         getGachaBanners().put(banner.scheduleId, banner);
                     }
                 }
@@ -124,25 +123,36 @@ public class GachaSystem extends BaseGameSystem {
             }
         }
         // throw new IllegalStateException();
-        return 0;  // This should only be reachable if total==0
+        return 0; // This should only be reachable if total==0
     }
 
-    private synchronized int doFallbackRarePull(int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
+    private synchronized int doFallbackRarePull(
+            int[] fallback1,
+            int[] fallback2,
+            int rarity,
+            GachaBanner banner,
+            PlayerGachaBannerInfo gachaInfo) {
         if (fallback1.length < 1) {
             if (fallback2.length < 1) {
-                return getRandom((rarity == 5) ? GachaBanner.DEFAULT_FALLBACK_ITEMS_5_POOL_2 : GachaBanner.DEFAULT_FALLBACK_ITEMS_4_POOL_2);
+                return getRandom(
+                        (rarity == 5)
+                                ? GachaBanner.DEFAULT_FALLBACK_ITEMS_5_POOL_2
+                                : GachaBanner.DEFAULT_FALLBACK_ITEMS_4_POOL_2);
             } else {
                 return getRandom(fallback2);
             }
         } else if (fallback2.length < 1) {
             return getRandom(fallback1);
-        } else {  // Both pools are possible, use the pool balancer
+        } else { // Both pools are possible, use the pool balancer
             int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
             int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
-            int chosenPool = switch ((pityPool1 >= pityPool2) ? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
-                case 1 -> 1 + drawRoulette(new int[]{pityPool1, pityPool2}, 10000);
-                default -> 2 - drawRoulette(new int[]{pityPool2, pityPool1}, 10000);
-            };
+            int chosenPool =
+                    switch ((pityPool1 >= pityPool2)
+                            ? 1
+                            : 0) { // Larger weight must come first for the hard cutoff to function correctly
+                        case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
+                        default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
+                    };
             return switch (chosenPool) {
                 case 1:
                     gachaInfo.setPityPool(rarity, 1, 0);
@@ -154,23 +164,37 @@ public class GachaSystem extends BaseGameSystem {
         }
     }
 
-    private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
+    private synchronized int doRarePull(
+            int[] featured,
+            int[] fallback1,
+            int[] fallback2,
+            int rarity,
+            GachaBanner banner,
+            PlayerGachaBannerInfo gachaInfo) {
         int itemId = 0;
-        boolean epitomized = (banner.hasEpitomized()) && (rarity == 5) && (gachaInfo.getWishItemId() != 0);
-        boolean pityEpitomized = (gachaInfo.getFailedChosenItemPulls() >= banner.getWishMaxProgress());  // Maximum fate points reached
-        boolean pityFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1);  // Lost previous coinflip
-        boolean rollFeatured = (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
+        boolean epitomized =
+                (banner.hasEpitomized()) && (rarity == 5) && (gachaInfo.getWishItemId() != 0);
+        boolean pityEpitomized =
+                (gachaInfo.getFailedChosenItemPulls()
+                        >= banner.getWishMaxProgress()); // Maximum fate points reached
+        boolean pityFeatured =
+                (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1); // Lost previous coinflip
+        boolean rollFeatured =
+                (this.randomRange(1, 100) <= banner.getEventChance(rarity)); // Won this coinflip
         boolean pullFeatured = pityFeatured || rollFeatured;
 
-        if (epitomized && pityEpitomized) {  // Auto pick item when epitomized points reached
-            gachaInfo.setFailedFeaturedItemPulls(rarity, 0);  // Epitomized item will always be a featured one
+        if (epitomized && pityEpitomized) { // Auto pick item when epitomized points reached
+            gachaInfo.setFailedFeaturedItemPulls(
+                    rarity, 0); // Epitomized item will always be a featured one
             itemId = gachaInfo.getWishItemId();
         } else {
             if (pullFeatured && (featured.length > 0)) {
                 gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
                 itemId = getRandom(featured);
             } else {
-                gachaInfo.addFailedFeaturedItemPulls(rarity, 1);  // This could be moved into doFallbackRarePull but having it here makes it clearer
+                gachaInfo.addFailedFeaturedItemPulls(
+                        rarity,
+                        1); // This could be moved into doFallbackRarePull but having it here makes it clearer
                 itemId = doFallbackRarePull(fallback1, fallback2, rarity, banner, gachaInfo);
             }
         }
@@ -185,20 +209,35 @@ public class GachaSystem extends BaseGameSystem {
         return itemId;
     }
 
-    private synchronized int doPull(GachaBanner banner, PlayerGachaBannerInfo gachaInfo, BannerPools pools) {
+    private synchronized int doPull(
+            GachaBanner banner, PlayerGachaBannerInfo gachaInfo, BannerPools pools) {
         // Pre-increment all pity pools (yes this makes all calculations assume 1-indexed pity)
         gachaInfo.incPityAll();
 
-        int[] weights = {banner.getWeight(5, gachaInfo.getPity5()), banner.getWeight(4, gachaInfo.getPity4()), 10000};
+        int[] weights = {
+            banner.getWeight(5, gachaInfo.getPity5()), banner.getWeight(4, gachaInfo.getPity4()), 10000
+        };
         int levelWon = 5 - drawRoulette(weights, 10000);
 
         return switch (levelWon) {
             case 5:
                 gachaInfo.setPity5(0);
-                yield doRarePull(pools.rateUpItems5, pools.fallbackItems5Pool1, pools.fallbackItems5Pool2, 5, banner, gachaInfo);
+                yield doRarePull(
+                        pools.rateUpItems5,
+                        pools.fallbackItems5Pool1,
+                        pools.fallbackItems5Pool2,
+                        5,
+                        banner,
+                        gachaInfo);
             case 4:
                 gachaInfo.setPity4(0);
-                yield doRarePull(pools.rateUpItems4, pools.fallbackItems4Pool1, pools.fallbackItems4Pool2, 4, banner, gachaInfo);
+                yield doRarePull(
+                        pools.rateUpItems4,
+                        pools.fallbackItems4Pool1,
+                        pools.fallbackItems4Pool2,
+                        4,
+                        banner,
+                        gachaInfo);
             default:
                 yield getRandom(banner.getFallbackItems3());
         };
@@ -211,7 +250,8 @@ public class GachaSystem extends BaseGameSystem {
             return;
         }
         Inventory inventory = player.getInventory();
-        if (inventory.getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times > inventory.getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
+        if (inventory.getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times
+                > inventory.getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
             player.sendPacket(new PacketDoGachaRsp(Retcode.RET_ITEM_EXCEED_LIMIT));
             return;
         }
@@ -226,7 +266,8 @@ public class GachaSystem extends BaseGameSystem {
         // Check against total limit
         PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
         int gachaTimesLimit = banner.getGachaTimesLimit();
-        if (gachaTimesLimit != Integer.MAX_VALUE && (gachaInfo.getTotalPulls() + times) > gachaTimesLimit) {
+        if (gachaTimesLimit != Integer.MAX_VALUE
+                && (gachaInfo.getTotalPulls() + times) > gachaTimesLimit) {
             player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_TIMES_LIMIT));
             return;
         }
@@ -244,7 +285,7 @@ public class GachaSystem extends BaseGameSystem {
         List<GachaItem> list = new ArrayList<>();
         int stardust = 0, starglitter = 0;
 
-        if (banner.isRemoveC6FromPool()) {  // The ultimate form of pity (non-vanilla)
+        if (banner.isRemoveC6FromPool()) { // The ultimate form of pity (non-vanilla)
             pools.rateUpItems4 = removeC6FromPool(pools.rateUpItems4, player);
             pools.rateUpItems5 = removeC6FromPool(pools.rateUpItems5, player);
             pools.fallbackItems4Pool1 = removeC6FromPool(pools.fallbackItems4Pool1, player);
@@ -258,7 +299,7 @@ public class GachaSystem extends BaseGameSystem {
             int itemId = doPull(banner, gachaInfo, pools);
             ItemData itemData = GameData.getItemDataMap().get(itemId);
             if (itemData == null) {
-                continue;  // Maybe we should bail out if an item fails instead of rolling the rest?
+                continue; // Maybe we should bail out if an item fails instead of rolling the rest?
             }
 
             // Write gacha record
@@ -273,28 +314,37 @@ public class GachaSystem extends BaseGameSystem {
             // Const check
             int constellation = InventorySystem.checkPlayerAvatarConstellationLevel(player, itemId);
             switch (constellation) {
-                case -2:  // Is weapon
+                case -2: // Is weapon
                     switch (itemData.getRankLevel()) {
                         case 5 -> addStarglitter = 10;
                         case 4 -> addStarglitter = 2;
                         default -> addStardust = 15;
                     }
                     break;
-                case -1:  // New character
+                case -1: // New character
                     gachaItem.setIsGachaItemNew(true);
                     break;
                 default:
-                    if (constellation >= 6) {  // C6, give consolation starglitter
+                    if (constellation >= 6) { // C6, give consolation starglitter
                         addStarglitter = (itemData.getRankLevel() == 5) ? 25 : 5;
-                    } else {  // C0-C5, give constellation item
-                        if (banner.isRemoveC6FromPool() && constellation == 5) {  // New C6, remove it from the pools so we don't get C7 in a 10pull
-                            pools.removeFromAllPools(new int[]{itemId});
+                    } else { // C0-C5, give constellation item
+                        if (banner.isRemoveC6FromPool()
+                                && constellation
+                                        == 5) { // New C6, remove it from the pools so we don't get C7 in a 10pull
+                            pools.removeFromAllPools(new int[] {itemId});
                         }
                         addStarglitter = (itemData.getRankLevel() == 5) ? 10 : 2;
-                        int constItemId = itemId + 100;  // This may not hold true for future characters. Examples of strictly correct constellation item lookup are elsewhere for now.
-                        boolean haveConstItem = inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId) == null;
-                        gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(haveConstItem));
-                        //inventory.addItem(constItemId, 1);  // This is now managed by the avatar card item itself
+                        int constItemId =
+                                itemId + 100; // This may not hold true for future characters. Examples of strictly
+                        // correct constellation item lookup are elsewhere for now.
+                        boolean haveConstItem =
+                                inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId) == null;
+                        gachaItem.addTransferItems(
+                                GachaTransferItem.newBuilder()
+                                        .setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1))
+                                        .setIsTransferItemNew(haveConstItem));
+                        // inventory.addItem(constItemId, 1);  // This is now managed by the avatar card item
+                        // itself
                     }
                     isTransferItem = true;
                     break;
@@ -309,10 +359,12 @@ public class GachaSystem extends BaseGameSystem {
             starglitter += addStarglitter;
 
             if (addStardust > 0) {
-                gachaItem.addTokenItemList(ItemParam.newBuilder().setItemId(stardustId).setCount(addStardust));
+                gachaItem.addTokenItemList(
+                        ItemParam.newBuilder().setItemId(stardustId).setCount(addStardust));
             }
             if (addStarglitter > 0) {
-                ItemParam starglitterParam = ItemParam.newBuilder().setItemId(starglitterId).setCount(addStarglitter).build();
+                ItemParam starglitterParam =
+                        ItemParam.newBuilder().setItemId(starglitterId).setCount(addStarglitter).build();
                 if (isTransferItem) {
                     gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(starglitterParam));
                 }
@@ -341,9 +393,15 @@ public class GachaSystem extends BaseGameSystem {
         if (this.watchService == null) {
             try {
                 this.watchService = FileSystems.getDefault().newWatchService();
-                FileUtils.getDataUserPath("").register(watchService, new WatchEvent.Kind[]{StandardWatchEventKinds.ENTRY_MODIFY}, SensitivityWatchEventModifier.HIGH);
+                FileUtils.getDataUserPath("")
+                        .register(
+                                watchService,
+                                new WatchEvent.Kind[] {StandardWatchEventKinds.ENTRY_MODIFY},
+                                SensitivityWatchEventModifier.HIGH);
             } catch (Exception e) {
-                Grasscutter.getLogger().error("Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
+                Grasscutter.getLogger()
+                        .error(
+                                "Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
                 e.printStackTrace();
             }
         } else {
@@ -360,14 +418,17 @@ public class GachaSystem extends BaseGameSystem {
                 for (WatchEvent<?> event : watchKey.pollEvents()) {
                     final Path changed = (Path) event.context();
                     if (changed.endsWith("Banners.json")) {
-                        Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
+                        Grasscutter.getLogger()
+                                .info("Change detected with banners.json. Reloading gacha config");
                         this.load();
                     }
                 }
 
                 boolean valid = watchKey.reset();
                 if (!valid) {
-                    Grasscutter.getLogger().error("Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
+                    Grasscutter.getLogger()
+                            .error(
+                                    "Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -381,7 +442,8 @@ public class GachaSystem extends BaseGameSystem {
         long currentTime = System.currentTimeMillis() / 1000L;
 
         for (GachaBanner banner : getGachaBanners().values()) {
-            if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD)) {
+            if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime)
+                    || (banner.getBannerType() == BannerType.STANDARD)) {
                 proto.addGachaInfoList(banner.toProto(player));
             }
         }

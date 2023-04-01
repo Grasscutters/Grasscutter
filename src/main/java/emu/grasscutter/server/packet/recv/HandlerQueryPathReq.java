@@ -14,13 +14,9 @@ public class HandlerQueryPathReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = QueryPathReq.parseFrom(payload);
 
-        /**
-         * It is not the actual work
-         */
-
+        /** It is not the actual work */
         if (req.getDestinationPosList().size() > 0) {
             session.send(new PacketQueryPathRsp(req));
         }
     }
-
 }

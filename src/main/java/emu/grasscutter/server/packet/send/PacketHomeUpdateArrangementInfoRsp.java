@@ -7,6 +7,5 @@ public class PacketHomeUpdateArrangementInfoRsp extends BasePacket {
 
     public PacketHomeUpdateArrangementInfoRsp() {
         super(PacketOpcodes.HomeUpdateArrangementInfoRsp);
-
     }
 }

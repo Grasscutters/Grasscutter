@@ -3,7 +3,6 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.CurveInfo;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -27,6 +26,7 @@ public class WeaponCurveData extends GameResource {
     @Override
     public void onLoad() {
         this.curveInfosMap = new HashMap<>();
-        Stream.of(this.curveInfos).forEach(info -> this.curveInfosMap.put(info.getType(), info.getValue()));
+        Stream.of(this.curveInfos)
+                .forEach(info -> this.curveInfosMap.put(info.getType(), info.getValue()));
     }
 }

@@ -15,5 +15,4 @@ public class HandlerDelMailReq extends PacketHandler {
 
         session.getPlayer().getMailHandler().deleteMail(req.getMailIdListList());
     }
-
 }

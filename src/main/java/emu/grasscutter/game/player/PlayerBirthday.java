@@ -51,17 +51,12 @@ public class PlayerBirthday {
     }
 
     public Birthday toProto() {
-        return Birthday.newBuilder()
-            .setDay(this.getDay())
-            .setMonth(this.getMonth())
-            .build();
+        return Birthday.newBuilder().setDay(this.getDay()).setMonth(this.getMonth()).build();
     }
 
     public Birthday.Builder getFilledProtoWhenNotEmpty() {
         if (this.getDay() > 0) {
-            return Birthday.newBuilder()
-                .setDay(this.getDay())
-                .setMonth(this.getMonth());
+            return Birthday.newBuilder().setDay(this.getDay()).setMonth(this.getMonth());
         }
 
         return Birthday.newBuilder();

@@ -16,10 +16,13 @@ public class HandlerChangeGameTimeReq extends PacketHandler {
         ChangeGameTimeReq req = ChangeGameTimeReq.parseFrom(payload);
 
         session.getPlayer().getScene().changeTime(req.getGameTime());
-        session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_GAME_TIME_TICK,
-            req.getGameTime() / 60, // hours
-            req.getExtraDays()); //days
+        session
+                .getPlayer()
+                .getQuestManager()
+                .triggerEvent(
+                        QuestTrigger.QUEST_CONTENT_GAME_TIME_TICK,
+                        req.getGameTime() / 60, // hours
+                        req.getExtraDays()); // days
         session.getPlayer().sendPacket(new PacketChangeGameTimeRsp(session.getPlayer()));
     }
-
 }

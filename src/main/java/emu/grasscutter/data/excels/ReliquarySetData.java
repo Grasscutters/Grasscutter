@@ -9,7 +9,9 @@ public class ReliquarySetData extends GameResource {
     private int setId;
     private int[] setNeedNum;
 
-    @SerializedName(value = "equipAffixId", alternate = {"EquipAffixId"})
+    @SerializedName(
+            value = "equipAffixId",
+            alternate = {"EquipAffixId"})
     private int equipAffixId;
 
     @Override
@@ -26,7 +28,5 @@ public class ReliquarySetData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-
-    }
+    public void onLoad() {}
 }

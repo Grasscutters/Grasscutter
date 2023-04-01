@@ -8,9 +8,7 @@ public class WeightedList<E> {
     private final NavigableMap<Double, E> map = new TreeMap<Double, E>();
     private double total = 0;
 
-    public WeightedList() {
-
-    }
+    public WeightedList() {}
 
     public WeightedList<E> add(double weight, E result) {
         if (weight <= 0) return this;

@@ -10,10 +10,8 @@ public class PacketWorldPlayerDieNotify extends BasePacket {
     public PacketWorldPlayerDieNotify(PlayerDieType playerDieType, int killerId) {
         super(PacketOpcodes.WorldPlayerDieNotify);
 
-        WorldPlayerDieNotify proto = WorldPlayerDieNotify.newBuilder()
-            .setDieType(playerDieType)
-            .setMonsterId(killerId)
-            .build();
+        WorldPlayerDieNotify proto =
+                WorldPlayerDieNotify.newBuilder().setDieType(playerDieType).setMonsterId(killerId).build();
 
         this.setData(proto);
     }

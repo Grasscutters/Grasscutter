@@ -14,15 +14,17 @@ public class PacketHomeResourceTakeHomeCoinRsp extends BasePacket {
 
         home.takeHomeCoin(player);
 
-        var coin = HomeResource.newBuilder()
-            .setNextRefreshTime(home.getNextUpdateTime())
-            .setStoreLimit(home.getMaxCoin(home.getLevel()))
-            .setStoreValue(0)
-            .build();
+        var coin =
+                HomeResource.newBuilder()
+                        .setNextRefreshTime(home.getNextUpdateTime())
+                        .setStoreLimit(home.getMaxCoin(home.getLevel()))
+                        .setStoreValue(0)
+                        .build();
 
-        var proto = HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp.newBuilder()
-            .setHomeCoin(coin)
-            .build();
+        var proto =
+                HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp.newBuilder()
+                        .setHomeCoin(coin)
+                        .build();
 
         this.setData(proto);
     }

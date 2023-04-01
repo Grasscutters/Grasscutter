@@ -8,11 +8,11 @@ import emu.grasscutter.utils.Utils;
 
 @Entity
 public class PlayerProfile {
-    @Transient
-    private Player player;
+    @Transient private Player player;
 
     @AlsoLoad("id")
     private int uid;
+
     private int nameCard;
     private int avatarId;
     private String name;
@@ -24,8 +24,7 @@ public class PlayerProfile {
     private int lastActiveTime;
 
     @Deprecated // Morphia only
-    public PlayerProfile() {
-    }
+    public PlayerProfile() {}
 
     public PlayerProfile(Player player) {
         this.uid = player.getUid();
@@ -100,7 +99,7 @@ public class PlayerProfile {
         this.nameCard = player.getNameCardId();
         this.playerLevel = player.getLevel();
         this.worldLevel = player.getWorldLevel();
-        //this.achievements = 0;
+        // this.achievements = 0;
         this.updateLastActiveTime();
     }
 }

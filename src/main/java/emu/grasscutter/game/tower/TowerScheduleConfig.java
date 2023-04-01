@@ -8,7 +8,6 @@ public class TowerScheduleConfig {
     private Date scheduleStartTime;
     private Date nextScheduleChangeTime;
 
-
     public int getScheduleId() {
         return scheduleId;
     }

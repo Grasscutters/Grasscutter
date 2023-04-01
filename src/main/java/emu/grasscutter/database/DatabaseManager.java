@@ -1,5 +1,8 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+import static emu.grasscutter.config.Configuration.SERVER;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -15,9 +18,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import org.reflections.Reflections;
-
-import static emu.grasscutter.config.Configuration.DATABASE;
-import static emu.grasscutter.config.Configuration.SERVER;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;
@@ -46,21 +46,23 @@ public final class DatabaseManager {
         MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);
 
         // Set mapper options.
-        MapperOptions mapperOptions = MapperOptions.builder()
-            .storeEmpties(true).storeNulls(false).build();
+        MapperOptions mapperOptions =
+                MapperOptions.builder().storeEmpties(true).storeNulls(false).build();
 
         // Create data store.
-        gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
+        gameDatastore =
+                Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
 
         // Map classes.
-        Class<?>[] entities = new Reflections(Grasscutter.class.getPackageName())
-            .getTypesAnnotatedWith(Entity.class)
-            .stream()
-            .filter(cls -> {
-                Entity e = cls.getAnnotation(Entity.class);
-                return e != null && !e.value().equals(Mapper.IGNORED_FIELDNAME);
-            })
-            .toArray(Class<?>[]::new);
+        Class<?>[] entities =
+                new Reflections(Grasscutter.class.getPackageName())
+                        .getTypesAnnotatedWith(Entity.class).stream()
+                                .filter(
+                                        cls -> {
+                                            Entity e = cls.getAnnotation(Entity.class);
+                                            return e != null && !e.value().equals(Mapper.IGNORED_FIELDNAME);
+                                        })
+                                .toArray(Class<?>[]::new);
 
         gameDatastore.getMapper().map(entities);
 
@@ -70,8 +72,9 @@ public final class DatabaseManager {
         if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
             MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
 
-            dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
-            dispatchDatastore.getMapper().map(new Class<?>[]{DatabaseCounter.class, Account.class});
+            dispatchDatastore =
+                    Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
+            dispatchDatastore.getMapper().map(new Class<?>[] {DatabaseCounter.class, Account.class});
 
             // Ensure indexes for dispatch datastore
             ensureIndexes(dispatchDatastore);
@@ -102,7 +105,11 @@ public final class DatabaseManager {
     }
 
     public static synchronized int getNextId(Class<?> c) {
-        DatabaseCounter counter = getGameDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
+        DatabaseCounter counter =
+                getGameDatastore()
+                        .find(DatabaseCounter.class)
+                        .filter(Filters.eq("_id", c.getSimpleName()))
+                        .first();
         if (counter == null) {
             counter = new DatabaseCounter(c.getSimpleName());
         }

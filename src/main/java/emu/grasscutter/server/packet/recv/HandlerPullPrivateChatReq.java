@@ -13,9 +13,11 @@ public class HandlerPullPrivateChatReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         PullPrivateChatReq req = PullPrivateChatReq.parseFrom(payload);
 
-        session.getServer().getChatSystem().handlePullPrivateChatReq(session.getPlayer(), req.getTargetUid());
+        session
+                .getServer()
+                .getChatSystem()
+                .handlePullPrivateChatReq(session.getPlayer(), req.getTargetUid());
 
         // session.send(new PacketPullPrivateChatRsp(req.getTargetUid()));
     }
-
 }

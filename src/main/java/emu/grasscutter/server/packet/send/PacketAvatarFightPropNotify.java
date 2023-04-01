@@ -10,10 +10,11 @@ public class PacketAvatarFightPropNotify extends BasePacket {
     public PacketAvatarFightPropNotify(Avatar avatar) {
         super(PacketOpcodes.AvatarFightPropNotify);
 
-        AvatarFightPropNotify proto = AvatarFightPropNotify.newBuilder()
-            .setAvatarGuid(avatar.getGuid())
-            .putAllFightPropMap(avatar.getFightProperties())
-            .build();
+        AvatarFightPropNotify proto =
+                AvatarFightPropNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .putAllFightPropMap(avatar.getFightProperties())
+                        .build();
 
         this.setData(proto);
     }

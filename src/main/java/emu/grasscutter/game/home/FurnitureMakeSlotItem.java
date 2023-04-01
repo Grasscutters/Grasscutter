@@ -13,8 +13,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(builderMethodName = "of")
 public class FurnitureMakeSlotItem {
-    @Id
-    int index;
+    @Id int index;
     int makeId;
     int avatarId;
     int beginTime;
@@ -22,11 +21,11 @@ public class FurnitureMakeSlotItem {
 
     public FurnitureMakeDataOuterClass.FurnitureMakeData toProto() {
         return FurnitureMakeDataOuterClass.FurnitureMakeData.newBuilder()
-            .setIndex(index)
-            .setAvatarId(avatarId)
-            .setMakeId(makeId)
-            .setBeginTime(beginTime)
-            .setDurTime(durTime)
-            .build();
+                .setIndex(index)
+                .setAvatarId(avatarId)
+                .setMakeId(makeId)
+                .setBeginTime(beginTime)
+                .setDurTime(durTime)
+                .build();
     }
 }

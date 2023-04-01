@@ -14,6 +14,5 @@ public class PacketAddQuestContentProgressRsp extends BasePacket {
         proto.setContentType(contentType);
 
         this.setData(proto);
-
     }
 }

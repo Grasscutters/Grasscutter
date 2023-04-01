@@ -12,8 +12,7 @@ public class HandlerGetDailyDungeonEntryInfoReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req =
-            GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.parseFrom(payload);
+        var req = GetDailyDungeonEntryInfoReqOuterClass.GetDailyDungeonEntryInfoReq.parseFrom(payload);
 
         session.send(new PacketGetDailyDungeonEntryInfoRsp(req.getSceneId()));
     }

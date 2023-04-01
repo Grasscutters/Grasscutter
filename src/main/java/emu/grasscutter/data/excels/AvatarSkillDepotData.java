@@ -11,17 +11,17 @@ import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
+import lombok.Getter;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
 public class AvatarSkillDepotData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     private int energySkill;
     private int attackModeSkill;
 
@@ -61,21 +61,24 @@ public class AvatarSkillDepotData extends GameResource {
             AvatarConfig config = GameDepot.getPlayerAbilities().get(getSkillDepotAbilityGroup());
 
             if (config != null) {
-                this.setAbilities(new AbilityEmbryoEntry(getSkillDepotAbilityGroup(), config.abilities.stream().map(Object::toString).toArray(String[]::new)));
+                this.setAbilities(
+                        new AbilityEmbryoEntry(
+                                getSkillDepotAbilityGroup(),
+                                config.abilities.stream().map(Object::toString).toArray(String[]::new)));
             }
         }
 
         // Get constellation item from GameData
         Optional.ofNullable(this.talents)
-            .map(talents -> talents.get(0))
-            .map(i -> GameData.getAvatarTalentDataMap().get((int) i))
-            .map(talentData -> talentData.getMainCostItemId())
-            .ifPresent(itemId -> this.talentCostItemId = itemId);
+                .map(talents -> talents.get(0))
+                .map(i -> GameData.getAvatarTalentDataMap().get((int) i))
+                .map(talentData -> talentData.getMainCostItemId())
+                .ifPresent(itemId -> this.talentCostItemId = itemId);
     }
 
     public IntStream getSkillsAndEnergySkill() {
         return IntStream.concat(this.skills.stream().mapToInt(i -> i), IntStream.of(this.energySkill))
-            .filter(skillId -> skillId > 0);
+                .filter(skillId -> skillId > 0);
     }
 
     @Getter

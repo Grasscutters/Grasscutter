@@ -9,27 +9,36 @@ import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
+@Command(
+        label = "setProp",
+        aliases = {"prop"},
+        usage = {"<prop> <value>"},
+        permission = "player.setprop",
+        permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
-    // List of map areas. Unfortunately, there is no readily available source for them in excels or bins.
-    private static final List<Integer> sceneAreas = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 100, 101, 102, 103, 200, 210, 300, 400, 401, 402, 403);
+    // List of map areas. Unfortunately, there is no readily available source for them in excels or
+    // bins.
+    private static final List<Integer> sceneAreas =
+            List.of(
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+                    28, 29, 32, 100, 101, 102, 103, 200, 210, 300, 400, 401, 402, 403);
     Map<String, Prop> props;
 
     public SetPropCommand() {
         this.props = new HashMap<>();
         // Full PlayerProperty enum that won't be advertised but can be used by devs
         for (PlayerProperty prop : PlayerProperty.values()) {
-            String name = prop.toString().substring(5);  // PROP_EXP -> EXP
-            String key = name.toLowerCase();  // EXP -> exp
+            String name = prop.toString().substring(5); // PROP_EXP -> EXP
+            String key = name.toLowerCase(); // EXP -> exp
             this.props.put(key, new Prop(name, prop));
         }
         // Add special props
-        Prop worldlevel = new Prop("World Level", PlayerProperty.PROP_PLAYER_WORLD_LEVEL, PseudoProp.WORLD_LEVEL);
+        Prop worldlevel =
+                new Prop("World Level", PlayerProperty.PROP_PLAYER_WORLD_LEVEL, PseudoProp.WORLD_LEVEL);
         this.props.put("worldlevel", worldlevel);
         this.props.put("wl", worldlevel);
 
@@ -89,12 +98,13 @@ public final class SetPropCommand implements CommandHandler {
             return;
         }
         try {
-            value = switch (valueStr.toLowerCase()) {
-                case "on", "true" -> 1;
-                case "off", "false" -> 0;
-                case "toggle" -> -1;
-                default -> Integer.parseInt(valueStr);
-            };
+            value =
+                    switch (valueStr.toLowerCase()) {
+                        case "on", "true" -> 1;
+                        case "off", "false" -> 0;
+                        case "toggle" -> -1;
+                        default -> Integer.parseInt(valueStr);
+                    };
         } catch (NumberFormatException ignored) {
             CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
             return;
@@ -103,30 +113,35 @@ public final class SetPropCommand implements CommandHandler {
         boolean success = false;
         Prop prop = props.get(propStr);
 
-        success = switch (prop.pseudoProp) {
-            case WORLD_LEVEL -> targetPlayer.setWorldLevel(value);
-            case BP_LEVEL -> targetPlayer.getBattlePassManager().setLevel(value);
-            case TOWER_LEVEL -> this.setTowerLevel(sender, targetPlayer, value);
-            case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY ->
-                this.setBool(sender, targetPlayer, prop.pseudoProp, value);
-            case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
-            case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
-            case UNLOCK_MAP -> unlockMap(targetPlayer);
-            default -> targetPlayer.setProperty(prop.prop, value);
-        };
+        success =
+                switch (prop.pseudoProp) {
+                    case WORLD_LEVEL -> targetPlayer.setWorldLevel(value);
+                    case BP_LEVEL -> targetPlayer.getBattlePassManager().setLevel(value);
+                    case TOWER_LEVEL -> this.setTowerLevel(sender, targetPlayer, value);
+                    case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY -> this.setBool(
+                            sender, targetPlayer, prop.pseudoProp, value);
+                    case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
+                    case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
+                    case UNLOCK_MAP -> unlockMap(targetPlayer);
+                    default -> targetPlayer.setProperty(prop.prop, value);
+                };
 
         if (success) {
             if (targetPlayer == sender) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_to", prop.name, valueStr);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.generic.set_to", prop.name, valueStr);
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_for_to", prop.name, uidStr, valueStr);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.generic.set_for_to", prop.name, uidStr, valueStr);
             }
         } else {
-            if (prop.prop != PlayerProperty.PROP_NONE) {  // PseudoProps need to do their own error messages
+            if (prop.prop
+                    != PlayerProperty.PROP_NONE) { // PseudoProps need to do their own error messages
                 int min = targetPlayer.getPropertyMin(prop.prop);
                 int max = targetPlayer.getPropertyMax(prop.prop);
-                CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.value_between", prop.name, min, max);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.generic.invalid.value_between", prop.name, min, max);
             }
         }
     }
@@ -134,7 +149,8 @@ public final class SetPropCommand implements CommandHandler {
     private boolean setTowerLevel(Player sender, Player targetPlayer, int topFloor) {
         List<Integer> floorIds = targetPlayer.getServer().getTowerSystem().getAllFloors();
         if (topFloor < 0 || topFloor > floorIds.size()) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.value_between", "Tower Level", 0, floorIds.size());
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.generic.invalid.value_between", "Tower Level", 0, floorIds.size());
             return false;
         }
 
@@ -151,23 +167,30 @@ public final class SetPropCommand implements CommandHandler {
         }
         // Six stars required on Floor 8 to unlock Floor 9+
         if (topFloor > 8) {
-            recordMap.get(floorIds.get(7)).setLevelStars(0, 6);  // levelIds seem to start at 1 for Floor 1 Chamber 1, so this doesn't get shown at all
+            recordMap
+                    .get(floorIds.get(7))
+                    .setLevelStars(
+                            0,
+                            6); // levelIds seem to start at 1 for Floor 1 Chamber 1, so this doesn't get shown at
+            // all
         }
         return true;
     }
 
     private boolean setBool(Player sender, Player targetPlayer, PseudoProp pseudoProp, int value) {
-        boolean enabled = switch (pseudoProp) {
-            case GOD_MODE -> targetPlayer.inGodmode();
-            case UNLIMITED_STAMINA -> targetPlayer.getUnlimitedStamina();
-            case UNLIMITED_ENERGY -> !targetPlayer.getEnergyManager().getEnergyUsage();
-            default -> false;
-        };
-        enabled = switch (value) {
-            case -1 -> !enabled;
-            case 0 -> false;
-            default -> true;
-        };
+        boolean enabled =
+                switch (pseudoProp) {
+                    case GOD_MODE -> targetPlayer.inGodmode();
+                    case UNLIMITED_STAMINA -> targetPlayer.getUnlimitedStamina();
+                    case UNLIMITED_ENERGY -> !targetPlayer.getEnergyManager().getEnergyUsage();
+                    default -> false;
+                };
+        enabled =
+                switch (value) {
+                    case -1 -> !enabled;
+                    case 0 -> false;
+                    default -> true;
+                };
 
         switch (pseudoProp) {
             case GOD_MODE:
@@ -192,18 +215,24 @@ public final class SetPropCommand implements CommandHandler {
 
     private boolean unlockMap(Player targetPlayer) {
         // Unlock.
-        GameData.getScenePointsPerScene().forEach((sceneId, scenePoints) -> {
-            // Unlock trans points.
-            targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
+        GameData.getScenePointsPerScene()
+                .forEach(
+                        (sceneId, scenePoints) -> {
+                            // Unlock trans points.
+                            targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
 
-            // Unlock map areas.
-            targetPlayer.getUnlockedSceneAreas(sceneId).addAll(sceneAreas);
-        });
+                            // Unlock map areas.
+                            targetPlayer.getUnlockedSceneAreas(sceneId).addAll(sceneAreas);
+                        });
 
         // Send notify.
         int playerScene = targetPlayer.getSceneId();
-        targetPlayer.sendPacket(new PacketScenePointUnlockNotify(playerScene, targetPlayer.getUnlockedScenePoints(playerScene)));
-        targetPlayer.sendPacket(new PacketSceneAreaUnlockNotify(playerScene, targetPlayer.getUnlockedSceneAreas(playerScene)));
+        targetPlayer.sendPacket(
+                new PacketScenePointUnlockNotify(
+                        playerScene, targetPlayer.getUnlockedScenePoints(playerScene)));
+        targetPlayer.sendPacket(
+                new PacketSceneAreaUnlockNotify(
+                        playerScene, targetPlayer.getUnlockedSceneAreas(playerScene)));
         return true;
     }
 

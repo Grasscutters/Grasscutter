@@ -16,5 +16,4 @@ public class HandlerGetScenePointReq extends PacketHandler {
 
         session.send(new PacketGetScenePointRsp(session.getPlayer(), req.getSceneId()));
     }
-
 }

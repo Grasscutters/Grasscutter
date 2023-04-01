@@ -11,10 +11,8 @@ public class PacketActivityTakeWatcherRewardRsp extends BasePacket {
 
         var proto = ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRsp.newBuilder();
 
-        proto.setActivityId(activityId)
-            .setWatcherId(watcherId);
+        proto.setActivityId(activityId).setWatcherId(watcherId);
 
         this.setData(proto);
     }
-
 }

@@ -14,5 +14,4 @@ public class HandlerHomeGetBasicInfoReq extends PacketHandler {
 
         session.send(new PacketHomeBasicInfoNotify(session.getPlayer(), false));
     }
-
 }

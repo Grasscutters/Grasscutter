@@ -14,10 +14,14 @@ public class PacketAvatarLifeStateChangeNotify extends BasePacket {
     public PacketAvatarLifeStateChangeNotify(Avatar avatar) {
         super(PacketOpcodes.AvatarLifeStateChangeNotify);
 
-        AvatarLifeStateChangeNotify proto = AvatarLifeStateChangeNotify.newBuilder()
-            .setAvatarGuid(avatar.getGuid())
-            .setLifeState(avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0 ? LifeState.LIFE_ALIVE.getValue() : LifeState.LIFE_DEAD.getValue())
-            .build();
+        AvatarLifeStateChangeNotify proto =
+                AvatarLifeStateChangeNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setLifeState(
+                                avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0
+                                        ? LifeState.LIFE_ALIVE.getValue()
+                                        : LifeState.LIFE_DEAD.getValue())
+                        .build();
 
         this.setData(proto);
     }
@@ -25,21 +29,27 @@ public class PacketAvatarLifeStateChangeNotify extends BasePacket {
     public PacketAvatarLifeStateChangeNotify(Avatar avatar, int attackerId, LifeState lifeState) {
         super(PacketOpcodes.AvatarLifeStateChangeNotify);
 
-        AvatarLifeStateChangeNotify proto = AvatarLifeStateChangeNotify.newBuilder()
-            .setAvatarGuid(avatar.getGuid())
-            .setLifeState(lifeState.getValue())
-            .setMoveReliableSeq(attackerId)
-            .build();
+        AvatarLifeStateChangeNotify proto =
+                AvatarLifeStateChangeNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setLifeState(lifeState.getValue())
+                        .setMoveReliableSeq(attackerId)
+                        .build();
 
         this.setData(proto);
     }
 
-    public PacketAvatarLifeStateChangeNotify(Avatar avatar, LifeState lifeState, PlayerDieType dieType) {
+    public PacketAvatarLifeStateChangeNotify(
+            Avatar avatar, LifeState lifeState, PlayerDieType dieType) {
         this(avatar, lifeState, null, "", dieType);
     }
 
-    public PacketAvatarLifeStateChangeNotify(Avatar avatar, LifeState lifeState, GameEntity sourceEntity,
-                                             String attackTag, PlayerDieType dieType) {
+    public PacketAvatarLifeStateChangeNotify(
+            Avatar avatar,
+            LifeState lifeState,
+            GameEntity sourceEntity,
+            String attackTag,
+            PlayerDieType dieType) {
         super(PacketOpcodes.AvatarLifeStateChangeNotify);
 
         AvatarLifeStateChangeNotify.Builder proto = AvatarLifeStateChangeNotify.newBuilder();
@@ -54,5 +64,4 @@ public class PacketAvatarLifeStateChangeNotify extends BasePacket {
 
         this.setData(proto.build());
     }
-
 }

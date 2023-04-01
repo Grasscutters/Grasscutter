@@ -1,5 +1,9 @@
 package emu.grasscutter.data;
 
+import static emu.grasscutter.utils.FileUtils.getDataPath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.translate;
+
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
@@ -18,9 +22,6 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
-import lombok.val;
-import org.reflections.Reflections;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -30,10 +31,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.utils.FileUtils.getDataPath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.translate;
+import lombok.val;
+import org.reflections.Reflections;
 
 public class ResourceLoader {
 
@@ -46,14 +45,18 @@ public class ResourceLoader {
         Set<?> classes = reflections.getSubTypesOf(GameResource.class);
 
         List<Class<?>> classList = new ArrayList<>(classes.size());
-        classes.forEach(o -> {
-            Class<?> c = (Class<?>) o;
-            if (c.getAnnotation(ResourceType.class) != null) {
-                classList.add(c);
-            }
-        });
+        classes.forEach(
+                o -> {
+                    Class<?> c = (Class<?>) o;
+                    if (c.getAnnotation(ResourceType.class) != null) {
+                        classList.add(c);
+                    }
+                });
 
-        classList.sort((a, b) -> b.getAnnotation(ResourceType.class).loadPriority().value() - a.getAnnotation(ResourceType.class).loadPriority().value());
+        classList.sort(
+                (a, b) ->
+                        b.getAnnotation(ResourceType.class).loadPriority().value()
+                                - a.getAnnotation(ResourceType.class).loadPriority().value());
 
         return classList;
     }
@@ -67,13 +70,14 @@ public class ResourceLoader {
         val map = new LinkedHashMap<ResourceType.LoadPriority, Set<Class<?>>>(priorities.size());
         priorities.forEach(p -> map.put(p, new HashSet<>()));
 
-        classes.forEach(c -> {
-            // val c = (Class<?>) o;
-            val annotation = c.getAnnotation(ResourceType.class);
-            if (annotation != null) {
-                map.get(annotation.loadPriority()).add(c);
-            }
-        });
+        classes.forEach(
+                c -> {
+                    // val c = (Class<?>) o;
+                    val annotation = c.getAnnotation(ResourceType.class);
+                    if (annotation != null) {
+                        map.get(annotation.loadPriority()).add(c);
+                    }
+                });
         return List.copyOf(map.values());
     }
 
@@ -112,33 +116,43 @@ public class ResourceLoader {
 
     public static void loadResources(boolean doReload) {
         long startTime = System.nanoTime();
-        val errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();  // Logger in a parallel stream will deadlock
+        val errors =
+                new ConcurrentLinkedQueue<
+                        Pair<String, Exception>>(); // Logger in a parallel stream will deadlock
 
-        getResourceDefClassesPrioritySets().forEach(classes -> {
-            classes.stream()
-                .parallel().unordered()
-                .forEach(c -> {
-                    val type = c.getAnnotation(ResourceType.class);
-                    if (type == null) return;
+        getResourceDefClassesPrioritySets()
+                .forEach(
+                        classes -> {
+                            classes.stream()
+                                    .parallel()
+                                    .unordered()
+                                    .forEach(
+                                            c -> {
+                                                val type = c.getAnnotation(ResourceType.class);
+                                                if (type == null) return;
 
-                    val map = GameData.getMapByResourceDef(c);
-                    if (map == null) return;
+                                                val map = GameData.getMapByResourceDef(c);
+                                                if (map == null) return;
 
-                    try {
-                        loadFromResource(c, type, map, doReload);
-                    } catch (Exception e) {
-                        errors.add(Pair.of(Arrays.toString(type.name()), e));
-                    }
-                });
-        });
-        errors.forEach(pair -> Grasscutter.getLogger().error("Error loading resource file: " + pair.left(), pair.right()));
+                                                try {
+                                                    loadFromResource(c, type, map, doReload);
+                                                } catch (Exception e) {
+                                                    errors.add(Pair.of(Arrays.toString(type.name()), e));
+                                                }
+                                            });
+                        });
+        errors.forEach(
+                pair ->
+                        Grasscutter.getLogger()
+                                .error("Error loading resource file: " + pair.left(), pair.right()));
         long endTime = System.nanoTime();
-        long ns = (endTime - startTime);  //divide by 1000000 to get milliseconds.
+        long ns = (endTime - startTime); // divide by 1000000 to get milliseconds.
         Grasscutter.getLogger().debug("Loading resources took " + ns + "ns == " + ns / 1000000 + "ms");
     }
 
     @SuppressWarnings("rawtypes")
-    protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
+    protected static void loadFromResource(
+            Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
         val simpleName = c.getSimpleName();
         if (doReload || !loadedResources.contains(simpleName)) {
             for (String name : type.name()) {
@@ -149,79 +163,95 @@ public class ResourceLoader {
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static <T> void loadFromResource(Class<T> c, Path filename, Int2ObjectMap map) throws Exception {
-        val results = switch (FileUtils.getFileExtension(filename)) {
-            case "json" -> JsonUtils.loadToList(filename, c);
-            case "tsj" -> TsvUtils.loadTsjToListSetField(filename, c);
-            case "tsv" -> TsvUtils.loadTsvToListSetField(filename, c);
-            default -> null;
-        };
+    protected static <T> void loadFromResource(Class<T> c, Path filename, Int2ObjectMap map)
+            throws Exception {
+        val results =
+                switch (FileUtils.getFileExtension(filename)) {
+                    case "json" -> JsonUtils.loadToList(filename, c);
+                    case "tsj" -> TsvUtils.loadTsjToListSetField(filename, c);
+                    case "tsv" -> TsvUtils.loadTsvToListSetField(filename, c);
+                    default -> null;
+                };
         if (results == null) return;
-        results.forEach(o -> {
-            GameResource res = (GameResource) o;
-            res.onLoad();
-            map.put(res.getId(), res);
-        });
+        results.forEach(
+                o -> {
+                    GameResource res = (GameResource) o;
+                    res.onLoad();
+                    map.put(res.getId(), res);
+                });
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
-        JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c).forEach(o -> {
-            GameResource res = (GameResource) o;
-            res.onLoad();
-            map.put(res.getId(), res);
-        });
+    protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map)
+            throws Exception {
+        JsonUtils.loadToList(getResourcePath("ExcelBinOutput/" + fileName), c)
+                .forEach(
+                        o -> {
+                            GameResource res = (GameResource) o;
+                            res.onLoad();
+                            map.put(res.getId(), res);
+                        });
     }
 
     private static void loadScenePoints() {
         val pattern = Pattern.compile("scene([0-9]+)_point\\.json");
         try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/Scene/Point"), "scene*_point.json").forEach(path -> {
-                val matcher = pattern.matcher(path.getFileName().toString());
-                if (!matcher.find()) return;
-                int sceneId = Integer.parseInt(matcher.group(1));
+            Files.newDirectoryStream(getResourcePath("BinOutput/Scene/Point"), "scene*_point.json")
+                    .forEach(
+                            path -> {
+                                val matcher = pattern.matcher(path.getFileName().toString());
+                                if (!matcher.find()) return;
+                                int sceneId = Integer.parseInt(matcher.group(1));
 
-                ScenePointConfig config;
-                try {
-                    config = JsonUtils.loadToClass(path, ScenePointConfig.class);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return;
-                }
+                                ScenePointConfig config;
+                                try {
+                                    config = JsonUtils.loadToClass(path, ScenePointConfig.class);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                    return;
+                                }
 
-                if (config.points == null) return;
+                                if (config.points == null) return;
 
-                val scenePoints = new IntArrayList();
-                config.points.forEach((pointId, pointData) -> {
-                    val scenePoint = new ScenePointEntry(sceneId, pointData);
-                    scenePoints.add(pointId);
-                    pointData.setId(pointId);
+                                val scenePoints = new IntArrayList();
+                                config.points.forEach(
+                                        (pointId, pointData) -> {
+                                            val scenePoint = new ScenePointEntry(sceneId, pointData);
+                                            scenePoints.add(pointId);
+                                            pointData.setId(pointId);
 
-                    GameData.getScenePointIdList().add(pointId);
-                    GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
-                    GameData.scenePointEntryMap.put((sceneId << 16) + pointId, scenePoint);
+                                            GameData.getScenePointIdList().add(pointId);
+                                            GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
+                                            GameData.scenePointEntryMap.put((sceneId << 16) + pointId, scenePoint);
 
-                    pointData.updateDailyDungeon();
-                });
-                GameData.getScenePointsPerScene().put(sceneId, scenePoints);
-            });
+                                            pointData.updateDailyDungeon();
+                                        });
+                                GameData.getScenePointsPerScene().put(sceneId, scenePoints);
+                            });
         } catch (IOException e) {
-            Grasscutter.getLogger().error("Scene point files cannot be found, you cannot use teleport waypoints!");
+            Grasscutter.getLogger()
+                    .error("Scene point files cannot be found, you cannot use teleport waypoints!");
         }
     }
 
     private static void cacheTalentLevelSets() {
         // All known levels, keyed by proudSkillGroupId
-        GameData.getProudSkillDataMap().forEach((id, data) ->
-            GameData.proudSkillGroupLevels
-                .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
-                .add(data.getLevel()));
+        GameData.getProudSkillDataMap()
+                .forEach(
+                        (id, data) ->
+                                GameData.proudSkillGroupLevels
+                                        .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
+                                        .add(data.getLevel()));
         // All known levels, keyed by avatarSkillId
-        GameData.getAvatarSkillDataMap().forEach((id, data) ->
-            GameData.avatarSkillLevels.put((int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
+        GameData.getAvatarSkillDataMap()
+                .forEach(
+                        (id, data) ->
+                                GameData.avatarSkillLevels.put(
+                                        (int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
         // Maximum known levels, keyed by proudSkillGroupId
-        GameData.proudSkillGroupLevels.forEach((id, set) ->
-            GameData.proudSkillGroupMaxLevels.put((int) id, set.intStream().max().getAsInt()));
+        GameData.proudSkillGroupLevels.forEach(
+                (id, set) ->
+                        GameData.proudSkillGroupMaxLevels.put((int) id, set.intStream().max().getAsInt()));
     }
 
     private static void loadAbilityEmbryos() {
@@ -229,7 +259,8 @@ public class ResourceLoader {
 
         // Read from cached file if exists
         try {
-            embryoList = JsonUtils.loadToList(getDataPath("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
+            embryoList =
+                    JsonUtils.loadToList(getDataPath("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
         } catch (Exception ignored) {
         }
 
@@ -239,25 +270,32 @@ public class ResourceLoader {
 
             val l = new ArrayList<AbilityEmbryoEntry>();
             try {
-                Files.newDirectoryStream(getResourcePath("BinOutput/Avatar/"), "ConfigAvatar_*.json").forEach(path -> {
-                    val matcher = pattern.matcher(path.getFileName().toString());
-                    if (!matcher.find()) return;
-                    String avatarName = matcher.group(1);
-                    AvatarConfig config;
+                Files.newDirectoryStream(getResourcePath("BinOutput/Avatar/"), "ConfigAvatar_*.json")
+                        .forEach(
+                                path -> {
+                                    val matcher = pattern.matcher(path.getFileName().toString());
+                                    if (!matcher.find()) return;
+                                    String avatarName = matcher.group(1);
+                                    AvatarConfig config;
 
-                    try {
-                        config = JsonUtils.loadToClass(path, AvatarConfig.class);
-                    } catch (Exception e) {
-                        Grasscutter.getLogger().error("Error loading player ability embryos:", e);
-                        return;
-                    }
+                                    try {
+                                        config = JsonUtils.loadToClass(path, AvatarConfig.class);
+                                    } catch (Exception e) {
+                                        Grasscutter.getLogger().error("Error loading player ability embryos:", e);
+                                        return;
+                                    }
 
-                    if (config.abilities == null) return;
+                                    if (config.abilities == null) return;
 
-                    int s = config.abilities.size();
-                    AbilityEmbryoEntry al = new AbilityEmbryoEntry(avatarName, config.abilities.stream().map(Object::toString).toArray(size -> new String[s]));
-                    l.add(al);
-                });
+                                    int s = config.abilities.size();
+                                    AbilityEmbryoEntry al =
+                                            new AbilityEmbryoEntry(
+                                                    avatarName,
+                                                    config.abilities.stream()
+                                                            .map(Object::toString)
+                                                            .toArray(size -> new String[s]));
+                                    l.add(al);
+                                });
             } catch (IOException e) {
                 Grasscutter.getLogger().error("Error loading ability embryos: no files found");
                 return;
@@ -266,7 +304,12 @@ public class ResourceLoader {
             embryoList = l;
 
             try {
-                GameDepot.setPlayerAbilities(JsonUtils.loadToMap(getResourcePath("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json"), String.class, AvatarConfig.class));
+                GameDepot.setPlayerAbilities(
+                        JsonUtils.loadToMap(
+                                getResourcePath(
+                                        "BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json"),
+                                String.class,
+                                AvatarConfig.class));
             } catch (IOException e) {
                 Grasscutter.getLogger().error("Error loading player abilities:", e);
             }
@@ -285,7 +328,10 @@ public class ResourceLoader {
     private static void loadAbilityModifiers() {
         // Load from BinOutput
         try (Stream<Path> paths = Files.walk(getResourcePath("BinOutput/Ability/Temp/"))) {
-            paths.filter(Files::isRegularFile).filter(path -> path.toString().endsWith(".json")).forEach(ResourceLoader::loadAbilityModifiers);
+            paths
+                    .filter(Files::isRegularFile)
+                    .filter(path -> path.toString().endsWith(".json"))
+                    .forEach(ResourceLoader::loadAbilityModifiers);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Error loading ability modifiers: ", e);
         }
@@ -296,9 +342,11 @@ public class ResourceLoader {
 
     private static void loadAbilityModifiers(Path path) {
         try {
-            JsonUtils.loadToList(path, AbilityConfigData.class).forEach(data -> loadAbilityData(data.Default));
+            JsonUtils.loadToList(path, AbilityConfigData.class)
+                    .forEach(data -> loadAbilityData(data.Default));
         } catch (IOException e) {
-            Grasscutter.getLogger().error("Error loading ability modifiers from path " + path.toString() + ": ", e);
+            Grasscutter.getLogger()
+                    .error("Error loading ability modifiers from path " + path.toString() + ": ", e);
         }
     }
 
@@ -310,20 +358,24 @@ public class ResourceLoader {
 
         String name = data.abilityName;
         AbilityModifierEntry modifierEntry = new AbilityModifierEntry(name);
-        modifiers.forEach((key, modifier) -> {
-            Stream.ofNullable(modifier.onAdded).flatMap(Stream::of)
-                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
-                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
-                .forEach(action -> modifierEntry.getOnAdded().add(action));
-            Stream.ofNullable(modifier.onThinkInterval).flatMap(Stream::of)
-                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
-                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
-                .forEach(action -> modifierEntry.getOnThinkInterval().add(action));
-            Stream.ofNullable(modifier.onRemoved).flatMap(Stream::of)
-                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
-                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
-                .forEach(action -> modifierEntry.getOnRemoved().add(action));
-        });
+        modifiers.forEach(
+                (key, modifier) -> {
+                    Stream.ofNullable(modifier.onAdded)
+                            .flatMap(Stream::of)
+                            // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                            .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                            .forEach(action -> modifierEntry.getOnAdded().add(action));
+                    Stream.ofNullable(modifier.onThinkInterval)
+                            .flatMap(Stream::of)
+                            // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                            .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                            .forEach(action -> modifierEntry.getOnThinkInterval().add(action));
+                    Stream.ofNullable(modifier.onRemoved)
+                            .flatMap(Stream::of)
+                            // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                            .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                            .forEach(action -> modifierEntry.getOnRemoved().add(action));
+                });
 
         GameData.getAbilityModifiers().put(name, modifierEntry);
     }
@@ -347,18 +399,19 @@ public class ResourceLoader {
         }
 
         HashMap<GridBlockId, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
-        //key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
+        // key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
         for (SpawnGroupEntry entry : spawnEntryMap) {
-            entry.getSpawns().forEach(
-                s -> {
-                    s.setGroup(entry);
-                    GridBlockId point = s.getBlockId();
-                    if (!areaSort.containsKey(point)) {
-                        areaSort.put(point, new ArrayList<>());
-                    }
-                    areaSort.get(point).add(s);
-                }
-            );
+            entry
+                    .getSpawns()
+                    .forEach(
+                            s -> {
+                                s.setGroup(entry);
+                                GridBlockId point = s.getBlockId();
+                                if (!areaSort.containsKey(point)) {
+                                    areaSort.put(point, new ArrayList<>());
+                                }
+                                areaSort.get(point).add(s);
+                            });
         }
         GameDepot.addSpawnListById(areaSort);
     }
@@ -378,16 +431,19 @@ public class ResourceLoader {
 
             for (String folderName : folderNames) {
                 try {
-                    Files.newDirectoryStream(getResourcePath(folderName), "*.json").forEach(path -> {
-                        try {
-                            JsonUtils.loadToMap(path, String.class, OpenConfigData[].class)
-                                .forEach((name, data) -> map.put(name, new OpenConfigEntry(name, data)));
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    });
+                    Files.newDirectoryStream(getResourcePath(folderName), "*.json")
+                            .forEach(
+                                    path -> {
+                                        try {
+                                            JsonUtils.loadToMap(path, String.class, OpenConfigData[].class)
+                                                    .forEach((name, data) -> map.put(name, new OpenConfigEntry(name, data)));
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    });
                 } catch (IOException e) {
-                    Grasscutter.getLogger().error("Error loading open config: no files found in " + folderName);
+                    Grasscutter.getLogger()
+                            .error("Error loading open config: no files found in " + folderName);
                     return;
                 }
             }
@@ -407,14 +463,16 @@ public class ResourceLoader {
 
     private static void loadQuests() {
         try {
-            Files.list(getResourcePath("BinOutput/Quest/")).forEach(path -> {
-                try {
-                    val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
-                    GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
-                } catch (IOException e) {
+            Files.list(getResourcePath("BinOutput/Quest/"))
+                    .forEach(
+                            path -> {
+                                try {
+                                    val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
+                                    GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
+                                } catch (IOException e) {
 
-                }
-            });
+                                }
+                            });
         } catch (IOException e) {
             Grasscutter.getLogger().error("Quest data missing");
             return;
@@ -424,11 +482,13 @@ public class ResourceLoader {
             val questEncryptionMap = GameData.getMainQuestEncryptionMap();
             String path = "QuestEncryptionKeys.json";
             try {
-                JsonUtils.loadToList(getResourcePath(path), QuestEncryptionKey.class).forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+                JsonUtils.loadToList(getResourcePath(path), QuestEncryptionKey.class)
+                        .forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             } catch (IOException | NullPointerException ignored) {
             }
             try {
-                DataLoader.loadList(path, QuestEncryptionKey.class).forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+                DataLoader.loadList(path, QuestEncryptionKey.class)
+                        .forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             } catch (IOException | NullPointerException ignored) {
             }
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
@@ -436,19 +496,26 @@ public class ResourceLoader {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }
 
-        Grasscutter.getLogger().debug("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
+        Grasscutter.getLogger()
+                .debug("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
     }
 
     public static void loadScriptSceneData() {
         try {
-            Files.list(getResourcePath("ScriptSceneData/")).forEach(path -> {
-                try {
-                    GameData.getScriptSceneDataMap().put(path.getFileName().toString(), JsonUtils.loadToClass(path, ScriptSceneData.class));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            Grasscutter.getLogger().debug("Loaded " + GameData.getScriptSceneDataMap().size() + " ScriptSceneDatas.");
+            Files.list(getResourcePath("ScriptSceneData/"))
+                    .forEach(
+                            path -> {
+                                try {
+                                    GameData.getScriptSceneDataMap()
+                                            .put(
+                                                    path.getFileName().toString(),
+                                                    JsonUtils.loadToClass(path, ScriptSceneData.class));
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            });
+            Grasscutter.getLogger()
+                    .debug("Loaded " + GameData.getScriptSceneDataMap().size() + " ScriptSceneDatas.");
         } catch (IOException e) {
             Grasscutter.getLogger().debug("ScriptSceneData folder missing or empty.");
         }
@@ -457,18 +524,25 @@ public class ResourceLoader {
     private static void loadHomeworldDefaultSaveData() {
         val pattern = Pattern.compile("scene([0-9]+)_home_config\\.json");
         try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/HomeworldDefaultSave"), "scene*_home_config.json").forEach(path -> {
-                val matcher = pattern.matcher(path.getFileName().toString());
-                if (!matcher.find()) return;
+            Files.newDirectoryStream(
+                            getResourcePath("BinOutput/HomeworldDefaultSave"), "scene*_home_config.json")
+                    .forEach(
+                            path -> {
+                                val matcher = pattern.matcher(path.getFileName().toString());
+                                if (!matcher.find()) return;
 
-                try {
-                    val sceneId = Integer.parseInt(matcher.group(1));
-                    val data = JsonUtils.loadToClass(path, HomeworldDefaultSaveData.class);
-                    GameData.getHomeworldDefaultSaveData().put(sceneId, data);
-                } catch (Exception ignored) {
-                }
-            });
-            Grasscutter.getLogger().debug("Loaded " + GameData.getHomeworldDefaultSaveData().size() + " HomeworldDefaultSaveDatas.");
+                                try {
+                                    val sceneId = Integer.parseInt(matcher.group(1));
+                                    val data = JsonUtils.loadToClass(path, HomeworldDefaultSaveData.class);
+                                    GameData.getHomeworldDefaultSaveData().put(sceneId, data);
+                                } catch (Exception ignored) {
+                                }
+                            });
+            Grasscutter.getLogger()
+                    .debug(
+                            "Loaded "
+                                    + GameData.getHomeworldDefaultSaveData().size()
+                                    + " HomeworldDefaultSaveDatas.");
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load HomeworldDefaultSave folder.");
         }
@@ -476,19 +550,24 @@ public class ResourceLoader {
 
     private static void loadNpcBornData() {
         try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/Scene/SceneNpcBorn/"), "*.json").forEach(path -> {
-                try {
-                    val data = JsonUtils.loadToClass(path, SceneNpcBornData.class);
-                    if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
-                        return;
-                    }
+            Files.newDirectoryStream(getResourcePath("BinOutput/Scene/SceneNpcBorn/"), "*.json")
+                    .forEach(
+                            path -> {
+                                try {
+                                    val data = JsonUtils.loadToClass(path, SceneNpcBornData.class);
+                                    if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
+                                        return;
+                                    }
 
-                    data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
-                    GameData.getSceneNpcBornData().put(data.getSceneId(), data);
-                } catch (IOException ignored) {
-                }
-            });
-            Grasscutter.getLogger().debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+                                    data.setIndex(
+                                            SceneIndexManager.buildIndex(
+                                                    3, data.getBornPosList(), item -> item.getPos().toPoint()));
+                                    GameData.getSceneNpcBornData().put(data.getSceneId(), data);
+                                } catch (IOException ignored) {
+                                }
+                            });
+            Grasscutter.getLogger()
+                    .debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load SceneNpcBorn folder.");
         }
@@ -496,15 +575,20 @@ public class ResourceLoader {
 
     private static void loadGadgetConfigData() {
         try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/Gadget/"), "*.json").forEach(path -> {
-                try {
-                    GameData.getGadgetConfigData().putAll(JsonUtils.loadToMap(path, String.class, ConfigGadget.class));
-                } catch (Exception e) {
-                    Grasscutter.getLogger().error("failed to load ConfigGadget entries for " + path.toString(), e);
-                }
-            });
+            Files.newDirectoryStream(getResourcePath("BinOutput/Gadget/"), "*.json")
+                    .forEach(
+                            path -> {
+                                try {
+                                    GameData.getGadgetConfigData()
+                                            .putAll(JsonUtils.loadToMap(path, String.class, ConfigGadget.class));
+                                } catch (Exception e) {
+                                    Grasscutter.getLogger()
+                                            .error("failed to load ConfigGadget entries for " + path.toString(), e);
+                                }
+                            });
 
-            Grasscutter.getLogger().debug("Loaded {} ConfigGadget entries.", GameData.getGadgetConfigData().size());
+            Grasscutter.getLogger()
+                    .debug("Loaded {} ConfigGadget entries.", GameData.getGadgetConfigData().size());
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load ConfigGadget folder.");
         }
@@ -525,7 +609,9 @@ public class ResourceLoader {
     }
 
     public static class AvatarConfig {
-        @SerializedName(value = "abilities", alternate = {"targetAbilities"})
+        @SerializedName(
+                value = "abilities",
+                alternate = {"targetAbilities"})
         public ArrayList<AvatarConfigAbility> abilities;
     }
 
@@ -547,17 +633,23 @@ public class ResourceLoader {
         public String $type;
         public String abilityName;
 
-        @SerializedName(value = "talentIndex", alternate = {"OJOFFKLNAHN"})
+        @SerializedName(
+                value = "talentIndex",
+                alternate = {"OJOFFKLNAHN"})
         public int talentIndex;
 
-        @SerializedName(value = "skillID", alternate = {"overtime"})
+        @SerializedName(
+                value = "skillID",
+                alternate = {"overtime"})
         public int skillID;
 
-        @SerializedName(value = "pointDelta", alternate = {"IGEBKIHPOIF"})
+        @SerializedName(
+                value = "pointDelta",
+                alternate = {"IGEBKIHPOIF"})
         public int pointDelta;
     }
 
-    public class ScenePointConfig {  // Sadly this doesn't work as a local class in loadScenePoints()
+    public class ScenePointConfig { // Sadly this doesn't work as a local class in loadScenePoints()
         public Map<Integer, PointData> points;
     }
 }

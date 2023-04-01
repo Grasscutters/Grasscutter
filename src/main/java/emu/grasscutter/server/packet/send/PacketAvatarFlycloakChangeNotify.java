@@ -10,10 +10,11 @@ public class PacketAvatarFlycloakChangeNotify extends BasePacket {
     public PacketAvatarFlycloakChangeNotify(Avatar avatar) {
         super(PacketOpcodes.AvatarFlycloakChangeNotify);
 
-        AvatarFlycloakChangeNotify proto = AvatarFlycloakChangeNotify.newBuilder()
-            .setAvatarGuid(avatar.getGuid())
-            .setFlycloakId(avatar.getFlyCloak())
-            .build();
+        AvatarFlycloakChangeNotify proto =
+                AvatarFlycloakChangeNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setFlycloakId(avatar.getFlyCloak())
+                        .build();
 
         this.setData(proto);
     }

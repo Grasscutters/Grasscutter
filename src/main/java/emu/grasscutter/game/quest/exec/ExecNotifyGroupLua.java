@@ -21,12 +21,12 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
 
         if (quest.getOwner().getScene().getId() == sceneId) {
             scriptManager.callEvent(
-                quest.getState() == QuestState.QUEST_STATE_FINISHED ?
-                    EventType.EVENT_QUEST_FINISH : EventType.EVENT_QUEST_START
-                , new ScriptArgs());
+                    quest.getState() == QuestState.QUEST_STATE_FINISHED
+                            ? EventType.EVENT_QUEST_FINISH
+                            : EventType.EVENT_QUEST_START,
+                    new ScriptArgs());
         }
 
         return true;
     }
-
 }

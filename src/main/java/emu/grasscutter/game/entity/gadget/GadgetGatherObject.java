@@ -45,16 +45,20 @@ public class GadgetGatherObject extends GadgetContent {
         GameItem item = new GameItem(itemData, 1);
         player.getInventory().addItem(item, ActionReason.Gather);
 
-        getGadget().getScene().broadcastPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_GATHER));
+        getGadget()
+                .getScene()
+                .broadcastPacket(
+                        new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_GATHER));
 
         return true;
     }
 
     public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-        GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
-            .setItemId(this.getItemId())
-            .setIsForbidGuest(this.isForbidGuest())
-            .build();
+        GatherGadgetInfo gatherGadgetInfo =
+                GatherGadgetInfo.newBuilder()
+                        .setItemId(this.getItemId())
+                        .setIsForbidGuest(this.isForbidGuest())
+                        .build();
 
         gadgetInfo.setGatherGadget(gatherGadgetInfo);
     }
@@ -64,13 +68,14 @@ public class GadgetGatherObject extends GadgetContent {
         int times = Utils.randomRange(1, 2);
 
         for (int i = 0; i < times; i++) {
-            EntityItem item = new EntityItem(
-                scene,
-                player,
-                GameData.getItemDataMap().get(itemId),
-                getGadget().getPosition().nearby2d(1f).addY(2f),
-                1,
-                true);
+            EntityItem item =
+                    new EntityItem(
+                            scene,
+                            player,
+                            GameData.getItemDataMap().get(itemId),
+                            getGadget().getPosition().nearby2d(1f).addY(2f),
+                            1,
+                            true);
 
             scene.addEntity(item);
         }

@@ -9,7 +9,6 @@ import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopO
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
-
 import java.util.Arrays;
 
 public class GadgetWorktop extends GadgetContent {
@@ -47,9 +46,8 @@ public class GadgetWorktop extends GadgetContent {
             return;
         }
 
-        WorktopInfo worktop = WorktopInfo.newBuilder()
-            .addAllOptionList(this.getWorktopOptions())
-            .build();
+        WorktopInfo worktop =
+                WorktopInfo.newBuilder().addAllOptionList(this.getWorktopOptions()).build();
 
         gadgetInfo.setWorktop(worktop);
     }
@@ -64,5 +62,4 @@ public class GadgetWorktop extends GadgetContent {
         }
         return false;
     }
-
 }

@@ -9,10 +9,11 @@ public class PacketDelBackupAvatarTeamRsp extends BasePacket {
     public PacketDelBackupAvatarTeamRsp(Retcode retcode, int id) {
         super(PacketOpcodes.DelBackupAvatarTeamRsp);
 
-        DelBackupAvatarTeamRsp proto = DelBackupAvatarTeamRsp.newBuilder()
-            .setRetcode(retcode.getNumber())
-            .setBackupAvatarTeamId(id)
-            .build();
+        DelBackupAvatarTeamRsp proto =
+                DelBackupAvatarTeamRsp.newBuilder()
+                        .setRetcode(retcode.getNumber())
+                        .setBackupAvatarTeamId(id)
+                        .build();
 
         this.setData(proto);
     }

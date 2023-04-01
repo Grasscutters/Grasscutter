@@ -10,9 +10,7 @@ public class PacketAvatarPromoteRsp extends BasePacket {
     public PacketAvatarPromoteRsp(Avatar avatar) {
         super(PacketOpcodes.AvatarPromoteRsp);
 
-        AvatarPromoteRsp proto = AvatarPromoteRsp.newBuilder()
-            .setGuid(avatar.getGuid())
-            .build();
+        AvatarPromoteRsp proto = AvatarPromoteRsp.newBuilder().setGuid(avatar.getGuid()).build();
 
         this.setData(proto);
     }

@@ -15,5 +15,4 @@ public class HandlerGetWidgetSlotReq extends PacketHandler {
         Player player = session.getPlayer();
         session.send(new PacketGetWidgetSlotRsp(player));
     }
-
 }

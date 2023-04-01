@@ -12,8 +12,10 @@ public class PacketAvatarSkillInfoNotify extends BasePacket {
 
         var proto = AvatarSkillInfoNotify.newBuilder().setGuid(avatarGuid);
 
-        skillExtraChargeMap.forEach((skillId, count) ->
-            proto.putSkillMap(skillId, AvatarSkillInfo.newBuilder().setMaxChargeCount(count).build()));
+        skillExtraChargeMap.forEach(
+                (skillId, count) ->
+                        proto.putSkillMap(
+                                skillId, AvatarSkillInfo.newBuilder().setMaxChargeCount(count).build()));
 
         this.setData(proto);
     }

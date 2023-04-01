@@ -22,7 +22,11 @@ public class HandlerHomeSceneJumpReq extends PacketHandler {
         var homeScene = home.getHomeSceneItem(realmId);
         home.save();
 
-        Scene scene = session.getPlayer().getWorld().getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
+        Scene scene =
+                session
+                        .getPlayer()
+                        .getWorld()
+                        .getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
         Position pos = scene.getScriptManager().getConfig().born_pos;
         Position rot = home.getSceneMap().get(scene.getId()).getBornRot();
 
@@ -34,13 +38,14 @@ public class HandlerHomeSceneJumpReq extends PacketHandler {
             pos = home.getSceneMap().get(realmId).getBornPos();
         }
 
-        session.getPlayer().getWorld().transferPlayerToScene(
-            session.getPlayer(),
-            req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
-            pos
-        );
+        session
+                .getPlayer()
+                .getWorld()
+                .transferPlayerToScene(
+                        session.getPlayer(),
+                        req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
+                        pos);
 
         session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
     }
-
 }

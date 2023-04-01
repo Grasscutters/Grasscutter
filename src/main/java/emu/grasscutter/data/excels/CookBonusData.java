@@ -4,7 +4,9 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 
-@ResourceType(name = {"CookBonusExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
+@ResourceType(
+        name = {"CookBonusExcelConfigData.json"},
+        loadPriority = LoadPriority.LOW)
 public class CookBonusData extends GameResource {
     private int avatarId;
     private int recipeId;
@@ -37,6 +39,5 @@ public class CookBonusData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-    }
+    public void onLoad() {}
 }

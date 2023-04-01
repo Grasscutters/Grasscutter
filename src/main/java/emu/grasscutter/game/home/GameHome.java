@@ -8,29 +8,27 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(builderMethodName = "of")
 public class GameHome {
-    @Id
-    String id;
+    @Id String id;
 
     @Indexed(options = @IndexOptions(unique = true))
     long ownerUid;
-    @Transient
-    Player player;
+
+    @Transient Player player;
 
     int level;
     int exp;
@@ -53,11 +51,11 @@ public class GameHome {
 
     public static GameHome create(Integer uid) {
         return GameHome.of()
-            .ownerUid(uid)
-            .level(1)
-            .sceneMap(new ConcurrentHashMap<>())
-            .unlockedHomeBgmList(new HashSet<>())
-            .build();
+                .ownerUid(uid)
+                .level(1)
+                .sceneMap(new ConcurrentHashMap<>())
+                .unlockedHomeBgmList(new HashSet<>())
+                .build();
     }
 
     public void save() {
@@ -65,22 +63,24 @@ public class GameHome {
     }
 
     public HomeSceneItem getHomeSceneItem(int sceneId) {
-        return sceneMap.computeIfAbsent(sceneId, e -> {
-            var defaultItem = GameData.getHomeworldDefaultSaveData().get(sceneId);
-            if (defaultItem != null) {
-                Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
-                return HomeSceneItem.parseFrom(defaultItem, sceneId);
-            } else {
-                // Realm res missing bricks account, use default realm data to allow main house
-                defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
-                return HomeSceneItem.parseFrom(defaultItem, sceneId);
-            }
-        });
+        return sceneMap.computeIfAbsent(
+                sceneId,
+                e -> {
+                    var defaultItem = GameData.getHomeworldDefaultSaveData().get(sceneId);
+                    if (defaultItem != null) {
+                        Grasscutter.getLogger()
+                                .info("Set player {} home {} to initial setting", ownerUid, sceneId);
+                        return HomeSceneItem.parseFrom(defaultItem, sceneId);
+                    } else {
+                        // Realm res missing bricks account, use default realm data to allow main house
+                        defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
+                        return HomeSceneItem.parseFrom(defaultItem, sceneId);
+                    }
+                });
     }
 
     public void onOwnerLogin(Player player) {
-        if (this.player == null)
-            this.player = player;
+        if (this.player == null) this.player = player;
         player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
@@ -130,9 +130,9 @@ public class GameHome {
 
     private Set<Integer> getDefaultUnlockedHomeBgmIds() {
         return GameData.getHomeWorldBgmDataMap().int2ObjectEntrySet().stream()
-            .filter(e -> e.getValue().isDefaultUnlock())
-            .map(Int2ObjectMap.Entry::getIntKey)
-            .collect(Collectors.toUnmodifiableSet());
+                .filter(e -> e.getValue().isDefaultUnlock())
+                .map(Int2ObjectMap.Entry::getIntKey)
+                .collect(Collectors.toUnmodifiableSet());
     }
 
     // Same as Player.java addExpDirectly
@@ -170,7 +170,8 @@ public class GameHome {
         owedRewards = 1 + ((clientTime - nextUpdateTime) / 3600);
 
         // Ensure next update is at top of the hour
-        nextUpdateTime = (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
+        nextUpdateTime =
+                (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
 
         // Get resources
         var hourlyResources = getComfortResources(player);
@@ -192,27 +193,43 @@ public class GameHome {
         List<Integer> invitedAvatars = new ArrayList<>();
 
         // Outdoors avatars
-        sceneMap.get(player.getCurrentRealmId() + 2000).getBlockItems().forEach((i, e) -> {
-            e.getDeployNPCList().forEach(id -> {
-                invitedAvatars.add(id.getAvatarId());
-            });
-        });
+        sceneMap
+                .get(player.getCurrentRealmId() + 2000)
+                .getBlockItems()
+                .forEach(
+                        (i, e) -> {
+                            e.getDeployNPCList()
+                                    .forEach(
+                                            id -> {
+                                                invitedAvatars.add(id.getAvatarId());
+                                            });
+                        });
 
         // Check as realm 5 inside is not in defaults and will be null
         if (Objects.nonNull(sceneMap.get(player.getCurrentRealmId() + 2200))) {
             // Indoors avatars
-            sceneMap.get(player.getCurrentRealmId() + 2200).getBlockItems().forEach((i, e) -> {
-                e.getDeployNPCList().forEach(id -> {
-                    invitedAvatars.add(id.getAvatarId());
-                });
-            });
+            sceneMap
+                    .get(player.getCurrentRealmId() + 2200)
+                    .getBlockItems()
+                    .forEach(
+                            (i, e) -> {
+                                e.getDeployNPCList()
+                                        .forEach(
+                                                id -> {
+                                                    invitedAvatars.add(id.getAvatarId());
+                                                });
+                            });
         }
 
         // Add exp to all avatars
-        invitedAvatars.forEach(id -> {
-            var avatar = player.getAvatars().getAvatarById(id);
-            player.getServer().getInventorySystem().upgradeAvatarFetterLevel(player, avatar, storedFetterExp);
-        });
+        invitedAvatars.forEach(
+                id -> {
+                    var avatar = player.getAvatars().getAvatarById(id);
+                    player
+                            .getServer()
+                            .getInventorySystem()
+                            .upgradeAvatarFetterLevel(player, avatar, storedFetterExp);
+                });
 
         storedFetterExp = 0;
         save();
@@ -235,7 +252,8 @@ public class GameHome {
         // Update stored resources
         storeResources(player, 0, 0);
         lastUpdatedTime = clientTime;
-        nextUpdateTime = (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
+        nextUpdateTime =
+                (int) ZonedDateTime.now().plusHours(1).truncatedTo(ChronoUnit.HOURS).toEpochSecond();
         save();
 
         // Send packet
@@ -320,8 +338,7 @@ public class GameHome {
             return List.of(12, 3);
         } else if (highestComfort >= 2000) {
             return List.of(8, 2);
-        } else
-            return List.of(4, 2);
+        } else return List.of(4, 2);
     }
 
     private int getExpRequired(int level) {

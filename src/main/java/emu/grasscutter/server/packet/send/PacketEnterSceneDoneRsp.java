@@ -10,9 +10,8 @@ public class PacketEnterSceneDoneRsp extends BasePacket {
     public PacketEnterSceneDoneRsp(Player player) {
         super(PacketOpcodes.EnterSceneDoneRsp);
 
-        EnterSceneDoneRsp p = EnterSceneDoneRsp.newBuilder()
-            .setEnterSceneToken(player.getEnterSceneToken())
-            .build();
+        EnterSceneDoneRsp p =
+                EnterSceneDoneRsp.newBuilder().setEnterSceneToken(player.getEnterSceneToken()).build();
 
         this.setData(p);
     }

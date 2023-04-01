@@ -5,17 +5,16 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.Map;
 
 public class PacketForgeGetQueueDataRsp extends BasePacket {
 
-    public PacketForgeGetQueueDataRsp(Retcode retcode, int numQueues, Map<Integer, ForgeQueueData> queueData) {
+    public PacketForgeGetQueueDataRsp(
+            Retcode retcode, int numQueues, Map<Integer, ForgeQueueData> queueData) {
         super(PacketOpcodes.ForgeGetQueueDataRsp);
 
-        ForgeGetQueueDataRsp.Builder builder = ForgeGetQueueDataRsp.newBuilder()
-            .setRetcode(retcode.getNumber())
-            .setMaxQueueNum(numQueues);
+        ForgeGetQueueDataRsp.Builder builder =
+                ForgeGetQueueDataRsp.newBuilder().setRetcode(retcode.getNumber()).setMaxQueueNum(numQueues);
 
         for (int queueId : queueData.keySet()) {
             var data = queueData.get(queueId);

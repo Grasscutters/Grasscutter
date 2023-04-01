@@ -9,10 +9,11 @@ public class PacketPlayerApplyEnterMpResultRsp extends BasePacket {
     public PacketPlayerApplyEnterMpResultRsp(int applyUid, boolean isAgreed) {
         super(PacketOpcodes.PlayerApplyEnterMpResultRsp);
 
-        PlayerApplyEnterMpResultRsp proto = PlayerApplyEnterMpResultRsp.newBuilder()
-            .setApplyUid(applyUid)
-            .setIsAgreed(isAgreed)
-            .build();
+        PlayerApplyEnterMpResultRsp proto =
+                PlayerApplyEnterMpResultRsp.newBuilder()
+                        .setApplyUid(applyUid)
+                        .setIsAgreed(isAgreed)
+                        .build();
 
         this.setData(proto);
     }

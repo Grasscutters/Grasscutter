@@ -12,6 +12,7 @@ import lombok.experimental.FieldDefaults;
 public class MusicGameBasicData extends GameResource {
     @Getter(onMethod_ = @Override)
     int id;
+
     int musicID;
     int musicLevel;
 }

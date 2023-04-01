@@ -15,5 +15,4 @@ public class HandlerChangeMpTeamAvatarReq extends PacketHandler {
 
         session.getPlayer().getTeamManager().setupMpTeam(req.getAvatarGuidListList());
     }
-
 }

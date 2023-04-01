@@ -8,7 +8,8 @@ public class PacketSetPlayerPropRsp extends BasePacket {
 
     public PacketSetPlayerPropRsp(int retCode) {
         super(PacketOpcodes.SetPlayerPropRsp);
-        SetPlayerPropRspOuterClass.SetPlayerPropRsp.Builder proto = SetPlayerPropRspOuterClass.SetPlayerPropRsp.newBuilder();
+        SetPlayerPropRspOuterClass.SetPlayerPropRsp.Builder proto =
+                SetPlayerPropRspOuterClass.SetPlayerPropRsp.newBuilder();
         if (retCode != 0) {
             proto.setRetcode(retCode);
         }

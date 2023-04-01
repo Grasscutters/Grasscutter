@@ -14,5 +14,4 @@ public class HandlerGetShopmallDataReq extends PacketHandler {
         // TODO add the correct shops
         session.send(new PacketGetShopmallDataRsp());
     }
-
 }

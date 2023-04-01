@@ -11,22 +11,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class PointData {
-    @Getter
-    @Setter
-    private int id;
+    @Getter @Setter private int id;
     private String $type;
-    @Getter
-    private Position tranPos;
+    @Getter private Position tranPos;
 
-    @SerializedName(value = "dungeonIds", alternate = {"JHHFPGJNMIN"})
+    @SerializedName(
+            value = "dungeonIds",
+            alternate = {"JHHFPGJNMIN"})
     @Getter
     private int[] dungeonIds;
 
-    @SerializedName(value = "dungeonRandomList", alternate = {"OIBKFJNBLHO"})
+    @SerializedName(
+            value = "dungeonRandomList",
+            alternate = {"OIBKFJNBLHO"})
     @Getter
     private int[] dungeonRandomList;
 
-    @SerializedName(value = "tranSceneId", alternate = {"JHBICGBAPIH"})
+    @SerializedName(
+            value = "tranSceneId",
+            alternate = {"JHBICGBAPIH"})
     @Getter
     @Setter
     private int tranSceneId;

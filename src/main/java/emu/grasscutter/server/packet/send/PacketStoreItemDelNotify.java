@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.StoreItemDelNotifyOuterClass.StoreItemDelNotify;
 import emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType;
-
 import java.util.Collection;
 
 public class PacketStoreItemDelNotify extends BasePacket {
@@ -17,9 +16,10 @@ public class PacketStoreItemDelNotify extends BasePacket {
     public PacketStoreItemDelNotify(GameItem item) {
         this();
 
-        StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()
-            .setStoreType(StoreType.STORE_TYPE_PACK)
-            .addGuidList(item.getGuid());
+        StoreItemDelNotify.Builder proto =
+                StoreItemDelNotify.newBuilder()
+                        .setStoreType(StoreType.STORE_TYPE_PACK)
+                        .addGuidList(item.getGuid());
 
         this.setData(proto);
     }
@@ -27,8 +27,8 @@ public class PacketStoreItemDelNotify extends BasePacket {
     public PacketStoreItemDelNotify(Collection<GameItem> items) {
         this();
 
-        StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()
-            .setStoreType(StoreType.STORE_TYPE_PACK);
+        StoreItemDelNotify.Builder proto =
+                StoreItemDelNotify.newBuilder().setStoreType(StoreType.STORE_TYPE_PACK);
 
         items.stream().forEach(item -> proto.addGuidList(item.getGuid()));
 

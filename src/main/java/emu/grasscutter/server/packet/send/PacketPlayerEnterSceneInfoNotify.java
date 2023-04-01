@@ -19,35 +19,36 @@ public class PacketPlayerEnterSceneInfoNotify extends BasePacket {
 
         AbilitySyncStateInfo empty = AbilitySyncStateInfo.newBuilder().build();
 
-        PlayerEnterSceneInfoNotify.Builder proto = PlayerEnterSceneInfoNotify.newBuilder()
-            .setCurAvatarEntityId(player.getTeamManager().getCurrentAvatarEntity().getId())
-            .setEnterSceneToken(player.getEnterSceneToken());
+        PlayerEnterSceneInfoNotify.Builder proto =
+                PlayerEnterSceneInfoNotify.newBuilder()
+                        .setCurAvatarEntityId(player.getTeamManager().getCurrentAvatarEntity().getId())
+                        .setEnterSceneToken(player.getEnterSceneToken());
 
         proto.setTeamEnterInfo(
-            TeamEnterSceneInfo.newBuilder()
-                .setTeamEntityId(player.getTeamManager().getEntityId()) // 150995833
-                .setTeamAbilityInfo(empty)
-                .setAbilityControlBlock(AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder().build())
-        );
+                TeamEnterSceneInfo.newBuilder()
+                        .setTeamEntityId(player.getTeamManager().getEntityId()) // 150995833
+                        .setTeamAbilityInfo(empty)
+                        .setAbilityControlBlock(
+                                AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder().build()));
         proto.setMpLevelEntityInfo(
-            MPLevelEntityInfo.newBuilder()
-                .setEntityId(player.getWorld().getLevelEntityId()) // 184550274
-                .setAuthorityPeerId(player.getWorld().getHostPeerId())
-                .setAbilityInfo(empty)
-        );
+                MPLevelEntityInfo.newBuilder()
+                        .setEntityId(player.getWorld().getLevelEntityId()) // 184550274
+                        .setAuthorityPeerId(player.getWorld().getHostPeerId())
+                        .setAbilityInfo(empty));
 
         for (EntityAvatar avatarEntity : player.getTeamManager().getActiveTeam()) {
             GameItem weapon = avatarEntity.getAvatar().getWeapon();
             long weaponGuid = weapon != null ? weapon.getGuid() : 0;
 
-            AvatarEnterSceneInfo avatarInfo = AvatarEnterSceneInfo.newBuilder()
-                .setAvatarGuid(avatarEntity.getAvatar().getGuid())
-                .setAvatarEntityId(avatarEntity.getId())
-                .setWeaponGuid(weaponGuid)
-                .setWeaponEntityId(avatarEntity.getWeaponEntityId())
-                .setAvatarAbilityInfo(empty)
-                .setWeaponAbilityInfo(empty)
-                .build();
+            AvatarEnterSceneInfo avatarInfo =
+                    AvatarEnterSceneInfo.newBuilder()
+                            .setAvatarGuid(avatarEntity.getAvatar().getGuid())
+                            .setAvatarEntityId(avatarEntity.getId())
+                            .setWeaponGuid(weaponGuid)
+                            .setWeaponEntityId(avatarEntity.getWeaponEntityId())
+                            .setAvatarAbilityInfo(empty)
+                            .setWeaponAbilityInfo(empty)
+                            .build();
 
             proto.addAvatarEnterInfo(avatarInfo);
         }

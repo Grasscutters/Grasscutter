@@ -35,16 +35,20 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
         session.getPlayer().getScene().loadNpcForPlayerEnter(session.getPlayer());
 
         // notify client to load the npc for quest
-        var questGroupSuites = session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
+        var questGroupSuites =
+                session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
 
         session.getPlayer().getScene().loadGroupForQuest(questGroupSuites);
-        Grasscutter.getLogger().debug("Loaded Scene {} Quest(s) Groupsuite(s): {}", session.getPlayer().getSceneId(), questGroupSuites);
+        Grasscutter.getLogger()
+                .debug(
+                        "Loaded Scene {} Quest(s) Groupsuite(s): {}",
+                        session.getPlayer().getSceneId(),
+                        questGroupSuites);
         session.send(new PacketGroupSuiteNotify(questGroupSuites));
 
         // Reset timer for sending player locations
         session.getPlayer().resetSendPlayerLocTime();
-        //Rsp
+        // Rsp
         session.send(new PacketEnterSceneDoneRsp(session.getPlayer()));
     }
-
 }

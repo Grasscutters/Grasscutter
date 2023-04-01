@@ -3,7 +3,6 @@ package emu.grasscutter.scripts.service;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.listener.ScriptMonsterListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +35,4 @@ public class ScriptMonsterSpawnService {
     public void onMonsterDead(EntityMonster entityMonster) {
         onMonsterDeadListener.forEach(l -> l.onNotify(entityMonster));
     }
-
 }

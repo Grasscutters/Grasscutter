@@ -7,9 +7,7 @@ public class ScriptArgs {
     public int source_eid; // Source entity
     public int target_eid;
 
-    public ScriptArgs() {
-
-    }
+    public ScriptArgs() {}
 
     public ScriptArgs(int param1) {
         this.param1 = param1;

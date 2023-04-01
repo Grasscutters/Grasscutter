@@ -12,10 +12,11 @@ public class PacketSetEquipLockStateRsp extends BasePacket {
 
         this.buildHeader(0);
 
-        SetEquipLockStateRsp proto = SetEquipLockStateRsp.newBuilder()
-            .setTargetEquipGuid(equip.getGuid())
-            .setIsLocked(equip.isLocked())
-            .build();
+        SetEquipLockStateRsp proto =
+                SetEquipLockStateRsp.newBuilder()
+                        .setTargetEquipGuid(equip.getGuid())
+                        .setIsLocked(equip.isLocked())
+                        .build();
 
         this.setData(proto);
     }

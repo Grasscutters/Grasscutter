@@ -29,24 +29,25 @@ import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.Getter;
 
 public class EntityItem extends EntityBaseGadget {
-    @Getter
-    private final GameItem item;
-    @Getter
-    private final long guid;
-    @Getter
-    private final boolean share;
+    @Getter private final GameItem item;
+    @Getter private final long guid;
+    @Getter private final boolean share;
 
     public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
         this(scene, player, itemData, pos, count, true);
     }
 
-    // In official game, some drop items are shared to all players, and some other items are independent to all players
-    // For example, if you killed a monster in MP mode, all players could get drops but rarity and number of them are different
+    // In official game, some drop items are shared to all players, and some other items are
+    // independent to all players
+    // For example, if you killed a monster in MP mode, all players could get drops but rarity and
+    // number of them are different
     // but if you broke regional mine, when someone picked up the drop then it disappeared
-    public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
+    public EntityItem(
+            Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
         super(scene, pos, null);
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
-        this.guid = player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
+        this.guid =
+                player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
         this.item = new GameItem(itemData, count);
         this.share = share;
     }
@@ -88,41 +89,52 @@ public class EntityItem extends EntityBaseGadget {
             if (!this.isShare()) { // not shared drop
                 player.sendPacket(new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
             } else {
-                this.getScene().broadcastPacket(new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
+                this.getScene()
+                        .broadcastPacket(
+                                new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
             }
         }
     }
 
     @Override
     public SceneEntityInfo toProto() {
-        EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
-            .setBornPos(Vector.newBuilder())
-            .build();
+        EntityAuthorityInfo authority =
+                EntityAuthorityInfo.newBuilder()
+                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+                        .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+                        .setAiInfo(
+                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
+                        .setBornPos(Vector.newBuilder())
+                        .build();
 
-        SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-            .setEntityId(getId())
-            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-            .setEntityClientData(EntityClientData.newBuilder())
-            .setEntityAuthorityInfo(authority)
-            .setLifeState(1);
+        SceneEntityInfo.Builder entityInfo =
+                SceneEntityInfo.newBuilder()
+                        .setEntityId(getId())
+                        .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+                        .setMotionInfo(
+                                MotionInfo.newBuilder()
+                                        .setPos(getPosition().toProto())
+                                        .setRot(getRotation().toProto())
+                                        .setSpeed(Vector.newBuilder()))
+                        .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+                        .setEntityClientData(EntityClientData.newBuilder())
+                        .setEntityAuthorityInfo(authority)
+                        .setLifeState(1);
 
-        PropPair pair = PropPair.newBuilder()
-            .setType(PlayerProperty.PROP_LEVEL.getId())
-            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-            .build();
+        PropPair pair =
+                PropPair.newBuilder()
+                        .setType(PlayerProperty.PROP_LEVEL.getId())
+                        .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+                        .build();
         entityInfo.addPropList(pair);
 
-        SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-            .setGadgetId(this.getItemData().getGadgetId())
-            .setTrifleItem(this.getItem().toProto())
-            .setBornType(GadgetBornType.GADGET_BORN_TYPE_IN_AIR)
-            .setAuthorityPeerId(this.getWorld().getHostPeerId())
-            .setIsEnableInteract(true);
+        SceneGadgetInfo.Builder gadgetInfo =
+                SceneGadgetInfo.newBuilder()
+                        .setGadgetId(this.getItemData().getGadgetId())
+                        .setTrifleItem(this.getItem().toProto())
+                        .setBornType(GadgetBornType.GADGET_BORN_TYPE_IN_AIR)
+                        .setAuthorityPeerId(this.getWorld().getHostPeerId())
+                        .setIsEnableInteract(true);
 
         entityInfo.setGadget(gadgetInfo);
 

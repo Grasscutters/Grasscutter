@@ -1,29 +1,23 @@
 package emu.grasscutter.server.scheduler;
 
+import javax.annotation.Nullable;
 import lombok.Getter;
 
-import javax.annotation.Nullable;
-
-/**
- * A server task that should be run asynchronously.
- */
+/** A server task that should be run asynchronously. */
 public final class AsyncServerTask implements Runnable {
     /* The runnable to run. */
     private final Runnable task;
     /* This ID is assigned by the scheduler. */
-    @Getter
-    private final int taskId;
+    @Getter private final int taskId;
     /* The result callback to run. */
-    @Nullable
-    private final Runnable callback;
+    @Nullable private final Runnable callback;
 
     /* Has the task already been started? */
     private boolean started = false;
     /* Has the task finished execution? */
     private boolean finished = false;
     /* The result produced in the async task. */
-    @Nullable
-    private Object result = null;
+    @Nullable private Object result = null;
 
     /**
      * For tasks without a callback.
@@ -37,7 +31,7 @@ public final class AsyncServerTask implements Runnable {
     /**
      * For tasks with a callback.
      *
-     * @param task     The task to run.
+     * @param task The task to run.
      * @param callback The task to run after the task is complete.
      */
     public AsyncServerTask(Runnable task, @Nullable Runnable callback, int taskId) {
@@ -64,9 +58,7 @@ public final class AsyncServerTask implements Runnable {
         return this.finished;
     }
 
-    /**
-     * Runs the task.
-     */
+    /** Runs the task. */
     @Override
     public void run() {
         // Declare the task as started.
@@ -79,13 +71,10 @@ public final class AsyncServerTask implements Runnable {
         this.finished = true;
     }
 
-    /**
-     * Runs the callback.
-     */
+    /** Runs the callback. */
     public void complete() {
         // Run the callback.
-        if (this.callback != null)
-            this.callback.run();
+        if (this.callback != null) this.callback.run();
     }
 
     /**
@@ -93,8 +82,7 @@ public final class AsyncServerTask implements Runnable {
      *
      * @return The result, or null if it has not been set.
      */
-    @Nullable
-    public Object getResult() {
+    @Nullable public Object getResult() {
         return this.result;
     }
 

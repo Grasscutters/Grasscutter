@@ -12,10 +12,11 @@ public class HandlerHomeUpdateArrangementInfoReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req = HomeUpdateArrangementInfoReqOuterClass.HomeUpdateArrangementInfoReq.parseFrom(payload);
+        var req =
+                HomeUpdateArrangementInfoReqOuterClass.HomeUpdateArrangementInfoReq.parseFrom(payload);
 
-        var homeScene = session.getPlayer().getHome()
-            .getHomeSceneItem(session.getPlayer().getSceneId());
+        var homeScene =
+                session.getPlayer().getHome().getHomeSceneItem(session.getPlayer().getSceneId());
 
         homeScene.update(req.getSceneArrangementInfo());
 
@@ -23,5 +24,4 @@ public class HandlerHomeUpdateArrangementInfoReq extends PacketHandler {
 
         session.send(new PacketHomeUpdateArrangementInfoRsp());
     }
-
 }

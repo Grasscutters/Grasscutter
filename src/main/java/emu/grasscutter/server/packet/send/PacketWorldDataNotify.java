@@ -14,10 +14,13 @@ public class PacketWorldDataNotify extends BasePacket {
         int worldLevel = world.getWorldLevel();
         int isMp = world.isMultiplayer() ? 1 : 0;
 
-        WorldDataNotify proto = WorldDataNotify.newBuilder()
-            .putWorldPropMap(1, PropValue.newBuilder().setType(1).setIval(worldLevel).setVal(worldLevel).build())
-            .putWorldPropMap(2, PropValue.newBuilder().setType(2).setIval(isMp).setVal(isMp).build())
-            .build();
+        WorldDataNotify proto =
+                WorldDataNotify.newBuilder()
+                        .putWorldPropMap(
+                                1, PropValue.newBuilder().setType(1).setIval(worldLevel).setVal(worldLevel).build())
+                        .putWorldPropMap(
+                                2, PropValue.newBuilder().setType(2).setIval(isMp).setVal(isMp).build())
+                        .build();
 
         this.setData(proto);
     }

@@ -9,9 +9,7 @@ public class PacketChooseCurAvatarTeamRsp extends BasePacket {
     public PacketChooseCurAvatarTeamRsp(int teamId) {
         super(PacketOpcodes.ChooseCurAvatarTeamRsp);
 
-        ChooseCurAvatarTeamRsp proto = ChooseCurAvatarTeamRsp.newBuilder()
-            .setCurTeamId(teamId)
-            .build();
+        ChooseCurAvatarTeamRsp proto = ChooseCurAvatarTeamRsp.newBuilder().setCurTeamId(teamId).build();
 
         this.setData(proto);
     }

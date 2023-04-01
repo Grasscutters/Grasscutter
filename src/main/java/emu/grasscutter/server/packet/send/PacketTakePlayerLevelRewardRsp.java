@@ -15,11 +15,12 @@ public class PacketTakePlayerLevelRewardRsp extends BasePacket {
             retcode = 1;
         }
 
-        TakePlayerLevelRewardRsp proto = TakePlayerLevelRewardRsp.newBuilder()
-            .setLevel(level)
-            .setRewardId(rewardId)
-            .setRetcode(retcode)
-            .build();
+        TakePlayerLevelRewardRsp proto =
+                TakePlayerLevelRewardRsp.newBuilder()
+                        .setLevel(level)
+                        .setRewardId(rewardId)
+                        .setRetcode(retcode)
+                        .build();
 
         this.setData(proto);
     }

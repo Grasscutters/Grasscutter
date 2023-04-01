@@ -12,6 +12,5 @@ public class PacketHomeSceneInitFinishRsp extends BasePacket {
         var proto = HomeSceneInitFinishReqOuterClass.HomeSceneInitFinishReq.newBuilder();
 
         this.setData(proto);
-
     }
 }

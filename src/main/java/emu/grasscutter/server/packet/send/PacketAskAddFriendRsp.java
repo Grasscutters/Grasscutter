@@ -9,9 +9,7 @@ public class PacketAskAddFriendRsp extends BasePacket {
     public PacketAskAddFriendRsp(int targetUid) {
         super(PacketOpcodes.AskAddFriendRsp);
 
-        AskAddFriendRsp proto = AskAddFriendRsp.newBuilder()
-            .setTargetUid(targetUid)
-            .build();
+        AskAddFriendRsp proto = AskAddFriendRsp.newBuilder().setTargetUid(targetUid).build();
 
         this.setData(proto);
     }

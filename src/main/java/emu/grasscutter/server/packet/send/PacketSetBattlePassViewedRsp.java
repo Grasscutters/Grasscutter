@@ -9,9 +9,8 @@ public class PacketSetBattlePassViewedRsp extends BasePacket {
     public PacketSetBattlePassViewedRsp(int scheduleId) {
         super(PacketOpcodes.SetBattlePassViewedRsp);
 
-        SetBattlePassViewedRsp proto = SetBattlePassViewedRsp.newBuilder()
-            .setScheduleId(scheduleId)
-            .build();
+        SetBattlePassViewedRsp proto =
+                SetBattlePassViewedRsp.newBuilder().setScheduleId(scheduleId).build();
 
         this.setData(proto);
     }

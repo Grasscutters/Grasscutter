@@ -43,7 +43,5 @@ public class GatherData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-
-    }
+    public void onLoad() {}
 }

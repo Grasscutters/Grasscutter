@@ -12,7 +12,10 @@ public class PacketAvatarTeamUpdateNotify extends BasePacket {
 
         AvatarTeamUpdateNotify.Builder proto = AvatarTeamUpdateNotify.newBuilder();
 
-        player.getTeamManager().getTeams().forEach((id, teamInfo) -> proto.putAvatarTeamMap(id, teamInfo.toProto(player)));
+        player
+                .getTeamManager()
+                .getTeams()
+                .forEach((id, teamInfo) -> proto.putAvatarTeamMap(id, teamInfo.toProto(player)));
 
         this.setData(proto);
     }

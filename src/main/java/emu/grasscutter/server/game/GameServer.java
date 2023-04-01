@@ -1,5 +1,8 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -34,18 +37,14 @@ import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
-import kcp.highway.ChannelConfig;
-import kcp.highway.KcpServer;
-import lombok.Getter;
-
 import java.net.InetSocketAddress;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.utils.Language.translate;
+import kcp.highway.ChannelConfig;
+import kcp.highway.KcpServer;
+import lombok.Getter;
 
 @Getter
 public final class GameServer extends KcpServer {
@@ -86,7 +85,7 @@ public final class GameServer extends KcpServer {
         channelConfig.setMtu(1400);
         channelConfig.setSndwnd(256);
         channelConfig.setRcvwnd(256);
-        channelConfig.setTimeoutMillis(30 * 1000);//30s
+        channelConfig.setTimeoutMillis(30 * 1000); // 30s
         channelConfig.setUseConvChannel(true);
         channelConfig.setAckNoDelay(false);
 
@@ -136,10 +135,7 @@ public final class GameServer extends KcpServer {
         if (GAME_INFO.bindAddress.equals("")) {
             inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
         } else {
-            inetSocketAddress = new InetSocketAddress(
-                GAME_INFO.bindAddress,
-                GAME_INFO.bindPort
-            );
+            inetSocketAddress = new InetSocketAddress(GAME_INFO.bindAddress, GAME_INFO.bindPort);
         }
         return inetSocketAddress;
     }
@@ -192,7 +188,10 @@ public final class GameServer extends KcpServer {
     }
 
     public Player getPlayerByAccountId(String accountId) {
-        Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
+        Optional<Player> playerOpt =
+                getPlayers().values().stream()
+                        .filter(player -> player.getAccount().getId().equals(accountId))
+                        .findFirst();
         return playerOpt.orElse(null);
     }
 
@@ -208,7 +207,10 @@ public final class GameServer extends KcpServer {
     }
 
     public Account getAccountByName(String username) {
-        Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
+        Optional<Player> playerOpt =
+                getPlayers().values().stream()
+                        .filter(player -> player.getAccount().getUsername().equals(username))
+                        .findFirst();
         if (playerOpt.isPresent()) {
             return playerOpt.get().getAccount();
         }
@@ -244,18 +246,22 @@ public final class GameServer extends KcpServer {
     public void start() {
         // Schedule game loop.
         Timer gameLoop = new Timer();
-        gameLoop.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    onTick();
-                } catch (Exception e) {
-                    Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
-                }
-            }
-        }, new Date(), 1000L);
+        gameLoop.scheduleAtFixedRate(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+                        try {
+                            onTick();
+                        } catch (Exception e) {
+                            Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+                        }
+                    }
+                },
+                new Date(),
+                1000L);
         Grasscutter.getLogger().info(translate("messages.status.free_software"));
-        Grasscutter.getLogger().info(translate("messages.game.address_bind", GAME_INFO.accessAddress, address.getPort()));
+        Grasscutter.getLogger()
+                .info(translate("messages.game.address_bind", GAME_INFO.accessAddress, address.getPort()));
         ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
         event.call();
     }

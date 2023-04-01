@@ -1,5 +1,8 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
@@ -8,9 +11,6 @@ import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import org.slf4j.Logger;
-
-import javax.annotation.Nullable;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -22,9 +22,8 @@ import java.time.ZonedDateTime;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.translate;
+import javax.annotation.Nullable;
+import org.slf4j.Logger;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -140,7 +139,7 @@ public final class Utils {
     /**
      * Copies a file from the archive's resources to the file system.
      *
-     * @param resource    The path to the resource.
+     * @param resource The path to the resource.
      * @param destination The path to copy the resource to.
      * @return True if the file was copied, false otherwise.
      */
@@ -154,7 +153,8 @@ public final class Utils {
             Files.copy(stream, new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
             return true;
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Unable to copy resource " + resource + " to " + destination, exception);
+            Grasscutter.getLogger()
+                    .warn("Unable to copy resource " + resource + " to " + destination, exception);
             return false;
         }
     }
@@ -168,9 +168,7 @@ public final class Utils {
         Grasscutter.getLogger().info(JsonUtils.encode(object));
     }
 
-    /**
-     * Checks for required files and folders before startup.
-     */
+    /** Checks for required files and folders before startup. */
     public static void startupCheck() {
         ConfigContainer config = Grasscutter.getConfig();
         Logger logger = Grasscutter.getLogger();
@@ -187,17 +185,17 @@ public final class Utils {
         }
 
         // Check for BinOutput + ExcelBinOutput.
-        if (!Files.exists(getResourcePath("BinOutput")) ||
-            !Files.exists(getResourcePath("ExcelBinOutput"))) {
+        if (!Files.exists(getResourcePath("BinOutput"))
+                || !Files.exists(getResourcePath("ExcelBinOutput"))) {
             logger.info(translate("messages.status.resources_error"));
             exit = true;
         }
 
         // Check for game data.
-        if (!fileExists(dataFolder))
-            createFolder(dataFolder);
+        if (!fileExists(dataFolder)) createFolder(dataFolder);
 
-        // Make sure the data folder is populated, if there are any missing files copy them from resources
+        // Make sure the data folder is populated, if there are any missing files copy them from
+        // resources
         DataLoader.checkAllFiles();
 
         if (exit) System.exit(1);
@@ -229,9 +227,15 @@ public final class Utils {
         ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
         for (int i = 0; i < param; i++) {
             if (zonedDateTime.getDayOfWeek() == DayOfWeek.MONDAY && zonedDateTime.getHour() < hour) {
-                zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+                zonedDateTime =
+                        ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
             } else {
-                zonedDateTime = zonedDateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY)).withHour(hour).withMinute(0).withSecond(0);
+                zonedDateTime =
+                        zonedDateTime
+                                .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+                                .withHour(hour)
+                                .withMinute(0)
+                                .withSecond(0);
             }
         }
         return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
@@ -246,9 +250,15 @@ public final class Utils {
         ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
         for (int i = 0; i < param; i++) {
             if (zonedDateTime.getDayOfMonth() == 1 && zonedDateTime.getHour() < hour) {
-                zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+                zonedDateTime =
+                        ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
             } else {
-                zonedDateTime = zonedDateTime.with(TemporalAdjusters.firstDayOfNextMonth()).withHour(hour).withMinute(0).withSecond(0);
+                zonedDateTime =
+                        zonedDateTime
+                                .with(TemporalAdjusters.firstDayOfNextMonth())
+                                .withHour(hour)
+                                .withMinute(0)
+                                .withSecond(0);
             }
         }
         return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
@@ -264,7 +274,8 @@ public final class Utils {
         if (stream == null) return "empty";
 
         StringBuilder stringBuilder = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+        try (BufferedReader reader =
+                new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
@@ -279,17 +290,18 @@ public final class Utils {
     }
 
     /**
-     * Performs a linear interpolation using a table of fixed points to create an effective piecewise f(x) = y function.
+     * Performs a linear interpolation using a table of fixed points to create an effective piecewise
+     * f(x) = y function.
      *
-     * @param x       The x value.
+     * @param x The x value.
      * @param xyArray Array of points in [[x0,y0], ... [xN, yN]] format
      * @return f(x) = y
      */
     public static int lerp(int x, int[][] xyArray) {
         try {
-            if (x <= xyArray[0][0]) {  // Clamp to first point
+            if (x <= xyArray[0][0]) { // Clamp to first point
                 return xyArray[0][1];
-            } else if (x >= xyArray[xyArray.length - 1][0]) {  // Clamp to last point
+            } else if (x >= xyArray[xyArray.length - 1][0]) { // Clamp to last point
                 return xyArray[xyArray.length - 1][1];
             }
             // At this point we're guaranteed to have two lerp points, and pity be somewhere between them.
@@ -299,7 +311,8 @@ public final class Utils {
                 }
                 if (x < xyArray[i + 1][0]) {
                     // We are between [i] and [i+1], interpolation time!
-                    // Using floats would be slightly cleaner but we can just as easily use ints if we're careful with order of operations.
+                    // Using floats would be slightly cleaner but we can just as easily use ints if we're
+                    // careful with order of operations.
                     int position = x - xyArray[i][0];
                     int fullDist = xyArray[i + 1][0] - xyArray[i][0];
                     int prevValue = xyArray[i][1];
@@ -308,7 +321,8 @@ public final class Utils {
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            Grasscutter.getLogger().error("Malformed lerp point array. Must be of form [[x0, y0], ..., [xN, yN]].");
+            Grasscutter.getLogger()
+                    .error("Malformed lerp point array. Must be of form [[x0, y0], ..., [xN, yN]].");
         }
         return 0;
     }
@@ -316,7 +330,7 @@ public final class Utils {
     /**
      * Checks if an int is in an int[]
      *
-     * @param key   int to look for
+     * @param key int to look for
      * @param array int[] to look in
      * @return key in array
      */
@@ -332,7 +346,7 @@ public final class Utils {
     /**
      * Return a copy of minuend without any elements found in subtrahend.
      *
-     * @param minuend    The array we want elements from
+     * @param minuend The array we want elements from
      * @param subtrahend The array whose elements we don't want
      * @return The array with only the elements we want, in the order that minuend had them
      */
@@ -429,8 +443,7 @@ public final class Utils {
             output.add(input.substring(start, next));
             start = next + 1;
         }
-        if (start < input.length())
-            output.add(input.substring(start));
+        if (start < input.length()) output.add(input.substring(start));
         return output;
     }
 }

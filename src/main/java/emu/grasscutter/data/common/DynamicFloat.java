@@ -3,16 +3,16 @@ package emu.grasscutter.data.common;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
-import lombok.val;
-
 import java.util.List;
 import java.util.Optional;
+import lombok.val;
 
 public class DynamicFloat {
     public static DynamicFloat ZERO = new DynamicFloat(0f);
     private List<StackOp> ops;
     private boolean dynamic = false;
     private float constant = 0f;
+
     public DynamicFloat(float constant) {
         this.constant = constant;
     }
@@ -43,8 +43,7 @@ public class DynamicFloat {
     }
 
     public float get(Object2FloatMap<String> props) {
-        if (!dynamic)
-            return constant;
+        if (!dynamic) return constant;
 
         val fl = new FloatArrayList();
         for (var op : this.ops) {
@@ -52,15 +51,15 @@ public class DynamicFloat {
                 case CONSTANT -> fl.push(op.fValue);
                 case KEY -> fl.push(props.getOrDefault(op.sValue, 0f));
                 case ADD -> fl.push(fl.popFloat() + fl.popFloat());
-                case SUB ->
-                    fl.push(-fl.popFloat() + fl.popFloat());  // [f0, f1, f2] -> [f0, f1-f2]  (opposite of RPN order)
+                case SUB -> fl.push(
+                        -fl.popFloat() + fl.popFloat()); // [f0, f1, f2] -> [f0, f1-f2]  (opposite of RPN order)
                 case MUL -> fl.push(fl.popFloat() * fl.popFloat());
-                case DIV -> fl.push((1f / fl.popFloat()) * fl.popFloat());  // [f0, f1, f2] -> [f0, f1/f2]
+                case DIV -> fl.push((1f / fl.popFloat()) * fl.popFloat()); // [f0, f1, f2] -> [f0, f1/f2]
                 case NEXBOOLEAN -> fl.push(props.getOrDefault(Optional.of(op.bValue), 0f));
             }
         }
 
-        return fl.popFloat();  // well-formed data will always have only one value left at this point
+        return fl.popFloat(); // well-formed data will always have only one value left at this point
     }
 
     public static class StackOp {
@@ -69,6 +68,7 @@ public class DynamicFloat {
         public float fValue;
         public String sValue;
         public boolean bValue;
+
         public StackOp(String s) {
             switch (s.toUpperCase()) {
                 case "ADD" -> this.op = Op.ADD;
@@ -92,6 +92,14 @@ public class DynamicFloat {
             this.fValue = f;
         }
 
-        enum Op {CONSTANT, KEY, ADD, SUB, MUL, DIV, NEXBOOLEAN}
+        enum Op {
+            CONSTANT,
+            KEY,
+            ADD,
+            SUB,
+            MUL,
+            DIV,
+            NEXBOOLEAN
+        }
     }
 }

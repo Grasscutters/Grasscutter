@@ -11,7 +11,9 @@ import lombok.Getter;
 public class SceneData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     @SerializedName("type")
     private SceneType sceneType;
+
     private String scriptData;
 }

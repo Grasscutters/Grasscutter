@@ -18,5 +18,4 @@ public class HandlerBuyBattlePassLevelReq extends PacketHandler {
 
         session.send(new PacketBuyBattlePassLevelRsp(buyLevel));
     }
-
 }

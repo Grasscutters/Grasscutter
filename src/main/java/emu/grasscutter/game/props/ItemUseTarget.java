@@ -2,7 +2,6 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.stream.Stream;
 
 public enum ItemUseTarget {
@@ -16,9 +15,11 @@ public enum ItemUseTarget {
     private static final Int2ObjectMap<ItemUseTarget> map = new Int2ObjectOpenHashMap<>();
 
     static {
-        Stream.of(values()).forEach(e -> {
-            map.put(e.getValue(), e);
-        });
+        Stream.of(values())
+                .forEach(
+                        e -> {
+                            map.put(e.getValue(), e);
+                        });
     }
 
     private final int value;

@@ -14,9 +14,10 @@ public class PacketPlayerPropNotify extends BasePacket {
 
         this.buildHeader(0);
 
-        PlayerPropNotify proto = PlayerPropNotify.newBuilder()
-            .putPropMap(prop.getId(), ProtoHelper.newPropValue(prop, player.getProperty(prop)))
-            .build();
+        PlayerPropNotify proto =
+                PlayerPropNotify.newBuilder()
+                        .putPropMap(prop.getId(), ProtoHelper.newPropValue(prop, player.getProperty(prop)))
+                        .build();
 
         this.setData(proto);
     }

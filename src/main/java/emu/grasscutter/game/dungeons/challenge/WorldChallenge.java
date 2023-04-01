@@ -10,11 +10,10 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -33,10 +32,15 @@ public class WorldChallenge {
     private long startedAt;
     private int finishedTime;
 
-    public WorldChallenge(Scene scene, SceneGroup group,
-                          int challengeId, int challengeIndex, List<Integer> paramList,
-                          int timeLimit, int goal,
-                          List<ChallengeTrigger> challengeTriggers) {
+    public WorldChallenge(
+            Scene scene,
+            SceneGroup group,
+            int challengeId,
+            int challengeIndex,
+            List<Integer> paramList,
+            int timeLimit,
+            int goal,
+            List<ChallengeTrigger> challengeTriggers) {
         this.scene = scene;
         this.group = group;
         this.challengeId = challengeId;
@@ -78,9 +82,12 @@ public class WorldChallenge {
             return;
         }
         finish(true);
-        this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS,
-            // TODO record the time in PARAM2 and used in action
-            new ScriptArgs().setParam2(finishedTime));
+        this.getScene()
+                .getScriptManager()
+                .callEvent(
+                        EventType.EVENT_CHALLENGE_SUCCESS,
+                        // TODO record the time in PARAM2 and used in action
+                        new ScriptArgs().setParam2(finishedTime));
 
         challengeTriggers.forEach(t -> t.onFinish(this));
     }

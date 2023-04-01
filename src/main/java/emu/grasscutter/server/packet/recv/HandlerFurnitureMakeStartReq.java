@@ -14,7 +14,5 @@ public class HandlerFurnitureMakeStartReq extends PacketHandler {
         var req = FurnitureMakeStartReqOuterClass.FurnitureMakeStartReq.parseFrom(payload);
 
         session.getPlayer().getFurnitureManager().startMake(req.getMakeId(), req.getAvatarId());
-
     }
-
 }

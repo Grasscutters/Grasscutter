@@ -1,57 +1,60 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
-import org.slf4j.LoggerFactory;
-
 import java.util.Map;
 import java.util.function.Function;
+import org.slf4j.LoggerFactory;
 
-import static emu.grasscutter.config.Configuration.*;
-
-/**
- * A parser for start-up arguments.
- */
+/** A parser for start-up arguments. */
 public final class StartupArguments {
     /* A map of parameter -> argument handler. */
-    private static final Map<String, Function<String, Boolean>> argumentHandlers = Map.of(
-        "-dumppacketids", parameter -> {
-            PacketOpcodesUtils.dumpPacketIds();
-            return true;
-        },
-        "-version", StartupArguments::printVersion,
-        "-debug", StartupArguments::enableDebug,
-        "-lang", parameter -> {
-            Grasscutter.setPreferredLanguage(parameter);
-            return false;
-        },
-        "-game", parameter -> {
-            Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY);
-            return false;
-        },
-        "-dispatch", parameter -> {
-            Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY);
-            return false;
-        },
-        "-test", parameter -> {
-            // Disable the console.
-            SERVER.game.enableConsole = false;
-            // Disable HTTP encryption.
-            SERVER.http.encryption.useEncryption = false;
-            return false;
-        },
+    private static final Map<String, Function<String, Boolean>> argumentHandlers =
+            Map.of(
+                    "-dumppacketids",
+                            parameter -> {
+                                PacketOpcodesUtils.dumpPacketIds();
+                                return true;
+                            },
+                    "-version", StartupArguments::printVersion,
+                    "-debug", StartupArguments::enableDebug,
+                    "-lang",
+                            parameter -> {
+                                Grasscutter.setPreferredLanguage(parameter);
+                                return false;
+                            },
+                    "-game",
+                            parameter -> {
+                                Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY);
+                                return false;
+                            },
+                    "-dispatch",
+                            parameter -> {
+                                Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY);
+                                return false;
+                            },
+                    "-test",
+                            parameter -> {
+                                // Disable the console.
+                                SERVER.game.enableConsole = false;
+                                // Disable HTTP encryption.
+                                SERVER.http.encryption.useEncryption = false;
+                                return false;
+                            },
 
-        // Aliases.
-        "-v", StartupArguments::printVersion,
-        "-debugall", parameter -> {
-            StartupArguments.enableDebug("all");
-            return false;
-        }
-    );
+                    // Aliases.
+                    "-v", StartupArguments::printVersion,
+                    "-debugall",
+                            parameter -> {
+                                StartupArguments.enableDebug("all");
+                                return false;
+                            });
 
     private StartupArguments() {
         // This class is not meant to be instantiated.
@@ -115,16 +118,11 @@ public final class StartupArguments {
         Level loggerLevel = DEBUG_MODE_INFO.servicesLoggersLevel;
 
         // Change loggers to debug.
-        ((Logger) LoggerFactory.getLogger("io.javalin"))
-            .setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.quartz"))
-            .setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.reflections"))
-            .setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-            .setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-            .setLevel(loggerLevel);
+        ((Logger) LoggerFactory.getLogger("io.javalin")).setLevel(loggerLevel);
+        ((Logger) LoggerFactory.getLogger("org.quartz")).setLevel(loggerLevel);
+        ((Logger) LoggerFactory.getLogger("org.reflections")).setLevel(loggerLevel);
+        ((Logger) LoggerFactory.getLogger("org.eclipse.jetty")).setLevel(loggerLevel);
+        ((Logger) LoggerFactory.getLogger("org.mongodb.driver")).setLevel(loggerLevel);
 
         return false;
     }

@@ -23,5 +23,4 @@ public class HandlerHomeChangeEditModeReq extends PacketHandler {
 
         session.send(new PacketHomeChangeEditModeRsp(req.getIsEnterEditMode()));
     }
-
 }

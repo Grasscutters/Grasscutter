@@ -9,10 +9,8 @@ public class PacketForgeFormulaDataNotify extends BasePacket {
     public PacketForgeFormulaDataNotify(int itemId) {
         super(PacketOpcodes.ForgeFormulaDataNotify);
 
-        ForgeFormulaDataNotify proto = ForgeFormulaDataNotify.newBuilder()
-            .setForgeId(itemId)
-            .setIsLocked(false)
-            .build();
+        ForgeFormulaDataNotify proto =
+                ForgeFormulaDataNotify.newBuilder().setForgeId(itemId).setIsLocked(false).build();
 
         this.setData(proto);
     }

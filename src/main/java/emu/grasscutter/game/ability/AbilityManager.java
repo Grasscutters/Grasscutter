@@ -21,8 +21,7 @@ import lombok.Getter;
 public final class AbilityManager extends BasePlayerManager {
     HealAbilityManager healAbilityManager;
 
-    @Getter
-    private boolean abilityInvulnerable = false;
+    @Getter private boolean abilityInvulnerable = false;
 
     public AbilityManager(Player player) {
         super(player);
@@ -32,23 +31,23 @@ public final class AbilityManager extends BasePlayerManager {
     public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
         this.healAbilityManager.healHandler(invoke);
 
-        //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
+        // Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue()
+        // + "): " + Utils.bytesToHex(invoke.toByteArray()));
         switch (invoke.getArgumentType()) {
             case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM -> this.handleOverrideParam(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_REINIT_OVERRIDEMAP -> this.handleReinitOverrideMap(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE -> this.handleModifierChange(invoke);
             case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA -> this.handleMixinCostStamina(invoke);
             case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL -> this.handleGenerateElemBall(invoke);
-            default -> {
-            }
+            default -> {}
         }
     }
 
     /**
      * Invoked when a player starts a skill.
      *
-     * @param player   The player who started the skill.
-     * @param skillId  The skill ID.
+     * @param player The player who started the skill.
+     * @param skillId The skill ID.
      * @param casterId The caster ID.
      */
     public void onSkillStart(Player player, int skillId, int casterId) {
@@ -115,7 +114,8 @@ public final class AbilityManager extends BasePlayerManager {
             return;
         }
 
-        AbilityMetaReInitOverrideMap map = AbilityMetaReInitOverrideMap.parseFrom(invoke.getAbilityData());
+        AbilityMetaReInitOverrideMap map =
+                AbilityMetaReInitOverrideMap.parseFrom(invoke.getAbilityData());
 
         for (AbilityScalarValueEntry entry : map.getOverrideMapList()) {
             entity.getMetaOverrideMap().put(entry.getKey().getStr(), entry.getFloatValue());
@@ -135,7 +135,8 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Destroying rocks
-        if (target instanceof EntityGadget targetGadget && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
+        if (target instanceof EntityGadget targetGadget
+                && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
             if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
                 gatherObject.dropItems(this.getPlayer());
                 return;
@@ -153,8 +154,10 @@ public final class AbilityManager extends BasePlayerManager {
             return;
         }
 
-        // This is not how it works but we will keep it for now since healing abilities dont work properly anyways
-        if (data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED && data.getParentAbilityName() != null) {
+        // This is not how it works but we will keep it for now since healing abilities dont work
+        // properly anyways
+        if (data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED
+                && data.getParentAbilityName() != null) {
             // Handle add modifier here
             String modifierString = data.getParentAbilityName().getStr();
             AbilityModifierEntry modifier = GameData.getAbilityModifiers().get(modifierString);
@@ -187,19 +190,22 @@ public final class AbilityManager extends BasePlayerManager {
         }
     }
 
-    private void handleMixinCostStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
-        AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
+    private void handleMixinCostStamina(AbilityInvokeEntry invoke)
+            throws InvalidProtocolBufferException {
+        AbilityMixinCostStamina costStamina =
+                AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
         this.getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
     }
 
-    private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+    private void handleGenerateElemBall(AbilityInvokeEntry invoke)
+            throws InvalidProtocolBufferException {
         this.player.getEnergyManager().handleGenerateElemBall(invoke);
     }
 
-    private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
+    private void invokeAction(
+            AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
         switch (action.type) {
-            case HealHP -> {
-            }
+            case HealHP -> {}
             case LoseHP -> {
                 if (action.amountByTargetCurrentHPRatio == null) {
                     return;
@@ -208,15 +214,15 @@ public final class AbilityManager extends BasePlayerManager {
                 float damageAmount = action.amount.get();
 
                 // if (action.amount.isDynamic && action.amount.dynamicKey != null) {
-                //     damageAmount = sourceEntity.getMetaOverrideMap().getOrDefault(action.amount.dynamicKey, 0f);
+                //     damageAmount =
+                // sourceEntity.getMetaOverrideMap().getOrDefault(action.amount.dynamicKey, 0f);
                 // }
 
                 if (damageAmount > 0) {
                     target.damage(damageAmount);
                 }
             }
-            default -> {
-            }
+            default -> {}
         }
     }
 }

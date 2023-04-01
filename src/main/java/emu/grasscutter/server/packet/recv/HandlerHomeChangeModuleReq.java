@@ -18,7 +18,7 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HomeChangeModuleReqOuterClass.HomeChangeModuleReq req =
-            HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
+                HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
         session.getPlayer().setCurrentRealmId(req.getTargetModuleId());
         session.send(new PacketHomeChangeModuleRsp(req.getTargetModuleId()));
         session.send(new PacketPlayerHomeCompInfoNotify(session.getPlayer()));
@@ -29,9 +29,9 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
         Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
-        session.getPlayer().getWorld().transferPlayerToScene(
-            session.getPlayer(), realmId,
-            TeleportType.WAYPOINT, pos
-        );
+        session
+                .getPlayer()
+                .getWorld()
+                .transferPlayerToScene(session.getPlayer(), realmId, TeleportType.WAYPOINT, pos);
     }
 }

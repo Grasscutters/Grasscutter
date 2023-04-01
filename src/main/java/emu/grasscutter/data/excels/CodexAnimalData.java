@@ -10,10 +10,14 @@ import lombok.Getter;
 public class CodexAnimalData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int Id;
+
     private String type;
     private int describeId;
     private int sortOrder;
-    @SerializedName(value = "countType", alternate = {"OCCLHPBCDGL"})
+
+    @SerializedName(
+            value = "countType",
+            alternate = {"OCCLHPBCDGL"})
     private CountType countType;
 
     public enum CountType {

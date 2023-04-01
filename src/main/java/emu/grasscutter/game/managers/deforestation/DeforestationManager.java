@@ -9,15 +9,14 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HitTreeNotifyOuterClass;
 import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.utils.Position;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DeforestationManager extends BasePlayerManager {
-    final static int RECORD_EXPIRED_SECONDS = 60 * 5; // 5 min
-    final static int RECORD_MAX_TIMES = 3; // max number of wood
-    final static int RECORD_MAX_TIMES_OTHER_HIT_TREE = 10; // if hit 10 times other trees, reset wood
-    private final static HashMap<Integer, Integer> ColliderTypeToWoodItemID = new HashMap<>();
+    static final int RECORD_EXPIRED_SECONDS = 60 * 5; // 5 min
+    static final int RECORD_MAX_TIMES = 3; // max number of wood
+    static final int RECORD_MAX_TIMES_OTHER_HIT_TREE = 10; // if hit 10 times other trees, reset wood
+    private static final HashMap<Integer, Integer> ColliderTypeToWoodItemID = new HashMap<>();
 
     static {
         /* define wood types which reflected to item id*/
@@ -55,10 +54,10 @@ public class DeforestationManager extends BasePlayerManager {
 
     public void onDeforestationInvoke(HitTreeNotifyOuterClass.HitTreeNotify hit) {
         synchronized (currentRecord) {
-            //Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
+            // Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
             VectorOuterClass.Vector hitPosition = hit.getTreePos();
             int woodType = hit.getTreeType();
-            if (ColliderTypeToWoodItemID.containsKey(woodType)) {// is a available wood type
+            if (ColliderTypeToWoodItemID.containsKey(woodType)) { // is a available wood type
                 Scene scene = player.getScene();
                 int itemId = ColliderTypeToWoodItemID.get(woodType);
                 int positionHash = hitPosition.hashCode();
@@ -66,22 +65,24 @@ public class DeforestationManager extends BasePlayerManager {
                 if (record == null) {
                     record = new HitTreeRecord(positionHash);
                 } else {
-                    currentRecord.remove(record);// move it to last position
+                    currentRecord.remove(record); // move it to last position
                 }
                 currentRecord.add(record);
                 if (currentRecord.size() > RECORD_MAX_TIMES_OTHER_HIT_TREE) {
                     currentRecord.remove(0);
                 }
                 if (record.record()) {
-                    EntityItem entity = new EntityItem(scene,
-                        null,
-                        GameData.getItemDataMap().get(itemId),
-                        new Position(hitPosition.getX(), hitPosition.getY(), hitPosition.getZ()),
-                        1,
-                        false);
+                    EntityItem entity =
+                            new EntityItem(
+                                    scene,
+                                    null,
+                                    GameData.getItemDataMap().get(itemId),
+                                    new Position(hitPosition.getX(), hitPosition.getY(), hitPosition.getZ()),
+                                    1,
+                                    false);
                     scene.addEntity(entity);
                 }
-                //record.record()=false : too many wood they have deforested, no more wood dropped!
+                // record.record()=false : too many wood they have deforested, no more wood dropped!
             } else {
                 Grasscutter.getLogger().warn("No wood type {} found.", woodType);
             }

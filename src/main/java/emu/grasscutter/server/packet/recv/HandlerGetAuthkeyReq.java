@@ -13,5 +13,4 @@ public class HandlerGetAuthkeyReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         session.send(new PacketGetAuthkeyRsp());
     }
-
 }

@@ -16,5 +16,4 @@ public class HandlerMusicGameStartReq extends PacketHandler {
 
         session.send(new PacketMusicGameStartRsp(req.getMusicBasicId(), req.getUgcGuid()));
     }
-
 }

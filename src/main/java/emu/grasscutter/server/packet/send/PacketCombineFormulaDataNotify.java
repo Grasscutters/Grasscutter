@@ -9,10 +9,8 @@ public class PacketCombineFormulaDataNotify extends BasePacket {
     public PacketCombineFormulaDataNotify(int combineId) {
         super(PacketOpcodes.CombineFormulaDataNotify);
 
-        CombineFormulaDataNotify proto = CombineFormulaDataNotify.newBuilder()
-            .setCombineId(combineId)
-            .setIsLocked(false)
-            .build();
+        CombineFormulaDataNotify proto =
+                CombineFormulaDataNotify.newBuilder().setCombineId(combineId).setIsLocked(false).build();
 
         this.setData(proto);
     }

@@ -17,13 +17,14 @@ public class PacketScenePlayerInfoNotify extends BasePacket {
         for (int i = 0; i < world.getPlayers().size(); i++) {
             Player p = world.getPlayers().get(i);
 
-            ScenePlayerInfo pInfo = ScenePlayerInfo.newBuilder()
-                .setUid(p.getUid())
-                .setPeerId(p.getPeerId())
-                .setName(p.getNickname())
-                .setSceneId(p.getSceneId())
-                .setOnlinePlayerInfo(p.getOnlinePlayerInfo())
-                .build();
+            ScenePlayerInfo pInfo =
+                    ScenePlayerInfo.newBuilder()
+                            .setUid(p.getUid())
+                            .setPeerId(p.getPeerId())
+                            .setName(p.getNickname())
+                            .setSceneId(p.getSceneId())
+                            .setOnlinePlayerInfo(p.getOnlinePlayerInfo())
+                            .build();
 
             proto.addPlayerInfoList(pInfo);
         }

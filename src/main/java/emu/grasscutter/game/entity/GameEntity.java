@@ -25,37 +25,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 public abstract class GameEntity {
-    @Getter
-    private final Scene scene;
-    @Getter
-    protected int id;
-    @Getter
-    @Setter
-    private SpawnDataEntry spawnEntry;
+    @Getter private final Scene scene;
+    @Getter protected int id;
+    @Getter @Setter private SpawnDataEntry spawnEntry;
 
-    @Getter
-    @Setter
-    private int blockId;
-    @Getter
-    @Setter
-    private int configId;
-    @Getter
-    @Setter
-    private int groupId;
+    @Getter @Setter private int blockId;
+    @Getter @Setter private int configId;
+    @Getter @Setter private int groupId;
 
-    @Getter
-    @Setter
-    private MotionState motionState;
-    @Getter
-    @Setter
-    private int lastMoveSceneTimeMs;
-    @Getter
-    @Setter
-    private int lastMoveReliableSeq;
+    @Getter @Setter private MotionState motionState;
+    @Getter @Setter private int lastMoveSceneTimeMs;
+    @Getter @Setter private int lastMoveReliableSeq;
 
-    @Getter
-    @Setter
-    private boolean lockHP;
+    @Getter @Setter private boolean lockHP;
 
     // Abilities
     private Object2FloatMap<String> metaOverrideMap;
@@ -123,19 +105,23 @@ public abstract class GameEntity {
     }
 
     public void addAllFightPropsToEntityInfo(SceneEntityInfo.Builder entityInfo) {
-        this.getFightProperties().forEach((key, value) -> {
-            if (key == 0) return;
-            entityInfo.addFightPropList(FightPropPair.newBuilder().setPropType(key).setPropValue(value).build());
-        });
+        this.getFightProperties()
+                .forEach(
+                        (key, value) -> {
+                            if (key == 0) return;
+                            entityInfo.addFightPropList(
+                                    FightPropPair.newBuilder().setPropType(key).setPropValue(value).build());
+                        });
     }
 
     protected MotionInfo getMotionInfo() {
-        MotionInfo proto = MotionInfo.newBuilder()
-            .setPos(this.getPosition().toProto())
-            .setRot(this.getRotation().toProto())
-            .setSpeed(Vector.newBuilder())
-            .setState(this.getMotionState())
-            .build();
+        MotionInfo proto =
+                MotionInfo.newBuilder()
+                        .setPos(this.getPosition().toProto())
+                        .setRot(this.getRotation().toProto())
+                        .setSpeed(Vector.newBuilder())
+                        .setState(this.getMotionState())
+                        .build();
 
         return proto;
     }
@@ -155,7 +141,9 @@ public abstract class GameEntity {
         float healed = Math.min(maxHp - curHp, amount);
         this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, healed);
 
-        this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+        this.getScene()
+                .broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
 
         return healed;
     }
@@ -171,7 +159,8 @@ public abstract class GameEntity {
         }
 
         // Invoke entity damage event.
-        EntityDamageEvent event = new EntityDamageEvent(this, amount, this.getScene().getEntityById(killerId));
+        EntityDamageEvent event =
+                new EntityDamageEvent(this, amount, this.getScene().getEntityById(killerId));
         event.call();
         if (event.isCanceled()) {
             return; // If the event is canceled, do not damage the entity.
@@ -191,7 +180,9 @@ public abstract class GameEntity {
         }
 
         // Packets
-        this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+        this.getScene()
+                .broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
 
         // Check if dead.
         if (isDead) {
@@ -214,23 +205,15 @@ public abstract class GameEntity {
     /**
      * Called when a player interacts with this entity
      *
-     * @param player      Player that is interacting with this entity
+     * @param player Player that is interacting with this entity
      * @param interactReq Interact request protobuf data
      */
-    public void onInteract(Player player, GadgetInteractReq interactReq) {
+    public void onInteract(Player player, GadgetInteractReq interactReq) {}
 
-    }
+    /** Called when this entity is added to the world */
+    public void onCreate() {}
 
-    /**
-     * Called when this entity is added to the world
-     */
-    public void onCreate() {
-
-    }
-
-    public void onRemoved() {
-
-    }
+    public void onRemoved() {}
 
     /**
      * Called when this entity dies

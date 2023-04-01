@@ -4,8 +4,7 @@ public class ItemParamStringData {
     private int id;
     private String count;
 
-    public ItemParamStringData() {
-    }
+    public ItemParamStringData() {}
 
     public int getId() {
         return id;

@@ -4,16 +4,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.InputStream;
 import java.net.URLClassLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-/**
- * The base class for all plugins to extend.
- */
+/** The base class for all plugins to extend. */
 public abstract class Plugin {
     private final ServerHook server = ServerHook.getInstance();
 
@@ -24,8 +21,8 @@ public abstract class Plugin {
 
     /**
      * This method is reflected into.
-     * <p>
-     * Set plugin variables.
+     *
+     * <p>Set plugin variables.
      *
      * @param identifier The plugin's identifier.
      */
@@ -41,7 +38,8 @@ public abstract class Plugin {
         this.logger = LoggerFactory.getLogger(identifier.name);
 
         if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
-            Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
+            Grasscutter.getLogger()
+                    .warn("Failed to create plugin data folder for " + this.identifier.name);
         }
     }
 
@@ -54,23 +52,17 @@ public abstract class Plugin {
         return this.identifier;
     }
 
-    /**
-     * Get the plugin's name.
-     */
+    /** Get the plugin's name. */
     public final String getName() {
         return this.identifier.name;
     }
 
-    /**
-     * Get the plugin's description.
-     */
+    /** Get the plugin's description. */
     public final String getDescription() {
         return this.identifier.description;
     }
 
-    /**
-     * Get the plugin's version.
-     */
+    /** Get the plugin's version. */
     public final String getVersion() {
         return this.identifier.version;
     }
@@ -122,14 +114,11 @@ public abstract class Plugin {
     }
 
     /* Called when the plugin is first loaded. */
-    public void onLoad() {
-    }
+    public void onLoad() {}
 
     /* Called after (most of) the server enables. */
-    public void onEnable() {
-    }
+    public void onEnable() {}
 
     /* Called before the server disables. */
-    public void onDisable() {
-    }
+    public void onDisable() {}
 }

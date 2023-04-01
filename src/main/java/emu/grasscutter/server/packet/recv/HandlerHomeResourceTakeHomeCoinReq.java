@@ -14,5 +14,4 @@ public class HandlerHomeResourceTakeHomeCoinReq extends PacketHandler {
 
         session.send(new PacketHomeResourceTakeHomeCoinRsp(session.getPlayer()));
     }
-
 }

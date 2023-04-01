@@ -5,7 +5,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeGetArrangementInfoRspOuterClass;
-
 import java.util.List;
 
 public class PacketHomeGetArrangementInfoRsp extends BasePacket {
@@ -15,10 +14,8 @@ public class PacketHomeGetArrangementInfoRsp extends BasePacket {
 
         var home = player.getHome();
 
-        var homeScenes = sceneIdList.stream()
-            .map(home::getHomeSceneItem)
-            .map(HomeSceneItem::toProto)
-            .toList();
+        var homeScenes =
+                sceneIdList.stream().map(home::getHomeSceneItem).map(HomeSceneItem::toProto).toList();
 
         home.save();
 

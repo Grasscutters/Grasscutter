@@ -12,5 +12,4 @@ public class PacketGetGachaInfoRsp extends BasePacket {
 
         this.setData(manager.toProto(player));
     }
-
 }

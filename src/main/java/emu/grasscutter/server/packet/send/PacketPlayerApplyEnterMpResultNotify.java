@@ -8,28 +8,37 @@ import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass.Player
 
 public class PacketPlayerApplyEnterMpResultNotify extends BasePacket {
 
-    public PacketPlayerApplyEnterMpResultNotify(Player target, boolean isAgreed, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason reason) {
+    public PacketPlayerApplyEnterMpResultNotify(
+            Player target,
+            boolean isAgreed,
+            PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason reason) {
         super(PacketOpcodes.PlayerApplyEnterMpResultNotify);
 
-        PlayerApplyEnterMpResultNotify proto = PlayerApplyEnterMpResultNotify.newBuilder()
-            .setTargetUid(target.getUid())
-            .setTargetNickname(target.getNickname())
-            .setIsAgreed(isAgreed)
-            .setReason(reason)
-            .build();
+        PlayerApplyEnterMpResultNotify proto =
+                PlayerApplyEnterMpResultNotify.newBuilder()
+                        .setTargetUid(target.getUid())
+                        .setTargetNickname(target.getNickname())
+                        .setIsAgreed(isAgreed)
+                        .setReason(reason)
+                        .build();
 
         this.setData(proto);
     }
 
-    public PacketPlayerApplyEnterMpResultNotify(int targetId, String targetName, boolean isAgreed, PlayerApplyEnterMpResultNotify.Reason reason) {
+    public PacketPlayerApplyEnterMpResultNotify(
+            int targetId,
+            String targetName,
+            boolean isAgreed,
+            PlayerApplyEnterMpResultNotify.Reason reason) {
         super(PacketOpcodes.PlayerApplyEnterMpResultNotify);
 
-        PlayerApplyEnterMpResultNotify proto = PlayerApplyEnterMpResultNotify.newBuilder()
-            .setTargetUid(targetId)
-            .setTargetNickname(targetName)
-            .setIsAgreed(isAgreed)
-            .setReason(reason)
-            .build();
+        PlayerApplyEnterMpResultNotify proto =
+                PlayerApplyEnterMpResultNotify.newBuilder()
+                        .setTargetUid(targetId)
+                        .setTargetNickname(targetName)
+                        .setIsAgreed(isAgreed)
+                        .setReason(reason)
+                        .build();
 
         this.setData(proto);
     }

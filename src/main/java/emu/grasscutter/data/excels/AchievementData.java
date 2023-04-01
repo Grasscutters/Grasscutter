@@ -4,13 +4,12 @@ import com.github.davidmoten.guavamini.Lists;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
-import lombok.Getter;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
+import lombok.Getter;
 
 @Getter
 @ResourceType(name = "AchievementExcelConfigData.json")
@@ -71,7 +70,9 @@ public class AchievementData extends GameResource {
             }
         }
 
-        map.values().stream().filter(a -> !a.hasGroupAchievements() && a.isUsed()).forEach(a -> a.isParent = true);
+        map.values().stream()
+                .filter(a -> !a.hasGroupAchievements() && a.isUsed())
+                .forEach(a -> a.isParent = true);
     }
 
     public boolean hasPreStageAchievement() {
@@ -91,6 +92,8 @@ public class AchievementData extends GameResource {
     }
 
     public Set<Integer> getExcludedGroupAchievementIdList() {
-        return this.groupAchievementIdList.stream().filter(integer -> integer != this.getId()).collect(Collectors.toUnmodifiableSet());
+        return this.groupAchievementIdList.stream()
+                .filter(integer -> integer != this.getId())
+                .collect(Collectors.toUnmodifiableSet());
     }
 }

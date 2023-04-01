@@ -15,5 +15,4 @@ public class HandlerDungeonEntryInfoReq extends PacketHandler {
 
         session.getServer().getDungeonSystem().getEntryInfo(session.getPlayer(), req.getPointId());
     }
-
 }

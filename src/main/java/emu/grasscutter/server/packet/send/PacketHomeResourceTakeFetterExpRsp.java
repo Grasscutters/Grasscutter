@@ -14,15 +14,17 @@ public class PacketHomeResourceTakeFetterExpRsp extends BasePacket {
 
         home.takeHomeFetter(player);
 
-        var fetterExp = HomeResource.newBuilder()
-            .setNextRefreshTime(home.getNextUpdateTime())
-            .setStoreLimit(home.getMaxFetter(home.getLevel()))
-            .setStoreValue(0)
-            .build();
+        var fetterExp =
+                HomeResource.newBuilder()
+                        .setNextRefreshTime(home.getNextUpdateTime())
+                        .setStoreLimit(home.getMaxFetter(home.getLevel()))
+                        .setStoreValue(0)
+                        .build();
 
-        var proto = HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp.newBuilder()
-            .setFetterExp(fetterExp)
-            .build();
+        var proto =
+                HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp.newBuilder()
+                        .setFetterExp(fetterExp)
+                        .build();
 
         this.setData(proto);
     }

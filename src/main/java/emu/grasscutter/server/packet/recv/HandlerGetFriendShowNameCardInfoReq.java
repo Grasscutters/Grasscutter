@@ -12,11 +12,13 @@ import emu.grasscutter.server.packet.send.PacketGetFriendShowNameCardInfoRsp;
 public class HandlerGetFriendShowNameCardInfoReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req = GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.parseFrom(payload);
+        var req =
+                GetFriendShowNameCardInfoReqOuterClass.GetFriendShowNameCardInfoReq.parseFrom(payload);
 
         int targetUid = req.getUid();
         Player target = session.getServer().getPlayerByUid(targetUid, true);
 
-        session.send(new PacketGetFriendShowNameCardInfoRsp(targetUid, target.getShowNameCardInfoList()));
+        session.send(
+                new PacketGetFriendShowNameCardInfoRsp(targetUid, target.getShowNameCardInfoList()));
     }
 }

@@ -9,14 +9,13 @@ import emu.grasscutter.server.packet.send.PacketHomeChooseModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
 
-
 @Opcodes(PacketOpcodes.HomeChooseModuleReq)
 public class HandlerHomeChooseModuleReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HomeChooseModuleReqOuterClass.HomeChooseModuleReq req =
-            HomeChooseModuleReqOuterClass.HomeChooseModuleReq.parseFrom(payload);
+                HomeChooseModuleReqOuterClass.HomeChooseModuleReq.parseFrom(payload);
         session.getPlayer().addRealmList(req.getModuleId());
         session.getPlayer().setCurrentRealmId(req.getModuleId());
         session.send(new PacketHomeChooseModuleRsp(req.getModuleId()));

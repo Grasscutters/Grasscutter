@@ -9,6 +9,7 @@ import lombok.Getter;
 public abstract class EntityBaseGadget extends GameEntity {
     @Getter(onMethod_ = @Override)
     protected final Position position;
+
     @Getter(onMethod_ = @Override)
     protected final Position rotation;
 

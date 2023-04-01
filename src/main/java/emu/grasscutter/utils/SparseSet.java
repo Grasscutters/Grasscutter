@@ -8,6 +8,7 @@ import java.util.TreeSet;
 public final class SparseSet {
     private final List<Range> rangeEntries;
     private final Set<Integer> denseEntries;
+
     public SparseSet(String csv) {
         this.rangeEntries = new ArrayList<>();
         this.denseEntries = new TreeSet<>();
@@ -19,10 +20,16 @@ public final class SparseSet {
                     this.denseEntries.add(Integer.parseInt(tokens[0]));
                     break;
                 case 2:
-                    this.rangeEntries.add(new Range(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1])));
+                    this.rangeEntries.add(
+                            new Range(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1])));
                     break;
                 default:
-                    throw new IllegalArgumentException("Invalid token passed to SparseSet initializer - " + token + " (split length " + tokens.length + ")");
+                    throw new IllegalArgumentException(
+                            "Invalid token passed to SparseSet initializer - "
+                                    + token
+                                    + " (split length "
+                                    + tokens.length
+                                    + ")");
             }
         }
     }
@@ -46,7 +53,8 @@ public final class SparseSet {
 
         public Range(int min, int max) {
             if (min > max) {
-                throw new IllegalArgumentException("Range passed minimum higher than maximum - " + min + " > " + max);
+                throw new IllegalArgumentException(
+                        "Range passed minimum higher than maximum - " + min + " > " + max);
             }
             this.min = min;
             this.max = max;

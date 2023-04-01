@@ -15,5 +15,4 @@ public class HandlerPathfindingEnterSceneReq extends PacketHandler {
         PacketHead head = PacketHead.parseFrom(header);
         session.send(new PacketPathfindingEnterSceneRsp(head.getClientSequenceId()));
     }
-
 }

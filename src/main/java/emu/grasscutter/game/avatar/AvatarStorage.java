@@ -14,7 +14,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -136,7 +135,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             }
 
             AvatarData avatarData = GameData.getAvatarDataMap().get(avatar.getAvatarId());
-            AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
+            AvatarSkillDepotData skillDepot =
+                    GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
             if (avatarData == null || skillDepot == null) {
                 continue;
             }

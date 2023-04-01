@@ -10,7 +10,6 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketPersonalSceneJumpRsp;
 import emu.grasscutter.utils.Position;
 
-
 @Opcodes(PacketOpcodes.PersonalSceneJumpReq)
 public class HandlerPersonalSceneJumpReq extends PacketHandler {
 
@@ -20,16 +19,16 @@ public class HandlerPersonalSceneJumpReq extends PacketHandler {
         var player = session.getPlayer();
 
         // get the scene point
-        ScenePointEntry scenePointEntry = GameData.getScenePointEntryById(player.getSceneId(), req.getPointId());
+        ScenePointEntry scenePointEntry =
+                GameData.getScenePointEntryById(player.getSceneId(), req.getPointId());
 
         if (scenePointEntry != null) {
-            Position pos = scenePointEntry.getPointData().getTranPos().clone();  // This might not need cloning
+            Position pos =
+                    scenePointEntry.getPointData().getTranPos().clone(); // This might not need cloning
             int sceneId = scenePointEntry.getPointData().getTranSceneId();
 
             player.getWorld().transferPlayerToScene(player, sceneId, pos);
             session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
         }
-
     }
-
 }

@@ -9,9 +9,7 @@ public class PacketBuyBattlePassLevelRsp extends BasePacket {
     public PacketBuyBattlePassLevelRsp(int buyLevel) {
         super(PacketOpcodes.BuyBattlePassLevelRsp);
 
-        BuyBattlePassLevelRsp proto = BuyBattlePassLevelRsp.newBuilder()
-            .setBuyLevel(buyLevel)
-            .build();
+        BuyBattlePassLevelRsp proto = BuyBattlePassLevelRsp.newBuilder().setBuyLevel(buyLevel).build();
 
         this.setData(proto);
     }

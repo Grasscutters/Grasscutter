@@ -10,11 +10,12 @@ public class PacketPlatformStartRouteNotify extends BasePacket {
     public PacketPlatformStartRouteNotify(EntityPlatform entity, Scene scene) {
         super(PacketOpcodes.PlatformStartRouteNotify);
 
-        var notify = PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.newBuilder()
-            .setEntityId(entity.getId())
-            .setSceneTime(scene.getSceneTime())
-            .setPlatform(entity.onStartRoute())
-            .build();
+        var notify =
+                PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.newBuilder()
+                        .setEntityId(entity.getId())
+                        .setSceneTime(scene.getSceneTime())
+                        .setPlatform(entity.onStartRoute())
+                        .build();
 
         this.setData(notify);
     }

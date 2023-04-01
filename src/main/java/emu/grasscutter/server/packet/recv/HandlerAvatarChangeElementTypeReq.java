@@ -26,13 +26,16 @@ public class HandlerAvatarChangeElementTypeReq extends PacketHandler {
 
         WorldAreaData area = GameData.getWorldAreaDataMap().get(req.getAreaId());
 
-        if (area == null || area.getElementType() == null || area.getElementType().getDepotValue() <= 0) {
+        if (area == null
+                || area.getElementType() == null
+                || area.getElementType().getDepotValue() <= 0) {
             session.send(new PacketAvatarChangeElementTypeRsp(Retcode.RET_SVR_ERROR_VALUE));
             return;
         }
 
         // Get current avatar, should be one of the main characters
-        EntityAvatar mainCharacterEntity = session.getPlayer().getTeamManager().getCurrentAvatarEntity();
+        EntityAvatar mainCharacterEntity =
+                session.getPlayer().getTeamManager().getCurrentAvatarEntity();
         Avatar mainCharacter = mainCharacterEntity.getAvatar();
 
         int skillDepotId = area.getElementType().getDepotValue();
@@ -63,5 +66,4 @@ public class HandlerAvatarChangeElementTypeReq extends PacketHandler {
         session.send(new PacketAbilityChangeNotify(mainCharacterEntity));
         session.send(new PacketAvatarFightPropNotify(mainCharacter));
     }
-
 }

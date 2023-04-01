@@ -13,7 +13,9 @@ public class HandlerSetEquipLockStateReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         SetEquipLockStateReq req = SetEquipLockStateReq.parseFrom(payload);
 
-        session.getServer().getInventorySystem().lockEquip(session.getPlayer(), req.getTargetEquipGuid(), req.getIsLocked());
+        session
+                .getServer()
+                .getInventorySystem()
+                .lockEquip(session.getPlayer(), req.getTargetEquipGuid(), req.getIsLocked());
     }
-
 }

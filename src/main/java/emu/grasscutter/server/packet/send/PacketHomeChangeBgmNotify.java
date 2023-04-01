@@ -8,9 +8,8 @@ public class PacketHomeChangeBgmNotify extends BasePacket {
     public PacketHomeChangeBgmNotify(int homeBgmId) {
         super(PacketOpcodes.HomeChangeBgmNotify);
 
-        var notify = HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.newBuilder()
-            .setBgmId(homeBgmId)
-            .build();
+        var notify =
+                HomeChangeBgmNotifyOuterClass.HomeChangeBgmNotify.newBuilder().setBgmId(homeBgmId).build();
 
         this.setData(notify);
     }

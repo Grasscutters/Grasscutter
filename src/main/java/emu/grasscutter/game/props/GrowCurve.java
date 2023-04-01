@@ -2,7 +2,6 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -69,15 +68,21 @@ public enum GrowCurve {
     GROW_CURVE_CRITICAL_304(2304),
     GROW_CURVE_CRITICAL_305(2305);
 
-    public static final int[] fightProps = new int[]{1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, 2000, 2001, 2002, 2003, 1010};
+    public static final int[] fightProps =
+            new int[] {
+                1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54,
+                55, 56, 2000, 2001, 2002, 2003, 1010
+            };
     private static final Int2ObjectMap<GrowCurve> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, GrowCurve> stringMap = new HashMap<>();
 
     static {
-        Stream.of(values()).forEach(e -> {
-            map.put(e.getId(), e);
-            stringMap.put(e.name(), e);
-        });
+        Stream.of(values())
+                .forEach(
+                        e -> {
+                            map.put(e.getId(), e);
+                            stringMap.put(e.name(), e);
+                        });
     }
 
     private final int id;

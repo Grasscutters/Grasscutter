@@ -11,13 +11,12 @@ import emu.grasscutter.data.common.DynamicFloat;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import lombok.val;
-
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import lombok.val;
 
 public class JsonAdapters {
     static class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -34,13 +33,14 @@ public class JsonAdapters {
                     reader.beginArray();
                     val opStack = new ArrayList<DynamicFloat.StackOp>();
                     while (reader.hasNext()) {
-                        opStack.add(switch (reader.peek()) {
-                            case STRING -> new DynamicFloat.StackOp(reader.nextString());
-                            case NUMBER -> new DynamicFloat.StackOp((float) reader.nextDouble());
-                            case BOOLEAN -> new DynamicFloat.StackOp(reader.nextBoolean());
-                            default ->
-                                throw new IOException("Invalid DynamicFloat definition - " + reader.peek().name());
-                        });
+                        opStack.add(
+                                switch (reader.peek()) {
+                                    case STRING -> new DynamicFloat.StackOp(reader.nextString());
+                                    case NUMBER -> new DynamicFloat.StackOp((float) reader.nextDouble());
+                                    case BOOLEAN -> new DynamicFloat.StackOp(reader.nextBoolean());
+                                    default -> throw new IOException(
+                                            "Invalid DynamicFloat definition - " + reader.peek().name());
+                                });
                     }
                     reader.endArray();
                     return new DynamicFloat(opStack);
@@ -50,9 +50,7 @@ public class JsonAdapters {
         }
 
         @Override
-        public void write(JsonWriter writer, DynamicFloat f) {
-        }
-
+        public void write(JsonWriter writer, DynamicFloat f) {}
     }
 
     static class IntListAdapter extends TypeAdapter<IntList> {
@@ -61,10 +59,10 @@ public class JsonAdapters {
             if (Objects.requireNonNull(reader.peek()) == JsonToken.BEGIN_ARRAY) {
                 reader.beginArray();
                 val i = new IntArrayList();
-                while (reader.hasNext())
-                    i.add(reader.nextInt());
+                while (reader.hasNext()) i.add(reader.nextInt());
                 reader.endArray();
-                i.trim();  // We might have a ton of these from resources and almost all of them immutable, don't overprovision!
+                i.trim(); // We might have a ton of these from resources and almost all of them
+                // immutable, don't overprovision!
                 return i;
             }
             throw new IOException("Invalid IntList definition - " + reader.peek().name());
@@ -73,25 +71,23 @@ public class JsonAdapters {
         @Override
         public void write(JsonWriter writer, IntList l) throws IOException {
             writer.beginArray();
-            for (val i : l)  // .forEach() doesn't appreciate exceptions
-                writer.value(i);
+            for (val i : l) // .forEach() doesn't appreciate exceptions
+            writer.value(i);
             writer.endArray();
         }
-
     }
 
     static class PositionAdapter extends TypeAdapter<Position> {
         @Override
         public Position read(JsonReader reader) throws IOException {
             switch (reader.peek()) {
-                case BEGIN_ARRAY:  // "pos": [x,y,z]
+                case BEGIN_ARRAY: // "pos": [x,y,z]
                     reader.beginArray();
                     val array = new FloatArrayList(3);
-                    while (reader.hasNext())
-                        array.add(reader.nextInt());
+                    while (reader.hasNext()) array.add(reader.nextInt());
                     reader.endArray();
                     return new Position(array);
-                case BEGIN_OBJECT:  // "pos": {"x": x, "y": y, "z": z}
+                case BEGIN_OBJECT: // "pos": {"x": x, "y": y, "z": z}
                     float x = 0f;
                     float y = 0f;
                     float z = 0f;
@@ -120,7 +116,6 @@ public class JsonAdapters {
             writer.value(i.getZ());
             writer.endArray();
         }
-
     }
 
     static class EnumTypeAdapterFactory implements TypeAdapterFactory {
@@ -132,8 +127,7 @@ public class JsonAdapters {
             // Make mappings of (string) names to enum constants
             val map = new HashMap<String, T>();
             val enumConstants = enumClass.getEnumConstants();
-            for (val constant : enumConstants)
-                map.put(constant.toString(), constant);
+            for (val constant : enumConstants) map.put(constant.toString(), constant);
 
             // If the enum also has a numeric value, map those to the constants too
             // System.out.println("Looking for enum value field");

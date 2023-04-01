@@ -13,7 +13,7 @@ public class HandlerQueryCodexMonsterBeKilledNumReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         QueryCodexMonsterBeKilledNumReq req = QueryCodexMonsterBeKilledNumReq.parseFrom(payload);
-        session.send(new PacketQueryCodexMonsterBeKilledNumRsp(session.getPlayer(), req.getCodexIdListList()));
+        session.send(
+                new PacketQueryCodexMonsterBeKilledNumRsp(session.getPlayer(), req.getCodexIdListList()));
     }
-
 }

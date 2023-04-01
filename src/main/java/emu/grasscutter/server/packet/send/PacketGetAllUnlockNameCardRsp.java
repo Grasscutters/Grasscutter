@@ -10,9 +10,8 @@ public class PacketGetAllUnlockNameCardRsp extends BasePacket {
     public PacketGetAllUnlockNameCardRsp(Player player) {
         super(PacketOpcodes.GetAllUnlockNameCardRsp);
 
-        GetAllUnlockNameCardRsp proto = GetAllUnlockNameCardRsp.newBuilder()
-            .addAllNameCardList(player.getNameCardList())
-            .build();
+        GetAllUnlockNameCardRsp proto =
+                GetAllUnlockNameCardRsp.newBuilder().addAllNameCardList(player.getNameCardList()).build();
 
         this.setData(proto);
     }

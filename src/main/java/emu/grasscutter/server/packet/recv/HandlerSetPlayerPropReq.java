@@ -30,6 +30,4 @@ public class HandlerSetPlayerPropReq extends PacketHandler {
         player.save();
         session.send(new PacketSetPlayerPropRsp(0));
     }
-
-
 }

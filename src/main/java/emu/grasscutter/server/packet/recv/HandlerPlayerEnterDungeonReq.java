@@ -14,7 +14,9 @@ public class HandlerPlayerEnterDungeonReq extends PacketHandler {
         // Auto template
         PlayerEnterDungeonReq req = PlayerEnterDungeonReq.parseFrom(payload);
 
-        session.getServer().getDungeonSystem().enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
+        session
+                .getServer()
+                .getDungeonSystem()
+                .enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
     }
-
 }

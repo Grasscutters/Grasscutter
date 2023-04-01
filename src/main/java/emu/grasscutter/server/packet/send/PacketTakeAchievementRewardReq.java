@@ -14,5 +14,4 @@ public class PacketTakeAchievementRewardReq extends BasePacket {
 
         this.setData(proto);
     }
-
 }

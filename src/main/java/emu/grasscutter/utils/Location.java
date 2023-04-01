@@ -8,10 +8,7 @@ import lombok.Setter;
 
 @Entity
 public class Location extends Position {
-    @Transient
-    @Getter
-    @Setter
-    private Scene scene;
+    @Transient @Getter @Setter private Scene scene;
 
     public Location(Scene scene, Position position) {
         this.set(position);

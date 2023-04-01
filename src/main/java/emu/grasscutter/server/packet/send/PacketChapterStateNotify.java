@@ -12,8 +12,7 @@ public class PacketChapterStateNotify extends BasePacket {
 
         var proto = ChapterStateNotifyOuterClass.ChapterStateNotify.newBuilder();
 
-        proto.setChapterId(id)
-            .setChapterState(state);
+        proto.setChapterId(id).setChapterState(state);
 
         this.setData(proto);
     }

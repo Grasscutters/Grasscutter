@@ -13,11 +13,10 @@ public class PacketBattlePassCurScheduleUpdateNotify extends BasePacket {
         var proto = BattlePassCurScheduleUpdateNotify.newBuilder();
 
         proto
-            .setHaveCurSchedule(true)
-            .setCurSchedule(player.getBattlePassManager().getScheduleProto())
-            .build();
+                .setHaveCurSchedule(true)
+                .setCurSchedule(player.getBattlePassManager().getScheduleProto())
+                .build();
 
         setData(proto.build());
-
     }
 }

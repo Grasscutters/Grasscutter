@@ -164,8 +164,7 @@ public class PacketWriter {
 
     public void writeBytes(int[] bytes) {
         byte[] b = new byte[bytes.length];
-        for (int i = 0; i < bytes.length; i++)
-            b[i] = (byte) bytes[i];
+        for (int i = 0; i < bytes.length; i++) b[i] = (byte) bytes[i];
 
         try {
             baos.write(b);

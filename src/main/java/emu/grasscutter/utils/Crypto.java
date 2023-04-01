@@ -1,7 +1,6 @@
 package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
-
 import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
@@ -35,8 +34,10 @@ public final class Crypto {
         ENCRYPT_SEED_BUFFER = FileUtils.readResource("/keys/secretKeyBuffer.bin");
 
         try {
-            CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
-                .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
+            CUR_SIGNING_KEY =
+                    KeyFactory.getInstance("RSA")
+                            .generatePrivate(
+                                    new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
             Pattern pattern = Pattern.compile("([0-9]*)_Pub\\.der");
             for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
@@ -45,8 +46,9 @@ public final class Crypto {
                     var m = pattern.matcher(path.getFileName().toString());
 
                     if (m.matches()) {
-                        var key = KeyFactory.getInstance("RSA")
-                            .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+                        var key =
+                                KeyFactory.getInstance("RSA")
+                                        .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
 
                         EncryptionKeys.put(Integer.valueOf(m.group(1)), key);
                     }

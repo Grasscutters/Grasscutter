@@ -2,7 +2,6 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -17,10 +16,12 @@ public enum FetterState {
     private static final Map<String, FetterState> stringMap = new HashMap<>();
 
     static {
-        Stream.of(values()).forEach(e -> {
-            map.put(e.getValue(), e);
-            stringMap.put(e.name(), e);
-        });
+        Stream.of(values())
+                .forEach(
+                        e -> {
+                            map.put(e.getValue(), e);
+                            stringMap.put(e.name(), e);
+                        });
     }
 
     private final int value;

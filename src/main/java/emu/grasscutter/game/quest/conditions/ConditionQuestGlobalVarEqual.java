@@ -11,8 +11,10 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ConditionQuestGlobalVarEqual extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        Integer questGlobalVarValue = quest.getMainQuest().getQuestManager().getQuestGlobalVarValue(Integer.valueOf(params[0]));
+    public boolean execute(
+            GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+        Integer questGlobalVarValue =
+                quest.getMainQuest().getQuestManager().getQuestGlobalVarValue(Integer.valueOf(params[0]));
         Grasscutter.getLogger().debug("questGlobarVar {} : {}", params[0], questGlobalVarValue);
         return questGlobalVarValue.intValue() == params[1];
     }

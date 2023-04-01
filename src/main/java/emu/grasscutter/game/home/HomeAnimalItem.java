@@ -19,18 +19,17 @@ public class HomeAnimalItem {
 
     public static HomeAnimalItem parseFrom(HomeAnimalDataOuterClass.HomeAnimalData homeAnimalData) {
         return HomeAnimalItem.of()
-            .furnitureId(homeAnimalData.getFurnitureId())
-            .spawnPos(new Position(homeAnimalData.getSpawnPos()))
-            .spawnRot(new Position(homeAnimalData.getSpawnRot()))
-            .build();
+                .furnitureId(homeAnimalData.getFurnitureId())
+                .spawnPos(new Position(homeAnimalData.getSpawnPos()))
+                .spawnRot(new Position(homeAnimalData.getSpawnRot()))
+                .build();
     }
 
     public HomeAnimalDataOuterClass.HomeAnimalData toProto() {
         return HomeAnimalDataOuterClass.HomeAnimalData.newBuilder()
-            .setFurnitureId(furnitureId)
-            .setSpawnPos(spawnPos.toProto())
-            .setSpawnRot(spawnRot.toProto())
-            .build();
+                .setFurnitureId(furnitureId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .build();
     }
-
 }

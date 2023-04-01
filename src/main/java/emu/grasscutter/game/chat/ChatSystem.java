@@ -1,5 +1,7 @@
 package emu.grasscutter.game.chat;
 
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.player.Player;
@@ -10,14 +12,11 @@ import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
 import emu.grasscutter.server.packet.send.PacketPullPrivateChatRsp;
 import emu.grasscutter.server.packet.send.PacketPullRecentChatRsp;
 import emu.grasscutter.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public class ChatSystem implements ChatSystemHandler {
     static final String PREFIXES = "[/!]";
@@ -39,8 +38,7 @@ public class ChatSystem implements ChatSystemHandler {
     }
 
     private boolean tryInvokeCommand(Player sender, Player target, String rawMessage) {
-        if (!RE_PREFIXES.matcher(rawMessage.substring(0, 1)).matches())
-            return false;
+        if (!RE_PREFIXES.matcher(rawMessage.substring(0, 1)).matches()) return false;
         for (String line : rawMessage.substring(1).split("\n[/!]"))
             CommandMap.getInstance().invoke(sender, target, line);
         return true;
@@ -50,9 +48,10 @@ public class ChatSystem implements ChatSystemHandler {
      * Chat history handling
      ********************/
     private void putInHistory(int uid, int partnerId, ChatInfo info) {
-        this.history.computeIfAbsent(uid, x -> new HashMap<>())
-            .computeIfAbsent(partnerId, x -> new ArrayList<>())
-            .add(info);
+        this.history
+                .computeIfAbsent(uid, x -> new HashMap<>())
+                .computeIfAbsent(partnerId, x -> new ArrayList<>())
+                .add(info);
     }
 
     public void clearHistoryOnLogout(Player player) {
@@ -60,22 +59,32 @@ public class ChatSystem implements ChatSystemHandler {
     }
 
     public void handlePullPrivateChatReq(Player player, int partnerId) {
-        var chatHistory = this.history.computeIfAbsent(player.getUid(), x -> new HashMap<>())
-            .computeIfAbsent(partnerId, x -> new ArrayList<>());
+        var chatHistory =
+                this.history
+                        .computeIfAbsent(player.getUid(), x -> new HashMap<>())
+                        .computeIfAbsent(partnerId, x -> new ArrayList<>());
         player.sendPacket(new PacketPullPrivateChatRsp(chatHistory));
     }
 
     public void handlePullRecentChatReq(Player player) {
         // If this user has no chat history yet, create it by sending the server welcome messages.
-        if (!this.history.computeIfAbsent(player.getUid(), x -> new HashMap<>()).containsKey(GameConstants.SERVER_CONSOLE_UID)) {
+        if (!this.history
+                .computeIfAbsent(player.getUid(), x -> new HashMap<>())
+                .containsKey(GameConstants.SERVER_CONSOLE_UID)) {
             this.sendServerWelcomeMessages(player);
         }
 
         // For now, we send the list three messages from the server for the recent chat history.
-        // This matches the previous behavior, but ultimately, we should probably keep track of the last chat partner
+        // This matches the previous behavior, but ultimately, we should probably keep track of the last
+        // chat partner
         // for every given player and return the last messages exchanged with that partner.
-        int historyLength = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).size();
-        var messages = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).subList(Math.max(historyLength - 3, 0), historyLength);
+        int historyLength =
+                this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).size();
+        var messages =
+                this.history
+                        .get(player.getUid())
+                        .get(GameConstants.SERVER_CONSOLE_UID)
+                        .subList(Math.max(historyLength - 3, 0), historyLength);
         player.sendPacket(new PacketPullRecentChatRsp(messages));
     }
 
@@ -194,7 +203,9 @@ public class ChatSystem implements ChatSystemHandler {
         var joinOptions = GAME_INFO.joinOptions;
 
         if (joinOptions.welcomeEmotes != null && joinOptions.welcomeEmotes.length > 0) {
-            this.sendPrivateMessageFromServer(player.getUid(), joinOptions.welcomeEmotes[Utils.randomRange(0, joinOptions.welcomeEmotes.length - 1)]);
+            this.sendPrivateMessageFromServer(
+                    player.getUid(),
+                    joinOptions.welcomeEmotes[Utils.randomRange(0, joinOptions.welcomeEmotes.length - 1)]);
         }
 
         if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {

@@ -3,14 +3,15 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import java.util.List;
+import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-import java.util.Objects;
-
-@ResourceType(name = "NewActivityExcelConfigData.json", loadPriority = ResourceType.LoadPriority.LOW)
+@ResourceType(
+        name = "NewActivityExcelConfigData.json",
+        loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ActivityData extends GameResource {
@@ -27,9 +28,10 @@ public class ActivityData extends GameResource {
 
     @Override
     public void onLoad() {
-        this.watcherDataList = watcherId.stream().map(item -> GameData.getActivityWatcherDataMap().get(item.intValue()))
-            .filter(Objects::nonNull)
-            .toList();
+        this.watcherDataList =
+                watcherId.stream()
+                        .map(item -> GameData.getActivityWatcherDataMap().get(item.intValue()))
+                        .filter(Objects::nonNull)
+                        .toList();
     }
-
 }

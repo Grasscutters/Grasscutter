@@ -9,10 +9,8 @@ public class PacketWearEquipRsp extends BasePacket {
     public PacketWearEquipRsp(long avatarGuid, long equipGuid) {
         super(PacketOpcodes.WearEquipRsp);
 
-        WearEquipRsp proto = WearEquipRsp.newBuilder()
-            .setAvatarGuid(avatarGuid)
-            .setEquipGuid(equipGuid)
-            .build();
+        WearEquipRsp proto =
+                WearEquipRsp.newBuilder().setAvatarGuid(avatarGuid).setEquipGuid(equipGuid).build();
 
         this.setData(proto);
     }

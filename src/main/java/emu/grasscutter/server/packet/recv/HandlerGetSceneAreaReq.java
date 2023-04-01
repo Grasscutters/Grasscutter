@@ -16,5 +16,4 @@ public class HandlerGetSceneAreaReq extends PacketHandler {
 
         session.send(new PacketGetSceneAreaRsp(session.getPlayer(), req.getSceneId()));
     }
-
 }

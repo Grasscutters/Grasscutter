@@ -15,7 +15,6 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,8 @@ public class BlossomActivity {
     private int generatedCount;
     private boolean pass = false;
 
-    public BlossomActivity(EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
+    public BlossomActivity(
+            EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
         this.gadget = entityGadget;
@@ -45,15 +45,18 @@ public class BlossomActivity {
         this.candidateMonsters.addAll(monsters);
         this.worldLevel = worldLevel;
         ArrayList<ChallengeTrigger> challengeTriggers = new ArrayList<>();
-        this.challenge = new WorldChallenge(entityGadget.getScene(),
-            tempSceneGroup,
-            1,
-            1,
-            List.of(goal, timeout),
-            timeout,
-            goal, challengeTriggers);
+        this.challenge =
+                new WorldChallenge(
+                        entityGadget.getScene(),
+                        tempSceneGroup,
+                        1,
+                        1,
+                        List.of(goal, timeout),
+                        timeout,
+                        goal,
+                        challengeTriggers);
         challengeTriggers.add(new KillMonsterTrigger());
-        //this.challengeTriggers.add(new InTimeTrigger());
+        // this.challengeTriggers.add(new InTimeTrigger());
     }
 
     public WorldChallenge getChallenge() {
@@ -128,7 +131,8 @@ public class BlossomActivity {
 
     public EntityGadget getChest() {
         if (chest == null) {
-            EntityGadget rewardGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
+            EntityGadget rewardGadget =
+                    new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
             SceneGadget metaGadget = new SceneGadget();
             metaGadget.boss_chest = new SceneBossChest();
             metaGadget.boss_chest.resin = 20;

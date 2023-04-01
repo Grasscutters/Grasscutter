@@ -4,9 +4,7 @@ import emu.grasscutter.server.http.Router;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
-/**
- * Handles logging requests made to the server.
- */
+/** Handles logging requests made to the server. */
 public final class LogHandler implements Router {
     private static void log(Context ctx) {
         // TODO: Figure out how to dump request body and log to file.

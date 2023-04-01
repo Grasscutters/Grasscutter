@@ -7,8 +7,7 @@ import lombok.Getter;
 @ResourceType(name = "TriggerExcelConfigData.json")
 @Getter
 public class TriggerExcelConfigData extends GameResource {
-    @Getter
-    private int id;
+    @Getter private int id;
     private int sceneId;
     private int groupId;
     private String triggerName;

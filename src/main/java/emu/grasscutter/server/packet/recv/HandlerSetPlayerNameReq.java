@@ -20,5 +20,4 @@ public class HandlerSetPlayerNameReq extends PacketHandler {
             session.send(new PacketSetPlayerNameRsp(session.getPlayer()));
         }
     }
-
 }

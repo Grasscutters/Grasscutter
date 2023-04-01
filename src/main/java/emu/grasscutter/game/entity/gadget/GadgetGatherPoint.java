@@ -46,10 +46,11 @@ public class GadgetGatherPoint extends GadgetContent {
     }
 
     public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-        GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
-            .setItemId(this.getItemId())
-            .setIsForbidGuest(this.isForbidGuest())
-            .build();
+        GatherGadgetInfo gatherGadgetInfo =
+                GatherGadgetInfo.newBuilder()
+                        .setItemId(this.getItemId())
+                        .setIsForbidGuest(this.isForbidGuest())
+                        .build();
 
         gadgetInfo.setGatherGadget(gatherGadgetInfo);
     }
@@ -59,16 +60,19 @@ public class GadgetGatherPoint extends GadgetContent {
         int times = Utils.randomRange(1, 2);
 
         for (int i = 0; i < times; i++) {
-            EntityItem item = new EntityItem(
-                scene,
-                player,
-                GameData.getItemDataMap().get(itemId),
-                getGadget().getPosition().clone()
-                    .addY(2f)
-                    .addX(Utils.randomFloatRange(-1f, 1f))
-                    .addZ(Utils.randomFloatRange(-1f, 1f)),
-                1,
-                true);
+            EntityItem item =
+                    new EntityItem(
+                            scene,
+                            player,
+                            GameData.getItemDataMap().get(itemId),
+                            getGadget()
+                                    .getPosition()
+                                    .clone()
+                                    .addY(2f)
+                                    .addX(Utils.randomFloatRange(-1f, 1f))
+                                    .addZ(Utils.randomFloatRange(-1f, 1f)),
+                            1,
+                            true);
 
             scene.addEntity(item);
         }

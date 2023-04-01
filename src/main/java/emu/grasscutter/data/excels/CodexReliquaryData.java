@@ -9,24 +9,15 @@ import lombok.Getter;
 
 @ResourceType(name = {"ReliquaryCodexExcelConfigData.json"})
 public class CodexReliquaryData extends GameResource {
-    @Getter
-    private int Id;
-    @Getter
-    private int suitId;
-    @Getter
-    private int level;
-    @Getter
-    private int cupId;
-    @Getter
-    private int leatherId;
-    @Getter
-    private int capId;
-    @Getter
-    private int flowerId;
-    @Getter
-    private int sandId;
-    @Getter
-    private int sortOrder;
+    @Getter private int Id;
+    @Getter private int suitId;
+    @Getter private int level;
+    @Getter private int cupId;
+    @Getter private int leatherId;
+    @Getter private int capId;
+    @Getter private int flowerId;
+    @Getter private int sandId;
+    @Getter private int sortOrder;
     private transient IntCollection ids;
 
     public boolean containsId(int id) {

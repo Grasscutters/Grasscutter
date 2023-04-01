@@ -3,12 +3,10 @@ package emu.grasscutter.server.event.game;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.ServerEvent;
-
 import javax.annotation.Nullable;
 
 public final class ReceiveCommandFeedbackEvent extends ServerEvent implements Cancellable {
-    @Nullable
-    private final Player player;
+    @Nullable private final Player player;
     private String message;
 
     public ReceiveCommandFeedbackEvent(@Nullable Player player, String message) {
@@ -26,8 +24,7 @@ public final class ReceiveCommandFeedbackEvent extends ServerEvent implements Ca
         this.message = message;
     }
 
-    @Nullable
-    public Player getPlayer() {
+    @Nullable public Player getPlayer() {
         return this.player;
     }
 }

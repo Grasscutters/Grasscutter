@@ -14,5 +14,4 @@ public class HandlerWorldPlayerReviveReq extends PacketHandler {
         session.getPlayer().getTeamManager().respawnTeam();
         session.send(new PacketWorldPlayerReviveRsp());
     }
-
 }

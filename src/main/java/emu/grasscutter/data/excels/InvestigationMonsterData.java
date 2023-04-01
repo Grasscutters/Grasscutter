@@ -3,18 +3,20 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
-@ResourceType(name = "InvestigationMonsterConfigData.json", loadPriority = ResourceType.LoadPriority.LOW)
+@ResourceType(
+        name = "InvestigationMonsterConfigData.json",
+        loadPriority = ResourceType.LoadPriority.LOW)
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class InvestigationMonsterData extends GameResource {
     @Getter(onMethod_ = @Override)
     int id;
+
     int cityId;
     List<Integer> monsterIdList;
     List<Integer> groupIdList;

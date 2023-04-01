@@ -19,6 +19,5 @@ public class FetterCharacterCardData extends GameResource {
     }
 
     @Override
-    public void onLoad() {
-    }
+    public void onLoad() {}
 }

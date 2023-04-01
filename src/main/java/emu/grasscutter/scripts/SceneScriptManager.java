@@ -15,35 +15,38 @@ import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
 import emu.grasscutter.scripts.service.ScriptMonsterTideService;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import org.luaj.vm2.LuaError;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
+import org.luaj.vm2.LuaError;
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 public class SceneScriptManager {
     public static final ExecutorService eventExecutor;
 
     static {
-        eventExecutor = new ThreadPoolExecutor(4, 4,
-            60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
-            FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
+        eventExecutor =
+                new ThreadPoolExecutor(
+                        4,
+                        4,
+                        60,
+                        TimeUnit.SECONDS,
+                        new LinkedBlockingDeque<>(1000),
+                        FastThreadLocalThread::new,
+                        new ThreadPoolExecutor.AbortPolicy());
     }
 
     private final Scene scene;
     private final Map<String, Integer> variables;
-    /**
-     * current triggers controlled by RefreshGroup
-     */
+    /** current triggers controlled by RefreshGroup */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
+
     private final Map<Integer, EntityRegion> regions; // <EntityId-Region>
     private final Map<Integer, SceneGroup> sceneGroups;
-    /**
-     * blockid - loaded groupSet
-     */
+    /** blockid - loaded groupSet */
     private final Map<Integer, Set<SceneGroup>> loadedGroupSetPerBlock;
+
     private SceneMeta meta;
     private boolean isInit;
     private ScriptMonsterTideService scriptMonsterTideService;
@@ -60,7 +63,8 @@ public class SceneScriptManager {
         this.loadedGroupSetPerBlock = new ConcurrentHashMap<>();
 
         // TEMPORARY
-        if (this.getScene().getId() < 10 && !Grasscutter.getConfig().server.game.enableScriptInBigWorld) {
+        if (this.getScene().getId() < 10
+                && !Grasscutter.getConfig().server.game.enableScriptInBigWorld) {
             return;
         }
 
@@ -139,18 +143,22 @@ public class SceneScriptManager {
 
     public void registerRegion(EntityRegion region) {
         regions.put(region.getId(), region);
-        Grasscutter.getLogger().debug("Registered region {} from group {}", region.getMetaRegion().config_id, region.getGroupId());
+        Grasscutter.getLogger()
+                .debug(
+                        "Registered region {} from group {}",
+                        region.getMetaRegion().config_id,
+                        region.getGroupId());
     }
 
     public void registerRegionInGroupSuite(SceneGroup group, SceneSuite suite) {
-        suite.sceneRegions.stream().map(region -> new EntityRegion(this.getScene(), region))
-            .forEach(this::registerRegion);
+        suite.sceneRegions.stream()
+                .map(region -> new EntityRegion(this.getScene(), region))
+                .forEach(this::registerRegion);
     }
 
     public synchronized void deregisterRegion(SceneRegion region) {
-        var instance = regions.values().stream()
-            .filter(r -> r.getConfigId() == region.config_id)
-            .findFirst();
+        var instance =
+                regions.values().stream().filter(r -> r.getConfigId() == region.config_id).findFirst();
         instance.ifPresent(entityRegion -> regions.remove(entityRegion.getId()));
     }
 
@@ -209,38 +217,43 @@ public class SceneScriptManager {
         }
 
         for (var region : this.regions.values()) {
-            // currently all condition_ENTER_REGION Events check for avatar, so we have no necessary to add other types of entity
-            getScene().getEntities().values()
-                .stream()
-                .filter(e -> e.getEntityType() == EntityType.Avatar.getValue() && region.getMetaRegion().contains(e.getPosition()))
-                .forEach(region::addEntity);
+            // currently all condition_ENTER_REGION Events check for avatar, so we have no necessary to
+            // add other types of entity
+            getScene().getEntities().values().stream()
+                    .filter(
+                            e ->
+                                    e.getEntityType() == EntityType.Avatar.getValue()
+                                            && region.getMetaRegion().contains(e.getPosition()))
+                    .forEach(region::addEntity);
 
             var players = region.getScene().getPlayers();
             int targetID = 0;
-            if (players.size() > 0)
-                targetID = players.get(0).getUid();
+            if (players.size() > 0) targetID = players.get(0).getUid();
 
             if (region.hasNewEntities()) {
-                Grasscutter.getLogger().trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
-                callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.getConfigId())
-                    .setSourceEntityId(region.getId())
-                    .setTargetEntityId(targetID)
-                );
+                Grasscutter.getLogger()
+                        .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
+                callEvent(
+                        EventType.EVENT_ENTER_REGION,
+                        new ScriptArgs(region.getConfigId())
+                                .setSourceEntityId(region.getId())
+                                .setTargetEntityId(targetID));
 
                 region.resetNewEntities();
             }
 
             for (int entityId : region.getEntities()) {
-                if (getScene().getEntityById(entityId) == null || !region.getMetaRegion().contains(getScene().getEntityById(entityId).getPosition())) {
+                if (getScene().getEntityById(entityId) == null
+                        || !region.getMetaRegion().contains(getScene().getEntityById(entityId).getPosition())) {
                     region.removeEntity(entityId);
-
                 }
             }
             if (region.entityLeave()) {
-                callEvent(EventType.EVENT_LEAVE_REGION, new ScriptArgs(region.getConfigId())
-                    .setSourceEntityId(region.getId())
-                    .setTargetEntityId(region.getFirstEntityId())
-                );
+                callEvent(
+                        EventType.EVENT_LEAVE_REGION,
+                        new ScriptArgs(region.getConfigId())
+                                .setSourceEntityId(region.getId())
+                                .setTargetEntityId(region.getFirstEntityId()));
 
                 region.resetNewEntities();
             }
@@ -249,16 +262,16 @@ public class SceneScriptManager {
 
     public List<EntityGadget> getGadgetsInGroupSuite(SceneGroup group, SceneSuite suite) {
         return suite.sceneGadgets.stream()
-            .map(g -> createGadget(group.id, group.block_id, g))
-            .filter(Objects::nonNull)
-            .toList();
+                .map(g -> createGadget(group.id, group.block_id, g))
+                .filter(Objects::nonNull)
+                .toList();
     }
 
     public List<EntityMonster> getMonstersInGroupSuite(SceneGroup group, SceneSuite suite) {
         return suite.sceneMonsters.stream()
-            .map(mob -> createMonster(group.id, group.block_id, mob))
-            .filter(Objects::nonNull)
-            .toList();
+                .map(mob -> createMonster(group.id, group.block_id, mob))
+                .filter(Objects::nonNull)
+                .toList();
     }
 
     public void addGroupSuite(SceneGroup group, SceneSuite suite) {
@@ -288,10 +301,11 @@ public class SceneScriptManager {
             gadgets = suite.sceneGadgets;
         }
 
-        var toCreate = gadgets.stream()
-            .map(g -> createGadget(g.group.id, group.block_id, g))
-            .filter(Objects::nonNull)
-            .toList();
+        var toCreate =
+                gadgets.stream()
+                        .map(g -> createGadget(g.group.id, group.block_id, g))
+                        .filter(Objects::nonNull)
+                        .toList();
         this.addEntities(toCreate);
     }
 
@@ -299,14 +313,16 @@ public class SceneScriptManager {
         if (suite == null || suite.sceneMonsters.size() <= 0) {
             return;
         }
-        this.addEntities(suite.sceneMonsters.stream()
-            .map(mob -> createMonster(group.id, group.block_id, mob)).toList());
+        this.addEntities(
+                suite.sceneMonsters.stream()
+                        .map(mob -> createMonster(group.id, group.block_id, mob))
+                        .toList());
     }
 
-    public void startMonsterTideInGroup(SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
+    public void startMonsterTideInGroup(
+            SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
         this.scriptMonsterTideService =
-            new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
-
+                new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
     }
 
     public void unloadCurrentMonsterTide() {
@@ -324,10 +340,11 @@ public class SceneScriptManager {
     // Events
     public void callEvent(int eventType, ScriptArgs params) {
         /**
-         * We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for every groups' trigger in every scene instances.
-         * But when callEvent is called in a ScriptLib func, it may cause NPE because the inner call cleans the ThreadLocal so that outer call could not get it.
-         * e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE -> (remove)
-         * So we use thread pool to clean the stack to avoid this new issue.
+         * We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for
+         * every groups' trigger in every scene instances. But when callEvent is called in a ScriptLib
+         * func, it may cause NPE because the inner call cleans the ThreadLocal so that outer call could
+         * not get it. e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE ->
+         * (remove) So we use thread pool to clean the stack to avoid this new issue.
          */
         eventExecutor.submit(() -> this.realCallEvent(eventType, params));
     }
@@ -337,8 +354,10 @@ public class SceneScriptManager {
             ScriptLoader.getScriptLib().setSceneScriptManager(this);
             Set<SceneTrigger> relevantTriggers = new HashSet<>();
             if (eventType == EventType.EVENT_ENTER_REGION || eventType == EventType.EVENT_LEAVE_REGION) {
-                List<SceneTrigger> relevantTriggersList = this.getTriggersByEvent(eventType).stream()
-                    .filter(p -> p.condition.contains(String.valueOf(params.param1))).toList();
+                List<SceneTrigger> relevantTriggersList =
+                        this.getTriggersByEvent(eventType).stream()
+                                .filter(p -> p.condition.contains(String.valueOf(params.param1)))
+                                .toList();
                 relevantTriggers = new HashSet<>(relevantTriggersList);
             } else {
                 relevantTriggers = this.getTriggersByEvent(eventType);
@@ -347,25 +366,41 @@ public class SceneScriptManager {
                 try {
                     ScriptLoader.getScriptLib().setCurrentGroup(trigger.currentGroup);
                     LuaValue ret = this.callScriptFunc(trigger.condition, trigger.currentGroup, params);
-                    Grasscutter.getLogger().trace("Call Condition Trigger {}, [{},{},{}]", trigger.condition, params.param1, params.source_eid, params.target_eid);
+                    Grasscutter.getLogger()
+                            .trace(
+                                    "Call Condition Trigger {}, [{},{},{}]",
+                                    trigger.condition,
+                                    params.param1,
+                                    params.source_eid,
+                                    params.target_eid);
                     if (ret.isboolean() && ret.checkboolean()) {
-                        // the SetGroupVariableValueByGroup in tower need the param to record the first stage time
+                        // the SetGroupVariableValueByGroup in tower need the param to record the first stage
+                        // time
                         this.callScriptFunc(trigger.action, trigger.currentGroup, params);
                         Grasscutter.getLogger().trace("Call Action Trigger {}", trigger.action);
                         if (trigger.event == EventType.EVENT_ENTER_REGION) {
-                            EntityRegion region = this.regions.values().stream().filter(p -> p.getConfigId() == params.param1).toList().get(0);
+                            EntityRegion region =
+                                    this.regions.values().stream()
+                                            .filter(p -> p.getConfigId() == params.param1)
+                                            .toList()
+                                            .get(0);
                             getScene().getPlayers().forEach(p -> p.onEnterRegion(region.getMetaRegion()));
                             deregisterRegion(region.getMetaRegion());
                         } else if (trigger.event == EventType.EVENT_LEAVE_REGION) {
-                            EntityRegion region = this.regions.values().stream().filter(p -> p.getConfigId() == params.param1).toList().get(0);
+                            EntityRegion region =
+                                    this.regions.values().stream()
+                                            .filter(p -> p.getConfigId() == params.param1)
+                                            .toList()
+                                            .get(0);
                             getScene().getPlayers().forEach(p -> p.onLeaveRegion(region.getMetaRegion()));
                             deregisterRegion(region.getMetaRegion());
                         }
                         deregisterTrigger(trigger);
                     } else {
-                        Grasscutter.getLogger().debug("Condition Trigger {} returned {}", trigger.condition, ret);
+                        Grasscutter.getLogger()
+                                .debug("Condition Trigger {} returned {}", trigger.condition, ret);
                     }
-                    //TODO some ret do not bool
+                    // TODO some ret do not bool
                 } finally {
                     ScriptLoader.getScriptLib().removeCurrentGroup();
                 }
@@ -415,11 +450,12 @@ public class SceneScriptManager {
 
     public EntityGadget createGadget(int groupId, int blockId, SceneGadget g) {
         if (g.isOneoff) {
-            var hasEntity = getScene().getEntities().values().stream()
-                .filter(e -> e instanceof EntityGadget)
-                .filter(e -> e.getGroupId() == g.group.id)
-                .filter(e -> e.getConfigId() == g.config_id)
-                .findFirst();
+            var hasEntity =
+                    getScene().getEntities().values().stream()
+                            .filter(e -> e instanceof EntityGadget)
+                            .filter(e -> e.getGroupId() == g.group.id)
+                            .filter(e -> e.getConfigId() == g.config_id)
+                            .findFirst();
             if (hasEntity.isPresent()) {
                 return null;
             }
@@ -463,7 +499,8 @@ public class SceneScriptManager {
         if (getScene().getDungeonData() != null) {
             level = getScene().getDungeonData().getShowLevel();
         } else if (getScene().getWorld().getWorldLevel() > 0) {
-            WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getScene().getWorld().getWorldLevel());
+            WorldLevelData worldLevelData =
+                    GameData.getWorldLevelDataMap().get(getScene().getWorld().getWorldLevel());
 
             if (worldLevelData != null) {
                 level = worldLevelData.getMonsterLevel();
@@ -479,7 +516,8 @@ public class SceneScriptManager {
         entity.setPoseId(monster.pose_id);
 
         this.getScriptMonsterSpawnService()
-            .onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
+                .onMonsterCreatedListener
+                .forEach(action -> action.onNotify(entity));
 
         return entity;
     }
@@ -501,27 +539,25 @@ public class SceneScriptManager {
     }
 
     public void removeMonstersInGroup(SceneGroup group, SceneSuite suite) {
-        var configSet = suite.sceneMonsters.stream()
-            .map(m -> m.config_id)
-            .collect(Collectors.toSet());
-        var toRemove = getScene().getEntities().values().stream()
-            .filter(e -> e instanceof EntityMonster)
-            .filter(e -> e.getGroupId() == group.id)
-            .filter(e -> configSet.contains(e.getConfigId()))
-            .toList();
+        var configSet = suite.sceneMonsters.stream().map(m -> m.config_id).collect(Collectors.toSet());
+        var toRemove =
+                getScene().getEntities().values().stream()
+                        .filter(e -> e instanceof EntityMonster)
+                        .filter(e -> e.getGroupId() == group.id)
+                        .filter(e -> configSet.contains(e.getConfigId()))
+                        .toList();
 
         getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
     }
 
     public void removeGadgetsInGroup(SceneGroup group, SceneSuite suite) {
-        var configSet = suite.sceneGadgets.stream()
-            .map(m -> m.config_id)
-            .collect(Collectors.toSet());
-        var toRemove = getScene().getEntities().values().stream()
-            .filter(e -> e instanceof EntityGadget)
-            .filter(e -> e.getGroupId() == group.id)
-            .filter(e -> configSet.contains(e.getConfigId()))
-            .toList();
+        var configSet = suite.sceneGadgets.stream().map(m -> m.config_id).collect(Collectors.toSet());
+        var toRemove =
+                getScene().getEntities().values().stream()
+                        .filter(e -> e instanceof EntityGadget)
+                        .filter(e -> e.getGroupId() == group.id)
+                        .filter(e -> configSet.contains(e.getConfigId()))
+                        .toList();
 
         getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
     }

@@ -1,10 +1,9 @@
 package emu.grasscutter.scripts.data;
 
-import lombok.Setter;
-import lombok.ToString;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Setter;
+import lombok.ToString;
 
 @ToString
 @Setter
@@ -24,39 +23,38 @@ public class SceneSuite {
 
     public void init(SceneGroup sceneGroup) {
         if (sceneGroup.monsters != null && this.monsters != null) {
-            this.sceneMonsters = new ArrayList<>(
-                this.monsters.stream()
-                    .filter(sceneGroup.monsters::containsKey)
-                    .map(sceneGroup.monsters::get)
-                    .toList()
-            );
+            this.sceneMonsters =
+                    new ArrayList<>(
+                            this.monsters.stream()
+                                    .filter(sceneGroup.monsters::containsKey)
+                                    .map(sceneGroup.monsters::get)
+                                    .toList());
         }
 
         if (sceneGroup.gadgets != null && this.gadgets != null) {
-            this.sceneGadgets = new ArrayList<>(
-                this.gadgets.stream()
-                    .filter(sceneGroup.gadgets::containsKey)
-                    .map(sceneGroup.gadgets::get)
-                    .toList()
-            );
+            this.sceneGadgets =
+                    new ArrayList<>(
+                            this.gadgets.stream()
+                                    .filter(sceneGroup.gadgets::containsKey)
+                                    .map(sceneGroup.gadgets::get)
+                                    .toList());
         }
 
         if (sceneGroup.triggers != null && this.triggers != null) {
-            this.sceneTriggers = new ArrayList<>(
-                this.triggers.stream()
-                    .filter(sceneGroup.triggers::containsKey)
-                    .map(sceneGroup.triggers::get)
-                    .toList()
-            );
+            this.sceneTriggers =
+                    new ArrayList<>(
+                            this.triggers.stream()
+                                    .filter(sceneGroup.triggers::containsKey)
+                                    .map(sceneGroup.triggers::get)
+                                    .toList());
         }
         if (sceneGroup.regions != null && this.regions != null) {
-            this.sceneRegions = new ArrayList<>(
-                this.regions.stream()
-                    .filter(sceneGroup.regions::containsKey)
-                    .map(sceneGroup.regions::get)
-                    .toList()
-            );
+            this.sceneRegions =
+                    new ArrayList<>(
+                            this.regions.stream()
+                                    .filter(sceneGroup.regions::containsKey)
+                                    .map(sceneGroup.regions::get)
+                                    .toList());
         }
-
     }
 }

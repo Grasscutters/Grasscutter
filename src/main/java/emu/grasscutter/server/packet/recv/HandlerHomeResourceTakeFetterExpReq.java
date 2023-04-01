@@ -14,5 +14,4 @@ public class HandlerHomeResourceTakeFetterExpReq extends PacketHandler {
 
         session.send(new PacketHomeResourceTakeFetterExpRsp(session.getPlayer()));
     }
-
 }

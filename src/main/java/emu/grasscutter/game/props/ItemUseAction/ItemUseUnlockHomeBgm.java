@@ -15,6 +15,6 @@ public class ItemUseUnlockHomeBgm extends ItemUseInt {
     @Override
     public boolean useItem(UseItemParams params) {
         params.player.getHome().addUnlockedHomeBgm(this.i);
-        return true;  // Probably best to remove the item even if the bgm was already unlocked.
+        return true; // Probably best to remove the item even if the bgm was already unlocked.
     }
 }

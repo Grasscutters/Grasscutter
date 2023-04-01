@@ -4,7 +4,6 @@ import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.QuestListUpdateNotifyOuterClass.QuestListUpdateNotify;
-
 import java.util.List;
 
 public class PacketQuestListUpdateNotify extends BasePacket {
@@ -12,9 +11,8 @@ public class PacketQuestListUpdateNotify extends BasePacket {
     public PacketQuestListUpdateNotify(GameQuest quest) {
         super(PacketOpcodes.QuestListUpdateNotify);
 
-        QuestListUpdateNotify proto = QuestListUpdateNotify.newBuilder()
-            .addQuestList(quest.toProto())
-            .build();
+        QuestListUpdateNotify proto =
+                QuestListUpdateNotify.newBuilder().addQuestList(quest.toProto()).build();
 
         this.setData(proto);
     }

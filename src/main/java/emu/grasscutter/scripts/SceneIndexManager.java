@@ -4,7 +4,6 @@ import com.github.davidmoten.rtreemulti.Entry;
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import com.github.davidmoten.rtreemulti.geometry.Rectangle;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,7 +11,8 @@ import java.util.function.Function;
 
 public class SceneIndexManager {
 
-    public static <T> RTree<T, Geometry> buildIndex(int dimensions, Collection<T> elements, Function<T, Geometry> extractor) {
+    public static <T> RTree<T, Geometry> buildIndex(
+            int dimensions, Collection<T> elements, Function<T, Geometry> extractor) {
         RTree<T, Geometry> rtree = RTree.dimensions(dimensions).create();
         return rtree.add(elements.stream().map(e -> Entry.entry(e, extractor.apply(e))).toList());
     }

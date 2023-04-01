@@ -3,7 +3,6 @@ package emu.grasscutter.task;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-
 /*
 * So what is cron expression?
 The format of a Cron expression is as follows.

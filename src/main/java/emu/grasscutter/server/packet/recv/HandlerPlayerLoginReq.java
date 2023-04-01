@@ -48,5 +48,4 @@ public class HandlerPlayerLoginReq extends PacketHandler {
         session.send(new PacketPlayerLoginRsp(session));
         session.send(new PacketTakeAchievementRewardReq(session));
     }
-
 }

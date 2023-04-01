@@ -26,10 +26,7 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
         } else {
             long avatarGuid = req.getAvatarGuid();
 
-            Avatar avatar = session
-                .getPlayer()
-                .getAvatars()
-                .getAvatarByGuid(avatarGuid);
+            Avatar avatar = session.getPlayer().getAvatars().getAvatarByGuid(avatarGuid);
 
             int rewardId = avatar.getNameCardRewardId();
 
@@ -38,7 +35,11 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
 
             if (session.getPlayer().getNameCardList().contains(cardId)) {
                 // Already got divorce certificate.
-                session.getPlayer().sendPacket(new PacketAvatarFetterLevelRewardRsp(req.getAvatarGuid(), req.getFetterLevel(), rewardId));
+                session
+                        .getPlayer()
+                        .sendPacket(
+                                new PacketAvatarFetterLevelRewardRsp(
+                                        req.getAvatarGuid(), req.getFetterLevel(), rewardId));
                 return;
             }
 
@@ -47,7 +48,8 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
             session.getPlayer().sendPacket(new PacketUnlockNameCardNotify(cardId));
             session.send(new PacketAvatarFetterDataNotify(avatar));
             session.send(new PacketAvatarDataNotify(avatar.getPlayer()));
-            session.send(new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
+            session.send(
+                    new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
         }
     }
 }

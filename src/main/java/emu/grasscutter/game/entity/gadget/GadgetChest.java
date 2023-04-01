@@ -21,21 +21,36 @@ public class GadgetChest extends GadgetContent {
     }
 
     public boolean onInteract(Player player, GadgetInteractReq req) {
-        var chestInteractHandlerMap = getGadget().getScene().getWorld().getServer().getWorldDataSystem().getChestInteractHandlerMap();
+        var chestInteractHandlerMap =
+                getGadget()
+                        .getScene()
+                        .getWorld()
+                        .getServer()
+                        .getWorldDataSystem()
+                        .getChestInteractHandlerMap();
         var handler = chestInteractHandlerMap.get(getGadget().getGadgetData().getJsonName());
         if (handler == null) {
-            Grasscutter.getLogger().warn("Could not found the handler of this type of Chests {}", getGadget().getGadgetData().getJsonName());
+            Grasscutter.getLogger()
+                    .warn(
+                            "Could not found the handler of this type of Chests {}",
+                            getGadget().getGadgetData().getJsonName());
             return false;
         }
 
         if (req.getOpType() == InterOpType.INTER_OP_TYPE_START && handler.isTwoStep()) {
-            player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_START));
+            player.sendPacket(
+                    new PacketGadgetInteractRsp(
+                            getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_START));
             return false;
         } else {
             boolean success;
             if (handler instanceof BossChestInteractHandler bossChestInteractHandler) {
-                success = bossChestInteractHandler.onInteract(this, player,
-                    req.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE);
+                success =
+                        bossChestInteractHandler.onInteract(
+                                this,
+                                player,
+                                req.getResinCostType()
+                                        == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE);
             } else {
                 success = handler.onInteract(this, player);
             }
@@ -44,7 +59,9 @@ public class GadgetChest extends GadgetContent {
             }
 
             getGadget().updateState(ScriptGadgetState.ChestOpened);
-            player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_OPEN_CHEST));
+            player.sendPacket(
+                    new PacketGadgetInteractRsp(
+                            this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_OPEN_CHEST));
 
             return true;
         }
@@ -59,13 +76,13 @@ public class GadgetChest extends GadgetContent {
         if (bossChest != null) {
             var players = getGadget().getScene().getPlayers().stream().map(Player::getUid).toList();
 
-            gadgetInfo.setBossChest(BossChestInfo.newBuilder()
-                .setMonsterConfigId(bossChest.monster_config_id)
-                .setResin(bossChest.resin)
-                .addAllQualifyUidList(players)
-                .addAllRemainUidList(players)
-                .build());
+            gadgetInfo.setBossChest(
+                    BossChestInfo.newBuilder()
+                            .setMonsterConfigId(bossChest.monster_config_id)
+                            .setResin(bossChest.resin)
+                            .addAllQualifyUidList(players)
+                            .addAllRemainUidList(players)
+                            .build());
         }
-
     }
 }

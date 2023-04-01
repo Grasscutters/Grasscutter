@@ -11,6 +11,7 @@ import lombok.Getter;
 public class AvatarSkillData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     private float cdTime;
     private int costElemVal;
     private int maxChargeNum;

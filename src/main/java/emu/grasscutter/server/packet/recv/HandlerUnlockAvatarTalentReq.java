@@ -18,5 +18,4 @@ public class HandlerUnlockAvatarTalentReq extends PacketHandler {
         if (avatar == null) return;
         avatar.unlockConstellation(req.getTalentId());
     }
-
 }

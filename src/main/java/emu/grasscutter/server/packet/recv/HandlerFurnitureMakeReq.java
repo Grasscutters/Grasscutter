@@ -12,5 +12,4 @@ public class HandlerFurnitureMakeReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         session.getPlayer().getFurnitureManager().queryStatus();
     }
-
 }

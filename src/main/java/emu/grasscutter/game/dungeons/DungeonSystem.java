@@ -16,11 +16,11 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterDungeonRsp;
 import emu.grasscutter.utils.Position;
-
 import java.util.List;
 
 public class DungeonSystem extends BaseGameSystem {
-    private static final BasicDungeonSettleListener basicDungeonSettleObserver = new BasicDungeonSettleListener();
+    private static final BasicDungeonSettleListener basicDungeonSettleObserver =
+            new BasicDungeonSettleListener();
 
     public DungeonSystem(GameServer server) {
         super(server);
@@ -44,7 +44,12 @@ public class DungeonSystem extends BaseGameSystem {
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter dungeon {}", player.getNickname(), player.getUid(), dungeonId);
+        Grasscutter.getLogger()
+                .info(
+                        "{}({}) is trying to enter dungeon {}",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
 
         int sceneId = data.getSceneId();
         player.getScene().setPrevScene(sceneId);
@@ -59,16 +64,20 @@ public class DungeonSystem extends BaseGameSystem {
         return true;
     }
 
-    /**
-     * used in tower dungeons handoff
-     */
-    public boolean handoffDungeon(Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
+    /** used in tower dungeons handoff */
+    public boolean handoffDungeon(
+            Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
         DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter tower dungeon {}", player.getNickname(), player.getUid(), dungeonId);
+        Grasscutter.getLogger()
+                .info(
+                        "{}({}) is trying to enter tower dungeon {}",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
 
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
             dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
@@ -107,6 +116,7 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public void updateDailyDungeons() {
-        GameData.getScenePointEntries().forEach((id, entry) -> entry.getPointData().updateDailyDungeon());
+        GameData.getScenePointEntries()
+                .forEach((id, entry) -> entry.getPointData().updateDailyDungeon());
     }
 }

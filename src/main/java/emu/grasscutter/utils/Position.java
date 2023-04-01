@@ -4,33 +4,37 @@ import com.github.davidmoten.rtreemulti.geometry.Point;
 import com.google.gson.annotations.SerializedName;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Position implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
 
-    @SerializedName(value = "x", alternate = {"_x", "X"})
+    @SerializedName(
+            value = "x",
+            alternate = {"_x", "X"})
     @Getter
     @Setter
     private float x;
 
-    @SerializedName(value = "y", alternate = {"_y", "Y"})
+    @SerializedName(
+            value = "y",
+            alternate = {"_y", "Y"})
     @Getter
     @Setter
     private float y;
 
-    @SerializedName(value = "z", alternate = {"_z", "Z"})
+    @SerializedName(
+            value = "z",
+            alternate = {"_z", "Z"})
     @Getter
     @Setter
     private float z;
 
-    public Position() {
-    }
+    public Position() {}
 
     public Position(float x, float y) {
         set(x, y);
@@ -42,13 +46,14 @@ public class Position implements Serializable {
 
     public Position(List<Float> xyz) {
         switch (xyz.size()) {
-            default:  // Might want to error on excess elements, but maybe we want to extend to 3+3 representation later.
+            default: // Might want to error on excess elements, but maybe we want to extend to 3+3
+                // representation later.
             case 3:
-                this.z = xyz.get(2);  // Fall-through
+                this.z = xyz.get(2); // Fall-through
             case 2:
-                this.y = xyz.get(1);  // Fall-through
+                this.y = xyz.get(1); // Fall-through
             case 1:
-                this.y = xyz.get(0);  // pointless fall-through
+                this.y = xyz.get(0); // pointless fall-through
             case 0:
                 break;
         }
@@ -124,9 +129,7 @@ public class Position implements Serializable {
         return this;
     }
 
-    /**
-     * In radians
-     */
+    /** In radians */
     public Position translate(float dist, float angle) {
         this.x += dist * Math.sin(angle);
         this.y += dist * Math.cos(angle);
@@ -174,28 +177,20 @@ public class Position implements Serializable {
     }
 
     public Vector toProto() {
-        return Vector.newBuilder()
-            .setX(this.getX())
-            .setY(this.getY())
-            .setZ(this.getZ())
-            .build();
+        return Vector.newBuilder().setX(this.getX()).setY(this.getY()).setZ(this.getZ()).build();
     }
 
     public Point toPoint() {
         return Point.create(x, y, z);
     }
 
-    /**
-     * To XYZ array for Spatial Index
-     */
+    /** To XYZ array for Spatial Index */
     public double[] toDoubleArray() {
-        return new double[]{x, y, z};
+        return new double[] {x, y, z};
     }
 
-    /**
-     * To XZ array for Spatial Index (Blocks)
-     */
+    /** To XZ array for Spatial Index (Blocks) */
     public double[] toXZDoubleArray() {
-        return new double[]{x, z};
+        return new double[] {x, z};
     }
 }

@@ -40,10 +40,9 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                     Player player = session.getPlayer();
 
                     // Check if the player is invulnerable.
-                    if (
-                        attackResult.getAttackerId() != player.getTeamManager().getCurrentAvatarEntity().getId() &&
-                            player.getAbilityManager().isAbilityInvulnerable()
-                    ) break;
+                    if (attackResult.getAttackerId()
+                                    != player.getTeamManager().getCurrentAvatarEntity().getId()
+                            && player.getAbilityManager().isAbilityInvulnerable()) break;
 
                     // Handle damage
                     player.getAttackResults().add(attackResult);
@@ -59,9 +58,12 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                         MotionState motionState = motionInfo.getState();
 
                         // Call entity move event.
-                        EntityMoveEvent event = new EntityMoveEvent(
-                            entity, new Position(motionInfo.getPos()),
-                            new Position(motionInfo.getRot()), motionState);
+                        EntityMoveEvent event =
+                                new EntityMoveEvent(
+                                        entity,
+                                        new Position(motionInfo.getPos()),
+                                        new Position(motionInfo.getRot()),
+                                        motionState);
                         event.call();
 
                         entity.move(event.getPosition(), event.getRotation());
@@ -69,7 +71,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                         entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
                         entity.setMotionState(motionState);
 
-                        session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
+                        session
+                                .getPlayer()
+                                .getStaminaManager()
+                                .handleCombatInvocationsNotify(session, moveInfo, entity);
 
                         // TODO: handle MOTION_FIGHT landing which has a different damage factor
                         // 		Also, for plunge attacks, LAND_SPEED is always -30 and is not useful.
@@ -96,14 +101,14 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                     }
                 }
                 case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED -> {
-                    EvtAnimatorParameterInfo paramInfo = EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
+                    EvtAnimatorParameterInfo paramInfo =
+                            EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
                     if (paramInfo.getIsServerCache()) {
                         paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
                         entry = entry.toBuilder().setCombatData(paramInfo.toByteString()).build();
                     }
                 }
-                default -> {
-                }
+                default -> {}
             }
 
             session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
@@ -114,13 +119,22 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
         if (session.getPlayer().inGodmode()) {
             return;
         }
-        // People have reported that after plunge attack (client sends a FIGHT instead of FALL_ON_GROUND) they will die
-        // 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping again.
+        // People have reported that after plunge attack (client sends a FIGHT instead of
+        // FALL_ON_GROUND) they will die
+        // 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping
+        // again.
         // A dirty patch: if not received immediately after MOTION_LAND_SPEED, discard this packet.
         // 200ms seems to be a reasonable delay.
         int maxDelay = 200;
         long actualDelay = System.currentTimeMillis() - cachedLandingTimeMillisecond;
-        Grasscutter.getLogger().trace("MOTION_FALL_ON_GROUND received after " + actualDelay + "/" + maxDelay + "ms." + (actualDelay > maxDelay ? " Discard" : ""));
+        Grasscutter.getLogger()
+                .trace(
+                        "MOTION_FALL_ON_GROUND received after "
+                                + actualDelay
+                                + "/"
+                                + maxDelay
+                                + "ms."
+                                + (actualDelay > maxDelay ? " Discard" : ""));
         if (actualDelay > maxDelay) {
             return;
         }
@@ -145,15 +159,32 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
             newHP = 0;
         }
         if (damageFactor > 0) {
-            Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
-                "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
+            Grasscutter.getLogger()
+                    .debug(
+                            currentHP
+                                    + "/"
+                                    + maxHP
+                                    + "\tLandingSpeed: "
+                                    + cachedLandingSpeed
+                                    + "\tDamageFactor: "
+                                    + damageFactor
+                                    + "\tDamage: "
+                                    + damage
+                                    + "\tNewHP: "
+                                    + newHP);
         } else {
             Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
         }
         entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
-        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+        entity
+                .getWorld()
+                .broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
         if (newHP == 0) {
-            session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_FALL);
+            session
+                    .getPlayer()
+                    .getStaminaManager()
+                    .killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_FALL);
         }
         cachedLandingSpeed = 0;
     }

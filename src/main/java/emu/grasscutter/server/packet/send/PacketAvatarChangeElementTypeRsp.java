@@ -14,9 +14,8 @@ public class PacketAvatarChangeElementTypeRsp extends BasePacket {
         super(PacketOpcodes.AvatarChangeElementTypeRsp);
 
         if (retcode > 0) {
-            AvatarChangeElementTypeRsp proto = AvatarChangeElementTypeRsp.newBuilder()
-                .setRetcode(retcode)
-                .build();
+            AvatarChangeElementTypeRsp proto =
+                    AvatarChangeElementTypeRsp.newBuilder().setRetcode(retcode).build();
 
             this.setData(proto);
         }

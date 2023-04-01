@@ -15,5 +15,4 @@ public class HandlerChooseCurAvatarTeamReq extends PacketHandler {
 
         session.getPlayer().getTeamManager().setCurrentTeam(req.getTeamId());
     }
-
 }

@@ -9,7 +9,9 @@ public class PacketFurnitureCurModuleArrangeCountNotify extends BasePacket {
     public PacketFurnitureCurModuleArrangeCountNotify() {
         super(PacketOpcodes.FurnitureCurModuleArrangeCountNotify);
 
-        var proto = FurnitureCurModuleArrangeCountNotifyOuterClass.FurnitureCurModuleArrangeCountNotify.newBuilder();
+        var proto =
+                FurnitureCurModuleArrangeCountNotifyOuterClass.FurnitureCurModuleArrangeCountNotify
+                        .newBuilder();
 
         // TODO
 

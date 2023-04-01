@@ -5,12 +5,10 @@ import dev.morphia.annotations.Id;
 
 @Entity(value = "counters", useDiscriminator = false)
 public class DatabaseCounter {
-    @Id
-    private String id;
+    @Id private String id;
     private int count;
 
-    public DatabaseCounter() {
-    }
+    public DatabaseCounter() {}
 
     public DatabaseCounter(String id) {
         this.id = id;

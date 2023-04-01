@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetActivityInfoReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetActivityInfoRsp;
-
 import java.util.HashSet;
 
 @Opcodes(PacketOpcodes.GetActivityInfoReq)
@@ -15,8 +14,8 @@ public class HandlerGetActivityInfoReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = GetActivityInfoReqOuterClass.GetActivityInfoReq.parseFrom(payload);
 
-        session.send(new PacketGetActivityInfoRsp(
-            new HashSet<>(req.getActivityIdListList()),
-            session.getPlayer().getActivityManager()));
+        session.send(
+                new PacketGetActivityInfoRsp(
+                        new HashSet<>(req.getActivityIdListList()), session.getPlayer().getActivityManager()));
     }
 }

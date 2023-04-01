@@ -18,5 +18,4 @@ public class HandlerTakeoffEquipReq extends PacketHandler {
             session.send(new PacketTakeoffEquipRsp(req.getAvatarGuid(), req.getSlot()));
         }
     }
-
 }

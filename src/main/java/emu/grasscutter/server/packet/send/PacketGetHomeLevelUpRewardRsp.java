@@ -15,10 +15,8 @@ public class PacketGetHomeLevelUpRewardRsp extends BasePacket {
             retcode = 1;
         }
 
-        GetHomeLevelUpRewardRsp proto = GetHomeLevelUpRewardRsp.newBuilder()
-            .setLevel(level)
-            .setRetcode(retcode)
-            .build();
+        GetHomeLevelUpRewardRsp proto =
+                GetHomeLevelUpRewardRsp.newBuilder().setLevel(level).setRetcode(retcode).build();
 
         this.setData(proto);
     }

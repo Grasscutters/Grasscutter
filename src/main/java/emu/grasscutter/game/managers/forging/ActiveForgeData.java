@@ -26,8 +26,7 @@ public class ActiveForgeData {
     }
 
     public int getNextFinishTimestamp(int currentTime) {
-        return
-            (currentTime >= this.getTotalFinishTimestamp())
+        return (currentTime >= this.getTotalFinishTimestamp())
                 ? this.getTotalFinishTimestamp()
                 : (this.getFinishedCount(currentTime) * this.forgeTime + this.forgeTime + this.startTime);
     }

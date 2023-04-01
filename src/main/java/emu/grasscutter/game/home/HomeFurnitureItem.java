@@ -24,45 +24,47 @@ public class HomeFurnitureItem {
     Position spawnRot;
     int version;
 
-    public static HomeFurnitureItem parseFrom(HomeFurnitureDataOuterClass.HomeFurnitureData homeFurnitureData) {
+    public static HomeFurnitureItem parseFrom(
+            HomeFurnitureDataOuterClass.HomeFurnitureData homeFurnitureData) {
         return HomeFurnitureItem.of()
-            .furnitureId(homeFurnitureData.getFurnitureId())
-            .guid(homeFurnitureData.getGuid())
-            .parentFurnitureIndex(homeFurnitureData.getParentFurnitureIndex())
-            .spawnPos(new Position(homeFurnitureData.getSpawnPos()))
-            .spawnRot(new Position(homeFurnitureData.getSpawnRot()))
-            .version(homeFurnitureData.getVersion())
-            .build();
+                .furnitureId(homeFurnitureData.getFurnitureId())
+                .guid(homeFurnitureData.getGuid())
+                .parentFurnitureIndex(homeFurnitureData.getParentFurnitureIndex())
+                .spawnPos(new Position(homeFurnitureData.getSpawnPos()))
+                .spawnRot(new Position(homeFurnitureData.getSpawnRot()))
+                .version(homeFurnitureData.getVersion())
+                .build();
     }
 
     public static HomeFurnitureItem parseFrom(HomeworldDefaultSaveData.HomeFurniture homeFurniture) {
         return HomeFurnitureItem.of()
-            .furnitureId(homeFurniture.getId())
-            .parentFurnitureIndex(1)
-            .spawnPos(homeFurniture.getPos() == null ? new Position() : homeFurniture.getPos())
-            .spawnRot(homeFurniture.getRot() == null ? new Position() : homeFurniture.getRot())
-            .build();
+                .furnitureId(homeFurniture.getId())
+                .parentFurnitureIndex(1)
+                .spawnPos(homeFurniture.getPos() == null ? new Position() : homeFurniture.getPos())
+                .spawnRot(homeFurniture.getRot() == null ? new Position() : homeFurniture.getRot())
+                .build();
     }
 
     public HomeFurnitureDataOuterClass.HomeFurnitureData toProto() {
         return HomeFurnitureDataOuterClass.HomeFurnitureData.newBuilder()
-            .setFurnitureId(furnitureId)
-            .setGuid(guid)
-            .setParentFurnitureIndex(parentFurnitureIndex)
-            .setSpawnPos(spawnPos.toProto())
-            .setSpawnRot(spawnRot.toProto())
-            .setVersion(version)
-            .build();
+                .setFurnitureId(furnitureId)
+                .setGuid(guid)
+                .setParentFurnitureIndex(parentFurnitureIndex)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setVersion(version)
+                .build();
     }
 
-    public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto(int type) {
+    public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto(
+            int type) {
         return HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData.newBuilder()
-            .setFurnitureId(furnitureId)
-            .setGuid(guid)
-            .setFurnitureType(type)
-            .setPos(spawnPos.toProto())
-            // TODO NPC and farm
-            .build();
+                .setFurnitureId(furnitureId)
+                .setGuid(guid)
+                .setFurnitureType(type)
+                .setPos(spawnPos.toProto())
+                // TODO NPC and farm
+                .build();
     }
 
     public ItemData getAsItem() {

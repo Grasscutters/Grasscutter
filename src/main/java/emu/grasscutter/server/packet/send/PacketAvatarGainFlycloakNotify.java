@@ -9,9 +9,8 @@ public class PacketAvatarGainFlycloakNotify extends BasePacket {
     public PacketAvatarGainFlycloakNotify(int flycloak) {
         super(PacketOpcodes.AvatarGainFlycloakNotify);
 
-        AvatarGainFlycloakNotify proto = AvatarGainFlycloakNotify.newBuilder()
-            .setFlycloakId(flycloak)
-            .build();
+        AvatarGainFlycloakNotify proto =
+                AvatarGainFlycloakNotify.newBuilder().setFlycloakId(flycloak).build();
 
         this.setData(proto);
     }

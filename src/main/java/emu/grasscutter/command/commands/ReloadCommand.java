@@ -1,15 +1,17 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
-@Command(label = "reload", permission = "server.reload", targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+        label = "reload",
+        permission = "server.reload",
+        targetRequirement = Command.TargetRequirement.NONE)
 public final class ReloadCommand implements CommandHandler {
 
     @Override

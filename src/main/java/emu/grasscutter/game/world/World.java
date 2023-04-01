@@ -19,7 +19,6 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -146,7 +145,12 @@ public class World implements Iterable<Player> {
 
         // Copy main team to multiplayer team
         if (this.isMultiplayer()) {
-            player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getCurrentSinglePlayerTeamInfo(), player.getTeamManager().getMaxTeamSize());
+            player
+                    .getTeamManager()
+                    .getMpTeam()
+                    .copyFrom(
+                            player.getTeamManager().getCurrentSinglePlayerTeamInfo(),
+                            player.getTeamManager().getMaxTeamSize());
             player.getTeamManager().setCurrentCharacterIndex(0);
         }
 
@@ -163,11 +167,11 @@ public class World implements Iterable<Player> {
     public synchronized void removePlayer(Player player) {
         // Remove team entities
         player.sendPacket(
-            new PacketDelTeamEntityNotify(
-                player.getSceneId(),
-                this.getPlayers().stream().map(p -> p.getTeamManager().getEntityId()).collect(Collectors.toList())
-            )
-        );
+                new PacketDelTeamEntityNotify(
+                        player.getSceneId(),
+                        this.getPlayers().stream()
+                                .map(p -> p.getTeamManager().getEntityId())
+                                .collect(Collectors.toList())));
 
         // Deregister
         this.getPlayers().remove(player);
@@ -189,7 +193,13 @@ public class World implements Iterable<Player> {
                 World world = new World(victim);
                 world.addPlayer(victim);
 
-                victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPosition()));
+                victim.sendPacket(
+                        new PacketPlayerEnterSceneNotify(
+                                victim,
+                                EnterType.ENTER_TYPE_SELF,
+                                EnterReason.TeamKick,
+                                victim.getSceneId(),
+                                victim.getPosition()));
             }
         }
     }
@@ -206,7 +216,8 @@ public class World implements Iterable<Player> {
         return this.transferPlayerToScene(player, sceneId, TeleportType.INTERNAL, null, pos);
     }
 
-    public boolean transferPlayerToScene(Player player, int sceneId, TeleportType teleportType, Position pos) {
+    public boolean transferPlayerToScene(
+            Player player, int sceneId, TeleportType teleportType, Position pos) {
         return this.transferPlayerToScene(player, sceneId, teleportType, null, pos);
     }
 
@@ -214,9 +225,15 @@ public class World implements Iterable<Player> {
         return this.transferPlayerToScene(player, sceneId, TeleportType.DUNGEON, data, null);
     }
 
-    public boolean transferPlayerToScene(Player player, int sceneId, TeleportType teleportType, DungeonData dungeonData, Position teleportTo) {
+    public boolean transferPlayerToScene(
+            Player player,
+            int sceneId,
+            TeleportType teleportType,
+            DungeonData dungeonData,
+            Position teleportTo) {
         // Call player teleport event.
-        PlayerTeleportEvent event = new PlayerTeleportEvent(player, teleportType, player.getPosition(), teleportTo);
+        PlayerTeleportEvent event =
+                new PlayerTeleportEvent(player, teleportType, player.getPosition(), teleportTo);
         // Call event & check if it was canceled.
         event.call();
         if (event.isCanceled()) {
@@ -283,11 +300,11 @@ public class World implements Iterable<Player> {
             // Home
             enterReason = EnterReason.EnterHome;
             enterType = EnterType.ENTER_TYPE_SELF_HOME;
-
         }
 
         // Teleport packet
-        player.sendPacket(new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, teleportTo));
+        player.sendPacket(
+                new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, teleportTo));
         return true;
     }
 
@@ -298,9 +315,14 @@ public class World implements Iterable<Player> {
                 continue;
             }
 
-            // Update team of all players since max players has been changed - Probably not the best way to do it
+            // Update team of all players since max players has been changed - Probably not the best way
+            // to do it
             if (this.isMultiplayer()) {
-                player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
+                player
+                        .getTeamManager()
+                        .getMpTeam()
+                        .copyFrom(
+                                player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
                 player.getTeamManager().updateTeamEntities(null);
             }
 
@@ -332,9 +354,7 @@ public class World implements Iterable<Player> {
         return false;
     }
 
-    public void close() {
-
-    }
+    public void close() {}
 
     @Override
     public Iterator<Player> iterator() {

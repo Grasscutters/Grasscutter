@@ -14,8 +14,10 @@ public class HandlerPlayerApplyEnterMpResultReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         PlayerApplyEnterMpResultReq req = PlayerApplyEnterMpResultReq.parseFrom(payload);
 
-        session.getServer().getMultiplayerSystem().applyEnterMpReply(session.getPlayer(), req.getApplyUid(), req.getIsAgreed());
+        session
+                .getServer()
+                .getMultiplayerSystem()
+                .applyEnterMpReply(session.getPlayer(), req.getApplyUid(), req.getIsAgreed());
         session.send(new PacketPlayerApplyEnterMpResultRsp(req.getApplyUid(), req.getIsAgreed()));
     }
-
 }

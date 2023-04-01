@@ -11,16 +11,15 @@ public class PacketPlayerChatNotify extends BasePacket {
     public PacketPlayerChatNotify(Player sender, int channelId, String message) {
         super(PacketOpcodes.PlayerChatNotify);
 
-        ChatInfo info = ChatInfo.newBuilder()
-            .setTime((int) (System.currentTimeMillis() / 1000))
-            .setUid(sender.getUid())
-            .setText(message)
-            .build();
+        ChatInfo info =
+                ChatInfo.newBuilder()
+                        .setTime((int) (System.currentTimeMillis() / 1000))
+                        .setUid(sender.getUid())
+                        .setText(message)
+                        .build();
 
-        PlayerChatNotify proto = PlayerChatNotify.newBuilder()
-            .setChannelId(channelId)
-            .setChatInfo(info)
-            .build();
+        PlayerChatNotify proto =
+                PlayerChatNotify.newBuilder().setChannelId(channelId).setChatInfo(info).build();
 
         this.setData(proto);
     }
@@ -28,16 +27,15 @@ public class PacketPlayerChatNotify extends BasePacket {
     public PacketPlayerChatNotify(Player sender, int channelId, int emote) {
         super(PacketOpcodes.PlayerChatNotify);
 
-        ChatInfo info = ChatInfo.newBuilder()
-            .setTime((int) (System.currentTimeMillis() / 1000))
-            .setUid(sender.getUid())
-            .setIcon(emote)
-            .build();
+        ChatInfo info =
+                ChatInfo.newBuilder()
+                        .setTime((int) (System.currentTimeMillis() / 1000))
+                        .setUid(sender.getUid())
+                        .setIcon(emote)
+                        .build();
 
-        PlayerChatNotify proto = PlayerChatNotify.newBuilder()
-            .setChannelId(channelId)
-            .setChatInfo(info)
-            .build();
+        PlayerChatNotify proto =
+                PlayerChatNotify.newBuilder().setChannelId(channelId).setChatInfo(info).build();
 
         this.setData(proto);
     }
@@ -45,16 +43,15 @@ public class PacketPlayerChatNotify extends BasePacket {
     public PacketPlayerChatNotify(Player sender, int channelId, ChatInfo.SystemHint systemHint) {
         super(PacketOpcodes.PlayerChatNotify);
 
-        ChatInfo info = ChatInfo.newBuilder()
-            .setTime((int) (System.currentTimeMillis() / 1000))
-            .setUid(sender.getUid())
-            .setSystemHint(systemHint)
-            .build();
+        ChatInfo info =
+                ChatInfo.newBuilder()
+                        .setTime((int) (System.currentTimeMillis() / 1000))
+                        .setUid(sender.getUid())
+                        .setSystemHint(systemHint)
+                        .build();
 
-        PlayerChatNotify proto = PlayerChatNotify.newBuilder()
-            .setChannelId(channelId)
-            .setChatInfo(info)
-            .build();
+        PlayerChatNotify proto =
+                PlayerChatNotify.newBuilder().setChannelId(channelId).setChatInfo(info).build();
 
         this.setData(proto);
     }

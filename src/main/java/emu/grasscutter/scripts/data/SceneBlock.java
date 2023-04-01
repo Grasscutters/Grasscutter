@@ -7,14 +7,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Position;
-import lombok.Setter;
-import lombok.ToString;
-
+import java.util.Map;
+import java.util.stream.Collectors;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-import java.util.Map;
-import java.util.stream.Collectors;
+import lombok.Setter;
+import lombok.ToString;
 
 @ToString
 @Setter
@@ -38,8 +37,10 @@ public class SceneBlock {
     }
 
     public boolean contains(Position pos) {
-        return pos.getX() <= this.max.getX() && pos.getX() >= this.min.getX() &&
-            pos.getZ() <= this.max.getZ() && pos.getZ() >= this.min.getZ();
+        return pos.getX() <= this.max.getX()
+                && pos.getX() >= this.min.getX()
+                && pos.getZ() <= this.max.getZ()
+                && pos.getZ() >= this.min.getZ();
     }
 
     public SceneBlock load(int sceneId, Bindings bindings) {
@@ -49,7 +50,9 @@ public class SceneBlock {
         this.sceneId = sceneId;
         this.setLoaded(true);
 
-        CompiledScript cs = ScriptLoader.getScript("Scene/" + sceneId + "/scene" + sceneId + "_block" + this.id + ".lua");
+        CompiledScript cs =
+                ScriptLoader.getScript(
+                        "Scene/" + sceneId + "/scene" + sceneId + "_block" + this.id + ".lua");
 
         if (cs == null) {
             return null;
@@ -60,13 +63,18 @@ public class SceneBlock {
             cs.eval(bindings);
 
             // Set groups
-            this.groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
-                .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
+            this.groups =
+                    ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
+                            .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
 
             this.groups.values().forEach(g -> g.block_id = this.id);
-            this.sceneGroupIndex = SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());
+            this.sceneGroupIndex =
+                    SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());
         } catch (ScriptException exception) {
-            Grasscutter.getLogger().error("An error occurred while loading block " + this.id + " in scene " + sceneId, exception);
+            Grasscutter.getLogger()
+                    .error(
+                            "An error occurred while loading block " + this.id + " in scene " + sceneId,
+                            exception);
         }
         Grasscutter.getLogger().debug("Successfully loaded block {} in scene {}.", this.id, sceneId);
         return this;

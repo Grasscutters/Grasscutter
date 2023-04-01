@@ -15,5 +15,4 @@ public class HandlerChangeAvatarReq extends PacketHandler {
 
         session.getPlayer().getTeamManager().changeAvatar(req.getGuid());
     }
-
 }

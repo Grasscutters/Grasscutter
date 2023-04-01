@@ -3,8 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseUnlockPaidBattlePassNormal extends ItemUseAction {
-    public ItemUseUnlockPaidBattlePassNormal(String[] useParam) {
-    }
+    public ItemUseUnlockPaidBattlePassNormal(String[] useParam) {}
 
     @Override
     public ItemUseOp getItemUseOp() {
@@ -14,7 +13,7 @@ public class ItemUseUnlockPaidBattlePassNormal extends ItemUseAction {
     @Override
     public boolean useItem(UseItemParams params) {
         // TODO: add paid BP
-        //return params.player.getBattlePassManager().setPaid(true);
+        // return params.player.getBattlePassManager().setPaid(true);
         return false;
     }
 }

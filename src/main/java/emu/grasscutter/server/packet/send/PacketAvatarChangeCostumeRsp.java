@@ -10,10 +10,11 @@ public class PacketAvatarChangeCostumeRsp extends BasePacket {
     public PacketAvatarChangeCostumeRsp(long avatarGuid, int costumeId) {
         super(PacketOpcodes.AvatarChangeCostumeRsp);
 
-        AvatarChangeCostumeRsp proto = AvatarChangeCostumeRsp.newBuilder()
-            .setAvatarGuid(avatarGuid)
-            .setCostumeId(costumeId)
-            .build();
+        AvatarChangeCostumeRsp proto =
+                AvatarChangeCostumeRsp.newBuilder()
+                        .setAvatarGuid(avatarGuid)
+                        .setCostumeId(costumeId)
+                        .build();
 
         this.setData(proto);
     }
@@ -21,9 +22,10 @@ public class PacketAvatarChangeCostumeRsp extends BasePacket {
     public PacketAvatarChangeCostumeRsp() {
         super(PacketOpcodes.AvatarChangeCostumeRsp);
 
-        AvatarChangeCostumeRsp proto = AvatarChangeCostumeRsp.newBuilder()
-            .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
-            .build();
+        AvatarChangeCostumeRsp proto =
+                AvatarChangeCostumeRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+                        .build();
 
         this.setData(proto);
     }

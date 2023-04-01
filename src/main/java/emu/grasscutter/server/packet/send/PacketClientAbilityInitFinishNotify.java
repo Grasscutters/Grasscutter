@@ -4,7 +4,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass.ClientAbilityInitFinishNotify;
-
 import java.util.List;
 
 public class PacketClientAbilityInitFinishNotify extends BasePacket {
@@ -19,10 +18,11 @@ public class PacketClientAbilityInitFinishNotify extends BasePacket {
             entityId = entry.getEntityId();
         }
 
-        ClientAbilityInitFinishNotify proto = ClientAbilityInitFinishNotify.newBuilder()
-            .setEntityId(entityId)
-            .addAllInvokes(entries)
-            .build();
+        ClientAbilityInitFinishNotify proto =
+                ClientAbilityInitFinishNotify.newBuilder()
+                        .setEntityId(entityId)
+                        .addAllInvokes(entries)
+                        .build();
 
         this.setData(proto);
     }

@@ -4,20 +4,28 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ClimateType;
-
 import java.util.List;
 
-@Command(label = "weather", aliases = {"w"}, usage = {"weather [<weatherId>] [<climateType>]"}, permission = "player.weather", permissionTargeted = "player.weather.others")
+@Command(
+        label = "weather",
+        aliases = {"w"},
+        usage = {"weather [<weatherId>] [<climateType>]"},
+        permission = "player.weather",
+        permissionTargeted = "player.weather.others")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         int weatherId = targetPlayer.getWeatherId();
-        ClimateType climate = ClimateType.CLIMATE_NONE;  // Sending ClimateType.CLIMATE_NONE to Scene.setWeather will use the default climate for that weather
+        ClimateType climate =
+                ClimateType
+                        .CLIMATE_NONE; // Sending ClimateType.CLIMATE_NONE to Scene.setWeather will use the
+        // default climate for that weather
 
         if (args.isEmpty()) {
             climate = targetPlayer.getClimate();
-            CommandHandler.sendTranslatedMessage(sender, "commands.weather.status", weatherId, climate.getShortName());
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.weather.status", weatherId, climate.getShortName());
             return;
         }
 
@@ -37,7 +45,8 @@ public final class WeatherCommand implements CommandHandler {
         }
 
         targetPlayer.setWeather(weatherId, climate);
-        climate = targetPlayer.getClimate();  // Might be different to what we set
-        CommandHandler.sendTranslatedMessage(sender, "commands.weather.success", weatherId, climate.getShortName());
+        climate = targetPlayer.getClimate(); // Might be different to what we set
+        CommandHandler.sendTranslatedMessage(
+                sender, "commands.weather.success", weatherId, climate.getShortName());
     }
 }

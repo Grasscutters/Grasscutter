@@ -63,5 +63,4 @@ public class HandlerSetPlayerBirthdayReq extends PacketHandler {
 
         return false;
     }
-
 }

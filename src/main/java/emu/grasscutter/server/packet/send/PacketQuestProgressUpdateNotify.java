@@ -10,7 +10,8 @@ public class PacketQuestProgressUpdateNotify extends BasePacket {
     public PacketQuestProgressUpdateNotify(GameQuest quest) {
         super(PacketOpcodes.QuestProgressUpdateNotify);
 
-        QuestProgressUpdateNotify.Builder proto = QuestProgressUpdateNotify.newBuilder().setQuestId(quest.getSubQuestId());
+        QuestProgressUpdateNotify.Builder proto =
+                QuestProgressUpdateNotify.newBuilder().setQuestId(quest.getSubQuestId());
 
         if (quest.getFinishProgressList() != null) {
             for (int i : quest.getFinishProgressList()) {

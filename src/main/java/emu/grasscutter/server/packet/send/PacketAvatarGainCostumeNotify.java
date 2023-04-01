@@ -9,9 +9,8 @@ public class PacketAvatarGainCostumeNotify extends BasePacket {
     public PacketAvatarGainCostumeNotify(int costumeId) {
         super(PacketOpcodes.AvatarGainCostumeNotify);
 
-        AvatarGainCostumeNotify proto = AvatarGainCostumeNotify.newBuilder()
-            .setCostumeId(costumeId)
-            .build();
+        AvatarGainCostumeNotify proto =
+                AvatarGainCostumeNotify.newBuilder().setCostumeId(costumeId).build();
 
         this.setData(proto);
     }

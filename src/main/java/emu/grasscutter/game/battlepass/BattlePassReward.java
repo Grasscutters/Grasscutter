@@ -12,12 +12,10 @@ public class BattlePassReward {
     private int rewardId;
     private boolean paid;
 
-    @Transient
-    private BattlePassMissionData data;
+    @Transient private BattlePassMissionData data;
 
     @Deprecated // Morphia only
-    public BattlePassReward() {
-    }
+    public BattlePassReward() {}
 
     public BattlePassReward(int level, int rewardId, boolean paid) {
         this.level = level;
@@ -41,9 +39,12 @@ public class BattlePassReward {
         var protoBuilder = BattlePassRewardTag.newBuilder();
 
         protoBuilder
-            .setLevel(this.getLevel())
-            .setRewardId(this.getRewardId())
-            .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE);
+                .setLevel(this.getLevel())
+                .setRewardId(this.getRewardId())
+                .setUnlockStatus(
+                        this.isPaid()
+                                ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID
+                                : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE);
 
         return protoBuilder.build();
     }

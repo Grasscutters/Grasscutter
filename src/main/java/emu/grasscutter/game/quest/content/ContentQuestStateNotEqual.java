@@ -10,7 +10,8 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentQuestStateNotEqual extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
         GameQuest checkQuest = quest.getOwner().getQuestManager().getQuestById(params[0]);
 
         if (checkQuest != null) {
@@ -19,5 +20,4 @@ public class ContentQuestStateNotEqual extends QuestBaseHandler {
 
         return false;
     }
-
 }

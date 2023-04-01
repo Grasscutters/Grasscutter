@@ -10,10 +10,11 @@ public class PacketChangeAvatarRsp extends BasePacket {
     public PacketChangeAvatarRsp(long guid) {
         super(PacketOpcodes.ChangeAvatarRsp);
 
-        ChangeAvatarRsp p = ChangeAvatarRsp.newBuilder()
-            .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
-            .setCurGuid(guid)
-            .build();
+        ChangeAvatarRsp p =
+                ChangeAvatarRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
+                        .setCurGuid(guid)
+                        .build();
 
         this.setData(p);
     }

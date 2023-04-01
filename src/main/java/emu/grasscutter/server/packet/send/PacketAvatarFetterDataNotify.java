@@ -15,8 +15,8 @@ public class PacketAvatarFetterDataNotify extends BasePacket {
 
         int fetterLevel = avatar.getFetterLevel();
 
-        AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-            .setExpLevel(avatar.getFetterLevel());
+        AvatarFetterInfo.Builder avatarFetter =
+                AvatarFetterInfo.newBuilder().setExpLevel(avatar.getFetterLevel());
 
         if (fetterLevel != 10) {
             avatarFetter.setExpNumber(avatar.getFetterExp());
@@ -25,10 +25,9 @@ public class PacketAvatarFetterDataNotify extends BasePacket {
         if (avatar.getFetterList() != null) {
             for (int i = 0; i < avatar.getFetterList().size(); i++) {
                 avatarFetter.addFetterList(
-                    FetterData.newBuilder()
-                        .setFetterId(avatar.getFetterList().get(i))
-                        .setFetterState(FetterState.FINISH.getValue())
-                );
+                        FetterData.newBuilder()
+                                .setFetterId(avatar.getFetterList().get(i))
+                                .setFetterState(FetterState.FINISH.getValue()));
             }
         }
 
@@ -40,9 +39,10 @@ public class PacketAvatarFetterDataNotify extends BasePacket {
 
         AvatarFetterInfo avatarFetterInfo = avatarFetter.build();
 
-        AvatarFetterDataNotify proto = AvatarFetterDataNotify.newBuilder()
-            .putFetterInfoMap(avatar.getGuid(), avatarFetterInfo)
-            .build();
+        AvatarFetterDataNotify proto =
+                AvatarFetterDataNotify.newBuilder()
+                        .putFetterInfoMap(avatar.getGuid(), avatarFetterInfo)
+                        .build();
 
         this.setData(proto);
     }

@@ -13,13 +13,15 @@ public class PacketGadgetInteractRsp extends BasePacket {
         this(gadget, interact, null);
     }
 
-    public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact, InterOpType opType) {
+    public PacketGadgetInteractRsp(
+            EntityBaseGadget gadget, InteractType interact, InterOpType opType) {
         super(PacketOpcodes.GadgetInteractRsp);
 
-        var proto = GadgetInteractRsp.newBuilder()
-            .setGadgetEntityId(gadget.getId())
-            .setInteractType(interact)
-            .setGadgetId(gadget.getGadgetId());
+        var proto =
+                GadgetInteractRsp.newBuilder()
+                        .setGadgetEntityId(gadget.getId())
+                        .setInteractType(interact)
+                        .setGadgetId(gadget.getGadgetId());
 
         if (opType != null) {
             proto.setOpType(opType);
@@ -31,9 +33,10 @@ public class PacketGadgetInteractRsp extends BasePacket {
     public PacketGadgetInteractRsp() {
         super(PacketOpcodes.GadgetInteractRsp);
 
-        GadgetInteractRsp proto = GadgetInteractRsp.newBuilder()
-            .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
-            .build();
+        GadgetInteractRsp proto =
+                GadgetInteractRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+                        .build();
 
         this.setData(proto);
     }

@@ -17,8 +17,8 @@ public class HandlerNpcTalkReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         NpcTalkReq req = NpcTalkReq.parseFrom(payload);
 
-        //Check if mainQuest exists
-        //remove last 2 digits to get a mainQuestId
+        // Check if mainQuest exists
+        // remove last 2 digits to get a mainQuestId
         int talkId = req.getTalkId();
         int mainQuestId = talkId / 100;
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
@@ -38,13 +38,28 @@ public class HandlerNpcTalkReq extends PacketHandler {
             // Add to the list of done talks for this quest.
             var mainQuest = session.getPlayer().getQuestManager().getMainQuestById(mainQuestId);
             if (mainQuest != null) {
-                session.getPlayer().getQuestManager().getMainQuestById(mainQuestId).getTalks().put(talkId, talkForQuest);
+                session
+                        .getPlayer()
+                        .getQuestManager()
+                        .getMainQuestById(mainQuestId)
+                        .getTalks()
+                        .put(talkId, talkForQuest);
             }
 
             // Fire quest triggers.
-            session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_ANY_TALK, String.valueOf(req.getTalkId()), 0, 0);
-            session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_TALK, req.getTalkId(), 0);
-            session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_FINISH_PLOT, req.getTalkId(), 0);
+            session
+                    .getPlayer()
+                    .getQuestManager()
+                    .triggerEvent(
+                            QuestTrigger.QUEST_CONTENT_COMPLETE_ANY_TALK, String.valueOf(req.getTalkId()), 0, 0);
+            session
+                    .getPlayer()
+                    .getQuestManager()
+                    .triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_TALK, req.getTalkId(), 0);
+            session
+                    .getPlayer()
+                    .getQuestManager()
+                    .triggerEvent(QuestTrigger.QUEST_CONTENT_FINISH_PLOT, req.getTalkId(), 0);
         }
 
         session.send(new PacketNpcTalkRsp(req.getNpcEntityId(), req.getTalkId(), req.getEntityId()));

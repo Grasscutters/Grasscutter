@@ -11,9 +11,7 @@ public class PacketMusicGameSettleRsp extends BasePacket {
 
         var proto = MusicGameSettleRspOuterClass.MusicGameSettleRsp.newBuilder();
 
-        proto.setMusicBasicId(musicBasicId)
-            .setUgcGuid(musicShareId)
-            .setIsNewRecord(isNewRecord);
+        proto.setMusicBasicId(musicBasicId).setUgcGuid(musicShareId).setIsNewRecord(isNewRecord);
 
         this.setData(proto);
     }

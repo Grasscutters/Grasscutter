@@ -5,13 +5,12 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(name = "QuestExcelConfigData.json")
 @Getter
@@ -37,12 +36,12 @@ public class QuestData extends GameResource {
     private List<QuestExecParam> failExec;
     private Guide guide;
 
-    //ResourceLoader not happy if you remove getId() ~~
+    // ResourceLoader not happy if you remove getId() ~~
     public int getId() {
         return subId;
     }
 
-    //Added getSubId() for clarity
+    // Added getSubId() for clarity
     public int getSubId() {
         return subId;
     }
@@ -105,13 +104,15 @@ public class QuestData extends GameResource {
     public static class QuestCondition {
         @SerializedName("_type")
         private QuestTrigger type;
+
         @SerializedName("_param")
         private int[] param;
+
         @SerializedName("_param_str")
         private String paramStr;
+
         @SerializedName("_count")
         private String count;
-
     }
 
     @Data
@@ -126,8 +127,10 @@ public class QuestData extends GameResource {
     public class QuestExecParam {
         @SerializedName("_type")
         QuestTrigger type;
+
         @SerializedName("_param")
         String[] param;
+
         @SerializedName("_count")
         String count;
     }

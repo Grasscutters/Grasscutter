@@ -14,13 +14,15 @@ public class HandlerAvatarChangeCostumeReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         AvatarChangeCostumeReq req = AvatarChangeCostumeReq.parseFrom(payload);
 
-        boolean success = session.getPlayer().getAvatars().changeCostume(req.getAvatarGuid(), req.getCostumeId());
+        boolean success =
+                session.getPlayer().getAvatars().changeCostume(req.getAvatarGuid(), req.getCostumeId());
 
         if (success) {
-            session.getPlayer().sendPacket(new PacketAvatarChangeCostumeRsp(req.getAvatarGuid(), req.getCostumeId()));
+            session
+                    .getPlayer()
+                    .sendPacket(new PacketAvatarChangeCostumeRsp(req.getAvatarGuid(), req.getCostumeId()));
         } else {
             session.getPlayer().sendPacket(new PacketAvatarChangeCostumeRsp());
         }
     }
-
 }

@@ -20,19 +20,19 @@ public class HomeNPCItem {
 
     public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
         return HomeNPCItem.of()
-            .avatarId(homeNpcData.getAvatarId())
-            .spawnPos(new Position(homeNpcData.getSpawnPos()))
-            .spawnRot(new Position(homeNpcData.getSpawnRot()))
-            .costumeId(homeNpcData.getCostumeId())
-            .build();
+                .avatarId(homeNpcData.getAvatarId())
+                .spawnPos(new Position(homeNpcData.getSpawnPos()))
+                .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .costumeId(homeNpcData.getCostumeId())
+                .build();
     }
 
     public HomeNpcDataOuterClass.HomeNpcData toProto() {
         return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
-            .setAvatarId(avatarId)
-            .setSpawnPos(spawnPos.toProto())
-            .setSpawnRot(spawnRot.toProto())
-            .setCostumeId(costumeId)
-            .build();
+                .setAvatarId(avatarId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setCostumeId(costumeId)
+                .build();
     }
 }

@@ -3,7 +3,7 @@ package emu.grasscutter.game.player;
 import lombok.NonNull;
 
 public abstract class BasePlayerManager {
-    protected transient final Player player;
+    protected final transient Player player;
 
     public BasePlayerManager(@NonNull Player player) {
         this.player = player;
@@ -13,9 +13,7 @@ public abstract class BasePlayerManager {
         return this.player;
     }
 
-    /**
-     * Saves the player to the database
-     */
+    /** Saves the player to the database */
     public void save() {
         getPlayer().save();
     }

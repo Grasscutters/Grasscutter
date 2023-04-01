@@ -14,7 +14,9 @@ public class HandlerWeaponPromoteReq extends PacketHandler {
         WeaponPromoteReq req = WeaponPromoteReq.parseFrom(payload);
 
         // Ascend weapon
-        session.getServer().getInventorySystem().promoteWeapon(session.getPlayer(), req.getTargetWeaponGuid());
+        session
+                .getServer()
+                .getInventorySystem()
+                .promoteWeapon(session.getPlayer(), req.getTargetWeaponGuid());
     }
-
 }

@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PullPrivateChatRspOuterClass.PullPrivateChatRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.List;
 
 public class PacketPullPrivateChatRsp extends BasePacket {

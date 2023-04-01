@@ -15,10 +15,15 @@ public class HandlerPrivateChatReq extends PacketHandler {
         PrivateChatReq.ContentCase content = req.getContentCase();
 
         if (content == PrivateChatReq.ContentCase.TEXT) {
-            session.getServer().getChatSystem().sendPrivateMessage(session.getPlayer(), req.getTargetUid(), req.getText());
+            session
+                    .getServer()
+                    .getChatSystem()
+                    .sendPrivateMessage(session.getPlayer(), req.getTargetUid(), req.getText());
         } else if (content == PrivateChatReq.ContentCase.ICON) {
-            session.getServer().getChatSystem().sendPrivateMessage(session.getPlayer(), req.getTargetUid(), req.getIcon());
+            session
+                    .getServer()
+                    .getChatSystem()
+                    .sendPrivateMessage(session.getPlayer(), req.getTargetUid(), req.getIcon());
         }
     }
-
 }

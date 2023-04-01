@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -15,12 +17,9 @@ import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
 import emu.grasscutter.utils.ByteHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
-
-import javax.crypto.Cipher;
 import java.nio.ByteBuffer;
 import java.security.Signature;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
+import javax.crypto.Cipher;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {
@@ -39,26 +38,29 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         session.setAccount(account);
 
         // Check if player object exists in server
-        // NOTE: CHECKING MUST SITUATED HERE (BEFORE getPlayerByUid)! because to save firstly ,to load secondly !!!
+        // NOTE: CHECKING MUST SITUATED HERE (BEFORE getPlayerByUid)! because to save firstly ,to load
+        // secondly !!!
         // TODO - optimize
         boolean kicked = false;
         Player exists = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
         if (exists != null) {
             GameSession existsSession = exists.getSession();
-            if (existsSession != session) {// No self-kicking
-                exists.onLogout();//must save immediately , or the below will load old data
+            if (existsSession != session) { // No self-kicking
+                exists.onLogout(); // must save immediately , or the below will load old data
                 existsSession.close();
-                Grasscutter.getLogger().warn("Player {} was kicked due to duplicated login", account.getUsername());
+                Grasscutter.getLogger()
+                        .warn("Player {} was kicked due to duplicated login", account.getUsername());
                 kicked = true;
             }
         }
 
-        //NOTE: If there are 5 online players, max count of player is 5,
+        // NOTE: If there are 5 online players, max count of player is 5,
         // a new client want to login by kicking one of them ,
         // I think it should be allowed
         if (!kicked) {
             // Max players limit
-            if (ACCOUNT.maxPlayer > -1 && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
+            if (ACCOUNT.maxPlayer > -1
+                    && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
                 session.close();
                 return;
             }
@@ -72,10 +74,12 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         Player player = DatabaseHelper.getPlayerByAccount(account, event.getPlayerClass());
 
         if (player == null) {
-            int nextPlayerUid = DatabaseHelper.getNextPlayerId(session.getAccount().getReservedPlayerUid());
+            int nextPlayerUid =
+                    DatabaseHelper.getNextPlayerId(session.getAccount().getReservedPlayerUid());
 
             // Create player instance from event.
-            player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
+            player =
+                    event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
 
             // Save to db
             DatabaseHelper.generatePlayerUid(player, nextPlayerUid);
@@ -87,7 +91,9 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         // Checks if the player is banned
         if (session.getAccount().isBanned()) {
             session.setState(SessionState.ACCOUNT_BANNED);
-            session.send(new PacketGetPlayerTokenRsp(session, 21, "FORBID_CHEATING_PLUGINS", session.getAccount().getBanEndTime()));
+            session.send(
+                    new PacketGetPlayerTokenRsp(
+                            session, 21, "FORBID_CHEATING_PLUGINS", session.getAccount().getBanEndTime()));
             return;
         }
 
@@ -105,12 +111,10 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
 
                 var client_seed_encrypted = Utils.base64Decode(req.getClientRandKey());
-                var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted))
-                    .getLong();
+                var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted)).getLong();
 
-                byte[] seed_bytes = ByteBuffer.wrap(new byte[8])
-                    .putLong(Crypto.ENCRYPT_SEED ^ client_seed)
-                    .array();
+                byte[] seed_bytes =
+                        ByteBuffer.wrap(new byte[8]).putLong(Crypto.ENCRYPT_SEED ^ client_seed).array();
 
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
                 var seed_encrypted = cipher.doFinal(seed_bytes);
@@ -119,7 +123,11 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 privateSignature.initSign(Crypto.CUR_SIGNING_KEY);
                 privateSignature.update(seed_bytes);
 
-                session.send(new PacketGetPlayerTokenRsp(session, Utils.base64Encode(seed_encrypted), Utils.base64Encode(privateSignature.sign())));
+                session.send(
+                        new PacketGetPlayerTokenRsp(
+                                session,
+                                Utils.base64Encode(seed_encrypted),
+                                Utils.base64Encode(privateSignature.sign())));
             } catch (Exception ignore) {
                 // Only UA Patch users will have exception
                 byte[] clientBytes = Utils.base64Decode(req.getClientRandKey());

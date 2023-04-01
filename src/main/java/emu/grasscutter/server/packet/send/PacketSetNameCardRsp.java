@@ -9,9 +9,7 @@ public class PacketSetNameCardRsp extends BasePacket {
     public PacketSetNameCardRsp(int nameCardId) {
         super(PacketOpcodes.SetNameCardRsp);
 
-        SetNameCardRsp proto = SetNameCardRsp.newBuilder()
-            .setNameCardId(nameCardId)
-            .build();
+        SetNameCardRsp proto = SetNameCardRsp.newBuilder().setNameCardId(nameCardId).build();
 
         this.setData(proto);
     }

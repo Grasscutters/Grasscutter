@@ -1,9 +1,8 @@
 package emu.grasscutter.game.quest;
 
+import java.util.List;
 import lombok.Data;
 import lombok.Getter;
-
-import java.util.List;
 
 @Data
 public class RewindData {
@@ -12,8 +11,7 @@ public class RewindData {
 
     @Data
     public static class AvatarData {
-        @Getter
-        private String pos;
+        @Getter private String pos;
     }
 
     @Data

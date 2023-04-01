@@ -10,7 +10,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTakePlayerLevelRewardRsp;
-
 import java.util.List;
 import java.util.Set;
 
@@ -23,10 +22,11 @@ public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
             TakePlayerLevelRewardReq req = TakePlayerLevelRewardReq.parseFrom(payload);
             int level = req.getLevel();
             Set<Integer> rewardedLevels = session.getPlayer().getRewardedLevels();
-            if (!rewardedLevels.contains(level)) {// No duplicated reward
+            if (!rewardedLevels.contains(level)) { // No duplicated reward
                 int rewardId = GameData.getPlayerLevelDataMap().get(level).getRewardId();
                 if (rewardId != 0) {
-                    List<ItemParamData> rewardItems = GameData.getRewardDataMap().get(rewardId).getRewardItemList();
+                    List<ItemParamData> rewardItems =
+                            GameData.getRewardDataMap().get(rewardId).getRewardItemList();
                     pl.getInventory().addItemParamDatas(rewardItems, ActionReason.PlayerUpgradeReward);
                     rewardedLevels.add(level);
                     pl.setRewardedLevels(rewardedLevels);

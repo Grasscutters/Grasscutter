@@ -1,7 +1,6 @@
 package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,5 +32,4 @@ public class AbilityModifierEntry {
     public List<AbilityModifierAction> getOnRemoved() {
         return onRemoved;
     }
-
 }

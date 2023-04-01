@@ -14,14 +14,20 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ConditionCompleteTalk extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        GameMainQuest checkMainQuest = quest.getOwner().getQuestManager().getMainQuestById(condition.getParam()[0] / 100);
-        if (checkMainQuest == null || GameData.getMainQuestDataMap().get(checkMainQuest.getParentQuestId()).getTalks() == null) {
-            Grasscutter.getLogger().debug("Warning: mainQuest {} hasn't been started yet, or has no talks", condition.getParam()[0] / 100);
+    public boolean execute(
+            GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+        GameMainQuest checkMainQuest =
+                quest.getOwner().getQuestManager().getMainQuestById(condition.getParam()[0] / 100);
+        if (checkMainQuest == null
+                || GameData.getMainQuestDataMap().get(checkMainQuest.getParentQuestId()).getTalks()
+                        == null) {
+            Grasscutter.getLogger()
+                    .debug(
+                            "Warning: mainQuest {} hasn't been started yet, or has no talks",
+                            condition.getParam()[0] / 100);
             return false;
         }
         MainQuestData.TalkData talkData = checkMainQuest.getTalks().get(Integer.valueOf(params[0]));
         return talkData != null || checkMainQuest.getChildQuestById(params[0]) != null;
     }
-
 }

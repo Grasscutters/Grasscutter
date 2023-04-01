@@ -24,5 +24,4 @@ public class HandlerPlayerSetPauseReq extends PacketHandler {
         session.send(new PacketPlayerTimeNotify(session.getPlayer()));
         session.send(new PacketSceneTimeNotify(session.getPlayer()));
     }
-
 }

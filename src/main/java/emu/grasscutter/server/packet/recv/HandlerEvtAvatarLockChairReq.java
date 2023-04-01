@@ -19,7 +19,7 @@ public class HandlerEvtAvatarLockChairReq extends PacketHandler {
 
         EntityAvatar entityAvatar = session.getPlayer().getTeamManager().getCurrentAvatarEntity();
 
-        session.send(new PacketEvtAvatarLockChairRsp(head.getClientSequenceId(), entityAvatar, lockChairReq));
+        session.send(
+                new PacketEvtAvatarLockChairRsp(head.getClientSequenceId(), entityAvatar, lockChairReq));
     }
-
 }

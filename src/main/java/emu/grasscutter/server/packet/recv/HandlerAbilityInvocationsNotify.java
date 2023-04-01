@@ -21,5 +21,4 @@ public class HandlerAbilityInvocationsNotify extends PacketHandler {
             player.getAbilityInvokeHandler().addEntry(entry.getForwardType(), entry);
         }
     }
-
 }

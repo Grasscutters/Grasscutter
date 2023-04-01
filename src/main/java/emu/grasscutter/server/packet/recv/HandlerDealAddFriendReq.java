@@ -13,7 +13,9 @@ public class HandlerDealAddFriendReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         DealAddFriendReq req = DealAddFriendReq.parseFrom(payload);
 
-        session.getPlayer().getFriendsList().handleFriendRequest(req.getTargetUid(), req.getDealAddFriendResult());
+        session
+                .getPlayer()
+                .getFriendsList()
+                .handleFriendRequest(req.getTargetUid(), req.getDealAddFriendResult());
     }
-
 }

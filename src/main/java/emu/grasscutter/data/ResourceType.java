@@ -8,9 +8,7 @@ import java.util.stream.Stream;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ResourceType {
 
-    /**
-     * Names of the file that this Resource loads from
-     */
+    /** Names of the file that this Resource loads from */
     String[] name();
 
     /**

@@ -15,16 +15,16 @@ public class GadgetRewardStatue extends GadgetContent {
     }
 
     public boolean onInteract(Player player, GadgetInteractReq req) {
-        if (player.getScene().getChallenge() != null && player.getScene().getChallenge() instanceof DungeonChallenge dungeonChallenge) {
+        if (player.getScene().getChallenge() != null
+                && player.getScene().getChallenge() instanceof DungeonChallenge dungeonChallenge) {
             dungeonChallenge.getStatueDrops(player, req);
         }
 
-        player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_STATUE));
+        player.sendPacket(
+                new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_STATUE));
 
         return false;
     }
 
-    public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-
-    }
+    public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {}
 }

@@ -15,5 +15,4 @@ public class HandlerEnterSceneReadyReq extends PacketHandler {
         session.send(new PacketEnterScenePeerNotify(session.getPlayer()));
         session.send(new PacketEnterSceneReadyRsp(session.getPlayer()));
     }
-
 }

@@ -11,5 +11,4 @@ public class PropGrowCurve {
     public String getGrowCurve() {
         return this.growCurve;
     }
-
 }

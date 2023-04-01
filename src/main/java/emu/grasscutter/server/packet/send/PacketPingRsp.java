@@ -9,9 +9,7 @@ public class PacketPingRsp extends BasePacket {
     public PacketPingRsp(int clientSeq, int time) {
         super(PacketOpcodes.PingRsp, clientSeq);
 
-        PingRsp p = PingRsp.newBuilder()
-            .setClientTime(time)
-            .build();
+        PingRsp p = PingRsp.newBuilder().setClientTime(time).build();
 
         this.setData(p.toByteArray());
     }

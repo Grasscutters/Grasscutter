@@ -13,9 +13,9 @@ public class HandlerTowerEnterLevelReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         TowerEnterLevelReq req = TowerEnterLevelReq.parseFrom(payload);
 
-        //session.send(new PacketTowerCurLevelRecordChangeNotify());
+        // session.send(new PacketTowerCurLevelRecordChangeNotify());
         session.getPlayer().getTowerManager().enterLevel(req.getEnterPointId());
 
-        //session.send(new PacketTowerLevelStarCondNotify());
+        // session.send(new PacketTowerLevelStarCondNotify());
     }
 }

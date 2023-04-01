@@ -12,8 +12,8 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
     public PacketDungeonEntryInfoRsp(Player player, PointData pointData) {
         super(PacketOpcodes.DungeonEntryInfoRsp);
 
-        DungeonEntryInfoRsp.Builder proto = DungeonEntryInfoRsp.newBuilder()
-            .setPointId(pointData.getId());
+        DungeonEntryInfoRsp.Builder proto =
+                DungeonEntryInfoRsp.newBuilder().setPointId(pointData.getId());
 
         if (pointData.getDungeonIds() != null) {
             for (int dungeonId : pointData.getDungeonIds()) {
@@ -28,9 +28,7 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
     public PacketDungeonEntryInfoRsp() {
         super(PacketOpcodes.DungeonEntryInfoRsp);
 
-        DungeonEntryInfoRsp proto = DungeonEntryInfoRsp.newBuilder()
-            .setRetcode(1)
-            .build();
+        DungeonEntryInfoRsp proto = DungeonEntryInfoRsp.newBuilder().setRetcode(1).build();
 
         this.setData(proto);
     }
