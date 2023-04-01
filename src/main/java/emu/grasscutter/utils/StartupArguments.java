@@ -28,11 +28,20 @@ public final class StartupArguments {
         "-lang", parameter -> {
             Grasscutter.setPreferredLanguage(parameter);
             return false;
-        }, "-game", parameter -> {
+        },
+        "-game", parameter -> {
             Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY);
             return false;
-        }, "-dispatch", parameter -> {
+        },
+        "-dispatch", parameter -> {
             Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY);
+            return false;
+        },
+        "-test", parameter -> {
+            // Disable the console.
+            SERVER.game.enableConsole = false;
+            // Disable HTTP encryption.
+            SERVER.http.encryption.useEncryption = false;
             return false;
         },
 
