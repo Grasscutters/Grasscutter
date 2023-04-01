@@ -4,502 +4,71 @@
 package emu.grasscutter.net.proto;
 
 public final class CodexDataFullNotifyOuterClass {
-  private CodexDataFullNotifyOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private CodexDataFullNotifyOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface CodexDataFullNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CodexDataFullNotify)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @return A list containing the recentViewedPushtipsList.
-     */
-    java.util.List<java.lang.Integer> getRecentViewedPushtipsListList();
-    /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @return The count of recentViewedPushtipsList.
-     */
-    int getRecentViewedPushtipsListCount();
-    /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @param index The index of the element to return.
-     * @return The recentViewedPushtipsList at the given index.
-     */
-    int getRecentViewedPushtipsList(int index);
-
-    /**
-     * <code>uint32 KAOIMONFEOK = 5;</code>
-     * @return The kAOIMONFEOK.
-     */
-    int getKAOIMONFEOK();
-
-    /**
-     * <code>uint32 AIOANFPLOPL = 8;</code>
-     * @return The aIOANFPLOPL.
-     */
-    int getAIOANFPLOPL();
-
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> 
-        getTypeDataListList();
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index);
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    int getTypeDataListCount();
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
-        getTypeDataListOrBuilderList();
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   * Name: GCDBECKPFCJ
-   * CmdId: 4203
-   * </pre>
-   *
-   * Protobuf type {@code CodexDataFullNotify}
-   */
-  public static final class CodexDataFullNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CodexDataFullNotify)
-      CodexDataFullNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CodexDataFullNotify.newBuilder() to construct.
-    private CodexDataFullNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CodexDataFullNotify() {
-      recentViewedPushtipsList_ = emptyIntList();
-      typeDataList_ = java.util.Collections.emptyList();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CodexDataFullNotify();
-    }
+    public interface CodexDataFullNotifyOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:CodexDataFullNotify)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CodexDataFullNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                recentViewedPushtipsList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              recentViewedPushtipsList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                recentViewedPushtipsList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                recentViewedPushtipsList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                typeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              typeDataList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @return A list containing the recentViewedPushtipsList.
+         */
+        java.util.List<java.lang.Integer> getRecentViewedPushtipsListList();
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @return The count of recentViewedPushtipsList.
+         */
+        int getRecentViewedPushtipsListCount();
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The recentViewedPushtipsList at the given index.
+         */
+        int getRecentViewedPushtipsList(int index);
 
-              kAOIMONFEOK_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>uint32 KAOIMONFEOK = 5;</code>
+         *
+         * @return The kAOIMONFEOK.
+         */
+        int getKAOIMONFEOK();
 
-              aIOANFPLOPL_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          recentViewedPushtipsList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.internal_static_CodexDataFullNotify_descriptor;
-    }
+        /**
+         * <code>uint32 AIOANFPLOPL = 8;</code>
+         *
+         * @return The aIOANFPLOPL.
+         */
+        int getAIOANFPLOPL();
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.internal_static_CodexDataFullNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.class, emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.Builder.class);
-    }
-
-    public static final int RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.IntList recentViewedPushtipsList_;
-    /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @return A list containing the recentViewedPushtipsList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getRecentViewedPushtipsListList() {
-      return recentViewedPushtipsList_;
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                getTypeDataListList();
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index);
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        int getTypeDataListCount();
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        java.util.List<
+                        ? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+                getTypeDataListOrBuilderList();
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder
+                getTypeDataListOrBuilder(int index);
     }
     /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @return The count of recentViewedPushtipsList.
-     */
-    public int getRecentViewedPushtipsListCount() {
-      return recentViewedPushtipsList_.size();
-    }
-    /**
-     * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-     * @param index The index of the element to return.
-     * @return The recentViewedPushtipsList at the given index.
-     */
-    public int getRecentViewedPushtipsList(int index) {
-      return recentViewedPushtipsList_.getInt(index);
-    }
-    private int recentViewedPushtipsListMemoizedSerializedSize = -1;
-
-    public static final int KAOIMONFEOK_FIELD_NUMBER = 5;
-    private int kAOIMONFEOK_;
-    /**
-     * <code>uint32 KAOIMONFEOK = 5;</code>
-     * @return The kAOIMONFEOK.
-     */
-    @java.lang.Override
-    public int getKAOIMONFEOK() {
-      return kAOIMONFEOK_;
-    }
-
-    public static final int AIOANFPLOPL_FIELD_NUMBER = 8;
-    private int aIOANFPLOPL_;
-    /**
-     * <code>uint32 AIOANFPLOPL = 8;</code>
-     * @return The aIOANFPLOPL.
-     */
-    @java.lang.Override
-    public int getAIOANFPLOPL() {
-      return aIOANFPLOPL_;
-    }
-
-    public static final int TYPE_DATA_LIST_FIELD_NUMBER = 4;
-    private java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> typeDataList_;
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> getTypeDataListList() {
-      return typeDataList_;
-    }
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
-        getTypeDataListOrBuilderList() {
-      return typeDataList_;
-    }
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    @java.lang.Override
-    public int getTypeDataListCount() {
-      return typeDataList_.size();
-    }
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index) {
-      return typeDataList_.get(index);
-    }
-    /**
-     * <code>repeated .CodexTypeData type_data_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
-        int index) {
-      return typeDataList_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (getRecentViewedPushtipsListList().size() > 0) {
-        output.writeUInt32NoTag(10);
-        output.writeUInt32NoTag(recentViewedPushtipsListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < recentViewedPushtipsList_.size(); i++) {
-        output.writeUInt32NoTag(recentViewedPushtipsList_.getInt(i));
-      }
-      for (int i = 0; i < typeDataList_.size(); i++) {
-        output.writeMessage(4, typeDataList_.get(i));
-      }
-      if (kAOIMONFEOK_ != 0) {
-        output.writeUInt32(5, kAOIMONFEOK_);
-      }
-      if (aIOANFPLOPL_ != 0) {
-        output.writeUInt32(8, aIOANFPLOPL_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < recentViewedPushtipsList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(recentViewedPushtipsList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getRecentViewedPushtipsListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        recentViewedPushtipsListMemoizedSerializedSize = dataSize;
-      }
-      for (int i = 0; i < typeDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, typeDataList_.get(i));
-      }
-      if (kAOIMONFEOK_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, kAOIMONFEOK_);
-      }
-      if (aIOANFPLOPL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, aIOANFPLOPL_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify other = (emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) obj;
-
-      if (!getRecentViewedPushtipsListList()
-          .equals(other.getRecentViewedPushtipsListList())) return false;
-      if (getKAOIMONFEOK()
-          != other.getKAOIMONFEOK()) return false;
-      if (getAIOANFPLOPL()
-          != other.getAIOANFPLOPL()) return false;
-      if (!getTypeDataListList()
-          .equals(other.getTypeDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRecentViewedPushtipsListCount() > 0) {
-        hash = (37 * hash) + RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getRecentViewedPushtipsListList().hashCode();
-      }
-      hash = (37 * hash) + KAOIMONFEOK_FIELD_NUMBER;
-      hash = (53 * hash) + getKAOIMONFEOK();
-      hash = (37 * hash) + AIOANFPLOPL_FIELD_NUMBER;
-      hash = (53 * hash) + getAIOANFPLOPL();
-      if (getTypeDataListCount() > 0) {
-        hash = (37 * hash) + TYPE_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTypeDataListList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Name: GCDBECKPFCJ
      * CmdId: 4203
@@ -507,684 +76,1163 @@ public final class CodexDataFullNotifyOuterClass {
      *
      * Protobuf type {@code CodexDataFullNotify}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CodexDataFullNotify)
-        emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.internal_static_CodexDataFullNotify_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.internal_static_CodexDataFullNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.class, emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTypeDataListFieldBuilder();
+    public static final class CodexDataFullNotify extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:CodexDataFullNotify)
+            CodexDataFullNotifyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use CodexDataFullNotify.newBuilder() to construct.
+        private CodexDataFullNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        recentViewedPushtipsList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        kAOIMONFEOK_ = 0;
 
-        aIOANFPLOPL_ = 0;
+        private CodexDataFullNotify() {
+            recentViewedPushtipsList_ = emptyIntList();
+            typeDataList_ = java.util.Collections.emptyList();
+        }
 
-        if (typeDataListBuilder_ == null) {
-          typeDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          typeDataListBuilder_.clear();
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new CodexDataFullNotify();
         }
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.internal_static_CodexDataFullNotify_descriptor;
-      }
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify build() {
-        emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify buildPartial() {
-        emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify result = new emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          recentViewedPushtipsList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.recentViewedPushtipsList_ = recentViewedPushtipsList_;
-        result.kAOIMONFEOK_ = kAOIMONFEOK_;
-        result.aIOANFPLOPL_ = aIOANFPLOPL_;
-        if (typeDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.typeDataList_ = typeDataList_;
-        } else {
-          result.typeDataList_ = typeDataListBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify other) {
-        if (other == emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.getDefaultInstance()) return this;
-        if (!other.recentViewedPushtipsList_.isEmpty()) {
-          if (recentViewedPushtipsList_.isEmpty()) {
-            recentViewedPushtipsList_ = other.recentViewedPushtipsList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureRecentViewedPushtipsListIsMutable();
-            recentViewedPushtipsList_.addAll(other.recentViewedPushtipsList_);
-          }
-          onChanged();
-        }
-        if (other.getKAOIMONFEOK() != 0) {
-          setKAOIMONFEOK(other.getKAOIMONFEOK());
-        }
-        if (other.getAIOANFPLOPL() != 0) {
-          setAIOANFPLOPL(other.getAIOANFPLOPL());
-        }
-        if (typeDataListBuilder_ == null) {
-          if (!other.typeDataList_.isEmpty()) {
-            if (typeDataList_.isEmpty()) {
-              typeDataList_ = other.typeDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureTypeDataListIsMutable();
-              typeDataList_.addAll(other.typeDataList_);
+        private CodexDataFullNotify(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.typeDataList_.isEmpty()) {
-            if (typeDataListBuilder_.isEmpty()) {
-              typeDataListBuilder_.dispose();
-              typeDataListBuilder_ = null;
-              typeDataList_ = other.typeDataList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              typeDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTypeDataListFieldBuilder() : null;
-            } else {
-              typeDataListBuilder_.addAllMessages(other.typeDataList_);
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    recentViewedPushtipsList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                recentViewedPushtipsList_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 10:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                    recentViewedPushtipsList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    recentViewedPushtipsList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 34:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    typeDataList_ =
+                                            new java.util.ArrayList<
+                                                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                typeDataList_.add(
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.parser(),
+                                                extensionRegistry));
+                                break;
+                            }
+                        case 40:
+                            {
+                                kAOIMONFEOK_ = input.readUInt32();
+                                break;
+                            }
+                        case 64:
+                            {
+                                aIOANFPLOPL_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    recentViewedPushtipsList_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass
+                    .internal_static_CodexDataFullNotify_descriptor;
+        }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass
+                    .internal_static_CodexDataFullNotify_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.class,
+                            emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.Builder
+                                    .class);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList recentViewedPushtipsList_ = emptyIntList();
-      private void ensureRecentViewedPushtipsListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          recentViewedPushtipsList_ = mutableCopy(recentViewedPushtipsList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @return A list containing the recentViewedPushtipsList.
-       */
-      public java.util.List<java.lang.Integer>
-          getRecentViewedPushtipsListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(recentViewedPushtipsList_) : recentViewedPushtipsList_;
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @return The count of recentViewedPushtipsList.
-       */
-      public int getRecentViewedPushtipsListCount() {
-        return recentViewedPushtipsList_.size();
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @param index The index of the element to return.
-       * @return The recentViewedPushtipsList at the given index.
-       */
-      public int getRecentViewedPushtipsList(int index) {
-        return recentViewedPushtipsList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The recentViewedPushtipsList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecentViewedPushtipsList(
-          int index, int value) {
-        ensureRecentViewedPushtipsListIsMutable();
-        recentViewedPushtipsList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @param value The recentViewedPushtipsList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRecentViewedPushtipsList(int value) {
-        ensureRecentViewedPushtipsListIsMutable();
-        recentViewedPushtipsList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @param values The recentViewedPushtipsList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllRecentViewedPushtipsList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureRecentViewedPushtipsListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, recentViewedPushtipsList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecentViewedPushtipsList() {
-        recentViewedPushtipsList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
+        public static final int RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER = 1;
+        private com.google.protobuf.Internal.IntList recentViewedPushtipsList_;
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @return A list containing the recentViewedPushtipsList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getRecentViewedPushtipsListList() {
+            return recentViewedPushtipsList_;
+        }
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @return The count of recentViewedPushtipsList.
+         */
+        public int getRecentViewedPushtipsListCount() {
+            return recentViewedPushtipsList_.size();
+        }
+        /**
+         * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The recentViewedPushtipsList at the given index.
+         */
+        public int getRecentViewedPushtipsList(int index) {
+            return recentViewedPushtipsList_.getInt(index);
+        }
 
-      private int kAOIMONFEOK_ ;
-      /**
-       * <code>uint32 KAOIMONFEOK = 5;</code>
-       * @return The kAOIMONFEOK.
-       */
-      @java.lang.Override
-      public int getKAOIMONFEOK() {
-        return kAOIMONFEOK_;
-      }
-      /**
-       * <code>uint32 KAOIMONFEOK = 5;</code>
-       * @param value The kAOIMONFEOK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKAOIMONFEOK(int value) {
-        
-        kAOIMONFEOK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KAOIMONFEOK = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKAOIMONFEOK() {
-        
-        kAOIMONFEOK_ = 0;
-        onChanged();
-        return this;
-      }
+        private int recentViewedPushtipsListMemoizedSerializedSize = -1;
 
-      private int aIOANFPLOPL_ ;
-      /**
-       * <code>uint32 AIOANFPLOPL = 8;</code>
-       * @return The aIOANFPLOPL.
-       */
-      @java.lang.Override
-      public int getAIOANFPLOPL() {
-        return aIOANFPLOPL_;
-      }
-      /**
-       * <code>uint32 AIOANFPLOPL = 8;</code>
-       * @param value The aIOANFPLOPL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAIOANFPLOPL(int value) {
-        
-        aIOANFPLOPL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AIOANFPLOPL = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAIOANFPLOPL() {
-        
-        aIOANFPLOPL_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int KAOIMONFEOK_FIELD_NUMBER = 5;
+        private int kAOIMONFEOK_;
+        /**
+         * <code>uint32 KAOIMONFEOK = 5;</code>
+         *
+         * @return The kAOIMONFEOK.
+         */
+        @java.lang.Override
+        public int getKAOIMONFEOK() {
+            return kAOIMONFEOK_;
+        }
 
-      private java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> typeDataList_ =
-        java.util.Collections.emptyList();
-      private void ensureTypeDataListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          typeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>(typeDataList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+        public static final int AIOANFPLOPL_FIELD_NUMBER = 8;
+        private int aIOANFPLOPL_;
+        /**
+         * <code>uint32 AIOANFPLOPL = 8;</code>
+         *
+         * @return The aIOANFPLOPL.
+         */
+        @java.lang.Override
+        public int getAIOANFPLOPL() {
+            return aIOANFPLOPL_;
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> typeDataListBuilder_;
+        public static final int TYPE_DATA_LIST_FIELD_NUMBER = 4;
+        private java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                typeDataList_;
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        @java.lang.Override
+        public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                getTypeDataListList() {
+            return typeDataList_;
+        }
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+                getTypeDataListOrBuilderList() {
+            return typeDataList_;
+        }
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        @java.lang.Override
+        public int getTypeDataListCount() {
+            return typeDataList_.size();
+        }
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(
+                int index) {
+            return typeDataList_.get(index);
+        }
+        /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder
+                getTypeDataListOrBuilder(int index) {
+            return typeDataList_.get(index);
+        }
 
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> getTypeDataListList() {
-        if (typeDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(typeDataList_);
-        } else {
-          return typeDataListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public int getTypeDataListCount() {
-        if (typeDataListBuilder_ == null) {
-          return typeDataList_.size();
-        } else {
-          return typeDataListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index) {
-        if (typeDataListBuilder_ == null) {
-          return typeDataList_.get(index);
-        } else {
-          return typeDataListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder setTypeDataList(
-          int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
-        if (typeDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeDataListIsMutable();
-          typeDataList_.set(index, value);
-          onChanged();
-        } else {
-          typeDataListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder setTypeDataList(
-          int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
-        if (typeDataListBuilder_ == null) {
-          ensureTypeDataListIsMutable();
-          typeDataList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          typeDataListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder addTypeDataList(emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
-        if (typeDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeDataListIsMutable();
-          typeDataList_.add(value);
-          onChanged();
-        } else {
-          typeDataListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder addTypeDataList(
-          int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
-        if (typeDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeDataListIsMutable();
-          typeDataList_.add(index, value);
-          onChanged();
-        } else {
-          typeDataListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder addTypeDataList(
-          emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
-        if (typeDataListBuilder_ == null) {
-          ensureTypeDataListIsMutable();
-          typeDataList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          typeDataListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder addTypeDataList(
-          int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
-        if (typeDataListBuilder_ == null) {
-          ensureTypeDataListIsMutable();
-          typeDataList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          typeDataListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder addAllTypeDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> values) {
-        if (typeDataListBuilder_ == null) {
-          ensureTypeDataListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, typeDataList_);
-          onChanged();
-        } else {
-          typeDataListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder clearTypeDataList() {
-        if (typeDataListBuilder_ == null) {
-          typeDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          typeDataListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public Builder removeTypeDataList(int index) {
-        if (typeDataListBuilder_ == null) {
-          ensureTypeDataListIsMutable();
-          typeDataList_.remove(index);
-          onChanged();
-        } else {
-          typeDataListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder getTypeDataListBuilder(
-          int index) {
-        return getTypeDataListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
-          int index) {
-        if (typeDataListBuilder_ == null) {
-          return typeDataList_.get(index);  } else {
-          return typeDataListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
-           getTypeDataListOrBuilderList() {
-        if (typeDataListBuilder_ != null) {
-          return typeDataListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(typeDataList_);
-        }
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder addTypeDataListBuilder() {
-        return getTypeDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder addTypeDataListBuilder(
-          int index) {
-        return getTypeDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .CodexTypeData type_data_list = 4;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder> 
-           getTypeDataListBuilderList() {
-        return getTypeDataListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
-          getTypeDataListFieldBuilder() {
-        if (typeDataListBuilder_ == null) {
-          typeDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>(
-                  typeDataList_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          typeDataList_ = null;
-        }
-        return typeDataListBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:CodexDataFullNotify)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            getSerializedSize();
+            if (getRecentViewedPushtipsListList().size() > 0) {
+                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(recentViewedPushtipsListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < recentViewedPushtipsList_.size(); i++) {
+                output.writeUInt32NoTag(recentViewedPushtipsList_.getInt(i));
+            }
+            for (int i = 0; i < typeDataList_.size(); i++) {
+                output.writeMessage(4, typeDataList_.get(i));
+            }
+            if (kAOIMONFEOK_ != 0) {
+                output.writeUInt32(5, kAOIMONFEOK_);
+            }
+            if (aIOANFPLOPL_ != 0) {
+                output.writeUInt32(8, aIOANFPLOPL_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            {
+                int dataSize = 0;
+                for (int i = 0; i < recentViewedPushtipsList_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
+                                    recentViewedPushtipsList_.getInt(i));
+                }
+                size += dataSize;
+                if (!getRecentViewedPushtipsListList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                recentViewedPushtipsListMemoizedSerializedSize = dataSize;
+            }
+            for (int i = 0; i < typeDataList_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, typeDataList_.get(i));
+            }
+            if (kAOIMONFEOK_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, kAOIMONFEOK_);
+            }
+            if (aIOANFPLOPL_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, aIOANFPLOPL_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify other =
+                    (emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) obj;
+
+            if (!getRecentViewedPushtipsListList().equals(other.getRecentViewedPushtipsListList()))
+                return false;
+            if (getKAOIMONFEOK() != other.getKAOIMONFEOK()) return false;
+            if (getAIOANFPLOPL() != other.getAIOANFPLOPL()) return false;
+            if (!getTypeDataListList().equals(other.getTypeDataListList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (getRecentViewedPushtipsListCount() > 0) {
+                hash = (37 * hash) + RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getRecentViewedPushtipsListList().hashCode();
+            }
+            hash = (37 * hash) + KAOIMONFEOK_FIELD_NUMBER;
+            hash = (53 * hash) + getKAOIMONFEOK();
+            hash = (37 * hash) + AIOANFPLOPL_FIELD_NUMBER;
+            hash = (53 * hash) + getAIOANFPLOPL();
+            if (getTypeDataListCount() > 0) {
+                hash = (37 * hash) + TYPE_DATA_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getTypeDataListList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: GCDBECKPFCJ
+         * CmdId: 4203
+         * </pre>
+         *
+         * Protobuf type {@code CodexDataFullNotify}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:CodexDataFullNotify)
+                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotifyOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass
+                        .internal_static_CodexDataFullNotify_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass
+                        .internal_static_CodexDataFullNotify_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.class,
+                                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getTypeDataListFieldBuilder();
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                recentViewedPushtipsList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                kAOIMONFEOK_ = 0;
+
+                aIOANFPLOPL_ = 0;
+
+                if (typeDataListBuilder_ == null) {
+                    typeDataList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                } else {
+                    typeDataListBuilder_.clear();
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass
+                        .internal_static_CodexDataFullNotify_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify build() {
+                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                    buildPartial() {
+                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify result =
+                        new emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify(this);
+                int from_bitField0_ = bitField0_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    recentViewedPushtipsList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.recentViewedPushtipsList_ = recentViewedPushtipsList_;
+                result.kAOIMONFEOK_ = kAOIMONFEOK_;
+                result.aIOANFPLOPL_ = aIOANFPLOPL_;
+                if (typeDataListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) != 0)) {
+                        typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    }
+                    result.typeDataList_ = typeDataList_;
+                } else {
+                    result.typeDataList_ = typeDataListBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify other) {
+                if (other
+                        == emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                                .getDefaultInstance()) return this;
+                if (!other.recentViewedPushtipsList_.isEmpty()) {
+                    if (recentViewedPushtipsList_.isEmpty()) {
+                        recentViewedPushtipsList_ = other.recentViewedPushtipsList_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureRecentViewedPushtipsListIsMutable();
+                        recentViewedPushtipsList_.addAll(other.recentViewedPushtipsList_);
+                    }
+                    onChanged();
+                }
+                if (other.getKAOIMONFEOK() != 0) {
+                    setKAOIMONFEOK(other.getKAOIMONFEOK());
+                }
+                if (other.getAIOANFPLOPL() != 0) {
+                    setAIOANFPLOPL(other.getAIOANFPLOPL());
+                }
+                if (typeDataListBuilder_ == null) {
+                    if (!other.typeDataList_.isEmpty()) {
+                        if (typeDataList_.isEmpty()) {
+                            typeDataList_ = other.typeDataList_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                        } else {
+                            ensureTypeDataListIsMutable();
+                            typeDataList_.addAll(other.typeDataList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.typeDataList_.isEmpty()) {
+                        if (typeDataListBuilder_.isEmpty()) {
+                            typeDataListBuilder_.dispose();
+                            typeDataListBuilder_ = null;
+                            typeDataList_ = other.typeDataList_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                            typeDataListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                            ? getTypeDataListFieldBuilder()
+                                            : null;
+                        } else {
+                            typeDataListBuilder_.addAllMessages(other.typeDataList_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private com.google.protobuf.Internal.IntList recentViewedPushtipsList_ = emptyIntList();
+
+            private void ensureRecentViewedPushtipsListIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    recentViewedPushtipsList_ = mutableCopy(recentViewedPushtipsList_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @return A list containing the recentViewedPushtipsList.
+             */
+            public java.util.List<java.lang.Integer> getRecentViewedPushtipsListList() {
+                return ((bitField0_ & 0x00000001) != 0)
+                        ? java.util.Collections.unmodifiableList(recentViewedPushtipsList_)
+                        : recentViewedPushtipsList_;
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @return The count of recentViewedPushtipsList.
+             */
+            public int getRecentViewedPushtipsListCount() {
+                return recentViewedPushtipsList_.size();
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The recentViewedPushtipsList at the given index.
+             */
+            public int getRecentViewedPushtipsList(int index) {
+                return recentViewedPushtipsList_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The recentViewedPushtipsList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRecentViewedPushtipsList(int index, int value) {
+                ensureRecentViewedPushtipsListIsMutable();
+                recentViewedPushtipsList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @param value The recentViewedPushtipsList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addRecentViewedPushtipsList(int value) {
+                ensureRecentViewedPushtipsListIsMutable();
+                recentViewedPushtipsList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @param values The recentViewedPushtipsList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllRecentViewedPushtipsList(
+                    java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureRecentViewedPushtipsListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recentViewedPushtipsList_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 recent_viewed_pushtips_list = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRecentViewedPushtipsList() {
+                recentViewedPushtipsList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            private int kAOIMONFEOK_;
+            /**
+             * <code>uint32 KAOIMONFEOK = 5;</code>
+             *
+             * @return The kAOIMONFEOK.
+             */
+            @java.lang.Override
+            public int getKAOIMONFEOK() {
+                return kAOIMONFEOK_;
+            }
+            /**
+             * <code>uint32 KAOIMONFEOK = 5;</code>
+             *
+             * @param value The kAOIMONFEOK to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKAOIMONFEOK(int value) {
+
+                kAOIMONFEOK_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 KAOIMONFEOK = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKAOIMONFEOK() {
+
+                kAOIMONFEOK_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int aIOANFPLOPL_;
+            /**
+             * <code>uint32 AIOANFPLOPL = 8;</code>
+             *
+             * @return The aIOANFPLOPL.
+             */
+            @java.lang.Override
+            public int getAIOANFPLOPL() {
+                return aIOANFPLOPL_;
+            }
+            /**
+             * <code>uint32 AIOANFPLOPL = 8;</code>
+             *
+             * @param value The aIOANFPLOPL to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAIOANFPLOPL(int value) {
+
+                aIOANFPLOPL_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 AIOANFPLOPL = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAIOANFPLOPL() {
+
+                aIOANFPLOPL_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                    typeDataList_ = java.util.Collections.emptyList();
+
+            private void ensureTypeDataListIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    typeDataList_ =
+                            new java.util.ArrayList<
+                                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>(typeDataList_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData,
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder,
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+                    typeDataListBuilder_;
+
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                    getTypeDataListList() {
+                if (typeDataListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(typeDataList_);
+                } else {
+                    return typeDataListBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public int getTypeDataListCount() {
+                if (typeDataListBuilder_ == null) {
+                    return typeDataList_.size();
+                } else {
+                    return typeDataListBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(
+                    int index) {
+                if (typeDataListBuilder_ == null) {
+                    return typeDataList_.get(index);
+                } else {
+                    return typeDataListBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder setTypeDataList(
+                    int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
+                if (typeDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.set(index, value);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder setTypeDataList(
+                    int index,
+                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
+                if (typeDataListBuilder_ == null) {
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder addTypeDataList(
+                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
+                if (typeDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.add(value);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder addTypeDataList(
+                    int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
+                if (typeDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.add(index, value);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder addTypeDataList(
+                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
+                if (typeDataListBuilder_ == null) {
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder addTypeDataList(
+                    int index,
+                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
+                if (typeDataListBuilder_ == null) {
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder addAllTypeDataList(
+                    java.lang.Iterable<
+                                    ? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+                            values) {
+                if (typeDataListBuilder_ == null) {
+                    ensureTypeDataListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, typeDataList_);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder clearTypeDataList() {
+                if (typeDataListBuilder_ == null) {
+                    typeDataList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public Builder removeTypeDataList(int index) {
+                if (typeDataListBuilder_ == null) {
+                    ensureTypeDataListIsMutable();
+                    typeDataList_.remove(index);
+                    onChanged();
+                } else {
+                    typeDataListBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder
+                    getTypeDataListBuilder(int index) {
+                return getTypeDataListFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder
+                    getTypeDataListOrBuilder(int index) {
+                if (typeDataListBuilder_ == null) {
+                    return typeDataList_.get(index);
+                } else {
+                    return typeDataListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public java.util.List<
+                            ? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+                    getTypeDataListOrBuilderList() {
+                if (typeDataListBuilder_ != null) {
+                    return typeDataListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(typeDataList_);
+                }
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder
+                    addTypeDataListBuilder() {
+                return getTypeDataListFieldBuilder()
+                        .addBuilder(
+                                emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder
+                    addTypeDataListBuilder(int index) {
+                return getTypeDataListFieldBuilder()
+                        .addBuilder(
+                                index,
+                                emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .CodexTypeData type_data_list = 4;</code> */
+            public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder>
+                    getTypeDataListBuilderList() {
+                return getTypeDataListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData,
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder,
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+                    getTypeDataListFieldBuilder() {
+                if (typeDataListBuilder_ == null) {
+                    typeDataListBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData,
+                                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder,
+                                    emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>(
+                                    typeDataList_,
+                                    ((bitField0_ & 0x00000002) != 0),
+                                    getParentForChildren(),
+                                    isClean());
+                    typeDataList_ = null;
+                }
+                return typeDataListBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:CodexDataFullNotify)
+        }
+
+        // @@protoc_insertion_point(class_scope:CodexDataFullNotify)
+        private static final emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify();
+        }
+
+        public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CodexDataFullNotify> PARSER =
+                new com.google.protobuf.AbstractParser<CodexDataFullNotify>() {
+                    @java.lang.Override
+                    public CodexDataFullNotify parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new CodexDataFullNotify(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<CodexDataFullNotify> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CodexDataFullNotify> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:CodexDataFullNotify)
-    private static final emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_CodexDataFullNotify_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_CodexDataFullNotify_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify();
+        java.lang.String[] descriptorData = {
+            "\n\031CodexDataFullNotify.proto\032\023CodexTypeDa"
+                    + "ta.proto\"\214\001\n\023CodexDataFullNotify\022#\n\033rece"
+                    + "nt_viewed_pushtips_list\030\001 \003(\r\022\023\n\013KAOIMON"
+                    + "FEOK\030\005 \001(\r\022\023\n\013AIOANFPLOPL\030\010 \001(\r\022&\n\016type_"
+                    + "data_list\030\004 \003(\0132\016.CodexTypeDataB\033\n\031emu.g"
+                    + "rasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.CodexTypeDataOuterClass.getDescriptor(),
+                        });
+        internal_static_CodexDataFullNotify_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_CodexDataFullNotify_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_CodexDataFullNotify_descriptor,
+                        new java.lang.String[] {
+                            "RecentViewedPushtipsList", "KAOIMONFEOK", "AIOANFPLOPL", "TypeDataList",
+                        });
+        emu.grasscutter.net.proto.CodexTypeDataOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CodexDataFullNotify>
-        PARSER = new com.google.protobuf.AbstractParser<CodexDataFullNotify>() {
-      @java.lang.Override
-      public CodexDataFullNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CodexDataFullNotify(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CodexDataFullNotify> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CodexDataFullNotify> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CodexDataFullNotify_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CodexDataFullNotify_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031CodexDataFullNotify.proto\032\023CodexTypeDa" +
-      "ta.proto\"\214\001\n\023CodexDataFullNotify\022#\n\033rece" +
-      "nt_viewed_pushtips_list\030\001 \003(\r\022\023\n\013KAOIMON" +
-      "FEOK\030\005 \001(\r\022\023\n\013AIOANFPLOPL\030\010 \001(\r\022&\n\016type_" +
-      "data_list\030\004 \003(\0132\016.CodexTypeDataB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.CodexTypeDataOuterClass.getDescriptor(),
-        });
-    internal_static_CodexDataFullNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_CodexDataFullNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CodexDataFullNotify_descriptor,
-        new java.lang.String[] { "RecentViewedPushtipsList", "KAOIMONFEOK", "AIOANFPLOPL", "TypeDataList", });
-    emu.grasscutter.net.proto.CodexTypeDataOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

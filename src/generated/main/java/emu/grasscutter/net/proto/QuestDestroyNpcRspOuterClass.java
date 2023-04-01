@@ -4,346 +4,43 @@
 package emu.grasscutter.net.proto;
 
 public final class QuestDestroyNpcRspOuterClass {
-  private QuestDestroyNpcRspOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private QuestDestroyNpcRspOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface QuestDestroyNpcRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:QuestDestroyNpcRsp)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 parent_quest_id = 5;</code>
-     * @return The parentQuestId.
-     */
-    int getParentQuestId();
-
-    /**
-     * <code>uint32 npc_id = 3;</code>
-     * @return The npcId.
-     */
-    int getNpcId();
-
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-  }
-  /**
-   * <pre>
-   * Name: IHAMDEJMOKK
-   * CmdId: 444
-   * </pre>
-   *
-   * Protobuf type {@code QuestDestroyNpcRsp}
-   */
-  public static final class QuestDestroyNpcRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:QuestDestroyNpcRsp)
-      QuestDestroyNpcRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use QuestDestroyNpcRsp.newBuilder() to construct.
-    private QuestDestroyNpcRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private QuestDestroyNpcRsp() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new QuestDestroyNpcRsp();
-    }
+    public interface QuestDestroyNpcRspOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:QuestDestroyNpcRsp)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private QuestDestroyNpcRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
+        /**
+         * <code>uint32 parent_quest_id = 5;</code>
+         *
+         * @return The parentQuestId.
+         */
+        int getParentQuestId();
 
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 24: {
+        /**
+         * <code>uint32 npc_id = 3;</code>
+         *
+         * @return The npcId.
+         */
+        int getNpcId();
 
-              npcId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              parentQuestId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.internal_static_QuestDestroyNpcRsp_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.internal_static_QuestDestroyNpcRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.class, emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.Builder.class);
-    }
-
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 5;
-    private int parentQuestId_;
-    /**
-     * <code>uint32 parent_quest_id = 5;</code>
-     * @return The parentQuestId.
-     */
-    @java.lang.Override
-    public int getParentQuestId() {
-      return parentQuestId_;
-    }
-
-    public static final int NPC_ID_FIELD_NUMBER = 3;
-    private int npcId_;
-    /**
-     * <code>uint32 npc_id = 3;</code>
-     * @return The npcId.
-     */
-    @java.lang.Override
-    public int getNpcId() {
-      return npcId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
-      if (npcId_ != 0) {
-        output.writeUInt32(3, npcId_);
-      }
-      if (parentQuestId_ != 0) {
-        output.writeUInt32(5, parentQuestId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
-      if (npcId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, npcId_);
-      }
-      if (parentQuestId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, parentQuestId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp other = (emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) obj;
-
-      if (getParentQuestId()
-          != other.getParentQuestId()) return false;
-      if (getNpcId()
-          != other.getNpcId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentQuestId();
-      hash = (37 * hash) + NPC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNpcId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>int32 retcode = 1;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
     }
     /**
+     *
+     *
      * <pre>
      * Name: IHAMDEJMOKK
      * CmdId: 444
@@ -351,337 +48,692 @@ public final class QuestDestroyNpcRspOuterClass {
      *
      * Protobuf type {@code QuestDestroyNpcRsp}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:QuestDestroyNpcRsp)
-        emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.internal_static_QuestDestroyNpcRsp_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.internal_static_QuestDestroyNpcRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.class, emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class QuestDestroyNpcRsp extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:QuestDestroyNpcRsp)
+            QuestDestroyNpcRspOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use QuestDestroyNpcRsp.newBuilder() to construct.
+        private QuestDestroyNpcRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        parentQuestId_ = 0;
 
-        npcId_ = 0;
+        private QuestDestroyNpcRsp() {}
 
-        retcode_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.internal_static_QuestDestroyNpcRsp_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp build() {
-        emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new QuestDestroyNpcRsp();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp buildPartial() {
-        emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp result = new emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp(this);
-        result.parentQuestId_ = parentQuestId_;
-        result.npcId_ = npcId_;
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp other) {
-        if (other == emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.getDefaultInstance()) return this;
-        if (other.getParentQuestId() != 0) {
-          setParentQuestId(other.getParentQuestId());
+        private QuestDestroyNpcRsp(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                retcode_ = input.readInt32();
+                                break;
+                            }
+                        case 24:
+                            {
+                                npcId_ = input.readUInt32();
+                                break;
+                            }
+                        case 40:
+                            {
+                                parentQuestId_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getNpcId() != 0) {
-          setNpcId(other.getNpcId());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass
+                    .internal_static_QuestDestroyNpcRsp_descriptor;
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass
+                    .internal_static_QuestDestroyNpcRsp_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.class,
+                            emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.Builder
+                                    .class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 5;
+        private int parentQuestId_;
+        /**
+         * <code>uint32 parent_quest_id = 5;</code>
+         *
+         * @return The parentQuestId.
+         */
+        @java.lang.Override
+        public int getParentQuestId() {
+            return parentQuestId_;
         }
-        return this;
-      }
 
-      private int parentQuestId_ ;
-      /**
-       * <code>uint32 parent_quest_id = 5;</code>
-       * @return The parentQuestId.
-       */
-      @java.lang.Override
-      public int getParentQuestId() {
-        return parentQuestId_;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 5;</code>
-       * @param value The parentQuestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentQuestId(int value) {
-        
-        parentQuestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentQuestId() {
-        
-        parentQuestId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int NPC_ID_FIELD_NUMBER = 3;
+        private int npcId_;
+        /**
+         * <code>uint32 npc_id = 3;</code>
+         *
+         * @return The npcId.
+         */
+        @java.lang.Override
+        public int getNpcId() {
+            return npcId_;
+        }
 
-      private int npcId_ ;
-      /**
-       * <code>uint32 npc_id = 3;</code>
-       * @return The npcId.
-       */
-      @java.lang.Override
-      public int getNpcId() {
-        return npcId_;
-      }
-      /**
-       * <code>uint32 npc_id = 3;</code>
-       * @param value The npcId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNpcId(int value) {
-        
-        npcId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 npc_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNpcId() {
-        
-        npcId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int RETCODE_FIELD_NUMBER = 1;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 1;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
+        }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:QuestDestroyNpcRsp)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (retcode_ != 0) {
+                output.writeInt32(1, retcode_);
+            }
+            if (npcId_ != 0) {
+                output.writeUInt32(3, npcId_);
+            }
+            if (parentQuestId_ != 0) {
+                output.writeUInt32(5, parentQuestId_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, retcode_);
+            }
+            if (npcId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, npcId_);
+            }
+            if (parentQuestId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, parentQuestId_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp other =
+                    (emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) obj;
+
+            if (getParentQuestId() != other.getParentQuestId()) return false;
+            if (getNpcId() != other.getNpcId()) return false;
+            if (getRetcode() != other.getRetcode()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getParentQuestId();
+            hash = (37 * hash) + NPC_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getNpcId();
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: IHAMDEJMOKK
+         * CmdId: 444
+         * </pre>
+         *
+         * Protobuf type {@code QuestDestroyNpcRsp}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:QuestDestroyNpcRsp)
+                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRspOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass
+                        .internal_static_QuestDestroyNpcRsp_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass
+                        .internal_static_QuestDestroyNpcRsp_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.class,
+                                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                parentQuestId_ = 0;
+
+                npcId_ = 0;
+
+                retcode_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass
+                        .internal_static_QuestDestroyNpcRsp_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp build() {
+                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                    buildPartial() {
+                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp result =
+                        new emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp(this);
+                result.parentQuestId_ = parentQuestId_;
+                result.npcId_ = npcId_;
+                result.retcode_ = retcode_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp other) {
+                if (other
+                        == emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                                .getDefaultInstance()) return this;
+                if (other.getParentQuestId() != 0) {
+                    setParentQuestId(other.getParentQuestId());
+                }
+                if (other.getNpcId() != 0) {
+                    setNpcId(other.getNpcId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int parentQuestId_;
+            /**
+             * <code>uint32 parent_quest_id = 5;</code>
+             *
+             * @return The parentQuestId.
+             */
+            @java.lang.Override
+            public int getParentQuestId() {
+                return parentQuestId_;
+            }
+            /**
+             * <code>uint32 parent_quest_id = 5;</code>
+             *
+             * @param value The parentQuestId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setParentQuestId(int value) {
+
+                parentQuestId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 parent_quest_id = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearParentQuestId() {
+
+                parentQuestId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int npcId_;
+            /**
+             * <code>uint32 npc_id = 3;</code>
+             *
+             * @return The npcId.
+             */
+            @java.lang.Override
+            public int getNpcId() {
+                return npcId_;
+            }
+            /**
+             * <code>uint32 npc_id = 3;</code>
+             *
+             * @param value The npcId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNpcId(int value) {
+
+                npcId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 npc_id = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNpcId() {
+
+                npcId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 1;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 1;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:QuestDestroyNpcRsp)
+        }
+
+        // @@protoc_insertion_point(class_scope:QuestDestroyNpcRsp)
+        private static final emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp();
+        }
+
+        public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<QuestDestroyNpcRsp> PARSER =
+                new com.google.protobuf.AbstractParser<QuestDestroyNpcRsp>() {
+                    @java.lang.Override
+                    public QuestDestroyNpcRsp parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new QuestDestroyNpcRsp(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<QuestDestroyNpcRsp> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<QuestDestroyNpcRsp> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:QuestDestroyNpcRsp)
-    private static final emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_QuestDestroyNpcRsp_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_QuestDestroyNpcRsp_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp();
+        java.lang.String[] descriptorData = {
+            "\n\030QuestDestroyNpcRsp.proto\"N\n\022QuestDestr"
+                    + "oyNpcRsp\022\027\n\017parent_quest_id\030\005 \001(\r\022\016\n\006npc"
+                    + "_id\030\003 \001(\r\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_QuestDestroyNpcRsp_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_QuestDestroyNpcRsp_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_QuestDestroyNpcRsp_descriptor,
+                        new java.lang.String[] {
+                            "ParentQuestId", "NpcId", "Retcode",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<QuestDestroyNpcRsp>
-        PARSER = new com.google.protobuf.AbstractParser<QuestDestroyNpcRsp>() {
-      @java.lang.Override
-      public QuestDestroyNpcRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuestDestroyNpcRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<QuestDestroyNpcRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<QuestDestroyNpcRsp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_QuestDestroyNpcRsp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_QuestDestroyNpcRsp_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\030QuestDestroyNpcRsp.proto\"N\n\022QuestDestr" +
-      "oyNpcRsp\022\027\n\017parent_quest_id\030\005 \001(\r\022\016\n\006npc" +
-      "_id\030\003 \001(\r\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_QuestDestroyNpcRsp_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_QuestDestroyNpcRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_QuestDestroyNpcRsp_descriptor,
-        new java.lang.String[] { "ParentQuestId", "NpcId", "Retcode", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

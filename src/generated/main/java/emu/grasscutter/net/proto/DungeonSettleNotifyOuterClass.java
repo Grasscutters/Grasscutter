@@ -4,1085 +4,187 @@
 package emu.grasscutter.net.proto;
 
 public final class DungeonSettleNotifyOuterClass {
-  private DungeonSettleNotifyOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private DungeonSettleNotifyOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface DungeonSettleNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DungeonSettleNotify)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 dungeon_id = 4;</code>
-     * @return The dungeonId.
-     */
-    int getDungeonId();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    }
 
-    /**
-     * <code>uint32 use_time = 7;</code>
-     * @return The useTime.
-     */
-    int getUseTime();
+    public interface DungeonSettleNotifyOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:DungeonSettleNotify)
+            com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>uint32 close_time = 11;</code>
-     * @return The closeTime.
-     */
-    int getCloseTime();
+        /**
+         * <code>uint32 dungeon_id = 4;</code>
+         *
+         * @return The dungeonId.
+         */
+        int getDungeonId();
 
-    /**
-     * <code>uint32 createPlayerUid = 10;</code>
-     * @return The createPlayerUid.
-     */
-    int getCreatePlayerUid();
+        /**
+         * <code>uint32 use_time = 7;</code>
+         *
+         * @return The useTime.
+         */
+        int getUseTime();
 
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @return A list containing the failCondList.
-     */
-    java.util.List<java.lang.Integer> getFailCondListList();
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @return The count of failCondList.
-     */
-    int getFailCondListCount();
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The failCondList at the given index.
-     */
-    int getFailCondList(int index);
+        /**
+         * <code>uint32 close_time = 11;</code>
+         *
+         * @return The closeTime.
+         */
+        int getCloseTime();
 
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    int getSettleShowCount();
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    boolean containsSettleShow(
-        int key);
-    /**
-     * Use {@link #getSettleShowMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-    getSettleShow();
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-    getSettleShowMap();
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
+        /**
+         * <code>uint32 createPlayerUid = 10;</code>
+         *
+         * @return The createPlayerUid.
+         */
+        int getCreatePlayerUid();
 
-    emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
-        int key,
-        emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue);
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @return A list containing the failCondList.
+         */
+        java.util.List<java.lang.Integer> getFailCondListList();
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @return The count of failCondList.
+         */
+        int getFailCondListCount();
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The failCondList at the given index.
+         */
+        int getFailCondList(int index);
 
-    emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
-        int key);
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        int getSettleShowCount();
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        boolean containsSettleShow(int key);
+        /** Use {@link #getSettleShowMap()} instead. */
+        @java.lang.Deprecated
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                getSettleShow();
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                getSettleShowMap();
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+                int key, emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue);
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(int key);
 
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    int getStrengthenPointDataMapCount();
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    boolean containsStrengthenPointDataMap(
-        int key);
-    /**
-     * Use {@link #getStrengthenPointDataMapMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-    getStrengthenPointDataMap();
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-    getStrengthenPointDataMapMap();
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        int getStrengthenPointDataMapCount();
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        boolean containsStrengthenPointDataMap(int key);
+        /** Use {@link #getStrengthenPointDataMapMap()} instead. */
+        @java.lang.Deprecated
+        java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                getStrengthenPointDataMap();
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                getStrengthenPointDataMapMap();
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                getStrengthenPointDataMapOrDefault(
+                        int key,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                                defaultValue);
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                getStrengthenPointDataMapOrThrow(int key);
 
-    emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
+        /**
+         * <code>bool is_success = 15;</code>
+         *
+         * @return The isSuccess.
+         */
+        boolean getIsSuccess();
 
-    emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
-        int key);
+        /**
+         * <code>uint32 result = 12;</code>
+         *
+         * @return The result.
+         */
+        int getResult();
 
-    /**
-     * <code>bool is_success = 15;</code>
-     * @return The isSuccess.
-     */
-    boolean getIsSuccess();
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         *
+         * @return Whether the towerLevelEndNotify field is set.
+         */
+        boolean hasTowerLevelEndNotify();
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         *
+         * @return The towerLevelEndNotify.
+         */
+        emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                getTowerLevelEndNotify();
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         */
+        emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder
+                getTowerLevelEndNotifyOrBuilder();
 
-    /**
-     * <code>uint32 result = 12;</code>
-     * @return The result.
-     */
-    int getResult();
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         *
+         * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
+         */
+        boolean hasTrialAvatarFirstPassDungeonNotify();
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         *
+         * @return The trialAvatarFirstPassDungeonNotify.
+         */
+        emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                        .TrialAvatarFirstPassDungeonNotify
+                getTrialAvatarFirstPassDungeonNotify();
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         */
+        emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                        .TrialAvatarFirstPassDungeonNotifyOrBuilder
+                getTrialAvatarFirstPassDungeonNotifyOrBuilder();
 
+        public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.DetailCase
+                getDetailCase();
+    }
     /**
-     * <pre>
-     * Type Event
-     * </pre>
      *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     * @return Whether the towerLevelEndNotify field is set.
-     */
-    boolean hasTowerLevelEndNotify();
-    /**
-     * <pre>
-     * Type Event
-     * </pre>
      *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     * @return The towerLevelEndNotify.
-     */
-    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify getTowerLevelEndNotify();
-    /**
-     * <pre>
-     * Type Event
-     * </pre>
-     *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     */
-    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder getTowerLevelEndNotifyOrBuilder();
-
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
-     */
-    boolean hasTrialAvatarFirstPassDungeonNotify();
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     * @return The trialAvatarFirstPassDungeonNotify.
-     */
-    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify getTrialAvatarFirstPassDungeonNotify();
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     */
-    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder getTrialAvatarFirstPassDungeonNotifyOrBuilder();
-
-    public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.DetailCase getDetailCase();
-  }
-  /**
-   * <pre>
-   * Name: FFCKLBMMNOC
-   * CmdId: 950
-   * </pre>
-   *
-   * Protobuf type {@code DungeonSettleNotify}
-   */
-  public static final class DungeonSettleNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:DungeonSettleNotify)
-      DungeonSettleNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DungeonSettleNotify.newBuilder() to construct.
-    private DungeonSettleNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DungeonSettleNotify() {
-      failCondList_ = emptyIntList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DungeonSettleNotify();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DungeonSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                failCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              failCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                failCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                failCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              useTime_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
-                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-              strengthenPointDataMap__ = input.readMessage(
-                  StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              strengthenPointDataMap_.getMutableMap().put(
-                  strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
-              break;
-            }
-            case 80: {
-
-              createPlayerUid_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              closeTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              result_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                settleShow_ = com.google.protobuf.MapField.newMapField(
-                    SettleShowDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-              settleShow__ = input.readMessage(
-                  SettleShowDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              settleShow_.getMutableMap().put(
-                  settleShow__.getKey(), settleShow__.getValue());
-              break;
-            }
-            case 120: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 5010: {
-              emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder subBuilder = null;
-              if (detailCase_ == 626) {
-                subBuilder = ((emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 626;
-              break;
-            }
-            case 6170: {
-              emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder subBuilder = null;
-              if (detailCase_ == 771) {
-                subBuilder = ((emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 771;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          failCondList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 14:
-          return internalGetSettleShow();
-        case 9:
-          return internalGetStrengthenPointDataMap();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.class, emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder.class);
-    }
-
-    private int detailCase_ = 0;
-    private java.lang.Object detail_;
-    public enum DetailCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      TOWER_LEVEL_END_NOTIFY(771),
-      TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY(626),
-      DETAIL_NOT_SET(0);
-      private final int value;
-      private DetailCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DetailCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DetailCase forNumber(int value) {
-        switch (value) {
-          case 771: return TOWER_LEVEL_END_NOTIFY;
-          case 626: return TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY;
-          case 0: return DETAIL_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DetailCase
-    getDetailCase() {
-      return DetailCase.forNumber(
-          detailCase_);
-    }
-
-    public static final int DUNGEON_ID_FIELD_NUMBER = 4;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeon_id = 4;</code>
-     * @return The dungeonId.
-     */
-    @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
-    }
-
-    public static final int USE_TIME_FIELD_NUMBER = 7;
-    private int useTime_;
-    /**
-     * <code>uint32 use_time = 7;</code>
-     * @return The useTime.
-     */
-    @java.lang.Override
-    public int getUseTime() {
-      return useTime_;
-    }
-
-    public static final int CLOSE_TIME_FIELD_NUMBER = 11;
-    private int closeTime_;
-    /**
-     * <code>uint32 close_time = 11;</code>
-     * @return The closeTime.
-     */
-    @java.lang.Override
-    public int getCloseTime() {
-      return closeTime_;
-    }
-
-    public static final int CREATEPLAYERUID_FIELD_NUMBER = 10;
-    private int createPlayerUid_;
-    /**
-     * <code>uint32 createPlayerUid = 10;</code>
-     * @return The createPlayerUid.
-     */
-    @java.lang.Override
-    public int getCreatePlayerUid() {
-      return createPlayerUid_;
-    }
-
-    public static final int FAIL_COND_LIST_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList failCondList_;
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @return A list containing the failCondList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getFailCondListList() {
-      return failCondList_;
-    }
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @return The count of failCondList.
-     */
-    public int getFailCondListCount() {
-      return failCondList_.size();
-    }
-    /**
-     * <code>repeated uint32 fail_cond_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The failCondList at the given index.
-     */
-    public int getFailCondList(int index) {
-      return failCondList_.getInt(index);
-    }
-    private int failCondListMemoizedSerializedSize = -1;
-
-    public static final int SETTLESHOW_FIELD_NUMBER = 14;
-    private static final class SettleShowDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>newDefaultInstance(
-                  emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_SettleShowEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.ParamListOuterClass.ParamList.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> settleShow_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-    internalGetSettleShow() {
-      if (settleShow_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            SettleShowDefaultEntryHolder.defaultEntry);
-      }
-      return settleShow_;
-    }
-
-    public int getSettleShowCount() {
-      return internalGetSettleShow().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsSettleShow(
-        int key) {
-      
-      return internalGetSettleShow().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getSettleShowMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> getSettleShow() {
-      return getSettleShowMap();
-    }
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> getSettleShowMap() {
-      return internalGetSettleShow().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
-        int key,
-        emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> map =
-          internalGetSettleShow().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> map =
-          internalGetSettleShow().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int STRENGTHEN_POINT_DATA_MAP_FIELD_NUMBER = 9;
-    private static final class StrengthenPointDataMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>newDefaultInstance(
-                  emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-    internalGetStrengthenPointDataMap() {
-      if (strengthenPointDataMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
-      }
-      return strengthenPointDataMap_;
-    }
-
-    public int getStrengthenPointDataMapCount() {
-      return internalGetStrengthenPointDataMap().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsStrengthenPointDataMap(
-        int key) {
-      
-      return internalGetStrengthenPointDataMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getStrengthenPointDataMapMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMap() {
-      return getStrengthenPointDataMapMap();
-    }
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
-      return internalGetStrengthenPointDataMap().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
-          internalGetStrengthenPointDataMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
-          internalGetStrengthenPointDataMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int IS_SUCCESS_FIELD_NUMBER = 15;
-    private boolean isSuccess_;
-    /**
-     * <code>bool is_success = 15;</code>
-     * @return The isSuccess.
-     */
-    @java.lang.Override
-    public boolean getIsSuccess() {
-      return isSuccess_;
-    }
-
-    public static final int RESULT_FIELD_NUMBER = 12;
-    private int result_;
-    /**
-     * <code>uint32 result = 12;</code>
-     * @return The result.
-     */
-    @java.lang.Override
-    public int getResult() {
-      return result_;
-    }
-
-    public static final int TOWER_LEVEL_END_NOTIFY_FIELD_NUMBER = 771;
-    /**
-     * <pre>
-     * Type Event
-     * </pre>
-     *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     * @return Whether the towerLevelEndNotify field is set.
-     */
-    @java.lang.Override
-    public boolean hasTowerLevelEndNotify() {
-      return detailCase_ == 771;
-    }
-    /**
-     * <pre>
-     * Type Event
-     * </pre>
-     *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     * @return The towerLevelEndNotify.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify getTowerLevelEndNotify() {
-      if (detailCase_ == 771) {
-         return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_;
-      }
-      return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
-    }
-    /**
-     * <pre>
-     * Type Event
-     * </pre>
-     *
-     * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder getTowerLevelEndNotifyOrBuilder() {
-      if (detailCase_ == 771) {
-         return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_;
-      }
-      return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
-    }
-
-    public static final int TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY_FIELD_NUMBER = 626;
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
-     */
-    @java.lang.Override
-    public boolean hasTrialAvatarFirstPassDungeonNotify() {
-      return detailCase_ == 626;
-    }
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     * @return The trialAvatarFirstPassDungeonNotify.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify getTrialAvatarFirstPassDungeonNotify() {
-      if (detailCase_ == 626) {
-         return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_;
-      }
-      return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
-    }
-    /**
-     * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder getTrialAvatarFirstPassDungeonNotifyOrBuilder() {
-      if (detailCase_ == 626) {
-         return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_;
-      }
-      return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (getFailCondListList().size() > 0) {
-        output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(failCondListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < failCondList_.size(); i++) {
-        output.writeUInt32NoTag(failCondList_.getInt(i));
-      }
-      if (dungeonId_ != 0) {
-        output.writeUInt32(4, dungeonId_);
-      }
-      if (useTime_ != 0) {
-        output.writeUInt32(7, useTime_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetStrengthenPointDataMap(),
-          StrengthenPointDataMapDefaultEntryHolder.defaultEntry,
-          9);
-      if (createPlayerUid_ != 0) {
-        output.writeUInt32(10, createPlayerUid_);
-      }
-      if (closeTime_ != 0) {
-        output.writeUInt32(11, closeTime_);
-      }
-      if (result_ != 0) {
-        output.writeUInt32(12, result_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetSettleShow(),
-          SettleShowDefaultEntryHolder.defaultEntry,
-          14);
-      if (isSuccess_ != false) {
-        output.writeBool(15, isSuccess_);
-      }
-      if (detailCase_ == 626) {
-        output.writeMessage(626, (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_);
-      }
-      if (detailCase_ == 771) {
-        output.writeMessage(771, (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < failCondList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(failCondList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getFailCondListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        failCondListMemoizedSerializedSize = dataSize;
-      }
-      if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dungeonId_);
-      }
-      if (useTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, useTime_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> entry
-           : internalGetStrengthenPointDataMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-        strengthenPointDataMap__ = StrengthenPointDataMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, strengthenPointDataMap__);
-      }
-      if (createPlayerUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, createPlayerUid_);
-      }
-      if (closeTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, closeTime_);
-      }
-      if (result_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, result_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> entry
-           : internalGetSettleShow().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-        settleShow__ = SettleShowDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, settleShow__);
-      }
-      if (isSuccess_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isSuccess_);
-      }
-      if (detailCase_ == 626) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(626, (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_);
-      }
-      if (detailCase_ == 771) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(771, (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify other = (emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) obj;
-
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
-      if (getUseTime()
-          != other.getUseTime()) return false;
-      if (getCloseTime()
-          != other.getCloseTime()) return false;
-      if (getCreatePlayerUid()
-          != other.getCreatePlayerUid()) return false;
-      if (!getFailCondListList()
-          .equals(other.getFailCondListList())) return false;
-      if (!internalGetSettleShow().equals(
-          other.internalGetSettleShow())) return false;
-      if (!internalGetStrengthenPointDataMap().equals(
-          other.internalGetStrengthenPointDataMap())) return false;
-      if (getIsSuccess()
-          != other.getIsSuccess()) return false;
-      if (getResult()
-          != other.getResult()) return false;
-      if (!getDetailCase().equals(other.getDetailCase())) return false;
-      switch (detailCase_) {
-        case 771:
-          if (!getTowerLevelEndNotify()
-              .equals(other.getTowerLevelEndNotify())) return false;
-          break;
-        case 626:
-          if (!getTrialAvatarFirstPassDungeonNotify()
-              .equals(other.getTrialAvatarFirstPassDungeonNotify())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
-      hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUseTime();
-      hash = (37 * hash) + CLOSE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCloseTime();
-      hash = (37 * hash) + CREATEPLAYERUID_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatePlayerUid();
-      if (getFailCondListCount() > 0) {
-        hash = (37 * hash) + FAIL_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getFailCondListList().hashCode();
-      }
-      if (!internalGetSettleShow().getMap().isEmpty()) {
-        hash = (37 * hash) + SETTLESHOW_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetSettleShow().hashCode();
-      }
-      if (!internalGetStrengthenPointDataMap().getMap().isEmpty()) {
-        hash = (37 * hash) + STRENGTHEN_POINT_DATA_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetStrengthenPointDataMap().hashCode();
-      }
-      hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSuccess());
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResult();
-      switch (detailCase_) {
-        case 771:
-          hash = (37 * hash) + TOWER_LEVEL_END_NOTIFY_FIELD_NUMBER;
-          hash = (53 * hash) + getTowerLevelEndNotify().hashCode();
-          break;
-        case 626:
-          hash = (37 * hash) + TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY_FIELD_NUMBER;
-          hash = (53 * hash) + getTrialAvatarFirstPassDungeonNotify().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
      * <pre>
      * Name: FFCKLBMMNOC
      * CmdId: 950
@@ -1090,1247 +192,2404 @@ public final class DungeonSettleNotifyOuterClass {
      *
      * Protobuf type {@code DungeonSettleNotify}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:DungeonSettleNotify)
-        emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 14:
-            return internalGetSettleShow();
-          case 9:
-            return internalGetStrengthenPointDataMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+    public static final class DungeonSettleNotify extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:DungeonSettleNotify)
+            DungeonSettleNotifyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use DungeonSettleNotify.newBuilder() to construct.
+        private DungeonSettleNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 14:
-            return internalGetMutableSettleShow();
-          case 9:
-            return internalGetMutableStrengthenPointDataMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+
+        private DungeonSettleNotify() {
+            failCondList_ = emptyIntList();
         }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.class, emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder.class);
-      }
 
-      // Construct using emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new DungeonSettleNotify();
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dungeonId_ = 0;
 
-        useTime_ = 0;
-
-        closeTime_ = 0;
-
-        createPlayerUid_ = 0;
-
-        failCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableSettleShow().clear();
-        internalGetMutableStrengthenPointDataMap().clear();
-        isSuccess_ = false;
-
-        result_ = 0;
-
-        detailCase_ = 0;
-        detail_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.internal_static_DungeonSettleNotify_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify build() {
-        emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify buildPartial() {
-        emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result = new emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.dungeonId_ = dungeonId_;
-        result.useTime_ = useTime_;
-        result.closeTime_ = closeTime_;
-        result.createPlayerUid_ = createPlayerUid_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          failCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        private DungeonSettleNotify(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 24:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    failCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                failCondList_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 26:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                    failCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    failCondList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 32:
+                            {
+                                dungeonId_ = input.readUInt32();
+                                break;
+                            }
+                        case 56:
+                            {
+                                useTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 74:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                                    strengthenPointDataMap_ =
+                                            com.google.protobuf.MapField.newMapField(
+                                                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 0x00000004;
+                                }
+                                com.google.protobuf.MapEntry<
+                                                java.lang.Integer,
+                                                emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                                        strengthenPointDataMap__ =
+                                                input.readMessage(
+                                                        StrengthenPointDataMapDefaultEntryHolder.defaultEntry
+                                                                .getParserForType(),
+                                                        extensionRegistry);
+                                strengthenPointDataMap_
+                                        .getMutableMap()
+                                        .put(strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
+                                break;
+                            }
+                        case 80:
+                            {
+                                createPlayerUid_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
+                            {
+                                closeTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 96:
+                            {
+                                result_ = input.readUInt32();
+                                break;
+                            }
+                        case 114:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    settleShow_ =
+                                            com.google.protobuf.MapField.newMapField(
+                                                    SettleShowDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                com.google.protobuf.MapEntry<
+                                                java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                                        settleShow__ =
+                                                input.readMessage(
+                                                        SettleShowDefaultEntryHolder.defaultEntry.getParserForType(),
+                                                        extensionRegistry);
+                                settleShow_.getMutableMap().put(settleShow__.getKey(), settleShow__.getValue());
+                                break;
+                            }
+                        case 120:
+                            {
+                                isSuccess_ = input.readBool();
+                                break;
+                            }
+                        case 5010:
+                            {
+                                emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                .TrialAvatarFirstPassDungeonNotify.Builder
+                                        subBuilder = null;
+                                if (detailCase_ == 626) {
+                                    subBuilder =
+                                            ((emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                                    .TrialAvatarFirstPassDungeonNotify)
+                                                            detail_)
+                                                    .toBuilder();
+                                }
+                                detail_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                        .TrialAvatarFirstPassDungeonNotify.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(
+                                            (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                            .TrialAvatarFirstPassDungeonNotify)
+                                                    detail_);
+                                    detail_ = subBuilder.buildPartial();
+                                }
+                                detailCase_ = 626;
+                                break;
+                            }
+                        case 6170:
+                            {
+                                emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder
+                                        subBuilder = null;
+                                if (detailCase_ == 771) {
+                                    subBuilder =
+                                            ((emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                                            detail_)
+                                                    .toBuilder();
+                                }
+                                detail_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                                                        .parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(
+                                            (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                                    detail_);
+                                    detail_ = subBuilder.buildPartial();
+                                }
+                                detailCase_ = 771;
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    failCondList_.makeImmutable(); // C
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        result.failCondList_ = failCondList_;
-        result.settleShow_ = internalGetSettleShow();
-        result.settleShow_.makeImmutable();
-        result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
-        result.strengthenPointDataMap_.makeImmutable();
-        result.isSuccess_ = isSuccess_;
-        result.result_ = result_;
-        if (detailCase_ == 771) {
-          if (towerLevelEndNotifyBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = towerLevelEndNotifyBuilder_.build();
-          }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                    .internal_static_DungeonSettleNotify_descriptor;
         }
-        if (detailCase_ == 626) {
-          if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = trialAvatarFirstPassDungeonNotifyBuilder_.build();
-          }
+
+        @SuppressWarnings({"rawtypes"})
+        @java.lang.Override
+        protected com.google.protobuf.MapField internalGetMapField(int number) {
+            switch (number) {
+                case 14:
+                    return internalGetSettleShow();
+                case 9:
+                    return internalGetStrengthenPointDataMap();
+                default:
+                    throw new RuntimeException("Invalid map field number: " + number);
+            }
         }
-        result.detailCase_ = detailCase_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                    .internal_static_DungeonSettleNotify_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.class,
+                            emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder
+                                    .class);
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify other) {
-        if (other == emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.getDefaultInstance()) return this;
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
+        private int detailCase_ = 0;
+        private java.lang.Object detail_;
+
+        public enum DetailCase
+                implements
+                        com.google.protobuf.Internal.EnumLite,
+                        com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            TOWER_LEVEL_END_NOTIFY(771),
+            TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY(626),
+            DETAIL_NOT_SET(0);
+            private final int value;
+
+            private DetailCase(int value) {
+                this.value = value;
+            }
+            /**
+             * @param value The number of the enum to look for.
+             * @return The enum associated with the given number.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static DetailCase valueOf(int value) {
+                return forNumber(value);
+            }
+
+            public static DetailCase forNumber(int value) {
+                switch (value) {
+                    case 771:
+                        return TOWER_LEVEL_END_NOTIFY;
+                    case 626:
+                        return TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY;
+                    case 0:
+                        return DETAIL_NOT_SET;
+                    default:
+                        return null;
+                }
+            }
+
+            public int getNumber() {
+                return this.value;
+            }
+        };
+
+        public DetailCase getDetailCase() {
+            return DetailCase.forNumber(detailCase_);
         }
-        if (other.getUseTime() != 0) {
-          setUseTime(other.getUseTime());
+
+        public static final int DUNGEON_ID_FIELD_NUMBER = 4;
+        private int dungeonId_;
+        /**
+         * <code>uint32 dungeon_id = 4;</code>
+         *
+         * @return The dungeonId.
+         */
+        @java.lang.Override
+        public int getDungeonId() {
+            return dungeonId_;
         }
-        if (other.getCloseTime() != 0) {
-          setCloseTime(other.getCloseTime());
+
+        public static final int USE_TIME_FIELD_NUMBER = 7;
+        private int useTime_;
+        /**
+         * <code>uint32 use_time = 7;</code>
+         *
+         * @return The useTime.
+         */
+        @java.lang.Override
+        public int getUseTime() {
+            return useTime_;
         }
-        if (other.getCreatePlayerUid() != 0) {
-          setCreatePlayerUid(other.getCreatePlayerUid());
+
+        public static final int CLOSE_TIME_FIELD_NUMBER = 11;
+        private int closeTime_;
+        /**
+         * <code>uint32 close_time = 11;</code>
+         *
+         * @return The closeTime.
+         */
+        @java.lang.Override
+        public int getCloseTime() {
+            return closeTime_;
         }
-        if (!other.failCondList_.isEmpty()) {
-          if (failCondList_.isEmpty()) {
-            failCondList_ = other.failCondList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureFailCondListIsMutable();
-            failCondList_.addAll(other.failCondList_);
-          }
-          onChanged();
+
+        public static final int CREATEPLAYERUID_FIELD_NUMBER = 10;
+        private int createPlayerUid_;
+        /**
+         * <code>uint32 createPlayerUid = 10;</code>
+         *
+         * @return The createPlayerUid.
+         */
+        @java.lang.Override
+        public int getCreatePlayerUid() {
+            return createPlayerUid_;
         }
-        internalGetMutableSettleShow().mergeFrom(
-            other.internalGetSettleShow());
-        internalGetMutableStrengthenPointDataMap().mergeFrom(
-            other.internalGetStrengthenPointDataMap());
-        if (other.getIsSuccess() != false) {
-          setIsSuccess(other.getIsSuccess());
+
+        public static final int FAIL_COND_LIST_FIELD_NUMBER = 3;
+        private com.google.protobuf.Internal.IntList failCondList_;
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @return A list containing the failCondList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getFailCondListList() {
+            return failCondList_;
         }
-        if (other.getResult() != 0) {
-          setResult(other.getResult());
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @return The count of failCondList.
+         */
+        public int getFailCondListCount() {
+            return failCondList_.size();
         }
-        switch (other.getDetailCase()) {
-          case TOWER_LEVEL_END_NOTIFY: {
-            mergeTowerLevelEndNotify(other.getTowerLevelEndNotify());
-            break;
-          }
-          case TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY: {
-            mergeTrialAvatarFirstPassDungeonNotify(other.getTrialAvatarFirstPassDungeonNotify());
-            break;
-          }
-          case DETAIL_NOT_SET: {
-            break;
-          }
+        /**
+         * <code>repeated uint32 fail_cond_list = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The failCondList at the given index.
+         */
+        public int getFailCondList(int index) {
+            return failCondList_.getInt(index);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        private int failCondListMemoizedSerializedSize = -1;
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int SETTLESHOW_FIELD_NUMBER = 14;
+
+        private static final class SettleShowDefaultEntryHolder {
+            static final com.google.protobuf.MapEntry<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    defaultEntry =
+                            com.google.protobuf.MapEntry
+                                    .<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                                            newDefaultInstance(
+                                                    emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                                                            .internal_static_DungeonSettleNotify_SettleShowEntry_descriptor,
+                                                    com.google.protobuf.WireFormat.FieldType.UINT32,
+                                                    0,
+                                                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                                                    emu.grasscutter.net.proto.ParamListOuterClass.ParamList
+                                                            .getDefaultInstance());
         }
-        return this;
-      }
-      private int detailCase_ = 0;
-      private java.lang.Object detail_;
-      public DetailCase
-          getDetailCase() {
-        return DetailCase.forNumber(
-            detailCase_);
-      }
 
-      public Builder clearDetail() {
-        detailCase_ = 0;
-        detail_ = null;
-        onChanged();
-        return this;
-      }
+        private com.google.protobuf.MapField<
+                        java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                settleShow_;
 
-      private int bitField0_;
-
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeon_id = 4;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeon_id = 4;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeon_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int useTime_ ;
-      /**
-       * <code>uint32 use_time = 7;</code>
-       * @return The useTime.
-       */
-      @java.lang.Override
-      public int getUseTime() {
-        return useTime_;
-      }
-      /**
-       * <code>uint32 use_time = 7;</code>
-       * @param value The useTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUseTime(int value) {
-        
-        useTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 use_time = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUseTime() {
-        
-        useTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int closeTime_ ;
-      /**
-       * <code>uint32 close_time = 11;</code>
-       * @return The closeTime.
-       */
-      @java.lang.Override
-      public int getCloseTime() {
-        return closeTime_;
-      }
-      /**
-       * <code>uint32 close_time = 11;</code>
-       * @param value The closeTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCloseTime(int value) {
-        
-        closeTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 close_time = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCloseTime() {
-        
-        closeTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int createPlayerUid_ ;
-      /**
-       * <code>uint32 createPlayerUid = 10;</code>
-       * @return The createPlayerUid.
-       */
-      @java.lang.Override
-      public int getCreatePlayerUid() {
-        return createPlayerUid_;
-      }
-      /**
-       * <code>uint32 createPlayerUid = 10;</code>
-       * @param value The createPlayerUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatePlayerUid(int value) {
-        
-        createPlayerUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 createPlayerUid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatePlayerUid() {
-        
-        createPlayerUid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList failCondList_ = emptyIntList();
-      private void ensureFailCondListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          failCondList_ = mutableCopy(failCondList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @return A list containing the failCondList.
-       */
-      public java.util.List<java.lang.Integer>
-          getFailCondListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(failCondList_) : failCondList_;
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @return The count of failCondList.
-       */
-      public int getFailCondListCount() {
-        return failCondList_.size();
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @param index The index of the element to return.
-       * @return The failCondList at the given index.
-       */
-      public int getFailCondList(int index) {
-        return failCondList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The failCondList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFailCondList(
-          int index, int value) {
-        ensureFailCondListIsMutable();
-        failCondList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @param value The failCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFailCondList(int value) {
-        ensureFailCondListIsMutable();
-        failCondList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @param values The failCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFailCondList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureFailCondListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, failCondList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 fail_cond_list = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFailCondList() {
-        failCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> settleShow_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-      internalGetSettleShow() {
-        if (settleShow_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              SettleShowDefaultEntryHolder.defaultEntry);
+        private com.google.protobuf.MapField<
+                        java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                internalGetSettleShow() {
+            if (settleShow_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        SettleShowDefaultEntryHolder.defaultEntry);
+            }
+            return settleShow_;
         }
-        return settleShow_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-      internalGetMutableSettleShow() {
-        onChanged();;
-        if (settleShow_ == null) {
-          settleShow_ = com.google.protobuf.MapField.newMapField(
-              SettleShowDefaultEntryHolder.defaultEntry);
+
+        public int getSettleShowCount() {
+            return internalGetSettleShow().getMap().size();
         }
-        if (!settleShow_.isMutable()) {
-          settleShow_ = settleShow_.copy();
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        @java.lang.Override
+        public boolean containsSettleShow(int key) {
+
+            return internalGetSettleShow().getMap().containsKey(key);
         }
-        return settleShow_;
-      }
-
-      public int getSettleShowCount() {
-        return internalGetSettleShow().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsSettleShow(
-          int key) {
-        
-        return internalGetSettleShow().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getSettleShowMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> getSettleShow() {
-        return getSettleShowMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> getSettleShowMap() {
-        return internalGetSettleShow().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
-          int key,
-          emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> map =
-            internalGetSettleShow().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> map =
-            internalGetSettleShow().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        /** Use {@link #getSettleShowMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                getSettleShow() {
+            return getSettleShowMap();
         }
-        return map.get(key);
-      }
-
-      public Builder clearSettleShow() {
-        internalGetMutableSettleShow().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-
-      public Builder removeSettleShow(
-          int key) {
-        
-        internalGetMutableSettleShow().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
-      getMutableSettleShow() {
-        return internalGetMutableSettleShow().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-      public Builder putSettleShow(
-          int key,
-          emu.grasscutter.net.proto.ParamListOuterClass.ParamList value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableSettleShow().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code>
-       */
-
-      public Builder putAllSettleShow(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList> values) {
-        internalGetMutableSettleShow().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      internalGetStrengthenPointDataMap() {
-        if (strengthenPointDataMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        @java.lang.Override
+        public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                getSettleShowMap() {
+            return internalGetSettleShow().getMap();
         }
-        return strengthenPointDataMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      internalGetMutableStrengthenPointDataMap() {
-        onChanged();;
-        if (strengthenPointDataMap_ == null) {
-          strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
-              StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
-        }
-        if (!strengthenPointDataMap_.isMutable()) {
-          strengthenPointDataMap_ = strengthenPointDataMap_.copy();
-        }
-        return strengthenPointDataMap_;
-      }
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+                int key, emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue) {
 
-      public int getStrengthenPointDataMapCount() {
-        return internalGetStrengthenPointDataMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
+            java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    map = internalGetSettleShow().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(int key) {
 
-      @java.lang.Override
-      public boolean containsStrengthenPointDataMap(
-          int key) {
-        
-        return internalGetStrengthenPointDataMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getStrengthenPointDataMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMap() {
-        return getStrengthenPointDataMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
-      @java.lang.Override
+            java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    map = internalGetSettleShow().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
 
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
-        return internalGetStrengthenPointDataMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
-      @java.lang.Override
+        public static final int STRENGTHEN_POINT_DATA_MAP_FIELD_NUMBER = 9;
 
-      public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
-          int key,
-          emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
-            internalGetStrengthenPointDataMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
-      @java.lang.Override
+        private static final class StrengthenPointDataMapDefaultEntryHolder {
+            static final com.google.protobuf.MapEntry<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    defaultEntry =
+                            com.google.protobuf.MapEntry
+                                    .<java.lang.Integer,
+                                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                                            newDefaultInstance(
+                                                    emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                                                            .internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor,
+                                                    com.google.protobuf.WireFormat.FieldType.UINT32,
+                                                    0,
+                                                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                                                    emu.grasscutter.net.proto.StrengthenPointDataOuterClass
+                                                            .StrengthenPointData.getDefaultInstance());
+        }
 
-      public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
-            internalGetStrengthenPointDataMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
+        private com.google.protobuf.MapField<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                strengthenPointDataMap_;
 
-      public Builder clearStrengthenPointDataMap() {
-        internalGetMutableStrengthenPointDataMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
+        private com.google.protobuf.MapField<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                internalGetStrengthenPointDataMap() {
+            if (strengthenPointDataMap_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+            }
+            return strengthenPointDataMap_;
+        }
 
-      public Builder removeStrengthenPointDataMap(
-          int key) {
-        
-        internalGetMutableStrengthenPointDataMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      getMutableStrengthenPointDataMap() {
-        return internalGetMutableStrengthenPointDataMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
-      public Builder putStrengthenPointDataMap(
-          int key,
-          emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableStrengthenPointDataMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code>
-       */
+        public int getStrengthenPointDataMapCount() {
+            return internalGetStrengthenPointDataMap().getMap().size();
+        }
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        @java.lang.Override
+        public boolean containsStrengthenPointDataMap(int key) {
 
-      public Builder putAllStrengthenPointDataMap(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> values) {
-        internalGetMutableStrengthenPointDataMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
+            return internalGetStrengthenPointDataMap().getMap().containsKey(key);
+        }
+        /** Use {@link #getStrengthenPointDataMapMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                getStrengthenPointDataMap() {
+            return getStrengthenPointDataMapMap();
+        }
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        @java.lang.Override
+        public java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                getStrengthenPointDataMapMap() {
+            return internalGetStrengthenPointDataMap().getMap();
+        }
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                getStrengthenPointDataMapOrDefault(
+                        int key,
+                        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                                defaultValue) {
 
-      private boolean isSuccess_ ;
-      /**
-       * <code>bool is_success = 15;</code>
-       * @return The isSuccess.
-       */
-      @java.lang.Override
-      public boolean getIsSuccess() {
-        return isSuccess_;
-      }
-      /**
-       * <code>bool is_success = 15;</code>
-       * @param value The isSuccess to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSuccess(boolean value) {
-        
-        isSuccess_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_success = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSuccess() {
-        
-        isSuccess_ = false;
-        onChanged();
-        return this;
-      }
+            java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    map = internalGetStrengthenPointDataMap().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                getStrengthenPointDataMapOrThrow(int key) {
 
-      private int result_ ;
-      /**
-       * <code>uint32 result = 12;</code>
-       * @return The result.
-       */
-      @java.lang.Override
-      public int getResult() {
-        return result_;
-      }
-      /**
-       * <code>uint32 result = 12;</code>
-       * @param value The result to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResult(int value) {
-        
-        result_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 result = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResult() {
-        
-        result_ = 0;
-        onChanged();
-        return this;
-      }
+            java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    map = internalGetStrengthenPointDataMap().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder> towerLevelEndNotifyBuilder_;
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       * @return Whether the towerLevelEndNotify field is set.
-       */
-      @java.lang.Override
-      public boolean hasTowerLevelEndNotify() {
-        return detailCase_ == 771;
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       * @return The towerLevelEndNotify.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify getTowerLevelEndNotify() {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          if (detailCase_ == 771) {
-            return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_;
-          }
-          return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
-        } else {
-          if (detailCase_ == 771) {
-            return towerLevelEndNotifyBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
+        public static final int IS_SUCCESS_FIELD_NUMBER = 15;
+        private boolean isSuccess_;
+        /**
+         * <code>bool is_success = 15;</code>
+         *
+         * @return The isSuccess.
+         */
+        @java.lang.Override
+        public boolean getIsSuccess() {
+            return isSuccess_;
         }
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      public Builder setTowerLevelEndNotify(emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify value) {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          towerLevelEndNotifyBuilder_.setMessage(value);
-        }
-        detailCase_ = 771;
-        return this;
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      public Builder setTowerLevelEndNotify(
-          emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder builderForValue) {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          towerLevelEndNotifyBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 771;
-        return this;
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      public Builder mergeTowerLevelEndNotify(emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify value) {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          if (detailCase_ == 771 &&
-              detail_ != emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.newBuilder((emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 771) {
-            towerLevelEndNotifyBuilder_.mergeFrom(value);
-          }
-          towerLevelEndNotifyBuilder_.setMessage(value);
-        }
-        detailCase_ = 771;
-        return this;
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      public Builder clearTowerLevelEndNotify() {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          if (detailCase_ == 771) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 771) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          towerLevelEndNotifyBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder getTowerLevelEndNotifyBuilder() {
-        return getTowerLevelEndNotifyFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder getTowerLevelEndNotifyOrBuilder() {
-        if ((detailCase_ == 771) && (towerLevelEndNotifyBuilder_ != null)) {
-          return towerLevelEndNotifyBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 771) {
-            return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_;
-          }
-          return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * Type Event
-       * </pre>
-       *
-       * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder> 
-          getTowerLevelEndNotifyFieldBuilder() {
-        if (towerLevelEndNotifyBuilder_ == null) {
-          if (!(detailCase_ == 771)) {
-            detail_ = emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.getDefaultInstance();
-          }
-          towerLevelEndNotifyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder, emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder>(
-                  (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 771;
-        onChanged();;
-        return towerLevelEndNotifyBuilder_;
-      }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder> trialAvatarFirstPassDungeonNotifyBuilder_;
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
-       */
-      @java.lang.Override
-      public boolean hasTrialAvatarFirstPassDungeonNotify() {
-        return detailCase_ == 626;
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       * @return The trialAvatarFirstPassDungeonNotify.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify getTrialAvatarFirstPassDungeonNotify() {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          if (detailCase_ == 626) {
-            return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_;
-          }
-          return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
-        } else {
-          if (detailCase_ == 626) {
-            return trialAvatarFirstPassDungeonNotifyBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+        public static final int RESULT_FIELD_NUMBER = 12;
+        private int result_;
+        /**
+         * <code>uint32 result = 12;</code>
+         *
+         * @return The result.
+         */
+        @java.lang.Override
+        public int getResult() {
+            return result_;
         }
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      public Builder setTrialAvatarFirstPassDungeonNotify(emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify value) {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
-        }
-        detailCase_ = 626;
-        return this;
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      public Builder setTrialAvatarFirstPassDungeonNotify(
-          emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder builderForValue) {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 626;
-        return this;
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      public Builder mergeTrialAvatarFirstPassDungeonNotify(emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify value) {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          if (detailCase_ == 626 &&
-              detail_ != emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.newBuilder((emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 626) {
-            trialAvatarFirstPassDungeonNotifyBuilder_.mergeFrom(value);
-          }
-          trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
-        }
-        detailCase_ = 626;
-        return this;
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      public Builder clearTrialAvatarFirstPassDungeonNotify() {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          if (detailCase_ == 626) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 626) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          trialAvatarFirstPassDungeonNotifyBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder getTrialAvatarFirstPassDungeonNotifyBuilder() {
-        return getTrialAvatarFirstPassDungeonNotifyFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder getTrialAvatarFirstPassDungeonNotifyOrBuilder() {
-        if ((detailCase_ == 626) && (trialAvatarFirstPassDungeonNotifyBuilder_ != null)) {
-          return trialAvatarFirstPassDungeonNotifyBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 626) {
-            return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_;
-          }
-          return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder> 
-          getTrialAvatarFirstPassDungeonNotifyFieldBuilder() {
-        if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
-          if (!(detailCase_ == 626)) {
-            detail_ = emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
-          }
-          trialAvatarFirstPassDungeonNotifyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder>(
-                  (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 626;
-        onChanged();;
-        return trialAvatarFirstPassDungeonNotifyBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int TOWER_LEVEL_END_NOTIFY_FIELD_NUMBER = 771;
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         *
+         * @return Whether the towerLevelEndNotify field is set.
+         */
+        @java.lang.Override
+        public boolean hasTowerLevelEndNotify() {
+            return detailCase_ == 771;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         *
+         * @return The towerLevelEndNotify.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                getTowerLevelEndNotify() {
+            if (detailCase_ == 771) {
+                return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                    .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type Event
+         * </pre>
+         *
+         * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder
+                getTowerLevelEndNotifyOrBuilder() {
+            if (detailCase_ == 771) {
+                return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                    .getDefaultInstance();
+        }
 
+        public static final int TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY_FIELD_NUMBER = 626;
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         *
+         * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
+         */
+        @java.lang.Override
+        public boolean hasTrialAvatarFirstPassDungeonNotify() {
+            return detailCase_ == 626;
+        }
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         *
+         * @return The trialAvatarFirstPassDungeonNotify.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                        .TrialAvatarFirstPassDungeonNotify
+                getTrialAvatarFirstPassDungeonNotify() {
+            if (detailCase_ == 626) {
+                return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                .TrialAvatarFirstPassDungeonNotify)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                    .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+        }
+        /**
+         * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                        .TrialAvatarFirstPassDungeonNotifyOrBuilder
+                getTrialAvatarFirstPassDungeonNotifyOrBuilder() {
+            if (detailCase_ == 626) {
+                return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                .TrialAvatarFirstPassDungeonNotify)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                    .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+        }
 
-      // @@protoc_insertion_point(builder_scope:DungeonSettleNotify)
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            getSerializedSize();
+            if (getFailCondListList().size() > 0) {
+                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(failCondListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < failCondList_.size(); i++) {
+                output.writeUInt32NoTag(failCondList_.getInt(i));
+            }
+            if (dungeonId_ != 0) {
+                output.writeUInt32(4, dungeonId_);
+            }
+            if (useTime_ != 0) {
+                output.writeUInt32(7, useTime_);
+            }
+            com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
+                    output,
+                    internalGetStrengthenPointDataMap(),
+                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry,
+                    9);
+            if (createPlayerUid_ != 0) {
+                output.writeUInt32(10, createPlayerUid_);
+            }
+            if (closeTime_ != 0) {
+                output.writeUInt32(11, closeTime_);
+            }
+            if (result_ != 0) {
+                output.writeUInt32(12, result_);
+            }
+            com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
+                    output, internalGetSettleShow(), SettleShowDefaultEntryHolder.defaultEntry, 14);
+            if (isSuccess_ != false) {
+                output.writeBool(15, isSuccess_);
+            }
+            if (detailCase_ == 626) {
+                output.writeMessage(
+                        626,
+                        (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                        .TrialAvatarFirstPassDungeonNotify)
+                                detail_);
+            }
+            if (detailCase_ == 771) {
+                output.writeMessage(
+                        771,
+                        (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) detail_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            {
+                int dataSize = 0;
+                for (int i = 0; i < failCondList_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(failCondList_.getInt(i));
+                }
+                size += dataSize;
+                if (!getFailCondListList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                failCondListMemoizedSerializedSize = dataSize;
+            }
+            if (dungeonId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, dungeonId_);
+            }
+            if (useTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, useTime_);
+            }
+            for (java.util.Map.Entry<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    entry : internalGetStrengthenPointDataMap().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                        strengthenPointDataMap__ =
+                                StrengthenPointDataMapDefaultEntryHolder.defaultEntry
+                                        .newBuilderForType()
+                                        .setKey(entry.getKey())
+                                        .setValue(entry.getValue())
+                                        .build();
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(9, strengthenPointDataMap__);
+            }
+            if (createPlayerUid_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, createPlayerUid_);
+            }
+            if (closeTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, closeTime_);
+            }
+            if (result_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, result_);
+            }
+            for (java.util.Map.Entry<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    entry : internalGetSettleShow().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<
+                                java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                        settleShow__ =
+                                SettleShowDefaultEntryHolder.defaultEntry
+                                        .newBuilderForType()
+                                        .setKey(entry.getKey())
+                                        .setValue(entry.getValue())
+                                        .build();
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, settleShow__);
+            }
+            if (isSuccess_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isSuccess_);
+            }
+            if (detailCase_ == 626) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                626,
+                                (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                .TrialAvatarFirstPassDungeonNotify)
+                                        detail_);
+            }
+            if (detailCase_ == 771) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                771,
+                                (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                        detail_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify other =
+                    (emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) obj;
+
+            if (getDungeonId() != other.getDungeonId()) return false;
+            if (getUseTime() != other.getUseTime()) return false;
+            if (getCloseTime() != other.getCloseTime()) return false;
+            if (getCreatePlayerUid() != other.getCreatePlayerUid()) return false;
+            if (!getFailCondListList().equals(other.getFailCondListList())) return false;
+            if (!internalGetSettleShow().equals(other.internalGetSettleShow())) return false;
+            if (!internalGetStrengthenPointDataMap().equals(other.internalGetStrengthenPointDataMap()))
+                return false;
+            if (getIsSuccess() != other.getIsSuccess()) return false;
+            if (getResult() != other.getResult()) return false;
+            if (!getDetailCase().equals(other.getDetailCase())) return false;
+            switch (detailCase_) {
+                case 771:
+                    if (!getTowerLevelEndNotify().equals(other.getTowerLevelEndNotify())) return false;
+                    break;
+                case 626:
+                    if (!getTrialAvatarFirstPassDungeonNotify()
+                            .equals(other.getTrialAvatarFirstPassDungeonNotify())) return false;
+                    break;
+                case 0:
+                default:
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getDungeonId();
+            hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getUseTime();
+            hash = (37 * hash) + CLOSE_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getCloseTime();
+            hash = (37 * hash) + CREATEPLAYERUID_FIELD_NUMBER;
+            hash = (53 * hash) + getCreatePlayerUid();
+            if (getFailCondListCount() > 0) {
+                hash = (37 * hash) + FAIL_COND_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getFailCondListList().hashCode();
+            }
+            if (!internalGetSettleShow().getMap().isEmpty()) {
+                hash = (37 * hash) + SETTLESHOW_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetSettleShow().hashCode();
+            }
+            if (!internalGetStrengthenPointDataMap().getMap().isEmpty()) {
+                hash = (37 * hash) + STRENGTHEN_POINT_DATA_MAP_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetStrengthenPointDataMap().hashCode();
+            }
+            hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSuccess());
+            hash = (37 * hash) + RESULT_FIELD_NUMBER;
+            hash = (53 * hash) + getResult();
+            switch (detailCase_) {
+                case 771:
+                    hash = (37 * hash) + TOWER_LEVEL_END_NOTIFY_FIELD_NUMBER;
+                    hash = (53 * hash) + getTowerLevelEndNotify().hashCode();
+                    break;
+                case 626:
+                    hash = (37 * hash) + TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY_FIELD_NUMBER;
+                    hash = (53 * hash) + getTrialAvatarFirstPassDungeonNotify().hashCode();
+                    break;
+                case 0:
+                default:
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: FFCKLBMMNOC
+         * CmdId: 950
+         * </pre>
+         *
+         * Protobuf type {@code DungeonSettleNotify}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:DungeonSettleNotify)
+                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotifyOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                        .internal_static_DungeonSettleNotify_descriptor;
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMapField(int number) {
+                switch (number) {
+                    case 14:
+                        return internalGetSettleShow();
+                    case 9:
+                        return internalGetStrengthenPointDataMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+                switch (number) {
+                    case 14:
+                        return internalGetMutableSettleShow();
+                    case 9:
+                        return internalGetMutableStrengthenPointDataMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                        .internal_static_DungeonSettleNotify_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.class,
+                                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                dungeonId_ = 0;
+
+                useTime_ = 0;
+
+                closeTime_ = 0;
+
+                createPlayerUid_ = 0;
+
+                failCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                internalGetMutableSettleShow().clear();
+                internalGetMutableStrengthenPointDataMap().clear();
+                isSuccess_ = false;
+
+                result_ = 0;
+
+                detailCase_ = 0;
+                detail_ = null;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass
+                        .internal_static_DungeonSettleNotify_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify build() {
+                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                    buildPartial() {
+                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify result =
+                        new emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify(this);
+                int from_bitField0_ = bitField0_;
+                result.dungeonId_ = dungeonId_;
+                result.useTime_ = useTime_;
+                result.closeTime_ = closeTime_;
+                result.createPlayerUid_ = createPlayerUid_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    failCondList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.failCondList_ = failCondList_;
+                result.settleShow_ = internalGetSettleShow();
+                result.settleShow_.makeImmutable();
+                result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
+                result.strengthenPointDataMap_.makeImmutable();
+                result.isSuccess_ = isSuccess_;
+                result.result_ = result_;
+                if (detailCase_ == 771) {
+                    if (towerLevelEndNotifyBuilder_ == null) {
+                        result.detail_ = detail_;
+                    } else {
+                        result.detail_ = towerLevelEndNotifyBuilder_.build();
+                    }
+                }
+                if (detailCase_ == 626) {
+                    if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                        result.detail_ = detail_;
+                    } else {
+                        result.detail_ = trialAvatarFirstPassDungeonNotifyBuilder_.build();
+                    }
+                }
+                result.detailCase_ = detailCase_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify other) {
+                if (other
+                        == emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                                .getDefaultInstance()) return this;
+                if (other.getDungeonId() != 0) {
+                    setDungeonId(other.getDungeonId());
+                }
+                if (other.getUseTime() != 0) {
+                    setUseTime(other.getUseTime());
+                }
+                if (other.getCloseTime() != 0) {
+                    setCloseTime(other.getCloseTime());
+                }
+                if (other.getCreatePlayerUid() != 0) {
+                    setCreatePlayerUid(other.getCreatePlayerUid());
+                }
+                if (!other.failCondList_.isEmpty()) {
+                    if (failCondList_.isEmpty()) {
+                        failCondList_ = other.failCondList_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureFailCondListIsMutable();
+                        failCondList_.addAll(other.failCondList_);
+                    }
+                    onChanged();
+                }
+                internalGetMutableSettleShow().mergeFrom(other.internalGetSettleShow());
+                internalGetMutableStrengthenPointDataMap()
+                        .mergeFrom(other.internalGetStrengthenPointDataMap());
+                if (other.getIsSuccess() != false) {
+                    setIsSuccess(other.getIsSuccess());
+                }
+                if (other.getResult() != 0) {
+                    setResult(other.getResult());
+                }
+                switch (other.getDetailCase()) {
+                    case TOWER_LEVEL_END_NOTIFY:
+                        {
+                            mergeTowerLevelEndNotify(other.getTowerLevelEndNotify());
+                            break;
+                        }
+                    case TRIAL_AVATAR_FIRST_PASS_DUNGEON_NOTIFY:
+                        {
+                            mergeTrialAvatarFirstPassDungeonNotify(other.getTrialAvatarFirstPassDungeonNotify());
+                            break;
+                        }
+                    case DETAIL_NOT_SET:
+                        {
+                            break;
+                        }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int detailCase_ = 0;
+            private java.lang.Object detail_;
+
+            public DetailCase getDetailCase() {
+                return DetailCase.forNumber(detailCase_);
+            }
+
+            public Builder clearDetail() {
+                detailCase_ = 0;
+                detail_ = null;
+                onChanged();
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int dungeonId_;
+            /**
+             * <code>uint32 dungeon_id = 4;</code>
+             *
+             * @return The dungeonId.
+             */
+            @java.lang.Override
+            public int getDungeonId() {
+                return dungeonId_;
+            }
+            /**
+             * <code>uint32 dungeon_id = 4;</code>
+             *
+             * @param value The dungeonId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDungeonId(int value) {
+
+                dungeonId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 dungeon_id = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDungeonId() {
+
+                dungeonId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int useTime_;
+            /**
+             * <code>uint32 use_time = 7;</code>
+             *
+             * @return The useTime.
+             */
+            @java.lang.Override
+            public int getUseTime() {
+                return useTime_;
+            }
+            /**
+             * <code>uint32 use_time = 7;</code>
+             *
+             * @param value The useTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUseTime(int value) {
+
+                useTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 use_time = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearUseTime() {
+
+                useTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int closeTime_;
+            /**
+             * <code>uint32 close_time = 11;</code>
+             *
+             * @return The closeTime.
+             */
+            @java.lang.Override
+            public int getCloseTime() {
+                return closeTime_;
+            }
+            /**
+             * <code>uint32 close_time = 11;</code>
+             *
+             * @param value The closeTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCloseTime(int value) {
+
+                closeTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 close_time = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCloseTime() {
+
+                closeTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int createPlayerUid_;
+            /**
+             * <code>uint32 createPlayerUid = 10;</code>
+             *
+             * @return The createPlayerUid.
+             */
+            @java.lang.Override
+            public int getCreatePlayerUid() {
+                return createPlayerUid_;
+            }
+            /**
+             * <code>uint32 createPlayerUid = 10;</code>
+             *
+             * @param value The createPlayerUid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCreatePlayerUid(int value) {
+
+                createPlayerUid_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 createPlayerUid = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCreatePlayerUid() {
+
+                createPlayerUid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList failCondList_ = emptyIntList();
+
+            private void ensureFailCondListIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    failCondList_ = mutableCopy(failCondList_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @return A list containing the failCondList.
+             */
+            public java.util.List<java.lang.Integer> getFailCondListList() {
+                return ((bitField0_ & 0x00000001) != 0)
+                        ? java.util.Collections.unmodifiableList(failCondList_)
+                        : failCondList_;
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @return The count of failCondList.
+             */
+            public int getFailCondListCount() {
+                return failCondList_.size();
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The failCondList at the given index.
+             */
+            public int getFailCondList(int index) {
+                return failCondList_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The failCondList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFailCondList(int index, int value) {
+                ensureFailCondListIsMutable();
+                failCondList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @param value The failCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addFailCondList(int value) {
+                ensureFailCondListIsMutable();
+                failCondList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @param values The failCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllFailCondList(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureFailCondListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failCondList_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 fail_cond_list = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFailCondList() {
+                failCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    settleShow_;
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    internalGetSettleShow() {
+                if (settleShow_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                            SettleShowDefaultEntryHolder.defaultEntry);
+                }
+                return settleShow_;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    internalGetMutableSettleShow() {
+                onChanged();
+                ;
+                if (settleShow_ == null) {
+                    settleShow_ =
+                            com.google.protobuf.MapField.newMapField(SettleShowDefaultEntryHolder.defaultEntry);
+                }
+                if (!settleShow_.isMutable()) {
+                    settleShow_ = settleShow_.copy();
+                }
+                return settleShow_;
+            }
+
+            public int getSettleShowCount() {
+                return internalGetSettleShow().getMap().size();
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            @java.lang.Override
+            public boolean containsSettleShow(int key) {
+
+                return internalGetSettleShow().getMap().containsKey(key);
+            }
+            /** Use {@link #getSettleShowMap()} instead. */
+            @java.lang.Override
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    getSettleShow() {
+                return getSettleShowMap();
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            @java.lang.Override
+            public java.util.Map<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    getSettleShowMap() {
+                return internalGetSettleShow().getMap();
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrDefault(
+                    int key, emu.grasscutter.net.proto.ParamListOuterClass.ParamList defaultValue) {
+
+                java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                        map = internalGetSettleShow().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ParamListOuterClass.ParamList getSettleShowOrThrow(int key) {
+
+                java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                        map = internalGetSettleShow().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearSettleShow() {
+                internalGetMutableSettleShow().getMutableMap().clear();
+                return this;
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            public Builder removeSettleShow(int key) {
+
+                internalGetMutableSettleShow().getMutableMap().remove(key);
+                return this;
+            }
+            /** Use alternate mutation accessors instead. */
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                    getMutableSettleShow() {
+                return internalGetMutableSettleShow().getMutableMap();
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            public Builder putSettleShow(
+                    int key, emu.grasscutter.net.proto.ParamListOuterClass.ParamList value) {
+
+                if (value == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                internalGetMutableSettleShow().getMutableMap().put(key, value);
+                return this;
+            }
+            /** <code>map&lt;uint32, .ParamList&gt; settleShow = 14;</code> */
+            public Builder putAllSettleShow(
+                    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ParamListOuterClass.ParamList>
+                            values) {
+                internalGetMutableSettleShow().getMutableMap().putAll(values);
+                return this;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    strengthenPointDataMap_;
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    internalGetStrengthenPointDataMap() {
+                if (strengthenPointDataMap_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                            StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+                }
+                return strengthenPointDataMap_;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    internalGetMutableStrengthenPointDataMap() {
+                onChanged();
+                ;
+                if (strengthenPointDataMap_ == null) {
+                    strengthenPointDataMap_ =
+                            com.google.protobuf.MapField.newMapField(
+                                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
+                }
+                if (!strengthenPointDataMap_.isMutable()) {
+                    strengthenPointDataMap_ = strengthenPointDataMap_.copy();
+                }
+                return strengthenPointDataMap_;
+            }
+
+            public int getStrengthenPointDataMapCount() {
+                return internalGetStrengthenPointDataMap().getMap().size();
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            @java.lang.Override
+            public boolean containsStrengthenPointDataMap(int key) {
+
+                return internalGetStrengthenPointDataMap().getMap().containsKey(key);
+            }
+            /** Use {@link #getStrengthenPointDataMapMap()} instead. */
+            @java.lang.Override
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    getStrengthenPointDataMap() {
+                return getStrengthenPointDataMapMap();
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            @java.lang.Override
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    getStrengthenPointDataMapMap() {
+                return internalGetStrengthenPointDataMap().getMap();
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                    getStrengthenPointDataMapOrDefault(
+                            int key,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                                    defaultValue) {
+
+                java.util.Map<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                        map = internalGetStrengthenPointDataMap().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData
+                    getStrengthenPointDataMapOrThrow(int key) {
+
+                java.util.Map<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                        map = internalGetStrengthenPointDataMap().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearStrengthenPointDataMap() {
+                internalGetMutableStrengthenPointDataMap().getMutableMap().clear();
+                return this;
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            public Builder removeStrengthenPointDataMap(int key) {
+
+                internalGetMutableStrengthenPointDataMap().getMutableMap().remove(key);
+                return this;
+            }
+            /** Use alternate mutation accessors instead. */
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                    getMutableStrengthenPointDataMap() {
+                return internalGetMutableStrengthenPointDataMap().getMutableMap();
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            public Builder putStrengthenPointDataMap(
+                    int key,
+                    emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData value) {
+
+                if (value == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                internalGetMutableStrengthenPointDataMap().getMutableMap().put(key, value);
+                return this;
+            }
+            /** <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 9;</code> */
+            public Builder putAllStrengthenPointDataMap(
+                    java.util.Map<
+                                    java.lang.Integer,
+                                    emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                            values) {
+                internalGetMutableStrengthenPointDataMap().getMutableMap().putAll(values);
+                return this;
+            }
+
+            private boolean isSuccess_;
+            /**
+             * <code>bool is_success = 15;</code>
+             *
+             * @return The isSuccess.
+             */
+            @java.lang.Override
+            public boolean getIsSuccess() {
+                return isSuccess_;
+            }
+            /**
+             * <code>bool is_success = 15;</code>
+             *
+             * @param value The isSuccess to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsSuccess(boolean value) {
+
+                isSuccess_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_success = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsSuccess() {
+
+                isSuccess_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int result_;
+            /**
+             * <code>uint32 result = 12;</code>
+             *
+             * @return The result.
+             */
+            @java.lang.Override
+            public int getResult() {
+                return result_;
+            }
+            /**
+             * <code>uint32 result = 12;</code>
+             *
+             * @param value The result to set.
+             * @return This builder for chaining.
+             */
+            public Builder setResult(int value) {
+
+                result_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 result = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearResult() {
+
+                result_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify,
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder,
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder>
+                    towerLevelEndNotifyBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             *
+             * @return Whether the towerLevelEndNotify field is set.
+             */
+            @java.lang.Override
+            public boolean hasTowerLevelEndNotify() {
+                return detailCase_ == 771;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             *
+             * @return The towerLevelEndNotify.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                    getTowerLevelEndNotify() {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    if (detailCase_ == 771) {
+                        return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                            .getDefaultInstance();
+                } else {
+                    if (detailCase_ == 771) {
+                        return towerLevelEndNotifyBuilder_.getMessage();
+                    }
+                    return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                            .getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            public Builder setTowerLevelEndNotify(
+                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify value) {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    detail_ = value;
+                    onChanged();
+                } else {
+                    towerLevelEndNotifyBuilder_.setMessage(value);
+                }
+                detailCase_ = 771;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            public Builder setTowerLevelEndNotify(
+                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder
+                            builderForValue) {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    detail_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    towerLevelEndNotifyBuilder_.setMessage(builderForValue.build());
+                }
+                detailCase_ = 771;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            public Builder mergeTowerLevelEndNotify(
+                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify value) {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    if (detailCase_ == 771
+                            && detail_
+                                    != emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                                            .getDefaultInstance()) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                                        .newBuilder(
+                                                (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass
+                                                                .TowerLevelEndNotify)
+                                                        detail_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        detail_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (detailCase_ == 771) {
+                        towerLevelEndNotifyBuilder_.mergeFrom(value);
+                    }
+                    towerLevelEndNotifyBuilder_.setMessage(value);
+                }
+                detailCase_ = 771;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            public Builder clearTowerLevelEndNotify() {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    if (detailCase_ == 771) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (detailCase_ == 771) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                    }
+                    towerLevelEndNotifyBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder
+                    getTowerLevelEndNotifyBuilder() {
+                return getTowerLevelEndNotifyFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder
+                    getTowerLevelEndNotifyOrBuilder() {
+                if ((detailCase_ == 771) && (towerLevelEndNotifyBuilder_ != null)) {
+                    return towerLevelEndNotifyBuilder_.getMessageOrBuilder();
+                } else {
+                    if (detailCase_ == 771) {
+                        return (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                            .getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Type Event
+             * </pre>
+             *
+             * <code>.TowerLevelEndNotify tower_level_end_notify = 771;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify,
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.Builder,
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotifyOrBuilder>
+                    getTowerLevelEndNotifyFieldBuilder() {
+                if (towerLevelEndNotifyBuilder_ == null) {
+                    if (!(detailCase_ == 771)) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                                        .getDefaultInstance();
+                    }
+                    towerLevelEndNotifyBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify,
+                                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify
+                                            .Builder,
+                                    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass
+                                            .TowerLevelEndNotifyOrBuilder>(
+                                    (emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify)
+                                            detail_,
+                                    getParentForChildren(),
+                                    isClean());
+                    detail_ = null;
+                }
+                detailCase_ = 771;
+                onChanged();
+                ;
+                return towerLevelEndNotifyBuilder_;
+            }
+
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify,
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify.Builder,
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotifyOrBuilder>
+                    trialAvatarFirstPassDungeonNotifyBuilder_;
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             *
+             * @return Whether the trialAvatarFirstPassDungeonNotify field is set.
+             */
+            @java.lang.Override
+            public boolean hasTrialAvatarFirstPassDungeonNotify() {
+                return detailCase_ == 626;
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             *
+             * @return The trialAvatarFirstPassDungeonNotify.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotify
+                    getTrialAvatarFirstPassDungeonNotify() {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    if (detailCase_ == 626) {
+                        return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                        .TrialAvatarFirstPassDungeonNotify)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+                } else {
+                    if (detailCase_ == 626) {
+                        return trialAvatarFirstPassDungeonNotifyBuilder_.getMessage();
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+                }
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            public Builder setTrialAvatarFirstPassDungeonNotify(
+                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify
+                            value) {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    detail_ = value;
+                    onChanged();
+                } else {
+                    trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
+                }
+                detailCase_ = 626;
+                return this;
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            public Builder setTrialAvatarFirstPassDungeonNotify(
+                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify.Builder
+                            builderForValue) {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    detail_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(builderForValue.build());
+                }
+                detailCase_ = 626;
+                return this;
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            public Builder mergeTrialAvatarFirstPassDungeonNotify(
+                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify
+                            value) {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    if (detailCase_ == 626
+                            && detail_
+                                    != emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                            .TrialAvatarFirstPassDungeonNotify.getDefaultInstance()) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                        .TrialAvatarFirstPassDungeonNotify.newBuilder(
+                                                (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                                .TrialAvatarFirstPassDungeonNotify)
+                                                        detail_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        detail_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (detailCase_ == 626) {
+                        trialAvatarFirstPassDungeonNotifyBuilder_.mergeFrom(value);
+                    }
+                    trialAvatarFirstPassDungeonNotifyBuilder_.setMessage(value);
+                }
+                detailCase_ = 626;
+                return this;
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            public Builder clearTrialAvatarFirstPassDungeonNotify() {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    if (detailCase_ == 626) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (detailCase_ == 626) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                    }
+                    trialAvatarFirstPassDungeonNotifyBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotify.Builder
+                    getTrialAvatarFirstPassDungeonNotifyBuilder() {
+                return getTrialAvatarFirstPassDungeonNotifyFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotifyOrBuilder
+                    getTrialAvatarFirstPassDungeonNotifyOrBuilder() {
+                if ((detailCase_ == 626) && (trialAvatarFirstPassDungeonNotifyBuilder_ != null)) {
+                    return trialAvatarFirstPassDungeonNotifyBuilder_.getMessageOrBuilder();
+                } else {
+                    if (detailCase_ == 626) {
+                        return (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                        .TrialAvatarFirstPassDungeonNotify)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                            .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+                }
+            }
+            /**
+             * <code>.TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 626;
+             * </code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify,
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotify.Builder,
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                    .TrialAvatarFirstPassDungeonNotifyOrBuilder>
+                    getTrialAvatarFirstPassDungeonNotifyFieldBuilder() {
+                if (trialAvatarFirstPassDungeonNotifyBuilder_ == null) {
+                    if (!(detailCase_ == 626)) {
+                        detail_ =
+                                emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                        .TrialAvatarFirstPassDungeonNotify.getDefaultInstance();
+                    }
+                    trialAvatarFirstPassDungeonNotifyBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                            .TrialAvatarFirstPassDungeonNotify,
+                                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                            .TrialAvatarFirstPassDungeonNotify.Builder,
+                                    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                            .TrialAvatarFirstPassDungeonNotifyOrBuilder>(
+                                    (emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass
+                                                    .TrialAvatarFirstPassDungeonNotify)
+                                            detail_,
+                                    getParentForChildren(),
+                                    isClean());
+                    detail_ = null;
+                }
+                detailCase_ = 626;
+                onChanged();
+                ;
+                return trialAvatarFirstPassDungeonNotifyBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:DungeonSettleNotify)
+        }
+
+        // @@protoc_insertion_point(class_scope:DungeonSettleNotify)
+        private static final emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify();
+        }
+
+        public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DungeonSettleNotify> PARSER =
+                new com.google.protobuf.AbstractParser<DungeonSettleNotify>() {
+                    @java.lang.Override
+                    public DungeonSettleNotify parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new DungeonSettleNotify(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<DungeonSettleNotify> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DungeonSettleNotify> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:DungeonSettleNotify)
-    private static final emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_DungeonSettleNotify_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_DungeonSettleNotify_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_DungeonSettleNotify_SettleShowEntry_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_DungeonSettleNotify_SettleShowEntry_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify();
+        java.lang.String[] descriptorData = {
+            "\n\031DungeonSettleNotify.proto\032\017ParamList.p"
+                    + "roto\032\031StrengthenPointData.proto\032\031TowerLe"
+                    + "velEndNotify.proto\032\'TrialAvatarFirstPass"
+                    + "DungeonNotify.proto\"\341\004\n\023DungeonSettleNot"
+                    + "ify\022\022\n\ndungeon_id\030\004 \001(\r\022\020\n\010use_time\030\007 \001("
+                    + "\r\022\022\n\nclose_time\030\013 \001(\r\022\027\n\017createPlayerUid"
+                    + "\030\n \001(\r\022\026\n\016fail_cond_list\030\003 \003(\r\0228\n\nsettle"
+                    + "Show\030\016 \003(\0132$.DungeonSettleNotify.SettleS"
+                    + "howEntry\022S\n\031strengthen_point_data_map\030\t "
+                    + "\003(\01320.DungeonSettleNotify.StrengthenPoin"
+                    + "tDataMapEntry\022\022\n\nis_success\030\017 \001(\010\022\016\n\006res"
+                    + "ult\030\014 \001(\r\0227\n\026tower_level_end_notify\030\203\006 \001"
+                    + "(\0132\024.TowerLevelEndNotifyH\000\022U\n&trial_avat"
+                    + "ar_first_pass_dungeon_notify\030\362\004 \001(\0132\".Tr"
+                    + "ialAvatarFirstPassDungeonNotifyH\000\032=\n\017Set"
+                    + "tleShowEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005value\030\002 \001(\013"
+                    + "2\n.ParamList:\0028\001\032S\n\033StrengthenPointDataM"
+                    + "apEntry\022\013\n\003key\030\001 \001(\r\022#\n\005value\030\002 \001(\0132\024.St"
+                    + "rengthenPointData:\0028\001B\010\n\006detailB\033\n\031emu.g"
+                    + "rasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.ParamListOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.StrengthenPointDataOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor(),
+                        });
+        internal_static_DungeonSettleNotify_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_DungeonSettleNotify_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_DungeonSettleNotify_descriptor,
+                        new java.lang.String[] {
+                            "DungeonId",
+                            "UseTime",
+                            "CloseTime",
+                            "CreatePlayerUid",
+                            "FailCondList",
+                            "SettleShow",
+                            "StrengthenPointDataMap",
+                            "IsSuccess",
+                            "Result",
+                            "TowerLevelEndNotify",
+                            "TrialAvatarFirstPassDungeonNotify",
+                            "Detail",
+                        });
+        internal_static_DungeonSettleNotify_SettleShowEntry_descriptor =
+                internal_static_DungeonSettleNotify_descriptor.getNestedTypes().get(0);
+        internal_static_DungeonSettleNotify_SettleShowEntry_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_DungeonSettleNotify_SettleShowEntry_descriptor,
+                        new java.lang.String[] {
+                            "Key", "Value",
+                        });
+        internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor =
+                internal_static_DungeonSettleNotify_descriptor.getNestedTypes().get(1);
+        internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor,
+                        new java.lang.String[] {
+                            "Key", "Value",
+                        });
+        emu.grasscutter.net.proto.ParamListOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.StrengthenPointDataOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DungeonSettleNotify>
-        PARSER = new com.google.protobuf.AbstractParser<DungeonSettleNotify>() {
-      @java.lang.Override
-      public DungeonSettleNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonSettleNotify(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DungeonSettleNotify> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DungeonSettleNotify> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DungeonSettleNotify_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DungeonSettleNotify_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DungeonSettleNotify_SettleShowEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DungeonSettleNotify_SettleShowEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031DungeonSettleNotify.proto\032\017ParamList.p" +
-      "roto\032\031StrengthenPointData.proto\032\031TowerLe" +
-      "velEndNotify.proto\032\'TrialAvatarFirstPass" +
-      "DungeonNotify.proto\"\341\004\n\023DungeonSettleNot" +
-      "ify\022\022\n\ndungeon_id\030\004 \001(\r\022\020\n\010use_time\030\007 \001(" +
-      "\r\022\022\n\nclose_time\030\013 \001(\r\022\027\n\017createPlayerUid" +
-      "\030\n \001(\r\022\026\n\016fail_cond_list\030\003 \003(\r\0228\n\nsettle" +
-      "Show\030\016 \003(\0132$.DungeonSettleNotify.SettleS" +
-      "howEntry\022S\n\031strengthen_point_data_map\030\t " +
-      "\003(\01320.DungeonSettleNotify.StrengthenPoin" +
-      "tDataMapEntry\022\022\n\nis_success\030\017 \001(\010\022\016\n\006res" +
-      "ult\030\014 \001(\r\0227\n\026tower_level_end_notify\030\203\006 \001" +
-      "(\0132\024.TowerLevelEndNotifyH\000\022U\n&trial_avat" +
-      "ar_first_pass_dungeon_notify\030\362\004 \001(\0132\".Tr" +
-      "ialAvatarFirstPassDungeonNotifyH\000\032=\n\017Set" +
-      "tleShowEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005value\030\002 \001(\013" +
-      "2\n.ParamList:\0028\001\032S\n\033StrengthenPointDataM" +
-      "apEntry\022\013\n\003key\030\001 \001(\r\022#\n\005value\030\002 \001(\0132\024.St" +
-      "rengthenPointData:\0028\001B\010\n\006detailB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ParamListOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.StrengthenPointDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor(),
-        });
-    internal_static_DungeonSettleNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_DungeonSettleNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DungeonSettleNotify_descriptor,
-        new java.lang.String[] { "DungeonId", "UseTime", "CloseTime", "CreatePlayerUid", "FailCondList", "SettleShow", "StrengthenPointDataMap", "IsSuccess", "Result", "TowerLevelEndNotify", "TrialAvatarFirstPassDungeonNotify", "Detail", });
-    internal_static_DungeonSettleNotify_SettleShowEntry_descriptor =
-      internal_static_DungeonSettleNotify_descriptor.getNestedTypes().get(0);
-    internal_static_DungeonSettleNotify_SettleShowEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DungeonSettleNotify_SettleShowEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor =
-      internal_static_DungeonSettleNotify_descriptor.getNestedTypes().get(1);
-    internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.ParamListOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.StrengthenPointDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

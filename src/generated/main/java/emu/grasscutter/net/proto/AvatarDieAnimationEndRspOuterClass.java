@@ -4,347 +4,43 @@
 package emu.grasscutter.net.proto;
 
 public final class AvatarDieAnimationEndRspOuterClass {
-  private AvatarDieAnimationEndRspOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private AvatarDieAnimationEndRspOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface AvatarDieAnimationEndRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AvatarDieAnimationEndRsp)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint64 die_guid = 12;</code>
-     * @return The dieGuid.
-     */
-    long getDieGuid();
-
-    /**
-     * <code>int32 retcode = 9;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 skill_id = 7;</code>
-     * @return The skillId.
-     */
-    int getSkillId();
-  }
-  /**
-   * <pre>
-   * Name: FDNGCDLNAFN
-   * CmdId: 1795
-   * </pre>
-   *
-   * Protobuf type {@code AvatarDieAnimationEndRsp}
-   */
-  public static final class AvatarDieAnimationEndRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AvatarDieAnimationEndRsp)
-      AvatarDieAnimationEndRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use AvatarDieAnimationEndRsp.newBuilder() to construct.
-    private AvatarDieAnimationEndRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AvatarDieAnimationEndRsp() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AvatarDieAnimationEndRsp();
-    }
+    public interface AvatarDieAnimationEndRspOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:AvatarDieAnimationEndRsp)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private AvatarDieAnimationEndRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
+        /**
+         * <code>uint64 die_guid = 12;</code>
+         *
+         * @return The dieGuid.
+         */
+        long getDieGuid();
 
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+        /**
+         * <code>int32 retcode = 9;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
 
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              dieGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.internal_static_AvatarDieAnimationEndRsp_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.class, emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.Builder.class);
-    }
-
-    public static final int DIE_GUID_FIELD_NUMBER = 12;
-    private long dieGuid_;
-    /**
-     * <code>uint64 die_guid = 12;</code>
-     * @return The dieGuid.
-     */
-    @java.lang.Override
-    public long getDieGuid() {
-      return dieGuid_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 9;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SKILL_ID_FIELD_NUMBER = 7;
-    private int skillId_;
-    /**
-     * <code>uint32 skill_id = 7;</code>
-     * @return The skillId.
-     */
-    @java.lang.Override
-    public int getSkillId() {
-      return skillId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (skillId_ != 0) {
-        output.writeUInt32(7, skillId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
-      }
-      if (dieGuid_ != 0L) {
-        output.writeUInt64(12, dieGuid_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (skillId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, skillId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
-      }
-      if (dieGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, dieGuid_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp other = (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp) obj;
-
-      if (getDieGuid()
-          != other.getDieGuid()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getSkillId()
-          != other.getSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIE_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDieGuid());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>uint32 skill_id = 7;</code>
+         *
+         * @return The skillId.
+         */
+        int getSkillId();
     }
     /**
+     *
+     *
      * <pre>
      * Name: FDNGCDLNAFN
      * CmdId: 1795
@@ -352,337 +48,721 @@ public final class AvatarDieAnimationEndRspOuterClass {
      *
      * Protobuf type {@code AvatarDieAnimationEndRsp}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AvatarDieAnimationEndRsp)
-        emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.internal_static_AvatarDieAnimationEndRsp_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.class, emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class AvatarDieAnimationEndRsp extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:AvatarDieAnimationEndRsp)
+            AvatarDieAnimationEndRspOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use AvatarDieAnimationEndRsp.newBuilder() to construct.
+        private AvatarDieAnimationEndRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dieGuid_ = 0L;
 
-        retcode_ = 0;
+        private AvatarDieAnimationEndRsp() {}
 
-        skillId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.internal_static_AvatarDieAnimationEndRsp_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp build() {
-        emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new AvatarDieAnimationEndRsp();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp buildPartial() {
-        emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp result = new emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp(this);
-        result.dieGuid_ = dieGuid_;
-        result.retcode_ = retcode_;
-        result.skillId_ = skillId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp other) {
-        if (other == emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.getDefaultInstance()) return this;
-        if (other.getDieGuid() != 0L) {
-          setDieGuid(other.getDieGuid());
+        private AvatarDieAnimationEndRsp(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 56:
+                            {
+                                skillId_ = input.readUInt32();
+                                break;
+                            }
+                        case 72:
+                            {
+                                retcode_ = input.readInt32();
+                                break;
+                            }
+                        case 96:
+                            {
+                                dieGuid_ = input.readUInt64();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                    .internal_static_AvatarDieAnimationEndRsp_descriptor;
         }
-        if (other.getSkillId() != 0) {
-          setSkillId(other.getSkillId());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                    .internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                                    .class,
+                            emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                                    .Builder.class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int DIE_GUID_FIELD_NUMBER = 12;
+        private long dieGuid_;
+        /**
+         * <code>uint64 die_guid = 12;</code>
+         *
+         * @return The dieGuid.
+         */
+        @java.lang.Override
+        public long getDieGuid() {
+            return dieGuid_;
         }
-        return this;
-      }
 
-      private long dieGuid_ ;
-      /**
-       * <code>uint64 die_guid = 12;</code>
-       * @return The dieGuid.
-       */
-      @java.lang.Override
-      public long getDieGuid() {
-        return dieGuid_;
-      }
-      /**
-       * <code>uint64 die_guid = 12;</code>
-       * @param value The dieGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDieGuid(long value) {
-        
-        dieGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 die_guid = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDieGuid() {
-        
-        dieGuid_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static final int RETCODE_FIELD_NUMBER = 9;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 9;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
+        }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 9;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 9;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int SKILL_ID_FIELD_NUMBER = 7;
+        private int skillId_;
+        /**
+         * <code>uint32 skill_id = 7;</code>
+         *
+         * @return The skillId.
+         */
+        @java.lang.Override
+        public int getSkillId() {
+            return skillId_;
+        }
 
-      private int skillId_ ;
-      /**
-       * <code>uint32 skill_id = 7;</code>
-       * @return The skillId.
-       */
-      @java.lang.Override
-      public int getSkillId() {
-        return skillId_;
-      }
-      /**
-       * <code>uint32 skill_id = 7;</code>
-       * @param value The skillId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSkillId(int value) {
-        
-        skillId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 skill_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSkillId() {
-        
-        skillId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:AvatarDieAnimationEndRsp)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (skillId_ != 0) {
+                output.writeUInt32(7, skillId_);
+            }
+            if (retcode_ != 0) {
+                output.writeInt32(9, retcode_);
+            }
+            if (dieGuid_ != 0L) {
+                output.writeUInt64(12, dieGuid_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (skillId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, skillId_);
+            }
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, retcode_);
+            }
+            if (dieGuid_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(12, dieGuid_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp other =
+                    (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp)
+                            obj;
+
+            if (getDieGuid() != other.getDieGuid()) return false;
+            if (getRetcode() != other.getRetcode()) return false;
+            if (getSkillId() != other.getSkillId()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + DIE_GUID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDieGuid());
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
+            hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSkillId();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                        prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: FDNGCDLNAFN
+         * CmdId: 1795
+         * </pre>
+         *
+         * Protobuf type {@code AvatarDieAnimationEndRsp}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:AvatarDieAnimationEndRsp)
+                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRspOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .internal_static_AvatarDieAnimationEndRsp_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                                        .AvatarDieAnimationEndRsp.class,
+                                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                                        .AvatarDieAnimationEndRsp.Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                dieGuid_ = 0L;
+
+                retcode_ = 0;
+
+                skillId_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .internal_static_AvatarDieAnimationEndRsp_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                    build() {
+                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                        result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                    buildPartial() {
+                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                        result =
+                                new emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                                        .AvatarDieAnimationEndRsp(this);
+                result.dieGuid_ = dieGuid_;
+                result.retcode_ = retcode_;
+                result.skillId_ = skillId_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                                            .AvatarDieAnimationEndRsp)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                            other) {
+                if (other
+                        == emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                                .getDefaultInstance()) return this;
+                if (other.getDieGuid() != 0L) {
+                    setDieGuid(other.getDieGuid());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (other.getSkillId() != 0) {
+                    setSkillId(other.getSkillId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                                            .AvatarDieAnimationEndRsp)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long dieGuid_;
+            /**
+             * <code>uint64 die_guid = 12;</code>
+             *
+             * @return The dieGuid.
+             */
+            @java.lang.Override
+            public long getDieGuid() {
+                return dieGuid_;
+            }
+            /**
+             * <code>uint64 die_guid = 12;</code>
+             *
+             * @param value The dieGuid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDieGuid(long value) {
+
+                dieGuid_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint64 die_guid = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDieGuid() {
+
+                dieGuid_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 9;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 9;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int skillId_;
+            /**
+             * <code>uint32 skill_id = 7;</code>
+             *
+             * @return The skillId.
+             */
+            @java.lang.Override
+            public int getSkillId() {
+                return skillId_;
+            }
+            /**
+             * <code>uint32 skill_id = 7;</code>
+             *
+             * @param value The skillId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSkillId(int value) {
+
+                skillId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 skill_id = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSkillId() {
+
+                skillId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:AvatarDieAnimationEndRsp)
+        }
+
+        // @@protoc_insertion_point(class_scope:AvatarDieAnimationEndRsp)
+        private static final emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                            .AvatarDieAnimationEndRsp();
+        }
+
+        public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass
+                        .AvatarDieAnimationEndRsp
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<AvatarDieAnimationEndRsp> PARSER =
+                new com.google.protobuf.AbstractParser<AvatarDieAnimationEndRsp>() {
+                    @java.lang.Override
+                    public AvatarDieAnimationEndRsp parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new AvatarDieAnimationEndRsp(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<AvatarDieAnimationEndRsp> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AvatarDieAnimationEndRsp> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:AvatarDieAnimationEndRsp)
-    private static final emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_AvatarDieAnimationEndRsp_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp();
+        java.lang.String[] descriptorData = {
+            "\n\036AvatarDieAnimationEndRsp.proto\"O\n\030Avat"
+                    + "arDieAnimationEndRsp\022\020\n\010die_guid\030\014 \001(\004\022\017"
+                    + "\n\007retcode\030\t \001(\005\022\020\n\010skill_id\030\007 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_AvatarDieAnimationEndRsp_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_AvatarDieAnimationEndRsp_descriptor,
+                        new java.lang.String[] {
+                            "DieGuid", "Retcode", "SkillId",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AvatarDieAnimationEndRsp>
-        PARSER = new com.google.protobuf.AbstractParser<AvatarDieAnimationEndRsp>() {
-      @java.lang.Override
-      public AvatarDieAnimationEndRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarDieAnimationEndRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AvatarDieAnimationEndRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AvatarDieAnimationEndRsp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AvatarDieAnimationEndRsp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\036AvatarDieAnimationEndRsp.proto\"O\n\030Avat" +
-      "arDieAnimationEndRsp\022\020\n\010die_guid\030\014 \001(\004\022\017" +
-      "\n\007retcode\030\t \001(\005\022\020\n\010skill_id\030\007 \001(\rB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_AvatarDieAnimationEndRsp_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AvatarDieAnimationEndRsp_descriptor,
-        new java.lang.String[] { "DieGuid", "Retcode", "SkillId", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

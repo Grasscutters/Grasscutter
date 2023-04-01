@@ -4,4311 +4,4538 @@
 package emu.grasscutter.net.proto;
 
 public final class ActivityInfoOuterClass {
-  private ActivityInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private ActivityInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface ActivityInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ActivityInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 ANGGLPJEBLE = 438;</code>
-     * @return The aNGGLPJEBLE.
-     */
-    int getANGGLPJEBLE();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    }
 
-    /**
-     * <code>uint32 schedule_id = 14;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
+    public interface ActivityInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:ActivityInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>bool FLFGIDFALEK = 15;</code>
-     * @return The fLFGIDFALEK.
-     */
-    boolean getFLFGIDFALEK();
+        /**
+         * <code>uint32 ANGGLPJEBLE = 438;</code>
+         *
+         * @return The aNGGLPJEBLE.
+         */
+        int getANGGLPJEBLE();
 
-    /**
-     * <code>uint32 LPOCNCICJHM = 485;</code>
-     * @return The lPOCNCICJHM.
-     */
-    int getLPOCNCICJHM();
+        /**
+         * <code>uint32 schedule_id = 14;</code>
+         *
+         * @return The scheduleId.
+         */
+        int getScheduleId();
 
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    int getActivityCoinMapCount();
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    boolean containsActivityCoinMap(
-        int key);
-    /**
-     * Use {@link #getActivityCoinMapMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getActivityCoinMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getActivityCoinMapMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
+        /**
+         * <code>bool FLFGIDFALEK = 15;</code>
+         *
+         * @return The fLFGIDFALEK.
+         */
+        boolean getFLFGIDFALEK();
 
-    int getActivityCoinMapOrDefault(
-        int key,
-        int defaultValue);
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
+        /**
+         * <code>uint32 LPOCNCICJHM = 485;</code>
+         *
+         * @return The lPOCNCICJHM.
+         */
+        int getLPOCNCICJHM();
 
-    int getActivityCoinMapOrThrow(
-        int key);
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        int getActivityCoinMapCount();
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        boolean containsActivityCoinMap(int key);
+        /** Use {@link #getActivityCoinMapMap()} instead. */
+        @java.lang.Deprecated
+        java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMap();
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap();
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        int getActivityCoinMapOrDefault(int key, int defaultValue);
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        int getActivityCoinMapOrThrow(int key);
 
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @return A list containing the meetCondList.
+         */
+        java.util.List<java.lang.Integer> getMeetCondListList();
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @return The count of meetCondList.
+         */
+        int getMeetCondListCount();
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The meetCondList at the given index.
+         */
+        int getMeetCondList(int index);
+
+        /**
+         * <code>uint32 end_time = 4;</code>
+         *
+         * @return The endTime.
+         */
+        int getEndTime();
+
+        /**
+         * <code>bool GLOONPBGOHM = 1331;</code>
+         *
+         * @return The gLOONPBGOHM.
+         */
+        boolean getGLOONPBGOHM();
+
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                getActivityPushTipsDataListList();
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                getActivityPushTipsDataList(int index);
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        int getActivityPushTipsDataListCount();
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                        .ActivityPushTipsDataOrBuilder>
+                getActivityPushTipsDataListOrBuilderList();
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder
+                getActivityPushTipsDataListOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @return A list containing the expireCondList.
+         */
+        java.util.List<java.lang.Integer> getExpireCondListList();
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @return The count of expireCondList.
+         */
+        int getExpireCondListCount();
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The expireCondList at the given index.
+         */
+        int getExpireCondList(int index);
+
+        /**
+         * <code>bool is_finished = 6;</code>
+         *
+         * @return The isFinished.
+         */
+        boolean getIsFinished();
+
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @return A list containing the takenRewardList.
+         */
+        java.util.List<java.lang.Integer> getTakenRewardListList();
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @return The count of takenRewardList.
+         */
+        int getTakenRewardListCount();
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The takenRewardList at the given index.
+         */
+        int getTakenRewardList(int index);
+
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                getWatcherInfoListList();
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo getWatcherInfoList(
+                int index);
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        int getWatcherInfoListCount();
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass
+                                        .ActivityWatcherInfoOrBuilder>
+                getWatcherInfoListOrBuilderList();
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
+                getWatcherInfoListOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * KMOFHMKLGHD
+         * </pre>
+         *
+         * <code>uint32 activity_type = 5;</code>
+         *
+         * @return The activityType.
+         */
+        int getActivityType();
+
+        /**
+         * <code>uint32 activity_id = 7;</code>
+         *
+         * @return The activityId.
+         */
+        int getActivityId();
+
+        /**
+         * <code>bool CJDFLBKBNPL = 10;</code>
+         *
+         * @return The cJDFLBKBNPL.
+         */
+        boolean getCJDFLBKBNPL();
+
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        int getWishGiftNumMapCount();
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        boolean containsWishGiftNumMap(int key);
+        /** Use {@link #getWishGiftNumMapMap()} instead. */
+        @java.lang.Deprecated
+        java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMap();
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap();
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        int getWishGiftNumMapOrDefault(int key, int defaultValue);
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        int getWishGiftNumMapOrThrow(int key);
+
+        /**
+         * <code>bool OEBHLKFBCOG = 696;</code>
+         *
+         * @return The oEBHLKFBCOG.
+         */
+        boolean getOEBHLKFBCOG();
+
+        /**
+         * <code>bool LGKOJCGDGBH = 1736;</code>
+         *
+         * @return The lGKOJCGDGBH.
+         */
+        boolean getLGKOJCGDGBH();
+
+        /**
+         * <code>uint32 begin_time = 9;</code>
+         *
+         * @return The beginTime.
+         */
+        int getBeginTime();
+
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @return A list containing the dDBJAKPEPLC.
+         */
+        java.util.List<java.lang.Integer> getDDBJAKPEPLCList();
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @return The count of dDBJAKPEPLC.
+         */
+        int getDDBJAKPEPLCCount();
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The dDBJAKPEPLC at the given index.
+         */
+        int getDDBJAKPEPLC(int index);
+
+        /**
+         * <code>uint32 first_day_start_time = 1677;</code>
+         *
+         * @return The firstDayStartTime.
+         */
+        int getFirstDayStartTime();
+
+        /**
+         * <code>uint32 cur_score = 1005;</code>
+         *
+         * @return The curScore.
+         */
+        int getCurScore();
+
+        /**
+         * <code>bool EFJOLIOFLBG = 514;</code>
+         *
+         * @return The eFJOLIOFLBG.
+         */
+        boolean getEFJOLIOFLBG();
+
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         *
+         * @return Whether the musicGameInfo field is set.
+         */
+        boolean hasMusicGameInfo();
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         *
+         * @return The musicGameInfo.
+         */
+        emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo
+                getMusicGameInfo();
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         */
+        emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                        .MusicGameActivityDetailInfoOrBuilder
+                getMusicGameInfoOrBuilder();
+
+        public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.DetailCase getDetailCase();
+    }
     /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
      *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @return A list containing the meetCondList.
-     */
-    java.util.List<java.lang.Integer> getMeetCondListList();
-    /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
      *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @return The count of meetCondList.
-     */
-    int getMeetCondListCount();
-    /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
-     *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
-     */
-    int getMeetCondList(int index);
-
-    /**
-     * <code>uint32 end_time = 4;</code>
-     * @return The endTime.
-     */
-    int getEndTime();
-
-    /**
-     * <code>bool GLOONPBGOHM = 1331;</code>
-     * @return The gLOONPBGOHM.
-     */
-    boolean getGLOONPBGOHM();
-
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> 
-        getActivityPushTipsDataListList();
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index);
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    int getActivityPushTipsDataListCount();
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
-        getActivityPushTipsDataListOrBuilderList();
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return A list containing the expireCondList.
-     */
-    java.util.List<java.lang.Integer> getExpireCondListList();
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return The count of expireCondList.
-     */
-    int getExpireCondListCount();
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
-     */
-    int getExpireCondList(int index);
-
-    /**
-     * <code>bool is_finished = 6;</code>
-     * @return The isFinished.
-     */
-    boolean getIsFinished();
-
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @return A list containing the takenRewardList.
-     */
-    java.util.List<java.lang.Integer> getTakenRewardListList();
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @return The count of takenRewardList.
-     */
-    int getTakenRewardListCount();
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @param index The index of the element to return.
-     * @return The takenRewardList at the given index.
-     */
-    int getTakenRewardList(int index);
-
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> 
-        getWatcherInfoListList();
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo getWatcherInfoList(int index);
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    int getWatcherInfoListCount();
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> 
-        getWatcherInfoListOrBuilderList();
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoListOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * KMOFHMKLGHD
-     * </pre>
-     *
-     * <code>uint32 activity_type = 5;</code>
-     * @return The activityType.
-     */
-    int getActivityType();
-
-    /**
-     * <code>uint32 activity_id = 7;</code>
-     * @return The activityId.
-     */
-    int getActivityId();
-
-    /**
-     * <code>bool CJDFLBKBNPL = 10;</code>
-     * @return The cJDFLBKBNPL.
-     */
-    boolean getCJDFLBKBNPL();
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    int getWishGiftNumMapCount();
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    boolean containsWishGiftNumMap(
-        int key);
-    /**
-     * Use {@link #getWishGiftNumMapMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getWishGiftNumMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getWishGiftNumMapMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-
-    int getWishGiftNumMapOrDefault(
-        int key,
-        int defaultValue);
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-
-    int getWishGiftNumMapOrThrow(
-        int key);
-
-    /**
-     * <code>bool OEBHLKFBCOG = 696;</code>
-     * @return The oEBHLKFBCOG.
-     */
-    boolean getOEBHLKFBCOG();
-
-    /**
-     * <code>bool LGKOJCGDGBH = 1736;</code>
-     * @return The lGKOJCGDGBH.
-     */
-    boolean getLGKOJCGDGBH();
-
-    /**
-     * <code>uint32 begin_time = 9;</code>
-     * @return The beginTime.
-     */
-    int getBeginTime();
-
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @return A list containing the dDBJAKPEPLC.
-     */
-    java.util.List<java.lang.Integer> getDDBJAKPEPLCList();
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @return The count of dDBJAKPEPLC.
-     */
-    int getDDBJAKPEPLCCount();
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @param index The index of the element to return.
-     * @return The dDBJAKPEPLC at the given index.
-     */
-    int getDDBJAKPEPLC(int index);
-
-    /**
-     * <code>uint32 first_day_start_time = 1677;</code>
-     * @return The firstDayStartTime.
-     */
-    int getFirstDayStartTime();
-
-    /**
-     * <code>uint32 cur_score = 1005;</code>
-     * @return The curScore.
-     */
-    int getCurScore();
-
-    /**
-     * <code>bool EFJOLIOFLBG = 514;</code>
-     * @return The eFJOLIOFLBG.
-     */
-    boolean getEFJOLIOFLBG();
-
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     * @return Whether the musicGameInfo field is set.
-     */
-    boolean hasMusicGameInfo();
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     * @return The musicGameInfo.
-     */
-    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo getMusicGameInfo();
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     */
-    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder getMusicGameInfoOrBuilder();
-
-    public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.DetailCase getDetailCase();
-  }
-  /**
-   * <pre>
-   * Name: EIPLHBCKIIO
-   * </pre>
-   *
-   * Protobuf type {@code ActivityInfo}
-   */
-  public static final class ActivityInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ActivityInfo)
-      ActivityInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ActivityInfo.newBuilder() to construct.
-    private ActivityInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ActivityInfo() {
-      meetCondList_ = emptyIntList();
-      activityPushTipsDataList_ = java.util.Collections.emptyList();
-      expireCondList_ = emptyIntList();
-      takenRewardList_ = emptyIntList();
-      watcherInfoList_ = java.util.Collections.emptyList();
-      dDBJAKPEPLC_ = emptyIntList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ActivityInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ActivityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                meetCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              meetCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                meetCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                meetCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              activityType_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                watcherInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              watcherInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              cJDFLBKBNPL_ = input.readBool();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                expireCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              expireCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                expireCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                expireCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              fLFGIDFALEK_ = input.readBool();
-              break;
-            }
-            case 3504: {
-
-              aNGGLPJEBLE_ = input.readUInt32();
-              break;
-            }
-            case 3880: {
-
-              lPOCNCICJHM_ = input.readUInt32();
-              break;
-            }
-            case 4112: {
-
-              eFJOLIOFLBG_ = input.readBool();
-              break;
-            }
-            case 5568: {
-
-              oEBHLKFBCOG_ = input.readBool();
-              break;
-            }
-            case 5626: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                activityCoinMap_ = com.google.protobuf.MapField.newMapField(
-                    ActivityCoinMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              activityCoinMap__ = input.readMessage(
-                  ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              activityCoinMap_.getMutableMap().put(
-                  activityCoinMap__.getKey(), activityCoinMap__.getValue());
-              break;
-            }
-            case 6224: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                dDBJAKPEPLC_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              dDBJAKPEPLC_.addInt(input.readUInt32());
-              break;
-            }
-            case 6226: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
-                dDBJAKPEPLC_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                dDBJAKPEPLC_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 7152: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              takenRewardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 7154: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                takenRewardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 8040: {
-
-              curScore_ = input.readUInt32();
-              break;
-            }
-            case 10648: {
-
-              gLOONPBGOHM_ = input.readBool();
-              break;
-            }
-            case 11674: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                wishGiftNumMap_ = com.google.protobuf.MapField.newMapField(
-                    WishGiftNumMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              wishGiftNumMap__ = input.readMessage(
-                  WishGiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              wishGiftNumMap_.getMutableMap().put(
-                  wishGiftNumMap__.getKey(), wishGiftNumMap__.getValue());
-              break;
-            }
-            case 13416: {
-
-              firstDayStartTime_ = input.readUInt32();
-              break;
-            }
-            case 13888: {
-
-              lGKOJCGDGBH_ = input.readBool();
-              break;
-            }
-            case 14618: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                activityPushTipsDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              activityPushTipsDataList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.parser(), extensionRegistry));
-              break;
-            }
-            case 15730: {
-              emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1966) {
-                subBuilder = ((emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1966;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          meetCondList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          expireCondList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          dDBJAKPEPLC_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          takenRewardList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 703:
-          return internalGetActivityCoinMap();
-        case 1459:
-          return internalGetWishGiftNumMap();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.class, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder.class);
-    }
-
-    private int detailCase_ = 0;
-    private java.lang.Object detail_;
-    public enum DetailCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      MUSIC_GAME_INFO(1966),
-      DETAIL_NOT_SET(0);
-      private final int value;
-      private DetailCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DetailCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DetailCase forNumber(int value) {
-        switch (value) {
-          case 1966: return MUSIC_GAME_INFO;
-          case 0: return DETAIL_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DetailCase
-    getDetailCase() {
-      return DetailCase.forNumber(
-          detailCase_);
-    }
-
-    public static final int ANGGLPJEBLE_FIELD_NUMBER = 438;
-    private int aNGGLPJEBLE_;
-    /**
-     * <code>uint32 ANGGLPJEBLE = 438;</code>
-     * @return The aNGGLPJEBLE.
-     */
-    @java.lang.Override
-    public int getANGGLPJEBLE() {
-      return aNGGLPJEBLE_;
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 14;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
-    }
-
-    public static final int FLFGIDFALEK_FIELD_NUMBER = 15;
-    private boolean fLFGIDFALEK_;
-    /**
-     * <code>bool FLFGIDFALEK = 15;</code>
-     * @return The fLFGIDFALEK.
-     */
-    @java.lang.Override
-    public boolean getFLFGIDFALEK() {
-      return fLFGIDFALEK_;
-    }
-
-    public static final int LPOCNCICJHM_FIELD_NUMBER = 485;
-    private int lPOCNCICJHM_;
-    /**
-     * <code>uint32 LPOCNCICJHM = 485;</code>
-     * @return The lPOCNCICJHM.
-     */
-    @java.lang.Override
-    public int getLPOCNCICJHM() {
-      return lPOCNCICJHM_;
-    }
-
-    public static final int ACTIVITY_COIN_MAP_FIELD_NUMBER = 703;
-    private static final class ActivityCoinMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, java.lang.Integer> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0);
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> activityCoinMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetActivityCoinMap() {
-      if (activityCoinMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ActivityCoinMapDefaultEntryHolder.defaultEntry);
-      }
-      return activityCoinMap_;
-    }
-
-    public int getActivityCoinMapCount() {
-      return internalGetActivityCoinMap().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsActivityCoinMap(
-        int key) {
-      
-      return internalGetActivityCoinMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getActivityCoinMapMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMap() {
-      return getActivityCoinMapMap();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
-      return internalGetActivityCoinMap().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    @java.lang.Override
-
-    public int getActivityCoinMapOrDefault(
-        int key,
-        int defaultValue) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetActivityCoinMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-     */
-    @java.lang.Override
-
-    public int getActivityCoinMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetActivityCoinMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int MEET_COND_LIST_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.IntList meetCondList_;
-    /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
-     *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @return A list containing the meetCondList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getMeetCondListList() {
-      return meetCondList_;
-    }
-    /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
-     *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @return The count of meetCondList.
-     */
-    public int getMeetCondListCount() {
-      return meetCondList_.size();
-    }
-    /**
-     * <pre>
-     *PAGIONJOCJN
-     * </pre>
-     *
-     * <code>repeated uint32 meet_cond_list = 2;</code>
-     * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
-     */
-    public int getMeetCondList(int index) {
-      return meetCondList_.getInt(index);
-    }
-    private int meetCondListMemoizedSerializedSize = -1;
-
-    public static final int END_TIME_FIELD_NUMBER = 4;
-    private int endTime_;
-    /**
-     * <code>uint32 end_time = 4;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
-    }
-
-    public static final int GLOONPBGOHM_FIELD_NUMBER = 1331;
-    private boolean gLOONPBGOHM_;
-    /**
-     * <code>bool GLOONPBGOHM = 1331;</code>
-     * @return The gLOONPBGOHM.
-     */
-    @java.lang.Override
-    public boolean getGLOONPBGOHM() {
-      return gLOONPBGOHM_;
-    }
-
-    public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 1827;
-    private java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_;
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> getActivityPushTipsDataListList() {
-      return activityPushTipsDataList_;
-    }
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
-        getActivityPushTipsDataListOrBuilderList() {
-      return activityPushTipsDataList_;
-    }
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    @java.lang.Override
-    public int getActivityPushTipsDataListCount() {
-      return activityPushTipsDataList_.size();
-    }
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index) {
-      return activityPushTipsDataList_.get(index);
-    }
-    /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
-        int index) {
-      return activityPushTipsDataList_.get(index);
-    }
-
-    public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList expireCondList_;
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return A list containing the expireCondList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getExpireCondListList() {
-      return expireCondList_;
-    }
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return The count of expireCondList.
-     */
-    public int getExpireCondListCount() {
-      return expireCondList_.size();
-    }
-    /**
-     * <pre>
-     * LGCJBENHFOB
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
-     */
-    public int getExpireCondList(int index) {
-      return expireCondList_.getInt(index);
-    }
-    private int expireCondListMemoizedSerializedSize = -1;
-
-    public static final int IS_FINISHED_FIELD_NUMBER = 6;
-    private boolean isFinished_;
-    /**
-     * <code>bool is_finished = 6;</code>
-     * @return The isFinished.
-     */
-    @java.lang.Override
-    public boolean getIsFinished() {
-      return isFinished_;
-    }
-
-    public static final int TAKEN_REWARD_LIST_FIELD_NUMBER = 894;
-    private com.google.protobuf.Internal.IntList takenRewardList_;
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @return A list containing the takenRewardList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getTakenRewardListList() {
-      return takenRewardList_;
-    }
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @return The count of takenRewardList.
-     */
-    public int getTakenRewardListCount() {
-      return takenRewardList_.size();
-    }
-    /**
-     * <pre>
-     *EOPFKDBBOII
-     * </pre>
-     *
-     * <code>repeated uint32 taken_reward_list = 894;</code>
-     * @param index The index of the element to return.
-     * @return The takenRewardList at the given index.
-     */
-    public int getTakenRewardList(int index) {
-      return takenRewardList_.getInt(index);
-    }
-    private int takenRewardListMemoizedSerializedSize = -1;
-
-    public static final int WATCHER_INFO_LIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> watcherInfoList_;
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> getWatcherInfoListList() {
-      return watcherInfoList_;
-    }
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> 
-        getWatcherInfoListOrBuilderList() {
-      return watcherInfoList_;
-    }
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public int getWatcherInfoListCount() {
-      return watcherInfoList_.size();
-    }
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo getWatcherInfoList(int index) {
-      return watcherInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoListOrBuilder(
-        int index) {
-      return watcherInfoList_.get(index);
-    }
-
-    public static final int ACTIVITY_TYPE_FIELD_NUMBER = 5;
-    private int activityType_;
-    /**
-     * <pre>
-     * KMOFHMKLGHD
-     * </pre>
-     *
-     * <code>uint32 activity_type = 5;</code>
-     * @return The activityType.
-     */
-    @java.lang.Override
-    public int getActivityType() {
-      return activityType_;
-    }
-
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
-    private int activityId_;
-    /**
-     * <code>uint32 activity_id = 7;</code>
-     * @return The activityId.
-     */
-    @java.lang.Override
-    public int getActivityId() {
-      return activityId_;
-    }
-
-    public static final int CJDFLBKBNPL_FIELD_NUMBER = 10;
-    private boolean cJDFLBKBNPL_;
-    /**
-     * <code>bool CJDFLBKBNPL = 10;</code>
-     * @return The cJDFLBKBNPL.
-     */
-    @java.lang.Override
-    public boolean getCJDFLBKBNPL() {
-      return cJDFLBKBNPL_;
-    }
-
-    public static final int WISH_GIFT_NUM_MAP_FIELD_NUMBER = 1459;
-    private static final class WishGiftNumMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, java.lang.Integer> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0);
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetWishGiftNumMap() {
-      if (wishGiftNumMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            WishGiftNumMapDefaultEntryHolder.defaultEntry);
-      }
-      return wishGiftNumMap_;
-    }
-
-    public int getWishGiftNumMapCount() {
-      return internalGetWishGiftNumMap().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsWishGiftNumMap(
-        int key) {
-      
-      return internalGetWishGiftNumMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getWishGiftNumMapMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMap() {
-      return getWishGiftNumMapMap();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
-      return internalGetWishGiftNumMap().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    @java.lang.Override
-
-    public int getWishGiftNumMapOrDefault(
-        int key,
-        int defaultValue) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetWishGiftNumMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-     */
-    @java.lang.Override
-
-    public int getWishGiftNumMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetWishGiftNumMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int OEBHLKFBCOG_FIELD_NUMBER = 696;
-    private boolean oEBHLKFBCOG_;
-    /**
-     * <code>bool OEBHLKFBCOG = 696;</code>
-     * @return The oEBHLKFBCOG.
-     */
-    @java.lang.Override
-    public boolean getOEBHLKFBCOG() {
-      return oEBHLKFBCOG_;
-    }
-
-    public static final int LGKOJCGDGBH_FIELD_NUMBER = 1736;
-    private boolean lGKOJCGDGBH_;
-    /**
-     * <code>bool LGKOJCGDGBH = 1736;</code>
-     * @return The lGKOJCGDGBH.
-     */
-    @java.lang.Override
-    public boolean getLGKOJCGDGBH() {
-      return lGKOJCGDGBH_;
-    }
-
-    public static final int BEGIN_TIME_FIELD_NUMBER = 9;
-    private int beginTime_;
-    /**
-     * <code>uint32 begin_time = 9;</code>
-     * @return The beginTime.
-     */
-    @java.lang.Override
-    public int getBeginTime() {
-      return beginTime_;
-    }
-
-    public static final int DDBJAKPEPLC_FIELD_NUMBER = 778;
-    private com.google.protobuf.Internal.IntList dDBJAKPEPLC_;
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @return A list containing the dDBJAKPEPLC.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getDDBJAKPEPLCList() {
-      return dDBJAKPEPLC_;
-    }
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @return The count of dDBJAKPEPLC.
-     */
-    public int getDDBJAKPEPLCCount() {
-      return dDBJAKPEPLC_.size();
-    }
-    /**
-     * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-     * @param index The index of the element to return.
-     * @return The dDBJAKPEPLC at the given index.
-     */
-    public int getDDBJAKPEPLC(int index) {
-      return dDBJAKPEPLC_.getInt(index);
-    }
-    private int dDBJAKPEPLCMemoizedSerializedSize = -1;
-
-    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 1677;
-    private int firstDayStartTime_;
-    /**
-     * <code>uint32 first_day_start_time = 1677;</code>
-     * @return The firstDayStartTime.
-     */
-    @java.lang.Override
-    public int getFirstDayStartTime() {
-      return firstDayStartTime_;
-    }
-
-    public static final int CUR_SCORE_FIELD_NUMBER = 1005;
-    private int curScore_;
-    /**
-     * <code>uint32 cur_score = 1005;</code>
-     * @return The curScore.
-     */
-    @java.lang.Override
-    public int getCurScore() {
-      return curScore_;
-    }
-
-    public static final int EFJOLIOFLBG_FIELD_NUMBER = 514;
-    private boolean eFJOLIOFLBG_;
-    /**
-     * <code>bool EFJOLIOFLBG = 514;</code>
-     * @return The eFJOLIOFLBG.
-     */
-    @java.lang.Override
-    public boolean getEFJOLIOFLBG() {
-      return eFJOLIOFLBG_;
-    }
-
-    public static final int MUSIC_GAME_INFO_FIELD_NUMBER = 1966;
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     * @return Whether the musicGameInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasMusicGameInfo() {
-      return detailCase_ == 1966;
-    }
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     * @return The musicGameInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo getMusicGameInfo() {
-      if (detailCase_ == 1966) {
-         return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_;
-      }
-      return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
-    }
-    /**
-     * <pre>
-     * event gc
-     * </pre>
-     *
-     * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder getMusicGameInfoOrBuilder() {
-      if (detailCase_ == 1966) {
-         return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_;
-      }
-      return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (getMeetCondListList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < meetCondList_.size(); i++) {
-        output.writeUInt32NoTag(meetCondList_.getInt(i));
-      }
-      if (endTime_ != 0) {
-        output.writeUInt32(4, endTime_);
-      }
-      if (activityType_ != 0) {
-        output.writeUInt32(5, activityType_);
-      }
-      if (isFinished_ != false) {
-        output.writeBool(6, isFinished_);
-      }
-      if (activityId_ != 0) {
-        output.writeUInt32(7, activityId_);
-      }
-      for (int i = 0; i < watcherInfoList_.size(); i++) {
-        output.writeMessage(8, watcherInfoList_.get(i));
-      }
-      if (beginTime_ != 0) {
-        output.writeUInt32(9, beginTime_);
-      }
-      if (cJDFLBKBNPL_ != false) {
-        output.writeBool(10, cJDFLBKBNPL_);
-      }
-      if (getExpireCondListList().size() > 0) {
-        output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(expireCondListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < expireCondList_.size(); i++) {
-        output.writeUInt32NoTag(expireCondList_.getInt(i));
-      }
-      if (scheduleId_ != 0) {
-        output.writeUInt32(14, scheduleId_);
-      }
-      if (fLFGIDFALEK_ != false) {
-        output.writeBool(15, fLFGIDFALEK_);
-      }
-      if (aNGGLPJEBLE_ != 0) {
-        output.writeUInt32(438, aNGGLPJEBLE_);
-      }
-      if (lPOCNCICJHM_ != 0) {
-        output.writeUInt32(485, lPOCNCICJHM_);
-      }
-      if (eFJOLIOFLBG_ != false) {
-        output.writeBool(514, eFJOLIOFLBG_);
-      }
-      if (oEBHLKFBCOG_ != false) {
-        output.writeBool(696, oEBHLKFBCOG_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetActivityCoinMap(),
-          ActivityCoinMapDefaultEntryHolder.defaultEntry,
-          703);
-      if (getDDBJAKPEPLCList().size() > 0) {
-        output.writeUInt32NoTag(6226);
-        output.writeUInt32NoTag(dDBJAKPEPLCMemoizedSerializedSize);
-      }
-      for (int i = 0; i < dDBJAKPEPLC_.size(); i++) {
-        output.writeUInt32NoTag(dDBJAKPEPLC_.getInt(i));
-      }
-      if (getTakenRewardListList().size() > 0) {
-        output.writeUInt32NoTag(7154);
-        output.writeUInt32NoTag(takenRewardListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < takenRewardList_.size(); i++) {
-        output.writeUInt32NoTag(takenRewardList_.getInt(i));
-      }
-      if (curScore_ != 0) {
-        output.writeUInt32(1005, curScore_);
-      }
-      if (gLOONPBGOHM_ != false) {
-        output.writeBool(1331, gLOONPBGOHM_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetWishGiftNumMap(),
-          WishGiftNumMapDefaultEntryHolder.defaultEntry,
-          1459);
-      if (firstDayStartTime_ != 0) {
-        output.writeUInt32(1677, firstDayStartTime_);
-      }
-      if (lGKOJCGDGBH_ != false) {
-        output.writeBool(1736, lGKOJCGDGBH_);
-      }
-      for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
-        output.writeMessage(1827, activityPushTipsDataList_.get(i));
-      }
-      if (detailCase_ == 1966) {
-        output.writeMessage(1966, (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < meetCondList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(meetCondList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getMeetCondListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        meetCondListMemoizedSerializedSize = dataSize;
-      }
-      if (endTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, endTime_);
-      }
-      if (activityType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, activityType_);
-      }
-      if (isFinished_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isFinished_);
-      }
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, activityId_);
-      }
-      for (int i = 0; i < watcherInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, watcherInfoList_.get(i));
-      }
-      if (beginTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, beginTime_);
-      }
-      if (cJDFLBKBNPL_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, cJDFLBKBNPL_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < expireCondList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(expireCondList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getExpireCondListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        expireCondListMemoizedSerializedSize = dataSize;
-      }
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, scheduleId_);
-      }
-      if (fLFGIDFALEK_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, fLFGIDFALEK_);
-      }
-      if (aNGGLPJEBLE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(438, aNGGLPJEBLE_);
-      }
-      if (lPOCNCICJHM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(485, lPOCNCICJHM_);
-      }
-      if (eFJOLIOFLBG_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(514, eFJOLIOFLBG_);
-      }
-      if (oEBHLKFBCOG_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(696, oEBHLKFBCOG_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetActivityCoinMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        activityCoinMap__ = ActivityCoinMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(703, activityCoinMap__);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < dDBJAKPEPLC_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dDBJAKPEPLC_.getInt(i));
-        }
-        size += dataSize;
-        if (!getDDBJAKPEPLCList().isEmpty()) {
-          size += 2;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        dDBJAKPEPLCMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < takenRewardList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(takenRewardList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getTakenRewardListList().isEmpty()) {
-          size += 2;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        takenRewardListMemoizedSerializedSize = dataSize;
-      }
-      if (curScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1005, curScore_);
-      }
-      if (gLOONPBGOHM_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1331, gLOONPBGOHM_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetWishGiftNumMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        wishGiftNumMap__ = WishGiftNumMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1459, wishGiftNumMap__);
-      }
-      if (firstDayStartTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1677, firstDayStartTime_);
-      }
-      if (lGKOJCGDGBH_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1736, lGKOJCGDGBH_);
-      }
-      for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1827, activityPushTipsDataList_.get(i));
-      }
-      if (detailCase_ == 1966) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1966, (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other = (emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) obj;
-
-      if (getANGGLPJEBLE()
-          != other.getANGGLPJEBLE()) return false;
-      if (getScheduleId()
-          != other.getScheduleId()) return false;
-      if (getFLFGIDFALEK()
-          != other.getFLFGIDFALEK()) return false;
-      if (getLPOCNCICJHM()
-          != other.getLPOCNCICJHM()) return false;
-      if (!internalGetActivityCoinMap().equals(
-          other.internalGetActivityCoinMap())) return false;
-      if (!getMeetCondListList()
-          .equals(other.getMeetCondListList())) return false;
-      if (getEndTime()
-          != other.getEndTime()) return false;
-      if (getGLOONPBGOHM()
-          != other.getGLOONPBGOHM()) return false;
-      if (!getActivityPushTipsDataListList()
-          .equals(other.getActivityPushTipsDataListList())) return false;
-      if (!getExpireCondListList()
-          .equals(other.getExpireCondListList())) return false;
-      if (getIsFinished()
-          != other.getIsFinished()) return false;
-      if (!getTakenRewardListList()
-          .equals(other.getTakenRewardListList())) return false;
-      if (!getWatcherInfoListList()
-          .equals(other.getWatcherInfoListList())) return false;
-      if (getActivityType()
-          != other.getActivityType()) return false;
-      if (getActivityId()
-          != other.getActivityId()) return false;
-      if (getCJDFLBKBNPL()
-          != other.getCJDFLBKBNPL()) return false;
-      if (!internalGetWishGiftNumMap().equals(
-          other.internalGetWishGiftNumMap())) return false;
-      if (getOEBHLKFBCOG()
-          != other.getOEBHLKFBCOG()) return false;
-      if (getLGKOJCGDGBH()
-          != other.getLGKOJCGDGBH()) return false;
-      if (getBeginTime()
-          != other.getBeginTime()) return false;
-      if (!getDDBJAKPEPLCList()
-          .equals(other.getDDBJAKPEPLCList())) return false;
-      if (getFirstDayStartTime()
-          != other.getFirstDayStartTime()) return false;
-      if (getCurScore()
-          != other.getCurScore()) return false;
-      if (getEFJOLIOFLBG()
-          != other.getEFJOLIOFLBG()) return false;
-      if (!getDetailCase().equals(other.getDetailCase())) return false;
-      switch (detailCase_) {
-        case 1966:
-          if (!getMusicGameInfo()
-              .equals(other.getMusicGameInfo())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ANGGLPJEBLE_FIELD_NUMBER;
-      hash = (53 * hash) + getANGGLPJEBLE();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
-      hash = (37 * hash) + FLFGIDFALEK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFLFGIDFALEK());
-      hash = (37 * hash) + LPOCNCICJHM_FIELD_NUMBER;
-      hash = (53 * hash) + getLPOCNCICJHM();
-      if (!internalGetActivityCoinMap().getMap().isEmpty()) {
-        hash = (37 * hash) + ACTIVITY_COIN_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetActivityCoinMap().hashCode();
-      }
-      if (getMeetCondListCount() > 0) {
-        hash = (37 * hash) + MEET_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMeetCondListList().hashCode();
-      }
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
-      hash = (37 * hash) + GLOONPBGOHM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGLOONPBGOHM());
-      if (getActivityPushTipsDataListCount() > 0) {
-        hash = (37 * hash) + ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getActivityPushTipsDataListList().hashCode();
-      }
-      if (getExpireCondListCount() > 0) {
-        hash = (37 * hash) + EXPIRE_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getExpireCondListList().hashCode();
-      }
-      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinished());
-      if (getTakenRewardListCount() > 0) {
-        hash = (37 * hash) + TAKEN_REWARD_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTakenRewardListList().hashCode();
-      }
-      if (getWatcherInfoListCount() > 0) {
-        hash = (37 * hash) + WATCHER_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getWatcherInfoListList().hashCode();
-      }
-      hash = (37 * hash) + ACTIVITY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getActivityType();
-      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getActivityId();
-      hash = (37 * hash) + CJDFLBKBNPL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCJDFLBKBNPL());
-      if (!internalGetWishGiftNumMap().getMap().isEmpty()) {
-        hash = (37 * hash) + WISH_GIFT_NUM_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetWishGiftNumMap().hashCode();
-      }
-      hash = (37 * hash) + OEBHLKFBCOG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getOEBHLKFBCOG());
-      hash = (37 * hash) + LGKOJCGDGBH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getLGKOJCGDGBH());
-      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getBeginTime();
-      if (getDDBJAKPEPLCCount() > 0) {
-        hash = (37 * hash) + DDBJAKPEPLC_FIELD_NUMBER;
-        hash = (53 * hash) + getDDBJAKPEPLCList().hashCode();
-      }
-      hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstDayStartTime();
-      hash = (37 * hash) + CUR_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getCurScore();
-      hash = (37 * hash) + EFJOLIOFLBG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEFJOLIOFLBG());
-      switch (detailCase_) {
-        case 1966:
-          hash = (37 * hash) + MUSIC_GAME_INFO_FIELD_NUMBER;
-          hash = (53 * hash) + getMusicGameInfo().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
      * <pre>
      * Name: EIPLHBCKIIO
      * </pre>
      *
      * Protobuf type {@code ActivityInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ActivityInfo)
-        emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 703:
-            return internalGetActivityCoinMap();
-          case 1459:
-            return internalGetWishGiftNumMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+    public static final class ActivityInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:ActivityInfo)
+            ActivityInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ActivityInfo.newBuilder() to construct.
+        private ActivityInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 703:
-            return internalGetMutableActivityCoinMap();
-          case 1459:
-            return internalGetMutableWishGiftNumMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+
+        private ActivityInfo() {
+            meetCondList_ = emptyIntList();
+            activityPushTipsDataList_ = java.util.Collections.emptyList();
+            expireCondList_ = emptyIntList();
+            takenRewardList_ = emptyIntList();
+            watcherInfoList_ = java.util.Collections.emptyList();
+            dDBJAKPEPLC_ = emptyIntList();
         }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.class, emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder.class);
-      }
 
-      // Construct using emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getActivityPushTipsDataListFieldBuilder();
-          getWatcherInfoListFieldBuilder();
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new ActivityInfo();
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        aNGGLPJEBLE_ = 0;
 
-        scheduleId_ = 0;
-
-        fLFGIDFALEK_ = false;
-
-        lPOCNCICJHM_ = 0;
-
-        internalGetMutableActivityCoinMap().clear();
-        meetCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        endTime_ = 0;
-
-        gLOONPBGOHM_ = false;
-
-        if (activityPushTipsDataListBuilder_ == null) {
-          activityPushTipsDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          activityPushTipsDataListBuilder_.clear();
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        expireCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        isFinished_ = false;
 
-        takenRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        if (watcherInfoListBuilder_ == null) {
-          watcherInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          watcherInfoListBuilder_.clear();
-        }
-        activityType_ = 0;
-
-        activityId_ = 0;
-
-        cJDFLBKBNPL_ = false;
-
-        internalGetMutableWishGiftNumMap().clear();
-        oEBHLKFBCOG_ = false;
-
-        lGKOJCGDGBH_ = false;
-
-        beginTime_ = 0;
-
-        dDBJAKPEPLC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        firstDayStartTime_ = 0;
-
-        curScore_ = 0;
-
-        eFJOLIOFLBG_ = false;
-
-        detailCase_ = 0;
-        detail_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo build() {
-        emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo buildPartial() {
-        emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo result = new emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.aNGGLPJEBLE_ = aNGGLPJEBLE_;
-        result.scheduleId_ = scheduleId_;
-        result.fLFGIDFALEK_ = fLFGIDFALEK_;
-        result.lPOCNCICJHM_ = lPOCNCICJHM_;
-        result.activityCoinMap_ = internalGetActivityCoinMap();
-        result.activityCoinMap_.makeImmutable();
-        if (((bitField0_ & 0x00000002) != 0)) {
-          meetCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.meetCondList_ = meetCondList_;
-        result.endTime_ = endTime_;
-        result.gLOONPBGOHM_ = gLOONPBGOHM_;
-        if (activityPushTipsDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.activityPushTipsDataList_ = activityPushTipsDataList_;
-        } else {
-          result.activityPushTipsDataList_ = activityPushTipsDataListBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000008) != 0)) {
-          expireCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.expireCondList_ = expireCondList_;
-        result.isFinished_ = isFinished_;
-        if (((bitField0_ & 0x00000010) != 0)) {
-          takenRewardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.takenRewardList_ = takenRewardList_;
-        if (watcherInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
-            watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.watcherInfoList_ = watcherInfoList_;
-        } else {
-          result.watcherInfoList_ = watcherInfoListBuilder_.build();
-        }
-        result.activityType_ = activityType_;
-        result.activityId_ = activityId_;
-        result.cJDFLBKBNPL_ = cJDFLBKBNPL_;
-        result.wishGiftNumMap_ = internalGetWishGiftNumMap();
-        result.wishGiftNumMap_.makeImmutable();
-        result.oEBHLKFBCOG_ = oEBHLKFBCOG_;
-        result.lGKOJCGDGBH_ = lGKOJCGDGBH_;
-        result.beginTime_ = beginTime_;
-        if (((bitField0_ & 0x00000080) != 0)) {
-          dDBJAKPEPLC_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.dDBJAKPEPLC_ = dDBJAKPEPLC_;
-        result.firstDayStartTime_ = firstDayStartTime_;
-        result.curScore_ = curScore_;
-        result.eFJOLIOFLBG_ = eFJOLIOFLBG_;
-        if (detailCase_ == 1966) {
-          if (musicGameInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = musicGameInfoBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other) {
-        if (other == emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance()) return this;
-        if (other.getANGGLPJEBLE() != 0) {
-          setANGGLPJEBLE(other.getANGGLPJEBLE());
-        }
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
-        }
-        if (other.getFLFGIDFALEK() != false) {
-          setFLFGIDFALEK(other.getFLFGIDFALEK());
-        }
-        if (other.getLPOCNCICJHM() != 0) {
-          setLPOCNCICJHM(other.getLPOCNCICJHM());
-        }
-        internalGetMutableActivityCoinMap().mergeFrom(
-            other.internalGetActivityCoinMap());
-        if (!other.meetCondList_.isEmpty()) {
-          if (meetCondList_.isEmpty()) {
-            meetCondList_ = other.meetCondList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureMeetCondListIsMutable();
-            meetCondList_.addAll(other.meetCondList_);
-          }
-          onChanged();
-        }
-        if (other.getEndTime() != 0) {
-          setEndTime(other.getEndTime());
-        }
-        if (other.getGLOONPBGOHM() != false) {
-          setGLOONPBGOHM(other.getGLOONPBGOHM());
-        }
-        if (activityPushTipsDataListBuilder_ == null) {
-          if (!other.activityPushTipsDataList_.isEmpty()) {
-            if (activityPushTipsDataList_.isEmpty()) {
-              activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureActivityPushTipsDataListIsMutable();
-              activityPushTipsDataList_.addAll(other.activityPushTipsDataList_);
+        private ActivityInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.activityPushTipsDataList_.isEmpty()) {
-            if (activityPushTipsDataListBuilder_.isEmpty()) {
-              activityPushTipsDataListBuilder_.dispose();
-              activityPushTipsDataListBuilder_ = null;
-              activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              activityPushTipsDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getActivityPushTipsDataListFieldBuilder() : null;
-            } else {
-              activityPushTipsDataListBuilder_.addAllMessages(other.activityPushTipsDataList_);
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 16:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    meetCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                meetCondList_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 18:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                                    meetCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    meetCondList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 32:
+                            {
+                                endTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 40:
+                            {
+                                activityType_ = input.readUInt32();
+                                break;
+                            }
+                        case 48:
+                            {
+                                isFinished_ = input.readBool();
+                                break;
+                            }
+                        case 56:
+                            {
+                                activityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 66:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                                    watcherInfoList_ =
+                                            new java.util.ArrayList<
+                                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass
+                                                            .ActivityWatcherInfo>();
+                                    mutable_bitField0_ |= 0x00000020;
+                                }
+                                watcherInfoList_.add(
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                                                        .parser(),
+                                                extensionRegistry));
+                                break;
+                            }
+                        case 72:
+                            {
+                                beginTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 80:
+                            {
+                                cJDFLBKBNPL_ = input.readBool();
+                                break;
+                            }
+                        case 104:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                                    expireCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000008;
+                                }
+                                expireCondList_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 106:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                                    expireCondList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000008;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    expireCondList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 112:
+                            {
+                                scheduleId_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                fLFGIDFALEK_ = input.readBool();
+                                break;
+                            }
+                        case 3504:
+                            {
+                                aNGGLPJEBLE_ = input.readUInt32();
+                                break;
+                            }
+                        case 3880:
+                            {
+                                lPOCNCICJHM_ = input.readUInt32();
+                                break;
+                            }
+                        case 4112:
+                            {
+                                eFJOLIOFLBG_ = input.readBool();
+                                break;
+                            }
+                        case 5568:
+                            {
+                                oEBHLKFBCOG_ = input.readBool();
+                                break;
+                            }
+                        case 5626:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    activityCoinMap_ =
+                                            com.google.protobuf.MapField.newMapField(
+                                                    ActivityCoinMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                                        activityCoinMap__ =
+                                                input.readMessage(
+                                                        ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(),
+                                                        extensionRegistry);
+                                activityCoinMap_
+                                        .getMutableMap()
+                                        .put(activityCoinMap__.getKey(), activityCoinMap__.getValue());
+                                break;
+                            }
+                        case 6224:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                                    dDBJAKPEPLC_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000080;
+                                }
+                                dDBJAKPEPLC_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 6226:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
+                                    dDBJAKPEPLC_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000080;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    dDBJAKPEPLC_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 7152:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                                    takenRewardList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000010;
+                                }
+                                takenRewardList_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 7154:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
+                                    takenRewardList_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000010;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    takenRewardList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 8040:
+                            {
+                                curScore_ = input.readUInt32();
+                                break;
+                            }
+                        case 10648:
+                            {
+                                gLOONPBGOHM_ = input.readBool();
+                                break;
+                            }
+                        case 11674:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                                    wishGiftNumMap_ =
+                                            com.google.protobuf.MapField.newMapField(
+                                                    WishGiftNumMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 0x00000040;
+                                }
+                                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                                        wishGiftNumMap__ =
+                                                input.readMessage(
+                                                        WishGiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(),
+                                                        extensionRegistry);
+                                wishGiftNumMap_
+                                        .getMutableMap()
+                                        .put(wishGiftNumMap__.getKey(), wishGiftNumMap__.getValue());
+                                break;
+                            }
+                        case 13416:
+                            {
+                                firstDayStartTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 13888:
+                            {
+                                lGKOJCGDGBH_ = input.readBool();
+                                break;
+                            }
+                        case 14618:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                                    activityPushTipsDataList_ =
+                                            new java.util.ArrayList<
+                                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                                            .ActivityPushTipsData>();
+                                    mutable_bitField0_ |= 0x00000004;
+                                }
+                                activityPushTipsDataList_.add(
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                                        .ActivityPushTipsData.parser(),
+                                                extensionRegistry));
+                                break;
+                            }
+                        case 15730:
+                            {
+                                emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                .MusicGameActivityDetailInfo.Builder
+                                        subBuilder = null;
+                                if (detailCase_ == 1966) {
+                                    subBuilder =
+                                            ((emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                                    .MusicGameActivityDetailInfo)
+                                                            detail_)
+                                                    .toBuilder();
+                                }
+                                detail_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                        .MusicGameActivityDetailInfo.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(
+                                            (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                            .MusicGameActivityDetailInfo)
+                                                    detail_);
+                                    detail_ = subBuilder.buildPartial();
+                                }
+                                detailCase_ = 1966;
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    meetCondList_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000020) != 0)) {
+                    watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
+                }
+                if (((mutable_bitField0_ & 0x00000008) != 0)) {
+                    expireCondList_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000080) != 0)) {
+                    dDBJAKPEPLC_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000010) != 0)) {
+                    takenRewardList_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000004) != 0)) {
+                    activityPushTipsDataList_ =
+                            java.util.Collections.unmodifiableList(activityPushTipsDataList_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-        if (!other.expireCondList_.isEmpty()) {
-          if (expireCondList_.isEmpty()) {
-            expireCondList_ = other.expireCondList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureExpireCondListIsMutable();
-            expireCondList_.addAll(other.expireCondList_);
-          }
-          onChanged();
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.ActivityInfoOuterClass
+                    .internal_static_ActivityInfo_descriptor;
         }
-        if (other.getIsFinished() != false) {
-          setIsFinished(other.getIsFinished());
-        }
-        if (!other.takenRewardList_.isEmpty()) {
-          if (takenRewardList_.isEmpty()) {
-            takenRewardList_ = other.takenRewardList_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureTakenRewardListIsMutable();
-            takenRewardList_.addAll(other.takenRewardList_);
-          }
-          onChanged();
-        }
-        if (watcherInfoListBuilder_ == null) {
-          if (!other.watcherInfoList_.isEmpty()) {
-            if (watcherInfoList_.isEmpty()) {
-              watcherInfoList_ = other.watcherInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-            } else {
-              ensureWatcherInfoListIsMutable();
-              watcherInfoList_.addAll(other.watcherInfoList_);
+
+        @SuppressWarnings({"rawtypes"})
+        @java.lang.Override
+        protected com.google.protobuf.MapField internalGetMapField(int number) {
+            switch (number) {
+                case 703:
+                    return internalGetActivityCoinMap();
+                case 1459:
+                    return internalGetWishGiftNumMap();
+                default:
+                    throw new RuntimeException("Invalid map field number: " + number);
             }
-            onChanged();
-          }
-        } else {
-          if (!other.watcherInfoList_.isEmpty()) {
-            if (watcherInfoListBuilder_.isEmpty()) {
-              watcherInfoListBuilder_.dispose();
-              watcherInfoListBuilder_ = null;
-              watcherInfoList_ = other.watcherInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-              watcherInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getWatcherInfoListFieldBuilder() : null;
-            } else {
-              watcherInfoListBuilder_.addAllMessages(other.watcherInfoList_);
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.ActivityInfoOuterClass
+                    .internal_static_ActivityInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.class,
+                            emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder.class);
+        }
+
+        private int detailCase_ = 0;
+        private java.lang.Object detail_;
+
+        public enum DetailCase
+                implements
+                        com.google.protobuf.Internal.EnumLite,
+                        com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            MUSIC_GAME_INFO(1966),
+            DETAIL_NOT_SET(0);
+            private final int value;
+
+            private DetailCase(int value) {
+                this.value = value;
             }
-          }
-        }
-        if (other.getActivityType() != 0) {
-          setActivityType(other.getActivityType());
-        }
-        if (other.getActivityId() != 0) {
-          setActivityId(other.getActivityId());
-        }
-        if (other.getCJDFLBKBNPL() != false) {
-          setCJDFLBKBNPL(other.getCJDFLBKBNPL());
-        }
-        internalGetMutableWishGiftNumMap().mergeFrom(
-            other.internalGetWishGiftNumMap());
-        if (other.getOEBHLKFBCOG() != false) {
-          setOEBHLKFBCOG(other.getOEBHLKFBCOG());
-        }
-        if (other.getLGKOJCGDGBH() != false) {
-          setLGKOJCGDGBH(other.getLGKOJCGDGBH());
-        }
-        if (other.getBeginTime() != 0) {
-          setBeginTime(other.getBeginTime());
-        }
-        if (!other.dDBJAKPEPLC_.isEmpty()) {
-          if (dDBJAKPEPLC_.isEmpty()) {
-            dDBJAKPEPLC_ = other.dDBJAKPEPLC_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-          } else {
-            ensureDDBJAKPEPLCIsMutable();
-            dDBJAKPEPLC_.addAll(other.dDBJAKPEPLC_);
-          }
-          onChanged();
-        }
-        if (other.getFirstDayStartTime() != 0) {
-          setFirstDayStartTime(other.getFirstDayStartTime());
-        }
-        if (other.getCurScore() != 0) {
-          setCurScore(other.getCurScore());
-        }
-        if (other.getEFJOLIOFLBG() != false) {
-          setEFJOLIOFLBG(other.getEFJOLIOFLBG());
-        }
-        switch (other.getDetailCase()) {
-          case MUSIC_GAME_INFO: {
-            mergeMusicGameInfo(other.getMusicGameInfo());
-            break;
-          }
-          case DETAIL_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
+            /**
+             * @param value The number of the enum to look for.
+             * @return The enum associated with the given number.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static DetailCase valueOf(int value) {
+                return forNumber(value);
+            }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+            public static DetailCase forNumber(int value) {
+                switch (value) {
+                    case 1966:
+                        return MUSIC_GAME_INFO;
+                    case 0:
+                        return DETAIL_NOT_SET;
+                    default:
+                        return null;
+                }
+            }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+            public int getNumber() {
+                return this.value;
+            }
+        };
+
+        public DetailCase getDetailCase() {
+            return DetailCase.forNumber(detailCase_);
         }
-        return this;
-      }
-      private int detailCase_ = 0;
-      private java.lang.Object detail_;
-      public DetailCase
-          getDetailCase() {
-        return DetailCase.forNumber(
-            detailCase_);
-      }
 
-      public Builder clearDetail() {
-        detailCase_ = 0;
-        detail_ = null;
-        onChanged();
-        return this;
-      }
-
-      private int bitField0_;
-
-      private int aNGGLPJEBLE_ ;
-      /**
-       * <code>uint32 ANGGLPJEBLE = 438;</code>
-       * @return The aNGGLPJEBLE.
-       */
-      @java.lang.Override
-      public int getANGGLPJEBLE() {
-        return aNGGLPJEBLE_;
-      }
-      /**
-       * <code>uint32 ANGGLPJEBLE = 438;</code>
-       * @param value The aNGGLPJEBLE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setANGGLPJEBLE(int value) {
-        
-        aNGGLPJEBLE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 ANGGLPJEBLE = 438;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearANGGLPJEBLE() {
-        
-        aNGGLPJEBLE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 14;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 14;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean fLFGIDFALEK_ ;
-      /**
-       * <code>bool FLFGIDFALEK = 15;</code>
-       * @return The fLFGIDFALEK.
-       */
-      @java.lang.Override
-      public boolean getFLFGIDFALEK() {
-        return fLFGIDFALEK_;
-      }
-      /**
-       * <code>bool FLFGIDFALEK = 15;</code>
-       * @param value The fLFGIDFALEK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFLFGIDFALEK(boolean value) {
-        
-        fLFGIDFALEK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool FLFGIDFALEK = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFLFGIDFALEK() {
-        
-        fLFGIDFALEK_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int lPOCNCICJHM_ ;
-      /**
-       * <code>uint32 LPOCNCICJHM = 485;</code>
-       * @return The lPOCNCICJHM.
-       */
-      @java.lang.Override
-      public int getLPOCNCICJHM() {
-        return lPOCNCICJHM_;
-      }
-      /**
-       * <code>uint32 LPOCNCICJHM = 485;</code>
-       * @param value The lPOCNCICJHM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLPOCNCICJHM(int value) {
-        
-        lPOCNCICJHM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LPOCNCICJHM = 485;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLPOCNCICJHM() {
-        
-        lPOCNCICJHM_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> activityCoinMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetActivityCoinMap() {
-        if (activityCoinMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ActivityCoinMapDefaultEntryHolder.defaultEntry);
+        public static final int ANGGLPJEBLE_FIELD_NUMBER = 438;
+        private int aNGGLPJEBLE_;
+        /**
+         * <code>uint32 ANGGLPJEBLE = 438;</code>
+         *
+         * @return The aNGGLPJEBLE.
+         */
+        @java.lang.Override
+        public int getANGGLPJEBLE() {
+            return aNGGLPJEBLE_;
         }
-        return activityCoinMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableActivityCoinMap() {
-        onChanged();;
-        if (activityCoinMap_ == null) {
-          activityCoinMap_ = com.google.protobuf.MapField.newMapField(
-              ActivityCoinMapDefaultEntryHolder.defaultEntry);
-        }
-        if (!activityCoinMap_.isMutable()) {
-          activityCoinMap_ = activityCoinMap_.copy();
-        }
-        return activityCoinMap_;
-      }
 
-      public int getActivityCoinMapCount() {
-        return internalGetActivityCoinMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsActivityCoinMap(
-          int key) {
-        
-        return internalGetActivityCoinMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getActivityCoinMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMap() {
-        return getActivityCoinMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
-        return internalGetActivityCoinMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
-      @java.lang.Override
-
-      public int getActivityCoinMapOrDefault(
-          int key,
-          int defaultValue) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetActivityCoinMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
-      @java.lang.Override
-
-      public int getActivityCoinMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetActivityCoinMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
+        private int scheduleId_;
+        /**
+         * <code>uint32 schedule_id = 14;</code>
+         *
+         * @return The scheduleId.
+         */
+        @java.lang.Override
+        public int getScheduleId() {
+            return scheduleId_;
         }
-        return map.get(key);
-      }
 
-      public Builder clearActivityCoinMap() {
-        internalGetMutableActivityCoinMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
+        public static final int FLFGIDFALEK_FIELD_NUMBER = 15;
+        private boolean fLFGIDFALEK_;
+        /**
+         * <code>bool FLFGIDFALEK = 15;</code>
+         *
+         * @return The fLFGIDFALEK.
+         */
+        @java.lang.Override
+        public boolean getFLFGIDFALEK() {
+            return fLFGIDFALEK_;
+        }
 
-      public Builder removeActivityCoinMap(
-          int key) {
-        
-        internalGetMutableActivityCoinMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableActivityCoinMap() {
-        return internalGetMutableActivityCoinMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
-      public Builder putActivityCoinMap(
-          int key,
-          int value) {
-        
-        
-        internalGetMutableActivityCoinMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code>
-       */
+        public static final int LPOCNCICJHM_FIELD_NUMBER = 485;
+        private int lPOCNCICJHM_;
+        /**
+         * <code>uint32 LPOCNCICJHM = 485;</code>
+         *
+         * @return The lPOCNCICJHM.
+         */
+        @java.lang.Override
+        public int getLPOCNCICJHM() {
+            return lPOCNCICJHM_;
+        }
 
-      public Builder putAllActivityCoinMap(
-          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableActivityCoinMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
+        public static final int ACTIVITY_COIN_MAP_FIELD_NUMBER = 703;
 
-      private com.google.protobuf.Internal.IntList meetCondList_ = emptyIntList();
-      private void ensureMeetCondListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          meetCondList_ = mutableCopy(meetCondList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @return A list containing the meetCondList.
-       */
-      public java.util.List<java.lang.Integer>
-          getMeetCondListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(meetCondList_) : meetCondList_;
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @return The count of meetCondList.
-       */
-      public int getMeetCondListCount() {
-        return meetCondList_.size();
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @param index The index of the element to return.
-       * @return The meetCondList at the given index.
-       */
-      public int getMeetCondList(int index) {
-        return meetCondList_.getInt(index);
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The meetCondList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMeetCondList(
-          int index, int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @param value The meetCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMeetCondList(int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @param values The meetCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMeetCondList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMeetCondListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, meetCondList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *PAGIONJOCJN
-       * </pre>
-       *
-       * <code>repeated uint32 meet_cond_list = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMeetCondList() {
-        meetCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
+        private static final class ActivityCoinMapDefaultEntryHolder {
+            static final com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer> defaultEntry =
+                    com.google.protobuf.MapEntry.<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                            emu.grasscutter.net.proto.ActivityInfoOuterClass
+                                    .internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor,
+                            com.google.protobuf.WireFormat.FieldType.UINT32,
+                            0,
+                            com.google.protobuf.WireFormat.FieldType.UINT32,
+                            0);
+        }
 
-      private int endTime_ ;
-      /**
-       * <code>uint32 end_time = 4;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <code>uint32 end_time = 4;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(int value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 end_time = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0;
-        onChanged();
-        return this;
-      }
+        private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer> activityCoinMap_;
 
-      private boolean gLOONPBGOHM_ ;
-      /**
-       * <code>bool GLOONPBGOHM = 1331;</code>
-       * @return The gLOONPBGOHM.
-       */
-      @java.lang.Override
-      public boolean getGLOONPBGOHM() {
-        return gLOONPBGOHM_;
-      }
-      /**
-       * <code>bool GLOONPBGOHM = 1331;</code>
-       * @param value The gLOONPBGOHM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGLOONPBGOHM(boolean value) {
-        
-        gLOONPBGOHM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool GLOONPBGOHM = 1331;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGLOONPBGOHM() {
-        
-        gLOONPBGOHM_ = false;
-        onChanged();
-        return this;
-      }
+        private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                internalGetActivityCoinMap() {
+            if (activityCoinMap_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        ActivityCoinMapDefaultEntryHolder.defaultEntry);
+            }
+            return activityCoinMap_;
+        }
 
-      private java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_ =
-        java.util.Collections.emptyList();
-      private void ensureActivityPushTipsDataListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          activityPushTipsDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>(activityPushTipsDataList_);
-          bitField0_ |= 0x00000004;
-         }
-      }
+        public int getActivityCoinMapCount() {
+            return internalGetActivityCoinMap().getMap().size();
+        }
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        @java.lang.Override
+        public boolean containsActivityCoinMap(int key) {
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> activityPushTipsDataListBuilder_;
+            return internalGetActivityCoinMap().getMap().containsKey(key);
+        }
+        /** Use {@link #getActivityCoinMapMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMap() {
+            return getActivityCoinMapMap();
+        }
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        @java.lang.Override
+        public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
+            return internalGetActivityCoinMap().getMap();
+        }
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        @java.lang.Override
+        public int getActivityCoinMapOrDefault(int key, int defaultValue) {
 
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> getActivityPushTipsDataListList() {
-        if (activityPushTipsDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-        } else {
-          return activityPushTipsDataListBuilder_.getMessageList();
+            java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                    internalGetActivityCoinMap().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public int getActivityPushTipsDataListCount() {
-        if (activityPushTipsDataListBuilder_ == null) {
-          return activityPushTipsDataList_.size();
-        } else {
-          return activityPushTipsDataListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          return activityPushTipsDataList_.get(index);
-        } else {
-          return activityPushTipsDataListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder setActivityPushTipsDataList(
-          int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.set(index, value);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder setActivityPushTipsDataList(
-          int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder addActivityPushTipsDataList(emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.add(value);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder addActivityPushTipsDataList(
-          int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.add(index, value);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder addActivityPushTipsDataList(
-          emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder addActivityPushTipsDataList(
-          int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder addAllActivityPushTipsDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> values) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          ensureActivityPushTipsDataListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, activityPushTipsDataList_);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder clearActivityPushTipsDataList() {
-        if (activityPushTipsDataListBuilder_ == null) {
-          activityPushTipsDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public Builder removeActivityPushTipsDataList(int index) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          ensureActivityPushTipsDataListIsMutable();
-          activityPushTipsDataList_.remove(index);
-          onChanged();
-        } else {
-          activityPushTipsDataListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder getActivityPushTipsDataListBuilder(
-          int index) {
-        return getActivityPushTipsDataListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
-          int index) {
-        if (activityPushTipsDataListBuilder_ == null) {
-          return activityPushTipsDataList_.get(index);  } else {
-          return activityPushTipsDataListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
-           getActivityPushTipsDataListOrBuilderList() {
-        if (activityPushTipsDataListBuilder_ != null) {
-          return activityPushTipsDataListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-        }
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder addActivityPushTipsDataListBuilder() {
-        return getActivityPushTipsDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder addActivityPushTipsDataListBuilder(
-          int index) {
-        return getActivityPushTipsDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder> 
-           getActivityPushTipsDataListBuilderList() {
-        return getActivityPushTipsDataListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
-          getActivityPushTipsDataListFieldBuilder() {
-        if (activityPushTipsDataListBuilder_ == null) {
-          activityPushTipsDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder>(
-                  activityPushTipsDataList_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          activityPushTipsDataList_ = null;
-        }
-        return activityPushTipsDataListBuilder_;
-      }
+        /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+        @java.lang.Override
+        public int getActivityCoinMapOrThrow(int key) {
 
-      private com.google.protobuf.Internal.IntList expireCondList_ = emptyIntList();
-      private void ensureExpireCondListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          expireCondList_ = mutableCopy(expireCondList_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @return A list containing the expireCondList.
-       */
-      public java.util.List<java.lang.Integer>
-          getExpireCondListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
-                 java.util.Collections.unmodifiableList(expireCondList_) : expireCondList_;
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @return The count of expireCondList.
-       */
-      public int getExpireCondListCount() {
-        return expireCondList_.size();
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param index The index of the element to return.
-       * @return The expireCondList at the given index.
-       */
-      public int getExpireCondList(int index) {
-        return expireCondList_.getInt(index);
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param index The index to set the value at.
-       * @param value The expireCondList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExpireCondList(
-          int index, int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param value The expireCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addExpireCondList(int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param values The expireCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllExpireCondList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureExpireCondListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, expireCondList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * LGCJBENHFOB
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExpireCondList() {
-        expireCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinished_ ;
-      /**
-       * <code>bool is_finished = 6;</code>
-       * @return The isFinished.
-       */
-      @java.lang.Override
-      public boolean getIsFinished() {
-        return isFinished_;
-      }
-      /**
-       * <code>bool is_finished = 6;</code>
-       * @param value The isFinished to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinished(boolean value) {
-        
-        isFinished_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finished = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinished() {
-        
-        isFinished_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList takenRewardList_ = emptyIntList();
-      private void ensureTakenRewardListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          takenRewardList_ = mutableCopy(takenRewardList_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @return A list containing the takenRewardList.
-       */
-      public java.util.List<java.lang.Integer>
-          getTakenRewardListList() {
-        return ((bitField0_ & 0x00000010) != 0) ?
-                 java.util.Collections.unmodifiableList(takenRewardList_) : takenRewardList_;
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @return The count of takenRewardList.
-       */
-      public int getTakenRewardListCount() {
-        return takenRewardList_.size();
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @param index The index of the element to return.
-       * @return The takenRewardList at the given index.
-       */
-      public int getTakenRewardList(int index) {
-        return takenRewardList_.getInt(index);
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @param index The index to set the value at.
-       * @param value The takenRewardList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTakenRewardList(
-          int index, int value) {
-        ensureTakenRewardListIsMutable();
-        takenRewardList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @param value The takenRewardList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTakenRewardList(int value) {
-        ensureTakenRewardListIsMutable();
-        takenRewardList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @param values The takenRewardList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllTakenRewardList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureTakenRewardListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, takenRewardList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *EOPFKDBBOII
-       * </pre>
-       *
-       * <code>repeated uint32 taken_reward_list = 894;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTakenRewardList() {
-        takenRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> watcherInfoList_ =
-        java.util.Collections.emptyList();
-      private void ensureWatcherInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
-          watcherInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>(watcherInfoList_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> watcherInfoListBuilder_;
-
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> getWatcherInfoListList() {
-        if (watcherInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(watcherInfoList_);
-        } else {
-          return watcherInfoListBuilder_.getMessageList();
+            java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                    internalGetActivityCoinMap().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
         }
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public int getWatcherInfoListCount() {
-        if (watcherInfoListBuilder_ == null) {
-          return watcherInfoList_.size();
-        } else {
-          return watcherInfoListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo getWatcherInfoList(int index) {
-        if (watcherInfoListBuilder_ == null) {
-          return watcherInfoList_.get(index);
-        } else {
-          return watcherInfoListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder setWatcherInfoList(
-          int index, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
-        if (watcherInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.set(index, value);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder setWatcherInfoList(
-          int index, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder builderForValue) {
-        if (watcherInfoListBuilder_ == null) {
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder addWatcherInfoList(emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
-        if (watcherInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.add(value);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder addWatcherInfoList(
-          int index, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
-        if (watcherInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.add(index, value);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder addWatcherInfoList(
-          emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder builderForValue) {
-        if (watcherInfoListBuilder_ == null) {
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder addWatcherInfoList(
-          int index, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder builderForValue) {
-        if (watcherInfoListBuilder_ == null) {
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder addAllWatcherInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> values) {
-        if (watcherInfoListBuilder_ == null) {
-          ensureWatcherInfoListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, watcherInfoList_);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder clearWatcherInfoList() {
-        if (watcherInfoListBuilder_ == null) {
-          watcherInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public Builder removeWatcherInfoList(int index) {
-        if (watcherInfoListBuilder_ == null) {
-          ensureWatcherInfoListIsMutable();
-          watcherInfoList_.remove(index);
-          onChanged();
-        } else {
-          watcherInfoListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder getWatcherInfoListBuilder(
-          int index) {
-        return getWatcherInfoListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoListOrBuilder(
-          int index) {
-        if (watcherInfoListBuilder_ == null) {
-          return watcherInfoList_.get(index);  } else {
-          return watcherInfoListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> 
-           getWatcherInfoListOrBuilderList() {
-        if (watcherInfoListBuilder_ != null) {
-          return watcherInfoListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(watcherInfoList_);
-        }
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder addWatcherInfoListBuilder() {
-        return getWatcherInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder addWatcherInfoListBuilder(
-          int index) {
-        return getWatcherInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder> 
-           getWatcherInfoListBuilderList() {
-        return getWatcherInfoListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> 
-          getWatcherInfoListFieldBuilder() {
-        if (watcherInfoListBuilder_ == null) {
-          watcherInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder, emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder>(
-                  watcherInfoList_,
-                  ((bitField0_ & 0x00000020) != 0),
-                  getParentForChildren(),
-                  isClean());
-          watcherInfoList_ = null;
-        }
-        return watcherInfoListBuilder_;
-      }
 
-      private int activityType_ ;
-      /**
-       * <pre>
-       * KMOFHMKLGHD
-       * </pre>
-       *
-       * <code>uint32 activity_type = 5;</code>
-       * @return The activityType.
-       */
-      @java.lang.Override
-      public int getActivityType() {
-        return activityType_;
-      }
-      /**
-       * <pre>
-       * KMOFHMKLGHD
-       * </pre>
-       *
-       * <code>uint32 activity_type = 5;</code>
-       * @param value The activityType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActivityType(int value) {
-        
-        activityType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * KMOFHMKLGHD
-       * </pre>
-       *
-       * <code>uint32 activity_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearActivityType() {
-        
-        activityType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int activityId_ ;
-      /**
-       * <code>uint32 activity_id = 7;</code>
-       * @return The activityId.
-       */
-      @java.lang.Override
-      public int getActivityId() {
-        return activityId_;
-      }
-      /**
-       * <code>uint32 activity_id = 7;</code>
-       * @param value The activityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActivityId(int value) {
-        
-        activityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 activity_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearActivityId() {
-        
-        activityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean cJDFLBKBNPL_ ;
-      /**
-       * <code>bool CJDFLBKBNPL = 10;</code>
-       * @return The cJDFLBKBNPL.
-       */
-      @java.lang.Override
-      public boolean getCJDFLBKBNPL() {
-        return cJDFLBKBNPL_;
-      }
-      /**
-       * <code>bool CJDFLBKBNPL = 10;</code>
-       * @param value The cJDFLBKBNPL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCJDFLBKBNPL(boolean value) {
-        
-        cJDFLBKBNPL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool CJDFLBKBNPL = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCJDFLBKBNPL() {
-        
-        cJDFLBKBNPL_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetWishGiftNumMap() {
-        if (wishGiftNumMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              WishGiftNumMapDefaultEntryHolder.defaultEntry);
+        public static final int MEET_COND_LIST_FIELD_NUMBER = 2;
+        private com.google.protobuf.Internal.IntList meetCondList_;
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @return A list containing the meetCondList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getMeetCondListList() {
+            return meetCondList_;
         }
-        return wishGiftNumMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableWishGiftNumMap() {
-        onChanged();;
-        if (wishGiftNumMap_ == null) {
-          wishGiftNumMap_ = com.google.protobuf.MapField.newMapField(
-              WishGiftNumMapDefaultEntryHolder.defaultEntry);
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @return The count of meetCondList.
+         */
+        public int getMeetCondListCount() {
+            return meetCondList_.size();
         }
-        if (!wishGiftNumMap_.isMutable()) {
-          wishGiftNumMap_ = wishGiftNumMap_.copy();
+        /**
+         *
+         *
+         * <pre>
+         * PAGIONJOCJN
+         * </pre>
+         *
+         * <code>repeated uint32 meet_cond_list = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The meetCondList at the given index.
+         */
+        public int getMeetCondList(int index) {
+            return meetCondList_.getInt(index);
         }
-        return wishGiftNumMap_;
-      }
 
-      public int getWishGiftNumMapCount() {
-        return internalGetWishGiftNumMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
+        private int meetCondListMemoizedSerializedSize = -1;
 
-      @java.lang.Override
-      public boolean containsWishGiftNumMap(
-          int key) {
-        
-        return internalGetWishGiftNumMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getWishGiftNumMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMap() {
-        return getWishGiftNumMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
-        return internalGetWishGiftNumMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-      @java.lang.Override
-
-      public int getWishGiftNumMapOrDefault(
-          int key,
-          int defaultValue) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetWishGiftNumMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-      @java.lang.Override
-
-      public int getWishGiftNumMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetWishGiftNumMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        public static final int END_TIME_FIELD_NUMBER = 4;
+        private int endTime_;
+        /**
+         * <code>uint32 end_time = 4;</code>
+         *
+         * @return The endTime.
+         */
+        @java.lang.Override
+        public int getEndTime() {
+            return endTime_;
         }
-        return map.get(key);
-      }
 
-      public Builder clearWishGiftNumMap() {
-        internalGetMutableWishGiftNumMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-
-      public Builder removeWishGiftNumMap(
-          int key) {
-        
-        internalGetMutableWishGiftNumMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableWishGiftNumMap() {
-        return internalGetMutableWishGiftNumMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-      public Builder putWishGiftNumMap(
-          int key,
-          int value) {
-        
-        
-        internalGetMutableWishGiftNumMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code>
-       */
-
-      public Builder putAllWishGiftNumMap(
-          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableWishGiftNumMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private boolean oEBHLKFBCOG_ ;
-      /**
-       * <code>bool OEBHLKFBCOG = 696;</code>
-       * @return The oEBHLKFBCOG.
-       */
-      @java.lang.Override
-      public boolean getOEBHLKFBCOG() {
-        return oEBHLKFBCOG_;
-      }
-      /**
-       * <code>bool OEBHLKFBCOG = 696;</code>
-       * @param value The oEBHLKFBCOG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOEBHLKFBCOG(boolean value) {
-        
-        oEBHLKFBCOG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool OEBHLKFBCOG = 696;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOEBHLKFBCOG() {
-        
-        oEBHLKFBCOG_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean lGKOJCGDGBH_ ;
-      /**
-       * <code>bool LGKOJCGDGBH = 1736;</code>
-       * @return The lGKOJCGDGBH.
-       */
-      @java.lang.Override
-      public boolean getLGKOJCGDGBH() {
-        return lGKOJCGDGBH_;
-      }
-      /**
-       * <code>bool LGKOJCGDGBH = 1736;</code>
-       * @param value The lGKOJCGDGBH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLGKOJCGDGBH(boolean value) {
-        
-        lGKOJCGDGBH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool LGKOJCGDGBH = 1736;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLGKOJCGDGBH() {
-        
-        lGKOJCGDGBH_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int beginTime_ ;
-      /**
-       * <code>uint32 begin_time = 9;</code>
-       * @return The beginTime.
-       */
-      @java.lang.Override
-      public int getBeginTime() {
-        return beginTime_;
-      }
-      /**
-       * <code>uint32 begin_time = 9;</code>
-       * @param value The beginTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBeginTime(int value) {
-        
-        beginTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 begin_time = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBeginTime() {
-        
-        beginTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList dDBJAKPEPLC_ = emptyIntList();
-      private void ensureDDBJAKPEPLCIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
-          dDBJAKPEPLC_ = mutableCopy(dDBJAKPEPLC_);
-          bitField0_ |= 0x00000080;
-         }
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @return A list containing the dDBJAKPEPLC.
-       */
-      public java.util.List<java.lang.Integer>
-          getDDBJAKPEPLCList() {
-        return ((bitField0_ & 0x00000080) != 0) ?
-                 java.util.Collections.unmodifiableList(dDBJAKPEPLC_) : dDBJAKPEPLC_;
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @return The count of dDBJAKPEPLC.
-       */
-      public int getDDBJAKPEPLCCount() {
-        return dDBJAKPEPLC_.size();
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @param index The index of the element to return.
-       * @return The dDBJAKPEPLC at the given index.
-       */
-      public int getDDBJAKPEPLC(int index) {
-        return dDBJAKPEPLC_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @param index The index to set the value at.
-       * @param value The dDBJAKPEPLC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDDBJAKPEPLC(
-          int index, int value) {
-        ensureDDBJAKPEPLCIsMutable();
-        dDBJAKPEPLC_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @param value The dDBJAKPEPLC to add.
-       * @return This builder for chaining.
-       */
-      public Builder addDDBJAKPEPLC(int value) {
-        ensureDDBJAKPEPLCIsMutable();
-        dDBJAKPEPLC_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @param values The dDBJAKPEPLC to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllDDBJAKPEPLC(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureDDBJAKPEPLCIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, dDBJAKPEPLC_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDDBJAKPEPLC() {
-        dDBJAKPEPLC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-
-      private int firstDayStartTime_ ;
-      /**
-       * <code>uint32 first_day_start_time = 1677;</code>
-       * @return The firstDayStartTime.
-       */
-      @java.lang.Override
-      public int getFirstDayStartTime() {
-        return firstDayStartTime_;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 1677;</code>
-       * @param value The firstDayStartTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstDayStartTime(int value) {
-        
-        firstDayStartTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 1677;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstDayStartTime() {
-        
-        firstDayStartTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curScore_ ;
-      /**
-       * <code>uint32 cur_score = 1005;</code>
-       * @return The curScore.
-       */
-      @java.lang.Override
-      public int getCurScore() {
-        return curScore_;
-      }
-      /**
-       * <code>uint32 cur_score = 1005;</code>
-       * @param value The curScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurScore(int value) {
-        
-        curScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_score = 1005;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurScore() {
-        
-        curScore_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean eFJOLIOFLBG_ ;
-      /**
-       * <code>bool EFJOLIOFLBG = 514;</code>
-       * @return The eFJOLIOFLBG.
-       */
-      @java.lang.Override
-      public boolean getEFJOLIOFLBG() {
-        return eFJOLIOFLBG_;
-      }
-      /**
-       * <code>bool EFJOLIOFLBG = 514;</code>
-       * @param value The eFJOLIOFLBG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEFJOLIOFLBG(boolean value) {
-        
-        eFJOLIOFLBG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool EFJOLIOFLBG = 514;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEFJOLIOFLBG() {
-        
-        eFJOLIOFLBG_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder> musicGameInfoBuilder_;
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       * @return Whether the musicGameInfo field is set.
-       */
-      @java.lang.Override
-      public boolean hasMusicGameInfo() {
-        return detailCase_ == 1966;
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       * @return The musicGameInfo.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo getMusicGameInfo() {
-        if (musicGameInfoBuilder_ == null) {
-          if (detailCase_ == 1966) {
-            return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_;
-          }
-          return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
-        } else {
-          if (detailCase_ == 1966) {
-            return musicGameInfoBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
+        public static final int GLOONPBGOHM_FIELD_NUMBER = 1331;
+        private boolean gLOONPBGOHM_;
+        /**
+         * <code>bool GLOONPBGOHM = 1331;</code>
+         *
+         * @return The gLOONPBGOHM.
+         */
+        @java.lang.Override
+        public boolean getGLOONPBGOHM() {
+            return gLOONPBGOHM_;
         }
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      public Builder setMusicGameInfo(emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo value) {
-        if (musicGameInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          musicGameInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 1966;
-        return this;
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      public Builder setMusicGameInfo(
-          emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder builderForValue) {
-        if (musicGameInfoBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          musicGameInfoBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 1966;
-        return this;
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      public Builder mergeMusicGameInfo(emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo value) {
-        if (musicGameInfoBuilder_ == null) {
-          if (detailCase_ == 1966 &&
-              detail_ != emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.newBuilder((emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 1966) {
-            musicGameInfoBuilder_.mergeFrom(value);
-          }
-          musicGameInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 1966;
-        return this;
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      public Builder clearMusicGameInfo() {
-        if (musicGameInfoBuilder_ == null) {
-          if (detailCase_ == 1966) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 1966) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          musicGameInfoBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder getMusicGameInfoBuilder() {
-        return getMusicGameInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder getMusicGameInfoOrBuilder() {
-        if ((detailCase_ == 1966) && (musicGameInfoBuilder_ != null)) {
-          return musicGameInfoBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 1966) {
-            return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_;
-          }
-          return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * event gc
-       * </pre>
-       *
-       * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder> 
-          getMusicGameInfoFieldBuilder() {
-        if (musicGameInfoBuilder_ == null) {
-          if (!(detailCase_ == 1966)) {
-            detail_ = emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.getDefaultInstance();
-          }
-          musicGameInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 1966;
-        onChanged();;
-        return musicGameInfoBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 1827;
+        private java.util.List<
+                        emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                activityPushTipsDataList_;
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                getActivityPushTipsDataListList() {
+            return activityPushTipsDataList_;
+        }
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                        .ActivityPushTipsDataOrBuilder>
+                getActivityPushTipsDataListOrBuilderList() {
+            return activityPushTipsDataList_;
+        }
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        @java.lang.Override
+        public int getActivityPushTipsDataListCount() {
+            return activityPushTipsDataList_.size();
+        }
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                getActivityPushTipsDataList(int index) {
+            return activityPushTipsDataList_.get(index);
+        }
+        /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder
+                getActivityPushTipsDataListOrBuilder(int index) {
+            return activityPushTipsDataList_.get(index);
+        }
 
+        public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 13;
+        private com.google.protobuf.Internal.IntList expireCondList_;
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @return A list containing the expireCondList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getExpireCondListList() {
+            return expireCondList_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @return The count of expireCondList.
+         */
+        public int getExpireCondListCount() {
+            return expireCondList_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * LGCJBENHFOB
+         * </pre>
+         *
+         * <code>repeated uint32 expire_cond_list = 13;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The expireCondList at the given index.
+         */
+        public int getExpireCondList(int index) {
+            return expireCondList_.getInt(index);
+        }
 
-      // @@protoc_insertion_point(builder_scope:ActivityInfo)
+        private int expireCondListMemoizedSerializedSize = -1;
+
+        public static final int IS_FINISHED_FIELD_NUMBER = 6;
+        private boolean isFinished_;
+        /**
+         * <code>bool is_finished = 6;</code>
+         *
+         * @return The isFinished.
+         */
+        @java.lang.Override
+        public boolean getIsFinished() {
+            return isFinished_;
+        }
+
+        public static final int TAKEN_REWARD_LIST_FIELD_NUMBER = 894;
+        private com.google.protobuf.Internal.IntList takenRewardList_;
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @return A list containing the takenRewardList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getTakenRewardListList() {
+            return takenRewardList_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @return The count of takenRewardList.
+         */
+        public int getTakenRewardListCount() {
+            return takenRewardList_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * EOPFKDBBOII
+         * </pre>
+         *
+         * <code>repeated uint32 taken_reward_list = 894;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The takenRewardList at the given index.
+         */
+        public int getTakenRewardList(int index) {
+            return takenRewardList_.getInt(index);
+        }
+
+        private int takenRewardListMemoizedSerializedSize = -1;
+
+        public static final int WATCHER_INFO_LIST_FIELD_NUMBER = 8;
+        private java.util.List<
+                        emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                watcherInfoList_;
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                getWatcherInfoListList() {
+            return watcherInfoList_;
+        }
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass
+                                        .ActivityWatcherInfoOrBuilder>
+                getWatcherInfoListOrBuilderList() {
+            return watcherInfoList_;
+        }
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        @java.lang.Override
+        public int getWatcherInfoListCount() {
+            return watcherInfoList_.size();
+        }
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                getWatcherInfoList(int index) {
+            return watcherInfoList_.get(index);
+        }
+        /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
+                getWatcherInfoListOrBuilder(int index) {
+            return watcherInfoList_.get(index);
+        }
+
+        public static final int ACTIVITY_TYPE_FIELD_NUMBER = 5;
+        private int activityType_;
+        /**
+         *
+         *
+         * <pre>
+         * KMOFHMKLGHD
+         * </pre>
+         *
+         * <code>uint32 activity_type = 5;</code>
+         *
+         * @return The activityType.
+         */
+        @java.lang.Override
+        public int getActivityType() {
+            return activityType_;
+        }
+
+        public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
+        private int activityId_;
+        /**
+         * <code>uint32 activity_id = 7;</code>
+         *
+         * @return The activityId.
+         */
+        @java.lang.Override
+        public int getActivityId() {
+            return activityId_;
+        }
+
+        public static final int CJDFLBKBNPL_FIELD_NUMBER = 10;
+        private boolean cJDFLBKBNPL_;
+        /**
+         * <code>bool CJDFLBKBNPL = 10;</code>
+         *
+         * @return The cJDFLBKBNPL.
+         */
+        @java.lang.Override
+        public boolean getCJDFLBKBNPL() {
+            return cJDFLBKBNPL_;
+        }
+
+        public static final int WISH_GIFT_NUM_MAP_FIELD_NUMBER = 1459;
+
+        private static final class WishGiftNumMapDefaultEntryHolder {
+            static final com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer> defaultEntry =
+                    com.google.protobuf.MapEntry.<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                            emu.grasscutter.net.proto.ActivityInfoOuterClass
+                                    .internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor,
+                            com.google.protobuf.WireFormat.FieldType.UINT32,
+                            0,
+                            com.google.protobuf.WireFormat.FieldType.UINT32,
+                            0);
+        }
+
+        private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
+
+        private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                internalGetWishGiftNumMap() {
+            if (wishGiftNumMap_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        WishGiftNumMapDefaultEntryHolder.defaultEntry);
+            }
+            return wishGiftNumMap_;
+        }
+
+        public int getWishGiftNumMapCount() {
+            return internalGetWishGiftNumMap().getMap().size();
+        }
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        @java.lang.Override
+        public boolean containsWishGiftNumMap(int key) {
+
+            return internalGetWishGiftNumMap().getMap().containsKey(key);
+        }
+        /** Use {@link #getWishGiftNumMapMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMap() {
+            return getWishGiftNumMapMap();
+        }
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        @java.lang.Override
+        public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
+            return internalGetWishGiftNumMap().getMap();
+        }
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        @java.lang.Override
+        public int getWishGiftNumMapOrDefault(int key, int defaultValue) {
+
+            java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                    internalGetWishGiftNumMap().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+        @java.lang.Override
+        public int getWishGiftNumMapOrThrow(int key) {
+
+            java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                    internalGetWishGiftNumMap().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
+
+        public static final int OEBHLKFBCOG_FIELD_NUMBER = 696;
+        private boolean oEBHLKFBCOG_;
+        /**
+         * <code>bool OEBHLKFBCOG = 696;</code>
+         *
+         * @return The oEBHLKFBCOG.
+         */
+        @java.lang.Override
+        public boolean getOEBHLKFBCOG() {
+            return oEBHLKFBCOG_;
+        }
+
+        public static final int LGKOJCGDGBH_FIELD_NUMBER = 1736;
+        private boolean lGKOJCGDGBH_;
+        /**
+         * <code>bool LGKOJCGDGBH = 1736;</code>
+         *
+         * @return The lGKOJCGDGBH.
+         */
+        @java.lang.Override
+        public boolean getLGKOJCGDGBH() {
+            return lGKOJCGDGBH_;
+        }
+
+        public static final int BEGIN_TIME_FIELD_NUMBER = 9;
+        private int beginTime_;
+        /**
+         * <code>uint32 begin_time = 9;</code>
+         *
+         * @return The beginTime.
+         */
+        @java.lang.Override
+        public int getBeginTime() {
+            return beginTime_;
+        }
+
+        public static final int DDBJAKPEPLC_FIELD_NUMBER = 778;
+        private com.google.protobuf.Internal.IntList dDBJAKPEPLC_;
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @return A list containing the dDBJAKPEPLC.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getDDBJAKPEPLCList() {
+            return dDBJAKPEPLC_;
+        }
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @return The count of dDBJAKPEPLC.
+         */
+        public int getDDBJAKPEPLCCount() {
+            return dDBJAKPEPLC_.size();
+        }
+        /**
+         * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The dDBJAKPEPLC at the given index.
+         */
+        public int getDDBJAKPEPLC(int index) {
+            return dDBJAKPEPLC_.getInt(index);
+        }
+
+        private int dDBJAKPEPLCMemoizedSerializedSize = -1;
+
+        public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 1677;
+        private int firstDayStartTime_;
+        /**
+         * <code>uint32 first_day_start_time = 1677;</code>
+         *
+         * @return The firstDayStartTime.
+         */
+        @java.lang.Override
+        public int getFirstDayStartTime() {
+            return firstDayStartTime_;
+        }
+
+        public static final int CUR_SCORE_FIELD_NUMBER = 1005;
+        private int curScore_;
+        /**
+         * <code>uint32 cur_score = 1005;</code>
+         *
+         * @return The curScore.
+         */
+        @java.lang.Override
+        public int getCurScore() {
+            return curScore_;
+        }
+
+        public static final int EFJOLIOFLBG_FIELD_NUMBER = 514;
+        private boolean eFJOLIOFLBG_;
+        /**
+         * <code>bool EFJOLIOFLBG = 514;</code>
+         *
+         * @return The eFJOLIOFLBG.
+         */
+        @java.lang.Override
+        public boolean getEFJOLIOFLBG() {
+            return eFJOLIOFLBG_;
+        }
+
+        public static final int MUSIC_GAME_INFO_FIELD_NUMBER = 1966;
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         *
+         * @return Whether the musicGameInfo field is set.
+         */
+        @java.lang.Override
+        public boolean hasMusicGameInfo() {
+            return detailCase_ == 1966;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         *
+         * @return The musicGameInfo.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                        .MusicGameActivityDetailInfo
+                getMusicGameInfo() {
+            if (detailCase_ == 1966) {
+                return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                .MusicGameActivityDetailInfo)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                    .MusicGameActivityDetailInfo.getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * event gc
+         * </pre>
+         *
+         * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                        .MusicGameActivityDetailInfoOrBuilder
+                getMusicGameInfoOrBuilder() {
+            if (detailCase_ == 1966) {
+                return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                .MusicGameActivityDetailInfo)
+                        detail_;
+            }
+            return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                    .MusicGameActivityDetailInfo.getDefaultInstance();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            getSerializedSize();
+            if (getMeetCondListList().size() > 0) {
+                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < meetCondList_.size(); i++) {
+                output.writeUInt32NoTag(meetCondList_.getInt(i));
+            }
+            if (endTime_ != 0) {
+                output.writeUInt32(4, endTime_);
+            }
+            if (activityType_ != 0) {
+                output.writeUInt32(5, activityType_);
+            }
+            if (isFinished_ != false) {
+                output.writeBool(6, isFinished_);
+            }
+            if (activityId_ != 0) {
+                output.writeUInt32(7, activityId_);
+            }
+            for (int i = 0; i < watcherInfoList_.size(); i++) {
+                output.writeMessage(8, watcherInfoList_.get(i));
+            }
+            if (beginTime_ != 0) {
+                output.writeUInt32(9, beginTime_);
+            }
+            if (cJDFLBKBNPL_ != false) {
+                output.writeBool(10, cJDFLBKBNPL_);
+            }
+            if (getExpireCondListList().size() > 0) {
+                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(expireCondListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < expireCondList_.size(); i++) {
+                output.writeUInt32NoTag(expireCondList_.getInt(i));
+            }
+            if (scheduleId_ != 0) {
+                output.writeUInt32(14, scheduleId_);
+            }
+            if (fLFGIDFALEK_ != false) {
+                output.writeBool(15, fLFGIDFALEK_);
+            }
+            if (aNGGLPJEBLE_ != 0) {
+                output.writeUInt32(438, aNGGLPJEBLE_);
+            }
+            if (lPOCNCICJHM_ != 0) {
+                output.writeUInt32(485, lPOCNCICJHM_);
+            }
+            if (eFJOLIOFLBG_ != false) {
+                output.writeBool(514, eFJOLIOFLBG_);
+            }
+            if (oEBHLKFBCOG_ != false) {
+                output.writeBool(696, oEBHLKFBCOG_);
+            }
+            com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
+                    output,
+                    internalGetActivityCoinMap(),
+                    ActivityCoinMapDefaultEntryHolder.defaultEntry,
+                    703);
+            if (getDDBJAKPEPLCList().size() > 0) {
+                output.writeUInt32NoTag(6226);
+                output.writeUInt32NoTag(dDBJAKPEPLCMemoizedSerializedSize);
+            }
+            for (int i = 0; i < dDBJAKPEPLC_.size(); i++) {
+                output.writeUInt32NoTag(dDBJAKPEPLC_.getInt(i));
+            }
+            if (getTakenRewardListList().size() > 0) {
+                output.writeUInt32NoTag(7154);
+                output.writeUInt32NoTag(takenRewardListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < takenRewardList_.size(); i++) {
+                output.writeUInt32NoTag(takenRewardList_.getInt(i));
+            }
+            if (curScore_ != 0) {
+                output.writeUInt32(1005, curScore_);
+            }
+            if (gLOONPBGOHM_ != false) {
+                output.writeBool(1331, gLOONPBGOHM_);
+            }
+            com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
+                    output, internalGetWishGiftNumMap(), WishGiftNumMapDefaultEntryHolder.defaultEntry, 1459);
+            if (firstDayStartTime_ != 0) {
+                output.writeUInt32(1677, firstDayStartTime_);
+            }
+            if (lGKOJCGDGBH_ != false) {
+                output.writeBool(1736, lGKOJCGDGBH_);
+            }
+            for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
+                output.writeMessage(1827, activityPushTipsDataList_.get(i));
+            }
+            if (detailCase_ == 1966) {
+                output.writeMessage(
+                        1966,
+                        (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                        .MusicGameActivityDetailInfo)
+                                detail_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            {
+                int dataSize = 0;
+                for (int i = 0; i < meetCondList_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(meetCondList_.getInt(i));
+                }
+                size += dataSize;
+                if (!getMeetCondListList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                meetCondListMemoizedSerializedSize = dataSize;
+            }
+            if (endTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, endTime_);
+            }
+            if (activityType_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, activityType_);
+            }
+            if (isFinished_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, isFinished_);
+            }
+            if (activityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, activityId_);
+            }
+            for (int i = 0; i < watcherInfoList_.size(); i++) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(8, watcherInfoList_.get(i));
+            }
+            if (beginTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, beginTime_);
+            }
+            if (cJDFLBKBNPL_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, cJDFLBKBNPL_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < expireCondList_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
+                                    expireCondList_.getInt(i));
+                }
+                size += dataSize;
+                if (!getExpireCondListList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                expireCondListMemoizedSerializedSize = dataSize;
+            }
+            if (scheduleId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, scheduleId_);
+            }
+            if (fLFGIDFALEK_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, fLFGIDFALEK_);
+            }
+            if (aNGGLPJEBLE_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(438, aNGGLPJEBLE_);
+            }
+            if (lPOCNCICJHM_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(485, lPOCNCICJHM_);
+            }
+            if (eFJOLIOFLBG_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(514, eFJOLIOFLBG_);
+            }
+            if (oEBHLKFBCOG_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(696, oEBHLKFBCOG_);
+            }
+            for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry :
+                    internalGetActivityCoinMap().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer> activityCoinMap__ =
+                        ActivityCoinMapDefaultEntryHolder.defaultEntry
+                                .newBuilderForType()
+                                .setKey(entry.getKey())
+                                .setValue(entry.getValue())
+                                .build();
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(703, activityCoinMap__);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < dDBJAKPEPLC_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dDBJAKPEPLC_.getInt(i));
+                }
+                size += dataSize;
+                if (!getDDBJAKPEPLCList().isEmpty()) {
+                    size += 2;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                dDBJAKPEPLCMemoizedSerializedSize = dataSize;
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < takenRewardList_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
+                                    takenRewardList_.getInt(i));
+                }
+                size += dataSize;
+                if (!getTakenRewardListList().isEmpty()) {
+                    size += 2;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                takenRewardListMemoizedSerializedSize = dataSize;
+            }
+            if (curScore_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1005, curScore_);
+            }
+            if (gLOONPBGOHM_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1331, gLOONPBGOHM_);
+            }
+            for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry :
+                    internalGetWishGiftNumMap().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer> wishGiftNumMap__ =
+                        WishGiftNumMapDefaultEntryHolder.defaultEntry
+                                .newBuilderForType()
+                                .setKey(entry.getKey())
+                                .setValue(entry.getValue())
+                                .build();
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(1459, wishGiftNumMap__);
+            }
+            if (firstDayStartTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1677, firstDayStartTime_);
+            }
+            if (lGKOJCGDGBH_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1736, lGKOJCGDGBH_);
+            }
+            for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                1827, activityPushTipsDataList_.get(i));
+            }
+            if (detailCase_ == 1966) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                1966,
+                                (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                .MusicGameActivityDetailInfo)
+                                        detail_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other =
+                    (emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) obj;
+
+            if (getANGGLPJEBLE() != other.getANGGLPJEBLE()) return false;
+            if (getScheduleId() != other.getScheduleId()) return false;
+            if (getFLFGIDFALEK() != other.getFLFGIDFALEK()) return false;
+            if (getLPOCNCICJHM() != other.getLPOCNCICJHM()) return false;
+            if (!internalGetActivityCoinMap().equals(other.internalGetActivityCoinMap())) return false;
+            if (!getMeetCondListList().equals(other.getMeetCondListList())) return false;
+            if (getEndTime() != other.getEndTime()) return false;
+            if (getGLOONPBGOHM() != other.getGLOONPBGOHM()) return false;
+            if (!getActivityPushTipsDataListList().equals(other.getActivityPushTipsDataListList()))
+                return false;
+            if (!getExpireCondListList().equals(other.getExpireCondListList())) return false;
+            if (getIsFinished() != other.getIsFinished()) return false;
+            if (!getTakenRewardListList().equals(other.getTakenRewardListList())) return false;
+            if (!getWatcherInfoListList().equals(other.getWatcherInfoListList())) return false;
+            if (getActivityType() != other.getActivityType()) return false;
+            if (getActivityId() != other.getActivityId()) return false;
+            if (getCJDFLBKBNPL() != other.getCJDFLBKBNPL()) return false;
+            if (!internalGetWishGiftNumMap().equals(other.internalGetWishGiftNumMap())) return false;
+            if (getOEBHLKFBCOG() != other.getOEBHLKFBCOG()) return false;
+            if (getLGKOJCGDGBH() != other.getLGKOJCGDGBH()) return false;
+            if (getBeginTime() != other.getBeginTime()) return false;
+            if (!getDDBJAKPEPLCList().equals(other.getDDBJAKPEPLCList())) return false;
+            if (getFirstDayStartTime() != other.getFirstDayStartTime()) return false;
+            if (getCurScore() != other.getCurScore()) return false;
+            if (getEFJOLIOFLBG() != other.getEFJOLIOFLBG()) return false;
+            if (!getDetailCase().equals(other.getDetailCase())) return false;
+            switch (detailCase_) {
+                case 1966:
+                    if (!getMusicGameInfo().equals(other.getMusicGameInfo())) return false;
+                    break;
+                case 0:
+                default:
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ANGGLPJEBLE_FIELD_NUMBER;
+            hash = (53 * hash) + getANGGLPJEBLE();
+            hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getScheduleId();
+            hash = (37 * hash) + FLFGIDFALEK_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFLFGIDFALEK());
+            hash = (37 * hash) + LPOCNCICJHM_FIELD_NUMBER;
+            hash = (53 * hash) + getLPOCNCICJHM();
+            if (!internalGetActivityCoinMap().getMap().isEmpty()) {
+                hash = (37 * hash) + ACTIVITY_COIN_MAP_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetActivityCoinMap().hashCode();
+            }
+            if (getMeetCondListCount() > 0) {
+                hash = (37 * hash) + MEET_COND_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getMeetCondListList().hashCode();
+            }
+            hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getEndTime();
+            hash = (37 * hash) + GLOONPBGOHM_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGLOONPBGOHM());
+            if (getActivityPushTipsDataListCount() > 0) {
+                hash = (37 * hash) + ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getActivityPushTipsDataListList().hashCode();
+            }
+            if (getExpireCondListCount() > 0) {
+                hash = (37 * hash) + EXPIRE_COND_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getExpireCondListList().hashCode();
+            }
+            hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinished());
+            if (getTakenRewardListCount() > 0) {
+                hash = (37 * hash) + TAKEN_REWARD_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getTakenRewardListList().hashCode();
+            }
+            if (getWatcherInfoListCount() > 0) {
+                hash = (37 * hash) + WATCHER_INFO_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getWatcherInfoListList().hashCode();
+            }
+            hash = (37 * hash) + ACTIVITY_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getActivityType();
+            hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getActivityId();
+            hash = (37 * hash) + CJDFLBKBNPL_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCJDFLBKBNPL());
+            if (!internalGetWishGiftNumMap().getMap().isEmpty()) {
+                hash = (37 * hash) + WISH_GIFT_NUM_MAP_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetWishGiftNumMap().hashCode();
+            }
+            hash = (37 * hash) + OEBHLKFBCOG_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOEBHLKFBCOG());
+            hash = (37 * hash) + LGKOJCGDGBH_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLGKOJCGDGBH());
+            hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getBeginTime();
+            if (getDDBJAKPEPLCCount() > 0) {
+                hash = (37 * hash) + DDBJAKPEPLC_FIELD_NUMBER;
+                hash = (53 * hash) + getDDBJAKPEPLCList().hashCode();
+            }
+            hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getFirstDayStartTime();
+            hash = (37 * hash) + CUR_SCORE_FIELD_NUMBER;
+            hash = (53 * hash) + getCurScore();
+            hash = (37 * hash) + EFJOLIOFLBG_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEFJOLIOFLBG());
+            switch (detailCase_) {
+                case 1966:
+                    hash = (37 * hash) + MUSIC_GAME_INFO_FIELD_NUMBER;
+                    hash = (53 * hash) + getMusicGameInfo().hashCode();
+                    break;
+                case 0:
+                default:
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: EIPLHBCKIIO
+         * </pre>
+         *
+         * Protobuf type {@code ActivityInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:ActivityInfo)
+                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ActivityInfoOuterClass
+                        .internal_static_ActivityInfo_descriptor;
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMapField(int number) {
+                switch (number) {
+                    case 703:
+                        return internalGetActivityCoinMap();
+                    case 1459:
+                        return internalGetWishGiftNumMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+                switch (number) {
+                    case 703:
+                        return internalGetMutableActivityCoinMap();
+                    case 1459:
+                        return internalGetMutableWishGiftNumMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.ActivityInfoOuterClass
+                        .internal_static_ActivityInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.class,
+                                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder.class);
+            }
+
+            // Construct using emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getActivityPushTipsDataListFieldBuilder();
+                    getWatcherInfoListFieldBuilder();
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                aNGGLPJEBLE_ = 0;
+
+                scheduleId_ = 0;
+
+                fLFGIDFALEK_ = false;
+
+                lPOCNCICJHM_ = 0;
+
+                internalGetMutableActivityCoinMap().clear();
+                meetCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                endTime_ = 0;
+
+                gLOONPBGOHM_ = false;
+
+                if (activityPushTipsDataListBuilder_ == null) {
+                    activityPushTipsDataList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000004);
+                } else {
+                    activityPushTipsDataListBuilder_.clear();
+                }
+                expireCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000008);
+                isFinished_ = false;
+
+                takenRewardList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000010);
+                if (watcherInfoListBuilder_ == null) {
+                    watcherInfoList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000020);
+                } else {
+                    watcherInfoListBuilder_.clear();
+                }
+                activityType_ = 0;
+
+                activityId_ = 0;
+
+                cJDFLBKBNPL_ = false;
+
+                internalGetMutableWishGiftNumMap().clear();
+                oEBHLKFBCOG_ = false;
+
+                lGKOJCGDGBH_ = false;
+
+                beginTime_ = 0;
+
+                dDBJAKPEPLC_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000080);
+                firstDayStartTime_ = 0;
+
+                curScore_ = 0;
+
+                eFJOLIOFLBG_ = false;
+
+                detailCase_ = 0;
+                detail_ = null;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.ActivityInfoOuterClass
+                        .internal_static_ActivityInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo build() {
+                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo buildPartial() {
+                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo result =
+                        new emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo(this);
+                int from_bitField0_ = bitField0_;
+                result.aNGGLPJEBLE_ = aNGGLPJEBLE_;
+                result.scheduleId_ = scheduleId_;
+                result.fLFGIDFALEK_ = fLFGIDFALEK_;
+                result.lPOCNCICJHM_ = lPOCNCICJHM_;
+                result.activityCoinMap_ = internalGetActivityCoinMap();
+                result.activityCoinMap_.makeImmutable();
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    meetCondList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.meetCondList_ = meetCondList_;
+                result.endTime_ = endTime_;
+                result.gLOONPBGOHM_ = gLOONPBGOHM_;
+                if (activityPushTipsDataListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000004) != 0)) {
+                        activityPushTipsDataList_ =
+                                java.util.Collections.unmodifiableList(activityPushTipsDataList_);
+                        bitField0_ = (bitField0_ & ~0x00000004);
+                    }
+                    result.activityPushTipsDataList_ = activityPushTipsDataList_;
+                } else {
+                    result.activityPushTipsDataList_ = activityPushTipsDataListBuilder_.build();
+                }
+                if (((bitField0_ & 0x00000008) != 0)) {
+                    expireCondList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000008);
+                }
+                result.expireCondList_ = expireCondList_;
+                result.isFinished_ = isFinished_;
+                if (((bitField0_ & 0x00000010) != 0)) {
+                    takenRewardList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000010);
+                }
+                result.takenRewardList_ = takenRewardList_;
+                if (watcherInfoListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000020) != 0)) {
+                        watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
+                        bitField0_ = (bitField0_ & ~0x00000020);
+                    }
+                    result.watcherInfoList_ = watcherInfoList_;
+                } else {
+                    result.watcherInfoList_ = watcherInfoListBuilder_.build();
+                }
+                result.activityType_ = activityType_;
+                result.activityId_ = activityId_;
+                result.cJDFLBKBNPL_ = cJDFLBKBNPL_;
+                result.wishGiftNumMap_ = internalGetWishGiftNumMap();
+                result.wishGiftNumMap_.makeImmutable();
+                result.oEBHLKFBCOG_ = oEBHLKFBCOG_;
+                result.lGKOJCGDGBH_ = lGKOJCGDGBH_;
+                result.beginTime_ = beginTime_;
+                if (((bitField0_ & 0x00000080) != 0)) {
+                    dDBJAKPEPLC_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000080);
+                }
+                result.dDBJAKPEPLC_ = dDBJAKPEPLC_;
+                result.firstDayStartTime_ = firstDayStartTime_;
+                result.curScore_ = curScore_;
+                result.eFJOLIOFLBG_ = eFJOLIOFLBG_;
+                if (detailCase_ == 1966) {
+                    if (musicGameInfoBuilder_ == null) {
+                        result.detail_ = detail_;
+                    } else {
+                        result.detail_ = musicGameInfoBuilder_.build();
+                    }
+                }
+                result.detailCase_ = detailCase_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) {
+                    return mergeFrom((emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other) {
+                if (other
+                        == emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance())
+                    return this;
+                if (other.getANGGLPJEBLE() != 0) {
+                    setANGGLPJEBLE(other.getANGGLPJEBLE());
+                }
+                if (other.getScheduleId() != 0) {
+                    setScheduleId(other.getScheduleId());
+                }
+                if (other.getFLFGIDFALEK() != false) {
+                    setFLFGIDFALEK(other.getFLFGIDFALEK());
+                }
+                if (other.getLPOCNCICJHM() != 0) {
+                    setLPOCNCICJHM(other.getLPOCNCICJHM());
+                }
+                internalGetMutableActivityCoinMap().mergeFrom(other.internalGetActivityCoinMap());
+                if (!other.meetCondList_.isEmpty()) {
+                    if (meetCondList_.isEmpty()) {
+                        meetCondList_ = other.meetCondList_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureMeetCondListIsMutable();
+                        meetCondList_.addAll(other.meetCondList_);
+                    }
+                    onChanged();
+                }
+                if (other.getEndTime() != 0) {
+                    setEndTime(other.getEndTime());
+                }
+                if (other.getGLOONPBGOHM() != false) {
+                    setGLOONPBGOHM(other.getGLOONPBGOHM());
+                }
+                if (activityPushTipsDataListBuilder_ == null) {
+                    if (!other.activityPushTipsDataList_.isEmpty()) {
+                        if (activityPushTipsDataList_.isEmpty()) {
+                            activityPushTipsDataList_ = other.activityPushTipsDataList_;
+                            bitField0_ = (bitField0_ & ~0x00000004);
+                        } else {
+                            ensureActivityPushTipsDataListIsMutable();
+                            activityPushTipsDataList_.addAll(other.activityPushTipsDataList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.activityPushTipsDataList_.isEmpty()) {
+                        if (activityPushTipsDataListBuilder_.isEmpty()) {
+                            activityPushTipsDataListBuilder_.dispose();
+                            activityPushTipsDataListBuilder_ = null;
+                            activityPushTipsDataList_ = other.activityPushTipsDataList_;
+                            bitField0_ = (bitField0_ & ~0x00000004);
+                            activityPushTipsDataListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                            ? getActivityPushTipsDataListFieldBuilder()
+                                            : null;
+                        } else {
+                            activityPushTipsDataListBuilder_.addAllMessages(other.activityPushTipsDataList_);
+                        }
+                    }
+                }
+                if (!other.expireCondList_.isEmpty()) {
+                    if (expireCondList_.isEmpty()) {
+                        expireCondList_ = other.expireCondList_;
+                        bitField0_ = (bitField0_ & ~0x00000008);
+                    } else {
+                        ensureExpireCondListIsMutable();
+                        expireCondList_.addAll(other.expireCondList_);
+                    }
+                    onChanged();
+                }
+                if (other.getIsFinished() != false) {
+                    setIsFinished(other.getIsFinished());
+                }
+                if (!other.takenRewardList_.isEmpty()) {
+                    if (takenRewardList_.isEmpty()) {
+                        takenRewardList_ = other.takenRewardList_;
+                        bitField0_ = (bitField0_ & ~0x00000010);
+                    } else {
+                        ensureTakenRewardListIsMutable();
+                        takenRewardList_.addAll(other.takenRewardList_);
+                    }
+                    onChanged();
+                }
+                if (watcherInfoListBuilder_ == null) {
+                    if (!other.watcherInfoList_.isEmpty()) {
+                        if (watcherInfoList_.isEmpty()) {
+                            watcherInfoList_ = other.watcherInfoList_;
+                            bitField0_ = (bitField0_ & ~0x00000020);
+                        } else {
+                            ensureWatcherInfoListIsMutable();
+                            watcherInfoList_.addAll(other.watcherInfoList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.watcherInfoList_.isEmpty()) {
+                        if (watcherInfoListBuilder_.isEmpty()) {
+                            watcherInfoListBuilder_.dispose();
+                            watcherInfoListBuilder_ = null;
+                            watcherInfoList_ = other.watcherInfoList_;
+                            bitField0_ = (bitField0_ & ~0x00000020);
+                            watcherInfoListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                            ? getWatcherInfoListFieldBuilder()
+                                            : null;
+                        } else {
+                            watcherInfoListBuilder_.addAllMessages(other.watcherInfoList_);
+                        }
+                    }
+                }
+                if (other.getActivityType() != 0) {
+                    setActivityType(other.getActivityType());
+                }
+                if (other.getActivityId() != 0) {
+                    setActivityId(other.getActivityId());
+                }
+                if (other.getCJDFLBKBNPL() != false) {
+                    setCJDFLBKBNPL(other.getCJDFLBKBNPL());
+                }
+                internalGetMutableWishGiftNumMap().mergeFrom(other.internalGetWishGiftNumMap());
+                if (other.getOEBHLKFBCOG() != false) {
+                    setOEBHLKFBCOG(other.getOEBHLKFBCOG());
+                }
+                if (other.getLGKOJCGDGBH() != false) {
+                    setLGKOJCGDGBH(other.getLGKOJCGDGBH());
+                }
+                if (other.getBeginTime() != 0) {
+                    setBeginTime(other.getBeginTime());
+                }
+                if (!other.dDBJAKPEPLC_.isEmpty()) {
+                    if (dDBJAKPEPLC_.isEmpty()) {
+                        dDBJAKPEPLC_ = other.dDBJAKPEPLC_;
+                        bitField0_ = (bitField0_ & ~0x00000080);
+                    } else {
+                        ensureDDBJAKPEPLCIsMutable();
+                        dDBJAKPEPLC_.addAll(other.dDBJAKPEPLC_);
+                    }
+                    onChanged();
+                }
+                if (other.getFirstDayStartTime() != 0) {
+                    setFirstDayStartTime(other.getFirstDayStartTime());
+                }
+                if (other.getCurScore() != 0) {
+                    setCurScore(other.getCurScore());
+                }
+                if (other.getEFJOLIOFLBG() != false) {
+                    setEFJOLIOFLBG(other.getEFJOLIOFLBG());
+                }
+                switch (other.getDetailCase()) {
+                    case MUSIC_GAME_INFO:
+                        {
+                            mergeMusicGameInfo(other.getMusicGameInfo());
+                            break;
+                        }
+                    case DETAIL_NOT_SET:
+                        {
+                            break;
+                        }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int detailCase_ = 0;
+            private java.lang.Object detail_;
+
+            public DetailCase getDetailCase() {
+                return DetailCase.forNumber(detailCase_);
+            }
+
+            public Builder clearDetail() {
+                detailCase_ = 0;
+                detail_ = null;
+                onChanged();
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int aNGGLPJEBLE_;
+            /**
+             * <code>uint32 ANGGLPJEBLE = 438;</code>
+             *
+             * @return The aNGGLPJEBLE.
+             */
+            @java.lang.Override
+            public int getANGGLPJEBLE() {
+                return aNGGLPJEBLE_;
+            }
+            /**
+             * <code>uint32 ANGGLPJEBLE = 438;</code>
+             *
+             * @param value The aNGGLPJEBLE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setANGGLPJEBLE(int value) {
+
+                aNGGLPJEBLE_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 ANGGLPJEBLE = 438;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearANGGLPJEBLE() {
+
+                aNGGLPJEBLE_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int scheduleId_;
+            /**
+             * <code>uint32 schedule_id = 14;</code>
+             *
+             * @return The scheduleId.
+             */
+            @java.lang.Override
+            public int getScheduleId() {
+                return scheduleId_;
+            }
+            /**
+             * <code>uint32 schedule_id = 14;</code>
+             *
+             * @param value The scheduleId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setScheduleId(int value) {
+
+                scheduleId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 schedule_id = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearScheduleId() {
+
+                scheduleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean fLFGIDFALEK_;
+            /**
+             * <code>bool FLFGIDFALEK = 15;</code>
+             *
+             * @return The fLFGIDFALEK.
+             */
+            @java.lang.Override
+            public boolean getFLFGIDFALEK() {
+                return fLFGIDFALEK_;
+            }
+            /**
+             * <code>bool FLFGIDFALEK = 15;</code>
+             *
+             * @param value The fLFGIDFALEK to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFLFGIDFALEK(boolean value) {
+
+                fLFGIDFALEK_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool FLFGIDFALEK = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFLFGIDFALEK() {
+
+                fLFGIDFALEK_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int lPOCNCICJHM_;
+            /**
+             * <code>uint32 LPOCNCICJHM = 485;</code>
+             *
+             * @return The lPOCNCICJHM.
+             */
+            @java.lang.Override
+            public int getLPOCNCICJHM() {
+                return lPOCNCICJHM_;
+            }
+            /**
+             * <code>uint32 LPOCNCICJHM = 485;</code>
+             *
+             * @param value The lPOCNCICJHM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLPOCNCICJHM(int value) {
+
+                lPOCNCICJHM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 LPOCNCICJHM = 485;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLPOCNCICJHM() {
+
+                lPOCNCICJHM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer> activityCoinMap_;
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                    internalGetActivityCoinMap() {
+                if (activityCoinMap_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                            ActivityCoinMapDefaultEntryHolder.defaultEntry);
+                }
+                return activityCoinMap_;
+            }
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                    internalGetMutableActivityCoinMap() {
+                onChanged();
+                ;
+                if (activityCoinMap_ == null) {
+                    activityCoinMap_ =
+                            com.google.protobuf.MapField.newMapField(
+                                    ActivityCoinMapDefaultEntryHolder.defaultEntry);
+                }
+                if (!activityCoinMap_.isMutable()) {
+                    activityCoinMap_ = activityCoinMap_.copy();
+                }
+                return activityCoinMap_;
+            }
+
+            public int getActivityCoinMapCount() {
+                return internalGetActivityCoinMap().getMap().size();
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            @java.lang.Override
+            public boolean containsActivityCoinMap(int key) {
+
+                return internalGetActivityCoinMap().getMap().containsKey(key);
+            }
+            /** Use {@link #getActivityCoinMapMap()} instead. */
+            @java.lang.Override
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMap() {
+                return getActivityCoinMapMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            @java.lang.Override
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
+                return internalGetActivityCoinMap().getMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            @java.lang.Override
+            public int getActivityCoinMapOrDefault(int key, int defaultValue) {
+
+                java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                        internalGetActivityCoinMap().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            @java.lang.Override
+            public int getActivityCoinMapOrThrow(int key) {
+
+                java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                        internalGetActivityCoinMap().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearActivityCoinMap() {
+                internalGetMutableActivityCoinMap().getMutableMap().clear();
+                return this;
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            public Builder removeActivityCoinMap(int key) {
+
+                internalGetMutableActivityCoinMap().getMutableMap().remove(key);
+                return this;
+            }
+            /** Use alternate mutation accessors instead. */
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getMutableActivityCoinMap() {
+                return internalGetMutableActivityCoinMap().getMutableMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            public Builder putActivityCoinMap(int key, int value) {
+
+                internalGetMutableActivityCoinMap().getMutableMap().put(key, value);
+                return this;
+            }
+            /** <code>map&lt;uint32, uint32&gt; activity_coin_map = 703;</code> */
+            public Builder putAllActivityCoinMap(
+                    java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+                internalGetMutableActivityCoinMap().getMutableMap().putAll(values);
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList meetCondList_ = emptyIntList();
+
+            private void ensureMeetCondListIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    meetCondList_ = mutableCopy(meetCondList_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @return A list containing the meetCondList.
+             */
+            public java.util.List<java.lang.Integer> getMeetCondListList() {
+                return ((bitField0_ & 0x00000002) != 0)
+                        ? java.util.Collections.unmodifiableList(meetCondList_)
+                        : meetCondList_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @return The count of meetCondList.
+             */
+            public int getMeetCondListCount() {
+                return meetCondList_.size();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The meetCondList at the given index.
+             */
+            public int getMeetCondList(int index) {
+                return meetCondList_.getInt(index);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The meetCondList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMeetCondList(int index, int value) {
+                ensureMeetCondListIsMutable();
+                meetCondList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @param value The meetCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addMeetCondList(int value) {
+                ensureMeetCondListIsMutable();
+                meetCondList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @param values The meetCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllMeetCondList(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureMeetCondListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, meetCondList_);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * PAGIONJOCJN
+             * </pre>
+             *
+             * <code>repeated uint32 meet_cond_list = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMeetCondList() {
+                meetCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+            }
+
+            private int endTime_;
+            /**
+             * <code>uint32 end_time = 4;</code>
+             *
+             * @return The endTime.
+             */
+            @java.lang.Override
+            public int getEndTime() {
+                return endTime_;
+            }
+            /**
+             * <code>uint32 end_time = 4;</code>
+             *
+             * @param value The endTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEndTime(int value) {
+
+                endTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 end_time = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEndTime() {
+
+                endTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean gLOONPBGOHM_;
+            /**
+             * <code>bool GLOONPBGOHM = 1331;</code>
+             *
+             * @return The gLOONPBGOHM.
+             */
+            @java.lang.Override
+            public boolean getGLOONPBGOHM() {
+                return gLOONPBGOHM_;
+            }
+            /**
+             * <code>bool GLOONPBGOHM = 1331;</code>
+             *
+             * @param value The gLOONPBGOHM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGLOONPBGOHM(boolean value) {
+
+                gLOONPBGOHM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool GLOONPBGOHM = 1331;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearGLOONPBGOHM() {
+
+                gLOONPBGOHM_ = false;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                    activityPushTipsDataList_ = java.util.Collections.emptyList();
+
+            private void ensureActivityPushTipsDataListIsMutable() {
+                if (!((bitField0_ & 0x00000004) != 0)) {
+                    activityPushTipsDataList_ =
+                            new java.util.ArrayList<
+                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>(
+                                    activityPushTipsDataList_);
+                    bitField0_ |= 0x00000004;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData,
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder,
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                    .ActivityPushTipsDataOrBuilder>
+                    activityPushTipsDataListBuilder_;
+
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                    getActivityPushTipsDataListList() {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(activityPushTipsDataList_);
+                } else {
+                    return activityPushTipsDataListBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public int getActivityPushTipsDataListCount() {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    return activityPushTipsDataList_.size();
+                } else {
+                    return activityPushTipsDataListBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                    getActivityPushTipsDataList(int index) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    return activityPushTipsDataList_.get(index);
+                } else {
+                    return activityPushTipsDataListBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder setActivityPushTipsDataList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.set(index, value);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder setActivityPushTipsDataList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                            builderForValue) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder addActivityPushTipsDataList(
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.add(value);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder addActivityPushTipsDataList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.add(index, value);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder addActivityPushTipsDataList(
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                            builderForValue) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder addActivityPushTipsDataList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                            builderForValue) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder addAllActivityPushTipsDataList(
+                    java.lang.Iterable<
+                                    ? extends
+                                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>
+                            values) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    ensureActivityPushTipsDataListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, activityPushTipsDataList_);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder clearActivityPushTipsDataList() {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    activityPushTipsDataList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000004);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public Builder removeActivityPushTipsDataList(int index) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    ensureActivityPushTipsDataListIsMutable();
+                    activityPushTipsDataList_.remove(index);
+                    onChanged();
+                } else {
+                    activityPushTipsDataListBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                    getActivityPushTipsDataListBuilder(int index) {
+                return getActivityPushTipsDataListFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder
+                    getActivityPushTipsDataListOrBuilder(int index) {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    return activityPushTipsDataList_.get(index);
+                } else {
+                    return activityPushTipsDataListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public java.util.List<
+                            ? extends
+                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                            .ActivityPushTipsDataOrBuilder>
+                    getActivityPushTipsDataListOrBuilderList() {
+                if (activityPushTipsDataListBuilder_ != null) {
+                    return activityPushTipsDataListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(activityPushTipsDataList_);
+                }
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                    addActivityPushTipsDataListBuilder() {
+                return getActivityPushTipsDataListFieldBuilder()
+                        .addBuilder(
+                                emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder
+                    addActivityPushTipsDataListBuilder(int index) {
+                return getActivityPushTipsDataListFieldBuilder()
+                        .addBuilder(
+                                index,
+                                emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1827;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder>
+                    getActivityPushTipsDataListBuilderList() {
+                return getActivityPushTipsDataListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData,
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder,
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                    .ActivityPushTipsDataOrBuilder>
+                    getActivityPushTipsDataListFieldBuilder() {
+                if (activityPushTipsDataListBuilder_ == null) {
+                    activityPushTipsDataListBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData,
+                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData
+                                            .Builder,
+                                    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass
+                                            .ActivityPushTipsDataOrBuilder>(
+                                    activityPushTipsDataList_,
+                                    ((bitField0_ & 0x00000004) != 0),
+                                    getParentForChildren(),
+                                    isClean());
+                    activityPushTipsDataList_ = null;
+                }
+                return activityPushTipsDataListBuilder_;
+            }
+
+            private com.google.protobuf.Internal.IntList expireCondList_ = emptyIntList();
+
+            private void ensureExpireCondListIsMutable() {
+                if (!((bitField0_ & 0x00000008) != 0)) {
+                    expireCondList_ = mutableCopy(expireCondList_);
+                    bitField0_ |= 0x00000008;
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @return A list containing the expireCondList.
+             */
+            public java.util.List<java.lang.Integer> getExpireCondListList() {
+                return ((bitField0_ & 0x00000008) != 0)
+                        ? java.util.Collections.unmodifiableList(expireCondList_)
+                        : expireCondList_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @return The count of expireCondList.
+             */
+            public int getExpireCondListCount() {
+                return expireCondList_.size();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The expireCondList at the given index.
+             */
+            public int getExpireCondList(int index) {
+                return expireCondList_.getInt(index);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The expireCondList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setExpireCondList(int index, int value) {
+                ensureExpireCondListIsMutable();
+                expireCondList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @param value The expireCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addExpireCondList(int value) {
+                ensureExpireCondListIsMutable();
+                expireCondList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @param values The expireCondList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllExpireCondList(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureExpireCondListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, expireCondList_);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * LGCJBENHFOB
+             * </pre>
+             *
+             * <code>repeated uint32 expire_cond_list = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearExpireCondList() {
+                expireCondList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000008);
+                onChanged();
+                return this;
+            }
+
+            private boolean isFinished_;
+            /**
+             * <code>bool is_finished = 6;</code>
+             *
+             * @return The isFinished.
+             */
+            @java.lang.Override
+            public boolean getIsFinished() {
+                return isFinished_;
+            }
+            /**
+             * <code>bool is_finished = 6;</code>
+             *
+             * @param value The isFinished to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsFinished(boolean value) {
+
+                isFinished_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_finished = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsFinished() {
+
+                isFinished_ = false;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList takenRewardList_ = emptyIntList();
+
+            private void ensureTakenRewardListIsMutable() {
+                if (!((bitField0_ & 0x00000010) != 0)) {
+                    takenRewardList_ = mutableCopy(takenRewardList_);
+                    bitField0_ |= 0x00000010;
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @return A list containing the takenRewardList.
+             */
+            public java.util.List<java.lang.Integer> getTakenRewardListList() {
+                return ((bitField0_ & 0x00000010) != 0)
+                        ? java.util.Collections.unmodifiableList(takenRewardList_)
+                        : takenRewardList_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @return The count of takenRewardList.
+             */
+            public int getTakenRewardListCount() {
+                return takenRewardList_.size();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The takenRewardList at the given index.
+             */
+            public int getTakenRewardList(int index) {
+                return takenRewardList_.getInt(index);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The takenRewardList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTakenRewardList(int index, int value) {
+                ensureTakenRewardListIsMutable();
+                takenRewardList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @param value The takenRewardList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addTakenRewardList(int value) {
+                ensureTakenRewardListIsMutable();
+                takenRewardList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @param values The takenRewardList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllTakenRewardList(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureTakenRewardListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, takenRewardList_);
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * EOPFKDBBOII
+             * </pre>
+             *
+             * <code>repeated uint32 taken_reward_list = 894;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTakenRewardList() {
+                takenRewardList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000010);
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                    watcherInfoList_ = java.util.Collections.emptyList();
+
+            private void ensureWatcherInfoListIsMutable() {
+                if (!((bitField0_ & 0x00000020) != 0)) {
+                    watcherInfoList_ =
+                            new java.util.ArrayList<
+                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>(
+                                    watcherInfoList_);
+                    bitField0_ |= 0x00000020;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo,
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder,
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder>
+                    watcherInfoListBuilder_;
+
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                    getWatcherInfoListList() {
+                if (watcherInfoListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(watcherInfoList_);
+                } else {
+                    return watcherInfoListBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public int getWatcherInfoListCount() {
+                if (watcherInfoListBuilder_ == null) {
+                    return watcherInfoList_.size();
+                } else {
+                    return watcherInfoListBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                    getWatcherInfoList(int index) {
+                if (watcherInfoListBuilder_ == null) {
+                    return watcherInfoList_.get(index);
+                } else {
+                    return watcherInfoListBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder setWatcherInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
+                if (watcherInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.set(index, value);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder setWatcherInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                            builderForValue) {
+                if (watcherInfoListBuilder_ == null) {
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder addWatcherInfoList(
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
+                if (watcherInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.add(value);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder addWatcherInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
+                if (watcherInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.add(index, value);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder addWatcherInfoList(
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                            builderForValue) {
+                if (watcherInfoListBuilder_ == null) {
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder addWatcherInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                            builderForValue) {
+                if (watcherInfoListBuilder_ == null) {
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder addAllWatcherInfoList(
+                    java.lang.Iterable<
+                                    ? extends
+                                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>
+                            values) {
+                if (watcherInfoListBuilder_ == null) {
+                    ensureWatcherInfoListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, watcherInfoList_);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder clearWatcherInfoList() {
+                if (watcherInfoListBuilder_ == null) {
+                    watcherInfoList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000020);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public Builder removeWatcherInfoList(int index) {
+                if (watcherInfoListBuilder_ == null) {
+                    ensureWatcherInfoListIsMutable();
+                    watcherInfoList_.remove(index);
+                    onChanged();
+                } else {
+                    watcherInfoListBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                    getWatcherInfoListBuilder(int index) {
+                return getWatcherInfoListFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
+                    getWatcherInfoListOrBuilder(int index) {
+                if (watcherInfoListBuilder_ == null) {
+                    return watcherInfoList_.get(index);
+                } else {
+                    return watcherInfoListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public java.util.List<
+                            ? extends
+                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass
+                                            .ActivityWatcherInfoOrBuilder>
+                    getWatcherInfoListOrBuilderList() {
+                if (watcherInfoListBuilder_ != null) {
+                    return watcherInfoListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(watcherInfoList_);
+                }
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                    addWatcherInfoListBuilder() {
+                return getWatcherInfoListFieldBuilder()
+                        .addBuilder(
+                                emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder
+                    addWatcherInfoListBuilder(int index) {
+                return getWatcherInfoListFieldBuilder()
+                        .addBuilder(
+                                index,
+                                emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .ActivityWatcherInfo watcher_info_list = 8;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder>
+                    getWatcherInfoListBuilderList() {
+                return getWatcherInfoListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo,
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder,
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder>
+                    getWatcherInfoListFieldBuilder() {
+                if (watcherInfoListBuilder_ == null) {
+                    watcherInfoListBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo,
+                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo
+                                            .Builder,
+                                    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass
+                                            .ActivityWatcherInfoOrBuilder>(
+                                    watcherInfoList_,
+                                    ((bitField0_ & 0x00000020) != 0),
+                                    getParentForChildren(),
+                                    isClean());
+                    watcherInfoList_ = null;
+                }
+                return watcherInfoListBuilder_;
+            }
+
+            private int activityType_;
+            /**
+             *
+             *
+             * <pre>
+             * KMOFHMKLGHD
+             * </pre>
+             *
+             * <code>uint32 activity_type = 5;</code>
+             *
+             * @return The activityType.
+             */
+            @java.lang.Override
+            public int getActivityType() {
+                return activityType_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * KMOFHMKLGHD
+             * </pre>
+             *
+             * <code>uint32 activity_type = 5;</code>
+             *
+             * @param value The activityType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setActivityType(int value) {
+
+                activityType_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * KMOFHMKLGHD
+             * </pre>
+             *
+             * <code>uint32 activity_type = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearActivityType() {
+
+                activityType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int activityId_;
+            /**
+             * <code>uint32 activity_id = 7;</code>
+             *
+             * @return The activityId.
+             */
+            @java.lang.Override
+            public int getActivityId() {
+                return activityId_;
+            }
+            /**
+             * <code>uint32 activity_id = 7;</code>
+             *
+             * @param value The activityId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setActivityId(int value) {
+
+                activityId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 activity_id = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearActivityId() {
+
+                activityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean cJDFLBKBNPL_;
+            /**
+             * <code>bool CJDFLBKBNPL = 10;</code>
+             *
+             * @return The cJDFLBKBNPL.
+             */
+            @java.lang.Override
+            public boolean getCJDFLBKBNPL() {
+                return cJDFLBKBNPL_;
+            }
+            /**
+             * <code>bool CJDFLBKBNPL = 10;</code>
+             *
+             * @param value The cJDFLBKBNPL to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCJDFLBKBNPL(boolean value) {
+
+                cJDFLBKBNPL_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool CJDFLBKBNPL = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCJDFLBKBNPL() {
+
+                cJDFLBKBNPL_ = false;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                    internalGetWishGiftNumMap() {
+                if (wishGiftNumMap_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                            WishGiftNumMapDefaultEntryHolder.defaultEntry);
+                }
+                return wishGiftNumMap_;
+            }
+
+            private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+                    internalGetMutableWishGiftNumMap() {
+                onChanged();
+                ;
+                if (wishGiftNumMap_ == null) {
+                    wishGiftNumMap_ =
+                            com.google.protobuf.MapField.newMapField(
+                                    WishGiftNumMapDefaultEntryHolder.defaultEntry);
+                }
+                if (!wishGiftNumMap_.isMutable()) {
+                    wishGiftNumMap_ = wishGiftNumMap_.copy();
+                }
+                return wishGiftNumMap_;
+            }
+
+            public int getWishGiftNumMapCount() {
+                return internalGetWishGiftNumMap().getMap().size();
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            @java.lang.Override
+            public boolean containsWishGiftNumMap(int key) {
+
+                return internalGetWishGiftNumMap().getMap().containsKey(key);
+            }
+            /** Use {@link #getWishGiftNumMapMap()} instead. */
+            @java.lang.Override
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMap() {
+                return getWishGiftNumMapMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            @java.lang.Override
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
+                return internalGetWishGiftNumMap().getMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            @java.lang.Override
+            public int getWishGiftNumMapOrDefault(int key, int defaultValue) {
+
+                java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                        internalGetWishGiftNumMap().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            @java.lang.Override
+            public int getWishGiftNumMapOrThrow(int key) {
+
+                java.util.Map<java.lang.Integer, java.lang.Integer> map =
+                        internalGetWishGiftNumMap().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearWishGiftNumMap() {
+                internalGetMutableWishGiftNumMap().getMutableMap().clear();
+                return this;
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            public Builder removeWishGiftNumMap(int key) {
+
+                internalGetMutableWishGiftNumMap().getMutableMap().remove(key);
+                return this;
+            }
+            /** Use alternate mutation accessors instead. */
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.Integer, java.lang.Integer> getMutableWishGiftNumMap() {
+                return internalGetMutableWishGiftNumMap().getMutableMap();
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            public Builder putWishGiftNumMap(int key, int value) {
+
+                internalGetMutableWishGiftNumMap().getMutableMap().put(key, value);
+                return this;
+            }
+            /** <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 1459;</code> */
+            public Builder putAllWishGiftNumMap(
+                    java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+                internalGetMutableWishGiftNumMap().getMutableMap().putAll(values);
+                return this;
+            }
+
+            private boolean oEBHLKFBCOG_;
+            /**
+             * <code>bool OEBHLKFBCOG = 696;</code>
+             *
+             * @return The oEBHLKFBCOG.
+             */
+            @java.lang.Override
+            public boolean getOEBHLKFBCOG() {
+                return oEBHLKFBCOG_;
+            }
+            /**
+             * <code>bool OEBHLKFBCOG = 696;</code>
+             *
+             * @param value The oEBHLKFBCOG to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOEBHLKFBCOG(boolean value) {
+
+                oEBHLKFBCOG_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool OEBHLKFBCOG = 696;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearOEBHLKFBCOG() {
+
+                oEBHLKFBCOG_ = false;
+                onChanged();
+                return this;
+            }
+
+            private boolean lGKOJCGDGBH_;
+            /**
+             * <code>bool LGKOJCGDGBH = 1736;</code>
+             *
+             * @return The lGKOJCGDGBH.
+             */
+            @java.lang.Override
+            public boolean getLGKOJCGDGBH() {
+                return lGKOJCGDGBH_;
+            }
+            /**
+             * <code>bool LGKOJCGDGBH = 1736;</code>
+             *
+             * @param value The lGKOJCGDGBH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLGKOJCGDGBH(boolean value) {
+
+                lGKOJCGDGBH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool LGKOJCGDGBH = 1736;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLGKOJCGDGBH() {
+
+                lGKOJCGDGBH_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int beginTime_;
+            /**
+             * <code>uint32 begin_time = 9;</code>
+             *
+             * @return The beginTime.
+             */
+            @java.lang.Override
+            public int getBeginTime() {
+                return beginTime_;
+            }
+            /**
+             * <code>uint32 begin_time = 9;</code>
+             *
+             * @param value The beginTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setBeginTime(int value) {
+
+                beginTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 begin_time = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearBeginTime() {
+
+                beginTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList dDBJAKPEPLC_ = emptyIntList();
+
+            private void ensureDDBJAKPEPLCIsMutable() {
+                if (!((bitField0_ & 0x00000080) != 0)) {
+                    dDBJAKPEPLC_ = mutableCopy(dDBJAKPEPLC_);
+                    bitField0_ |= 0x00000080;
+                }
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @return A list containing the dDBJAKPEPLC.
+             */
+            public java.util.List<java.lang.Integer> getDDBJAKPEPLCList() {
+                return ((bitField0_ & 0x00000080) != 0)
+                        ? java.util.Collections.unmodifiableList(dDBJAKPEPLC_)
+                        : dDBJAKPEPLC_;
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @return The count of dDBJAKPEPLC.
+             */
+            public int getDDBJAKPEPLCCount() {
+                return dDBJAKPEPLC_.size();
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The dDBJAKPEPLC at the given index.
+             */
+            public int getDDBJAKPEPLC(int index) {
+                return dDBJAKPEPLC_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The dDBJAKPEPLC to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDDBJAKPEPLC(int index, int value) {
+                ensureDDBJAKPEPLCIsMutable();
+                dDBJAKPEPLC_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @param value The dDBJAKPEPLC to add.
+             * @return This builder for chaining.
+             */
+            public Builder addDDBJAKPEPLC(int value) {
+                ensureDDBJAKPEPLCIsMutable();
+                dDBJAKPEPLC_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @param values The dDBJAKPEPLC to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllDDBJAKPEPLC(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureDDBJAKPEPLCIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dDBJAKPEPLC_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DDBJAKPEPLC = 778;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDDBJAKPEPLC() {
+                dDBJAKPEPLC_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000080);
+                onChanged();
+                return this;
+            }
+
+            private int firstDayStartTime_;
+            /**
+             * <code>uint32 first_day_start_time = 1677;</code>
+             *
+             * @return The firstDayStartTime.
+             */
+            @java.lang.Override
+            public int getFirstDayStartTime() {
+                return firstDayStartTime_;
+            }
+            /**
+             * <code>uint32 first_day_start_time = 1677;</code>
+             *
+             * @param value The firstDayStartTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFirstDayStartTime(int value) {
+
+                firstDayStartTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 first_day_start_time = 1677;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFirstDayStartTime() {
+
+                firstDayStartTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int curScore_;
+            /**
+             * <code>uint32 cur_score = 1005;</code>
+             *
+             * @return The curScore.
+             */
+            @java.lang.Override
+            public int getCurScore() {
+                return curScore_;
+            }
+            /**
+             * <code>uint32 cur_score = 1005;</code>
+             *
+             * @param value The curScore to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCurScore(int value) {
+
+                curScore_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 cur_score = 1005;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCurScore() {
+
+                curScore_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean eFJOLIOFLBG_;
+            /**
+             * <code>bool EFJOLIOFLBG = 514;</code>
+             *
+             * @return The eFJOLIOFLBG.
+             */
+            @java.lang.Override
+            public boolean getEFJOLIOFLBG() {
+                return eFJOLIOFLBG_;
+            }
+            /**
+             * <code>bool EFJOLIOFLBG = 514;</code>
+             *
+             * @param value The eFJOLIOFLBG to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEFJOLIOFLBG(boolean value) {
+
+                eFJOLIOFLBG_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool EFJOLIOFLBG = 514;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEFJOLIOFLBG() {
+
+                eFJOLIOFLBG_ = false;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo,
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo.Builder,
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfoOrBuilder>
+                    musicGameInfoBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             *
+             * @return Whether the musicGameInfo field is set.
+             */
+            @java.lang.Override
+            public boolean hasMusicGameInfo() {
+                return detailCase_ == 1966;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             *
+             * @return The musicGameInfo.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfo
+                    getMusicGameInfo() {
+                if (musicGameInfoBuilder_ == null) {
+                    if (detailCase_ == 1966) {
+                        return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                        .MusicGameActivityDetailInfo)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfo.getDefaultInstance();
+                } else {
+                    if (detailCase_ == 1966) {
+                        return musicGameInfoBuilder_.getMessage();
+                    }
+                    return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfo.getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            public Builder setMusicGameInfo(
+                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo
+                            value) {
+                if (musicGameInfoBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    detail_ = value;
+                    onChanged();
+                } else {
+                    musicGameInfoBuilder_.setMessage(value);
+                }
+                detailCase_ = 1966;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            public Builder setMusicGameInfo(
+                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo.Builder
+                            builderForValue) {
+                if (musicGameInfoBuilder_ == null) {
+                    detail_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    musicGameInfoBuilder_.setMessage(builderForValue.build());
+                }
+                detailCase_ = 1966;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            public Builder mergeMusicGameInfo(
+                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo
+                            value) {
+                if (musicGameInfoBuilder_ == null) {
+                    if (detailCase_ == 1966
+                            && detail_
+                                    != emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                            .MusicGameActivityDetailInfo.getDefaultInstance()) {
+                        detail_ =
+                                emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                        .MusicGameActivityDetailInfo.newBuilder(
+                                                (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                                .MusicGameActivityDetailInfo)
+                                                        detail_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        detail_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (detailCase_ == 1966) {
+                        musicGameInfoBuilder_.mergeFrom(value);
+                    }
+                    musicGameInfoBuilder_.setMessage(value);
+                }
+                detailCase_ = 1966;
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            public Builder clearMusicGameInfo() {
+                if (musicGameInfoBuilder_ == null) {
+                    if (detailCase_ == 1966) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (detailCase_ == 1966) {
+                        detailCase_ = 0;
+                        detail_ = null;
+                    }
+                    musicGameInfoBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfo.Builder
+                    getMusicGameInfoBuilder() {
+                return getMusicGameInfoFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfoOrBuilder
+                    getMusicGameInfoOrBuilder() {
+                if ((detailCase_ == 1966) && (musicGameInfoBuilder_ != null)) {
+                    return musicGameInfoBuilder_.getMessageOrBuilder();
+                } else {
+                    if (detailCase_ == 1966) {
+                        return (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                        .MusicGameActivityDetailInfo)
+                                detail_;
+                    }
+                    return emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                            .MusicGameActivityDetailInfo.getDefaultInstance();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * event gc
+             * </pre>
+             *
+             * <code>.MusicGameActivityDetailInfo music_game_info = 1966;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo,
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfo.Builder,
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                    .MusicGameActivityDetailInfoOrBuilder>
+                    getMusicGameInfoFieldBuilder() {
+                if (musicGameInfoBuilder_ == null) {
+                    if (!(detailCase_ == 1966)) {
+                        detail_ =
+                                emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                        .MusicGameActivityDetailInfo.getDefaultInstance();
+                    }
+                    musicGameInfoBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                            .MusicGameActivityDetailInfo,
+                                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                            .MusicGameActivityDetailInfo.Builder,
+                                    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                            .MusicGameActivityDetailInfoOrBuilder>(
+                                    (emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass
+                                                    .MusicGameActivityDetailInfo)
+                                            detail_,
+                                    getParentForChildren(),
+                                    isClean());
+                    detail_ = null;
+                }
+                detailCase_ = 1966;
+                onChanged();
+                ;
+                return musicGameInfoBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:ActivityInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:ActivityInfo)
+        private static final emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo();
+        }
+
+        public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ActivityInfo> PARSER =
+                new com.google.protobuf.AbstractParser<ActivityInfo>() {
+                    @java.lang.Override
+                    public ActivityInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new ActivityInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<ActivityInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ActivityInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:ActivityInfo)
-    private static final emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ActivityInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ActivityInfo_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ActivityInfo_WishGiftNumMapEntry_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo();
+        java.lang.String[] descriptorData = {
+            "\n\022ActivityInfo.proto\032\032ActivityPushTipsDa"
+                    + "ta.proto\032\031ActivityWatcherInfo.proto\032!Mus"
+                    + "icGameActivityDetailInfo.proto\"\360\006\n\014Activ"
+                    + "ityInfo\022\024\n\013ANGGLPJEBLE\030\266\003 \001(\r\022\023\n\013schedul"
+                    + "e_id\030\016 \001(\r\022\023\n\013FLFGIDFALEK\030\017 \001(\010\022\024\n\013LPOCN"
+                    + "CICJHM\030\345\003 \001(\r\022>\n\021activity_coin_map\030\277\005 \003("
+                    + "\0132\".ActivityInfo.ActivityCoinMapEntry\022\026\n"
+                    + "\016meet_cond_list\030\002 \003(\r\022\020\n\010end_time\030\004 \001(\r\022"
+                    + "\024\n\013GLOONPBGOHM\030\263\n \001(\010\022<\n\034activity_push_t"
+                    + "ips_data_list\030\243\016 \003(\0132\025.ActivityPushTipsD"
+                    + "ata\022\030\n\020expire_cond_list\030\r \003(\r\022\023\n\013is_fini"
+                    + "shed\030\006 \001(\010\022\032\n\021taken_reward_list\030\376\006 \003(\r\022/"
+                    + "\n\021watcher_info_list\030\010 \003(\0132\024.ActivityWatc"
+                    + "herInfo\022\025\n\ractivity_type\030\005 \001(\r\022\023\n\013activi"
+                    + "ty_id\030\007 \001(\r\022\023\n\013CJDFLBKBNPL\030\n \001(\010\022=\n\021wish"
+                    + "_gift_num_map\030\263\013 \003(\0132!.ActivityInfo.Wish"
+                    + "GiftNumMapEntry\022\024\n\013OEBHLKFBCOG\030\270\005 \001(\010\022\024\n"
+                    + "\013LGKOJCGDGBH\030\310\r \001(\010\022\022\n\nbegin_time\030\t \001(\r\022"
+                    + "\024\n\013DDBJAKPEPLC\030\212\006 \003(\r\022\035\n\024first_day_start"
+                    + "_time\030\215\r \001(\r\022\022\n\tcur_score\030\355\007 \001(\r\022\024\n\013EFJO"
+                    + "LIOFLBG\030\202\004 \001(\010\0228\n\017music_game_info\030\256\017 \001(\013"
+                    + "2\034.MusicGameActivityDetailInfoH\000\0326\n\024Acti"
+                    + "vityCoinMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002"
+                    + " \001(\r:\0028\001\0325\n\023WishGiftNumMapEntry\022\013\n\003key\030\001"
+                    + " \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006detailB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor(),
+                        });
+        internal_static_ActivityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_ActivityInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_ActivityInfo_descriptor,
+                        new java.lang.String[] {
+                            "ANGGLPJEBLE",
+                            "ScheduleId",
+                            "FLFGIDFALEK",
+                            "LPOCNCICJHM",
+                            "ActivityCoinMap",
+                            "MeetCondList",
+                            "EndTime",
+                            "GLOONPBGOHM",
+                            "ActivityPushTipsDataList",
+                            "ExpireCondList",
+                            "IsFinished",
+                            "TakenRewardList",
+                            "WatcherInfoList",
+                            "ActivityType",
+                            "ActivityId",
+                            "CJDFLBKBNPL",
+                            "WishGiftNumMap",
+                            "OEBHLKFBCOG",
+                            "LGKOJCGDGBH",
+                            "BeginTime",
+                            "DDBJAKPEPLC",
+                            "FirstDayStartTime",
+                            "CurScore",
+                            "EFJOLIOFLBG",
+                            "MusicGameInfo",
+                            "Detail",
+                        });
+        internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor =
+                internal_static_ActivityInfo_descriptor.getNestedTypes().get(0);
+        internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor,
+                        new java.lang.String[] {
+                            "Key", "Value",
+                        });
+        internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor =
+                internal_static_ActivityInfo_descriptor.getNestedTypes().get(1);
+        internal_static_ActivityInfo_WishGiftNumMapEntry_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor,
+                        new java.lang.String[] {
+                            "Key", "Value",
+                        });
+        emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ActivityInfo>
-        PARSER = new com.google.protobuf.AbstractParser<ActivityInfo>() {
-      @java.lang.Override
-      public ActivityInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ActivityInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ActivityInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ActivityInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ActivityInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ActivityInfo_WishGiftNumMapEntry_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\022ActivityInfo.proto\032\032ActivityPushTipsDa" +
-      "ta.proto\032\031ActivityWatcherInfo.proto\032!Mus" +
-      "icGameActivityDetailInfo.proto\"\360\006\n\014Activ" +
-      "ityInfo\022\024\n\013ANGGLPJEBLE\030\266\003 \001(\r\022\023\n\013schedul" +
-      "e_id\030\016 \001(\r\022\023\n\013FLFGIDFALEK\030\017 \001(\010\022\024\n\013LPOCN" +
-      "CICJHM\030\345\003 \001(\r\022>\n\021activity_coin_map\030\277\005 \003(" +
-      "\0132\".ActivityInfo.ActivityCoinMapEntry\022\026\n" +
-      "\016meet_cond_list\030\002 \003(\r\022\020\n\010end_time\030\004 \001(\r\022" +
-      "\024\n\013GLOONPBGOHM\030\263\n \001(\010\022<\n\034activity_push_t" +
-      "ips_data_list\030\243\016 \003(\0132\025.ActivityPushTipsD" +
-      "ata\022\030\n\020expire_cond_list\030\r \003(\r\022\023\n\013is_fini" +
-      "shed\030\006 \001(\010\022\032\n\021taken_reward_list\030\376\006 \003(\r\022/" +
-      "\n\021watcher_info_list\030\010 \003(\0132\024.ActivityWatc" +
-      "herInfo\022\025\n\ractivity_type\030\005 \001(\r\022\023\n\013activi" +
-      "ty_id\030\007 \001(\r\022\023\n\013CJDFLBKBNPL\030\n \001(\010\022=\n\021wish" +
-      "_gift_num_map\030\263\013 \003(\0132!.ActivityInfo.Wish" +
-      "GiftNumMapEntry\022\024\n\013OEBHLKFBCOG\030\270\005 \001(\010\022\024\n" +
-      "\013LGKOJCGDGBH\030\310\r \001(\010\022\022\n\nbegin_time\030\t \001(\r\022" +
-      "\024\n\013DDBJAKPEPLC\030\212\006 \003(\r\022\035\n\024first_day_start" +
-      "_time\030\215\r \001(\r\022\022\n\tcur_score\030\355\007 \001(\r\022\024\n\013EFJO" +
-      "LIOFLBG\030\202\004 \001(\010\0228\n\017music_game_info\030\256\017 \001(\013" +
-      "2\034.MusicGameActivityDetailInfoH\000\0326\n\024Acti" +
-      "vityCoinMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002" +
-      " \001(\r:\0028\001\0325\n\023WishGiftNumMapEntry\022\013\n\003key\030\001" +
-      " \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006detailB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor(),
-        });
-    internal_static_ActivityInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_ActivityInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ActivityInfo_descriptor,
-        new java.lang.String[] { "ANGGLPJEBLE", "ScheduleId", "FLFGIDFALEK", "LPOCNCICJHM", "ActivityCoinMap", "MeetCondList", "EndTime", "GLOONPBGOHM", "ActivityPushTipsDataList", "ExpireCondList", "IsFinished", "TakenRewardList", "WatcherInfoList", "ActivityType", "ActivityId", "CJDFLBKBNPL", "WishGiftNumMap", "OEBHLKFBCOG", "LGKOJCGDGBH", "BeginTime", "DDBJAKPEPLC", "FirstDayStartTime", "CurScore", "EFJOLIOFLBG", "MusicGameInfo", "Detail", });
-    internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor =
-      internal_static_ActivityInfo_descriptor.getNestedTypes().get(0);
-    internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor =
-      internal_static_ActivityInfo_descriptor.getNestedTypes().get(1);
-    internal_static_ActivityInfo_WishGiftNumMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ActivityInfo_WishGiftNumMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

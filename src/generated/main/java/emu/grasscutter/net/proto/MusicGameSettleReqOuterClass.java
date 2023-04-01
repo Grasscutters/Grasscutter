@@ -4,977 +4,174 @@
 package emu.grasscutter.net.proto;
 
 public final class MusicGameSettleReqOuterClass {
-  private MusicGameSettleReqOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private MusicGameSettleReqOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface MusicGameSettleReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MusicGameSettleReq)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 APJPLBOJEGN = 1;</code>
-     * @return The aPJPLBOJEGN.
-     */
-    int getAPJPLBOJEGN();
-
-    /**
-     * <code>uint32 combo = 14;</code>
-     * @return The combo.
-     */
-    int getCombo();
-
-    /**
-     * <code>uint64 ugc_guid = 6;</code>
-     * @return The ugcGuid.
-     */
-    long getUgcGuid();
-
-    /**
-     * <code>uint32 OJIACEJOFJF = 1954;</code>
-     * @return The oJIACEJOFJF.
-     */
-    int getOJIACEJOFJF();
-
-    /**
-     * <code>uint32 max_combo = 15;</code>
-     * @return The maxCombo.
-     */
-    int getMaxCombo();
-
-    /**
-     * <code>bool is_save_score = 3;</code>
-     * @return The isSaveScore.
-     */
-    boolean getIsSaveScore();
-
-    /**
-     * <code>uint32 BFAIDHEKEOD = 181;</code>
-     * @return The bFAIDHEKEOD.
-     */
-    int getBFAIDHEKEOD();
-
-    /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @return A list containing the dGMDAOAENMJ.
-     */
-    java.util.List<java.lang.Integer> getDGMDAOAENMJList();
-    /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @return The count of dGMDAOAENMJ.
-     */
-    int getDGMDAOAENMJCount();
-    /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @param index The index of the element to return.
-     * @return The dGMDAOAENMJ at the given index.
-     */
-    int getDGMDAOAENMJ(int index);
-
-    /**
-     * <code>uint32 score = 2;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>bool JIIDBCILMEP = 1707;</code>
-     * @return The jIIDBCILMEP.
-     */
-    boolean getJIIDBCILMEP();
-
-    /**
-     * <code>uint32 JNBMKEFPJIC = 1085;</code>
-     * @return The jNBMKEFPJIC.
-     */
-    int getJNBMKEFPJIC();
-
-    /**
-     * <code>bool AECNMHLOMBH = 634;</code>
-     * @return The aECNMHLOMBH.
-     */
-    boolean getAECNMHLOMBH();
-
-    /**
-     * <code>float speed = 1108;</code>
-     * @return The speed.
-     */
-    float getSpeed();
-
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @return A list containing the nNIJFEMDAIM.
-     */
-    java.util.List<java.lang.Integer> getNNIJFEMDAIMList();
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @return The count of nNIJFEMDAIM.
-     */
-    int getNNIJFEMDAIMCount();
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @param index The index of the element to return.
-     * @return The nNIJFEMDAIM at the given index.
-     */
-    int getNNIJFEMDAIM(int index);
-
-    /**
-     * <code>uint32 HPAMHHMILKM = 8;</code>
-     * @return The hPAMHHMILKM.
-     */
-    int getHPAMHHMILKM();
-
-    /**
-     * <code>uint32 NDOFNFADKJH = 10;</code>
-     * @return The nDOFNFADKJH.
-     */
-    int getNDOFNFADKJH();
-
-    /**
-     * <code>uint32 correct_hit = 4;</code>
-     * @return The correctHit.
-     */
-    int getCorrectHit();
-
-    /**
-     * <code>uint32 music_basic_id = 12;</code>
-     * @return The musicBasicId.
-     */
-    int getMusicBasicId();
-  }
-  /**
-   * <pre>
-   * Name: KKNNAGLMLKD
-   * CmdId: 8278
-   * </pre>
-   *
-   * Protobuf type {@code MusicGameSettleReq}
-   */
-  public static final class MusicGameSettleReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MusicGameSettleReq)
-      MusicGameSettleReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MusicGameSettleReq.newBuilder() to construct.
-    private MusicGameSettleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MusicGameSettleReq() {
-      dGMDAOAENMJ_ = emptyIntList();
-      nNIJFEMDAIM_ = emptyIntList();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MusicGameSettleReq();
-    }
+    public interface MusicGameSettleReqOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:MusicGameSettleReq)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MusicGameSettleReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
+        /**
+         * <code>uint32 APJPLBOJEGN = 1;</code>
+         *
+         * @return The aPJPLBOJEGN.
+         */
+        int getAPJPLBOJEGN();
 
-              aPJPLBOJEGN_ = input.readUInt32();
-              break;
-            }
-            case 16: {
+        /**
+         * <code>uint32 combo = 14;</code>
+         *
+         * @return The combo.
+         */
+        int getCombo();
 
-              score_ = input.readUInt32();
-              break;
-            }
-            case 24: {
+        /**
+         * <code>uint64 ugc_guid = 6;</code>
+         *
+         * @return The ugcGuid.
+         */
+        long getUgcGuid();
 
-              isSaveScore_ = input.readBool();
-              break;
-            }
-            case 32: {
+        /**
+         * <code>uint32 OJIACEJOFJF = 1954;</code>
+         *
+         * @return The oJIACEJOFJF.
+         */
+        int getOJIACEJOFJF();
 
-              correctHit_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+        /**
+         * <code>uint32 max_combo = 15;</code>
+         *
+         * @return The maxCombo.
+         */
+        int getMaxCombo();
 
-              ugcGuid_ = input.readUInt64();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>bool is_save_score = 3;</code>
+         *
+         * @return The isSaveScore.
+         */
+        boolean getIsSaveScore();
 
-              hPAMHHMILKM_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+        /**
+         * <code>uint32 BFAIDHEKEOD = 181;</code>
+         *
+         * @return The bFAIDHEKEOD.
+         */
+        int getBFAIDHEKEOD();
 
-              nDOFNFADKJH_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @return A list containing the dGMDAOAENMJ.
+         */
+        java.util.List<java.lang.Integer> getDGMDAOAENMJList();
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @return The count of dGMDAOAENMJ.
+         */
+        int getDGMDAOAENMJCount();
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The dGMDAOAENMJ at the given index.
+         */
+        int getDGMDAOAENMJ(int index);
 
-              musicBasicId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nNIJFEMDAIM_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              nNIJFEMDAIM_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                nNIJFEMDAIM_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                nNIJFEMDAIM_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
+        /**
+         * <code>uint32 score = 2;</code>
+         *
+         * @return The score.
+         */
+        int getScore();
 
-              combo_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+        /**
+         * <code>bool JIIDBCILMEP = 1707;</code>
+         *
+         * @return The jIIDBCILMEP.
+         */
+        boolean getJIIDBCILMEP();
 
-              maxCombo_ = input.readUInt32();
-              break;
-            }
-            case 1448: {
+        /**
+         * <code>uint32 JNBMKEFPJIC = 1085;</code>
+         *
+         * @return The jNBMKEFPJIC.
+         */
+        int getJNBMKEFPJIC();
 
-              bFAIDHEKEOD_ = input.readUInt32();
-              break;
-            }
-            case 5040: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dGMDAOAENMJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dGMDAOAENMJ_.addInt(input.readUInt32());
-              break;
-            }
-            case 5042: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                dGMDAOAENMJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                dGMDAOAENMJ_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 5072: {
+        /**
+         * <code>bool AECNMHLOMBH = 634;</code>
+         *
+         * @return The aECNMHLOMBH.
+         */
+        boolean getAECNMHLOMBH();
 
-              aECNMHLOMBH_ = input.readBool();
-              break;
-            }
-            case 8680: {
+        /**
+         * <code>float speed = 1108;</code>
+         *
+         * @return The speed.
+         */
+        float getSpeed();
 
-              jNBMKEFPJIC_ = input.readUInt32();
-              break;
-            }
-            case 8869: {
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @return A list containing the nNIJFEMDAIM.
+         */
+        java.util.List<java.lang.Integer> getNNIJFEMDAIMList();
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @return The count of nNIJFEMDAIM.
+         */
+        int getNNIJFEMDAIMCount();
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The nNIJFEMDAIM at the given index.
+         */
+        int getNNIJFEMDAIM(int index);
 
-              speed_ = input.readFloat();
-              break;
-            }
-            case 13656: {
+        /**
+         * <code>uint32 HPAMHHMILKM = 8;</code>
+         *
+         * @return The hPAMHHMILKM.
+         */
+        int getHPAMHHMILKM();
 
-              jIIDBCILMEP_ = input.readBool();
-              break;
-            }
-            case 15632: {
+        /**
+         * <code>uint32 NDOFNFADKJH = 10;</code>
+         *
+         * @return The nDOFNFADKJH.
+         */
+        int getNDOFNFADKJH();
 
-              oJIACEJOFJF_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nNIJFEMDAIM_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dGMDAOAENMJ_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_descriptor;
-    }
+        /**
+         * <code>uint32 correct_hit = 4;</code>
+         *
+         * @return The correctHit.
+         */
+        int getCorrectHit();
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.class, emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.Builder.class);
-    }
-
-    public static final int APJPLBOJEGN_FIELD_NUMBER = 1;
-    private int aPJPLBOJEGN_;
-    /**
-     * <code>uint32 APJPLBOJEGN = 1;</code>
-     * @return The aPJPLBOJEGN.
-     */
-    @java.lang.Override
-    public int getAPJPLBOJEGN() {
-      return aPJPLBOJEGN_;
-    }
-
-    public static final int COMBO_FIELD_NUMBER = 14;
-    private int combo_;
-    /**
-     * <code>uint32 combo = 14;</code>
-     * @return The combo.
-     */
-    @java.lang.Override
-    public int getCombo() {
-      return combo_;
-    }
-
-    public static final int UGC_GUID_FIELD_NUMBER = 6;
-    private long ugcGuid_;
-    /**
-     * <code>uint64 ugc_guid = 6;</code>
-     * @return The ugcGuid.
-     */
-    @java.lang.Override
-    public long getUgcGuid() {
-      return ugcGuid_;
-    }
-
-    public static final int OJIACEJOFJF_FIELD_NUMBER = 1954;
-    private int oJIACEJOFJF_;
-    /**
-     * <code>uint32 OJIACEJOFJF = 1954;</code>
-     * @return The oJIACEJOFJF.
-     */
-    @java.lang.Override
-    public int getOJIACEJOFJF() {
-      return oJIACEJOFJF_;
-    }
-
-    public static final int MAX_COMBO_FIELD_NUMBER = 15;
-    private int maxCombo_;
-    /**
-     * <code>uint32 max_combo = 15;</code>
-     * @return The maxCombo.
-     */
-    @java.lang.Override
-    public int getMaxCombo() {
-      return maxCombo_;
-    }
-
-    public static final int IS_SAVE_SCORE_FIELD_NUMBER = 3;
-    private boolean isSaveScore_;
-    /**
-     * <code>bool is_save_score = 3;</code>
-     * @return The isSaveScore.
-     */
-    @java.lang.Override
-    public boolean getIsSaveScore() {
-      return isSaveScore_;
-    }
-
-    public static final int BFAIDHEKEOD_FIELD_NUMBER = 181;
-    private int bFAIDHEKEOD_;
-    /**
-     * <code>uint32 BFAIDHEKEOD = 181;</code>
-     * @return The bFAIDHEKEOD.
-     */
-    @java.lang.Override
-    public int getBFAIDHEKEOD() {
-      return bFAIDHEKEOD_;
-    }
-
-    public static final int DGMDAOAENMJ_FIELD_NUMBER = 630;
-    private com.google.protobuf.Internal.IntList dGMDAOAENMJ_;
-    /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @return A list containing the dGMDAOAENMJ.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getDGMDAOAENMJList() {
-      return dGMDAOAENMJ_;
+        /**
+         * <code>uint32 music_basic_id = 12;</code>
+         *
+         * @return The musicBasicId.
+         */
+        int getMusicBasicId();
     }
     /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @return The count of dGMDAOAENMJ.
-     */
-    public int getDGMDAOAENMJCount() {
-      return dGMDAOAENMJ_.size();
-    }
-    /**
-     * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-     * @param index The index of the element to return.
-     * @return The dGMDAOAENMJ at the given index.
-     */
-    public int getDGMDAOAENMJ(int index) {
-      return dGMDAOAENMJ_.getInt(index);
-    }
-    private int dGMDAOAENMJMemoizedSerializedSize = -1;
-
-    public static final int SCORE_FIELD_NUMBER = 2;
-    private int score_;
-    /**
-     * <code>uint32 score = 2;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int JIIDBCILMEP_FIELD_NUMBER = 1707;
-    private boolean jIIDBCILMEP_;
-    /**
-     * <code>bool JIIDBCILMEP = 1707;</code>
-     * @return The jIIDBCILMEP.
-     */
-    @java.lang.Override
-    public boolean getJIIDBCILMEP() {
-      return jIIDBCILMEP_;
-    }
-
-    public static final int JNBMKEFPJIC_FIELD_NUMBER = 1085;
-    private int jNBMKEFPJIC_;
-    /**
-     * <code>uint32 JNBMKEFPJIC = 1085;</code>
-     * @return The jNBMKEFPJIC.
-     */
-    @java.lang.Override
-    public int getJNBMKEFPJIC() {
-      return jNBMKEFPJIC_;
-    }
-
-    public static final int AECNMHLOMBH_FIELD_NUMBER = 634;
-    private boolean aECNMHLOMBH_;
-    /**
-     * <code>bool AECNMHLOMBH = 634;</code>
-     * @return The aECNMHLOMBH.
-     */
-    @java.lang.Override
-    public boolean getAECNMHLOMBH() {
-      return aECNMHLOMBH_;
-    }
-
-    public static final int SPEED_FIELD_NUMBER = 1108;
-    private float speed_;
-    /**
-     * <code>float speed = 1108;</code>
-     * @return The speed.
-     */
-    @java.lang.Override
-    public float getSpeed() {
-      return speed_;
-    }
-
-    public static final int NNIJFEMDAIM_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList nNIJFEMDAIM_;
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @return A list containing the nNIJFEMDAIM.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getNNIJFEMDAIMList() {
-      return nNIJFEMDAIM_;
-    }
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @return The count of nNIJFEMDAIM.
-     */
-    public int getNNIJFEMDAIMCount() {
-      return nNIJFEMDAIM_.size();
-    }
-    /**
-     * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-     * @param index The index of the element to return.
-     * @return The nNIJFEMDAIM at the given index.
-     */
-    public int getNNIJFEMDAIM(int index) {
-      return nNIJFEMDAIM_.getInt(index);
-    }
-    private int nNIJFEMDAIMMemoizedSerializedSize = -1;
-
-    public static final int HPAMHHMILKM_FIELD_NUMBER = 8;
-    private int hPAMHHMILKM_;
-    /**
-     * <code>uint32 HPAMHHMILKM = 8;</code>
-     * @return The hPAMHHMILKM.
-     */
-    @java.lang.Override
-    public int getHPAMHHMILKM() {
-      return hPAMHHMILKM_;
-    }
-
-    public static final int NDOFNFADKJH_FIELD_NUMBER = 10;
-    private int nDOFNFADKJH_;
-    /**
-     * <code>uint32 NDOFNFADKJH = 10;</code>
-     * @return The nDOFNFADKJH.
-     */
-    @java.lang.Override
-    public int getNDOFNFADKJH() {
-      return nDOFNFADKJH_;
-    }
-
-    public static final int CORRECT_HIT_FIELD_NUMBER = 4;
-    private int correctHit_;
-    /**
-     * <code>uint32 correct_hit = 4;</code>
-     * @return The correctHit.
-     */
-    @java.lang.Override
-    public int getCorrectHit() {
-      return correctHit_;
-    }
-
-    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 12;
-    private int musicBasicId_;
-    /**
-     * <code>uint32 music_basic_id = 12;</code>
-     * @return The musicBasicId.
-     */
-    @java.lang.Override
-    public int getMusicBasicId() {
-      return musicBasicId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (aPJPLBOJEGN_ != 0) {
-        output.writeUInt32(1, aPJPLBOJEGN_);
-      }
-      if (score_ != 0) {
-        output.writeUInt32(2, score_);
-      }
-      if (isSaveScore_ != false) {
-        output.writeBool(3, isSaveScore_);
-      }
-      if (correctHit_ != 0) {
-        output.writeUInt32(4, correctHit_);
-      }
-      if (ugcGuid_ != 0L) {
-        output.writeUInt64(6, ugcGuid_);
-      }
-      if (hPAMHHMILKM_ != 0) {
-        output.writeUInt32(8, hPAMHHMILKM_);
-      }
-      if (nDOFNFADKJH_ != 0) {
-        output.writeUInt32(10, nDOFNFADKJH_);
-      }
-      if (musicBasicId_ != 0) {
-        output.writeUInt32(12, musicBasicId_);
-      }
-      if (getNNIJFEMDAIMList().size() > 0) {
-        output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(nNIJFEMDAIMMemoizedSerializedSize);
-      }
-      for (int i = 0; i < nNIJFEMDAIM_.size(); i++) {
-        output.writeUInt32NoTag(nNIJFEMDAIM_.getInt(i));
-      }
-      if (combo_ != 0) {
-        output.writeUInt32(14, combo_);
-      }
-      if (maxCombo_ != 0) {
-        output.writeUInt32(15, maxCombo_);
-      }
-      if (bFAIDHEKEOD_ != 0) {
-        output.writeUInt32(181, bFAIDHEKEOD_);
-      }
-      if (getDGMDAOAENMJList().size() > 0) {
-        output.writeUInt32NoTag(5042);
-        output.writeUInt32NoTag(dGMDAOAENMJMemoizedSerializedSize);
-      }
-      for (int i = 0; i < dGMDAOAENMJ_.size(); i++) {
-        output.writeUInt32NoTag(dGMDAOAENMJ_.getInt(i));
-      }
-      if (aECNMHLOMBH_ != false) {
-        output.writeBool(634, aECNMHLOMBH_);
-      }
-      if (jNBMKEFPJIC_ != 0) {
-        output.writeUInt32(1085, jNBMKEFPJIC_);
-      }
-      if (speed_ != 0F) {
-        output.writeFloat(1108, speed_);
-      }
-      if (jIIDBCILMEP_ != false) {
-        output.writeBool(1707, jIIDBCILMEP_);
-      }
-      if (oJIACEJOFJF_ != 0) {
-        output.writeUInt32(1954, oJIACEJOFJF_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (aPJPLBOJEGN_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, aPJPLBOJEGN_);
-      }
-      if (score_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, score_);
-      }
-      if (isSaveScore_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isSaveScore_);
-      }
-      if (correctHit_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, correctHit_);
-      }
-      if (ugcGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, ugcGuid_);
-      }
-      if (hPAMHHMILKM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, hPAMHHMILKM_);
-      }
-      if (nDOFNFADKJH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, nDOFNFADKJH_);
-      }
-      if (musicBasicId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, musicBasicId_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < nNIJFEMDAIM_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(nNIJFEMDAIM_.getInt(i));
-        }
-        size += dataSize;
-        if (!getNNIJFEMDAIMList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        nNIJFEMDAIMMemoizedSerializedSize = dataSize;
-      }
-      if (combo_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, combo_);
-      }
-      if (maxCombo_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, maxCombo_);
-      }
-      if (bFAIDHEKEOD_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(181, bFAIDHEKEOD_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < dGMDAOAENMJ_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dGMDAOAENMJ_.getInt(i));
-        }
-        size += dataSize;
-        if (!getDGMDAOAENMJList().isEmpty()) {
-          size += 2;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        dGMDAOAENMJMemoizedSerializedSize = dataSize;
-      }
-      if (aECNMHLOMBH_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(634, aECNMHLOMBH_);
-      }
-      if (jNBMKEFPJIC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1085, jNBMKEFPJIC_);
-      }
-      if (speed_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1108, speed_);
-      }
-      if (jIIDBCILMEP_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1707, jIIDBCILMEP_);
-      }
-      if (oJIACEJOFJF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1954, oJIACEJOFJF_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq other = (emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) obj;
-
-      if (getAPJPLBOJEGN()
-          != other.getAPJPLBOJEGN()) return false;
-      if (getCombo()
-          != other.getCombo()) return false;
-      if (getUgcGuid()
-          != other.getUgcGuid()) return false;
-      if (getOJIACEJOFJF()
-          != other.getOJIACEJOFJF()) return false;
-      if (getMaxCombo()
-          != other.getMaxCombo()) return false;
-      if (getIsSaveScore()
-          != other.getIsSaveScore()) return false;
-      if (getBFAIDHEKEOD()
-          != other.getBFAIDHEKEOD()) return false;
-      if (!getDGMDAOAENMJList()
-          .equals(other.getDGMDAOAENMJList())) return false;
-      if (getScore()
-          != other.getScore()) return false;
-      if (getJIIDBCILMEP()
-          != other.getJIIDBCILMEP()) return false;
-      if (getJNBMKEFPJIC()
-          != other.getJNBMKEFPJIC()) return false;
-      if (getAECNMHLOMBH()
-          != other.getAECNMHLOMBH()) return false;
-      if (java.lang.Float.floatToIntBits(getSpeed())
-          != java.lang.Float.floatToIntBits(
-              other.getSpeed())) return false;
-      if (!getNNIJFEMDAIMList()
-          .equals(other.getNNIJFEMDAIMList())) return false;
-      if (getHPAMHHMILKM()
-          != other.getHPAMHHMILKM()) return false;
-      if (getNDOFNFADKJH()
-          != other.getNDOFNFADKJH()) return false;
-      if (getCorrectHit()
-          != other.getCorrectHit()) return false;
-      if (getMusicBasicId()
-          != other.getMusicBasicId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APJPLBOJEGN_FIELD_NUMBER;
-      hash = (53 * hash) + getAPJPLBOJEGN();
-      hash = (37 * hash) + COMBO_FIELD_NUMBER;
-      hash = (53 * hash) + getCombo();
-      hash = (37 * hash) + UGC_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUgcGuid());
-      hash = (37 * hash) + OJIACEJOFJF_FIELD_NUMBER;
-      hash = (53 * hash) + getOJIACEJOFJF();
-      hash = (37 * hash) + MAX_COMBO_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxCombo();
-      hash = (37 * hash) + IS_SAVE_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSaveScore());
-      hash = (37 * hash) + BFAIDHEKEOD_FIELD_NUMBER;
-      hash = (53 * hash) + getBFAIDHEKEOD();
-      if (getDGMDAOAENMJCount() > 0) {
-        hash = (37 * hash) + DGMDAOAENMJ_FIELD_NUMBER;
-        hash = (53 * hash) + getDGMDAOAENMJList().hashCode();
-      }
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
-      hash = (37 * hash) + JIIDBCILMEP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJIIDBCILMEP());
-      hash = (37 * hash) + JNBMKEFPJIC_FIELD_NUMBER;
-      hash = (53 * hash) + getJNBMKEFPJIC();
-      hash = (37 * hash) + AECNMHLOMBH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getAECNMHLOMBH());
-      hash = (37 * hash) + SPEED_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getSpeed());
-      if (getNNIJFEMDAIMCount() > 0) {
-        hash = (37 * hash) + NNIJFEMDAIM_FIELD_NUMBER;
-        hash = (53 * hash) + getNNIJFEMDAIMList().hashCode();
-      }
-      hash = (37 * hash) + HPAMHHMILKM_FIELD_NUMBER;
-      hash = (53 * hash) + getHPAMHHMILKM();
-      hash = (37 * hash) + NDOFNFADKJH_FIELD_NUMBER;
-      hash = (53 * hash) + getNDOFNFADKJH();
-      hash = (37 * hash) + CORRECT_HIT_FIELD_NUMBER;
-      hash = (53 * hash) + getCorrectHit();
-      hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMusicBasicId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Name: KKNNAGLMLKD
      * CmdId: 8278
@@ -982,1020 +179,1950 @@ public final class MusicGameSettleReqOuterClass {
      *
      * Protobuf type {@code MusicGameSettleReq}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MusicGameSettleReq)
-        emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.class, emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class MusicGameSettleReq extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:MusicGameSettleReq)
+            MusicGameSettleReqOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use MusicGameSettleReq.newBuilder() to construct.
+        private MusicGameSettleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        aPJPLBOJEGN_ = 0;
 
-        combo_ = 0;
-
-        ugcGuid_ = 0L;
-
-        oJIACEJOFJF_ = 0;
-
-        maxCombo_ = 0;
-
-        isSaveScore_ = false;
-
-        bFAIDHEKEOD_ = 0;
-
-        dGMDAOAENMJ_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        score_ = 0;
-
-        jIIDBCILMEP_ = false;
-
-        jNBMKEFPJIC_ = 0;
-
-        aECNMHLOMBH_ = false;
-
-        speed_ = 0F;
-
-        nNIJFEMDAIM_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        hPAMHHMILKM_ = 0;
-
-        nDOFNFADKJH_ = 0;
-
-        correctHit_ = 0;
-
-        musicBasicId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq build() {
-        emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private MusicGameSettleReq() {
+            dGMDAOAENMJ_ = emptyIntList();
+            nNIJFEMDAIM_ = emptyIntList();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq buildPartial() {
-        emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result = new emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq(this);
-        int from_bitField0_ = bitField0_;
-        result.aPJPLBOJEGN_ = aPJPLBOJEGN_;
-        result.combo_ = combo_;
-        result.ugcGuid_ = ugcGuid_;
-        result.oJIACEJOFJF_ = oJIACEJOFJF_;
-        result.maxCombo_ = maxCombo_;
-        result.isSaveScore_ = isSaveScore_;
-        result.bFAIDHEKEOD_ = bFAIDHEKEOD_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          dGMDAOAENMJ_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new MusicGameSettleReq();
         }
-        result.dGMDAOAENMJ_ = dGMDAOAENMJ_;
-        result.score_ = score_;
-        result.jIIDBCILMEP_ = jIIDBCILMEP_;
-        result.jNBMKEFPJIC_ = jNBMKEFPJIC_;
-        result.aECNMHLOMBH_ = aECNMHLOMBH_;
-        result.speed_ = speed_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          nNIJFEMDAIM_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        result.nNIJFEMDAIM_ = nNIJFEMDAIM_;
-        result.hPAMHHMILKM_ = hPAMHHMILKM_;
-        result.nDOFNFADKJH_ = nDOFNFADKJH_;
-        result.correctHit_ = correctHit_;
-        result.musicBasicId_ = musicBasicId_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) {
-          return mergeFrom((emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private MusicGameSettleReq(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                aPJPLBOJEGN_ = input.readUInt32();
+                                break;
+                            }
+                        case 16:
+                            {
+                                score_ = input.readUInt32();
+                                break;
+                            }
+                        case 24:
+                            {
+                                isSaveScore_ = input.readBool();
+                                break;
+                            }
+                        case 32:
+                            {
+                                correctHit_ = input.readUInt32();
+                                break;
+                            }
+                        case 48:
+                            {
+                                ugcGuid_ = input.readUInt64();
+                                break;
+                            }
+                        case 64:
+                            {
+                                hPAMHHMILKM_ = input.readUInt32();
+                                break;
+                            }
+                        case 80:
+                            {
+                                nDOFNFADKJH_ = input.readUInt32();
+                                break;
+                            }
+                        case 96:
+                            {
+                                musicBasicId_ = input.readUInt32();
+                                break;
+                            }
+                        case 104:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    nNIJFEMDAIM_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                nNIJFEMDAIM_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 106:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                                    nNIJFEMDAIM_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    nNIJFEMDAIM_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 112:
+                            {
+                                combo_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                maxCombo_ = input.readUInt32();
+                                break;
+                            }
+                        case 1448:
+                            {
+                                bFAIDHEKEOD_ = input.readUInt32();
+                                break;
+                            }
+                        case 5040:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    dGMDAOAENMJ_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                dGMDAOAENMJ_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 5042:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                    dGMDAOAENMJ_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    dGMDAOAENMJ_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 5072:
+                            {
+                                aECNMHLOMBH_ = input.readBool();
+                                break;
+                            }
+                        case 8680:
+                            {
+                                jNBMKEFPJIC_ = input.readUInt32();
+                                break;
+                            }
+                        case 8869:
+                            {
+                                speed_ = input.readFloat();
+                                break;
+                            }
+                        case 13656:
+                            {
+                                jIIDBCILMEP_ = input.readBool();
+                                break;
+                            }
+                        case 15632:
+                            {
+                                oJIACEJOFJF_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    nNIJFEMDAIM_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    dGMDAOAENMJ_.makeImmutable(); // C
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq other) {
-        if (other == emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.getDefaultInstance()) return this;
-        if (other.getAPJPLBOJEGN() != 0) {
-          setAPJPLBOJEGN(other.getAPJPLBOJEGN());
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass
+                    .internal_static_MusicGameSettleReq_descriptor;
         }
-        if (other.getCombo() != 0) {
-          setCombo(other.getCombo());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass
+                    .internal_static_MusicGameSettleReq_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.class,
+                            emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.Builder
+                                    .class);
         }
-        if (other.getUgcGuid() != 0L) {
-          setUgcGuid(other.getUgcGuid());
+
+        public static final int APJPLBOJEGN_FIELD_NUMBER = 1;
+        private int aPJPLBOJEGN_;
+        /**
+         * <code>uint32 APJPLBOJEGN = 1;</code>
+         *
+         * @return The aPJPLBOJEGN.
+         */
+        @java.lang.Override
+        public int getAPJPLBOJEGN() {
+            return aPJPLBOJEGN_;
         }
-        if (other.getOJIACEJOFJF() != 0) {
-          setOJIACEJOFJF(other.getOJIACEJOFJF());
+
+        public static final int COMBO_FIELD_NUMBER = 14;
+        private int combo_;
+        /**
+         * <code>uint32 combo = 14;</code>
+         *
+         * @return The combo.
+         */
+        @java.lang.Override
+        public int getCombo() {
+            return combo_;
         }
-        if (other.getMaxCombo() != 0) {
-          setMaxCombo(other.getMaxCombo());
+
+        public static final int UGC_GUID_FIELD_NUMBER = 6;
+        private long ugcGuid_;
+        /**
+         * <code>uint64 ugc_guid = 6;</code>
+         *
+         * @return The ugcGuid.
+         */
+        @java.lang.Override
+        public long getUgcGuid() {
+            return ugcGuid_;
         }
-        if (other.getIsSaveScore() != false) {
-          setIsSaveScore(other.getIsSaveScore());
+
+        public static final int OJIACEJOFJF_FIELD_NUMBER = 1954;
+        private int oJIACEJOFJF_;
+        /**
+         * <code>uint32 OJIACEJOFJF = 1954;</code>
+         *
+         * @return The oJIACEJOFJF.
+         */
+        @java.lang.Override
+        public int getOJIACEJOFJF() {
+            return oJIACEJOFJF_;
         }
-        if (other.getBFAIDHEKEOD() != 0) {
-          setBFAIDHEKEOD(other.getBFAIDHEKEOD());
+
+        public static final int MAX_COMBO_FIELD_NUMBER = 15;
+        private int maxCombo_;
+        /**
+         * <code>uint32 max_combo = 15;</code>
+         *
+         * @return The maxCombo.
+         */
+        @java.lang.Override
+        public int getMaxCombo() {
+            return maxCombo_;
         }
-        if (!other.dGMDAOAENMJ_.isEmpty()) {
-          if (dGMDAOAENMJ_.isEmpty()) {
-            dGMDAOAENMJ_ = other.dGMDAOAENMJ_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureDGMDAOAENMJIsMutable();
-            dGMDAOAENMJ_.addAll(other.dGMDAOAENMJ_);
-          }
-          onChanged();
+
+        public static final int IS_SAVE_SCORE_FIELD_NUMBER = 3;
+        private boolean isSaveScore_;
+        /**
+         * <code>bool is_save_score = 3;</code>
+         *
+         * @return The isSaveScore.
+         */
+        @java.lang.Override
+        public boolean getIsSaveScore() {
+            return isSaveScore_;
         }
-        if (other.getScore() != 0) {
-          setScore(other.getScore());
+
+        public static final int BFAIDHEKEOD_FIELD_NUMBER = 181;
+        private int bFAIDHEKEOD_;
+        /**
+         * <code>uint32 BFAIDHEKEOD = 181;</code>
+         *
+         * @return The bFAIDHEKEOD.
+         */
+        @java.lang.Override
+        public int getBFAIDHEKEOD() {
+            return bFAIDHEKEOD_;
         }
-        if (other.getJIIDBCILMEP() != false) {
-          setJIIDBCILMEP(other.getJIIDBCILMEP());
+
+        public static final int DGMDAOAENMJ_FIELD_NUMBER = 630;
+        private com.google.protobuf.Internal.IntList dGMDAOAENMJ_;
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @return A list containing the dGMDAOAENMJ.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getDGMDAOAENMJList() {
+            return dGMDAOAENMJ_;
         }
-        if (other.getJNBMKEFPJIC() != 0) {
-          setJNBMKEFPJIC(other.getJNBMKEFPJIC());
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @return The count of dGMDAOAENMJ.
+         */
+        public int getDGMDAOAENMJCount() {
+            return dGMDAOAENMJ_.size();
         }
-        if (other.getAECNMHLOMBH() != false) {
-          setAECNMHLOMBH(other.getAECNMHLOMBH());
+        /**
+         * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The dGMDAOAENMJ at the given index.
+         */
+        public int getDGMDAOAENMJ(int index) {
+            return dGMDAOAENMJ_.getInt(index);
         }
-        if (other.getSpeed() != 0F) {
-          setSpeed(other.getSpeed());
+
+        private int dGMDAOAENMJMemoizedSerializedSize = -1;
+
+        public static final int SCORE_FIELD_NUMBER = 2;
+        private int score_;
+        /**
+         * <code>uint32 score = 2;</code>
+         *
+         * @return The score.
+         */
+        @java.lang.Override
+        public int getScore() {
+            return score_;
         }
-        if (!other.nNIJFEMDAIM_.isEmpty()) {
-          if (nNIJFEMDAIM_.isEmpty()) {
-            nNIJFEMDAIM_ = other.nNIJFEMDAIM_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureNNIJFEMDAIMIsMutable();
-            nNIJFEMDAIM_.addAll(other.nNIJFEMDAIM_);
-          }
-          onChanged();
+
+        public static final int JIIDBCILMEP_FIELD_NUMBER = 1707;
+        private boolean jIIDBCILMEP_;
+        /**
+         * <code>bool JIIDBCILMEP = 1707;</code>
+         *
+         * @return The jIIDBCILMEP.
+         */
+        @java.lang.Override
+        public boolean getJIIDBCILMEP() {
+            return jIIDBCILMEP_;
         }
-        if (other.getHPAMHHMILKM() != 0) {
-          setHPAMHHMILKM(other.getHPAMHHMILKM());
+
+        public static final int JNBMKEFPJIC_FIELD_NUMBER = 1085;
+        private int jNBMKEFPJIC_;
+        /**
+         * <code>uint32 JNBMKEFPJIC = 1085;</code>
+         *
+         * @return The jNBMKEFPJIC.
+         */
+        @java.lang.Override
+        public int getJNBMKEFPJIC() {
+            return jNBMKEFPJIC_;
         }
-        if (other.getNDOFNFADKJH() != 0) {
-          setNDOFNFADKJH(other.getNDOFNFADKJH());
+
+        public static final int AECNMHLOMBH_FIELD_NUMBER = 634;
+        private boolean aECNMHLOMBH_;
+        /**
+         * <code>bool AECNMHLOMBH = 634;</code>
+         *
+         * @return The aECNMHLOMBH.
+         */
+        @java.lang.Override
+        public boolean getAECNMHLOMBH() {
+            return aECNMHLOMBH_;
         }
-        if (other.getCorrectHit() != 0) {
-          setCorrectHit(other.getCorrectHit());
+
+        public static final int SPEED_FIELD_NUMBER = 1108;
+        private float speed_;
+        /**
+         * <code>float speed = 1108;</code>
+         *
+         * @return The speed.
+         */
+        @java.lang.Override
+        public float getSpeed() {
+            return speed_;
         }
-        if (other.getMusicBasicId() != 0) {
-          setMusicBasicId(other.getMusicBasicId());
+
+        public static final int NNIJFEMDAIM_FIELD_NUMBER = 13;
+        private com.google.protobuf.Internal.IntList nNIJFEMDAIM_;
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @return A list containing the nNIJFEMDAIM.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getNNIJFEMDAIMList() {
+            return nNIJFEMDAIM_;
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @return The count of nNIJFEMDAIM.
+         */
+        public int getNNIJFEMDAIMCount() {
+            return nNIJFEMDAIM_.size();
         }
-        return this;
-      }
-      private int bitField0_;
+        /**
+         * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The nNIJFEMDAIM at the given index.
+         */
+        public int getNNIJFEMDAIM(int index) {
+            return nNIJFEMDAIM_.getInt(index);
+        }
 
-      private int aPJPLBOJEGN_ ;
-      /**
-       * <code>uint32 APJPLBOJEGN = 1;</code>
-       * @return The aPJPLBOJEGN.
-       */
-      @java.lang.Override
-      public int getAPJPLBOJEGN() {
-        return aPJPLBOJEGN_;
-      }
-      /**
-       * <code>uint32 APJPLBOJEGN = 1;</code>
-       * @param value The aPJPLBOJEGN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAPJPLBOJEGN(int value) {
-        
-        aPJPLBOJEGN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 APJPLBOJEGN = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAPJPLBOJEGN() {
-        
-        aPJPLBOJEGN_ = 0;
-        onChanged();
-        return this;
-      }
+        private int nNIJFEMDAIMMemoizedSerializedSize = -1;
 
-      private int combo_ ;
-      /**
-       * <code>uint32 combo = 14;</code>
-       * @return The combo.
-       */
-      @java.lang.Override
-      public int getCombo() {
-        return combo_;
-      }
-      /**
-       * <code>uint32 combo = 14;</code>
-       * @param value The combo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCombo(int value) {
-        
-        combo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 combo = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCombo() {
-        
-        combo_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int HPAMHHMILKM_FIELD_NUMBER = 8;
+        private int hPAMHHMILKM_;
+        /**
+         * <code>uint32 HPAMHHMILKM = 8;</code>
+         *
+         * @return The hPAMHHMILKM.
+         */
+        @java.lang.Override
+        public int getHPAMHHMILKM() {
+            return hPAMHHMILKM_;
+        }
 
-      private long ugcGuid_ ;
-      /**
-       * <code>uint64 ugc_guid = 6;</code>
-       * @return The ugcGuid.
-       */
-      @java.lang.Override
-      public long getUgcGuid() {
-        return ugcGuid_;
-      }
-      /**
-       * <code>uint64 ugc_guid = 6;</code>
-       * @param value The ugcGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUgcGuid(long value) {
-        
-        ugcGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ugc_guid = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUgcGuid() {
-        
-        ugcGuid_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static final int NDOFNFADKJH_FIELD_NUMBER = 10;
+        private int nDOFNFADKJH_;
+        /**
+         * <code>uint32 NDOFNFADKJH = 10;</code>
+         *
+         * @return The nDOFNFADKJH.
+         */
+        @java.lang.Override
+        public int getNDOFNFADKJH() {
+            return nDOFNFADKJH_;
+        }
 
-      private int oJIACEJOFJF_ ;
-      /**
-       * <code>uint32 OJIACEJOFJF = 1954;</code>
-       * @return The oJIACEJOFJF.
-       */
-      @java.lang.Override
-      public int getOJIACEJOFJF() {
-        return oJIACEJOFJF_;
-      }
-      /**
-       * <code>uint32 OJIACEJOFJF = 1954;</code>
-       * @param value The oJIACEJOFJF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOJIACEJOFJF(int value) {
-        
-        oJIACEJOFJF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OJIACEJOFJF = 1954;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOJIACEJOFJF() {
-        
-        oJIACEJOFJF_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int CORRECT_HIT_FIELD_NUMBER = 4;
+        private int correctHit_;
+        /**
+         * <code>uint32 correct_hit = 4;</code>
+         *
+         * @return The correctHit.
+         */
+        @java.lang.Override
+        public int getCorrectHit() {
+            return correctHit_;
+        }
 
-      private int maxCombo_ ;
-      /**
-       * <code>uint32 max_combo = 15;</code>
-       * @return The maxCombo.
-       */
-      @java.lang.Override
-      public int getMaxCombo() {
-        return maxCombo_;
-      }
-      /**
-       * <code>uint32 max_combo = 15;</code>
-       * @param value The maxCombo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxCombo(int value) {
-        
-        maxCombo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 max_combo = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxCombo() {
-        
-        maxCombo_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 12;
+        private int musicBasicId_;
+        /**
+         * <code>uint32 music_basic_id = 12;</code>
+         *
+         * @return The musicBasicId.
+         */
+        @java.lang.Override
+        public int getMusicBasicId() {
+            return musicBasicId_;
+        }
 
-      private boolean isSaveScore_ ;
-      /**
-       * <code>bool is_save_score = 3;</code>
-       * @return The isSaveScore.
-       */
-      @java.lang.Override
-      public boolean getIsSaveScore() {
-        return isSaveScore_;
-      }
-      /**
-       * <code>bool is_save_score = 3;</code>
-       * @param value The isSaveScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSaveScore(boolean value) {
-        
-        isSaveScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_save_score = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSaveScore() {
-        
-        isSaveScore_ = false;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int bFAIDHEKEOD_ ;
-      /**
-       * <code>uint32 BFAIDHEKEOD = 181;</code>
-       * @return The bFAIDHEKEOD.
-       */
-      @java.lang.Override
-      public int getBFAIDHEKEOD() {
-        return bFAIDHEKEOD_;
-      }
-      /**
-       * <code>uint32 BFAIDHEKEOD = 181;</code>
-       * @param value The bFAIDHEKEOD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBFAIDHEKEOD(int value) {
-        
-        bFAIDHEKEOD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BFAIDHEKEOD = 181;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBFAIDHEKEOD() {
-        
-        bFAIDHEKEOD_ = 0;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      private com.google.protobuf.Internal.IntList dGMDAOAENMJ_ = emptyIntList();
-      private void ensureDGMDAOAENMJIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          dGMDAOAENMJ_ = mutableCopy(dGMDAOAENMJ_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @return A list containing the dGMDAOAENMJ.
-       */
-      public java.util.List<java.lang.Integer>
-          getDGMDAOAENMJList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(dGMDAOAENMJ_) : dGMDAOAENMJ_;
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @return The count of dGMDAOAENMJ.
-       */
-      public int getDGMDAOAENMJCount() {
-        return dGMDAOAENMJ_.size();
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @param index The index of the element to return.
-       * @return The dGMDAOAENMJ at the given index.
-       */
-      public int getDGMDAOAENMJ(int index) {
-        return dGMDAOAENMJ_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @param index The index to set the value at.
-       * @param value The dGMDAOAENMJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDGMDAOAENMJ(
-          int index, int value) {
-        ensureDGMDAOAENMJIsMutable();
-        dGMDAOAENMJ_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @param value The dGMDAOAENMJ to add.
-       * @return This builder for chaining.
-       */
-      public Builder addDGMDAOAENMJ(int value) {
-        ensureDGMDAOAENMJIsMutable();
-        dGMDAOAENMJ_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @param values The dGMDAOAENMJ to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllDGMDAOAENMJ(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureDGMDAOAENMJIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, dGMDAOAENMJ_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDGMDAOAENMJ() {
-        dGMDAOAENMJ_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      private int score_ ;
-      /**
-       * <code>uint32 score = 2;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 2;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            getSerializedSize();
+            if (aPJPLBOJEGN_ != 0) {
+                output.writeUInt32(1, aPJPLBOJEGN_);
+            }
+            if (score_ != 0) {
+                output.writeUInt32(2, score_);
+            }
+            if (isSaveScore_ != false) {
+                output.writeBool(3, isSaveScore_);
+            }
+            if (correctHit_ != 0) {
+                output.writeUInt32(4, correctHit_);
+            }
+            if (ugcGuid_ != 0L) {
+                output.writeUInt64(6, ugcGuid_);
+            }
+            if (hPAMHHMILKM_ != 0) {
+                output.writeUInt32(8, hPAMHHMILKM_);
+            }
+            if (nDOFNFADKJH_ != 0) {
+                output.writeUInt32(10, nDOFNFADKJH_);
+            }
+            if (musicBasicId_ != 0) {
+                output.writeUInt32(12, musicBasicId_);
+            }
+            if (getNNIJFEMDAIMList().size() > 0) {
+                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(nNIJFEMDAIMMemoizedSerializedSize);
+            }
+            for (int i = 0; i < nNIJFEMDAIM_.size(); i++) {
+                output.writeUInt32NoTag(nNIJFEMDAIM_.getInt(i));
+            }
+            if (combo_ != 0) {
+                output.writeUInt32(14, combo_);
+            }
+            if (maxCombo_ != 0) {
+                output.writeUInt32(15, maxCombo_);
+            }
+            if (bFAIDHEKEOD_ != 0) {
+                output.writeUInt32(181, bFAIDHEKEOD_);
+            }
+            if (getDGMDAOAENMJList().size() > 0) {
+                output.writeUInt32NoTag(5042);
+                output.writeUInt32NoTag(dGMDAOAENMJMemoizedSerializedSize);
+            }
+            for (int i = 0; i < dGMDAOAENMJ_.size(); i++) {
+                output.writeUInt32NoTag(dGMDAOAENMJ_.getInt(i));
+            }
+            if (aECNMHLOMBH_ != false) {
+                output.writeBool(634, aECNMHLOMBH_);
+            }
+            if (jNBMKEFPJIC_ != 0) {
+                output.writeUInt32(1085, jNBMKEFPJIC_);
+            }
+            if (speed_ != 0F) {
+                output.writeFloat(1108, speed_);
+            }
+            if (jIIDBCILMEP_ != false) {
+                output.writeBool(1707, jIIDBCILMEP_);
+            }
+            if (oJIACEJOFJF_ != 0) {
+                output.writeUInt32(1954, oJIACEJOFJF_);
+            }
+            unknownFields.writeTo(output);
+        }
 
-      private boolean jIIDBCILMEP_ ;
-      /**
-       * <code>bool JIIDBCILMEP = 1707;</code>
-       * @return The jIIDBCILMEP.
-       */
-      @java.lang.Override
-      public boolean getJIIDBCILMEP() {
-        return jIIDBCILMEP_;
-      }
-      /**
-       * <code>bool JIIDBCILMEP = 1707;</code>
-       * @param value The jIIDBCILMEP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJIIDBCILMEP(boolean value) {
-        
-        jIIDBCILMEP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool JIIDBCILMEP = 1707;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJIIDBCILMEP() {
-        
-        jIIDBCILMEP_ = false;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
 
-      private int jNBMKEFPJIC_ ;
-      /**
-       * <code>uint32 JNBMKEFPJIC = 1085;</code>
-       * @return The jNBMKEFPJIC.
-       */
-      @java.lang.Override
-      public int getJNBMKEFPJIC() {
-        return jNBMKEFPJIC_;
-      }
-      /**
-       * <code>uint32 JNBMKEFPJIC = 1085;</code>
-       * @param value The jNBMKEFPJIC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJNBMKEFPJIC(int value) {
-        
-        jNBMKEFPJIC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JNBMKEFPJIC = 1085;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJNBMKEFPJIC() {
-        
-        jNBMKEFPJIC_ = 0;
-        onChanged();
-        return this;
-      }
+            size = 0;
+            if (aPJPLBOJEGN_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, aPJPLBOJEGN_);
+            }
+            if (score_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, score_);
+            }
+            if (isSaveScore_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isSaveScore_);
+            }
+            if (correctHit_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, correctHit_);
+            }
+            if (ugcGuid_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(6, ugcGuid_);
+            }
+            if (hPAMHHMILKM_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, hPAMHHMILKM_);
+            }
+            if (nDOFNFADKJH_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, nDOFNFADKJH_);
+            }
+            if (musicBasicId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, musicBasicId_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < nNIJFEMDAIM_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(nNIJFEMDAIM_.getInt(i));
+                }
+                size += dataSize;
+                if (!getNNIJFEMDAIMList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                nNIJFEMDAIMMemoizedSerializedSize = dataSize;
+            }
+            if (combo_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, combo_);
+            }
+            if (maxCombo_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, maxCombo_);
+            }
+            if (bFAIDHEKEOD_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(181, bFAIDHEKEOD_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < dGMDAOAENMJ_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dGMDAOAENMJ_.getInt(i));
+                }
+                size += dataSize;
+                if (!getDGMDAOAENMJList().isEmpty()) {
+                    size += 2;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                dGMDAOAENMJMemoizedSerializedSize = dataSize;
+            }
+            if (aECNMHLOMBH_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(634, aECNMHLOMBH_);
+            }
+            if (jNBMKEFPJIC_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1085, jNBMKEFPJIC_);
+            }
+            if (speed_ != 0F) {
+                size += com.google.protobuf.CodedOutputStream.computeFloatSize(1108, speed_);
+            }
+            if (jIIDBCILMEP_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1707, jIIDBCILMEP_);
+            }
+            if (oJIACEJOFJF_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1954, oJIACEJOFJF_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
 
-      private boolean aECNMHLOMBH_ ;
-      /**
-       * <code>bool AECNMHLOMBH = 634;</code>
-       * @return The aECNMHLOMBH.
-       */
-      @java.lang.Override
-      public boolean getAECNMHLOMBH() {
-        return aECNMHLOMBH_;
-      }
-      /**
-       * <code>bool AECNMHLOMBH = 634;</code>
-       * @param value The aECNMHLOMBH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAECNMHLOMBH(boolean value) {
-        
-        aECNMHLOMBH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool AECNMHLOMBH = 634;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAECNMHLOMBH() {
-        
-        aECNMHLOMBH_ = false;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq other =
+                    (emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) obj;
 
-      private float speed_ ;
-      /**
-       * <code>float speed = 1108;</code>
-       * @return The speed.
-       */
-      @java.lang.Override
-      public float getSpeed() {
-        return speed_;
-      }
-      /**
-       * <code>float speed = 1108;</code>
-       * @param value The speed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpeed(float value) {
-        
-        speed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float speed = 1108;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpeed() {
-        
-        speed_ = 0F;
-        onChanged();
-        return this;
-      }
+            if (getAPJPLBOJEGN() != other.getAPJPLBOJEGN()) return false;
+            if (getCombo() != other.getCombo()) return false;
+            if (getUgcGuid() != other.getUgcGuid()) return false;
+            if (getOJIACEJOFJF() != other.getOJIACEJOFJF()) return false;
+            if (getMaxCombo() != other.getMaxCombo()) return false;
+            if (getIsSaveScore() != other.getIsSaveScore()) return false;
+            if (getBFAIDHEKEOD() != other.getBFAIDHEKEOD()) return false;
+            if (!getDGMDAOAENMJList().equals(other.getDGMDAOAENMJList())) return false;
+            if (getScore() != other.getScore()) return false;
+            if (getJIIDBCILMEP() != other.getJIIDBCILMEP()) return false;
+            if (getJNBMKEFPJIC() != other.getJNBMKEFPJIC()) return false;
+            if (getAECNMHLOMBH() != other.getAECNMHLOMBH()) return false;
+            if (java.lang.Float.floatToIntBits(getSpeed())
+                    != java.lang.Float.floatToIntBits(other.getSpeed())) return false;
+            if (!getNNIJFEMDAIMList().equals(other.getNNIJFEMDAIMList())) return false;
+            if (getHPAMHHMILKM() != other.getHPAMHHMILKM()) return false;
+            if (getNDOFNFADKJH() != other.getNDOFNFADKJH()) return false;
+            if (getCorrectHit() != other.getCorrectHit()) return false;
+            if (getMusicBasicId() != other.getMusicBasicId()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
 
-      private com.google.protobuf.Internal.IntList nNIJFEMDAIM_ = emptyIntList();
-      private void ensureNNIJFEMDAIMIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          nNIJFEMDAIM_ = mutableCopy(nNIJFEMDAIM_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @return A list containing the nNIJFEMDAIM.
-       */
-      public java.util.List<java.lang.Integer>
-          getNNIJFEMDAIMList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(nNIJFEMDAIM_) : nNIJFEMDAIM_;
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @return The count of nNIJFEMDAIM.
-       */
-      public int getNNIJFEMDAIMCount() {
-        return nNIJFEMDAIM_.size();
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @param index The index of the element to return.
-       * @return The nNIJFEMDAIM at the given index.
-       */
-      public int getNNIJFEMDAIM(int index) {
-        return nNIJFEMDAIM_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @param index The index to set the value at.
-       * @param value The nNIJFEMDAIM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNNIJFEMDAIM(
-          int index, int value) {
-        ensureNNIJFEMDAIMIsMutable();
-        nNIJFEMDAIM_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @param value The nNIJFEMDAIM to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNNIJFEMDAIM(int value) {
-        ensureNNIJFEMDAIMIsMutable();
-        nNIJFEMDAIM_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @param values The nNIJFEMDAIM to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNNIJFEMDAIM(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNNIJFEMDAIMIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nNIJFEMDAIM_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNNIJFEMDAIM() {
-        nNIJFEMDAIM_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + APJPLBOJEGN_FIELD_NUMBER;
+            hash = (53 * hash) + getAPJPLBOJEGN();
+            hash = (37 * hash) + COMBO_FIELD_NUMBER;
+            hash = (53 * hash) + getCombo();
+            hash = (37 * hash) + UGC_GUID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUgcGuid());
+            hash = (37 * hash) + OJIACEJOFJF_FIELD_NUMBER;
+            hash = (53 * hash) + getOJIACEJOFJF();
+            hash = (37 * hash) + MAX_COMBO_FIELD_NUMBER;
+            hash = (53 * hash) + getMaxCombo();
+            hash = (37 * hash) + IS_SAVE_SCORE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSaveScore());
+            hash = (37 * hash) + BFAIDHEKEOD_FIELD_NUMBER;
+            hash = (53 * hash) + getBFAIDHEKEOD();
+            if (getDGMDAOAENMJCount() > 0) {
+                hash = (37 * hash) + DGMDAOAENMJ_FIELD_NUMBER;
+                hash = (53 * hash) + getDGMDAOAENMJList().hashCode();
+            }
+            hash = (37 * hash) + SCORE_FIELD_NUMBER;
+            hash = (53 * hash) + getScore();
+            hash = (37 * hash) + JIIDBCILMEP_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getJIIDBCILMEP());
+            hash = (37 * hash) + JNBMKEFPJIC_FIELD_NUMBER;
+            hash = (53 * hash) + getJNBMKEFPJIC();
+            hash = (37 * hash) + AECNMHLOMBH_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAECNMHLOMBH());
+            hash = (37 * hash) + SPEED_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(getSpeed());
+            if (getNNIJFEMDAIMCount() > 0) {
+                hash = (37 * hash) + NNIJFEMDAIM_FIELD_NUMBER;
+                hash = (53 * hash) + getNNIJFEMDAIMList().hashCode();
+            }
+            hash = (37 * hash) + HPAMHHMILKM_FIELD_NUMBER;
+            hash = (53 * hash) + getHPAMHHMILKM();
+            hash = (37 * hash) + NDOFNFADKJH_FIELD_NUMBER;
+            hash = (53 * hash) + getNDOFNFADKJH();
+            hash = (37 * hash) + CORRECT_HIT_FIELD_NUMBER;
+            hash = (53 * hash) + getCorrectHit();
+            hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getMusicBasicId();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
 
-      private int hPAMHHMILKM_ ;
-      /**
-       * <code>uint32 HPAMHHMILKM = 8;</code>
-       * @return The hPAMHHMILKM.
-       */
-      @java.lang.Override
-      public int getHPAMHHMILKM() {
-        return hPAMHHMILKM_;
-      }
-      /**
-       * <code>uint32 HPAMHHMILKM = 8;</code>
-       * @param value The hPAMHHMILKM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHPAMHHMILKM(int value) {
-        
-        hPAMHHMILKM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HPAMHHMILKM = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHPAMHHMILKM() {
-        
-        hPAMHHMILKM_ = 0;
-        onChanged();
-        return this;
-      }
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private int nDOFNFADKJH_ ;
-      /**
-       * <code>uint32 NDOFNFADKJH = 10;</code>
-       * @return The nDOFNFADKJH.
-       */
-      @java.lang.Override
-      public int getNDOFNFADKJH() {
-        return nDOFNFADKJH_;
-      }
-      /**
-       * <code>uint32 NDOFNFADKJH = 10;</code>
-       * @param value The nDOFNFADKJH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNDOFNFADKJH(int value) {
-        
-        nDOFNFADKJH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NDOFNFADKJH = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNDOFNFADKJH() {
-        
-        nDOFNFADKJH_ = 0;
-        onChanged();
-        return this;
-      }
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      private int correctHit_ ;
-      /**
-       * <code>uint32 correct_hit = 4;</code>
-       * @return The correctHit.
-       */
-      @java.lang.Override
-      public int getCorrectHit() {
-        return correctHit_;
-      }
-      /**
-       * <code>uint32 correct_hit = 4;</code>
-       * @param value The correctHit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCorrectHit(int value) {
-        
-        correctHit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 correct_hit = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCorrectHit() {
-        
-        correctHit_ = 0;
-        onChanged();
-        return this;
-      }
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private int musicBasicId_ ;
-      /**
-       * <code>uint32 music_basic_id = 12;</code>
-       * @return The musicBasicId.
-       */
-      @java.lang.Override
-      public int getMusicBasicId() {
-        return musicBasicId_;
-      }
-      /**
-       * <code>uint32 music_basic_id = 12;</code>
-       * @param value The musicBasicId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMusicBasicId(int value) {
-        
-        musicBasicId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 music_basic_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMusicBasicId() {
-        
-        musicBasicId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      // @@protoc_insertion_point(builder_scope:MusicGameSettleReq)
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: KKNNAGLMLKD
+         * CmdId: 8278
+         * </pre>
+         *
+         * Protobuf type {@code MusicGameSettleReq}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:MusicGameSettleReq)
+                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReqOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass
+                        .internal_static_MusicGameSettleReq_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass
+                        .internal_static_MusicGameSettleReq_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.class,
+                                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                aPJPLBOJEGN_ = 0;
+
+                combo_ = 0;
+
+                ugcGuid_ = 0L;
+
+                oJIACEJOFJF_ = 0;
+
+                maxCombo_ = 0;
+
+                isSaveScore_ = false;
+
+                bFAIDHEKEOD_ = 0;
+
+                dGMDAOAENMJ_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                score_ = 0;
+
+                jIIDBCILMEP_ = false;
+
+                jNBMKEFPJIC_ = 0;
+
+                aECNMHLOMBH_ = false;
+
+                speed_ = 0F;
+
+                nNIJFEMDAIM_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                hPAMHHMILKM_ = 0;
+
+                nDOFNFADKJH_ = 0;
+
+                correctHit_ = 0;
+
+                musicBasicId_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass
+                        .internal_static_MusicGameSettleReq_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq build() {
+                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                    buildPartial() {
+                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result =
+                        new emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq(this);
+                int from_bitField0_ = bitField0_;
+                result.aPJPLBOJEGN_ = aPJPLBOJEGN_;
+                result.combo_ = combo_;
+                result.ugcGuid_ = ugcGuid_;
+                result.oJIACEJOFJF_ = oJIACEJOFJF_;
+                result.maxCombo_ = maxCombo_;
+                result.isSaveScore_ = isSaveScore_;
+                result.bFAIDHEKEOD_ = bFAIDHEKEOD_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    dGMDAOAENMJ_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.dGMDAOAENMJ_ = dGMDAOAENMJ_;
+                result.score_ = score_;
+                result.jIIDBCILMEP_ = jIIDBCILMEP_;
+                result.jNBMKEFPJIC_ = jNBMKEFPJIC_;
+                result.aECNMHLOMBH_ = aECNMHLOMBH_;
+                result.speed_ = speed_;
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    nNIJFEMDAIM_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.nNIJFEMDAIM_ = nNIJFEMDAIM_;
+                result.hPAMHHMILKM_ = hPAMHHMILKM_;
+                result.nDOFNFADKJH_ = nDOFNFADKJH_;
+                result.correctHit_ = correctHit_;
+                result.musicBasicId_ = musicBasicId_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq other) {
+                if (other
+                        == emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                                .getDefaultInstance()) return this;
+                if (other.getAPJPLBOJEGN() != 0) {
+                    setAPJPLBOJEGN(other.getAPJPLBOJEGN());
+                }
+                if (other.getCombo() != 0) {
+                    setCombo(other.getCombo());
+                }
+                if (other.getUgcGuid() != 0L) {
+                    setUgcGuid(other.getUgcGuid());
+                }
+                if (other.getOJIACEJOFJF() != 0) {
+                    setOJIACEJOFJF(other.getOJIACEJOFJF());
+                }
+                if (other.getMaxCombo() != 0) {
+                    setMaxCombo(other.getMaxCombo());
+                }
+                if (other.getIsSaveScore() != false) {
+                    setIsSaveScore(other.getIsSaveScore());
+                }
+                if (other.getBFAIDHEKEOD() != 0) {
+                    setBFAIDHEKEOD(other.getBFAIDHEKEOD());
+                }
+                if (!other.dGMDAOAENMJ_.isEmpty()) {
+                    if (dGMDAOAENMJ_.isEmpty()) {
+                        dGMDAOAENMJ_ = other.dGMDAOAENMJ_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureDGMDAOAENMJIsMutable();
+                        dGMDAOAENMJ_.addAll(other.dGMDAOAENMJ_);
+                    }
+                    onChanged();
+                }
+                if (other.getScore() != 0) {
+                    setScore(other.getScore());
+                }
+                if (other.getJIIDBCILMEP() != false) {
+                    setJIIDBCILMEP(other.getJIIDBCILMEP());
+                }
+                if (other.getJNBMKEFPJIC() != 0) {
+                    setJNBMKEFPJIC(other.getJNBMKEFPJIC());
+                }
+                if (other.getAECNMHLOMBH() != false) {
+                    setAECNMHLOMBH(other.getAECNMHLOMBH());
+                }
+                if (other.getSpeed() != 0F) {
+                    setSpeed(other.getSpeed());
+                }
+                if (!other.nNIJFEMDAIM_.isEmpty()) {
+                    if (nNIJFEMDAIM_.isEmpty()) {
+                        nNIJFEMDAIM_ = other.nNIJFEMDAIM_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureNNIJFEMDAIMIsMutable();
+                        nNIJFEMDAIM_.addAll(other.nNIJFEMDAIM_);
+                    }
+                    onChanged();
+                }
+                if (other.getHPAMHHMILKM() != 0) {
+                    setHPAMHHMILKM(other.getHPAMHHMILKM());
+                }
+                if (other.getNDOFNFADKJH() != 0) {
+                    setNDOFNFADKJH(other.getNDOFNFADKJH());
+                }
+                if (other.getCorrectHit() != 0) {
+                    setCorrectHit(other.getCorrectHit());
+                }
+                if (other.getMusicBasicId() != 0) {
+                    setMusicBasicId(other.getMusicBasicId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int aPJPLBOJEGN_;
+            /**
+             * <code>uint32 APJPLBOJEGN = 1;</code>
+             *
+             * @return The aPJPLBOJEGN.
+             */
+            @java.lang.Override
+            public int getAPJPLBOJEGN() {
+                return aPJPLBOJEGN_;
+            }
+            /**
+             * <code>uint32 APJPLBOJEGN = 1;</code>
+             *
+             * @param value The aPJPLBOJEGN to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAPJPLBOJEGN(int value) {
+
+                aPJPLBOJEGN_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 APJPLBOJEGN = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAPJPLBOJEGN() {
+
+                aPJPLBOJEGN_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int combo_;
+            /**
+             * <code>uint32 combo = 14;</code>
+             *
+             * @return The combo.
+             */
+            @java.lang.Override
+            public int getCombo() {
+                return combo_;
+            }
+            /**
+             * <code>uint32 combo = 14;</code>
+             *
+             * @param value The combo to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCombo(int value) {
+
+                combo_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 combo = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCombo() {
+
+                combo_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private long ugcGuid_;
+            /**
+             * <code>uint64 ugc_guid = 6;</code>
+             *
+             * @return The ugcGuid.
+             */
+            @java.lang.Override
+            public long getUgcGuid() {
+                return ugcGuid_;
+            }
+            /**
+             * <code>uint64 ugc_guid = 6;</code>
+             *
+             * @param value The ugcGuid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUgcGuid(long value) {
+
+                ugcGuid_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint64 ugc_guid = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearUgcGuid() {
+
+                ugcGuid_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private int oJIACEJOFJF_;
+            /**
+             * <code>uint32 OJIACEJOFJF = 1954;</code>
+             *
+             * @return The oJIACEJOFJF.
+             */
+            @java.lang.Override
+            public int getOJIACEJOFJF() {
+                return oJIACEJOFJF_;
+            }
+            /**
+             * <code>uint32 OJIACEJOFJF = 1954;</code>
+             *
+             * @param value The oJIACEJOFJF to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOJIACEJOFJF(int value) {
+
+                oJIACEJOFJF_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 OJIACEJOFJF = 1954;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearOJIACEJOFJF() {
+
+                oJIACEJOFJF_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int maxCombo_;
+            /**
+             * <code>uint32 max_combo = 15;</code>
+             *
+             * @return The maxCombo.
+             */
+            @java.lang.Override
+            public int getMaxCombo() {
+                return maxCombo_;
+            }
+            /**
+             * <code>uint32 max_combo = 15;</code>
+             *
+             * @param value The maxCombo to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMaxCombo(int value) {
+
+                maxCombo_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 max_combo = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMaxCombo() {
+
+                maxCombo_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean isSaveScore_;
+            /**
+             * <code>bool is_save_score = 3;</code>
+             *
+             * @return The isSaveScore.
+             */
+            @java.lang.Override
+            public boolean getIsSaveScore() {
+                return isSaveScore_;
+            }
+            /**
+             * <code>bool is_save_score = 3;</code>
+             *
+             * @param value The isSaveScore to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsSaveScore(boolean value) {
+
+                isSaveScore_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_save_score = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsSaveScore() {
+
+                isSaveScore_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int bFAIDHEKEOD_;
+            /**
+             * <code>uint32 BFAIDHEKEOD = 181;</code>
+             *
+             * @return The bFAIDHEKEOD.
+             */
+            @java.lang.Override
+            public int getBFAIDHEKEOD() {
+                return bFAIDHEKEOD_;
+            }
+            /**
+             * <code>uint32 BFAIDHEKEOD = 181;</code>
+             *
+             * @param value The bFAIDHEKEOD to set.
+             * @return This builder for chaining.
+             */
+            public Builder setBFAIDHEKEOD(int value) {
+
+                bFAIDHEKEOD_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 BFAIDHEKEOD = 181;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearBFAIDHEKEOD() {
+
+                bFAIDHEKEOD_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList dGMDAOAENMJ_ = emptyIntList();
+
+            private void ensureDGMDAOAENMJIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    dGMDAOAENMJ_ = mutableCopy(dGMDAOAENMJ_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @return A list containing the dGMDAOAENMJ.
+             */
+            public java.util.List<java.lang.Integer> getDGMDAOAENMJList() {
+                return ((bitField0_ & 0x00000001) != 0)
+                        ? java.util.Collections.unmodifiableList(dGMDAOAENMJ_)
+                        : dGMDAOAENMJ_;
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @return The count of dGMDAOAENMJ.
+             */
+            public int getDGMDAOAENMJCount() {
+                return dGMDAOAENMJ_.size();
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The dGMDAOAENMJ at the given index.
+             */
+            public int getDGMDAOAENMJ(int index) {
+                return dGMDAOAENMJ_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The dGMDAOAENMJ to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDGMDAOAENMJ(int index, int value) {
+                ensureDGMDAOAENMJIsMutable();
+                dGMDAOAENMJ_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @param value The dGMDAOAENMJ to add.
+             * @return This builder for chaining.
+             */
+            public Builder addDGMDAOAENMJ(int value) {
+                ensureDGMDAOAENMJIsMutable();
+                dGMDAOAENMJ_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @param values The dGMDAOAENMJ to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllDGMDAOAENMJ(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureDGMDAOAENMJIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dGMDAOAENMJ_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 DGMDAOAENMJ = 630;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDGMDAOAENMJ() {
+                dGMDAOAENMJ_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            private int score_;
+            /**
+             * <code>uint32 score = 2;</code>
+             *
+             * @return The score.
+             */
+            @java.lang.Override
+            public int getScore() {
+                return score_;
+            }
+            /**
+             * <code>uint32 score = 2;</code>
+             *
+             * @param value The score to set.
+             * @return This builder for chaining.
+             */
+            public Builder setScore(int value) {
+
+                score_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 score = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearScore() {
+
+                score_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean jIIDBCILMEP_;
+            /**
+             * <code>bool JIIDBCILMEP = 1707;</code>
+             *
+             * @return The jIIDBCILMEP.
+             */
+            @java.lang.Override
+            public boolean getJIIDBCILMEP() {
+                return jIIDBCILMEP_;
+            }
+            /**
+             * <code>bool JIIDBCILMEP = 1707;</code>
+             *
+             * @param value The jIIDBCILMEP to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJIIDBCILMEP(boolean value) {
+
+                jIIDBCILMEP_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool JIIDBCILMEP = 1707;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearJIIDBCILMEP() {
+
+                jIIDBCILMEP_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int jNBMKEFPJIC_;
+            /**
+             * <code>uint32 JNBMKEFPJIC = 1085;</code>
+             *
+             * @return The jNBMKEFPJIC.
+             */
+            @java.lang.Override
+            public int getJNBMKEFPJIC() {
+                return jNBMKEFPJIC_;
+            }
+            /**
+             * <code>uint32 JNBMKEFPJIC = 1085;</code>
+             *
+             * @param value The jNBMKEFPJIC to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJNBMKEFPJIC(int value) {
+
+                jNBMKEFPJIC_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 JNBMKEFPJIC = 1085;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearJNBMKEFPJIC() {
+
+                jNBMKEFPJIC_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean aECNMHLOMBH_;
+            /**
+             * <code>bool AECNMHLOMBH = 634;</code>
+             *
+             * @return The aECNMHLOMBH.
+             */
+            @java.lang.Override
+            public boolean getAECNMHLOMBH() {
+                return aECNMHLOMBH_;
+            }
+            /**
+             * <code>bool AECNMHLOMBH = 634;</code>
+             *
+             * @param value The aECNMHLOMBH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAECNMHLOMBH(boolean value) {
+
+                aECNMHLOMBH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool AECNMHLOMBH = 634;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAECNMHLOMBH() {
+
+                aECNMHLOMBH_ = false;
+                onChanged();
+                return this;
+            }
+
+            private float speed_;
+            /**
+             * <code>float speed = 1108;</code>
+             *
+             * @return The speed.
+             */
+            @java.lang.Override
+            public float getSpeed() {
+                return speed_;
+            }
+            /**
+             * <code>float speed = 1108;</code>
+             *
+             * @param value The speed to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSpeed(float value) {
+
+                speed_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>float speed = 1108;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSpeed() {
+
+                speed_ = 0F;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList nNIJFEMDAIM_ = emptyIntList();
+
+            private void ensureNNIJFEMDAIMIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    nNIJFEMDAIM_ = mutableCopy(nNIJFEMDAIM_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @return A list containing the nNIJFEMDAIM.
+             */
+            public java.util.List<java.lang.Integer> getNNIJFEMDAIMList() {
+                return ((bitField0_ & 0x00000002) != 0)
+                        ? java.util.Collections.unmodifiableList(nNIJFEMDAIM_)
+                        : nNIJFEMDAIM_;
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @return The count of nNIJFEMDAIM.
+             */
+            public int getNNIJFEMDAIMCount() {
+                return nNIJFEMDAIM_.size();
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The nNIJFEMDAIM at the given index.
+             */
+            public int getNNIJFEMDAIM(int index) {
+                return nNIJFEMDAIM_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The nNIJFEMDAIM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNNIJFEMDAIM(int index, int value) {
+                ensureNNIJFEMDAIMIsMutable();
+                nNIJFEMDAIM_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @param value The nNIJFEMDAIM to add.
+             * @return This builder for chaining.
+             */
+            public Builder addNNIJFEMDAIM(int value) {
+                ensureNNIJFEMDAIMIsMutable();
+                nNIJFEMDAIM_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @param values The nNIJFEMDAIM to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllNNIJFEMDAIM(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureNNIJFEMDAIMIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nNIJFEMDAIM_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 NNIJFEMDAIM = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNNIJFEMDAIM() {
+                nNIJFEMDAIM_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+            }
+
+            private int hPAMHHMILKM_;
+            /**
+             * <code>uint32 HPAMHHMILKM = 8;</code>
+             *
+             * @return The hPAMHHMILKM.
+             */
+            @java.lang.Override
+            public int getHPAMHHMILKM() {
+                return hPAMHHMILKM_;
+            }
+            /**
+             * <code>uint32 HPAMHHMILKM = 8;</code>
+             *
+             * @param value The hPAMHHMILKM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHPAMHHMILKM(int value) {
+
+                hPAMHHMILKM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 HPAMHHMILKM = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearHPAMHHMILKM() {
+
+                hPAMHHMILKM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int nDOFNFADKJH_;
+            /**
+             * <code>uint32 NDOFNFADKJH = 10;</code>
+             *
+             * @return The nDOFNFADKJH.
+             */
+            @java.lang.Override
+            public int getNDOFNFADKJH() {
+                return nDOFNFADKJH_;
+            }
+            /**
+             * <code>uint32 NDOFNFADKJH = 10;</code>
+             *
+             * @param value The nDOFNFADKJH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNDOFNFADKJH(int value) {
+
+                nDOFNFADKJH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 NDOFNFADKJH = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNDOFNFADKJH() {
+
+                nDOFNFADKJH_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int correctHit_;
+            /**
+             * <code>uint32 correct_hit = 4;</code>
+             *
+             * @return The correctHit.
+             */
+            @java.lang.Override
+            public int getCorrectHit() {
+                return correctHit_;
+            }
+            /**
+             * <code>uint32 correct_hit = 4;</code>
+             *
+             * @param value The correctHit to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCorrectHit(int value) {
+
+                correctHit_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 correct_hit = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCorrectHit() {
+
+                correctHit_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int musicBasicId_;
+            /**
+             * <code>uint32 music_basic_id = 12;</code>
+             *
+             * @return The musicBasicId.
+             */
+            @java.lang.Override
+            public int getMusicBasicId() {
+                return musicBasicId_;
+            }
+            /**
+             * <code>uint32 music_basic_id = 12;</code>
+             *
+             * @param value The musicBasicId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMusicBasicId(int value) {
+
+                musicBasicId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 music_basic_id = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMusicBasicId() {
+
+                musicBasicId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:MusicGameSettleReq)
+        }
+
+        // @@protoc_insertion_point(class_scope:MusicGameSettleReq)
+        private static final emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq();
+        }
+
+        public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<MusicGameSettleReq> PARSER =
+                new com.google.protobuf.AbstractParser<MusicGameSettleReq>() {
+                    @java.lang.Override
+                    public MusicGameSettleReq parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new MusicGameSettleReq(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<MusicGameSettleReq> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MusicGameSettleReq> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:MusicGameSettleReq)
-    private static final emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_MusicGameSettleReq_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_MusicGameSettleReq_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq();
+        java.lang.String[] descriptorData = {
+            "\n\030MusicGameSettleReq.proto\"\203\003\n\022MusicGame"
+                    + "SettleReq\022\023\n\013APJPLBOJEGN\030\001 \001(\r\022\r\n\005combo\030"
+                    + "\016 \001(\r\022\020\n\010ugc_guid\030\006 \001(\004\022\024\n\013OJIACEJOFJF\030\242"
+                    + "\017 \001(\r\022\021\n\tmax_combo\030\017 \001(\r\022\025\n\ris_save_scor"
+                    + "e\030\003 \001(\010\022\024\n\013BFAIDHEKEOD\030\265\001 \001(\r\022\024\n\013DGMDAOA"
+                    + "ENMJ\030\366\004 \003(\r\022\r\n\005score\030\002 \001(\r\022\024\n\013JIIDBCILME"
+                    + "P\030\253\r \001(\010\022\024\n\013JNBMKEFPJIC\030\275\010 \001(\r\022\024\n\013AECNMH"
+                    + "LOMBH\030\372\004 \001(\010\022\016\n\005speed\030\324\010 \001(\002\022\023\n\013NNIJFEMD"
+                    + "AIM\030\r \003(\r\022\023\n\013HPAMHHMILKM\030\010 \001(\r\022\023\n\013NDOFNF"
+                    + "ADKJH\030\n \001(\r\022\023\n\013correct_hit\030\004 \001(\r\022\026\n\016musi"
+                    + "c_basic_id\030\014 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_MusicGameSettleReq_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_MusicGameSettleReq_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_MusicGameSettleReq_descriptor,
+                        new java.lang.String[] {
+                            "APJPLBOJEGN",
+                            "Combo",
+                            "UgcGuid",
+                            "OJIACEJOFJF",
+                            "MaxCombo",
+                            "IsSaveScore",
+                            "BFAIDHEKEOD",
+                            "DGMDAOAENMJ",
+                            "Score",
+                            "JIIDBCILMEP",
+                            "JNBMKEFPJIC",
+                            "AECNMHLOMBH",
+                            "Speed",
+                            "NNIJFEMDAIM",
+                            "HPAMHHMILKM",
+                            "NDOFNFADKJH",
+                            "CorrectHit",
+                            "MusicBasicId",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MusicGameSettleReq>
-        PARSER = new com.google.protobuf.AbstractParser<MusicGameSettleReq>() {
-      @java.lang.Override
-      public MusicGameSettleReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MusicGameSettleReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MusicGameSettleReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MusicGameSettleReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MusicGameSettleReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MusicGameSettleReq_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\030MusicGameSettleReq.proto\"\203\003\n\022MusicGame" +
-      "SettleReq\022\023\n\013APJPLBOJEGN\030\001 \001(\r\022\r\n\005combo\030" +
-      "\016 \001(\r\022\020\n\010ugc_guid\030\006 \001(\004\022\024\n\013OJIACEJOFJF\030\242" +
-      "\017 \001(\r\022\021\n\tmax_combo\030\017 \001(\r\022\025\n\ris_save_scor" +
-      "e\030\003 \001(\010\022\024\n\013BFAIDHEKEOD\030\265\001 \001(\r\022\024\n\013DGMDAOA" +
-      "ENMJ\030\366\004 \003(\r\022\r\n\005score\030\002 \001(\r\022\024\n\013JIIDBCILME" +
-      "P\030\253\r \001(\010\022\024\n\013JNBMKEFPJIC\030\275\010 \001(\r\022\024\n\013AECNMH" +
-      "LOMBH\030\372\004 \001(\010\022\016\n\005speed\030\324\010 \001(\002\022\023\n\013NNIJFEMD" +
-      "AIM\030\r \003(\r\022\023\n\013HPAMHHMILKM\030\010 \001(\r\022\023\n\013NDOFNF" +
-      "ADKJH\030\n \001(\r\022\023\n\013correct_hit\030\004 \001(\r\022\026\n\016musi" +
-      "c_basic_id\030\014 \001(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_MusicGameSettleReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_MusicGameSettleReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MusicGameSettleReq_descriptor,
-        new java.lang.String[] { "APJPLBOJEGN", "Combo", "UgcGuid", "OJIACEJOFJF", "MaxCombo", "IsSaveScore", "BFAIDHEKEOD", "DGMDAOAENMJ", "Score", "JIIDBCILMEP", "JNBMKEFPJIC", "AECNMHLOMBH", "Speed", "NNIJFEMDAIM", "HPAMHHMILKM", "NDOFNFADKJH", "CorrectHit", "MusicBasicId", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

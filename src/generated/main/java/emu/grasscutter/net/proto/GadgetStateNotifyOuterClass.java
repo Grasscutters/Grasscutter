@@ -4,347 +4,43 @@
 package emu.grasscutter.net.proto;
 
 public final class GadgetStateNotifyOuterClass {
-  private GadgetStateNotifyOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private GadgetStateNotifyOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface GadgetStateNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:GadgetStateNotify)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 gadget_state = 15;</code>
-     * @return The gadgetState.
-     */
-    int getGadgetState();
-
-    /**
-     * <code>bool is_enable_interact = 6;</code>
-     * @return The isEnableInteract.
-     */
-    boolean getIsEnableInteract();
-
-    /**
-     * <code>uint32 gadget_entity_id = 8;</code>
-     * @return The gadgetEntityId.
-     */
-    int getGadgetEntityId();
-  }
-  /**
-   * <pre>
-   * Name: DPAAILJEKLP
-   * CmdId: 854
-   * </pre>
-   *
-   * Protobuf type {@code GadgetStateNotify}
-   */
-  public static final class GadgetStateNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GadgetStateNotify)
-      GadgetStateNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use GadgetStateNotify.newBuilder() to construct.
-    private GadgetStateNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GadgetStateNotify() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GadgetStateNotify();
-    }
+    public interface GadgetStateNotifyOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:GadgetStateNotify)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GadgetStateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
+        /**
+         * <code>uint32 gadget_state = 15;</code>
+         *
+         * @return The gadgetState.
+         */
+        int getGadgetState();
 
-              isEnableInteract_ = input.readBool();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>bool is_enable_interact = 6;</code>
+         *
+         * @return The isEnableInteract.
+         */
+        boolean getIsEnableInteract();
 
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              gadgetState_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.internal_static_GadgetStateNotify_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.internal_static_GadgetStateNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.class, emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.Builder.class);
-    }
-
-    public static final int GADGET_STATE_FIELD_NUMBER = 15;
-    private int gadgetState_;
-    /**
-     * <code>uint32 gadget_state = 15;</code>
-     * @return The gadgetState.
-     */
-    @java.lang.Override
-    public int getGadgetState() {
-      return gadgetState_;
-    }
-
-    public static final int IS_ENABLE_INTERACT_FIELD_NUMBER = 6;
-    private boolean isEnableInteract_;
-    /**
-     * <code>bool is_enable_interact = 6;</code>
-     * @return The isEnableInteract.
-     */
-    @java.lang.Override
-    public boolean getIsEnableInteract() {
-      return isEnableInteract_;
-    }
-
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 8;
-    private int gadgetEntityId_;
-    /**
-     * <code>uint32 gadget_entity_id = 8;</code>
-     * @return The gadgetEntityId.
-     */
-    @java.lang.Override
-    public int getGadgetEntityId() {
-      return gadgetEntityId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (isEnableInteract_ != false) {
-        output.writeBool(6, isEnableInteract_);
-      }
-      if (gadgetEntityId_ != 0) {
-        output.writeUInt32(8, gadgetEntityId_);
-      }
-      if (gadgetState_ != 0) {
-        output.writeUInt32(15, gadgetState_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (isEnableInteract_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isEnableInteract_);
-      }
-      if (gadgetEntityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, gadgetEntityId_);
-      }
-      if (gadgetState_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, gadgetState_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify other = (emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) obj;
-
-      if (getGadgetState()
-          != other.getGadgetState()) return false;
-      if (getIsEnableInteract()
-          != other.getIsEnableInteract()) return false;
-      if (getGadgetEntityId()
-          != other.getGadgetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GADGET_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetState();
-      hash = (37 * hash) + IS_ENABLE_INTERACT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsEnableInteract());
-      hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>uint32 gadget_entity_id = 8;</code>
+         *
+         * @return The gadgetEntityId.
+         */
+        int getGadgetEntityId();
     }
     /**
+     *
+     *
      * <pre>
      * Name: DPAAILJEKLP
      * CmdId: 854
@@ -352,337 +48,687 @@ public final class GadgetStateNotifyOuterClass {
      *
      * Protobuf type {@code GadgetStateNotify}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:GadgetStateNotify)
-        emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.internal_static_GadgetStateNotify_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.internal_static_GadgetStateNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.class, emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class GadgetStateNotify extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:GadgetStateNotify)
+            GadgetStateNotifyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use GadgetStateNotify.newBuilder() to construct.
+        private GadgetStateNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        gadgetState_ = 0;
 
-        isEnableInteract_ = false;
+        private GadgetStateNotify() {}
 
-        gadgetEntityId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.internal_static_GadgetStateNotify_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify build() {
-        emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new GadgetStateNotify();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify buildPartial() {
-        emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify result = new emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify(this);
-        result.gadgetState_ = gadgetState_;
-        result.isEnableInteract_ = isEnableInteract_;
-        result.gadgetEntityId_ = gadgetEntityId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify other) {
-        if (other == emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.getDefaultInstance()) return this;
-        if (other.getGadgetState() != 0) {
-          setGadgetState(other.getGadgetState());
+        private GadgetStateNotify(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 48:
+                            {
+                                isEnableInteract_ = input.readBool();
+                                break;
+                            }
+                        case 64:
+                            {
+                                gadgetEntityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                gadgetState_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getIsEnableInteract() != false) {
-          setIsEnableInteract(other.getIsEnableInteract());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass
+                    .internal_static_GadgetStateNotify_descriptor;
         }
-        if (other.getGadgetEntityId() != 0) {
-          setGadgetEntityId(other.getGadgetEntityId());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass
+                    .internal_static_GadgetStateNotify_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.class,
+                            emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.Builder
+                                    .class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int GADGET_STATE_FIELD_NUMBER = 15;
+        private int gadgetState_;
+        /**
+         * <code>uint32 gadget_state = 15;</code>
+         *
+         * @return The gadgetState.
+         */
+        @java.lang.Override
+        public int getGadgetState() {
+            return gadgetState_;
         }
-        return this;
-      }
 
-      private int gadgetState_ ;
-      /**
-       * <code>uint32 gadget_state = 15;</code>
-       * @return The gadgetState.
-       */
-      @java.lang.Override
-      public int getGadgetState() {
-        return gadgetState_;
-      }
-      /**
-       * <code>uint32 gadget_state = 15;</code>
-       * @param value The gadgetState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetState(int value) {
-        
-        gadgetState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_state = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetState() {
-        
-        gadgetState_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int IS_ENABLE_INTERACT_FIELD_NUMBER = 6;
+        private boolean isEnableInteract_;
+        /**
+         * <code>bool is_enable_interact = 6;</code>
+         *
+         * @return The isEnableInteract.
+         */
+        @java.lang.Override
+        public boolean getIsEnableInteract() {
+            return isEnableInteract_;
+        }
 
-      private boolean isEnableInteract_ ;
-      /**
-       * <code>bool is_enable_interact = 6;</code>
-       * @return The isEnableInteract.
-       */
-      @java.lang.Override
-      public boolean getIsEnableInteract() {
-        return isEnableInteract_;
-      }
-      /**
-       * <code>bool is_enable_interact = 6;</code>
-       * @param value The isEnableInteract to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsEnableInteract(boolean value) {
-        
-        isEnableInteract_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_enable_interact = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsEnableInteract() {
-        
-        isEnableInteract_ = false;
-        onChanged();
-        return this;
-      }
+        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 8;
+        private int gadgetEntityId_;
+        /**
+         * <code>uint32 gadget_entity_id = 8;</code>
+         *
+         * @return The gadgetEntityId.
+         */
+        @java.lang.Override
+        public int getGadgetEntityId() {
+            return gadgetEntityId_;
+        }
 
-      private int gadgetEntityId_ ;
-      /**
-       * <code>uint32 gadget_entity_id = 8;</code>
-       * @return The gadgetEntityId.
-       */
-      @java.lang.Override
-      public int getGadgetEntityId() {
-        return gadgetEntityId_;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 8;</code>
-       * @param value The gadgetEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetEntityId(int value) {
-        
-        gadgetEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetEntityId() {
-        
-        gadgetEntityId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:GadgetStateNotify)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (isEnableInteract_ != false) {
+                output.writeBool(6, isEnableInteract_);
+            }
+            if (gadgetEntityId_ != 0) {
+                output.writeUInt32(8, gadgetEntityId_);
+            }
+            if (gadgetState_ != 0) {
+                output.writeUInt32(15, gadgetState_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (isEnableInteract_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, isEnableInteract_);
+            }
+            if (gadgetEntityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, gadgetEntityId_);
+            }
+            if (gadgetState_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, gadgetState_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify other =
+                    (emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) obj;
+
+            if (getGadgetState() != other.getGadgetState()) return false;
+            if (getIsEnableInteract() != other.getIsEnableInteract()) return false;
+            if (getGadgetEntityId() != other.getGadgetEntityId()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + GADGET_STATE_FIELD_NUMBER;
+            hash = (53 * hash) + getGadgetState();
+            hash = (37 * hash) + IS_ENABLE_INTERACT_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsEnableInteract());
+            hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getGadgetEntityId();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: DPAAILJEKLP
+         * CmdId: 854
+         * </pre>
+         *
+         * Protobuf type {@code GadgetStateNotify}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:GadgetStateNotify)
+                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotifyOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass
+                        .internal_static_GadgetStateNotify_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass
+                        .internal_static_GadgetStateNotify_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.class,
+                                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                gadgetState_ = 0;
+
+                isEnableInteract_ = false;
+
+                gadgetEntityId_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass
+                        .internal_static_GadgetStateNotify_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify build() {
+                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                    buildPartial() {
+                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify result =
+                        new emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify(this);
+                result.gadgetState_ = gadgetState_;
+                result.isEnableInteract_ = isEnableInteract_;
+                result.gadgetEntityId_ = gadgetEntityId_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify other) {
+                if (other
+                        == emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                                .getDefaultInstance()) return this;
+                if (other.getGadgetState() != 0) {
+                    setGadgetState(other.getGadgetState());
+                }
+                if (other.getIsEnableInteract() != false) {
+                    setIsEnableInteract(other.getIsEnableInteract());
+                }
+                if (other.getGadgetEntityId() != 0) {
+                    setGadgetEntityId(other.getGadgetEntityId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int gadgetState_;
+            /**
+             * <code>uint32 gadget_state = 15;</code>
+             *
+             * @return The gadgetState.
+             */
+            @java.lang.Override
+            public int getGadgetState() {
+                return gadgetState_;
+            }
+            /**
+             * <code>uint32 gadget_state = 15;</code>
+             *
+             * @param value The gadgetState to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGadgetState(int value) {
+
+                gadgetState_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 gadget_state = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearGadgetState() {
+
+                gadgetState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean isEnableInteract_;
+            /**
+             * <code>bool is_enable_interact = 6;</code>
+             *
+             * @return The isEnableInteract.
+             */
+            @java.lang.Override
+            public boolean getIsEnableInteract() {
+                return isEnableInteract_;
+            }
+            /**
+             * <code>bool is_enable_interact = 6;</code>
+             *
+             * @param value The isEnableInteract to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsEnableInteract(boolean value) {
+
+                isEnableInteract_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_enable_interact = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsEnableInteract() {
+
+                isEnableInteract_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int gadgetEntityId_;
+            /**
+             * <code>uint32 gadget_entity_id = 8;</code>
+             *
+             * @return The gadgetEntityId.
+             */
+            @java.lang.Override
+            public int getGadgetEntityId() {
+                return gadgetEntityId_;
+            }
+            /**
+             * <code>uint32 gadget_entity_id = 8;</code>
+             *
+             * @param value The gadgetEntityId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGadgetEntityId(int value) {
+
+                gadgetEntityId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 gadget_entity_id = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearGadgetEntityId() {
+
+                gadgetEntityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:GadgetStateNotify)
+        }
+
+        // @@protoc_insertion_point(class_scope:GadgetStateNotify)
+        private static final emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify();
+        }
+
+        public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<GadgetStateNotify> PARSER =
+                new com.google.protobuf.AbstractParser<GadgetStateNotify>() {
+                    @java.lang.Override
+                    public GadgetStateNotify parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new GadgetStateNotify(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<GadgetStateNotify> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<GadgetStateNotify> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:GadgetStateNotify)
-    private static final emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_GadgetStateNotify_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_GadgetStateNotify_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify();
+        java.lang.String[] descriptorData = {
+            "\n\027GadgetStateNotify.proto\"_\n\021GadgetState"
+                    + "Notify\022\024\n\014gadget_state\030\017 \001(\r\022\032\n\022is_enabl"
+                    + "e_interact\030\006 \001(\010\022\030\n\020gadget_entity_id\030\010 \001"
+                    + "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_GadgetStateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_GadgetStateNotify_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_GadgetStateNotify_descriptor,
+                        new java.lang.String[] {
+                            "GadgetState", "IsEnableInteract", "GadgetEntityId",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GadgetStateNotify>
-        PARSER = new com.google.protobuf.AbstractParser<GadgetStateNotify>() {
-      @java.lang.Override
-      public GadgetStateNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetStateNotify(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GadgetStateNotify> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GadgetStateNotify> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GadgetStateNotify_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GadgetStateNotify_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\027GadgetStateNotify.proto\"_\n\021GadgetState" +
-      "Notify\022\024\n\014gadget_state\030\017 \001(\r\022\032\n\022is_enabl" +
-      "e_interact\030\006 \001(\010\022\030\n\020gadget_entity_id\030\010 \001" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_GadgetStateNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_GadgetStateNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GadgetStateNotify_descriptor,
-        new java.lang.String[] { "GadgetState", "IsEnableInteract", "GadgetEntityId", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

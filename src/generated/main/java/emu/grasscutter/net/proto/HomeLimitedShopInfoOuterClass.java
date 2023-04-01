@@ -4,1283 +4,1443 @@
 package emu.grasscutter.net.proto;
 
 public final class HomeLimitedShopInfoOuterClass {
-  private HomeLimitedShopInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private HomeLimitedShopInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface HomeLimitedShopInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HomeLimitedShopInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public interface HomeLimitedShopInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:HomeLimitedShopInfo)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint32 nextGuestOpenTime = 12;</code>
+         *
+         * @return The nextGuestOpenTime.
+         */
+        int getNextGuestOpenTime();
+
+        /**
+         * <code>uint32 nextOpenTime = 11;</code>
+         *
+         * @return The nextOpenTime.
+         */
+        int getNextOpenTime();
+
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         *
+         * @return Whether the djinnPos field is set.
+         */
+        boolean hasDjinnPos();
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         *
+         * @return The djinnPos.
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos();
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder();
+
+        /**
+         * <code>uint32 nextCloseTime = 6;</code>
+         *
+         * @return The nextCloseTime.
+         */
+        int getNextCloseTime();
+
+        /**
+         * <code>uint32 uid = 14;</code>
+         *
+         * @return The uid.
+         */
+        int getUid();
+
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         *
+         * @return Whether the djinnRot field is set.
+         */
+        boolean hasDjinnRot();
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         *
+         * @return The djinnRot.
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot();
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder();
+    }
     /**
-     * <code>uint32 nextGuestOpenTime = 12;</code>
-     * @return The nextGuestOpenTime.
-     */
-    int getNextGuestOpenTime();
-
-    /**
-     * <code>uint32 nextOpenTime = 11;</code>
-     * @return The nextOpenTime.
-     */
-    int getNextOpenTime();
-
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
      *
-     * <code>.Vector djinn_pos = 1;</code>
-     * @return Whether the djinnPos field is set.
-     */
-    boolean hasDjinnPos();
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
      *
-     * <code>.Vector djinn_pos = 1;</code>
-     * @return The djinnPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos();
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
-     *
-     * <code>.Vector djinn_pos = 1;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder();
-
-    /**
-     * <code>uint32 nextCloseTime = 6;</code>
-     * @return The nextCloseTime.
-     */
-    int getNextCloseTime();
-
-    /**
-     * <code>uint32 uid = 14;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     * @return Whether the djinnRot field is set.
-     */
-    boolean hasDjinnRot();
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     * @return The djinnRot.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot();
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder();
-  }
-  /**
-   * <pre>
-   * Name: ILEIPGLHFAP
-   * </pre>
-   *
-   * Protobuf type {@code HomeLimitedShopInfo}
-   */
-  public static final class HomeLimitedShopInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:HomeLimitedShopInfo)
-      HomeLimitedShopInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use HomeLimitedShopInfo.newBuilder() to construct.
-    private HomeLimitedShopInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private HomeLimitedShopInfo() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new HomeLimitedShopInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private HomeLimitedShopInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (djinnPos_ != null) {
-                subBuilder = djinnPos_.toBuilder();
-              }
-              djinnPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(djinnPos_);
-                djinnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              nextCloseTime_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (djinnRot_ != null) {
-                subBuilder = djinnRot_.toBuilder();
-              }
-              djinnRot_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(djinnRot_);
-                djinnRot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              nextOpenTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              nextGuestOpenTime_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.class, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder.class);
-    }
-
-    public static final int NEXTGUESTOPENTIME_FIELD_NUMBER = 12;
-    private int nextGuestOpenTime_;
-    /**
-     * <code>uint32 nextGuestOpenTime = 12;</code>
-     * @return The nextGuestOpenTime.
-     */
-    @java.lang.Override
-    public int getNextGuestOpenTime() {
-      return nextGuestOpenTime_;
-    }
-
-    public static final int NEXTOPENTIME_FIELD_NUMBER = 11;
-    private int nextOpenTime_;
-    /**
-     * <code>uint32 nextOpenTime = 11;</code>
-     * @return The nextOpenTime.
-     */
-    @java.lang.Override
-    public int getNextOpenTime() {
-      return nextOpenTime_;
-    }
-
-    public static final int DJINN_POS_FIELD_NUMBER = 1;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
-     *
-     * <code>.Vector djinn_pos = 1;</code>
-     * @return Whether the djinnPos field is set.
-     */
-    @java.lang.Override
-    public boolean hasDjinnPos() {
-      return djinnPos_ != null;
-    }
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
-     *
-     * <code>.Vector djinn_pos = 1;</code>
-     * @return The djinnPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
-      return djinnPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
-    }
-    /**
-     * <pre>
-     *CKJKPEEKOGG
-     * </pre>
-     *
-     * <code>.Vector djinn_pos = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
-      return getDjinnPos();
-    }
-
-    public static final int NEXTCLOSETIME_FIELD_NUMBER = 6;
-    private int nextCloseTime_;
-    /**
-     * <code>uint32 nextCloseTime = 6;</code>
-     * @return The nextCloseTime.
-     */
-    @java.lang.Override
-    public int getNextCloseTime() {
-      return nextCloseTime_;
-    }
-
-    public static final int UID_FIELD_NUMBER = 14;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 14;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
-    public static final int DJINN_ROT_FIELD_NUMBER = 9;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnRot_;
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     * @return Whether the djinnRot field is set.
-     */
-    @java.lang.Override
-    public boolean hasDjinnRot() {
-      return djinnRot_ != null;
-    }
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     * @return The djinnRot.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot() {
-      return djinnRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnRot_;
-    }
-    /**
-     * <pre>
-     *GMPJFCODOLK
-     * </pre>
-     *
-     * <code>.Vector djinn_rot = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder() {
-      return getDjinnRot();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (djinnPos_ != null) {
-        output.writeMessage(1, getDjinnPos());
-      }
-      if (nextCloseTime_ != 0) {
-        output.writeUInt32(6, nextCloseTime_);
-      }
-      if (djinnRot_ != null) {
-        output.writeMessage(9, getDjinnRot());
-      }
-      if (nextOpenTime_ != 0) {
-        output.writeUInt32(11, nextOpenTime_);
-      }
-      if (nextGuestOpenTime_ != 0) {
-        output.writeUInt32(12, nextGuestOpenTime_);
-      }
-      if (uid_ != 0) {
-        output.writeUInt32(14, uid_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (djinnPos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDjinnPos());
-      }
-      if (nextCloseTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, nextCloseTime_);
-      }
-      if (djinnRot_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getDjinnRot());
-      }
-      if (nextOpenTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, nextOpenTime_);
-      }
-      if (nextGuestOpenTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, nextGuestOpenTime_);
-      }
-      if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, uid_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other = (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) obj;
-
-      if (getNextGuestOpenTime()
-          != other.getNextGuestOpenTime()) return false;
-      if (getNextOpenTime()
-          != other.getNextOpenTime()) return false;
-      if (hasDjinnPos() != other.hasDjinnPos()) return false;
-      if (hasDjinnPos()) {
-        if (!getDjinnPos()
-            .equals(other.getDjinnPos())) return false;
-      }
-      if (getNextCloseTime()
-          != other.getNextCloseTime()) return false;
-      if (getUid()
-          != other.getUid()) return false;
-      if (hasDjinnRot() != other.hasDjinnRot()) return false;
-      if (hasDjinnRot()) {
-        if (!getDjinnRot()
-            .equals(other.getDjinnRot())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NEXTGUESTOPENTIME_FIELD_NUMBER;
-      hash = (53 * hash) + getNextGuestOpenTime();
-      hash = (37 * hash) + NEXTOPENTIME_FIELD_NUMBER;
-      hash = (53 * hash) + getNextOpenTime();
-      if (hasDjinnPos()) {
-        hash = (37 * hash) + DJINN_POS_FIELD_NUMBER;
-        hash = (53 * hash) + getDjinnPos().hashCode();
-      }
-      hash = (37 * hash) + NEXTCLOSETIME_FIELD_NUMBER;
-      hash = (53 * hash) + getNextCloseTime();
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
-      if (hasDjinnRot()) {
-        hash = (37 * hash) + DJINN_ROT_FIELD_NUMBER;
-        hash = (53 * hash) + getDjinnRot().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
      * <pre>
      * Name: ILEIPGLHFAP
      * </pre>
      *
      * Protobuf type {@code HomeLimitedShopInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:HomeLimitedShopInfo)
-        emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.class, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        nextGuestOpenTime_ = 0;
-
-        nextOpenTime_ = 0;
-
-        if (djinnPosBuilder_ == null) {
-          djinnPos_ = null;
-        } else {
-          djinnPos_ = null;
-          djinnPosBuilder_ = null;
-        }
-        nextCloseTime_ = 0;
-
-        uid_ = 0;
-
-        if (djinnRotBuilder_ == null) {
-          djinnRot_ = null;
-        } else {
-          djinnRot_ = null;
-          djinnRotBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.internal_static_HomeLimitedShopInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo build() {
-        emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo buildPartial() {
-        emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result = new emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo(this);
-        result.nextGuestOpenTime_ = nextGuestOpenTime_;
-        result.nextOpenTime_ = nextOpenTime_;
-        if (djinnPosBuilder_ == null) {
-          result.djinnPos_ = djinnPos_;
-        } else {
-          result.djinnPos_ = djinnPosBuilder_.build();
-        }
-        result.nextCloseTime_ = nextCloseTime_;
-        result.uid_ = uid_;
-        if (djinnRotBuilder_ == null) {
-          result.djinnRot_ = djinnRot_;
-        } else {
-          result.djinnRot_ = djinnRotBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other) {
-        if (other == emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance()) return this;
-        if (other.getNextGuestOpenTime() != 0) {
-          setNextGuestOpenTime(other.getNextGuestOpenTime());
-        }
-        if (other.getNextOpenTime() != 0) {
-          setNextOpenTime(other.getNextOpenTime());
-        }
-        if (other.hasDjinnPos()) {
-          mergeDjinnPos(other.getDjinnPos());
-        }
-        if (other.getNextCloseTime() != 0) {
-          setNextCloseTime(other.getNextCloseTime());
-        }
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
-        }
-        if (other.hasDjinnRot()) {
-          mergeDjinnRot(other.getDjinnRot());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int nextGuestOpenTime_ ;
-      /**
-       * <code>uint32 nextGuestOpenTime = 12;</code>
-       * @return The nextGuestOpenTime.
-       */
-      @java.lang.Override
-      public int getNextGuestOpenTime() {
-        return nextGuestOpenTime_;
-      }
-      /**
-       * <code>uint32 nextGuestOpenTime = 12;</code>
-       * @param value The nextGuestOpenTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextGuestOpenTime(int value) {
-        
-        nextGuestOpenTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 nextGuestOpenTime = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextGuestOpenTime() {
-        
-        nextGuestOpenTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nextOpenTime_ ;
-      /**
-       * <code>uint32 nextOpenTime = 11;</code>
-       * @return The nextOpenTime.
-       */
-      @java.lang.Override
-      public int getNextOpenTime() {
-        return nextOpenTime_;
-      }
-      /**
-       * <code>uint32 nextOpenTime = 11;</code>
-       * @param value The nextOpenTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextOpenTime(int value) {
-        
-        nextOpenTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 nextOpenTime = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextOpenTime() {
-        
-        nextOpenTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> djinnPosBuilder_;
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       * @return Whether the djinnPos field is set.
-       */
-      public boolean hasDjinnPos() {
-        return djinnPosBuilder_ != null || djinnPos_ != null;
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       * @return The djinnPos.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
-        if (djinnPosBuilder_ == null) {
-          return djinnPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
-        } else {
-          return djinnPosBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public Builder setDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (djinnPosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          djinnPos_ = value;
-          onChanged();
-        } else {
-          djinnPosBuilder_.setMessage(value);
+    public static final class HomeLimitedShopInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:HomeLimitedShopInfo)
+            HomeLimitedShopInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use HomeLimitedShopInfo.newBuilder() to construct.
+        private HomeLimitedShopInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public Builder setDjinnPos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (djinnPosBuilder_ == null) {
-          djinnPos_ = builderForValue.build();
-          onChanged();
-        } else {
-          djinnPosBuilder_.setMessage(builderForValue.build());
+        private HomeLimitedShopInfo() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new HomeLimitedShopInfo();
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public Builder mergeDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (djinnPosBuilder_ == null) {
-          if (djinnPos_ != null) {
-            djinnPos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(djinnPos_).mergeFrom(value).buildPartial();
-          } else {
-            djinnPos_ = value;
-          }
-          onChanged();
-        } else {
-          djinnPosBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public Builder clearDjinnPos() {
-        if (djinnPosBuilder_ == null) {
-          djinnPos_ = null;
-          onChanged();
-        } else {
-          djinnPos_ = null;
-          djinnPosBuilder_ = null;
+        private HomeLimitedShopInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10:
+                            {
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+                                if (djinnPos_ != null) {
+                                    subBuilder = djinnPos_.toBuilder();
+                                }
+                                djinnPos_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(djinnPos_);
+                                    djinnPos_ = subBuilder.buildPartial();
+                                }
+
+                                break;
+                            }
+                        case 48:
+                            {
+                                nextCloseTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 74:
+                            {
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+                                if (djinnRot_ != null) {
+                                    subBuilder = djinnRot_.toBuilder();
+                                }
+                                djinnRot_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(djinnRot_);
+                                    djinnRot_ = subBuilder.buildPartial();
+                                }
+
+                                break;
+                            }
+                        case 88:
+                            {
+                                nextOpenTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 96:
+                            {
+                                nextGuestOpenTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 112:
+                            {
+                                uid_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDjinnPosBuilder() {
-        
-        onChanged();
-        return getDjinnPosFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
-        if (djinnPosBuilder_ != null) {
-          return djinnPosBuilder_.getMessageOrBuilder();
-        } else {
-          return djinnPos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
-        }
-      }
-      /**
-       * <pre>
-       *CKJKPEEKOGG
-       * </pre>
-       *
-       * <code>.Vector djinn_pos = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getDjinnPosFieldBuilder() {
-        if (djinnPosBuilder_ == null) {
-          djinnPosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getDjinnPos(),
-                  getParentForChildren(),
-                  isClean());
-          djinnPos_ = null;
-        }
-        return djinnPosBuilder_;
-      }
-
-      private int nextCloseTime_ ;
-      /**
-       * <code>uint32 nextCloseTime = 6;</code>
-       * @return The nextCloseTime.
-       */
-      @java.lang.Override
-      public int getNextCloseTime() {
-        return nextCloseTime_;
-      }
-      /**
-       * <code>uint32 nextCloseTime = 6;</code>
-       * @param value The nextCloseTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextCloseTime(int value) {
-        
-        nextCloseTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 nextCloseTime = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextCloseTime() {
-        
-        nextCloseTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 14;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 14;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnRot_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> djinnRotBuilder_;
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       * @return Whether the djinnRot field is set.
-       */
-      public boolean hasDjinnRot() {
-        return djinnRotBuilder_ != null || djinnRot_ != null;
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       * @return The djinnRot.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot() {
-        if (djinnRotBuilder_ == null) {
-          return djinnRot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnRot_;
-        } else {
-          return djinnRotBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public Builder setDjinnRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (djinnRotBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          djinnRot_ = value;
-          onChanged();
-        } else {
-          djinnRotBuilder_.setMessage(value);
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass
+                    .internal_static_HomeLimitedShopInfo_descriptor;
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public Builder setDjinnRot(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (djinnRotBuilder_ == null) {
-          djinnRot_ = builderForValue.build();
-          onChanged();
-        } else {
-          djinnRotBuilder_.setMessage(builderForValue.build());
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass
+                    .internal_static_HomeLimitedShopInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.class,
+                            emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder
+                                    .class);
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public Builder mergeDjinnRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (djinnRotBuilder_ == null) {
-          if (djinnRot_ != null) {
-            djinnRot_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(djinnRot_).mergeFrom(value).buildPartial();
-          } else {
-            djinnRot_ = value;
-          }
-          onChanged();
-        } else {
-          djinnRotBuilder_.mergeFrom(value);
+        public static final int NEXTGUESTOPENTIME_FIELD_NUMBER = 12;
+        private int nextGuestOpenTime_;
+        /**
+         * <code>uint32 nextGuestOpenTime = 12;</code>
+         *
+         * @return The nextGuestOpenTime.
+         */
+        @java.lang.Override
+        public int getNextGuestOpenTime() {
+            return nextGuestOpenTime_;
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public Builder clearDjinnRot() {
-        if (djinnRotBuilder_ == null) {
-          djinnRot_ = null;
-          onChanged();
-        } else {
-          djinnRot_ = null;
-          djinnRotBuilder_ = null;
+        public static final int NEXTOPENTIME_FIELD_NUMBER = 11;
+        private int nextOpenTime_;
+        /**
+         * <code>uint32 nextOpenTime = 11;</code>
+         *
+         * @return The nextOpenTime.
+         */
+        @java.lang.Override
+        public int getNextOpenTime() {
+            return nextOpenTime_;
         }
 
-        return this;
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDjinnRotBuilder() {
-        
-        onChanged();
-        return getDjinnRotFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder() {
-        if (djinnRotBuilder_ != null) {
-          return djinnRotBuilder_.getMessageOrBuilder();
-        } else {
-          return djinnRot_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnRot_;
+        public static final int DJINN_POS_FIELD_NUMBER = 1;
+        private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         *
+         * @return Whether the djinnPos field is set.
+         */
+        @java.lang.Override
+        public boolean hasDjinnPos() {
+            return djinnPos_ != null;
         }
-      }
-      /**
-       * <pre>
-       *GMPJFCODOLK
-       * </pre>
-       *
-       * <code>.Vector djinn_rot = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getDjinnRotFieldBuilder() {
-        if (djinnRotBuilder_ == null) {
-          djinnRotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getDjinnRot(),
-                  getParentForChildren(),
-                  isClean());
-          djinnRot_ = null;
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         *
+         * @return The djinnPos.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
+            return djinnPos_ == null
+                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                    : djinnPos_;
         }
-        return djinnRotBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        /**
+         *
+         *
+         * <pre>
+         * CKJKPEEKOGG
+         * </pre>
+         *
+         * <code>.Vector djinn_pos = 1;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
+            return getDjinnPos();
+        }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int NEXTCLOSETIME_FIELD_NUMBER = 6;
+        private int nextCloseTime_;
+        /**
+         * <code>uint32 nextCloseTime = 6;</code>
+         *
+         * @return The nextCloseTime.
+         */
+        @java.lang.Override
+        public int getNextCloseTime() {
+            return nextCloseTime_;
+        }
 
+        public static final int UID_FIELD_NUMBER = 14;
+        private int uid_;
+        /**
+         * <code>uint32 uid = 14;</code>
+         *
+         * @return The uid.
+         */
+        @java.lang.Override
+        public int getUid() {
+            return uid_;
+        }
 
-      // @@protoc_insertion_point(builder_scope:HomeLimitedShopInfo)
+        public static final int DJINN_ROT_FIELD_NUMBER = 9;
+        private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnRot_;
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         *
+         * @return Whether the djinnRot field is set.
+         */
+        @java.lang.Override
+        public boolean hasDjinnRot() {
+            return djinnRot_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         *
+         * @return The djinnRot.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot() {
+            return djinnRot_ == null
+                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                    : djinnRot_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * GMPJFCODOLK
+         * </pre>
+         *
+         * <code>.Vector djinn_rot = 9;</code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder() {
+            return getDjinnRot();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (djinnPos_ != null) {
+                output.writeMessage(1, getDjinnPos());
+            }
+            if (nextCloseTime_ != 0) {
+                output.writeUInt32(6, nextCloseTime_);
+            }
+            if (djinnRot_ != null) {
+                output.writeMessage(9, getDjinnRot());
+            }
+            if (nextOpenTime_ != 0) {
+                output.writeUInt32(11, nextOpenTime_);
+            }
+            if (nextGuestOpenTime_ != 0) {
+                output.writeUInt32(12, nextGuestOpenTime_);
+            }
+            if (uid_ != 0) {
+                output.writeUInt32(14, uid_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (djinnPos_ != null) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDjinnPos());
+            }
+            if (nextCloseTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, nextCloseTime_);
+            }
+            if (djinnRot_ != null) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getDjinnRot());
+            }
+            if (nextOpenTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, nextOpenTime_);
+            }
+            if (nextGuestOpenTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, nextGuestOpenTime_);
+            }
+            if (uid_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, uid_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other =
+                    (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) obj;
+
+            if (getNextGuestOpenTime() != other.getNextGuestOpenTime()) return false;
+            if (getNextOpenTime() != other.getNextOpenTime()) return false;
+            if (hasDjinnPos() != other.hasDjinnPos()) return false;
+            if (hasDjinnPos()) {
+                if (!getDjinnPos().equals(other.getDjinnPos())) return false;
+            }
+            if (getNextCloseTime() != other.getNextCloseTime()) return false;
+            if (getUid() != other.getUid()) return false;
+            if (hasDjinnRot() != other.hasDjinnRot()) return false;
+            if (hasDjinnRot()) {
+                if (!getDjinnRot().equals(other.getDjinnRot())) return false;
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + NEXTGUESTOPENTIME_FIELD_NUMBER;
+            hash = (53 * hash) + getNextGuestOpenTime();
+            hash = (37 * hash) + NEXTOPENTIME_FIELD_NUMBER;
+            hash = (53 * hash) + getNextOpenTime();
+            if (hasDjinnPos()) {
+                hash = (37 * hash) + DJINN_POS_FIELD_NUMBER;
+                hash = (53 * hash) + getDjinnPos().hashCode();
+            }
+            hash = (37 * hash) + NEXTCLOSETIME_FIELD_NUMBER;
+            hash = (53 * hash) + getNextCloseTime();
+            hash = (37 * hash) + UID_FIELD_NUMBER;
+            hash = (53 * hash) + getUid();
+            if (hasDjinnRot()) {
+                hash = (37 * hash) + DJINN_ROT_FIELD_NUMBER;
+                hash = (53 * hash) + getDjinnRot().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: ILEIPGLHFAP
+         * </pre>
+         *
+         * Protobuf type {@code HomeLimitedShopInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:HomeLimitedShopInfo)
+                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass
+                        .internal_static_HomeLimitedShopInfo_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass
+                        .internal_static_HomeLimitedShopInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.class,
+                                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                nextGuestOpenTime_ = 0;
+
+                nextOpenTime_ = 0;
+
+                if (djinnPosBuilder_ == null) {
+                    djinnPos_ = null;
+                } else {
+                    djinnPos_ = null;
+                    djinnPosBuilder_ = null;
+                }
+                nextCloseTime_ = 0;
+
+                uid_ = 0;
+
+                if (djinnRotBuilder_ == null) {
+                    djinnRot_ = null;
+                } else {
+                    djinnRot_ = null;
+                    djinnRotBuilder_ = null;
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass
+                        .internal_static_HomeLimitedShopInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo build() {
+                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                    buildPartial() {
+                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result =
+                        new emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo(this);
+                result.nextGuestOpenTime_ = nextGuestOpenTime_;
+                result.nextOpenTime_ = nextOpenTime_;
+                if (djinnPosBuilder_ == null) {
+                    result.djinnPos_ = djinnPos_;
+                } else {
+                    result.djinnPos_ = djinnPosBuilder_.build();
+                }
+                result.nextCloseTime_ = nextCloseTime_;
+                result.uid_ = uid_;
+                if (djinnRotBuilder_ == null) {
+                    result.djinnRot_ = djinnRot_;
+                } else {
+                    result.djinnRot_ = djinnRotBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other) {
+                if (other
+                        == emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                                .getDefaultInstance()) return this;
+                if (other.getNextGuestOpenTime() != 0) {
+                    setNextGuestOpenTime(other.getNextGuestOpenTime());
+                }
+                if (other.getNextOpenTime() != 0) {
+                    setNextOpenTime(other.getNextOpenTime());
+                }
+                if (other.hasDjinnPos()) {
+                    mergeDjinnPos(other.getDjinnPos());
+                }
+                if (other.getNextCloseTime() != 0) {
+                    setNextCloseTime(other.getNextCloseTime());
+                }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
+                }
+                if (other.hasDjinnRot()) {
+                    mergeDjinnRot(other.getDjinnRot());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int nextGuestOpenTime_;
+            /**
+             * <code>uint32 nextGuestOpenTime = 12;</code>
+             *
+             * @return The nextGuestOpenTime.
+             */
+            @java.lang.Override
+            public int getNextGuestOpenTime() {
+                return nextGuestOpenTime_;
+            }
+            /**
+             * <code>uint32 nextGuestOpenTime = 12;</code>
+             *
+             * @param value The nextGuestOpenTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNextGuestOpenTime(int value) {
+
+                nextGuestOpenTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 nextGuestOpenTime = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNextGuestOpenTime() {
+
+                nextGuestOpenTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int nextOpenTime_;
+            /**
+             * <code>uint32 nextOpenTime = 11;</code>
+             *
+             * @return The nextOpenTime.
+             */
+            @java.lang.Override
+            public int getNextOpenTime() {
+                return nextOpenTime_;
+            }
+            /**
+             * <code>uint32 nextOpenTime = 11;</code>
+             *
+             * @param value The nextOpenTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNextOpenTime(int value) {
+
+                nextOpenTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 nextOpenTime = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNextOpenTime() {
+
+                nextOpenTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    djinnPosBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             *
+             * @return Whether the djinnPos field is set.
+             */
+            public boolean hasDjinnPos() {
+                return djinnPosBuilder_ != null || djinnPos_ != null;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             *
+             * @return The djinnPos.
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnPos() {
+                if (djinnPosBuilder_ == null) {
+                    return djinnPos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : djinnPos_;
+                } else {
+                    return djinnPosBuilder_.getMessage();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public Builder setDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (djinnPosBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    djinnPos_ = value;
+                    onChanged();
+                } else {
+                    djinnPosBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public Builder setDjinnPos(
+                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (djinnPosBuilder_ == null) {
+                    djinnPos_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    djinnPosBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public Builder mergeDjinnPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (djinnPosBuilder_ == null) {
+                    if (djinnPos_ != null) {
+                        djinnPos_ =
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(djinnPos_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        djinnPos_ = value;
+                    }
+                    onChanged();
+                } else {
+                    djinnPosBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public Builder clearDjinnPos() {
+                if (djinnPosBuilder_ == null) {
+                    djinnPos_ = null;
+                    onChanged();
+                } else {
+                    djinnPos_ = null;
+                    djinnPosBuilder_ = null;
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDjinnPosBuilder() {
+
+                onChanged();
+                return getDjinnPosFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
+                if (djinnPosBuilder_ != null) {
+                    return djinnPosBuilder_.getMessageOrBuilder();
+                } else {
+                    return djinnPos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : djinnPos_;
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * CKJKPEEKOGG
+             * </pre>
+             *
+             * <code>.Vector djinn_pos = 1;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getDjinnPosFieldBuilder() {
+                if (djinnPosBuilder_ == null) {
+                    djinnPosBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                                    getDjinnPos(), getParentForChildren(), isClean());
+                    djinnPos_ = null;
+                }
+                return djinnPosBuilder_;
+            }
+
+            private int nextCloseTime_;
+            /**
+             * <code>uint32 nextCloseTime = 6;</code>
+             *
+             * @return The nextCloseTime.
+             */
+            @java.lang.Override
+            public int getNextCloseTime() {
+                return nextCloseTime_;
+            }
+            /**
+             * <code>uint32 nextCloseTime = 6;</code>
+             *
+             * @param value The nextCloseTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNextCloseTime(int value) {
+
+                nextCloseTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 nextCloseTime = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNextCloseTime() {
+
+                nextCloseTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int uid_;
+            /**
+             * <code>uint32 uid = 14;</code>
+             *
+             * @return The uid.
+             */
+            @java.lang.Override
+            public int getUid() {
+                return uid_;
+            }
+            /**
+             * <code>uint32 uid = 14;</code>
+             *
+             * @param value The uid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUid(int value) {
+
+                uid_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 uid = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearUid() {
+
+                uid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnRot_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    djinnRotBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             *
+             * @return Whether the djinnRot field is set.
+             */
+            public boolean hasDjinnRot() {
+                return djinnRotBuilder_ != null || djinnRot_ != null;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             *
+             * @return The djinnRot.
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector getDjinnRot() {
+                if (djinnRotBuilder_ == null) {
+                    return djinnRot_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : djinnRot_;
+                } else {
+                    return djinnRotBuilder_.getMessage();
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public Builder setDjinnRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (djinnRotBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    djinnRot_ = value;
+                    onChanged();
+                } else {
+                    djinnRotBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public Builder setDjinnRot(
+                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (djinnRotBuilder_ == null) {
+                    djinnRot_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    djinnRotBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public Builder mergeDjinnRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (djinnRotBuilder_ == null) {
+                    if (djinnRot_ != null) {
+                        djinnRot_ =
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(djinnRot_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        djinnRot_ = value;
+                    }
+                    onChanged();
+                } else {
+                    djinnRotBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public Builder clearDjinnRot() {
+                if (djinnRotBuilder_ == null) {
+                    djinnRot_ = null;
+                    onChanged();
+                } else {
+                    djinnRot_ = null;
+                    djinnRotBuilder_ = null;
+                }
+
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDjinnRotBuilder() {
+
+                onChanged();
+                return getDjinnRotFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnRotOrBuilder() {
+                if (djinnRotBuilder_ != null) {
+                    return djinnRotBuilder_.getMessageOrBuilder();
+                } else {
+                    return djinnRot_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : djinnRot_;
+                }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * GMPJFCODOLK
+             * </pre>
+             *
+             * <code>.Vector djinn_rot = 9;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getDjinnRotFieldBuilder() {
+                if (djinnRotBuilder_ == null) {
+                    djinnRotBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                                    getDjinnRot(), getParentForChildren(), isClean());
+                    djinnRot_ = null;
+                }
+                return djinnRotBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:HomeLimitedShopInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:HomeLimitedShopInfo)
+        private static final emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo();
+        }
+
+        public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<HomeLimitedShopInfo> PARSER =
+                new com.google.protobuf.AbstractParser<HomeLimitedShopInfo>() {
+                    @java.lang.Override
+                    public HomeLimitedShopInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new HomeLimitedShopInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<HomeLimitedShopInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<HomeLimitedShopInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:HomeLimitedShopInfo)
-    private static final emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_HomeLimitedShopInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_HomeLimitedShopInfo_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo();
+        java.lang.String[] descriptorData = {
+            "\n\031HomeLimitedShopInfo.proto\032\014Vector.prot"
+                    + "o\"\242\001\n\023HomeLimitedShopInfo\022\031\n\021nextGuestOp"
+                    + "enTime\030\014 \001(\r\022\024\n\014nextOpenTime\030\013 \001(\r\022\032\n\tdj"
+                    + "inn_pos\030\001 \001(\0132\007.Vector\022\025\n\rnextCloseTime\030"
+                    + "\006 \001(\r\022\013\n\003uid\030\016 \001(\r\022\032\n\tdjinn_rot\030\t \001(\0132\007."
+                    + "VectorB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+                        });
+        internal_static_HomeLimitedShopInfo_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_HomeLimitedShopInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_HomeLimitedShopInfo_descriptor,
+                        new java.lang.String[] {
+                            "NextGuestOpenTime", "NextOpenTime", "DjinnPos", "NextCloseTime", "Uid", "DjinnRot",
+                        });
+        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<HomeLimitedShopInfo>
-        PARSER = new com.google.protobuf.AbstractParser<HomeLimitedShopInfo>() {
-      @java.lang.Override
-      public HomeLimitedShopInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeLimitedShopInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<HomeLimitedShopInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<HomeLimitedShopInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HomeLimitedShopInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HomeLimitedShopInfo_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031HomeLimitedShopInfo.proto\032\014Vector.prot" +
-      "o\"\242\001\n\023HomeLimitedShopInfo\022\031\n\021nextGuestOp" +
-      "enTime\030\014 \001(\r\022\024\n\014nextOpenTime\030\013 \001(\r\022\032\n\tdj" +
-      "inn_pos\030\001 \001(\0132\007.Vector\022\025\n\rnextCloseTime\030" +
-      "\006 \001(\r\022\013\n\003uid\030\016 \001(\r\022\032\n\tdjinn_rot\030\t \001(\0132\007." +
-      "VectorB\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-        });
-    internal_static_HomeLimitedShopInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_HomeLimitedShopInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HomeLimitedShopInfo_descriptor,
-        new java.lang.String[] { "NextGuestOpenTime", "NextOpenTime", "DjinnPos", "NextCloseTime", "Uid", "DjinnRot", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }
