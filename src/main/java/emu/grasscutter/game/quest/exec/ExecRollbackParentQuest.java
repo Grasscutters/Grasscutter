@@ -12,7 +12,7 @@ public class ExecRollbackParentQuest extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
         var targetPosition = quest.getMainQuest().rewind();
-        if(targetPosition == null){
+        if (targetPosition == null) {
             return false;
         }
         quest.getOwner().getPosition().set(targetPosition.get(0));

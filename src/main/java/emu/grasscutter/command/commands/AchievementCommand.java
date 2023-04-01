@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AchievementData;
+import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.achievement.AchievementControlReturns;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.player.Player;
@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
         permissionTargeted = "player.achievement.others",
         targetRequirement = Command.TargetRequirement.PLAYER,
         threading = true)
-public class AchievementCommand implements CommandHandler {
+public final class AchievementCommand implements CommandHandler {
     private static void sendSuccessMessage(Player sender, String cmd, Object... args) {
         CommandHandler.sendTranslatedMessage(
                 sender, AchievementControlReturns.Return.SUCCESS.getKey() + cmd, args);

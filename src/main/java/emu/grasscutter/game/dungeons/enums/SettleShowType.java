@@ -11,7 +11,7 @@ public enum SettleShowType {
 
     @Getter private final int id;
 
-    SettleShowType(int id){
+    SettleShowType(int id) {
         this.id = id;
     }
 }

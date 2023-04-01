@@ -7,6 +7,5 @@ public class PacketHomeUnknown2Rsp extends BasePacket {
 
     public PacketHomeUnknown2Rsp() {
         super(PacketOpcodes.Unk2700_KIIOGMKFNNP_ServerRsp);
-
     }
 }

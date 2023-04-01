@@ -1,7 +1,7 @@
 package emu.grasscutter.data.custom;
 
-import lombok.*;
 import java.util.List;
+import lombok.*;
 
 @Data
 public class TrialAvatarCustomData {

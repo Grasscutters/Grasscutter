@@ -10,9 +10,13 @@ import lombok.val;
 public class ConditionPersonalLineUnlock extends BaseCondition {
 
     @Override
-    public boolean execute(Player owner, QuestData questData, QuestData.QuestAcceptCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
         val personalLineId = condition.getParam()[0];
         return owner.getPersonalLineList().contains(personalLineId);
     }
-
 }

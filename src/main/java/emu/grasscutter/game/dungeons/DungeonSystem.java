@@ -3,12 +3,8 @@ package emu.grasscutter.game.dungeons;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.ScenePointEntry;
-import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.BaseGameSystem;
@@ -18,7 +14,7 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterDungeonRsp;
 import emu.grasscutter.utils.Position;
 import java.util.List;
 
-public class DungeonSystem extends BaseGameSystem {
+public final class DungeonSystem extends BaseGameSystem {
     private static final BasicDungeonSettleListener basicDungeonSettleObserver =
             new BasicDungeonSettleListener();
 
@@ -27,7 +23,7 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public void getEntryInfo(Player player, int pointId) {
-        ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
+        var entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
 
         if (entry == null) {
             // Error
@@ -39,24 +35,24 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public boolean enterDungeon(Player player, int pointId, int dungeonId) {
-        DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
-
+        var data = GameData.getDungeonDataMap().get(dungeonId);
         if (data == null) {
             return false;
         }
+
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "{}({}) is trying to enter dungeon {}",
                         player.getNickname(),
                         player.getUid(),
                         dungeonId);
 
-        int sceneId = data.getSceneId();
+        var sceneId = data.getSceneId();
         player.getScene().setPrevScene(sceneId);
 
         if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
             player.getScene().addDungeonSettleObserver(basicDungeonSettleObserver);
-            player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_ENTER_DUNGEON, data.getId());
+            player.getQuestManager().triggerEvent(QuestContent.QUEST_CONTENT_ENTER_DUNGEON, data.getId());
         }
 
         player.getScene().setPrevScenePoint(pointId);
@@ -67,13 +63,13 @@ public class DungeonSystem extends BaseGameSystem {
     /** used in tower dungeons handoff */
     public boolean handoffDungeon(
             Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
-        DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
-
+        var data = GameData.getDungeonDataMap().get(dungeonId);
         if (data == null) {
             return false;
         }
+
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "{}({}) is trying to enter tower dungeon {}",
                         player.getNickname(),
                         player.getUid(),
@@ -82,30 +78,32 @@ public class DungeonSystem extends BaseGameSystem {
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
             dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
         }
+
         return true;
     }
 
     public void exitDungeon(Player player) {
-        Scene scene = player.getScene();
+        var scene = player.getScene();
 
         if (scene == null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
             return;
         }
 
         // Get previous scene
-        int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
+        var prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
 
         // Get previous position
-        DungeonData dungeonData = scene.getDungeonData();
-        Position prevPos = new Position(GameConstants.START_POSITION);
+        var dungeonData = scene.getDungeonData();
+        var prevPos = new Position(GameConstants.START_POSITION);
 
         if (dungeonData != null) {
-            ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
+            var entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
 
             if (entry != null) {
                 prevPos.set(entry.getPointData().getTranPos());
             }
         }
+
         // clean temp team if it has
         player.getTeamManager().cleanTemporaryTeam();
         player.getTowerManager().clearEntry();
@@ -113,10 +111,5 @@ public class DungeonSystem extends BaseGameSystem {
         // Transfer player back to world
         player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
         player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
-    }
-
-    public void updateDailyDungeons() {
-        GameData.getScenePointEntries()
-                .forEach((id, entry) -> entry.getPointData().updateDailyDungeon());
     }
 }

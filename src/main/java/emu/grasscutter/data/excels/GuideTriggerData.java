@@ -6,7 +6,8 @@ import emu.grasscutter.data.ResourceType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@Data @EqualsAndHashCode(callSuper=false)
+@Data
+@EqualsAndHashCode(callSuper = false)
 @ResourceType(name = "GuideTriggerExcelConfigData.json")
 public class GuideTriggerData extends GameResource {
     // more like open state guide than quest guide

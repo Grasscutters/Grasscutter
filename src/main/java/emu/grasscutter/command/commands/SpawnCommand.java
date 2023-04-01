@@ -9,7 +9,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityType;

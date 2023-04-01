@@ -7,13 +7,13 @@ import emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType;
 
 public class PacketCheckUgcUpdateRsp extends BasePacket {
 
-	public PacketCheckUgcUpdateRsp(UgcType ugcType) {
-		super(PacketOpcodes.CheckUgcUpdateRsp);
+    public PacketCheckUgcUpdateRsp(UgcType ugcType) {
+        super(PacketOpcodes.CheckUgcUpdateRsp);
 
         var proto = CheckUgcUpdateRsp.newBuilder();
 
         proto.setUgcType(ugcType);
 
         this.setData(proto);
-	}
+    }
 }

@@ -10,7 +10,12 @@ public abstract class BaseConditionQuestVar extends BaseCondition {
     protected abstract boolean doCompare(int variable, int cond);
 
     @Override
-    public boolean execute(Player owner, QuestData questData, QuestData.QuestAcceptCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
         val index = condition.getParam()[0];
         val targetValue = condition.getParam()[1];
         val questVarValue = getQuestVar(owner, questData, index);
@@ -31,10 +36,14 @@ public abstract class BaseConditionQuestVar extends BaseCondition {
         }
         val questVars = mainQuest.getQuestVars();
         if (index >= questVars.length) {
-            Grasscutter.getLogger().error("questVar out of bounds for {} index {} size {}", questData.getSubId(), index, questVars.length);
+            Grasscutter.getLogger()
+                    .error(
+                            "questVar out of bounds for {} index {} size {}",
+                            questData.getSubId(),
+                            index,
+                            questVars.length);
             return -2;
         }
         return questVars[index];
     }
-
 }

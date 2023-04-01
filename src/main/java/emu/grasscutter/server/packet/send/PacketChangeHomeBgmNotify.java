@@ -8,9 +8,10 @@ public class PacketChangeHomeBgmNotify extends BasePacket {
     public PacketChangeHomeBgmNotify(int homeBgmId) {
         super(PacketOpcodes.Unk2700_FJEHHCPCBLG_ServerNotify);
 
-        var notify = Unk2700FJEHHCPCBLGServerNotify.Unk2700_FJEHHCPCBLG_ServerNotify.newBuilder()
-            .setUnk2700BJHAMKKECEI(homeBgmId)
-            .build();
+        var notify =
+                Unk2700FJEHHCPCBLGServerNotify.Unk2700_FJEHHCPCBLG_ServerNotify.newBuilder()
+                        .setUnk2700BJHAMKKECEI(homeBgmId)
+                        .build();
 
         this.setData(notify);
     }

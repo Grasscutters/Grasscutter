@@ -8,7 +8,7 @@ import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.excels.AchievementData;
+import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;

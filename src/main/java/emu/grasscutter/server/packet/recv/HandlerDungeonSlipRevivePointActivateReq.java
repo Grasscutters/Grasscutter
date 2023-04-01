@@ -22,5 +22,4 @@ public class HandlerDungeonSlipRevivePointActivateReq extends PacketHandler {
 
         session.send(new PacketDungeonSlipRevivePointActivateRsp(success, req.getSlipRevivePointId()));
     }
-
 }

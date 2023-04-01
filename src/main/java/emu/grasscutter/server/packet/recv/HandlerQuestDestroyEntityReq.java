@@ -1,12 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.QuestDestroyEntityReqOuterClass.QuestDestroyEntityReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestDestroyEntityRsp;
 import lombok.val;
-import emu.grasscutter.net.proto.QuestDestroyEntityReqOuterClass.QuestDestroyEntityReq;
 
 @Opcodes(PacketOpcodes.QuestDestroyEntityReq)
 public class HandlerQuestDestroyEntityReq extends PacketHandler {
@@ -17,11 +17,10 @@ public class HandlerQuestDestroyEntityReq extends PacketHandler {
         val scene = session.getPlayer().getWorld().getSceneById(req.getSceneId());
         val entity = scene.getEntityById(req.getEntityId());
 
-        if(entity!=null){
+        if (entity != null) {
             scene.removeEntity(entity);
         }
 
-        session.send(new PacketQuestDestroyEntityRsp(entity!=null, req));
+        session.send(new PacketQuestDestroyEntityRsp(entity != null, req));
     }
-
 }

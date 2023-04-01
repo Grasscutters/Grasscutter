@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -17,7 +16,7 @@ public class HandlerGadgetInteractReq extends PacketHandler {
         session
                 .getPlayer()
                 .getQuestManager()
-                .triggerEvent(QuestTrigger.QUEST_CONTENT_INTERACT_GADGET, req.getGadgetId());
+                .triggerEvent(QuestContent.QUEST_CONTENT_INTERACT_GADGET, req.getGadgetId());
         session.getPlayer().interactWith(req.getGadgetEntityId(), req);
     }
 }

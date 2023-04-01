@@ -4,10 +4,16 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
+import emu.grasscutter.data.binout.routes.Route;
 import emu.grasscutter.data.excels.*;
+import emu.grasscutter.data.excels.codex.CodexAnimalData;
+import emu.grasscutter.data.excels.monster.MonsterData;
+import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
+import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.managers.blossom.BlossomManager;
@@ -28,6 +34,7 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -43,21 +50,25 @@ public class Scene {
     @Getter private final Set<SpawnDataEntry> spawnedEntities;
     @Getter private final Set<SpawnDataEntry> deadSpawnedEntities;
     @Getter private final Set<SceneBlock> loadedBlocks;
+    @Getter private final Set<SceneGroup> loadedGroups;
     @Getter private final BlossomManager blossomManager;
+    private final HashSet<Integer> unlockedForces;
+    private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
+    private final long startWorldTime;
+    @Getter @Setter DungeonManager dungeonManager;
+    @Getter Int2ObjectMap<Route> sceneRoutes;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
     @Getter @Setter private boolean dontDestroyWhenEmpty;
-
-    @Getter @Setter private int autoCloseTime;
-    @Getter @Setter private int time;
-    private final long startTime;
-
     @Getter private final SceneScriptManager scriptManager;
     @Getter @Setter private WorldChallenge challenge;
     @Getter private List<DungeonSettleListener> dungeonSettleListeners;
-    @Getter private DungeonData dungeonData;
     @Getter @Setter private int prevScene; // Id of the previous scene
     @Getter @Setter private int prevScenePoint;
+    @Getter @Setter private int killedMonsterCount;
     private Set<SceneNpcBornEntry> npcBornEntrySet;
+    @Getter private boolean finishedLoading = false;
+    @Getter private int tickCount = 0;
+    @Getter private boolean isPaused = false;
 
     public Scene(World world, SceneData sceneData) {
         this.world = world;
@@ -65,17 +76,20 @@ public class Scene {
         this.players = new CopyOnWriteArrayList<>();
         this.entities = new ConcurrentHashMap<>();
 
-        this.time = 8 * 60;
-        this.startTime = System.currentTimeMillis();
         this.prevScene = 3;
+        this.sceneRoutes = GameData.getSceneRoutes(getId());
+
+        this.startWorldTime = world.getWorldTime();
 
         this.spawnedEntities = ConcurrentHashMap.newKeySet();
         this.deadSpawnedEntities = ConcurrentHashMap.newKeySet();
         this.loadedBlocks = ConcurrentHashMap.newKeySet();
+        this.loadedGroups = ConcurrentHashMap.newKeySet();
         this.loadedGridBlocks = new HashSet<>();
         this.npcBornEntrySet = ConcurrentHashMap.newKeySet();
         this.scriptManager = new SceneScriptManager(this);
         this.blossomManager = new BlossomManager(this);
+        this.unlockedForces = new HashSet<>();
     }
 
     public int getId() {
@@ -101,29 +115,53 @@ public class Scene {
                 .orElse(null);
     }
 
-    public void changeTime(int time) {
-        this.time = time % 1440;
-    }
-
-    public int getSceneTime() {
-        return (int) (System.currentTimeMillis() - this.startTime);
-    }
-
-    public void setDungeonData(DungeonData dungeonData) {
-        if (dungeonData == null
-                || this.dungeonData != null
-                || this.getSceneType() != SceneType.SCENE_DUNGEON
-                || dungeonData.getSceneId() != this.getId()) {
-            return;
+    /**
+     * Sets the scene's pause state. Sends the current scene's time to all players.
+     *
+     * @param paused The new pause state.
+     */
+    public void setPaused(boolean paused) {
+        if (this.isPaused != paused) {
+            this.isPaused = paused;
+            this.broadcastPacket(new PacketSceneTimeNotify(this));
         }
-        this.dungeonData = dungeonData;
+    }
+
+    /**
+     * Gets the time in seconds since the scene started.
+     *
+     * @return The time in seconds since the scene started.
+     */
+    public int getSceneTime() {
+        return (int) (this.getWorld().getWorldTime() - this.startWorldTime);
+    }
+
+    /**
+     * Gets {@link Scene#getSceneTime()} in seconds.
+     *
+     * @return The time in seconds since the scene started.
+     */
+    public int getSceneTimeSeconds() {
+        return this.getSceneTime() / 1000;
     }
 
     public void addDungeonSettleObserver(DungeonSettleListener dungeonSettleListener) {
         if (dungeonSettleListeners == null) {
             dungeonSettleListeners = new ArrayList<>();
         }
+
         dungeonSettleListeners.add(dungeonSettleListener);
+    }
+
+    /**
+     * Triggers an event in the dungeon manager.
+     *
+     * @param conditionType The condition type to trigger.
+     * @param params The parameters to pass to the event.
+     */
+    public void triggerDungeonEvent(DungeonPassConditionType conditionType, int... params) {
+        if (this.dungeonManager == null) return;
+        this.dungeonManager.triggerEvent(conditionType, params);
     }
 
     public boolean isInScene(GameEntity entity) {

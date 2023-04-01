@@ -2,11 +2,11 @@ package emu.grasscutter.game.quest.exec;
 
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.game.quest.QuestValueExec;
+import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 
-@QuestValue(QuestTrigger.QUEST_EXEC_UNLOCK_POINT)
+@QuestValueExec(QuestExec.QUEST_EXEC_UNLOCK_POINT)
 public class ExecUnlockPoint extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
@@ -15,9 +15,7 @@ public class ExecUnlockPoint extends QuestExecHandler {
         int pointId = Integer.parseInt(paramStr[1]);
         boolean isStatue = quest.getMainQuestId() == 303 || quest.getMainQuestId() == 352;
 
-        quest.getOwner().getProgressManager().unlockTransPoint(sceneId, pointId, isStatue);
-
         // Done.
-        return true;
+        return quest.getOwner().getProgressManager().unlockTransPoint(sceneId, pointId, isStatue);
     }
 }

@@ -1,5 +1,8 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.*;
@@ -9,32 +12,29 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.utils.Language.translate;
+import lombok.Setter;
 
 @Command(
-    label = "entity",
-    usage = {
-        "<configId gadget> [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]",
-        "<configId monster> [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]"},
-    permission = "server.entity")
+        label = "entity",
+        usage = {
+            "<configId gadget> [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]",
+            "<configId monster> [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]"
+        },
+        permission = "server.entity")
 public final class EntityCommand implements CommandHandler {
-    private static final Map<Pattern, BiConsumer<EntityParameters, Integer>> intCommandHandlers = Map.ofEntries(
-        Map.entry(stateRegex, EntityParameters::setState),
-        Map.entry(maxHPRegex, EntityParameters::setMaxHP),
-        Map.entry(hpRegex, EntityParameters::setHp),
-        Map.entry(defRegex, EntityParameters::setDef),
-        Map.entry(atkRegex, EntityParameters::setAtk),
-        Map.entry(aiRegex, EntityParameters::setAi)
-    );
+    private static final Map<Pattern, BiConsumer<EntityParameters, Integer>> intCommandHandlers =
+            Map.ofEntries(
+                    Map.entry(stateRegex, EntityParameters::setState),
+                    Map.entry(maxHPRegex, EntityParameters::setMaxHP),
+                    Map.entry(hpRegex, EntityParameters::setHp),
+                    Map.entry(defRegex, EntityParameters::setDef),
+                    Map.entry(atkRegex, EntityParameters::setAtk),
+                    Map.entry(aiRegex, EntityParameters::setAi));
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -44,7 +44,7 @@ public final class EntityCommand implements CommandHandler {
 
         // At this point, first remaining argument MUST be the id and the rest the pos
         if (args.size() != 1) {
-            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
 
@@ -57,7 +57,7 @@ public final class EntityCommand implements CommandHandler {
         param.scene = targetPlayer.getScene();
         var entity = param.scene.getEntityByConfigId(param.configId);
 
-        if(entity == null){
+        if (entity == null) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.entity.not_found_error"));
             return;
         }
@@ -68,25 +68,23 @@ public final class EntityCommand implements CommandHandler {
         CommandHandler.sendMessage(sender, translate(sender, "commands.status.success"));
     }
 
-
-
     private void applyGadgetParams(GameEntity entity, EntityParameters param) {
-        if(!(entity instanceof EntityGadget)){
+        if (!(entity instanceof EntityGadget)) {
             return;
         }
-        if(param.state != -1 ){
+        if (param.state != -1) {
             ((EntityGadget) entity).updateState(param.state);
         }
-
     }
+
     private void applyMonsterParams(GameEntity entity, EntityParameters param) {
-        if(!(entity instanceof EntityMonster)){
+        if (!(entity instanceof EntityMonster)) {
             return;
         }
 
-        if(param.ai != -1 ){
+        if (param.ai != -1) {
             ((EntityMonster) entity).setAiId(param.ai);
-            //TODO notify
+            // TODO notify
         }
     }
 
@@ -99,7 +97,8 @@ public final class EntityCommand implements CommandHandler {
             float targetHp = param.hp == 0 ? Float.MAX_VALUE : param.hp;
             float oldHp = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
             setFightProperty(entity, FightProperty.FIGHT_PROP_CUR_HP, targetHp, changedFields);
-            EntityDamageEvent event = new EntityDamageEvent(entity, oldHp-targetHp, ElementType.None, null);
+            EntityDamageEvent event =
+                    new EntityDamageEvent(entity, oldHp - targetHp, ElementType.None, null);
             callHPEvents(entity, event);
         }
         if (param.atk != -1) {
@@ -110,16 +109,19 @@ public final class EntityCommand implements CommandHandler {
             setFightProperty(entity, FightProperty.FIGHT_PROP_DEFENSE, param.def, changedFields);
             setFightProperty(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE, param.def, changedFields);
         }
-        if(!changedFields.isEmpty()) {
-            entity.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, changedFields));
+        if (!changedFields.isEmpty()) {
+            entity
+                    .getScene()
+                    .broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, changedFields));
         }
     }
 
-    private void callHPEvents(GameEntity entity, EntityDamageEvent event){
+    private void callHPEvents(GameEntity entity, EntityDamageEvent event) {
         entity.callLuaHPEvent(event);
     }
 
-    private void setFightProperty(GameEntity entity, FightProperty property, float value, List<FightProperty> modifiedProps){
+    private void setFightProperty(
+            GameEntity entity, FightProperty property, float value, List<FightProperty> modifiedProps) {
         entity.setFightProperty(property, value);
         modifiedProps.add(property);
     }

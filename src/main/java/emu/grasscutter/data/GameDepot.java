@@ -2,8 +2,8 @@ package emu.grasscutter.data;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
-import emu.grasscutter.data.excels.ReliquaryAffixData;
-import emu.grasscutter.data.excels.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.utils.WeightedList;

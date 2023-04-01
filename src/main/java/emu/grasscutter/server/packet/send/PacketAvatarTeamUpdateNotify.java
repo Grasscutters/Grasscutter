@@ -19,4 +19,11 @@ public class PacketAvatarTeamUpdateNotify extends BasePacket {
 
         this.setData(proto);
     }
+
+    /** Used for locking/unlocking team modification. */
+    public PacketAvatarTeamUpdateNotify() {
+        super(PacketOpcodes.AvatarTeamUpdateNotify);
+
+        this.setData(AvatarTeamUpdateNotify.newBuilder().build());
+    }
 }

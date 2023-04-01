@@ -7,16 +7,21 @@ import emu.grasscutter.game.quest.enums.QuestCond;
 import lombok.val;
 
 @QuestValueCond(QuestCond.QUEST_COND_TIME_VAR_GT_EQ)
-public class ConditionTimeVarGreaterOrEqual extends BaseCondition{
+public class ConditionTimeVarGreaterOrEqual extends BaseCondition {
     @Override
-    public boolean execute(Player owner, QuestData questData, QuestData.QuestAcceptCondition condition, String paramStr, int... params) {
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
         val mainQuestId = condition.getParam()[0];
         val timeVarIndex = condition.getParam()[1];
         val minTime = condition.getParam()[2];
 
         val mainQuest = owner.getQuestManager().getMainQuestById(mainQuestId);
 
-        if(mainQuest == null){
+        if (mainQuest == null) {
             return false;
         }
 

@@ -2,8 +2,8 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
-import emu.grasscutter.data.excels.WorldAreaData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.world.WorldAreaData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.net.packet.Opcodes;

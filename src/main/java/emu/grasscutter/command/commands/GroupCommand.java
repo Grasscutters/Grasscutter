@@ -1,19 +1,19 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.SceneGroupInstance;
-
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
-@Command(label = "group",
-         aliases = {"g"},
-         usage = {"(refresh) [<groupId>] [<suiteId>]"},
-         permission = "player.group",
-         permissionTargeted = "player.group.others")
+@Command(
+        label = "group",
+        aliases = {"g"},
+        usage = {"(refresh) [<groupId>] [<suiteId>]"},
+        permission = "player.group",
+        permissionTargeted = "player.group.others")
 public final class GroupCommand implements CommandHandler {
 
     @Override
@@ -25,20 +25,18 @@ public final class GroupCommand implements CommandHandler {
 
         int groupId = 0;
         int suiteId = 0;
-        switch (args.size()){
+        switch (args.size()) {
             case 2:
                 try {
                     suiteId = Integer.parseInt(args.get(1));
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.group.invalid_suiteid"));
                     return;
-                }  // Fallthrough
+                } // Fallthrough
             case 1:
                 try {
                     groupId = Integer.parseInt(args.get(0));
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.group.invalid_groupid"));
                     return;
                 }
@@ -50,13 +48,15 @@ public final class GroupCommand implements CommandHandler {
 
         switch (cmd) {
             case "refresh" -> {
-                SceneGroupInstance groupInstance = targetPlayer.getScene().getScriptManager().getGroupInstanceById(groupId);
-                if(groupInstance == null) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.group.group_not_found", groupId));
+                SceneGroupInstance groupInstance =
+                        targetPlayer.getScene().getScriptManager().getGroupInstanceById(groupId);
+                if (groupInstance == null) {
+                    CommandHandler.sendMessage(
+                            sender, translate(sender, "commands.group.group_not_found", groupId));
                     return;
                 }
 
-                if(args.size() >= 2) {
+                if (args.size() >= 2) {
                     targetPlayer.getScene().getScriptManager().refreshGroup(groupInstance, suiteId, false);
                 } else {
                     targetPlayer.getScene().getScriptManager().refreshGroup(groupInstance);

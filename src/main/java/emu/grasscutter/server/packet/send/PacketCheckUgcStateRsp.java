@@ -7,12 +7,9 @@ import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketCheckUgcStateRsp extends BasePacket {
 
-	public PacketCheckUgcStateRsp(RetcodeOuterClass.Retcode ret) {
-		super(PacketOpcodes.CheckUgcStateRsp);
+    public PacketCheckUgcStateRsp(RetcodeOuterClass.Retcode ret) {
+        super(PacketOpcodes.CheckUgcStateRsp);
 
-        this.setData(CheckUgcStateRsp.newBuilder()
-            .setRetcode(ret.getNumber())
-        );
-	}
-
+        this.setData(CheckUgcStateRsp.newBuilder().setRetcode(ret.getNumber()));
+    }
 }

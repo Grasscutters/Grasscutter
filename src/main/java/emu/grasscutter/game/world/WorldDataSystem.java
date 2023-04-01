@@ -5,7 +5,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.InvestigationMonsterData;
 import emu.grasscutter.data.excels.RewardPreviewData;
-import emu.grasscutter.data.excels.WorldLevelData;
+import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.ChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.NormalChestInteractHandler;

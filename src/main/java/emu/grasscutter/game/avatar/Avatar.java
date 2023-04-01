@@ -9,8 +9,19 @@ import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.excels.*;
-import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.excels.ItemData.WeaponProperty;
+import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData.InherentProudSkillOpens;
+import emu.grasscutter.data.excels.avatar.AvatarTalentData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryLevelData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.ReliquarySetData;
+import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
+import emu.grasscutter.data.excels.weapon.WeaponCurveData;
+import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
@@ -25,11 +36,14 @@ import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
 import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
+import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord;
+import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
@@ -43,7 +57,7 @@ public class Avatar {
     @Id private ObjectId id;
     @Indexed @Getter private int ownerId; // Id of player that this avatar belongs to
     @Transient private Player owner;
-    @Transient @Getter private AvatarData data;
+    @Transient @Getter private AvatarData avatarData;
     @Transient @Getter private AvatarSkillDepotData skillDepot;
     @Transient @Getter private long guid; // Player unique id
     @Getter private int avatarId; // Id of avatar
@@ -81,6 +95,17 @@ public class Avatar {
     @Getter @Setter private int nameCardRewardId;
     @Getter @Setter private int nameCardId;
 
+    // trial avatar property
+    @Getter @Setter private int trialAvatarId = 0;
+    // cannot store to db if grant reason is not integer
+    @Getter @Setter
+    private int grantReason = TrialAvatarGrantRecord.GrantReason.GRANT_REASON_INVALID.getNumber();
+
+    @Getter @Setter private int fromParentQuestId = 0;
+    // so far no outer class or prop value has information of this, but from packet:
+    // 1 = normal, 2 = trial avatar
+    @Getter @Setter private int avatarType = Type.NORMAL.getNumber();
+
     @Deprecated // Do not use. Morhpia only!
     public Avatar() {
         this.equips = new Int2ObjectOpenHashMap<>();
@@ -100,7 +125,7 @@ public class Avatar {
         this.avatarId = data.getId();
         this.nameCardRewardId = data.getNameCardRewardId();
         this.nameCardId = data.getNameCardId();
-        this.data = data;
+        this.avatarData = data;
         this.bornTime = (int) (System.currentTimeMillis() / 1000);
         this.flyCloak = 140001;
 
@@ -154,16 +179,12 @@ public class Avatar {
     }
 
     public ObjectId getObjectId() {
-        return id;
-    }
-
-    public AvatarData getAvatarData() {
-        return data;
+        return this.id;
     }
 
     protected void setAvatarData(AvatarData data) {
-        if (this.data != null) return;
-        this.data = data; // Used while loading this from the database
+        if (this.avatarData != null) return;
+        this.avatarData = data; // Used while loading this from the database
     }
 
     public void setOwner(Player player) {
@@ -680,7 +701,7 @@ public class Avatar {
         this.skillExtraChargeMap.clear();
 
         // Sanity checks
-        if (this.data == null || this.skillDepot == null) {
+        if (this.avatarData == null || this.skillDepot == null) {
             return;
         }
 
@@ -1001,11 +1022,200 @@ public class Avatar {
         return showAvatarInfo.build();
     }
 
+    /**
+     * Converts this avatar into a trial avatar.
+     *
+     * @param level The avatar's level.
+     * @param avatarId The ID of the avatar.
+     * @param grantReason The reason for granting the avatar.
+     * @param questId The ID of the quest that granted the avatar.
+     */
+    public void setTrialAvatarInfo(
+            int level, int avatarId, TrialAvatarGrantRecord.GrantReason grantReason, int questId) {
+        this.setLevel(level);
+        this.setPromoteLevel(getMinPromoteLevel(level));
+        this.setTrialAvatarId(avatarId);
+        this.setGrantReason(grantReason.getNumber());
+        this.setFromParentQuestId(questId);
+        this.setAvatarType(Type.TRIAL.getNumber());
+        this.applyTrialSkillLevels();
+        this.applyTrialItems();
+    }
+
+    /**
+     * Gets the gear template based on the avatar's level.
+     *
+     * @return The avatar's template.
+     */
+    private int getTrialTemplate() {
+        return this.getLevel() <= 9
+                ? 1
+                : (int)
+                        (Math.floor(this.getLevel() / 10f) * 10); // round trial level to fit template levels
+    }
+
+    /**
+     * @return The level to be used for the avatar's skills (talents).
+     */
+    public int getTrialSkillLevel() {
+        // Use default data if custom data not available.
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+            var template = getTrialTemplate(); // round trial level to fit template levels
+
+            var templateData = GameData.getTrialAvatarTemplateDataMap().get(template);
+            return templateData == null ? 1 : templateData.getTrialAvatarSkillLevel();
+        }
+
+        // Use custom data.
+        var trialData = GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId());
+        if (trialData == null) return 1;
+
+        return trialData.getCoreProudSkillLevel(); // enhanced version of weapon
+    }
+
+    /** Applies the correct skill level for the trial avatar. */
+    public void applyTrialSkillLevels() {
+        this.getSkillLevelMap()
+                .keySet()
+                .forEach(skill -> this.setSkillLevel(skill, this.getTrialSkillLevel()));
+    }
+
+    /**
+     * @return The weapon to use with the avatar.
+     */
+    public int getTrialWeaponId() {
+        // Use default data if custom data not available.
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+            if (GameData.getTrialAvatarDataMap().get(this.getTrialAvatarId()) == null)
+                return this.getAvatarData().getInitialWeapon();
+
+            return GameData.getItemDataMap().get(this.getAvatarData().getInitialWeapon() + 100) == null
+                    ? getAvatarData().getInitialWeapon()
+                    : getAvatarData().getInitialWeapon() + 100; // enhanced version of weapon
+        }
+
+        // Use custom data.
+        var trialData = GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId());
+        if (trialData == null) return 0;
+
+        var trialCustomParams = trialData.getTrialAvatarParamList();
+        return trialCustomParams.size() < 2
+                ? getAvatarData().getInitialWeapon()
+                : Integer.parseInt(trialCustomParams.get(1).split(";")[0]);
+    }
+
+    /**
+     * @return A list of artifact IDs to use with the avatar.
+     */
+    public List<Integer> getTrialReliquary() {
+        // Use default data if custom data not available.
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+            int trialAvatarTemplateLevel = getTrialTemplate();
+
+            TrialAvatarTemplateData templateData =
+                    GameData.getTrialAvatarTemplateDataMap().get(trialAvatarTemplateLevel);
+            return templateData == null ? List.of() : templateData.getTrialReliquaryList();
+        }
+
+        // Use custom data.
+        var trialData = GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId());
+        if (trialData == null) return List.of();
+
+        var trialCustomParams =
+                GameData.getTrialAvatarCustomData().get(getTrialAvatarId()).getTrialAvatarParamList();
+        return trialCustomParams.size() < 3
+                ? List.of()
+                : Stream.of(trialCustomParams.get(2).split(";")).map(Integer::parseInt).toList();
+    }
+
+    /** Applies the correct items for the trial avatar. */
+    public void applyTrialItems() {
+        // Use an enhanced version of the weapon if available.
+        var weapon = new GameItem(this.getTrialWeaponId());
+        weapon.setLevel(this.getLevel());
+        weapon.setExp(0);
+        weapon.setPromoteLevel(getMinPromoteLevel(this.getLevel()));
+        this.getEquips().put(weapon.getEquipSlot(), weapon);
+
+        // Add artifacts for the trial avatar.
+        this.getTrialReliquary()
+                .forEach(
+                        id -> {
+                            var reliquaryData = GameData.getTrialReliquaryDataMap().get((int) id);
+                            if (reliquaryData == null) return;
+
+                            var relic = new GameItem(reliquaryData.getReliquaryId());
+                            relic.setLevel(reliquaryData.getLevel());
+                            relic.setMainPropId(reliquaryData.getMainPropId());
+                            relic.getAppendPropIdList().addAll(reliquaryData.getAppendPropList());
+                            this.getEquips().put(relic.getEquipSlot(), relic);
+                        });
+
+        // Add costume if avatar has a costume.
+        GameData.getAvatarCostumeDataItemIdMap()
+                .values()
+                .forEach(
+                        costumeData -> {
+                            if (costumeData.getCharacterId() != this.getAvatarId()) return;
+                            this.setCostume(costumeData.getId());
+                        });
+    }
+
+    /** Equips the items applied from {@link Avatar#applyTrialItems()}. */
+    public void equipTrialItems() {
+        var player = this.getPlayer();
+
+        this.getEquips()
+                .values()
+                .forEach(
+                        item -> {
+                            item.setEquipCharacter(this.getAvatarId());
+                            item.setOwner(player);
+                            if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
+                                item.setWeaponEntityId(player.getWorld().getNextEntityId(EntityIdType.WEAPON));
+                                player.sendPacket(new PacketAvatarEquipChangeNotify(this, item));
+                            }
+                        });
+    }
+
+    /**
+     * Converts this (trial) avatar into a trial info protocol buffer.
+     *
+     * @return The trial info protocol buffer.
+     */
+    public TrialAvatarInfo toTrialInfo() {
+        var trialAvatar =
+                TrialAvatarInfo.newBuilder()
+                        .setTrialAvatarId(this.getTrialAvatarId())
+                        .setGrantRecord(
+                                TrialAvatarGrantRecord.newBuilder()
+                                        .setGrantReason(this.getGrantReason())
+                                        .setFromParentQuestId(this.getFromParentQuestId()));
+
+        // Check if the avatar is a trial avatar.
+        if (this.getTrialAvatarId() > 0) {
+            // Add the artifacts & weapons for the avatar.
+            trialAvatar.addAllTrialEquipList(
+                    this.getEquips().values().stream().map(GameItem::toProto).toList());
+        }
+
+        return trialAvatar.build();
+    }
+
     @PostLoad
     private void onLoad() {}
 
     @PrePersist
     private void prePersist() {
         this.currentHp = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+    }
+
+    @AllArgsConstructor
+    @Getter
+    enum Type {
+        NORMAL(0),
+        TRIAL(1);
+
+        final int number;
     }
 }

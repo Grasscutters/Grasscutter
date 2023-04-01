@@ -6,8 +6,8 @@ import emu.grasscutter.net.proto.CloseCommonTipsNotifyOuterClass.CloseCommonTips
 
 public class PacketCloseCommonTipsNotify extends BasePacket {
 
-	public PacketCloseCommonTipsNotify() {
-		super(PacketOpcodes.CloseCommonTipsNotify);
-		this.setData(CloseCommonTipsNotify.newBuilder().build());
-	}
+    public PacketCloseCommonTipsNotify() {
+        super(PacketOpcodes.CloseCommonTipsNotify);
+        this.setData(CloseCommonTipsNotify.newBuilder().build());
+    }
 }

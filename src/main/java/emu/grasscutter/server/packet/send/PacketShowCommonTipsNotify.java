@@ -6,12 +6,13 @@ import emu.grasscutter.net.proto.ShowCommonTipsNotifyOuterClass.ShowCommonTipsNo
 
 public class PacketShowCommonTipsNotify extends BasePacket {
 
-	public PacketShowCommonTipsNotify(String title, String content, int closeTime) {
-		super(PacketOpcodes.ShowCommonTipsNotify);
-		this.setData(ShowCommonTipsNotify.newBuilder()
-			.setTitle(title)
-			.setContent(content)
-			.setCloseTime(closeTime)
-			.build());
-	}
+    public PacketShowCommonTipsNotify(String title, String content, int closeTime) {
+        super(PacketOpcodes.ShowCommonTipsNotify);
+        this.setData(
+                ShowCommonTipsNotify.newBuilder()
+                        .setTitle(title)
+                        .setContent(content)
+                        .setCloseTime(closeTime)
+                        .build());
+    }
 }

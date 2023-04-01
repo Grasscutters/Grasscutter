@@ -1,8 +1,8 @@
 package emu.grasscutter.game.managers.blossom;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.data.excels.WorldLevelData;
+import emu.grasscutter.data.excels.monster.MonsterData;
+import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterTrigger;

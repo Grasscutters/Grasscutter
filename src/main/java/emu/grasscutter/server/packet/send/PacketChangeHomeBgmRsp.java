@@ -8,9 +8,10 @@ public class PacketChangeHomeBgmRsp extends BasePacket {
     public PacketChangeHomeBgmRsp() {
         super(PacketOpcodes.Unk2700_OGHMHELMBNN_ServerRsp);
 
-        var rsp = Unk2700OGHMHELMBNNServerRsp.Unk2700_OGHMHELMBNN_ServerRsp.newBuilder()
-            .setRetcode(0)
-            .build();
+        var rsp =
+                Unk2700OGHMHELMBNNServerRsp.Unk2700_OGHMHELMBNN_ServerRsp.newBuilder()
+                        .setRetcode(0)
+                        .build();
 
         this.setData(rsp);
     }

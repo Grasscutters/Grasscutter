@@ -1,13 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketExecuteGadgetLuaRsp;
 
@@ -22,9 +21,9 @@ public class HandlerExecuteGadgetLuaReq extends PacketHandler {
         GameEntity entity = player.getScene().getEntities().get(req.getSourceEntityId());
 
         int result = 1;
-        if(entity instanceof EntityGadget gadget) result = gadget.onClientExecuteRequest(req.getParam1(), req.getParam2(), req.getParam3());
+        if (entity instanceof EntityGadget gadget)
+            result = gadget.onClientExecuteRequest(req.getParam1(), req.getParam2(), req.getParam3());
 
         player.sendPacket(new PacketExecuteGadgetLuaRsp(result));
     }
-
 }

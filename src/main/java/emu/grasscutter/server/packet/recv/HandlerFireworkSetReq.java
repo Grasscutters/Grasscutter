@@ -13,9 +13,7 @@ public class HandlerFireworkSetReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 
-        var req
-                = FireworkSetReqOuterClass.FireworkSetReq.parseFrom(payload);
-
+        var req = FireworkSetReqOuterClass.FireworkSetReq.parseFrom(payload);
 
         session.send(new PacketFireworkSetNotify(req.getData()));
         session.send(new PacketFireworkSetRsp());

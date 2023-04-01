@@ -16,24 +16,25 @@ public class PacketGetUgcRsp extends BasePacket {
         var proto = GetUgcRsp.newBuilder();
 
         proto
-            .setUgcGuid(briefInfo.getUgcGuid())
-            .setUgcType(req.getUgcType())
-            .setUgcRecordUsageValue(req.getUgcRecordUsageValue())
-            .setMusicRecord(musicRecord)
-            .setMusicBriefInfo(briefInfo);
+                .setUgcGuid(briefInfo.getUgcGuid())
+                .setUgcType(req.getUgcType())
+                .setUgcRecordUsageValue(req.getUgcRecordUsageValue())
+                .setMusicRecord(musicRecord)
+                .setMusicBriefInfo(briefInfo);
 
         this.setData(proto);
     }
+
     public PacketGetUgcRsp(Retcode errorCode, GetUgcReq req) {
         super(PacketOpcodes.GetUgcRsp);
 
         var proto = GetUgcRsp.newBuilder();
 
         proto
-            .setUgcGuid(req.getUgcGuid())
-            .setUgcType(req.getUgcType())
-            .setUgcRecordUsageValue(req.getUgcRecordUsageValue())
-            .setRetcode(errorCode.getNumber());
+                .setUgcGuid(req.getUgcGuid())
+                .setUgcType(req.getUgcType())
+                .setUgcRecordUsageValue(req.getUgcRecordUsageValue())
+                .setRetcode(errorCode.getNumber());
 
         this.setData(proto);
     }

@@ -16,11 +16,10 @@ public class HandlerDungeonWayPointActivateReq extends PacketHandler {
         var dungeonManager = session.getPlayer().getScene().getDungeonManager();
 
         boolean success = false;
-        if(dungeonManager != null){
+        if (dungeonManager != null) {
             success = dungeonManager.activateRespawnPoint(req.getWayPointId());
         }
 
         session.send(new PacketDungeonWayPointActivateRsp(success, req.getWayPointId()));
     }
-
 }

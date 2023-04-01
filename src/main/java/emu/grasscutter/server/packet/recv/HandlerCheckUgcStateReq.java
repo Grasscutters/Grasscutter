@@ -12,12 +12,10 @@ import lombok.val;
 @Opcodes(PacketOpcodes.CheckUgcStateReq)
 public class HandlerCheckUgcStateReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		val req = CheckUgcStateReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        val req = CheckUgcStateReq.parseFrom(payload);
 
         session.send(new PacketCheckUgcStateRsp(Retcode.RET_SUCC));
-
-	}
-
+    }
 }

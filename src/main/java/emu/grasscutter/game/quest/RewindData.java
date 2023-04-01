@@ -15,7 +15,7 @@ public class RewindData {
     }
 
     @Data
-    private static class Npc {
+    public static class Npc {
         private String script;
         private int room_id;
         private int data_index;

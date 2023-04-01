@@ -221,14 +221,13 @@ public class ResourceLoader {
                                             pointData.setId(pointId);
 
                                             GameData.getScenePointIdList().add(pointId);
-                                            GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
-                                            GameData.scenePointEntryMap.put((sceneId << 16) + pointId, scenePoint);
+                                            GameData.getScenePointEntryMap().put((sceneId << 16) + pointId, scenePoint);
 
                                             pointData.updateDailyDungeon();
                                         });
                                 GameData.getScenePointsPerScene().put(sceneId, scenePoints);
                             });
-        } catch (IOException e) {
+        } catch (IOException ignored) {
             Grasscutter.getLogger()
                     .error("Scene point files cannot be found, you cannot use teleport waypoints!");
         }
@@ -239,19 +238,23 @@ public class ResourceLoader {
         GameData.getProudSkillDataMap()
                 .forEach(
                         (id, data) ->
-                                GameData.proudSkillGroupLevels
+                                GameData.getProudSkillGroupLevels()
                                         .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
                                         .add(data.getLevel()));
         // All known levels, keyed by avatarSkillId
         GameData.getAvatarSkillDataMap()
                 .forEach(
                         (id, data) ->
-                                GameData.avatarSkillLevels.put(
-                                        (int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
+                                GameData.getAvatarSkillLevels()
+                                        .put(
+                                                (int) id,
+                                                GameData.getProudSkillGroupLevels().get(data.getProudSkillGroupId())));
         // Maximum known levels, keyed by proudSkillGroupId
-        GameData.proudSkillGroupLevels.forEach(
-                (id, set) ->
-                        GameData.proudSkillGroupMaxLevels.put((int) id, set.intStream().max().getAsInt()));
+        GameData.getProudSkillGroupLevels()
+                .forEach(
+                        (id, set) ->
+                                GameData.getProudSkillGroupMaxLevels()
+                                        .put((int) id, set.intStream().max().orElse(-1)));
     }
 
     private static void loadAbilityEmbryos() {
@@ -266,42 +269,41 @@ public class ResourceLoader {
 
         if (embryoList == null) {
             // Load from BinOutput
-            val pattern = Pattern.compile("ConfigAvatar_(.+?)\\.json");
+            var pattern = Pattern.compile("ConfigAvatar_(.+?)\\.json");
 
-            val l = new ArrayList<AbilityEmbryoEntry>();
-            try {
-                Files.newDirectoryStream(getResourcePath("BinOutput/Avatar/"), "ConfigAvatar_*.json")
-                        .forEach(
-                                path -> {
-                                    val matcher = pattern.matcher(path.getFileName().toString());
-                                    if (!matcher.find()) return;
-                                    String avatarName = matcher.group(1);
-                                    AvatarConfig config;
+            var entries = new ArrayList<AbilityEmbryoEntry>();
+            try (var stream =
+                    Files.newDirectoryStream(getResourcePath("BinOutput/Avatar/"), "ConfigAvatar_*.json")) {
 
-                                    try {
-                                        config = JsonUtils.loadToClass(path, AvatarConfig.class);
-                                    } catch (Exception e) {
-                                        Grasscutter.getLogger().error("Error loading player ability embryos:", e);
-                                        return;
-                                    }
+                stream.forEach(
+                        path -> {
+                            var matcher = pattern.matcher(path.getFileName().toString());
+                            if (!matcher.find()) return;
 
-                                    if (config.abilities == null) return;
+                            var avatarName = matcher.group(1);
+                            AvatarConfig config;
+                            try {
+                                config = JsonUtils.loadToClass(path, AvatarConfig.class);
+                            } catch (Exception e) {
+                                Grasscutter.getLogger().error("Error loading player ability embryos:", e);
+                                return;
+                            }
 
-                                    int s = config.abilities.size();
-                                    AbilityEmbryoEntry al =
-                                            new AbilityEmbryoEntry(
-                                                    avatarName,
-                                                    config.abilities.stream()
-                                                            .map(Object::toString)
-                                                            .toArray(size -> new String[s]));
-                                    l.add(al);
-                                });
+                            if (config.abilities == null) return;
+
+                            entries.add(
+                                    new AbilityEmbryoEntry(
+                                            avatarName,
+                                            config.abilities.stream()
+                                                    .map(Object::toString)
+                                                    .toArray(size -> new String[config.abilities.size()])));
+                        });
             } catch (IOException e) {
                 Grasscutter.getLogger().error("Error loading ability embryos: no files found");
                 return;
             }
 
-            embryoList = l;
+            embryoList = entries;
 
             try {
                 GameDepot.setPlayerAbilities(
@@ -351,7 +353,7 @@ public class ResourceLoader {
     }
 
     private static void loadAbilityData(AbilityData data) {
-        GameData.abilityDataMap.put(data.abilityName, data);
+        GameData.getAbilityDataMap().put(data.abilityName, data);
 
         val modifiers = data.modifiers;
         if (modifiers == null || modifiers.size() == 0) return;

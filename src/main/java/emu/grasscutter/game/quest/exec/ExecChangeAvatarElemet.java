@@ -9,9 +9,7 @@ import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import lombok.val;
 
-/**
- * Changes the main avatar's element. First parameter is the elementType id
- */
+/** Changes the main avatar's element. First parameter is the elementType id */
 @QuestValueExec(QuestExec.QUEST_EXEC_CHANGE_AVATAR_ELEMET)
 public class ExecChangeAvatarElemet extends QuestExecHandler {
     @Override
@@ -20,12 +18,17 @@ public class ExecChangeAvatarElemet extends QuestExecHandler {
         val owner = quest.getOwner();
         val mainAvatar = owner.getAvatars().getAvatarById(owner.getMainCharacterId());
 
-        if(mainAvatar == null){
-            Grasscutter.getLogger().error("Failed to get main avatar for use {}", quest.getOwner().getUid());
+        if (mainAvatar == null) {
+            Grasscutter.getLogger()
+                    .error("Failed to get main avatar for use {}", quest.getOwner().getUid());
             return false;
         }
 
-        Grasscutter.getLogger().info("Changing avatar element to {} for quest {}", targetElement.name(), quest.getSubQuestId());
+        Grasscutter.getLogger()
+                .info(
+                        "Changing avatar element to {} for quest {}",
+                        targetElement.name(),
+                        quest.getSubQuestId());
         return mainAvatar.changeElement(targetElement);
     }
 }

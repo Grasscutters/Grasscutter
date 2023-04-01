@@ -15,5 +15,4 @@ public class ExecRefreshGroupMonster extends QuestExecHandler {
 
         return quest.getOwner().getScene().getScriptManager().refreshGroupMonster(groupId);
     }
-
 }

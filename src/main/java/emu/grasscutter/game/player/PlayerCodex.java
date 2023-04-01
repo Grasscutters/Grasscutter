@@ -3,7 +3,7 @@ package emu.grasscutter.game.player;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.CodexAnimalData;
+import emu.grasscutter.data.excels.codex.CodexAnimalData;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;

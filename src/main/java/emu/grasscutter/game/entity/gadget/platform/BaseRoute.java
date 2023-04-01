@@ -43,7 +43,7 @@ public abstract class BaseRoute {
         }
         this.isStarted = true;
         this.isActive = true;
-        this.startSceneTime = scene.getSceneTime()+300;
+        this.startSceneTime = scene.getSceneTime() + 300;
 
         return true;
     }
@@ -63,19 +63,18 @@ public abstract class BaseRoute {
     private MathQuaternion.Builder rotAsMathQuaternion() {
         val result = MathQuaternion.newBuilder();
         if (startRot != null) {
-            result.setX(startRot.getX())
-                .setY(startRot.getY())
-                .setZ(startRot.getZ());
+            result.setX(startRot.getX()).setY(startRot.getY()).setZ(startRot.getZ());
         }
         return result;
     }
 
     public PlatformInfo.Builder toProto() {
-        val result = PlatformInfo.newBuilder()
-            .setIsStarted(isStarted)
-            .setIsActive(isActive)
-            .setStartRot(rotAsMathQuaternion())
-            .setStartSceneTime(startSceneTime);
+        val result =
+                PlatformInfo.newBuilder()
+                        .setIsStarted(isStarted)
+                        .setIsActive(isActive)
+                        .setStartRot(rotAsMathQuaternion())
+                        .setStartSceneTime(startSceneTime);
         if (!isStarted) {
             result.setStopSceneTime(stopSceneTime);
         }

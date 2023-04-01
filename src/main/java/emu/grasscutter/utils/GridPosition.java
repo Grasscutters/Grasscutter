@@ -1,10 +1,9 @@
 package emu.grasscutter.utils;
 
+import dev.morphia.annotations.Entity;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
-
-import dev.morphia.annotations.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +28,7 @@ public class GridPosition implements Serializable {
     }
 
     public GridPosition(Position pos, int width) {
-        this.set((int)(pos.getX() / width), (int)(pos.getZ() / width), width);
+        this.set((int) (pos.getX() / width), (int) (pos.getZ() / width), width);
     }
 
     public GridPosition(List<Integer> xzwidth) {
@@ -40,13 +39,13 @@ public class GridPosition implements Serializable {
 
     public GridPosition(String str) throws IOException {
         String[] listOfParams = str.replace(" ", "").replace("(", "").replace(")", "").split(",");
-        if(listOfParams.length != 3)
+        if (listOfParams.length != 3)
             throw new IOException("invalid size on GridPosition definition - ");
         try {
             this.x = Integer.parseInt(listOfParams[0]);
             this.z = Integer.parseInt(listOfParams[1]);
             this.width = Integer.parseInt(listOfParams[2]);
-        } catch(NumberFormatException ignored) {
+        } catch (NumberFormatException ignored) {
             throw new IOException("invalid number on GridPosition definition - ");
         }
     }
@@ -87,16 +86,15 @@ public class GridPosition implements Serializable {
     }
 
     public int[] toIntArray() {
-        return new int[]{ x, z, width };
+        return new int[] {x, z, width};
     }
 
     public int[] toXZIntArray() {
-        return new int[]{ x, z };
+        return new int[] {x, z};
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result = (int) (x ^ (x >>> 32));
         result = 31 * result + (int) (z ^ (z >>> 32));
         result = 31 * result + (int) (width ^ (width >>> 32));
@@ -105,12 +103,9 @@ public class GridPosition implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null)
-            return false;
-        if (getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
         GridPosition pos = (GridPosition) o;
         // field comparison
         return pos.x == x && pos.z == z && pos.width == width;

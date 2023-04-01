@@ -1,6 +1,8 @@
 package emu.grasscutter.game.quest.enums;
 
-public enum QuestState {
+import emu.grasscutter.scripts.constants.IntValueEnum;
+
+public enum QuestState implements IntValueEnum {
     QUEST_STATE_NONE(0),
     QUEST_STATE_UNSTARTED(1),
     QUEST_STATE_UNFINISHED(2),

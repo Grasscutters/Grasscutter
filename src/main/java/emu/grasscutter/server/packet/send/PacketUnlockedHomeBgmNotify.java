@@ -15,9 +15,10 @@ public class PacketUnlockedHomeBgmNotify extends BasePacket {
 
         var unlocked = player.getHome().getUnlockedHomeBgmList();
 
-        var notify = Unk2700LOHBMOKOPLHServerNotify.Unk2700_LOHBMOKOPLH_ServerNotify.newBuilder()
-            .addAllUnk2700KMEKMNONMGE(unlocked)
-            .build();
+        var notify =
+                Unk2700LOHBMOKOPLHServerNotify.Unk2700_LOHBMOKOPLH_ServerNotify.newBuilder()
+                        .addAllUnk2700KMEKMNONMGE(unlocked)
+                        .build();
 
         this.setData(notify);
     }

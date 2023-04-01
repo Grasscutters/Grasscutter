@@ -43,7 +43,7 @@ public enum DungeonType {
 
     @Getter private final boolean countsToBattlepass;
 
-    DungeonType(boolean countsToBattlepass){
+    DungeonType(boolean countsToBattlepass) {
         this.countsToBattlepass = countsToBattlepass;
     }
 }

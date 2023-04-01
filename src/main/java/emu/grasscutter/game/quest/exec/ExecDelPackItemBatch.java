@@ -13,11 +13,11 @@ public class ExecDelPackItemBatch extends QuestExecHandler {
         // input is like this: "100497:999,100498:999,100499:999"
         var items = paramStr[0].split(",");
         boolean success = true;
-        for (var itemString : items){
+        for (var itemString : items) {
             var itemFields = itemString.split(":");
             var itemId = Integer.parseInt(itemFields[0]);
             var amount = Integer.parseInt(itemFields[1]);
-            if(!quest.getOwner().getInventory().removeItem(itemId, amount)){
+            if (!quest.getOwner().getInventory().removeItem(itemId, amount)) {
                 success = false;
             }
         }

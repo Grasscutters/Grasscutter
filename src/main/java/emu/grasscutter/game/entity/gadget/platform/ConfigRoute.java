@@ -24,7 +24,8 @@ public class ConfigRoute extends BaseRoute {
     @Override
     public PlatformInfoOuterClass.PlatformInfo.Builder toProto() {
         return super.toProto()
-            .setRouteId(routeId)
-            .setMovingPlatformType(MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_USE_CONFIG);
+                .setRouteId(routeId)
+                .setMovingPlatformType(
+                        MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_USE_CONFIG);
     }
 }

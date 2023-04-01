@@ -10,9 +10,8 @@ public class PacketDungeonPlayerDieRsp extends BasePacket {
     public PacketDungeonPlayerDieRsp(Retcode retcode) {
         super(PacketOpcodes.DungeonPlayerDieRsp);
 
-        DungeonPlayerDieRsp proto = DungeonPlayerDieRsp.newBuilder()
-            .setRetcode(retcode.getNumber())
-            .build();
+        DungeonPlayerDieRsp proto =
+                DungeonPlayerDieRsp.newBuilder().setRetcode(retcode.getNumber()).build();
 
         this.setData(proto);
     }

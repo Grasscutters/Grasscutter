@@ -10,11 +10,10 @@ import emu.grasscutter.server.packet.send.PacketCheckUgcUpdateRsp;
 @Opcodes(PacketOpcodes.CheckUgcUpdateReq)
 public class HandlerCheckUgcUpdateReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = CheckUgcUpdateReq.parseFrom(payload);
 
-		session.send(new PacketCheckUgcUpdateRsp(req.getUgcType()));
-	}
-
+        session.send(new PacketCheckUgcUpdateRsp(req.getUgcType()));
+    }
 }

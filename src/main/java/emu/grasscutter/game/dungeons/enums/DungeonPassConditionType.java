@@ -13,10 +13,11 @@ public enum DungeonPassConditionType implements IntValueEnum {
     DUNGEON_COND_IN_TIME(13), // Missing triggers and tracking
     DUNGEON_COND_FINISH_CHALLENGE(14),
     DUNGEON_COND_END_MULTISTAGE_PLAY(15) // Missing
-    ;
+;
 
     @Getter private final int id;
-    DungeonPassConditionType(int id){
+
+    DungeonPassConditionType(int id) {
         this.id = id;
     }
 

@@ -17,13 +17,11 @@ public class Route {
     private RotType rotType; // optional
     private RotAngleType rotAngleType; // optional
 
-    public RouteOuterClass.Route toProto(){
-        val builder =  RouteOuterClass.Route.newBuilder()
-            .setRouteType(type.getValue());
-        if(points !=null){
-            for(var routePoint : points){
-                builder.addRoutePoints(routePoint.toProto()
-                    .setArriveRange(arriveRange));
+    public RouteOuterClass.Route toProto() {
+        val builder = RouteOuterClass.Route.newBuilder().setRouteType(type.getValue());
+        if (points != null) {
+            for (var routePoint : points) {
+                builder.addRoutePoints(routePoint.toProto().setArriveRange(arriveRange));
             }
         }
         return builder.build();

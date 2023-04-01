@@ -8,9 +8,10 @@ public class PacketUnlockHomeBgmNotify extends BasePacket {
     public PacketUnlockHomeBgmNotify(int homeBgmId) {
         super(PacketOpcodes.Unk2700_MEBFPBDNPGO_ServerNotify);
 
-        var notify = Unk2700MEBFPBDNPGOServerNotify.Unk2700_MEBFPBDNPGO_ServerNotify.newBuilder()
-            .addUnk2700ELJPLMIHNIP(homeBgmId)
-            .build();
+        var notify =
+                Unk2700MEBFPBDNPGOServerNotify.Unk2700_MEBFPBDNPGO_ServerNotify.newBuilder()
+                        .addUnk2700ELJPLMIHNIP(homeBgmId)
+                        .build();
 
         this.setData(notify);
     }

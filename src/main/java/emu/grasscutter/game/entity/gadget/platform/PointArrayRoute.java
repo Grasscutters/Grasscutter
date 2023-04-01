@@ -7,9 +7,7 @@ import emu.grasscutter.utils.Position;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * TODO implement point array routes, read from missing resources
- */
+/** TODO implement point array routes, read from missing resources */
 public class PointArrayRoute extends BaseRoute {
 
     @Getter @Setter int currentPoint;
@@ -19,7 +17,8 @@ public class PointArrayRoute extends BaseRoute {
         super(gadget);
     }
 
-    public PointArrayRoute(Position startRot, boolean startRoute, boolean isActive, int pointArrayId) {
+    public PointArrayRoute(
+            Position startRot, boolean startRoute, boolean isActive, int pointArrayId) {
         super(startRot, startRoute, isActive);
         this.pointArrayId = pointArrayId;
     }
@@ -27,6 +26,7 @@ public class PointArrayRoute extends BaseRoute {
     @Override
     public PlatformInfoOuterClass.PlatformInfo.Builder toProto() {
         return super.toProto()
-            .setMovingPlatformType(MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_ROUTE);
+                .setMovingPlatformType(
+                        MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_ROUTE);
     }
 }

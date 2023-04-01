@@ -3,31 +3,38 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.game.activity.trialavatar.TrialAvatarActivityHandler;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.server.packet.send.PacketEnterTrialAvatarActivityDungeonRsp;
-import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
-import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonReqOuterClass.EnterTrialAvatarActivityDungeonReq;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.packet.send.PacketEnterTrialAvatarActivityDungeonRsp;
 import lombok.val;
 
 @Opcodes(PacketOpcodes.EnterTrialAvatarActivityDungeonReq)
 public class HandlerEnterTrialAvatarActivityDungeonReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         val req = EnterTrialAvatarActivityDungeonReq.parseFrom(payload);
 
-        val handler = session.getPlayer().getActivityManager()
-            .getActivityHandlerAs(ActivityType.NEW_ACTIVITY_TRIAL_AVATAR, TrialAvatarActivityHandler.class);
+        val handler =
+                session
+                        .getPlayer()
+                        .getActivityManager()
+                        .getActivityHandlerAs(
+                                ActivityType.NEW_ACTIVITY_TRIAL_AVATAR, TrialAvatarActivityHandler.class);
 
-        boolean result = handler.isPresent() && handler.get().enterTrialDungeon(session.getPlayer(), req.getTrialAvatarIndexId(), req.getEnterPointId());
+        boolean result =
+                handler.isPresent()
+                        && handler
+                                .get()
+                                .enterTrialDungeon(
+                                        session.getPlayer(), req.getTrialAvatarIndexId(), req.getEnterPointId());
 
-        session.getPlayer().sendPacket(new PacketEnterTrialAvatarActivityDungeonRsp(
-            req.getActivityId(),
-            req.getTrialAvatarIndexId(),
-            result));
-	}
-
+        session
+                .getPlayer()
+                .sendPacket(
+                        new PacketEnterTrialAvatarActivityDungeonRsp(
+                                req.getActivityId(), req.getTrialAvatarIndexId(), result));
+    }
 }

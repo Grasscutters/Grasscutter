@@ -9,6 +9,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
@@ -39,6 +40,7 @@ public final class AbilityManager extends BasePlayerManager {
             case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE -> this.handleModifierChange(invoke);
             case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA -> this.handleMixinCostStamina(invoke);
             case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL -> this.handleGenerateElemBall(invoke);
+            case ABILITY_INVOKE_ARGUMENT_META_GLOBAL_FLOAT_VALUE -> this.handleGlobalFloatValue(invoke);
             default -> {}
         }
     }
@@ -200,6 +202,22 @@ public final class AbilityManager extends BasePlayerManager {
     private void handleGenerateElemBall(AbilityInvokeEntry invoke)
             throws InvalidProtocolBufferException {
         this.player.getEnergyManager().handleGenerateElemBall(invoke);
+    }
+
+    /**
+     * Handles a float value ability entry.
+     *
+     * @param invoke The ability invoke entry.
+     */
+    private void handleGlobalFloatValue(AbilityInvokeEntry invoke)
+            throws InvalidProtocolBufferException {
+        var entry = AbilityScalarValueEntry.parseFrom(invoke.getAbilityData());
+        if (entry.getKey().hasStr()
+                && entry.hasFloatValue()
+                && entry.getFloatValue() == 2.0f
+                && entry.getKey().getStr().equals("_ABILITY_UziExplode_Count")) {
+            player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10006);
+        }
     }
 
     private void invokeAction(

@@ -20,20 +20,19 @@ public class ExecRegisterDynamicGroup extends QuestExecHandler {
         Grasscutter.getLogger().warn("Registering group {}", groupId);
 
         Scene scene = quest.getOwner().getWorld().getSceneById(sceneId);
-        if(scene == null) return false;
+        if (scene == null) return false;
 
         int suiteId = scene.loadDynamicGroup(groupId);
-        if(suiteId == -1) return false;
+        if (suiteId == -1) return false;
 
-        quest.getMainQuest().getQuestGroupSuites().add(QuestGroupSuite.of()
-            .scene(sceneId)
-            .group(groupId)
-            .suite(suiteId)
-            .build());
+        quest
+                .getMainQuest()
+                .getQuestGroupSuites()
+                .add(QuestGroupSuite.of().scene(sceneId).group(groupId).suite(suiteId).build());
 
-        Grasscutter.getLogger().warn("Registered group {}, suite {} in scene {}", groupId, suiteId, scene.getId());
+        Grasscutter.getLogger()
+                .warn("Registered group {}, suite {} in scene {}", groupId, suiteId, scene.getId());
 
         return true;
     }
-
 }

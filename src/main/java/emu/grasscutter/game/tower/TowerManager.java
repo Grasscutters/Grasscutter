@@ -1,7 +1,7 @@
 package emu.grasscutter.game.tower;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.TowerLevelData;
+import emu.grasscutter.data.excels.tower.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.BasePlayerManager;
@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 public class TowerManager extends BasePlayerManager {
-
     private static final List<DungeonSettleListener> towerDungeonSettleListener =
             List.of(new TowerDungeonSettleListener());
 
@@ -21,20 +20,20 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public TowerData getTowerData() {
-        return getPlayer().getTowerData();
+        return this.getPlayer().getTowerData();
     }
 
     public int getCurrentFloorId() {
-        return getTowerData().currentFloorId;
+        return this.getTowerData().currentFloorId;
     }
 
     public int getCurrentLevelId() {
-        return getTowerData().currentLevelId + getTowerData().currentLevel;
+        return this.getTowerData().currentLevelId + this.getTowerData().currentLevel;
     }
 
     /** form 1-3 */
     public int getCurrentLevel() {
-        return getTowerData().currentLevel + 1;
+        return this.getTowerData().currentLevel + 1;
     }
 
     public Map<Integer, TowerLevelRecord> getRecordMap() {
@@ -103,7 +102,7 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public void notifyCurLevelRecordChangeWhenDone(int stars) {
-        Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
+        Map<Integer, TowerLevelRecord> recordMap = this.getRecordMap();
         int currentFloorId = getTowerData().currentFloorId;
         if (!recordMap.containsKey(currentFloorId)) {
             recordMap.put(
@@ -114,9 +113,9 @@ public class TowerManager extends BasePlayerManager {
                     currentFloorId, recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
         }
 
-        getTowerData().currentLevel++;
+        this.getTowerData().currentLevel++;
 
-        if (!hasNextLevel()) {
+        if (!this.hasNextLevel()) {
             // set up the next floor
             var nextFloorId = this.getNextFloorId();
             recordMap.computeIfAbsent(nextFloorId, TowerLevelRecord::new);
@@ -133,11 +132,18 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public int getNextFloorId() {
-        return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId);
+        return this.player
+                .getServer()
+                .getTowerSystem()
+                .getNextFloorId(this.getTowerData().currentFloorId);
     }
 
     public boolean hasNextFloor() {
-        return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId) > 0;
+        return this.player
+                        .getServer()
+                        .getTowerSystem()
+                        .getNextFloorId(this.getTowerData().currentFloorId)
+                > 0;
     }
 
     public void clearEntry() {
@@ -145,11 +151,13 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public boolean canEnterScheduleFloor() {
-        Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
-        if (!recordMap.containsKey(player.getServer().getTowerSystem().getLastEntranceFloor())) {
+        Map<Integer, TowerLevelRecord> recordMap = this.getRecordMap();
+        if (!recordMap.containsKey(this.player.getServer().getTowerSystem().getLastEntranceFloor())) {
             return false;
         }
-        return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor()).getStarCount()
+        return recordMap
+                        .get(this.player.getServer().getTowerSystem().getLastEntranceFloor())
+                        .getStarCount()
                 >= 6;
     }
 

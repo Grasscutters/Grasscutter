@@ -9,7 +9,11 @@ public class DungeonEndStats {
     @Getter private int openChestCount;
     @Getter private BaseDungeonResult.DungeonEndReason dungeonResult;
 
-    public DungeonEndStats(int killedMonsters, int timeTaken, int openChestCount, BaseDungeonResult.DungeonEndReason dungeonResult){
+    public DungeonEndStats(
+            int killedMonsters,
+            int timeTaken,
+            int openChestCount,
+            BaseDungeonResult.DungeonEndReason dungeonResult) {
         this.killedMonsters = killedMonsters;
         this.timeTaken = timeTaken;
         this.dungeonResult = dungeonResult;

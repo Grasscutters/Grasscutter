@@ -1,7 +1,5 @@
 package emu.grasscutter.game.entity.gadget;
 
-import java.util.Arrays;
-
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
@@ -27,13 +25,13 @@ public class GadgetAbility extends GadgetContent {
             return;
         }
 
-        val abilityGadgetInfo = AbilityGadgetInfoOuterClass.AbilityGadgetInfo.newBuilder()
-            .setCampId(parent.getCampId())
-            .setCampTargetType(parent.getCampType())
-            .setTargetEntityId(parent.getId())
-            .build();
+        val abilityGadgetInfo =
+                AbilityGadgetInfoOuterClass.AbilityGadgetInfo.newBuilder()
+                        .setCampId(parent.getCampId())
+                        .setCampTargetType(parent.getCampType())
+                        .setTargetEntityId(parent.getId())
+                        .build();
 
         gadgetInfo.setAbilityGadget(abilityGadgetInfo);
     }
-
 }

@@ -8,5 +8,4 @@ public class PacketFireworkRsp extends BasePacket {
     public PacketFireworkRsp() {
         super(PacketOpcodes.FireworkRsp);
     }
-
 }

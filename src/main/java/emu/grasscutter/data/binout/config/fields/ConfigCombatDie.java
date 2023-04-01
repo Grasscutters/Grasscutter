@@ -8,8 +8,11 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ConfigCombatDie {
-    @SerializedName(value="dieEndTime", alternate={"HGGPMFGGBNC"})
+    @SerializedName(
+            value = "dieEndTime",
+            alternate = {"HGGPMFGGBNC"})
     double dieEndTime;
+
     double dieForceDisappearTime;
     boolean hasAnimatorDie;
 }

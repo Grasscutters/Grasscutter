@@ -16,5 +16,4 @@ public class HandlerHomeUnknown2Req extends PacketHandler {
          */
         session.send(new PacketHomeUnknown2Rsp());
     }
-
 }
