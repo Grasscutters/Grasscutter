@@ -577,8 +577,6 @@ public class PacketOpcodes {
   public static final int GetAllActivatedBargainDataRsp = 457;
   public static final int GetAllH5ActivityInfoReq = 5693;
   public static final int GetAllH5ActivityInfoRsp = 5698;
-  public static final int GetAllMailReq = 1459;
-  public static final int GetAllMailRsp = 1407;
   public static final int GetAllSceneGalleryInfoReq = 5572;
   public static final int GetAllSceneGalleryInfoRsp = 5582;
   public static final int GetAllUnlockNameCardReq = 4046;
