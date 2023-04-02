@@ -13,7 +13,7 @@
 * Chiến đấu, giao tranh
 * Danh sách bạn bè
 * Dịch chuyển
-* Hệ thống gacha
+* Hệ thống cầu nguyện (gacha)
 * *Một phần* của tính năng chơi chung (co-op)
 * Gọi ra quái vật từ bảng điều khiển (console)
 * Vật phẩm/Nhân vật (nhận vật phẩm/nhân vật, nâng cấp vật phẩm/nhân vật)
@@ -26,9 +26,9 @@
 
 * [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) hoặc cao hơn
 
-  **Ghi chú:** Nếu bạn chỉ cần **sử dụng**, thì cài **jre** là đủ.
+  **Ghi chú:** Nếu bạn chỉ muốn **sử dụng**, vậy thì cài đặt **jre** là đủ.
 
-* [MongoDB](https://www.mongodb.com/try/download/community) (khuyến khích phiên bản từ 4.0 trở lên)
+* [MongoDB](https://www.mongodb.com/try/download/community) (khuyến khích sử dụng phiên bản từ 4.0 trở lên)
 
 * Proxy Daemon: [mitmproxy](https://mitmproxy.org/) (nên sử dụng mitmdump), [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe), v.v.
 
@@ -62,11 +62,11 @@
 
     - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
-2. Cài đặt network proxy thành `127.0.0.1:8080` hoặc cổng proxy bạn đã chỉ định.
+2. Cài đặt network proxy thành `127.0.0.1:8080` hoặc cổng proxy mà bạn đã chỉ định.
 
--   Với mitmproxy: Sau khi thiết lập proxy và cài đặt chứng chỉ, hãy kiểm tra http://mitm.it/ nếu lưu lượng truy cập đi qua mitmproxy.
+-   Với mitmproxy: Sau khi thiết lập proxy và cài đặt chứng chỉ, hãy kiểm tra http://mitm.it/ để xem liệu lưu lượng có đang thông qua mitmproxy hay không.
 
-**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up `JAVA_HOME` environment and configure the `start_config.cmd` file.**
+**Bạn cũng có thể sử dụng `start.cmd` để tự động khởi động máy chủ (servers) và proxy daemons, nhưng trước đó bạn phải thiết lập biến môi trường `JAVA_HOME` và cấu hình tệp `start_config.cmd`.**
 
 ### Tự tạo server (Building)
 
@@ -101,6 +101,6 @@ Bạn có thể tìm thấy tệp jar đã được biên dịch tại thư mụ
 
 # Khắc phục nhanh các sụ cố
 
--   Nếu quá trình biên dịch (compile) không thành công, vui lòng kiểm tra cài đặt JDK của bạn (Đảm bảo rằng JDK phải từ phiên bản 17 trở lên và PATH của JDK đã được cài đặt).
--   Không thể kết nối, không thể đăng nhập, 4206, v.v... - Cài đặt proxy (proxy daemon) của bạn thường là *vấn đề*. Nếu bạn đang sử dụng Fiddler, hãy đổi port (cổng) mặc định khác 8888.
--   Thứ tự cài đặt: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, v.v.) > Game
+-   Nếu quá trình biên dịch (compile) không thành công, hãy kiểm tra cài đặt JDK của bạn (Đảm bảo rằng JDK phải từ phiên bản 17 trở lên và PATH của JDK đã được cài đặt).
+-   Không thể kết nối, không thể đăng nhập, 4206, v.v. - *Vấn đề* thường là do cài đặt proxy (proxy daemon) của bạn. Nếu bạn đang sử dụng Fiddler, hãy đổi cổng (port) mặc định sang bất cứ cổng nào khác 8888.
+-   Thứ tự khởi động: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, v.v.) > Game
