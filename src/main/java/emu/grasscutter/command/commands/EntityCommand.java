@@ -117,7 +117,7 @@ public final class EntityCommand implements CommandHandler {
     }
 
     private void callHPEvents(GameEntity entity, EntityDamageEvent event) {
-        entity.callLuaHPEvent(event);
+        entity.runLuaCallbacks(event);
     }
 
     private void setFightProperty(

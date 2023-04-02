@@ -103,6 +103,13 @@ public class PlayerActivityData {
         int curProgress;
         boolean isTakenReward;
 
+        /**
+         * @return True when the progress of this watcher has reached the total progress.
+         */
+        public boolean isFinished(){
+            return this.curProgress >= this.totalProgress;
+        }
+
         public static WatcherInfo init(ActivityWatcher watcher) {
             return WatcherInfo.of()
                     .watcherId(watcher.getWatcherId())

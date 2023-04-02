@@ -48,7 +48,10 @@ public final class GameData {
     @Getter
     private static final Map<String, AbilityModifierEntry> abilityModifiers = new HashMap<>();
 
-    @Getter private static final Map<String, ConfigGadget> gadgetConfigData = new HashMap<>();
+    @Getter private static final Map<String, ConfigEntityAvatar> avatarConfigData = new HashMap<>();
+    @Getter private static final Map<String, ConfigEntityGadget> gadgetConfigData = new HashMap<>();
+    @Getter private static final Map<String, ConfigEntityMonster> monsterConfigData = new HashMap<>();
+
     @Getter private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 
     private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
@@ -101,6 +104,8 @@ public final class GameData {
     @Getter
     private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataMap =
             new Int2ObjectLinkedOpenHashMap<>();
+
+    @Getter private static final Int2ObjectMap<AvatarReplaceCostumeData> avatarReplaceCostumeDataMap = new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<AvatarCurveData> avatarCurveDataMap =
@@ -221,6 +226,8 @@ public final class GameData {
 
     @Getter
     private static final Int2ObjectMap<GatherData> gatherDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter @Deprecated // This is to prevent people from using this map. This is for the resource loader only!
+    private static final Int2ObjectMap<GuideTriggerData> guideTriggerDataMap = new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<HomeWorldBgmData> homeWorldBgmDataMap =
@@ -246,6 +253,8 @@ public final class GameData {
     @Getter
     private static final Int2ObjectMap<MonsterDescribeData> monsterDescribeDataMap =
             new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<MonsterSpecialNameData> monsterSpecialNameDataMap =
+        new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<MusicGameBasicData> musicGameBasicDataMap =
@@ -403,9 +412,8 @@ public final class GameData {
     @Getter private static final List<OpenStateData> openStateList = new ArrayList<>();
     @Getter private static final Map<Integer, List<Integer>> scenePointsPerScene = new HashMap<>();
     @Getter private static final Map<String, ScriptSceneData> scriptSceneDataMap = new HashMap<>();
-
-    @Getter
-    private static final Map<String, ConfigLevelEntity> configLevelEntityDataMap = new HashMap<>();
+    @Getter private static final Map<String, GuideTriggerData> guideTriggerDataStringMap = new HashMap<>();
+    @Getter private static final Map<String, ConfigLevelEntity> configLevelEntityDataMap = new HashMap<>();
 
     @Getter
     private static final Int2ObjectMap<IntSet> proudSkillGroupLevels = new Int2ObjectOpenHashMap<>();

@@ -1,6 +1,11 @@
 package emu.grasscutter.data.excels.monster;
 
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -9,26 +14,12 @@ import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.MonsterType;
-import java.util.List;
-import java.util.Set;
 import lombok.Getter;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter
 public class MonsterData extends GameResource {
-    public static Set<FightProperty> definedFightProperties =
-            Set.of(
-                    FightProperty.FIGHT_PROP_BASE_HP,
-                    FightProperty.FIGHT_PROP_BASE_ATTACK,
-                    FightProperty.FIGHT_PROP_BASE_DEFENSE,
-                    FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT,
-                    FightProperty.FIGHT_PROP_FIRE_SUB_HURT,
-                    FightProperty.FIGHT_PROP_ELEC_SUB_HURT,
-                    FightProperty.FIGHT_PROP_WATER_SUB_HURT,
-                    FightProperty.FIGHT_PROP_GRASS_SUB_HURT,
-                    FightProperty.FIGHT_PROP_WIND_SUB_HURT,
-                    FightProperty.FIGHT_PROP_ROCK_SUB_HURT,
-                    FightProperty.FIGHT_PROP_ICE_SUB_HURT);
+    static public Set<FightProperty> definedFightProperties = Set.of(FightProperty.FIGHT_PROP_BASE_HP, FightProperty.FIGHT_PROP_BASE_ATTACK, FightProperty.FIGHT_PROP_BASE_DEFENSE, FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT, FightProperty.FIGHT_PROP_FIRE_SUB_HURT, FightProperty.FIGHT_PROP_ELEC_SUB_HURT, FightProperty.FIGHT_PROP_WATER_SUB_HURT, FightProperty.FIGHT_PROP_GRASS_SUB_HURT, FightProperty.FIGHT_PROP_WIND_SUB_HURT, FightProperty.FIGHT_PROP_ROCK_SUB_HURT, FightProperty.FIGHT_PROP_ICE_SUB_HURT);
 
     @Getter(onMethod_ = @Override)
     private int id;
@@ -51,10 +42,8 @@ public class MonsterData extends GameResource {
 
     @SerializedName("hpBase")
     private float baseHp;
-
     @SerializedName("attackBase")
     private float baseAttack;
-
     @SerializedName("defenseBase")
     private float baseDefense;
 
@@ -74,6 +63,38 @@ public class MonsterData extends GameResource {
     private int weaponId;
     private MonsterDescribeData describeData;
 
+    private int specialNameId; // will only be set if describe data is available
+
+    @Override
+    public void onLoad() {
+        for (int id : this.equips) {
+            if (id == 0) {
+                continue;
+            }
+
+            GadgetData gadget = GameData.getGadgetDataMap().get(id);
+            if (gadget == null) {
+                continue;
+            }
+
+            if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
+                this.weaponId = id;
+            }
+        }
+
+        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
+
+        if (this.describeData == null){
+            return;
+        }
+        for(Entry<Integer, MonsterSpecialNameData> entry: GameData.getMonsterSpecialNameDataMap().entrySet()) {
+            if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()){
+                this.specialNameId = entry.getKey();
+                break;
+            }
+        }
+    }
+
     public float getFightProperty(FightProperty prop) {
         return switch (prop) {
             case FIGHT_PROP_BASE_HP -> this.baseHp;
@@ -89,24 +110,6 @@ public class MonsterData extends GameResource {
             case FIGHT_PROP_ICE_SUB_HURT -> this.iceSubHurt;
             default -> 0f;
         };
-    }
-
-    @Override
-    public void onLoad() {
-        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-
-        for (int id : this.equips) {
-            if (id == 0) {
-                continue;
-            }
-            GadgetData gadget = GameData.getGadgetDataMap().get(id);
-            if (gadget == null) {
-                continue;
-            }
-            if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
-                this.weaponId = id;
-            }
-        }
     }
 
     @Getter

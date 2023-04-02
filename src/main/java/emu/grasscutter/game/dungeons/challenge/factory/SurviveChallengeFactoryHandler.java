@@ -1,13 +1,14 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
-import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_SURVIVE;
-
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.ForTimeTrigger;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
+
 import java.util.List;
+
+import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_SURVIVE;
 
 public class SurviveChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override
@@ -18,23 +19,15 @@ public class SurviveChallengeFactoryHandler implements ChallengeFactoryHandler {
     }
 
     @Override
-    public WorldChallenge build(
-            int challengeIndex,
-            int challengeId,
-            int timeToSurvive,
-            int unused4,
-            int unused5,
-            int unused6,
-            Scene scene,
-            SceneGroup group) {
+    public WorldChallenge build(int challengeIndex, int challengeId, int timeToSurvive, int unused4, int unused5, int unused6, Scene scene, SceneGroup group) {
         return new WorldChallenge(
-                scene,
-                group,
-                challengeId, // Id
-                challengeIndex, // Index
-                List.of(timeToSurvive),
-                timeToSurvive, // Limit
-                0, // Goal
-                List.of(new ForTimeTrigger()));
+            scene, group,
+            challengeId, // Id
+            challengeIndex, // Index
+            List.of(timeToSurvive),
+            timeToSurvive, // Limit
+            0,  // Goal
+            List.of(new ForTimeTrigger())
+        );
     }
 }

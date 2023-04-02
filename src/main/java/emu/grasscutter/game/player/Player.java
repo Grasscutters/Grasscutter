@@ -45,7 +45,6 @@ import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
@@ -117,12 +116,13 @@ public class Player {
     @Getter @Setter private int sceneId;
     @Getter @Setter private int regionId;
     @Getter private int mainCharacterId;
-    @Setter private boolean godmode;  // Getter is inGodmode
-    private boolean stamina;  // Getter is getUnlimitedStamina, Setter is setUnlimitedStamina
+    @Getter @Setter private boolean inGodMode;
+    @Getter @Setter private boolean unlimitedStamina;
 
     @Getter private Set<Integer> nameCardList;
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> personalLineList;
     @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> homeRewardedLevels;
     @Getter @Setter private Set<Integer> realmList;
@@ -791,18 +791,6 @@ public class Player {
             getShopLimit().add(sl);
         }
         this.save();
-    }
-
-    public boolean getUnlimitedStamina() {
-        return stamina;
-    }
-
-    public void setUnlimitedStamina(boolean stamina) {
-        this.stamina = stamina;
-    }
-
-    public boolean inGodmode() {
-        return godmode;
     }
 
     public boolean hasSentLoginPackets() {

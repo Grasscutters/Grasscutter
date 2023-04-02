@@ -1,13 +1,15 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.ConfigGadget;
+import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.entity.gadget.*;
+import emu.grasscutter.game.entity.gadget.platform.BaseRoute;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -15,42 +17,58 @@ import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
+import emu.grasscutter.net.proto.PlatformInfoOuterClass;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
+import emu.grasscutter.scripts.EntityControllerScriptManager;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
+import emu.grasscutter.server.packet.send.PacketPlatformStartRouteNotify;
+import emu.grasscutter.server.packet.send.PacketPlatformStopRouteNotify;
+import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import java.util.Optional;
-import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
     @Getter private final GadgetData gadgetData;
-
-    @Getter(onMethod_ = @Override, lazy = true)
-    private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
-
-    @Getter(onMethod_ = @Override)
-    @Setter
+    @Getter(onMethod = @__(@Override)) @Setter
     private int gadgetId;
+    @Getter private final Position bornPos;
+    @Getter private final Position bornRot;
+    @Getter @Setter private GameEntity owner = null;
+    @Getter @Setter private List<GameEntity> children = new ArrayList<>();
 
-    @Getter @Setter private int state;
+    @Getter private int state;
     @Getter @Setter private int pointType;
     @Getter private GadgetContent content;
+    @Getter(onMethod = @__(@Override), lazy = true)
+    private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
     @Getter @Setter private SceneGadget metaGadget;
-    @Nullable @Getter private final ConfigGadget configGadget;
+    @Nullable @Getter
+    private ConfigEntityGadget configGadget;
+    @Getter @Setter private BaseRoute routeConfig;
+
+    @Getter @Setter private int stopValue = 0; //Controller related, inited to zero
+    @Getter @Setter private int startValue = 0; //Controller related, inited to zero
+    @Getter @Setter private int ticksSinceChange;
+
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
         this(scene, gadgetId, pos, null, null);
@@ -60,27 +78,43 @@ public class EntityGadget extends EntityBaseGadget {
         this(scene, gadgetId, pos, rot, null);
     }
 
-    public EntityGadget(
-            Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
         super(scene, pos, rot);
+
         this.gadgetData = GameData.getGadgetDataMap().get(gadgetId);
-        this.configGadget =
-                Optional.ofNullable(this.gadgetData)
-                        .map(GadgetData::getJsonName)
-                        .map(GameData.getGadgetConfigData()::get)
-                        .orElse(null);
+        if (gadgetData != null && gadgetData.getJsonName() != null) {
+            this.configGadget = GameData.getGadgetConfigData().get(gadgetData.getJsonName());
+        }
+
         this.id = this.getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
         this.gadgetId = gadgetId;
         this.content = content;
-        fillFightProps(configGadget);
+        this.bornPos = this.getPosition().clone();
+        this.bornRot = this.getRotation().clone();
+        this.fillFightProps(configGadget);
+
+        if(GameData.getGadgetMappingMap().containsKey(gadgetId)) {
+            String controllerName = GameData.getGadgetMappingMap().get(gadgetId).getServerController();
+            this.setEntityController(EntityControllerScriptManager.getGadgetController(controllerName));
+        }
+    }
+
+    public void setState(int state) {
+        this.state = state;
+        //Cache the gadget state
+        if(metaGadget != null && metaGadget.group != null) {
+            var instance = getScene().getScriptManager().getCachedGroupInstanceById(metaGadget.group.id);
+            if(instance != null) instance.cacheGadgetState(metaGadget, state);
+        }
     }
 
     public void updateState(int state) {
+        if(state == this.getState()) return; //Don't triggers events
+
         this.setState(state);
+        ticksSinceChange = getScene().getSceneTimeSeconds();
         this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
-        getScene()
-                .getScriptManager()
-                .callEvent(EventType.EVENT_GADGET_STATE_CHANGE, new ScriptArgs(state, this.getConfigId()));
+        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_GADGET_STATE_CHANGE, state, this.getConfigId()));
     }
 
     @Deprecated(forRemoval = true) // Dont use!
@@ -90,22 +124,19 @@ public class EntityGadget extends EntityBaseGadget {
 
     // TODO refactor
     public void buildContent() {
-        if (this.getContent() != null
-                || this.getGadgetData() == null
-                || this.getGadgetData().getType() == null) {
+        if (this.getContent() != null || this.getGadgetData() == null || this.getGadgetData().getType() == null) {
             return;
         }
 
-        this.content =
-                switch (this.getGadgetData().getType()) {
-                    case GatherPoint -> new GadgetGatherPoint(this);
-                    case GatherObject -> new GadgetGatherObject(this);
-                    case Worktop -> new GadgetWorktop(this);
-                    case RewardStatue -> new GadgetRewardStatue(this);
-                    case Chest -> new GadgetChest(this);
-                    case Gadget -> new GadgetObject(this);
-                    default -> null;
-                };
+        this.content = switch (this.getGadgetData().getType()) {
+            case GatherPoint -> new GadgetGatherPoint(this);
+            case GatherObject -> new GadgetGatherObject(this);
+            case Worktop, SealGadget -> new GadgetWorktop(this);
+            case RewardStatue -> new GadgetRewardStatue(this);
+            case Chest -> new GadgetChest(this);
+            case Gadget -> new GadgetObject(this);
+            default -> null;
+        };
     }
 
     @Override
@@ -124,9 +155,16 @@ public class EntityGadget extends EntityBaseGadget {
     @Override
     public void onCreate() {
         // Lua event
-        getScene()
-                .getScriptManager()
-                .callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(this.getConfigId()));
+        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_GADGET_CREATE, this.getConfigId()));
+    }
+
+    @Override
+    public void onRemoved() {
+        super.onRemoved();
+        if(!children.isEmpty()) {
+            getScene().removeEntities(children, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+            children.clear();
+        }
     }
 
     @Override
@@ -139,68 +177,105 @@ public class EntityGadget extends EntityBaseGadget {
         if (getScene().getChallenge() != null) {
             getScene().getChallenge().onGadgetDeath(this);
         }
-        getScene()
-                .getScriptManager()
-                .callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
+        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_ANY_GADGET_DIE, this.getConfigId()));
+
+        SceneGroupInstance groupInstance = getScene().getScriptManager().getCachedGroupInstanceById(this.getGroupId());
+        if(groupInstance != null && metaGadget != null)
+            groupInstance.getDeadEntities().add(metaGadget.config_id);
+    }
+
+    public boolean startPlatform(){
+        if(routeConfig == null){
+            return false;
+        }
+
+        if(routeConfig.isStarted()){
+            return true;
+        }
+        getScene().broadcastPacket(new PacketSceneTimeNotify(getScene()));
+        routeConfig.startRoute(getScene());
+        getScene().broadcastPacket(new PacketPlatformStartRouteNotify(this));
+
+        return true;
+    }
+
+    public boolean stopPlatform(){
+        if(routeConfig == null){
+            return false;
+        }
+
+        if(!routeConfig.isStarted()){
+            return true;
+        }
+        routeConfig.stopRoute(getScene());
+        getScene().broadcastPacket(new PacketPlatformStopRouteNotify(this));
+
+        return true;
     }
 
     @Override
     public SceneEntityInfo toProto() {
-        EntityAuthorityInfo authority =
-                EntityAuthorityInfo.newBuilder()
-                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                        .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                        .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
-                        .setBornPos(Vector.newBuilder())
-                        .build();
+        EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(bornPos.toProto()))
+            .setBornPos(bornPos.toProto())
+            .build();
 
-        SceneEntityInfo.Builder entityInfo =
-                SceneEntityInfo.newBuilder()
-                        .setEntityId(getId())
-                        .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-                        .setMotionInfo(
-                                MotionInfo.newBuilder()
-                                        .setPos(getPosition().toProto())
-                                        .setRot(getRotation().toProto())
-                                        .setSpeed(Vector.newBuilder()))
-                        .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-                        .setEntityClientData(EntityClientData.newBuilder())
-                        .setEntityAuthorityInfo(authority)
-                        .setLifeState(1);
+        SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
+            .setEntityId(getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setEntityClientData(EntityClientData.newBuilder())
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(1);
 
-        PropPair pair =
-                PropPair.newBuilder()
-                        .setType(PlayerProperty.PROP_LEVEL.getId())
-                        .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-                        .build();
+        PropPair pair = PropPair.newBuilder()
+            .setType(PlayerProperty.PROP_LEVEL.getId())
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+            .build();
         entityInfo.addPropList(pair);
 
-        // We do not use the getter to null check because the getter will create a fight prop map if it
-        // is null
+        // We do not use the getter to null check because the getter will create a fight prop map if it is null
         if (this.fightProperties != null) {
             addAllFightPropsToEntityInfo(entityInfo);
         }
 
-        SceneGadgetInfo.Builder gadgetInfo =
-                SceneGadgetInfo.newBuilder()
-                        .setGadgetId(this.getGadgetId())
-                        .setGroupId(this.getGroupId())
-                        .setConfigId(this.getConfigId())
-                        .setGadgetState(this.getState())
-                        .setIsEnableInteract(true)
-                        .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+        SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
+            .setGadgetId(this.getGadgetId())
+            .setGroupId(this.getGroupId())
+            .setConfigId(this.getConfigId())
+            .setGadgetState(this.getState())
+            .setIsEnableInteract(true)
+            .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);
+        }
+
+        if(owner != null){
+            gadgetInfo.setOwnerEntityId(owner.getId());
         }
 
         if (this.getContent() != null) {
             this.getContent().onBuildProto(gadgetInfo);
         }
 
+        if(routeConfig!=null){
+            gadgetInfo.setPlatform(getPlatformInfo());
+        }
+
         entityInfo.setGadget(gadgetInfo);
 
         return entityInfo.build();
+    }
+
+    public PlatformInfoOuterClass.PlatformInfo.Builder getPlatformInfo(){
+        if(routeConfig != null){
+            return routeConfig.toProto();
+        }
+
+        return PlatformInfoOuterClass.PlatformInfo.newBuilder();
     }
 }

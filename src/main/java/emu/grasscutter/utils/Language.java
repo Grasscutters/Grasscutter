@@ -344,7 +344,7 @@ public final class Language {
                             "Cache modified %d, textmap modified %d".formatted(cacheModified, textmapsModified));
             if (textmapsModified < cacheModified) {
                 // Try loading from cache
-                Grasscutter.getLogger().info("Loading cached 'TextMaps'...");
+                Grasscutter.getLogger().debug("Loading cached 'TextMaps'...");
                 textMapStrings = loadTextMapsCache();
                 return;
             }

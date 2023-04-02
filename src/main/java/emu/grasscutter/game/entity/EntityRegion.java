@@ -20,13 +20,19 @@ public class EntityRegion extends GameEntity {
 
     public EntityRegion(Scene scene, SceneRegion region) {
         super(scene);
+
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.REGION);
-        setGroupId(region.group.id);
-        setBlockId(region.group.block_id);
-        setConfigId(region.config_id);
+        this.setGroupId(region.group.id);
+        this.setBlockId(region.group.block_id);
+        this.setConfigId(region.config_id);
         this.position = region.pos.clone();
         this.entities = ConcurrentHashMap.newKeySet();
         this.metaRegion = region;
+    }
+
+    @Override
+    public int getEntityTypeId() {
+        return this.metaRegion.config_id;
     }
 
     public void addEntity(GameEntity entity) {

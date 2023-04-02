@@ -49,6 +49,8 @@ import lombok.Setter;
 import lombok.val;
 import org.bson.types.ObjectId;
 
+import javax.annotation.Nonnull;
+
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
     @Transient @Getter private final Int2ObjectMap<GameItem> equips;
@@ -234,7 +236,23 @@ public class Avatar {
         this.skillDepot = skillDepot; // Used while loading this from the database
     }
 
+    /**
+     * Changes this avatar's skill depot.
+     * Does not notify the player of the change.
+     *
+     * @param skillDepot The new skill depot.
+     */
     public void setSkillDepotData(AvatarSkillDepotData skillDepot) {
+        this.setSkillDepotData(skillDepot, false);
+    }
+
+    /**
+     * Changes this avatar's skill depot.
+     *
+     * @param skillDepot The new skill depot.
+     * @param notify    Whether to notify the player of the change.
+     */
+    public void setSkillDepotData(AvatarSkillDepotData skillDepot, boolean notify) {
         // Set id and depot
         this.skillDepotId = skillDepot.getId();
         this.skillDepot = skillDepot;
@@ -251,6 +269,38 @@ public class Avatar {
                 .filter(proudSkillId -> GameData.getProudSkillDataMap().containsKey(proudSkillId))
                 .forEach(proudSkillId -> this.proudSkillList.add(proudSkillId));
         this.recalcStats();
+
+        // Send the depot change notification.
+        if (notify) this.owner.sendPacket(new PacketAvatarSkillDepotChangeNotify(this));
+    }
+
+    /**
+     * Changes the avatar's element to the target element, if the character has values for it set in the candSkillDepot
+     *
+     * @param elementTypeToChange element to change to
+     * @return false if failed or already using that element, true if it actually changed
+     */
+    public boolean changeElement(@Nonnull ElementType elementTypeToChange) {
+        var candSkillDepotIdsList = this.avatarData.getCandSkillDepotIds();
+        var candSkillDepotIndex = elementTypeToChange.getDepotIndex();
+
+        // if no candidate skill to change or index out of bound
+        if (candSkillDepotIdsList == null ||
+            candSkillDepotIndex >= candSkillDepotIdsList.size()) {
+            return false;
+        }
+
+        var candSkillDepotId = candSkillDepotIdsList.get(candSkillDepotIndex);
+
+        // Sanity checks for skill depots
+        val skillDepot = GameData.getAvatarSkillDepotDataMap().get(candSkillDepotId);
+        if (skillDepot == null || skillDepot.getId() == skillDepotId) {
+            return false;
+        }
+
+        // Set skill depot
+        setSkillDepotData(skillDepot, true);
+        return true;
     }
 
     public List<Integer> getFetterList() {

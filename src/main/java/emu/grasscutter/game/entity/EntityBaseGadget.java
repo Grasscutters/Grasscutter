@@ -1,6 +1,6 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.data.binout.ConfigGadget;
+import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.utils.Position;
@@ -26,11 +26,16 @@ public abstract class EntityBaseGadget extends GameEntity {
     public abstract int getGadgetId();
 
     @Override
+    public int getEntityTypeId() {
+        return this.getGadgetId();
+    }
+
+    @Override
     public void onDeath(int killerId) {
         super.onDeath(killerId); // Invoke super class's onDeath() method.
     }
 
-    protected void fillFightProps(ConfigGadget configGadget) {
+    protected void fillFightProps(ConfigEntityGadget configGadget) {
         if (configGadget == null || configGadget.getCombat() == null) {
             return;
         }

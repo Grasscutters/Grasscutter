@@ -5,14 +5,18 @@ import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.enums.QuestCond;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
+import lombok.val;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 
 // @Entity
-public class PlayerProgressManager extends BasePlayerDataManager {
+public final class PlayerProgressManager extends BasePlayerDataManager {
     /******************************************************************************************************************
      ******************************************************************************************************************
      * OPEN STATES
@@ -145,6 +149,13 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         this.player.sendPacket(new PacketSetOpenStateRsp(openState, value));
     }
 
+    /**
+     * This force sets an open state, ignoring all conditions and permissions
+     */
+    public void forceSetOpenState(int openState, int value) {
+        this.setOpenState(openState, value);
+    }
+
     /**********
      * Triggered unlocking of open states (unlock states whose conditions have been met.)
      **********/
@@ -221,7 +232,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // Fire quest trigger for trans point unlock.
         this.player
                 .getQuestManager()
-                .triggerEvent(QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
+                .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
 
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));
@@ -234,5 +245,36 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
         // Send packet.
         this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, areaId));
+    }
+
+    /**
+     * Give replace costume to player (Amber, Jean, Mona, Rosaria)
+     */
+    public void addReplaceCostumes(){
+        var currentPlayerCostumes = player.getCostumeList();
+        GameData.getAvatarReplaceCostumeDataMap().keySet().forEach(costumeId -> {
+            if (GameData.getAvatarCostumeDataMap().get(costumeId) == null || currentPlayerCostumes.contains(costumeId)){
+                return;
+            }
+            this.player.addCostume(costumeId);
+        });
+    }
+
+    /**
+     * Quest progress
+     */
+    public void addQuestProgress(int id, int count){
+        var newCount = player.getPlayerProgress().addToCurrentProgress(id, count);
+        player.save();
+        player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ADD_QUEST_PROGRESS, id, newCount);
+    }
+
+    /**
+     * Item history
+     */
+    public void addItemObtainedHistory(int id, int count){
+        var newCount = player.getPlayerProgress().addToItemHistory(id, count);
+        player.save();
+        player.getQuestManager().queueEvent(QuestCond.QUEST_COND_HISTORY_GOT_ANY_ITEM, id, newCount);
     }
 }

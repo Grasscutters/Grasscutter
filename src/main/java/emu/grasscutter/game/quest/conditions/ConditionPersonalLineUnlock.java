@@ -15,8 +15,9 @@ public class ConditionPersonalLineUnlock extends BaseCondition {
             QuestData questData,
             QuestData.QuestAcceptCondition condition,
             String paramStr,
-            int... params) {
-        val personalLineId = condition.getParam()[0];
+            int... params
+    ) {
+        var personalLineId = condition.getParam()[0];
         return owner.getPersonalLineList().contains(personalLineId);
     }
 }

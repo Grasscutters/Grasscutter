@@ -41,7 +41,7 @@ public class AvatarData extends GameResource {
     @Getter
     private int staminaRecoverSpeed;
     @Getter
-    private List<String> candSkillDepotIds;
+    private List<Integer> candSkillDepotIds;
     @Getter
     private String avatarIdentityType;
     @Getter

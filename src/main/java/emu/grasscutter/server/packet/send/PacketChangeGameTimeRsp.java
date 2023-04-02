@@ -11,7 +11,7 @@ public class PacketChangeGameTimeRsp extends BasePacket {
         super(PacketOpcodes.ChangeGameTimeRsp);
 
         ChangeGameTimeRsp proto =
-                ChangeGameTimeRsp.newBuilder().setCurGameTime(player.getScene().getTime()).build();
+                ChangeGameTimeRsp.newBuilder().setCurGameTime(player.getWorld().getGameTime()).build();
 
         this.setData(proto);
     }

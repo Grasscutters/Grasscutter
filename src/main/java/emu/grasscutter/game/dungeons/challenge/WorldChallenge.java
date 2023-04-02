@@ -2,11 +2,14 @@ package emu.grasscutter.game.dungeons.challenge;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
+import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.SceneTrigger;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
@@ -14,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.val;
 
 @Getter
 @Setter
@@ -78,26 +82,33 @@ public class WorldChallenge {
     }
 
     public void done() {
-        if (!inProgress()) {
-            return;
-        }
-        finish(true);
-        this.getScene()
-                .getScriptManager()
-                .callEvent(
-                        EventType.EVENT_CHALLENGE_SUCCESS,
-                        // TODO record the time in PARAM2 and used in action
-                        new ScriptArgs().setParam2(finishedTime));
+        if (!this.inProgress()) return;
+        this.finish(true);
 
-        challengeTriggers.forEach(t -> t.onFinish(this));
+        var scene = this.getScene();
+        var dungeonManager = scene.getDungeonManager();
+        if (dungeonManager != null && dungeonManager.getDungeonData() != null) {
+            scene.getPlayers().forEach(p -> p.getActivityManager().triggerWatcher(
+                WatcherTriggerType.TRIGGER_FINISH_CHALLENGE,
+                String.valueOf(dungeonManager.getDungeonData().getId()),
+                String.valueOf(this.getGroup().id),
+                String.valueOf(this.getChallengeId())
+            ));
+        }
+
+        scene.getScriptManager().callEvent(
+            // TODO record the time in PARAM2 and used in action
+            new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS).setParam2(finishedTime));
+        this.getScene().triggerDungeonEvent(DungeonPassConditionType.DUNGEON_COND_FINISH_CHALLENGE, getChallengeId(), getChallengeIndex());
+
+        this.challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
-    public void fail() {
-        if (!inProgress()) {
-            return;
-        }
-        finish(false);
-        this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_FAIL, null);
+    public void fail(){
+        if (!this.inProgress()) return;
+        this.finish(true);
+
+        this.getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL));
         challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
@@ -130,6 +141,18 @@ public class WorldChallenge {
             return;
         }
         this.challengeTriggers.forEach(t -> t.onGadgetDeath(this, gadget));
+    }
+
+    public void onGroupTriggerDeath(SceneTrigger trigger) {
+        if(!this.inProgress()) return;
+
+        var triggerGroup = trigger.getCurrentGroup();
+        if (triggerGroup == null ||
+            triggerGroup.id != getGroup().id) {
+            return;
+        }
+
+        this.challengeTriggers.forEach(t -> t.onGroupTrigger(this, trigger));
     }
 
     public void onGadgetDamage(EntityGadget gadget) {

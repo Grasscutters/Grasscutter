@@ -8,7 +8,7 @@ import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import java.util.Arrays;
 
 @QuestValueExec(QuestExec.QUEST_EXEC_ADD_QUEST_PROGRESS)
-public class ExecAddQuestProgress extends QuestExecHandler {
+public final class ExecAddQuestProgress extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
         var param =

@@ -24,20 +24,22 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.val;
 
-/**
- * TODO handle time limits TODO handle respawn points TODO handle team wipes and respawns TODO check
- * monster level and levelConfigMap
- */
-public class DungeonManager {
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
+/**
+ * TODO handle time limits
+ * TODO handle respawn points
+ * TODO handle team wipes and respawns
+ * TODO check monster level and levelConfigMap
+ */
+public final class DungeonManager {
     @Getter private final Scene scene;
     @Getter private final DungeonData dungeonData;
     @Getter private final DungeonPassConfigData passConfigData;
@@ -69,12 +71,14 @@ public class DungeonManager {
                 if (getScene().getWorld().getServer().getDungeonSystem().triggerCondition(cond, params)) {
                     finishedConditions[i] = 1;
                 }
+
             }
         }
 
         if (isFinishedSuccessfully()) {
             finishDungeon();
         }
+
     }
 
     public boolean isFinishedSuccessfully() {
@@ -82,7 +86,7 @@ public class DungeonManager {
     }
 
     public int getLevelForMonster(int id) {
-        // TODO should use levelConfigMap? and how?
+        //TODO should use levelConfigMap? and how?
         return dungeonData.getShowLevel();
     }
 
@@ -94,20 +98,19 @@ public class DungeonManager {
             return false;
         }
 
-        scene.broadcastPacket(
-                new PacketDungeonWayPointNotify(
-                        activeDungeonWayPoints.add(pointId), activeDungeonWayPoints));
+        scene.broadcastPacket(new PacketDungeonWayPointNotify(activeDungeonWayPoints.add(pointId), activeDungeonWayPoints));
         newestWayPoint = pointId;
 
         Grasscutter.getLogger().debug("[unimplemented respawn] activated respawn point {}", pointId);
         return true;
     }
 
-    @Nullable public Position getRespawnLocation() {
+    @Nullable
+    public Position getRespawnLocation() {
         if (newestWayPoint == 0) { // validity is checked before setting it, so if != 0 its always valid
             return null;
         }
-        val pointData = GameData.getScenePointEntryById(scene.getId(), newestWayPoint).getPointData();
+        var pointData = GameData.getScenePointEntryById(scene.getId(), newestWayPoint).getPointData();
         return pointData.getTranPos() != null ? pointData.getTranPos() : pointData.getPos();
     }
 
@@ -120,9 +123,7 @@ public class DungeonManager {
     }
 
     public boolean getStatueDrops(Player player, boolean useCondensed, int groupId) {
-        if (!isFinishedSuccessfully()
-                || dungeonData.getRewardPreviewData() == null
-                || dungeonData.getRewardPreviewData().getPreviewItems().length == 0) {
+        if (!isFinishedSuccessfully() || dungeonData.getRewardPreviewData() == null || dungeonData.getRewardPreviewData().getPreviewItems().length == 0) {
             return false;
         }
 
@@ -130,6 +131,7 @@ public class DungeonManager {
         if (rewardedPlayers.contains(player.getUid())) {
             return false;
         }
+
 
         if (!handleCost(player, useCondensed)) {
             return false;
@@ -196,10 +198,8 @@ public class DungeonManager {
 
                 // Roll items for this group.
                 // Here, we have to handle stacking, or the client will not display results correctly.
-                // For now, we use the following logic: If the possible drop item are a list of multiple
-                // items,
-                // we roll them separately. If not, we stack them. This should work out in practice, at
-                // least
+                // For now, we use the following logic: If the possible drop item are a list of multiple items,
+                // we roll them separately. If not, we stack them. This should work out in practice, at least
                 // for the currently existing set of dungeons.
                 if (entry.getItems().size() == 1) {
                     rewards.add(new GameItem(entry.getItems().get(0), amount));
@@ -207,8 +207,7 @@ public class DungeonManager {
                     for (int i = 0; i < amount; i++) {
                         // int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
                         // int itemId = entry.getItems().get(itemIndex);
-                        int itemId =
-                                Utils.drawRandomListElement(entry.getItems(), entry.getItemProbabilities());
+                        int itemId = Utils.drawRandomListElement(entry.getItems(), entry.getItemProbabilities());
                         rewards.add(new GameItem(itemId, 1));
                     }
                 }
@@ -216,8 +215,7 @@ public class DungeonManager {
         }
         // Otherwise, we fall back to the preview data.
         else {
-            Grasscutter.getLogger()
-                    .info("No drop data found or dungeon {}, falling back to preview data ...", dungeonId);
+            Grasscutter.getLogger().info("No drop data found or dungeon {}, falling back to preview data ...", dungeonId);
             for (ItemParamData param : dungeonData.getRewardPreviewData().getPreviewItems()) {
                 rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
             }
@@ -230,46 +228,38 @@ public class DungeonManager {
         if (getDungeonData() == null) return;
 
         switch (getDungeonData().getType()) {
-                // case DUNGEON_PLOT is handled by quest execs
+            // case DUNGEON_PLOT is handled by quest execs
             case DUNGEON_ACTIVITY -> {
                 switch (getDungeonData().getPlayType()) {
                     case DUNGEON_PLAY_TYPE_TRIAL_AVATAR -> {
-                        val activityHandler =
-                                player
-                                        .getActivityManager()
-                                        .getActivityHandlerAs(
-                                                ActivityType.NEW_ACTIVITY_TRIAL_AVATAR, TrialAvatarActivityHandler.class);
-                        activityHandler.ifPresent(
-                                trialAvatarActivityHandler ->
-                                        this.trialTeam = trialAvatarActivityHandler.getTrialAvatarDungeonTeam());
+                        val activityHandler = player.getActivityManager()
+                            .getActivityHandlerAs(ActivityType.NEW_ACTIVITY_TRIAL_AVATAR, TrialAvatarActivityHandler.class);
+                        activityHandler.ifPresent(trialAvatarActivityHandler ->
+                            this.trialTeam = trialAvatarActivityHandler.getTrialAvatarDungeonTeam());
                     }
                 }
             }
             case DUNGEON_ELEMENT_CHALLENGE -> {} // TODO
         }
+
         if (this.trialTeam != null) {
             player.getTeamManager().addTrialAvatars(trialTeam.trialAvatarIds);
         }
     }
 
-    public void unsetTrialTeam(Player player) {
-        if (this.trialTeam == null) {
-            return;
-        }
+    public void unsetTrialTeam(Player player){
+        if (this.trialTeam == null) return;
+
         player.getTeamManager().removeTrialAvatar();
         this.trialTeam = null;
     }
 
     public void startDungeon() {
         this.startSceneTime = scene.getSceneTimeSeconds();
-        scene
-                .getPlayers()
-                .forEach(
-                        p -> {
-                            p.getQuestManager()
-                                    .queueEvent(QuestContent.QUEST_CONTENT_ENTER_DUNGEON, dungeonData.getId());
-                            applyTrialTeam(p);
-                        });
+        scene.getPlayers().forEach(p -> {
+            p.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ENTER_DUNGEON, dungeonData.getId());
+            applyTrialTeam(p);
+        });
     }
 
     public void finishDungeon() {
@@ -278,26 +268,18 @@ public class DungeonManager {
     }
 
     public void notifyEndDungeon(boolean successfully) {
-        scene
-                .getPlayers()
-                .forEach(
-                        p -> {
-                            // Quest trigger
-                            p.getQuestManager()
-                                    .queueEvent(
-                                            successfully
-                                                    ? QuestContent.QUEST_CONTENT_FINISH_DUNGEON
-                                                    : QuestContent.QUEST_CONTENT_FAIL_DUNGEON,
-                                            dungeonData.getId());
+        scene.getPlayers().forEach(p -> {
+            // Quest trigger
+            p.getQuestManager().queueEvent(successfully ?
+                    QuestContent.QUEST_CONTENT_FINISH_DUNGEON : QuestContent.QUEST_CONTENT_FAIL_DUNGEON,
+                dungeonData.getId());
 
-                            // Battle pass trigger
-                            if (dungeonData.getType().isCountsToBattlepass() && successfully) {
-                                p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON);
-                            }
-                        });
-        scene
-                .getScriptManager()
-                .callEvent(new ScriptArgs(0, EventType.EVENT_DUNGEON_SETTLE, successfully ? 1 : 0));
+            // Battle pass trigger
+            if (dungeonData.getType().isCountsToBattlepass() && successfully) {
+                p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON);
+            }
+        });
+        scene.getScriptManager().callEvent(new ScriptArgs(0, EventType.EVENT_DUNGEON_SETTLE, successfully ? 1 : 0));
     }
 
     public void quitDungeon() {

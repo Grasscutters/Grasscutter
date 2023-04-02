@@ -40,7 +40,7 @@ import lombok.Setter;
 import lombok.val;
 
 @Entity
-public class TeamManager extends BasePlayerDataManager {
+public final class TeamManager extends BasePlayerDataManager {
     @Transient private final List<EntityAvatar> avatars;
     @Transient @Getter private final Set<EntityBaseGadget> gadgets;
     @Transient @Getter private final IntSet teamResonances;
@@ -656,6 +656,17 @@ public class TeamManager extends BasePlayerDataManager {
         // Remove and Add
         this.getPlayer().getScene().replaceEntity(oldEntity, newEntity);
         this.getPlayer().sendPacket(new PacketChangeAvatarRsp(guid));
+    }
+
+    /**
+     * Applies 10% of the avatar's max HP as damage.
+     * This occurs when the avatar is killed by the void.
+     */
+    public void applyVoidDamage() {
+        this.getActiveTeam().forEach(entity -> {
+            entity.damage(entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f);
+            player.sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
+        });
     }
 
     public void onAvatarDie(long dieGuid) {

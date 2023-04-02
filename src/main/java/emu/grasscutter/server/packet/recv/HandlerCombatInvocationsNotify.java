@@ -116,7 +116,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
     }
 
     private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
-        if (session.getPlayer().inGodmode()) {
+        if (session.getPlayer().isInGodMode()) {
             return;
         }
         // People have reported that after plunge attack (client sends a FIGHT instead of

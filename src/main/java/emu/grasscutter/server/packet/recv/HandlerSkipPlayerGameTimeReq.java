@@ -14,7 +14,7 @@ public class HandlerSkipPlayerGameTimeReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = SkipPlayerGameTimeReqOuterClass.SkipPlayerGameTimeReq.parseFrom(payload);
         var player = session.getPlayer();
-        player.getScene().setTime(req.getGameTime());
+        player.updatePlayerGameTime(req.getGameTime());
         player.getScene().broadcastPacket(new PacketPlayerGameTimeNotify(player));
         player.sendPacket(new PacketSkipPlayerGameTimeRsp(req));
     }

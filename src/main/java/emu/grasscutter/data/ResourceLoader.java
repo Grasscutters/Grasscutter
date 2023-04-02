@@ -8,6 +8,10 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.binout.config.ConfigEntityAvatar;
+import emu.grasscutter.data.binout.config.ConfigEntityBase;
+import emu.grasscutter.data.binout.config.ConfigEntityGadget;
+import emu.grasscutter.data.binout.config.ConfigEntityMonster;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
@@ -85,6 +89,7 @@ public class ResourceLoader {
         if (loadedAll) return;
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
 
+        loadConfigData();
         // Load ability lists
         loadAbilityEmbryos();
         loadOpenConfig();
@@ -94,7 +99,6 @@ public class ResourceLoader {
         // Process into depots
         GameDepot.load();
         // Load spawn data and quests
-        loadGadgetConfigData();
         loadSpawnData();
         loadQuests();
         loadScriptSceneData();
@@ -575,24 +579,44 @@ public class ResourceLoader {
         }
     }
 
-    private static void loadGadgetConfigData() {
-        try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/Gadget/"), "*.json")
-                    .forEach(
-                            path -> {
-                                try {
-                                    GameData.getGadgetConfigData()
-                                            .putAll(JsonUtils.loadToMap(path, String.class, ConfigGadget.class));
-                                } catch (Exception e) {
-                                    Grasscutter.getLogger()
-                                            .error("failed to load ConfigGadget entries for " + path.toString(), e);
-                                }
-                            });
+    private static void loadConfigData(){
+        loadConfigData(GameData.getAvatarConfigData(), "BinOutput/Avatar/", ConfigEntityAvatar.class);
+        loadConfigData(GameData.getMonsterConfigData(), "BinOutput/Monster/", ConfigEntityMonster.class);
+        loadConfigDataMap(GameData.getGadgetConfigData(), "BinOutput/Gadget/", ConfigEntityGadget.class);
+    }
 
-            Grasscutter.getLogger()
-                    .debug("Loaded {} ConfigGadget entries.", GameData.getGadgetConfigData().size());
+    private static <T extends ConfigEntityBase> void loadConfigData(Map<String,T> targetMap, String folderPath, Class<T> configClass) {
+        val className = configClass.getName();
+        try(val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
+            stream.forEach(path -> {
+                try {
+                    val name = path.getFileName().toString().replace(".json", "");
+                    targetMap.put(name, JsonUtils.loadToClass(path, configClass));
+                } catch (Exception e) {
+                    Grasscutter.getLogger().error("failed to load {} entries for {}", className, path.toString(), e);
+                }
+            });
+
+            Grasscutter.getLogger().debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
         } catch (IOException e) {
-            Grasscutter.getLogger().error("Failed to load ConfigGadget folder.");
+            Grasscutter.getLogger().error("Failed to load {} folder.", className);
+        }
+    }
+
+    private static <T extends ConfigEntityBase> void loadConfigDataMap(Map<String,T> targetMap, String folderPath, Class<T> configClass) {
+        val className = configClass.getName();
+        try(val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
+            stream.forEach(path -> {
+                try {
+                    targetMap.putAll(JsonUtils.loadToMap(path, String.class, configClass));
+                } catch (Exception e) {
+                    Grasscutter.getLogger().error("failed to load {} entries for {}", className, path.toString(), e);
+                }
+            });
+
+            Grasscutter.getLogger().debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Failed to load {} folder.", className);
         }
     }
 
