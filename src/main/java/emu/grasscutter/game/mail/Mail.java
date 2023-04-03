@@ -6,15 +6,20 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.EquipParamOuterClass.EquipParam;
+import emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState;
+import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
+import org.bson.types.ObjectId;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bson.types.ObjectId;
+import static emu.grasscutter.net.proto.MailItemOuterClass.MailItem.*;
 
 @Entity(value = "mail", useDiscriminator = false)
-public class Mail {
+public final class Mail {
 	@Id private ObjectId id;
 	@Indexed private int ownerUid;
     public MailContent mailContent;
@@ -51,18 +56,32 @@ public class Mail {
     }
 
     public ObjectId getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public int getOwnerUid() {
-		return ownerUid;
-	}
+    public int getOwnerUid() {
+        return ownerUid;
+    }
 
-	public void setOwnerUid(int ownerUid) {
-		this.ownerUid = ownerUid;
-	}
+    public void setOwnerUid(int ownerUid) {
+        this.ownerUid = ownerUid;
+    }
 
-	@Entity
+    public MailDataOuterClass.MailData toProto(Player player) {
+        return MailDataOuterClass.MailData.newBuilder()
+            .setMailId(player.getMailId(this))
+            .setMailTextContent(this.mailContent.toProto())
+            .addAllItemList(this.itemList.stream().map(MailItem::toProto).toList())
+            .setSendTime((int) this.sendTime)
+            .setExpireTime((int) this.expireTime)
+            .setImportance(this.importance)
+            .setIsRead(this.isRead)
+            .setIsAttachmentGot(this.isAttachmentGot)
+            .setCollectState(MailCollectState.MAIL_COLLECT_STATE_NOT_COLLECTIBLE)
+            .build();
+    }
+
+    @Entity
     public static class MailContent {
         public String title;
         public String content;
@@ -87,6 +106,14 @@ public class Mail {
             this.content = content;
             this.sender = sender;
         }
+
+        public MailTextContent toProto() {
+            return MailTextContent.newBuilder()
+                .setTitle(this.title)
+                .setContent(this.content)
+                .setSender(this.sender)
+                .build();
+        }
     }
 
     @Entity
@@ -105,12 +132,24 @@ public class Mail {
             this(itemId, 1);
         }
 
-        public MailItem(int itemId, int itemCount) { this(itemId, itemCount, 1); }
+        public MailItem(int itemId, int itemCount) {
+            this(itemId, itemCount, 1);
+        }
 
         public MailItem(int itemId, int itemCount, int itemLevel) {
             this.itemId = itemId;
             this.itemCount = itemCount;
             this.itemLevel = itemLevel;
+        }
+
+        public MailItemOuterClass.MailItem toProto() {
+            return newBuilder().setEquipParam(EquipParam.newBuilder()
+                    .setItemId(this.itemId)
+                    .setItemNum(this.itemCount)
+                    .setItemLevel(this.itemLevel)
+                    .setPromoteLevel(0)//mock
+                    .build())
+                .build();
         }
     }
 
