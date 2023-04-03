@@ -121,9 +121,9 @@ public final class Scene {
 
     public GameEntity getEntityByConfigId(int configId, int groupId) {
         return this.entities.values().stream()
-            .filter(x -> x.getConfigId() == configId && x.getGroupId() == groupId)
-            .findFirst()
-            .orElse(null);
+                .filter(x -> x.getConfigId() == configId && x.getGroupId() == groupId)
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -437,35 +437,34 @@ public final class Scene {
 
         this.finishLoading();
         this.checkPlayerRespawn();
-        if (this.tickCount++ % 10 == 0)
-            broadcastPacket(new PacketSceneTimeNotify(this));
+        if (this.tickCount++ % 10 == 0) broadcastPacket(new PacketSceneTimeNotify(this));
     }
 
-    /**
-     * Validates a player's current position.
-     * Teleports the player if the player is out of bounds.
-     */
+    /** Validates a player's current position. Teleports the player if the player is out of bounds. */
     private void checkPlayerRespawn() {
         if (this.getScriptManager().getConfig() == null) return;
         var diePos = this.getScriptManager().getConfig().die_y;
 
         // Check players in the scene.
-        this.players.forEach(player -> {
-            if (this.getScriptManager().getConfig() == null) return;
+        this.players.forEach(
+                player -> {
+                    if (this.getScriptManager().getConfig() == null) return;
 
-            // Check if we need a respawn
-            if (diePos >= player.getPosition().getY()) {
-                //Respawn the player.
-                this.respawnPlayer(player);
-            }
-        });
+                    // Check if we need a respawn
+                    if (diePos >= player.getPosition().getY()) {
+                        // Respawn the player.
+                        this.respawnPlayer(player);
+                    }
+                });
 
         // Check entities in the scene.
-        this.getEntities().forEach((id, entity) -> {
-            if (diePos >= entity.getPosition().getY()){
-                this.killEntity(entity);
-            }
-        });
+        this.getEntities()
+                .forEach(
+                        (id, entity) -> {
+                            if (diePos >= entity.getPosition().getY()) {
+                                this.killEntity(entity);
+                            }
+                        });
     }
 
     /**
@@ -503,7 +502,8 @@ public final class Scene {
      * @return The respawn rotation for the player.
      */
     private Position getRespawnRotation(Player player) {
-        var lastCheckpointRot = this.dungeonManager != null ? this.dungeonManager.getRespawnRotation() : null;
+        var lastCheckpointRot =
+                this.dungeonManager != null ? this.dungeonManager.getRespawnRotation() : null;
         return lastCheckpointRot != null ? lastCheckpointRot : this.getDefaultRot(player);
     }
 
@@ -520,20 +520,22 @@ public final class Scene {
         // TODO: Respawn the player at the last valid location.
         var targetPos = getRespawnLocation(player);
         var targetRot = getRespawnRotation(player);
-        var teleportProps = TeleportProperties.builder()
-            .sceneId(getId())
-            .teleportTo(targetPos)
-            .teleportRot(targetRot)
-            .teleportType(PlayerTeleportEvent.TeleportType.INTERNAL)
-            .enterType(EnterTypeOuterClass.EnterType.ENTER_TYPE_GOTO)
-            .enterReason(dungeonManager != null ? EnterReason.DungeonReviveOnWaypoint : EnterReason.Revival);
+        var teleportProps =
+                TeleportProperties.builder()
+                        .sceneId(getId())
+                        .teleportTo(targetPos)
+                        .teleportRot(targetRot)
+                        .teleportType(PlayerTeleportEvent.TeleportType.INTERNAL)
+                        .enterType(EnterTypeOuterClass.EnterType.ENTER_TYPE_GOTO)
+                        .enterReason(
+                                dungeonManager != null ? EnterReason.DungeonReviveOnWaypoint : EnterReason.Revival);
 
         return this.getWorld().transferPlayerToScene(player, teleportProps.build());
     }
 
     /**
-     * Invoked when the scene finishes loading.
-     * Runs all callbacks that were added with {@link #runWhenFinished(Runnable)}.
+     * Invoked when the scene finishes loading. Runs all callbacks that were added with {@link
+     * #runWhenFinished(Runnable)}.
      */
     public void finishLoading() {
         if (this.finishedLoading) return;
@@ -544,14 +546,15 @@ public final class Scene {
     }
 
     /**
-     * Adds a callback to be executed when the scene is finished loading.
-     * If the scene is already finished loading, the callback will be executed immediately.
+     * Adds a callback to be executed when the scene is finished loading. If the scene is already
+     * finished loading, the callback will be executed immediately.
      *
      * @param runnable The callback to be executed.
      */
     public void runWhenFinished(Runnable runnable) {
         if (this.isFinishedLoading()) {
-            runnable.run();return;
+            runnable.run();
+            return;
         }
 
         this.afterLoadedCallbacks.add(runnable);
@@ -774,17 +777,18 @@ public final class Scene {
 
     public int loadDynamicGroup(int group_id) {
         SceneGroup group = getScriptManager().getGroupById(group_id);
-        if(group == null || getScriptManager().getGroupInstanceById(group_id) != null) return -1; //Group not found or already instanced
+        if (group == null || getScriptManager().getGroupInstanceById(group_id) != null)
+            return -1; // Group not found or already instanced
 
         onLoadGroup(new ArrayList<>(List.of(group)));
 
-        if(GameData.getGroupReplacements().containsKey(group_id)) onRegisterGroups();
+        if (GameData.getGroupReplacements().containsKey(group_id)) onRegisterGroups();
 
         if (group.init_config == null) return -1;
         return group.init_config.suite;
     }
 
-    public boolean unregisterDynamicGroup(int groupId){
+    public boolean unregisterDynamicGroup(int groupId) {
         var group = getScriptManager().getGroupById(groupId);
         if (group == null) return false;
 
@@ -795,70 +799,76 @@ public final class Scene {
 
     public void onRegisterGroups() {
         var sceneGroups = this.loadedGroups;
-        var sceneGroupMap = sceneGroups.stream()
-            .collect(Collectors.toMap(item -> item.id, item -> item));
-        var sceneGroupsIds = sceneGroups.stream()
-            .map(group -> group.id)
-            .toList();
-        var dynamicGroups = sceneGroups.stream()
-            .filter(group -> group.dynamic_load)
-            .map(group -> group.id)
-            .toList();
+        var sceneGroupMap =
+                sceneGroups.stream().collect(Collectors.toMap(item -> item.id, item -> item));
+        var sceneGroupsIds = sceneGroups.stream().map(group -> group.id).toList();
+        var dynamicGroups =
+                sceneGroups.stream().filter(group -> group.dynamic_load).map(group -> group.id).toList();
 
-        //Create the graph
+        // Create the graph
         var nodes = new ArrayList<KahnsSort.Node>();
         var groupList = new ArrayList<Integer>();
-        GameData.getGroupReplacements().values().stream().filter(replacement -> dynamicGroups.contains(replacement.id)).forEach(replacement -> {
-            Grasscutter.getLogger().info("Graph ordering replacement {}", replacement);
-            replacement.replace_groups.forEach(group -> {
-                nodes.add(new KahnsSort.Node(replacement.id, group));
-                if (!groupList.contains(group))
-                    groupList.add(group);
-            });
+        GameData.getGroupReplacements().values().stream()
+                .filter(replacement -> dynamicGroups.contains(replacement.id))
+                .forEach(
+                        replacement -> {
+                            Grasscutter.getLogger().info("Graph ordering replacement {}", replacement);
+                            replacement.replace_groups.forEach(
+                                    group -> {
+                                        nodes.add(new KahnsSort.Node(replacement.id, group));
+                                        if (!groupList.contains(group)) groupList.add(group);
+                                    });
 
-            if (!groupList.contains(replacement.id))
-                groupList.add(replacement.id);
-        });
+                            if (!groupList.contains(replacement.id)) groupList.add(replacement.id);
+                        });
 
         KahnsSort.Graph graph = new KahnsSort.Graph(nodes, groupList);
         List<Integer> dynamicGroupsOrdered = KahnsSort.doSort(graph);
         if (dynamicGroupsOrdered == null) throw new RuntimeException("Invalid group replacement graph");
 
         // Now we can start unloading and loading groups :D
-        dynamicGroupsOrdered.forEach(group -> {
-            if (GameData.getGroupReplacements().containsKey((int)group)) { //isGroupJoinReplacement
-                var data = GameData.getGroupReplacements().get((int)group);
-                var sceneGroupReplacement = this.loadedGroups.stream().filter(g -> g.id == group).findFirst().orElseThrow();
-                if (sceneGroupReplacement.is_replaceable != null) {
-                    var it = data.replace_groups.iterator();
-                    while (it.hasNext()) {
-                        var replace_group = it.next();
-                        if (!sceneGroupsIds.contains(replace_group)) continue;
+        dynamicGroupsOrdered.forEach(
+                group -> {
+                    if (GameData.getGroupReplacements().containsKey((int) group)) { // isGroupJoinReplacement
+                        var data = GameData.getGroupReplacements().get((int) group);
+                        var sceneGroupReplacement =
+                                this.loadedGroups.stream().filter(g -> g.id == group).findFirst().orElseThrow();
+                        if (sceneGroupReplacement.is_replaceable != null) {
+                            var it = data.replace_groups.iterator();
+                            while (it.hasNext()) {
+                                var replace_group = it.next();
+                                if (!sceneGroupsIds.contains(replace_group)) continue;
 
-                        // Check if we can replace this group
-                        SceneGroup sceneGroup = sceneGroupMap.get(replace_group);
-                        if (sceneGroup != null && sceneGroup.is_replaceable != null &&
-                            ((sceneGroup.is_replaceable.value &&
-                                sceneGroup.is_replaceable.version <= sceneGroupReplacement.is_replaceable.version) ||
-                                sceneGroup.is_replaceable.new_bin_only)) {
-                            this.unloadGroup(scriptManager.getBlocks().get(sceneGroup.block_id), replace_group);
-                            it.remove();
-                            Grasscutter.getLogger().info("Graph ordering: unloaded {}", replace_group);
+                                // Check if we can replace this group
+                                SceneGroup sceneGroup = sceneGroupMap.get(replace_group);
+                                if (sceneGroup != null
+                                        && sceneGroup.is_replaceable != null
+                                        && ((sceneGroup.is_replaceable.value
+                                                        && sceneGroup.is_replaceable.version
+                                                                <= sceneGroupReplacement.is_replaceable.version)
+                                                || sceneGroup.is_replaceable.new_bin_only)) {
+                                    this.unloadGroup(
+                                            scriptManager.getBlocks().get(sceneGroup.block_id), replace_group);
+                                    it.remove();
+                                    Grasscutter.getLogger().info("Graph ordering: unloaded {}", replace_group);
+                                }
+                            }
                         }
                     }
-                }
-            }
-        });
+                });
     }
 
     public void loadTriggerFromGroup(SceneGroup group, String triggerName) {
         // Load triggers and regions
-        this.getScriptManager().registerTrigger(group.triggers.values().stream()
-            .filter(p -> p.getName().contains(triggerName)).toList());
+        this.getScriptManager()
+                .registerTrigger(
+                        group.triggers.values().stream()
+                                .filter(p -> p.getName().contains(triggerName))
+                                .toList());
         group.regions.values().stream()
-            .filter(q -> q.config_id == Integer.parseInt(triggerName.substring(13)))
-            .map(region -> new EntityRegion(this, region))
-            .forEach(getScriptManager()::registerRegion);
+                .filter(q -> q.config_id == Integer.parseInt(triggerName.substring(13)))
+                .map(region -> new EntityRegion(this, region))
+                .forEach(getScriptManager()::registerRegion);
     }
 
     public void onLoadGroup(List<SceneGroup> groups) {
@@ -867,7 +877,7 @@ public final class Scene {
         }
 
         for (var group : groups) {
-            if(this.loadedGroups.contains(group)) continue;
+            if (this.loadedGroups.contains(group)) continue;
 
             // We load the script files for the groups here
             this.getScriptManager().loadGroupFromScript(group);
@@ -880,7 +890,7 @@ public final class Scene {
         // TODO
         var entities = new ArrayList<GameEntity>();
         for (var group : groups) {
-            if(this.loadedGroups.contains(group)) continue;
+            if (this.loadedGroups.contains(group)) continue;
 
             if (group.init_config == null) {
                 continue;
@@ -897,20 +907,24 @@ public final class Scene {
             var garbageGadgets = group.getGarbageGadgets();
 
             if (garbageGadgets != null) {
-                entities.addAll(garbageGadgets.stream()
-                    .map(g -> scriptManager.createGadget(group.id, group.block_id, g))
-                    .filter(Objects::nonNull).toList());
+                entities.addAll(
+                        garbageGadgets.stream()
+                                .map(g -> scriptManager.createGadget(group.id, group.block_id, g))
+                                .filter(Objects::nonNull)
+                                .toList());
             }
 
             // Load suites
-            //int suite = group.findInitSuiteIndex(0);
-            this.getScriptManager().refreshGroup(groupInstance, 0, false); //This is what the official server does
+            // int suite = group.findInitSuiteIndex(0);
+            this.getScriptManager()
+                    .refreshGroup(groupInstance, 0, false); // This is what the official server does
 
             this.loadedGroups.add(group);
         }
 
         this.scriptManager.meetEntities(entities);
-        groups.forEach(g -> scriptManager.callEvent(new ScriptArgs(g.id, EventType.EVENT_GROUP_LOAD, g.id)));
+        groups.forEach(
+                g -> scriptManager.callEvent(new ScriptArgs(g.id, EventType.EVENT_GROUP_LOAD, g.id)));
 
         Grasscutter.getLogger().info("Scene {} loaded {} group(s)", this.getId(), groups.size());
     }
@@ -944,25 +958,23 @@ public final class Scene {
      * @param groupId The group ID.
      */
     public void unloadGroup(SceneBlock block, int groupId) {
-        var toRemove = this.getEntities().values().stream()
-            .filter(e -> e != null && (
-                e.getBlockId() == block.id &&
-                    e.getGroupId() == groupId)
-            ).toList();
+        var toRemove =
+                this.getEntities().values().stream()
+                        .filter(e -> e != null && (e.getBlockId() == block.id && e.getGroupId() == groupId))
+                        .toList();
 
         if (toRemove.size() > 0) {
             toRemove.forEach(this::removeEntityDirectly);
-            this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
+            this.broadcastPacket(
+                    new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
         }
 
         var group = block.groups.get(groupId);
         if (group.triggers != null) {
-            group.triggers.values().forEach(
-                this.getScriptManager()::deregisterTrigger);
+            group.triggers.values().forEach(this.getScriptManager()::deregisterTrigger);
         }
         if (group.regions != null) {
-            group.regions.values().forEach(
-                this.getScriptManager()::deregisterRegion);
+            group.regions.values().forEach(this.getScriptManager()::deregisterRegion);
         }
 
         this.scriptManager.getLoadedGroupSetPerBlock().get(block.id).remove(group);
@@ -1093,18 +1105,19 @@ public final class Scene {
             return;
         }
 
-        sceneGroupSuite.forEach(i -> {
-            var group = scriptManager.getGroupById(i.getGroup());
-            if (group == null) return;
+        sceneGroupSuite.forEach(
+                i -> {
+                    var group = scriptManager.getGroupById(i.getGroup());
+                    if (group == null) return;
 
-            var groupInstance = scriptManager.getGroupInstanceById(i.getGroup());
-            var suite = group.getSuiteByIndex(i.getSuite());
-            if (suite == null || groupInstance == null) {
-                return;
-            }
+                    var groupInstance = scriptManager.getGroupInstanceById(i.getGroup());
+                    var suite = group.getSuiteByIndex(i.getSuite());
+                    if (suite == null || groupInstance == null) {
+                        return;
+                    }
 
-            scriptManager.refreshGroup(groupInstance, i.getSuite(), false);
-        });
+                    scriptManager.refreshGroup(groupInstance, i.getSuite(), false);
+                });
     }
 
     /**

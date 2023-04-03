@@ -6,10 +6,11 @@ import emu.grasscutter.server.packet.send.PacketDungeonSettleNotify;
 public class BasicDungeonSettleListener implements DungeonSettleListener {
 
     @Override
-    public void onDungeonSettle(DungeonManager dungeonManager, BaseDungeonResult.DungeonEndReason endReason) {
+    public void onDungeonSettle(
+            DungeonManager dungeonManager, BaseDungeonResult.DungeonEndReason endReason) {
         var scene = dungeonManager.getScene();
         var dungeonData = dungeonManager.getDungeonData();
-        var time = scene.getSceneTimeSeconds() - dungeonManager.getStartSceneTime() ;
+        var time = scene.getSceneTimeSeconds() - dungeonManager.getStartSceneTime();
         // TODO time taken and chests handling
         DungeonEndStats stats = new DungeonEndStats(scene.getKilledMonsterCount(), time, 0, endReason);
 

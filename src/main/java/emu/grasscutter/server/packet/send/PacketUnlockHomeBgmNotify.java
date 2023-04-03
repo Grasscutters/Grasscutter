@@ -1,10 +1,10 @@
-//package emu.grasscutter.server.packet.send;
+// package emu.grasscutter.server.packet.send;
 //
-//import emu.grasscutter.net.packet.BasePacket;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.Unk2700MEBFPBDNPGOServerNotify;
+// import emu.grasscutter.net.packet.BasePacket;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.Unk2700MEBFPBDNPGOServerNotify;
 //
-//public class PacketUnlockHomeBgmNotify extends BasePacket {
+// public class PacketUnlockHomeBgmNotify extends BasePacket {
 //    public PacketUnlockHomeBgmNotify(int homeBgmId) {
 //        super(PacketOpcodes.Unk2700_MEBFPBDNPGO_ServerNotify);
 //
@@ -15,4 +15,4 @@
 //
 //        this.setData(notify);
 //    }
-//}
+// }

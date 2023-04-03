@@ -30,11 +30,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import lombok.Getter;
 
 public class EnergyManager extends BasePlayerManager {
     private static final Int2ObjectMap<List<EnergyDropInfo>> energyDropData =
@@ -390,7 +389,8 @@ public class EnergyManager extends BasePlayerManager {
      */
     public boolean refillActiveEnergy() {
         var activeEntity = this.player.getTeamManager().getCurrentAvatarEntity();
-        return activeEntity.addEnergy(activeEntity.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal());
+        return activeEntity.addEnergy(
+                activeEntity.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal());
     }
 
     /**
@@ -402,8 +402,10 @@ public class EnergyManager extends BasePlayerManager {
     public void refillTeamEnergy(PropChangeReason changeReason, boolean isFlat) {
         for (var entityAvatar : this.player.getTeamManager().getActiveTeam()) {
             // giving the exact amount read off the AvatarSkillData.json
-            entityAvatar.addEnergy(entityAvatar.getAvatar().getSkillDepot()
-                .getEnergySkillData().getCostElemVal(), changeReason, isFlat);
+            entityAvatar.addEnergy(
+                    entityAvatar.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal(),
+                    changeReason,
+                    isFlat);
         }
     }
 

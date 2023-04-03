@@ -1,10 +1,8 @@
 package emu.grasscutter.scripts;
 
 import emu.grasscutter.Grasscutter;
-import java.util.HashMap;
-
 import emu.grasscutter.utils.Position;
-import lombok.val;
+import java.util.HashMap;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 

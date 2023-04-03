@@ -15,7 +15,8 @@ public class HandlerUpdateAbilityCreatedMovingPlatformNotify extends PacketHandl
         var notify = UpdateAbilityCreatedMovingPlatformNotify.parseFrom(payload);
         var entity = session.getPlayer().getScene().getEntityById(notify.getEntityId());
 
-        if (!(entity instanceof EntityGadget entityGadget) || !(entityGadget.getRouteConfig() instanceof AbilityRoute)) {
+        if (!(entity instanceof EntityGadget entityGadget)
+                || !(entityGadget.getRouteConfig() instanceof AbilityRoute)) {
             return;
         }
 

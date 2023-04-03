@@ -11,11 +11,11 @@ public class ScriptArgs {
     public int type; // lua event type, used by scripts and the ScriptManager
 
     public ScriptArgs(int groupId, int eventType) {
-        this(groupId, eventType, 0,0);
+        this(groupId, eventType, 0, 0);
     }
 
     public ScriptArgs(int groupId, int eventType, int param1) {
-        this(groupId, eventType, param1,0);
+        this(groupId, eventType, param1, 0);
     }
 
     public ScriptArgs(int groupId, int eventType, int param1, int param2) {

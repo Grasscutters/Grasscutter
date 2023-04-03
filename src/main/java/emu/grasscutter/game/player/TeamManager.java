@@ -659,14 +659,16 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     /**
-     * Applies 10% of the avatar's max HP as damage.
-     * This occurs when the avatar is killed by the void.
+     * Applies 10% of the avatar's max HP as damage. This occurs when the avatar is killed by the
+     * void.
      */
     public void applyVoidDamage() {
-        this.getActiveTeam().forEach(entity -> {
-            entity.damage(entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f);
-            player.sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
-        });
+        this.getActiveTeam()
+                .forEach(
+                        entity -> {
+                            entity.damage(entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f);
+                            player.sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
+                        });
     }
 
     public void onAvatarDie(long dieGuid) {

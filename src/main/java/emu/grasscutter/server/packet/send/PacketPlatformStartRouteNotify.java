@@ -10,10 +10,11 @@ public class PacketPlatformStartRouteNotify extends BasePacket {
     public PacketPlatformStartRouteNotify(EntityGadget gadgetEntity) {
         super(PacketOpcodes.PlatformStartRouteNotify);
 
-        val notify = PlatformStartRouteNotify.newBuilder()
-            .setEntityId(gadgetEntity.getId())
-            .setSceneTime(gadgetEntity.getScene().getSceneTime())
-            .setPlatform(gadgetEntity.getPlatformInfo());
+        val notify =
+                PlatformStartRouteNotify.newBuilder()
+                        .setEntityId(gadgetEntity.getId())
+                        .setSceneTime(gadgetEntity.getScene().getSceneTime())
+                        .setPlatform(gadgetEntity.getPlatformInfo());
 
         this.setData(notify);
     }

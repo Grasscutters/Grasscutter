@@ -10,8 +10,6 @@ import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
-import lombok.val;
-
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -149,9 +147,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player.sendPacket(new PacketSetOpenStateRsp(openState, value));
     }
 
-    /**
-     * This force sets an open state, ignoring all conditions and permissions
-     */
+    /** This force sets an open state, ignoring all conditions and permissions */
     public void forceSetOpenState(int openState, int value) {
         this.setOpenState(openState, value);
     }
@@ -247,32 +243,32 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, areaId));
     }
 
-    /**
-     * Give replace costume to player (Amber, Jean, Mona, Rosaria)
-     */
-    public void addReplaceCostumes(){
+    /** Give replace costume to player (Amber, Jean, Mona, Rosaria) */
+    public void addReplaceCostumes() {
         var currentPlayerCostumes = player.getCostumeList();
-        GameData.getAvatarReplaceCostumeDataMap().keySet().forEach(costumeId -> {
-            if (GameData.getAvatarCostumeDataMap().get(costumeId) == null || currentPlayerCostumes.contains(costumeId)){
-                return;
-            }
-            this.player.addCostume(costumeId);
-        });
+        GameData.getAvatarReplaceCostumeDataMap()
+                .keySet()
+                .forEach(
+                        costumeId -> {
+                            if (GameData.getAvatarCostumeDataMap().get(costumeId) == null
+                                    || currentPlayerCostumes.contains(costumeId)) {
+                                return;
+                            }
+                            this.player.addCostume(costumeId);
+                        });
     }
 
-    /**
-     * Quest progress
-     */
-    public void addQuestProgress(int id, int count){
+    /** Quest progress */
+    public void addQuestProgress(int id, int count) {
         var newCount = player.getPlayerProgress().addToCurrentProgress(id, count);
         player.save();
-        player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ADD_QUEST_PROGRESS, id, newCount);
+        player
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_ADD_QUEST_PROGRESS, id, newCount);
     }
 
-    /**
-     * Item history
-     */
-    public void addItemObtainedHistory(int id, int count){
+    /** Item history */
+    public void addItemObtainedHistory(int id, int count) {
         var newCount = player.getPlayerProgress().addToItemHistory(id, count);
         player.save();
         player.getQuestManager().queueEvent(QuestCond.QUEST_COND_HISTORY_GOT_ANY_ITEM, id, newCount);

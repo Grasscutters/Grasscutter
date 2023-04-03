@@ -16,11 +16,10 @@ public class HandlerAddQuestContentProgressReq extends PacketHandler {
 
         // Find all conditions in quest that are the same as the given one
         var type = QuestContent.getContentTriggerByValue(req.getContentType());
-        if(type != null) {
+        if (type != null) {
             session.getPlayer().getQuestManager().queueEvent(type, req.getParam());
         }
 
         session.send(new PacketAddQuestContentProgressRsp(req.getContentType()));
     }
-
 }

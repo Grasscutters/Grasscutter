@@ -202,7 +202,7 @@ public abstract class GameEntity {
      */
     public void runLuaCallbacks(EntityDamageEvent event) {
         if (entityController != null) {
-            entityController.onBeHurt(this, event.getAttackElementType(), true);//todo is host handling
+            entityController.onBeHurt(this, event.getAttackElementType(), true); // todo is host handling
         }
     }
 

@@ -16,13 +16,13 @@ import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import java.util.List;
 import lombok.val;
 import org.reflections.Reflections;
 
-import java.util.List;
-
 public class DungeonSystem extends BaseGameSystem {
-    private static final BasicDungeonSettleListener basicDungeonSettleObserver = new BasicDungeonSettleListener();
+    private static final BasicDungeonSettleListener basicDungeonSettleObserver =
+            new BasicDungeonSettleListener();
     private final Int2ObjectMap<DungeonBaseHandler> passCondHandlers;
 
     public DungeonSystem(GameServer server) {
@@ -32,7 +32,10 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public void registerHandlers() {
-        this.registerHandlers(this.passCondHandlers, "emu.grasscutter.game.dungeons.pass_condition", DungeonBaseHandler.class);
+        this.registerHandlers(
+                this.passCondHandlers,
+                "emu.grasscutter.game.dungeons.pass_condition",
+                DungeonBaseHandler.class);
     }
 
     public <T> void registerHandlers(Int2ObjectMap<T> map, String packageName, Class<T> clazz) {
@@ -70,11 +73,13 @@ public class DungeonSystem extends BaseGameSystem {
         player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
     }
 
-    public boolean triggerCondition(DungeonPassConfigData.DungeonPassCondition condition, int... params) {
+    public boolean triggerCondition(
+            DungeonPassConfigData.DungeonPassCondition condition, int... params) {
         var handler = passCondHandlers.get(condition.getCondType().ordinal());
 
         if (handler == null) {
-            Grasscutter.getLogger().debug("Could not trigger condition {} at {}", condition.getCondType(), params);
+            Grasscutter.getLogger()
+                    .debug("Could not trigger condition {} at {}", condition.getCondType(), params);
             return false;
         }
 
@@ -87,7 +92,12 @@ public class DungeonSystem extends BaseGameSystem {
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter dungeon {}" ,player.getNickname(),player.getUid(),dungeonId);
+        Grasscutter.getLogger()
+                .info(
+                        "{}({}) is trying to enter dungeon {}",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
 
         int sceneId = data.getSceneId();
         var scene = player.getScene();
@@ -102,16 +112,20 @@ public class DungeonSystem extends BaseGameSystem {
         return true;
     }
 
-    /**
-     * used in tower dungeons handoff
-     */
-    public boolean handoffDungeon(Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
+    /** used in tower dungeons handoff */
+    public boolean handoffDungeon(
+            Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
         DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 
         if (data == null) {
             return false;
         }
-        Grasscutter.getLogger().info("{}({}) is trying to enter tower dungeon {}" ,player.getNickname(),player.getUid(),dungeonId);
+        Grasscutter.getLogger()
+                .info(
+                        "{}({}) is trying to enter tower dungeon {}",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
 
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
             dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
@@ -122,7 +136,7 @@ public class DungeonSystem extends BaseGameSystem {
     public void exitDungeon(Player player) {
         Scene scene = player.getScene();
 
-        if (scene==null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
+        if (scene == null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
             return;
         }
 
@@ -131,7 +145,7 @@ public class DungeonSystem extends BaseGameSystem {
 
         // Get previous position
         val dungeonManager = scene.getDungeonManager();
-        DungeonData dungeonData =  dungeonManager != null ? dungeonManager.getDungeonData() : null;
+        DungeonData dungeonData = dungeonManager != null ? dungeonManager.getDungeonData() : null;
         Position prevPos = new Position(GameConstants.START_POSITION);
 
         if (dungeonData != null) {
@@ -140,7 +154,7 @@ public class DungeonSystem extends BaseGameSystem {
             if (entry != null) {
                 prevPos.set(entry.getPointData().getTranPos());
             }
-            if(!dungeonManager.isFinishedSuccessfully()){
+            if (!dungeonManager.isFinishedSuccessfully()) {
                 dungeonManager.quitDungeon();
             }
 
@@ -149,7 +163,6 @@ public class DungeonSystem extends BaseGameSystem {
         // clean temp team if it has
         player.getTeamManager().cleanTemporaryTeam();
         player.getTowerManager().clearEntry();
-
 
         // Transfer player back to world
         player.getWorld().transferPlayerToScene(player, prevScene, prevPos);

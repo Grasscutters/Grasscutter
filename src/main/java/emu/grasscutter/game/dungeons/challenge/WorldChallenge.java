@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.val;
 
 @Getter
 @Setter
@@ -88,27 +87,40 @@ public class WorldChallenge {
         var scene = this.getScene();
         var dungeonManager = scene.getDungeonManager();
         if (dungeonManager != null && dungeonManager.getDungeonData() != null) {
-            scene.getPlayers().forEach(p -> p.getActivityManager().triggerWatcher(
-                WatcherTriggerType.TRIGGER_FINISH_CHALLENGE,
-                String.valueOf(dungeonManager.getDungeonData().getId()),
-                String.valueOf(this.getGroup().id),
-                String.valueOf(this.getChallengeId())
-            ));
+            scene
+                    .getPlayers()
+                    .forEach(
+                            p ->
+                                    p.getActivityManager()
+                                            .triggerWatcher(
+                                                    WatcherTriggerType.TRIGGER_FINISH_CHALLENGE,
+                                                    String.valueOf(dungeonManager.getDungeonData().getId()),
+                                                    String.valueOf(this.getGroup().id),
+                                                    String.valueOf(this.getChallengeId())));
         }
 
-        scene.getScriptManager().callEvent(
-            // TODO record the time in PARAM2 and used in action
-            new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS).setParam2(finishedTime));
-        this.getScene().triggerDungeonEvent(DungeonPassConditionType.DUNGEON_COND_FINISH_CHALLENGE, getChallengeId(), getChallengeIndex());
+        scene
+                .getScriptManager()
+                .callEvent(
+                        // TODO record the time in PARAM2 and used in action
+                        new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
+                                .setParam2(finishedTime));
+        this.getScene()
+                .triggerDungeonEvent(
+                        DungeonPassConditionType.DUNGEON_COND_FINISH_CHALLENGE,
+                        getChallengeId(),
+                        getChallengeIndex());
 
         this.challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
-    public void fail(){
+    public void fail() {
         if (!this.inProgress()) return;
         this.finish(true);
 
-        this.getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL));
+        this.getScene()
+                .getScriptManager()
+                .callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL));
         challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
@@ -144,11 +156,10 @@ public class WorldChallenge {
     }
 
     public void onGroupTriggerDeath(SceneTrigger trigger) {
-        if(!this.inProgress()) return;
+        if (!this.inProgress()) return;
 
         var triggerGroup = trigger.getCurrentGroup();
-        if (triggerGroup == null ||
-            triggerGroup.id != getGroup().id) {
+        if (triggerGroup == null || triggerGroup.id != getGroup().id) {
             return;
         }
 

@@ -13,9 +13,16 @@ public class MonsterDescribeData extends GameResource {
     private int id;
 
     private long nameTextMapHash;
-    @SerializedName(value = "titleId", alternate={"titleID"})
+
+    @SerializedName(
+            value = "titleId",
+            alternate = {"titleID"})
     private int titleId;
-    @SerializedName(value = "specialNameLabId", alternate={"specialNameLabID"})
+
+    @SerializedName(
+            value = "specialNameLabId",
+            alternate = {"specialNameLabID"})
     private int specialNameLabId;
+
     private MonsterSpecialNameData specialNameData;
 }

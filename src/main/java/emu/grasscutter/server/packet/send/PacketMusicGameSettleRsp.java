@@ -18,14 +18,15 @@ public class PacketMusicGameSettleRsp extends BasePacket {
         this.setData(proto);
     }
 
-    public PacketMusicGameSettleRsp(RetcodeOuterClass.Retcode errorCode, MusicGameSettleReqOuterClass.MusicGameSettleReq req) {
+    public PacketMusicGameSettleRsp(
+            RetcodeOuterClass.Retcode errorCode, MusicGameSettleReqOuterClass.MusicGameSettleReq req) {
         super(PacketOpcodes.MusicGameSettleRsp);
 
-        var proto = MusicGameSettleRspOuterClass.MusicGameSettleRsp.newBuilder()
-            .setRetcode(errorCode.getNumber())
-            .setMusicBasicId(req.getMusicBasicId())
-            .setUgcGuid(req.getUgcGuid());
-
+        var proto =
+                MusicGameSettleRspOuterClass.MusicGameSettleRsp.newBuilder()
+                        .setRetcode(errorCode.getNumber())
+                        .setMusicBasicId(req.getMusicBasicId())
+                        .setUgcGuid(req.getUgcGuid());
 
         this.setData(proto);
     }

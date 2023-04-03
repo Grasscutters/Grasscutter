@@ -1,15 +1,15 @@
-//package emu.grasscutter.server.packet.send;
+// package emu.grasscutter.server.packet.send;
 //
-//import emu.grasscutter.net.packet.BasePacket;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.BeginCameraSceneLookNotifyOuterClass.BeginCameraSceneLookNotify;
-//import emu.grasscutter.utils.Position;
-//import java.util.ArrayList;
-//import java.util.Collection;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
+// import emu.grasscutter.net.packet.BasePacket;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.BeginCameraSceneLookNotifyOuterClass.BeginCameraSceneLookNotify;
+// import emu.grasscutter.utils.Position;
+// import java.util.ArrayList;
+// import java.util.Collection;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
 //
-//public class PacketBeginCameraSceneLookNotify extends BasePacket {
+// public class PacketBeginCameraSceneLookNotify extends BasePacket {
 //
 //    public PacketBeginCameraSceneLookNotify(CameraSceneLookNotify parameters) {
 //        super(PacketOpcodes.BeginCameraSceneLookNotify);
@@ -58,4 +58,4 @@
 //        int entityId = 0;
 //        Collection<String> otherParams = new ArrayList<>(0);
 //    }
-//}
+// }

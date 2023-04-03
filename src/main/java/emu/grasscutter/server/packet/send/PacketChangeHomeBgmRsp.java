@@ -1,10 +1,10 @@
-//package emu.grasscutter.server.packet.send;
+// package emu.grasscutter.server.packet.send;
 //
-//import emu.grasscutter.net.packet.BasePacket;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.Unk2700OGHMHELMBNNServerRsp;
+// import emu.grasscutter.net.packet.BasePacket;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.Unk2700OGHMHELMBNNServerRsp;
 //
-//public class PacketChangeHomeBgmRsp extends BasePacket {
+// public class PacketChangeHomeBgmRsp extends BasePacket {
 //    public PacketChangeHomeBgmRsp() {
 //        super(PacketOpcodes.Unk2700_OGHMHELMBNN_ServerRsp);
 //
@@ -15,4 +15,4 @@
 //
 //        this.setData(rsp);
 //    }
-//}
+// }

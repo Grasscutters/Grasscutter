@@ -10,9 +10,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeElementTypeRsp;
 import lombok.val;
 
-/**
- * Changes the currently active avatars Element if possible
- */
+/** Changes the currently active avatars Element if possible */
 @Opcodes(PacketOpcodes.AvatarChangeElementTypeReq)
 public class HandlerAvatarChangeElementTypeReq extends PacketHandler {
 
@@ -21,7 +19,9 @@ public class HandlerAvatarChangeElementTypeReq extends PacketHandler {
         var req = AvatarChangeElementTypeReq.parseFrom(payload);
         var area = GameData.getWorldAreaDataMap().get(req.getAreaId());
 
-        if (area == null || area.getElementType() == null || area.getElementType().getDepotIndex() <= 0) {
+        if (area == null
+                || area.getElementType() == null
+                || area.getElementType().getDepotIndex() <= 0) {
             session.send(new PacketAvatarChangeElementTypeRsp(Retcode.RET_SVR_ERROR_VALUE));
             return;
         }
@@ -35,5 +35,4 @@ public class HandlerAvatarChangeElementTypeReq extends PacketHandler {
         // Success
         session.send(new PacketAvatarChangeElementTypeRsp());
     }
-
 }

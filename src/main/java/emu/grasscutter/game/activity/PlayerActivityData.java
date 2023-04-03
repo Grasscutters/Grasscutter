@@ -106,7 +106,7 @@ public class PlayerActivityData {
         /**
          * @return True when the progress of this watcher has reached the total progress.
          */
-        public boolean isFinished(){
+        public boolean isFinished() {
             return this.curProgress >= this.totalProgress;
         }
 

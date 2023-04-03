@@ -43,13 +43,12 @@ import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import javax.annotation.Nonnull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 import org.bson.types.ObjectId;
-
-import javax.annotation.Nonnull;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -237,8 +236,7 @@ public class Avatar {
     }
 
     /**
-     * Changes this avatar's skill depot.
-     * Does not notify the player of the change.
+     * Changes this avatar's skill depot. Does not notify the player of the change.
      *
      * @param skillDepot The new skill depot.
      */
@@ -250,7 +248,7 @@ public class Avatar {
      * Changes this avatar's skill depot.
      *
      * @param skillDepot The new skill depot.
-     * @param notify    Whether to notify the player of the change.
+     * @param notify Whether to notify the player of the change.
      */
     public void setSkillDepotData(AvatarSkillDepotData skillDepot, boolean notify) {
         // Set id and depot
@@ -275,7 +273,8 @@ public class Avatar {
     }
 
     /**
-     * Changes the avatar's element to the target element, if the character has values for it set in the candSkillDepot
+     * Changes the avatar's element to the target element, if the character has values for it set in
+     * the candSkillDepot
      *
      * @param elementTypeToChange element to change to
      * @return false if failed or already using that element, true if it actually changed
@@ -285,8 +284,7 @@ public class Avatar {
         var candSkillDepotIndex = elementTypeToChange.getDepotIndex();
 
         // if no candidate skill to change or index out of bound
-        if (candSkillDepotIdsList == null ||
-            candSkillDepotIndex >= candSkillDepotIdsList.size()) {
+        if (candSkillDepotIdsList == null || candSkillDepotIndex >= candSkillDepotIdsList.size()) {
             return false;
         }
 

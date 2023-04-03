@@ -20,7 +20,7 @@ public final class SceneTrigger {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof SceneTrigger sceneTrigger){
+        if (obj instanceof SceneTrigger sceneTrigger) {
             return this.name.equals(sceneTrigger.name);
         } else return super.equals(obj);
     }
@@ -32,14 +32,26 @@ public final class SceneTrigger {
 
     @Override
     public String toString() {
-        return "SceneTrigger{" +
-            "name='" + name + '\'' +
-            ", config_id=" + config_id +
-            ", event=" + event +
-            ", source='" + source + '\'' +
-            ", condition='" + condition + '\'' +
-            ", action='" + action + '\'' +
-            ", trigger_count='" + trigger_count + '\'' +
-            '}';
+        return "SceneTrigger{"
+                + "name='"
+                + name
+                + '\''
+                + ", config_id="
+                + config_id
+                + ", event="
+                + event
+                + ", source='"
+                + source
+                + '\''
+                + ", condition='"
+                + condition
+                + '\''
+                + ", action='"
+                + action
+                + '\''
+                + ", trigger_count='"
+                + trigger_count
+                + '\''
+                + '}';
     }
 }

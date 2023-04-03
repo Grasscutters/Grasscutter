@@ -22,7 +22,6 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
-
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -457,8 +456,9 @@ public final class DatabaseHelper {
     }
 
     public static SceneGroupInstance loadGroupInstance(int groupId, Player owner) {
-        return DatabaseManager.getGameDatastore().find(SceneGroupInstance.class)
-            .filter(Filters.and(Filters.eq("ownerUid", owner.getUid()),
-                Filters.eq("groupId", groupId))).first();
+        return DatabaseManager.getGameDatastore()
+                .find(SceneGroupInstance.class)
+                .filter(Filters.and(Filters.eq("ownerUid", owner.getUid()), Filters.eq("groupId", groupId)))
+                .first();
     }
 }

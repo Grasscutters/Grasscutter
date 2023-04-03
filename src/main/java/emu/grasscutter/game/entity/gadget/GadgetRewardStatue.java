@@ -19,7 +19,8 @@ public final class GadgetRewardStatue extends GadgetContent {
         var dungeonManager = player.getScene().getDungeonManager();
 
         if (player.getScene().getChallenge() instanceof DungeonChallenge) {
-            var useCondensed = req.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE;
+            var useCondensed =
+                    req.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE;
             dungeonManager.getStatueDrops(player, useCondensed, getGadget().getGroupId());
         }
 

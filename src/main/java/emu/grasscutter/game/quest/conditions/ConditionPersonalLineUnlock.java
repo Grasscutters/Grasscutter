@@ -4,7 +4,6 @@ import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestValueCond;
 import emu.grasscutter.game.quest.enums.QuestCond;
-import lombok.val;
 
 @QuestValueCond(QuestCond.QUEST_COND_PERSONAL_LINE_UNLOCK)
 public class ConditionPersonalLineUnlock extends BaseCondition {
@@ -15,8 +14,7 @@ public class ConditionPersonalLineUnlock extends BaseCondition {
             QuestData questData,
             QuestData.QuestAcceptCondition condition,
             String paramStr,
-            int... params
-    ) {
+            int... params) {
         var personalLineId = condition.getParam()[0];
         return owner.getPersonalLineList().contains(personalLineId);
     }

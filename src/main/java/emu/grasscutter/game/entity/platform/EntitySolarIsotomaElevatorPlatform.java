@@ -9,7 +9,12 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.utils.Position;
 
 public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
-    public EntitySolarIsotomaElevatorPlatform(EntitySolarIsotomaClientGadget isotoma, Scene scene, int gadgetId, Position pos, Position rot) {
+    public EntitySolarIsotomaElevatorPlatform(
+            EntitySolarIsotomaClientGadget isotoma,
+            Scene scene,
+            int gadgetId,
+            Position pos,
+            Position rot) {
         super(scene, gadgetId, pos, rot);
         setOwner(isotoma);
         this.setRouteConfig(new AbilityRoute(rot, false, false, pos));
@@ -25,7 +30,7 @@ public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
         var combatProperties = combatData.getProperty();
 
         if (combatProperties.isUseCreatorProperty()) {
-            //If useCreatorProperty == true, use owner's property;
+            // If useCreatorProperty == true, use owner's property;
             GameEntity ownerEntity = getOwner();
             if (ownerEntity != null) {
                 getFightProperties().putAll(ownerEntity.getFightProperties());

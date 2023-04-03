@@ -1,11 +1,11 @@
-//package emu.grasscutter.server.packet.send;
+// package emu.grasscutter.server.packet.send;
 //
-//import emu.grasscutter.game.player.Player;
-//import emu.grasscutter.net.packet.BasePacket;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.Unk2700LOHBMOKOPLHServerNotify;
+// import emu.grasscutter.game.player.Player;
+// import emu.grasscutter.net.packet.BasePacket;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.Unk2700LOHBMOKOPLHServerNotify;
 //
-//public class PacketUnlockedHomeBgmNotify extends BasePacket {
+// public class PacketUnlockedHomeBgmNotify extends BasePacket {
 //    public PacketUnlockedHomeBgmNotify(Player player) {
 //        super(PacketOpcodes.Unk2700_LOHBMOKOPLH_ServerNotify);
 //
@@ -22,4 +22,4 @@
 //
 //        this.setData(notify);
 //    }
-//}
+// }

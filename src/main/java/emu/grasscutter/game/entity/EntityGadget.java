@@ -37,19 +37,21 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
     @Getter private final GadgetData gadgetData;
-    @Getter(onMethod = @__(@Override)) @Setter
+
+    @Getter(onMethod = @__(@Override))
+    @Setter
     private int gadgetId;
+
     @Getter private final Position bornPos;
     @Getter private final Position bornRot;
     @Getter @Setter private GameEntity owner = null;
@@ -58,17 +60,17 @@ public class EntityGadget extends EntityBaseGadget {
     @Getter private int state;
     @Getter @Setter private int pointType;
     @Getter private GadgetContent content;
+
     @Getter(onMethod = @__(@Override), lazy = true)
     private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
+
     @Getter @Setter private SceneGadget metaGadget;
-    @Nullable @Getter
-    private ConfigEntityGadget configGadget;
+    @Nullable @Getter private ConfigEntityGadget configGadget;
     @Getter @Setter private BaseRoute routeConfig;
 
-    @Getter @Setter private int stopValue = 0; //Controller related, inited to zero
-    @Getter @Setter private int startValue = 0; //Controller related, inited to zero
+    @Getter @Setter private int stopValue = 0; // Controller related, inited to zero
+    @Getter @Setter private int startValue = 0; // Controller related, inited to zero
     @Getter @Setter private int ticksSinceChange;
-
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
         this(scene, gadgetId, pos, null, null);
@@ -78,7 +80,8 @@ public class EntityGadget extends EntityBaseGadget {
         this(scene, gadgetId, pos, rot, null);
     }
 
-    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+    public EntityGadget(
+            Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
         super(scene, pos, rot);
 
         this.gadgetData = GameData.getGadgetDataMap().get(gadgetId);
@@ -93,7 +96,7 @@ public class EntityGadget extends EntityBaseGadget {
         this.bornRot = this.getRotation().clone();
         this.fillFightProps(configGadget);
 
-        if(GameData.getGadgetMappingMap().containsKey(gadgetId)) {
+        if (GameData.getGadgetMappingMap().containsKey(gadgetId)) {
             String controllerName = GameData.getGadgetMappingMap().get(gadgetId).getServerController();
             this.setEntityController(EntityControllerScriptManager.getGadgetController(controllerName));
         }
@@ -101,20 +104,24 @@ public class EntityGadget extends EntityBaseGadget {
 
     public void setState(int state) {
         this.state = state;
-        //Cache the gadget state
-        if(metaGadget != null && metaGadget.group != null) {
+        // Cache the gadget state
+        if (metaGadget != null && metaGadget.group != null) {
             var instance = getScene().getScriptManager().getCachedGroupInstanceById(metaGadget.group.id);
-            if(instance != null) instance.cacheGadgetState(metaGadget, state);
+            if (instance != null) instance.cacheGadgetState(metaGadget, state);
         }
     }
 
     public void updateState(int state) {
-        if(state == this.getState()) return; //Don't triggers events
+        if (state == this.getState()) return; // Don't triggers events
 
         this.setState(state);
         ticksSinceChange = getScene().getSceneTimeSeconds();
         this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
-        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_GADGET_STATE_CHANGE, state, this.getConfigId()));
+        getScene()
+                .getScriptManager()
+                .callEvent(
+                        new ScriptArgs(
+                                this.getGroupId(), EventType.EVENT_GADGET_STATE_CHANGE, state, this.getConfigId()));
     }
 
     @Deprecated(forRemoval = true) // Dont use!
@@ -124,19 +131,22 @@ public class EntityGadget extends EntityBaseGadget {
 
     // TODO refactor
     public void buildContent() {
-        if (this.getContent() != null || this.getGadgetData() == null || this.getGadgetData().getType() == null) {
+        if (this.getContent() != null
+                || this.getGadgetData() == null
+                || this.getGadgetData().getType() == null) {
             return;
         }
 
-        this.content = switch (this.getGadgetData().getType()) {
-            case GatherPoint -> new GadgetGatherPoint(this);
-            case GatherObject -> new GadgetGatherObject(this);
-            case Worktop, SealGadget -> new GadgetWorktop(this);
-            case RewardStatue -> new GadgetRewardStatue(this);
-            case Chest -> new GadgetChest(this);
-            case Gadget -> new GadgetObject(this);
-            default -> null;
-        };
+        this.content =
+                switch (this.getGadgetData().getType()) {
+                    case GatherPoint -> new GadgetGatherPoint(this);
+                    case GatherObject -> new GadgetGatherObject(this);
+                    case Worktop, SealGadget -> new GadgetWorktop(this);
+                    case RewardStatue -> new GadgetRewardStatue(this);
+                    case Chest -> new GadgetChest(this);
+                    case Gadget -> new GadgetObject(this);
+                    default -> null;
+                };
     }
 
     @Override
@@ -155,13 +165,16 @@ public class EntityGadget extends EntityBaseGadget {
     @Override
     public void onCreate() {
         // Lua event
-        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_GADGET_CREATE, this.getConfigId()));
+        getScene()
+                .getScriptManager()
+                .callEvent(
+                        new ScriptArgs(this.getGroupId(), EventType.EVENT_GADGET_CREATE, this.getConfigId()));
     }
 
     @Override
     public void onRemoved() {
         super.onRemoved();
-        if(!children.isEmpty()) {
+        if (!children.isEmpty()) {
             getScene().removeEntities(children, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
             children.clear();
         }
@@ -177,19 +190,23 @@ public class EntityGadget extends EntityBaseGadget {
         if (getScene().getChallenge() != null) {
             getScene().getChallenge().onGadgetDeath(this);
         }
-        getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_ANY_GADGET_DIE, this.getConfigId()));
+        getScene()
+                .getScriptManager()
+                .callEvent(
+                        new ScriptArgs(this.getGroupId(), EventType.EVENT_ANY_GADGET_DIE, this.getConfigId()));
 
-        SceneGroupInstance groupInstance = getScene().getScriptManager().getCachedGroupInstanceById(this.getGroupId());
-        if(groupInstance != null && metaGadget != null)
+        SceneGroupInstance groupInstance =
+                getScene().getScriptManager().getCachedGroupInstanceById(this.getGroupId());
+        if (groupInstance != null && metaGadget != null)
             groupInstance.getDeadEntities().add(metaGadget.config_id);
     }
 
-    public boolean startPlatform(){
-        if(routeConfig == null){
+    public boolean startPlatform() {
+        if (routeConfig == null) {
             return false;
         }
 
-        if(routeConfig.isStarted()){
+        if (routeConfig.isStarted()) {
             return true;
         }
         getScene().broadcastPacket(new PacketSceneTimeNotify(getScene()));
@@ -199,12 +216,12 @@ public class EntityGadget extends EntityBaseGadget {
         return true;
     }
 
-    public boolean stopPlatform(){
-        if(routeConfig == null){
+    public boolean stopPlatform() {
+        if (routeConfig == null) {
             return false;
         }
 
-        if(!routeConfig.isStarted()){
+        if (!routeConfig.isStarted()) {
             return true;
         }
         routeConfig.stopRoute(getScene());
@@ -215,46 +232,56 @@ public class EntityGadget extends EntityBaseGadget {
 
     @Override
     public SceneEntityInfo toProto() {
-        EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(bornPos.toProto()))
-            .setBornPos(bornPos.toProto())
-            .build();
+        EntityAuthorityInfo authority =
+                EntityAuthorityInfo.newBuilder()
+                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+                        .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+                        .setAiInfo(
+                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(bornPos.toProto()))
+                        .setBornPos(bornPos.toProto())
+                        .build();
 
-        SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-            .setEntityId(getId())
-            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-            .setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-            .setEntityClientData(EntityClientData.newBuilder())
-            .setEntityAuthorityInfo(authority)
-            .setLifeState(1);
+        SceneEntityInfo.Builder entityInfo =
+                SceneEntityInfo.newBuilder()
+                        .setEntityId(getId())
+                        .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+                        .setMotionInfo(
+                                MotionInfo.newBuilder()
+                                        .setPos(getPosition().toProto())
+                                        .setRot(getRotation().toProto())
+                                        .setSpeed(Vector.newBuilder()))
+                        .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+                        .setEntityClientData(EntityClientData.newBuilder())
+                        .setEntityAuthorityInfo(authority)
+                        .setLifeState(1);
 
-        PropPair pair = PropPair.newBuilder()
-            .setType(PlayerProperty.PROP_LEVEL.getId())
-            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-            .build();
+        PropPair pair =
+                PropPair.newBuilder()
+                        .setType(PlayerProperty.PROP_LEVEL.getId())
+                        .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+                        .build();
         entityInfo.addPropList(pair);
 
-        // We do not use the getter to null check because the getter will create a fight prop map if it is null
+        // We do not use the getter to null check because the getter will create a fight prop map if it
+        // is null
         if (this.fightProperties != null) {
             addAllFightPropsToEntityInfo(entityInfo);
         }
 
-        SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-            .setGadgetId(this.getGadgetId())
-            .setGroupId(this.getGroupId())
-            .setConfigId(this.getConfigId())
-            .setGadgetState(this.getState())
-            .setIsEnableInteract(true)
-            .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+        SceneGadgetInfo.Builder gadgetInfo =
+                SceneGadgetInfo.newBuilder()
+                        .setGadgetId(this.getGadgetId())
+                        .setGroupId(this.getGroupId())
+                        .setConfigId(this.getConfigId())
+                        .setGadgetState(this.getState())
+                        .setIsEnableInteract(true)
+                        .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);
         }
 
-        if(owner != null){
+        if (owner != null) {
             gadgetInfo.setOwnerEntityId(owner.getId());
         }
 
@@ -262,7 +289,7 @@ public class EntityGadget extends EntityBaseGadget {
             this.getContent().onBuildProto(gadgetInfo);
         }
 
-        if(routeConfig!=null){
+        if (routeConfig != null) {
             gadgetInfo.setPlatform(getPlatformInfo());
         }
 
@@ -271,8 +298,8 @@ public class EntityGadget extends EntityBaseGadget {
         return entityInfo.build();
     }
 
-    public PlatformInfoOuterClass.PlatformInfo.Builder getPlatformInfo(){
-        if(routeConfig != null){
+    public PlatformInfoOuterClass.PlatformInfo.Builder getPlatformInfo() {
+        if (routeConfig != null) {
             return routeConfig.toProto();
         }
 

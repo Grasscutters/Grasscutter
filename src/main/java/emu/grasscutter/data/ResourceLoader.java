@@ -579,42 +579,52 @@ public class ResourceLoader {
         }
     }
 
-    private static void loadConfigData(){
+    private static void loadConfigData() {
         loadConfigData(GameData.getAvatarConfigData(), "BinOutput/Avatar/", ConfigEntityAvatar.class);
-        loadConfigData(GameData.getMonsterConfigData(), "BinOutput/Monster/", ConfigEntityMonster.class);
-        loadConfigDataMap(GameData.getGadgetConfigData(), "BinOutput/Gadget/", ConfigEntityGadget.class);
+        loadConfigData(
+                GameData.getMonsterConfigData(), "BinOutput/Monster/", ConfigEntityMonster.class);
+        loadConfigDataMap(
+                GameData.getGadgetConfigData(), "BinOutput/Gadget/", ConfigEntityGadget.class);
     }
 
-    private static <T extends ConfigEntityBase> void loadConfigData(Map<String,T> targetMap, String folderPath, Class<T> configClass) {
+    private static <T extends ConfigEntityBase> void loadConfigData(
+            Map<String, T> targetMap, String folderPath, Class<T> configClass) {
         val className = configClass.getName();
-        try(val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
-            stream.forEach(path -> {
-                try {
-                    val name = path.getFileName().toString().replace(".json", "");
-                    targetMap.put(name, JsonUtils.loadToClass(path, configClass));
-                } catch (Exception e) {
-                    Grasscutter.getLogger().error("failed to load {} entries for {}", className, path.toString(), e);
-                }
-            });
+        try (val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
+            stream.forEach(
+                    path -> {
+                        try {
+                            val name = path.getFileName().toString().replace(".json", "");
+                            targetMap.put(name, JsonUtils.loadToClass(path, configClass));
+                        } catch (Exception e) {
+                            Grasscutter.getLogger()
+                                    .error("failed to load {} entries for {}", className, path.toString(), e);
+                        }
+                    });
 
-            Grasscutter.getLogger().debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
+            Grasscutter.getLogger()
+                    .debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load {} folder.", className);
         }
     }
 
-    private static <T extends ConfigEntityBase> void loadConfigDataMap(Map<String,T> targetMap, String folderPath, Class<T> configClass) {
+    private static <T extends ConfigEntityBase> void loadConfigDataMap(
+            Map<String, T> targetMap, String folderPath, Class<T> configClass) {
         val className = configClass.getName();
-        try(val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
-            stream.forEach(path -> {
-                try {
-                    targetMap.putAll(JsonUtils.loadToMap(path, String.class, configClass));
-                } catch (Exception e) {
-                    Grasscutter.getLogger().error("failed to load {} entries for {}", className, path.toString(), e);
-                }
-            });
+        try (val stream = Files.newDirectoryStream(getResourcePath(folderPath), "*.json")) {
+            stream.forEach(
+                    path -> {
+                        try {
+                            targetMap.putAll(JsonUtils.loadToMap(path, String.class, configClass));
+                        } catch (Exception e) {
+                            Grasscutter.getLogger()
+                                    .error("failed to load {} entries for {}", className, path.toString(), e);
+                        }
+                    });
 
-            Grasscutter.getLogger().debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
+            Grasscutter.getLogger()
+                    .debug("Loaded {} {} entries.", GameData.getMonsterConfigData().size(), className);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load {} folder.", className);
         }

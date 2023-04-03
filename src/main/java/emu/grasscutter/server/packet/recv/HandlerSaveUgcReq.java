@@ -1,25 +1,25 @@
-//package emu.grasscutter.server.packet.recv;
+// package emu.grasscutter.server.packet.recv;
 //
-//import emu.grasscutter.database.DatabaseHelper;
-//import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
-//import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
-//import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
-//import emu.grasscutter.game.props.ActivityType;
-//import emu.grasscutter.net.packet.Opcodes;
-//import emu.grasscutter.net.packet.PacketHandler;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.RetcodeOuterClass;
-//import emu.grasscutter.net.proto.SaveUgcReqOuterClass;
-//import emu.grasscutter.net.proto.UgcTypeOuterClass;
-//import emu.grasscutter.server.game.GameSession;
-//import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
-//import emu.grasscutter.server.packet.send.PacketMusicGameCreateBeatmapRsp;
-//import emu.grasscutter.utils.Utils;
-//import java.util.Objects;
-//import lombok.val;
+// import emu.grasscutter.database.DatabaseHelper;
+// import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
+// import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
+// import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
+// import emu.grasscutter.game.props.ActivityType;
+// import emu.grasscutter.net.packet.Opcodes;
+// import emu.grasscutter.net.packet.PacketHandler;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.RetcodeOuterClass;
+// import emu.grasscutter.net.proto.SaveUgcReqOuterClass;
+// import emu.grasscutter.net.proto.UgcTypeOuterClass;
+// import emu.grasscutter.server.game.GameSession;
+// import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
+// import emu.grasscutter.server.packet.send.PacketMusicGameCreateBeatmapRsp;
+// import emu.grasscutter.utils.Utils;
+// import java.util.Objects;
+// import lombok.val;
 //
-//@Opcodes(PacketOpcodes.SaveUgcReq)
-//public class HandlerSaveUgcReq extends PacketHandler {
+// @Opcodes(PacketOpcodes.SaveUgcReq)
+// public class HandlerSaveUgcReq extends PacketHandler {
 //
 //    @Override
 //    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
@@ -48,7 +48,8 @@
 //                        .realTimeEditTime(briefInfo.getRealTimeEditTime())
 //                        .maxScore(briefInfo.getMaxScore())
 //                        .authorUid(session.getPlayer().getUid())
-//                        .beatmap(MusicGameBeatmap.parse(req.getMusicRecord().getMusicTrackListList()))
+//
+// .beatmap(MusicGameBeatmap.parse(req.getMusicRecord().getMusicTrackListList()))
 //                        .createTime(Utils.getCurrentSeconds())
 //                        .build();
 //
@@ -58,7 +59,8 @@
 //                session
 //                        .getPlayer()
 //                        .getActivityManager()
-//                        .getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
+//
+// .getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
 //        if (playerData.isEmpty()) {
 //            session.send(
 //                    new PacketMusicGameCreateBeatmapRsp(
@@ -76,7 +78,8 @@
 //                        .filter(Objects::nonNull)
 //                        .filter(item -> item.getAuthorUid() == session.getPlayer().getUid())
 //                        .filter(item -> item.getMusicId() == req.getMusicBriefInfo().getMusicId())
-//                        .filter(item -> item.getSavePosition() == req.getMusicBriefInfo().getSaveIdx())
+//                        .filter(item -> item.getSavePosition() ==
+// req.getMusicBriefInfo().getSaveIdx())
 //                        .findFirst();
 //
 //        // delete old beatmap for player
@@ -90,8 +93,10 @@
 //                new PacketActivityInfoNotify(
 //                        handler.toProto(
 //                                playerData.get(),
-//                                session.getPlayer().getActivityManager().getConditionExecutor())));
+//
+// session.getPlayer().getActivityManager().getConditionExecutor())));
 //        session.send(
-//                new PacketMusicGameCreateBeatmapRsp(musicGameBeatmap.getMusicShareId(), req.getUgcType()));
+//                new PacketMusicGameCreateBeatmapRsp(musicGameBeatmap.getMusicShareId(),
+// req.getUgcType()));
 //    }
-//}
+// }
