@@ -7,15 +7,19 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.*;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.net.proto.EquipParamOuterClass.EquipParam;
+import emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState;
+import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
 import org.bson.types.ObjectId;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+import static emu.grasscutter.net.proto.MailItemOuterClass.MailItem.*;
+
 @Entity(value = "mail", useDiscriminator = false)
-public class Mail {
+public final class Mail {
 	@Id private ObjectId id;
 	@Indexed private int ownerUid;
     public MailContent mailContent;
@@ -73,7 +77,7 @@ public class Mail {
             .setImportance(this.importance)
             .setIsRead(this.isRead)
             .setIsAttachmentGot(this.isAttachmentGot)
-            .setCollectState(MailCollectStateOuterClass.MailCollectState.MAIL_COLLECT_STATE_NOT_COLLECTIBLE)
+            .setCollectState(MailCollectState.MAIL_COLLECT_STATE_NOT_COLLECTIBLE)
             .build();
     }
 
@@ -103,8 +107,8 @@ public class Mail {
             this.sender = sender;
         }
 
-        public MailTextContentOuterClass.MailTextContent toProto() {
-            return MailTextContentOuterClass.MailTextContent.newBuilder()
+        public MailTextContent toProto() {
+            return MailTextContent.newBuilder()
                 .setTitle(this.title)
                 .setContent(this.content)
                 .setSender(this.sender)
@@ -139,13 +143,13 @@ public class Mail {
         }
 
         public MailItemOuterClass.MailItem toProto() {
-            return MailItemOuterClass.MailItem.newBuilder()
-                .setEquipParam(Utils.make(() -> EquipParamOuterClass.EquipParam.newBuilder()
+            return newBuilder().setEquipParam(EquipParam.newBuilder()
                     .setItemId(this.itemId)
                     .setItemNum(this.itemCount)
                     .setItemLevel(this.itemLevel)
                     .setPromoteLevel(0)//mock
-                    .build())).build();
+                    .build())
+                .build();
         }
     }
 
