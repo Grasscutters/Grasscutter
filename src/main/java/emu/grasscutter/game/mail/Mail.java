@@ -6,13 +6,22 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.EquipParamOuterClass.EquipParam;
+import emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState;
+import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
+import org.bson.types.ObjectId;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import org.bson.types.ObjectId;
+
+import static emu.grasscutter.net.proto.MailItemOuterClass.MailItem.*;
 
 @Entity(value = "mail", useDiscriminator = false)
-public class Mail {
+public final class Mail {
+	@Id private ObjectId id;
+	@Indexed private int ownerUid;
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
@@ -21,16 +30,10 @@ public class Mail {
     public boolean isRead;
     public boolean isAttachmentGot;
     public int stateValue;
-    @Id private ObjectId id;
-    @Indexed private int ownerUid;
     @Transient private boolean shouldDelete;
 
     public Mail() {
-        this(
-                new MailContent(),
-                new ArrayList<MailItem>(),
-                (int) Instant.now().getEpochSecond()
-                        + 604800); // TODO: add expire time to send mail command
+        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
@@ -41,12 +44,7 @@ public class Mail {
         this(mailContent, itemList, expireTime, importance, 1);
     }
 
-    public Mail(
-            MailContent mailContent,
-            List<MailItem> itemList,
-            long expireTime,
-            int importance,
-            int state) {
+    public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime, int importance, int state) {
         this.mailContent = mailContent;
         this.itemList = itemList;
         this.sendTime = (int) Instant.now().getEpochSecond();
@@ -69,12 +67,18 @@ public class Mail {
         this.ownerUid = ownerUid;
     }
 
-    public void save() {
-        if (this.expireTime * 1000 < System.currentTimeMillis()) {
-            DatabaseHelper.deleteMail(this);
-        } else {
-            DatabaseHelper.saveMail(this);
-        }
+    public MailDataOuterClass.MailData toProto(Player player) {
+        return MailDataOuterClass.MailData.newBuilder()
+            .setMailId(player.getMailId(this))
+            .setMailTextContent(this.mailContent.toProto())
+            .addAllItemList(this.itemList.stream().map(MailItem::toProto).toList())
+            .setSendTime((int) this.sendTime)
+            .setExpireTime((int) this.expireTime)
+            .setImportance(this.importance)
+            .setIsRead(this.isRead)
+            .setIsAttachmentGot(this.isAttachmentGot)
+            .setCollectState(MailCollectState.MAIL_COLLECT_STATE_NOT_COLLECTIBLE)
+            .build();
     }
 
     @Entity
@@ -101,6 +105,14 @@ public class Mail {
             this.title = title;
             this.content = content;
             this.sender = sender;
+        }
+
+        public MailTextContent toProto() {
+            return MailTextContent.newBuilder()
+                .setTitle(this.title)
+                .setContent(this.content)
+                .setSender(this.sender)
+                .build();
         }
     }
 
@@ -129,5 +141,23 @@ public class Mail {
             this.itemCount = itemCount;
             this.itemLevel = itemLevel;
         }
+
+        public MailItemOuterClass.MailItem toProto() {
+            return newBuilder().setEquipParam(EquipParam.newBuilder()
+                    .setItemId(this.itemId)
+                    .setItemNum(this.itemCount)
+                    .setItemLevel(this.itemLevel)
+                    .setPromoteLevel(0)//mock
+                    .build())
+                .build();
+        }
     }
+
+	public void save() {
+		if (this.expireTime * 1000 < System.currentTimeMillis()) {
+			DatabaseHelper.deleteMail(this);
+		} else {
+			DatabaseHelper.saveMail(this);
+		}
+	}
 }
