@@ -446,6 +446,7 @@ public final class Scene {
      * Teleports the player if the player is out of bounds.
      */
     private void checkPlayerRespawn() {
+        if (this.getScriptManager().getConfig() == null) return;
         var diePos = this.getScriptManager().getConfig().die_y;
 
         // Check players in the scene.
