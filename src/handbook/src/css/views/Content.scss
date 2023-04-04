@@ -4,19 +4,24 @@
     width: 100%;
 
     background-color: var(--background-color);
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .Content_Top {
     display: flex;
     width: 100%;
+    height: 80%;
 
     flex-direction: column;
     align-items: center;
+
+    gap: 24px;
 }
 
 .Content_Title {
     margin-top: 31px;
-    margin-bottom: 39px;
+    margin-bottom: 15px;
 }
 
 .Content_Buttons {
@@ -25,8 +30,77 @@
 
     max-width: 1376px;
     max-height: 256px;
+
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .Content_Bottom {
+    display: flex;
+
+    height: 50%;
+    max-height: 125px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Content_Box {
+    display: flex;
+    background-color: var(--secondary-color);
+}
+
+.Content_Disclaimer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+
+    width: 50%;
+    height: 100%;
+    max-width: 630px;
+    max-height: 93px;
+
+    margin: 0 24px 0 60px;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding: 11px;
+
+    :nth-child(1) {
+        font-size: 24px;
+        max-height: 30px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    p {
+        font-size: 18px;
+        max-height: 40px;
+    }
+}
+
+.Content_Discord {
+    max-height: 40px;
+    max-width: 150px;
+
+    gap: 8px;
+    align-self: center;
+    align-items: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        max-width: 44px;
+        max-height: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.Content_Credits {
 
 }
