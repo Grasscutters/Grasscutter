@@ -1,0 +1,41 @@
+html {
+    --background-color: #346b77;
+    --secondary-color: #418493;
+
+    --text-primary-color: #FFFFFF;
+
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    #root {
+        height: 100%;
+        width: 100%;
+    }
+
+    * {
+        font-family: 'SDK_SC_Web', 'SDK_JP_Web', 'Poppins', sans-serif;
+    }
+
+    svg:focus {
+        outline: none;
+    }
+}
+
+.App {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+
+    div {
+        display: flex;
+    }
+}

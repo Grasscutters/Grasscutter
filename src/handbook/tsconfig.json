@@ -21,7 +21,9 @@
       "@app/*": ["src/*"],
       "@backend/*": ["src/backend/*"],
       "@css/*": ["src/css/*"],
-      "@components/*": ["src/ui/*"]
+      "@components/*": ["src/ui/*"],
+      "@icons/*": ["src/icons/*"],
+      "@views/*": ["src/ui/views/*"]
     }
   },
   "include": ["src"],

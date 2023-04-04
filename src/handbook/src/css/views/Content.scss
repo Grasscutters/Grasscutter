@@ -1,0 +1,32 @@
+.Content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--background-color);
+}
+
+.Content_Top {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.Content_Title {
+    margin-top: 31px;
+    margin-bottom: 39px;
+}
+
+.Content_Buttons {
+    width: 100%;
+    height: 40%;
+
+    max-width: 1376px;
+    max-height: 256px;
+}
+
+.Content_Bottom {
+
+}
