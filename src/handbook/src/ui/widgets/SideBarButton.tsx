@@ -1,10 +1,13 @@
 import React from "react";
 
+import type { Page } from "@backend/types";
+import { navigate } from "@backend/events";
+
 import "@css/widgets/SideBarButton.scss";
 
 interface IProps {
     name: string;
-    anchor: string;
+    anchor: Page;
 }
 
 class SideBarButton extends React.PureComponent<IProps> {
@@ -17,8 +20,7 @@ class SideBarButton extends React.PureComponent<IProps> {
      * @private
      */
     private redirect(): void {
-        // TODO: Implement navigator system.
-        window.location.href = `/${this.props.anchor}`;
+        navigate(this.props.anchor);
     }
 
     render() {

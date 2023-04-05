@@ -1,6 +1,7 @@
 import React from "react";
 
 import HomePage from "@pages/HomePage";
+import CommandsPage from "@pages/CommandsPage";
 
 import type { Page } from "@backend/types";
 
@@ -8,7 +9,7 @@ import "@css/views/Content.scss";
 import { addNavListener, removeNavListener } from "@backend/events";
 
 interface IProps {
-    initial?: Page;
+    initial?: Page | null;
 }
 
 interface IState {
@@ -46,6 +47,7 @@ class Content extends React.Component<IProps, IState> {
         switch (this.state.current) {
             default: return undefined;
             case "Home": return <HomePage />;
+            case "Commands": return <CommandsPage />;
         }
     }
 }

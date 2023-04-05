@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { Page } from "@backend/types";
+import type { Page } from "@backend/types";
 
 const emitter = new EventEmitter();
 const navigation = new EventEmitter();
@@ -8,19 +8,12 @@ let navStack: Page[] = [];
 let currentPage: number | null = -1;
 
 /**
- * The initial setup function for this file.
+ * Sets up the event system.
  */
 export function setup(): void {
-    // Check if the window's href is a page.
-    const page = window.location.href.split("/").pop();
-    if (page == undefined) return;
-
-    // Convert the page to a Page type.
-    const pageName = page.charAt(0).toUpperCase() + page.slice(1);
-    const pageType = pageName as Page;
-
-    // Navigate to the page.
-    navigate(pageType, false);
+    window.onpopstate = (event) => {
+        navigate(event.state, false);
+    };
 }
 
 /**
