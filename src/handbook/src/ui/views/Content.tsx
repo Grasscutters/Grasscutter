@@ -15,7 +15,7 @@ class Content extends React.Component<any, any> {
         return (
             <div className={"Content"}>
                 <div className={"Content_Top"}>
-                    <h1 className={"Content_Title"}>Welcome Back Traveler!</h1>
+                    <h1 className={"Content_Title"}>Welcome back, Traveler~</h1>
 
                     <div className={"Content_Buttons"}>
                         <HomeButton name={"Commands"} anchor={"commands"} />
@@ -46,7 +46,16 @@ class Content extends React.Component<any, any> {
                     </div>
 
                     <div className={"Content_Text"}>
+                        <div className={"Content_Credits"}>
+                            <p>Credits</p>
+                            <p>(hover to see info)</p>
+                        </div>
 
+                        <div className={"Content_Links"}>
+                            <a href={"https://paimon.moe"}>paimon.moe</a>
+                            <a href={"https://gitlab.com/Dimbreath/AnimeGameData"}>Anime Game Data</a>
+                            <a href={"https://genshin-impact.fandom.com"}>Genshin Impact Wiki</a>
+                        </div>
                     </div>
                 </div>
             </div>
