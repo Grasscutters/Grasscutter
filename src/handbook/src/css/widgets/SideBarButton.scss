@@ -1,0 +1,26 @@
+.SideBarButton {
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    width: 100%;
+    height: 64px;
+    max-width: 300px;
+    max-height: 64px;
+
+    align-items: center;
+}
+
+.SideBarButton_Icon {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.SideBarButton_Label {
+    font-size: 22px;
+    line-height: 29px;
+    font-style: normal;
+
+    max-width: 220px;
+}

@@ -1,9 +1,31 @@
 .SideBar {
     display: flex;
+    flex-direction: column;
 
     height: 100%;
     width: 100%;
     max-width: 300px;
 
     background-color: var(--secondary-color);
+
+    gap: 40px;
+}
+
+.SideBar_Title {
+    margin-top: 42px;
+    line-height: 41px;
+    font-size: 34px;
+
+    max-width: 256px;
+    max-height: 128px;
+    text-align: center;
+    align-self: center;
+}
+
+.SideBar_Buttons {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 27px;
+    gap: 15px;
 }
