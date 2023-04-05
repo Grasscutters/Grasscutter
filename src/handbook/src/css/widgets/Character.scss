@@ -1,0 +1,34 @@
+.Character {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--legendary-color);
+
+    max-width: 100px;
+    max-height: 125px;
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+.Character_Icon {
+    width: 100%;
+    height: 100%;
+
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.Character_Label {
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+
+    max-width: 100px;
+    height: 25px;
+
+    p {
+        color: var(--text-primary-color);
+        font-size: 18px;
+    }
+}
