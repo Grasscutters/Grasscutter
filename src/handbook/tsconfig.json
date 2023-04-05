@@ -23,7 +23,8 @@
       "@css/*": ["src/css/*"],
       "@components/*": ["src/ui/*"],
       "@icons/*": ["src/icons/*"],
-      "@views/*": ["src/ui/views/*"]
+      "@views/*": ["src/ui/views/*"],
+      "@pages/*": ["src/ui/pages/*"]
     }
   },
   "include": ["src"],
