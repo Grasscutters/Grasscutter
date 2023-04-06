@@ -10,6 +10,8 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import java.util.Map;
 import java.util.function.Function;
+
+import emu.grasscutter.tools.Dumpers;
 import org.slf4j.LoggerFactory;
 
 /** A parser for start-up arguments. */
@@ -47,6 +49,7 @@ public final class StartupArguments {
                                 SERVER.http.encryption.useEncryption = false;
                                 return false;
                             },
+                    "-dump", StartupArguments::dump,
 
                     // Aliases.
                     "-v", StartupArguments::printVersion,
@@ -125,5 +128,37 @@ public final class StartupArguments {
         ((Logger) LoggerFactory.getLogger("org.mongodb.driver")).setLevel(loggerLevel);
 
         return false;
+    }
+
+    /**
+     * Dumps the specified information.
+     *
+     * @param parameter The parameter to dump.
+     * @return True to exit early.
+     */
+    private static boolean dump(String parameter) {
+        // Parse the parameter.
+        if (!parameter.contains(",")) {
+            Grasscutter.getLogger().error("Dumper usage: -dump=<content>,<language>");
+            return true;
+        }
+
+        var split = parameter.split(",");
+        var content = split[0];
+        var language = split[1];
+
+        try {
+            switch (content.toLowerCase()) {
+                case "commands" -> Dumpers.dumpCommands(language);
+                case "avatars" -> Dumpers.dumpAvatars(language);
+                case "items" -> Dumpers.dumpItems(language);
+            }
+
+            Grasscutter.getLogger().info("Finished dumping.");
+        } catch (Exception exception) {
+            Grasscutter.getLogger().error("Unable to complete dump.", exception);
+        }
+
+        return true;
     }
 }
