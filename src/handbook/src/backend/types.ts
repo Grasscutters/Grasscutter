@@ -38,13 +38,13 @@ export enum Quality {
 }
 
 export enum ItemType {
-    None = 0,
-    Virtual = 1,
-    Material = 2,
-    Reliquary = 3,
-    Weapon = 4,
-    Display = 5,
-    Furniture = 6
+    None = "ITEM_NONE",
+    Virtual = "ITEM_VIRTUAL",
+    Material = "ITEM_MATERIAL",
+    Reliquary = "ITEM_RELIQUARY",
+    Weapon = "ITEM_WEAPON",
+    Display = "ITEM_DISPLAY",
+    Furniture = "ITEM_FURNITURE"
 }
 
 /**
