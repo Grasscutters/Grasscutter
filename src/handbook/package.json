@@ -28,6 +28,7 @@
     "vite-tsconfig-paths": "^4.0.7",
     "vite-plugin-singlefile": "^0.13.5",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "@rollup/plugin-dsv": "^3.0.2",
 
     "sass": "^1.58.3",
     "cssnano": "^5.1.15",

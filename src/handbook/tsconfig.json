@@ -24,7 +24,8 @@
       "@components/*": ["src/ui/*"],
       "@icons/*": ["src/icons/*"],
       "@views/*": ["src/ui/views/*"],
-      "@pages/*": ["src/ui/pages/*"]
+      "@pages/*": ["src/ui/pages/*"],
+      "@data/*": ["data/*"]
     }
   },
   "include": ["src"],
