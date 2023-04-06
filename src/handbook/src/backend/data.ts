@@ -1,5 +1,5 @@
-import avatars from "@data/avatars.json";
 import commands from "@data/commands.json";
+import avatars from "@data/avatars.csv";
 import items from "@data/items.csv";
 
 import type { Command, Avatar, Item } from "@backend/types";

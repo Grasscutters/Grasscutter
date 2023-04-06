@@ -108,21 +108,20 @@ public interface Dumpers {
             var langHash = avatar.getNameTextMapHash();
             dump.put(id, new AvatarInfo(
                 langHash == 0 ? avatar.getName() : Language.getTextMapKey(langHash).get(locale),
-                avatar.getQualityType().equals("QUALITY_PURPLE") ? Quality.EPIC : Quality.LEGENDARY,
-                avatar.getId()
+                avatar.getQualityType().equals("QUALITY_PURPLE") ? Quality.EPIC : Quality.LEGENDARY
             ));
         });
 
         try {
             // Create a file for the dump.
-            var file = new File("avatars.json");
+            var file = new File("avatars.csv");
             if (file.exists() && !file.delete())
                 throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
             // Write the dump to the file.
-            Files.writeString(file.toPath(), JsonUtils.encode(dump));
+            Files.writeString(file.toPath(), Dumpers.miniEncode(dump));
         } catch (IOException ignored) {
             throw new RuntimeException("Failed to write to file.");
         }
@@ -141,7 +140,7 @@ public interface Dumpers {
         // Convert all known items to an item map.
         var dump = new HashMap<Integer, ItemData>();
         GameData.getItemDataMap().forEach((id, item) -> dump.put(id, new ItemData(
-            item.getId(), Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
+            Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
             Quality.from(item.getRankLevel()), item.getItemType()
         )));
 
@@ -173,20 +172,23 @@ public interface Dumpers {
     class AvatarInfo {
         public String name;
         public Quality quality;
-        public int id;
+
+        @Override
+        public String toString() {
+            return this.name + ","
+                + this.quality;
+        }
     }
 
     @AllArgsConstructor
     class ItemData {
-        public int id;
         public String name;
         public Quality quality;
         public ItemType type;
 
         @Override
         public String toString() {
-            return this.id + ","
-                + this.name + ","
+            return this.name + ","
                 + this.quality + ","
                 + this.type;
         }
