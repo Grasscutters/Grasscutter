@@ -1,5 +1,7 @@
 import React from "react";
 
+import "@css/pages/CommandsPage.scss";
+
 class CommandsPage extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -7,7 +9,7 @@ class CommandsPage extends React.Component<any, any> {
 
     render() {
         return (
-            <div>
+            <div className={"CommandsPage"}>
                 <h1>Commands</h1>
             </div>
         );
