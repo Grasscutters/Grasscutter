@@ -36,8 +36,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
+        working-directory: src/handbook
         run: npm install
       - name: Run linter
+        working-directory: src/handbook
         run: npm run lint
 
       - run: git config --global user.name "github-actions"
@@ -54,7 +56,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - run: cd src/handbook
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
@@ -69,9 +70,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
+        working-directory: src/handbook
         run: npm install
       - name: Build handbook
-        run: npm run build
+        working-directory: src/handbook
+        run: cd src/handbook && npm run build
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
