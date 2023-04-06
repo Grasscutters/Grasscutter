@@ -74,7 +74,7 @@ jobs:
         run: npm install
       - name: Build handbook
         working-directory: src/handbook
-        run: cd src/handbook && npm run build
+        run: npm run build
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:

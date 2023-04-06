@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+
+    "lint": "npx prettier --write \"src/handbook/**/*.{ts,tsx,js,jsx,json,md}\""
   },
 
   "dependencies": {
