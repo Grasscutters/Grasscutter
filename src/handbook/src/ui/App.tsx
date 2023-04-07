@@ -4,11 +4,10 @@ import SideBar from "@views/SideBar";
 import Content from "@views/Content";
 
 import type { Page } from "@backend/types";
+import { isPage } from "@backend/types";
 
 import "@css/App.scss";
 import "@css/Text.scss";
-import { isPage } from "@backend/types";
-
 
 // Based on the design at: https://www.figma.com/file/PDeAVDkTDF5vvUGGdaIZ39/GM-Handbook.
 // Currently designed by: Magix.

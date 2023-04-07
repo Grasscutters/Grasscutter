@@ -1,16 +1,30 @@
 import React from "react";
 
+import Card from "@components/widgets/Card";
+
+import { listCommands } from "@backend/data";
+
 import "@css/pages/CommandsPage.scss";
 
-class CommandsPage extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-    }
-
+class CommandsPage extends React.PureComponent {
     render() {
         return (
             <div className={"CommandsPage"}>
-                <h1>Commands</h1>
+                <h1 className={"CommandsPage_Title"}>Commands</h1>
+
+                <div className={"CommandsPage_List"}>
+                    {
+                        listCommands().map(command => (
+                            <Card
+                                title={command.name[0]}
+                                alternate={command.name.length == 1 ? undefined :
+                                    `(aka /${command.name.slice(1).join(", /")})`}
+                                description={command.description}
+                                height={75}
+                            />
+                        ))
+                    }
+                </div>
             </div>
         );
     }
