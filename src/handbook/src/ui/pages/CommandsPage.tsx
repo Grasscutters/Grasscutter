@@ -16,6 +16,7 @@ class CommandsPage extends React.PureComponent {
                     {
                         listCommands().map(command => (
                             <Card
+                                key={command.name[0]}
                                 title={command.name[0]}
                                 alternate={command.name.length == 1 ? undefined :
                                     `(aka /${command.name.slice(1).join(", /")})`}

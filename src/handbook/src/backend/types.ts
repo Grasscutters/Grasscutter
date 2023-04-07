@@ -1,4 +1,4 @@
-export type Page = "Home" | "Commands";
+export type Page = "Home" | "Commands" | "Avatars";
 
 export type Command = {
     name: string[];

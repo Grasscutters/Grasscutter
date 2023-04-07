@@ -6,6 +6,10 @@
     background-color: var(--background-color);
     flex-direction: column;
     justify-content: space-between;
+
+    div {
+        display: flex;
+    }
 }
 
 .HomePage_Top {

@@ -41,6 +41,13 @@ export function getAvatars(): AvatarDump {
 }
 
 /**
+ * Fetches and lists all the avatars in the file.
+ */
+export function listAvatars(): Avatar[] {
+    return Object.values(getAvatars());
+}
+
+/**
  * Fetches and casts all items in the file.
  */
 export function getItems(): Item[] {

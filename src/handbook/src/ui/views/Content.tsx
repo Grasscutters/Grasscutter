@@ -2,11 +2,12 @@ import React from "react";
 
 import HomePage from "@pages/HomePage";
 import CommandsPage from "@pages/CommandsPage";
+import AvatarsPage from "@pages/AvatarsPage";
 
 import type { Page } from "@backend/types";
+import { addNavListener, removeNavListener } from "@backend/events";
 
 import "@css/views/Content.scss";
-import { addNavListener, removeNavListener } from "@backend/events";
 
 interface IProps {
     initial?: Page | null;
@@ -48,6 +49,7 @@ class Content extends React.Component<IProps, IState> {
             default: return undefined;
             case "Home": return <HomePage />;
             case "Commands": return <CommandsPage />;
+            case "Avatars": return <AvatarsPage />;
         }
     }
 }

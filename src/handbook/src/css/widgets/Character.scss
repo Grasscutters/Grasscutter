@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
 
-    background-color: var(--legendary-color);
-
     max-width: 100px;
-    max-height: 125px;
+    max-height: 150px;
     border-radius: 15px;
+
+    height: 100%;
 
     overflow: hidden;
 }
@@ -20,15 +20,17 @@
 }
 
 .Character_Label {
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--secondary-color);
 
     max-width: 100px;
-    height: 25px;
+    height: 50px;
 
     p {
-        color: var(--text-primary-color);
         font-size: 18px;
+        text-align: center;
+        height: 100%;
     }
 }

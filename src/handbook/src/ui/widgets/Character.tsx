@@ -1,5 +1,8 @@
 import React from "react";
 
+import type { Avatar } from "@backend/types";
+import { colorFor } from "@app/utils";
+
 import "@css/widgets/Character.scss";
 
 // Image base URL: https://paimon.moe/images/characters/(name).png
@@ -9,13 +12,30 @@ import "@css/widgets/Character.scss";
  * Example: Hu Tao -> hu_tao
  *
  * @param name The character's name.
+ * @param id The character's ID.
  */
-function formatName(name: string): string {
+function formatName(name: string, id: number): string {
+    // Check if a different name is used for the character.
+    if (refSwitch[id]) name = refSwitch[id];
     return name.toLowerCase().replace(" ", "_");
 }
 
+const ignored = [
+    10000001 // Kate
+];
+
+const refSwitch: { [key: number]: string } = {
+    10000005: "traveler_anemo",
+    10000007: "traveler_geo",
+};
+
+const nameSwitch: { [key: number]: string } = {
+    10000005: "Lumine",
+    10000007: "Aether",
+};
+
 interface IProps {
-    name: string; // paimon.moe reference name.
+    data: Avatar;
 }
 
 class Character extends React.PureComponent<IProps> {
@@ -24,16 +44,26 @@ class Character extends React.PureComponent<IProps> {
     }
 
     render() {
+        const { name, quality, id } = this.props.data;
+        const qualityColor = colorFor(quality);
+
+        // Check if the avatar is blacklisted.
+        if (ignored.includes(id))
+            return undefined;
+
         return (
-            <div className={"Character"}>
+            <div
+                className={"Character"}
+                style={{ backgroundColor: `var(${qualityColor})` }}
+            >
                 <img
                     className={"Character_Icon"}
-                    alt={this.props.name}
-                    src={`https://paimon.moe/images/characters/${formatName(this.props.name)}.png`}
+                    alt={name}
+                    src={`https://paimon.moe/images/characters/${formatName(name, id)}.png`}
                 />
 
                 <div className={"Character_Label"}>
-                    <p>{this.props.name}</p>
+                    <p>{nameSwitch[id] ?? name}</p>
                 </div>
             </div>
         );
