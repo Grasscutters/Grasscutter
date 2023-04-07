@@ -30,19 +30,21 @@ class Card extends React.PureComponent<IProps> {
             >
                 <div className={"Card_Header"}>
                     <p className={"Card_Title"}>{this.props.title}</p>
-                    {this.props.alternate &&
-                        <p className={"Card_Alternate"}>{this.props.alternate}</p>}
+                    {this.props.alternate && <p className={"Card_Alternate"}>{this.props.alternate}</p>}
                 </div>
 
                 <div style={{ height: "50%", alignItems: "center" }}>
-                    {
-                        this.props.description ? (
-                            Array.isArray(this.props.description) ?
-                                this.props.description.map((line, index) => (
-                                    <p className={"Card_Description"} key={index}>{line}</p>
-                                )) : <p className={"Card_Description"}>{this.props.description}</p>
-                        ) : undefined
-                    }
+                    {this.props.description ? (
+                        Array.isArray(this.props.description) ? (
+                            this.props.description.map((line, index) => (
+                                <p className={"Card_Description"} key={index}>
+                                    {line}
+                                </p>
+                            ))
+                        ) : (
+                            <p className={"Card_Description"}>{this.props.description}</p>
+                        )
+                    ) : undefined}
                 </div>
             </div>
         );

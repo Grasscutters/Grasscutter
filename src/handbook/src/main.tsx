@@ -9,9 +9,8 @@ import App from "@components/App";
 events.setup();
 
 // Render the application.
-createRoot(document.getElementById(
-    "root") as HTMLElement).render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
+createRoot(document.getElementById("root") as HTMLElement).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );

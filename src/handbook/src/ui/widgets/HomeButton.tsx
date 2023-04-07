@@ -25,15 +25,8 @@ class HomeButton extends React.PureComponent<IProps> {
 
     render() {
         return (
-            <div
-                className={"HomeButton"}
-                onClick={() => this.redirect()}
-            >
-                <img
-                    className={"HomeButton_Icon"}
-                    src={"https://dummyimage.com/128x128"}
-                    alt={this.props.name}
-                />
+            <div className={"HomeButton"} onClick={() => this.redirect()}>
+                <img className={"HomeButton_Icon"} src={"https://dummyimage.com/128x128"} alt={this.props.name} />
 
                 <p className={"HomeButton_Label"}>{this.props.name}</p>
             </div>

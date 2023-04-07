@@ -26,12 +26,12 @@ const ignored = [
 
 const refSwitch: { [key: number]: string } = {
     10000005: "traveler_anemo",
-    10000007: "traveler_geo",
+    10000007: "traveler_geo"
 };
 
 const nameSwitch: { [key: number]: string } = {
     10000005: "Lumine",
-    10000007: "Aether",
+    10000007: "Aether"
 };
 
 interface IProps {
@@ -48,14 +48,10 @@ class Character extends React.PureComponent<IProps> {
         const qualityColor = colorFor(quality);
 
         // Check if the avatar is blacklisted.
-        if (ignored.includes(id))
-            return undefined;
+        if (ignored.includes(id)) return undefined;
 
         return (
-            <div
-                className={"Character"}
-                style={{ backgroundColor: `var(${qualityColor})` }}
-            >
+            <div className={"Character"} style={{ backgroundColor: `var(${qualityColor})` }}>
                 <img
                     className={"Character_Icon"}
                     alt={name}

@@ -14,10 +14,7 @@ class SideBar extends React.Component<any, any> {
     render() {
         return (
             <div className={"SideBar"}>
-                <h1
-                    className={"SideBar_Title"}
-                    onClick={() => navigate("Home")}
-                >
+                <h1 className={"SideBar_Title"} onClick={() => navigate("Home")}>
                     The Ultimate Anime Game Handbook
                 </h1>
 

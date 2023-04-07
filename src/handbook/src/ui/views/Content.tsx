@@ -47,11 +47,16 @@ class Content extends React.Component<IProps, IState> {
 
     render() {
         switch (this.state.current) {
-            default: return undefined;
-            case "Home": return <HomePage />;
-            case "Commands": return <CommandsPage />;
-            case "Avatars": return <AvatarsPage />;
-            case "Items": return <ItemsPage />;
+            default:
+                return undefined;
+            case "Home":
+                return <HomePage />;
+            case "Commands":
+                return <CommandsPage />;
+            case "Avatars":
+                return <AvatarsPage />;
+            case "Items":
+                return <ItemsPage />;
         }
     }
 }

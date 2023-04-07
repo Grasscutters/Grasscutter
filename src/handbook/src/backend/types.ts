@@ -19,7 +19,7 @@ export type Item = {
     name: string;
     quality: Quality;
     type: ItemType;
-}
+};
 
 export enum Target {
     None = "NONE",

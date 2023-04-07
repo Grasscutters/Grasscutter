@@ -11,11 +11,9 @@ class ItemsPage extends React.PureComponent {
                 <h1 className={"ItemsPage_Title"}>Items</h1>
 
                 <div className={"ItemsPage_List"}>
-                    {
-                        getItems().map(item => (
-                            <p key={item.id}>{item.name}</p>
-                        ))
-                    }
+                    {getItems().map((item) => (
+                        <p key={item.id}>{item.name}</p>
+                    ))}
                 </div>
             </div>
         );

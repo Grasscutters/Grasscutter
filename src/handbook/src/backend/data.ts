@@ -26,9 +26,9 @@ export function listCommands(): Command[] {
  * Fetches and casts all avatars in the file.
  */
 export function getAvatars(): AvatarDump {
-    const map: AvatarDump = {}; avatars.forEach(avatar => {
-        const values = Object.values(avatar) as
-            [string, string, string];
+    const map: AvatarDump = {};
+    avatars.forEach((avatar) => {
+        const values = Object.values(avatar) as [string, string, string];
         const id = parseInt(values[0]);
         map[id] = {
             id,
@@ -51,15 +51,14 @@ export function listAvatars(): Avatar[] {
  * Fetches and casts all items in the file.
  */
 export function getItems(): Item[] {
-    return items.map(item => {
-        const values = Object.values(item) as
-            [string, string, string, string];
+    return items.map((item) => {
+        const values = Object.values(item) as [string, string, string, string];
         const id = parseInt(values[0]);
         return {
             id,
             name: values[1],
             type: values[2] as ItemType,
             quality: values[3] as Quality
-        }
+        };
     });
 }
