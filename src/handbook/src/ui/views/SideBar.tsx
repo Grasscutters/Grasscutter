@@ -24,7 +24,7 @@ class SideBar extends React.Component<any, any> {
                 <div className={"SideBar_Buttons"}>
                     <SideBarButton name={"Commands"} anchor={"Commands"} />
                     <SideBarButton name={"Characters"} anchor={"Avatars"} />
-                    <SideBarButton name={"Items"} anchor={"Home"} />
+                    <SideBarButton name={"Items"} anchor={"Items"} />
                     <SideBarButton name={"Entities"} anchor={"Home"} />
                     <SideBarButton name={"Scenes"} anchor={"Home"} />
                     <SideBarButton name={"Quests"} anchor={"Home"} />

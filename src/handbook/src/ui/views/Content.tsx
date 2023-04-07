@@ -3,6 +3,7 @@ import React from "react";
 import HomePage from "@pages/HomePage";
 import CommandsPage from "@pages/CommandsPage";
 import AvatarsPage from "@pages/AvatarsPage";
+import ItemsPage from "@pages/ItemsPage";
 
 import type { Page } from "@backend/types";
 import { addNavListener, removeNavListener } from "@backend/events";
@@ -50,6 +51,7 @@ class Content extends React.Component<IProps, IState> {
             case "Home": return <HomePage />;
             case "Commands": return <CommandsPage />;
             case "Avatars": return <AvatarsPage />;
+            case "Items": return <ItemsPage />;
         }
     }
 }
