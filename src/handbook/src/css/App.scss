@@ -1,6 +1,7 @@
 html {
     --background-color: #346b77;
     --secondary-color: #418493;
+    --accent-color: #5abcb9;
 
     --text-primary-color: #FFFFFF;
 
@@ -41,4 +42,17 @@ body {
     div {
         display: flex;
     }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
 }
