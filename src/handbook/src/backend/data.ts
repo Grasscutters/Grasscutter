@@ -6,12 +6,20 @@ import { Quality, ItemType } from "@backend/types";
 import type { Command, Avatar, Item } from "@backend/types";
 
 type AvatarDump = { [key: number]: Avatar };
+type CommandDump = { [key: string]: Command };
 
 /**
  * Fetches and casts all commands in the file.
  */
-export function getCommands(): { [key: string]: Command } {
-    return commands as { [key: string]: Command };
+export function getCommands(): CommandDump {
+    return commands as CommandDump;
+}
+
+/**
+ * Fetches and lists all the commands in the file.
+ */
+export function listCommands(): Command[] {
+    return Object.values(getCommands());
 }
 
 /**
