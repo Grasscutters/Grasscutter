@@ -10,7 +10,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
 
-    "lint": "npx prettier --write \"src/handbook/**/*.{ts,tsx,js,jsx,json,md}\""
+    "lint": "npx prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
   },
 
   "dependencies": {
