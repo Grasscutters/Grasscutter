@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "@components/widgets/Card";
+import Card from "@widgets/Card";
 
 import { listCommands } from "@backend/data";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomeButton from "@components/widgets/HomeButton";
+import HomeButton from "@widgets/HomeButton";
 
 import { ReactComponent as DiscordLogo } from "@icons/discord.svg";
 

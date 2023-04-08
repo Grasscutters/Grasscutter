@@ -16,7 +16,7 @@ type TaggedItems = { [key: number]: Item[] }
  * TODO: Figure out what suffix is for which artifact type.
  */
 
-const sortedItems: TaggedItems = {
+export const sortedItems: TaggedItems = {
     [ItemCategory.Constellation]: [], // Range: 1102 - 11xx
     [ItemCategory.Weapon]: [],
     [ItemCategory.Artifact]: [],
