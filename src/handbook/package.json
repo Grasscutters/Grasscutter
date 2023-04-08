@@ -10,12 +10,14 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
 
+    "postinstall": "npx patch-package",
     "lint": "npx prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
   },
 
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-virtualized": "^9.22.3",
 
     "events": "^3.3.0"
   },
@@ -23,6 +25,7 @@
     "typescript": "^4.9.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/react-virtualized": "^9.21.21",
     "@types/events": "^3.0.0",
 
     "vite": "^4.2.0",
@@ -41,6 +44,7 @@
     "postcss-load-config": "^4.0.1",
     "postcss-font-magician": "^3.0.0",
 
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "patch-package": "^6.5.1"
   }
 }

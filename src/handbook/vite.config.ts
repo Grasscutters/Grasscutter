@@ -15,5 +15,11 @@ import postcss from "./cfg/postcss.config.js";
 export default defineConfig({
     plugins: [ react(), tsconfigPaths(), dsv(),
         viteSvgr(), viteSingleFile() ],
-    css: { postcss }
+    css: { postcss },
+
+    optimizeDeps: {
+        exclude: [
+            "react-virtualization"
+        ]
+    }
 });
