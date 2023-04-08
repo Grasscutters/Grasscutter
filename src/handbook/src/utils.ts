@@ -21,3 +21,14 @@ export function colorFor(quality: Quality): string {
             return "--unknown-color";
     }
 }
+
+/**
+ * Checks if a value is between two numbers.
+ *
+ * @param value The value to check.
+ * @param min The minimum value.
+ * @param max The maximum value.
+ */
+export function inRange(value: number, min: number, max: number): boolean {
+    return value >= min && value <= max;
+}

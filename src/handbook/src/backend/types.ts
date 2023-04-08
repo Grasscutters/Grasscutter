@@ -47,6 +47,15 @@ export enum ItemType {
     Furniture = "ITEM_FURNITURE"
 }
 
+export enum ItemCategory {
+    Constellation,
+    Weapon,
+    Artifact,
+    Furniture,
+    Material,
+    Miscellaneous
+}
+
 /**
  * Checks if a string is a page.
  *
