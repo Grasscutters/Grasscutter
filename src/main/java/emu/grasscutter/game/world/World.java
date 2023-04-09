@@ -319,12 +319,14 @@ public class World implements Iterable<Player> {
         var newScene = this.getSceneById(teleportProperties.getSceneId());
         newScene.addPlayer(player);
         player.setAvatarsAbilityForScene(newScene);
+
         // Dungeon
         // Dungeon system is handling this already
         // if(dungeonData!=null){
         //     var dungeonManager = new DungeonManager(newScene, dungeonData);
         //     dungeonManager.startDungeon();
         // }
+
         SceneConfig config = newScene.getScriptManager().getConfig();
         if (teleportProperties.getTeleportTo() == null && config != null) {
             if (config.born_pos != null) {

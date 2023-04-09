@@ -20,6 +20,7 @@ import emu.grasscutter.data.excels.world.*;
 import emu.grasscutter.data.server.*;
 import emu.grasscutter.game.dungeons.*;
 import emu.grasscutter.game.quest.*;
+import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
@@ -609,6 +610,11 @@ public final class GameData {
                         ? GameData.getTrialAvatarActivityDataDataMap()
                         : GameData.getTrialAvatarActivityDataCustomData();
         return datamap.get(dataId);
+    }
+
+    @Nullable public static List<QuestData> getQuestDataByConditions(
+            QuestCond questCond, int param0, String questStr) {
+        return beginCondQuestMap.get(QuestData.questConditionKey(questCond, param0, questStr));
     }
 
     public static Int2ObjectMap<AchievementData> getAchievementDataMap() {

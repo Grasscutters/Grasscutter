@@ -137,22 +137,25 @@ public final class Tools {
         itemDataMap.forEach(
                 (id, data) -> {
                     val name = getTextMapKey(data.getNameTextMapHash());
-                    if (Objects.requireNonNull(data.getMaterialType()) == MaterialType.MATERIAL_BGM) {
-                        val bgmName =
-                                Optional.ofNullable(data.getItemUse())
-                                        .map(u -> u.get(0))
-                                        .map(u -> u.getUseParam())
-                                        .filter(u -> u.length > 0)
-                                        .map(u -> Integer.parseInt(u[0]))
-                                        .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
-                                        .map(bgm -> bgm.getBgmNameTextMapHash())
-                                        .map(hash -> getTextMapKey(hash));
-                        if (bgmName.isPresent()) {
-                            h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
+                    switch (data.getMaterialType()) {
+                        case MATERIAL_BGM:
+                            val bgmName =
+                                    Optional.ofNullable(data.getItemUse())
+                                            .map(u -> u.get(0))
+                                            .map(u -> u.getUseParam())
+                                            .filter(u -> u.length > 0)
+                                            .map(u -> Integer.parseInt(u[0]))
+                                            .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
+                                            .map(bgm -> bgm.getBgmNameTextMapHash())
+                                            .map(hash -> getTextMapKey(hash));
+                            if (bgmName.isPresent()) {
+                                h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
+                                return;
+                            } // Fall-through
+                        default:
+                            h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
                             return;
-                        } // Fall-through
                     }
-                    h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
                 });
         // Monsters
         h.newSection("Monsters");

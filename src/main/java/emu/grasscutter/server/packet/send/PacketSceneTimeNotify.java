@@ -9,16 +9,7 @@ import emu.grasscutter.net.proto.SceneTimeNotifyOuterClass.SceneTimeNotify;
 public class PacketSceneTimeNotify extends BasePacket {
 
     public PacketSceneTimeNotify(Player player) {
-        super(PacketOpcodes.SceneTimeNotify);
-
-        var proto =
-                SceneTimeNotify.newBuilder()
-                        .setIsPaused(player.isPaused())
-                        .setSceneId(player.getSceneId())
-                        .setSceneTime(player.getScene().getSceneTime())
-                        .build();
-
-        this.setData(proto);
+        this(player.getScene());
     }
 
     public PacketSceneTimeNotify(Scene scene) {

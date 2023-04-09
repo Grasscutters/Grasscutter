@@ -16,7 +16,6 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.quest.enums.*;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
@@ -41,7 +40,7 @@ public class GameMainQuest {
     @Getter private int[] questVars;
     @Getter private long[] timeVar;
     //QuestUpdateQuestVarReq is sent in two stages...
-    @Getter private List<Integer> questVarsUpdate;
+    private List<Integer> questVarsUpdate;
     @Getter private ParentQuestState state;
     @Getter private boolean isFinished;
     @Getter List<QuestGroupSuite> questGroupSuites;
@@ -65,6 +64,13 @@ public class GameMainQuest {
         this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
         this.questGroupSuites = new ArrayList<>();
         addAllChildQuests();
+    }
+
+    public List<Integer> getQuestVarsUpdate() {
+        if(questVarsUpdate == null){
+            questVarsUpdate = new ArrayList<>();
+        }
+        return questVarsUpdate;
     }
 
     private void addAllChildQuests() {
@@ -166,10 +172,10 @@ public class GameMainQuest {
         }
 
         // handoff main quest
-        if (mainQuestData.getSuggestTrackMainQuestList() != null) {
-            Arrays.stream(mainQuestData.getSuggestTrackMainQuestList())
-                .forEach(getQuestManager()::startMainQuest);
-        }
+        // if (mainQuestData.getSuggestTrackMainQuestList() != null) {
+        //     Arrays.stream(mainQuestData.getSuggestTrackMainQuestList())
+        //         .forEach(getQuestManager()::startMainQuest);
+        // }
     }
     //TODO
     public void fail() {}
@@ -181,9 +187,9 @@ public class GameMainQuest {
             return null;
         }
 
-        /*if(rewindPositions.isEmpty()){
-            addRewindPoints();
-        }*/
+        // if(rewindPositions.isEmpty()){
+        //     this.addRewindPoints();
+        // }
 
         List<Position> posAndRot = new ArrayList<>();
         if(hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)){
@@ -198,8 +204,8 @@ public class GameMainQuest {
             if (hasRewindPosition(quest.getSubQuestId(), posAndRot)) {
                 return posAndRot;
             }
-
         }
+
         return null;
     }
 

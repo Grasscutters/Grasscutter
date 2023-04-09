@@ -122,6 +122,7 @@ public class GameQuest {
         getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
+        this.save();
     }
 
     public String getTriggerNameById(int id) {
@@ -226,6 +227,9 @@ public class GameQuest {
         if (getQuestData().getSubId() == 35402) {
             getOwner().getInventory().addItem(1021, 1, ActionReason.QuestItem); // amber item id
         }
+
+        this.save();
+
         Grasscutter.getLogger().debug("Quest {} is finished", subQuestId);
     }
 

@@ -15,6 +15,7 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
@@ -44,6 +45,7 @@ import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
+import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
@@ -51,20 +53,18 @@ import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
-import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
+import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
@@ -88,6 +88,7 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Stream;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
@@ -472,6 +473,8 @@ public class Player {
 
             // Handle open state unlocks from level-up.
             this.getProgressManager().tryUnlockOpenStates();
+            this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_PLAYER_LEVEL_UP, level);
+            this.getQuestManager().queueEvent(QuestCond.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER, level);
 
             return true;
         }
@@ -613,7 +616,7 @@ public class Player {
 
     public void onEnterRegion(SceneRegion region) {
         getQuestManager().forEachActiveQuest(quest -> {
-            if (quest.getTriggers().containsKey("ENTER_REGION_" + region.config_id)) {
+            if (quest.getTriggerData() != null && quest.getTriggers().containsKey("ENTER_REGION_"+ region.config_id)) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_" + region.config_id, true))) {
                     //getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
@@ -824,6 +827,85 @@ public class Player {
         addAvatar(avatar, true);
     }
 
+    public void addAvatar(int avatarId) {
+        // I dont see why we cant do this lolz
+        addAvatar(new Avatar(avatarId), true);
+    }
+
+    public List<Integer> getTrialAvatarParam (int trialAvatarId) {
+        if (GameData.getTrialAvatarCustomData().isEmpty()) { // use default data if custom data not available
+            if (GameData.getTrialAvatarDataMap().get(trialAvatarId) == null) return List.of();
+
+            return GameData.getTrialAvatarDataMap().get(trialAvatarId)
+                .getTrialAvatarParamList();
+        }
+        // use custom data
+        if (GameData.getTrialAvatarCustomData().get(trialAvatarId) == null) return List.of();
+
+        var trialCustomParams = GameData.getTrialAvatarCustomData().get(trialAvatarId).getTrialAvatarParamList();
+        return trialCustomParams.isEmpty() ? List.of() : Stream.of(trialCustomParams.get(0).split(";")).map(Integer::parseInt).toList();
+    }
+
+    public boolean addTrialAvatar(int trialAvatarId, GrantReason reason, int questMainId){
+        List<Integer> trialAvatarBasicParam = getTrialAvatarParam(trialAvatarId);
+        if (trialAvatarBasicParam.isEmpty()) return false;
+
+        Avatar avatar = new Avatar(trialAvatarBasicParam.get(0));
+        if (avatar.getAvatarData() == null || !hasSentLoginPackets()) return false;
+
+        avatar.setOwner(this);
+        // Add trial weapons and relics
+        avatar.setTrialAvatarInfo(trialAvatarBasicParam.get(1), trialAvatarId, reason, questMainId);
+        avatar.equipTrialItems();
+        // Recalc stats
+        avatar.recalcStats();
+
+        // Packet, mimic official server behaviour, add to player's bag but not saving to db
+        sendPacket(new PacketAvatarAddNotify(avatar, false));
+        // add to avatar to temporary trial team
+        getTeamManager().addAvatarToTrialTeam(avatar);
+        return true;
+    }
+
+    public boolean addTrialAvatarForQuest(int trialAvatarId, int questMainId) {
+        // TODO: Find method for 'setupTrialAvatarTeamForQuest'.
+        getTeamManager().setupTrialAvatars(true);
+        if (!addTrialAvatar(
+            trialAvatarId,
+            GrantReason.GRANT_REASON_BY_QUEST,
+            questMainId)) return false;
+        getTeamManager().trialAvatarTeamPostUpdate();
+        // Packet, mimic official server behaviour, neccessary to stop player from modifying team
+        sendPacket(new PacketAvatarTeamUpdateNotify(this));
+        return true;
+    }
+
+    public void addTrialAvatarsForActivity(List<Integer> trialAvatarIds) {
+        getTeamManager().setupTrialAvatars(false);
+        trialAvatarIds.forEach(trialAvatarId -> addTrialAvatar(
+            trialAvatarId,
+            GrantReason.GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY,
+            0));
+        getTeamManager().trialAvatarTeamPostUpdate(0);
+    }
+
+    public boolean removeTrialAvatarForQuest(int trialAvatarId) {
+        if (!getTeamManager().isUsingTrialTeam()) return false;
+
+        sendPacket(new PacketAvatarDelNotify(List.of(getTeamManager().getTrialAvatarGuid(trialAvatarId))));
+        getTeamManager().removeTrialAvatarTeam(trialAvatarId);
+        sendPacket(new PacketAvatarTeamUpdateNotify());
+        return true;
+    }
+
+    public void removeTrialAvatarForActivity() {
+        if (!getTeamManager().isUsingTrialTeam()) return;
+
+        sendPacket(new PacketAvatarDelNotify(getTeamManager().getActiveTeam().stream()
+            .map(x -> x.getAvatar().getGuid()).toList()));
+        getTeamManager().removeTrialAvatarTeam();
+    }
+
     public void addFlycloak(int flycloakId) {
         this.getFlyCloakList().add(flycloakId);
         this.sendPacket(new PacketAvatarGainFlycloakNotify(flycloakId));
@@ -832,6 +914,11 @@ public class Player {
     public void addCostume(int costumeId) {
         this.getCostumeList().add(costumeId);
         this.sendPacket(new PacketAvatarGainCostumeNotify(costumeId));
+    }
+
+    public void addPersonalLine(int personalLineId) {
+        this.getPersonalLineList().add(personalLineId);
+        session.getPlayer().getQuestManager().queueEvent(QuestCond.QUEST_COND_PERSONAL_LINE_UNLOCK, personalLineId);
     }
 
     public void addNameCard(int nameCardId) {
@@ -863,6 +950,46 @@ public class Player {
         this.getServer().getChatSystem().sendPrivateMessageFromServer(getUid(), message.toString());
     }
 
+    public void setAvatarsAbilityForScene(Scene scene) {
+        try {
+            var levelEntityConfig = scene.getSceneData().getLevelEntityConfig();
+            var config = GameData.getConfigLevelEntityDataMap().get(levelEntityConfig);
+            if (config == null){
+                return;
+            }
+
+            List<Integer> avatarIds = scene.getSceneData().getSpecifiedAvatarList();
+            List<EntityAvatar> specifiedAvatarList = getTeamManager().getActiveTeam();
+
+            if (avatarIds != null && avatarIds.size() > 0){
+                // certain scene could limit specifc avatars' entry
+                specifiedAvatarList.clear();
+                for (int id : avatarIds){
+                    var avatar = getAvatars().getAvatarById(id);
+                    if (avatar == null){
+                        continue;
+                    }
+                    specifiedAvatarList.add(new EntityAvatar(scene, avatar));
+                }
+            }
+
+            for (EntityAvatar entityAvatar : specifiedAvatarList){
+                var avatarData = entityAvatar.getAvatar().getAvatarData();
+                if (avatarData == null){
+                    continue;
+                }
+                avatarData.buildEmbryo();
+                if (config.getAvatarAbilities() == null){
+                    continue; // continue and not break because has to rebuild ability for the next avatar if any
+                }
+                for (var abilities : config.getAvatarAbilities()){
+                    avatarData.getAbilities().add(Utils.abilityHash(abilities.getAbilityName()));
+                }
+            }
+        } catch (Exception e){
+            Grasscutter.getLogger().error("Error applying level entity config for scene {}", scene.getSceneData().getId(), e);
+        }
+    }
     /**
      * Sends a message to another player.
      *
@@ -982,7 +1109,7 @@ public class Player {
             }
         }
 
-        SocialDetail.Builder social = SocialDetail.newBuilder()
+        return SocialDetail.newBuilder()
             .setUid(this.getUid())
             .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
             .setNickname(this.getNickname())
@@ -996,7 +1123,6 @@ public class Player {
             .addAllShowNameCardIdList(this.getShowNameCardInfoList())
             .setFinishAchievementNum(this.getFinishedAchievementNum())
             .setFriendEnterHomeOptionValue(this.getHome() == null ? 0 : this.getHome().getEnterHomeOption());
-        return social;
     }
 
     public int getFinishedAchievementNum() {
@@ -1135,6 +1261,8 @@ public class Player {
 
         // Home resources
         this.getHome().updateHourlyResources(this);
+
+        this.getQuestManager().onTick();
     }
 
     private synchronized void doDailyReset() {
@@ -1200,12 +1328,17 @@ public class Player {
         this.achievements = Achievements.getByPlayer(this);
         this.getAvatars().loadFromDatabase();
         this.getInventory().loadFromDatabase();
-        this.loadBattlePassManager(); // Call before avatar postLoad to avoid null pointer
-        this.getAvatars().postLoad(); // Needs to be called after inventory is handled
 
         this.getFriendsList().loadFromDatabase();
         this.getMailHandler().loadFromDatabase();
         this.getQuestManager().loadFromDatabase();
+
+        this.loadBattlePassManager();
+        this.getAvatars().postLoad(); // Needs to be called after inventory is handled
+    }
+
+    public void onPlayerBorn() {
+        getQuestManager().onPlayerBorn();
     }
 
     public void onLogin() {

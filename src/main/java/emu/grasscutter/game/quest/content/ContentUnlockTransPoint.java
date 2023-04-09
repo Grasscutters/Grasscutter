@@ -11,6 +11,9 @@ public class ContentUnlockTransPoint extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        return condition.getParam()[0] == params[0] && condition.getParam()[1] == params[1];
+        var sceneId = condition.getParam()[0];
+        var scenePointId = condition.getParam()[1];
+        var scenePoints = quest.getOwner().getUnlockedScenePoints().get(sceneId);
+        return scenePoints != null && scenePoints.contains(scenePointId);
     }
 }

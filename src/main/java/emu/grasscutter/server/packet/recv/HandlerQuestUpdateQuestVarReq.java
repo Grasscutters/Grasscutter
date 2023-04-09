@@ -1,11 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass;
-import emu.grasscutter.net.proto.QuestVarOpOuterClass;
+import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq;
+import emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOp;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarRsp;
 import java.util.List;
@@ -17,16 +18,31 @@ public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         // Client sends packets. One with the value, and one with the index and the new value to
         // set/inc/dec
-        var req = QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq.parseFrom(payload);
-        GameMainQuest mainQuest =
-                session.getPlayer().getQuestManager().getMainQuestById(req.getQuestId() / 100);
-        List<QuestVarOpOuterClass.QuestVarOp> questVars = req.getQuestVarOpListList();
-        if (mainQuest.getQuestVarsUpdate().size() == 0) {
-            for (QuestVarOpOuterClass.QuestVarOp questVar : questVars) {
-                mainQuest.getQuestVarsUpdate().add(questVar.getValue());
+        var req = QuestUpdateQuestVarReq.parseFrom(payload);
+        var questManager = session.getPlayer().getQuestManager();
+        var subQuest = questManager.getQuestById(req.getQuestId());
+        var mainQuest = questManager.getMainQuestById(req.getParentQuestId());
+        if (mainQuest == null && subQuest != null) {
+            mainQuest = subQuest.getMainQuest();
+        }
+
+        if (mainQuest == null) {
+            session.send(new PacketQuestUpdateQuestVarRsp(req, Retcode.RET_QUEST_NOT_EXIST));
+            Grasscutter.getLogger()
+                    .debug(
+                            "trying to update QuestVar for non existing quest s{} m{}",
+                            req.getQuestId(),
+                            req.getParentQuestId());
+            return;
+        }
+        List<QuestVarOp> questVars = req.getQuestVarOpListList();
+        var questVarUpdate = mainQuest.getQuestVarsUpdate();
+        if (questVarUpdate.size() == 0) {
+            for (var questVar : questVars) {
+                questVarUpdate.add(questVar.getValue());
             }
         } else {
-            for (QuestVarOpOuterClass.QuestVarOp questVar : questVars) {
+            for (QuestVarOp questVar : questVars) {
                 if (questVar.getIsAdd()) {
                     if (questVar.getValue() >= 0) {
                         mainQuest.incQuestVar(questVar.getIndex(), questVar.getValue());
@@ -34,12 +50,12 @@ public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
                         mainQuest.decQuestVar(questVar.getIndex(), questVar.getValue());
                     }
                 } else {
-                    mainQuest.setQuestVar(questVar.getIndex(), mainQuest.getQuestVarsUpdate().get(0));
+                    mainQuest.setQuestVar(questVar.getIndex(), questVarUpdate.get(0));
                 }
                 // remove the first element from the update list
-                mainQuest.getQuestVarsUpdate().remove(0);
+                questVarUpdate.remove(0);
             }
         }
-        session.send(new PacketQuestUpdateQuestVarRsp(req.getQuestId()));
+        session.send(new PacketQuestUpdateQuestVarRsp(req));
     }
 }

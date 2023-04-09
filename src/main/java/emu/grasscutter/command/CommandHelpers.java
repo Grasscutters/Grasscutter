@@ -25,6 +25,8 @@ public class CommandHelpers {
     public static final Pattern atkRegex = Pattern.compile("atk(\\d+)");
     public static final Pattern defRegex = Pattern.compile("def(\\d+)");
     public static final Pattern aiRegex = Pattern.compile("ai(\\d+)");
+    public static final Pattern sceneRegex = Pattern.compile("scene(\\d+)");
+    public static final Pattern suiteRegex = Pattern.compile("suite(\\d+)");
 
     public static int matchIntOrNeg(Pattern pattern, String arg) {
         Matcher match = pattern.matcher(arg);

@@ -10,9 +10,8 @@ public class PacketScenePointUnlockNotify extends BasePacket {
 
         ScenePointUnlockNotify.Builder p =
                 ScenePointUnlockNotify.newBuilder()
-                        .setSceneId(sceneId)
-                        .addPointList(pointId)
-                        .addUnhidePointList(pointId);
+                    .setSceneId(sceneId)
+                    .addPointList(pointId);
 
         this.setData(p);
     }
@@ -22,9 +21,8 @@ public class PacketScenePointUnlockNotify extends BasePacket {
 
         ScenePointUnlockNotify.Builder p =
                 ScenePointUnlockNotify.newBuilder()
-                        .setSceneId(sceneId)
-                        .addAllPointList(pointIds)
-                        .addAllUnhidePointList(pointIds);
+                    .setSceneId(sceneId)
+                    .addAllPointList(pointIds);
 
         this.setData(p);
     }

@@ -11,7 +11,7 @@ import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 public class ExecAddCurAvatarEnergy extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
-        Grasscutter.getLogger().info("Energy refilled");
+        Grasscutter.getLogger().debug("Energy refilled");
         return quest.getOwner().getEnergyManager().refillActiveEnergy();
     }
 }
