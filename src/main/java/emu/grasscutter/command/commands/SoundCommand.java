@@ -11,11 +11,11 @@ import java.util.List;
 import lombok.val;
 
 @Command(
-    label = "sound",
-    aliases = {"s", "audio"},
-    usage = {"[<audioname>] [<x><y><z>]"},
-    permission = "player.group",
-    permissionTargeted = "player.group.others")
+        label = "sound",
+        aliases = {"s", "audio"},
+        usage = {"[<audioname>] [<x><y><z>]"},
+        permission = "player.group",
+        permissionTargeted = "player.group.others")
 public final class SoundCommand implements CommandHandler {
 
     @Override
@@ -42,7 +42,7 @@ public final class SoundCommand implements CommandHandler {
             return;
         }
         targetPlayer
-            .getScene()
-            .broadcastPacket(new PacketScenePlayerSoundNotify(playPosition, soundName, 1));
+                .getScene()
+                .broadcastPacket(new PacketScenePlayerSoundNotify(playPosition, soundName, 1));
     }
 }

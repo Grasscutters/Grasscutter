@@ -15,13 +15,12 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
-import org.luaj.vm2.LuaError;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
+import org.luaj.vm2.LuaError;
 
 public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler

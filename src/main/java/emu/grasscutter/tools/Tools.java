@@ -12,7 +12,6 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;

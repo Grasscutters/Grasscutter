@@ -4,7 +4,6 @@ import com.esotericsoftware.reflectasm.ConstructorAccess;
 import com.esotericsoftware.reflectasm.MethodAccess;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptUtils;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

@@ -4,3 +4,4 @@
 *.properties text=lf
 *.py text=lf
 *.sh text=lf
+* text eol=lf

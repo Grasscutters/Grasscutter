@@ -17,6 +17,7 @@ public class CompoundData extends GameResource {
 
     @SerializedName("groupID")
     private int groupId;
+
     private int rankLevel;
     private boolean isDefaultUnlocked;
     private int costTime;

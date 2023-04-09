@@ -2,11 +2,10 @@ package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum ItemQuality {
     QUALITY_NONE(0),

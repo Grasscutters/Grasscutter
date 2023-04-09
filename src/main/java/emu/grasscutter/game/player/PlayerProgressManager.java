@@ -1,5 +1,7 @@
 package emu.grasscutter.game.player;
 
+import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
@@ -14,8 +16,6 @@ import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.*;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
 
 // @Entity
 public final class PlayerProgressManager extends BasePlayerDataManager {

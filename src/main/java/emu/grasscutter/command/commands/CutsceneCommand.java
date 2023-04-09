@@ -8,11 +8,11 @@ import java.util.List;
 import lombok.val;
 
 @Command(
-    label = "cutscene",
-    aliases = {"c"},
-    usage = {"[<cutsceneId>]"},
-    permission = "player.group",
-    permissionTargeted = "player.group.others")
+        label = "cutscene",
+        aliases = {"c"},
+        usage = {"[<cutsceneId>]"},
+        permission = "player.group",
+        permissionTargeted = "player.group.others")
 public final class CutsceneCommand implements CommandHandler {
 
     @Override

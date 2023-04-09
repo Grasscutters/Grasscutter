@@ -238,7 +238,7 @@ public final class GameServer extends KcpServer {
 
     public void deregisterWorld(World world) {
         // TODO Auto-generated method stub
-        world.save(); //Save the player's world
+        world.save(); // Save the player's world
     }
 
     public void start() {

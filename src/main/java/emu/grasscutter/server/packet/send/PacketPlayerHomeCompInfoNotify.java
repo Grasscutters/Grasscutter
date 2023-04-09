@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass;
-
 import java.util.List;
 
 public class PacketPlayerHomeCompInfoNotify extends BasePacket {

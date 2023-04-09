@@ -14,10 +14,7 @@ public class PacketPlayerEnterDungeonRsp extends BasePacket {
                 PlayerEnterDungeonRsp.newBuilder()
                         .setPointId(pointId)
                         .setDungeonId(dungeonId)
-                        .setRetcode(
-                                success
-                                        ? Retcode.RET_SUCC_VALUE
-                                        : Retcode.RET_FAIL_VALUE)
+                        .setRetcode(success ? Retcode.RET_SUCC_VALUE : Retcode.RET_FAIL_VALUE)
                         .build();
 
         this.setData(proto);
