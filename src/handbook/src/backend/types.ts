@@ -19,6 +19,7 @@ export type Item = {
     name: string;
     quality: Quality;
     type: ItemType;
+    icon: string;
 };
 
 export enum Target {
@@ -49,6 +50,7 @@ export enum ItemType {
 
 export enum ItemCategory {
     Constellation,
+    Avatar,
     Weapon,
     Artifact,
     Furniture,

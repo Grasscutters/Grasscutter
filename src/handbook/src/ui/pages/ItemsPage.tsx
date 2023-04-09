@@ -67,6 +67,21 @@ class ItemsPage extends React.Component<{}, IState> {
         this.setState({ search: event.target.value });
     }
 
+    /**
+     * Should the item be showed?
+     *
+     * @param item The item.
+     * @private
+     */
+    private showItem(item: ItemType): boolean {
+        // Check if the item has an icon.
+        if (item.icon.length == 0) return false;
+        // Check if the item is a TCG card.
+        if (item.icon.includes("Gcg")) return false;
+
+        return item.id > 0;
+    }
+
     render() {
         const items = this.getItems();
 
@@ -87,11 +102,9 @@ class ItemsPage extends React.Component<{}, IState> {
                 {
                     items.length > 0 ? (
                         <VirtualizedGrid
-                            list={items} itemHeight={64}
+                            list={items.filter(item => this.showItem(item))} itemHeight={64}
                             itemsPerRow={20} gap={5} itemGap={5}
-                            render={(item) => (
-                                <Item key={item.id} data={item} />
-                            )}
+                            render={(item) => <Item key={item.id} data={item} />}
                         />
                     ) : undefined
                 }

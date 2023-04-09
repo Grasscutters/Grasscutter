@@ -1,33 +1,15 @@
 import React from "react";
 
 import type { Avatar } from "@backend/types";
-import { colorFor } from "@app/utils";
+import { colorFor, formatAvatarName } from "@app/utils";
 
 import "@css/widgets/Character.scss";
 
 // Image base URL: https://paimon.moe/images/characters/(name).png
 
-/**
- * Formats a character's name to fit with the reference name.
- * Example: Hu Tao -> hu_tao
- *
- * @param name The character's name.
- * @param id The character's ID.
- */
-function formatName(name: string, id: number): string {
-    // Check if a different name is used for the character.
-    if (refSwitch[id]) name = refSwitch[id];
-    return name.toLowerCase().replace(" ", "_");
-}
-
 const ignored = [
     10000001 // Kate
 ];
-
-const refSwitch: { [key: number]: string } = {
-    10000005: "traveler_anemo",
-    10000007: "traveler_geo"
-};
 
 const nameSwitch: { [key: number]: string } = {
     10000005: "Lumine",
@@ -55,7 +37,7 @@ class Character extends React.PureComponent<IProps> {
                 <img
                     className={"Character_Icon"}
                     alt={name}
-                    src={`https://paimon.moe/images/characters/${formatName(name, id)}.png`}
+                    src={`https://paimon.moe/images/characters/${formatAvatarName(name, id)}.png`}
                 />
 
                 <div className={"Character_Label"}>

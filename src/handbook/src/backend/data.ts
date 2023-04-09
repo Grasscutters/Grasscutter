@@ -9,15 +9,16 @@ import { inRange } from "@app/utils";
 
 type AvatarDump = { [key: number]: Avatar };
 type CommandDump = { [key: string]: Command };
-type TaggedItems = { [key: number]: Item[] }
+type TaggedItems = { [key: number]: Item[] };
+type ItemIcons = { [key: number]: string };
 
-/*
- * Notes on artifacts:
- * TODO: Figure out what suffix is for which artifact type.
+/**
+ * @see {@file src/handbook/data/README.md}
  */
 
 export const sortedItems: TaggedItems = {
     [ItemCategory.Constellation]: [], // Range: 1102 - 11xx
+    [ItemCategory.Avatar]: [], // Range: 1002 - 10xx
     [ItemCategory.Weapon]: [],
     [ItemCategory.Artifact]: [],
     [ItemCategory.Furniture]: [],
@@ -32,15 +33,27 @@ export const sortedItems: TaggedItems = {
 export function setup(): void {
     getItems().forEach(item => {
         switch (item.type) {
-            case ItemType.Weapon: sortedItems[ItemCategory.Weapon].push(item); break;
-            case ItemType.Material: sortedItems[ItemCategory.Material].push(item); break;
-            case ItemType.Furniture: sortedItems[ItemCategory.Furniture].push(item); break;
-            case ItemType.Reliquary: sortedItems[ItemCategory.Artifact].push(item); break;
+            case ItemType.Weapon:
+                sortedItems[ItemCategory.Weapon].push(item);
+                break;
+            case ItemType.Material:
+                sortedItems[ItemCategory.Material].push(item);
+                break;
+            case ItemType.Furniture:
+                sortedItems[ItemCategory.Furniture].push(item);
+                break;
+            case ItemType.Reliquary:
+                sortedItems[ItemCategory.Artifact].push(item);
+                break;
         }
 
         // Sort constellations.
         if (inRange(item.id, 1102, 1199)) {
             sortedItems[ItemCategory.Constellation].push(item);
+        }
+        // Sort avatars.
+        if (inRange(item.id, 1002, 1099)) {
+            sortedItems[ItemCategory.Avatar].push(item);
         }
     });
 }
@@ -88,14 +101,15 @@ export function listAvatars(): Avatar[] {
  * Fetches and casts all items in the file.
  */
 export function getItems(): Item[] {
-    return items.map((item) => {
-        const values = Object.values(item) as [string, string, string, string];
+    return items.map((entry) => {
+        const values = Object.values(entry) as string[];
         const id = parseInt(values[0]);
         return {
             id,
             name: values[1],
-            type: values[2] as ItemType,
-            quality: values[3] as Quality
+            type: values[3] as ItemType,
+            quality: values[2] as Quality,
+            icon: values[4]
         };
     });
 }
