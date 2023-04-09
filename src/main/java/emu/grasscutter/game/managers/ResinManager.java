@@ -6,6 +6,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
@@ -152,14 +153,14 @@ public class ResinManager extends BasePlayerManager {
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
-    public boolean buy() {
+    public int buy() {
         if (this.player.getResinBuyCount() >= MAX_RESIN_BUYING_COUNT) {
-            return false;
+            return RetcodeOuterClass.Retcode.RET_RESIN_BOUGHT_COUNT_EXCEEDED_VALUE;
         }
 
         var res = this.player.getInventory().payItem(201, HCOIN_NUM_TO_BUY_RESIN[this.player.getResinBuyCount()]);
         if (!res) {
-            return false;
+            return RetcodeOuterClass.Retcode.RET_HCOIN_NOT_ENOUGH_VALUE;
         }
 
         this.player.setResinBuyCount(this.player.getResinBuyCount() + 1);
@@ -167,6 +168,6 @@ public class ResinManager extends BasePlayerManager {
         this.addResin(AMOUNT_TO_ADD);
         this.player.sendPacket(new PacketItemAddHintNotify(new GameItem(106, AMOUNT_TO_ADD), ActionReason.BuyResin));
 
-        return true;
+        return 0;
     }
 }
