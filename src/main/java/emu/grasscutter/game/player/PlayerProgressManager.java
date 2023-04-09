@@ -5,13 +5,17 @@ import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.enums.ParentQuestState;
 import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.*;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
 
 // @Entity
 public final class PlayerProgressManager extends BasePlayerDataManager {
@@ -33,22 +37,25 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             GameData.getOpenStateList().stream()
                     .filter(
                             s ->
-                                    s.isDefaultState() // Actual default-opened states.
+                                    s.isDefaultState() && !s.isAllowClientOpen() // Actual default-opened states.
+                                            || ((s.getCond().size() == 1)
+                                                    && (s.getCond().get(0).getCondType()
+                                                            == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL)
+                                                    && (s.getCond().get(0).getParam() == 1))
                                             // All states whose unlock we don't handle correctly yet.
                                             || (s.getCond().stream()
-                                                            .filter(
-                                                                    c ->
-                                                                            c.getCondType()
-                                                                                    == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL)
-                                                            .count()
-                                                    == 0)
+                                                    .anyMatch(
+                                                            c ->
+                                                                    c.getCondType() == OpenStateCondType.OPEN_STATE_OFFERING_LEVEL
+                                                                            || c.getCondType()
+                                                                                    == OpenStateCondType.OPEN_STATE_CITY_REPUTATION_LEVEL))
                                             // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a
                                             // working chat.
                                             || s.getId() == 1)
                     .filter(
                             s ->
                                     !BLACKLIST_OPEN_STATES.contains(s.getId())) // Filter out states in the blacklist.
-                    .map(s -> s.getId())
+                    .map(OpenStateData::getId)
                     .collect(Collectors.toSet());
 
     public PlayerProgressManager(Player player) {
@@ -88,6 +95,10 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         if (value != previousValue) {
             this.player.getOpenStates().put(openState, value);
 
+            this.player
+                    .getQuestManager()
+                    .queueEvent(QuestCond.QUEST_COND_OPEN_STATE_EQUAL, openState, value);
+
             if (sendNotify) {
                 player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
             }
@@ -104,19 +115,31 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
     private boolean areConditionsMet(OpenStateData openState) {
         // Check all conditions and test if at least one of them is violated.
         for (var condition : openState.getCond()) {
-            // For level conditions, check if the player has reached the necessary level.
-            if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL) {
-                if (this.player.getLevel() < condition.getParam()) {
-                    return false;
+            switch (condition.getCondType()) {
+                    // For level conditions, check if the player has reached the necessary level.
+                case OPEN_STATE_COND_PLAYER_LEVEL -> {
+                    if (this.player.getLevel() < condition.getParam()) {
+                        return false;
+                    }
                 }
-            } else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_QUEST) {
-                // ToDo: Implement.
-            } else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_PARENT_QUEST) {
-                // ToDo: Implement.
-            } else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_OFFERING_LEVEL) {
-                // ToDo: Implement.
-            } else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_CITY_REPUTATION_LEVEL) {
-                // ToDo: Implement.
+                case OPEN_STATE_COND_QUEST -> {
+                    // check sub quest id for quest finished met requirements
+                    var quest = this.player.getQuestManager().getQuestById(condition.getParam());
+                    if (quest == null || quest.getState() != QuestState.QUEST_STATE_FINISHED) {
+                        return false;
+                    }
+                }
+                case OPEN_STATE_COND_PARENT_QUEST -> {
+                    // check main quest id for quest finished met requirements
+                    // TODO not sure if its having or finished quest
+                    var mainQuest = this.player.getQuestManager().getMainQuestById(condition.getParam());
+                    if (mainQuest == null
+                            || mainQuest.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED) {
+                        return false;
+                    }
+                }
+                    // ToDo: Implement.
+                case OPEN_STATE_OFFERING_LEVEL, OPEN_STATE_CITY_REPUTATION_LEVEL -> {}
             }
         }
 
@@ -229,6 +252,10 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player
                 .getQuestManager()
                 .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
+        this.player
+                .getScene()
+                .getScriptManager()
+                .callEvent(new ScriptArgs(0, EVENT_UNLOCK_TRANS_POINT, sceneId, pointId));
 
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));

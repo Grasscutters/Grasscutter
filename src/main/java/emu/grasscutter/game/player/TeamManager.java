@@ -68,6 +68,8 @@ public final class TeamManager extends BasePlayerDataManager {
         this.gadgets = new HashSet<>();
         this.teamResonances = new IntOpenHashSet();
         this.teamResonancesConfig = new IntOpenHashSet();
+        this.trialAvatars = new HashMap<>();
+        this.trialAvatarTeam = new TeamInfo();
     }
 
     public TeamManager(Player player) {

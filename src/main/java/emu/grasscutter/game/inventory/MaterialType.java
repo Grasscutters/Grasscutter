@@ -2,6 +2,8 @@ package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -61,7 +63,7 @@ public enum MaterialType {
                         });
     }
 
-    private final int value;
+    @Getter private final int value;
 
     MaterialType(int value) {
         this.value = value;
@@ -73,9 +75,5 @@ public enum MaterialType {
 
     public static MaterialType getTypeByName(String name) {
         return stringMap.getOrDefault(name, MATERIAL_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

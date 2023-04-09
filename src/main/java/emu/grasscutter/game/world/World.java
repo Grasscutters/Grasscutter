@@ -217,7 +217,12 @@ public class World implements Iterable<Player> {
     }
 
     public void deregisterScene(Scene scene) {
+        scene.saveGroups();
         this.getScenes().remove(scene.getId());
+    }
+
+    public void save() {
+        this.getScenes().values().forEach(Scene::saveGroups);
     }
 
     public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
@@ -299,6 +304,7 @@ public class World implements Iterable<Player> {
         }
 
         Scene oldScene = null;
+
         if (player.getScene() != null) {
             oldScene = player.getScene();
 
@@ -312,8 +318,13 @@ public class World implements Iterable<Player> {
 
         var newScene = this.getSceneById(teleportProperties.getSceneId());
         newScene.addPlayer(player);
-        player.getTeamManager().applyAbilities(newScene);
-
+        player.setAvatarsAbilityForScene(newScene);
+        // Dungeon
+        // Dungeon system is handling this already
+        // if(dungeonData!=null){
+        //     var dungeonManager = new DungeonManager(newScene, dungeonData);
+        //     dungeonManager.startDungeon();
+        // }
         SceneConfig config = newScene.getScriptManager().getConfig();
         if (teleportProperties.getTeleportTo() == null && config != null) {
             if (config.born_pos != null) {

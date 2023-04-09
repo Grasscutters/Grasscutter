@@ -157,6 +157,10 @@ public abstract class GameEntity {
         this.damage(amount, 0, ElementType.None);
     }
 
+    public void damage(float amount, ElementType attackType) {
+        this.damage(amount, 0, attackType);
+    }
+
     public void damage(float amount, int killerId, ElementType attackType) {
         // Check if the entity has properties.
         if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
@@ -177,12 +181,15 @@ public abstract class GameEntity {
             this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
         }
 
+        this.lastAttackType = attackType;
+
         // Check if dead
         boolean isDead = false;
         if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
             this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
             isDead = true;
         }
+        this.runLuaCallbacks(event);
 
         // Packets
         this.getScene()

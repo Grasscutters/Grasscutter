@@ -55,14 +55,11 @@ public class EntityAvatar extends GameEntity {
 
         this.avatar = avatar;
         this.avatar.setCurrentEnergy();
+        if (scene != null) this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 
-        if (getScene() != null) {
-            this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
-
-            var weapon = getAvatar().getWeapon();
-            if (weapon != null) {
-                weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
-            }
+        GameItem weapon = this.getAvatar().getWeapon();
+        if (weapon != null) {
+            weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
         }
     }
 

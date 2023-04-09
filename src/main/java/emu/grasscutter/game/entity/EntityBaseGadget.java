@@ -2,9 +2,14 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.utils.Position;
 import lombok.Getter;
+
+import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_GADGET_HP_CHANGE;
 
 public abstract class EntityBaseGadget extends GameEntity {
     @Getter(onMethod_ = @Override)
@@ -33,6 +38,29 @@ public abstract class EntityBaseGadget extends GameEntity {
     @Override
     public void onDeath(int killerId) {
         super.onDeath(killerId); // Invoke super class's onDeath() method.
+
+        getScene()
+                .getPlayers()
+                .forEach(
+                        p ->
+                                p.getQuestManager()
+                                        .queueEvent(QuestContent.QUEST_CONTENT_DESTROY_GADGET, this.getGadgetId()));
+    }
+
+    @Override
+    public void runLuaCallbacks(EntityDamageEvent event) {
+        super.runLuaCallbacks(event);
+        getScene()
+                .getScriptManager()
+                .callEvent(
+                        new ScriptArgs(
+                                        this.getGroupId(),
+                                        EVENT_SPECIFIC_GADGET_HP_CHANGE,
+                                        getConfigId(),
+                                        getGadgetId())
+                                .setSourceEntityId(getId())
+                                .setParam3((int) this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP))
+                                .setEventSource(Integer.toString(getConfigId())));
     }
 
     protected void fillFightProps(ConfigEntityGadget configGadget) {

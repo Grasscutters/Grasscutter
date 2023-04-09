@@ -57,6 +57,7 @@ public class GameItem {
 
     @Getter @Setter private int equipCharacter;
     @Transient @Getter @Setter private int weaponEntityId;
+    @Transient @Getter private boolean newItem = false;
 
     public GameItem() {
         // Morphia only
@@ -116,6 +117,30 @@ public class GameItem {
         }
     }
 
+    public int getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwner(Player player) {
+        this.ownerId = player.getUid();
+        this.guid = player.getNextGameGuid();
+    }
+
+    public void checkIsNew(Inventory inventory) {
+        // display notification when player obtain new item
+        if (inventory.getItemByGuid(this.itemId) == null) {
+            this.newItem = true;
+        }
+    }
+
+    public ObjectId getObjectId() {
+        return id;
+    }
+
+    public ItemType getItemType() {
+        return this.itemData.getItemType();
+    }
+
     public static int getMinPromoteLevel(int level) {
         if (level > 80) {
             return 6;
@@ -131,23 +156,6 @@ public class GameItem {
             return 1;
         }
         return 0;
-    }
-
-    public int getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwner(Player player) {
-        this.ownerId = player.getUid();
-        this.guid = player.getNextGameGuid();
-    }
-
-    public ObjectId getObjectId() {
-        return id;
-    }
-
-    public ItemType getItemType() {
-        return this.itemData.getItemType();
     }
 
     public int getEquipSlot() {
@@ -353,7 +361,7 @@ public class GameItem {
         return ItemHint.newBuilder()
                 .setItemId(getItemId())
                 .setCount(getCount())
-                .setIsNew(false)
+                .setIsNew(this.isNewItem())
                 .build();
     }
 

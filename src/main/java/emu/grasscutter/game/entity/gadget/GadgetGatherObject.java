@@ -1,6 +1,8 @@
 package emu.grasscutter.game.entity.gadget;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.GatherData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
@@ -15,15 +17,25 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Utils;
 
-public class GadgetGatherObject extends GadgetContent {
+public final class GadgetGatherObject extends GadgetContent {
     private int itemId;
     private boolean isForbidGuest;
 
     public GadgetGatherObject(EntityGadget gadget) {
         super(gadget);
 
+        // overwrites the default spawn handling
         if (gadget.getSpawnEntry() != null) {
             this.itemId = gadget.getSpawnEntry().getGatherItemId();
+            return;
+        }
+
+        GatherData gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
+        if (gatherData != null) {
+            this.itemId = gatherData.getItemId();
+            this.isForbidGuest = gatherData.isForbidGuest();
+        } else {
+            Grasscutter.getLogger().error("invalid gather object: {}", gadget.getConfigId());
         }
     }
 

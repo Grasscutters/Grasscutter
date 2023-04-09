@@ -116,7 +116,7 @@ public class WorldChallenge {
 
     public void fail() {
         if (!this.inProgress()) return;
-        this.finish(true);
+        this.finish(false);
 
         this.getScene()
                 .getScriptManager()
@@ -127,7 +127,7 @@ public class WorldChallenge {
     private void finish(boolean success) {
         this.progress = false;
         this.success = success;
-        this.finishedTime = (int) ((System.currentTimeMillis() - this.startedAt) / 1000L);
+        this.finishedTime = (int) ((this.scene.getSceneTimeSeconds() - this.startedAt));
         getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
     }
 

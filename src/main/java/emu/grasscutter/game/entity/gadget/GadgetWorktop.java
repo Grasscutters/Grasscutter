@@ -11,7 +11,7 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import java.util.Arrays;
 
-public class GadgetWorktop extends GadgetContent {
+public final class GadgetWorktop extends GadgetContent {
     private IntSet worktopOptions;
     private WorktopWorktopOptionHandler handler;
 
@@ -20,6 +20,9 @@ public class GadgetWorktop extends GadgetContent {
     }
 
     public IntSet getWorktopOptions() {
+        if (this.worktopOptions == null) {
+            this.worktopOptions = new IntOpenHashSet();
+        }
         return worktopOptions;
     }
 

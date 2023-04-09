@@ -2,6 +2,8 @@ package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -27,7 +29,7 @@ public enum EquipType {
                         });
     }
 
-    private final int value;
+    @Getter private final int value;
 
     EquipType(int value) {
         this.value = value;
@@ -39,9 +41,5 @@ public enum EquipType {
 
     public static EquipType getTypeByName(String name) {
         return stringMap.getOrDefault(name, EQUIP_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

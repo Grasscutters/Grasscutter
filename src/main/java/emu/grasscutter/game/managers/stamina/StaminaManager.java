@@ -141,6 +141,7 @@ public class StaminaManager extends BasePlayerManager {
         put(242301, 0.8f);
         put(542301, 0.8f);
     }};
+
     private final Logger logger = Grasscutter.getLogger();
     private final HashMap<String, BeforeUpdateStaminaListener> beforeUpdateStaminaListeners = new HashMap<>();
     private final HashMap<String, AfterUpdateStaminaListener> afterUpdateStaminaListeners = new HashMap<>();
@@ -414,13 +415,7 @@ public class StaminaManager extends BasePlayerManager {
     // Internal handler
 
     private void handleImmediateStamina(GameSession session, @NotNull MotionState motionState) {
-        if (currentState == motionState) {
-            if (motionState.equals(MotionState.MOTION_STATE_CLIMB_JUMP)) {
-                updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
-            }
-            return;
-        }
-
+        if (currentState == motionState) return;
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
                 updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
@@ -440,6 +435,73 @@ public class StaminaManager extends BasePlayerManager {
         updateStaminaRelative(session, consumption, true);
     }
 
+    private class SustainedStaminaHandler extends TimerTask {
+        public void run() {
+            boolean moving = isPlayerMoving();
+            int currentCharacterStamina = getCurrentCharacterStamina();
+            int maxCharacterStamina = getMaxCharacterStamina();
+            int currentVehicleStamina = getCurrentVehicleStamina();
+            int maxVehicleStamina = getMaxVehicleStamina();
+            if (moving || (currentCharacterStamina < maxCharacterStamina) || (currentVehicleStamina < maxVehicleStamina)) {
+                logger.trace("Player moving: " + moving + ", stamina full: " +
+                        (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
+                boolean isCharacterStamina = true;
+                Consumption consumption;
+                if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
+                    consumption = getClimbConsumption();
+                } else if (MotionStatesCategorized.get("DASH").contains(currentState)) {
+                    consumption = getDashConsumption();
+                } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
+                    consumption = getFlyConsumption();
+                } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.RUN);
+                } else if (MotionStatesCategorized.get("SKIFF").contains(currentState)) {
+                    consumption = getSkiffConsumption();
+                    isCharacterStamina = false;
+                } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.STANDBY);
+                } else if (MotionStatesCategorized.get("SWIM").contains(currentState)) {
+                    consumption = getSwimConsumptions();
+                } else if (MotionStatesCategorized.get("WALK").contains(currentState)) {
+                    consumption = new Consumption(ConsumptionType.WALK);
+                } else if (MotionStatesCategorized.get("NOCOST_NORECOVER").contains(currentState)) {
+                    consumption = new Consumption();
+                } else if (MotionStatesCategorized.get("OTHER").contains(currentState)) {
+                    consumption = getOtherConsumptions();
+                } else { // ignore
+                    return;
+                }
+
+                if (consumption.amount < 0 && isCharacterStamina) {
+                    // Do not apply reduction factor when recovering stamina
+                    if (player.getTeamManager().getTeamResonances().contains(10301)) {
+                        consumption.amount *= 0.85f;
+                    }
+                }
+                // Delay 1 seconds before starts recovering stamina
+                if (consumption.amount != 0 && cachedSession != null) {
+                    if (consumption.amount < 0) {
+                        staminaRecoverDelay = 0;
+                    }
+                    if (consumption.amount > 0
+                            && consumption.type != ConsumptionType.POWERED_FLY
+                            && consumption.type != ConsumptionType.POWERED_SKIFF) {
+                        // For POWERED_* recover immediately - things like Amber's gliding exam and skiff challenges may require this.
+                        if (staminaRecoverDelay < 5) {
+                            // For others recover after 1 seconds (5 ticks) - as official server does.
+                            staminaRecoverDelay++;
+                            consumption.amount = 0;
+                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
+                        }
+                    }
+                    updateStaminaRelative(cachedSession, consumption, isCharacterStamina);
+                }
+            }
+            previousState = currentState;
+            previousCoordinates = currentCoordinates.clone();
+        }
+    }
+
     private void handleDrowning() {
         // TODO: fix drowning waverider entity
         int stamina = getCurrentCharacterStamina();
@@ -451,6 +513,10 @@ public class StaminaManager extends BasePlayerManager {
             }
         }
     }
+
+    // Consumption Calculators
+
+    // Stamina Consumption Reduction: https://genshin-impact.fandom.com/wiki/Stamina
 
     private Consumption getFightConsumption(int skillCasting) {
         // Talent moving
@@ -470,10 +536,6 @@ public class StaminaManager extends BasePlayerManager {
             default -> new Consumption();
         };
     }
-
-    // Consumption Calculators
-
-    // Stamina Consumption Reduction: https://genshin-impact.fandom.com/wiki/Stamina
 
     private Consumption getClimbConsumption() {
         Consumption consumption = new Consumption();
@@ -552,6 +614,8 @@ public class StaminaManager extends BasePlayerManager {
         return new Consumption();
     }
 
+    // Reduction getter
+
     private float getTalentCostReductionFactor(HashMap<Integer, Float> talentReductionMap) {
         // All known talents reductions are not stackable
         float reduction = 1;
@@ -567,8 +631,6 @@ public class StaminaManager extends BasePlayerManager {
         }
         return reduction;
     }
-
-    // Reduction getter
 
     private float getFoodCostReductionFactor(HashMap<Integer, Float> foodReductionMap) {
         // All known food reductions are not stackable
@@ -633,76 +695,11 @@ public class StaminaManager extends BasePlayerManager {
     private Consumption getSwordCost(int skillId) {
         Consumption consumption = new Consumption(ConsumptionType.FIGHT, -2000);
         // Character specific handling
-        if (skillId == 10421) {
-            consumption.amount = -2500;
+        switch (skillId) {
+            case 10421:
+                consumption.amount = -2500;
+                break;
         }
         return consumption;
-    }
-
-    private class SustainedStaminaHandler extends TimerTask {
-        public void run() {
-            boolean moving = isPlayerMoving();
-            int currentCharacterStamina = getCurrentCharacterStamina();
-            int maxCharacterStamina = getMaxCharacterStamina();
-            int currentVehicleStamina = getCurrentVehicleStamina();
-            int maxVehicleStamina = getMaxVehicleStamina();
-            if (moving || (currentCharacterStamina < maxCharacterStamina) || (currentVehicleStamina < maxVehicleStamina)) {
-                logger.trace("Player moving: " + moving + ", stamina full: " +
-                    (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
-                boolean isCharacterStamina = true;
-                Consumption consumption;
-                if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
-                    consumption = getClimbConsumption();
-                } else if (MotionStatesCategorized.get("DASH").contains(currentState)) {
-                    consumption = getDashConsumption();
-                } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
-                    consumption = getFlyConsumption();
-                } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.RUN);
-                } else if (MotionStatesCategorized.get("SKIFF").contains(currentState)) {
-                    consumption = getSkiffConsumption();
-                    isCharacterStamina = false;
-                } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.STANDBY);
-                } else if (MotionStatesCategorized.get("SWIM").contains(currentState)) {
-                    consumption = getSwimConsumptions();
-                } else if (MotionStatesCategorized.get("WALK").contains(currentState)) {
-                    consumption = new Consumption(ConsumptionType.WALK);
-                } else if (MotionStatesCategorized.get("NOCOST_NORECOVER").contains(currentState)) {
-                    consumption = new Consumption();
-                } else if (MotionStatesCategorized.get("OTHER").contains(currentState)) {
-                    consumption = getOtherConsumptions();
-                } else { // ignore
-                    return;
-                }
-
-                if (consumption.amount < 0 && isCharacterStamina) {
-                    // Do not apply reduction factor when recovering stamina
-                    if (player.getTeamManager().getTeamResonances().contains(10301)) {
-                        consumption.amount *= 0.85f;
-                    }
-                }
-                // Delay 1 seconds before starts recovering stamina
-                if (consumption.amount != 0 && cachedSession != null) {
-                    if (consumption.amount < 0) {
-                        staminaRecoverDelay = 0;
-                    }
-                    if (consumption.amount > 0
-                        && consumption.type != ConsumptionType.POWERED_FLY
-                        && consumption.type != ConsumptionType.POWERED_SKIFF) {
-                        // For POWERED_* recover immediately - things like Amber's gliding exam and skiff challenges may require this.
-                        if (staminaRecoverDelay < 5) {
-                            // For others recover after 1 seconds (5 ticks) - as official server does.
-                            staminaRecoverDelay++;
-                            consumption.amount = 0;
-                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
-                        }
-                    }
-                    updateStaminaRelative(cachedSession, consumption, isCharacterStamina);
-                }
-            }
-            previousState = currentState;
-            previousCoordinates = currentCoordinates.clone();
-        }
     }
 }
