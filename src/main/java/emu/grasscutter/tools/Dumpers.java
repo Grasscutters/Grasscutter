@@ -152,6 +152,7 @@ public interface Dumpers {
         var dump = new HashMap<Integer, ItemData>();
         originalDump.forEach(item -> {
             // Validate the item.
+            if (item.name.contains("[CHS]")) return;
             if (names.contains(item.name)) return;
             if (dump.containsKey(item.id)) return;
             // Add the item to the dump.
