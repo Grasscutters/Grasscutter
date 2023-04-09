@@ -33,7 +33,7 @@ class Card extends React.PureComponent<IProps> {
                     {this.props.alternate && <p className={"Card_Alternate"}>{this.props.alternate}</p>}
                 </div>
 
-                <div style={{ height: "50%", alignItems: "center" }}>
+                <div style={{ alignItems: "center" }}>
                     {this.props.description ? (
                         Array.isArray(this.props.description) ? (
                             this.props.description.map((line, index) => (
