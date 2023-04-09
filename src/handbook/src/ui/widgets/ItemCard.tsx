@@ -27,15 +27,69 @@ interface IProps {
 
 interface IState {
     icon: boolean;
+    count: number | string;
 }
+
+const defaultState = {
+    icon: true,
+    count: 1
+};
 
 class ItemCard extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
 
-        this.state = {
-            icon: true
-        };
+        this.state = defaultState;
+    }
+
+    /**
+     * Updates the count of the item.
+     *
+     * @param event The change event.
+     * @private
+     */
+    private updateCount(event: React.ChangeEvent<HTMLInputElement>) {
+        const value = event.target.value;
+        if (isNaN(parseInt(value)) && value.length > 1) return;
+
+        this.setState({ count: value });
+    }
+
+    /**
+     * Adds to the count of the item.
+     *
+     * @param positive Is the count being added or subtracted?
+     * @param multiple Is the count being multiplied by 10?
+     * @private
+     */
+    private addCount(positive: boolean, multiple: boolean) {
+        let { count } = this.state;
+        if (count === "") count = 1;
+        if (typeof count == "string")
+            count = parseInt(count);
+        if (count < 1) count = 1;
+
+        let increment = 1;
+        if (!positive) increment = -1;
+        if (multiple) increment *= 10;
+
+        count = Math.max(1, count + increment);
+
+        this.setState({ count });
+    }
+
+    /**
+     * Adds the item to the player's connected inventory.
+     * @private
+     */
+    private async addToInventory(): Promise<void> {
+        // TODO: Implement server access.
+    }
+
+    componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: any) {
+        if (this.props.item != prevProps.item) {
+            this.setState(defaultState);
+        }
     }
 
     render() {
@@ -64,8 +118,36 @@ class ItemCard extends React.Component<IProps, IState> {
                     </div>
                 </div>
 
-                <div>
+                <div className={"ItemCard_Actions"}>
+                    <div className={"ItemCard_Counter"}>
+                        <div onClick={() => this.addCount(false, false)}
+                             onContextMenu={(e) => {
+                                 e.preventDefault();
+                                 this.addCount(false, true);
+                             }}
+                             className={"ItemCard_Operation"}>-</div>
+                        <input type={"text"}
+                               value={this.state.count}
+                               className={"ItemCard_Count"}
+                               onChange={this.updateCount.bind(this)}
+                               onBlur={() => {
+                                   if (this.state.count == "") {
+                                        this.setState({ count: 1 });
+                                   }
+                               }}
+                        />
+                        <div onClick={() => this.addCount(true, false)}
+                             onContextMenu={(e) => {
+                                 e.preventDefault();
+                                 this.addCount(true, true);
+                             }}
+                             className={"ItemCard_Operation"}>+</div>
+                    </div>
 
+                    <button
+                        className={"ItemCard_Submit"}
+                        onClick={this.addToInventory.bind(this)}
+                    >Add to Inventory</button>
                 </div>
             </div>
         ) : undefined;
