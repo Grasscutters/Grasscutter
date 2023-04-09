@@ -35,7 +35,7 @@ class HomePage extends React.Component<any, any> {
                     <div className={"HomePage_Box HomePage_Disclaimer"}>
                         <div>
                             <p>This tool is not affiliated with HoYoverse.</p>
-                            <p>Genshin Impact, game HomePage and materials are</p>
+                            <p>Genshin Impact, game content and materials are</p>
                             <p>trademarks and copyrights of HoYoverse.</p>
                         </div>
 
