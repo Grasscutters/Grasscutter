@@ -24,7 +24,9 @@
     display: grid;
     gap: 15px 15px;
 
-    grid-template-columns: repeat(15, 100px);
+    max-width: 90%;
+
+    grid-template-columns: repeat(12, 100px);
 
     margin-bottom: 28px;
     overflow-y: scroll;
