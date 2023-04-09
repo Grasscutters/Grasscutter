@@ -7,6 +7,7 @@ import "@css/widgets/Item.scss";
 
 interface IProps {
     data: ItemData;
+    onClick?: () => void;
 }
 
 interface IState {
@@ -51,7 +52,9 @@ class Item extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={"Item"}>
+            <div className={"Item"}
+                 onClick={this.props.onClick}
+            >
                 <div className={"Item_Background"}>
                     {this.state.icon && (
                         <img

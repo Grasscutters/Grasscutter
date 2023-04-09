@@ -1,5 +1,5 @@
-import { ItemType, Quality } from "@backend/types";
 import type { Item } from "@backend/types";
+import { ItemInfo, ItemType, Quality } from "@backend/types";
 
 /**
  * Fetches the name of the CSS variable for the quality.
@@ -73,3 +73,41 @@ const refSwitch: { [key: number]: string } = {
     10000005: "traveler_anemo",
     10000007: "traveler_geo"
 };
+
+/**
+ * Gets the route for an item type.
+ *
+ * @param type The type of the item.
+ */
+export function typeToRoute(type: ItemType): string {
+    switch (type) {
+        default:
+            return "material";
+        case ItemType.Furniture:
+            return "furniture";
+        case ItemType.Reliquary:
+            return "reliquary";
+        case ItemType.Weapon:
+            return "weapon";
+    }
+}
+
+/**
+ * Fetches the data for an item.
+ * Uses the Project Amber API to get the data.
+ *
+ * @route GET https://api.ambr.top/v2/EN/{type}/{id}
+ * @param item The item to fetch the data for.
+ */
+export async function fetchItemData(item: Item): Promise<ItemInfo> {
+    let url = `https://api.ambr.top/v2/EN/(type)/(id)`;
+
+    // Replace the type and ID in the URL.
+    url = url.replace("(type)", typeToRoute(item.type));
+    url = url.replace("(id)", item.id.toString());
+
+    // Fetch the data.
+    return fetch(url)
+        .then((res) => res.json())
+        .catch(() => {});
+}

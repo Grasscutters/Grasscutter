@@ -1,0 +1,71 @@
+.ItemCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 700px;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+    background-color: var(--accent-color);
+}
+
+.ItemCard_Content {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+}
+
+.ItemCard_Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ItemCard_Info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    :nth-child(1) {
+        font-weight: bold;
+        font-size: 20px;
+
+        max-width: 170px;
+        max-height: 40px;
+
+        color: var(--text-primary-color);
+    }
+
+    :nth-child(2) {
+        font-size: 16px;
+
+        color: var(--text-primary-color);
+    }
+}
+
+.ItemCard_Icon {
+    width: 64px;
+    height: 64px
+}
+
+.ItemCard_Description {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 250px;
+    max-height: 460px;
+
+    p {
+        font-size: 14px;
+
+        color: var(--text-primary-color);
+    }
+}

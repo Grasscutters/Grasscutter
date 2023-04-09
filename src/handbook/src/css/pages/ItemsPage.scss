@@ -3,10 +3,18 @@
     height: 100%;
     width: 100%;
 
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--background-color);
-    flex-direction: column;
 
     padding: 24px;
+}
+
+.ItemsPage_Content {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
 }
 
 .ItemsPage_Header {
@@ -71,4 +79,15 @@
 
     margin-bottom: 28px;
     overflow-y: scroll;
+}
+
+.ItemsPage_Card {
+    display: flex;
+
+    width: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 700px;
+
+    align-self: center;
 }

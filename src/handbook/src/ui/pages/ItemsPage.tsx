@@ -1,17 +1,22 @@
 import React, { ChangeEvent } from "react";
 
 import Item from "@widgets/Item";
+import ItemCard from "@widgets/ItemCard";
 import VirtualizedGrid from "@components/VirtualizedGrid";
 
 import { ItemCategory } from "@backend/types";
-import type { Item as ItemType } from "@backend/types";
+import type { Item as ItemType, ItemInfo } from "@backend/types";
 import { getItems, sortedItems } from "@backend/data";
+import { fetchItemData } from "@app/utils";
 
 import "@css/pages/ItemsPage.scss";
 
 interface IState {
     filters: ItemCategory[];
     search: string;
+
+    selected: ItemType | null;
+    selectedInfo: ItemInfo | null;
 }
 
 class ItemsPage extends React.Component<{}, IState> {
@@ -20,7 +25,10 @@ class ItemsPage extends React.Component<{}, IState> {
 
         this.state = {
             filters: [],
-            search: ""
+            search: "",
+
+            selected: null,
+            selectedInfo: null
         };
     }
 
@@ -82,34 +90,63 @@ class ItemsPage extends React.Component<{}, IState> {
         return item.id > 0;
     }
 
+    /**
+     * Sets the selected item.
+     *
+     * @param item The item.
+     * @private
+     */
+    private async setSelectedItem(item: ItemType): Promise<void> {
+        let data: ItemInfo | null = null; try {
+            data = await fetchItemData(item);
+        } catch { }
+
+        this.setState({
+            selected: item,
+            selectedInfo: data
+        });
+    }
+
     render() {
         const items = this.getItems();
 
         return (
             <div className={"ItemsPage"}>
-                <div className={"ItemsPage_Header"}>
-                    <h1 className={"ItemsPage_Title"}>Items</h1>
+                <div className={"ItemsPage_Content"}>
+                    <div className={"ItemsPage_Header"}>
+                        <h1 className={"ItemsPage_Title"}>Items</h1>
 
-                    <div className={"ItemsPage_Search"}>
-                        <input
-                            type={"text"}
-                            className={"ItemsPage_Input"}
-                            placeholder={"Search..."}
-                            onChange={this.onChange.bind(this)}
-                        />
+                        <div className={"ItemsPage_Search"}>
+                            <input
+                                type={"text"}
+                                className={"ItemsPage_Input"}
+                                placeholder={"Search..."}
+                                onChange={this.onChange.bind(this)}
+                            />
+                        </div>
                     </div>
+
+                    {items.length > 0 ? (
+                        <VirtualizedGrid
+                            list={items.filter((item) => this.showItem(item))}
+                            itemHeight={64}
+                            itemsPerRow={18}
+                            gap={5}
+                            itemGap={5}
+                            render={(item) => <Item
+                                key={item.id} data={item}
+                                onClick={() => this.setSelectedItem(item)}
+                            />}
+                        />
+                    ) : undefined}
                 </div>
 
-                {items.length > 0 ? (
-                    <VirtualizedGrid
-                        list={items.filter((item) => this.showItem(item))}
-                        itemHeight={64}
-                        itemsPerRow={20}
-                        gap={5}
-                        itemGap={5}
-                        render={(item) => <Item key={item.id} data={item} />}
+                <div className={"ItemsPage_Card"}>
+                    <ItemCard
+                        item={this.state.selected}
+                        info={this.state.selectedInfo}
                     />
-                ) : undefined}
+                </div>
             </div>
         );
     }
