@@ -20,6 +20,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public interface Dumpers {
+    // See `src/handbook/data/README.md` for attributions.
+
     /**
      * Fetches the description of a command.
      *
@@ -141,7 +143,8 @@ public interface Dumpers {
         var dump = new HashMap<Integer, ItemData>();
         GameData.getItemDataMap().forEach((id, item) -> dump.put(id, new ItemData(
             Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
-            Quality.from(item.getRankLevel()), item.getItemType()
+            Quality.from(item.getRankLevel()), item.getItemType(),
+            item.getIcon().length() > 0 ? item.getIcon().substring(3) : ""
         )));
 
         try {
@@ -185,12 +188,14 @@ public interface Dumpers {
         public String name;
         public Quality quality;
         public ItemType type;
+        public String icon;
 
         @Override
         public String toString() {
             return this.name + ","
                 + this.quality + ","
-                + this.type;
+                + this.type + ","
+                + this.icon;
         }
     }
 
