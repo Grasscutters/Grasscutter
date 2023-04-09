@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies
         working-directory: src/handbook
-        run: npm install
+        run: npm install --force
       - name: Run linter
         working-directory: src/handbook
         run: npm run lint
@@ -71,7 +71,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies
         working-directory: src/handbook
-        run: npm install
+        run: npm install --force
       - name: Build handbook
         working-directory: src/handbook
         run: npm run build
