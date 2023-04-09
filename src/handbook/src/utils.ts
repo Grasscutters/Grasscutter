@@ -47,9 +47,12 @@ export function itemIcon(item: Item): string {
     }
 
     switch (item.type) {
-        default: return `https://api.ambr.top/assets/UI/UI_${item.icon}.png`;
-        case ItemType.Furniture: return `https://api.ambr.top/assets/UI/furniture/UI_${item.icon}.png`;
-        case ItemType.Reliquary: return `https://api.ambr.top/assets/UI/reliquary/UI_${item.icon}.png`;
+        default:
+            return `https://api.ambr.top/assets/UI/UI_${item.icon}.png`;
+        case ItemType.Furniture:
+            return `https://api.ambr.top/assets/UI/furniture/UI_${item.icon}.png`;
+        case ItemType.Reliquary:
+            return `https://api.ambr.top/assets/UI/reliquary/UI_${item.icon}.png`;
     }
 }
 

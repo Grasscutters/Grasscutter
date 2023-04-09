@@ -91,23 +91,25 @@ class ItemsPage extends React.Component<{}, IState> {
                     <h1 className={"ItemsPage_Title"}>Items</h1>
 
                     <div className={"ItemsPage_Search"}>
-                        <input type={"text"}
-                               className={"ItemsPage_Input"}
-                               placeholder={"Search..."}
-                               onChange={this.onChange.bind(this)}
+                        <input
+                            type={"text"}
+                            className={"ItemsPage_Input"}
+                            placeholder={"Search..."}
+                            onChange={this.onChange.bind(this)}
                         />
                     </div>
                 </div>
 
-                {
-                    items.length > 0 ? (
-                        <VirtualizedGrid
-                            list={items.filter(item => this.showItem(item))} itemHeight={64}
-                            itemsPerRow={20} gap={5} itemGap={5}
-                            render={(item) => <Item key={item.id} data={item} />}
-                        />
-                    ) : undefined
-                }
+                {items.length > 0 ? (
+                    <VirtualizedGrid
+                        list={items.filter((item) => this.showItem(item))}
+                        itemHeight={64}
+                        itemsPerRow={20}
+                        gap={5}
+                        itemGap={5}
+                        render={(item) => <Item key={item.id} data={item} />}
+                    />
+                ) : undefined}
             </div>
         );
     }

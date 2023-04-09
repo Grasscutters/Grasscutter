@@ -37,8 +37,7 @@ class Item extends React.Component<IProps, IState> {
     }
 
     private forceReplace(): void {
-        if (!this.state.loaded)
-            this.replaceIcon();
+        if (!this.state.loaded) this.replaceIcon();
     }
 
     componentDidMount() {
@@ -54,21 +53,20 @@ class Item extends React.Component<IProps, IState> {
         return (
             <div className={"Item"}>
                 <div className={"Item_Background"}>
-                    { this.state.icon && <img
-                        className={"Item_Icon"}
-                        alt={this.props.data.name}
-                        src={itemIcon(this.props.data)}
-                        onError={this.replaceIcon.bind(this)}
-                        onLoad={() => this.setState({ loaded: true })}
-                    /> }
+                    {this.state.icon && (
+                        <img
+                            className={"Item_Icon"}
+                            alt={this.props.data.name}
+                            src={itemIcon(this.props.data)}
+                            onError={this.replaceIcon.bind(this)}
+                            onLoad={() => this.setState({ loaded: true })}
+                        />
+                    )}
 
-                    { (!this.state.loaded || !this.state.icon) &&
-                        <p className={"Item_Label"}>{this.props.data.name}</p> }
+                    {(!this.state.loaded || !this.state.icon) && <p className={"Item_Label"}>{this.props.data.name}</p>}
                 </div>
 
-                <div className={"Item_Info"}>
-
-                </div>
+                <div className={"Item_Info"}></div>
             </div>
         );
     }

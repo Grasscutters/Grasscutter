@@ -48,12 +48,17 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
         }
 
         return (
-            <div key={props.key} style={{
-                ...props.style,
-                gap: this.props.itemGap ?? 0
-            }} className={"GridRow"}>
-                {items.map((item, index) =>
-                    <div key={index}>{item}</div>)}
+            <div
+                key={props.key}
+                style={{
+                    ...props.style,
+                    gap: this.props.itemGap ?? 0
+                }}
+                className={"GridRow"}
+            >
+                {items.map((item, index) => (
+                    <div key={index}>{item}</div>
+                ))}
                 <div style={{ height: this.props.gap ?? 0 }} />
             </div>
         );
@@ -65,12 +70,14 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
         return (
             <AutoSizer>
                 {({ height, width }) => (
-                    <List height={height - 150} width={width}
-                          rowHeight={itemHeight + (this.props.gap ?? 0)}
-                          rowCount={Math.ceil(list.length / (itemsPerRow ?? 10))}
-                          rowRenderer={this.rowRender.bind(this)}
-                          scrollTop={this.state.scrollTop}
-                          onScroll={(e) => this.setState({ scrollTop: e.scrollTop })}
+                    <List
+                        height={height - 150}
+                        width={width}
+                        rowHeight={itemHeight + (this.props.gap ?? 0)}
+                        rowCount={Math.ceil(list.length / (itemsPerRow ?? 10))}
+                        rowRenderer={this.rowRender.bind(this)}
+                        scrollTop={this.state.scrollTop}
+                        onScroll={(e) => this.setState({ scrollTop: e.scrollTop })}
                     />
                 )}
             </AutoSizer>

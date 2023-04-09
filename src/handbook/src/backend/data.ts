@@ -31,7 +31,7 @@ export const sortedItems: TaggedItems = {
  * Sorts all items into their respective categories.
  */
 export function setup(): void {
-    getItems().forEach(item => {
+    getItems().forEach((item) => {
         switch (item.type) {
             case ItemType.Weapon:
                 sortedItems[ItemCategory.Weapon].push(item);
