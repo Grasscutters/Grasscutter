@@ -166,6 +166,10 @@
       "in_dungeon_error": "あなたはすでにその秘境にいます｡",
       "description": "秘境に入ります｡"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "使用方法: give <聖遺物ID> [メインステータスID] [<サブステータスID>[,<強化回数>]]... [lv<レベル 0-20>]",
       "illegal_relic": "この聖遺物IDはブラックリストに登録された範囲に属しています。必要な範囲ではない可能性があります。",
@@ -230,7 +234,21 @@
       "finished": "クエスト %s を終了しました。",
       "not_found": "クエストが見つかりません｡",
       "invalid_id": "クエストIDが無効です｡",
-      "description": "クエストを追加または終了します｡"
+      "description": "クエストを追加または終了します｡",
+      "enabled": "Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "カットシーンを再生します"
+    },
+    "sound": {
+      "description": "Plays a sound"
     },
     "reload": {
       "reload_start": "設定を再読み込みしています。",
@@ -342,6 +360,17 @@
       "exists_error": "指定されたシーンが存在しません。",
       "success": "%1$s を シーン %5$s の %2$s, %3$s, %4$s にテレポートさせました。",
       "description": "プレイヤーの位置を変更します。"
+    },
+    "trialAvatarActivity": {
+      "description": "トライアル アバター アクティビティの機能を操作します。これには、ダンジョンと報酬の状態の切り替えが含まれます。",
+      "not_found": "試用アバター アクティビティ プレーヤー データが見つかりません。アクティビティが有効になっていない可能性があります。",
+      "invalid_param": "無効なパラメーター。",
+      "schedule_not_found": "スケジュール %s が見つかりません。",
+      "success_schedule": "スケジュール ID を %s に変更しました。",
+      "success_dungeon": "アバター %s のダンジョン ステータスを切り替えました。",
+      "success_dungeon_all": "すべてのアバターのダンジョン ステータスを切り替えました。",
+      "success_reward": "アバター %s の報酬ステータスを切り替えました。",
+      "success_reward_all": "すべてのアバターの報酬ステータスを切り替えました。"
     },
     "weather": {
       "success": "天気のIDを気候タイプ %2$s の %1$s に設定しました。",

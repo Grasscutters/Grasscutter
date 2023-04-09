@@ -84,6 +84,7 @@
         "artifactId": "ID de artefact invalid.",
         "avatarId": "ID de avatar invalid.",
         "avatarLevel": "avatarLevel invalid.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "ID de entitate invalid.",
         "itemId": "ID-ul articolului invalid.",
         "itemLevel": "itemLevel invalid.",
@@ -166,6 +167,10 @@
       "in_dungeon_error": "Ești deja în acea temniță.",
       "description": "Intră într-o temniță."
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "Utilizare: give <artifactID> [mainPropID] [<appendPropID>[,<t>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Acest ID de artefact aparține unui interval de pe lista neagră, este posibil să nu fie cel pe care l-ați dorit.",
@@ -230,7 +235,21 @@
       "finished": "Ați terminat misiunea %s.",
       "not_found": "Misiunea nu a fost găsită.",
       "invalid_id": "ID-ul misiunii nu a fost găsit.",
-      "description": "Adaugă sau termină misiuni"
+      "description": "Adaugă sau termină misiuni",
+      "enabled": "Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Plays a cutscene"
+    },
+    "sound": {
+      "description": "Plays a sound"
     },
     "reload": {
       "reload_start": "Se reîncarcă configurația.",
@@ -329,7 +348,7 @@
       "index_out_of_range": "Indexul specificat este în afara intervalului.",
       "failed_parse_avatar_id": "Nu a reușit să analizeze id-ul avatarului: %s",
       "avatar_already_in_team": "Avatarul este deja în echipă.",
-      "avatar_not_found": "Avatarul %s nu a fost găsit.",
+      "avatar_not_found": "Avatarul %d nu a fost găsit.",
       "description": "Modifică-ți echipa manual."
     },
     "teleportAll": {
@@ -342,6 +361,17 @@
       "exists_error": "Scena specificată nu există.",
       "success": "Teleportat %s la %s, %s, %s în scena %s.",
       "description": "Schimbă poziția jucătorului."
+    },
+    "trialAvatarActivity": {
+      "description": "Manipulați funcționalitățile activității de probă avatarului. Aceasta include comutarea stărilor de temniță și recompensă.",
+      "not_found": "Nie znaleziono danych gracza o aktywności awatara w wersji próbnej. Być może aktywność nie jest włączona.",
+      "invalid_param": "Niewłaściwy parametr.",
+      "schedule_not_found": "Nie znaleziono harmonogramu %s.",
+      "success_schedule": "Zmieniono identyfikator harmonogramu na %s.",
+      "success_dungeon": "Zmieniono stan lochów awatara %s.",
+      "success_dungeon_all": "Zmieniono stan lochów wszystkich awatarów.",
+      "success_reward": "Zmieniono status nagrody awatara %s.",
+      "success_reward_all": "Zmieniono status nagrody dla wszystkich awatarów."
     },
     "weather": {
       "success": "A setat ID-ul meteo la %s cu tipul de climă %s",

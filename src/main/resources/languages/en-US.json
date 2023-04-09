@@ -84,6 +84,7 @@
         "artifactId": "Invalid artifact ID.",
         "avatarId": "Invalid avatar ID.",
         "avatarLevel": "Invalid avatarLevel.",
+        "cfgId": "Invalid cfg ID.",
         "entityId": "Invalid entity ID.",
         "itemId": "Invalid item ID.",
         "itemLevel": "Invalid itemLevel.",
@@ -166,6 +167,10 @@
       "in_dungeon_error": "You are already in that dungeon.",
       "description": "Enter a dungeon"
     },
+    "entity": {
+      "description": "Modify an existing entity's properties",
+      "not_found_error": "Entity does not exist"
+    },
     "give": {
       "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
@@ -230,7 +235,21 @@
       "finished": "Finished quest %s.",
       "not_found": "Quest not found.",
       "invalid_id": "Invalid quest ID.",
-      "description": "Add or finish quests"
+      "description": "Add or finish quests",
+      "enabled": "Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Plays a cutscene"
+    },
+    "sound": {
+      "description": "Plays a sound"
     },
     "reload": {
       "reload_start": "Reloading config.",
@@ -342,6 +361,17 @@
       "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
+    },
+    "trialAvatarActivity": {
+      "description": "Manipulate functionalities of Trial Avatar Activity. This includes toggling dungeon and reward states.",
+      "not_found": "Trial avatar activity player data not found. Maybe the activity is not enabled.",
+      "invalid_param": "Invalid parameter.",
+      "schedule_not_found": "Schedule %s not found.",
+      "success_schedule": "Changed schedule id to %s.",
+      "success_dungeon": "Togggled avatar %s's dungeon status.",
+      "success_dungeon_all": "Toggled all avatars' dungeon status.",
+      "success_reward": "Togggled avatar %s's reward status.",
+      "success_reward_all": "Togggled all avatars reward status."
     },
     "weather": {
       "success": "Set weather ID to %s with climate type %s.",

@@ -232,6 +232,19 @@
       "invalid_id": "ID missione non valido.",
       "description": "Aggiungi o completa missioni"
     },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Riproduce un filmato"
+    },
+    "sound": {
+      "description": "Plays a sound"
+    },
     "reload": {
       "reload_start": "Ricarica configurazione.",
       "reload_done": "Ricarica completa.",
@@ -342,6 +355,17 @@
       "exists_error": "La scena specificata non esiste.",
       "success": "Teletrasportato %s in %s, %s, %s nella scena %s.",
       "description": "Cambia la posizione del giocatore"
+    },
+    "trialAvatarActivity": {
+      "description": "Manipolare le funzionalità dell'attività Avatar di prova. Ciò include la commutazione degli stati dei sotterranei e delle ricompense.",
+      "not_found": "Dati giocatore attività avatar di prova non trovati. Forse l'attività non è abilitata.",
+      "invalid_param": "Parametro non valido.",
+      "schedule_not_found": "Programma %s non trovato.",
+      "success_schedule": "ID programma modificato in %s.",
+      "success_dungeon": "Stato del dungeon dell'avatar %s attivato.",
+      "success_dungeon_all": "Modificato lo stato dei dungeon di tutti gli avatar.",
+      "success_reward": "Stato della ricompensa dell'avatar %s attivato/disattivato.",
+      "success_reward_all": "Attivato/disattivato lo stato di ricompensa di tutti gli avatar."
     },
     "weather": {
       "success": "Imposta l'ID meteo su %s con il tipo di clima %s.",

@@ -84,6 +84,7 @@
         "artifactId": "无效的圣遗物ID。",
         "avatarId": "无效的角色ID。",
         "avatarLevel": "无效的角色等级。",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "无效的实体ID。",
         "itemId": "无效的物品ID。",
         "itemLevel": "无效的物品等级。",
@@ -166,6 +167,10 @@
       "in_dungeon_error": "你已经在这个秘境中了。",
       "description": "进入指定秘境"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "用法：give <圣遗物ID> [主词条ID] [<副词条ID>[,<强化次数>]]... [lv<等级 0-20>]",
       "illegal_relic": "此圣遗物ID属于黑名单范围，也许不是你想要的。",
@@ -230,7 +235,21 @@
       "finished": "已完成任务 %s。",
       "not_found": "任务不存在。",
       "invalid_id": "无效的任务ID。",
-      "description": "添加或完成任务"
+      "description": "添加或完成任务",
+      "enabled": "Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Plays a cutscene"
+    },
+    "sound": {
+      "description": "Plays a sound"
     },
     "reload": {
       "reload_start": "正在重载配置文件和数据...",
@@ -342,6 +361,17 @@
       "exists_error": "此场景不存在。",
       "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
       "description": "改变指定玩家的位置"
+    },
+    "trialAvatarActivity": {
+      "description": "操纵试用角色活动的功能。这包括切换地牢和奖励的状态。",
+      "not_found": "未找到试用角色活动玩家数据。也许该活动未被启用。",
+      "invalid_param": "无效的参数。",
+      "schedule_not_found": "未找到计划 %s。",
+      "success_schedule": "已将计划 ID 更改为 %s。",
+      "success_dungeon": "已切换角色 %s 的地牢状态。",
+      "success_dungeon_all": "已切换所有角色的地牢状态。",
+      "success_reward": "已切换角色 %s 的奖励状态。",
+      "success_reward_all": "已切换所有角色的奖励状态。"
     },
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
