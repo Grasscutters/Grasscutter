@@ -14,6 +14,19 @@ export function setup(): void {
     window.onpopstate = (event) => {
         navigate(event.state, false);
     };
+
+    setTimeout(() => {
+        // Check if the window's href is a page.
+        const page = window.location.href.split("/").pop();
+        if (page == undefined) return;
+
+        // Convert the page to a Page type.
+        const pageName = page.charAt(0).toUpperCase() + page.slice(1);
+        const pageType = pageName as Page;
+
+        // Navigate to the page.
+        navigate(pageType, false);
+    }, 3e2);
 }
 
 /**
