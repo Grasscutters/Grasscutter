@@ -140,12 +140,24 @@ public interface Dumpers {
         Language.loadTextMaps();
 
         // Convert all known items to an item map.
-        var dump = new HashMap<Integer, ItemData>();
-        GameData.getItemDataMap().forEach((id, item) -> dump.put(id, new ItemData(
+        var originalDump = new ArrayList<ItemData>();
+        GameData.getItemDataMap().forEach((id, item) -> originalDump.add(new ItemData(id,
             Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
             Quality.from(item.getRankLevel()), item.getItemType(),
             item.getIcon().length() > 0 ? item.getIcon().substring(3) : ""
         )));
+
+        // Create a new dump with filtered duplicates.
+        var names = new ArrayList<String>();
+        var dump = new HashMap<Integer, ItemData>();
+        originalDump.forEach(item -> {
+            // Validate the item.
+            if (names.contains(item.name)) return;
+            if (dump.containsKey(item.id)) return;
+            // Add the item to the dump.
+            names.add(item.name);
+            dump.put(item.id, item);
+        });
 
         try {
             // Create a file for the dump.
@@ -185,6 +197,7 @@ public interface Dumpers {
 
     @AllArgsConstructor
     class ItemData {
+        public Integer id;
         public String name;
         public Quality quality;
         public ItemType type;
