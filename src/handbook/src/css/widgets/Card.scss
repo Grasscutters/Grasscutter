@@ -1,6 +1,6 @@
 .Card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 
     width: 100%;
@@ -12,6 +12,12 @@
     box-sizing: border-box;
 
     background-color: var(--secondary-color);
+}
+
+.Card_Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .Card_Header {
@@ -39,4 +45,12 @@
 
     overflow-y: scroll;
     max-height: 24px;
+}
+
+.Card_Button {
+    display: flex;
+    margin-right: 13px;
+
+    align-self: center;
+    justify-content: center;
 }

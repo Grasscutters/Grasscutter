@@ -22,7 +22,7 @@ class HomePage extends React.Component<any, any> {
                         <HomeButton name={"Characters"} anchor={"Avatars"} />
                         <HomeButton name={"Items"} anchor={"Items"} />
                         <HomeButton name={"Entities"} anchor={"Home"} />
-                        <HomeButton name={"Scenes"} anchor={"Home"} />
+                        <HomeButton name={"Scenes"} anchor={"Scenes"} />
                     </div>
 
                     <div className={"HomePage_Buttons"}>

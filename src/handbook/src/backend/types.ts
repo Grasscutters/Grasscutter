@@ -1,4 +1,5 @@
-export type Page = "Home" | "Commands" | "Avatars" | "Items";
+export type Page = "Home" | "Commands" | "Avatars" | "Items"
+    | "Scenes";
 export type Days = "Sunday" | "Monday" | "Tuesday"
     | "Wednesday" | "Thursday" | "Friday" | "Saturday";
 
@@ -18,7 +19,7 @@ export type Avatar = {
 
 export type Scene = {
     identifier: string;
-    type: string;
+    type: SceneType;
     id: number;
 };
 

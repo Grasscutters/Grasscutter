@@ -8,6 +8,8 @@ interface IProps {
     description?: string | string[];
 
     height?: number | string;
+    button?: React.ReactNode;
+    rightOffset?: number;
 
     onClick?: () => void;
     onOver?: () => void;
@@ -28,24 +30,34 @@ class Card extends React.PureComponent<IProps> {
                 onMouseOut={this.props.onOut}
                 style={{ height: this.props.height }}
             >
-                <div className={"Card_Header"}>
-                    <p className={"Card_Title"}>{this.props.title}</p>
-                    {this.props.alternate && <p className={"Card_Alternate"}>{this.props.alternate}</p>}
+                <div className={"Card_Content"}>
+                    <div className={"Card_Header"}>
+                        <p className={"Card_Title"}>{this.props.title}</p>
+                        {this.props.alternate && <p className={"Card_Alternate"}>{this.props.alternate}</p>}
+                    </div>
+
+                    <div style={{ alignItems: "center" }}>
+                        {this.props.description ? (
+                            Array.isArray(this.props.description) ? (
+                                this.props.description.map((line, index) => (
+                                    <p className={"Card_Description"} key={index}>
+                                        {line}
+                                    </p>
+                                ))
+                            ) : (
+                                <p className={"Card_Description"}>{this.props.description}</p>
+                            )
+                        ) : undefined}
+                    </div>
                 </div>
 
-                <div style={{ alignItems: "center" }}>
-                    {this.props.description ? (
-                        Array.isArray(this.props.description) ? (
-                            this.props.description.map((line, index) => (
-                                <p className={"Card_Description"} key={index}>
-                                    {line}
-                                </p>
-                            ))
-                        ) : (
-                            <p className={"Card_Description"}>{this.props.description}</p>
-                        )
-                    ) : undefined}
-                </div>
+                {this.props.button ? (
+                    <div className={"Card_Button"}
+                         style={{ marginRight: this.props.rightOffset ?? 0 }}
+                    >
+                        {this.props.button}
+                    </div>
+                ) : undefined}
             </div>
         );
     }
