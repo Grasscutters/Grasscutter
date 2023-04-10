@@ -1,13 +1,13 @@
 import React, { ChangeEvent } from "react";
 
-import Item from "@widgets/Item";
+import MiniCard from "@widgets/MiniCard";
 import ItemCard from "@widgets/ItemCard";
 import VirtualizedGrid from "@components/VirtualizedGrid";
 
 import { ItemCategory } from "@backend/types";
 import type { Item as ItemType, ItemInfo } from "@backend/types";
 import { getItems, sortedItems } from "@backend/data";
-import { fetchItemData } from "@app/utils";
+import { fetchItemData, itemIcon } from "@app/utils";
 
 import "@css/pages/ItemsPage.scss";
 
@@ -133,8 +133,8 @@ class ItemsPage extends React.Component<{}, IState> {
                             itemsPerRow={18}
                             gap={5}
                             itemGap={5}
-                            render={(item) => <Item
-                                key={item.id} data={item}
+                            render={(item) => <MiniCard
+                                key={item.id} data={item} icon={itemIcon(item)}
                                 onClick={() => this.setSelectedItem(item)}
                             />}
                         />

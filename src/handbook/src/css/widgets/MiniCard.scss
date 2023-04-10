@@ -1,4 +1,4 @@
-.Item {
+.MiniCard {
     display: flex;
 
     width: 64px;
@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.Item_Background {
+.MiniCard_Background {
     display: flex;
     align-items: center;
 
@@ -19,13 +19,14 @@
     background-color: var(--secondary-color);
 }
 
-.Item_Icon {
+.MiniCard_Icon {
     max-width: 64px;
     max-height: 64px;
     object-fit: scale-down;
+    border-radius: 10px;
 }
 
-.Item_Label {
+.MiniCard_Label {
     width: 64px;
     max-height: 64px;
     text-align: center;
@@ -33,7 +34,7 @@
     color: var(--text-primary-color);
 }
 
-.Item_Info {
+.MiniCard_Info {
     position: absolute;
     display: flex;
 }

@@ -3,6 +3,7 @@ Use Grasscutter's dumpers to generate the data to put here.
 
 ## Files Required
 - `commands.json`
+- `entities.csv`
 - `avatars.csv`
 - `scenes.csv`
 - `items.csv`

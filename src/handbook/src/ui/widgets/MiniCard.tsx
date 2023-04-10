@@ -1,12 +1,13 @@
 import React from "react";
 
-import type { Item as ItemData } from "@backend/types";
 import { itemIcon } from "@app/utils";
 
-import "@css/widgets/Item.scss";
+import "@css/widgets/MiniCard.scss";
 
 interface IProps {
-    data: ItemData;
+    data: { name: string; };
+    icon: string;
+
     onClick?: () => void;
 }
 
@@ -16,7 +17,7 @@ interface IState {
     loaded: boolean;
 }
 
-class Item extends React.Component<IProps, IState> {
+class MiniCard extends React.Component<IProps, IState> {
     loading: number | any;
 
     constructor(props: IProps) {
@@ -52,27 +53,25 @@ class Item extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={"Item"}
+            <div className={"MiniCard"}
                  onClick={this.props.onClick}
             >
-                <div className={"Item_Background"}>
+                <div className={"MiniCard_Background"}>
                     {this.state.icon && (
                         <img
-                            className={"Item_Icon"}
+                            className={"MiniCard_Icon"}
                             alt={this.props.data.name}
-                            src={itemIcon(this.props.data)}
+                            src={this.props.icon}
                             onError={this.replaceIcon.bind(this)}
                             onLoad={() => this.setState({ loaded: true })}
                         />
                     )}
 
-                    {(!this.state.loaded || !this.state.icon) && <p className={"Item_Label"}>{this.props.data.name}</p>}
+                    {(!this.state.loaded || !this.state.icon) && <p className={"MiniCard_Label"}>{this.props.data.name}</p>}
                 </div>
-
-                <div className={"Item_Info"}></div>
             </div>
         );
     }
 }
 
-export default Item;
+export default MiniCard;

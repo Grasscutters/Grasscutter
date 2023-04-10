@@ -1,10 +1,11 @@
 import commands from "@data/commands.json";
+import entities from "@data/entities.csv";
 import avatars from "@data/avatars.csv";
 import scenes from "@data/scenes.csv";
 import items from "@data/items.csv";
 
 import { Quality, ItemType, ItemCategory, SceneType } from "@backend/types";
-import type { Command, Avatar, Item, Scene } from "@backend/types";
+import type { Command, Avatar, Item, Scene, Entity } from "@backend/types";
 
 import { inRange } from "@app/utils";
 
@@ -70,6 +71,21 @@ export function getCommands(): CommandDump {
  */
 export function listCommands(): Command[] {
     return Object.values(getCommands());
+}
+
+/**
+ * Fetches and casts all entities in the file.
+ */
+export function getEntities(): Entity[] {
+    return entities.map((entry) => {
+        const values = Object.values(entry) as string[];
+        const id = parseInt(values[0]);
+        return {
+            id,
+            name: values[1],
+            internal: values[2]
+        };
+    });
 }
 
 /**

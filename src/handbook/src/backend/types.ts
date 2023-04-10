@@ -1,5 +1,5 @@
 export type Page = "Home" | "Commands" | "Avatars" | "Items"
-    | "Scenes";
+    | "Entities" | "Scenes";
 export type Days = "Sunday" | "Monday" | "Tuesday"
     | "Wednesday" | "Thursday" | "Friday" | "Saturday";
 
@@ -31,6 +31,12 @@ export type Item = {
     icon: string;
 };
 
+export type Entity = {
+    id: number;
+    name: string;
+    internal: string;
+};
+
 // Exported from Project Amber.
 export type ItemInfo = {
     response: number | 200 | 404;
@@ -48,6 +54,23 @@ export type ItemInfo = {
         icon: string;
         rank: 1 | 2 | 3 | 4 | 5;
         route: string;
+    };
+};
+
+// Exported from Project Amber.
+export type EntityInfo = {
+    response: number | 200 | 404;
+    data: {
+        id: number;
+        name: string;
+        type: string;
+        icon: string;
+        route: string;
+        title: string;
+        specialName: string;
+        description: string;
+        entries: any[];
+        tips: null;
     };
 };
 

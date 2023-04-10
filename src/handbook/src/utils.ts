@@ -1,5 +1,5 @@
-import type { Item } from "@backend/types";
-import { ItemInfo, ItemType, Quality } from "@backend/types";
+import type { Entity, Item, EntityInfo, ItemInfo } from "@backend/types";
+import { ItemType, Quality } from "@backend/types";
 
 /**
  * Fetches the name of the CSS variable for the quality.
@@ -57,6 +57,16 @@ export function itemIcon(item: Item): string {
 }
 
 /**
+ * Gets the path to the icon for an entity.
+ * Uses the Project Amber API to get the icon.
+ *
+ * @param entity The entity to get the icon for. Project Amber data required.
+ */
+export function entityIcon(entity: Entity): string {
+    return `https://api.ambr.top/assets/UI/monster/UI_MonsterIcon_${entity.internal}.png`;
+}
+
+/**
  * Formats a character's name to fit with the reference name.
  * Example: Hu Tao -> hu_tao
  *
@@ -108,6 +118,19 @@ export async function fetchItemData(item: Item): Promise<ItemInfo> {
 
     // Fetch the data.
     return fetch(url)
+        .then((res) => res.json())
+        .catch(() => {});
+}
+
+/**
+ * Fetches the data for an entity.
+ * Uses the Project Amber API to get the data.
+ *
+ * @route GET https://api.ambr.top/v2/en/monster/{id}
+ * @param entity The entity to fetch the data for.
+ */
+export async function fetchEntityData(entity: Entity): Promise<EntityInfo> {
+    return fetch(`https://api.ambr.top/v2/en/monster/${entity.id}`)
         .then((res) => res.json())
         .catch(() => {});
 }

@@ -50,7 +50,7 @@ class SideBar extends React.Component<{}, IState> {
                         <SideBarButton name={"Commands"} anchor={"Commands"} />
                         <SideBarButton name={"Characters"} anchor={"Avatars"} />
                         <SideBarButton name={"Items"} anchor={"Items"} />
-                        <SideBarButton name={"Entities"} anchor={"Home"} />
+                        <SideBarButton name={"Entities"} anchor={"Entities"} />
                         <SideBarButton name={"Scenes"} anchor={"Scenes"} />
                         <SideBarButton name={"Quests"} anchor={"Home"} />
                         <SideBarButton name={"Achievements"} anchor={"Home"} />
