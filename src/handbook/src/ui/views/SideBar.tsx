@@ -5,6 +5,7 @@ import SideBarButton from "@app/ui/widgets/SideBarButton";
 import { navigate } from "@app/backend/events";
 
 import "@css/views/SideBar.scss";
+import { setTargetPlayer } from "@backend/server";
 
 interface IState {
     uid: string | null;
@@ -31,6 +32,7 @@ class SideBar extends React.Component<{}, IState> {
         if (uid && uid.length > 10) return;
 
         this.setState({ uid });
+        setTargetPlayer(parseInt(uid ?? "0"));
     }
 
     render() {

@@ -18,6 +18,8 @@ const nameSwitch: { [key: number]: string } = {
 
 interface IProps {
     data: Avatar;
+
+    onClick?: () => void;
 }
 
 class Character extends React.PureComponent<IProps> {
@@ -33,7 +35,11 @@ class Character extends React.PureComponent<IProps> {
         if (ignored.includes(id)) return undefined;
 
         return (
-            <div className={"Character"} style={{ backgroundColor: `var(${qualityColor})` }}>
+            <div
+                className={"Character"}
+                style={{ backgroundColor: `var(${qualityColor})` }}
+                onClick={this.props.onClick}
+            >
                 <img
                     className={"Character_Icon"}
                     alt={name}
