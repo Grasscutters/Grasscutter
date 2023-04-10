@@ -204,6 +204,42 @@ public interface Dumpers {
         }
     }
 
+    /**
+     * Dumps all entities to a JSON file.
+     *
+     * @param locale The language to dump the entities in.
+     */
+    static void dumpEntities(String locale) {
+        // Reload resources.
+        ResourceLoader.loadAll();
+        Language.loadTextMaps();
+
+        // Convert all known avatars to an avatar map.
+        var dump = new HashMap<Integer, EntityInfo>();
+        GameData.getMonsterDataMap().forEach((id, monster) -> {
+            var langHash = monster.getNameTextMapHash();
+            dump.put(id, new EntityInfo(
+                langHash == 0 ? monster.getMonsterName() :
+                    Language.getTextMapKey(langHash).get(locale),
+                monster.getMonsterName()
+            ));
+        });
+
+        try {
+            // Create a file for the dump.
+            var file = new File("entities.csv");
+            if (file.exists() && !file.delete())
+                throw new RuntimeException("Failed to delete file.");
+            if (!file.exists() && !file.createNewFile())
+                throw new RuntimeException("Failed to create file.");
+
+            // Write the dump to the file.
+            Files.writeString(file.toPath(), Dumpers.miniEncode(dump));
+        } catch (IOException ignored) {
+            throw new RuntimeException("Failed to write to file.");
+        }
+    }
+
     @AllArgsConstructor
     class CommandInfo {
         public List<String> name;
@@ -251,6 +287,18 @@ public interface Dumpers {
         public String toString() {
             return this.identifier + ","
                 + this.type;
+        }
+    }
+
+    @AllArgsConstructor
+    class EntityInfo {
+        public String name;
+        public String internal;
+
+        @Override
+        public String toString() {
+            return this.name + ","
+                + this.internal;
         }
     }
 
