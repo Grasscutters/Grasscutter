@@ -23,7 +23,7 @@ class App extends React.Component<{}, IState> {
         // Check if the window's href is a page.
         let targetPage = null;
         const page = window.location.href.split("/").pop();
-        console.log(page)
+        console.log(page);
 
         if (page != undefined && page != "") {
             // Convert the page to a Page type.
