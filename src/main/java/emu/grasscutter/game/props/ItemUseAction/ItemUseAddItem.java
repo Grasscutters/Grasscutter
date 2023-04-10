@@ -1,5 +1,6 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseAddItem extends ItemUseInt {
@@ -19,6 +20,6 @@ public class ItemUseAddItem extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        return params.player.getInventory().addItem(this.i, this.count * params.count);
+        return params.player.getInventory().addItem(this.i, this.count * params.count, ActionReason.PlayerUseItem);
     }
 }
