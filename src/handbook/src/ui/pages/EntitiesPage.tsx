@@ -93,9 +93,10 @@ class EntitiesPage extends React.Component<{}, IState> {
      * @private
      */
     private async setSelectedItem(entity: EntityType): Promise<void> {
-        let data: EntityInfo | null = null; try {
+        let data: EntityInfo | null = null;
+        try {
             data = await fetchEntityData(entity);
-        } catch { }
+        } catch {}
 
         this.setState({
             selected: entity,
@@ -124,24 +125,25 @@ class EntitiesPage extends React.Component<{}, IState> {
 
                     {entities.length > 0 ? (
                         <VirtualizedGrid
-                            list={entities.filter(entity => this.showEntity(entity))}
+                            list={entities.filter((entity) => this.showEntity(entity))}
                             itemHeight={64}
                             itemsPerRow={18}
                             gap={5}
                             itemGap={5}
-                            render={(entity) => <MiniCard
-                                key={entity.id} data={entity} icon={entityIcon(entity)}
-                                onClick={() => this.setSelectedItem(entity)}
-                            />}
+                            render={(entity) => (
+                                <MiniCard
+                                    key={entity.id}
+                                    data={entity}
+                                    icon={entityIcon(entity)}
+                                    onClick={() => this.setSelectedItem(entity)}
+                                />
+                            )}
                         />
                     ) : undefined}
                 </div>
 
                 <div className={"EntitiesPage_Card"}>
-                    <EntityCard
-                        entity={this.state.selected}
-                        info={this.state.selectedInfo}
-                    />
+                    <EntityCard entity={this.state.selected} info={this.state.selectedInfo} />
                 </div>
             </div>
         );

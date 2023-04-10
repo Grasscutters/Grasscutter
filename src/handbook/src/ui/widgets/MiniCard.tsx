@@ -5,7 +5,7 @@ import { itemIcon } from "@app/utils";
 import "@css/widgets/MiniCard.scss";
 
 interface IProps {
-    data: { name: string; };
+    data: { name: string };
     icon: string;
 
     onClick?: () => void;
@@ -53,9 +53,7 @@ class MiniCard extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={"MiniCard"}
-                 onClick={this.props.onClick}
-            >
+            <div className={"MiniCard"} onClick={this.props.onClick}>
                 <div className={"MiniCard_Background"}>
                     {this.state.icon && (
                         <img
@@ -67,7 +65,9 @@ class MiniCard extends React.Component<IProps, IState> {
                         />
                     )}
 
-                    {(!this.state.loaded || !this.state.icon) && <p className={"MiniCard_Label"}>{this.props.data.name}</p>}
+                    {(!this.state.loaded || !this.state.icon) && (
+                        <p className={"MiniCard_Label"}>{this.props.data.name}</p>
+                    )}
                 </div>
             </div>
         );

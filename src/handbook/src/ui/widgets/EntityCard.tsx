@@ -13,10 +13,9 @@ import "@css/widgets/ItemCard.scss";
 function toDescription(description: string | undefined): JSX.Element[] {
     if (!description) return [];
 
-    return description.split("\\n")
-        .map((line, index) => {
-            return <p key={index}>{line}</p>;
-        });
+    return description.split("\\n").map((line, index) => {
+        return <p key={index}>{line}</p>;
+    });
 }
 
 interface IProps {
@@ -64,8 +63,7 @@ class EntityCard extends React.Component<IProps, IState> {
     private addCount(positive: boolean, multiple: boolean) {
         let { count } = this.state;
         if (count === "") count = 1;
-        if (typeof count == "string")
-            count = parseInt(count);
+        if (typeof count == "string") count = parseInt(count);
         if (count < 1) count = 1;
 
         let increment = 1;
@@ -104,49 +102,57 @@ class EntityCard extends React.Component<IProps, IState> {
                             <p>{data?.type ?? ""}</p>
                         </div>
 
-                        { this.state.icon && <img
-                            className={"ItemCard_Icon"}
-                            alt={entity.name}
-                            src={entityIcon(entity)}
-                            onError={() => this.setState({ icon: false })}
-                        /> }
+                        {this.state.icon && (
+                            <img
+                                className={"ItemCard_Icon"}
+                                alt={entity.name}
+                                src={entityIcon(entity)}
+                                onError={() => this.setState({ icon: false })}
+                            />
+                        )}
                     </div>
 
-                    <div className={"ItemCard_Description"}>
-                        {toDescription(data?.description)}
-                    </div>
+                    <div className={"ItemCard_Description"}>{toDescription(data?.description)}</div>
                 </div>
 
                 <div className={"ItemCard_Actions"}>
                     <div className={"ItemCard_Counter"}>
-                        <div onClick={() => this.addCount(false, false)}
-                             onContextMenu={(e) => {
-                                 e.preventDefault();
-                                 this.addCount(false, true);
-                             }}
-                             className={"ItemCard_Operation"}>-</div>
-                        <input type={"text"}
-                               value={this.state.count}
-                               className={"ItemCard_Count"}
-                               onChange={this.updateCount.bind(this)}
-                               onBlur={() => {
-                                   if (this.state.count == "") {
-                                        this.setState({ count: 1 });
-                                   }
-                               }}
+                        <div
+                            onClick={() => this.addCount(false, false)}
+                            onContextMenu={(e) => {
+                                e.preventDefault();
+                                this.addCount(false, true);
+                            }}
+                            className={"ItemCard_Operation"}
+                        >
+                            -
+                        </div>
+                        <input
+                            type={"text"}
+                            value={this.state.count}
+                            className={"ItemCard_Count"}
+                            onChange={this.updateCount.bind(this)}
+                            onBlur={() => {
+                                if (this.state.count == "") {
+                                    this.setState({ count: 1 });
+                                }
+                            }}
                         />
-                        <div onClick={() => this.addCount(true, false)}
-                             onContextMenu={(e) => {
-                                 e.preventDefault();
-                                 this.addCount(true, true);
-                             }}
-                             className={"ItemCard_Operation"}>+</div>
+                        <div
+                            onClick={() => this.addCount(true, false)}
+                            onContextMenu={(e) => {
+                                e.preventDefault();
+                                this.addCount(true, true);
+                            }}
+                            className={"ItemCard_Operation"}
+                        >
+                            +
+                        </div>
                     </div>
 
-                    <button
-                        className={"ItemCard_Submit"}
-                        onClick={this.summonAtPlayer.bind(this)}
-                    >Summon</button>
+                    <button className={"ItemCard_Submit"} onClick={this.summonAtPlayer.bind(this)}>
+                        Summon
+                    </button>
                 </div>
             </div>
         ) : undefined;

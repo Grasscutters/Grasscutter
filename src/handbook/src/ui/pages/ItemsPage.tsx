@@ -97,9 +97,10 @@ class ItemsPage extends React.Component<{}, IState> {
      * @private
      */
     private async setSelectedItem(item: ItemType): Promise<void> {
-        let data: ItemInfo | null = null; try {
+        let data: ItemInfo | null = null;
+        try {
             data = await fetchItemData(item);
-        } catch { }
+        } catch {}
 
         this.setState({
             selected: item,
@@ -133,19 +134,20 @@ class ItemsPage extends React.Component<{}, IState> {
                             itemsPerRow={18}
                             gap={5}
                             itemGap={5}
-                            render={(item) => <MiniCard
-                                key={item.id} data={item} icon={itemIcon(item)}
-                                onClick={() => this.setSelectedItem(item)}
-                            />}
+                            render={(item) => (
+                                <MiniCard
+                                    key={item.id}
+                                    data={item}
+                                    icon={itemIcon(item)}
+                                    onClick={() => this.setSelectedItem(item)}
+                                />
+                            )}
                         />
                     ) : undefined}
                 </div>
 
                 <div className={"ItemsPage_Card"}>
-                    <ItemCard
-                        item={this.state.selected}
-                        info={this.state.selectedInfo}
-                    />
+                    <ItemCard item={this.state.selected} info={this.state.selectedInfo} />
                 </div>
             </div>
         );

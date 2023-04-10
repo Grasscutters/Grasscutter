@@ -1,7 +1,5 @@
-export type Page = "Home" | "Commands" | "Avatars" | "Items"
-    | "Entities" | "Scenes";
-export type Days = "Sunday" | "Monday" | "Tuesday"
-    | "Wednesday" | "Thursday" | "Friday" | "Saturday";
+export type Page = "Home" | "Commands" | "Avatars" | "Items" | "Entities" | "Scenes";
+export type Days = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
 
 export type Command = {
     name: string[];
@@ -136,13 +134,21 @@ export function isPage(page: string): page is Page {
  */
 export function itemTypeToString(type: ItemType): string {
     switch (type) {
-        default: return "Unknown";
-        case ItemType.None: return "None";
-        case ItemType.Virtual: return "Virtual";
-        case ItemType.Material: return "Material";
-        case ItemType.Reliquary: return "Reliquary";
-        case ItemType.Weapon: return "Weapon";
-        case ItemType.Display: return "Display";
-        case ItemType.Furniture: return "Furniture";
+        default:
+            return "Unknown";
+        case ItemType.None:
+            return "None";
+        case ItemType.Virtual:
+            return "Virtual";
+        case ItemType.Material:
+            return "Material";
+        case ItemType.Reliquary:
+            return "Reliquary";
+        case ItemType.Weapon:
+            return "Weapon";
+        case ItemType.Display:
+            return "Display";
+        case ItemType.Furniture:
+            return "Furniture";
     }
 }
