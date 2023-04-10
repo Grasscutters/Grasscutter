@@ -16,4 +16,5 @@ public class SceneData extends GameResource {
     private SceneType sceneType;
 
     private String scriptData;
+    private String levelEntityConfig;
 }

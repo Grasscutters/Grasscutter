@@ -6,6 +6,7 @@ import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
 import lombok.AllArgsConstructor;
@@ -140,8 +141,8 @@ public interface Dumpers {
         Language.loadTextMaps();
 
         // Convert all known items to an item map.
-        var originalDump = new ArrayList<ItemData>();
-        GameData.getItemDataMap().forEach((id, item) -> originalDump.add(new ItemData(id,
+        var originalDump = new ArrayList<ItemInfo>();
+        GameData.getItemDataMap().forEach((id, item) -> originalDump.add(new ItemInfo(id,
             Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
             Quality.from(item.getRankLevel()), item.getItemType(),
             item.getIcon().length() > 0 ? item.getIcon().substring(3) : ""
@@ -149,7 +150,7 @@ public interface Dumpers {
 
         // Create a new dump with filtered duplicates.
         var names = new ArrayList<String>();
-        var dump = new HashMap<Integer, ItemData>();
+        var dump = new HashMap<Integer, ItemInfo>();
         originalDump.forEach(item -> {
             // Validate the item.
             if (item.name.contains("[CHS]")) return;
@@ -163,6 +164,34 @@ public interface Dumpers {
         try {
             // Create a file for the dump.
             var file = new File("items.csv");
+            if (file.exists() && !file.delete())
+                throw new RuntimeException("Failed to delete file.");
+            if (!file.exists() && !file.createNewFile())
+                throw new RuntimeException("Failed to create file.");
+
+            // Write the dump to the file.
+            Files.writeString(file.toPath(), Dumpers.miniEncode(dump));
+        } catch (IOException ignored) {
+            throw new RuntimeException("Failed to write to file.");
+        }
+    }
+
+    /**
+     * Dumps all scenes to a JSON file.
+     */
+    static void dumpScenes() {
+        // Reload resources.
+        ResourceLoader.loadAll();
+        Language.loadTextMaps();
+
+        // Convert all known scenes to a scene map.
+        var dump = new HashMap<Integer, SceneInfo>();
+        GameData.getSceneDataMap().forEach((id, scene) ->
+            dump.put(id, new SceneInfo(scene.getScriptData(), scene.getSceneType())));
+
+        try {
+            // Create a file for the dump.
+            var file = new File("scenes.csv");
             if (file.exists() && !file.delete())
                 throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
@@ -197,7 +226,7 @@ public interface Dumpers {
     }
 
     @AllArgsConstructor
-    class ItemData {
+    class ItemInfo {
         public Integer id;
         public String name;
         public Quality quality;
@@ -210,6 +239,18 @@ public interface Dumpers {
                 + this.quality + ","
                 + this.type + ","
                 + this.icon;
+        }
+    }
+
+    @AllArgsConstructor
+    class SceneInfo {
+        public String identifier;
+        public SceneType type;
+
+        @Override
+        public String toString() {
+            return this.identifier + ","
+                + this.type;
         }
     }
 
