@@ -1,20 +1,26 @@
 package emu.grasscutter.utils;
 
+import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.nio.file.Path;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
+import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
 import emu.grasscutter.Grasscutter;
+import javax.crypto.Cipher;
 
 public final class Crypto {
+
     private static final SecureRandom secureRandom = new SecureRandom();
 
     public static byte[] DISPATCH_KEY;
@@ -45,8 +51,7 @@ public final class Crypto {
 
                     var m = pattern.matcher(path.getFileName().toString());
 
-                    if (m.matches())
-                    {
+                    if (m.matches()) {
                         var key = KeyFactory.getInstance("RSA")
                             .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
 
@@ -54,8 +59,7 @@ public final class Crypto {
                     }
                 }
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
         }
     }
@@ -74,5 +78,39 @@ public final class Crypto {
         byte[] bytes = new byte[length];
         secureRandom.nextBytes(bytes);
         return bytes;
+    }
+
+    public static QueryCurRegionRspJson encryptAndSignRegionData(byte[] regionInfo, String key_id) throws Exception {
+        if (key_id == null) {
+            throw new Exception("Key ID was not set");
+        }
+
+        Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+        cipher.init(Cipher.ENCRYPT_MODE, EncryptionKeys.get(Integer.valueOf(key_id)));
+
+        //Encrypt regionInfo in chunks
+        ByteArrayOutputStream encryptedRegionInfoStream = new ByteArrayOutputStream();
+
+        //Thank you so much GH Copilot
+        int chunkSize = 256 - 11;
+        int regionInfoLength = regionInfo.length;
+        int numChunks = (int) Math.ceil(regionInfoLength / (double) chunkSize);
+
+        for (int i = 0; i < numChunks; i++) {
+            byte[] chunk = Arrays.copyOfRange(regionInfo, i * chunkSize,
+                Math.min((i + 1) * chunkSize, regionInfoLength));
+            byte[] encryptedChunk = cipher.doFinal(chunk);
+            encryptedRegionInfoStream.write(encryptedChunk);
+        }
+
+        Signature privateSignature = Signature.getInstance("SHA256withRSA");
+        privateSignature.initSign(CUR_SIGNING_KEY);
+        privateSignature.update(regionInfo);
+
+        var rsp = new QueryCurRegionRspJson();
+
+        rsp.content = Utils.base64Encode(encryptedRegionInfoStream.toByteArray());
+        rsp.sign = Utils.base64Encode(privateSignature.sign());
+        return rsp;
     }
 }

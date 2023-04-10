@@ -1,12 +1,15 @@
 package emu.grasscutter.server.http.dispatch;
 
 import com.google.protobuf.ByteString;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.Router;
@@ -16,6 +19,7 @@ import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
+import java.time.Instant;
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
 import java.util.*;
@@ -202,7 +206,8 @@ public final class RegionHandler implements Router {
                 regionData = region.getBase64();
         }
 
-        String[] versionCode = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "").split("\\.");
+        String clientVersion = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
+        String[] versionCode = clientVersion.split("\\.");
         int versionMajor = Integer.parseInt(versionCode[0]);
         int versionMinor = Integer.parseInt(versionCode[1]);
         int versionFix   = Integer.parseInt(versionCode[2]);
@@ -210,6 +215,30 @@ public final class RegionHandler implements Router {
         if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50) || (versionMajor == 2 && versionMinor == 8)) {
             try {
                 QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
+
+                String key_id = ctx.queryParam("key_id");
+
+                if (!clientVersion.equals(GameConstants.VERSION)) { // Reject clients when there is a version mismatch
+
+                    boolean updateClient = GameConstants.VERSION.compareTo(clientVersion) > 0;
+
+                    QueryCurrRegionHttpRsp rsp = QueryCurrRegionHttpRsp.newBuilder()
+                        .setRetcode(Retcode.RET_STOP_SERVER_VALUE)
+                        .setMsg("Connection Failed!")
+                        .setRegionInfo(RegionInfo.newBuilder())
+                        .setStopServer(StopServerInfo.newBuilder()
+                            .setUrl("https://discord.gg/grasscutters")
+                            .setStopBeginTime((int) Instant.now().getEpochSecond())
+                            .setStopEndTime((int) Instant.now().getEpochSecond()*2)
+                            .setContentMsg(updateClient ? "\nVersion mismatch outdated client! \n\nServer version: %s\nClient version: %s".formatted(GameConstants.VERSION, clientVersion) : "\nVersion mismatch outdated server! \n\nServer version: %s\nClient version: %s".formatted(GameConstants.VERSION, clientVersion))
+                            .build())
+                        .buildPartial();
+
+                    Grasscutter.getLogger().info(String.format("Connection denied for %s due to %s", ctx.ip(), updateClient ? "outdated client!" : "outdated server!"));
+
+                    ctx.json(Crypto.encryptAndSignRegionData(rsp.toByteArray(), key_id));
+                    return;
+                }
 
                 if (ctx.queryParam("dispatchSeed") == null) {
                     // More love for UA Patch players
@@ -222,39 +251,10 @@ public final class RegionHandler implements Router {
                     return;
                 }
 
-                String key_id = ctx.queryParam("key_id");
 
-                if (key_id == null)
-                    throw new Exception("Key ID was not set");
-
-                Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-                cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(Integer.valueOf(key_id)));
                 var regionInfo = Utils.base64Decode(event.getRegionInfo());
 
-                //Encrypt regionInfo in chunks
-                ByteArrayOutputStream encryptedRegionInfoStream = new ByteArrayOutputStream();
-
-                //Thank you so much GH Copilot
-                int chunkSize = 256 - 11;
-                int regionInfoLength = regionInfo.length;
-                int numChunks = (int) Math.ceil(regionInfoLength / (double) chunkSize);
-
-                for (int i = 0; i < numChunks; i++) {
-                    byte[] chunk = Arrays.copyOfRange(regionInfo, i * chunkSize, Math.min((i + 1) * chunkSize, regionInfoLength));
-                    byte[] encryptedChunk = cipher.doFinal(chunk);
-                    encryptedRegionInfoStream.write(encryptedChunk);
-                }
-
-                Signature privateSignature = Signature.getInstance("SHA256withRSA");
-                privateSignature.initSign(Crypto.CUR_SIGNING_KEY);
-                privateSignature.update(regionInfo);
-
-                var rsp = new QueryCurRegionRspJson();
-
-                rsp.content = Utils.base64Encode(encryptedRegionInfoStream.toByteArray());
-                rsp.sign = Utils.base64Encode(privateSignature.sign());
-
-                ctx.json(rsp);
+                ctx.json(Crypto.encryptAndSignRegionData(regionInfo, key_id));
             }
             catch (Exception e) {
                 Grasscutter.getLogger().error("An error occurred while handling query_cur_region.", e);
