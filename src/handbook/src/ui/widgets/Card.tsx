@@ -52,9 +52,7 @@ class Card extends React.PureComponent<IProps> {
                 </div>
 
                 {this.props.button ? (
-                    <div className={"Card_Button"}
-                         style={{ marginRight: this.props.rightOffset ?? 0 }}
-                    >
+                    <div className={"Card_Button"} style={{ marginRight: this.props.rightOffset ?? 0 }}>
                         {this.props.button}
                     </div>
                 ) : undefined}

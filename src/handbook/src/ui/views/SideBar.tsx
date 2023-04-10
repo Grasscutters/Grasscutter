@@ -40,12 +40,14 @@ class SideBar extends React.Component<{}, IState> {
                     The Ultimate Anime Game Handbook
                 </h1>
 
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    height: "100%"
-                }}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        height: "100%"
+                    }}
+                >
                     <div className={"SideBar_Buttons"}>
                         <SideBarButton name={"Commands"} anchor={"Commands"} />
                         <SideBarButton name={"Characters"} anchor={"Avatars"} />

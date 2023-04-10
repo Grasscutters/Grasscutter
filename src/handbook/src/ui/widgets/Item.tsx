@@ -52,9 +52,7 @@ class Item extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={"Item"}
-                 onClick={this.props.onClick}
-            >
+            <div className={"Item"} onClick={this.props.onClick}>
                 <div className={"Item_Background"}>
                     {this.state.icon && (
                         <img

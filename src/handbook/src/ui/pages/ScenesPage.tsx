@@ -14,14 +14,22 @@ import "@css/pages/ScenesPage.scss";
  */
 function sceneTypeToString(type: SceneType): string {
     switch (type) {
-        default: return "Unknown";
-        case SceneType.None: return "None";
-        case SceneType.World: return "World";
-        case SceneType.Activity: return "Activity";
-        case SceneType.Dungeon: return "Dungeon";
-        case SceneType.Room: return "Room";
-        case SceneType.HomeRoom: return "Home Room";
-        case SceneType.HomeWorld: return "Home World";
+        default:
+            return "Unknown";
+        case SceneType.None:
+            return "None";
+        case SceneType.World:
+            return "World";
+        case SceneType.Activity:
+            return "Activity";
+        case SceneType.Dungeon:
+            return "Dungeon";
+        case SceneType.Room:
+            return "Room";
+        case SceneType.HomeRoom:
+            return "Home Room";
+        case SceneType.HomeWorld:
+            return "Home World";
     }
 }
 
@@ -45,11 +53,12 @@ class ScenesPage extends React.PureComponent {
                             key={command.identifier}
                             title={command.identifier}
                             alternate={`ID: ${command.id} | ${sceneTypeToString(command.type)}`}
-                            button={(
-                                <button className={"ScenesPage_Button"}
-                                        onClick={this.teleport.bind(this)}
-                                >Teleport</button>
-                            )} rightOffset={13}
+                            button={
+                                <button className={"ScenesPage_Button"} onClick={this.teleport.bind(this)}>
+                                    Teleport
+                                </button>
+                            }
+                            rightOffset={13}
                             height={75}
                         />
                     ))}
