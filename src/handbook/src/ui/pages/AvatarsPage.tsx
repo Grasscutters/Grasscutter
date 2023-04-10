@@ -26,11 +26,9 @@ class AvatarsPage extends React.PureComponent {
 
                 <div className={"AvatarsPage_List"}>
                     {listAvatars().map((avatar) =>
-                        avatar.id > 11000000 ? undefined :
-                            <Character
-                                key={avatar.id} data={avatar}
-                                onClick={this.grantAvatar.bind(this, avatar)}
-                            />
+                        avatar.id > 11000000 ? undefined : (
+                            <Character key={avatar.id} data={avatar} onClick={this.grantAvatar.bind(this, avatar)} />
+                        )
                     )}
                 </div>
             </div>

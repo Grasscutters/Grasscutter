@@ -121,7 +121,7 @@ export enum ItemCategory {
 export type CommandResponse = {
     status: number | 200 | 500;
     message: string;
-}
+};
 
 /**
  * Checks if a string is a page.
