@@ -23,7 +23,9 @@ class App extends React.Component<{}, IState> {
         // Check if the window's href is a page.
         let targetPage = null;
         const page = window.location.href.split("/").pop();
-        if (page != undefined) {
+        console.log(page)
+
+        if (page != undefined && page != "") {
             // Convert the page to a Page type.
             const pageName = page.charAt(0).toUpperCase() + page.slice(1);
             // Check if the page is a valid page.

@@ -1,5 +1,7 @@
 import { EventEmitter } from "events";
+
 import type { Page } from "@backend/types";
+import { isPage } from "@backend/types";
 
 const emitter = new EventEmitter();
 const navigation = new EventEmitter();
@@ -18,14 +20,14 @@ export function setup(): void {
     setTimeout(() => {
         // Check if the window's href is a page.
         const page = window.location.href.split("/").pop();
-        if (page == undefined) return;
+        if (page == undefined || page == "") return;
 
         // Convert the page to a Page type.
         const pageName = page.charAt(0).toUpperCase() + page.slice(1);
         const pageType = pageName as Page;
 
         // Navigate to the page.
-        navigate(pageType, false);
+        isPage(page) && navigate(pageType, false);
     }, 3e2);
 }
 

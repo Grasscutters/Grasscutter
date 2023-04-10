@@ -124,7 +124,7 @@ export enum ItemCategory {
  * @param page The string to check.
  */
 export function isPage(page: string): page is Page {
-    return ["Home", "Commands"].includes(page);
+    return ["Home", "Commands", "Avatars", "Items", "Entities", "Scenes"].includes(page);
 }
 
 /**
