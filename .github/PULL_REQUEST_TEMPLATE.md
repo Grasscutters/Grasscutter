@@ -1,7 +1,7 @@
 ## Description
 
 Please carefully read the [Contributing note](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md) and [Code of conduct](https://github.com/Grasscutters/Grasscutter/blob/development/CODE_OF_CONDUCT.md) before making any pull requests.
-And, **Do not make a pull request to merge into stable unless it is a hotfix. Use the development branch instead.**
+
 ## Issues fixed by this PR
 
 <!--- Put the links of issues that may be fixed by this PR here (if any). -->
