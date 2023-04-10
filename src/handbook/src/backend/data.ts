@@ -1,16 +1,16 @@
 import commands from "@data/commands.json";
 import avatars from "@data/avatars.csv";
+import scenes from "@data/scenes.csv";
 import items from "@data/items.csv";
 
-import { Quality, ItemType, ItemCategory } from "@backend/types";
-import type { Command, Avatar, Item } from "@backend/types";
+import { Quality, ItemType, ItemCategory, SceneType } from "@backend/types";
+import type { Command, Avatar, Item, Scene } from "@backend/types";
 
 import { inRange } from "@app/utils";
 
 type AvatarDump = { [key: number]: Avatar };
 type CommandDump = { [key: string]: Command };
 type TaggedItems = { [key: number]: Item[] };
-type ItemIcons = { [key: number]: string };
 
 /**
  * @see {@file src/handbook/data/README.md}
@@ -95,6 +95,21 @@ export function getAvatars(): AvatarDump {
  */
 export function listAvatars(): Avatar[] {
     return Object.values(getAvatars());
+}
+
+/**
+ * Fetches and casts all scenes in the file.
+ */
+export function getScenes(): Scene[] {
+    return scenes.map((entry) => {
+        const values = Object.values(entry) as string[];
+        const id = parseInt(values[0]);
+        return {
+            id,
+            identifier: values[1],
+            type: values[2] as SceneType
+        };
+    });
 }
 
 /**

@@ -2,8 +2,9 @@
 Use Grasscutter's dumpers to generate the data to put here.
 
 ## Files Required
-- `avatars.json`
 - `commands.json`
+- `avatars.csv`
+- `scenes.csv`
 - `items.csv`
 
 # Item Icon Notes

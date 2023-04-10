@@ -16,6 +16,12 @@ export type Avatar = {
     id: number;
 };
 
+export type Scene = {
+    identifier: string;
+    type: string;
+    id: number;
+};
+
 export type Item = {
     id: number;
     name: string;
@@ -68,6 +74,16 @@ export enum ItemType {
     Weapon = "ITEM_WEAPON",
     Display = "ITEM_DISPLAY",
     Furniture = "ITEM_FURNITURE"
+}
+
+export enum SceneType {
+    None = "SCENE_NONE",
+    World = "SCENE_WORLD",
+    Dungeon = "SCENE_DUNGEON",
+    Room = "SCENE_ROOM",
+    HomeWorld = "SCENE_HOME_WORLD",
+    HomeRoom = "SCENE_HOME_ROOM",
+    Activity = "SCENE_ACTIVITY"
 }
 
 export enum ItemCategory {
