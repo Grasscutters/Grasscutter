@@ -30,8 +30,10 @@ function invalid(value: number): boolean {
  * @param talents The level for the avatar's talents.
  */
 export async function grantAvatar(
-    avatar: number, level = 90,
-    constellations = 6, talents = 6
+    avatar: number,
+    level = 90,
+    constellations = 6,
+    talents = 6
 ): Promise<CommandResponse> {
     // Validate the numbers.
     if (invalid(avatar) || invalid(level)
@@ -39,12 +41,15 @@ export async function grantAvatar(
         return { status: -1, message: "Invalid arguments." };
 
     return await fetch(`https://localhost:443/handbook/avatar`, {
-        method: "POST", body: JSON.stringify({
+        method: "POST",
+        body: JSON.stringify({
             player: targetPlayer.toString(),
             avatar: avatar.toString(),
-            level, constellations, talentLevels: talents
+            level,
+            constellations,
+            talentLevels: talents
         })
-    }).then(res => res.json());
+    }).then((res) => res.json());
 }
 
 /**
