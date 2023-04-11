@@ -430,7 +430,7 @@ public class SceneScriptManager {
         } catch (IOException ignored) {
             Grasscutter.getLogger().error("Scene {} unable to load grid file.", getScene().getId());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Scene {} unable to load grid file.", e, getScene().getId());
+            Grasscutter.getLogger().error("Scene {} unable to load grid file.", getScene().getId(), e);
         }
 
         boolean runForFirstTime = this.groupGrids == null;
