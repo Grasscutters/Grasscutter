@@ -427,6 +427,7 @@ public class SceneScriptManager {
 
         try {
             this.groupGrids = JsonUtils.loadToList(path, Grid.class);
+            this.groupGrids.forEach(Grid::load);
         } catch (IOException ignored) {
             Grasscutter.getLogger().error("Scene {} unable to load grid file.", getScene().getId());
         } catch (Exception e) {
@@ -552,7 +553,7 @@ public class SceneScriptManager {
             this.groupGrids = new ArrayList<>();
             for (int i = 0; i < 6; i++) {
                 this.groupGrids.add(new Grid());
-                this.groupGrids.get(i).grid = groupPositions.get(i);
+                this.groupGrids.get(i).gridMap = groupPositions.get(i);
             }
 
             try (FileWriter file = new FileWriter(path.toFile())) {

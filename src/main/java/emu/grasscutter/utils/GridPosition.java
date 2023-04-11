@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 
 @Entity
 public class GridPosition implements Serializable {
@@ -37,7 +38,8 @@ public class GridPosition implements Serializable {
         this.x = xzwidth.get(0);
     }
 
-    public GridPosition(String str) throws IOException {
+    @SneakyThrows
+    public GridPosition(String str) {
         String[] listOfParams = str.replace(" ", "").replace("(", "").replace(")", "").split(",");
         if (listOfParams.length != 3)
             throw new IOException("invalid size on GridPosition definition - ");
