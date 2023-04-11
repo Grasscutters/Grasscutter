@@ -108,22 +108,20 @@ public final class StartupArguments {
             GAME_INFO.isShowPacketPayload = DEBUG_MODE_INFO.isShowPacketPayload;
             GAME_INFO.logPackets = DEBUG_MODE_INFO.logPackets;
             DISPATCH_INFO.logRequests = DEBUG_MODE_INFO.logRequests;
+
+            // Log level to other third-party services
+            Level loggerLevel = DEBUG_MODE_INFO.servicesLoggersLevel;
+            // Change loggers to debug.
+            ((Logger) LoggerFactory.getLogger("io.javalin")).setLevel(loggerLevel);
+            ((Logger) LoggerFactory.getLogger("org.quartz")).setLevel(loggerLevel);
+            ((Logger) LoggerFactory.getLogger("org.reflections")).setLevel(loggerLevel);
+            ((Logger) LoggerFactory.getLogger("org.eclipse.jetty")).setLevel(loggerLevel);
+            ((Logger) LoggerFactory.getLogger("org.mongodb.driver")).setLevel(loggerLevel);
         }
 
         // Set the main logger to debug.
         Grasscutter.getLogger().setLevel(DEBUG_MODE_INFO.serverLoggerLevel);
         Grasscutter.getLogger().debug("The logger is now running in debug mode.");
-
-        // Log level to other third-party services
-        Level loggerLevel = DEBUG_MODE_INFO.servicesLoggersLevel;
-
-        // Change loggers to debug.
-        ((Logger) LoggerFactory.getLogger("io.javalin")).setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.quartz")).setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.reflections")).setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.eclipse.jetty")).setLevel(loggerLevel);
-        ((Logger) LoggerFactory.getLogger("org.mongodb.driver")).setLevel(loggerLevel);
-
         return false;
     }
 }
