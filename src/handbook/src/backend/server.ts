@@ -36,8 +36,7 @@ export async function grantAvatar(
     talents = 6
 ): Promise<CommandResponse> {
     // Validate the numbers.
-    if (invalid(avatar) || invalid(level)
-        || invalid(constellations) || invalid(talents))
+    if (invalid(avatar) || invalid(level) || invalid(constellations) || invalid(talents))
         return { status: -1, message: "Invalid arguments." };
 
     return await fetch(`https://localhost:443/handbook/avatar`, {
@@ -60,18 +59,16 @@ export async function grantAvatar(
  * @param item The item's ID.
  * @param amount The amount of the item to give.
  */
-export async function giveItem(
-    item: number, amount = 1
-): Promise<CommandResponse> {
+export async function giveItem(item: number, amount = 1): Promise<CommandResponse> {
     // Validate the number.
-    if (isNaN(amount) || amount < 1)
-        return { status: -1, message: "Invalid amount." };
+    if (isNaN(amount) || amount < 1) return { status: -1, message: "Invalid amount." };
 
     return await fetch(`https://localhost:443/handbook/item`, {
-        method: "POST", body: JSON.stringify({
+        method: "POST",
+        body: JSON.stringify({
             player: targetPlayer.toString(),
             item: item.toString(),
             amount
         })
-    }).then(res => res.json());
+    }).then((res) => res.json());
 }

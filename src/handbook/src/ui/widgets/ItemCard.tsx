@@ -82,9 +82,10 @@ class ItemCard extends React.Component<IProps, IState> {
      * @private
      */
     private async addToInventory(): Promise<void> {
-        await giveItem(this.props.item?.id ?? 102,
-            typeof(this.state.count) == "string" ?
-                parseInt(this.state.count) : this.state.count);
+        await giveItem(
+            this.props.item?.id ?? 102,
+            typeof this.state.count == "string" ? parseInt(this.state.count) : this.state.count
+        );
     }
 
     componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: any) {
