@@ -786,7 +786,7 @@ public final class Scene {
         this.getScriptManager().loadBlockFromScript(block);
         scriptManager.getLoadedGroupSetPerBlock().put(block.id, new HashSet<>());
 
-        Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
+        Grasscutter.getLogger().debug("Scene {} Block {} loaded.", this.getId(), block.id);
     }
 
     public int loadDynamicGroup(int group_id) {
@@ -826,7 +826,7 @@ public final class Scene {
                 .filter(replacement -> dynamicGroups.contains(replacement.id))
                 .forEach(
                         replacement -> {
-                            Grasscutter.getLogger().info("Graph ordering replacement {}", replacement);
+                            Grasscutter.getLogger().debug("Graph ordering replacement {}", replacement);
                             replacement.replace_groups.forEach(
                                     group -> {
                                         nodes.add(new KahnsSort.Node(replacement.id, group));
@@ -863,7 +863,7 @@ public final class Scene {
                                     this.unloadGroup(
                                             scriptManager.getBlocks().get(sceneGroup.block_id), replace_group);
                                     it.remove();
-                                    Grasscutter.getLogger().info("Graph ordering: unloaded {}", replace_group);
+                                    Grasscutter.getLogger().debug("Graph ordering: unloaded {}", replace_group);
                                 }
                             }
                         }
@@ -939,7 +939,7 @@ public final class Scene {
         groups.forEach(
                 g -> scriptManager.callEvent(new ScriptArgs(g.id, EventType.EVENT_GROUP_LOAD, g.id)));
 
-        Grasscutter.getLogger().info("Scene {} loaded {} group(s)", this.getId(), groups.size());
+        Grasscutter.getLogger().debug("Scene {} loaded {} group(s)", this.getId(), groups.size());
     }
 
     public void unloadGroup(SceneBlock block, int group_id) {
@@ -967,7 +967,7 @@ public final class Scene {
 
         if (this.scriptManager.getLoadedGroupSetPerBlock().get(block.id).isEmpty()) {
             this.scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
-            Grasscutter.getLogger().info("Scene {} Block {} is unloaded.", this.getId(), block.id);
+            Grasscutter.getLogger().debug("Scene {} Block {} is unloaded.", this.getId(), block.id);
         }
 
         this.broadcastPacket(new PacketGroupUnloadNotify(List.of(group_id)));
