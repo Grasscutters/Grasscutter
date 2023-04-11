@@ -3,6 +3,7 @@ import React from "react";
 import type { Item as ItemType, ItemInfo } from "@backend/types";
 import { itemTypeToString } from "@backend/types";
 import { itemIcon } from "@app/utils";
+import { giveItem } from "@backend/server";
 
 import "@css/widgets/ItemCard.scss";
 
@@ -81,7 +82,9 @@ class ItemCard extends React.Component<IProps, IState> {
      * @private
      */
     private async addToInventory(): Promise<void> {
-        // TODO: Implement server access.
+        await giveItem(this.props.item?.id ?? 102,
+            typeof(this.state.count) == "string" ?
+                parseInt(this.state.count) : this.state.count);
     }
 
     componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: any) {
