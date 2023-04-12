@@ -1,7 +1,0 @@
-*.java text=lf
-*.json text=lf
-*.md text=lf
-*.properties text=lf
-*.py text=lf
-*.sh text=lf
-* text eol=lf
