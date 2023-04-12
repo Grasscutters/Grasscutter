@@ -512,8 +512,14 @@ public class ScriptLib {
     }
 
     public int SetEntityServerGlobalValueByConfigId(int cfgId, String sgvName, int value){
-        logger.warn("[LUA] Call unimplemented SetEntityServerGlobalValueByConfigId with {} {} {}", cfgId, sgvName, value);
-        //TODO implement
+        var scriptManager = this.getSceneScriptManager();
+        if (scriptManager == null) return 1;
+
+        var entity = scriptManager.getScene().getEntityByConfigId(cfgId);
+        if (entity == null) return 2;
+
+        scriptManager.getScene().getWorld().broadcastPacket(
+            new PacketServerGlobalValueChangeNotify(entity, sgvName, value));
         return 0;
     }
 
