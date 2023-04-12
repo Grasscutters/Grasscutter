@@ -6,6 +6,9 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.game.dungeons.enums.*;
 import java.util.List;
+
+import emu.grasscutter.scripts.data.SceneMeta;
+import emu.grasscutter.utils.Position;
 import lombok.Getter;
 
 @ResourceType(name = "DungeonExcelConfigData.json")
@@ -60,6 +63,20 @@ public class DungeonData extends GameResource {
             return DungeonInvolveType.INVOLVE_NONE;
         }
         return involveType;
+    }
+
+    /**
+     * @return The position of the player when they enter the dungeon.
+     */
+    public Position getStartPosition() {
+        return SceneMeta.of(this.getSceneId()).config.born_pos;
+    }
+
+    /**
+     * @return The rotation of the player when they enter the dungeon.
+     */
+    public Position getStartRotation() {
+        return SceneMeta.of(this.getSceneId()).config.born_rot;
     }
 
     @Override
