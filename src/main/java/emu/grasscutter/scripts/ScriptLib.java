@@ -511,14 +511,18 @@ public class ScriptLib {
         return 0;
     }
 
-    public int SetEntityServerGlobalValueByConfigId(int cfgId, String sgvName, int value){
+    public int SetEntityServerGlobalValueByConfigId(int cfgId, String sgvName, int value) {
+        logger.debug("[LUA] Call SetEntityServerGlobalValueByConfigId with {}, {}, {}",
+            cfgId, sgvName, value);
+
         var scriptManager = this.getSceneScriptManager();
         if (scriptManager == null) return 1;
 
-        var entity = scriptManager.getScene().getEntityByConfigId(cfgId);
+        var scene = scriptManager.getScene();
+        var entity = scene.getEntityByConfigId(cfgId);
         if (entity == null) return 2;
 
-        scriptManager.getScene().getWorld().broadcastPacket(
+        scene.broadcastPacket(
             new PacketServerGlobalValueChangeNotify(entity, sgvName, value));
         return 0;
     }
