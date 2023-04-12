@@ -105,11 +105,11 @@ public class ScriptLib {
             configId,gadgetState);
         GameEntity entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
 
-        if (!(entity instanceof EntityGadget)) {
+        if (!(entity instanceof EntityGadget gadget)) {
             return 1;
         }
 
-        ((EntityGadget) entity).updateState(gadgetState);
+        gadget.updateState(gadgetState);
         return 0;
     }
 
@@ -118,10 +118,10 @@ public class ScriptLib {
             groupId,configId,gadgetState);
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
-        if(!(entity instanceof EntityGadget)){
+        if(!(entity instanceof EntityGadget gadget)){
             return -1;
         }
-        ((EntityGadget) entity).updateState(gadgetState);
+        gadget.updateState(gadgetState);
 
         return 0;
     }

@@ -21,8 +21,11 @@ import emu.grasscutter.server.packet.send.PacketDelQuestNotify;
 import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.utils.Utils;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.script.Bindings;
+
+import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
@@ -279,6 +282,26 @@ public class GameQuest {
         clearProgress(notifyDelete);
         this.start();
         return true;
+    }
+
+    /**
+     * @return A list of dungeon IDs associated with the quest's 'QUEST_CONTENT_ENTER_DUNGEON' triggers.
+     *    The first element of the pair is the dungeon ID.
+     *    The second element of the pair is the dungeon's scene point.
+     */
+    public List<IntIntImmutablePair> getDungeonIds() {
+        var conditions = this.getQuestData().getFinishCond().stream()
+            .filter(cond -> cond.getType() == QuestContent.QUEST_CONTENT_ENTER_DUNGEON)
+            .toList();
+
+        return conditions.stream()
+            .map(condition -> {
+                var params = condition.getParam();
+                // The first parameter is the ID of the dungeon.
+                // The second parameter is the dungeon entry's scene point.
+                // ex. [1, 1] = dungeon ID 1, scene point 1 or 'KaeyaDungeon'.
+                return new IntIntImmutablePair(params[0], params[1]);
+            }).toList();
     }
 
     public void save() {

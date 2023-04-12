@@ -61,16 +61,27 @@ public class DungeonSystem extends BaseGameSystem {
         }
     }
 
-    public void getEntryInfo(Player player, int pointId) {
-        ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
-
+    /**
+     * Sends the entry info for the given dungeon point to the player.
+     *
+     * @param player The player to send the entry info to.
+     * @param pointId The dungeon point ID.
+     */
+    public void sendEntryInfoFor(Player player, int pointId) {
+        var entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
         if (entry == null) {
-            // Error
+            // An invalid point ID was sent.
             player.sendPacket(new PacketDungeonEntryInfoRsp());
             return;
         }
 
-        player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
+        // Check if the player has quests with dungeon IDs.
+        var questDungeons = player.getQuestManager().questsForDungeon(entry);
+        if (questDungeons.size() > 0) {
+            player.sendPacket(new PacketDungeonEntryInfoRsp(entry.getPointData(), questDungeons));
+        } else {
+            player.sendPacket(new PacketDungeonEntryInfoRsp(entry.getPointData()));
+        }
     }
 
     public boolean triggerCondition(

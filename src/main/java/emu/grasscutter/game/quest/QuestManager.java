@@ -3,6 +3,7 @@ package emu.grasscutter.game.quest;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
+import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.BasePlayerManager;
@@ -13,6 +14,7 @@ import emu.grasscutter.utils.Position;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
 import lombok.Getter;
 import lombok.val;
 
@@ -442,5 +444,36 @@ public class QuestManager extends BasePlayerManager {
 
     public List<GameMainQuest> getActiveMainQuests() {
         return getMainQuests().values().stream().filter(p -> !p.isFinished()).toList();
+    }
+
+    /**
+     * Fetches dungeon IDs for quests which have a dungeon.
+     *
+     * @param point The associated scene point of the dungeon.
+     * @return A list of dungeon IDs, or an empty list if none are found.
+     */
+    public List<Integer> questsForDungeon(ScenePointEntry point) {
+        var pointId = point.getPointData().getId();
+        // Get the active quests.
+        return this.getActiveMainQuests().stream()
+            // Get the sub-quests of the main quest.
+            .map(GameMainQuest::getChildQuests)
+            // Get the values of the sub-quests map.
+            .map(Map::values)
+            .map(quests -> quests.stream()
+                // Get the dungeon IDs of each quest.
+                .map(GameQuest::getDungeonIds)
+                .map(ids -> ids.stream()
+                    // Find entry points which match this dungeon.
+                    .filter(id -> id.rightInt() == pointId)
+                    .toList())
+                .map(ids -> ids.stream()
+                    // Of the remaining dungeons, find the ID of the quest dungeon.
+                    .map(IntIntImmutablePair::leftInt)
+                    .toList())
+                .flatMap(Collection::stream)
+                .toList())
+            .flatMap(Collection::stream)
+            .toList();
     }
 }
