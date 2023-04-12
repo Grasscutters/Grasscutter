@@ -98,7 +98,7 @@ public class SceneScriptManager {
         }
 
         // Create
-        this.init();
+        new Thread(this::init).start();
     }
 
     public Scene getScene() {
