@@ -20,8 +20,8 @@ public final class ForgeGetQueueDataReqOuterClass {
   }
   /**
    * <pre>
-   * Name: OLAKEAMNKMH
-   * CmdId: 618
+   * CmdId: 654
+   * Name: FDJBLFOADKF
    * </pre>
    *
    * Protobuf type {@code ForgeGetQueueDataReq}
@@ -246,8 +246,8 @@ public final class ForgeGetQueueDataReqOuterClass {
     }
     /**
      * <pre>
-     * Name: OLAKEAMNKMH
-     * CmdId: 618
+     * CmdId: 654
+     * Name: FDJBLFOADKF
      * </pre>
      *
      * Protobuf type {@code ForgeGetQueueDataReq}

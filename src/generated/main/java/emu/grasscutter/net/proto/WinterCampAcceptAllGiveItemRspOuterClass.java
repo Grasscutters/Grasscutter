@@ -19,39 +19,39 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> 
         getAcceptItemResultInfoList();
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo getAcceptItemResultInfo(int index);
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     int getAcceptItemResultInfoCount();
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder> 
         getAcceptItemResultInfoOrBuilderList();
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder getAcceptItemResultInfoOrBuilder(
         int index);
+
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * Name: BHEABKLJGEG
-   * CmdId: 8815
+   * CmdId: 8440
+   * Name: IAMGMPONLOL
    * </pre>
    *
    * Protobuf type {@code WinterCampAcceptAllGiveItemRsp}
@@ -100,18 +100,18 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 114: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 acceptItemResultInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               acceptItemResultInfo_.add(
                   input.readMessage(emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -149,28 +149,17 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
               emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp.class, emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int ACCEPT_ITEM_RESULT_INFO_FIELD_NUMBER = 14;
+    public static final int ACCEPT_ITEM_RESULT_INFO_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> acceptItemResultInfo_;
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> getAcceptItemResultInfoList() {
       return acceptItemResultInfo_;
     }
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder> 
@@ -178,26 +167,37 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       return acceptItemResultInfo_;
     }
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     @java.lang.Override
     public int getAcceptItemResultInfoCount() {
       return acceptItemResultInfo_.size();
     }
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo getAcceptItemResultInfo(int index) {
       return acceptItemResultInfo_.get(index);
     }
     /**
-     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+     * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder getAcceptItemResultInfoOrBuilder(
         int index) {
       return acceptItemResultInfo_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 14;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -214,11 +214,11 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
-      }
       for (int i = 0; i < acceptItemResultInfo_.size(); i++) {
-        output.writeMessage(14, acceptItemResultInfo_.get(i));
+        output.writeMessage(3, acceptItemResultInfo_.get(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
-      }
       for (int i = 0; i < acceptItemResultInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, acceptItemResultInfo_.get(i));
+          .computeMessageSize(3, acceptItemResultInfo_.get(i));
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       }
       emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp other = (emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getAcceptItemResultInfoList()
           .equals(other.getAcceptItemResultInfoList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getAcceptItemResultInfoCount() > 0) {
         hash = (37 * hash) + ACCEPT_ITEM_RESULT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAcceptItemResultInfoList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
     }
     /**
      * <pre>
-     * Name: BHEABKLJGEG
-     * CmdId: 8815
+     * CmdId: 8440
+     * Name: IAMGMPONLOL
      * </pre>
      *
      * Protobuf type {@code WinterCampAcceptAllGiveItemRsp}
@@ -412,14 +412,14 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         if (acceptItemResultInfoBuilder_ == null) {
           acceptItemResultInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           acceptItemResultInfoBuilder_.clear();
         }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -447,7 +447,6 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       public emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp buildPartial() {
         emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp result = new emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (acceptItemResultInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             acceptItemResultInfo_ = java.util.Collections.unmodifiableList(acceptItemResultInfo_);
@@ -457,6 +456,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         } else {
           result.acceptItemResultInfo_ = acceptItemResultInfoBuilder_.build();
         }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -505,9 +505,6 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp other) {
         if (other == emu.grasscutter.net.proto.WinterCampAcceptAllGiveItemRspOuterClass.WinterCampAcceptAllGiveItemRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (acceptItemResultInfoBuilder_ == null) {
           if (!other.acceptItemResultInfo_.isEmpty()) {
             if (acceptItemResultInfo_.isEmpty()) {
@@ -533,6 +530,9 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
               acceptItemResultInfoBuilder_.addAllMessages(other.acceptItemResultInfo_);
             }
           }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,37 +564,6 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> acceptItemResultInfo_ =
         java.util.Collections.emptyList();
       private void ensureAcceptItemResultInfoIsMutable() {
@@ -608,7 +577,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
           emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder> acceptItemResultInfoBuilder_;
 
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> getAcceptItemResultInfoList() {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -618,7 +587,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public int getAcceptItemResultInfoCount() {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -628,7 +597,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo getAcceptItemResultInfo(int index) {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -638,7 +607,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder setAcceptItemResultInfo(
           int index, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo value) {
@@ -655,7 +624,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder setAcceptItemResultInfo(
           int index, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder builderForValue) {
@@ -669,7 +638,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder addAcceptItemResultInfo(emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo value) {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -685,7 +654,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder addAcceptItemResultInfo(
           int index, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo value) {
@@ -702,7 +671,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder addAcceptItemResultInfo(
           emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder builderForValue) {
@@ -716,7 +685,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder addAcceptItemResultInfo(
           int index, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder builderForValue) {
@@ -730,7 +699,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder addAllAcceptItemResultInfo(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo> values) {
@@ -745,7 +714,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder clearAcceptItemResultInfo() {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -758,7 +727,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public Builder removeAcceptItemResultInfo(int index) {
         if (acceptItemResultInfoBuilder_ == null) {
@@ -771,14 +740,14 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder getAcceptItemResultInfoBuilder(
           int index) {
         return getAcceptItemResultInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder getAcceptItemResultInfoOrBuilder(
           int index) {
@@ -788,7 +757,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder> 
            getAcceptItemResultInfoOrBuilderList() {
@@ -799,14 +768,14 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder addAcceptItemResultInfoBuilder() {
         return getAcceptItemResultInfoFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder addAcceptItemResultInfoBuilder(
           int index) {
@@ -814,7 +783,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
             index, emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 14;</code>
+       * <code>repeated .WinterCampAcceptItemResultInfo accept_item_result_info = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.Builder> 
            getAcceptItemResultInfoBuilderList() {
@@ -833,6 +802,37 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
           acceptItemResultInfo_ = null;
         }
         return acceptItemResultInfoBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -903,9 +903,9 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n$WinterCampAcceptAllGiveItemRsp.proto\032$" +
       "WinterCampAcceptItemResultInfo.proto\"s\n\036" +
-      "WinterCampAcceptAllGiveItemRsp\022\017\n\007retcod" +
-      "e\030\n \001(\005\022@\n\027accept_item_result_info\030\016 \003(\013" +
-      "2\037.WinterCampAcceptItemResultInfoB\033\n\031emu" +
+      "WinterCampAcceptAllGiveItemRsp\022@\n\027accept" +
+      "_item_result_info\030\003 \003(\0132\037.WinterCampAcce" +
+      "ptItemResultInfo\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -918,7 +918,7 @@ public final class WinterCampAcceptAllGiveItemRspOuterClass {
     internal_static_WinterCampAcceptAllGiveItemRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WinterCampAcceptAllGiveItemRsp_descriptor,
-        new java.lang.String[] { "Retcode", "AcceptItemResultInfo", });
+        new java.lang.String[] { "AcceptItemResultInfo", "Retcode", });
     emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.getDescriptor();
   }
 

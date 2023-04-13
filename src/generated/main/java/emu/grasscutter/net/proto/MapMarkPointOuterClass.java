@@ -87,7 +87,7 @@ public final class MapMarkPointOuterClass {
   }
   /**
    * <pre>
-   * Name: CKNMIHFPLAI
+   * Name: EDELLOCMJAG
    * </pre>
    *
    * Protobuf type {@code MapMarkPoint}
@@ -575,7 +575,7 @@ public final class MapMarkPointOuterClass {
     }
     /**
      * <pre>
-     * Name: CKNMIHFPLAI
+     * Name: EDELLOCMJAG
      * </pre>
      *
      * Protobuf type {@code MapMarkPoint}

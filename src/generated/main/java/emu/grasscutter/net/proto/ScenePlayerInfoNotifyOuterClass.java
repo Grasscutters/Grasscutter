@@ -44,8 +44,8 @@ public final class ScenePlayerInfoNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: JGMDCGBILKP
-   * CmdId: 240
+   * CmdId: 218
+   * Name: LOJLNEMABDP
    * </pre>
    *
    * Protobuf type {@code ScenePlayerInfoNotify}
@@ -337,8 +337,8 @@ public final class ScenePlayerInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: JGMDCGBILKP
-     * CmdId: 240
+     * CmdId: 218
+     * Name: LOJLNEMABDP
      * </pre>
      *
      * Protobuf type {@code ScenePlayerInfoNotify}

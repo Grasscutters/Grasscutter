@@ -44,7 +44,7 @@ public final class AbilityControlBlockOuterClass {
   }
   /**
    * <pre>
-   * Name: KDMMAILHMCH
+   * Name: AKFKOGCMMAF
    * </pre>
    *
    * Protobuf type {@code AbilityControlBlock}
@@ -336,7 +336,7 @@ public final class AbilityControlBlockOuterClass {
     }
     /**
      * <pre>
-     * Name: KDMMAILHMCH
+     * Name: AKFKOGCMMAF
      * </pre>
      *
      * Protobuf type {@code AbilityControlBlock}

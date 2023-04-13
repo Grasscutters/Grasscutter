@@ -32,7 +32,7 @@ public final class GadgetCrucibleInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: BLBKDPNKGGG
+   * Name: BPDPHKJNGFI
    * </pre>
    *
    * Protobuf type {@code GadgetCrucibleInfo}
@@ -311,7 +311,7 @@ public final class GadgetCrucibleInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: BLBKDPNKGGG
+     * Name: BPDPHKJNGFI
      * </pre>
      *
      * Protobuf type {@code GadgetCrucibleInfo}

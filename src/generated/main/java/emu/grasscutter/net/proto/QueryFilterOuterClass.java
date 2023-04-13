@@ -19,18 +19,22 @@ public final class QueryFilterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 areaMask = 9;</code>
-     * @return The areaMask.
+     * <code>int32 AOLDDCCIAHH = 2;</code>
+     * @return The aOLDDCCIAHH.
      */
-    int getAreaMask();
+    int getAOLDDCCIAHH();
 
     /**
-     * <code>int32 typeId = 3;</code>
-     * @return The typeId.
+     * <code>int32 KMKDOPOMCNG = 9;</code>
+     * @return The kMKDOPOMCNG.
      */
-    int getTypeId();
+    int getKMKDOPOMCNG();
   }
   /**
+   * <pre>
+   * Name: BIAIAGAANOL
+   * </pre>
+   *
    * Protobuf type {@code QueryFilter}
    */
   public static final class QueryFilter extends
@@ -75,14 +79,14 @@ public final class QueryFilterOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
-              typeId_ = input.readInt32();
+              aOLDDCCIAHH_ = input.readInt32();
               break;
             }
             case 72: {
 
-              areaMask_ = input.readInt32();
+              kMKDOPOMCNG_ = input.readInt32();
               break;
             }
             default: {
@@ -117,26 +121,26 @@ public final class QueryFilterOuterClass {
               emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.class, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder.class);
     }
 
-    public static final int AREAMASK_FIELD_NUMBER = 9;
-    private int areaMask_;
+    public static final int AOLDDCCIAHH_FIELD_NUMBER = 2;
+    private int aOLDDCCIAHH_;
     /**
-     * <code>int32 areaMask = 9;</code>
-     * @return The areaMask.
+     * <code>int32 AOLDDCCIAHH = 2;</code>
+     * @return The aOLDDCCIAHH.
      */
     @java.lang.Override
-    public int getAreaMask() {
-      return areaMask_;
+    public int getAOLDDCCIAHH() {
+      return aOLDDCCIAHH_;
     }
 
-    public static final int TYPEID_FIELD_NUMBER = 3;
-    private int typeId_;
+    public static final int KMKDOPOMCNG_FIELD_NUMBER = 9;
+    private int kMKDOPOMCNG_;
     /**
-     * <code>int32 typeId = 3;</code>
-     * @return The typeId.
+     * <code>int32 KMKDOPOMCNG = 9;</code>
+     * @return The kMKDOPOMCNG.
      */
     @java.lang.Override
-    public int getTypeId() {
-      return typeId_;
+    public int getKMKDOPOMCNG() {
+      return kMKDOPOMCNG_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +157,11 @@ public final class QueryFilterOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (typeId_ != 0) {
-        output.writeInt32(3, typeId_);
+      if (aOLDDCCIAHH_ != 0) {
+        output.writeInt32(2, aOLDDCCIAHH_);
       }
-      if (areaMask_ != 0) {
-        output.writeInt32(9, areaMask_);
+      if (kMKDOPOMCNG_ != 0) {
+        output.writeInt32(9, kMKDOPOMCNG_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class QueryFilterOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (typeId_ != 0) {
+      if (aOLDDCCIAHH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, typeId_);
+          .computeInt32Size(2, aOLDDCCIAHH_);
       }
-      if (areaMask_ != 0) {
+      if (kMKDOPOMCNG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, areaMask_);
+          .computeInt32Size(9, kMKDOPOMCNG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class QueryFilterOuterClass {
       }
       emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter other = (emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter) obj;
 
-      if (getAreaMask()
-          != other.getAreaMask()) return false;
-      if (getTypeId()
-          != other.getTypeId()) return false;
+      if (getAOLDDCCIAHH()
+          != other.getAOLDDCCIAHH()) return false;
+      if (getKMKDOPOMCNG()
+          != other.getKMKDOPOMCNG()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class QueryFilterOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AREAMASK_FIELD_NUMBER;
-      hash = (53 * hash) + getAreaMask();
-      hash = (37 * hash) + TYPEID_FIELD_NUMBER;
-      hash = (53 * hash) + getTypeId();
+      hash = (37 * hash) + AOLDDCCIAHH_FIELD_NUMBER;
+      hash = (53 * hash) + getAOLDDCCIAHH();
+      hash = (37 * hash) + KMKDOPOMCNG_FIELD_NUMBER;
+      hash = (53 * hash) + getKMKDOPOMCNG();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class QueryFilterOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: BIAIAGAANOL
+     * </pre>
+     *
      * Protobuf type {@code QueryFilter}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class QueryFilterOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        areaMask_ = 0;
+        aOLDDCCIAHH_ = 0;
 
-        typeId_ = 0;
+        kMKDOPOMCNG_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class QueryFilterOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter buildPartial() {
         emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter result = new emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter(this);
-        result.areaMask_ = areaMask_;
-        result.typeId_ = typeId_;
+        result.aOLDDCCIAHH_ = aOLDDCCIAHH_;
+        result.kMKDOPOMCNG_ = kMKDOPOMCNG_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class QueryFilterOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter other) {
         if (other == emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance()) return this;
-        if (other.getAreaMask() != 0) {
-          setAreaMask(other.getAreaMask());
+        if (other.getAOLDDCCIAHH() != 0) {
+          setAOLDDCCIAHH(other.getAOLDDCCIAHH());
         }
-        if (other.getTypeId() != 0) {
-          setTypeId(other.getTypeId());
+        if (other.getKMKDOPOMCNG() != 0) {
+          setKMKDOPOMCNG(other.getKMKDOPOMCNG());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,64 +466,64 @@ public final class QueryFilterOuterClass {
         return this;
       }
 
-      private int areaMask_ ;
+      private int aOLDDCCIAHH_ ;
       /**
-       * <code>int32 areaMask = 9;</code>
-       * @return The areaMask.
+       * <code>int32 AOLDDCCIAHH = 2;</code>
+       * @return The aOLDDCCIAHH.
        */
       @java.lang.Override
-      public int getAreaMask() {
-        return areaMask_;
+      public int getAOLDDCCIAHH() {
+        return aOLDDCCIAHH_;
       }
       /**
-       * <code>int32 areaMask = 9;</code>
-       * @param value The areaMask to set.
+       * <code>int32 AOLDDCCIAHH = 2;</code>
+       * @param value The aOLDDCCIAHH to set.
        * @return This builder for chaining.
        */
-      public Builder setAreaMask(int value) {
+      public Builder setAOLDDCCIAHH(int value) {
         
-        areaMask_ = value;
+        aOLDDCCIAHH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 areaMask = 9;</code>
+       * <code>int32 AOLDDCCIAHH = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAreaMask() {
+      public Builder clearAOLDDCCIAHH() {
         
-        areaMask_ = 0;
+        aOLDDCCIAHH_ = 0;
         onChanged();
         return this;
       }
 
-      private int typeId_ ;
+      private int kMKDOPOMCNG_ ;
       /**
-       * <code>int32 typeId = 3;</code>
-       * @return The typeId.
+       * <code>int32 KMKDOPOMCNG = 9;</code>
+       * @return The kMKDOPOMCNG.
        */
       @java.lang.Override
-      public int getTypeId() {
-        return typeId_;
+      public int getKMKDOPOMCNG() {
+        return kMKDOPOMCNG_;
       }
       /**
-       * <code>int32 typeId = 3;</code>
-       * @param value The typeId to set.
+       * <code>int32 KMKDOPOMCNG = 9;</code>
+       * @param value The kMKDOPOMCNG to set.
        * @return This builder for chaining.
        */
-      public Builder setTypeId(int value) {
+      public Builder setKMKDOPOMCNG(int value) {
         
-        typeId_ = value;
+        kMKDOPOMCNG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 typeId = 3;</code>
+       * <code>int32 KMKDOPOMCNG = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTypeId() {
+      public Builder clearKMKDOPOMCNG() {
         
-        typeId_ = 0;
+        kMKDOPOMCNG_ = 0;
         onChanged();
         return this;
       }
@@ -586,9 +594,9 @@ public final class QueryFilterOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021QueryFilter.proto\"/\n\013QueryFilter\022\020\n\010ar" +
-      "eaMask\030\t \001(\005\022\016\n\006typeId\030\003 \001(\005B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\021QueryFilter.proto\"7\n\013QueryFilter\022\023\n\013AO" +
+      "LDDCCIAHH\030\002 \001(\005\022\023\n\013KMKDOPOMCNG\030\t \001(\005B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -599,7 +607,7 @@ public final class QueryFilterOuterClass {
     internal_static_QueryFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryFilter_descriptor,
-        new java.lang.String[] { "AreaMask", "TypeId", });
+        new java.lang.String[] { "AOLDDCCIAHH", "KMKDOPOMCNG", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

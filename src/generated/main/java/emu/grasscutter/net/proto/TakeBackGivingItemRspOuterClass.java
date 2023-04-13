@@ -25,15 +25,15 @@ public final class TakeBackGivingItemRspOuterClass {
     int getGivingId();
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: INDAOIHAFIE
-   * CmdId: 110
+   * CmdId: 117
+   * Name: IMAJBLHALDE
    * </pre>
    *
    * Protobuf type {@code TakeBackGivingItemRsp}
@@ -80,14 +80,14 @@ public final class TakeBackGivingItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 96: {
 
               givingId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class TakeBackGivingItemRspOuterClass {
       return givingId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class TakeBackGivingItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
       if (givingId_ != 0) {
         output.writeUInt32(12, givingId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class TakeBackGivingItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
       if (givingId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, givingId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class TakeBackGivingItemRspOuterClass {
     }
     /**
      * <pre>
-     * Name: INDAOIHAFIE
-     * CmdId: 110
+     * CmdId: 117
+     * Name: IMAJBLHALDE
      * </pre>
      *
      * Protobuf type {@code TakeBackGivingItemRsp}
@@ -501,7 +501,7 @@ public final class TakeBackGivingItemRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class TakeBackGivingItemRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class TakeBackGivingItemRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -598,7 +598,7 @@ public final class TakeBackGivingItemRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033TakeBackGivingItemRsp.proto\";\n\025TakeBac" +
       "kGivingItemRsp\022\021\n\tgiving_id\030\014 \001(\r\022\017\n\007ret" +
-      "code\030\006 \001(\005B\033\n\031emu.grasscutter.net.protob" +
+      "code\030\r \001(\005B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -66,7 +66,7 @@ public final class EntityRendererChangedInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LNAAJJBMJEM
+   * Name: OJIGKDCPAJL
    * </pre>
    *
    * Protobuf type {@code EntityRendererChangedInfo}
@@ -475,7 +475,7 @@ public final class EntityRendererChangedInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LNAAJJBMJEM
+     * Name: OJIGKDCPAJL
      * </pre>
      *
      * Protobuf type {@code EntityRendererChangedInfo}

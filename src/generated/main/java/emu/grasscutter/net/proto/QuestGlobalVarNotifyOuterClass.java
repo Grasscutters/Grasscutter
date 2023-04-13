@@ -44,8 +44,8 @@ public final class QuestGlobalVarNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: ABJNGHFNOGP
-   * CmdId: 426
+   * CmdId: 435
+   * Name: OKMLFKDCPMD
    * </pre>
    *
    * Protobuf type {@code QuestGlobalVarNotify}
@@ -337,8 +337,8 @@ public final class QuestGlobalVarNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: ABJNGHFNOGP
-     * CmdId: 426
+     * CmdId: 435
+     * Name: OKMLFKDCPMD
      * </pre>
      *
      * Protobuf type {@code QuestGlobalVarNotify}

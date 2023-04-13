@@ -16,7 +16,7 @@ public final class InterOpTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: JHPFIBBFMME
+   * Name: DGDNJFDLBNB
    * </pre>
    *
    * Protobuf enum {@code InterOpType}

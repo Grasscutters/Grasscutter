@@ -20,8 +20,8 @@ public final class PlayerGetForceQuitBanInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: BPNGAHKAPLH
-   * CmdId: 4167
+   * CmdId: 4200
+   * Name: OPDAOPFFNFE
    * </pre>
    *
    * Protobuf type {@code PlayerGetForceQuitBanInfoReq}
@@ -246,8 +246,8 @@ public final class PlayerGetForceQuitBanInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: BPNGAHKAPLH
-     * CmdId: 4167
+     * CmdId: 4200
+     * Name: OPDAOPFFNFE
      * </pre>
      *
      * Protobuf type {@code PlayerGetForceQuitBanInfoReq}

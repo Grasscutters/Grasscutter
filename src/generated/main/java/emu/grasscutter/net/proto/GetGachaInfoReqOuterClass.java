@@ -20,8 +20,8 @@ public final class GetGachaInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: HNEDOEEAMMI
-   * CmdId: 1567
+   * CmdId: 1590
+   * Name: AMHKOMFJCKN
    * </pre>
    *
    * Protobuf type {@code GetGachaInfoReq}
@@ -246,8 +246,8 @@ public final class GetGachaInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: HNEDOEEAMMI
-     * CmdId: 1567
+     * CmdId: 1590
+     * Name: AMHKOMFJCKN
      * </pre>
      *
      * Protobuf type {@code GetGachaInfoReq}

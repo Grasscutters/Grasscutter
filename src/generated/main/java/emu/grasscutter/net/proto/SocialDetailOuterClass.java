@@ -274,7 +274,7 @@ public final class SocialDetailOuterClass {
   }
   /**
    * <pre>
-   * Name: BNOIABMAJCB
+   * Name: HKLLEGCFOKN
    * </pre>
    *
    * Protobuf type {@code SocialDetail}
@@ -1567,7 +1567,7 @@ public final class SocialDetailOuterClass {
     }
     /**
      * <pre>
-     * Name: BNOIABMAJCB
+     * Name: HKLLEGCFOKN
      * </pre>
      *
      * Protobuf type {@code SocialDetail}

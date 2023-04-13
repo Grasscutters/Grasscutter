@@ -19,21 +19,21 @@ public final class PlayerCookArgsRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>float qte_range_ratio = 4;</code>
+     * <code>float qte_range_ratio = 14;</code>
      * @return The qteRangeRatio.
      */
     float getQteRangeRatio();
   }
   /**
    * <pre>
-   * Name: BGBECGDMAEH
-   * CmdId: 121
+   * CmdId: 119
+   * Name: BHLPANEFMHM
    * </pre>
    *
    * Protobuf type {@code PlayerCookArgsRsp}
@@ -80,14 +80,14 @@ public final class PlayerCookArgsRspOuterClass {
             case 0:
               done = true;
               break;
-            case 37: {
-
-              qteRangeRatio_ = input.readFloat();
-              break;
-            }
-            case 64: {
+            case 32: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 117: {
+
+              qteRangeRatio_ = input.readFloat();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class PlayerCookArgsRspOuterClass {
               emu.grasscutter.net.proto.PlayerCookArgsRspOuterClass.PlayerCookArgsRsp.class, emu.grasscutter.net.proto.PlayerCookArgsRspOuterClass.PlayerCookArgsRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class PlayerCookArgsRspOuterClass {
       return retcode_;
     }
 
-    public static final int QTE_RANGE_RATIO_FIELD_NUMBER = 4;
+    public static final int QTE_RANGE_RATIO_FIELD_NUMBER = 14;
     private float qteRangeRatio_;
     /**
-     * <code>float qte_range_ratio = 4;</code>
+     * <code>float qte_range_ratio = 14;</code>
      * @return The qteRangeRatio.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class PlayerCookArgsRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (qteRangeRatio_ != 0F) {
-        output.writeFloat(4, qteRangeRatio_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(4, retcode_);
+      }
+      if (qteRangeRatio_ != 0F) {
+        output.writeFloat(14, qteRangeRatio_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class PlayerCookArgsRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (qteRangeRatio_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, qteRangeRatio_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(4, retcode_);
+      }
+      if (qteRangeRatio_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(14, qteRangeRatio_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,8 +314,8 @@ public final class PlayerCookArgsRspOuterClass {
     }
     /**
      * <pre>
-     * Name: BGBECGDMAEH
-     * CmdId: 121
+     * CmdId: 119
+     * Name: BHLPANEFMHM
      * </pre>
      *
      * Protobuf type {@code PlayerCookArgsRsp}
@@ -472,7 +472,7 @@ public final class PlayerCookArgsRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -480,7 +480,7 @@ public final class PlayerCookArgsRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -491,7 +491,7 @@ public final class PlayerCookArgsRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -503,7 +503,7 @@ public final class PlayerCookArgsRspOuterClass {
 
       private float qteRangeRatio_ ;
       /**
-       * <code>float qte_range_ratio = 4;</code>
+       * <code>float qte_range_ratio = 14;</code>
        * @return The qteRangeRatio.
        */
       @java.lang.Override
@@ -511,7 +511,7 @@ public final class PlayerCookArgsRspOuterClass {
         return qteRangeRatio_;
       }
       /**
-       * <code>float qte_range_ratio = 4;</code>
+       * <code>float qte_range_ratio = 14;</code>
        * @param value The qteRangeRatio to set.
        * @return This builder for chaining.
        */
@@ -522,7 +522,7 @@ public final class PlayerCookArgsRspOuterClass {
         return this;
       }
       /**
-       * <code>float qte_range_ratio = 4;</code>
+       * <code>float qte_range_ratio = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearQteRangeRatio() {
@@ -599,8 +599,8 @@ public final class PlayerCookArgsRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027PlayerCookArgsRsp.proto\"=\n\021PlayerCookA" +
-      "rgsRsp\022\017\n\007retcode\030\010 \001(\005\022\027\n\017qte_range_rat" +
-      "io\030\004 \001(\002B\033\n\031emu.grasscutter.net.protob\006p" +
+      "rgsRsp\022\017\n\007retcode\030\004 \001(\005\022\027\n\017qte_range_rat" +
+      "io\030\016 \001(\002B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

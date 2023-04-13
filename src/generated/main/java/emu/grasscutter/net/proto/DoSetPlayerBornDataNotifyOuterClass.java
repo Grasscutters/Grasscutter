@@ -20,8 +20,8 @@ public final class DoSetPlayerBornDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: ILFGJLJBACE
-   * CmdId: 161
+   * CmdId: 182
+   * Name: CECEPKGBFMG
    * </pre>
    *
    * Protobuf type {@code DoSetPlayerBornDataNotify}
@@ -246,8 +246,8 @@ public final class DoSetPlayerBornDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: ILFGJLJBACE
-     * CmdId: 161
+     * CmdId: 182
+     * Name: CECEPKGBFMG
      * </pre>
      *
      * Protobuf type {@code DoSetPlayerBornDataNotify}

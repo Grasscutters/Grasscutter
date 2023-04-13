@@ -44,8 +44,8 @@ public final class WorldPlayerRTTNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: DIGOHGCDENF
-   * CmdId: 19
+   * CmdId: 77
+   * Name: NDMJPBGJMPF
    * </pre>
    *
    * Protobuf type {@code WorldPlayerRTTNotify}
@@ -337,8 +337,8 @@ public final class WorldPlayerRTTNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: DIGOHGCDENF
-     * CmdId: 19
+     * CmdId: 77
+     * Name: NDMJPBGJMPF
      * </pre>
      *
      * Protobuf type {@code WorldPlayerRTTNotify}

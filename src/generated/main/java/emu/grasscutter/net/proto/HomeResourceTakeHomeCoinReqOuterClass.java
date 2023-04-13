@@ -20,8 +20,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
   }
   /**
    * <pre>
-   * Name: HOHLNANCKPP
-   * CmdId: 4688
+   * CmdId: 4694
+   * Name: NBBFEOCBBNF
    * </pre>
    *
    * Protobuf type {@code HomeResourceTakeHomeCoinReq}
@@ -246,8 +246,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
     }
     /**
      * <pre>
-     * Name: HOHLNANCKPP
-     * CmdId: 4688
+     * CmdId: 4694
+     * Name: NBBFEOCBBNF
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeHomeCoinReq}

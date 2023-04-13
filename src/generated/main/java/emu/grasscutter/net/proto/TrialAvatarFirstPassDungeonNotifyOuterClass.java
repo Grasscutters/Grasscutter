@@ -19,15 +19,15 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_avatar_index_id = 10;</code>
+     * <code>uint32 trial_avatar_index_id = 5;</code>
      * @return The trialAvatarIndexId.
      */
     int getTrialAvatarIndexId();
   }
   /**
    * <pre>
-   * Name: JDOFGAKDDPA
-   * CmdId: 2105
+   * CmdId: 2089
+   * Name: LJGHKOONHHG
    * </pre>
    *
    * Protobuf type {@code TrialAvatarFirstPassDungeonNotify}
@@ -74,7 +74,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 40: {
 
               trialAvatarIndexId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
               emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.class, emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify.Builder.class);
     }
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 10;
+    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 5;
     private int trialAvatarIndexId_;
     /**
-     * <code>uint32 trial_avatar_index_id = 10;</code>
+     * <code>uint32 trial_avatar_index_id = 5;</code>
      * @return The trialAvatarIndexId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(10, trialAvatarIndexId_);
+        output.writeUInt32(5, trialAvatarIndexId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
       size = 0;
       if (trialAvatarIndexId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, trialAvatarIndexId_);
+          .computeUInt32Size(5, trialAvatarIndexId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: JDOFGAKDDPA
-     * CmdId: 2105
+     * CmdId: 2089
+     * Name: LJGHKOONHHG
      * </pre>
      *
      * Protobuf type {@code TrialAvatarFirstPassDungeonNotify}
@@ -431,7 +431,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
 
       private int trialAvatarIndexId_ ;
       /**
-       * <code>uint32 trial_avatar_index_id = 10;</code>
+       * <code>uint32 trial_avatar_index_id = 5;</code>
        * @return The trialAvatarIndexId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
         return trialAvatarIndexId_;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 10;</code>
+       * <code>uint32 trial_avatar_index_id = 5;</code>
        * @param value The trialAvatarIndexId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 10;</code>
+       * <code>uint32 trial_avatar_index_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarIndexId() {
@@ -528,7 +528,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'TrialAvatarFirstPassDungeonNotify.prot" +
       "o\"B\n!TrialAvatarFirstPassDungeonNotify\022\035" +
-      "\n\025trial_avatar_index_id\030\n \001(\rB\033\n\031emu.gra" +
+      "\n\025trial_avatar_index_id\030\005 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

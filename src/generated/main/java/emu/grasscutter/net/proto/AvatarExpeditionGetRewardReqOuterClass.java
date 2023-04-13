@@ -19,15 +19,15 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 14;</code>
+     * <code>uint64 avatar_guid = 4;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
    * <pre>
-   * Name: MIEMEMKNFDE
-   * CmdId: 1641
+   * CmdId: 1614
+   * Name: BPDOOALCEFI
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionGetRewardReq}
@@ -74,7 +74,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 32: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -111,10 +111,10 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq.class, emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 4;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 14;</code>
+     * <code>uint64 avatar_guid = 4;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(14, avatarGuid_);
+        output.writeUInt64(4, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, avatarGuid_);
+          .computeUInt64Size(4, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
     }
     /**
      * <pre>
-     * Name: MIEMEMKNFDE
-     * CmdId: 1641
+     * CmdId: 1614
+     * Name: BPDOOALCEFI
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionGetRewardReq}
@@ -432,7 +432,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -529,7 +529,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"AvatarExpeditionGetRewardReq.proto\"3\n\034" +
       "AvatarExpeditionGetRewardReq\022\023\n\013avatar_g" +
-      "uid\030\016 \001(\004B\033\n\031emu.grasscutter.net.protob\006" +
+      "uid\030\004 \001(\004B\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

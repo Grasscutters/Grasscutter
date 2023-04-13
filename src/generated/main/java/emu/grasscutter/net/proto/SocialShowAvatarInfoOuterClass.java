@@ -38,7 +38,7 @@ public final class SocialShowAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: MLKHGDPIAKD
+   * Name: PKPGAPABGIN
    * </pre>
    *
    * Protobuf type {@code SocialShowAvatarInfo}
@@ -344,7 +344,7 @@ public final class SocialShowAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: MLKHGDPIAKD
+     * Name: PKPGAPABGIN
      * </pre>
      *
      * Protobuf type {@code SocialShowAvatarInfo}

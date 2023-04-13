@@ -19,6 +19,12 @@ public final class FurnitureMakeHelpRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
      * <code>repeated .FurnitureMakeHelpData help_data_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> 
@@ -41,17 +47,11 @@ public final class FurnitureMakeHelpRspOuterClass {
      */
     emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpDataOrBuilder getHelpDataListOrBuilder(
         int index);
-
-    /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
   }
   /**
    * <pre>
-   * Name: AIMNKFINBAF
-   * CmdId: 4841
+   * CmdId: 4567
+   * Name: EDBKNPNNLMH
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeHelpRsp}
@@ -100,7 +100,7 @@ public final class FurnitureMakeHelpRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -149,6 +149,17 @@ public final class FurnitureMakeHelpRspOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp.class, emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp.Builder.class);
     }
 
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
     public static final int HELP_DATA_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> helpDataList_;
     /**
@@ -189,17 +200,6 @@ public final class FurnitureMakeHelpRspOuterClass {
       return helpDataList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -215,7 +215,7 @@ public final class FurnitureMakeHelpRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(13, retcode_);
       }
       for (int i = 0; i < helpDataList_.size(); i++) {
         output.writeMessage(14, helpDataList_.get(i));
@@ -231,7 +231,7 @@ public final class FurnitureMakeHelpRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       for (int i = 0; i < helpDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -252,10 +252,10 @@ public final class FurnitureMakeHelpRspOuterClass {
       }
       emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp other = (emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp) obj;
 
-      if (!getHelpDataListList()
-          .equals(other.getHelpDataListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (!getHelpDataListList()
+          .equals(other.getHelpDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class FurnitureMakeHelpRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       if (getHelpDataListCount() > 0) {
         hash = (37 * hash) + HELP_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getHelpDataListList().hashCode();
       }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class FurnitureMakeHelpRspOuterClass {
     }
     /**
      * <pre>
-     * Name: AIMNKFINBAF
-     * CmdId: 4841
+     * CmdId: 4567
+     * Name: EDBKNPNNLMH
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeHelpRsp}
@@ -412,14 +412,14 @@ public final class FurnitureMakeHelpRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        retcode_ = 0;
+
         if (helpDataListBuilder_ == null) {
           helpDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           helpDataListBuilder_.clear();
         }
-        retcode_ = 0;
-
         return this;
       }
 
@@ -447,6 +447,7 @@ public final class FurnitureMakeHelpRspOuterClass {
       public emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp buildPartial() {
         emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp result = new emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp(this);
         int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (helpDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             helpDataList_ = java.util.Collections.unmodifiableList(helpDataList_);
@@ -456,7 +457,6 @@ public final class FurnitureMakeHelpRspOuterClass {
         } else {
           result.helpDataList_ = helpDataListBuilder_.build();
         }
-        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -505,6 +505,9 @@ public final class FurnitureMakeHelpRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp other) {
         if (other == emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp.getDefaultInstance()) return this;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         if (helpDataListBuilder_ == null) {
           if (!other.helpDataList_.isEmpty()) {
             if (helpDataList_.isEmpty()) {
@@ -530,9 +533,6 @@ public final class FurnitureMakeHelpRspOuterClass {
               helpDataListBuilder_.addAllMessages(other.helpDataList_);
             }
           }
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -563,6 +563,37 @@ public final class FurnitureMakeHelpRspOuterClass {
         return this;
       }
       private int bitField0_;
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
 
       private java.util.List<emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> helpDataList_ =
         java.util.Collections.emptyList();
@@ -803,37 +834,6 @@ public final class FurnitureMakeHelpRspOuterClass {
         }
         return helpDataListBuilder_;
       }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -903,8 +903,8 @@ public final class FurnitureMakeHelpRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032FurnitureMakeHelpRsp.proto\032\033FurnitureM" +
       "akeHelpData.proto\"W\n\024FurnitureMakeHelpRs" +
-      "p\022.\n\016help_data_list\030\016 \003(\0132\026.FurnitureMak" +
-      "eHelpData\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grassc" +
+      "p\022\017\n\007retcode\030\r \001(\005\022.\n\016help_data_list\030\016 \003" +
+      "(\0132\026.FurnitureMakeHelpDataB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -917,7 +917,7 @@ public final class FurnitureMakeHelpRspOuterClass {
     internal_static_FurnitureMakeHelpRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FurnitureMakeHelpRsp_descriptor,
-        new java.lang.String[] { "HelpDataList", "Retcode", });
+        new java.lang.String[] { "Retcode", "HelpDataList", });
     emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.getDescriptor();
   }
 

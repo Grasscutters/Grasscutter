@@ -16,7 +16,7 @@ public final class MapMarkFromTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: NPBCGNLAONB
+   * Name: ICFEJHJADHJ
    * </pre>
    *
    * Protobuf enum {@code MapMarkFromType}

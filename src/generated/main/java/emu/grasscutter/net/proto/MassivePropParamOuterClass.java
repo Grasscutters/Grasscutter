@@ -66,7 +66,7 @@ public final class MassivePropParamOuterClass {
   }
   /**
    * <pre>
-   * Name: FHFHEHMGCCO
+   * Name: HPABALOPOIG
    * </pre>
    *
    * Protobuf type {@code MassivePropParam}
@@ -504,7 +504,7 @@ public final class MassivePropParamOuterClass {
     }
     /**
      * <pre>
-     * Name: FHFHEHMGCCO
+     * Name: HPABALOPOIG
      * </pre>
      *
      * Protobuf type {@code MassivePropParam}

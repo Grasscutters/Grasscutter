@@ -19,42 +19,46 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isOpen = 7;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> 
-        getExceededItemTypeListList();
+        getChallengeInfoListList();
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
-    emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getExceededItemTypeList(int index);
+    emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getChallengeInfoList(int index);
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
-    int getExceededItemTypeListCount();
+    int getChallengeInfoListCount();
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> 
-        getExceededItemTypeListOrBuilderList();
+        getChallengeInfoListOrBuilderList();
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
-    emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(
+    emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getChallengeInfoListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 stageId = 15;</code>
+     * <code>uint32 stage_id = 5;</code>
      * @return The stageId.
      */
     int getStageId();
+
+    /**
+     * <code>bool is_open = 7;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
   }
   /**
+   * <pre>
+   * Name: AHGKMMHDLNC
+   * </pre>
+   *
    * Protobuf type {@code LanternRiteFireworksStageInfo}
    */
   public static final class LanternRiteFireworksStageInfo extends
@@ -67,7 +71,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       super(builder);
     }
     private LanternRiteFireworksStageInfo() {
-      exceededItemTypeList_ = java.util.Collections.emptyList();
+      challengeInfoList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -101,23 +105,23 @@ public final class LanternRiteFireworksStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 74: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                exceededItemTypeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>();
+                challengeInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              exceededItemTypeList_.add(
+              challengeInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.parser(), extensionRegistry));
               break;
             }
-            case 120: {
+            case 40: {
 
               stageId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isOpen_ = input.readBool();
               break;
             }
             default: {
@@ -136,7 +140,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          exceededItemTypeList_ = java.util.Collections.unmodifiableList(exceededItemTypeList_);
+          challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -155,66 +159,66 @@ public final class LanternRiteFireworksStageInfoOuterClass {
               emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo.class, emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo.Builder.class);
     }
 
-    public static final int ISOPEN_FIELD_NUMBER = 7;
-    private boolean isOpen_;
+    public static final int CHALLENGE_INFO_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> challengeInfoList_;
     /**
-     * <code>bool isOpen = 7;</code>
-     * @return The isOpen.
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int EXCEEDEDITEMTYPELIST_FIELD_NUMBER = 9;
-    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> exceededItemTypeList_;
-    /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> getExceededItemTypeListList() {
-      return exceededItemTypeList_;
+    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> getChallengeInfoListList() {
+      return challengeInfoList_;
     }
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> 
-        getExceededItemTypeListOrBuilderList() {
-      return exceededItemTypeList_;
+        getChallengeInfoListOrBuilderList() {
+      return challengeInfoList_;
     }
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     @java.lang.Override
-    public int getExceededItemTypeListCount() {
-      return exceededItemTypeList_.size();
+    public int getChallengeInfoListCount() {
+      return challengeInfoList_.size();
     }
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getExceededItemTypeList(int index) {
-      return exceededItemTypeList_.get(index);
+    public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getChallengeInfoList(int index) {
+      return challengeInfoList_.get(index);
     }
     /**
-     * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+     * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(
+    public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getChallengeInfoListOrBuilder(
         int index) {
-      return exceededItemTypeList_.get(index);
+      return challengeInfoList_.get(index);
     }
 
-    public static final int STAGEID_FIELD_NUMBER = 15;
+    public static final int STAGE_ID_FIELD_NUMBER = 5;
     private int stageId_;
     /**
-     * <code>uint32 stageId = 15;</code>
+     * <code>uint32 stage_id = 5;</code>
      * @return The stageId.
      */
     @java.lang.Override
     public int getStageId() {
       return stageId_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 7;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,14 +235,14 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
-      }
-      for (int i = 0; i < exceededItemTypeList_.size(); i++) {
-        output.writeMessage(9, exceededItemTypeList_.get(i));
+      for (int i = 0; i < challengeInfoList_.size(); i++) {
+        output.writeMessage(3, challengeInfoList_.get(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(15, stageId_);
+        output.writeUInt32(5, stageId_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(7, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,17 +253,17 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
+      for (int i = 0; i < challengeInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
-      }
-      for (int i = 0; i < exceededItemTypeList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, exceededItemTypeList_.get(i));
+          .computeMessageSize(3, challengeInfoList_.get(i));
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, stageId_);
+          .computeUInt32Size(5, stageId_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -276,12 +280,12 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       }
       emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo other = (emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (!getExceededItemTypeListList()
-          .equals(other.getExceededItemTypeListList())) return false;
+      if (!getChallengeInfoListList()
+          .equals(other.getChallengeInfoListList())) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -293,15 +297,15 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISOPEN_FIELD_NUMBER;
+      if (getChallengeInfoListCount() > 0) {
+        hash = (37 * hash) + CHALLENGE_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getChallengeInfoListList().hashCode();
+      }
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      if (getExceededItemTypeListCount() > 0) {
-        hash = (37 * hash) + EXCEEDEDITEMTYPELIST_FIELD_NUMBER;
-        hash = (53 * hash) + getExceededItemTypeListList().hashCode();
-      }
-      hash = (37 * hash) + STAGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -398,6 +402,10 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: AHGKMMHDLNC
+     * </pre>
+     *
      * Protobuf type {@code LanternRiteFireworksStageInfo}
      */
     public static final class Builder extends
@@ -430,21 +438,21 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getExceededItemTypeListFieldBuilder();
+          getChallengeInfoListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
-
-        if (exceededItemTypeListBuilder_ == null) {
-          exceededItemTypeList_ = java.util.Collections.emptyList();
+        if (challengeInfoListBuilder_ == null) {
+          challengeInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          exceededItemTypeListBuilder_.clear();
+          challengeInfoListBuilder_.clear();
         }
         stageId_ = 0;
+
+        isOpen_ = false;
 
         return this;
       }
@@ -473,17 +481,17 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       public emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo buildPartial() {
         emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo result = new emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo(this);
         int from_bitField0_ = bitField0_;
-        result.isOpen_ = isOpen_;
-        if (exceededItemTypeListBuilder_ == null) {
+        if (challengeInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            exceededItemTypeList_ = java.util.Collections.unmodifiableList(exceededItemTypeList_);
+            challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.exceededItemTypeList_ = exceededItemTypeList_;
+          result.challengeInfoList_ = challengeInfoList_;
         } else {
-          result.exceededItemTypeList_ = exceededItemTypeListBuilder_.build();
+          result.challengeInfoList_ = challengeInfoListBuilder_.build();
         }
         result.stageId_ = stageId_;
+        result.isOpen_ = isOpen_;
         onBuilt();
         return result;
       }
@@ -532,37 +540,37 @@ public final class LanternRiteFireworksStageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo other) {
         if (other == emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
-        if (exceededItemTypeListBuilder_ == null) {
-          if (!other.exceededItemTypeList_.isEmpty()) {
-            if (exceededItemTypeList_.isEmpty()) {
-              exceededItemTypeList_ = other.exceededItemTypeList_;
+        if (challengeInfoListBuilder_ == null) {
+          if (!other.challengeInfoList_.isEmpty()) {
+            if (challengeInfoList_.isEmpty()) {
+              challengeInfoList_ = other.challengeInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureExceededItemTypeListIsMutable();
-              exceededItemTypeList_.addAll(other.exceededItemTypeList_);
+              ensureChallengeInfoListIsMutable();
+              challengeInfoList_.addAll(other.challengeInfoList_);
             }
             onChanged();
           }
         } else {
-          if (!other.exceededItemTypeList_.isEmpty()) {
-            if (exceededItemTypeListBuilder_.isEmpty()) {
-              exceededItemTypeListBuilder_.dispose();
-              exceededItemTypeListBuilder_ = null;
-              exceededItemTypeList_ = other.exceededItemTypeList_;
+          if (!other.challengeInfoList_.isEmpty()) {
+            if (challengeInfoListBuilder_.isEmpty()) {
+              challengeInfoListBuilder_.dispose();
+              challengeInfoListBuilder_ = null;
+              challengeInfoList_ = other.challengeInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              exceededItemTypeListBuilder_ = 
+              challengeInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getExceededItemTypeListFieldBuilder() : null;
+                   getChallengeInfoListFieldBuilder() : null;
             } else {
-              exceededItemTypeListBuilder_.addAllMessages(other.exceededItemTypeList_);
+              challengeInfoListBuilder_.addAllMessages(other.challengeInfoList_);
             }
           }
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -594,280 +602,249 @@ public final class LanternRiteFireworksStageInfoOuterClass {
       }
       private int bitField0_;
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool isOpen = 7;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool isOpen = 7;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool isOpen = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> exceededItemTypeList_ =
+      private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> challengeInfoList_ =
         java.util.Collections.emptyList();
-      private void ensureExceededItemTypeListIsMutable() {
+      private void ensureChallengeInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          exceededItemTypeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>(exceededItemTypeList_);
+          challengeInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo>(challengeInfoList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> exceededItemTypeListBuilder_;
+          emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> challengeInfoListBuilder_;
 
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> getExceededItemTypeListList() {
-        if (exceededItemTypeListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(exceededItemTypeList_);
+      public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> getChallengeInfoListList() {
+        if (challengeInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(challengeInfoList_);
         } else {
-          return exceededItemTypeListBuilder_.getMessageList();
+          return challengeInfoListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public int getExceededItemTypeListCount() {
-        if (exceededItemTypeListBuilder_ == null) {
-          return exceededItemTypeList_.size();
+      public int getChallengeInfoListCount() {
+        if (challengeInfoListBuilder_ == null) {
+          return challengeInfoList_.size();
         } else {
-          return exceededItemTypeListBuilder_.getCount();
+          return challengeInfoListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getExceededItemTypeList(int index) {
-        if (exceededItemTypeListBuilder_ == null) {
-          return exceededItemTypeList_.get(index);
+      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo getChallengeInfoList(int index) {
+        if (challengeInfoListBuilder_ == null) {
+          return challengeInfoList_.get(index);
         } else {
-          return exceededItemTypeListBuilder_.getMessage(index);
+          return challengeInfoListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder setExceededItemTypeList(
+      public Builder setChallengeInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo value) {
-        if (exceededItemTypeListBuilder_ == null) {
+        if (challengeInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.set(index, value);
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.set(index, value);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.setMessage(index, value);
+          challengeInfoListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder setExceededItemTypeList(
+      public Builder setChallengeInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder builderForValue) {
-        if (exceededItemTypeListBuilder_ == null) {
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.set(index, builderForValue.build());
+        if (challengeInfoListBuilder_ == null) {
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.setMessage(index, builderForValue.build());
+          challengeInfoListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder addExceededItemTypeList(emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo value) {
-        if (exceededItemTypeListBuilder_ == null) {
+      public Builder addChallengeInfoList(emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo value) {
+        if (challengeInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.add(value);
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.add(value);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.addMessage(value);
+          challengeInfoListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder addExceededItemTypeList(
+      public Builder addChallengeInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo value) {
-        if (exceededItemTypeListBuilder_ == null) {
+        if (challengeInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.add(index, value);
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.add(index, value);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.addMessage(index, value);
+          challengeInfoListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder addExceededItemTypeList(
+      public Builder addChallengeInfoList(
           emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder builderForValue) {
-        if (exceededItemTypeListBuilder_ == null) {
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.add(builderForValue.build());
+        if (challengeInfoListBuilder_ == null) {
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.add(builderForValue.build());
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.addMessage(builderForValue.build());
+          challengeInfoListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder addExceededItemTypeList(
+      public Builder addChallengeInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder builderForValue) {
-        if (exceededItemTypeListBuilder_ == null) {
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.add(index, builderForValue.build());
+        if (challengeInfoListBuilder_ == null) {
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.addMessage(index, builderForValue.build());
+          challengeInfoListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder addAllExceededItemTypeList(
+      public Builder addAllChallengeInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo> values) {
-        if (exceededItemTypeListBuilder_ == null) {
-          ensureExceededItemTypeListIsMutable();
+        if (challengeInfoListBuilder_ == null) {
+          ensureChallengeInfoListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, exceededItemTypeList_);
+              values, challengeInfoList_);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.addAllMessages(values);
+          challengeInfoListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder clearExceededItemTypeList() {
-        if (exceededItemTypeListBuilder_ == null) {
-          exceededItemTypeList_ = java.util.Collections.emptyList();
+      public Builder clearChallengeInfoList() {
+        if (challengeInfoListBuilder_ == null) {
+          challengeInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.clear();
+          challengeInfoListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public Builder removeExceededItemTypeList(int index) {
-        if (exceededItemTypeListBuilder_ == null) {
-          ensureExceededItemTypeListIsMutable();
-          exceededItemTypeList_.remove(index);
+      public Builder removeChallengeInfoList(int index) {
+        if (challengeInfoListBuilder_ == null) {
+          ensureChallengeInfoListIsMutable();
+          challengeInfoList_.remove(index);
           onChanged();
         } else {
-          exceededItemTypeListBuilder_.remove(index);
+          challengeInfoListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder getExceededItemTypeListBuilder(
+      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder getChallengeInfoListBuilder(
           int index) {
-        return getExceededItemTypeListFieldBuilder().getBuilder(index);
+        return getChallengeInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(
+      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder getChallengeInfoListOrBuilder(
           int index) {
-        if (exceededItemTypeListBuilder_ == null) {
-          return exceededItemTypeList_.get(index);  } else {
-          return exceededItemTypeListBuilder_.getMessageOrBuilder(index);
+        if (challengeInfoListBuilder_ == null) {
+          return challengeInfoList_.get(index);  } else {
+          return challengeInfoListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> 
-           getExceededItemTypeListOrBuilderList() {
-        if (exceededItemTypeListBuilder_ != null) {
-          return exceededItemTypeListBuilder_.getMessageOrBuilderList();
+           getChallengeInfoListOrBuilderList() {
+        if (challengeInfoListBuilder_ != null) {
+          return challengeInfoListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(exceededItemTypeList_);
+          return java.util.Collections.unmodifiableList(challengeInfoList_);
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder addExceededItemTypeListBuilder() {
-        return getExceededItemTypeListFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder addChallengeInfoListBuilder() {
+        return getChallengeInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
-      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder addExceededItemTypeListBuilder(
+      public emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder addChallengeInfoListBuilder(
           int index) {
-        return getExceededItemTypeListFieldBuilder().addBuilder(
+        return getChallengeInfoListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksChallengeInfo exceededItemTypeList = 9;</code>
+       * <code>repeated .LanternRiteFireworksChallengeInfo challenge_info_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder> 
-           getExceededItemTypeListBuilderList() {
-        return getExceededItemTypeListFieldBuilder().getBuilderList();
+           getChallengeInfoListBuilderList() {
+        return getChallengeInfoListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder> 
-          getExceededItemTypeListFieldBuilder() {
-        if (exceededItemTypeListBuilder_ == null) {
-          exceededItemTypeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getChallengeInfoListFieldBuilder() {
+        if (challengeInfoListBuilder_ == null) {
+          challengeInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.LanternRiteFireworksChallengeInfoOrBuilder>(
-                  exceededItemTypeList_,
+                  challengeInfoList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          exceededItemTypeList_ = null;
+          challengeInfoList_ = null;
         }
-        return exceededItemTypeListBuilder_;
+        return challengeInfoListBuilder_;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stageId = 15;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -875,7 +852,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stageId = 15;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -886,12 +863,43 @@ public final class LanternRiteFireworksStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stageId = 15;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
         
         stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -963,12 +971,12 @@ public final class LanternRiteFireworksStageInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#LanternRiteFireworksStageInfo.proto\032\'L" +
-      "anternRiteFireworksChallengeInfo.proto\"\202" +
-      "\001\n\035LanternRiteFireworksStageInfo\022\016\n\006isOp" +
-      "en\030\007 \001(\010\022@\n\024exceededItemTypeList\030\t \003(\0132\"" +
-      ".LanternRiteFireworksChallengeInfo\022\017\n\007st" +
-      "ageId\030\017 \001(\rB\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "anternRiteFireworksChallengeInfo.proto\"\203" +
+      "\001\n\035LanternRiteFireworksStageInfo\022?\n\023chal" +
+      "lenge_info_list\030\003 \003(\0132\".LanternRiteFirew" +
+      "orksChallengeInfo\022\020\n\010stage_id\030\005 \001(\r\022\017\n\007i" +
+      "s_open\030\007 \001(\010B\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -980,7 +988,7 @@ public final class LanternRiteFireworksStageInfoOuterClass {
     internal_static_LanternRiteFireworksStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LanternRiteFireworksStageInfo_descriptor,
-        new java.lang.String[] { "IsOpen", "ExceededItemTypeList", "StageId", });
+        new java.lang.String[] { "ChallengeInfoList", "StageId", "IsOpen", });
     emu.grasscutter.net.proto.LanternRiteFireworksChallengeInfoOuterClass.getDescriptor();
   }
 

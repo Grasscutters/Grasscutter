@@ -119,7 +119,7 @@ public final class EntityAuthorityInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: PEALFGKFNKK
+   * Name: KJIGNLMODHM
    * </pre>
    *
    * Protobuf type {@code EntityAuthorityInfo}
@@ -686,7 +686,7 @@ public final class EntityAuthorityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: PEALFGKFNKK
+     * Name: KJIGNLMODHM
      * </pre>
      *
      * Protobuf type {@code EntityAuthorityInfo}

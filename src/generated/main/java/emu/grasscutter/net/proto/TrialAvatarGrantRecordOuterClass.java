@@ -32,7 +32,7 @@ public final class TrialAvatarGrantRecordOuterClass {
   }
   /**
    * <pre>
-   * Name: FINJPJBDGIK
+   * Name: NMHLLNINEFA
    * </pre>
    *
    * Protobuf type {@code TrialAvatarGrantRecord}
@@ -122,10 +122,6 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
 
     /**
-     * <pre>
-     * Name: FJBKKFJNBHD
-     * </pre>
-     *
      * Protobuf enum {@code TrialAvatarGrantRecord.GrantReason}
      */
     public enum GrantReason
@@ -549,7 +545,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
     /**
      * <pre>
-     * Name: FINJPJBDGIK
+     * Name: NMHLLNINEFA
      * </pre>
      *
      * Protobuf type {@code TrialAvatarGrantRecord}

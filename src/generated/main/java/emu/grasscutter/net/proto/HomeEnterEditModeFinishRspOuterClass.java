@@ -19,15 +19,15 @@ public final class HomeEnterEditModeFinishRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: KIEJGNOINFO
-   * CmdId: 4562
+   * CmdId: 4769
+   * Name: MFGDMJPMPBD
    * </pre>
    *
    * Protobuf type {@code HomeEnterEditModeFinishRsp}
@@ -74,7 +74,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class HomeEnterEditModeFinishRspOuterClass {
               emu.grasscutter.net.proto.HomeEnterEditModeFinishRspOuterClass.HomeEnterEditModeFinishRsp.class, emu.grasscutter.net.proto.HomeEnterEditModeFinishRspOuterClass.HomeEnterEditModeFinishRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(3, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class HomeEnterEditModeFinishRspOuterClass {
     }
     /**
      * <pre>
-     * Name: KIEJGNOINFO
-     * CmdId: 4562
+     * CmdId: 4769
+     * Name: MFGDMJPMPBD
      * </pre>
      *
      * Protobuf type {@code HomeEnterEditModeFinishRsp}
@@ -431,7 +431,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class HomeEnterEditModeFinishRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n HomeEnterEditModeFinishRsp.proto\"-\n\032Ho" +
-      "meEnterEditModeFinishRsp\022\017\n\007retcode\030\t \001(" +
+      "meEnterEditModeFinishRsp\022\017\n\007retcode\030\003 \001(" +
       "\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

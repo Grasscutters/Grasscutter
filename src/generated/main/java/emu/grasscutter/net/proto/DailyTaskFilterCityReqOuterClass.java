@@ -19,15 +19,15 @@ public final class DailyTaskFilterCityReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 city_id = 7;</code>
+     * <code>uint32 city_id = 1;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
    * <pre>
-   * Name: NMHFKMALINE
-   * CmdId: 199
+   * CmdId: 180
+   * Name: OPHFKHGDMBK
    * </pre>
    *
    * Protobuf type {@code DailyTaskFilterCityReq}
@@ -74,7 +74,7 @@ public final class DailyTaskFilterCityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
               cityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DailyTaskFilterCityReqOuterClass {
               emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass.DailyTaskFilterCityReq.class, emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass.DailyTaskFilterCityReq.Builder.class);
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 7;
+    public static final int CITY_ID_FIELD_NUMBER = 1;
     private int cityId_;
     /**
-     * <code>uint32 city_id = 7;</code>
+     * <code>uint32 city_id = 1;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DailyTaskFilterCityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(7, cityId_);
+        output.writeUInt32(1, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DailyTaskFilterCityReqOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, cityId_);
+          .computeUInt32Size(1, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DailyTaskFilterCityReqOuterClass {
     }
     /**
      * <pre>
-     * Name: NMHFKMALINE
-     * CmdId: 199
+     * CmdId: 180
+     * Name: OPHFKHGDMBK
      * </pre>
      *
      * Protobuf type {@code DailyTaskFilterCityReq}
@@ -431,7 +431,7 @@ public final class DailyTaskFilterCityReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 city_id = 7;</code>
+       * <code>uint32 city_id = 1;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 city_id = 7;</code>
+       * <code>uint32 city_id = 1;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 city_id = 7;</code>
+       * <code>uint32 city_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -527,7 +527,7 @@ public final class DailyTaskFilterCityReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034DailyTaskFilterCityReq.proto\")\n\026DailyT" +
-      "askFilterCityReq\022\017\n\007city_id\030\007 \001(\rB\033\n\031emu" +
+      "askFilterCityReq\022\017\n\007city_id\030\001 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,27 +19,27 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 job_id = 3;</code>
-     * @return The jobId.
+     * <code>uint32 entity_id = 3;</code>
+     * @return The entityId.
      */
-    int getJobId();
+    int getEntityId();
 
     /**
-     * <code>int32 hash_value = 6;</code>
+     * <code>int32 hash_value = 4;</code>
      * @return The hashValue.
      */
     int getHashValue();
 
     /**
-     * <code>uint32 entity_id = 14;</code>
-     * @return The entityId.
+     * <code>uint32 job_id = 8;</code>
+     * @return The jobId.
      */
-    int getEntityId();
+    int getJobId();
   }
   /**
    * <pre>
-   * Name: LELAMOBAAJE
-   * CmdId: 3379
+   * CmdId: 3467
+   * Name: MEGNOIJENKI
    * </pre>
    *
    * Protobuf type {@code MonsterAIConfigHashNotify}
@@ -88,17 +88,17 @@ public final class MonsterAIConfigHashNotifyOuterClass {
               break;
             case 24: {
 
-              jobId_ = input.readUInt32();
+              entityId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 32: {
 
               hashValue_ = input.readInt32();
               break;
             }
-            case 112: {
+            case 64: {
 
-              entityId_ = input.readUInt32();
+              jobId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class MonsterAIConfigHashNotifyOuterClass {
               emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify.class, emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify.Builder.class);
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 3;
-    private int jobId_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    private int entityId_;
     /**
-     * <code>uint32 job_id = 3;</code>
-     * @return The jobId.
+     * <code>uint32 entity_id = 3;</code>
+     * @return The entityId.
      */
     @java.lang.Override
-    public int getJobId() {
-      return jobId_;
+    public int getEntityId() {
+      return entityId_;
     }
 
-    public static final int HASH_VALUE_FIELD_NUMBER = 6;
+    public static final int HASH_VALUE_FIELD_NUMBER = 4;
     private int hashValue_;
     /**
-     * <code>int32 hash_value = 6;</code>
+     * <code>int32 hash_value = 4;</code>
      * @return The hashValue.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       return hashValue_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_;
+    public static final int JOB_ID_FIELD_NUMBER = 8;
+    private int jobId_;
     /**
-     * <code>uint32 entity_id = 14;</code>
-     * @return The entityId.
+     * <code>uint32 job_id = 8;</code>
+     * @return The jobId.
      */
     @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
+    public int getJobId() {
+      return jobId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class MonsterAIConfigHashNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jobId_ != 0) {
-        output.writeUInt32(3, jobId_);
+      if (entityId_ != 0) {
+        output.writeUInt32(3, entityId_);
       }
       if (hashValue_ != 0) {
-        output.writeInt32(6, hashValue_);
+        output.writeInt32(4, hashValue_);
       }
-      if (entityId_ != 0) {
-        output.writeUInt32(14, entityId_);
+      if (jobId_ != 0) {
+        output.writeUInt32(8, jobId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (jobId_ != 0) {
+      if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, jobId_);
+          .computeUInt32Size(3, entityId_);
       }
       if (hashValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, hashValue_);
+          .computeInt32Size(4, hashValue_);
       }
-      if (entityId_ != 0) {
+      if (jobId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, entityId_);
+          .computeUInt32Size(8, jobId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify other = (emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify) obj;
 
-      if (getJobId()
-          != other.getJobId()) return false;
-      if (getHashValue()
-          != other.getHashValue()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
+      if (getHashValue()
+          != other.getHashValue()) return false;
+      if (getJobId()
+          != other.getJobId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId();
-      hash = (37 * hash) + HASH_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getHashValue();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + HASH_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getHashValue();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class MonsterAIConfigHashNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: LELAMOBAAJE
-     * CmdId: 3379
+     * CmdId: 3467
+     * Name: MEGNOIJENKI
      * </pre>
      *
      * Protobuf type {@code MonsterAIConfigHashNotify}
@@ -386,11 +386,11 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jobId_ = 0;
+        entityId_ = 0;
 
         hashValue_ = 0;
 
-        entityId_ = 0;
+        jobId_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class MonsterAIConfigHashNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify buildPartial() {
         emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify result = new emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify(this);
-        result.jobId_ = jobId_;
-        result.hashValue_ = hashValue_;
         result.entityId_ = entityId_;
+        result.hashValue_ = hashValue_;
+        result.jobId_ = jobId_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class MonsterAIConfigHashNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify other) {
         if (other == emu.grasscutter.net.proto.MonsterAIConfigHashNotifyOuterClass.MonsterAIConfigHashNotify.getDefaultInstance()) return this;
-        if (other.getJobId() != 0) {
-          setJobId(other.getJobId());
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         if (other.getHashValue() != 0) {
           setHashValue(other.getHashValue());
         }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
+        if (other.getJobId() != 0) {
+          setJobId(other.getJobId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,71 +507,9 @@ public final class MonsterAIConfigHashNotifyOuterClass {
         return this;
       }
 
-      private int jobId_ ;
-      /**
-       * <code>uint32 job_id = 3;</code>
-       * @return The jobId.
-       */
-      @java.lang.Override
-      public int getJobId() {
-        return jobId_;
-      }
-      /**
-       * <code>uint32 job_id = 3;</code>
-       * @param value The jobId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJobId(int value) {
-        
-        jobId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 job_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJobId() {
-        
-        jobId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hashValue_ ;
-      /**
-       * <code>int32 hash_value = 6;</code>
-       * @return The hashValue.
-       */
-      @java.lang.Override
-      public int getHashValue() {
-        return hashValue_;
-      }
-      /**
-       * <code>int32 hash_value = 6;</code>
-       * @param value The hashValue to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHashValue(int value) {
-        
-        hashValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 hash_value = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHashValue() {
-        
-        hashValue_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 3;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -579,7 +517,7 @@ public final class MonsterAIConfigHashNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 3;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -590,12 +528,74 @@ public final class MonsterAIConfigHashNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 14;</code>
+       * <code>uint32 entity_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
         
         entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hashValue_ ;
+      /**
+       * <code>int32 hash_value = 4;</code>
+       * @return The hashValue.
+       */
+      @java.lang.Override
+      public int getHashValue() {
+        return hashValue_;
+      }
+      /**
+       * <code>int32 hash_value = 4;</code>
+       * @param value The hashValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHashValue(int value) {
+        
+        hashValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 hash_value = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHashValue() {
+        
+        hashValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int jobId_ ;
+      /**
+       * <code>uint32 job_id = 8;</code>
+       * @return The jobId.
+       */
+      @java.lang.Override
+      public int getJobId() {
+        return jobId_;
+      }
+      /**
+       * <code>uint32 job_id = 8;</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(int value) {
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 job_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class MonsterAIConfigHashNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037MonsterAIConfigHashNotify.proto\"R\n\031Mon" +
-      "sterAIConfigHashNotify\022\016\n\006job_id\030\003 \001(\r\022\022" +
-      "\n\nhash_value\030\006 \001(\005\022\021\n\tentity_id\030\016 \001(\rB\033\n" +
+      "sterAIConfigHashNotify\022\021\n\tentity_id\030\003 \001(" +
+      "\r\022\022\n\nhash_value\030\004 \001(\005\022\016\n\006job_id\030\010 \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class MonsterAIConfigHashNotifyOuterClass {
     internal_static_MonsterAIConfigHashNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterAIConfigHashNotify_descriptor,
-        new java.lang.String[] { "JobId", "HashValue", "EntityId", });
+        new java.lang.String[] { "EntityId", "HashValue", "JobId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

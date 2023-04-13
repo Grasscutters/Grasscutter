@@ -20,8 +20,8 @@ public final class AddBackupAvatarTeamReqOuterClass {
   }
   /**
    * <pre>
-   * Name: DGBNGBAJBLO
-   * CmdId: 1602
+   * CmdId: 1670
+   * Name: JGCLHIODNGH
    * </pre>
    *
    * Protobuf type {@code AddBackupAvatarTeamReq}
@@ -246,8 +246,8 @@ public final class AddBackupAvatarTeamReqOuterClass {
     }
     /**
      * <pre>
-     * Name: DGBNGBAJBLO
-     * CmdId: 1602
+     * CmdId: 1670
+     * Name: JGCLHIODNGH
      * </pre>
      *
      * Protobuf type {@code AddBackupAvatarTeamReq}

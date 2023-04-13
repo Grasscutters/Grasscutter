@@ -19,24 +19,24 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      * @return Whether the curLevelRecord field is set.
      */
     boolean hasCurLevelRecord();
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      * @return The curLevelRecord.
      */
     emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord getCurLevelRecord();
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      */
     emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder();
   }
   /**
    * <pre>
-   * Name: PDBLNOEODKK
-   * CmdId: 2454
+   * CmdId: 2489
+   * Name: DNLLHGCKDOC
    * </pre>
    *
    * Protobuf type {@code TowerCurLevelRecordChangeNotify}
@@ -83,7 +83,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 58: {
               emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder subBuilder = null;
               if (curLevelRecord_ != null) {
                 subBuilder = curLevelRecord_.toBuilder();
@@ -128,10 +128,10 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
               emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.class, emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify.Builder.class);
     }
 
-    public static final int CUR_LEVEL_RECORD_FIELD_NUMBER = 9;
+    public static final int CUR_LEVEL_RECORD_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord curLevelRecord_;
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      * @return Whether the curLevelRecord field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       return curLevelRecord_ != null;
     }
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      * @return The curLevelRecord.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       return curLevelRecord_ == null ? emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.getDefaultInstance() : curLevelRecord_;
     }
     /**
-     * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+     * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder() {
@@ -169,7 +169,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (curLevelRecord_ != null) {
-        output.writeMessage(9, getCurLevelRecord());
+        output.writeMessage(7, getCurLevelRecord());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       size = 0;
       if (curLevelRecord_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getCurLevelRecord());
+          .computeMessageSize(7, getCurLevelRecord());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: PDBLNOEODKK
-     * CmdId: 2454
+     * CmdId: 2489
+     * Name: DNLLHGCKDOC
      * </pre>
      *
      * Protobuf type {@code TowerCurLevelRecordChangeNotify}
@@ -478,14 +478,14 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder> curLevelRecordBuilder_;
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        * @return Whether the curLevelRecord field is set.
        */
       public boolean hasCurLevelRecord() {
         return curLevelRecordBuilder_ != null || curLevelRecord_ != null;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        * @return The curLevelRecord.
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord getCurLevelRecord() {
@@ -496,7 +496,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public Builder setCurLevelRecord(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord value) {
         if (curLevelRecordBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public Builder setCurLevelRecord(
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public Builder mergeCurLevelRecord(emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord value) {
         if (curLevelRecordBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public Builder clearCurLevelRecord() {
         if (curLevelRecordBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder getCurLevelRecordBuilder() {
         
@@ -566,7 +566,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         return getCurLevelRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       public emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder getCurLevelRecordOrBuilder() {
         if (curLevelRecordBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.TowerCurLevelRecord cur_level_record = 9;</code>
+       * <code>.TowerCurLevelRecord cur_level_record = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder, emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecordOrBuilder> 
@@ -662,7 +662,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
       "\n%TowerCurLevelRecordChangeNotify.proto\032" +
       "\031TowerCurLevelRecord.proto\"Q\n\037TowerCurLe" +
       "velRecordChangeNotify\022.\n\020cur_level_recor" +
-      "d\030\t \001(\0132\024.TowerCurLevelRecordB\033\n\031emu.gra" +
+      "d\030\007 \001(\0132\024.TowerCurLevelRecordB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

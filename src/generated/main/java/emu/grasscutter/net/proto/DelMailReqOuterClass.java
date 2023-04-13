@@ -19,17 +19,17 @@ public final class DelMailReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @return A list containing the mailIdList.
      */
     java.util.List<java.lang.Integer> getMailIdListList();
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @return The count of mailIdList.
      */
     int getMailIdListCount();
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
@@ -37,8 +37,8 @@ public final class DelMailReqOuterClass {
   }
   /**
    * <pre>
-   * Name: ICLHPLBGGMM
-   * CmdId: 1434
+   * CmdId: 1456
+   * Name: MJOIAKOLBNB
    * </pre>
    *
    * Protobuf type {@code DelMailReq}
@@ -87,7 +87,7 @@ public final class DelMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 8: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class DelMailReqOuterClass {
               mailIdList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class DelMailReqOuterClass {
               emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq.class, emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq.Builder.class);
     }
 
-    public static final int MAIL_ID_LIST_FIELD_NUMBER = 15;
+    public static final int MAIL_ID_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList mailIdList_;
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @return A list containing the mailIdList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class DelMailReqOuterClass {
       return mailIdList_;
     }
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @return The count of mailIdList.
      */
     public int getMailIdListCount() {
       return mailIdList_.size();
     }
     /**
-     * <code>repeated uint32 mail_id_list = 15;</code>
+     * <code>repeated uint32 mail_id_list = 1;</code>
      * @param index The index of the element to return.
      * @return The mailIdList at the given index.
      */
@@ -187,7 +187,7 @@ public final class DelMailReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getMailIdListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(mailIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < mailIdList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class DelMailReqOuterClass {
     }
     /**
      * <pre>
-     * Name: ICLHPLBGGMM
-     * CmdId: 1434
+     * CmdId: 1456
+     * Name: MJOIAKOLBNB
      * </pre>
      *
      * Protobuf type {@code DelMailReq}
@@ -516,7 +516,7 @@ public final class DelMailReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @return A list containing the mailIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class DelMailReqOuterClass {
                  java.util.Collections.unmodifiableList(mailIdList_) : mailIdList_;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @return The count of mailIdList.
        */
       public int getMailIdListCount() {
         return mailIdList_.size();
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @param index The index of the element to return.
        * @return The mailIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class DelMailReqOuterClass {
         return mailIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The mailIdList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @param value The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @param values The mailIdList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class DelMailReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 mail_id_list = 15;</code>
+       * <code>repeated uint32 mail_id_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMailIdList() {
@@ -654,7 +654,7 @@ public final class DelMailReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020DelMailReq.proto\"\"\n\nDelMailReq\022\024\n\014mail" +
-      "_id_list\030\017 \003(\rB\033\n\031emu.grasscutter.net.pr" +
+      "_id_list\030\001 \003(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

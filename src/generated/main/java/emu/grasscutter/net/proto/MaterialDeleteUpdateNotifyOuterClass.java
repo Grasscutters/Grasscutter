@@ -20,8 +20,8 @@ public final class MaterialDeleteUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: KKPBLFHGLFP
-   * CmdId: 620
+   * CmdId: 657
+   * Name: DJEPBIENMFA
    * </pre>
    *
    * Protobuf type {@code MaterialDeleteUpdateNotify}
@@ -246,8 +246,8 @@ public final class MaterialDeleteUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: KKPBLFHGLFP
-     * CmdId: 620
+     * CmdId: 657
+     * Name: DJEPBIENMFA
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteUpdateNotify}

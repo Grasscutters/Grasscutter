@@ -78,7 +78,7 @@ public final class BlossomChestInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: EAFPFNAHIOC
+   * Name: JGBHEKPGJOJ
    * </pre>
    *
    * Protobuf type {@code BlossomChestInfo}
@@ -573,7 +573,7 @@ public final class BlossomChestInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: EAFPFNAHIOC
+     * Name: JGBHEKPGJOJ
      * </pre>
      *
      * Protobuf type {@code BlossomChestInfo}

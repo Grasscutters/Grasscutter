@@ -32,7 +32,7 @@ public final class Uint32PairOuterClass {
   }
   /**
    * <pre>
-   * Name: MNNNCKCAGLP
+   * Name: ONINAMINFAL
    * </pre>
    *
    * Protobuf type {@code Uint32Pair}
@@ -311,7 +311,7 @@ public final class Uint32PairOuterClass {
     }
     /**
      * <pre>
-     * Name: MNNNCKCAGLP
+     * Name: ONINAMINFAL
      * </pre>
      *
      * Protobuf type {@code Uint32Pair}

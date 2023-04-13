@@ -212,7 +212,7 @@ public final class DoGachaRspOuterClass {
   }
   /**
    * <pre>
-   * Name: LEFDKOLFJKL
+   * Name: LEFDKOLFJKL (3.5, help)
    * CmdId: 1564
    * </pre>
    *
@@ -1053,7 +1053,7 @@ public final class DoGachaRspOuterClass {
     }
     /**
      * <pre>
-     * Name: LEFDKOLFJKL
+     * Name: LEFDKOLFJKL (3.5, help)
      * CmdId: 1564
      * </pre>
      *

@@ -100,7 +100,7 @@ public final class BossChestInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: CFMDIIMKKFP
+   * Name: COGBGNFGPGI
    * </pre>
    *
    * Protobuf type {@code BossChestInfo}
@@ -669,7 +669,7 @@ public final class BossChestInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: CFMDIIMKKFP
+     * Name: COGBGNFGPGI
      * </pre>
      *
      * Protobuf type {@code BossChestInfo}

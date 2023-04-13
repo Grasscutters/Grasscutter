@@ -19,24 +19,24 @@ public final class DailyTaskProgressNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      * @return The info.
      */
     emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo getInfo();
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      */
     emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
-   * Name: CAMFJNGDAOP
-   * CmdId: 160
+   * CmdId: 115
+   * Name: EGKFGNGJHKO
    * </pre>
    *
    * Protobuf type {@code DailyTaskProgressNotify}
@@ -83,7 +83,7 @@ public final class DailyTaskProgressNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 66: {
               emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -128,10 +128,10 @@ public final class DailyTaskProgressNotifyOuterClass {
               emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.class, emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 15;
+    public static final int INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo info_;
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       return info_ != null;
     }
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      * @return The info.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       return info_ == null ? emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.DailyTaskInfo info = 15;</code>
+     * <code>.DailyTaskInfo info = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class DailyTaskProgressNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(15, getInfo());
+        output.writeMessage(8, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class DailyTaskProgressNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getInfo());
+          .computeMessageSize(8, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class DailyTaskProgressNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: CAMFJNGDAOP
-     * CmdId: 160
+     * CmdId: 115
+     * Name: EGKFGNGJHKO
      * </pre>
      *
      * Protobuf type {@code DailyTaskProgressNotify}
@@ -478,14 +478,14 @@ public final class DailyTaskProgressNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        * @return The info.
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo getInfo() {
@@ -496,7 +496,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         }
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public Builder setInfo(emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo value) {
         if (infoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public Builder setInfo(
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public Builder mergeInfo(emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo value) {
         if (infoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder getInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       public emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class DailyTaskProgressNotifyOuterClass {
         }
       }
       /**
-       * <code>.DailyTaskInfo info = 15;</code>
+       * <code>.DailyTaskInfo info = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder, emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class DailyTaskProgressNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035DailyTaskProgressNotify.proto\032\023DailyTa" +
       "skInfo.proto\"7\n\027DailyTaskProgressNotify\022" +
-      "\034\n\004info\030\017 \001(\0132\016.DailyTaskInfoB\033\n\031emu.gra" +
+      "\034\n\004info\030\010 \001(\0132\016.DailyTaskInfoB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

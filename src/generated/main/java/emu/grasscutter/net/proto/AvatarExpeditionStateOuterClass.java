@@ -16,7 +16,7 @@ public final class AvatarExpeditionStateOuterClass {
   }
   /**
    * <pre>
-   * Name: ALJEMELPDLN
+   * Name: PHCFOHLGLJN
    * </pre>
    *
    * Protobuf enum {@code AvatarExpeditionState}

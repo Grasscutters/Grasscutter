@@ -32,7 +32,7 @@ public final class HomeMarkPointNPCDataOuterClass {
   }
   /**
    * <pre>
-   * Name: DGCNBEDMHFC
+   * Name: ECAMCLJMACN
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointNPCData}
@@ -311,7 +311,7 @@ public final class HomeMarkPointNPCDataOuterClass {
     }
     /**
      * <pre>
-     * Name: DGCNBEDMHFC
+     * Name: ECAMCLJMACN
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointNPCData}

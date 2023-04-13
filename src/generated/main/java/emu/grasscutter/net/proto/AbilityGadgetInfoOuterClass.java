@@ -38,7 +38,7 @@ public final class AbilityGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: PDONEGKNDKM
+   * Name: JDMJNJAJHGI
    * </pre>
    *
    * Protobuf type {@code AbilityGadgetInfo}
@@ -344,7 +344,7 @@ public final class AbilityGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: PDONEGKNDKM
+     * Name: JDMJNJAJHGI
      * </pre>
      *
      * Protobuf type {@code AbilityGadgetInfo}

@@ -19,14 +19,14 @@ public final class BonusOpActivityInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 left_bonus_count = 4;</code>
+     * <code>uint32 left_bonus_count = 12;</code>
      * @return The leftBonusCount.
      */
     int getLeftBonusCount();
   }
   /**
    * <pre>
-   * Name: MHBLMMJDAIF
+   * Name: IKECAOJEKPH
    * </pre>
    *
    * Protobuf type {@code BonusOpActivityInfo}
@@ -73,7 +73,7 @@ public final class BonusOpActivityInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 96: {
 
               leftBonusCount_ = input.readUInt32();
               break;
@@ -110,10 +110,10 @@ public final class BonusOpActivityInfoOuterClass {
               emu.grasscutter.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo.class, emu.grasscutter.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo.Builder.class);
     }
 
-    public static final int LEFT_BONUS_COUNT_FIELD_NUMBER = 4;
+    public static final int LEFT_BONUS_COUNT_FIELD_NUMBER = 12;
     private int leftBonusCount_;
     /**
-     * <code>uint32 left_bonus_count = 4;</code>
+     * <code>uint32 left_bonus_count = 12;</code>
      * @return The leftBonusCount.
      */
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class BonusOpActivityInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (leftBonusCount_ != 0) {
-        output.writeUInt32(4, leftBonusCount_);
+        output.writeUInt32(12, leftBonusCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class BonusOpActivityInfoOuterClass {
       size = 0;
       if (leftBonusCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, leftBonusCount_);
+          .computeUInt32Size(12, leftBonusCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,7 +278,7 @@ public final class BonusOpActivityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: MHBLMMJDAIF
+     * Name: IKECAOJEKPH
      * </pre>
      *
      * Protobuf type {@code BonusOpActivityInfo}
@@ -429,7 +429,7 @@ public final class BonusOpActivityInfoOuterClass {
 
       private int leftBonusCount_ ;
       /**
-       * <code>uint32 left_bonus_count = 4;</code>
+       * <code>uint32 left_bonus_count = 12;</code>
        * @return The leftBonusCount.
        */
       @java.lang.Override
@@ -437,7 +437,7 @@ public final class BonusOpActivityInfoOuterClass {
         return leftBonusCount_;
       }
       /**
-       * <code>uint32 left_bonus_count = 4;</code>
+       * <code>uint32 left_bonus_count = 12;</code>
        * @param value The leftBonusCount to set.
        * @return This builder for chaining.
        */
@@ -448,7 +448,7 @@ public final class BonusOpActivityInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_bonus_count = 4;</code>
+       * <code>uint32 left_bonus_count = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftBonusCount() {
@@ -525,7 +525,7 @@ public final class BonusOpActivityInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031BonusOpActivityInfo.proto\"/\n\023BonusOpAc" +
-      "tivityInfo\022\030\n\020left_bonus_count\030\004 \001(\rB\033\n\031" +
+      "tivityInfo\022\030\n\020left_bonus_count\030\014 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

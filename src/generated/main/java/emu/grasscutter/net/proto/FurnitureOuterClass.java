@@ -26,7 +26,7 @@ public final class FurnitureOuterClass {
   }
   /**
    * <pre>
-   * Name: KMPFIBHBALL
+   * Name: MENJHDPJMCN
    * </pre>
    *
    * Protobuf type {@code Furniture}
@@ -278,7 +278,7 @@ public final class FurnitureOuterClass {
     }
     /**
      * <pre>
-     * Name: KMPFIBHBALL
+     * Name: MENJHDPJMCN
      * </pre>
      *
      * Protobuf type {@code Furniture}

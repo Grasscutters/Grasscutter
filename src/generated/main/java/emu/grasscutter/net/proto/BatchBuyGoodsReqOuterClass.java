@@ -25,33 +25,33 @@ public final class BatchBuyGoodsReqOuterClass {
     int getShopType();
 
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> 
         getBuyGoodsListList();
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam getBuyGoodsList(int index);
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     int getBuyGoodsListCount();
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder> 
         getBuyGoodsListOrBuilderList();
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder getBuyGoodsListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Name: DCEKNGGFLJN
-   * CmdId: 765
+   * CmdId: 792
+   * Name: HFFEKJIIFDG
    * </pre>
    *
    * Protobuf type {@code BatchBuyGoodsReq}
@@ -100,18 +100,18 @@ public final class BatchBuyGoodsReqOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 96: {
+
+              shopType_ = input.readUInt32();
+              break;
+            }
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 buyGoodsList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               buyGoodsList_.add(
                   input.readMessage(emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              shopType_ = input.readUInt32();
               break;
             }
             default: {
@@ -160,17 +160,17 @@ public final class BatchBuyGoodsReqOuterClass {
       return shopType_;
     }
 
-    public static final int BUY_GOODS_LIST_FIELD_NUMBER = 2;
+    public static final int BUY_GOODS_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> buyGoodsList_;
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> getBuyGoodsListList() {
       return buyGoodsList_;
     }
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder> 
@@ -178,21 +178,21 @@ public final class BatchBuyGoodsReqOuterClass {
       return buyGoodsList_;
     }
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     @java.lang.Override
     public int getBuyGoodsListCount() {
       return buyGoodsList_.size();
     }
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam getBuyGoodsList(int index) {
       return buyGoodsList_.get(index);
     }
     /**
-     * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+     * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder getBuyGoodsListOrBuilder(
@@ -214,11 +214,11 @@ public final class BatchBuyGoodsReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < buyGoodsList_.size(); i++) {
-        output.writeMessage(2, buyGoodsList_.get(i));
-      }
       if (shopType_ != 0) {
         output.writeUInt32(12, shopType_);
+      }
+      for (int i = 0; i < buyGoodsList_.size(); i++) {
+        output.writeMessage(13, buyGoodsList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class BatchBuyGoodsReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < buyGoodsList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, buyGoodsList_.get(i));
-      }
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, shopType_);
+      }
+      for (int i = 0; i < buyGoodsList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, buyGoodsList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,8 +370,8 @@ public final class BatchBuyGoodsReqOuterClass {
     }
     /**
      * <pre>
-     * Name: DCEKNGGFLJN
-     * CmdId: 765
+     * CmdId: 792
+     * Name: HFFEKJIIFDG
      * </pre>
      *
      * Protobuf type {@code BatchBuyGoodsReq}
@@ -608,7 +608,7 @@ public final class BatchBuyGoodsReqOuterClass {
           emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder> buyGoodsListBuilder_;
 
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> getBuyGoodsListList() {
         if (buyGoodsListBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class BatchBuyGoodsReqOuterClass {
         }
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public int getBuyGoodsListCount() {
         if (buyGoodsListBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class BatchBuyGoodsReqOuterClass {
         }
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam getBuyGoodsList(int index) {
         if (buyGoodsListBuilder_ == null) {
@@ -638,7 +638,7 @@ public final class BatchBuyGoodsReqOuterClass {
         }
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder setBuyGoodsList(
           int index, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam value) {
@@ -655,7 +655,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder setBuyGoodsList(
           int index, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder builderForValue) {
@@ -669,7 +669,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder addBuyGoodsList(emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam value) {
         if (buyGoodsListBuilder_ == null) {
@@ -685,7 +685,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder addBuyGoodsList(
           int index, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam value) {
@@ -702,7 +702,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder addBuyGoodsList(
           emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder builderForValue) {
@@ -716,7 +716,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder addBuyGoodsList(
           int index, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder builderForValue) {
@@ -730,7 +730,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder addAllBuyGoodsList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> values) {
@@ -745,7 +745,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder clearBuyGoodsList() {
         if (buyGoodsListBuilder_ == null) {
@@ -758,7 +758,7 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public Builder removeBuyGoodsList(int index) {
         if (buyGoodsListBuilder_ == null) {
@@ -771,14 +771,14 @@ public final class BatchBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder getBuyGoodsListBuilder(
           int index) {
         return getBuyGoodsListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder getBuyGoodsListOrBuilder(
           int index) {
@@ -788,7 +788,7 @@ public final class BatchBuyGoodsReqOuterClass {
         }
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder> 
            getBuyGoodsListOrBuilderList() {
@@ -799,14 +799,14 @@ public final class BatchBuyGoodsReqOuterClass {
         }
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder addBuyGoodsListBuilder() {
         return getBuyGoodsListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder addBuyGoodsListBuilder(
           int index) {
@@ -814,7 +814,7 @@ public final class BatchBuyGoodsReqOuterClass {
             index, emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .BuyGoodsParam buy_goods_list = 2;</code>
+       * <code>repeated .BuyGoodsParam buy_goods_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder> 
            getBuyGoodsListBuilderList() {
@@ -903,7 +903,7 @@ public final class BatchBuyGoodsReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026BatchBuyGoodsReq.proto\032\023BuyGoodsParam." +
       "proto\"M\n\020BatchBuyGoodsReq\022\021\n\tshop_type\030\014" +
-      " \001(\r\022&\n\016buy_goods_list\030\002 \003(\0132\016.BuyGoodsP" +
+      " \001(\r\022&\n\016buy_goods_list\030\r \003(\0132\016.BuyGoodsP" +
       "aramB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

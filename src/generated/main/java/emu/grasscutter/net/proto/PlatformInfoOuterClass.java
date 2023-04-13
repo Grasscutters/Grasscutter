@@ -31,48 +31,28 @@ public final class PlatformInfoOuterClass {
     int getStartIndex();
 
     /**
-     * <pre>
-     * MGFMDFCMKDH
-     * </pre>
-     *
      * <code>uint32 start_route_time = 3;</code>
      * @return The startRouteTime.
      */
     int getStartRouteTime();
 
     /**
-     * <pre>
-     * COKDLJOELIL
-     * </pre>
-     *
      * <code>uint32 start_scene_time = 4;</code>
      * @return The startSceneTime.
      */
     int getStartSceneTime();
 
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      * @return Whether the startPos field is set.
      */
     boolean hasStartPos();
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      * @return The startPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getStartPos();
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getStartPosOrBuilder();
@@ -84,92 +64,52 @@ public final class PlatformInfoOuterClass {
     boolean getIsStarted();
 
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      * @return Whether the startRot field is set.
      */
     boolean hasStartRot();
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      * @return The startRot.
      */
     emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion getStartRot();
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      */
     emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getStartRotOrBuilder();
 
     /**
-     * <pre>
-     * LJKOGHEMFPA
-     * </pre>
-     *
      * <code>uint32 stop_scene_time = 10;</code>
      * @return The stopSceneTime.
      */
     int getStopSceneTime();
 
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      * @return Whether the posOffset field is set.
      */
     boolean hasPosOffset();
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      * @return The posOffset.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getPosOffset();
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOffsetOrBuilder();
 
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      * @return Whether the rotOffset field is set.
      */
     boolean hasRotOffset();
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      * @return The rotOffset.
      */
     emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion getRotOffset();
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      */
     emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getRotOffsetOrBuilder();
@@ -214,7 +154,7 @@ public final class PlatformInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: COPHAEDKHOK
+   * Name: EFNFEPKAAOA
    * </pre>
    *
    * Protobuf type {@code PlatformInfo}
@@ -430,10 +370,6 @@ public final class PlatformInfoOuterClass {
     public static final int START_ROUTE_TIME_FIELD_NUMBER = 3;
     private int startRouteTime_;
     /**
-     * <pre>
-     * MGFMDFCMKDH
-     * </pre>
-     *
      * <code>uint32 start_route_time = 3;</code>
      * @return The startRouteTime.
      */
@@ -445,10 +381,6 @@ public final class PlatformInfoOuterClass {
     public static final int START_SCENE_TIME_FIELD_NUMBER = 4;
     private int startSceneTime_;
     /**
-     * <pre>
-     * COKDLJOELIL
-     * </pre>
-     *
      * <code>uint32 start_scene_time = 4;</code>
      * @return The startSceneTime.
      */
@@ -460,10 +392,6 @@ public final class PlatformInfoOuterClass {
     public static final int START_POS_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector startPos_;
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      * @return Whether the startPos field is set.
      */
@@ -472,10 +400,6 @@ public final class PlatformInfoOuterClass {
       return startPos_ != null;
     }
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      * @return The startPos.
      */
@@ -484,10 +408,6 @@ public final class PlatformInfoOuterClass {
       return startPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : startPos_;
     }
     /**
-     * <pre>
-     * PMCHNNEAMCO
-     * </pre>
-     *
      * <code>.Vector start_pos = 7;</code>
      */
     @java.lang.Override
@@ -509,10 +429,6 @@ public final class PlatformInfoOuterClass {
     public static final int START_ROT_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion startRot_;
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      * @return Whether the startRot field is set.
      */
@@ -521,10 +437,6 @@ public final class PlatformInfoOuterClass {
       return startRot_ != null;
     }
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      * @return The startRot.
      */
@@ -533,10 +445,6 @@ public final class PlatformInfoOuterClass {
       return startRot_ == null ? emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : startRot_;
     }
     /**
-     * <pre>
-     * PFJLOCMMIDO
-     * </pre>
-     *
      * <code>.MathQuaternion start_rot = 9;</code>
      */
     @java.lang.Override
@@ -547,10 +455,6 @@ public final class PlatformInfoOuterClass {
     public static final int STOP_SCENE_TIME_FIELD_NUMBER = 10;
     private int stopSceneTime_;
     /**
-     * <pre>
-     * LJKOGHEMFPA
-     * </pre>
-     *
      * <code>uint32 stop_scene_time = 10;</code>
      * @return The stopSceneTime.
      */
@@ -562,10 +466,6 @@ public final class PlatformInfoOuterClass {
     public static final int POS_OFFSET_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector posOffset_;
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      * @return Whether the posOffset field is set.
      */
@@ -574,10 +474,6 @@ public final class PlatformInfoOuterClass {
       return posOffset_ != null;
     }
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      * @return The posOffset.
      */
@@ -586,10 +482,6 @@ public final class PlatformInfoOuterClass {
       return posOffset_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : posOffset_;
     }
     /**
-     * <pre>
-     * PGNBBMEBGIO
-     * </pre>
-     *
      * <code>.Vector pos_offset = 11;</code>
      */
     @java.lang.Override
@@ -600,10 +492,6 @@ public final class PlatformInfoOuterClass {
     public static final int ROT_OFFSET_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion rotOffset_;
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      * @return Whether the rotOffset field is set.
      */
@@ -612,10 +500,6 @@ public final class PlatformInfoOuterClass {
       return rotOffset_ != null;
     }
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      * @return The rotOffset.
      */
@@ -624,10 +508,6 @@ public final class PlatformInfoOuterClass {
       return rotOffset_ == null ? emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : rotOffset_;
     }
     /**
-     * <pre>
-     * DFEPLBHBKHG
-     * </pre>
-     *
      * <code>.MathQuaternion rot_offset = 12;</code>
      */
     @java.lang.Override
@@ -1028,7 +908,7 @@ public final class PlatformInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: COPHAEDKHOK
+     * Name: EFNFEPKAAOA
      * </pre>
      *
      * Protobuf type {@code PlatformInfo}
@@ -1359,10 +1239,6 @@ public final class PlatformInfoOuterClass {
 
       private int startRouteTime_ ;
       /**
-       * <pre>
-       * MGFMDFCMKDH
-       * </pre>
-       *
        * <code>uint32 start_route_time = 3;</code>
        * @return The startRouteTime.
        */
@@ -1371,10 +1247,6 @@ public final class PlatformInfoOuterClass {
         return startRouteTime_;
       }
       /**
-       * <pre>
-       * MGFMDFCMKDH
-       * </pre>
-       *
        * <code>uint32 start_route_time = 3;</code>
        * @param value The startRouteTime to set.
        * @return This builder for chaining.
@@ -1386,10 +1258,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * MGFMDFCMKDH
-       * </pre>
-       *
        * <code>uint32 start_route_time = 3;</code>
        * @return This builder for chaining.
        */
@@ -1402,10 +1270,6 @@ public final class PlatformInfoOuterClass {
 
       private int startSceneTime_ ;
       /**
-       * <pre>
-       * COKDLJOELIL
-       * </pre>
-       *
        * <code>uint32 start_scene_time = 4;</code>
        * @return The startSceneTime.
        */
@@ -1414,10 +1278,6 @@ public final class PlatformInfoOuterClass {
         return startSceneTime_;
       }
       /**
-       * <pre>
-       * COKDLJOELIL
-       * </pre>
-       *
        * <code>uint32 start_scene_time = 4;</code>
        * @param value The startSceneTime to set.
        * @return This builder for chaining.
@@ -1429,10 +1289,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * COKDLJOELIL
-       * </pre>
-       *
        * <code>uint32 start_scene_time = 4;</code>
        * @return This builder for chaining.
        */
@@ -1447,10 +1303,6 @@ public final class PlatformInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> startPosBuilder_;
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        * @return Whether the startPos field is set.
        */
@@ -1458,10 +1310,6 @@ public final class PlatformInfoOuterClass {
         return startPosBuilder_ != null || startPos_ != null;
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        * @return The startPos.
        */
@@ -1473,10 +1321,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public Builder setStartPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1493,10 +1337,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public Builder setStartPos(
@@ -1511,10 +1351,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public Builder mergeStartPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1533,10 +1369,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public Builder clearStartPos() {
@@ -1551,10 +1383,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getStartPosBuilder() {
@@ -1563,10 +1391,6 @@ public final class PlatformInfoOuterClass {
         return getStartPosFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getStartPosOrBuilder() {
@@ -1578,10 +1402,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PMCHNNEAMCO
-       * </pre>
-       *
        * <code>.Vector start_pos = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1633,10 +1453,6 @@ public final class PlatformInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion, emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder, emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder> startRotBuilder_;
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        * @return Whether the startRot field is set.
        */
@@ -1644,10 +1460,6 @@ public final class PlatformInfoOuterClass {
         return startRotBuilder_ != null || startRot_ != null;
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        * @return The startRot.
        */
@@ -1659,10 +1471,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public Builder setStartRot(emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
@@ -1679,10 +1487,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public Builder setStartRot(
@@ -1697,10 +1501,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public Builder mergeStartRot(emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
@@ -1719,10 +1519,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public Builder clearStartRot() {
@@ -1737,10 +1533,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getStartRotBuilder() {
@@ -1749,10 +1541,6 @@ public final class PlatformInfoOuterClass {
         return getStartRotFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       public emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getStartRotOrBuilder() {
@@ -1764,10 +1552,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PFJLOCMMIDO
-       * </pre>
-       *
        * <code>.MathQuaternion start_rot = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1786,10 +1570,6 @@ public final class PlatformInfoOuterClass {
 
       private int stopSceneTime_ ;
       /**
-       * <pre>
-       * LJKOGHEMFPA
-       * </pre>
-       *
        * <code>uint32 stop_scene_time = 10;</code>
        * @return The stopSceneTime.
        */
@@ -1798,10 +1578,6 @@ public final class PlatformInfoOuterClass {
         return stopSceneTime_;
       }
       /**
-       * <pre>
-       * LJKOGHEMFPA
-       * </pre>
-       *
        * <code>uint32 stop_scene_time = 10;</code>
        * @param value The stopSceneTime to set.
        * @return This builder for chaining.
@@ -1813,10 +1589,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * LJKOGHEMFPA
-       * </pre>
-       *
        * <code>uint32 stop_scene_time = 10;</code>
        * @return This builder for chaining.
        */
@@ -1831,10 +1603,6 @@ public final class PlatformInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posOffsetBuilder_;
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        * @return Whether the posOffset field is set.
        */
@@ -1842,10 +1610,6 @@ public final class PlatformInfoOuterClass {
         return posOffsetBuilder_ != null || posOffset_ != null;
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        * @return The posOffset.
        */
@@ -1857,10 +1621,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public Builder setPosOffset(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1877,10 +1637,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public Builder setPosOffset(
@@ -1895,10 +1651,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public Builder mergePosOffset(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1917,10 +1669,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public Builder clearPosOffset() {
@@ -1935,10 +1683,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosOffsetBuilder() {
@@ -1947,10 +1691,6 @@ public final class PlatformInfoOuterClass {
         return getPosOffsetFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOffsetOrBuilder() {
@@ -1962,10 +1702,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * PGNBBMEBGIO
-       * </pre>
-       *
        * <code>.Vector pos_offset = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1986,10 +1722,6 @@ public final class PlatformInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion, emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder, emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder> rotOffsetBuilder_;
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        * @return Whether the rotOffset field is set.
        */
@@ -1997,10 +1729,6 @@ public final class PlatformInfoOuterClass {
         return rotOffsetBuilder_ != null || rotOffset_ != null;
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        * @return The rotOffset.
        */
@@ -2012,10 +1740,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public Builder setRotOffset(emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
@@ -2032,10 +1756,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public Builder setRotOffset(
@@ -2050,10 +1770,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public Builder mergeRotOffset(emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
@@ -2072,10 +1788,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public Builder clearRotOffset() {
@@ -2090,10 +1802,6 @@ public final class PlatformInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getRotOffsetBuilder() {
@@ -2102,10 +1810,6 @@ public final class PlatformInfoOuterClass {
         return getRotOffsetFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       public emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getRotOffsetOrBuilder() {
@@ -2117,10 +1821,6 @@ public final class PlatformInfoOuterClass {
         }
       }
       /**
-       * <pre>
-       * DFEPLBHBKHG
-       * </pre>
-       *
        * <code>.MathQuaternion rot_offset = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

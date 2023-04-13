@@ -34,15 +34,15 @@ public final class PlayerCompoundMaterialRspOuterClass {
     emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder getCompoundQueueDataOrBuilder();
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: FLGCALNDKFE
-   * CmdId: 116
+   * CmdId: 183
+   * Name: NPAHEOCCAHH
    * </pre>
    *
    * Protobuf type {@code PlayerCompoundMaterialRsp}
@@ -89,11 +89,6 @@ public final class PlayerCompoundMaterialRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 34: {
               emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.Builder subBuilder = null;
               if (compoundQueueData_ != null) {
@@ -105,6 +100,11 @@ public final class PlayerCompoundMaterialRspOuterClass {
                 compoundQueueData_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -165,10 +165,10 @@ public final class PlayerCompoundMaterialRspOuterClass {
       return getCompoundQueueData();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -190,11 +190,11 @@ public final class PlayerCompoundMaterialRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (compoundQueueData_ != null) {
         output.writeMessage(4, getCompoundQueueData());
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class PlayerCompoundMaterialRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       if (compoundQueueData_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getCompoundQueueData());
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class PlayerCompoundMaterialRspOuterClass {
     }
     /**
      * <pre>
-     * Name: FLGCALNDKFE
-     * CmdId: 116
+     * CmdId: 183
+     * Name: NPAHEOCCAHH
      * </pre>
      *
      * Protobuf type {@code PlayerCompoundMaterialRsp}
@@ -634,7 +634,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -642,7 +642,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -653,7 +653,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -732,7 +732,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
       "\n\037PlayerCompoundMaterialRsp.proto\032\027Compo" +
       "undQueueData.proto\"[\n\031PlayerCompoundMate" +
       "rialRsp\022-\n\021compoundQueueData\030\004 \001(\0132\022.Com" +
-      "poundQueueData\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.g" +
+      "poundQueueData\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

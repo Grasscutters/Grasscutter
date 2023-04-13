@@ -16,7 +16,7 @@ public final class CustomDungeonFinishTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: IKPIMJPJJNH
+   * Name: MNOIKAEJGOK
    * </pre>
    *
    * Protobuf enum {@code CustomDungeonFinishType}

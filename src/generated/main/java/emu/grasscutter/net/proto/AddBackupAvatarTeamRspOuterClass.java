@@ -19,15 +19,15 @@ public final class AddBackupAvatarTeamRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: FPILCNDJKNF
-   * CmdId: 1777
+   * CmdId: 1658
+   * Name: AFDHKHAFKNE
    * </pre>
    *
    * Protobuf type {@code AddBackupAvatarTeamRsp}
@@ -74,7 +74,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class AddBackupAvatarTeamRspOuterClass {
               emu.grasscutter.net.proto.AddBackupAvatarTeamRspOuterClass.AddBackupAvatarTeamRsp.class, emu.grasscutter.net.proto.AddBackupAvatarTeamRspOuterClass.AddBackupAvatarTeamRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(6, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class AddBackupAvatarTeamRspOuterClass {
     }
     /**
      * <pre>
-     * Name: FPILCNDJKNF
-     * CmdId: 1777
+     * CmdId: 1658
+     * Name: AFDHKHAFKNE
      * </pre>
      *
      * Protobuf type {@code AddBackupAvatarTeamRsp}
@@ -431,7 +431,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034AddBackupAvatarTeamRsp.proto\")\n\026AddBac" +
-      "kupAvatarTeamRsp\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu" +
+      "kupAvatarTeamRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -16,7 +16,7 @@ public final class VisionTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: GCJAHMGAAGM
+   * Name: KHKOLNIDAEP
    * </pre>
    *
    * Protobuf enum {@code VisionType}

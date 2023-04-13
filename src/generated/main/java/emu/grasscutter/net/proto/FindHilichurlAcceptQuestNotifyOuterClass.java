@@ -20,8 +20,8 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: MGJECLOLHFM
-   * CmdId: 8170
+   * CmdId: 8287
+   * Name: KFDFIIMBCPO
    * </pre>
    *
    * Protobuf type {@code FindHilichurlAcceptQuestNotify}
@@ -246,8 +246,8 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: MGJECLOLHFM
-     * CmdId: 8170
+     * CmdId: 8287
+     * Name: KFDFIIMBCPO
      * </pre>
      *
      * Protobuf type {@code FindHilichurlAcceptQuestNotify}

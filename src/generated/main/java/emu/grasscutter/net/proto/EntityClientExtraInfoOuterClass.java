@@ -35,7 +35,7 @@ public final class EntityClientExtraInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: MJCEMFIHNCD
+   * Name: KGEALKMFDMM
    * </pre>
    *
    * Protobuf type {@code EntityClientExtraInfo}
@@ -315,7 +315,7 @@ public final class EntityClientExtraInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: MJCEMFIHNCD
+     * Name: KGEALKMFDMM
      * </pre>
      *
      * Protobuf type {@code EntityClientExtraInfo}

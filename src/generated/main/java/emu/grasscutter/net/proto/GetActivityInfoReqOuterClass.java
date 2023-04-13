@@ -37,8 +37,8 @@ public final class GetActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: ODFEGOJADOK
-   * CmdId: 2116
+   * CmdId: 2044
+   * Name: FAJCGNIBCDO
    * </pre>
    *
    * Protobuf type {@code GetActivityInfoReq}
@@ -345,8 +345,8 @@ public final class GetActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: ODFEGOJADOK
-     * CmdId: 2116
+     * CmdId: 2044
+     * Name: FAJCGNIBCDO
      * </pre>
      *
      * Protobuf type {@code GetActivityInfoReq}

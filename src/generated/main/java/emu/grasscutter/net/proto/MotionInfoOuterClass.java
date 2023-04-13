@@ -133,7 +133,7 @@ public final class MotionInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: BNEGCDIFHLA
+   * Name: NLAAPIDMOCD
    * </pre>
    *
    * Protobuf type {@code MotionInfo}
@@ -763,7 +763,7 @@ public final class MotionInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: BNEGCDIFHLA
+     * Name: NLAAPIDMOCD
      * </pre>
      *
      * Protobuf type {@code MotionInfo}

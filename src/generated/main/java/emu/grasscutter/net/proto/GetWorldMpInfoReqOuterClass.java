@@ -20,8 +20,8 @@ public final class GetWorldMpInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: OKGDDDOHINO
-   * CmdId: 3479
+   * CmdId: 3100
+   * Name: LEBMIODJLOG
    * </pre>
    *
    * Protobuf type {@code GetWorldMpInfoReq}
@@ -246,8 +246,8 @@ public final class GetWorldMpInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: OKGDDDOHINO
-     * CmdId: 3479
+     * CmdId: 3100
+     * Name: LEBMIODJLOG
      * </pre>
      *
      * Protobuf type {@code GetWorldMpInfoReq}

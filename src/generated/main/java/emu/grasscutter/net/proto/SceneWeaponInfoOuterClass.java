@@ -120,7 +120,7 @@ public final class SceneWeaponInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: NCCBAHIEMNM
+   * Name: JEOEDBOGIAG
    * </pre>
    *
    * Protobuf type {@code SceneWeaponInfo}
@@ -747,7 +747,7 @@ public final class SceneWeaponInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: NCCBAHIEMNM
+     * Name: JEOEDBOGIAG
      * </pre>
      *
      * Protobuf type {@code SceneWeaponInfo}

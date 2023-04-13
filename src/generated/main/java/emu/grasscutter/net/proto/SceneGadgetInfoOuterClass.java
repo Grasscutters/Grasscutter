@@ -96,10 +96,6 @@ public final class SceneGadgetInfoOuterClass {
     int getMarkFlag();
 
     /**
-     * <pre>
-     *LMDHNJFCOOI
-     * </pre>
-     *
      * <code>uint32 prop_owner_entity_id = 22;</code>
      * @return The propOwnerEntityId.
      */
@@ -498,7 +494,7 @@ public final class SceneGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: APLBOALHGKD
+   * Name: CAHMGNJLGHD
    * </pre>
    *
    * Protobuf type {@code SceneGadgetInfo}
@@ -1238,10 +1234,6 @@ public final class SceneGadgetInfoOuterClass {
     public static final int PROP_OWNER_ENTITY_ID_FIELD_NUMBER = 22;
     private int propOwnerEntityId_;
     /**
-     * <pre>
-     *LMDHNJFCOOI
-     * </pre>
-     *
      * <code>uint32 prop_owner_entity_id = 22;</code>
      * @return The propOwnerEntityId.
      */
@@ -2745,7 +2737,7 @@ public final class SceneGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: APLBOALHGKD
+     * Name: CAHMGNJLGHD
      * </pre>
      *
      * Protobuf type {@code SceneGadgetInfo}
@@ -3687,10 +3679,6 @@ public final class SceneGadgetInfoOuterClass {
 
       private int propOwnerEntityId_ ;
       /**
-       * <pre>
-       *LMDHNJFCOOI
-       * </pre>
-       *
        * <code>uint32 prop_owner_entity_id = 22;</code>
        * @return The propOwnerEntityId.
        */
@@ -3699,10 +3687,6 @@ public final class SceneGadgetInfoOuterClass {
         return propOwnerEntityId_;
       }
       /**
-       * <pre>
-       *LMDHNJFCOOI
-       * </pre>
-       *
        * <code>uint32 prop_owner_entity_id = 22;</code>
        * @param value The propOwnerEntityId to set.
        * @return This builder for chaining.
@@ -3714,10 +3698,6 @@ public final class SceneGadgetInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       *LMDHNJFCOOI
-       * </pre>
-       *
        * <code>uint32 prop_owner_entity_id = 22;</code>
        * @return This builder for chaining.
        */

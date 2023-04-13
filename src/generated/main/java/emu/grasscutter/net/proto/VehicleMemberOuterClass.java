@@ -38,7 +38,7 @@ public final class VehicleMemberOuterClass {
   }
   /**
    * <pre>
-   * Name: ENANJKOACDB
+   * Name: CJDBELBDBLI
    * </pre>
    *
    * Protobuf type {@code VehicleMember}
@@ -345,7 +345,7 @@ public final class VehicleMemberOuterClass {
     }
     /**
      * <pre>
-     * Name: ENANJKOACDB
+     * Name: CJDBELBDBLI
      * </pre>
      *
      * Protobuf type {@code VehicleMember}

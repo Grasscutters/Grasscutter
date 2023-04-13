@@ -19,21 +19,21 @@ public final class SceneInitFinishRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 enter_scene_token = 13;</code>
-     * @return The enterSceneToken.
-     */
-    int getEnterSceneToken();
-
-    /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 enter_scene_token = 14;</code>
+     * @return The enterSceneToken.
+     */
+    int getEnterSceneToken();
   }
   /**
    * <pre>
-   * Name: GCJHACJGIDO
-   * CmdId: 214
+   * CmdId: 216
+   * Name: OLMNHDCCBOE
    * </pre>
    *
    * Protobuf type {@code SceneInitFinishRsp}
@@ -80,12 +80,12 @@ public final class SceneInitFinishRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 16: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
               enterSceneToken_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class SceneInitFinishRspOuterClass {
               emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp.class, emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp.Builder.class);
     }
 
-    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 13;
-    private int enterSceneToken_;
-    /**
-     * <code>uint32 enter_scene_token = 13;</code>
-     * @return The enterSceneToken.
-     */
-    @java.lang.Override
-    public int getEnterSceneToken() {
-      return enterSceneToken_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 14;
+    private int enterSceneToken_;
+    /**
+     * <code>uint32 enter_scene_token = 14;</code>
+     * @return The enterSceneToken.
+     */
+    @java.lang.Override
+    public int getEnterSceneToken() {
+      return enterSceneToken_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class SceneInitFinishRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(2, retcode_);
       }
       if (enterSceneToken_ != 0) {
-        output.writeUInt32(13, enterSceneToken_);
+        output.writeUInt32(14, enterSceneToken_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SceneInitFinishRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(2, retcode_);
       }
       if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, enterSceneToken_);
+          .computeUInt32Size(14, enterSceneToken_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SceneInitFinishRspOuterClass {
       }
       emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp other = (emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp) obj;
 
-      if (getEnterSceneToken()
-          != other.getEnterSceneToken()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getEnterSceneToken()
+          != other.getEnterSceneToken()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SceneInitFinishRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTER_SCENE_TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getEnterSceneToken();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + ENTER_SCENE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterSceneToken();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SceneInitFinishRspOuterClass {
     }
     /**
      * <pre>
-     * Name: GCJHACJGIDO
-     * CmdId: 214
+     * CmdId: 216
+     * Name: OLMNHDCCBOE
      * </pre>
      *
      * Protobuf type {@code SceneInitFinishRsp}
@@ -353,9 +353,9 @@ public final class SceneInitFinishRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        enterSceneToken_ = 0;
-
         retcode_ = 0;
+
+        enterSceneToken_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SceneInitFinishRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp buildPartial() {
         emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp result = new emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp(this);
-        result.enterSceneToken_ = enterSceneToken_;
         result.retcode_ = retcode_;
+        result.enterSceneToken_ = enterSceneToken_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SceneInitFinishRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp other) {
         if (other == emu.grasscutter.net.proto.SceneInitFinishRspOuterClass.SceneInitFinishRsp.getDefaultInstance()) return this;
-        if (other.getEnterSceneToken() != 0) {
-          setEnterSceneToken(other.getEnterSceneToken());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getEnterSceneToken() != 0) {
+          setEnterSceneToken(other.getEnterSceneToken());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class SceneInitFinishRspOuterClass {
         return this;
       }
 
-      private int enterSceneToken_ ;
-      /**
-       * <code>uint32 enter_scene_token = 13;</code>
-       * @return The enterSceneToken.
-       */
-      @java.lang.Override
-      public int getEnterSceneToken() {
-        return enterSceneToken_;
-      }
-      /**
-       * <code>uint32 enter_scene_token = 13;</code>
-       * @param value The enterSceneToken to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnterSceneToken(int value) {
-        
-        enterSceneToken_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 enter_scene_token = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnterSceneToken() {
-        
-        enterSceneToken_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class SceneInitFinishRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class SceneInitFinishRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int enterSceneToken_ ;
+      /**
+       * <code>uint32 enter_scene_token = 14;</code>
+       * @return The enterSceneToken.
+       */
+      @java.lang.Override
+      public int getEnterSceneToken() {
+        return enterSceneToken_;
+      }
+      /**
+       * <code>uint32 enter_scene_token = 14;</code>
+       * @param value The enterSceneToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnterSceneToken(int value) {
+        
+        enterSceneToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 enter_scene_token = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnterSceneToken() {
+        
+        enterSceneToken_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SceneInitFinishRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030SceneInitFinishRsp.proto\"@\n\022SceneInitF" +
-      "inishRsp\022\031\n\021enter_scene_token\030\r \001(\r\022\017\n\007r" +
-      "etcode\030\004 \001(\005B\033\n\031emu.grasscutter.net.prot" +
+      "inishRsp\022\017\n\007retcode\030\002 \001(\005\022\031\n\021enter_scene" +
+      "_token\030\016 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SceneInitFinishRspOuterClass {
     internal_static_SceneInitFinishRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneInitFinishRsp_descriptor,
-        new java.lang.String[] { "EnterSceneToken", "Retcode", });
+        new java.lang.String[] { "Retcode", "EnterSceneToken", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

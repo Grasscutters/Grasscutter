@@ -65,7 +65,7 @@ public final class TrialAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LCCNADFOJME
+   * Name: NDCPPFJKBFD
    * </pre>
    *
    * Protobuf type {@code TrialAvatarInfo}
@@ -439,7 +439,7 @@ public final class TrialAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LCCNADFOJME
+     * Name: NDCPPFJKBFD
      * </pre>
      *
      * Protobuf type {@code TrialAvatarInfo}

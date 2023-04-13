@@ -386,7 +386,7 @@ public final class GachaInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LIBILADMDKG
+   * Name: LIBILADMDKG (3.5, help)
    * </pre>
    *
    * Protobuf type {@code GachaInfo}
@@ -1785,7 +1785,7 @@ public final class GachaInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LIBILADMDKG
+     * Name: LIBILADMDKG (3.5, help)
      * </pre>
      *
      * Protobuf type {@code GachaInfo}

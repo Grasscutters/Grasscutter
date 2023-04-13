@@ -43,19 +43,11 @@ public final class MailTextContentOuterClass {
         getContentBytes();
 
     /**
-     * <pre>
-     *NBNLJCLPGEA
-     * </pre>
-     *
      * <code>string sender = 3;</code>
      * @return The sender.
      */
     java.lang.String getSender();
     /**
-     * <pre>
-     *NBNLJCLPGEA
-     * </pre>
-     *
      * <code>string sender = 3;</code>
      * @return The bytes for sender.
      */
@@ -64,7 +56,7 @@ public final class MailTextContentOuterClass {
   }
   /**
    * <pre>
-   * Name: CBGLBMMCPPK 
+   * Name: JLNOLCOKGJD
    * </pre>
    *
    * Protobuf type {@code MailTextContent}
@@ -243,10 +235,6 @@ public final class MailTextContentOuterClass {
     public static final int SENDER_FIELD_NUMBER = 3;
     private volatile java.lang.Object sender_;
     /**
-     * <pre>
-     *NBNLJCLPGEA
-     * </pre>
-     *
      * <code>string sender = 3;</code>
      * @return The sender.
      */
@@ -264,10 +252,6 @@ public final class MailTextContentOuterClass {
       }
     }
     /**
-     * <pre>
-     *NBNLJCLPGEA
-     * </pre>
-     *
      * <code>string sender = 3;</code>
      * @return The bytes for sender.
      */
@@ -462,7 +446,7 @@ public final class MailTextContentOuterClass {
     }
     /**
      * <pre>
-     * Name: CBGLBMMCPPK 
+     * Name: JLNOLCOKGJD
      * </pre>
      *
      * Protobuf type {@code MailTextContent}
@@ -780,10 +764,6 @@ public final class MailTextContentOuterClass {
 
       private java.lang.Object sender_ = "";
       /**
-       * <pre>
-       *NBNLJCLPGEA
-       * </pre>
-       *
        * <code>string sender = 3;</code>
        * @return The sender.
        */
@@ -800,10 +780,6 @@ public final class MailTextContentOuterClass {
         }
       }
       /**
-       * <pre>
-       *NBNLJCLPGEA
-       * </pre>
-       *
        * <code>string sender = 3;</code>
        * @return The bytes for sender.
        */
@@ -821,10 +797,6 @@ public final class MailTextContentOuterClass {
         }
       }
       /**
-       * <pre>
-       *NBNLJCLPGEA
-       * </pre>
-       *
        * <code>string sender = 3;</code>
        * @param value The sender to set.
        * @return This builder for chaining.
@@ -840,10 +812,6 @@ public final class MailTextContentOuterClass {
         return this;
       }
       /**
-       * <pre>
-       *NBNLJCLPGEA
-       * </pre>
-       *
        * <code>string sender = 3;</code>
        * @return This builder for chaining.
        */
@@ -854,10 +822,6 @@ public final class MailTextContentOuterClass {
         return this;
       }
       /**
-       * <pre>
-       *NBNLJCLPGEA
-       * </pre>
-       *
        * <code>string sender = 3;</code>
        * @param value The bytes for sender to set.
        * @return This builder for chaining.

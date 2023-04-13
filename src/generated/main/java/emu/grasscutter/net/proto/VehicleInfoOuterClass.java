@@ -56,7 +56,7 @@ public final class VehicleInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: CDPOOGDCAEF
+   * Name: AAIPFEKBIGD
    * </pre>
    *
    * Protobuf type {@code VehicleInfo}
@@ -404,7 +404,7 @@ public final class VehicleInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: CDPOOGDCAEF
+     * Name: AAIPFEKBIGD
      * </pre>
      *
      * Protobuf type {@code VehicleInfo}

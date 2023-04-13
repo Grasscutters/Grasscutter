@@ -19,85 +19,85 @@ public final class VehicleLocationInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @return A list containing the uidList.
      */
     java.util.List<java.lang.Integer> getUidListList();
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @return The count of uidList.
      */
     int getUidListCount();
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
     int getUidList(int index);
 
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>uint32 gadget_id = 11;</code>
+     * <code>uint32 gadget_id = 12;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
 
     /**
-     * <code>float ICHELNHEJEK = 12;</code>
-     * @return The iCHELNHEJEK.
-     */
-    float getICHELNHEJEK();
-
-    /**
-     * <code>float KCHLIBBDFCG = 10;</code>
-     * @return The kCHLIBBDFCG.
-     */
-    float getKCHLIBBDFCG();
-
-    /**
-     * <code>.Vector rot = 13;</code>
-     * @return Whether the rot field is set.
-     */
-    boolean hasRot();
-    /**
-     * <code>.Vector rot = 13;</code>
-     * @return The rot.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getRot();
-    /**
-     * <code>.Vector rot = 13;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
-
-    /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      * @return The pos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
     /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>uint32 owner_uid = 7;</code>
+     * <code>.Vector rot = 14;</code>
+     * @return Whether the rot field is set.
+     */
+    boolean hasRot();
+    /**
+     * <code>.Vector rot = 14;</code>
+     * @return The rot.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getRot();
+    /**
+     * <code>.Vector rot = 14;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
+
+    /**
+     * <code>uint32 owner_uid = 1;</code>
      * @return The ownerUid.
      */
     int getOwnerUid();
+
+    /**
+     * <code>float KCCDNGMKBOB = 11;</code>
+     * @return The kCCDNGMKBOB.
+     */
+    float getKCCDNGMKBOB();
+
+    /**
+     * <code>float MILGENBLEAK = 7;</code>
+     * @return The mILGENBLEAK.
+     */
+    float getMILGENBLEAK();
   }
   /**
    * <pre>
-   * Name: GHECOJHFPKA
+   * Name: NADLILFDAMD
    * </pre>
    *
    * Protobuf type {@code VehicleLocationInfo}
@@ -146,17 +146,22 @@ public final class VehicleLocationInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 8: {
 
               ownerUid_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 40: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 61: {
+
+              mILGENBLEAK_ = input.readFloat();
+              break;
+            }
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 uidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -164,7 +169,7 @@ public final class VehicleLocationInfoOuterClass {
               uidList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -177,7 +182,17 @@ public final class VehicleLocationInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 74: {
+            case 93: {
+
+              kCCDNGMKBOB_ = input.readFloat();
+              break;
+            }
+            case 96: {
+
+              gadgetId_ = input.readUInt32();
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -190,22 +205,7 @@ public final class VehicleLocationInfoOuterClass {
 
               break;
             }
-            case 85: {
-
-              kCHLIBBDFCG_ = input.readFloat();
-              break;
-            }
-            case 88: {
-
-              gadgetId_ = input.readUInt32();
-              break;
-            }
-            case 101: {
-
-              iCHELNHEJEK_ = input.readFloat();
-              break;
-            }
-            case 106: {
+            case 114: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -253,10 +253,10 @@ public final class VehicleLocationInfoOuterClass {
               emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.class, emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.Builder.class);
     }
 
-    public static final int UID_LIST_FIELD_NUMBER = 8;
+    public static final int UID_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList uidList_;
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @return A list containing the uidList.
      */
     @java.lang.Override
@@ -265,14 +265,14 @@ public final class VehicleLocationInfoOuterClass {
       return uidList_;
     }
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @return The count of uidList.
      */
     public int getUidListCount() {
       return uidList_.size();
     }
     /**
-     * <code>repeated uint32 uid_list = 8;</code>
+     * <code>repeated uint32 uid_list = 10;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
@@ -281,10 +281,10 @@ public final class VehicleLocationInfoOuterClass {
     }
     private int uidListMemoizedSerializedSize = -1;
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    public static final int ENTITY_ID_FIELD_NUMBER = 5;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -292,10 +292,10 @@ public final class VehicleLocationInfoOuterClass {
       return entityId_;
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 11;
+    public static final int GADGET_ID_FIELD_NUMBER = 12;
     private int gadgetId_;
     /**
-     * <code>uint32 gadget_id = 11;</code>
+     * <code>uint32 gadget_id = 12;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -303,58 +303,10 @@ public final class VehicleLocationInfoOuterClass {
       return gadgetId_;
     }
 
-    public static final int ICHELNHEJEK_FIELD_NUMBER = 12;
-    private float iCHELNHEJEK_;
-    /**
-     * <code>float ICHELNHEJEK = 12;</code>
-     * @return The iCHELNHEJEK.
-     */
-    @java.lang.Override
-    public float getICHELNHEJEK() {
-      return iCHELNHEJEK_;
-    }
-
-    public static final int KCHLIBBDFCG_FIELD_NUMBER = 10;
-    private float kCHLIBBDFCG_;
-    /**
-     * <code>float KCHLIBBDFCG = 10;</code>
-     * @return The kCHLIBBDFCG.
-     */
-    @java.lang.Override
-    public float getKCHLIBBDFCG() {
-      return kCHLIBBDFCG_;
-    }
-
-    public static final int ROT_FIELD_NUMBER = 13;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
-    /**
-     * <code>.Vector rot = 13;</code>
-     * @return Whether the rot field is set.
-     */
-    @java.lang.Override
-    public boolean hasRot() {
-      return rot_ != null;
-    }
-    /**
-     * <code>.Vector rot = 13;</code>
-     * @return The rot.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
-      return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
-    }
-    /**
-     * <code>.Vector rot = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-      return getRot();
-    }
-
-    public static final int POS_FIELD_NUMBER = 9;
+    public static final int POS_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      * @return Whether the pos field is set.
      */
     @java.lang.Override
@@ -362,7 +314,7 @@ public final class VehicleLocationInfoOuterClass {
       return pos_ != null;
     }
     /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      * @return The pos.
      */
     @java.lang.Override
@@ -370,22 +322,70 @@ public final class VehicleLocationInfoOuterClass {
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
     /**
-     * <code>.Vector pos = 9;</code>
+     * <code>.Vector pos = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
       return getPos();
     }
 
-    public static final int OWNER_UID_FIELD_NUMBER = 7;
+    public static final int ROT_FIELD_NUMBER = 14;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
+    /**
+     * <code>.Vector rot = 14;</code>
+     * @return Whether the rot field is set.
+     */
+    @java.lang.Override
+    public boolean hasRot() {
+      return rot_ != null;
+    }
+    /**
+     * <code>.Vector rot = 14;</code>
+     * @return The rot.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
+      return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+    }
+    /**
+     * <code>.Vector rot = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
+      return getRot();
+    }
+
+    public static final int OWNER_UID_FIELD_NUMBER = 1;
     private int ownerUid_;
     /**
-     * <code>uint32 owner_uid = 7;</code>
+     * <code>uint32 owner_uid = 1;</code>
      * @return The ownerUid.
      */
     @java.lang.Override
     public int getOwnerUid() {
       return ownerUid_;
+    }
+
+    public static final int KCCDNGMKBOB_FIELD_NUMBER = 11;
+    private float kCCDNGMKBOB_;
+    /**
+     * <code>float KCCDNGMKBOB = 11;</code>
+     * @return The kCCDNGMKBOB.
+     */
+    @java.lang.Override
+    public float getKCCDNGMKBOB() {
+      return kCCDNGMKBOB_;
+    }
+
+    public static final int MILGENBLEAK_FIELD_NUMBER = 7;
+    private float mILGENBLEAK_;
+    /**
+     * <code>float MILGENBLEAK = 7;</code>
+     * @return The mILGENBLEAK.
+     */
+    @java.lang.Override
+    public float getMILGENBLEAK() {
+      return mILGENBLEAK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -403,33 +403,33 @@ public final class VehicleLocationInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (entityId_ != 0) {
-        output.writeUInt32(2, entityId_);
-      }
       if (ownerUid_ != 0) {
-        output.writeUInt32(7, ownerUid_);
+        output.writeUInt32(1, ownerUid_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(5, entityId_);
+      }
+      if (mILGENBLEAK_ != 0F) {
+        output.writeFloat(7, mILGENBLEAK_);
       }
       if (getUidListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(uidListMemoizedSerializedSize);
       }
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
       }
-      if (pos_ != null) {
-        output.writeMessage(9, getPos());
-      }
-      if (kCHLIBBDFCG_ != 0F) {
-        output.writeFloat(10, kCHLIBBDFCG_);
+      if (kCCDNGMKBOB_ != 0F) {
+        output.writeFloat(11, kCCDNGMKBOB_);
       }
       if (gadgetId_ != 0) {
-        output.writeUInt32(11, gadgetId_);
+        output.writeUInt32(12, gadgetId_);
       }
-      if (iCHELNHEJEK_ != 0F) {
-        output.writeFloat(12, iCHELNHEJEK_);
+      if (pos_ != null) {
+        output.writeMessage(13, getPos());
       }
       if (rot_ != null) {
-        output.writeMessage(13, getRot());
+        output.writeMessage(14, getRot());
       }
       unknownFields.writeTo(output);
     }
@@ -440,13 +440,17 @@ public final class VehicleLocationInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, entityId_);
-      }
       if (ownerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, ownerUid_);
+          .computeUInt32Size(1, ownerUid_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, entityId_);
+      }
+      if (mILGENBLEAK_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(7, mILGENBLEAK_);
       }
       {
         int dataSize = 0;
@@ -462,25 +466,21 @@ public final class VehicleLocationInfoOuterClass {
         }
         uidListMemoizedSerializedSize = dataSize;
       }
-      if (pos_ != null) {
+      if (kCCDNGMKBOB_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getPos());
-      }
-      if (kCHLIBBDFCG_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, kCHLIBBDFCG_);
+          .computeFloatSize(11, kCCDNGMKBOB_);
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, gadgetId_);
+          .computeUInt32Size(12, gadgetId_);
       }
-      if (iCHELNHEJEK_ != 0F) {
+      if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(12, iCHELNHEJEK_);
+          .computeMessageSize(13, getPos());
       }
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getRot());
+          .computeMessageSize(14, getRot());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -503,24 +503,24 @@ public final class VehicleLocationInfoOuterClass {
           != other.getEntityId()) return false;
       if (getGadgetId()
           != other.getGadgetId()) return false;
-      if (java.lang.Float.floatToIntBits(getICHELNHEJEK())
-          != java.lang.Float.floatToIntBits(
-              other.getICHELNHEJEK())) return false;
-      if (java.lang.Float.floatToIntBits(getKCHLIBBDFCG())
-          != java.lang.Float.floatToIntBits(
-              other.getKCHLIBBDFCG())) return false;
-      if (hasRot() != other.hasRot()) return false;
-      if (hasRot()) {
-        if (!getRot()
-            .equals(other.getRot())) return false;
-      }
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
+      if (hasRot() != other.hasRot()) return false;
+      if (hasRot()) {
+        if (!getRot()
+            .equals(other.getRot())) return false;
+      }
       if (getOwnerUid()
           != other.getOwnerUid()) return false;
+      if (java.lang.Float.floatToIntBits(getKCCDNGMKBOB())
+          != java.lang.Float.floatToIntBits(
+              other.getKCCDNGMKBOB())) return false;
+      if (java.lang.Float.floatToIntBits(getMILGENBLEAK())
+          != java.lang.Float.floatToIntBits(
+              other.getMILGENBLEAK())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -540,22 +540,22 @@ public final class VehicleLocationInfoOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetId();
-      hash = (37 * hash) + ICHELNHEJEK_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getICHELNHEJEK());
-      hash = (37 * hash) + KCHLIBBDFCG_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getKCHLIBBDFCG());
-      if (hasRot()) {
-        hash = (37 * hash) + ROT_FIELD_NUMBER;
-        hash = (53 * hash) + getRot().hashCode();
-      }
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
+      if (hasRot()) {
+        hash = (37 * hash) + ROT_FIELD_NUMBER;
+        hash = (53 * hash) + getRot().hashCode();
+      }
       hash = (37 * hash) + OWNER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerUid();
+      hash = (37 * hash) + KCCDNGMKBOB_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getKCCDNGMKBOB());
+      hash = (37 * hash) + MILGENBLEAK_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMILGENBLEAK());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -653,7 +653,7 @@ public final class VehicleLocationInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GHECOJHFPKA
+     * Name: NADLILFDAMD
      * </pre>
      *
      * Protobuf type {@code VehicleLocationInfo}
@@ -699,23 +699,23 @@ public final class VehicleLocationInfoOuterClass {
 
         gadgetId_ = 0;
 
-        iCHELNHEJEK_ = 0F;
-
-        kCHLIBBDFCG_ = 0F;
-
-        if (rotBuilder_ == null) {
-          rot_ = null;
-        } else {
-          rot_ = null;
-          rotBuilder_ = null;
-        }
         if (posBuilder_ == null) {
           pos_ = null;
         } else {
           pos_ = null;
           posBuilder_ = null;
         }
+        if (rotBuilder_ == null) {
+          rot_ = null;
+        } else {
+          rot_ = null;
+          rotBuilder_ = null;
+        }
         ownerUid_ = 0;
+
+        kCCDNGMKBOB_ = 0F;
+
+        mILGENBLEAK_ = 0F;
 
         return this;
       }
@@ -751,19 +751,19 @@ public final class VehicleLocationInfoOuterClass {
         result.uidList_ = uidList_;
         result.entityId_ = entityId_;
         result.gadgetId_ = gadgetId_;
-        result.iCHELNHEJEK_ = iCHELNHEJEK_;
-        result.kCHLIBBDFCG_ = kCHLIBBDFCG_;
-        if (rotBuilder_ == null) {
-          result.rot_ = rot_;
-        } else {
-          result.rot_ = rotBuilder_.build();
-        }
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
+        if (rotBuilder_ == null) {
+          result.rot_ = rot_;
+        } else {
+          result.rot_ = rotBuilder_.build();
+        }
         result.ownerUid_ = ownerUid_;
+        result.kCCDNGMKBOB_ = kCCDNGMKBOB_;
+        result.mILGENBLEAK_ = mILGENBLEAK_;
         onBuilt();
         return result;
       }
@@ -828,20 +828,20 @@ public final class VehicleLocationInfoOuterClass {
         if (other.getGadgetId() != 0) {
           setGadgetId(other.getGadgetId());
         }
-        if (other.getICHELNHEJEK() != 0F) {
-          setICHELNHEJEK(other.getICHELNHEJEK());
-        }
-        if (other.getKCHLIBBDFCG() != 0F) {
-          setKCHLIBBDFCG(other.getKCHLIBBDFCG());
+        if (other.hasPos()) {
+          mergePos(other.getPos());
         }
         if (other.hasRot()) {
           mergeRot(other.getRot());
         }
-        if (other.hasPos()) {
-          mergePos(other.getPos());
-        }
         if (other.getOwnerUid() != 0) {
           setOwnerUid(other.getOwnerUid());
+        }
+        if (other.getKCCDNGMKBOB() != 0F) {
+          setKCCDNGMKBOB(other.getKCCDNGMKBOB());
+        }
+        if (other.getMILGENBLEAK() != 0F) {
+          setMILGENBLEAK(other.getMILGENBLEAK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -881,7 +881,7 @@ public final class VehicleLocationInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @return A list containing the uidList.
        */
       public java.util.List<java.lang.Integer>
@@ -890,14 +890,14 @@ public final class VehicleLocationInfoOuterClass {
                  java.util.Collections.unmodifiableList(uidList_) : uidList_;
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @return The count of uidList.
        */
       public int getUidListCount() {
         return uidList_.size();
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @param index The index of the element to return.
        * @return The uidList at the given index.
        */
@@ -905,7 +905,7 @@ public final class VehicleLocationInfoOuterClass {
         return uidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @param index The index to set the value at.
        * @param value The uidList to set.
        * @return This builder for chaining.
@@ -918,7 +918,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @param value The uidList to add.
        * @return This builder for chaining.
        */
@@ -929,7 +929,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @param values The uidList to add.
        * @return This builder for chaining.
        */
@@ -942,7 +942,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 8;</code>
+       * <code>repeated uint32 uid_list = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUidList() {
@@ -954,7 +954,7 @@ public final class VehicleLocationInfoOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -962,7 +962,7 @@ public final class VehicleLocationInfoOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -973,7 +973,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -985,7 +985,7 @@ public final class VehicleLocationInfoOuterClass {
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 11;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -993,7 +993,7 @@ public final class VehicleLocationInfoOuterClass {
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 11;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -1004,7 +1004,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 11;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -1014,199 +1014,18 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
 
-      private float iCHELNHEJEK_ ;
-      /**
-       * <code>float ICHELNHEJEK = 12;</code>
-       * @return The iCHELNHEJEK.
-       */
-      @java.lang.Override
-      public float getICHELNHEJEK() {
-        return iCHELNHEJEK_;
-      }
-      /**
-       * <code>float ICHELNHEJEK = 12;</code>
-       * @param value The iCHELNHEJEK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setICHELNHEJEK(float value) {
-        
-        iCHELNHEJEK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float ICHELNHEJEK = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearICHELNHEJEK() {
-        
-        iCHELNHEJEK_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float kCHLIBBDFCG_ ;
-      /**
-       * <code>float KCHLIBBDFCG = 10;</code>
-       * @return The kCHLIBBDFCG.
-       */
-      @java.lang.Override
-      public float getKCHLIBBDFCG() {
-        return kCHLIBBDFCG_;
-      }
-      /**
-       * <code>float KCHLIBBDFCG = 10;</code>
-       * @param value The kCHLIBBDFCG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKCHLIBBDFCG(float value) {
-        
-        kCHLIBBDFCG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float KCHLIBBDFCG = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKCHLIBBDFCG() {
-        
-        kCHLIBBDFCG_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
-      /**
-       * <code>.Vector rot = 13;</code>
-       * @return Whether the rot field is set.
-       */
-      public boolean hasRot() {
-        return rotBuilder_ != null || rot_ != null;
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       * @return The rot.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
-        if (rotBuilder_ == null) {
-          return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
-        } else {
-          return rotBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public Builder setRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (rotBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          rot_ = value;
-          onChanged();
-        } else {
-          rotBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public Builder setRot(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (rotBuilder_ == null) {
-          rot_ = builderForValue.build();
-          onChanged();
-        } else {
-          rotBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public Builder mergeRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (rotBuilder_ == null) {
-          if (rot_ != null) {
-            rot_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
-          } else {
-            rot_ = value;
-          }
-          onChanged();
-        } else {
-          rotBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public Builder clearRot() {
-        if (rotBuilder_ == null) {
-          rot_ = null;
-          onChanged();
-        } else {
-          rot_ = null;
-          rotBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
-        
-        onChanged();
-        return getRotFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-        if (rotBuilder_ != null) {
-          return rotBuilder_.getMessageOrBuilder();
-        } else {
-          return rot_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
-        }
-      }
-      /**
-       * <code>.Vector rot = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getRotFieldBuilder() {
-        if (rotBuilder_ == null) {
-          rotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getRot(),
-                  getParentForChildren(),
-                  isClean());
-          rot_ = null;
-        }
-        return rotBuilder_;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -1217,7 +1036,7 @@ public final class VehicleLocationInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -1233,7 +1052,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1247,7 +1066,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -1265,7 +1084,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public Builder clearPos() {
         if (posBuilder_ == null) {
@@ -1279,7 +1098,7 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         
@@ -1287,7 +1106,7 @@ public final class VehicleLocationInfoOuterClass {
         return getPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -1298,7 +1117,7 @@ public final class VehicleLocationInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 9;</code>
+       * <code>.Vector pos = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1314,9 +1133,128 @@ public final class VehicleLocationInfoOuterClass {
         return posBuilder_;
       }
 
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
+      /**
+       * <code>.Vector rot = 14;</code>
+       * @return Whether the rot field is set.
+       */
+      public boolean hasRot() {
+        return rotBuilder_ != null || rot_ != null;
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       * @return The rot.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
+        if (rotBuilder_ == null) {
+          return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+        } else {
+          return rotBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public Builder setRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (rotBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rot_ = value;
+          onChanged();
+        } else {
+          rotBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public Builder setRot(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (rotBuilder_ == null) {
+          rot_ = builderForValue.build();
+          onChanged();
+        } else {
+          rotBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public Builder mergeRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (rotBuilder_ == null) {
+          if (rot_ != null) {
+            rot_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
+          } else {
+            rot_ = value;
+          }
+          onChanged();
+        } else {
+          rotBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public Builder clearRot() {
+        if (rotBuilder_ == null) {
+          rot_ = null;
+          onChanged();
+        } else {
+          rot_ = null;
+          rotBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
+        
+        onChanged();
+        return getRotFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
+        if (rotBuilder_ != null) {
+          return rotBuilder_.getMessageOrBuilder();
+        } else {
+          return rot_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+        }
+      }
+      /**
+       * <code>.Vector rot = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getRotFieldBuilder() {
+        if (rotBuilder_ == null) {
+          rotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getRot(),
+                  getParentForChildren(),
+                  isClean());
+          rot_ = null;
+        }
+        return rotBuilder_;
+      }
+
       private int ownerUid_ ;
       /**
-       * <code>uint32 owner_uid = 7;</code>
+       * <code>uint32 owner_uid = 1;</code>
        * @return The ownerUid.
        */
       @java.lang.Override
@@ -1324,7 +1262,7 @@ public final class VehicleLocationInfoOuterClass {
         return ownerUid_;
       }
       /**
-       * <code>uint32 owner_uid = 7;</code>
+       * <code>uint32 owner_uid = 1;</code>
        * @param value The ownerUid to set.
        * @return This builder for chaining.
        */
@@ -1335,12 +1273,74 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 owner_uid = 7;</code>
+       * <code>uint32 owner_uid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
         
         ownerUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float kCCDNGMKBOB_ ;
+      /**
+       * <code>float KCCDNGMKBOB = 11;</code>
+       * @return The kCCDNGMKBOB.
+       */
+      @java.lang.Override
+      public float getKCCDNGMKBOB() {
+        return kCCDNGMKBOB_;
+      }
+      /**
+       * <code>float KCCDNGMKBOB = 11;</code>
+       * @param value The kCCDNGMKBOB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKCCDNGMKBOB(float value) {
+        
+        kCCDNGMKBOB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float KCCDNGMKBOB = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKCCDNGMKBOB() {
+        
+        kCCDNGMKBOB_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float mILGENBLEAK_ ;
+      /**
+       * <code>float MILGENBLEAK = 7;</code>
+       * @return The mILGENBLEAK.
+       */
+      @java.lang.Override
+      public float getMILGENBLEAK() {
+        return mILGENBLEAK_;
+      }
+      /**
+       * <code>float MILGENBLEAK = 7;</code>
+       * @param value The mILGENBLEAK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMILGENBLEAK(float value) {
+        
+        mILGENBLEAK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float MILGENBLEAK = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMILGENBLEAK() {
+        
+        mILGENBLEAK_ = 0F;
         onChanged();
         return this;
       }
@@ -1412,11 +1412,11 @@ public final class VehicleLocationInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031VehicleLocationInfo.proto\032\014Vector.prot" +
-      "o\"\266\001\n\023VehicleLocationInfo\022\020\n\010uid_list\030\010 " +
-      "\003(\r\022\021\n\tentity_id\030\002 \001(\r\022\021\n\tgadget_id\030\013 \001(" +
-      "\r\022\023\n\013ICHELNHEJEK\030\014 \001(\002\022\023\n\013KCHLIBBDFCG\030\n " +
-      "\001(\002\022\024\n\003rot\030\r \001(\0132\007.Vector\022\024\n\003pos\030\t \001(\0132\007" +
-      ".Vector\022\021\n\towner_uid\030\007 \001(\rB\033\n\031emu.grassc" +
+      "o\"\266\001\n\023VehicleLocationInfo\022\020\n\010uid_list\030\n " +
+      "\003(\r\022\021\n\tentity_id\030\005 \001(\r\022\021\n\tgadget_id\030\014 \001(" +
+      "\r\022\024\n\003pos\030\r \001(\0132\007.Vector\022\024\n\003rot\030\016 \001(\0132\007.V" +
+      "ector\022\021\n\towner_uid\030\001 \001(\r\022\023\n\013KCCDNGMKBOB\030" +
+      "\013 \001(\002\022\023\n\013MILGENBLEAK\030\007 \001(\002B\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1429,7 +1429,7 @@ public final class VehicleLocationInfoOuterClass {
     internal_static_VehicleLocationInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VehicleLocationInfo_descriptor,
-        new java.lang.String[] { "UidList", "EntityId", "GadgetId", "ICHELNHEJEK", "KCHLIBBDFCG", "Rot", "Pos", "OwnerUid", });
+        new java.lang.String[] { "UidList", "EntityId", "GadgetId", "Pos", "Rot", "OwnerUid", "KCCDNGMKBOB", "MILGENBLEAK", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

@@ -16,7 +16,7 @@ public final class UgcTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: MOCGOKGHGNG
+   * Name: OKDOOEMGDLK
    * </pre>
    *
    * Protobuf enum {@code UgcType}

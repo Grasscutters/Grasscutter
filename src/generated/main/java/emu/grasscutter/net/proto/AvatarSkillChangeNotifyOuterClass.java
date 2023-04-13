@@ -19,45 +19,45 @@ public final class AvatarSkillChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cur_level = 10;</code>
-     * @return The curLevel.
-     */
-    int getCurLevel();
-
-    /**
-     * <code>uint64 avatar_guid = 9;</code>
-     * @return The avatarGuid.
-     */
-    long getAvatarGuid();
-
-    /**
-     * <code>uint32 entity_id = 8;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 old_level = 3;</code>
+     * <code>uint32 old_level = 5;</code>
      * @return The oldLevel.
      */
     int getOldLevel();
 
     /**
-     * <code>uint32 avatar_skill_id = 14;</code>
+     * <code>uint32 entity_id = 10;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>uint32 avatar_skill_id = 7;</code>
      * @return The avatarSkillId.
      */
     int getAvatarSkillId();
 
     /**
-     * <code>uint32 skill_depot_id = 4;</code>
+     * <code>uint64 avatar_guid = 8;</code>
+     * @return The avatarGuid.
+     */
+    long getAvatarGuid();
+
+    /**
+     * <code>uint32 cur_level = 13;</code>
+     * @return The curLevel.
+     */
+    int getCurLevel();
+
+    /**
+     * <code>uint32 skill_depot_id = 2;</code>
      * @return The skillDepotId.
      */
     int getSkillDepotId();
   }
   /**
    * <pre>
-   * Name: KLNBJHKJCIN
-   * CmdId: 1042
+   * CmdId: 1065
+   * Name: IHFNGMCDILI
    * </pre>
    *
    * Protobuf type {@code AvatarSkillChangeNotify}
@@ -104,34 +104,34 @@ public final class AvatarSkillChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              oldLevel_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 16: {
 
               skillDepotId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 40: {
 
-              entityId_ = input.readUInt32();
+              oldLevel_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 56: {
+
+              avatarSkillId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
             case 80: {
 
-              curLevel_ = input.readUInt32();
+              entityId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 104: {
 
-              avatarSkillId_ = input.readUInt32();
+              curLevel_ = input.readUInt32();
               break;
             }
             default: {
@@ -166,43 +166,10 @@ public final class AvatarSkillChangeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify.class, emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify.Builder.class);
     }
 
-    public static final int CUR_LEVEL_FIELD_NUMBER = 10;
-    private int curLevel_;
-    /**
-     * <code>uint32 cur_level = 10;</code>
-     * @return The curLevel.
-     */
-    @java.lang.Override
-    public int getCurLevel() {
-      return curLevel_;
-    }
-
-    public static final int AVATAR_GUID_FIELD_NUMBER = 9;
-    private long avatarGuid_;
-    /**
-     * <code>uint64 avatar_guid = 9;</code>
-     * @return The avatarGuid.
-     */
-    @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 8;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int OLD_LEVEL_FIELD_NUMBER = 3;
+    public static final int OLD_LEVEL_FIELD_NUMBER = 5;
     private int oldLevel_;
     /**
-     * <code>uint32 old_level = 3;</code>
+     * <code>uint32 old_level = 5;</code>
      * @return The oldLevel.
      */
     @java.lang.Override
@@ -210,10 +177,21 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return oldLevel_;
     }
 
-    public static final int AVATAR_SKILL_ID_FIELD_NUMBER = 14;
+    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 10;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int AVATAR_SKILL_ID_FIELD_NUMBER = 7;
     private int avatarSkillId_;
     /**
-     * <code>uint32 avatar_skill_id = 14;</code>
+     * <code>uint32 avatar_skill_id = 7;</code>
      * @return The avatarSkillId.
      */
     @java.lang.Override
@@ -221,10 +199,32 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return avatarSkillId_;
     }
 
-    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 4;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 8;
+    private long avatarGuid_;
+    /**
+     * <code>uint64 avatar_guid = 8;</code>
+     * @return The avatarGuid.
+     */
+    @java.lang.Override
+    public long getAvatarGuid() {
+      return avatarGuid_;
+    }
+
+    public static final int CUR_LEVEL_FIELD_NUMBER = 13;
+    private int curLevel_;
+    /**
+     * <code>uint32 cur_level = 13;</code>
+     * @return The curLevel.
+     */
+    @java.lang.Override
+    public int getCurLevel() {
+      return curLevel_;
+    }
+
+    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 2;
     private int skillDepotId_;
     /**
-     * <code>uint32 skill_depot_id = 4;</code>
+     * <code>uint32 skill_depot_id = 2;</code>
      * @return The skillDepotId.
      */
     @java.lang.Override
@@ -246,23 +246,23 @@ public final class AvatarSkillChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (oldLevel_ != 0) {
-        output.writeUInt32(3, oldLevel_);
-      }
       if (skillDepotId_ != 0) {
-        output.writeUInt32(4, skillDepotId_);
+        output.writeUInt32(2, skillDepotId_);
       }
-      if (entityId_ != 0) {
-        output.writeUInt32(8, entityId_);
-      }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(9, avatarGuid_);
-      }
-      if (curLevel_ != 0) {
-        output.writeUInt32(10, curLevel_);
+      if (oldLevel_ != 0) {
+        output.writeUInt32(5, oldLevel_);
       }
       if (avatarSkillId_ != 0) {
-        output.writeUInt32(14, avatarSkillId_);
+        output.writeUInt32(7, avatarSkillId_);
+      }
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(8, avatarGuid_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(10, entityId_);
+      }
+      if (curLevel_ != 0) {
+        output.writeUInt32(13, curLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -273,29 +273,29 @@ public final class AvatarSkillChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (oldLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, oldLevel_);
-      }
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, skillDepotId_);
+          .computeUInt32Size(2, skillDepotId_);
       }
-      if (entityId_ != 0) {
+      if (oldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, entityId_);
-      }
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, avatarGuid_);
-      }
-      if (curLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, curLevel_);
+          .computeUInt32Size(5, oldLevel_);
       }
       if (avatarSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, avatarSkillId_);
+          .computeUInt32Size(7, avatarSkillId_);
+      }
+      if (avatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, avatarGuid_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, entityId_);
+      }
+      if (curLevel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, curLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,16 +312,16 @@ public final class AvatarSkillChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify other = (emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify) obj;
 
-      if (getCurLevel()
-          != other.getCurLevel()) return false;
-      if (getAvatarGuid()
-          != other.getAvatarGuid()) return false;
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (getOldLevel()
           != other.getOldLevel()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (getAvatarSkillId()
           != other.getAvatarSkillId()) return false;
+      if (getAvatarGuid()
+          != other.getAvatarGuid()) return false;
+      if (getCurLevel()
+          != other.getCurLevel()) return false;
       if (getSkillDepotId()
           != other.getSkillDepotId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -335,17 +335,17 @@ public final class AvatarSkillChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getCurLevel();
+      hash = (37 * hash) + OLD_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getOldLevel();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + AVATAR_SKILL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarSkillId();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + OLD_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getOldLevel();
-      hash = (37 * hash) + AVATAR_SKILL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarSkillId();
+      hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getCurLevel();
       hash = (37 * hash) + SKILL_DEPOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillDepotId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -445,8 +445,8 @@ public final class AvatarSkillChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: KLNBJHKJCIN
-     * CmdId: 1042
+     * CmdId: 1065
+     * Name: IHFNGMCDILI
      * </pre>
      *
      * Protobuf type {@code AvatarSkillChangeNotify}
@@ -486,15 +486,15 @@ public final class AvatarSkillChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        curLevel_ = 0;
-
-        avatarGuid_ = 0L;
+        oldLevel_ = 0;
 
         entityId_ = 0;
 
-        oldLevel_ = 0;
-
         avatarSkillId_ = 0;
+
+        avatarGuid_ = 0L;
+
+        curLevel_ = 0;
 
         skillDepotId_ = 0;
 
@@ -524,11 +524,11 @@ public final class AvatarSkillChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify buildPartial() {
         emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify result = new emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify(this);
-        result.curLevel_ = curLevel_;
-        result.avatarGuid_ = avatarGuid_;
-        result.entityId_ = entityId_;
         result.oldLevel_ = oldLevel_;
+        result.entityId_ = entityId_;
         result.avatarSkillId_ = avatarSkillId_;
+        result.avatarGuid_ = avatarGuid_;
+        result.curLevel_ = curLevel_;
         result.skillDepotId_ = skillDepotId_;
         onBuilt();
         return result;
@@ -578,20 +578,20 @@ public final class AvatarSkillChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify other) {
         if (other == emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify.getDefaultInstance()) return this;
-        if (other.getCurLevel() != 0) {
-          setCurLevel(other.getCurLevel());
-        }
-        if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
+        if (other.getOldLevel() != 0) {
+          setOldLevel(other.getOldLevel());
         }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        if (other.getOldLevel() != 0) {
-          setOldLevel(other.getOldLevel());
-        }
         if (other.getAvatarSkillId() != 0) {
           setAvatarSkillId(other.getAvatarSkillId());
+        }
+        if (other.getAvatarGuid() != 0L) {
+          setAvatarGuid(other.getAvatarGuid());
+        }
+        if (other.getCurLevel() != 0) {
+          setCurLevel(other.getCurLevel());
         }
         if (other.getSkillDepotId() != 0) {
           setSkillDepotId(other.getSkillDepotId());
@@ -625,102 +625,9 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
 
-      private int curLevel_ ;
-      /**
-       * <code>uint32 cur_level = 10;</code>
-       * @return The curLevel.
-       */
-      @java.lang.Override
-      public int getCurLevel() {
-        return curLevel_;
-      }
-      /**
-       * <code>uint32 cur_level = 10;</code>
-       * @param value The curLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurLevel(int value) {
-        
-        curLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_level = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurLevel() {
-        
-        curLevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatar_guid = 9;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatar_guid = 9;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatar_guid = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 8;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 8;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int oldLevel_ ;
       /**
-       * <code>uint32 old_level = 3;</code>
+       * <code>uint32 old_level = 5;</code>
        * @return The oldLevel.
        */
       @java.lang.Override
@@ -728,7 +635,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return oldLevel_;
       }
       /**
-       * <code>uint32 old_level = 3;</code>
+       * <code>uint32 old_level = 5;</code>
        * @param value The oldLevel to set.
        * @return This builder for chaining.
        */
@@ -739,7 +646,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 old_level = 3;</code>
+       * <code>uint32 old_level = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearOldLevel() {
@@ -749,9 +656,40 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
 
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int avatarSkillId_ ;
       /**
-       * <code>uint32 avatar_skill_id = 14;</code>
+       * <code>uint32 avatar_skill_id = 7;</code>
        * @return The avatarSkillId.
        */
       @java.lang.Override
@@ -759,7 +697,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return avatarSkillId_;
       }
       /**
-       * <code>uint32 avatar_skill_id = 14;</code>
+       * <code>uint32 avatar_skill_id = 7;</code>
        * @param value The avatarSkillId to set.
        * @return This builder for chaining.
        */
@@ -770,7 +708,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_skill_id = 14;</code>
+       * <code>uint32 avatar_skill_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarSkillId() {
@@ -780,9 +718,71 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
 
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 8;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 8;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        
+        avatarGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int curLevel_ ;
+      /**
+       * <code>uint32 cur_level = 13;</code>
+       * @return The curLevel.
+       */
+      @java.lang.Override
+      public int getCurLevel() {
+        return curLevel_;
+      }
+      /**
+       * <code>uint32 cur_level = 13;</code>
+       * @param value The curLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurLevel(int value) {
+        
+        curLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_level = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurLevel() {
+        
+        curLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int skillDepotId_ ;
       /**
-       * <code>uint32 skill_depot_id = 4;</code>
+       * <code>uint32 skill_depot_id = 2;</code>
        * @return The skillDepotId.
        */
       @java.lang.Override
@@ -790,7 +790,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return skillDepotId_;
       }
       /**
-       * <code>uint32 skill_depot_id = 4;</code>
+       * <code>uint32 skill_depot_id = 2;</code>
        * @param value The skillDepotId to set.
        * @return This builder for chaining.
        */
@@ -801,7 +801,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 skill_depot_id = 4;</code>
+       * <code>uint32 skill_depot_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
@@ -878,10 +878,10 @@ public final class AvatarSkillChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035AvatarSkillChangeNotify.proto\"\230\001\n\027Avat" +
-      "arSkillChangeNotify\022\021\n\tcur_level\030\n \001(\r\022\023" +
-      "\n\013avatar_guid\030\t \001(\004\022\021\n\tentity_id\030\010 \001(\r\022\021" +
-      "\n\told_level\030\003 \001(\r\022\027\n\017avatar_skill_id\030\016 \001" +
-      "(\r\022\026\n\016skill_depot_id\030\004 \001(\rB\033\n\031emu.grassc" +
+      "arSkillChangeNotify\022\021\n\told_level\030\005 \001(\r\022\021" +
+      "\n\tentity_id\030\n \001(\r\022\027\n\017avatar_skill_id\030\007 \001" +
+      "(\r\022\023\n\013avatar_guid\030\010 \001(\004\022\021\n\tcur_level\030\r \001" +
+      "(\r\022\026\n\016skill_depot_id\030\002 \001(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -893,7 +893,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
     internal_static_AvatarSkillChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarSkillChangeNotify_descriptor,
-        new java.lang.String[] { "CurLevel", "AvatarGuid", "EntityId", "OldLevel", "AvatarSkillId", "SkillDepotId", });
+        new java.lang.String[] { "OldLevel", "EntityId", "AvatarSkillId", "AvatarGuid", "CurLevel", "SkillDepotId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

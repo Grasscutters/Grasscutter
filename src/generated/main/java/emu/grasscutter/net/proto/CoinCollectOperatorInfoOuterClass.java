@@ -26,7 +26,7 @@ public final class CoinCollectOperatorInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: AINGLIBEGNA
+   * Name: JMNGHMOAGEP
    * </pre>
    *
    * Protobuf type {@code CoinCollectOperatorInfo}
@@ -278,7 +278,7 @@ public final class CoinCollectOperatorInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: AINGLIBEGNA
+     * Name: JMNGHMOAGEP
      * </pre>
      *
      * Protobuf type {@code CoinCollectOperatorInfo}

@@ -19,15 +19,15 @@ public final class HomeModuleUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 module_id = 6;</code>
+     * <code>uint32 module_id = 2;</code>
      * @return The moduleId.
      */
     int getModuleId();
   }
   /**
    * <pre>
-   * Name: BJCKAJNCINB
-   * CmdId: 4700
+   * CmdId: 4660
+   * Name: NHKAPMNLCOF
    * </pre>
    *
    * Protobuf type {@code HomeModuleUnlockNotify}
@@ -74,7 +74,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 16: {
 
               moduleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class HomeModuleUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.HomeModuleUnlockNotifyOuterClass.HomeModuleUnlockNotify.class, emu.grasscutter.net.proto.HomeModuleUnlockNotifyOuterClass.HomeModuleUnlockNotify.Builder.class);
     }
 
-    public static final int MODULE_ID_FIELD_NUMBER = 6;
+    public static final int MODULE_ID_FIELD_NUMBER = 2;
     private int moduleId_;
     /**
-     * <code>uint32 module_id = 6;</code>
+     * <code>uint32 module_id = 2;</code>
      * @return The moduleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (moduleId_ != 0) {
-        output.writeUInt32(6, moduleId_);
+        output.writeUInt32(2, moduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
       size = 0;
       if (moduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, moduleId_);
+          .computeUInt32Size(2, moduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class HomeModuleUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: BJCKAJNCINB
-     * CmdId: 4700
+     * CmdId: 4660
+     * Name: NHKAPMNLCOF
      * </pre>
      *
      * Protobuf type {@code HomeModuleUnlockNotify}
@@ -431,7 +431,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
 
       private int moduleId_ ;
       /**
-       * <code>uint32 module_id = 6;</code>
+       * <code>uint32 module_id = 2;</code>
        * @return The moduleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
         return moduleId_;
       }
       /**
-       * <code>uint32 module_id = 6;</code>
+       * <code>uint32 module_id = 2;</code>
        * @param value The moduleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 module_id = 6;</code>
+       * <code>uint32 module_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
@@ -527,7 +527,7 @@ public final class HomeModuleUnlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034HomeModuleUnlockNotify.proto\"+\n\026HomeMo" +
-      "duleUnlockNotify\022\021\n\tmodule_id\030\006 \001(\rB\033\n\031e" +
+      "duleUnlockNotify\022\021\n\tmodule_id\030\002 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

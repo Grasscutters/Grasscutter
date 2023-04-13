@@ -46,7 +46,7 @@ public final class CreateGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: GICHAGEMNME
+   * Name: DMLOGFGNFCA
    * </pre>
    *
    * Protobuf type {@code CreateGadgetInfo}
@@ -163,7 +163,7 @@ public final class CreateGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: FHHMGJOLDLM
+     * Name: ACFOEFOCAOB
      * </pre>
      *
      * Protobuf type {@code CreateGadgetInfo.Chest}
@@ -443,7 +443,7 @@ public final class CreateGadgetInfoOuterClass {
       }
       /**
        * <pre>
-       * Name: FHHMGJOLDLM
+       * Name: ACFOEFOCAOB
        * </pre>
        *
        * Protobuf type {@code CreateGadgetInfo.Chest}
@@ -929,7 +929,7 @@ public final class CreateGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GICHAGEMNME
+     * Name: DMLOGFGNFCA
      * </pre>
      *
      * Protobuf type {@code CreateGadgetInfo}

@@ -19,12 +19,12 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string target_psn_id = 8;</code>
+     * <code>string target_psn_id = 3;</code>
      * @return The targetPsnId.
      */
     java.lang.String getTargetPsnId();
     /**
-     * <code>string target_psn_id = 8;</code>
+     * <code>string target_psn_id = 3;</code>
      * @return The bytes for targetPsnId.
      */
     com.google.protobuf.ByteString
@@ -32,8 +32,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
   }
   /**
    * <pre>
-   * Name: MMHNNIDKFBL
-   * CmdId: 1801
+   * CmdId: 1831
+   * Name: CCBPPMJBDGE
    * </pre>
    *
    * Protobuf type {@code PSPlayerApplyEnterMpReq}
@@ -81,7 +81,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               targetPsnId_ = s;
@@ -119,10 +119,10 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
               emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq.class, emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq.Builder.class);
     }
 
-    public static final int TARGET_PSN_ID_FIELD_NUMBER = 8;
+    public static final int TARGET_PSN_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object targetPsnId_;
     /**
-     * <code>string target_psn_id = 8;</code>
+     * <code>string target_psn_id = 3;</code>
      * @return The targetPsnId.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       }
     }
     /**
-     * <code>string target_psn_id = 8;</code>
+     * <code>string target_psn_id = 3;</code>
      * @return The bytes for targetPsnId.
      */
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, targetPsnId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetPsnId_);
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, targetPsnId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetPsnId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     }
     /**
      * <pre>
-     * Name: MMHNNIDKFBL
-     * CmdId: 1801
+     * CmdId: 1831
+     * Name: CCBPPMJBDGE
      * </pre>
      *
      * Protobuf type {@code PSPlayerApplyEnterMpReq}
@@ -466,7 +466,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
 
       private java.lang.Object targetPsnId_ = "";
       /**
-       * <code>string target_psn_id = 8;</code>
+       * <code>string target_psn_id = 3;</code>
        * @return The targetPsnId.
        */
       public java.lang.String getTargetPsnId() {
@@ -482,7 +482,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         }
       }
       /**
-       * <code>string target_psn_id = 8;</code>
+       * <code>string target_psn_id = 3;</code>
        * @return The bytes for targetPsnId.
        */
       public com.google.protobuf.ByteString
@@ -499,7 +499,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         }
       }
       /**
-       * <code>string target_psn_id = 8;</code>
+       * <code>string target_psn_id = 3;</code>
        * @param value The targetPsnId to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         return this;
       }
       /**
-       * <code>string target_psn_id = 8;</code>
+       * <code>string target_psn_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetPsnId() {
@@ -524,7 +524,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         return this;
       }
       /**
-       * <code>string target_psn_id = 8;</code>
+       * <code>string target_psn_id = 3;</code>
        * @param value The bytes for targetPsnId to set.
        * @return This builder for chaining.
        */
@@ -607,7 +607,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035PSPlayerApplyEnterMpReq.proto\"0\n\027PSPla" +
-      "yerApplyEnterMpReq\022\025\n\rtarget_psn_id\030\010 \001(" +
+      "yerApplyEnterMpReq\022\025\n\rtarget_psn_id\030\003 \001(" +
       "\tB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

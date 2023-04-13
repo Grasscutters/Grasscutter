@@ -26,8 +26,8 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: EOGNJKOAELI
-   * CmdId: 4060
+   * CmdId: 4015
+   * Name: CFPHGJPKKHP
    * </pre>
    *
    * Protobuf type {@code GetFriendShowAvatarInfoReq}
@@ -279,8 +279,8 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: EOGNJKOAELI
-     * CmdId: 4060
+     * CmdId: 4015
+     * Name: CFPHGJPKKHP
      * </pre>
      *
      * Protobuf type {@code GetFriendShowAvatarInfoReq}

@@ -295,7 +295,7 @@ public final class BreakoutSnapShotOuterClass {
   }
   /**
    * <pre>
-   * Name: HNPNHGMKOGO
+   * Name: GMKOGAABHBL
    * </pre>
    *
    * Protobuf type {@code BreakoutSnapShot}
@@ -1430,7 +1430,7 @@ public final class BreakoutSnapShotOuterClass {
     }
     /**
      * <pre>
-     * Name: HNPNHGMKOGO
+     * Name: GMKOGAABHBL
      * </pre>
      *
      * Protobuf type {@code BreakoutSnapShot}

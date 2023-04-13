@@ -68,7 +68,7 @@ public final class RegionSimpleInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LLDIKKJHCCB
+   * Name: PNCGEFDNHHF
    * </pre>
    *
    * Protobuf type {@code RegionSimpleInfo}
@@ -513,7 +513,7 @@ public final class RegionSimpleInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LLDIKKJHCCB
+     * Name: PNCGEFDNHHF
      * </pre>
      *
      * Protobuf type {@code RegionSimpleInfo}

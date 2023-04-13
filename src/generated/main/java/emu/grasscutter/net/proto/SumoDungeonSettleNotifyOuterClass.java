@@ -19,45 +19,45 @@ public final class SumoDungeonSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 7;</code>
+     * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>uint32 final_score = 6;</code>
-     * @return The finalScore.
+     * <code>uint32 difficulty_id = 3;</code>
+     * @return The difficultyId.
      */
-    int getFinalScore();
+    int getDifficultyId();
 
     /**
-     * <code>uint32 LFMGDDMJGIP = 3;</code>
-     * @return The lFMGDDMJGIP.
-     */
-    int getLFMGDDMJGIP();
-
-    /**
-     * <code>uint32 DNCGDPEOCHL = 14;</code>
-     * @return The dNCGDPEOCHL.
-     */
-    int getDNCGDPEOCHL();
-
-    /**
-     * <code>bool is_new_record = 12;</code>
+     * <code>bool is_new_record = 5;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 difficulty_id = 11;</code>
-     * @return The difficultyId.
+     * <code>uint32 DPLOCABFHKK = 14;</code>
+     * @return The dPLOCABFHKK.
      */
-    int getDifficultyId();
+    int getDPLOCABFHKK();
+
+    /**
+     * <code>uint32 KFACNCAIMAM = 1;</code>
+     * @return The kFACNCAIMAM.
+     */
+    int getKFACNCAIMAM();
+
+    /**
+     * <code>uint32 final_score = 7;</code>
+     * @return The finalScore.
+     */
+    int getFinalScore();
   }
   /**
    * <pre>
-   * Name: DBDANFEPCMO
-   * CmdId: 8665
+   * CmdId: 8047
+   * Name: POHNNONJGLA
    * </pre>
    *
    * Protobuf type {@code SumoDungeonSettleNotify}
@@ -104,34 +104,34 @@ public final class SumoDungeonSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              kFACNCAIMAM_ = input.readUInt32();
+              break;
+            }
             case 24: {
-
-              lFMGDDMJGIP_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              finalScore_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
 
               difficultyId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 40: {
 
               isNewRecord_ = input.readBool();
               break;
             }
+            case 56: {
+
+              finalScore_ = input.readUInt32();
+              break;
+            }
             case 112: {
 
-              dNCGDPEOCHL_ = input.readUInt32();
+              dPLOCABFHKK_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -166,10 +166,10 @@ public final class SumoDungeonSettleNotifyOuterClass {
               emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify.class, emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 7;
+    public static final int STAGE_ID_FIELD_NUMBER = 15;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 7;</code>
+     * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -177,43 +177,21 @@ public final class SumoDungeonSettleNotifyOuterClass {
       return stageId_;
     }
 
-    public static final int FINAL_SCORE_FIELD_NUMBER = 6;
-    private int finalScore_;
+    public static final int DIFFICULTY_ID_FIELD_NUMBER = 3;
+    private int difficultyId_;
     /**
-     * <code>uint32 final_score = 6;</code>
-     * @return The finalScore.
+     * <code>uint32 difficulty_id = 3;</code>
+     * @return The difficultyId.
      */
     @java.lang.Override
-    public int getFinalScore() {
-      return finalScore_;
+    public int getDifficultyId() {
+      return difficultyId_;
     }
 
-    public static final int LFMGDDMJGIP_FIELD_NUMBER = 3;
-    private int lFMGDDMJGIP_;
-    /**
-     * <code>uint32 LFMGDDMJGIP = 3;</code>
-     * @return The lFMGDDMJGIP.
-     */
-    @java.lang.Override
-    public int getLFMGDDMJGIP() {
-      return lFMGDDMJGIP_;
-    }
-
-    public static final int DNCGDPEOCHL_FIELD_NUMBER = 14;
-    private int dNCGDPEOCHL_;
-    /**
-     * <code>uint32 DNCGDPEOCHL = 14;</code>
-     * @return The dNCGDPEOCHL.
-     */
-    @java.lang.Override
-    public int getDNCGDPEOCHL() {
-      return dNCGDPEOCHL_;
-    }
-
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 12;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 5;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 12;</code>
+     * <code>bool is_new_record = 5;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -221,15 +199,37 @@ public final class SumoDungeonSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int DIFFICULTY_ID_FIELD_NUMBER = 11;
-    private int difficultyId_;
+    public static final int DPLOCABFHKK_FIELD_NUMBER = 14;
+    private int dPLOCABFHKK_;
     /**
-     * <code>uint32 difficulty_id = 11;</code>
-     * @return The difficultyId.
+     * <code>uint32 DPLOCABFHKK = 14;</code>
+     * @return The dPLOCABFHKK.
      */
     @java.lang.Override
-    public int getDifficultyId() {
-      return difficultyId_;
+    public int getDPLOCABFHKK() {
+      return dPLOCABFHKK_;
+    }
+
+    public static final int KFACNCAIMAM_FIELD_NUMBER = 1;
+    private int kFACNCAIMAM_;
+    /**
+     * <code>uint32 KFACNCAIMAM = 1;</code>
+     * @return The kFACNCAIMAM.
+     */
+    @java.lang.Override
+    public int getKFACNCAIMAM() {
+      return kFACNCAIMAM_;
+    }
+
+    public static final int FINAL_SCORE_FIELD_NUMBER = 7;
+    private int finalScore_;
+    /**
+     * <code>uint32 final_score = 7;</code>
+     * @return The finalScore.
+     */
+    @java.lang.Override
+    public int getFinalScore() {
+      return finalScore_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -246,23 +246,23 @@ public final class SumoDungeonSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (lFMGDDMJGIP_ != 0) {
-        output.writeUInt32(3, lFMGDDMJGIP_);
-      }
-      if (finalScore_ != 0) {
-        output.writeUInt32(6, finalScore_);
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(7, stageId_);
+      if (kFACNCAIMAM_ != 0) {
+        output.writeUInt32(1, kFACNCAIMAM_);
       }
       if (difficultyId_ != 0) {
-        output.writeUInt32(11, difficultyId_);
+        output.writeUInt32(3, difficultyId_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(12, isNewRecord_);
+        output.writeBool(5, isNewRecord_);
       }
-      if (dNCGDPEOCHL_ != 0) {
-        output.writeUInt32(14, dNCGDPEOCHL_);
+      if (finalScore_ != 0) {
+        output.writeUInt32(7, finalScore_);
+      }
+      if (dPLOCABFHKK_ != 0) {
+        output.writeUInt32(14, dPLOCABFHKK_);
+      }
+      if (stageId_ != 0) {
+        output.writeUInt32(15, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -273,29 +273,29 @@ public final class SumoDungeonSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lFMGDDMJGIP_ != 0) {
+      if (kFACNCAIMAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, lFMGDDMJGIP_);
-      }
-      if (finalScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, finalScore_);
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, stageId_);
+          .computeUInt32Size(1, kFACNCAIMAM_);
       }
       if (difficultyId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, difficultyId_);
+          .computeUInt32Size(3, difficultyId_);
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isNewRecord_);
+          .computeBoolSize(5, isNewRecord_);
       }
-      if (dNCGDPEOCHL_ != 0) {
+      if (finalScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, dNCGDPEOCHL_);
+          .computeUInt32Size(7, finalScore_);
+      }
+      if (dPLOCABFHKK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, dPLOCABFHKK_);
+      }
+      if (stageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,16 +314,16 @@ public final class SumoDungeonSettleNotifyOuterClass {
 
       if (getStageId()
           != other.getStageId()) return false;
-      if (getFinalScore()
-          != other.getFinalScore()) return false;
-      if (getLFMGDDMJGIP()
-          != other.getLFMGDDMJGIP()) return false;
-      if (getDNCGDPEOCHL()
-          != other.getDNCGDPEOCHL()) return false;
-      if (getIsNewRecord()
-          != other.getIsNewRecord()) return false;
       if (getDifficultyId()
           != other.getDifficultyId()) return false;
+      if (getIsNewRecord()
+          != other.getIsNewRecord()) return false;
+      if (getDPLOCABFHKK()
+          != other.getDPLOCABFHKK()) return false;
+      if (getKFACNCAIMAM()
+          != other.getKFACNCAIMAM()) return false;
+      if (getFinalScore()
+          != other.getFinalScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,17 +337,17 @@ public final class SumoDungeonSettleNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + FINAL_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getFinalScore();
-      hash = (37 * hash) + LFMGDDMJGIP_FIELD_NUMBER;
-      hash = (53 * hash) + getLFMGDDMJGIP();
-      hash = (37 * hash) + DNCGDPEOCHL_FIELD_NUMBER;
-      hash = (53 * hash) + getDNCGDPEOCHL();
+      hash = (37 * hash) + DIFFICULTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficultyId();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + DIFFICULTY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficultyId();
+      hash = (37 * hash) + DPLOCABFHKK_FIELD_NUMBER;
+      hash = (53 * hash) + getDPLOCABFHKK();
+      hash = (37 * hash) + KFACNCAIMAM_FIELD_NUMBER;
+      hash = (53 * hash) + getKFACNCAIMAM();
+      hash = (37 * hash) + FINAL_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getFinalScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -445,8 +445,8 @@ public final class SumoDungeonSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: DBDANFEPCMO
-     * CmdId: 8665
+     * CmdId: 8047
+     * Name: POHNNONJGLA
      * </pre>
      *
      * Protobuf type {@code SumoDungeonSettleNotify}
@@ -488,15 +488,15 @@ public final class SumoDungeonSettleNotifyOuterClass {
         super.clear();
         stageId_ = 0;
 
-        finalScore_ = 0;
-
-        lFMGDDMJGIP_ = 0;
-
-        dNCGDPEOCHL_ = 0;
+        difficultyId_ = 0;
 
         isNewRecord_ = false;
 
-        difficultyId_ = 0;
+        dPLOCABFHKK_ = 0;
+
+        kFACNCAIMAM_ = 0;
+
+        finalScore_ = 0;
 
         return this;
       }
@@ -525,11 +525,11 @@ public final class SumoDungeonSettleNotifyOuterClass {
       public emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify buildPartial() {
         emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify result = new emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify(this);
         result.stageId_ = stageId_;
-        result.finalScore_ = finalScore_;
-        result.lFMGDDMJGIP_ = lFMGDDMJGIP_;
-        result.dNCGDPEOCHL_ = dNCGDPEOCHL_;
-        result.isNewRecord_ = isNewRecord_;
         result.difficultyId_ = difficultyId_;
+        result.isNewRecord_ = isNewRecord_;
+        result.dPLOCABFHKK_ = dPLOCABFHKK_;
+        result.kFACNCAIMAM_ = kFACNCAIMAM_;
+        result.finalScore_ = finalScore_;
         onBuilt();
         return result;
       }
@@ -581,20 +581,20 @@ public final class SumoDungeonSettleNotifyOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getFinalScore() != 0) {
-          setFinalScore(other.getFinalScore());
-        }
-        if (other.getLFMGDDMJGIP() != 0) {
-          setLFMGDDMJGIP(other.getLFMGDDMJGIP());
-        }
-        if (other.getDNCGDPEOCHL() != 0) {
-          setDNCGDPEOCHL(other.getDNCGDPEOCHL());
+        if (other.getDifficultyId() != 0) {
+          setDifficultyId(other.getDifficultyId());
         }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        if (other.getDifficultyId() != 0) {
-          setDifficultyId(other.getDifficultyId());
+        if (other.getDPLOCABFHKK() != 0) {
+          setDPLOCABFHKK(other.getDPLOCABFHKK());
+        }
+        if (other.getKFACNCAIMAM() != 0) {
+          setKFACNCAIMAM(other.getKFACNCAIMAM());
+        }
+        if (other.getFinalScore() != 0) {
+          setFinalScore(other.getFinalScore());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -627,7 +627,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 7;</code>
+       * <code>uint32 stage_id = 15;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -635,7 +635,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 7;</code>
+       * <code>uint32 stage_id = 15;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -646,7 +646,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 7;</code>
+       * <code>uint32 stage_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -656,133 +656,9 @@ public final class SumoDungeonSettleNotifyOuterClass {
         return this;
       }
 
-      private int finalScore_ ;
-      /**
-       * <code>uint32 final_score = 6;</code>
-       * @return The finalScore.
-       */
-      @java.lang.Override
-      public int getFinalScore() {
-        return finalScore_;
-      }
-      /**
-       * <code>uint32 final_score = 6;</code>
-       * @param value The finalScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinalScore(int value) {
-        
-        finalScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 final_score = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinalScore() {
-        
-        finalScore_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lFMGDDMJGIP_ ;
-      /**
-       * <code>uint32 LFMGDDMJGIP = 3;</code>
-       * @return The lFMGDDMJGIP.
-       */
-      @java.lang.Override
-      public int getLFMGDDMJGIP() {
-        return lFMGDDMJGIP_;
-      }
-      /**
-       * <code>uint32 LFMGDDMJGIP = 3;</code>
-       * @param value The lFMGDDMJGIP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLFMGDDMJGIP(int value) {
-        
-        lFMGDDMJGIP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LFMGDDMJGIP = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLFMGDDMJGIP() {
-        
-        lFMGDDMJGIP_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int dNCGDPEOCHL_ ;
-      /**
-       * <code>uint32 DNCGDPEOCHL = 14;</code>
-       * @return The dNCGDPEOCHL.
-       */
-      @java.lang.Override
-      public int getDNCGDPEOCHL() {
-        return dNCGDPEOCHL_;
-      }
-      /**
-       * <code>uint32 DNCGDPEOCHL = 14;</code>
-       * @param value The dNCGDPEOCHL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDNCGDPEOCHL(int value) {
-        
-        dNCGDPEOCHL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DNCGDPEOCHL = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDNCGDPEOCHL() {
-        
-        dNCGDPEOCHL_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isNewRecord_ ;
-      /**
-       * <code>bool is_new_record = 12;</code>
-       * @return The isNewRecord.
-       */
-      @java.lang.Override
-      public boolean getIsNewRecord() {
-        return isNewRecord_;
-      }
-      /**
-       * <code>bool is_new_record = 12;</code>
-       * @param value The isNewRecord to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsNewRecord(boolean value) {
-        
-        isNewRecord_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_new_record = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsNewRecord() {
-        
-        isNewRecord_ = false;
-        onChanged();
-        return this;
-      }
-
       private int difficultyId_ ;
       /**
-       * <code>uint32 difficulty_id = 11;</code>
+       * <code>uint32 difficulty_id = 3;</code>
        * @return The difficultyId.
        */
       @java.lang.Override
@@ -790,7 +666,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
         return difficultyId_;
       }
       /**
-       * <code>uint32 difficulty_id = 11;</code>
+       * <code>uint32 difficulty_id = 3;</code>
        * @param value The difficultyId to set.
        * @return This builder for chaining.
        */
@@ -801,12 +677,136 @@ public final class SumoDungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficulty_id = 11;</code>
+       * <code>uint32 difficulty_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
         
         difficultyId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isNewRecord_ ;
+      /**
+       * <code>bool is_new_record = 5;</code>
+       * @return The isNewRecord.
+       */
+      @java.lang.Override
+      public boolean getIsNewRecord() {
+        return isNewRecord_;
+      }
+      /**
+       * <code>bool is_new_record = 5;</code>
+       * @param value The isNewRecord to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsNewRecord(boolean value) {
+        
+        isNewRecord_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_new_record = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsNewRecord() {
+        
+        isNewRecord_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int dPLOCABFHKK_ ;
+      /**
+       * <code>uint32 DPLOCABFHKK = 14;</code>
+       * @return The dPLOCABFHKK.
+       */
+      @java.lang.Override
+      public int getDPLOCABFHKK() {
+        return dPLOCABFHKK_;
+      }
+      /**
+       * <code>uint32 DPLOCABFHKK = 14;</code>
+       * @param value The dPLOCABFHKK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDPLOCABFHKK(int value) {
+        
+        dPLOCABFHKK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 DPLOCABFHKK = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDPLOCABFHKK() {
+        
+        dPLOCABFHKK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kFACNCAIMAM_ ;
+      /**
+       * <code>uint32 KFACNCAIMAM = 1;</code>
+       * @return The kFACNCAIMAM.
+       */
+      @java.lang.Override
+      public int getKFACNCAIMAM() {
+        return kFACNCAIMAM_;
+      }
+      /**
+       * <code>uint32 KFACNCAIMAM = 1;</code>
+       * @param value The kFACNCAIMAM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKFACNCAIMAM(int value) {
+        
+        kFACNCAIMAM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KFACNCAIMAM = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKFACNCAIMAM() {
+        
+        kFACNCAIMAM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int finalScore_ ;
+      /**
+       * <code>uint32 final_score = 7;</code>
+       * @return The finalScore.
+       */
+      @java.lang.Override
+      public int getFinalScore() {
+        return finalScore_;
+      }
+      /**
+       * <code>uint32 final_score = 7;</code>
+       * @param value The finalScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinalScore(int value) {
+        
+        finalScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 final_score = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinalScore() {
+        
+        finalScore_ = 0;
         onChanged();
         return this;
       }
@@ -878,10 +878,10 @@ public final class SumoDungeonSettleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035SumoDungeonSettleNotify.proto\"\230\001\n\027Sumo" +
-      "DungeonSettleNotify\022\020\n\010stage_id\030\007 \001(\r\022\023\n" +
-      "\013final_score\030\006 \001(\r\022\023\n\013LFMGDDMJGIP\030\003 \001(\r\022" +
-      "\023\n\013DNCGDPEOCHL\030\016 \001(\r\022\025\n\ris_new_record\030\014 " +
-      "\001(\010\022\025\n\rdifficulty_id\030\013 \001(\rB\033\n\031emu.grassc" +
+      "DungeonSettleNotify\022\020\n\010stage_id\030\017 \001(\r\022\025\n" +
+      "\rdifficulty_id\030\003 \001(\r\022\025\n\ris_new_record\030\005 " +
+      "\001(\010\022\023\n\013DPLOCABFHKK\030\016 \001(\r\022\023\n\013KFACNCAIMAM\030" +
+      "\001 \001(\r\022\023\n\013final_score\030\007 \001(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -893,7 +893,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
     internal_static_SumoDungeonSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SumoDungeonSettleNotify_descriptor,
-        new java.lang.String[] { "StageId", "FinalScore", "LFMGDDMJGIP", "DNCGDPEOCHL", "IsNewRecord", "DifficultyId", });
+        new java.lang.String[] { "StageId", "DifficultyId", "IsNewRecord", "DPLOCABFHKK", "KFACNCAIMAM", "FinalScore", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

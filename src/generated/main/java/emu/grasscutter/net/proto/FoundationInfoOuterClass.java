@@ -60,7 +60,7 @@ public final class FoundationInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: BHEIJJMBINN
+   * Name: AMABAPDIMGK
    * </pre>
    *
    * Protobuf type {@code FoundationInfo}
@@ -457,7 +457,7 @@ public final class FoundationInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: BHEIJJMBINN
+     * Name: AMABAPDIMGK
      * </pre>
      *
      * Protobuf type {@code FoundationInfo}
