@@ -236,7 +236,7 @@ public class ConfigContainer {
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
-        public boolean questing = false;
+        public boolean questing = true;
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
