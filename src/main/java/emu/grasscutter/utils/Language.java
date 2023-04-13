@@ -424,7 +424,7 @@ public final class Language {
             }
         } catch (Exception e) {
             Grasscutter.getLogger().debug("Exception while checking cache: ", e);
-        };
+        }
 
         // Regenerate cache
         Grasscutter.getLogger().debug("Generating TextMaps cache");
