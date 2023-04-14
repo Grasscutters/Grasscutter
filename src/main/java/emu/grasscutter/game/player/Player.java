@@ -535,9 +535,10 @@ public class Player {
      * @param defaultValue The value to apply if the property doesn't exist.
      */
     private void setOrFetch(PlayerProperty property, int defaultValue) {
-        this.setProperty(property,
-            this.properties.containsKey(property.getId()) ?
-                this.getProperty(property) : defaultValue, false);
+        var exists = this.properties.containsKey(property.getId());
+        if (exists) exists = this.getProperty(property) != 0;
+        this.setProperty(property, exists ? this.getProperty(property)
+            : defaultValue, false);
     }
 
     public int getPrimogems() {
