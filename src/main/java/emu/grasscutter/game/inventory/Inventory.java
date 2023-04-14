@@ -142,7 +142,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             if (item.getItemId() == 0) continue;
             GameItem result = null;
             try {
-                // putItem might throws exception
+                // putItem might throw exception
                 // ignore that exception and continue
                 result = putItem(item);
             } catch (Exception e) {
