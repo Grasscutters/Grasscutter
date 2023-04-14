@@ -299,16 +299,7 @@ public class Player {
         this.teamManager = new TeamManager(this);
         this.birthday = new PlayerBirthday();
         this.codex = new PlayerCodex(this);
-        this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1, false);
-        this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1, false);
-        this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50, false);
-        this.setProperty(PlayerProperty.PROP_IS_FLYABLE, 1, false);
-        this.setProperty(PlayerProperty.PROP_IS_TRANSFERABLE, 1, false);
-        this.setProperty(PlayerProperty.PROP_MAX_STAMINA, 24000, false);
-        this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, 24000, false);
-        this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160, false);
-        this.getFlyCloakList().add(140001);
-        this.getNameCardList().add(210001);
+
         this.messageHandler = null;
         this.mapMarksManager = new MapMarksManager(this);
         this.staminaManager = new StaminaManager(this);
@@ -322,6 +313,10 @@ public class Player {
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
+
+        this.applyProperties();
+        this.getFlyCloakList().add(140001);
+        this.getNameCardList().add(210001);
     }
 
     /**
@@ -512,6 +507,40 @@ public class Player {
         }
 
         return this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
+    }
+
+    /**
+     * Applies the properties to the player.
+     */
+    private void applyProperties() {
+        var withQuesting = GAME_OPTIONS.questing;
+
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_LEVEL, 1);
+        this.setOrFetch(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
+        this.setOrFetch(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
+        this.setOrFetch(PlayerProperty.PROP_IS_FLYABLE,
+            withQuesting ? 0 : 1);
+        this.setOrFetch(PlayerProperty.PROP_IS_TRANSFERABLE, 1);
+        this.setOrFetch(PlayerProperty.PROP_MAX_STAMINA,
+            withQuesting ? 10000 : 24000);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 160);
+
+        // The player's current stamina is always their max stamina.
+        this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
+            this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
+    }
+
+    /**
+     * Applies a property to the player if it doesn't exist in the database.
+     *
+     * @param property The property to apply.
+     * @param defaultValue The value to apply if the property doesn't exist.
+     */
+    private void setOrFetch(PlayerProperty property, int defaultValue) {
+        if (!this.properties.containsKey(property.getId())) {
+            this.setProperty(property, defaultValue, false);
+            this.save();
+        }
     }
 
     public int getPrimogems() {

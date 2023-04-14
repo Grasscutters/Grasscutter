@@ -30,11 +30,9 @@ public class DropData {
         return minCount;
     }
 
-
     public int getMaxCount() {
         return maxCount;
     }
-
 
     public int getMinWeight() {
         return minWeight;
@@ -44,7 +42,6 @@ public class DropData {
         return maxWeight;
     }
 
-
     public boolean isShare() {
         return share;
     }
@@ -52,5 +49,4 @@ public class DropData {
     public void setIsShare(boolean share) {
         this.share = share;
     }
-
 }

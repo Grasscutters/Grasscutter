@@ -81,6 +81,12 @@ public final class SetPropCommand implements CommandHandler {
         Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
         this.props.put("unlockmap", unlockmap);
         this.props.put("um", unlockmap);
+
+        Prop flyable = new Prop("IsFlyable", PlayerProperty.PROP_IS_FLYABLE, PseudoProp.IS_FLYABLE);
+        this.props.put("canfly", flyable);
+        this.props.put("fly", flyable);
+        this.props.put("glider", flyable);
+        this.props.put("canglide", flyable);
     }
 
     @Override
@@ -246,7 +252,8 @@ public final class SetPropCommand implements CommandHandler {
         UNLIMITED_ENERGY,
         SET_OPENSTATE,
         UNSET_OPENSTATE,
-        UNLOCK_MAP
+        UNLOCK_MAP,
+        IS_FLYABLE
     }
 
     static class Prop {
