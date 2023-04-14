@@ -13,7 +13,7 @@ public class PacketDropHintNotify extends BasePacket {
         var proto = DropHintNotify.newBuilder()
             .addItemIdList(itemId)
             .setPosition(position);
-        setData(proto.build());
+        this.setData(proto.build());
     }
 
     public PacketDropHintNotify(Iterable<GameItem> items, Vector position) {
@@ -22,6 +22,6 @@ public class PacketDropHintNotify extends BasePacket {
         var proto = DropHintNotify.newBuilder();
         items.forEach(i -> proto.addItemIdList(i.getItemId()));
         proto.setPosition(position);
-        setData(proto.build());
+        this.setData(proto.build());
     }
 }
