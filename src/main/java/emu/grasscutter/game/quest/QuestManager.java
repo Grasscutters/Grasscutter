@@ -95,8 +95,9 @@ public class QuestManager extends BasePlayerManager {
         // TODO scan the quest and start the quest with acceptCond fulfilled
         // The off send 3 request in that order: 1. FinishedParentQuestNotify, 2. QuestListNotify, 3. ServerCondMeetQuestListUpdateNotify
 
-        if(this.isQuestingEnabled()) {
-            this.enableQuests();
+        if (this.isQuestingEnabled()) {
+            // this.enableQuests();
+            this.addQuest(35104);
         }
 
         //getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
