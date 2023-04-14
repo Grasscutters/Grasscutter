@@ -56,6 +56,7 @@ public class WorldDataSystem extends BaseGameSystem {
     public Map<String, ChestInteractHandler> getChestInteractHandlerMap() {
         return chestInteractHandlerMap;
     }
+
     @Deprecated
     public RewardPreviewData getRewardByBossId(int monsterId) {
         var investigationMonsterData =
