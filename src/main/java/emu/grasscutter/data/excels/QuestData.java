@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.quest.enums.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,9 @@ public class QuestData extends GameResource {
     @Getter private List<QuestExecParam> finishExec;
     @Getter private List<QuestExecParam> failExec;
     @Getter private Guide guide;
+
     @Getter private List<Integer> trialAvatarList;
+    @Getter private List<ItemParamData> gainItems;
 
     public static String questConditionKey(
             @Nonnull Enum<?> type, int firstParam, @Nullable String paramsStr) {
