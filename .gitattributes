@@ -1,0 +1,7 @@
+*.java text=crlf
+*.json text=crlf
+*.md text=crlf
+*.properties text=crlf
+*.py text=crlf
+*.sh text=crlf
+* text eol=crlf
