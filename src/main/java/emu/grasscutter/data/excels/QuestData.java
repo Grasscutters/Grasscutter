@@ -8,6 +8,7 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.quest.enums.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -65,6 +66,8 @@ public class QuestData extends GameResource {
         if (this.finishCondComb == null) this.finishCondComb = LogicType.LOGIC_NONE;
 
         if (this.failCondComb == null) this.failCondComb = LogicType.LOGIC_NONE;
+
+        if (this.gainItems == null) this.gainItems = Collections.emptyList();
 
         addToCache();
     }
