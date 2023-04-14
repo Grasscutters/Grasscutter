@@ -151,7 +151,9 @@ public final class FileUtils {
     }
 
     public static Path getExcelPath(String filename) {
-        return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
+        Path p = getTsjJsonTsv(RESOURCES_PATH.resolve("Server"), filename);
+        if (Files.exists(p)) return p;
+        else return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
     }
 
     // Gets path of a resource.

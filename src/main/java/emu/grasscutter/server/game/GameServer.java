@@ -1,8 +1,5 @@
 package emu.grasscutter.server.game;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -12,6 +9,7 @@ import emu.grasscutter.game.chat.ChatSystem;
 import emu.grasscutter.game.chat.ChatSystemHandler;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropSystem;
+import emu.grasscutter.game.drop.DropSystemLegacy;
 import emu.grasscutter.game.dungeons.DungeonSystem;
 import emu.grasscutter.game.expedition.ExpeditionSystem;
 import emu.grasscutter.game.gacha.GachaSystem;
@@ -36,14 +34,18 @@ import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
+import kcp.highway.ChannelConfig;
+import kcp.highway.KcpServer;
+import lombok.Getter;
+
 import java.net.InetSocketAddress;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import kcp.highway.ChannelConfig;
-import kcp.highway.KcpServer;
-import lombok.Getter;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.utils.Language.translate;
 
 @Getter
 public final class GameServer extends KcpServer {
@@ -61,6 +63,7 @@ public final class GameServer extends KcpServer {
     private final DungeonSystem dungeonSystem;
     private final ExpeditionSystem expeditionSystem;
     private final DropSystem dropSystem;
+    private final DropSystemLegacy dropSystemLegacy;
     private final WorldDataSystem worldDataSystem;
     private final BattlePassSystem battlePassSystem;
     private final CombineManger combineSystem;
@@ -113,6 +116,7 @@ public final class GameServer extends KcpServer {
         this.multiplayerSystem = new MultiplayerSystem(this);
         this.dungeonSystem = new DungeonSystem(this);
         this.dropSystem = new DropSystem(this);
+        this.dropSystemLegacy = new DropSystemLegacy(this);
         this.expeditionSystem = new ExpeditionSystem(this);
         this.combineSystem = new CombineManger(this);
         this.towerSystem = new TowerSystem(this);
