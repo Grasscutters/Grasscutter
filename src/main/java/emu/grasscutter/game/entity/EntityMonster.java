@@ -34,6 +34,7 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.annotation.Nullable;
 import java.util.Optional;
 
 import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_MONSTER_HP_CHANGE;
@@ -53,7 +54,7 @@ public class EntityMonster extends GameEntity {
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
-    @Getter @Setter private SceneMonster metaMonster;
+    @Nullable @Getter @Setter private SceneMonster metaMonster;
 
     public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
         super(scene);
@@ -206,15 +207,19 @@ public class EntityMonster extends GameEntity {
 
     @Override
     public SceneEntityInfo toProto() {
+        var data = this.getMonsterData();
+
         var authority = EntityAuthorityInfo.newBuilder()
             .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
             .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(this.getBornPos().toProto()))
+            .setAiInfo(SceneEntityAiInfo.newBuilder()
+                .setIsAiOpen(true)
+                .setBornPos(this.getBornPos().toProto()))
             .setBornPos(this.getBornPos().toProto())
             .build();
 
         var entityInfo = SceneEntityInfo.newBuilder()
-            .setEntityId(getId())
+            .setEntityId(this.getId())
             .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
             .setMotionInfo(this.getMotionInfo())
             .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
@@ -226,25 +231,27 @@ public class EntityMonster extends GameEntity {
 
         entityInfo.addPropList(PropPair.newBuilder()
             .setType(PlayerProperty.PROP_LEVEL.getId())
-            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, getLevel()))
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, this.getLevel()))
             .build());
 
         var monsterInfo = SceneMonsterInfo.newBuilder()
             .setMonsterId(getMonsterId())
             .setGroupId(this.getGroupId())
             .setConfigId(this.getConfigId())
-            .addAllAffixList(getMonsterData().getAffix())
-            .setAuthorityPeerId(getWorld().getHostPeerId())
+            .addAllAffixList(data.getAffix())
+            .setAuthorityPeerId(this.getWorld().getHostPeerId())
             .setPoseId(this.getPoseId())
-            .setBlockId(getScene().getId())
+            .setBlockId(this.getScene().getId())
             .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
-        if (metaMonster.special_name_id != 0) {
-            monsterInfo.setTitleId(metaMonster.title_id)
-                .setSpecialNameId(metaMonster.special_name_id);
-        } else if (getMonsterData().getDescribeData() != null) {
-            monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleId())
-                .setSpecialNameId(getMonsterData().getSpecialNameId());
 
+        if (this.metaMonster != null) {
+            if (this.metaMonster.special_name_id != 0) {
+                monsterInfo.setTitleId(this.metaMonster.title_id)
+                    .setSpecialNameId(this.metaMonster.special_name_id);
+            } else if (data.getDescribeData() != null) {
+                monsterInfo.setTitleId(data.getDescribeData().getTitleId())
+                    .setSpecialNameId(data.getSpecialNameId());
+            }
         }
 
         if (this.getMonsterWeaponId() > 0) {
