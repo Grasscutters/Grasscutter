@@ -238,8 +238,10 @@ public class EntityMonster extends GameEntity {
             .setPoseId(this.getPoseId())
             .setBlockId(getScene().getId())
             .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
-
-        if (getMonsterData().getDescribeData() != null) {
+        if (metaMonster.special_name_id != 0) {
+            monsterInfo.setTitleId(metaMonster.title_id)
+                .setSpecialNameId(metaMonster.special_name_id);
+        } else if (getMonsterData().getDescribeData() != null) {
             monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleId())
                 .setSpecialNameId(getMonsterData().getSpecialNameId());
 

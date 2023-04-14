@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -50,8 +51,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         // Create avatar
         if (player.getAvatars().getAvatarCount() == 0) {
             Avatar mainCharacter = new Avatar(avatarId);
-            mainCharacter.setSkillDepotData(
+
+            // Check if the default Anemo skill should be given.
+            if (!GAME_OPTIONS.questing) {
+                mainCharacter.setSkillDepotData(
                     GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+            }
+
             // Manually handle adding to team
             player.addAvatar(mainCharacter, false);
             player.setMainCharacterId(avatarId);
@@ -68,6 +74,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 
         // Login done
         session.getPlayer().onLogin();
+        session.getPlayer().onPlayerBorn();
 
         // Born resp packet
         session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
