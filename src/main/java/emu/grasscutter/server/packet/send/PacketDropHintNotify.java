@@ -9,6 +9,7 @@ import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 public class PacketDropHintNotify extends BasePacket {
     public PacketDropHintNotify(int itemId, Vector position) {
         super(PacketOpcodes.DropHintNotify);
+
         var proto = DropHintNotify.newBuilder()
             .addItemIdList(itemId)
             .setPosition(position);
@@ -17,6 +18,7 @@ public class PacketDropHintNotify extends BasePacket {
 
     public PacketDropHintNotify(Iterable<GameItem> items, Vector position) {
         super(PacketOpcodes.DropHintNotify);
+
         var proto = DropHintNotify.newBuilder();
         items.forEach(i -> proto.addItemIdList(i.getItemId()));
         proto.setPosition(position);
