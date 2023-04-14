@@ -52,7 +52,7 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
                             quest.getState() == QuestState.QUEST_STATE_FINISHED
                                     ? EventType.EVENT_QUEST_FINISH
                                     : EventType.EVENT_QUEST_START;
-                    scriptManager.callEvent(new ScriptArgs(groupId, eventType, quest.getSubQuestId()));
+                    scriptManager.callEvent(new ScriptArgs(groupId, eventType, quest.getSubQuestId()).setEventSource(String.valueOf(quest.getSubQuestId())));
                 });
 
         return true;
