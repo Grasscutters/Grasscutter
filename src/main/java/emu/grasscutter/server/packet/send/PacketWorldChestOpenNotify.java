@@ -7,11 +7,11 @@ import emu.grasscutter.net.proto.WorldChestOpenNotifyOuterClass.WorldChestOpenNo
 public class PacketWorldChestOpenNotify extends BasePacket {
     public PacketWorldChestOpenNotify(int groupId,int sceneId,int configId){
         super(PacketOpcodes.WorldChestOpenNotify);
-        WorldChestOpenNotify proto= WorldChestOpenNotify.newBuilder()
+
+        this.setData(WorldChestOpenNotify.newBuilder()
             .setGroupId(groupId)
             .setSceneId(sceneId)
             .setConfigId(configId)
-            .build();
-        setData(proto);
+            .build());
     }
 }
