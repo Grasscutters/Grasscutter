@@ -44,6 +44,8 @@ import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -59,7 +61,7 @@ public class Avatar {
     @Indexed @Getter private int ownerId; // Id of player that this avatar belongs to
     @Transient private Player owner;
     @Transient @Getter private AvatarData avatarData;
-    @Transient @Getter private AvatarSkillDepotData skillDepot;
+    @Nullable @Transient @Getter private AvatarSkillDepotData skillDepot;
     @Transient @Getter private long guid; // Player unique id
     @Getter private int avatarId; // Id of avatar
     @Getter @Setter private int level = 1;
@@ -123,6 +125,7 @@ public class Avatar {
 
     public Avatar(AvatarData data) {
         this();
+
         this.avatarId = data.getId();
         this.nameCardRewardId = data.getNameCardRewardId();
         this.nameCardId = data.getNameCardId();
@@ -135,19 +138,17 @@ public class Avatar {
 
         // Combat properties
         Stream.of(FightProperty.values())
-                .map(FightProperty::getId)
-                .filter(id -> (id > 0) && (id < 3000))
-                .forEach(id -> this.setFightProperty(id, 0f));
+            .map(FightProperty::getId)
+            .filter(id -> (id > 0) && (id < 3000))
+            .forEach(id -> this.setFightProperty(id, 0f));
 
-        // Skill depot
-        this.setSkillDepotData(
-                switch (this.avatarId) {
-                    case GameConstants.MAIN_CHARACTER_MALE -> GameData.getAvatarSkillDepotDataMap()
-                            .get(504); // Hack to start with anemo skills
-                    case GameConstants.MAIN_CHARACTER_FEMALE -> GameData.getAvatarSkillDepotDataMap()
-                            .get(704);
-                    default -> data.getSkillDepot();
-                });
+        this.setSkillDepotData(switch (this.getAvatarId()) {
+            case GameConstants.MAIN_CHARACTER_MALE ->
+                GameData.getAvatarSkillDepotDataMap().get(501);
+            case GameConstants.MAIN_CHARACTER_FEMALE ->
+                GameData.getAvatarSkillDepotDataMap().get(701);
+            default -> data.getSkillDepot();
+        });
 
         // Set stats
         this.recalcStats();
@@ -175,6 +176,16 @@ public class Avatar {
         return 0;
     }
 
+    /**
+     * @return True if the avatar is a main character.
+     */
+    public boolean isMainCharacter() {
+        return List.of(
+            GameConstants.MAIN_CHARACTER_MALE,
+            GameConstants.MAIN_CHARACTER_FEMALE
+        ).contains(this.getAvatarId());
+    }
+
     public Player getPlayer() {
         return this.owner;
     }
@@ -192,6 +203,11 @@ public class Avatar {
         this.owner = player;
         this.ownerId = player.getUid();
         this.guid = player.getNextGameGuid();
+
+        if (this.isMainCharacter()) {
+            // Apply skill depot based on player resonance.
+            this.changeElement(player.getMainCharacterElement(), false);
+        }
     }
 
     public boolean addSatiation(int value) {
@@ -273,14 +289,28 @@ public class Avatar {
     }
 
     /**
-     * Changes the avatar's element to the target element, if the character has values for it set in
-     * the candSkillDepot
+     * Changes the avatar's element to the target element.
+     * Only applies if the avatar has the element in its 'candSkillDepot's.
      *
-     * @param elementTypeToChange element to change to
-     * @return false if failed or already using that element, true if it actually changed
+     * @param newElement The new element to change to.
+     * @return True if the element was changed, false otherwise.
      */
-    public boolean changeElement(@Nonnull ElementType elementTypeToChange) {
-        var candSkillDepotIdsList = this.avatarData.getCandSkillDepotIds();
+    public boolean changeElement(@Nonnull ElementType newElement) {
+        return this.changeElement(newElement, true);
+    }
+
+    /**
+     * Changes the avatar's element to the target element.
+     * Only applies if the avatar has the element in its 'candSkillDepot's.
+     *
+     * @param elementTypeToChange The new element to change to.
+     * @param notify Whether to notify the player of the change.
+     * @return True if the element was changed, false otherwise.
+     */
+    public boolean changeElement(@Nonnull ElementType elementTypeToChange, boolean notify) {
+        if (elementTypeToChange == ElementType.None) return true;
+
+        var candSkillDepotIdsList = this.getAvatarData().getCandSkillDepotIds();
         var candSkillDepotIndex = elementTypeToChange.getDepotIndex();
 
         // if no candidate skill to change or index out of bound
@@ -297,7 +327,9 @@ public class Avatar {
         }
 
         // Set skill depot
-        setSkillDepotData(skillDepot, true);
+        this.setSkillDepotData(skillDepot, notify);
+        // Set element.
+        this.getPlayer().setMainCharacterElement(elementTypeToChange);
         return true;
     }
 
@@ -383,17 +415,21 @@ public class Avatar {
     }
 
     public IntSet getTalentIdList() { // Returns a copy of the unlocked constellations for the current
-        // skillDepot.
-        var talents = new IntOpenHashSet(this.getSkillDepot().getTalents());
-        talents.removeIf(id -> !this.talentIdList.contains(id));
-        return talents;
+        if (this.getSkillDepot() != null) {
+            // skillDepot.
+            var talents = new IntOpenHashSet(this.getSkillDepot().getTalents());
+            talents.removeIf(id -> !this.talentIdList.contains(id));
+            return talents;
+        } else return new IntOpenHashSet();
     }
 
     public int getCoreProudSkillLevel() {
-        var lockedTalents = new IntOpenHashSet(this.getSkillDepot().getTalents());
-        lockedTalents.removeAll(this.getTalentIdList());
-        // One below the lowest locked talent, or 6 if there are no locked talents.
-        return lockedTalents.intStream().map(i -> i % 10).min().orElse(7) - 1;
+        if (this.getSkillDepot() != null) {
+            var lockedTalents = new IntOpenHashSet(this.getSkillDepot().getTalents());
+            lockedTalents.removeAll(this.getTalentIdList());
+            // One below the lowest locked talent, or 6 if there are no locked talents.
+            return lockedTalents.intStream().map(i -> i % 10).min().orElse(7) - 1;
+        } else return 0;
     }
 
     public boolean equipItem(GameItem item, boolean shouldRecalc) {
@@ -624,14 +660,16 @@ public class Avatar {
         AvatarSkillDepotData skillDepot =
                 GameData.getAvatarSkillDepotDataMap().get(this.getSkillDepotId());
         this.getProudSkillList().clear();
-        for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
-            if (openData.getProudSkillGroupId() == 0) {
-                continue;
-            }
-            if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
-                int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
-                if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
-                    this.getProudSkillList().add(proudSkillId);
+        if (skillDepot != null) {
+            for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
+                if (openData.getProudSkillGroupId() == 0) {
+                    continue;
+                }
+                if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
+                    int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
+                    if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
+                        this.getProudSkillList().add(proudSkillId);
+                    }
                 }
             }
         }

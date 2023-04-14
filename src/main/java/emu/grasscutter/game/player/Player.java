@@ -40,10 +40,7 @@ import emu.grasscutter.game.managers.forging.ForgingManager;
 import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.game.managers.mapmark.MapMarksManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ClimateType;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
@@ -64,7 +61,6 @@ import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
@@ -88,7 +84,6 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.stream.Stream;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
@@ -213,6 +208,8 @@ public class Player {
     @Getter private PlayerProgress playerProgress;
     @Getter private Set<Integer> activeQuestTimers;
 
+    @Getter @Setter private ElementType mainCharacterElement = ElementType.None;
+
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
     public Player() {
@@ -291,6 +288,7 @@ public class Player {
     // On player creation
     public Player(GameSession session) {
         this();
+
         this.account = session.getAccount();
         this.accountId = this.getAccount().getId();
         this.session = session;
@@ -299,6 +297,10 @@ public class Player {
         this.teamManager = new TeamManager(this);
         this.birthday = new PlayerBirthday();
         this.codex = new PlayerCodex(this);
+
+        this.applyProperties();
+        this.getFlyCloakList().add(140001);
+        this.getNameCardList().add(210001);
 
         this.messageHandler = null;
         this.mapMarksManager = new MapMarksManager(this);
@@ -313,10 +315,6 @@ public class Player {
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
-
-        this.applyProperties();
-        this.getFlyCloakList().add(140001);
-        this.getNameCardList().add(210001);
     }
 
     /**
@@ -537,10 +535,9 @@ public class Player {
      * @param defaultValue The value to apply if the property doesn't exist.
      */
     private void setOrFetch(PlayerProperty property, int defaultValue) {
-        if (!this.properties.containsKey(property.getId())) {
-            this.setProperty(property, defaultValue, false);
-            this.save();
-        }
+        this.setProperty(property,
+            this.properties.containsKey(property.getId()) ?
+                this.getProperty(property) : defaultValue, false);
     }
 
     public int getPrimogems() {
@@ -862,80 +859,6 @@ public class Player {
     public void addAvatar(int avatarId) {
         // I dont see why we cant do this lolz
         addAvatar(new Avatar(avatarId), true);
-    }
-
-    public List<Integer> getTrialAvatarParam (int trialAvatarId) {
-        if (GameData.getTrialAvatarCustomData().isEmpty()) { // use default data if custom data not available
-            if (GameData.getTrialAvatarDataMap().get(trialAvatarId) == null) return List.of();
-
-            return GameData.getTrialAvatarDataMap().get(trialAvatarId)
-                .getTrialAvatarParamList();
-        }
-        // use custom data
-        if (GameData.getTrialAvatarCustomData().get(trialAvatarId) == null) return List.of();
-
-        var trialCustomParams = GameData.getTrialAvatarCustomData().get(trialAvatarId).getTrialAvatarParamList();
-        return trialCustomParams.isEmpty() ? List.of() : Stream.of(trialCustomParams.get(0).split(";")).map(Integer::parseInt).toList();
-    }
-
-    public boolean addTrialAvatar(int trialAvatarId, GrantReason reason, int questMainId){
-        List<Integer> trialAvatarBasicParam = getTrialAvatarParam(trialAvatarId);
-        if (trialAvatarBasicParam.isEmpty()) return false;
-
-        Avatar avatar = new Avatar(trialAvatarBasicParam.get(0));
-        if (avatar.getAvatarData() == null || !hasSentLoginPackets()) return false;
-
-        avatar.setOwner(this);
-        // Add trial weapons and relics
-        avatar.setTrialAvatarInfo(trialAvatarBasicParam.get(1), trialAvatarId, reason, questMainId);
-        avatar.equipTrialItems();
-        // Recalc stats
-        avatar.recalcStats();
-
-        // Packet, mimic official server behaviour, add to player's bag but not saving to db
-        sendPacket(new PacketAvatarAddNotify(avatar, false));
-        // add to avatar to temporary trial team
-        getTeamManager().addAvatarToTrialTeam(avatar);
-        return true;
-    }
-
-    public boolean addTrialAvatarForQuest(int trialAvatarId, int questMainId) {
-        // TODO: Find method for 'setupTrialAvatarTeamForQuest'.
-        getTeamManager().setupTrialAvatars(true);
-        if (!addTrialAvatar(
-            trialAvatarId,
-            GrantReason.GRANT_REASON_BY_QUEST,
-            questMainId)) return false;
-        getTeamManager().trialAvatarTeamPostUpdate();
-        // Packet, mimic official server behaviour, neccessary to stop player from modifying team
-        sendPacket(new PacketAvatarTeamUpdateNotify(this));
-        return true;
-    }
-
-    public void addTrialAvatarsForActivity(List<Integer> trialAvatarIds) {
-        getTeamManager().setupTrialAvatars(false);
-        trialAvatarIds.forEach(trialAvatarId -> addTrialAvatar(
-            trialAvatarId,
-            GrantReason.GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY,
-            0));
-        getTeamManager().trialAvatarTeamPostUpdate(0);
-    }
-
-    public boolean removeTrialAvatarForQuest(int trialAvatarId) {
-        if (!getTeamManager().isUsingTrialTeam()) return false;
-
-        sendPacket(new PacketAvatarDelNotify(List.of(getTeamManager().getTrialAvatarGuid(trialAvatarId))));
-        getTeamManager().removeTrialAvatarTeam(trialAvatarId);
-        sendPacket(new PacketAvatarTeamUpdateNotify());
-        return true;
-    }
-
-    public void removeTrialAvatarForActivity() {
-        if (!getTeamManager().isUsingTrialTeam()) return;
-
-        sendPacket(new PacketAvatarDelNotify(getTeamManager().getActiveTeam().stream()
-            .map(x -> x.getAvatar().getGuid()).toList()));
-        getTeamManager().removeTrialAvatarTeam();
     }
 
     public void addFlycloak(int flycloakId) {
