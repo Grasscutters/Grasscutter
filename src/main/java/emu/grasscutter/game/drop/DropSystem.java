@@ -21,46 +21,51 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 import java.util.*;
 
-public class DropSystem extends BaseGameSystem {
+public final class DropSystem extends BaseGameSystem {
     private final Int2ObjectMap<DropTableData> dropTable;
     private final Map<String, List<BaseDropData>> chestReward;
     private final Map<String, List<BaseDropData>> monsterDrop;
     private final Random rand;
-    //TODO:don't know how to determine boss level.Have to hard-code the data from wiki.
+
+    // TODO: don't know how to determine boss level.Have to hard-code the data from wiki.
     private final int[] bossLevel = {36, 37, 41, 50, 62, 72, 83, 91, 93};
 
     public DropSystem(GameServer server) {
         super(server);
-        rand = new Random();
-        dropTable = GameData.getDropTableDataMap();
-        chestReward = new HashMap<>();
-        monsterDrop = new HashMap<>();
+
+        this.rand = new Random();
+        this.dropTable = GameData.getDropTableDataMap();
+        this.chestReward = new HashMap<>();
+        this.monsterDrop = new HashMap<>();
+
         try {
-            List<ChestDropData> dataList = DataLoader.loadList("ChestDrop.json", ChestDropData.class);
+            var dataList = DataLoader.loadList("ChestDrop.json", ChestDropData.class);
             for (var i : dataList) {
                 if (!chestReward.containsKey(i.getIndex())) {
                     chestReward.put(i.getIndex(), new ArrayList<>());
                 }
                 chestReward.get(i.getIndex()).add(i);
             }
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to load chest drop data.Please place ChestDrop.json in data folder.");
+        } catch (Exception ignored) {
+            Grasscutter.getLogger().error("Unable to load chest drop data. Please place ChestDrop.json in data folder.");
         }
+
         try {
-            List<BaseDropData> dataList = DataLoader.loadList("MonsterDrop.json", BaseDropData.class);
+            var dataList = DataLoader.loadList("MonsterDrop.json", BaseDropData.class);
             for (var i : dataList) {
                 if (!monsterDrop.containsKey(i.getIndex())) {
                     monsterDrop.put(i.getIndex(), new ArrayList<>());
                 }
                 monsterDrop.get(i.getIndex()).add(i);
             }
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to load monster drop data.Please place MonsterDrop.json in data folder.");
+        } catch (Exception ignored) {
+            Grasscutter.getLogger().error("Unable to load monster drop data. Please place MonsterDrop.json in data folder.");
         }
     }
 
     private int queryDropData(String dropTag, int level, Map<String, List<BaseDropData>> rewards) {
         if (!rewards.containsKey(dropTag)) return 0;
+
         var rewardList = rewards.get(dropTag);
         BaseDropData dropData = null;
         int minLevel = 0;
