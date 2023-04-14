@@ -328,6 +328,7 @@ public class Avatar {
 
         // Set skill depot
         this.setSkillDepotData(skillDepot, notify);
+        this.recalcStats(true);
         // Set element.
         this.getPlayer().setMainCharacterElement(elementTypeToChange);
         return true;
