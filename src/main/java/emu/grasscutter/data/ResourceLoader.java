@@ -23,6 +23,7 @@ import emu.grasscutter.game.world.GroupReplacementData;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.scripts.EntityControllerScriptManager;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.FileUtils;
@@ -128,6 +129,8 @@ public final class ResourceLoader {
         loadActivityCondGroups();
         loadGroupReplacements();
         loadTrialAvatarCustomData();
+
+        EntityControllerScriptManager.load();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
         loadedAll = true;
@@ -732,7 +735,7 @@ public final class ResourceLoader {
             val gadgetMap = GameData.getGadgetMappingMap();
             try {
                 JsonUtils.loadToList(getResourcePath("Server/GadgetMapping.json"), GadgetMapping.class)
-                    .forEach(entry -> gadgetMap.put(entry.getGadgetId(), entry));;
+                    .forEach(entry -> gadgetMap.put(entry.getGadgetId(), entry));
             } catch (IOException | NullPointerException ignored) {}
             Grasscutter.getLogger().debug("Loaded {} gadget mappings.", gadgetMap.size());
         } catch (Exception e) {
