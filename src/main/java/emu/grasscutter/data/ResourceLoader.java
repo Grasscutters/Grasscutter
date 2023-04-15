@@ -811,12 +811,8 @@ public final class ResourceLoader {
 
         if (GameData.getGroupReplacements() == null || GameData.getGroupReplacements().isEmpty()) {
             Grasscutter.getLogger().error("No Group Replacements loaded!");
-            return;
         } else {
             Grasscutter.getLogger().debug("Loaded {} group replacements.", GameData.getGroupReplacements().size());
-            GameData.getGroupReplacements().forEach((group, groups) -> {
-                Grasscutter.getLogger().debug("{} -> {}", group, groups.getReplace_groups().stream().map(String::valueOf).collect(Collectors.joining(",")));
-            });
         }
     }
 
