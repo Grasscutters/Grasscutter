@@ -54,10 +54,10 @@ public class ItemData extends GameResource {
     private int[] satiationParams;
 
     // Usable item
-    private final ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
+    private ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
     private List<ItemUseData> itemUse;
     private List<ItemUseAction> itemUseActions;
-    private final boolean useOnGain = false;
+    private boolean useOnGain = false;
 
     // Relic
     private int mainPropDepotId;

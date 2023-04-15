@@ -731,7 +731,8 @@ public final class ResourceLoader {
         try {
             val gadgetMap = GameData.getGadgetMappingMap();
             try {
-                JsonUtils.loadToList(getResourcePath("Server/GadgetMapping.json"), GadgetMapping.class).forEach(entry -> gadgetMap.put(entry.getGadgetId(), entry));;
+                JsonUtils.loadToList(getResourcePath("Server/GadgetMapping.json"), GadgetMapping.class)
+                    .forEach(entry -> gadgetMap.put(entry.getGadgetId(), entry));;
             } catch (IOException | NullPointerException ignored) {}
             Grasscutter.getLogger().debug("Loaded {} gadget mappings.", gadgetMap.size());
         } catch (Exception e) {
