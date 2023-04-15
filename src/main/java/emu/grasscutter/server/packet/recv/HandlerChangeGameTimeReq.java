@@ -15,6 +15,6 @@ public class HandlerChangeGameTimeReq extends PacketHandler {
         var req = ChangeGameTimeReq.parseFrom(payload);
 
         session.getPlayer().getWorld().changeTime(req.getGameTime(), req.getExtraDays());
-        session.getPlayer().sendPacket(new PacketChangeGameTimeRsp(session.getPlayer()));
+        session.getPlayer().sendPacket(new PacketChangeGameTimeRsp(session.getPlayer(), req.getExtraDays()));
     }
 }

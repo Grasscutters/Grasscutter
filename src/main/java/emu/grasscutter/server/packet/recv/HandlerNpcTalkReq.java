@@ -3,6 +3,7 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
+import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -20,7 +21,7 @@ public class HandlerNpcTalkReq extends PacketHandler {
         // Check if mainQuest exists
         // remove last 2 digits to get a mainQuestId
         int talkId = req.getTalkId();
-        int mainQuestId = talkId / 100;
+        int mainQuestId = GameData.getQuestTalkMap().getOrDefault(talkId, talkId / 100);
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
 
         if (mainQuestData != null) {
@@ -36,30 +37,17 @@ public class HandlerNpcTalkReq extends PacketHandler {
             }
 
             // Add to the list of done talks for this quest.
-            var mainQuest = session.getPlayer().getQuestManager().getMainQuestById(mainQuestId);
+            var questManager = session.getPlayer().getQuestManager();
+            var mainQuest = questManager.getMainQuestByTalkId(talkId);
             if (mainQuest != null) {
-                session
-                        .getPlayer()
-                        .getQuestManager()
-                        .getMainQuestById(mainQuestId)
-                        .getTalks()
-                        .put(talkId, talkForQuest);
+                mainQuest.getTalks().put(talkId, talkForQuest);
             }
 
             // Fire quest triggers.
-            session
-                    .getPlayer()
-                    .getQuestManager()
-                    .queueEvent(
-                            QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK, String.valueOf(req.getTalkId()), 0, 0);
-            session
-                    .getPlayer()
-                    .getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_COMPLETE_TALK, req.getTalkId(), 0);
-            session
-                    .getPlayer()
-                    .getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_FINISH_PLOT, req.getTalkId(), 0);
+            questManager.queueEvent(QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK, talkId, 0, 0);
+            questManager.queueEvent(QuestContent.QUEST_CONTENT_COMPLETE_TALK, talkId, 0);
+            questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_PLOT, talkId, 0);
+            questManager.queueEvent(QuestCond.QUEST_COND_COMPLETE_TALK, talkId, 0);
         }
 
         session.send(new PacketNpcTalkRsp(req.getNpcEntityId(), req.getTalkId(), req.getEntityId()));
