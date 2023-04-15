@@ -918,7 +918,7 @@ public class Player {
             List<EntityAvatar> specifiedAvatarList = getTeamManager().getActiveTeam();
 
             if (avatarIds != null && avatarIds.size() > 0){
-                // certain scene could limit specifc avatars' entry
+                // certain scene could limit a specific avatar's entry
                 specifiedAvatarList.clear();
                 for (int id : avatarIds){
                     var avatar = getAvatars().getAvatarById(id);
