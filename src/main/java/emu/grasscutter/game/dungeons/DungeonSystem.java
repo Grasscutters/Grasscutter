@@ -116,6 +116,7 @@ public class DungeonSystem extends BaseGameSystem {
 
         if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
             scene = player.getScene();
+            scene.setDungeonManager(new DungeonManager(scene, data));
             scene.addDungeonSettleObserver(basicDungeonSettleObserver);
         }
 
