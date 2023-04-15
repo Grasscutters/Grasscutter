@@ -204,7 +204,7 @@ public class Avatar {
         this.ownerId = player.getUid();
         this.guid = player.getNextGameGuid();
 
-        if (this.isMainCharacter()) {
+        if (this.getAvatarId() == player.getMainCharacterId()) {
             // Apply skill depot based on player resonance.
             this.changeElement(player.getMainCharacterElement(), false);
         }
@@ -308,8 +308,6 @@ public class Avatar {
      * @return True if the element was changed, false otherwise.
      */
     public boolean changeElement(@Nonnull ElementType elementTypeToChange, boolean notify) {
-        if (elementTypeToChange == ElementType.None) return true;
-
         var candSkillDepotIdsList = this.getAvatarData().getCandSkillDepotIds();
         var candSkillDepotIndex = elementTypeToChange.getDepotIndex();
 
