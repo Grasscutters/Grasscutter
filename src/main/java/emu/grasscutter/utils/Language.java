@@ -2,6 +2,7 @@ package emu.grasscutter.utils;
 
 import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.FileUtils.getCachePath;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -37,8 +38,7 @@ public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
     private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE04;
     private static final Pattern textMapKeyValueRegex = Pattern.compile("\"(\\d+)\": \"(.+)\"");
-    private static final Path TEXTMAP_CACHE_PATH =
-            Path.of(Utils.toFilePath("cache/TextMapCache.bin"));
+    private static final Path TEXTMAP_CACHE_PATH = getCachePath("TextMap/TextMapCache.bin");
     private static boolean scannedTextmaps =
             false; // Ensure that we don't infinitely rescan on cache misses that don't exist
     private static Int2ObjectMap<TextStrings> textMapStrings;
@@ -289,14 +289,9 @@ public final class Language {
     }
 
     private static void saveTextMapsCache(Int2ObjectMap<TextStrings> input) throws IOException {
-        try {
-            Files.createDirectory(Path.of("cache"));
-        } catch (FileAlreadyExistsException ignored) {
-        }
-        try (ObjectOutputStream file =
-                new ObjectOutputStream(
-                        new BufferedOutputStream(
-                                Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
+        Files.createDirectories(TEXTMAP_CACHE_PATH.getParent());
+        try (var file = new ObjectOutputStream(new BufferedOutputStream(
+                Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
             file.writeInt(TEXTMAP_CACHE_VERSION);
             file.writeObject(input);
         }
