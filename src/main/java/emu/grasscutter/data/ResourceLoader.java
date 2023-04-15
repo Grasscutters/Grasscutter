@@ -10,10 +10,16 @@ import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.config.*;
 import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.custom.TrialAvatarActivityCustomData;
+import emu.grasscutter.data.custom.TrialAvatarCustomData;
+import emu.grasscutter.data.excels.trial.TrialAvatarActivityDataData;
+import emu.grasscutter.data.server.ActivityCondGroup;
+import emu.grasscutter.data.server.GadgetMapping;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.quest.RewindData;
 import emu.grasscutter.game.quest.TeleportData;
+import emu.grasscutter.game.world.GroupReplacementData;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
@@ -40,7 +46,10 @@ import java.util.stream.Stream;
 import lombok.val;
 import org.reflections.Reflections;
 
-public class ResourceLoader {
+import javax.script.Bindings;
+import javax.script.CompiledScript;
+
+public final class ResourceLoader {
 
     private static final Set<String> loadedResources = new CopyOnWriteArraySet<>();
     private static boolean loadedAll = false;
@@ -111,9 +120,14 @@ public class ResourceLoader {
         loadNpcBornData();
         loadBlossomResources();
         cacheTalentLevelSets();
-        // Load special ability in certain scene/dungeon
+
+        // Load custom server resources.
         loadConfigLevelEntityData();
         loadQuestShareConfig();
+        loadGadgetMappings();
+        loadActivityCondGroups();
+        loadGroupReplacements();
+        loadTrialAvatarCustomData();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
         loadedAll = true;
@@ -710,6 +724,99 @@ public class ResourceLoader {
             || GameData.getRewindDataMap() == null || GameData.getRewindDataMap().isEmpty()) {
             Grasscutter.getLogger().error("No Quest Share Config loaded!");
             return;
+        }
+    }
+
+    private static void loadGadgetMappings() {
+        try {
+            val gadgetMap = GameData.getGadgetMappingMap();
+            try {
+                JsonUtils.loadToList(getResourcePath("Server/GadgetMapping.json"), GadgetMapping.class).forEach(entry -> gadgetMap.put(entry.getGadgetId(), entry));;
+            } catch (IOException | NullPointerException ignored) {}
+            Grasscutter.getLogger().debug("Loaded {} gadget mappings.", gadgetMap.size());
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Unable to load gadget mappings.", e);
+        }
+    }
+
+    private static void loadActivityCondGroups() {
+        try {
+            val gadgetMap = GameData.getActivityCondGroupMap();
+            try {
+                JsonUtils.loadToList(getResourcePath("Server/ActivityCondGroups.json"), ActivityCondGroup.class).forEach(entry -> gadgetMap.put(entry.getCondGroupId(), entry));
+            } catch (IOException | NullPointerException ignored) {}
+            Grasscutter.getLogger().debug("Loaded {} ActivityCondGroups.", gadgetMap.size());
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Unable to load ActivityCondGroups.", e);
+        }
+    }
+
+    private static void loadTrialAvatarCustomData() {
+        try {
+            String pathName = "CustomResources/TrialAvatarExcels/";
+            try {
+                JsonUtils.loadToList(
+                    getResourcePath(pathName + "TrialAvatarActivityDataExcelConfigData.json"),
+                    TrialAvatarActivityDataData.class).forEach(instance -> {
+                    instance.onLoad();
+                    GameData.getTrialAvatarActivityDataCustomData()
+                        .put(instance.getTrialAvatarIndexId(), instance);
+                });
+            } catch (IOException | NullPointerException ignored) {}
+            Grasscutter.getLogger().debug("Loaded trial activity custom data.");
+            try {
+                JsonUtils.loadToList(
+                    getResourcePath(pathName + "TrialAvatarActivityExcelConfigData.json"),
+                    TrialAvatarActivityCustomData.class).forEach(instance -> {
+                    instance.onLoad();
+                    GameData.getTrialAvatarActivityCustomData()
+                        .put(instance.getScheduleId(), instance);
+                });
+            } catch (IOException | NullPointerException ignored) {}
+            Grasscutter.getLogger().debug("Loaded trial activity schedule custom data.");
+            try {
+                JsonUtils.loadToList(
+                    getResourcePath(pathName + "TrialAvatarData.json"),
+                    TrialAvatarCustomData.class).forEach(instance -> {
+                    instance.onLoad();
+                    GameData.getTrialAvatarCustomData()
+                        .put(instance.getTrialAvatarId(), instance);
+                });
+            } catch (IOException | NullPointerException ignored) {}
+            Grasscutter.getLogger().debug("Loaded trial avatar custom data.");
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Unable to load trial avatar custom data.", e);
+        }
+    }
+
+    private static void loadGroupReplacements(){
+        Bindings bindings = ScriptLoader.getEngine().createBindings();
+
+        CompiledScript cs = ScriptLoader.getScript("Scene/groups_replacement.lua");
+        if (cs == null) {
+            Grasscutter.getLogger().error("Error while loading Group Replacements: file not found");
+            return;
+        }
+
+        try{
+            cs.eval(bindings);
+            // these are Map<String, class>
+            var replacementsMap = ScriptLoader.getSerializer().toMap(GroupReplacementData.class, bindings.get("replacements"));
+            // convert them to Map<Integer, class> and cache
+            GameData.getGroupReplacements().putAll(replacementsMap.entrySet().stream().collect(Collectors.toMap(entry -> Integer.valueOf(entry.getValue().getId()), Entry::getValue)));
+
+        } catch (Throwable e){
+            Grasscutter.getLogger().error("Error while loading Group Replacements");
+        }
+
+        if (GameData.getGroupReplacements() == null || GameData.getGroupReplacements().isEmpty()) {
+            Grasscutter.getLogger().error("No Group Replacements loaded!");
+            return;
+        } else {
+            Grasscutter.getLogger().debug("Loaded {} group replacements.", GameData.getGroupReplacements().size());
+            GameData.getGroupReplacements().forEach((group, groups) -> {
+                Grasscutter.getLogger().debug("{} -> {}", group, groups.getReplace_groups().stream().map(String::valueOf).collect(Collectors.joining(",")));
+            });
         }
     }
 
