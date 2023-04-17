@@ -26,8 +26,8 @@ public class DungeonSystem extends BaseGameSystem {
         super(server);
     }
 
-    public void getEntryInfo(Player player, int pointId) {
-        ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
+    public void getEntryInfo(Player player, int pointId, int sceneId) {
+        ScenePointEntry entry = GameData.getScenePointEntryById(sceneId, pointId);
 
         if (entry == null) {
             // Error
