@@ -5,7 +5,6 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
@@ -13,6 +12,7 @@ import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
 import emu.grasscutter.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
@@ -94,14 +94,14 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             }
                         }
 
-                        // MOTION_STATE_NOTIFY = Dont send to other players
-                        if (motionState == MotionState.MOTION_STATE_NOTIFY) {
+                        // as long as one of these two packets be forwarded to client, the animation of avatar will be interrupted
+                        if (motionState == MotionState.MOTION_STATE_NOTIFY || motionState == MotionState.MOTION_STATE_FIGHT) {
                             continue;
                         }
                     }
                 }
                 case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED -> {
-                    EvtAnimatorParameterInfo paramInfo =
+                    var paramInfo =
                             EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
                     if (paramInfo.getIsServerCache()) {
                         paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
