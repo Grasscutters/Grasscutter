@@ -67,8 +67,8 @@ public class DungeonSystem extends BaseGameSystem {
      * @param player The player to send the entry info to.
      * @param pointId The dungeon point ID.
      */
-    public void sendEntryInfoFor(Player player, int pointId) {
-        var entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
+    public void sendEntryInfoFor(Player player, int pointId, int sceneId) {
+        var entry = GameData.getScenePointEntryById(sceneId, pointId);
         if (entry == null) {
             // An invalid point ID was sent.
             player.sendPacket(new PacketDungeonEntryInfoRsp());
