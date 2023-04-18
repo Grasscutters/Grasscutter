@@ -1019,7 +1019,7 @@ public class Avatar {
                         .putAllSkillLevelMap(this.getSkillLevelMap())
                         .addAllInherentProudSkillList(this.getProudSkillList())
                         .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
-                        .setAvatarType(1)
+                        .setAvatarType(this.getAvatarType())
                         .setBornTime(this.getBornTime())
                         .setFetterInfo(avatarFetter)
                         .setWearingFlycloakId(this.getFlyCloak())

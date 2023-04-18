@@ -486,7 +486,7 @@ public final class TeamManager extends BasePlayerDataManager {
     public long getTrialAvatarGuid(int avatarId) {
         return getTrialAvatars().values().stream()
                 .filter(avatar -> avatar.getTrialAvatarId() == avatarId)
-                .map(avatar -> avatar.getGuid())
+                .map(Avatar::getGuid)
                 .findFirst()
                 .orElse(0L);
     }
