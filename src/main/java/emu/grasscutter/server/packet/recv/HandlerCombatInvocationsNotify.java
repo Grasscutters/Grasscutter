@@ -89,8 +89,8 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             }
                         }
 
-                        // MOTION_STATE_NOTIFY = Dont send to other players
-                        if (motionState == MotionState.MOTION_STATE_NOTIFY) {
+                        // as long as one of these two packets be forwarded to client, the animation of avatar will be interrupted
+                        if (motionState == MotionState.MOTION_STATE_NOTIFY || motionState == MotionState.MOTION_STATE_FIGHT) {
                             continue;
                         }
                     }
@@ -146,7 +146,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
         }
         if (damageFactor > 0) {
             Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
-                    "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
+                "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
         } else {
             Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
         }
