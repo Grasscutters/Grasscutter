@@ -8,6 +8,7 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.utils.JsonUtils;
 import lombok.NoArgsConstructor;
 
+import java.net.URI;
 import java.util.Set;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -88,6 +89,7 @@ public class ConfigContainer {
         public String packets = "./packets/";
         public String scripts = "resources:Scripts/";
         public String plugins = "./plugins/";
+        public String cache = "./cache/";
 
         // UNUSED (potentially added later?)
         // public String dumps = "./dumps/";
