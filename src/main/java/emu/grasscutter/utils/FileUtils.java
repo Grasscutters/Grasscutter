@@ -138,6 +138,7 @@ public final class FileUtils {
     public static Path getDataUserPath(String path) {
         return DATA_USER_PATH.resolve(path);
     }
+
     public static Path getCachePath(String path) {
         return CACHE_PATH.resolve(path);
     }
