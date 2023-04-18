@@ -63,7 +63,10 @@
       "game_version": "Versiunea de joc: %s",
       "resources": {
         "loading": "Se încarcă resursele...",
-        "finish": "Resursele au fost încărcate."
+        "finish": "Resursele au fost încărcate.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -236,20 +239,20 @@
       "not_found": "Misiunea nu a fost găsită.",
       "invalid_id": "ID-ul misiunii nu a fost găsit.",
       "description": "Adaugă sau termină misiuni",
-      "enabled": "Questing enabled."
+      "enabled": "🇺🇸Questing enabled."
     },
     "group": {
-      "invalid_groupid": "Invalid group ID.",
-      "invalid_suiteid": "Invalid suite ID.",
-      "group_not_found": "Group not found.",
-      "description": "Alter group loading",
-      "refreshed": "Group %s refreshed."
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
     },
     "cutscene": {
-      "description": "Plays a cutscene"
+      "description": "🇺🇸Plays a cutscene"
     },
     "sound": {
-      "description": "Plays a sound"
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Se reîncarcă configurația.",

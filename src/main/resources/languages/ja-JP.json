@@ -63,7 +63,10 @@
       "game_version": "ゲームバージョン: %s",
       "resources": {
         "loading": "resourcesファイルをロード中...",
-        "finish": "resourcesファイルのロードが完了｡"
+        "finish": "resourcesファイルのロードが完了｡",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "聖遺物IDが無効な値です。",
         "avatarId": "キャラIDが無効な値です｡",
         "avatarLevel": "キャラレベルが無効な値です｡",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "エンティティIDが無効な値です｡",
         "itemId": "アイテムIDが無効な値です｡",
         "itemLevel": "アイテムレベルが無効な値です｡",
@@ -235,20 +239,20 @@
       "not_found": "クエストが見つかりません｡",
       "invalid_id": "クエストIDが無効です｡",
       "description": "クエストを追加または終了します｡",
-      "enabled": "Questing enabled."
+      "enabled": "🇺🇸Questing enabled."
     },
     "group": {
-      "invalid_groupid": "Invalid group ID.",
-      "invalid_suiteid": "Invalid suite ID.",
-      "group_not_found": "Group not found.",
-      "description": "Alter group loading",
-      "refreshed": "Group %s refreshed."
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
     },
     "cutscene": {
       "description": "カットシーンを再生します"
     },
     "sound": {
-      "description": "Plays a sound"
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "設定を再読み込みしています。",
@@ -408,7 +412,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "コマンド",
       "title_avatars": "キャラ",
       "title_items": "アイテム",
@@ -424,7 +428,7 @@
     },
     "index": {
       "title": "ドキュメント",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "ガチャマップ JSON"
     }
   },

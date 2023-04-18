@@ -63,7 +63,10 @@
       "game_version": "Versión del juego: %s",
       "resources": {
         "loading": "Cargando recursos...",
-        "finish": "Ha finalizado la carga de recursos."
+        "finish": "Ha finalizado la carga de recursos.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -236,7 +239,7 @@
       "not_found": "Misión no encontrada.",
       "invalid_id": "ID de misión inválido.",
       "description": "Añade o finaliza misiones",
-      "enabled": "Questing enabled."
+      "enabled": "🇺🇸Questing enabled."
     },
     "group": {
       "invalid_groupid": "ID de grupo invalida.",
@@ -249,7 +252,7 @@
       "description": "Reproduce una escena"
     },
     "sound": {
-      "description": "Plays a sound"
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Recargando configuración.",
@@ -365,7 +368,7 @@
     "trialAvatarActivity": {
       "description": "Manipular las funcionalidades de la Actividad de Avatar de Prueba. Esto incluye alternar estados de mazmorra y recompensa.",
       "not_found": "No se encontraron los datos del jugador de la actividad del avatar de prueba. Quizás la actividad no esté habilitada.",
-      "invalid_param": "Invalid parameter.",
+      "invalid_param": "🇺🇸Invalid parameter.",
       "schedule_not_found": "Horario %s no encontrado.",
       "success_schedule": "Cambió la identificación del horario a %s.",
       "success_dungeon": "Se alteró el estado de la mazmorra del avatar %s.",
@@ -409,23 +412,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   },

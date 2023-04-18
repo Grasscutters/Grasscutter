@@ -63,7 +63,10 @@
       "game_version": "Game version: %s",
       "resources": {
         "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "finish": "Finished loading resources.",
+        "custom": "Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },

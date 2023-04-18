@@ -63,7 +63,10 @@
       "game_version": "遊戲版本：%s",
       "resources": {
         "loading": "加載資源中...",
-        "finish": "資源加載完成.。"
+        "finish": "資源加載完成.。",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -236,20 +239,20 @@
       "not_found": "未找到任務",
       "invalid_id": "無效的任務ID",
       "description": "添加或完成任務",
-      "enabled": "Questing enabled."
+      "enabled": "🇺🇸Questing enabled."
     },
     "group": {
-      "invalid_groupid": "Invalid group ID.",
-      "invalid_suiteid": "Invalid suite ID.",
-      "group_not_found": "Group not found.",
-      "description": "Alter group loading",
-      "refreshed": "Group %s refreshed."
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
     },
     "cutscene": {
-      "description": "Plays a cutscene"
+      "description": "🇺🇸Plays a cutscene"
     },
     "sound": {
-      "description": "Plays a sound"
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",

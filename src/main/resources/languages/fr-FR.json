@@ -63,7 +63,10 @@
       "game_version": "Version du jeu: %s",
       "resources": {
         "loading": "Chargement des ressources...",
-        "finish": "Chargement des ressources terminé."
+        "finish": "Chargement des ressources terminé.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -239,17 +242,17 @@
       "enabled": "Quêtes activées."
     },
     "group": {
-      "invalid_groupid": "Invalid group ID.",
-      "invalid_suiteid": "Invalid suite ID.",
-      "group_not_found": "Group not found.",
-      "description": "Alter group loading",
-      "refreshed": "Group %s refreshed."
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
     },
     "cutscene": {
       "description": "Joue une cinématique"
     },
     "sound": {
-      "description": "Plays a sound"
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Rechargement de la configuration.",
@@ -424,9 +427,9 @@
       "header_monster": "Monstre"
     },
     "index": {
-      "title": "Documentation",
+      "title": "🇺🇸Documentation",
       "handbook": "Manuel GM",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   },
   "plugin": {

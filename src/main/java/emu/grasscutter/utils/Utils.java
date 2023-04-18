@@ -172,7 +172,7 @@ public final class Utils {
     public static void startupCheck() {
         ConfigContainer config = Grasscutter.getConfig();
         Logger logger = Grasscutter.getLogger();
-        boolean exit = false;
+        boolean exit = false, custom = false;
 
         String dataFolder = config.folderStructure.data;
 
@@ -198,6 +198,22 @@ public final class Utils {
         // resources
         DataLoader.checkAllFiles();
 
+        // Check for Server resources.
+        if (!Files.exists(getResourcePath("Server"))) {
+            logger.info(translate("messages.status.resources.missing_server"));
+            custom = true;
+        }
+
+        // Check for ScriptSceneData.
+        if (!Files.exists(getResourcePath("ScriptSceneData"))) {
+            logger.info(translate("messages.status.resources.missing_scenes"));
+            custom = true;
+        }
+
+        // Log message if custom resources are missing.
+        if (custom) logger.info(translate("messages.status.resources.custom"));
+
+        // Exit if there are any missing files.
         if (exit) System.exit(1);
     }
 
