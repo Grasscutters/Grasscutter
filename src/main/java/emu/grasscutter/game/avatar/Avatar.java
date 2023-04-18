@@ -1298,8 +1298,8 @@ public class Avatar {
     @AllArgsConstructor
     @Getter
     enum Type {
-        NORMAL(0),
-        TRIAL(1);
+        NORMAL(1),
+        TRIAL(2);
 
         final int number;
     }
