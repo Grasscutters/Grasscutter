@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
 import lombok.val;
 
 public class EntityControllerScriptManager {
@@ -21,23 +19,23 @@ public class EntityControllerScriptManager {
 
     private static void cacheGadgetControllers() {
         try (var stream = Files.newDirectoryStream(getScriptPath("Gadget/"), "*.lua")) {
-            stream.forEach(path -> {
-                val fileName = path.getFileName().toString();
-                if (!fileName.endsWith(".lua")) return;
+            stream.forEach(
+                    path -> {
+                        val fileName = path.getFileName().toString();
+                        if (!fileName.endsWith(".lua")) return;
 
-                val controllerName = fileName.substring(0, fileName.length() - 4);
-                var cs = ScriptLoader.getScript("Gadget/" + fileName);
-                var bindings = ScriptLoader.getEngine().createBindings();
-                if (cs == null) return;
+                        val controllerName = fileName.substring(0, fileName.length() - 4);
+                        var cs = ScriptLoader.getScript("Gadget/" + fileName);
+                        var bindings = ScriptLoader.getEngine().createBindings();
+                        if (cs == null) return;
 
-                try {
-                    cs.eval(bindings);
-                    gadgetController.put(controllerName, new EntityController(cs, bindings));
-                } catch (Throwable e) {
-                    Grasscutter.getLogger()
-                        .error("Error while loading gadget controller: {}.", fileName);
-                }
-            });
+                        try {
+                            cs.eval(bindings);
+                            gadgetController.put(controllerName, new EntityController(cs, bindings));
+                        } catch (Throwable e) {
+                            Grasscutter.getLogger().error("Error while loading gadget controller: {}.", fileName);
+                        }
+                    });
             Grasscutter.getLogger().debug("Loaded {} gadget controllers", gadgetController.size());
         } catch (IOException e) {
             Grasscutter.getLogger().error("Error loading gadget controller Lua scripts.");

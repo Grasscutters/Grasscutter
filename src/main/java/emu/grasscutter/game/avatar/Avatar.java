@@ -45,7 +45,6 @@ import java.util.*;
 import java.util.stream.Stream;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -138,17 +137,17 @@ public class Avatar {
 
         // Combat properties
         Stream.of(FightProperty.values())
-            .map(FightProperty::getId)
-            .filter(id -> (id > 0) && (id < 3000))
-            .forEach(id -> this.setFightProperty(id, 0f));
+                .map(FightProperty::getId)
+                .filter(id -> (id > 0) && (id < 3000))
+                .forEach(id -> this.setFightProperty(id, 0f));
 
-        this.setSkillDepotData(switch (this.getAvatarId()) {
-            case GameConstants.MAIN_CHARACTER_MALE ->
-                GameData.getAvatarSkillDepotDataMap().get(501);
-            case GameConstants.MAIN_CHARACTER_FEMALE ->
-                GameData.getAvatarSkillDepotDataMap().get(701);
-            default -> data.getSkillDepot();
-        });
+        this.setSkillDepotData(
+                switch (this.getAvatarId()) {
+                    case GameConstants.MAIN_CHARACTER_MALE -> GameData.getAvatarSkillDepotDataMap().get(501);
+                    case GameConstants.MAIN_CHARACTER_FEMALE -> GameData.getAvatarSkillDepotDataMap()
+                            .get(701);
+                    default -> data.getSkillDepot();
+                });
 
         // Set stats
         this.recalcStats();
@@ -180,10 +179,8 @@ public class Avatar {
      * @return True if the avatar is a main character.
      */
     public boolean isMainCharacter() {
-        return List.of(
-            GameConstants.MAIN_CHARACTER_MALE,
-            GameConstants.MAIN_CHARACTER_FEMALE
-        ).contains(this.getAvatarId());
+        return List.of(GameConstants.MAIN_CHARACTER_MALE, GameConstants.MAIN_CHARACTER_FEMALE)
+                .contains(this.getAvatarId());
     }
 
     public Player getPlayer() {
@@ -289,8 +286,8 @@ public class Avatar {
     }
 
     /**
-     * Changes the avatar's element to the target element.
-     * Only applies if the avatar has the element in its 'candSkillDepot's.
+     * Changes the avatar's element to the target element. Only applies if the avatar has the element
+     * in its 'candSkillDepot's.
      *
      * @param newElement The new element to change to.
      * @return True if the element was changed, false otherwise.
@@ -300,8 +297,8 @@ public class Avatar {
     }
 
     /**
-     * Changes the avatar's element to the target element.
-     * Only applies if the avatar has the element in its 'candSkillDepot's.
+     * Changes the avatar's element to the target element. Only applies if the avatar has the element
+     * in its 'candSkillDepot's.
      *
      * @param elementTypeToChange The new element to change to.
      * @param notify Whether to notify the player of the change.

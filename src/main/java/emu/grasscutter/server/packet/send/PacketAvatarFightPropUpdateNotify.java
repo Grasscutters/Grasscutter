@@ -5,7 +5,6 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFightPropUpdateNotifyOuterClass.AvatarFightPropUpdateNotify;
-
 import java.util.Map;
 
 public class PacketAvatarFightPropUpdateNotify extends BasePacket {

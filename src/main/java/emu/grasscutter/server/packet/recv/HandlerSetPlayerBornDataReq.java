@@ -55,7 +55,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             // Check if the default Anemo skill should be given.
             if (!GAME_OPTIONS.questing) {
                 mainCharacter.setSkillDepotData(
-                    GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+                        GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
             }
 
             // Manually handle adding to team

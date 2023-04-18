@@ -9,6 +9,7 @@ import lombok.Getter;
 public class DropMaterialData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     private boolean useOnGain;
     private boolean disableFirstGainHint;
     private boolean autoPick;

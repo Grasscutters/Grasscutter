@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -17,8 +16,9 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         var scene = player.getScene();
         var questManager = player.getQuestManager();
 
-        switch (session.getPlayer().getScene().getSceneType()){
-            case SCENE_ROOM -> questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_ROOM, scene.getId(), 0);
+        switch (session.getPlayer().getScene().getSceneType()) {
+            case SCENE_ROOM -> questManager.queueEvent(
+                    QuestContent.QUEST_CONTENT_ENTER_ROOM, scene.getId(), 0);
             case SCENE_WORLD -> {
                 questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD, scene.getId());
                 questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD_SCENE, scene.getId());

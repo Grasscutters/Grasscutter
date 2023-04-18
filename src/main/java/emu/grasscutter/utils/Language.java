@@ -1,8 +1,8 @@
 package emu.grasscutter.utils;
 
 import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.FileUtils.getCachePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -19,7 +19,6 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -290,8 +289,10 @@ public final class Language {
 
     private static void saveTextMapsCache(Int2ObjectMap<TextStrings> input) throws IOException {
         Files.createDirectories(TEXTMAP_CACHE_PATH.getParent());
-        try (var file = new ObjectOutputStream(new BufferedOutputStream(
-                Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
+        try (var file =
+                new ObjectOutputStream(
+                        new BufferedOutputStream(
+                                Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
             file.writeInt(TEXTMAP_CACHE_VERSION);
             file.writeObject(input);
         }

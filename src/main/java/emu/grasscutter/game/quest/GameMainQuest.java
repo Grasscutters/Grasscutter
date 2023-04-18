@@ -303,7 +303,15 @@ public class GameMainQuest {
         return true;
     }
 
-    public boolean hasTeleportPostion(int subId, List<Position> posAndRot) {
+    /**
+     * Checks if the quest has a teleport position. Returns true if it does & adds the target position
+     * & rotation to the list.
+     *
+     * @param subId The sub-quest ID.
+     * @param posAndRot A list which will contain the position & rotation if the quest has a teleport.
+     * @return True if the quest has a teleport position. False otherwise.
+     */
+    public boolean hasTeleportPosition(int subId, List<Position> posAndRot) {
         TeleportData questTransmit = GameData.getTeleportDataMap().get(subId);
         if (questTransmit == null) return false;
 
@@ -338,7 +346,7 @@ public class GameMainQuest {
                 1,
                 new Position(
                         transmitPosRot.get(0), transmitPosRot.get(1), transmitPosRot.get(2))); // rotation
-        Grasscutter.getLogger().info("Succesfully loaded teleport data for subQuest {}", subId);
+        Grasscutter.getLogger().debug("Successfully loaded teleport data for sub-quest {}.", subId);
         return true;
     }
 

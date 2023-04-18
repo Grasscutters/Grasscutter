@@ -10,9 +10,7 @@ public class PacketDropHintNotify extends BasePacket {
     public PacketDropHintNotify(int itemId, Vector position) {
         super(PacketOpcodes.DropHintNotify);
 
-        var proto = DropHintNotify.newBuilder()
-            .addItemIdList(itemId)
-            .setPosition(position);
+        var proto = DropHintNotify.newBuilder().addItemIdList(itemId).setPosition(position);
         this.setData(proto.build());
     }
 

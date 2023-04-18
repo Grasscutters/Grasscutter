@@ -13,6 +13,9 @@ public class HandlerDungeonEntryInfoReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         DungeonEntryInfoReq req = DungeonEntryInfoReq.parseFrom(payload);
 
-        session.getServer().getDungeonSystem().sendEntryInfoFor(session.getPlayer(), req.getPointId(), req.getSceneId());
+        session
+                .getServer()
+                .getDungeonSystem()
+                .sendEntryInfoFor(session.getPlayer(), req.getPointId(), req.getSceneId());
     }
 }

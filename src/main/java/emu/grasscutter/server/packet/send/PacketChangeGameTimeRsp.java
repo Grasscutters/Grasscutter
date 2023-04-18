@@ -12,9 +12,9 @@ public class PacketChangeGameTimeRsp extends BasePacket {
 
         ChangeGameTimeRsp proto =
                 ChangeGameTimeRsp.newBuilder()
-                    .setCurGameTime(player.getWorld().getGameTime())
-                    .setExtraDays(extraDays)
-                    .build();
+                        .setCurGameTime(player.getWorld().getGameTime())
+                        .setExtraDays(extraDays)
+                        .build();
 
         this.setData(proto);
     }

@@ -17,9 +17,7 @@ public class HandlerUnlockPersonalLineReq extends PacketHandler {
         var req = UnlockPersonalLineReq.parseFrom(payload);
         var data = GameData.getPersonalLineDataMap().get(req.getPersonalLineId());
         if (data == null) {
-            session.send(
-                    new PacketUnlockPersonalLineRsp(
-                            req.getPersonalLineId(), Retcode.RET_FAIL));
+            session.send(new PacketUnlockPersonalLineRsp(req.getPersonalLineId(), Retcode.RET_FAIL));
             return;
         }
 

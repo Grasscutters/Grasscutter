@@ -56,7 +56,8 @@ public final class AnnouncementTask extends TaskHandler {
                         .toList();
 
         Grasscutter.getGameServer().getAnnouncementSystem().broadcast(toSend);
-        Grasscutter.getLogger().trace("Broadcast {} announcement(s) to all online players", toSend.size());
+        Grasscutter.getLogger()
+                .trace("Broadcast {} announcement(s) to all online players", toSend.size());
 
         // clear the interval count
         toSend.forEach(i -> intervalMap.put(i.getTemplateId(), 0));

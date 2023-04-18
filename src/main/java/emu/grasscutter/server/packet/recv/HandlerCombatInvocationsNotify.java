@@ -94,8 +94,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             }
                         }
 
-                        // as long as one of these two packets be forwarded to client, the animation of avatar will be interrupted
-                        if (motionState == MotionState.MOTION_STATE_NOTIFY || motionState == MotionState.MOTION_STATE_FIGHT) {
+                        // as long as one of these two packets be forwarded to client, the animation of avatar
+                        // will be interrupted
+                        if (motionState == MotionState.MOTION_STATE_NOTIFY
+                                || motionState == MotionState.MOTION_STATE_FIGHT) {
                             continue;
                         }
                     }

@@ -40,17 +40,11 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.KahnsSort;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
-
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
@@ -311,8 +305,7 @@ public final class Scene {
         // TODO:optimize EntityItem.java. Maybe we should make other players can't see
         // the ItemEntity.
         ItemData itemData = GameData.getItemDataMap().get(item.getItemId());
-        if (itemData == null)
-            return;
+        if (itemData == null) return;
         if (itemData.isEquip()) {
             float range = (1.5f + (.05f * item.getCount()));
             for (int j = 0; j < item.getCount(); j++) {
@@ -321,11 +314,16 @@ public final class Scene {
                 addEntity(entity);
             }
         } else {
-            EntityItem entity = new EntityItem(this, player, itemData, bornForm.getPosition().clone().addY(0.5f),
-                item.getCount(), share);
+            EntityItem entity =
+                    new EntityItem(
+                            this,
+                            player,
+                            itemData,
+                            bornForm.getPosition().clone().addY(0.5f),
+                            item.getCount(),
+                            share);
             addEntity(entity);
         }
-
     }
 
     public void addEntities(Collection<? extends GameEntity> entities) {
@@ -333,7 +331,7 @@ public final class Scene {
     }
 
     public synchronized void addEntities(
-        Collection<? extends GameEntity> entities, VisionType visionType) {
+            Collection<? extends GameEntity> entities, VisionType visionType) {
         if (entities == null || entities.isEmpty()) {
             return;
         }
@@ -448,8 +446,13 @@ public final class Scene {
         // Reward drop
         var world = this.getWorld();
         if (target instanceof EntityMonster monster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            if (monster.getMetaMonster() != null && !world.getServer().getDropSystem().handleMonsterDrop(monster)) {
-                Grasscutter.getLogger().debug("Can not solve monster drop: drop_id = {}, drop_tag = {}. Falling back to legacy drop system.", monster.getMetaMonster().drop_id, monster.getMetaMonster().drop_tag);
+            if (monster.getMetaMonster() != null
+                    && !world.getServer().getDropSystem().handleMonsterDrop(monster)) {
+                Grasscutter.getLogger()
+                        .debug(
+                                "Can not solve monster drop: drop_id = {}, drop_tag = {}. Falling back to legacy drop system.",
+                                monster.getMetaMonster().drop_id,
+                                monster.getMetaMonster().drop_tag);
                 getWorld().getServer().getDropSystemLegacy().callDrop(monster);
             }
         }

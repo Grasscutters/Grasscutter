@@ -3,7 +3,6 @@ package emu.grasscutter.data.server;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.GridPosition;
 import emu.grasscutter.utils.Position;
-
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,15 +10,11 @@ import java.util.Set;
 
 public class Grid {
     public Map<String, Set<Integer>> grid;
-    public Map<GridPosition, Set<Integer>> gridMap
-        = new LinkedHashMap<>();
+    public Map<GridPosition, Set<Integer>> gridMap = new LinkedHashMap<>();
 
-    /**
-     * Loads the correct grid map.
-     */
+    /** Loads the correct grid map. */
     public void load() {
-        this.grid.forEach((position, groups) ->
-            this.gridMap.put(new GridPosition(position), groups));
+        this.grid.forEach((position, groups) -> this.gridMap.put(new GridPosition(position), groups));
     }
 
     /**

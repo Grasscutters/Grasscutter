@@ -279,10 +279,10 @@ public class World implements Iterable<Player> {
 
         val sceneData = GameData.getSceneDataMap().get(sceneId);
         if (dungeonData != null) {
-            teleportProps.teleportTo(dungeonData.getStartPosition())
-                .teleportRot(dungeonData.getStartRotation());
-            teleportProps.enterType(EnterType.ENTER_TYPE_DUNGEON)
-                .enterReason(EnterReason.DungeonEnter);
+            teleportProps
+                    .teleportTo(dungeonData.getStartPosition())
+                    .teleportRot(dungeonData.getStartRotation());
+            teleportProps.enterType(EnterType.ENTER_TYPE_DUNGEON).enterReason(EnterReason.DungeonEnter);
         } else if (player.getSceneId() == sceneId) {
             teleportProps.enterType(EnterType.ENTER_TYPE_GOTO);
         } else if (sceneData != null && sceneData.getSceneType() == SceneType.SCENE_HOME_WORLD) {

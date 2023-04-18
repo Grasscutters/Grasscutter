@@ -17,7 +17,6 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 import java.util.List;
 
 public class DropSystemLegacy extends BaseGameSystem {
@@ -49,20 +48,27 @@ public class DropSystemLegacy extends BaseGameSystem {
             Grasscutter.getLogger().error("Unable to load drop data.", e);
         }
     }
-    private void addDropEntity(DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {
-        if (!dd.isGive() && (itemData.getItemType() != ItemType.ITEM_VIRTUAL || itemData.getGadgetId() != 0)) {
+
+    private void addDropEntity(
+            DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {
+        if (!dd.isGive()
+                && (itemData.getItemType() != ItemType.ITEM_VIRTUAL || itemData.getGadgetId() != 0)) {
             EntityItem entity = new EntityItem(dropScene, target, itemData, pos, num, dd.isShare());
-            if (!dd.isShare())
-                dropScene.addEntityToSingleClient(target, entity);
-            else
-                dropScene.addEntity(entity);
+            if (!dd.isShare()) dropScene.addEntityToSingleClient(target, entity);
+            else dropScene.addEntity(entity);
         } else {
             if (target != null) {
                 target.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true);
             } else {
-                // target is null if items will be added are shared. no one could pick it up because of the combination(give + shared)
+                // target is null if items will be added are shared. no one could pick it up because of the
+                // combination(give + shared)
                 // so it will be sent to all players' inventories directly.
-                dropScene.getPlayers().forEach(x -> x.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true));
+                dropScene
+                        .getPlayers()
+                        .forEach(
+                                x ->
+                                        x.getInventory()
+                                                .addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true));
             }
         }
     }
@@ -93,8 +99,7 @@ public class DropSystemLegacy extends BaseGameSystem {
         int id = em.getMonsterData().getId();
         if (getDropData().containsKey(id)) {
             for (DropData dd : getDropData().get(id)) {
-                if (dd.isShare())
-                    processDrop(dd, em, null);
+                if (dd.isShare()) processDrop(dd, em, null);
                 else {
                     for (Player gp : em.getScene().getPlayers()) {
                         processDrop(dd, em, gp);

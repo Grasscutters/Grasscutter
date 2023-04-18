@@ -15,12 +15,13 @@ public class HandlerPlayerEnterDungeonReq extends PacketHandler {
         // Auto template
         PlayerEnterDungeonReq req = PlayerEnterDungeonReq.parseFrom(payload);
 
-        var success = session
-                .getServer()
-                .getDungeonSystem()
-                .enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
+        var success =
+                session
+                        .getServer()
+                        .getDungeonSystem()
+                        .enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
         session
-            .getPlayer()
-            .sendPacket(new PacketPlayerEnterDungeonRsp(req.getPointId(), req.getDungeonId(), success));
+                .getPlayer()
+                .sendPacket(new PacketPlayerEnterDungeonRsp(req.getPointId(), req.getDungeonId(), success));
     }
 }

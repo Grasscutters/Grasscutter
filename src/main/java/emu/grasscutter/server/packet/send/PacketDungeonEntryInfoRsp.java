@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo;
 import emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,19 +35,18 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
     public PacketDungeonEntryInfoRsp(PointData pointData, List<Integer> additional) {
         super(PacketOpcodes.DungeonEntryInfoRsp);
 
-        var packet = DungeonEntryInfoRsp.newBuilder()
-            .setPointId(pointData.getId());
+        var packet = DungeonEntryInfoRsp.newBuilder().setPointId(pointData.getId());
 
         // Add dungeon IDs from the point data.
         if (pointData.getDungeonIds() != null) {
             Arrays.stream(pointData.getDungeonIds())
-                .forEach(id -> packet.addDungeonEntryList(
-                    DungeonEntryInfo.newBuilder().setDungeonId(id)));
+                    .forEach(
+                            id -> packet.addDungeonEntryList(DungeonEntryInfo.newBuilder().setDungeonId(id)));
         }
 
         // Add additional dungeon IDs.
-        additional.forEach(id -> packet.addDungeonEntryList(
-            DungeonEntryInfo.newBuilder().setDungeonId(id)));
+        additional.forEach(
+                id -> packet.addDungeonEntryList(DungeonEntryInfo.newBuilder().setDungeonId(id)));
 
         this.setData(packet);
     }

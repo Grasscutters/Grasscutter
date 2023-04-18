@@ -14,11 +14,14 @@ public class PacketAvatarTeamUpdateNotify extends BasePacket {
 
         var teamManager = player.getTeamManager();
         if (teamManager.isUsingTrialTeam()) {
-            proto.addAllTempAvatarGuidList(teamManager.getActiveTeam().stream()
-                .map(entity -> entity.getAvatar().getGuid()).toList());
+            proto.addAllTempAvatarGuidList(
+                    teamManager.getActiveTeam().stream()
+                            .map(entity -> entity.getAvatar().getGuid())
+                            .toList());
         } else {
-            teamManager.getTeams().forEach((key, value) ->
-                proto.putAvatarTeamMap(key, value.toProto(player)));
+            teamManager
+                    .getTeams()
+                    .forEach((key, value) -> proto.putAvatarTeamMap(key, value.toProto(player)));
         }
 
         this.setData(proto);
