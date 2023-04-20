@@ -166,7 +166,6 @@ public final class RegionHandler implements Router {
                 // Use the CN region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
                 event.call();
-                logger.debug("Connect to Chinese version");
 
                 // Respond with the event result.
                 ctx.result(event.getRegionList());
@@ -176,7 +175,6 @@ public final class RegionHandler implements Router {
                 // Use the OS region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
                 event.call();
-                logger.debug("Connect to global version");
 
                 // Respond with the event result.
                 ctx.result(event.getRegionList());
@@ -191,7 +189,6 @@ public final class RegionHandler implements Router {
                 // Use the default region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
                 event.call();
-                logger.debug("Connect to global version");
 
                 // Respond with the event result.
                 ctx.result(event.getRegionList());
@@ -200,7 +197,6 @@ public final class RegionHandler implements Router {
             // Use the default region list.
             QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
             event.call();
-            logger.debug("Connect to global version");
 
             // Respond with the event result.
             ctx.result(event.getRegionList());

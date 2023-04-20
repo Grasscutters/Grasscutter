@@ -106,7 +106,7 @@ public class Avatar {
     @Getter @Setter private int fromParentQuestId = 0;
     // so far no outer class or prop value has information of this, but from packet:
     // 1 = normal, 2 = trial avatar
-    @Getter @Setter private int avatarType = Type.NORMAL.getNumber();
+    @Transient @Getter @Setter private int avatarType = Type.NORMAL.getNumber();
 
     @Deprecated // Do not use. Morhpia only!
     public Avatar() {
