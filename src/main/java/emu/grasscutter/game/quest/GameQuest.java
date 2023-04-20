@@ -288,21 +288,19 @@ public class GameQuest {
      *     is the dungeon's scene point.
      */
     public List<IntIntImmutablePair> getDungeonIds() {
-        var conditions =
-                this.getQuestData().getFinishCond().stream()
-                        .filter(cond -> cond.getType() == QuestContent.QUEST_CONTENT_ENTER_DUNGEON)
-                        .toList();
+        // Check if this quest is active.
+        if (this.state != QuestState.UNFINISHED) return List.of();
 
-        return conditions.stream()
-                .map(
-                        condition -> {
-                            var params = condition.getParam();
-                            // The first parameter is the ID of the dungeon.
-                            // The second parameter is the dungeon entry's scene point.
-                            // ex. [1, 1] = dungeon ID 1, scene point 1 or 'KaeyaDungeon'.
-                            return new IntIntImmutablePair(params[0], params[1]);
-                        })
-                .toList();
+        return this.getQuestData().getFinishCond().stream()
+            .filter(cond -> cond.getType() == QuestContent.QUEST_CONTENT_ENTER_DUNGEON)
+            .map(condition -> {
+                    var params = condition.getParam();
+                    // The first parameter is the ID of the dungeon.
+                    // The second parameter is the dungeon entry's scene point.
+                    // ex. [1, 1] = dungeon ID 1, scene point 1 or 'KaeyaDungeon'.
+                    return new IntIntImmutablePair(params[0], params[1]);
+            })
+            .toList();
     }
 
     public void save() {
