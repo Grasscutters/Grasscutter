@@ -86,7 +86,7 @@ cd Grasscutter
 .\gradlew jar # Compile
 ```
 
-##### GNU/Linux
+##### Linux (GNU)
 
 ```bash
 git clone https://github.com/Grasscutters/Grasscutter.git
