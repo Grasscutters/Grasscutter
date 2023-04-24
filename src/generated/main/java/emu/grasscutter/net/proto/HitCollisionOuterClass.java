@@ -18,6 +18,12 @@ public final class HitCollisionOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
+         *
+         *
+         * <pre>
+         * FCBNNPNJOHM
+         * </pre>
+         *
          * <code>float attackeeHitForceAngle = 7;</code>
          *
          * @return The attackeeHitForceAngle.
@@ -40,6 +46,12 @@ public final class HitCollisionOuterClass {
         emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder();
 
         /**
+         *
+         *
+         * <pre>
+         * LFNEGKFGIIE
+         * </pre>
+         *
          * <code>float attackeeHitEntityAngle = 9;</code>
          *
          * @return The attackeeHitEntityAngle.
@@ -226,6 +238,12 @@ public final class HitCollisionOuterClass {
         public static final int ATTACKEEHITFORCEANGLE_FIELD_NUMBER = 7;
         private float attackeeHitForceAngle_;
         /**
+         *
+         *
+         * <pre>
+         * FCBNNPNJOHM
+         * </pre>
+         *
          * <code>float attackeeHitForceAngle = 7;</code>
          *
          * @return The attackeeHitForceAngle.
@@ -266,6 +284,12 @@ public final class HitCollisionOuterClass {
         public static final int ATTACKEEHITENTITYANGLE_FIELD_NUMBER = 9;
         private float attackeeHitEntityAngle_;
         /**
+         *
+         *
+         * <pre>
+         * LFNEGKFGIIE
+         * </pre>
+         *
          * <code>float attackeeHitEntityAngle = 9;</code>
          *
          * @return The attackeeHitEntityAngle.
@@ -780,6 +804,12 @@ public final class HitCollisionOuterClass {
 
             private float attackeeHitForceAngle_;
             /**
+             *
+             *
+             * <pre>
+             * FCBNNPNJOHM
+             * </pre>
+             *
              * <code>float attackeeHitForceAngle = 7;</code>
              *
              * @return The attackeeHitForceAngle.
@@ -789,6 +819,12 @@ public final class HitCollisionOuterClass {
                 return attackeeHitForceAngle_;
             }
             /**
+             *
+             *
+             * <pre>
+             * FCBNNPNJOHM
+             * </pre>
+             *
              * <code>float attackeeHitForceAngle = 7;</code>
              *
              * @param value The attackeeHitForceAngle to set.
@@ -801,6 +837,12 @@ public final class HitCollisionOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * FCBNNPNJOHM
+             * </pre>
+             *
              * <code>float attackeeHitForceAngle = 7;</code>
              *
              * @return This builder for chaining.
@@ -932,6 +974,12 @@ public final class HitCollisionOuterClass {
 
             private float attackeeHitEntityAngle_;
             /**
+             *
+             *
+             * <pre>
+             * LFNEGKFGIIE
+             * </pre>
+             *
              * <code>float attackeeHitEntityAngle = 9;</code>
              *
              * @return The attackeeHitEntityAngle.
@@ -941,6 +989,12 @@ public final class HitCollisionOuterClass {
                 return attackeeHitEntityAngle_;
             }
             /**
+             *
+             *
+             * <pre>
+             * LFNEGKFGIIE
+             * </pre>
+             *
              * <code>float attackeeHitEntityAngle = 9;</code>
              *
              * @param value The attackeeHitEntityAngle to set.
@@ -953,6 +1007,12 @@ public final class HitCollisionOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * LFNEGKFGIIE
+             * </pre>
+             *
              * <code>float attackeeHitEntityAngle = 9;</code>
              *
              * @return This builder for chaining.
@@ -1250,8 +1310,8 @@ public final class HitCollisionOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\022HitCollision.proto\032\014Vector.proto\032\025HitC"
-                    + "olliderType.proto\"\307\001\n\014HitCollision\022\035\n\025at"
+            "\n\022HitCollision.proto\032\025HitColliderType.pr"
+                    + "oto\032\014Vector.proto\"\307\001\n\014HitCollision\022\035\n\025at"
                     + "tackeeHitForceAngle\030\007 \001(\002\022\032\n\thit_point\030\005"
                     + " \001(\0132\007.Vector\022\036\n\026attackeeHitEntityAngle\030"
                     + "\t \001(\002\022\025\n\rhit_box_index\030\002 \001(\005\022\030\n\007hit_dir\030"
@@ -1263,8 +1323,8 @@ public final class HitCollisionOuterClass {
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
                         });
         internal_static_HitCollision_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_HitCollision_fieldAccessorTable =
@@ -1278,8 +1338,8 @@ public final class HitCollisionOuterClass {
                             "HitDir",
                             "HitColliderType",
                         });
-        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
         emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

@@ -25,6 +25,12 @@ public final class GetAllMailResultNotifyOuterClass {
         int getRetcode();
 
         /**
+         *
+         *
+         * <pre>
+         * FCGFGPDOKOH
+         * </pre>
+         *
          * <code>uint32 packet_be_sent_num = 1;</code>
          *
          * @return The packetBeSentNum.
@@ -64,6 +70,12 @@ public final class GetAllMailResultNotifyOuterClass {
         boolean getIsCollected();
 
         /**
+         *
+         *
+         * <pre>
+         * GKAOFKGNGGO
+         * </pre>
+         *
          * <code>uint32 packet_num = 13;</code>
          *
          * @return The packetNum.
@@ -220,6 +232,12 @@ public final class GetAllMailResultNotifyOuterClass {
         public static final int PACKET_BE_SENT_NUM_FIELD_NUMBER = 1;
         private int packetBeSentNum_;
         /**
+         *
+         *
+         * <pre>
+         * FCGFGPDOKOH
+         * </pre>
+         *
          * <code>uint32 packet_be_sent_num = 1;</code>
          *
          * @return The packetBeSentNum.
@@ -311,6 +329,12 @@ public final class GetAllMailResultNotifyOuterClass {
         public static final int PACKET_NUM_FIELD_NUMBER = 13;
         private int packetNum_;
         /**
+         *
+         *
+         * <pre>
+         * GKAOFKGNGGO
+         * </pre>
+         *
          * <code>uint32 packet_num = 13;</code>
          *
          * @return The packetNum.
@@ -824,6 +848,12 @@ public final class GetAllMailResultNotifyOuterClass {
 
             private int packetBeSentNum_;
             /**
+             *
+             *
+             * <pre>
+             * FCGFGPDOKOH
+             * </pre>
+             *
              * <code>uint32 packet_be_sent_num = 1;</code>
              *
              * @return The packetBeSentNum.
@@ -833,6 +863,12 @@ public final class GetAllMailResultNotifyOuterClass {
                 return packetBeSentNum_;
             }
             /**
+             *
+             *
+             * <pre>
+             * FCGFGPDOKOH
+             * </pre>
+             *
              * <code>uint32 packet_be_sent_num = 1;</code>
              *
              * @param value The packetBeSentNum to set.
@@ -845,6 +881,12 @@ public final class GetAllMailResultNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * FCGFGPDOKOH
+             * </pre>
+             *
              * <code>uint32 packet_be_sent_num = 1;</code>
              *
              * @return This builder for chaining.
@@ -1187,6 +1229,12 @@ public final class GetAllMailResultNotifyOuterClass {
 
             private int packetNum_;
             /**
+             *
+             *
+             * <pre>
+             * GKAOFKGNGGO
+             * </pre>
+             *
              * <code>uint32 packet_num = 13;</code>
              *
              * @return The packetNum.
@@ -1196,6 +1244,12 @@ public final class GetAllMailResultNotifyOuterClass {
                 return packetNum_;
             }
             /**
+             *
+             *
+             * <pre>
+             * GKAOFKGNGGO
+             * </pre>
+             *
              * <code>uint32 packet_num = 13;</code>
              *
              * @param value The packetNum to set.
@@ -1208,6 +1262,12 @@ public final class GetAllMailResultNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * GKAOFKGNGGO
+             * </pre>
+             *
              * <code>uint32 packet_num = 13;</code>
              *
              * @return This builder for chaining.

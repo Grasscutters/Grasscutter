@@ -62,6 +62,12 @@ public final class PlayerLoginRspOuterClass {
         boolean getKMOMLBCPPBA();
 
         /**
+         *
+         *
+         * <pre>
+         * HGDJOGDJFDJ
+         * </pre>
+         *
          * <code>bytes playerData = 1712;</code>
          *
          * @return The playerData.
@@ -321,6 +327,12 @@ public final class PlayerLoginRspOuterClass {
         emu.grasscutter.net.proto.BlockInfoOuterClass.BlockInfo getBlockInfoMapOrThrow(int key);
 
         /**
+         *
+         *
+         * <pre>
+         * JDGOBICDINB
+         * </pre>
+         *
          * <code>bytes scInfo = 3;</code>
          *
          * @return The scInfo.
@@ -858,6 +870,12 @@ public final class PlayerLoginRspOuterClass {
         public static final int PLAYERDATA_FIELD_NUMBER = 1712;
         private com.google.protobuf.ByteString playerData_;
         /**
+         *
+         *
+         * <pre>
+         * HGDJOGDJFDJ
+         * </pre>
+         *
          * <code>bytes playerData = 1712;</code>
          *
          * @return The playerData.
@@ -1503,6 +1521,12 @@ public final class PlayerLoginRspOuterClass {
         public static final int SCINFO_FIELD_NUMBER = 3;
         private com.google.protobuf.ByteString scInfo_;
         /**
+         *
+         *
+         * <pre>
+         * JDGOBICDINB
+         * </pre>
+         *
          * <code>bytes scInfo = 3;</code>
          *
          * @return The scInfo.
@@ -3006,6 +3030,12 @@ public final class PlayerLoginRspOuterClass {
 
             private com.google.protobuf.ByteString playerData_ = com.google.protobuf.ByteString.EMPTY;
             /**
+             *
+             *
+             * <pre>
+             * HGDJOGDJFDJ
+             * </pre>
+             *
              * <code>bytes playerData = 1712;</code>
              *
              * @return The playerData.
@@ -3015,6 +3045,12 @@ public final class PlayerLoginRspOuterClass {
                 return playerData_;
             }
             /**
+             *
+             *
+             * <pre>
+             * HGDJOGDJFDJ
+             * </pre>
+             *
              * <code>bytes playerData = 1712;</code>
              *
              * @param value The playerData to set.
@@ -3030,6 +3066,12 @@ public final class PlayerLoginRspOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * HGDJOGDJFDJ
+             * </pre>
+             *
              * <code>bytes playerData = 1712;</code>
              *
              * @return This builder for chaining.
@@ -4522,6 +4564,12 @@ public final class PlayerLoginRspOuterClass {
 
             private com.google.protobuf.ByteString scInfo_ = com.google.protobuf.ByteString.EMPTY;
             /**
+             *
+             *
+             * <pre>
+             * JDGOBICDINB
+             * </pre>
+             *
              * <code>bytes scInfo = 3;</code>
              *
              * @return The scInfo.
@@ -4531,6 +4579,12 @@ public final class PlayerLoginRspOuterClass {
                 return scInfo_;
             }
             /**
+             *
+             *
+             * <pre>
+             * JDGOBICDINB
+             * </pre>
+             *
              * <code>bytes scInfo = 3;</code>
              *
              * @param value The scInfo to set.
@@ -4546,6 +4600,12 @@ public final class PlayerLoginRspOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * JDGOBICDINB
+             * </pre>
+             *
              * <code>bytes scInfo = 3;</code>
              *
              * @return This builder for chaining.

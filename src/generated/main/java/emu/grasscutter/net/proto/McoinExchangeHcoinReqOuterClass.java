@@ -18,7 +18,7 @@ public final class McoinExchangeHcoinReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 mcoinCost = 8;</code>
+         * <code>uint32 mcoin_cost = 8;</code>
          *
          * @return The mcoinCost.
          */
@@ -127,10 +127,10 @@ public final class McoinExchangeHcoinReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int MCOINCOST_FIELD_NUMBER = 8;
+        public static final int MCOIN_COST_FIELD_NUMBER = 8;
         private int mcoinCost_;
         /**
-         * <code>uint32 mcoinCost = 8;</code>
+         * <code>uint32 mcoin_cost = 8;</code>
          *
          * @return The mcoinCost.
          */
@@ -217,7 +217,7 @@ public final class McoinExchangeHcoinReqOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + MCOINCOST_FIELD_NUMBER;
+            hash = (37 * hash) + MCOIN_COST_FIELD_NUMBER;
             hash = (53 * hash) + getMcoinCost();
             hash = (37 * hash) + HCOIN_FIELD_NUMBER;
             hash = (53 * hash) + getHcoin();
@@ -516,7 +516,7 @@ public final class McoinExchangeHcoinReqOuterClass {
 
             private int mcoinCost_;
             /**
-             * <code>uint32 mcoinCost = 8;</code>
+             * <code>uint32 mcoin_cost = 8;</code>
              *
              * @return The mcoinCost.
              */
@@ -525,7 +525,7 @@ public final class McoinExchangeHcoinReqOuterClass {
                 return mcoinCost_;
             }
             /**
-             * <code>uint32 mcoinCost = 8;</code>
+             * <code>uint32 mcoin_cost = 8;</code>
              *
              * @param value The mcoinCost to set.
              * @return This builder for chaining.
@@ -537,7 +537,7 @@ public final class McoinExchangeHcoinReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 mcoinCost = 8;</code>
+             * <code>uint32 mcoin_cost = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -652,10 +652,10 @@ public final class McoinExchangeHcoinReqOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\033McoinExchangeHcoinReq.proto\"9\n\025McoinEx"
-                    + "changeHcoinReq\022\021\n\tmcoinCost\030\010 \001(\r\022\r\n\005hco"
-                    + "in\030\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006p"
-                    + "roto3"
+            "\n\033McoinExchangeHcoinReq.proto\":\n\025McoinEx"
+                    + "changeHcoinReq\022\022\n\nmcoin_cost\030\010 \001(\r\022\r\n\005hc"
+                    + "oin\030\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006"
+                    + "proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

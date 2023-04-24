@@ -18,6 +18,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
+         *
+         *
+         * <pre>
+         * GIDCANHMHNG
+         * </pre>
+         *
          * <code>uint32 challengeRecordType = 1;</code>
          *
          * @return The challengeRecordType.
@@ -45,6 +51,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
         emu.grasscutter.net.proto.ChallengeFinishTypeOuterClass.ChallengeFinishType getFinishType();
 
         /**
+         *
+         *
+         * <pre>
+         * LLGLNCOOMPM
+         * </pre>
+         *
          * <code>uint32 currentValue = 15;</code>
          *
          * @return The currentValue.
@@ -505,6 +517,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
         public static final int CHALLENGERECORDTYPE_FIELD_NUMBER = 1;
         private int challengeRecordType_;
         /**
+         *
+         *
+         * <pre>
+         * GIDCANHMHNG
+         * </pre>
+         *
          * <code>uint32 challengeRecordType = 1;</code>
          *
          * @return The challengeRecordType.
@@ -557,6 +575,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
         public static final int CURRENTVALUE_FIELD_NUMBER = 15;
         private int currentValue_;
         /**
+         *
+         *
+         * <pre>
+         * LLGLNCOOMPM
+         * </pre>
+         *
          * <code>uint32 currentValue = 15;</code>
          *
          * @return The currentValue.
@@ -1561,6 +1585,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
 
             private int challengeRecordType_;
             /**
+             *
+             *
+             * <pre>
+             * GIDCANHMHNG
+             * </pre>
+             *
              * <code>uint32 challengeRecordType = 1;</code>
              *
              * @return The challengeRecordType.
@@ -1570,6 +1600,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
                 return challengeRecordType_;
             }
             /**
+             *
+             *
+             * <pre>
+             * GIDCANHMHNG
+             * </pre>
+             *
              * <code>uint32 challengeRecordType = 1;</code>
              *
              * @param value The challengeRecordType to set.
@@ -1582,6 +1618,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * GIDCANHMHNG
+             * </pre>
+             *
              * <code>uint32 challengeRecordType = 1;</code>
              *
              * @return This builder for chaining.
@@ -1696,6 +1738,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
 
             private int currentValue_;
             /**
+             *
+             *
+             * <pre>
+             * LLGLNCOOMPM
+             * </pre>
+             *
              * <code>uint32 currentValue = 15;</code>
              *
              * @return The currentValue.
@@ -1705,6 +1753,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
                 return currentValue_;
             }
             /**
+             *
+             *
+             * <pre>
+             * LLGLNCOOMPM
+             * </pre>
+             *
              * <code>uint32 currentValue = 15;</code>
              *
              * @param value The currentValue to set.
@@ -1717,6 +1771,12 @@ public final class DungeonChallengeFinishNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * LLGLNCOOMPM
+             * </pre>
+             *
              * <code>uint32 currentValue = 15;</code>
              *
              * @return This builder for chaining.

@@ -18,25 +18,43 @@ public final class HomeLimitedShopGoodsOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 KCHMFBKCLKO = 5;</code>
          *
-         * @return The kCHMFBKCLKO.
+         *
+         * <pre>
+         * KCHMFBKCLKO
+         * </pre>
+         *
+         * <code>uint32 bought_num = 5;</code>
+         *
+         * @return The boughtNum.
          */
-        int getKCHMFBKCLKO();
+        int getBoughtNum();
 
         /**
-         * <code>uint32 LLJPJOEMPFE = 12;</code>
          *
-         * @return The lLJPJOEMPFE.
+         *
+         * <pre>
+         * LLJPJOEMPFE
+         * </pre>
+         *
+         * <code>uint32 disable_type = 12;</code>
+         *
+         * @return The disableType.
          */
-        int getLLJPJOEMPFE();
+        int getDisableType();
 
         /**
-         * <code>uint32 FGACANHEBMH = 11;</code>
          *
-         * @return The fGACANHEBMH.
+         *
+         * <pre>
+         * FGACANHEBMH
+         * </pre>
+         *
+         * <code>uint32 buy_limit = 11;</code>
+         *
+         * @return The buyLimit.
          */
-        int getFGACANHEBMH();
+        int getBuyLimit();
 
         /**
          * <code>.ItemParam goods_item = 2;</code>
@@ -67,11 +85,17 @@ public final class HomeLimitedShopGoodsOuterClass {
                 int index);
 
         /**
-         * <code>uint32 GOMAIIJPDKD = 14;</code>
          *
-         * @return The gOMAIIJPDKD.
+         *
+         * <pre>
+         * GOMAIIJPDKD
+         * </pre>
+         *
+         * <code>uint32 goods_id = 14;</code>
+         *
+         * @return The goodsId.
          */
-        int getGOMAIIJPDKD();
+        int getGoodsId();
     }
     /**
      *
@@ -145,7 +169,7 @@ public final class HomeLimitedShopGoodsOuterClass {
                             }
                         case 40:
                             {
-                                kCHMFBKCLKO_ = input.readUInt32();
+                                boughtNum_ = input.readUInt32();
                                 break;
                             }
                         case 50:
@@ -164,17 +188,17 @@ public final class HomeLimitedShopGoodsOuterClass {
                             }
                         case 88:
                             {
-                                fGACANHEBMH_ = input.readUInt32();
+                                buyLimit_ = input.readUInt32();
                                 break;
                             }
                         case 96:
                             {
-                                lLJPJOEMPFE_ = input.readUInt32();
+                                disableType_ = input.readUInt32();
                                 break;
                             }
                         case 112:
                             {
-                                gOMAIIJPDKD_ = input.readUInt32();
+                                goodsId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -215,40 +239,58 @@ public final class HomeLimitedShopGoodsOuterClass {
                                     .class);
         }
 
-        public static final int KCHMFBKCLKO_FIELD_NUMBER = 5;
-        private int kCHMFBKCLKO_;
+        public static final int BOUGHT_NUM_FIELD_NUMBER = 5;
+        private int boughtNum_;
         /**
-         * <code>uint32 KCHMFBKCLKO = 5;</code>
          *
-         * @return The kCHMFBKCLKO.
+         *
+         * <pre>
+         * KCHMFBKCLKO
+         * </pre>
+         *
+         * <code>uint32 bought_num = 5;</code>
+         *
+         * @return The boughtNum.
          */
         @java.lang.Override
-        public int getKCHMFBKCLKO() {
-            return kCHMFBKCLKO_;
+        public int getBoughtNum() {
+            return boughtNum_;
         }
 
-        public static final int LLJPJOEMPFE_FIELD_NUMBER = 12;
-        private int lLJPJOEMPFE_;
+        public static final int DISABLE_TYPE_FIELD_NUMBER = 12;
+        private int disableType_;
         /**
-         * <code>uint32 LLJPJOEMPFE = 12;</code>
          *
-         * @return The lLJPJOEMPFE.
+         *
+         * <pre>
+         * LLJPJOEMPFE
+         * </pre>
+         *
+         * <code>uint32 disable_type = 12;</code>
+         *
+         * @return The disableType.
          */
         @java.lang.Override
-        public int getLLJPJOEMPFE() {
-            return lLJPJOEMPFE_;
+        public int getDisableType() {
+            return disableType_;
         }
 
-        public static final int FGACANHEBMH_FIELD_NUMBER = 11;
-        private int fGACANHEBMH_;
+        public static final int BUY_LIMIT_FIELD_NUMBER = 11;
+        private int buyLimit_;
         /**
-         * <code>uint32 FGACANHEBMH = 11;</code>
          *
-         * @return The fGACANHEBMH.
+         *
+         * <pre>
+         * FGACANHEBMH
+         * </pre>
+         *
+         * <code>uint32 buy_limit = 11;</code>
+         *
+         * @return The buyLimit.
          */
         @java.lang.Override
-        public int getFGACANHEBMH() {
-            return fGACANHEBMH_;
+        public int getBuyLimit() {
+            return buyLimit_;
         }
 
         public static final int GOODS_ITEM_FIELD_NUMBER = 2;
@@ -312,16 +354,22 @@ public final class HomeLimitedShopGoodsOuterClass {
             return costItemList_.get(index);
         }
 
-        public static final int GOMAIIJPDKD_FIELD_NUMBER = 14;
-        private int gOMAIIJPDKD_;
+        public static final int GOODS_ID_FIELD_NUMBER = 14;
+        private int goodsId_;
         /**
-         * <code>uint32 GOMAIIJPDKD = 14;</code>
          *
-         * @return The gOMAIIJPDKD.
+         *
+         * <pre>
+         * GOMAIIJPDKD
+         * </pre>
+         *
+         * <code>uint32 goods_id = 14;</code>
+         *
+         * @return The goodsId.
          */
         @java.lang.Override
-        public int getGOMAIIJPDKD() {
-            return gOMAIIJPDKD_;
+        public int getGoodsId() {
+            return goodsId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -341,20 +389,20 @@ public final class HomeLimitedShopGoodsOuterClass {
             if (goodsItem_ != null) {
                 output.writeMessage(2, getGoodsItem());
             }
-            if (kCHMFBKCLKO_ != 0) {
-                output.writeUInt32(5, kCHMFBKCLKO_);
+            if (boughtNum_ != 0) {
+                output.writeUInt32(5, boughtNum_);
             }
             for (int i = 0; i < costItemList_.size(); i++) {
                 output.writeMessage(6, costItemList_.get(i));
             }
-            if (fGACANHEBMH_ != 0) {
-                output.writeUInt32(11, fGACANHEBMH_);
+            if (buyLimit_ != 0) {
+                output.writeUInt32(11, buyLimit_);
             }
-            if (lLJPJOEMPFE_ != 0) {
-                output.writeUInt32(12, lLJPJOEMPFE_);
+            if (disableType_ != 0) {
+                output.writeUInt32(12, disableType_);
             }
-            if (gOMAIIJPDKD_ != 0) {
-                output.writeUInt32(14, gOMAIIJPDKD_);
+            if (goodsId_ != 0) {
+                output.writeUInt32(14, goodsId_);
             }
             unknownFields.writeTo(output);
         }
@@ -368,20 +416,20 @@ public final class HomeLimitedShopGoodsOuterClass {
             if (goodsItem_ != null) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGoodsItem());
             }
-            if (kCHMFBKCLKO_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, kCHMFBKCLKO_);
+            if (boughtNum_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, boughtNum_);
             }
             for (int i = 0; i < costItemList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, costItemList_.get(i));
             }
-            if (fGACANHEBMH_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, fGACANHEBMH_);
+            if (buyLimit_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, buyLimit_);
             }
-            if (lLJPJOEMPFE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, lLJPJOEMPFE_);
+            if (disableType_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, disableType_);
             }
-            if (gOMAIIJPDKD_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, gOMAIIJPDKD_);
+            if (goodsId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, goodsId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -401,15 +449,15 @@ public final class HomeLimitedShopGoodsOuterClass {
             emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods other =
                     (emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods) obj;
 
-            if (getKCHMFBKCLKO() != other.getKCHMFBKCLKO()) return false;
-            if (getLLJPJOEMPFE() != other.getLLJPJOEMPFE()) return false;
-            if (getFGACANHEBMH() != other.getFGACANHEBMH()) return false;
+            if (getBoughtNum() != other.getBoughtNum()) return false;
+            if (getDisableType() != other.getDisableType()) return false;
+            if (getBuyLimit() != other.getBuyLimit()) return false;
             if (hasGoodsItem() != other.hasGoodsItem()) return false;
             if (hasGoodsItem()) {
                 if (!getGoodsItem().equals(other.getGoodsItem())) return false;
             }
             if (!getCostItemListList().equals(other.getCostItemListList())) return false;
-            if (getGOMAIIJPDKD() != other.getGOMAIIJPDKD()) return false;
+            if (getGoodsId() != other.getGoodsId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -421,12 +469,12 @@ public final class HomeLimitedShopGoodsOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + KCHMFBKCLKO_FIELD_NUMBER;
-            hash = (53 * hash) + getKCHMFBKCLKO();
-            hash = (37 * hash) + LLJPJOEMPFE_FIELD_NUMBER;
-            hash = (53 * hash) + getLLJPJOEMPFE();
-            hash = (37 * hash) + FGACANHEBMH_FIELD_NUMBER;
-            hash = (53 * hash) + getFGACANHEBMH();
+            hash = (37 * hash) + BOUGHT_NUM_FIELD_NUMBER;
+            hash = (53 * hash) + getBoughtNum();
+            hash = (37 * hash) + DISABLE_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getDisableType();
+            hash = (37 * hash) + BUY_LIMIT_FIELD_NUMBER;
+            hash = (53 * hash) + getBuyLimit();
             if (hasGoodsItem()) {
                 hash = (37 * hash) + GOODS_ITEM_FIELD_NUMBER;
                 hash = (53 * hash) + getGoodsItem().hashCode();
@@ -435,8 +483,8 @@ public final class HomeLimitedShopGoodsOuterClass {
                 hash = (37 * hash) + COST_ITEM_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getCostItemListList().hashCode();
             }
-            hash = (37 * hash) + GOMAIIJPDKD_FIELD_NUMBER;
-            hash = (53 * hash) + getGOMAIIJPDKD();
+            hash = (37 * hash) + GOODS_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getGoodsId();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -595,11 +643,11 @@ public final class HomeLimitedShopGoodsOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                kCHMFBKCLKO_ = 0;
+                boughtNum_ = 0;
 
-                lLJPJOEMPFE_ = 0;
+                disableType_ = 0;
 
-                fGACANHEBMH_ = 0;
+                buyLimit_ = 0;
 
                 if (goodsItemBuilder_ == null) {
                     goodsItem_ = null;
@@ -613,7 +661,7 @@ public final class HomeLimitedShopGoodsOuterClass {
                 } else {
                     costItemListBuilder_.clear();
                 }
-                gOMAIIJPDKD_ = 0;
+                goodsId_ = 0;
 
                 return this;
             }
@@ -647,9 +695,9 @@ public final class HomeLimitedShopGoodsOuterClass {
                 emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods result =
                         new emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods(this);
                 int from_bitField0_ = bitField0_;
-                result.kCHMFBKCLKO_ = kCHMFBKCLKO_;
-                result.lLJPJOEMPFE_ = lLJPJOEMPFE_;
-                result.fGACANHEBMH_ = fGACANHEBMH_;
+                result.boughtNum_ = boughtNum_;
+                result.disableType_ = disableType_;
+                result.buyLimit_ = buyLimit_;
                 if (goodsItemBuilder_ == null) {
                     result.goodsItem_ = goodsItem_;
                 } else {
@@ -664,7 +712,7 @@ public final class HomeLimitedShopGoodsOuterClass {
                 } else {
                     result.costItemList_ = costItemListBuilder_.build();
                 }
-                result.gOMAIIJPDKD_ = gOMAIIJPDKD_;
+                result.goodsId_ = goodsId_;
                 onBuilt();
                 return result;
             }
@@ -723,14 +771,14 @@ public final class HomeLimitedShopGoodsOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods
                                 .getDefaultInstance()) return this;
-                if (other.getKCHMFBKCLKO() != 0) {
-                    setKCHMFBKCLKO(other.getKCHMFBKCLKO());
+                if (other.getBoughtNum() != 0) {
+                    setBoughtNum(other.getBoughtNum());
                 }
-                if (other.getLLJPJOEMPFE() != 0) {
-                    setLLJPJOEMPFE(other.getLLJPJOEMPFE());
+                if (other.getDisableType() != 0) {
+                    setDisableType(other.getDisableType());
                 }
-                if (other.getFGACANHEBMH() != 0) {
-                    setFGACANHEBMH(other.getFGACANHEBMH());
+                if (other.getBuyLimit() != 0) {
+                    setBuyLimit(other.getBuyLimit());
                 }
                 if (other.hasGoodsItem()) {
                     mergeGoodsItem(other.getGoodsItem());
@@ -762,8 +810,8 @@ public final class HomeLimitedShopGoodsOuterClass {
                         }
                     }
                 }
-                if (other.getGOMAIIJPDKD() != 0) {
-                    setGOMAIIJPDKD(other.getGOMAIIJPDKD());
+                if (other.getGoodsId() != 0) {
+                    setGoodsId(other.getGoodsId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -799,104 +847,158 @@ public final class HomeLimitedShopGoodsOuterClass {
 
             private int bitField0_;
 
-            private int kCHMFBKCLKO_;
+            private int boughtNum_;
             /**
-             * <code>uint32 KCHMFBKCLKO = 5;</code>
              *
-             * @return The kCHMFBKCLKO.
+             *
+             * <pre>
+             * KCHMFBKCLKO
+             * </pre>
+             *
+             * <code>uint32 bought_num = 5;</code>
+             *
+             * @return The boughtNum.
              */
             @java.lang.Override
-            public int getKCHMFBKCLKO() {
-                return kCHMFBKCLKO_;
+            public int getBoughtNum() {
+                return boughtNum_;
             }
             /**
-             * <code>uint32 KCHMFBKCLKO = 5;</code>
              *
-             * @param value The kCHMFBKCLKO to set.
+             *
+             * <pre>
+             * KCHMFBKCLKO
+             * </pre>
+             *
+             * <code>uint32 bought_num = 5;</code>
+             *
+             * @param value The boughtNum to set.
              * @return This builder for chaining.
              */
-            public Builder setKCHMFBKCLKO(int value) {
+            public Builder setBoughtNum(int value) {
 
-                kCHMFBKCLKO_ = value;
+                boughtNum_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 KCHMFBKCLKO = 5;</code>
+             *
+             *
+             * <pre>
+             * KCHMFBKCLKO
+             * </pre>
+             *
+             * <code>uint32 bought_num = 5;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearKCHMFBKCLKO() {
+            public Builder clearBoughtNum() {
 
-                kCHMFBKCLKO_ = 0;
+                boughtNum_ = 0;
                 onChanged();
                 return this;
             }
 
-            private int lLJPJOEMPFE_;
+            private int disableType_;
             /**
-             * <code>uint32 LLJPJOEMPFE = 12;</code>
              *
-             * @return The lLJPJOEMPFE.
+             *
+             * <pre>
+             * LLJPJOEMPFE
+             * </pre>
+             *
+             * <code>uint32 disable_type = 12;</code>
+             *
+             * @return The disableType.
              */
             @java.lang.Override
-            public int getLLJPJOEMPFE() {
-                return lLJPJOEMPFE_;
+            public int getDisableType() {
+                return disableType_;
             }
             /**
-             * <code>uint32 LLJPJOEMPFE = 12;</code>
              *
-             * @param value The lLJPJOEMPFE to set.
+             *
+             * <pre>
+             * LLJPJOEMPFE
+             * </pre>
+             *
+             * <code>uint32 disable_type = 12;</code>
+             *
+             * @param value The disableType to set.
              * @return This builder for chaining.
              */
-            public Builder setLLJPJOEMPFE(int value) {
+            public Builder setDisableType(int value) {
 
-                lLJPJOEMPFE_ = value;
+                disableType_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 LLJPJOEMPFE = 12;</code>
+             *
+             *
+             * <pre>
+             * LLJPJOEMPFE
+             * </pre>
+             *
+             * <code>uint32 disable_type = 12;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearLLJPJOEMPFE() {
+            public Builder clearDisableType() {
 
-                lLJPJOEMPFE_ = 0;
+                disableType_ = 0;
                 onChanged();
                 return this;
             }
 
-            private int fGACANHEBMH_;
+            private int buyLimit_;
             /**
-             * <code>uint32 FGACANHEBMH = 11;</code>
              *
-             * @return The fGACANHEBMH.
+             *
+             * <pre>
+             * FGACANHEBMH
+             * </pre>
+             *
+             * <code>uint32 buy_limit = 11;</code>
+             *
+             * @return The buyLimit.
              */
             @java.lang.Override
-            public int getFGACANHEBMH() {
-                return fGACANHEBMH_;
+            public int getBuyLimit() {
+                return buyLimit_;
             }
             /**
-             * <code>uint32 FGACANHEBMH = 11;</code>
              *
-             * @param value The fGACANHEBMH to set.
+             *
+             * <pre>
+             * FGACANHEBMH
+             * </pre>
+             *
+             * <code>uint32 buy_limit = 11;</code>
+             *
+             * @param value The buyLimit to set.
              * @return This builder for chaining.
              */
-            public Builder setFGACANHEBMH(int value) {
+            public Builder setBuyLimit(int value) {
 
-                fGACANHEBMH_ = value;
+                buyLimit_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 FGACANHEBMH = 11;</code>
+             *
+             *
+             * <pre>
+             * FGACANHEBMH
+             * </pre>
+             *
+             * <code>uint32 buy_limit = 11;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearFGACANHEBMH() {
+            public Builder clearBuyLimit() {
 
-                fGACANHEBMH_ = 0;
+                buyLimit_ = 0;
                 onChanged();
                 return this;
             }
@@ -1246,36 +1348,54 @@ public final class HomeLimitedShopGoodsOuterClass {
                 return costItemListBuilder_;
             }
 
-            private int gOMAIIJPDKD_;
+            private int goodsId_;
             /**
-             * <code>uint32 GOMAIIJPDKD = 14;</code>
              *
-             * @return The gOMAIIJPDKD.
+             *
+             * <pre>
+             * GOMAIIJPDKD
+             * </pre>
+             *
+             * <code>uint32 goods_id = 14;</code>
+             *
+             * @return The goodsId.
              */
             @java.lang.Override
-            public int getGOMAIIJPDKD() {
-                return gOMAIIJPDKD_;
+            public int getGoodsId() {
+                return goodsId_;
             }
             /**
-             * <code>uint32 GOMAIIJPDKD = 14;</code>
              *
-             * @param value The gOMAIIJPDKD to set.
+             *
+             * <pre>
+             * GOMAIIJPDKD
+             * </pre>
+             *
+             * <code>uint32 goods_id = 14;</code>
+             *
+             * @param value The goodsId to set.
              * @return This builder for chaining.
              */
-            public Builder setGOMAIIJPDKD(int value) {
+            public Builder setGoodsId(int value) {
 
-                gOMAIIJPDKD_ = value;
+                goodsId_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 GOMAIIJPDKD = 14;</code>
+             *
+             *
+             * <pre>
+             * GOMAIIJPDKD
+             * </pre>
+             *
+             * <code>uint32 goods_id = 14;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearGOMAIIJPDKD() {
+            public Builder clearGoodsId() {
 
-                gOMAIIJPDKD_ = 0;
+                goodsId_ = 0;
                 onChanged();
                 return this;
             }
@@ -1351,12 +1471,12 @@ public final class HomeLimitedShopGoodsOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032HomeLimitedShopGoods.proto\032\017ItemParam."
-                    + "proto\"\256\001\n\024HomeLimitedShopGoods\022\023\n\013KCHMFB"
-                    + "KCLKO\030\005 \001(\r\022\023\n\013LLJPJOEMPFE\030\014 \001(\r\022\023\n\013FGAC"
-                    + "ANHEBMH\030\013 \001(\r\022\036\n\ngoods_item\030\002 \001(\0132\n.Item"
-                    + "Param\022\"\n\016cost_item_list\030\006 \003(\0132\n.ItemPara"
-                    + "m\022\023\n\013GOMAIIJPDKD\030\016 \001(\rB\033\n\031emu.grasscutte"
-                    + "r.net.protob\006proto3"
+                    + "proto\"\251\001\n\024HomeLimitedShopGoods\022\022\n\nbought"
+                    + "_num\030\005 \001(\r\022\024\n\014disable_type\030\014 \001(\r\022\021\n\tbuy_"
+                    + "limit\030\013 \001(\r\022\036\n\ngoods_item\030\002 \001(\0132\n.ItemPa"
+                    + "ram\022\"\n\016cost_item_list\030\006 \003(\0132\n.ItemParam\022"
+                    + "\020\n\010goods_id\030\016 \001(\rB\033\n\031emu.grasscutter.net"
+                    + ".protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1369,12 +1489,7 @@ public final class HomeLimitedShopGoodsOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_HomeLimitedShopGoods_descriptor,
                         new java.lang.String[] {
-                            "KCHMFBKCLKO",
-                            "LLJPJOEMPFE",
-                            "FGACANHEBMH",
-                            "GoodsItem",
-                            "CostItemList",
-                            "GOMAIIJPDKD",
+                            "BoughtNum", "DisableType", "BuyLimit", "GoodsItem", "CostItemList", "GoodsId",
                         });
         emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
     }

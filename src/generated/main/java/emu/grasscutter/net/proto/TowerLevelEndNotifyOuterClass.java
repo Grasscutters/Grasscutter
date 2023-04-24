@@ -18,7 +18,7 @@ public final class TowerLevelEndNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 nextFloorId = 11;</code>
+         * <code>uint32 next_floor_id = 11;</code>
          *
          * @return The nextFloorId.
          */
@@ -58,7 +58,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 int index);
 
         /**
-         * <code>uint32 continueState = 8;</code>
+         * <code>uint32 continue_state = 8;</code>
          *
          * @return The continueState.
          */
@@ -334,10 +334,10 @@ public final class TowerLevelEndNotifyOuterClass {
             // @@protoc_insertion_point(enum_scope:TowerLevelEndNotify.ContinueStateType)
         }
 
-        public static final int NEXTFLOORID_FIELD_NUMBER = 11;
+        public static final int NEXT_FLOOR_ID_FIELD_NUMBER = 11;
         private int nextFloorId_;
         /**
-         * <code>uint32 nextFloorId = 11;</code>
+         * <code>uint32 next_floor_id = 11;</code>
          *
          * @return The nextFloorId.
          */
@@ -409,10 +409,10 @@ public final class TowerLevelEndNotifyOuterClass {
             return rewardItemList_.get(index);
         }
 
-        public static final int CONTINUESTATE_FIELD_NUMBER = 8;
+        public static final int CONTINUE_STATE_FIELD_NUMBER = 8;
         private int continueState_;
         /**
-         * <code>uint32 continueState = 8;</code>
+         * <code>uint32 continue_state = 8;</code>
          *
          * @return The continueState.
          */
@@ -535,7 +535,7 @@ public final class TowerLevelEndNotifyOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + NEXTFLOORID_FIELD_NUMBER;
+            hash = (37 * hash) + NEXT_FLOOR_ID_FIELD_NUMBER;
             hash = (53 * hash) + getNextFloorId();
             if (getFinishedStarCondListCount() > 0) {
                 hash = (37 * hash) + FINISHED_STAR_COND_LIST_FIELD_NUMBER;
@@ -545,7 +545,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 hash = (37 * hash) + REWARD_ITEM_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getRewardItemListList().hashCode();
             }
-            hash = (37 * hash) + CONTINUESTATE_FIELD_NUMBER;
+            hash = (37 * hash) + CONTINUE_STATE_FIELD_NUMBER;
             hash = (53 * hash) + getContinueState();
             hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSuccess());
@@ -910,7 +910,7 @@ public final class TowerLevelEndNotifyOuterClass {
 
             private int nextFloorId_;
             /**
-             * <code>uint32 nextFloorId = 11;</code>
+             * <code>uint32 next_floor_id = 11;</code>
              *
              * @return The nextFloorId.
              */
@@ -919,7 +919,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 return nextFloorId_;
             }
             /**
-             * <code>uint32 nextFloorId = 11;</code>
+             * <code>uint32 next_floor_id = 11;</code>
              *
              * @param value The nextFloorId to set.
              * @return This builder for chaining.
@@ -931,7 +931,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 nextFloorId = 11;</code>
+             * <code>uint32 next_floor_id = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -1255,7 +1255,7 @@ public final class TowerLevelEndNotifyOuterClass {
 
             private int continueState_;
             /**
-             * <code>uint32 continueState = 8;</code>
+             * <code>uint32 continue_state = 8;</code>
              *
              * @return The continueState.
              */
@@ -1264,7 +1264,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 return continueState_;
             }
             /**
-             * <code>uint32 continueState = 8;</code>
+             * <code>uint32 continue_state = 8;</code>
              *
              * @param value The continueState to set.
              * @return This builder for chaining.
@@ -1276,7 +1276,7 @@ public final class TowerLevelEndNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 continueState = 8;</code>
+             * <code>uint32 continue_state = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -1391,15 +1391,15 @@ public final class TowerLevelEndNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\031TowerLevelEndNotify.proto\032\017ItemParam.p"
-                    + "roto\"\270\002\n\023TowerLevelEndNotify\022\023\n\013nextFloo"
-                    + "rId\030\013 \001(\r\022\037\n\027finished_star_cond_list\030\r \003"
-                    + "(\r\022$\n\020reward_item_list\030\t \003(\0132\n.ItemParam"
-                    + "\022\025\n\rcontinueState\030\010 \001(\r\022\022\n\nis_success\030\007 "
-                    + "\001(\010\"\231\001\n\021ContinueStateType\022(\n$CONTINUE_ST"
-                    + "ATE_TYPE_CAN_NOT_CONTINUE\020\000\022,\n(CONTINUE_"
-                    + "STATE_TYPE_CAN_ENTER_NEXT_LEVEL\020\001\022,\n(CON"
-                    + "TINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR\020\002B"
-                    + "\033\n\031emu.grasscutter.net.protob\006proto3"
+                    + "roto\"\273\002\n\023TowerLevelEndNotify\022\025\n\rnext_flo"
+                    + "or_id\030\013 \001(\r\022\037\n\027finished_star_cond_list\030\r"
+                    + " \003(\r\022$\n\020reward_item_list\030\t \003(\0132\n.ItemPar"
+                    + "am\022\026\n\016continue_state\030\010 \001(\r\022\022\n\nis_success"
+                    + "\030\007 \001(\010\"\231\001\n\021ContinueStateType\022(\n$CONTINUE"
+                    + "_STATE_TYPE_CAN_NOT_CONTINUE\020\000\022,\n(CONTIN"
+                    + "UE_STATE_TYPE_CAN_ENTER_NEXT_LEVEL\020\001\022,\n("
+                    + "CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR"
+                    + "\020\002B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

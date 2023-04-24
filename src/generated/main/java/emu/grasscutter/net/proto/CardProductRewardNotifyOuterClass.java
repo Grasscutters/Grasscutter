@@ -25,7 +25,7 @@ public final class CardProductRewardNotifyOuterClass {
         int getHcoin();
 
         /**
-         * <code>uint32 remainDays = 6;</code>
+         * <code>uint32 remain_days = 6;</code>
          *
          * @return The remainDays.
          */
@@ -162,10 +162,10 @@ public final class CardProductRewardNotifyOuterClass {
             return hcoin_;
         }
 
-        public static final int REMAINDAYS_FIELD_NUMBER = 6;
+        public static final int REMAIN_DAYS_FIELD_NUMBER = 6;
         private int remainDays_;
         /**
-         * <code>uint32 remainDays = 6;</code>
+         * <code>uint32 remain_days = 6;</code>
          *
          * @return The remainDays.
          */
@@ -286,7 +286,7 @@ public final class CardProductRewardNotifyOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + HCOIN_FIELD_NUMBER;
             hash = (53 * hash) + getHcoin();
-            hash = (37 * hash) + REMAINDAYS_FIELD_NUMBER;
+            hash = (37 * hash) + REMAIN_DAYS_FIELD_NUMBER;
             hash = (53 * hash) + getRemainDays();
             hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
             hash = (53 * hash) + getProductId().hashCode();
@@ -641,7 +641,7 @@ public final class CardProductRewardNotifyOuterClass {
 
             private int remainDays_;
             /**
-             * <code>uint32 remainDays = 6;</code>
+             * <code>uint32 remain_days = 6;</code>
              *
              * @return The remainDays.
              */
@@ -650,7 +650,7 @@ public final class CardProductRewardNotifyOuterClass {
                 return remainDays_;
             }
             /**
-             * <code>uint32 remainDays = 6;</code>
+             * <code>uint32 remain_days = 6;</code>
              *
              * @param value The remainDays to set.
              * @return This builder for chaining.
@@ -662,7 +662,7 @@ public final class CardProductRewardNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 remainDays = 6;</code>
+             * <code>uint32 remain_days = 6;</code>
              *
              * @return This builder for chaining.
              */
@@ -820,10 +820,10 @@ public final class CardProductRewardNotifyOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\035CardProductRewardNotify.proto\"P\n\027CardP"
-                    + "roductRewardNotify\022\r\n\005hcoin\030\002 \001(\r\022\022\n\nrem"
-                    + "ainDays\030\006 \001(\r\022\022\n\nproduct_id\030\017 \001(\tB\033\n\031emu"
-                    + ".grasscutter.net.protob\006proto3"
+            "\n\035CardProductRewardNotify.proto\"Q\n\027CardP"
+                    + "roductRewardNotify\022\r\n\005hcoin\030\002 \001(\r\022\023\n\013rem"
+                    + "ain_days\030\006 \001(\r\022\022\n\nproduct_id\030\017 \001(\tB\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

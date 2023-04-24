@@ -25,11 +25,11 @@ public final class EvtCreateGadgetNotifyOuterClass {
         boolean getFGMFGIKBNPJ();
 
         /**
-         * <code>bool isPeerIdFromPlayer = 14;</code>
+         * <code>bool ILAPAEOJDPE = 14;</code>
          *
-         * @return The isPeerIdFromPlayer.
+         * @return The iLAPAEOJDPE.
          */
-        boolean getIsPeerIdFromPlayer();
+        boolean getILAPAEOJDPE();
 
         /**
          * <code>uint64 guid = 15;</code>
@@ -115,6 +115,12 @@ public final class EvtCreateGadgetNotifyOuterClass {
         int getOwnerEntityId();
 
         /**
+         *
+         *
+         * <pre>
+         * KEDBNJGFGOI
+         * </pre>
+         *
          * <code>bool is_async_load = 1128;</code>
          *
          * @return The isAsyncLoad.
@@ -203,11 +209,11 @@ public final class EvtCreateGadgetNotifyOuterClass {
         int getTargetEntityId();
 
         /**
-         * <code>bool Unk3300_EJNBIGLGMII = 1628;</code>
+         * <code>bool is_peer_id_from_player = 1628;</code>
          *
-         * @return The unk3300EJNBIGLGMII.
+         * @return The isPeerIdFromPlayer.
          */
-        boolean getUnk3300EJNBIGLGMII();
+        boolean getIsPeerIdFromPlayer();
 
         /**
          *
@@ -393,7 +399,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                             }
                         case 112:
                             {
-                                isPeerIdFromPlayer_ = input.readBool();
+                                iLAPAEOJDPE_ = input.readBool();
                                 break;
                             }
                         case 120:
@@ -431,7 +437,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                             }
                         case 13024:
                             {
-                                unk3300EJNBIGLGMII_ = input.readBool();
+                                isPeerIdFromPlayer_ = input.readBool();
                                 break;
                             }
                         case 15560:
@@ -510,16 +516,16 @@ public final class EvtCreateGadgetNotifyOuterClass {
             return fGMFGIKBNPJ_;
         }
 
-        public static final int ISPEERIDFROMPLAYER_FIELD_NUMBER = 14;
-        private boolean isPeerIdFromPlayer_;
+        public static final int ILAPAEOJDPE_FIELD_NUMBER = 14;
+        private boolean iLAPAEOJDPE_;
         /**
-         * <code>bool isPeerIdFromPlayer = 14;</code>
+         * <code>bool ILAPAEOJDPE = 14;</code>
          *
-         * @return The isPeerIdFromPlayer.
+         * @return The iLAPAEOJDPE.
          */
         @java.lang.Override
-        public boolean getIsPeerIdFromPlayer() {
-            return isPeerIdFromPlayer_;
+        public boolean getILAPAEOJDPE() {
+            return iLAPAEOJDPE_;
         }
 
         public static final int GUID_FIELD_NUMBER = 15;
@@ -659,6 +665,12 @@ public final class EvtCreateGadgetNotifyOuterClass {
         public static final int IS_ASYNC_LOAD_FIELD_NUMBER = 1128;
         private boolean isAsyncLoad_;
         /**
+         *
+         *
+         * <pre>
+         * KEDBNJGFGOI
+         * </pre>
+         *
          * <code>bool is_async_load = 1128;</code>
          *
          * @return The isAsyncLoad.
@@ -796,16 +808,16 @@ public final class EvtCreateGadgetNotifyOuterClass {
             return targetEntityId_;
         }
 
-        public static final int UNK3300_EJNBIGLGMII_FIELD_NUMBER = 1628;
-        private boolean unk3300EJNBIGLGMII_;
+        public static final int IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER = 1628;
+        private boolean isPeerIdFromPlayer_;
         /**
-         * <code>bool Unk3300_EJNBIGLGMII = 1628;</code>
+         * <code>bool is_peer_id_from_player = 1628;</code>
          *
-         * @return The unk3300EJNBIGLGMII.
+         * @return The isPeerIdFromPlayer.
          */
         @java.lang.Override
-        public boolean getUnk3300EJNBIGLGMII() {
-            return unk3300EJNBIGLGMII_;
+        public boolean getIsPeerIdFromPlayer() {
+            return isPeerIdFromPlayer_;
         }
 
         public static final int INITEULERANGLES_FIELD_NUMBER = 13;
@@ -913,8 +925,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             if (initEulerAngles_ != null) {
                 output.writeMessage(13, getInitEulerAngles());
             }
-            if (isPeerIdFromPlayer_ != false) {
-                output.writeBool(14, isPeerIdFromPlayer_);
+            if (iLAPAEOJDPE_ != false) {
+                output.writeBool(14, iLAPAEOJDPE_);
             }
             if (guid_ != 0L) {
                 output.writeUInt64(15, guid_);
@@ -929,8 +941,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             if (isAsyncLoad_ != false) {
                 output.writeBool(1128, isAsyncLoad_);
             }
-            if (unk3300EJNBIGLGMII_ != false) {
-                output.writeBool(1628, unk3300EJNBIGLGMII_);
+            if (isPeerIdFromPlayer_ != false) {
+                output.writeBool(1628, isPeerIdFromPlayer_);
             }
             if (getTargetEntityIdListList().size() > 0) {
                 output.writeUInt32NoTag(15562);
@@ -989,8 +1001,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             if (initEulerAngles_ != null) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getInitEulerAngles());
             }
-            if (isPeerIdFromPlayer_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, isPeerIdFromPlayer_);
+            if (iLAPAEOJDPE_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, iLAPAEOJDPE_);
             }
             if (guid_ != 0L) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt64Size(15, guid_);
@@ -1012,8 +1024,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             if (isAsyncLoad_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(1128, isAsyncLoad_);
             }
-            if (unk3300EJNBIGLGMII_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1628, unk3300EJNBIGLGMII_);
+            if (isPeerIdFromPlayer_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1628, isPeerIdFromPlayer_);
             }
             {
                 int dataSize = 0;
@@ -1048,7 +1060,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                     (emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass.EvtCreateGadgetNotify) obj;
 
             if (getFGMFGIKBNPJ() != other.getFGMFGIKBNPJ()) return false;
-            if (getIsPeerIdFromPlayer() != other.getIsPeerIdFromPlayer()) return false;
+            if (getILAPAEOJDPE() != other.getILAPAEOJDPE()) return false;
             if (getGuid() != other.getGuid()) return false;
             if (hasInitPos() != other.hasInitPos()) return false;
             if (hasInitPos()) {
@@ -1068,7 +1080,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 return false;
             if (!getTargetEntityIdListList().equals(other.getTargetEntityIdListList())) return false;
             if (getTargetEntityId() != other.getTargetEntityId()) return false;
-            if (getUnk3300EJNBIGLGMII() != other.getUnk3300EJNBIGLGMII()) return false;
+            if (getIsPeerIdFromPlayer() != other.getIsPeerIdFromPlayer()) return false;
             if (hasInitEulerAngles() != other.hasInitEulerAngles()) return false;
             if (hasInitEulerAngles()) {
                 if (!getInitEulerAngles().equals(other.getInitEulerAngles())) return false;
@@ -1086,8 +1098,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + FGMFGIKBNPJ_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFGMFGIKBNPJ());
-            hash = (37 * hash) + ISPEERIDFROMPLAYER_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPeerIdFromPlayer());
+            hash = (37 * hash) + ILAPAEOJDPE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getILAPAEOJDPE());
             hash = (37 * hash) + GUID_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGuid());
             if (hasInitPos()) {
@@ -1124,8 +1136,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
             }
             hash = (37 * hash) + TARGET_ENTITY_ID_FIELD_NUMBER;
             hash = (53 * hash) + getTargetEntityId();
-            hash = (37 * hash) + UNK3300_EJNBIGLGMII_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnk3300EJNBIGLGMII());
+            hash = (37 * hash) + IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPeerIdFromPlayer());
             if (hasInitEulerAngles()) {
                 hash = (37 * hash) + INITEULERANGLES_FIELD_NUMBER;
                 hash = (53 * hash) + getInitEulerAngles().hashCode();
@@ -1290,7 +1302,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 super.clear();
                 fGMFGIKBNPJ_ = false;
 
-                isPeerIdFromPlayer_ = false;
+                iLAPAEOJDPE_ = false;
 
                 guid_ = 0L;
 
@@ -1326,7 +1338,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 targetEntityId_ = 0;
 
-                unk3300EJNBIGLGMII_ = false;
+                isPeerIdFromPlayer_ = false;
 
                 if (initEulerAnglesBuilder_ == null) {
                     initEulerAngles_ = null;
@@ -1369,7 +1381,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                                 this);
                 int from_bitField0_ = bitField0_;
                 result.fGMFGIKBNPJ_ = fGMFGIKBNPJ_;
-                result.isPeerIdFromPlayer_ = isPeerIdFromPlayer_;
+                result.iLAPAEOJDPE_ = iLAPAEOJDPE_;
                 result.guid_ = guid_;
                 if (initPosBuilder_ == null) {
                     result.initPos_ = initPos_;
@@ -1397,7 +1409,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 }
                 result.targetEntityIdList_ = targetEntityIdList_;
                 result.targetEntityId_ = targetEntityId_;
-                result.unk3300EJNBIGLGMII_ = unk3300EJNBIGLGMII_;
+                result.isPeerIdFromPlayer_ = isPeerIdFromPlayer_;
                 if (initEulerAnglesBuilder_ == null) {
                     result.initEulerAngles_ = initEulerAngles_;
                 } else {
@@ -1464,8 +1476,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 if (other.getFGMFGIKBNPJ() != false) {
                     setFGMFGIKBNPJ(other.getFGMFGIKBNPJ());
                 }
-                if (other.getIsPeerIdFromPlayer() != false) {
-                    setIsPeerIdFromPlayer(other.getIsPeerIdFromPlayer());
+                if (other.getILAPAEOJDPE() != false) {
+                    setILAPAEOJDPE(other.getILAPAEOJDPE());
                 }
                 if (other.getGuid() != 0L) {
                     setGuid(other.getGuid());
@@ -1526,8 +1538,8 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 if (other.getTargetEntityId() != 0) {
                     setTargetEntityId(other.getTargetEntityId());
                 }
-                if (other.getUnk3300EJNBIGLGMII() != false) {
-                    setUnk3300EJNBIGLGMII(other.getUnk3300EJNBIGLGMII());
+                if (other.getIsPeerIdFromPlayer() != false) {
+                    setIsPeerIdFromPlayer(other.getIsPeerIdFromPlayer());
                 }
                 if (other.hasInitEulerAngles()) {
                     mergeInitEulerAngles(other.getInitEulerAngles());
@@ -1600,36 +1612,36 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 return this;
             }
 
-            private boolean isPeerIdFromPlayer_;
+            private boolean iLAPAEOJDPE_;
             /**
-             * <code>bool isPeerIdFromPlayer = 14;</code>
+             * <code>bool ILAPAEOJDPE = 14;</code>
              *
-             * @return The isPeerIdFromPlayer.
+             * @return The iLAPAEOJDPE.
              */
             @java.lang.Override
-            public boolean getIsPeerIdFromPlayer() {
-                return isPeerIdFromPlayer_;
+            public boolean getILAPAEOJDPE() {
+                return iLAPAEOJDPE_;
             }
             /**
-             * <code>bool isPeerIdFromPlayer = 14;</code>
+             * <code>bool ILAPAEOJDPE = 14;</code>
              *
-             * @param value The isPeerIdFromPlayer to set.
+             * @param value The iLAPAEOJDPE to set.
              * @return This builder for chaining.
              */
-            public Builder setIsPeerIdFromPlayer(boolean value) {
+            public Builder setILAPAEOJDPE(boolean value) {
 
-                isPeerIdFromPlayer_ = value;
+                iLAPAEOJDPE_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool isPeerIdFromPlayer = 14;</code>
+             * <code>bool ILAPAEOJDPE = 14;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearIsPeerIdFromPlayer() {
+            public Builder clearILAPAEOJDPE() {
 
-                isPeerIdFromPlayer_ = false;
+                iLAPAEOJDPE_ = false;
                 onChanged();
                 return this;
             }
@@ -2056,6 +2068,12 @@ public final class EvtCreateGadgetNotifyOuterClass {
 
             private boolean isAsyncLoad_;
             /**
+             *
+             *
+             * <pre>
+             * KEDBNJGFGOI
+             * </pre>
+             *
              * <code>bool is_async_load = 1128;</code>
              *
              * @return The isAsyncLoad.
@@ -2065,6 +2083,12 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 return isAsyncLoad_;
             }
             /**
+             *
+             *
+             * <pre>
+             * KEDBNJGFGOI
+             * </pre>
+             *
              * <code>bool is_async_load = 1128;</code>
              *
              * @param value The isAsyncLoad to set.
@@ -2077,6 +2101,12 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * KEDBNJGFGOI
+             * </pre>
+             *
              * <code>bool is_async_load = 1128;</code>
              *
              * @return This builder for chaining.
@@ -2446,36 +2476,36 @@ public final class EvtCreateGadgetNotifyOuterClass {
                 return this;
             }
 
-            private boolean unk3300EJNBIGLGMII_;
+            private boolean isPeerIdFromPlayer_;
             /**
-             * <code>bool Unk3300_EJNBIGLGMII = 1628;</code>
+             * <code>bool is_peer_id_from_player = 1628;</code>
              *
-             * @return The unk3300EJNBIGLGMII.
+             * @return The isPeerIdFromPlayer.
              */
             @java.lang.Override
-            public boolean getUnk3300EJNBIGLGMII() {
-                return unk3300EJNBIGLGMII_;
+            public boolean getIsPeerIdFromPlayer() {
+                return isPeerIdFromPlayer_;
             }
             /**
-             * <code>bool Unk3300_EJNBIGLGMII = 1628;</code>
+             * <code>bool is_peer_id_from_player = 1628;</code>
              *
-             * @param value The unk3300EJNBIGLGMII to set.
+             * @param value The isPeerIdFromPlayer to set.
              * @return This builder for chaining.
              */
-            public Builder setUnk3300EJNBIGLGMII(boolean value) {
+            public Builder setIsPeerIdFromPlayer(boolean value) {
 
-                unk3300EJNBIGLGMII_ = value;
+                isPeerIdFromPlayer_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool Unk3300_EJNBIGLGMII = 1628;</code>
+             * <code>bool is_peer_id_from_player = 1628;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearUnk3300EJNBIGLGMII() {
+            public Builder clearIsPeerIdFromPlayer() {
 
-                unk3300EJNBIGLGMII_ = false;
+                isPeerIdFromPlayer_ = false;
                 onChanged();
                 return this;
             }
@@ -2738,21 +2768,20 @@ public final class EvtCreateGadgetNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033EvtCreateGadgetNotify.proto\032\021ForwardTy"
-                    + "pe.proto\032\014Vector.proto\"\364\003\n\025EvtCreateGadg"
-                    + "etNotify\022\023\n\013FGMFGIKBNPJ\030\007 \001(\010\022\032\n\022isPeerI"
-                    + "dFromPlayer\030\016 \001(\010\022\014\n\004guid\030\017 \001(\004\022\030\n\007InitP"
-                    + "os\030\005 \001(\0132\007.Vector\022\"\n\014forward_type\030\003 \001(\0162"
-                    + "\014.ForwardType\022\021\n\tcamp_type\030\001 \001(\r\022\021\n\tenti"
-                    + "ty_id\030\006 \001(\r\022\023\n\013JKHNMNELMJL\030\t \001(\r\022\027\n\017owne"
-                    + "r_entity_id\030\n \001(\r\022\026\n\ris_async_load\030\350\010 \001("
-                    + "\010\022\017\n\007room_id\030\013 \001(\r\022\017\n\007camp_id\030\010 \001(\r\022\021\n\tc"
-                    + "onfig_id\030\002 \001(\r\022\034\n\024prop_owner_entity_id\030\004"
-                    + " \001(\r\022%\n\034target_lock_point_index_list\030\306\004 "
-                    + "\003(\r\022\036\n\025target_entity_id_list\030\231\017 \003(\r\022\030\n\020t"
-                    + "arget_entity_id\030\014 \001(\r\022\034\n\023Unk3300_EJNBIGL"
-                    + "GMII\030\334\014 \001(\010\022 \n\017InitEulerAngles\030\r \001(\0132\007.V"
-                    + "ectorB\033\n\031emu.grasscutter.net.protob\006prot"
-                    + "o3"
+                    + "pe.proto\032\014Vector.proto\"\360\003\n\025EvtCreateGadg"
+                    + "etNotify\022\023\n\013FGMFGIKBNPJ\030\007 \001(\010\022\023\n\013ILAPAEO"
+                    + "JDPE\030\016 \001(\010\022\014\n\004guid\030\017 \001(\004\022\030\n\007InitPos\030\005 \001("
+                    + "\0132\007.Vector\022\"\n\014forward_type\030\003 \001(\0162\014.Forwa"
+                    + "rdType\022\021\n\tcamp_type\030\001 \001(\r\022\021\n\tentity_id\030\006"
+                    + " \001(\r\022\023\n\013JKHNMNELMJL\030\t \001(\r\022\027\n\017owner_entit"
+                    + "y_id\030\n \001(\r\022\026\n\ris_async_load\030\350\010 \001(\010\022\017\n\007ro"
+                    + "om_id\030\013 \001(\r\022\017\n\007camp_id\030\010 \001(\r\022\021\n\tconfig_i"
+                    + "d\030\002 \001(\r\022\034\n\024prop_owner_entity_id\030\004 \001(\r\022%\n"
+                    + "\034target_lock_point_index_list\030\306\004 \003(\r\022\036\n\025"
+                    + "target_entity_id_list\030\231\017 \003(\r\022\030\n\020target_e"
+                    + "ntity_id\030\014 \001(\r\022\037\n\026is_peer_id_from_player"
+                    + "\030\334\014 \001(\010\022 \n\017InitEulerAngles\030\r \001(\0132\007.Vecto"
+                    + "rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -2767,7 +2796,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                         internal_static_EvtCreateGadgetNotify_descriptor,
                         new java.lang.String[] {
                             "FGMFGIKBNPJ",
-                            "IsPeerIdFromPlayer",
+                            "ILAPAEOJDPE",
                             "Guid",
                             "InitPos",
                             "ForwardType",
@@ -2783,7 +2812,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
                             "TargetLockPointIndexList",
                             "TargetEntityIdList",
                             "TargetEntityId",
-                            "Unk3300EJNBIGLGMII",
+                            "IsPeerIdFromPlayer",
                             "InitEulerAngles",
                         });
         emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();

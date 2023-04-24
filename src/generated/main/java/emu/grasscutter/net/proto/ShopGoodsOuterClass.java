@@ -31,11 +31,17 @@ public final class ShopGoodsOuterClass {
         int getMinLevel();
 
         /**
-         * <code>uint32 JAFFFHILNCD = 1817;</code>
          *
-         * @return The jAFFFHILNCD.
+         *
+         * <pre>
+         * JAFFFHILNCD
+         * </pre>
+         *
+         * <code>uint32 secondary_sheet_id = 1817;</code>
+         *
+         * @return The secondarySheetId.
          */
-        int getJAFFFHILNCD();
+        int getSecondarySheetId();
 
         /**
          * <code>.ItemParam goods_item = 8;</code>
@@ -123,20 +129,20 @@ public final class ShopGoodsOuterClass {
          * ALOPKNFLFBE ???
          * </pre>
          *
-         * <code>uint32 secondarySheetId = 570;</code>
+         * <code>uint32 JAFFFHILNCD = 570;</code>
          *
-         * @return The secondarySheetId.
+         * @return The jAFFFHILNCD.
          */
-        int getSecondarySheetId();
+        int getJAFFFHILNCD();
 
         /**
          *
          *
          * <pre>
-         * KCHMFBKCLKO ???
+         * KCHMFBKCLKO
          * </pre>
          *
-         * <code>uint32 boughtNum = 4;</code>
+         * <code>uint32 bought_num = 4;</code>
          *
          * @return The boughtNum.
          */
@@ -489,7 +495,7 @@ public final class ShopGoodsOuterClass {
                             }
                         case 4560:
                             {
-                                secondarySheetId_ = input.readUInt32();
+                                jAFFFHILNCD_ = input.readUInt32();
                                 break;
                             }
                         case 10752:
@@ -504,7 +510,7 @@ public final class ShopGoodsOuterClass {
                             }
                         case 14536:
                             {
-                                jAFFFHILNCD_ = input.readUInt32();
+                                secondarySheetId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -564,16 +570,22 @@ public final class ShopGoodsOuterClass {
             return minLevel_;
         }
 
-        public static final int JAFFFHILNCD_FIELD_NUMBER = 1817;
-        private int jAFFFHILNCD_;
+        public static final int SECONDARY_SHEET_ID_FIELD_NUMBER = 1817;
+        private int secondarySheetId_;
         /**
-         * <code>uint32 JAFFFHILNCD = 1817;</code>
          *
-         * @return The jAFFFHILNCD.
+         *
+         * <pre>
+         * JAFFFHILNCD
+         * </pre>
+         *
+         * <code>uint32 secondary_sheet_id = 1817;</code>
+         *
+         * @return The secondarySheetId.
          */
         @java.lang.Override
-        public int getJAFFFHILNCD() {
-            return jAFFFHILNCD_;
+        public int getSecondarySheetId() {
+            return secondarySheetId_;
         }
 
         public static final int GOODS_ITEM_FIELD_NUMBER = 8;
@@ -690,8 +702,8 @@ public final class ShopGoodsOuterClass {
 
         private int preGoodsIdListMemoizedSerializedSize = -1;
 
-        public static final int SECONDARYSHEETID_FIELD_NUMBER = 570;
-        private int secondarySheetId_;
+        public static final int JAFFFHILNCD_FIELD_NUMBER = 570;
+        private int jAFFFHILNCD_;
         /**
          *
          *
@@ -699,25 +711,25 @@ public final class ShopGoodsOuterClass {
          * ALOPKNFLFBE ???
          * </pre>
          *
-         * <code>uint32 secondarySheetId = 570;</code>
+         * <code>uint32 JAFFFHILNCD = 570;</code>
          *
-         * @return The secondarySheetId.
+         * @return The jAFFFHILNCD.
          */
         @java.lang.Override
-        public int getSecondarySheetId() {
-            return secondarySheetId_;
+        public int getJAFFFHILNCD() {
+            return jAFFFHILNCD_;
         }
 
-        public static final int BOUGHTNUM_FIELD_NUMBER = 4;
+        public static final int BOUGHT_NUM_FIELD_NUMBER = 4;
         private int boughtNum_;
         /**
          *
          *
          * <pre>
-         * KCHMFBKCLKO ???
+         * KCHMFBKCLKO
          * </pre>
          *
-         * <code>uint32 boughtNum = 4;</code>
+         * <code>uint32 bought_num = 4;</code>
          *
          * @return The boughtNum.
          */
@@ -1039,8 +1051,8 @@ public final class ShopGoodsOuterClass {
             if (disableType_ != 0) {
                 output.writeUInt32(505, disableType_);
             }
-            if (secondarySheetId_ != 0) {
-                output.writeUInt32(570, secondarySheetId_);
+            if (jAFFFHILNCD_ != 0) {
+                output.writeUInt32(570, jAFFFHILNCD_);
             }
             if (lLCOFLCEKDB_ != 0) {
                 output.writeUInt32(1344, lLCOFLCEKDB_);
@@ -1048,8 +1060,8 @@ public final class ShopGoodsOuterClass {
             if (lMOPLEOOIJM_ != 0) {
                 output.writeUInt32(1467, lMOPLEOOIJM_);
             }
-            if (jAFFFHILNCD_ != 0) {
-                output.writeUInt32(1817, jAFFFHILNCD_);
+            if (secondarySheetId_ != 0) {
+                output.writeUInt32(1817, secondarySheetId_);
             }
             unknownFields.writeTo(output);
         }
@@ -1119,8 +1131,8 @@ public final class ShopGoodsOuterClass {
             if (disableType_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(505, disableType_);
             }
-            if (secondarySheetId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(570, secondarySheetId_);
+            if (jAFFFHILNCD_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(570, jAFFFHILNCD_);
             }
             if (lLCOFLCEKDB_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1344, lLCOFLCEKDB_);
@@ -1128,8 +1140,8 @@ public final class ShopGoodsOuterClass {
             if (lMOPLEOOIJM_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1467, lMOPLEOOIJM_);
             }
-            if (jAFFFHILNCD_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1817, jAFFFHILNCD_);
+            if (secondarySheetId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1817, secondarySheetId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -1148,7 +1160,7 @@ public final class ShopGoodsOuterClass {
                     (emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoods) obj;
 
             if (getMinLevel() != other.getMinLevel()) return false;
-            if (getJAFFFHILNCD() != other.getJAFFFHILNCD()) return false;
+            if (getSecondarySheetId() != other.getSecondarySheetId()) return false;
             if (hasGoodsItem() != other.hasGoodsItem()) return false;
             if (hasGoodsItem()) {
                 if (!getGoodsItem().equals(other.getGoodsItem())) return false;
@@ -1156,7 +1168,7 @@ public final class ShopGoodsOuterClass {
             if (getEndTime() != other.getEndTime()) return false;
             if (getScoin() != other.getScoin()) return false;
             if (!getPreGoodsIdListList().equals(other.getPreGoodsIdListList())) return false;
-            if (getSecondarySheetId() != other.getSecondarySheetId()) return false;
+            if (getJAFFFHILNCD() != other.getJAFFFHILNCD()) return false;
             if (getBoughtNum() != other.getBoughtNum()) return false;
             if (getGoodsId() != other.getGoodsId()) return false;
             if (getMaxLevel() != other.getMaxLevel()) return false;
@@ -1183,8 +1195,8 @@ public final class ShopGoodsOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + MIN_LEVEL_FIELD_NUMBER;
             hash = (53 * hash) + getMinLevel();
-            hash = (37 * hash) + JAFFFHILNCD_FIELD_NUMBER;
-            hash = (53 * hash) + getJAFFFHILNCD();
+            hash = (37 * hash) + SECONDARY_SHEET_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSecondarySheetId();
             if (hasGoodsItem()) {
                 hash = (37 * hash) + GOODS_ITEM_FIELD_NUMBER;
                 hash = (53 * hash) + getGoodsItem().hashCode();
@@ -1197,9 +1209,9 @@ public final class ShopGoodsOuterClass {
                 hash = (37 * hash) + PRE_GOODS_ID_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getPreGoodsIdListList().hashCode();
             }
-            hash = (37 * hash) + SECONDARYSHEETID_FIELD_NUMBER;
-            hash = (53 * hash) + getSecondarySheetId();
-            hash = (37 * hash) + BOUGHTNUM_FIELD_NUMBER;
+            hash = (37 * hash) + JAFFFHILNCD_FIELD_NUMBER;
+            hash = (53 * hash) + getJAFFFHILNCD();
+            hash = (37 * hash) + BOUGHT_NUM_FIELD_NUMBER;
             hash = (53 * hash) + getBoughtNum();
             hash = (37 * hash) + GOODS_ID_FIELD_NUMBER;
             hash = (53 * hash) + getGoodsId();
@@ -1378,7 +1390,7 @@ public final class ShopGoodsOuterClass {
                 super.clear();
                 minLevel_ = 0;
 
-                jAFFFHILNCD_ = 0;
+                secondarySheetId_ = 0;
 
                 if (goodsItemBuilder_ == null) {
                     goodsItem_ = null;
@@ -1392,7 +1404,7 @@ public final class ShopGoodsOuterClass {
 
                 preGoodsIdList_ = emptyIntList();
                 bitField0_ = (bitField0_ & ~0x00000001);
-                secondarySheetId_ = 0;
+                jAFFFHILNCD_ = 0;
 
                 boughtNum_ = 0;
 
@@ -1452,7 +1464,7 @@ public final class ShopGoodsOuterClass {
                         new emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoods(this);
                 int from_bitField0_ = bitField0_;
                 result.minLevel_ = minLevel_;
-                result.jAFFFHILNCD_ = jAFFFHILNCD_;
+                result.secondarySheetId_ = secondarySheetId_;
                 if (goodsItemBuilder_ == null) {
                     result.goodsItem_ = goodsItem_;
                 } else {
@@ -1465,7 +1477,7 @@ public final class ShopGoodsOuterClass {
                     bitField0_ = (bitField0_ & ~0x00000001);
                 }
                 result.preGoodsIdList_ = preGoodsIdList_;
-                result.secondarySheetId_ = secondarySheetId_;
+                result.jAFFFHILNCD_ = jAFFFHILNCD_;
                 result.boughtNum_ = boughtNum_;
                 result.goodsId_ = goodsId_;
                 result.maxLevel_ = maxLevel_;
@@ -1542,8 +1554,8 @@ public final class ShopGoodsOuterClass {
                 if (other.getMinLevel() != 0) {
                     setMinLevel(other.getMinLevel());
                 }
-                if (other.getJAFFFHILNCD() != 0) {
-                    setJAFFFHILNCD(other.getJAFFFHILNCD());
+                if (other.getSecondarySheetId() != 0) {
+                    setSecondarySheetId(other.getSecondarySheetId());
                 }
                 if (other.hasGoodsItem()) {
                     mergeGoodsItem(other.getGoodsItem());
@@ -1564,8 +1576,8 @@ public final class ShopGoodsOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getSecondarySheetId() != 0) {
-                    setSecondarySheetId(other.getSecondarySheetId());
+                if (other.getJAFFFHILNCD() != 0) {
+                    setJAFFFHILNCD(other.getJAFFFHILNCD());
                 }
                 if (other.getBoughtNum() != 0) {
                     setBoughtNum(other.getBoughtNum());
@@ -1714,36 +1726,54 @@ public final class ShopGoodsOuterClass {
                 return this;
             }
 
-            private int jAFFFHILNCD_;
+            private int secondarySheetId_;
             /**
-             * <code>uint32 JAFFFHILNCD = 1817;</code>
              *
-             * @return The jAFFFHILNCD.
+             *
+             * <pre>
+             * JAFFFHILNCD
+             * </pre>
+             *
+             * <code>uint32 secondary_sheet_id = 1817;</code>
+             *
+             * @return The secondarySheetId.
              */
             @java.lang.Override
-            public int getJAFFFHILNCD() {
-                return jAFFFHILNCD_;
+            public int getSecondarySheetId() {
+                return secondarySheetId_;
             }
             /**
-             * <code>uint32 JAFFFHILNCD = 1817;</code>
              *
-             * @param value The jAFFFHILNCD to set.
+             *
+             * <pre>
+             * JAFFFHILNCD
+             * </pre>
+             *
+             * <code>uint32 secondary_sheet_id = 1817;</code>
+             *
+             * @param value The secondarySheetId to set.
              * @return This builder for chaining.
              */
-            public Builder setJAFFFHILNCD(int value) {
+            public Builder setSecondarySheetId(int value) {
 
-                jAFFFHILNCD_ = value;
+                secondarySheetId_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 JAFFFHILNCD = 1817;</code>
+             *
+             *
+             * <pre>
+             * JAFFFHILNCD
+             * </pre>
+             *
+             * <code>uint32 secondary_sheet_id = 1817;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearJAFFFHILNCD() {
+            public Builder clearSecondarySheetId() {
 
-                jAFFFHILNCD_ = 0;
+                secondarySheetId_ = 0;
                 onChanged();
                 return this;
             }
@@ -2097,7 +2127,7 @@ public final class ShopGoodsOuterClass {
                 return this;
             }
 
-            private int secondarySheetId_;
+            private int jAFFFHILNCD_;
             /**
              *
              *
@@ -2105,13 +2135,13 @@ public final class ShopGoodsOuterClass {
              * ALOPKNFLFBE ???
              * </pre>
              *
-             * <code>uint32 secondarySheetId = 570;</code>
+             * <code>uint32 JAFFFHILNCD = 570;</code>
              *
-             * @return The secondarySheetId.
+             * @return The jAFFFHILNCD.
              */
             @java.lang.Override
-            public int getSecondarySheetId() {
-                return secondarySheetId_;
+            public int getJAFFFHILNCD() {
+                return jAFFFHILNCD_;
             }
             /**
              *
@@ -2120,14 +2150,14 @@ public final class ShopGoodsOuterClass {
              * ALOPKNFLFBE ???
              * </pre>
              *
-             * <code>uint32 secondarySheetId = 570;</code>
+             * <code>uint32 JAFFFHILNCD = 570;</code>
              *
-             * @param value The secondarySheetId to set.
+             * @param value The jAFFFHILNCD to set.
              * @return This builder for chaining.
              */
-            public Builder setSecondarySheetId(int value) {
+            public Builder setJAFFFHILNCD(int value) {
 
-                secondarySheetId_ = value;
+                jAFFFHILNCD_ = value;
                 onChanged();
                 return this;
             }
@@ -2138,13 +2168,13 @@ public final class ShopGoodsOuterClass {
              * ALOPKNFLFBE ???
              * </pre>
              *
-             * <code>uint32 secondarySheetId = 570;</code>
+             * <code>uint32 JAFFFHILNCD = 570;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearSecondarySheetId() {
+            public Builder clearJAFFFHILNCD() {
 
-                secondarySheetId_ = 0;
+                jAFFFHILNCD_ = 0;
                 onChanged();
                 return this;
             }
@@ -2154,10 +2184,10 @@ public final class ShopGoodsOuterClass {
              *
              *
              * <pre>
-             * KCHMFBKCLKO ???
+             * KCHMFBKCLKO
              * </pre>
              *
-             * <code>uint32 boughtNum = 4;</code>
+             * <code>uint32 bought_num = 4;</code>
              *
              * @return The boughtNum.
              */
@@ -2169,10 +2199,10 @@ public final class ShopGoodsOuterClass {
              *
              *
              * <pre>
-             * KCHMFBKCLKO ???
+             * KCHMFBKCLKO
              * </pre>
              *
-             * <code>uint32 boughtNum = 4;</code>
+             * <code>uint32 bought_num = 4;</code>
              *
              * @param value The boughtNum to set.
              * @return This builder for chaining.
@@ -2187,10 +2217,10 @@ public final class ShopGoodsOuterClass {
              *
              *
              * <pre>
-             * KCHMFBKCLKO ???
+             * KCHMFBKCLKO
              * </pre>
              *
-             * <code>uint32 boughtNum = 4;</code>
+             * <code>uint32 bought_num = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -3136,19 +3166,20 @@ public final class ShopGoodsOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\017ShopGoods.proto\032\017ItemParam.proto\"\276\003\n\tS"
-                    + "hopGoods\022\021\n\tmin_level\030\007 \001(\r\022\024\n\013JAFFFHILN"
-                    + "CD\030\231\016 \001(\r\022\036\n\ngoods_item\030\010 \001(\0132\n.ItemPara"
-                    + "m\022\020\n\010end_time\030\014 \001(\r\022\r\n\005scoin\030\016 \001(\r\022\031\n\021pr"
-                    + "e_goods_id_list\030\003 \003(\r\022\031\n\020secondarySheetI"
-                    + "d\030\272\004 \001(\r\022\021\n\tboughtNum\030\004 \001(\r\022\020\n\010goods_id\030"
-                    + "\t \001(\r\022\021\n\tmax_level\030\013 \001(\r\022\024\n\013disableType\030"
-                    + "\371\003 \001(\r\022\021\n\tbuy_limit\030\006 \001(\r\022\022\n\nbegin_time\030"
-                    + "\005 \001(\r\022\031\n\021next_refresh_time\030\n \001(\r\022\"\n\016cost"
-                    + "_item_list\030\001 \003(\0132\n.ItemParam\022\024\n\013LMOPLEOO"
-                    + "IJM\030\273\013 \001(\r\022\023\n\013LLJPJOEMPFE\030\017 \001(\r\022\r\n\005hcoin"
-                    + "\030\002 \001(\r\022\024\n\013LLCOFLCEKDB\030\300\n \001(\r\022\r\n\005mcoin\030\r "
-                    + "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+            "\n\017ShopGoods.proto\032\017ItemParam.proto\"\301\003\n\tS"
+                    + "hopGoods\022\021\n\tmin_level\030\007 \001(\r\022\033\n\022secondary"
+                    + "_sheet_id\030\231\016 \001(\r\022\036\n\ngoods_item\030\010 \001(\0132\n.I"
+                    + "temParam\022\020\n\010end_time\030\014 \001(\r\022\r\n\005scoin\030\016 \001("
+                    + "\r\022\031\n\021pre_goods_id_list\030\003 \003(\r\022\024\n\013JAFFFHIL"
+                    + "NCD\030\272\004 \001(\r\022\022\n\nbought_num\030\004 \001(\r\022\020\n\010goods_"
+                    + "id\030\t \001(\r\022\021\n\tmax_level\030\013 \001(\r\022\024\n\013disableTy"
+                    + "pe\030\371\003 \001(\r\022\021\n\tbuy_limit\030\006 \001(\r\022\022\n\nbegin_ti"
+                    + "me\030\005 \001(\r\022\031\n\021next_refresh_time\030\n \001(\r\022\"\n\016c"
+                    + "ost_item_list\030\001 \003(\0132\n.ItemParam\022\024\n\013LMOPL"
+                    + "EOOIJM\030\273\013 \001(\r\022\023\n\013LLJPJOEMPFE\030\017 \001(\r\022\r\n\005hc"
+                    + "oin\030\002 \001(\r\022\024\n\013LLCOFLCEKDB\030\300\n \001(\r\022\r\n\005mcoin"
+                    + "\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -3162,12 +3193,12 @@ public final class ShopGoodsOuterClass {
                         internal_static_ShopGoods_descriptor,
                         new java.lang.String[] {
                             "MinLevel",
-                            "JAFFFHILNCD",
+                            "SecondarySheetId",
                             "GoodsItem",
                             "EndTime",
                             "Scoin",
                             "PreGoodsIdList",
-                            "SecondarySheetId",
+                            "JAFFFHILNCD",
                             "BoughtNum",
                             "GoodsId",
                             "MaxLevel",

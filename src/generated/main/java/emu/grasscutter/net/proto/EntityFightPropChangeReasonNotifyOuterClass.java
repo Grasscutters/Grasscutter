@@ -1376,7 +1376,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\'EntityFightPropChangeReasonNotify.prot"
-                    + "o\032\024ChangeHpReason.proto\032\030ChangeEnergyRea"
+                    + "o\032\030ChangeEnergyReason.proto\032\024ChangeHpRea"
                     + "son.proto\032\026PropChangeReason.proto\"\356\001\n!En"
                     + "tityFightPropChangeReasonNotify\022\022\n\nparam"
                     + "_list\030\014 \003(\r\022\021\n\tprop_type\030\t \001(\r\022/\n\022change"
@@ -1390,8 +1390,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.ChangeHpReasonOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.ChangeHpReasonOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.PropChangeReasonOuterClass.getDescriptor(),
                         });
         internal_static_EntityFightPropChangeReasonNotify_descriptor =
@@ -1408,8 +1408,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                             "PropDelta",
                             "EntityId",
                         });
-        emu.grasscutter.net.proto.ChangeHpReasonOuterClass.getDescriptor();
         emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.ChangeHpReasonOuterClass.getDescriptor();
         emu.grasscutter.net.proto.PropChangeReasonOuterClass.getDescriptor();
     }
 

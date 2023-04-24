@@ -18,6 +18,12 @@ public final class HomeLimitedShopInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
+         *
+         *
+         * <pre>
+         * CLCPIJBAOEA
+         * </pre>
+         *
          * <code>uint32 nextGuestOpenTime = 12;</code>
          *
          * @return The nextGuestOpenTime.
@@ -25,6 +31,12 @@ public final class HomeLimitedShopInfoOuterClass {
         int getNextGuestOpenTime();
 
         /**
+         *
+         *
+         * <pre>
+         * PGENOLMDFEM
+         * </pre>
+         *
          * <code>uint32 nextOpenTime = 11;</code>
          *
          * @return The nextOpenTime.
@@ -67,6 +79,12 @@ public final class HomeLimitedShopInfoOuterClass {
         emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder();
 
         /**
+         *
+         *
+         * <pre>
+         * NIDABDPMHHF
+         * </pre>
+         *
          * <code>uint32 nextCloseTime = 6;</code>
          *
          * @return The nextCloseTime.
@@ -257,6 +275,12 @@ public final class HomeLimitedShopInfoOuterClass {
         public static final int NEXTGUESTOPENTIME_FIELD_NUMBER = 12;
         private int nextGuestOpenTime_;
         /**
+         *
+         *
+         * <pre>
+         * CLCPIJBAOEA
+         * </pre>
+         *
          * <code>uint32 nextGuestOpenTime = 12;</code>
          *
          * @return The nextGuestOpenTime.
@@ -269,6 +293,12 @@ public final class HomeLimitedShopInfoOuterClass {
         public static final int NEXTOPENTIME_FIELD_NUMBER = 11;
         private int nextOpenTime_;
         /**
+         *
+         *
+         * <pre>
+         * PGENOLMDFEM
+         * </pre>
+         *
          * <code>uint32 nextOpenTime = 11;</code>
          *
          * @return The nextOpenTime.
@@ -329,6 +359,12 @@ public final class HomeLimitedShopInfoOuterClass {
         public static final int NEXTCLOSETIME_FIELD_NUMBER = 6;
         private int nextCloseTime_;
         /**
+         *
+         *
+         * <pre>
+         * NIDABDPMHHF
+         * </pre>
+         *
          * <code>uint32 nextCloseTime = 6;</code>
          *
          * @return The nextCloseTime.
@@ -843,6 +879,12 @@ public final class HomeLimitedShopInfoOuterClass {
 
             private int nextGuestOpenTime_;
             /**
+             *
+             *
+             * <pre>
+             * CLCPIJBAOEA
+             * </pre>
+             *
              * <code>uint32 nextGuestOpenTime = 12;</code>
              *
              * @return The nextGuestOpenTime.
@@ -852,6 +894,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return nextGuestOpenTime_;
             }
             /**
+             *
+             *
+             * <pre>
+             * CLCPIJBAOEA
+             * </pre>
+             *
              * <code>uint32 nextGuestOpenTime = 12;</code>
              *
              * @param value The nextGuestOpenTime to set.
@@ -864,6 +912,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * CLCPIJBAOEA
+             * </pre>
+             *
              * <code>uint32 nextGuestOpenTime = 12;</code>
              *
              * @return This builder for chaining.
@@ -877,6 +931,12 @@ public final class HomeLimitedShopInfoOuterClass {
 
             private int nextOpenTime_;
             /**
+             *
+             *
+             * <pre>
+             * PGENOLMDFEM
+             * </pre>
+             *
              * <code>uint32 nextOpenTime = 11;</code>
              *
              * @return The nextOpenTime.
@@ -886,6 +946,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return nextOpenTime_;
             }
             /**
+             *
+             *
+             * <pre>
+             * PGENOLMDFEM
+             * </pre>
+             *
              * <code>uint32 nextOpenTime = 11;</code>
              *
              * @param value The nextOpenTime to set.
@@ -898,6 +964,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * PGENOLMDFEM
+             * </pre>
+             *
              * <code>uint32 nextOpenTime = 11;</code>
              *
              * @return This builder for chaining.
@@ -1097,6 +1169,12 @@ public final class HomeLimitedShopInfoOuterClass {
 
             private int nextCloseTime_;
             /**
+             *
+             *
+             * <pre>
+             * NIDABDPMHHF
+             * </pre>
+             *
              * <code>uint32 nextCloseTime = 6;</code>
              *
              * @return The nextCloseTime.
@@ -1106,6 +1184,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return nextCloseTime_;
             }
             /**
+             *
+             *
+             * <pre>
+             * NIDABDPMHHF
+             * </pre>
+             *
              * <code>uint32 nextCloseTime = 6;</code>
              *
              * @param value The nextCloseTime to set.
@@ -1118,6 +1202,12 @@ public final class HomeLimitedShopInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * NIDABDPMHHF
+             * </pre>
+             *
              * <code>uint32 nextCloseTime = 6;</code>
              *
              * @return This builder for chaining.

@@ -32,6 +32,12 @@ public final class FurnitureMakeDataOuterClass {
         int getBeginTime();
 
         /**
+         *
+         *
+         * <pre>
+         * LIECEPODMCI
+         * </pre>
+         *
          * <code>uint32 durTime = 15;</code>
          *
          * @return The durTime.
@@ -39,6 +45,12 @@ public final class FurnitureMakeDataOuterClass {
         int getDurTime();
 
         /**
+         *
+         *
+         * <pre>
+         * KHGHPIBGLNO
+         * </pre>
+         *
          * <code>uint32 accelerateTime = 6;</code>
          *
          * @return The accelerateTime.
@@ -201,6 +213,12 @@ public final class FurnitureMakeDataOuterClass {
         public static final int DURTIME_FIELD_NUMBER = 15;
         private int durTime_;
         /**
+         *
+         *
+         * <pre>
+         * LIECEPODMCI
+         * </pre>
+         *
          * <code>uint32 durTime = 15;</code>
          *
          * @return The durTime.
@@ -213,6 +231,12 @@ public final class FurnitureMakeDataOuterClass {
         public static final int ACCELERATETIME_FIELD_NUMBER = 6;
         private int accelerateTime_;
         /**
+         *
+         *
+         * <pre>
+         * KHGHPIBGLNO
+         * </pre>
+         *
          * <code>uint32 accelerateTime = 6;</code>
          *
          * @return The accelerateTime.
@@ -727,6 +751,12 @@ public final class FurnitureMakeDataOuterClass {
 
             private int durTime_;
             /**
+             *
+             *
+             * <pre>
+             * LIECEPODMCI
+             * </pre>
+             *
              * <code>uint32 durTime = 15;</code>
              *
              * @return The durTime.
@@ -736,6 +766,12 @@ public final class FurnitureMakeDataOuterClass {
                 return durTime_;
             }
             /**
+             *
+             *
+             * <pre>
+             * LIECEPODMCI
+             * </pre>
+             *
              * <code>uint32 durTime = 15;</code>
              *
              * @param value The durTime to set.
@@ -748,6 +784,12 @@ public final class FurnitureMakeDataOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * LIECEPODMCI
+             * </pre>
+             *
              * <code>uint32 durTime = 15;</code>
              *
              * @return This builder for chaining.
@@ -761,6 +803,12 @@ public final class FurnitureMakeDataOuterClass {
 
             private int accelerateTime_;
             /**
+             *
+             *
+             * <pre>
+             * KHGHPIBGLNO
+             * </pre>
+             *
              * <code>uint32 accelerateTime = 6;</code>
              *
              * @return The accelerateTime.
@@ -770,6 +818,12 @@ public final class FurnitureMakeDataOuterClass {
                 return accelerateTime_;
             }
             /**
+             *
+             *
+             * <pre>
+             * KHGHPIBGLNO
+             * </pre>
+             *
              * <code>uint32 accelerateTime = 6;</code>
              *
              * @param value The accelerateTime to set.
@@ -782,6 +836,12 @@ public final class FurnitureMakeDataOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * KHGHPIBGLNO
+             * </pre>
+             *
              * <code>uint32 accelerateTime = 6;</code>
              *
              * @return This builder for chaining.

@@ -66,6 +66,12 @@ public final class SceneGadgetInfoOuterClass {
         int getGadgetState();
 
         /**
+         *
+         *
+         * <pre>
+         * EIHJCEDOKKE
+         * </pre>
+         *
          * <code>uint32 gadget_type = 7;</code>
          *
          * @return The gadgetType.
@@ -94,6 +100,12 @@ public final class SceneGadgetInfoOuterClass {
         boolean getIsEnableInteract();
 
         /**
+         *
+         *
+         * <pre>
+         * IJJBMNMNKKB
+         * </pre>
+         *
          * <code>uint32 interact_id = 11;</code>
          *
          * @return The interactId.
@@ -163,6 +175,12 @@ public final class SceneGadgetInfoOuterClass {
         int getDraftId();
 
         /**
+         *
+         *
+         * <pre>
+         * HIOJEFHGLJI
+         * </pre>
+         *
          * <code>uint32 gadget_talk_state = 26;</code>
          *
          * @return The gadgetTalkState.
@@ -1469,6 +1487,12 @@ public final class SceneGadgetInfoOuterClass {
         public static final int GADGET_TYPE_FIELD_NUMBER = 7;
         private int gadgetType_;
         /**
+         *
+         *
+         * <pre>
+         * EIHJCEDOKKE
+         * </pre>
+         *
          * <code>uint32 gadget_type = 7;</code>
          *
          * @return The gadgetType.
@@ -1517,6 +1541,12 @@ public final class SceneGadgetInfoOuterClass {
         public static final int INTERACT_ID_FIELD_NUMBER = 11;
         private int interactId_;
         /**
+         *
+         *
+         * <pre>
+         * IJJBMNMNKKB
+         * </pre>
+         *
          * <code>uint32 interact_id = 11;</code>
          *
          * @return The interactId.
@@ -1631,6 +1661,12 @@ public final class SceneGadgetInfoOuterClass {
         public static final int GADGET_TALK_STATE_FIELD_NUMBER = 26;
         private int gadgetTalkState_;
         /**
+         *
+         *
+         * <pre>
+         * HIOJEFHGLJI
+         * </pre>
+         *
          * <code>uint32 gadget_talk_state = 26;</code>
          *
          * @return The gadgetTalkState.
@@ -3983,6 +4019,12 @@ public final class SceneGadgetInfoOuterClass {
 
             private int gadgetType_;
             /**
+             *
+             *
+             * <pre>
+             * EIHJCEDOKKE
+             * </pre>
+             *
              * <code>uint32 gadget_type = 7;</code>
              *
              * @return The gadgetType.
@@ -3992,6 +4034,12 @@ public final class SceneGadgetInfoOuterClass {
                 return gadgetType_;
             }
             /**
+             *
+             *
+             * <pre>
+             * EIHJCEDOKKE
+             * </pre>
+             *
              * <code>uint32 gadget_type = 7;</code>
              *
              * @param value The gadgetType to set.
@@ -4004,6 +4052,12 @@ public final class SceneGadgetInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * EIHJCEDOKKE
+             * </pre>
+             *
              * <code>uint32 gadget_type = 7;</code>
              *
              * @return This builder for chaining.
@@ -4119,6 +4173,12 @@ public final class SceneGadgetInfoOuterClass {
 
             private int interactId_;
             /**
+             *
+             *
+             * <pre>
+             * IJJBMNMNKKB
+             * </pre>
+             *
              * <code>uint32 interact_id = 11;</code>
              *
              * @return The interactId.
@@ -4128,6 +4188,12 @@ public final class SceneGadgetInfoOuterClass {
                 return interactId_;
             }
             /**
+             *
+             *
+             * <pre>
+             * IJJBMNMNKKB
+             * </pre>
+             *
              * <code>uint32 interact_id = 11;</code>
              *
              * @param value The interactId to set.
@@ -4140,6 +4206,12 @@ public final class SceneGadgetInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * IJJBMNMNKKB
+             * </pre>
+             *
              * <code>uint32 interact_id = 11;</code>
              *
              * @return This builder for chaining.
@@ -4479,6 +4551,12 @@ public final class SceneGadgetInfoOuterClass {
 
             private int gadgetTalkState_;
             /**
+             *
+             *
+             * <pre>
+             * HIOJEFHGLJI
+             * </pre>
+             *
              * <code>uint32 gadget_talk_state = 26;</code>
              *
              * @return The gadgetTalkState.
@@ -4488,6 +4566,12 @@ public final class SceneGadgetInfoOuterClass {
                 return gadgetTalkState_;
             }
             /**
+             *
+             *
+             * <pre>
+             * HIOJEFHGLJI
+             * </pre>
+             *
              * <code>uint32 gadget_talk_state = 26;</code>
              *
              * @param value The gadgetTalkState to set.
@@ -4500,6 +4584,12 @@ public final class SceneGadgetInfoOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * HIOJEFHGLJI
+             * </pre>
+             *
              * <code>uint32 gadget_talk_state = 26;</code>
              *
              * @return This builder for chaining.

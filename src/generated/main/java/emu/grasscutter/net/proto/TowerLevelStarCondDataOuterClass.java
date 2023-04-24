@@ -25,18 +25,30 @@ public final class TowerLevelStarCondDataOuterClass {
         boolean getEOJOAHGECCE();
 
         /**
-         * <code>uint32 NLNHJFLCGHB = 4;</code>
          *
-         * @return The nLNHJFLCGHB.
+         *
+         * <pre>
+         * NLNHJFLCGHB
+         * </pre>
+         *
+         * <code>uint32 star_cond_index = 4;</code>
+         *
+         * @return The starCondIndex.
          */
-        int getNLNHJFLCGHB();
+        int getStarCondIndex();
 
         /**
-         * <code>uint32 KOPBLHONCEF = 7;</code>
          *
-         * @return The kOPBLHONCEF.
+         *
+         * <pre>
+         * KOPBLHONCEF
+         * </pre>
+         *
+         * <code>uint32 cond_value = 7;</code>
+         *
+         * @return The condValue.
          */
-        int getKOPBLHONCEF();
+        int getCondValue();
 
         /**
          * <code>bool MFPMLIGPNIJ = 2;</code>
@@ -102,12 +114,12 @@ public final class TowerLevelStarCondDataOuterClass {
                             }
                         case 32:
                             {
-                                nLNHJFLCGHB_ = input.readUInt32();
+                                starCondIndex_ = input.readUInt32();
                                 break;
                             }
                         case 56:
                             {
-                                kOPBLHONCEF_ = input.readUInt32();
+                                condValue_ = input.readUInt32();
                                 break;
                             }
                         case 104:
@@ -163,28 +175,40 @@ public final class TowerLevelStarCondDataOuterClass {
             return eOJOAHGECCE_;
         }
 
-        public static final int NLNHJFLCGHB_FIELD_NUMBER = 4;
-        private int nLNHJFLCGHB_;
+        public static final int STAR_COND_INDEX_FIELD_NUMBER = 4;
+        private int starCondIndex_;
         /**
-         * <code>uint32 NLNHJFLCGHB = 4;</code>
          *
-         * @return The nLNHJFLCGHB.
+         *
+         * <pre>
+         * NLNHJFLCGHB
+         * </pre>
+         *
+         * <code>uint32 star_cond_index = 4;</code>
+         *
+         * @return The starCondIndex.
          */
         @java.lang.Override
-        public int getNLNHJFLCGHB() {
-            return nLNHJFLCGHB_;
+        public int getStarCondIndex() {
+            return starCondIndex_;
         }
 
-        public static final int KOPBLHONCEF_FIELD_NUMBER = 7;
-        private int kOPBLHONCEF_;
+        public static final int COND_VALUE_FIELD_NUMBER = 7;
+        private int condValue_;
         /**
-         * <code>uint32 KOPBLHONCEF = 7;</code>
          *
-         * @return The kOPBLHONCEF.
+         *
+         * <pre>
+         * KOPBLHONCEF
+         * </pre>
+         *
+         * <code>uint32 cond_value = 7;</code>
+         *
+         * @return The condValue.
          */
         @java.lang.Override
-        public int getKOPBLHONCEF() {
-            return kOPBLHONCEF_;
+        public int getCondValue() {
+            return condValue_;
         }
 
         public static final int MFPMLIGPNIJ_FIELD_NUMBER = 2;
@@ -216,11 +240,11 @@ public final class TowerLevelStarCondDataOuterClass {
             if (mFPMLIGPNIJ_ != false) {
                 output.writeBool(2, mFPMLIGPNIJ_);
             }
-            if (nLNHJFLCGHB_ != 0) {
-                output.writeUInt32(4, nLNHJFLCGHB_);
+            if (starCondIndex_ != 0) {
+                output.writeUInt32(4, starCondIndex_);
             }
-            if (kOPBLHONCEF_ != 0) {
-                output.writeUInt32(7, kOPBLHONCEF_);
+            if (condValue_ != 0) {
+                output.writeUInt32(7, condValue_);
             }
             if (eOJOAHGECCE_ != false) {
                 output.writeBool(13, eOJOAHGECCE_);
@@ -237,11 +261,11 @@ public final class TowerLevelStarCondDataOuterClass {
             if (mFPMLIGPNIJ_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, mFPMLIGPNIJ_);
             }
-            if (nLNHJFLCGHB_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, nLNHJFLCGHB_);
+            if (starCondIndex_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, starCondIndex_);
             }
-            if (kOPBLHONCEF_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, kOPBLHONCEF_);
+            if (condValue_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, condValue_);
             }
             if (eOJOAHGECCE_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, eOJOAHGECCE_);
@@ -265,8 +289,8 @@ public final class TowerLevelStarCondDataOuterClass {
                     (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) obj;
 
             if (getEOJOAHGECCE() != other.getEOJOAHGECCE()) return false;
-            if (getNLNHJFLCGHB() != other.getNLNHJFLCGHB()) return false;
-            if (getKOPBLHONCEF() != other.getKOPBLHONCEF()) return false;
+            if (getStarCondIndex() != other.getStarCondIndex()) return false;
+            if (getCondValue() != other.getCondValue()) return false;
             if (getMFPMLIGPNIJ() != other.getMFPMLIGPNIJ()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
@@ -281,10 +305,10 @@ public final class TowerLevelStarCondDataOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + EOJOAHGECCE_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEOJOAHGECCE());
-            hash = (37 * hash) + NLNHJFLCGHB_FIELD_NUMBER;
-            hash = (53 * hash) + getNLNHJFLCGHB();
-            hash = (37 * hash) + KOPBLHONCEF_FIELD_NUMBER;
-            hash = (53 * hash) + getKOPBLHONCEF();
+            hash = (37 * hash) + STAR_COND_INDEX_FIELD_NUMBER;
+            hash = (53 * hash) + getStarCondIndex();
+            hash = (37 * hash) + COND_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getCondValue();
             hash = (37 * hash) + MFPMLIGPNIJ_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMFPMLIGPNIJ());
             hash = (29 * hash) + unknownFields.hashCode();
@@ -447,9 +471,9 @@ public final class TowerLevelStarCondDataOuterClass {
                 super.clear();
                 eOJOAHGECCE_ = false;
 
-                nLNHJFLCGHB_ = 0;
+                starCondIndex_ = 0;
 
-                kOPBLHONCEF_ = 0;
+                condValue_ = 0;
 
                 mFPMLIGPNIJ_ = false;
 
@@ -487,8 +511,8 @@ public final class TowerLevelStarCondDataOuterClass {
                         new emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData(
                                 this);
                 result.eOJOAHGECCE_ = eOJOAHGECCE_;
-                result.nLNHJFLCGHB_ = nLNHJFLCGHB_;
-                result.kOPBLHONCEF_ = kOPBLHONCEF_;
+                result.starCondIndex_ = starCondIndex_;
+                result.condValue_ = condValue_;
                 result.mFPMLIGPNIJ_ = mFPMLIGPNIJ_;
                 onBuilt();
                 return result;
@@ -551,11 +575,11 @@ public final class TowerLevelStarCondDataOuterClass {
                 if (other.getEOJOAHGECCE() != false) {
                     setEOJOAHGECCE(other.getEOJOAHGECCE());
                 }
-                if (other.getNLNHJFLCGHB() != 0) {
-                    setNLNHJFLCGHB(other.getNLNHJFLCGHB());
+                if (other.getStarCondIndex() != 0) {
+                    setStarCondIndex(other.getStarCondIndex());
                 }
-                if (other.getKOPBLHONCEF() != 0) {
-                    setKOPBLHONCEF(other.getKOPBLHONCEF());
+                if (other.getCondValue() != 0) {
+                    setCondValue(other.getCondValue());
                 }
                 if (other.getMFPMLIGPNIJ() != false) {
                     setMFPMLIGPNIJ(other.getMFPMLIGPNIJ());
@@ -626,70 +650,106 @@ public final class TowerLevelStarCondDataOuterClass {
                 return this;
             }
 
-            private int nLNHJFLCGHB_;
+            private int starCondIndex_;
             /**
-             * <code>uint32 NLNHJFLCGHB = 4;</code>
              *
-             * @return The nLNHJFLCGHB.
+             *
+             * <pre>
+             * NLNHJFLCGHB
+             * </pre>
+             *
+             * <code>uint32 star_cond_index = 4;</code>
+             *
+             * @return The starCondIndex.
              */
             @java.lang.Override
-            public int getNLNHJFLCGHB() {
-                return nLNHJFLCGHB_;
+            public int getStarCondIndex() {
+                return starCondIndex_;
             }
             /**
-             * <code>uint32 NLNHJFLCGHB = 4;</code>
              *
-             * @param value The nLNHJFLCGHB to set.
+             *
+             * <pre>
+             * NLNHJFLCGHB
+             * </pre>
+             *
+             * <code>uint32 star_cond_index = 4;</code>
+             *
+             * @param value The starCondIndex to set.
              * @return This builder for chaining.
              */
-            public Builder setNLNHJFLCGHB(int value) {
+            public Builder setStarCondIndex(int value) {
 
-                nLNHJFLCGHB_ = value;
+                starCondIndex_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 NLNHJFLCGHB = 4;</code>
+             *
+             *
+             * <pre>
+             * NLNHJFLCGHB
+             * </pre>
+             *
+             * <code>uint32 star_cond_index = 4;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearNLNHJFLCGHB() {
+            public Builder clearStarCondIndex() {
 
-                nLNHJFLCGHB_ = 0;
+                starCondIndex_ = 0;
                 onChanged();
                 return this;
             }
 
-            private int kOPBLHONCEF_;
+            private int condValue_;
             /**
-             * <code>uint32 KOPBLHONCEF = 7;</code>
              *
-             * @return The kOPBLHONCEF.
+             *
+             * <pre>
+             * KOPBLHONCEF
+             * </pre>
+             *
+             * <code>uint32 cond_value = 7;</code>
+             *
+             * @return The condValue.
              */
             @java.lang.Override
-            public int getKOPBLHONCEF() {
-                return kOPBLHONCEF_;
+            public int getCondValue() {
+                return condValue_;
             }
             /**
-             * <code>uint32 KOPBLHONCEF = 7;</code>
              *
-             * @param value The kOPBLHONCEF to set.
+             *
+             * <pre>
+             * KOPBLHONCEF
+             * </pre>
+             *
+             * <code>uint32 cond_value = 7;</code>
+             *
+             * @param value The condValue to set.
              * @return This builder for chaining.
              */
-            public Builder setKOPBLHONCEF(int value) {
+            public Builder setCondValue(int value) {
 
-                kOPBLHONCEF_ = value;
+                condValue_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 KOPBLHONCEF = 7;</code>
+             *
+             *
+             * <pre>
+             * KOPBLHONCEF
+             * </pre>
+             *
+             * <code>uint32 cond_value = 7;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearKOPBLHONCEF() {
+            public Builder clearCondValue() {
 
-                kOPBLHONCEF_ = 0;
+                condValue_ = 0;
                 onChanged();
                 return this;
             }
@@ -798,11 +858,11 @@ public final class TowerLevelStarCondDataOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\034TowerLevelStarCondData.proto\"l\n\026TowerL"
-                    + "evelStarCondData\022\023\n\013EOJOAHGECCE\030\r \001(\010\022\023\n"
-                    + "\013NLNHJFLCGHB\030\004 \001(\r\022\023\n\013KOPBLHONCEF\030\007 \001(\r\022"
-                    + "\023\n\013MFPMLIGPNIJ\030\002 \001(\010B\033\n\031emu.grasscutter."
-                    + "net.protob\006proto3"
+            "\n\034TowerLevelStarCondData.proto\"o\n\026TowerL"
+                    + "evelStarCondData\022\023\n\013EOJOAHGECCE\030\r \001(\010\022\027\n"
+                    + "\017star_cond_index\030\004 \001(\r\022\022\n\ncond_value\030\007 \001"
+                    + "(\r\022\023\n\013MFPMLIGPNIJ\030\002 \001(\010B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -812,7 +872,7 @@ public final class TowerLevelStarCondDataOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_TowerLevelStarCondData_descriptor,
                         new java.lang.String[] {
-                            "EOJOAHGECCE", "NLNHJFLCGHB", "KOPBLHONCEF", "MFPMLIGPNIJ",
+                            "EOJOAHGECCE", "StarCondIndex", "CondValue", "MFPMLIGPNIJ",
                         });
     }
 

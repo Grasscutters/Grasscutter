@@ -21,43 +21,42 @@ public final class AttackHitEffectResultOuterClass {
          *
          *
          * <pre>
-         * NCIHLNFLAAF
+         * OGEJIAIJMDB
          * </pre>
          *
-         * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
-         *
-         * @return The unk3300KLNGDAMMFIF.
-         */
-        int getUnk3300KLNGDAMMFIF();
-
-        /**
-         * <code>float airStrength = 6;</code>
-         *
-         * @return The airStrength.
-         */
-        float getAirStrength();
-
-        /**
-         *
-         *
-         * <pre>
-         * LDDDDFHEMBA
-         * </pre>
-         *
-         * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
-         *
-         * @return The unk3300LCKECJCKKJK.
-         */
-        int getUnk3300LCKECJCKKJK();
-
-        /**
-         * <code>float hitHaltTime = 15;</code>
+         * <code>float hitHaltTime = 14;</code>
          *
          * @return The hitHaltTime.
          */
         float getHitHaltTime();
 
         /**
+         *
+         *
+         * <pre>
+         * AKLACKOIKOE
+         * </pre>
+         *
+         * <code>float airStrength = 7;</code>
+         *
+         * @return The airStrength.
+         */
+        float getAirStrength();
+
+        /**
+         * <code>uint32 NCIHLNFLAAF = 10;</code>
+         *
+         * @return The nCIHLNFLAAF.
+         */
+        int getNCIHLNFLAAF();
+
+        /**
+         *
+         *
+         * <pre>
+         * PFNLKOMLOIO
+         * </pre>
+         *
          * <code>float retreatStrength = 4;</code>
          *
          * @return The retreatStrength.
@@ -65,11 +64,24 @@ public final class AttackHitEffectResultOuterClass {
         float getRetreatStrength();
 
         /**
-         * <code>float hitHaltTimeScale = 7;</code>
+         *
+         *
+         * <pre>
+         * JLEGJBGOHHP
+         * </pre>
+         *
+         * <code>float hitHaltTimeScale = 2;</code>
          *
          * @return The hitHaltTimeScale.
          */
         float getHitHaltTimeScale();
+
+        /**
+         * <code>uint32 LDDDDFHEMBA = 3;</code>
+         *
+         * @return The lDDDDFHEMBA.
+         */
+        int getLDDDDFHEMBA();
     }
     /**
      *
@@ -121,9 +133,14 @@ public final class AttackHitEffectResultOuterClass {
                         case 0:
                             done = true;
                             break;
+                        case 21:
+                            {
+                                hitHaltTimeScale_ = input.readFloat();
+                                break;
+                            }
                         case 24:
                             {
-                                unk3300LCKECJCKKJK_ = input.readUInt32();
+                                lDDDDFHEMBA_ = input.readUInt32();
                                 break;
                             }
                         case 37:
@@ -131,22 +148,17 @@ public final class AttackHitEffectResultOuterClass {
                                 retreatStrength_ = input.readFloat();
                                 break;
                             }
-                        case 53:
+                        case 61:
                             {
                                 airStrength_ = input.readFloat();
                                 break;
                             }
-                        case 61:
-                            {
-                                hitHaltTimeScale_ = input.readFloat();
-                                break;
-                            }
                         case 80:
                             {
-                                unk3300KLNGDAMMFIF_ = input.readUInt32();
+                                nCIHLNFLAAF_ = input.readUInt32();
                                 break;
                             }
-                        case 125:
+                        case 117:
                             {
                                 hitHaltTime_ = input.readFloat();
                                 break;
@@ -186,58 +198,16 @@ public final class AttackHitEffectResultOuterClass {
                                     .Builder.class);
         }
 
-        public static final int UNK3300_KLNGDAMMFIF_FIELD_NUMBER = 10;
-        private int unk3300KLNGDAMMFIF_;
-        /**
-         *
-         *
-         * <pre>
-         * NCIHLNFLAAF
-         * </pre>
-         *
-         * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
-         *
-         * @return The unk3300KLNGDAMMFIF.
-         */
-        @java.lang.Override
-        public int getUnk3300KLNGDAMMFIF() {
-            return unk3300KLNGDAMMFIF_;
-        }
-
-        public static final int AIRSTRENGTH_FIELD_NUMBER = 6;
-        private float airStrength_;
-        /**
-         * <code>float airStrength = 6;</code>
-         *
-         * @return The airStrength.
-         */
-        @java.lang.Override
-        public float getAirStrength() {
-            return airStrength_;
-        }
-
-        public static final int UNK3300_LCKECJCKKJK_FIELD_NUMBER = 3;
-        private int unk3300LCKECJCKKJK_;
-        /**
-         *
-         *
-         * <pre>
-         * LDDDDFHEMBA
-         * </pre>
-         *
-         * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
-         *
-         * @return The unk3300LCKECJCKKJK.
-         */
-        @java.lang.Override
-        public int getUnk3300LCKECJCKKJK() {
-            return unk3300LCKECJCKKJK_;
-        }
-
-        public static final int HITHALTTIME_FIELD_NUMBER = 15;
+        public static final int HITHALTTIME_FIELD_NUMBER = 14;
         private float hitHaltTime_;
         /**
-         * <code>float hitHaltTime = 15;</code>
+         *
+         *
+         * <pre>
+         * OGEJIAIJMDB
+         * </pre>
+         *
+         * <code>float hitHaltTime = 14;</code>
          *
          * @return The hitHaltTime.
          */
@@ -246,9 +216,45 @@ public final class AttackHitEffectResultOuterClass {
             return hitHaltTime_;
         }
 
+        public static final int AIRSTRENGTH_FIELD_NUMBER = 7;
+        private float airStrength_;
+        /**
+         *
+         *
+         * <pre>
+         * AKLACKOIKOE
+         * </pre>
+         *
+         * <code>float airStrength = 7;</code>
+         *
+         * @return The airStrength.
+         */
+        @java.lang.Override
+        public float getAirStrength() {
+            return airStrength_;
+        }
+
+        public static final int NCIHLNFLAAF_FIELD_NUMBER = 10;
+        private int nCIHLNFLAAF_;
+        /**
+         * <code>uint32 NCIHLNFLAAF = 10;</code>
+         *
+         * @return The nCIHLNFLAAF.
+         */
+        @java.lang.Override
+        public int getNCIHLNFLAAF() {
+            return nCIHLNFLAAF_;
+        }
+
         public static final int RETREATSTRENGTH_FIELD_NUMBER = 4;
         private float retreatStrength_;
         /**
+         *
+         *
+         * <pre>
+         * PFNLKOMLOIO
+         * </pre>
+         *
          * <code>float retreatStrength = 4;</code>
          *
          * @return The retreatStrength.
@@ -258,16 +264,34 @@ public final class AttackHitEffectResultOuterClass {
             return retreatStrength_;
         }
 
-        public static final int HITHALTTIMESCALE_FIELD_NUMBER = 7;
+        public static final int HITHALTTIMESCALE_FIELD_NUMBER = 2;
         private float hitHaltTimeScale_;
         /**
-         * <code>float hitHaltTimeScale = 7;</code>
+         *
+         *
+         * <pre>
+         * JLEGJBGOHHP
+         * </pre>
+         *
+         * <code>float hitHaltTimeScale = 2;</code>
          *
          * @return The hitHaltTimeScale.
          */
         @java.lang.Override
         public float getHitHaltTimeScale() {
             return hitHaltTimeScale_;
+        }
+
+        public static final int LDDDDFHEMBA_FIELD_NUMBER = 3;
+        private int lDDDDFHEMBA_;
+        /**
+         * <code>uint32 LDDDDFHEMBA = 3;</code>
+         *
+         * @return The lDDDDFHEMBA.
+         */
+        @java.lang.Override
+        public int getLDDDDFHEMBA() {
+            return lDDDDFHEMBA_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -284,23 +308,23 @@ public final class AttackHitEffectResultOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (unk3300LCKECJCKKJK_ != 0) {
-                output.writeUInt32(3, unk3300LCKECJCKKJK_);
+            if (hitHaltTimeScale_ != 0F) {
+                output.writeFloat(2, hitHaltTimeScale_);
+            }
+            if (lDDDDFHEMBA_ != 0) {
+                output.writeUInt32(3, lDDDDFHEMBA_);
             }
             if (retreatStrength_ != 0F) {
                 output.writeFloat(4, retreatStrength_);
             }
             if (airStrength_ != 0F) {
-                output.writeFloat(6, airStrength_);
+                output.writeFloat(7, airStrength_);
             }
-            if (hitHaltTimeScale_ != 0F) {
-                output.writeFloat(7, hitHaltTimeScale_);
-            }
-            if (unk3300KLNGDAMMFIF_ != 0) {
-                output.writeUInt32(10, unk3300KLNGDAMMFIF_);
+            if (nCIHLNFLAAF_ != 0) {
+                output.writeUInt32(10, nCIHLNFLAAF_);
             }
             if (hitHaltTime_ != 0F) {
-                output.writeFloat(15, hitHaltTime_);
+                output.writeFloat(14, hitHaltTime_);
             }
             unknownFields.writeTo(output);
         }
@@ -311,23 +335,23 @@ public final class AttackHitEffectResultOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (unk3300LCKECJCKKJK_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, unk3300LCKECJCKKJK_);
+            if (hitHaltTimeScale_ != 0F) {
+                size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, hitHaltTimeScale_);
+            }
+            if (lDDDDFHEMBA_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, lDDDDFHEMBA_);
             }
             if (retreatStrength_ != 0F) {
                 size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, retreatStrength_);
             }
             if (airStrength_ != 0F) {
-                size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, airStrength_);
+                size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, airStrength_);
             }
-            if (hitHaltTimeScale_ != 0F) {
-                size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, hitHaltTimeScale_);
-            }
-            if (unk3300KLNGDAMMFIF_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, unk3300KLNGDAMMFIF_);
+            if (nCIHLNFLAAF_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, nCIHLNFLAAF_);
             }
             if (hitHaltTime_ != 0F) {
-                size += com.google.protobuf.CodedOutputStream.computeFloatSize(15, hitHaltTime_);
+                size += com.google.protobuf.CodedOutputStream.computeFloatSize(14, hitHaltTime_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -347,16 +371,16 @@ public final class AttackHitEffectResultOuterClass {
             emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult other =
                     (emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult) obj;
 
-            if (getUnk3300KLNGDAMMFIF() != other.getUnk3300KLNGDAMMFIF()) return false;
-            if (java.lang.Float.floatToIntBits(getAirStrength())
-                    != java.lang.Float.floatToIntBits(other.getAirStrength())) return false;
-            if (getUnk3300LCKECJCKKJK() != other.getUnk3300LCKECJCKKJK()) return false;
             if (java.lang.Float.floatToIntBits(getHitHaltTime())
                     != java.lang.Float.floatToIntBits(other.getHitHaltTime())) return false;
+            if (java.lang.Float.floatToIntBits(getAirStrength())
+                    != java.lang.Float.floatToIntBits(other.getAirStrength())) return false;
+            if (getNCIHLNFLAAF() != other.getNCIHLNFLAAF()) return false;
             if (java.lang.Float.floatToIntBits(getRetreatStrength())
                     != java.lang.Float.floatToIntBits(other.getRetreatStrength())) return false;
             if (java.lang.Float.floatToIntBits(getHitHaltTimeScale())
                     != java.lang.Float.floatToIntBits(other.getHitHaltTimeScale())) return false;
+            if (getLDDDDFHEMBA() != other.getLDDDDFHEMBA()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -368,18 +392,18 @@ public final class AttackHitEffectResultOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + UNK3300_KLNGDAMMFIF_FIELD_NUMBER;
-            hash = (53 * hash) + getUnk3300KLNGDAMMFIF();
-            hash = (37 * hash) + AIRSTRENGTH_FIELD_NUMBER;
-            hash = (53 * hash) + java.lang.Float.floatToIntBits(getAirStrength());
-            hash = (37 * hash) + UNK3300_LCKECJCKKJK_FIELD_NUMBER;
-            hash = (53 * hash) + getUnk3300LCKECJCKKJK();
             hash = (37 * hash) + HITHALTTIME_FIELD_NUMBER;
             hash = (53 * hash) + java.lang.Float.floatToIntBits(getHitHaltTime());
+            hash = (37 * hash) + AIRSTRENGTH_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(getAirStrength());
+            hash = (37 * hash) + NCIHLNFLAAF_FIELD_NUMBER;
+            hash = (53 * hash) + getNCIHLNFLAAF();
             hash = (37 * hash) + RETREATSTRENGTH_FIELD_NUMBER;
             hash = (53 * hash) + java.lang.Float.floatToIntBits(getRetreatStrength());
             hash = (37 * hash) + HITHALTTIMESCALE_FIELD_NUMBER;
             hash = (53 * hash) + java.lang.Float.floatToIntBits(getHitHaltTimeScale());
+            hash = (37 * hash) + LDDDDFHEMBA_FIELD_NUMBER;
+            hash = (53 * hash) + getLDDDDFHEMBA();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -537,17 +561,17 @@ public final class AttackHitEffectResultOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                unk3300KLNGDAMMFIF_ = 0;
+                hitHaltTime_ = 0F;
 
                 airStrength_ = 0F;
 
-                unk3300LCKECJCKKJK_ = 0;
-
-                hitHaltTime_ = 0F;
+                nCIHLNFLAAF_ = 0;
 
                 retreatStrength_ = 0F;
 
                 hitHaltTimeScale_ = 0F;
+
+                lDDDDFHEMBA_ = 0;
 
                 return this;
             }
@@ -582,12 +606,12 @@ public final class AttackHitEffectResultOuterClass {
                 emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult result =
                         new emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult(
                                 this);
-                result.unk3300KLNGDAMMFIF_ = unk3300KLNGDAMMFIF_;
-                result.airStrength_ = airStrength_;
-                result.unk3300LCKECJCKKJK_ = unk3300LCKECJCKKJK_;
                 result.hitHaltTime_ = hitHaltTime_;
+                result.airStrength_ = airStrength_;
+                result.nCIHLNFLAAF_ = nCIHLNFLAAF_;
                 result.retreatStrength_ = retreatStrength_;
                 result.hitHaltTimeScale_ = hitHaltTimeScale_;
+                result.lDDDDFHEMBA_ = lDDDDFHEMBA_;
                 onBuilt();
                 return result;
             }
@@ -646,23 +670,23 @@ public final class AttackHitEffectResultOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult
                                 .getDefaultInstance()) return this;
-                if (other.getUnk3300KLNGDAMMFIF() != 0) {
-                    setUnk3300KLNGDAMMFIF(other.getUnk3300KLNGDAMMFIF());
+                if (other.getHitHaltTime() != 0F) {
+                    setHitHaltTime(other.getHitHaltTime());
                 }
                 if (other.getAirStrength() != 0F) {
                     setAirStrength(other.getAirStrength());
                 }
-                if (other.getUnk3300LCKECJCKKJK() != 0) {
-                    setUnk3300LCKECJCKKJK(other.getUnk3300LCKECJCKKJK());
-                }
-                if (other.getHitHaltTime() != 0F) {
-                    setHitHaltTime(other.getHitHaltTime());
+                if (other.getNCIHLNFLAAF() != 0) {
+                    setNCIHLNFLAAF(other.getNCIHLNFLAAF());
                 }
                 if (other.getRetreatStrength() != 0F) {
                     setRetreatStrength(other.getRetreatStrength());
                 }
                 if (other.getHitHaltTimeScale() != 0F) {
                     setHitHaltTimeScale(other.getHitHaltTimeScale());
+                }
+                if (other.getLDDDDFHEMBA() != 0) {
+                    setLDDDDFHEMBA(other.getLDDDDFHEMBA());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -696,147 +720,15 @@ public final class AttackHitEffectResultOuterClass {
                 return this;
             }
 
-            private int unk3300KLNGDAMMFIF_;
-            /**
-             *
-             *
-             * <pre>
-             * NCIHLNFLAAF
-             * </pre>
-             *
-             * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
-             *
-             * @return The unk3300KLNGDAMMFIF.
-             */
-            @java.lang.Override
-            public int getUnk3300KLNGDAMMFIF() {
-                return unk3300KLNGDAMMFIF_;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * NCIHLNFLAAF
-             * </pre>
-             *
-             * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
-             *
-             * @param value The unk3300KLNGDAMMFIF to set.
-             * @return This builder for chaining.
-             */
-            public Builder setUnk3300KLNGDAMMFIF(int value) {
-
-                unk3300KLNGDAMMFIF_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * NCIHLNFLAAF
-             * </pre>
-             *
-             * <code>uint32 Unk3300_KLNGDAMMFIF = 10;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearUnk3300KLNGDAMMFIF() {
-
-                unk3300KLNGDAMMFIF_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private float airStrength_;
-            /**
-             * <code>float airStrength = 6;</code>
-             *
-             * @return The airStrength.
-             */
-            @java.lang.Override
-            public float getAirStrength() {
-                return airStrength_;
-            }
-            /**
-             * <code>float airStrength = 6;</code>
-             *
-             * @param value The airStrength to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAirStrength(float value) {
-
-                airStrength_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>float airStrength = 6;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAirStrength() {
-
-                airStrength_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            private int unk3300LCKECJCKKJK_;
-            /**
-             *
-             *
-             * <pre>
-             * LDDDDFHEMBA
-             * </pre>
-             *
-             * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
-             *
-             * @return The unk3300LCKECJCKKJK.
-             */
-            @java.lang.Override
-            public int getUnk3300LCKECJCKKJK() {
-                return unk3300LCKECJCKKJK_;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * LDDDDFHEMBA
-             * </pre>
-             *
-             * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
-             *
-             * @param value The unk3300LCKECJCKKJK to set.
-             * @return This builder for chaining.
-             */
-            public Builder setUnk3300LCKECJCKKJK(int value) {
-
-                unk3300LCKECJCKKJK_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * LDDDDFHEMBA
-             * </pre>
-             *
-             * <code>uint32 Unk3300_LCKECJCKKJK = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearUnk3300LCKECJCKKJK() {
-
-                unk3300LCKECJCKKJK_ = 0;
-                onChanged();
-                return this;
-            }
-
             private float hitHaltTime_;
             /**
-             * <code>float hitHaltTime = 15;</code>
+             *
+             *
+             * <pre>
+             * OGEJIAIJMDB
+             * </pre>
+             *
+             * <code>float hitHaltTime = 14;</code>
              *
              * @return The hitHaltTime.
              */
@@ -845,7 +737,13 @@ public final class AttackHitEffectResultOuterClass {
                 return hitHaltTime_;
             }
             /**
-             * <code>float hitHaltTime = 15;</code>
+             *
+             *
+             * <pre>
+             * OGEJIAIJMDB
+             * </pre>
+             *
+             * <code>float hitHaltTime = 14;</code>
              *
              * @param value The hitHaltTime to set.
              * @return This builder for chaining.
@@ -857,7 +755,13 @@ public final class AttackHitEffectResultOuterClass {
                 return this;
             }
             /**
-             * <code>float hitHaltTime = 15;</code>
+             *
+             *
+             * <pre>
+             * OGEJIAIJMDB
+             * </pre>
+             *
+             * <code>float hitHaltTime = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -868,8 +772,100 @@ public final class AttackHitEffectResultOuterClass {
                 return this;
             }
 
+            private float airStrength_;
+            /**
+             *
+             *
+             * <pre>
+             * AKLACKOIKOE
+             * </pre>
+             *
+             * <code>float airStrength = 7;</code>
+             *
+             * @return The airStrength.
+             */
+            @java.lang.Override
+            public float getAirStrength() {
+                return airStrength_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * AKLACKOIKOE
+             * </pre>
+             *
+             * <code>float airStrength = 7;</code>
+             *
+             * @param value The airStrength to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAirStrength(float value) {
+
+                airStrength_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * AKLACKOIKOE
+             * </pre>
+             *
+             * <code>float airStrength = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAirStrength() {
+
+                airStrength_ = 0F;
+                onChanged();
+                return this;
+            }
+
+            private int nCIHLNFLAAF_;
+            /**
+             * <code>uint32 NCIHLNFLAAF = 10;</code>
+             *
+             * @return The nCIHLNFLAAF.
+             */
+            @java.lang.Override
+            public int getNCIHLNFLAAF() {
+                return nCIHLNFLAAF_;
+            }
+            /**
+             * <code>uint32 NCIHLNFLAAF = 10;</code>
+             *
+             * @param value The nCIHLNFLAAF to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNCIHLNFLAAF(int value) {
+
+                nCIHLNFLAAF_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 NCIHLNFLAAF = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNCIHLNFLAAF() {
+
+                nCIHLNFLAAF_ = 0;
+                onChanged();
+                return this;
+            }
+
             private float retreatStrength_;
             /**
+             *
+             *
+             * <pre>
+             * PFNLKOMLOIO
+             * </pre>
+             *
              * <code>float retreatStrength = 4;</code>
              *
              * @return The retreatStrength.
@@ -879,6 +875,12 @@ public final class AttackHitEffectResultOuterClass {
                 return retreatStrength_;
             }
             /**
+             *
+             *
+             * <pre>
+             * PFNLKOMLOIO
+             * </pre>
+             *
              * <code>float retreatStrength = 4;</code>
              *
              * @param value The retreatStrength to set.
@@ -891,6 +893,12 @@ public final class AttackHitEffectResultOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * PFNLKOMLOIO
+             * </pre>
+             *
              * <code>float retreatStrength = 4;</code>
              *
              * @return This builder for chaining.
@@ -904,7 +912,13 @@ public final class AttackHitEffectResultOuterClass {
 
             private float hitHaltTimeScale_;
             /**
-             * <code>float hitHaltTimeScale = 7;</code>
+             *
+             *
+             * <pre>
+             * JLEGJBGOHHP
+             * </pre>
+             *
+             * <code>float hitHaltTimeScale = 2;</code>
              *
              * @return The hitHaltTimeScale.
              */
@@ -913,7 +927,13 @@ public final class AttackHitEffectResultOuterClass {
                 return hitHaltTimeScale_;
             }
             /**
-             * <code>float hitHaltTimeScale = 7;</code>
+             *
+             *
+             * <pre>
+             * JLEGJBGOHHP
+             * </pre>
+             *
+             * <code>float hitHaltTimeScale = 2;</code>
              *
              * @param value The hitHaltTimeScale to set.
              * @return This builder for chaining.
@@ -925,13 +945,53 @@ public final class AttackHitEffectResultOuterClass {
                 return this;
             }
             /**
-             * <code>float hitHaltTimeScale = 7;</code>
+             *
+             *
+             * <pre>
+             * JLEGJBGOHHP
+             * </pre>
+             *
+             * <code>float hitHaltTimeScale = 2;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearHitHaltTimeScale() {
 
                 hitHaltTimeScale_ = 0F;
+                onChanged();
+                return this;
+            }
+
+            private int lDDDDFHEMBA_;
+            /**
+             * <code>uint32 LDDDDFHEMBA = 3;</code>
+             *
+             * @return The lDDDDFHEMBA.
+             */
+            @java.lang.Override
+            public int getLDDDDFHEMBA() {
+                return lDDDDFHEMBA_;
+            }
+            /**
+             * <code>uint32 LDDDDFHEMBA = 3;</code>
+             *
+             * @param value The lDDDDFHEMBA to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLDDDDFHEMBA(int value) {
+
+                lDDDDFHEMBA_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 LDDDDFHEMBA = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLDDDDFHEMBA() {
+
+                lDDDDFHEMBA_ = 0;
                 onChanged();
                 return this;
             }
@@ -1006,13 +1066,12 @@ public final class AttackHitEffectResultOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\033AttackHitEffectResult.proto\"\256\001\n\025Attack"
-                    + "HitEffectResult\022\033\n\023Unk3300_KLNGDAMMFIF\030\n"
-                    + " \001(\r\022\023\n\013airStrength\030\006 \001(\002\022\033\n\023Unk3300_LCK"
-                    + "ECJCKKJK\030\003 \001(\r\022\023\n\013hitHaltTime\030\017 \001(\002\022\027\n\017r"
-                    + "etreatStrength\030\004 \001(\002\022\030\n\020hitHaltTimeScale"
-                    + "\030\007 \001(\002B\033\n\031emu.grasscutter.net.protob\006pro"
-                    + "to3"
+            "\n\033AttackHitEffectResult.proto\"\236\001\n\025Attack"
+                    + "HitEffectResult\022\023\n\013hitHaltTime\030\016 \001(\002\022\023\n\013"
+                    + "airStrength\030\007 \001(\002\022\023\n\013NCIHLNFLAAF\030\n \001(\r\022\027"
+                    + "\n\017retreatStrength\030\004 \001(\002\022\030\n\020hitHaltTimeSc"
+                    + "ale\030\002 \001(\002\022\023\n\013LDDDDFHEMBA\030\003 \001(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1022,12 +1081,12 @@ public final class AttackHitEffectResultOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_AttackHitEffectResult_descriptor,
                         new java.lang.String[] {
-                            "Unk3300KLNGDAMMFIF",
-                            "AirStrength",
-                            "Unk3300LCKECJCKKJK",
                             "HitHaltTime",
+                            "AirStrength",
+                            "NCIHLNFLAAF",
                             "RetreatStrength",
                             "HitHaltTimeScale",
+                            "LDDDDFHEMBA",
                         });
     }
 

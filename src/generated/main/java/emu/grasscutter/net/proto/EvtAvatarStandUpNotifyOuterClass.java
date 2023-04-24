@@ -32,6 +32,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
         int getEntityId();
 
         /**
+         *
+         *
+         * <pre>
+         * HKCNKFCDGIP
+         * </pre>
+         *
          * <code>int32 performId = 7;</code>
          *
          * @return The performId.
@@ -39,6 +45,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
         int getPerformId();
 
         /**
+         *
+         *
+         * <pre>
+         * DBKDLMNLNKM
+         * </pre>
+         *
          * <code>int32 direction = 1;</code>
          *
          * @return The direction.
@@ -179,6 +191,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
         public static final int PERFORMID_FIELD_NUMBER = 7;
         private int performId_;
         /**
+         *
+         *
+         * <pre>
+         * HKCNKFCDGIP
+         * </pre>
+         *
          * <code>int32 performId = 7;</code>
          *
          * @return The performId.
@@ -191,6 +209,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
         public static final int DIRECTION_FIELD_NUMBER = 1;
         private int direction_;
         /**
+         *
+         *
+         * <pre>
+         * DBKDLMNLNKM
+         * </pre>
+         *
          * <code>int32 direction = 1;</code>
          *
          * @return The direction.
@@ -664,6 +688,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
 
             private int performId_;
             /**
+             *
+             *
+             * <pre>
+             * HKCNKFCDGIP
+             * </pre>
+             *
              * <code>int32 performId = 7;</code>
              *
              * @return The performId.
@@ -673,6 +703,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
                 return performId_;
             }
             /**
+             *
+             *
+             * <pre>
+             * HKCNKFCDGIP
+             * </pre>
+             *
              * <code>int32 performId = 7;</code>
              *
              * @param value The performId to set.
@@ -685,6 +721,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * HKCNKFCDGIP
+             * </pre>
+             *
              * <code>int32 performId = 7;</code>
              *
              * @return This builder for chaining.
@@ -698,6 +740,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
 
             private int direction_;
             /**
+             *
+             *
+             * <pre>
+             * DBKDLMNLNKM
+             * </pre>
+             *
              * <code>int32 direction = 1;</code>
              *
              * @return The direction.
@@ -707,6 +755,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
                 return direction_;
             }
             /**
+             *
+             *
+             * <pre>
+             * DBKDLMNLNKM
+             * </pre>
+             *
              * <code>int32 direction = 1;</code>
              *
              * @param value The direction to set.
@@ -719,6 +773,12 @@ public final class EvtAvatarStandUpNotifyOuterClass {
                 return this;
             }
             /**
+             *
+             *
+             * <pre>
+             * DBKDLMNLNKM
+             * </pre>
+             *
              * <code>int32 direction = 1;</code>
              *
              * @return This builder for chaining.
