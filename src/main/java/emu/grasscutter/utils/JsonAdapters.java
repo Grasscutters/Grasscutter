@@ -77,6 +77,36 @@ public class JsonAdapters {
         }
     }
 
+    static class GridPositionAdapter extends TypeAdapter<GridPosition> {
+        @Override
+        public void write(JsonWriter out, GridPosition value) throws IOException {
+            out.value("(" + value.getX() + ", " + value.getZ() + ", " + value.getWidth() + ")");
+        }
+
+        @Override
+        public GridPosition read(JsonReader in) throws IOException {
+            if (in.peek() != JsonToken.STRING)
+                throw new IOException("Invalid GridPosition definition - " + in.peek().name());
+
+            // GridPosition follows the format of: (x, y, z).
+            // Flatten to (x,y,z) for easier parsing.
+            var str = in.nextString()
+                .replace("(", "")
+                .replace(")", "")
+                .replace(" ", "");
+            var split = str.split(",");
+
+            if (split.length != 3)
+                throw new IOException("Invalid GridPosition definition - " + in.peek().name());
+
+            return new GridPosition(
+                Integer.parseInt(split[0]),
+                Integer.parseInt(split[1]),
+                Integer.parseInt(split[2])
+            );
+        }
+    }
+
     static class PositionAdapter extends TypeAdapter<Position> {
         @Override
         public Position read(JsonReader reader) throws IOException {
