@@ -71,11 +71,11 @@ public abstract class ActivityHandler {
                 .forEach(
                         condGroupId -> {
                             var condGroup = GameData.getActivityCondGroupMap().get((int) condGroupId);
-                            condGroup
-                                    .getCondIds()
-                                    .forEach(
-                                            condition ->
-                                                    questManager.queueEvent(QuestCond.QUEST_COND_ACTIVITY_COND, condition));
+                            if (condGroup != null) condGroup
+                                .getCondIds()
+                                .forEach(
+                                    condition ->
+                                        questManager.queueEvent(QuestCond.QUEST_COND_ACTIVITY_COND, condition));
                         });
     }
 

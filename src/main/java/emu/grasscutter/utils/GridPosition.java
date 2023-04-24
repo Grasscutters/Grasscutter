@@ -1,5 +1,6 @@
 package emu.grasscutter.utils;
 
+import com.github.davidmoten.rtreemulti.geometry.Point;
 import dev.morphia.annotations.Entity;
 import java.io.IOException;
 import java.io.Serializable;
@@ -9,7 +10,7 @@ import lombok.Setter;
 import lombok.SneakyThrows;
 
 @Entity
-public class GridPosition implements Serializable {
+public final class GridPosition implements Serializable {
     private static final long serialVersionUID = -2001232300615923575L;
 
     @Getter @Setter private int x;
@@ -38,8 +39,7 @@ public class GridPosition implements Serializable {
         this.x = xzwidth.get(0);
     }
 
-    @SneakyThrows
-    public GridPosition(String str) {
+    public GridPosition(String str) throws IOException {
         String[] listOfParams = str.replace(" ", "").replace("(", "").replace(")", "").split(",");
         if (listOfParams.length != 3)
             throw new IOException("invalid size on GridPosition definition - ");
@@ -91,15 +91,23 @@ public class GridPosition implements Serializable {
         return new int[] {x, z, width};
     }
 
+    public double[] toDoubleArray() {
+        return new double[]{ x, z };
+    }
+
     public int[] toXZIntArray() {
         return new int[] {x, z};
     }
 
+    public Point toPoint() {
+        return Point.create(x,z);
+    }
+
     @Override
     public int hashCode() {
-        int result = (int) (x ^ (x >>> 32));
-        result = 31 * result + (int) (z ^ (z >>> 32));
-        result = 31 * result + (int) (width ^ (width >>> 32));
+        int result = x ^ (x >>> 32);
+        result = 31 * result + (z ^ (z >>> 32));
+        result = 31 * result + (width ^ (width >>> 32));
         return result;
     }
 

@@ -330,16 +330,30 @@ public final class Scene {
         addEntities(entities, VisionType.VISION_TYPE_BORN);
     }
 
+    private static <T> List<List<T>> chopped(List<T> list, final int L) {
+        List<List<T>> parts = new ArrayList<List<T>>();
+        final int N = list.size();
+        for (int i = 0; i < N; i += L) {
+            parts.add(new ArrayList<T>(
+                list.subList(i, Math.min(N, i + L)))
+            );
+        }
+        return parts;
+    }
+
     public synchronized void addEntities(
             Collection<? extends GameEntity> entities, VisionType visionType) {
         if (entities == null || entities.isEmpty()) {
             return;
         }
-        for (GameEntity entity : entities) {
+
+        for (var entity : entities) {
             this.addEntityDirectly(entity);
         }
 
-        this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, visionType));
+        for(var l : chopped(new ArrayList<>(entities), 100)) {
+            this.broadcastPacket(new PacketSceneEntityAppearNotify(l, visionType));
+        }
     }
 
     private GameEntity removeEntityDirectly(GameEntity entity) {
