@@ -2,11 +2,13 @@ package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.quest.enums.QuestType;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
 import lombok.Data;
 
 public class MainQuestData {
@@ -59,17 +61,14 @@ public class MainQuestData {
         this.talks = talks.stream().filter(Objects::nonNull).toList();
         Arrays.stream(this.subQuests).forEach(quest -> {
             var questData = GameData.getQuestDataMap().get(quest.getSubId());
-            if (questData != null) questData.applyFrom(quest);
+            if (questData != null)
+                questData.applyFrom(quest);
+            else
+                GameData.getQuestDataMap().put(quest.getSubId(), quest);
         });
     }
 
-    @Data
-    public static class SubQuestData {
-        private int subId;
-        private int order;
-        private boolean isRewind;
-        private boolean finishParent;
-    }
+    public static class SubQuestData extends QuestData { }
 
     @Data
     @Entity
