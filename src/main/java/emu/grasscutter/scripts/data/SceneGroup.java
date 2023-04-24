@@ -15,6 +15,7 @@ import javax.script.ScriptException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 
 @ToString
@@ -165,11 +166,13 @@ public final class SceneGroup {
 
             // Add monsters and gadgets to suite
             this.suites.forEach(i -> i.init(this));
-
         } catch (ScriptException e) {
             Grasscutter.getLogger()
                     .error(
                             "An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
+        } catch (LuaError luaError) {
+            Grasscutter.getLogger().error("An error occurred while loading group %s in scene %s."
+                .formatted(this.id, sceneId), luaError);
         }
 
         Grasscutter.getLogger().debug("Successfully loaded group {} in scene {}.", this.id, sceneId);
