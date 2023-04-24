@@ -489,17 +489,15 @@ public final class ResourceLoader {
     }
 
     private static void loadQuests() {
-        try {
-            Files.list(getResourcePath("BinOutput/Quest/"))
-                    .forEach(
-                            path -> {
-                                try {
-                                    val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
-                                    GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
-                                } catch (IOException e) {
+        try (var files = Files.list(getResourcePath("BinOutput/Quest/"))) {
+            files.forEach(path -> {
+                try {
+                    val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
+                    GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
 
-                                }
-                            });
+                    mainQuest.onLoad(); // Load the quest data.
+                } catch (IOException ignored) { }
+            });
         } catch (IOException e) {
             Grasscutter.getLogger().error("Quest data missing");
             return;
@@ -507,17 +505,19 @@ public final class ResourceLoader {
 
         try {
             val questEncryptionMap = GameData.getMainQuestEncryptionMap();
-            String path = "QuestEncryptionKeys.json";
+            var path = "QuestEncryptionKeys.json";
             try {
                 JsonUtils.loadToList(getResourcePath(path), QuestEncryptionKey.class)
                         .forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             } catch (IOException | NullPointerException ignored) {
             }
+
             try {
                 DataLoader.loadList(path, QuestEncryptionKey.class)
                         .forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             } catch (IOException | NullPointerException ignored) {
             }
+
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);

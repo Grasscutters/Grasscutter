@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.quest.enums.*;
 import java.util.ArrayList;
@@ -69,7 +70,12 @@ public class QuestData extends GameResource {
 
         if (this.gainItems == null) this.gainItems = Collections.emptyList();
 
-        addToCache();
+        this.addToCache();
+    }
+
+    public void applyFrom(MainQuestData.SubQuestData additionalData) {
+        this.isRewind = additionalData.isRewind();
+        this.finishParent = additionalData.isFinishParent();
     }
 
     private void addToCache() {
