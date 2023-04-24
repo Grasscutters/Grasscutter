@@ -289,7 +289,7 @@ public class GameQuest {
      */
     public List<IntIntImmutablePair> getDungeonIds() {
         // Check if this quest is active.
-        if (this.state != QuestState.UNFINISHED) return List.of();
+        if (this.state != QuestState.QUEST_STATE_UNFINISHED) return List.of();
 
         return this.getQuestData().getFinishCond().stream()
                 .filter(cond -> cond.getType() == QuestContent.QUEST_CONTENT_ENTER_DUNGEON)
