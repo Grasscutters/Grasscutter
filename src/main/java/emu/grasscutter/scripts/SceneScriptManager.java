@@ -437,7 +437,7 @@ public class SceneScriptManager {
     public List<Grid> getGroupGrids() {
         int sceneId = scene.getId();
         if (groupGridsCache.containsKey(sceneId) && groupGridsCache.get(sceneId) != null) {
-            Grasscutter.getLogger().debug("Hit cache for scene {}", sceneId);
+            Grasscutter.getLogger().trace("Hit cache for scene {}", sceneId);
             return groupGridsCache.get(sceneId);
         } else {
             var path = FileUtils.getCachePath("scene" + sceneId + "_grid.json");
