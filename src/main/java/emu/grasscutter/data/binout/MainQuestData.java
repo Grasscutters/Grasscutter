@@ -58,17 +58,21 @@ public class MainQuestData {
     }
 
     public void onLoad() {
-        this.talks = talks.stream().filter(Objects::nonNull).toList();
+        if (this.talks != null)
+            this.talks = this.talks.stream()
+                .filter(Objects::nonNull).toList();
         Arrays.stream(this.subQuests).forEach(quest -> {
             var questData = GameData.getQuestDataMap().get(quest.getSubId());
-            if (questData != null)
-                questData.applyFrom(quest);
-            else
-                GameData.getQuestDataMap().put(quest.getSubId(), quest);
+            if (questData != null) questData.applyFrom(quest);
         });
     }
 
-    public static class SubQuestData extends QuestData { }
+    @Data public static class SubQuestData {
+        private int subId;
+        private int order;
+        private boolean isMpBlock;
+        private boolean isRewind, finishParent;
+    }
 
     @Data
     @Entity
