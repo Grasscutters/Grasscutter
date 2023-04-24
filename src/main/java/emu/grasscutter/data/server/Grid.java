@@ -6,7 +6,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.GridPosition;
 import emu.grasscutter.utils.Position;
-
 import java.util.*;
 
 public class Grid {
@@ -15,14 +14,13 @@ public class Grid {
 
     public Map<GridPosition, Set<Integer>> grid = new LinkedHashMap<>();
 
-    /**
-     * Creates an optimized cache of the grid.
-     */
+    /** Creates an optimized cache of the grid. */
     private void optimize() {
         if (this.gridOptimized == null) {
             var gridValues = new ArrayList<Map.Entry<GridPosition, Set<Integer>>>();
             this.grid.forEach((k, v) -> gridValues.add(new AbstractMap.SimpleEntry<>(k, v)));
-            this.gridOptimized = SceneIndexManager.buildIndex(2, gridValues, entry -> entry.getKey().toPoint());
+            this.gridOptimized =
+                    SceneIndexManager.buildIndex(2, gridValues, entry -> entry.getKey().toPoint());
         }
     }
 
@@ -57,7 +55,7 @@ public class Grid {
 
         // Construct a list of nearby groups.
         SceneIndexManager.queryNeighbors(gridOptimized, pos.toDoubleArray(), vision_range_grid + 1)
-            .forEach(e -> nearbyGroups.addAll(e.getValue()));
+                .forEach(e -> nearbyGroups.addAll(e.getValue()));
         return this.nearbyGroups;
     }
 }

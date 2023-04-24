@@ -105,21 +105,23 @@ public class EntityGadget extends EntityBaseGadget {
         this.addConfigAbilities();
     }
 
-    private void addConfigAbilities(){
-        if(this.configGadget != null && this.configGadget.getAbilities() != null) {
+    private void addConfigAbilities() {
+        if (this.configGadget != null && this.configGadget.getAbilities() != null) {
             for (var ability : this.configGadget.getAbilities()) {
                 this.addConfigAbility(ability);
             }
         }
     }
 
-    private void addConfigAbility(ConfigAbilityData abilityData){
+    private void addConfigAbility(ConfigAbilityData abilityData) {
         var data = GameData.getAbilityData(abilityData.getAbilityName());
-        if(data != null)
-            getScene().getWorld().getHost().getAbilityManager().addAbilityToEntity(
-                this, data, abilityData.getAbilityID());
+        if (data != null)
+            getScene()
+                    .getWorld()
+                    .getHost()
+                    .getAbilityManager()
+                    .addAbilityToEntity(this, data, abilityData.getAbilityID());
     }
-
 
     public void setState(int state) {
         this.state = state;

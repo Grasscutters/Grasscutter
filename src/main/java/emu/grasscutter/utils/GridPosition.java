@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.SneakyThrows;
 
 @Entity
 public final class GridPosition implements Serializable {
@@ -92,7 +91,7 @@ public final class GridPosition implements Serializable {
     }
 
     public double[] toDoubleArray() {
-        return new double[]{ x, z };
+        return new double[] {x, z};
     }
 
     public int[] toXZIntArray() {
@@ -100,7 +99,7 @@ public final class GridPosition implements Serializable {
     }
 
     public Point toPoint() {
-        return Point.create(x,z);
+        return Point.create(x, z);
     }
 
     @Override

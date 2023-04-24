@@ -487,7 +487,8 @@ public final class TeamManager extends BasePlayerDataManager {
         return this.getTrialAvatars().values().stream()
                 .filter(avatar -> avatar.getTrialAvatarId() == trialAvatarId)
                 .map(Avatar::getGuid)
-                .findFirst().orElse(0L);
+                .findFirst()
+                .orElse(0L);
     }
 
     /** Rollback changes from using a trial avatar team. */
@@ -1074,7 +1075,8 @@ public final class TeamManager extends BasePlayerDataManager {
 
         this.getPlayer()
                 .sendPacket(
-                        new PacketAvatarDelNotify(trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
+                        new PacketAvatarDelNotify(
+                                trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
         this.removeTrialAvatarTeam(trialAvatarIds);
 
         // Update the team.

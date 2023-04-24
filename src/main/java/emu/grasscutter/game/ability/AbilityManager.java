@@ -13,29 +13,36 @@ import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
+import emu.grasscutter.net.proto.AbilityMetaAddAbilityOuterClass.AbilityMetaAddAbility;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
+import emu.grasscutter.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange;
 import emu.grasscutter.net.proto.AbilityMetaReInitOverrideMapOuterClass.AbilityMetaReInitOverrideMap;
 import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     public static final ExecutorService eventExecutor;
 
     static {
-        eventExecutor = new ThreadPoolExecutor(4, 4,
-            60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
-            FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
+        eventExecutor =
+                new ThreadPoolExecutor(
+                        4,
+                        4,
+                        60,
+                        TimeUnit.SECONDS,
+                        new LinkedBlockingDeque<>(1000),
+                        FastThreadLocalThread::new,
+                        new ThreadPoolExecutor.AbortPolicy());
     }
 
     private final HealAbilityManager healAbilityManager;
@@ -52,9 +59,7 @@ public final class AbilityManager extends BasePlayerManager {
         this.registerHandlers();
     }
 
-    /**
-     * Registers all present ability handlers.
-     */
+    /** Registers all present ability handlers. */
     private void registerHandlers() {
         var reflections = new Reflections("emu.grasscutter.game.ability.actions");
         var handlerClasses = reflections.getSubTypesOf(AbilityActionHandler.class);
@@ -77,22 +82,31 @@ public final class AbilityManager extends BasePlayerManager {
         var handler = actionHandlers.get(action.type);
 
         if (handler == null || ability == null) {
-            Grasscutter.getLogger().debug("Could not execute ability action {} at {}", action.type, ability);
+            Grasscutter.getLogger()
+                    .debug("Could not execute ability action {} at {}", action.type, ability);
             return;
         }
 
-        eventExecutor.submit(() -> {
-            if (!handler.execute(ability, action)) {
-                Grasscutter.getLogger().debug("exec ability action failed {} at {}", action.type, ability);
-            }
-        });
+        eventExecutor.submit(
+                () -> {
+                    if (!handler.execute(ability, action)) {
+                        Grasscutter.getLogger()
+                                .debug("exec ability action failed {} at {}", action.type, ability);
+                    }
+                });
     }
 
     public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
         this.healAbilityManager.healHandler(invoke);
 
         if (invoke.getEntityId() == 67109298) {
-            Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + invoke.getEntityId());
+            Grasscutter.getLogger()
+                    .info(
+                            invoke.getArgumentType()
+                                    + " ("
+                                    + invoke.getArgumentTypeValue()
+                                    + "): "
+                                    + invoke.getEntityId());
         }
 
         switch (invoke.getArgumentType()) {
@@ -102,7 +116,8 @@ public final class AbilityManager extends BasePlayerManager {
             case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA -> this.handleMixinCostStamina(invoke);
             case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL -> this.handleGenerateElemBall(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_GLOBAL_FLOAT_VALUE -> this.handleGlobalFloatValue(invoke);
-            case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_DURABILITY_CHANGE -> this.handleModifierDurabilityChange(invoke);
+            case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_DURABILITY_CHANGE -> this
+                    .handleModifierDurabilityChange(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_ADD_NEW_ABILITY -> this.handleAddNewAbility(invoke);
             case ABILITY_INVOKE_ARGUMENT_NONE -> this.handleInvoke(invoke);
             default -> {}
@@ -173,29 +188,39 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         var head = invoke.getHead();
-        Grasscutter.getLogger().debug("{} {} {}", head.getInstancedAbilityId(), entity.getInstanceToHash(), head.getLocalId());
+        Grasscutter.getLogger()
+                .debug(
+                        "{} {} {}",
+                        head.getInstancedAbilityId(),
+                        entity.getInstanceToHash(),
+                        head.getLocalId());
 
         var hash = entity.getInstanceToHash().get(head.getInstancedAbilityId());
         if (hash == null) {
             var abilities = entity.getAbilities().values().toArray(new Ability[0]);
 
-            if(head.getInstancedAbilityId() <= abilities.length) {
+            if (head.getInstancedAbilityId() <= abilities.length) {
                 var ability = abilities[head.getInstancedAbilityId() - 1];
                 Grasscutter.getLogger().warn("-> {}", ability.getData().localIdToAction);
                 var action = ability.getData().localIdToAction.get(head.getLocalId());
-                if(action != null) ability.getManager().executeAction(ability, action);
+                if (action != null) ability.getManager().executeAction(ability, action);
             }
 
             return;
         }
 
-        var stream = entity.getAbilities().values().stream()
-            .filter(a -> a.getHash() == hash ||
-                a.getData().abilityName == entity.getInstanceToName().get(head.getInstancedAbilityId()));
-        stream.forEach(ability -> {
-            var action = ability.getData().localIdToAction.get(head.getLocalId());
-            if(action != null) ability.getManager().executeAction(ability, action);
-        });
+        var stream =
+                entity.getAbilities().values().stream()
+                        .filter(
+                                a ->
+                                        a.getHash() == hash
+                                                || a.getData().abilityName
+                                                        == entity.getInstanceToName().get(head.getInstancedAbilityId()));
+        stream.forEach(
+                ability -> {
+                    var action = ability.getData().localIdToAction.get(head.getLocalId());
+                    if (action != null) ability.getManager().executeAction(ability, action);
+                });
     }
 
     private void handleOverrideParam(AbilityInvokeEntry invoke) throws Exception {
@@ -248,7 +273,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
             var ability = target.getAbilities().get(data.getParentAbilityName().getStr());
-            if(ability != null) {
+            if (ability != null) {
                 var modifier = ability.getModifiers().get(head.getInstancedModifierId());
                 if (modifier != null) {
                     modifier.onRemoved();
@@ -257,16 +282,26 @@ public final class AbilityManager extends BasePlayerManager {
             }
         }
 
-        if(data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED) {
+        if (data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED) {
             var modifierString = data.getParentAbilityName().getStr();
             var hash = target.getInstanceToHash().get(head.getInstancedAbilityId());
-            if(hash == null) return;
+            if (hash == null) return;
 
-            target.getAbilities().values().stream().filter(a -> a.getHash() == hash || a.getData().abilityName == target.getInstanceToName().get(head.getInstancedAbilityId())).forEach(a -> {
-                a.getModifiers().keySet().stream().filter(key -> key.compareTo(modifierString) == 0).forEach(key -> {
-                    a.getModifiers().get(key).setLocalId(head.getInstancedModifierId());
-                });
-            });
+            target.getAbilities().values().stream()
+                    .filter(
+                            a ->
+                                    a.getHash() == hash
+                                            || a.getData().abilityName
+                                                    == target.getInstanceToName().get(head.getInstancedAbilityId()))
+                    .forEach(
+                            a -> {
+                                a.getModifiers().keySet().stream()
+                                        .filter(key -> key.compareTo(modifierString) == 0)
+                                        .forEach(
+                                                key -> {
+                                                    a.getModifiers().get(key).setLocalId(head.getInstancedModifierId());
+                                                });
+                            });
         }
 
         var sourceEntity = this.player.getScene().getEntityById(data.getApplyEntityId());
@@ -362,7 +397,8 @@ public final class AbilityManager extends BasePlayerManager {
         }
     }
 
-    private void handleModifierDurabilityChange(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+    private void handleModifierDurabilityChange(AbilityInvokeEntry invoke)
+            throws InvalidProtocolBufferException {
         var target = this.player.getScene().getEntityById(invoke.getEntityId());
         if (target == null) {
             return;
@@ -374,41 +410,53 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         var head = invoke.getHead();
-        if (head == null) {
-            return;
-        }
-
         var hash = target.getInstanceToHash().get(head.getInstancedAbilityId());
-        if(hash == null) return;
-        target.getAbilities().values().stream().filter(a -> a.getHash() == hash || a.getData().abilityName == target.getInstanceToName().get(head.getInstancedAbilityId())).forEach(a -> {
-            a.getModifiers().values().stream().filter(m -> m.getLocalId() == head.getInstancedModifierId()).forEach(modifier -> {
-                modifier.setElementDurability(data.getRemainDurability());
-            });
-        });
+        if (hash == null) return;
+        target.getAbilities().values().stream()
+                .filter(
+                        a ->
+                                a.getHash() == hash
+                                        || a.getData().abilityName
+                                                == target.getInstanceToName().get(head.getInstancedAbilityId()))
+                .forEach(
+                        a -> {
+                            a.getModifiers().values().stream()
+                                    .filter(m -> m.getLocalId() == head.getInstancedModifierId())
+                                    .forEach(
+                                            modifier -> {
+                                                modifier.setElementDurability(data.getRemainDurability());
+                                            });
+                        });
     }
 
-    private void handleAddNewAbility(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+    private void handleAddNewAbility(AbilityInvokeEntry invoke)
+            throws InvalidProtocolBufferException {
         var data = AbilityMetaAddAbility.parseFrom(invoke.getAbilityData());
         if (data == null) {
             return;
-}
+        }
 
-        if(data.getAbility().getAbilityName().getHash() != 0) Grasscutter.getLogger().warn("Instancing {} in to {}", data.getAbility().getAbilityName().getHash(), data.getAbility().getInstancedAbilityId());
-        else Grasscutter.getLogger().warn("Instancing {} in to {}", data.getAbility().getAbilityName().getStr(), data.getAbility().getInstancedAbilityId());
+        var ability = data.getAbility();
+        var abilityName = ability.getAbilityName();
+        if (abilityName.getHash() != 0)
+            Grasscutter.getLogger()
+                    .warn("Instancing {} in to {}", abilityName.getHash(), ability.getInstancedAbilityId());
+        else
+            Grasscutter.getLogger()
+                    .warn("Instancing {} in to {}", abilityName.getStr(), ability.getInstancedAbilityId());
 
-        GameEntity target = this.player.getScene().getEntityById(invoke.getEntityId());
+        var target = this.player.getScene().getEntityById(invoke.getEntityId());
         if (target == null) {
             return;
         }
 
-        target.getInstanceToHash().put(data.getAbility().getInstancedAbilityId(), data.getAbility().getAbilityName().getHash());
-        target.getInstanceToName().put(data.getAbility().getInstancedAbilityId(), data.getAbility().getAbilityName().getStr());
+        target.getInstanceToHash().put(ability.getInstancedAbilityId(), abilityName.getHash());
+        target.getInstanceToName().put(ability.getInstancedAbilityId(), abilityName.getStr());
     }
 
     public void addAbilityToEntity(GameEntity entity, String name) {
         var data = GameData.getAbilityData(name);
-        if(data != null)
-            addAbilityToEntity(entity, data, name);
+        if (data != null) addAbilityToEntity(entity, data, name);
     }
 
     public void addAbilityToEntity(GameEntity entity, AbilityData abilityData, String id) {

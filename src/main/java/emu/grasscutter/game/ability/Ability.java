@@ -1,12 +1,11 @@
 package emu.grasscutter.game.ability;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import emu.grasscutter.data.binout.AbilityData;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.utils.Utils;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Getter;
 
 public final class Ability {
@@ -14,8 +13,7 @@ public final class Ability {
     @Getter private GameEntity owner;
 
     @Getter private AbilityManager manager;
-    @Getter private Map<String, AbilityModifierController> modifiers
-        = new HashMap<>();
+    @Getter private Map<String, AbilityModifierController> modifiers = new HashMap<>();
 
     @Getter private int hash;
 

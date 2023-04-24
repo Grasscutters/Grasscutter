@@ -4,7 +4,6 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.ability.AbilityAction;
 import emu.grasscutter.game.ability.AbilityActionHandler;
-import emu.grasscutter.game.entity.GameEntity;
 
 @AbilityAction(AbilityModifierAction.Type.KillSelf)
 public final class ActionKillSelf extends AbilityActionHandler {

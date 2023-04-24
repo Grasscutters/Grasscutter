@@ -2,9 +2,8 @@ package emu.grasscutter.game.ability;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import lombok.AllArgsConstructor;
-
 import java.util.Map;
+import lombok.AllArgsConstructor;
 
 public final class AbilityLocalIdGenerator {
     public ConfigAbilitySubContainerType type;
@@ -13,13 +12,12 @@ public final class AbilityLocalIdGenerator {
     public long mixinIndex = 0;
     private long actionIndex = 0;
 
-    public AbilityLocalIdGenerator(ConfigAbilitySubContainerType type)
-    {
+    public AbilityLocalIdGenerator(ConfigAbilitySubContainerType type) {
         this.type = type;
     }
 
-    public void initializeActionLocalIds(AbilityModifierAction[] actions, Map<Integer, AbilityModifierAction> localIdToAction)
-    {
+    public void initializeActionLocalIds(
+            AbilityModifierAction[] actions, Map<Integer, AbilityModifierAction> localIdToAction) {
         if (actions == null) return;
 
         actionIndex = 0;
@@ -44,7 +42,11 @@ public final class AbilityLocalIdGenerator {
                 return type.value + (modifierIndex << 3) + (configIndex << 9) + (actionIndex << 15);
             }
             case MODIFIER_MIXIN -> {
-                return type.value + (modifierIndex << 3) + (mixinIndex << 9) + (configIndex << 15) + (actionIndex << 21);
+                return type.value
+                        + (modifierIndex << 3)
+                        + (mixinIndex << 9)
+                        + (configIndex << 15)
+                        + (actionIndex << 21);
             }
             case NONE -> Grasscutter.getLogger().error("Ability local id generator using NONE type.");
         }

@@ -18,9 +18,10 @@ public final class ActionApplyModifier extends AbilityActionHandler {
             return false;
         }
 
-        if (modifierData.stacking != null && modifierData.stacking.compareTo("Unique") == 0 &&
-            ability.getModifiers().values().stream()
-                .anyMatch(m -> m.getData().equals(modifierData))) {
+        if (modifierData.stacking != null
+                && modifierData.stacking.compareTo("Unique") == 0
+                && ability.getModifiers().values().stream()
+                        .anyMatch(m -> m.getData().equals(modifierData))) {
             return true;
         }
 
@@ -28,15 +29,18 @@ public final class ActionApplyModifier extends AbilityActionHandler {
         ability.getModifiers().put(action.modifierName, modifier);
         modifier.onAdded();
 
-        if(modifierData.duration != DynamicFloat.ZERO) {
-            Grasscutter.getGameServer().getScheduler().scheduleAsyncTask(() -> {
-                try {
-                    Thread.sleep((int)(modifierData.duration.get() * 1000));
-                    modifier.onRemoved();
-                } catch (InterruptedException ignored) {
-                    Grasscutter.getLogger().error("Failed to schedule ability modifier async task.");
-                }
-            });
+        if (modifierData.duration != DynamicFloat.ZERO) {
+            Grasscutter.getGameServer()
+                    .getScheduler()
+                    .scheduleAsyncTask(
+                            () -> {
+                                try {
+                                    Thread.sleep((int) (modifierData.duration.get() * 1000));
+                                    modifier.onRemoved();
+                                } catch (InterruptedException ignored) {
+                                    Grasscutter.getLogger().error("Failed to schedule ability modifier async task.");
+                                }
+                            });
         }
 
         return true;

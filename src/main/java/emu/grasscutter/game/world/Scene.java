@@ -334,9 +334,7 @@ public final class Scene {
         List<List<T>> parts = new ArrayList<List<T>>();
         final int N = list.size();
         for (int i = 0; i < N; i += L) {
-            parts.add(new ArrayList<T>(
-                list.subList(i, Math.min(N, i + L)))
-            );
+            parts.add(new ArrayList<T>(list.subList(i, Math.min(N, i + L))));
         }
         return parts;
     }
@@ -351,7 +349,7 @@ public final class Scene {
             this.addEntityDirectly(entity);
         }
 
-        for(var l : chopped(new ArrayList<>(entities), 100)) {
+        for (var l : chopped(new ArrayList<>(entities), 100)) {
             this.broadcastPacket(new PacketSceneEntityAppearNotify(l, visionType));
         }
     }

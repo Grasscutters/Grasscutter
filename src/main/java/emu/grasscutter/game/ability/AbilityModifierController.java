@@ -9,7 +9,7 @@ import lombok.Setter;
 public final class AbilityModifierController {
     @Getter private AbilityModifier data;
 
-    @Getter private Ability ability; //Owner ability instance
+    @Getter private Ability ability; // Owner ability instance
 
     @Getter private float elementDurability;
 
@@ -54,7 +54,7 @@ public final class AbilityModifierController {
 
         if (event.getAttackElementType().equals(data.elementType)) {
             elementDurability -= event.getDamage();
-            if(elementDurability <= 0) {
+            if (elementDurability <= 0) {
                 onRemoved();
                 ability.getModifiers().values().removeIf(a -> a == this);
             }
