@@ -20,7 +20,7 @@
 
 ## Quick setup guide
 
-**Note:** For support please join our [Discord](https://discord.gg/T5vZU6UyeG).
+**Note**: For support please join our [Discord](https://discord.gg/T5vZU6UyeG).
 
 ### Requirements
 
@@ -86,7 +86,7 @@ cd Grasscutter
 .\gradlew jar # Compile
 ```
 
-##### Linux
+##### Linux (GNU)
 
 ```bash
 git clone https://github.com/Grasscutters/Grasscutter.git
@@ -97,10 +97,6 @@ chmod +x gradlew
 
 You can find the output jar in the root of the project folder.
 
-### Commands have moved to the [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
+### Troubleshooting 
 
-# Quick Troubleshooting
-
-* If compiling wasn't successful, please check your JDK installation (Make sure its JDK 17 or higher and validated JDK's bin PATH variable).
-* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*. If you're using Fiddler, change the default port to anything other than 8888.
-* Startup sequence: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game
+For a list of common issues and solutions and to ask for help, please join [our Discord server](https://discord.gg/T5vZU6UyeG) and go to the support channel.
