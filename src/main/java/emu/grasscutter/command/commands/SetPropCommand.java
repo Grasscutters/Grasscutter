@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -231,7 +232,7 @@ public final class SetPropCommand implements CommandHandler {
     }
 
     // List of map areas. Unfortunately, there is no readily available source for them in excels or bins.
-    final static private List<Integer> sceneAreas = List.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20,21,22,23,24,25,26,27,28,29,32,100,101,102,103,200,210,300,400,401,402,403);
+    final static private List<Integer> sceneAreas = IntStream.range(1, 1000).boxed().toList();
     private boolean unlockMap(Player targetPlayer) {
         // Unlock.
         GameData.getScenePointsPerScene().forEach((sceneId, scenePoints) -> {
