@@ -438,11 +438,6 @@ public final class TeamManager extends BasePlayerDataManager {
         this.usingTrialTeam = true;
     }
 
-    /** Displays the trial avatars. Picks the last avatar in the team. */
-    public void trialAvatarTeamPostUpdate() {
-        this.trialAvatarTeamPostUpdate(this.getActiveTeam().size() - 1);
-    }
-
     /**
      * Displays the trial avatars.
      *
@@ -1035,7 +1030,7 @@ public final class TeamManager extends BasePlayerDataManager {
                             this.addTrialAvatar(
                                     trialAvatarId,
                                     questId,
-                                    questId == 0
+                                    questId != 0
                                             ? GrantReason.GRANT_REASON_BY_QUEST
                                             : GrantReason.GRANT_REASON_BY_TRIAL_AVATAR_ACTIVITY);
 
@@ -1073,11 +1068,11 @@ public final class TeamManager extends BasePlayerDataManager {
     public void removeTrialAvatar(List<Integer> trialAvatarIds) {
         if (!this.isUsingTrialTeam()) throw new RuntimeException("Player is not using a trial team.");
 
+        this.removeTrialAvatarTeam(trialAvatarIds);
         this.getPlayer()
                 .sendPacket(
                         new PacketAvatarDelNotify(
                                 trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
-        this.removeTrialAvatarTeam(trialAvatarIds);
 
         // Update the team.
         if (trialAvatarIds.size() == 1) this.getPlayer().sendPacket(new PacketAvatarTeamUpdateNotify());
