@@ -19,10 +19,10 @@ public final class TowerAllDataRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DPKOCIDIHEI = 10;</code>
-     * @return The dPKOCIDIHEI.
+     * <code>uint32 tower_schedule_id = 10;</code>
+     * @return The towerScheduleId.
      */
-    int getDPKOCIDIHEI();
+    int getTowerScheduleId();
 
     /**
      * <code>bool is_finished_entrance_floor = 4;</code>
@@ -31,60 +31,44 @@ public final class TowerAllDataRspOuterClass {
     boolean getIsFinishedEntranceFloor();
 
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
-    int getOAFKGDGFFEOCount();
+    int getFloorOpenTimeMapCount();
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
-    boolean containsOAFKGDGFFEO(
+    boolean containsFloorOpenTimeMap(
         int key);
     /**
-     * Use {@link #getOAFKGDGFFEOMap()} instead.
+     * Use {@link #getFloorOpenTimeMapMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getOAFKGDGFFEO();
+    getFloorOpenTimeMap();
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getOAFKGDGFFEOMap();
+    getFloorOpenTimeMapMap();
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
 
-    int getOAFKGDGFFEOOrDefault(
+    int getFloorOpenTimeMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
 
-    int getOAFKGDGFFEOOrThrow(
+    int getFloorOpenTimeMapOrThrow(
         int key);
 
     /**
+     * <pre>
+     * not used
+     * </pre>
+     *
      * <code>uint32 AJKNPOGBLDG = 6;</code>
      * @return The aJKNPOGBLDG.
      */
@@ -97,10 +81,10 @@ public final class TowerAllDataRspOuterClass {
     boolean getIsFirstInteract();
 
     /**
-     * <code>uint32 EDGJPPKNHJE = 5;</code>
-     * @return The eDGJPPKNHJE.
+     * <code>uint32 next_schedule_change_time = 5;</code>
+     * @return The nextScheduleChangeTime.
      */
-    int getEDGJPPKNHJE();
+    int getNextScheduleChangeTime();
 
     /**
      * <code>int32 retcode = 13;</code>
@@ -110,15 +94,19 @@ public final class TowerAllDataRspOuterClass {
 
     /**
      * <pre>
-     * PHCNCLHJFBM
+     * not used
      * </pre>
      *
-     * <code>uint32 next_schedule_change_time = 8;</code>
-     * @return The nextScheduleChangeTime.
+     * <code>uint32 PHCNCLHJFBM = 8;</code>
+     * @return The pHCNCLHJFBM.
      */
-    int getNextScheduleChangeTime();
+    int getPHCNCLHJFBM();
 
     /**
+     * <pre>
+     * not used
+     * </pre>
+     *
      * <code>uint32 KPJMJMPPPGK = 12;</code>
      * @return The kPJMJMPPPGK.
      */
@@ -129,10 +117,10 @@ public final class TowerAllDataRspOuterClass {
      *NKMMGNAGOOA
      * </pre>
      *
-     * <code>uint32 tower_schedule_id = 15;</code>
-     * @return The towerScheduleId.
+     * <code>uint32 valid_tower_record_num = 15;</code>
+     * @return The validTowerRecordNum.
      */
-    int getTowerScheduleId();
+    int getValidTowerRecordNum();
 
     /**
      * <code>.TowerMonthlyBrief last_schedule_monthly_brief = 1890;</code>
@@ -189,70 +177,50 @@ public final class TowerAllDataRspOuterClass {
     emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder getMonthlyBriefOrBuilder();
 
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
-    int getFloorOpenTimeMapCount();
+    int getSkipFloorGrantedRewardItemMapCount();
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
-    boolean containsFloorOpenTimeMap(
+    boolean containsSkipFloorGrantedRewardItemMap(
         int key);
     /**
-     * Use {@link #getFloorOpenTimeMapMap()} instead.
+     * Use {@link #getSkipFloorGrantedRewardItemMapMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getFloorOpenTimeMap();
+    getSkipFloorGrantedRewardItemMap();
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getFloorOpenTimeMapMap();
+    getSkipFloorGrantedRewardItemMapMap();
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
 
-    int getFloorOpenTimeMapOrDefault(
+    int getSkipFloorGrantedRewardItemMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
 
-    int getFloorOpenTimeMapOrThrow(
+    int getSkipFloorGrantedRewardItemMapOrThrow(
         int key);
 
     /**
+     * <pre>
+     * GMMJNDFMHAM
+     * </pre>
+     *
      * <code>uint32 GMMJNDFMHAM = 9;</code>
      * @return The gMMJNDFMHAM.
      */
     int getGMMJNDFMHAM();
 
     /**
-     * <pre>
-     * MDANKJCGMIN
-     * </pre>
-     *
      * <code>uint32 schedule_start_time = 1783;</code>
      * @return The scheduleStartTime.
      */
@@ -327,15 +295,15 @@ public final class TowerAllDataRspOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oAFKGDGFFEO_ = com.google.protobuf.MapField.newMapField(
-                    OAFKGDGFFEODefaultEntryHolder.defaultEntry);
+                floorOpenTimeMap_ = com.google.protobuf.MapField.newMapField(
+                    FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              oAFKGDGFFEO__ = input.readMessage(
-                  OAFKGDGFFEODefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              oAFKGDGFFEO_.getMutableMap().put(
-                  oAFKGDGFFEO__.getKey(), oAFKGDGFFEO__.getValue());
+              floorOpenTimeMap__ = input.readMessage(
+                  FloorOpenTimeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              floorOpenTimeMap_.getMutableMap().put(
+                  floorOpenTimeMap__.getKey(), floorOpenTimeMap__.getValue());
               break;
             }
             case 18: {
@@ -349,15 +317,15 @@ public final class TowerAllDataRspOuterClass {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                floorOpenTimeMap_ = com.google.protobuf.MapField.newMapField(
-                    FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
+                skipFloorGrantedRewardItemMap_ = com.google.protobuf.MapField.newMapField(
+                    SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              floorOpenTimeMap__ = input.readMessage(
-                  FloorOpenTimeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              floorOpenTimeMap_.getMutableMap().put(
-                  floorOpenTimeMap__.getKey(), floorOpenTimeMap__.getValue());
+              skipFloorGrantedRewardItemMap__ = input.readMessage(
+                  SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              skipFloorGrantedRewardItemMap_.getMutableMap().put(
+                  skipFloorGrantedRewardItemMap__.getKey(), skipFloorGrantedRewardItemMap__.getValue());
               break;
             }
             case 32: {
@@ -367,7 +335,7 @@ public final class TowerAllDataRspOuterClass {
             }
             case 40: {
 
-              eDGJPPKNHJE_ = input.readUInt32();
+              nextScheduleChangeTime_ = input.readUInt32();
               break;
             }
             case 48: {
@@ -390,7 +358,7 @@ public final class TowerAllDataRspOuterClass {
             }
             case 64: {
 
-              nextScheduleChangeTime_ = input.readUInt32();
+              pHCNCLHJFBM_ = input.readUInt32();
               break;
             }
             case 72: {
@@ -400,7 +368,7 @@ public final class TowerAllDataRspOuterClass {
             }
             case 80: {
 
-              dPKOCIDIHEI_ = input.readUInt32();
+              towerScheduleId_ = input.readUInt32();
               break;
             }
             case 88: {
@@ -433,7 +401,7 @@ public final class TowerAllDataRspOuterClass {
             }
             case 120: {
 
-              towerScheduleId_ = input.readUInt32();
+              validTowerRecordNum_ = input.readUInt32();
               break;
             }
             case 14264: {
@@ -487,9 +455,9 @@ public final class TowerAllDataRspOuterClass {
         int number) {
       switch (number) {
         case 1:
-          return internalGetOAFKGDGFFEO();
-        case 3:
           return internalGetFloorOpenTimeMap();
+        case 3:
+          return internalGetSkipFloorGrantedRewardItemMap();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -503,15 +471,15 @@ public final class TowerAllDataRspOuterClass {
               emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp.class, emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp.Builder.class);
     }
 
-    public static final int DPKOCIDIHEI_FIELD_NUMBER = 10;
-    private int dPKOCIDIHEI_;
+    public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 10;
+    private int towerScheduleId_;
     /**
-     * <code>uint32 DPKOCIDIHEI = 10;</code>
-     * @return The dPKOCIDIHEI.
+     * <code>uint32 tower_schedule_id = 10;</code>
+     * @return The towerScheduleId.
      */
     @java.lang.Override
-    public int getDPKOCIDIHEI() {
-      return dPKOCIDIHEI_;
+    public int getTowerScheduleId() {
+      return towerScheduleId_;
     }
 
     public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 4;
@@ -525,97 +493,81 @@ public final class TowerAllDataRspOuterClass {
       return isFinishedEntranceFloor_;
     }
 
-    public static final int OAFKGDGFFEO_FIELD_NUMBER = 1;
-    private static final class OAFKGDGFFEODefaultEntryHolder {
+    public static final int FLOOR_OPEN_TIME_MAP_FIELD_NUMBER = 1;
+    private static final class FloorOpenTimeMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.TowerAllDataRspOuterClass.internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_descriptor, 
+                  emu.grasscutter.net.proto.TowerAllDataRspOuterClass.internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> oAFKGDGFFEO_;
+        java.lang.Integer, java.lang.Integer> floorOpenTimeMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetOAFKGDGFFEO() {
-      if (oAFKGDGFFEO_ == null) {
+    internalGetFloorOpenTimeMap() {
+      if (floorOpenTimeMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            OAFKGDGFFEODefaultEntryHolder.defaultEntry);
+            FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
       }
-      return oAFKGDGFFEO_;
+      return floorOpenTimeMap_;
     }
 
-    public int getOAFKGDGFFEOCount() {
-      return internalGetOAFKGDGFFEO().getMap().size();
+    public int getFloorOpenTimeMapCount() {
+      return internalGetFloorOpenTimeMap().getMap().size();
     }
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
 
     @java.lang.Override
-    public boolean containsOAFKGDGFFEO(
+    public boolean containsFloorOpenTimeMap(
         int key) {
       
-      return internalGetOAFKGDGFFEO().getMap().containsKey(key);
+      return internalGetFloorOpenTimeMap().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getOAFKGDGFFEOMap()} instead.
+     * Use {@link #getFloorOpenTimeMapMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getOAFKGDGFFEO() {
-      return getOAFKGDGFFEOMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMap() {
+      return getFloorOpenTimeMapMap();
     }
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getOAFKGDGFFEOMap() {
-      return internalGetOAFKGDGFFEO().getMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMapMap() {
+      return internalGetFloorOpenTimeMap().getMap();
     }
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
     @java.lang.Override
 
-    public int getOAFKGDGFFEOOrDefault(
+    public int getFloorOpenTimeMapOrDefault(
         int key,
         int defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetOAFKGDGFFEO().getMap();
+          internalGetFloorOpenTimeMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <pre>
-     * OAFKGDGFFEO
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
      */
     @java.lang.Override
 
-    public int getOAFKGDGFFEOOrThrow(
+    public int getFloorOpenTimeMapOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetOAFKGDGFFEO().getMap();
+          internalGetFloorOpenTimeMap().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -625,6 +577,10 @@ public final class TowerAllDataRspOuterClass {
     public static final int AJKNPOGBLDG_FIELD_NUMBER = 6;
     private int aJKNPOGBLDG_;
     /**
+     * <pre>
+     * not used
+     * </pre>
+     *
      * <code>uint32 AJKNPOGBLDG = 6;</code>
      * @return The aJKNPOGBLDG.
      */
@@ -644,15 +600,15 @@ public final class TowerAllDataRspOuterClass {
       return isFirstInteract_;
     }
 
-    public static final int EDGJPPKNHJE_FIELD_NUMBER = 5;
-    private int eDGJPPKNHJE_;
+    public static final int NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER = 5;
+    private int nextScheduleChangeTime_;
     /**
-     * <code>uint32 EDGJPPKNHJE = 5;</code>
-     * @return The eDGJPPKNHJE.
+     * <code>uint32 next_schedule_change_time = 5;</code>
+     * @return The nextScheduleChangeTime.
      */
     @java.lang.Override
-    public int getEDGJPPKNHJE() {
-      return eDGJPPKNHJE_;
+    public int getNextScheduleChangeTime() {
+      return nextScheduleChangeTime_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
@@ -666,24 +622,28 @@ public final class TowerAllDataRspOuterClass {
       return retcode_;
     }
 
-    public static final int NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER = 8;
-    private int nextScheduleChangeTime_;
+    public static final int PHCNCLHJFBM_FIELD_NUMBER = 8;
+    private int pHCNCLHJFBM_;
     /**
      * <pre>
-     * PHCNCLHJFBM
+     * not used
      * </pre>
      *
-     * <code>uint32 next_schedule_change_time = 8;</code>
-     * @return The nextScheduleChangeTime.
+     * <code>uint32 PHCNCLHJFBM = 8;</code>
+     * @return The pHCNCLHJFBM.
      */
     @java.lang.Override
-    public int getNextScheduleChangeTime() {
-      return nextScheduleChangeTime_;
+    public int getPHCNCLHJFBM() {
+      return pHCNCLHJFBM_;
     }
 
     public static final int KPJMJMPPPGK_FIELD_NUMBER = 12;
     private int kPJMJMPPPGK_;
     /**
+     * <pre>
+     * not used
+     * </pre>
+     *
      * <code>uint32 KPJMJMPPPGK = 12;</code>
      * @return The kPJMJMPPPGK.
      */
@@ -692,19 +652,19 @@ public final class TowerAllDataRspOuterClass {
       return kPJMJMPPPGK_;
     }
 
-    public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 15;
-    private int towerScheduleId_;
+    public static final int VALID_TOWER_RECORD_NUM_FIELD_NUMBER = 15;
+    private int validTowerRecordNum_;
     /**
      * <pre>
      *NKMMGNAGOOA
      * </pre>
      *
-     * <code>uint32 tower_schedule_id = 15;</code>
-     * @return The towerScheduleId.
+     * <code>uint32 valid_tower_record_num = 15;</code>
+     * @return The validTowerRecordNum.
      */
     @java.lang.Override
-    public int getTowerScheduleId() {
-      return towerScheduleId_;
+    public int getValidTowerRecordNum() {
+      return validTowerRecordNum_;
     }
 
     public static final int LAST_SCHEDULE_MONTHLY_BRIEF_FIELD_NUMBER = 1890;
@@ -799,97 +759,81 @@ public final class TowerAllDataRspOuterClass {
       return getMonthlyBrief();
     }
 
-    public static final int FLOOR_OPEN_TIME_MAP_FIELD_NUMBER = 3;
-    private static final class FloorOpenTimeMapDefaultEntryHolder {
+    public static final int SKIP_FLOOR_GRANTED_REWARD_ITEM_MAP_FIELD_NUMBER = 3;
+    private static final class SkipFloorGrantedRewardItemMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.TowerAllDataRspOuterClass.internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_descriptor, 
+                  emu.grasscutter.net.proto.TowerAllDataRspOuterClass.internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> floorOpenTimeMap_;
+        java.lang.Integer, java.lang.Integer> skipFloorGrantedRewardItemMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetFloorOpenTimeMap() {
-      if (floorOpenTimeMap_ == null) {
+    internalGetSkipFloorGrantedRewardItemMap() {
+      if (skipFloorGrantedRewardItemMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
+            SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry);
       }
-      return floorOpenTimeMap_;
+      return skipFloorGrantedRewardItemMap_;
     }
 
-    public int getFloorOpenTimeMapCount() {
-      return internalGetFloorOpenTimeMap().getMap().size();
+    public int getSkipFloorGrantedRewardItemMapCount() {
+      return internalGetSkipFloorGrantedRewardItemMap().getMap().size();
     }
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
 
     @java.lang.Override
-    public boolean containsFloorOpenTimeMap(
+    public boolean containsSkipFloorGrantedRewardItemMap(
         int key) {
       
-      return internalGetFloorOpenTimeMap().getMap().containsKey(key);
+      return internalGetSkipFloorGrantedRewardItemMap().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getFloorOpenTimeMapMap()} instead.
+     * Use {@link #getSkipFloorGrantedRewardItemMapMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMap() {
-      return getFloorOpenTimeMapMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkipFloorGrantedRewardItemMap() {
+      return getSkipFloorGrantedRewardItemMapMap();
     }
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMapMap() {
-      return internalGetFloorOpenTimeMap().getMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkipFloorGrantedRewardItemMapMap() {
+      return internalGetSkipFloorGrantedRewardItemMap().getMap();
     }
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
     @java.lang.Override
 
-    public int getFloorOpenTimeMapOrDefault(
+    public int getSkipFloorGrantedRewardItemMapOrDefault(
         int key,
         int defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetFloorOpenTimeMap().getMap();
+          internalGetSkipFloorGrantedRewardItemMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <pre>
-     * OJGBCIONMOL
-     * </pre>
-     *
-     * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+     * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
      */
     @java.lang.Override
 
-    public int getFloorOpenTimeMapOrThrow(
+    public int getSkipFloorGrantedRewardItemMapOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetFloorOpenTimeMap().getMap();
+          internalGetSkipFloorGrantedRewardItemMap().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -899,6 +843,10 @@ public final class TowerAllDataRspOuterClass {
     public static final int GMMJNDFMHAM_FIELD_NUMBER = 9;
     private int gMMJNDFMHAM_;
     /**
+     * <pre>
+     * GMMJNDFMHAM
+     * </pre>
+     *
      * <code>uint32 GMMJNDFMHAM = 9;</code>
      * @return The gMMJNDFMHAM.
      */
@@ -910,10 +858,6 @@ public final class TowerAllDataRspOuterClass {
     public static final int SCHEDULE_START_TIME_FIELD_NUMBER = 1783;
     private int scheduleStartTime_;
     /**
-     * <pre>
-     * MDANKJCGMIN
-     * </pre>
-     *
      * <code>uint32 schedule_start_time = 1783;</code>
      * @return The scheduleStartTime.
      */
@@ -965,8 +909,8 @@ public final class TowerAllDataRspOuterClass {
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetOAFKGDGFFEO(),
-          OAFKGDGFFEODefaultEntryHolder.defaultEntry,
+          internalGetFloorOpenTimeMap(),
+          FloorOpenTimeMapDefaultEntryHolder.defaultEntry,
           1);
       for (int i = 0; i < towerFloorRecordList_.size(); i++) {
         output.writeMessage(2, towerFloorRecordList_.get(i));
@@ -974,14 +918,14 @@ public final class TowerAllDataRspOuterClass {
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetFloorOpenTimeMap(),
-          FloorOpenTimeMapDefaultEntryHolder.defaultEntry,
+          internalGetSkipFloorGrantedRewardItemMap(),
+          SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry,
           3);
       if (isFinishedEntranceFloor_ != false) {
         output.writeBool(4, isFinishedEntranceFloor_);
       }
-      if (eDGJPPKNHJE_ != 0) {
-        output.writeUInt32(5, eDGJPPKNHJE_);
+      if (nextScheduleChangeTime_ != 0) {
+        output.writeUInt32(5, nextScheduleChangeTime_);
       }
       if (aJKNPOGBLDG_ != 0) {
         output.writeUInt32(6, aJKNPOGBLDG_);
@@ -989,14 +933,14 @@ public final class TowerAllDataRspOuterClass {
       if (monthlyBrief_ != null) {
         output.writeMessage(7, getMonthlyBrief());
       }
-      if (nextScheduleChangeTime_ != 0) {
-        output.writeUInt32(8, nextScheduleChangeTime_);
+      if (pHCNCLHJFBM_ != 0) {
+        output.writeUInt32(8, pHCNCLHJFBM_);
       }
       if (gMMJNDFMHAM_ != 0) {
         output.writeUInt32(9, gMMJNDFMHAM_);
       }
-      if (dPKOCIDIHEI_ != 0) {
-        output.writeUInt32(10, dPKOCIDIHEI_);
+      if (towerScheduleId_ != 0) {
+        output.writeUInt32(10, towerScheduleId_);
       }
       if (isFirstInteract_ != false) {
         output.writeBool(11, isFirstInteract_);
@@ -1010,8 +954,8 @@ public final class TowerAllDataRspOuterClass {
       if (curLevelRecord_ != null) {
         output.writeMessage(14, getCurLevelRecord());
       }
-      if (towerScheduleId_ != 0) {
-        output.writeUInt32(15, towerScheduleId_);
+      if (validTowerRecordNum_ != 0) {
+        output.writeUInt32(15, validTowerRecordNum_);
       }
       if (scheduleStartTime_ != 0) {
         output.writeUInt32(1783, scheduleStartTime_);
@@ -1029,20 +973,6 @@ public final class TowerAllDataRspOuterClass {
 
       size = 0;
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetOAFKGDGFFEO().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        oAFKGDGFFEO__ = OAFKGDGFFEODefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, oAFKGDGFFEO__);
-      }
-      for (int i = 0; i < towerFloorRecordList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, towerFloorRecordList_.get(i));
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetFloorOpenTimeMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
         floorOpenTimeMap__ = FloorOpenTimeMapDefaultEntryHolder.defaultEntry.newBuilderForType()
@@ -1050,15 +980,29 @@ public final class TowerAllDataRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, floorOpenTimeMap__);
+            .computeMessageSize(1, floorOpenTimeMap__);
+      }
+      for (int i = 0; i < towerFloorRecordList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, towerFloorRecordList_.get(i));
+      }
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetSkipFloorGrantedRewardItemMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        skipFloorGrantedRewardItemMap__ = SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, skipFloorGrantedRewardItemMap__);
       }
       if (isFinishedEntranceFloor_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isFinishedEntranceFloor_);
       }
-      if (eDGJPPKNHJE_ != 0) {
+      if (nextScheduleChangeTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, eDGJPPKNHJE_);
+          .computeUInt32Size(5, nextScheduleChangeTime_);
       }
       if (aJKNPOGBLDG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1068,17 +1012,17 @@ public final class TowerAllDataRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getMonthlyBrief());
       }
-      if (nextScheduleChangeTime_ != 0) {
+      if (pHCNCLHJFBM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, nextScheduleChangeTime_);
+          .computeUInt32Size(8, pHCNCLHJFBM_);
       }
       if (gMMJNDFMHAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, gMMJNDFMHAM_);
       }
-      if (dPKOCIDIHEI_ != 0) {
+      if (towerScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, dPKOCIDIHEI_);
+          .computeUInt32Size(10, towerScheduleId_);
       }
       if (isFirstInteract_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1096,9 +1040,9 @@ public final class TowerAllDataRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getCurLevelRecord());
       }
-      if (towerScheduleId_ != 0) {
+      if (validTowerRecordNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, towerScheduleId_);
+          .computeUInt32Size(15, validTowerRecordNum_);
       }
       if (scheduleStartTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1123,26 +1067,26 @@ public final class TowerAllDataRspOuterClass {
       }
       emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp other = (emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp) obj;
 
-      if (getDPKOCIDIHEI()
-          != other.getDPKOCIDIHEI()) return false;
+      if (getTowerScheduleId()
+          != other.getTowerScheduleId()) return false;
       if (getIsFinishedEntranceFloor()
           != other.getIsFinishedEntranceFloor()) return false;
-      if (!internalGetOAFKGDGFFEO().equals(
-          other.internalGetOAFKGDGFFEO())) return false;
+      if (!internalGetFloorOpenTimeMap().equals(
+          other.internalGetFloorOpenTimeMap())) return false;
       if (getAJKNPOGBLDG()
           != other.getAJKNPOGBLDG()) return false;
       if (getIsFirstInteract()
           != other.getIsFirstInteract()) return false;
-      if (getEDGJPPKNHJE()
-          != other.getEDGJPPKNHJE()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getNextScheduleChangeTime()
           != other.getNextScheduleChangeTime()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getPHCNCLHJFBM()
+          != other.getPHCNCLHJFBM()) return false;
       if (getKPJMJMPPPGK()
           != other.getKPJMJMPPPGK()) return false;
-      if (getTowerScheduleId()
-          != other.getTowerScheduleId()) return false;
+      if (getValidTowerRecordNum()
+          != other.getValidTowerRecordNum()) return false;
       if (hasLastScheduleMonthlyBrief() != other.hasLastScheduleMonthlyBrief()) return false;
       if (hasLastScheduleMonthlyBrief()) {
         if (!getLastScheduleMonthlyBrief()
@@ -1155,8 +1099,8 @@ public final class TowerAllDataRspOuterClass {
         if (!getMonthlyBrief()
             .equals(other.getMonthlyBrief())) return false;
       }
-      if (!internalGetFloorOpenTimeMap().equals(
-          other.internalGetFloorOpenTimeMap())) return false;
+      if (!internalGetSkipFloorGrantedRewardItemMap().equals(
+          other.internalGetSkipFloorGrantedRewardItemMap())) return false;
       if (getGMMJNDFMHAM()
           != other.getGMMJNDFMHAM()) return false;
       if (getScheduleStartTime()
@@ -1177,30 +1121,30 @@ public final class TowerAllDataRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DPKOCIDIHEI_FIELD_NUMBER;
-      hash = (53 * hash) + getDPKOCIDIHEI();
+      hash = (37 * hash) + TOWER_SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTowerScheduleId();
       hash = (37 * hash) + IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinishedEntranceFloor());
-      if (!internalGetOAFKGDGFFEO().getMap().isEmpty()) {
-        hash = (37 * hash) + OAFKGDGFFEO_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetOAFKGDGFFEO().hashCode();
+      if (!internalGetFloorOpenTimeMap().getMap().isEmpty()) {
+        hash = (37 * hash) + FLOOR_OPEN_TIME_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFloorOpenTimeMap().hashCode();
       }
       hash = (37 * hash) + AJKNPOGBLDG_FIELD_NUMBER;
       hash = (53 * hash) + getAJKNPOGBLDG();
       hash = (37 * hash) + IS_FIRST_INTERACT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFirstInteract());
-      hash = (37 * hash) + EDGJPPKNHJE_FIELD_NUMBER;
-      hash = (53 * hash) + getEDGJPPKNHJE();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNextScheduleChangeTime();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + PHCNCLHJFBM_FIELD_NUMBER;
+      hash = (53 * hash) + getPHCNCLHJFBM();
       hash = (37 * hash) + KPJMJMPPPGK_FIELD_NUMBER;
       hash = (53 * hash) + getKPJMJMPPPGK();
-      hash = (37 * hash) + TOWER_SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTowerScheduleId();
+      hash = (37 * hash) + VALID_TOWER_RECORD_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getValidTowerRecordNum();
       if (hasLastScheduleMonthlyBrief()) {
         hash = (37 * hash) + LAST_SCHEDULE_MONTHLY_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getLastScheduleMonthlyBrief().hashCode();
@@ -1213,9 +1157,9 @@ public final class TowerAllDataRspOuterClass {
         hash = (37 * hash) + MONTHLY_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getMonthlyBrief().hashCode();
       }
-      if (!internalGetFloorOpenTimeMap().getMap().isEmpty()) {
-        hash = (37 * hash) + FLOOR_OPEN_TIME_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetFloorOpenTimeMap().hashCode();
+      if (!internalGetSkipFloorGrantedRewardItemMap().getMap().isEmpty()) {
+        hash = (37 * hash) + SKIP_FLOOR_GRANTED_REWARD_ITEM_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSkipFloorGrantedRewardItemMap().hashCode();
       }
       hash = (37 * hash) + GMMJNDFMHAM_FIELD_NUMBER;
       hash = (53 * hash) + getGMMJNDFMHAM();
@@ -1342,9 +1286,9 @@ public final class TowerAllDataRspOuterClass {
           int number) {
         switch (number) {
           case 1:
-            return internalGetOAFKGDGFFEO();
-          case 3:
             return internalGetFloorOpenTimeMap();
+          case 3:
+            return internalGetSkipFloorGrantedRewardItemMap();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1355,9 +1299,9 @@ public final class TowerAllDataRspOuterClass {
           int number) {
         switch (number) {
           case 1:
-            return internalGetMutableOAFKGDGFFEO();
-          case 3:
             return internalGetMutableFloorOpenTimeMap();
+          case 3:
+            return internalGetMutableSkipFloorGrantedRewardItemMap();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1390,24 +1334,24 @@ public final class TowerAllDataRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dPKOCIDIHEI_ = 0;
+        towerScheduleId_ = 0;
 
         isFinishedEntranceFloor_ = false;
 
-        internalGetMutableOAFKGDGFFEO().clear();
+        internalGetMutableFloorOpenTimeMap().clear();
         aJKNPOGBLDG_ = 0;
 
         isFirstInteract_ = false;
 
-        eDGJPPKNHJE_ = 0;
+        nextScheduleChangeTime_ = 0;
 
         retcode_ = 0;
 
-        nextScheduleChangeTime_ = 0;
+        pHCNCLHJFBM_ = 0;
 
         kPJMJMPPPGK_ = 0;
 
-        towerScheduleId_ = 0;
+        validTowerRecordNum_ = 0;
 
         if (lastScheduleMonthlyBriefBuilder_ == null) {
           lastScheduleMonthlyBrief_ = null;
@@ -1427,7 +1371,7 @@ public final class TowerAllDataRspOuterClass {
           monthlyBrief_ = null;
           monthlyBriefBuilder_ = null;
         }
-        internalGetMutableFloorOpenTimeMap().clear();
+        internalGetMutableSkipFloorGrantedRewardItemMap().clear();
         gMMJNDFMHAM_ = 0;
 
         scheduleStartTime_ = 0;
@@ -1465,17 +1409,17 @@ public final class TowerAllDataRspOuterClass {
       public emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp buildPartial() {
         emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp result = new emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp(this);
         int from_bitField0_ = bitField0_;
-        result.dPKOCIDIHEI_ = dPKOCIDIHEI_;
+        result.towerScheduleId_ = towerScheduleId_;
         result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
-        result.oAFKGDGFFEO_ = internalGetOAFKGDGFFEO();
-        result.oAFKGDGFFEO_.makeImmutable();
+        result.floorOpenTimeMap_ = internalGetFloorOpenTimeMap();
+        result.floorOpenTimeMap_.makeImmutable();
         result.aJKNPOGBLDG_ = aJKNPOGBLDG_;
         result.isFirstInteract_ = isFirstInteract_;
-        result.eDGJPPKNHJE_ = eDGJPPKNHJE_;
-        result.retcode_ = retcode_;
         result.nextScheduleChangeTime_ = nextScheduleChangeTime_;
+        result.retcode_ = retcode_;
+        result.pHCNCLHJFBM_ = pHCNCLHJFBM_;
         result.kPJMJMPPPGK_ = kPJMJMPPPGK_;
-        result.towerScheduleId_ = towerScheduleId_;
+        result.validTowerRecordNum_ = validTowerRecordNum_;
         if (lastScheduleMonthlyBriefBuilder_ == null) {
           result.lastScheduleMonthlyBrief_ = lastScheduleMonthlyBrief_;
         } else {
@@ -1495,8 +1439,8 @@ public final class TowerAllDataRspOuterClass {
         } else {
           result.monthlyBrief_ = monthlyBriefBuilder_.build();
         }
-        result.floorOpenTimeMap_ = internalGetFloorOpenTimeMap();
-        result.floorOpenTimeMap_.makeImmutable();
+        result.skipFloorGrantedRewardItemMap_ = internalGetSkipFloorGrantedRewardItemMap();
+        result.skipFloorGrantedRewardItemMap_.makeImmutable();
         result.gMMJNDFMHAM_ = gMMJNDFMHAM_;
         result.scheduleStartTime_ = scheduleStartTime_;
         if (curLevelRecordBuilder_ == null) {
@@ -1552,34 +1496,34 @@ public final class TowerAllDataRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp other) {
         if (other == emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp.getDefaultInstance()) return this;
-        if (other.getDPKOCIDIHEI() != 0) {
-          setDPKOCIDIHEI(other.getDPKOCIDIHEI());
+        if (other.getTowerScheduleId() != 0) {
+          setTowerScheduleId(other.getTowerScheduleId());
         }
         if (other.getIsFinishedEntranceFloor() != false) {
           setIsFinishedEntranceFloor(other.getIsFinishedEntranceFloor());
         }
-        internalGetMutableOAFKGDGFFEO().mergeFrom(
-            other.internalGetOAFKGDGFFEO());
+        internalGetMutableFloorOpenTimeMap().mergeFrom(
+            other.internalGetFloorOpenTimeMap());
         if (other.getAJKNPOGBLDG() != 0) {
           setAJKNPOGBLDG(other.getAJKNPOGBLDG());
         }
         if (other.getIsFirstInteract() != false) {
           setIsFirstInteract(other.getIsFirstInteract());
         }
-        if (other.getEDGJPPKNHJE() != 0) {
-          setEDGJPPKNHJE(other.getEDGJPPKNHJE());
+        if (other.getNextScheduleChangeTime() != 0) {
+          setNextScheduleChangeTime(other.getNextScheduleChangeTime());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (other.getNextScheduleChangeTime() != 0) {
-          setNextScheduleChangeTime(other.getNextScheduleChangeTime());
+        if (other.getPHCNCLHJFBM() != 0) {
+          setPHCNCLHJFBM(other.getPHCNCLHJFBM());
         }
         if (other.getKPJMJMPPPGK() != 0) {
           setKPJMJMPPPGK(other.getKPJMJMPPPGK());
         }
-        if (other.getTowerScheduleId() != 0) {
-          setTowerScheduleId(other.getTowerScheduleId());
+        if (other.getValidTowerRecordNum() != 0) {
+          setValidTowerRecordNum(other.getValidTowerRecordNum());
         }
         if (other.hasLastScheduleMonthlyBrief()) {
           mergeLastScheduleMonthlyBrief(other.getLastScheduleMonthlyBrief());
@@ -1613,8 +1557,8 @@ public final class TowerAllDataRspOuterClass {
         if (other.hasMonthlyBrief()) {
           mergeMonthlyBrief(other.getMonthlyBrief());
         }
-        internalGetMutableFloorOpenTimeMap().mergeFrom(
-            other.internalGetFloorOpenTimeMap());
+        internalGetMutableSkipFloorGrantedRewardItemMap().mergeFrom(
+            other.internalGetSkipFloorGrantedRewardItemMap());
         if (other.getGMMJNDFMHAM() != 0) {
           setGMMJNDFMHAM(other.getGMMJNDFMHAM());
         }
@@ -1654,33 +1598,33 @@ public final class TowerAllDataRspOuterClass {
       }
       private int bitField0_;
 
-      private int dPKOCIDIHEI_ ;
+      private int towerScheduleId_ ;
       /**
-       * <code>uint32 DPKOCIDIHEI = 10;</code>
-       * @return The dPKOCIDIHEI.
+       * <code>uint32 tower_schedule_id = 10;</code>
+       * @return The towerScheduleId.
        */
       @java.lang.Override
-      public int getDPKOCIDIHEI() {
-        return dPKOCIDIHEI_;
+      public int getTowerScheduleId() {
+        return towerScheduleId_;
       }
       /**
-       * <code>uint32 DPKOCIDIHEI = 10;</code>
-       * @param value The dPKOCIDIHEI to set.
+       * <code>uint32 tower_schedule_id = 10;</code>
+       * @param value The towerScheduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setDPKOCIDIHEI(int value) {
+      public Builder setTowerScheduleId(int value) {
         
-        dPKOCIDIHEI_ = value;
+        towerScheduleId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DPKOCIDIHEI = 10;</code>
+       * <code>uint32 tower_schedule_id = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDPKOCIDIHEI() {
+      public Builder clearTowerScheduleId() {
         
-        dPKOCIDIHEI_ = 0;
+        towerScheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -1717,119 +1661,99 @@ public final class TowerAllDataRspOuterClass {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> oAFKGDGFFEO_;
+          java.lang.Integer, java.lang.Integer> floorOpenTimeMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetOAFKGDGFFEO() {
-        if (oAFKGDGFFEO_ == null) {
+      internalGetFloorOpenTimeMap() {
+        if (floorOpenTimeMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              OAFKGDGFFEODefaultEntryHolder.defaultEntry);
+              FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
         }
-        return oAFKGDGFFEO_;
+        return floorOpenTimeMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableOAFKGDGFFEO() {
+      internalGetMutableFloorOpenTimeMap() {
         onChanged();;
-        if (oAFKGDGFFEO_ == null) {
-          oAFKGDGFFEO_ = com.google.protobuf.MapField.newMapField(
-              OAFKGDGFFEODefaultEntryHolder.defaultEntry);
+        if (floorOpenTimeMap_ == null) {
+          floorOpenTimeMap_ = com.google.protobuf.MapField.newMapField(
+              FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
         }
-        if (!oAFKGDGFFEO_.isMutable()) {
-          oAFKGDGFFEO_ = oAFKGDGFFEO_.copy();
+        if (!floorOpenTimeMap_.isMutable()) {
+          floorOpenTimeMap_ = floorOpenTimeMap_.copy();
         }
-        return oAFKGDGFFEO_;
+        return floorOpenTimeMap_;
       }
 
-      public int getOAFKGDGFFEOCount() {
-        return internalGetOAFKGDGFFEO().getMap().size();
+      public int getFloorOpenTimeMapCount() {
+        return internalGetFloorOpenTimeMap().getMap().size();
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
 
       @java.lang.Override
-      public boolean containsOAFKGDGFFEO(
+      public boolean containsFloorOpenTimeMap(
           int key) {
         
-        return internalGetOAFKGDGFFEO().getMap().containsKey(key);
+        return internalGetFloorOpenTimeMap().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getOAFKGDGFFEOMap()} instead.
+       * Use {@link #getFloorOpenTimeMapMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getOAFKGDGFFEO() {
-        return getOAFKGDGFFEOMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMap() {
+        return getFloorOpenTimeMapMap();
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getOAFKGDGFFEOMap() {
-        return internalGetOAFKGDGFFEO().getMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMapMap() {
+        return internalGetFloorOpenTimeMap().getMap();
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
       @java.lang.Override
 
-      public int getOAFKGDGFFEOOrDefault(
+      public int getFloorOpenTimeMapOrDefault(
           int key,
           int defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetOAFKGDGFFEO().getMap();
+            internalGetFloorOpenTimeMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
       @java.lang.Override
 
-      public int getOAFKGDGFFEOOrThrow(
+      public int getFloorOpenTimeMapOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetOAFKGDGFFEO().getMap();
+            internalGetFloorOpenTimeMap().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearOAFKGDGFFEO() {
-        internalGetMutableOAFKGDGFFEO().getMutableMap()
+      public Builder clearFloorOpenTimeMap() {
+        internalGetMutableFloorOpenTimeMap().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
 
-      public Builder removeOAFKGDGFFEO(
+      public Builder removeFloorOpenTimeMap(
           int key) {
         
-        internalGetMutableOAFKGDGFFEO().getMutableMap()
+        internalGetMutableFloorOpenTimeMap().getMutableMap()
             .remove(key);
         return this;
       }
@@ -1838,42 +1762,38 @@ public final class TowerAllDataRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableOAFKGDGFFEO() {
-        return internalGetMutableOAFKGDGFFEO().getMutableMap();
+      getMutableFloorOpenTimeMap() {
+        return internalGetMutableFloorOpenTimeMap().getMutableMap();
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
-      public Builder putOAFKGDGFFEO(
+      public Builder putFloorOpenTimeMap(
           int key,
           int value) {
         
         
-        internalGetMutableOAFKGDGFFEO().getMutableMap()
+        internalGetMutableFloorOpenTimeMap().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <pre>
-       * OAFKGDGFFEO
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; OAFKGDGFFEO = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 1;</code>
        */
 
-      public Builder putAllOAFKGDGFFEO(
+      public Builder putAllFloorOpenTimeMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableOAFKGDGFFEO().getMutableMap()
+        internalGetMutableFloorOpenTimeMap().getMutableMap()
             .putAll(values);
         return this;
       }
 
       private int aJKNPOGBLDG_ ;
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 AJKNPOGBLDG = 6;</code>
        * @return The aJKNPOGBLDG.
        */
@@ -1882,6 +1802,10 @@ public final class TowerAllDataRspOuterClass {
         return aJKNPOGBLDG_;
       }
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 AJKNPOGBLDG = 6;</code>
        * @param value The aJKNPOGBLDG to set.
        * @return This builder for chaining.
@@ -1893,6 +1817,10 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 AJKNPOGBLDG = 6;</code>
        * @return This builder for chaining.
        */
@@ -1934,33 +1862,33 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
 
-      private int eDGJPPKNHJE_ ;
+      private int nextScheduleChangeTime_ ;
       /**
-       * <code>uint32 EDGJPPKNHJE = 5;</code>
-       * @return The eDGJPPKNHJE.
+       * <code>uint32 next_schedule_change_time = 5;</code>
+       * @return The nextScheduleChangeTime.
        */
       @java.lang.Override
-      public int getEDGJPPKNHJE() {
-        return eDGJPPKNHJE_;
+      public int getNextScheduleChangeTime() {
+        return nextScheduleChangeTime_;
       }
       /**
-       * <code>uint32 EDGJPPKNHJE = 5;</code>
-       * @param value The eDGJPPKNHJE to set.
+       * <code>uint32 next_schedule_change_time = 5;</code>
+       * @param value The nextScheduleChangeTime to set.
        * @return This builder for chaining.
        */
-      public Builder setEDGJPPKNHJE(int value) {
+      public Builder setNextScheduleChangeTime(int value) {
         
-        eDGJPPKNHJE_ = value;
+        nextScheduleChangeTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 EDGJPPKNHJE = 5;</code>
+       * <code>uint32 next_schedule_change_time = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEDGJPPKNHJE() {
+      public Builder clearNextScheduleChangeTime() {
         
-        eDGJPPKNHJE_ = 0;
+        nextScheduleChangeTime_ = 0;
         onChanged();
         return this;
       }
@@ -1996,51 +1924,55 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
 
-      private int nextScheduleChangeTime_ ;
+      private int pHCNCLHJFBM_ ;
       /**
        * <pre>
-       * PHCNCLHJFBM
+       * not used
        * </pre>
        *
-       * <code>uint32 next_schedule_change_time = 8;</code>
-       * @return The nextScheduleChangeTime.
+       * <code>uint32 PHCNCLHJFBM = 8;</code>
+       * @return The pHCNCLHJFBM.
        */
       @java.lang.Override
-      public int getNextScheduleChangeTime() {
-        return nextScheduleChangeTime_;
+      public int getPHCNCLHJFBM() {
+        return pHCNCLHJFBM_;
       }
       /**
        * <pre>
-       * PHCNCLHJFBM
+       * not used
        * </pre>
        *
-       * <code>uint32 next_schedule_change_time = 8;</code>
-       * @param value The nextScheduleChangeTime to set.
+       * <code>uint32 PHCNCLHJFBM = 8;</code>
+       * @param value The pHCNCLHJFBM to set.
        * @return This builder for chaining.
        */
-      public Builder setNextScheduleChangeTime(int value) {
+      public Builder setPHCNCLHJFBM(int value) {
         
-        nextScheduleChangeTime_ = value;
+        pHCNCLHJFBM_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * PHCNCLHJFBM
+       * not used
        * </pre>
        *
-       * <code>uint32 next_schedule_change_time = 8;</code>
+       * <code>uint32 PHCNCLHJFBM = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNextScheduleChangeTime() {
+      public Builder clearPHCNCLHJFBM() {
         
-        nextScheduleChangeTime_ = 0;
+        pHCNCLHJFBM_ = 0;
         onChanged();
         return this;
       }
 
       private int kPJMJMPPPGK_ ;
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 KPJMJMPPPGK = 12;</code>
        * @return The kPJMJMPPPGK.
        */
@@ -2049,6 +1981,10 @@ public final class TowerAllDataRspOuterClass {
         return kPJMJMPPPGK_;
       }
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 KPJMJMPPPGK = 12;</code>
        * @param value The kPJMJMPPPGK to set.
        * @return This builder for chaining.
@@ -2060,6 +1996,10 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * not used
+       * </pre>
+       *
        * <code>uint32 KPJMJMPPPGK = 12;</code>
        * @return This builder for chaining.
        */
@@ -2070,31 +2010,31 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
 
-      private int towerScheduleId_ ;
+      private int validTowerRecordNum_ ;
       /**
        * <pre>
        *NKMMGNAGOOA
        * </pre>
        *
-       * <code>uint32 tower_schedule_id = 15;</code>
-       * @return The towerScheduleId.
+       * <code>uint32 valid_tower_record_num = 15;</code>
+       * @return The validTowerRecordNum.
        */
       @java.lang.Override
-      public int getTowerScheduleId() {
-        return towerScheduleId_;
+      public int getValidTowerRecordNum() {
+        return validTowerRecordNum_;
       }
       /**
        * <pre>
        *NKMMGNAGOOA
        * </pre>
        *
-       * <code>uint32 tower_schedule_id = 15;</code>
-       * @param value The towerScheduleId to set.
+       * <code>uint32 valid_tower_record_num = 15;</code>
+       * @param value The validTowerRecordNum to set.
        * @return This builder for chaining.
        */
-      public Builder setTowerScheduleId(int value) {
+      public Builder setValidTowerRecordNum(int value) {
         
-        towerScheduleId_ = value;
+        validTowerRecordNum_ = value;
         onChanged();
         return this;
       }
@@ -2103,12 +2043,12 @@ public final class TowerAllDataRspOuterClass {
        *NKMMGNAGOOA
        * </pre>
        *
-       * <code>uint32 tower_schedule_id = 15;</code>
+       * <code>uint32 valid_tower_record_num = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTowerScheduleId() {
+      public Builder clearValidTowerRecordNum() {
         
-        towerScheduleId_ = 0;
+        validTowerRecordNum_ = 0;
         onChanged();
         return this;
       }
@@ -2592,119 +2532,99 @@ public final class TowerAllDataRspOuterClass {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> floorOpenTimeMap_;
+          java.lang.Integer, java.lang.Integer> skipFloorGrantedRewardItemMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetFloorOpenTimeMap() {
-        if (floorOpenTimeMap_ == null) {
+      internalGetSkipFloorGrantedRewardItemMap() {
+        if (skipFloorGrantedRewardItemMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
+              SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry);
         }
-        return floorOpenTimeMap_;
+        return skipFloorGrantedRewardItemMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableFloorOpenTimeMap() {
+      internalGetMutableSkipFloorGrantedRewardItemMap() {
         onChanged();;
-        if (floorOpenTimeMap_ == null) {
-          floorOpenTimeMap_ = com.google.protobuf.MapField.newMapField(
-              FloorOpenTimeMapDefaultEntryHolder.defaultEntry);
+        if (skipFloorGrantedRewardItemMap_ == null) {
+          skipFloorGrantedRewardItemMap_ = com.google.protobuf.MapField.newMapField(
+              SkipFloorGrantedRewardItemMapDefaultEntryHolder.defaultEntry);
         }
-        if (!floorOpenTimeMap_.isMutable()) {
-          floorOpenTimeMap_ = floorOpenTimeMap_.copy();
+        if (!skipFloorGrantedRewardItemMap_.isMutable()) {
+          skipFloorGrantedRewardItemMap_ = skipFloorGrantedRewardItemMap_.copy();
         }
-        return floorOpenTimeMap_;
+        return skipFloorGrantedRewardItemMap_;
       }
 
-      public int getFloorOpenTimeMapCount() {
-        return internalGetFloorOpenTimeMap().getMap().size();
+      public int getSkipFloorGrantedRewardItemMapCount() {
+        return internalGetSkipFloorGrantedRewardItemMap().getMap().size();
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
 
       @java.lang.Override
-      public boolean containsFloorOpenTimeMap(
+      public boolean containsSkipFloorGrantedRewardItemMap(
           int key) {
         
-        return internalGetFloorOpenTimeMap().getMap().containsKey(key);
+        return internalGetSkipFloorGrantedRewardItemMap().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getFloorOpenTimeMapMap()} instead.
+       * Use {@link #getSkipFloorGrantedRewardItemMapMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMap() {
-        return getFloorOpenTimeMapMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkipFloorGrantedRewardItemMap() {
+        return getSkipFloorGrantedRewardItemMapMap();
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getFloorOpenTimeMapMap() {
-        return internalGetFloorOpenTimeMap().getMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkipFloorGrantedRewardItemMapMap() {
+        return internalGetSkipFloorGrantedRewardItemMap().getMap();
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
       @java.lang.Override
 
-      public int getFloorOpenTimeMapOrDefault(
+      public int getSkipFloorGrantedRewardItemMapOrDefault(
           int key,
           int defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetFloorOpenTimeMap().getMap();
+            internalGetSkipFloorGrantedRewardItemMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
       @java.lang.Override
 
-      public int getFloorOpenTimeMapOrThrow(
+      public int getSkipFloorGrantedRewardItemMapOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetFloorOpenTimeMap().getMap();
+            internalGetSkipFloorGrantedRewardItemMap().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearFloorOpenTimeMap() {
-        internalGetMutableFloorOpenTimeMap().getMutableMap()
+      public Builder clearSkipFloorGrantedRewardItemMap() {
+        internalGetMutableSkipFloorGrantedRewardItemMap().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
 
-      public Builder removeFloorOpenTimeMap(
+      public Builder removeSkipFloorGrantedRewardItemMap(
           int key) {
         
-        internalGetMutableFloorOpenTimeMap().getMutableMap()
+        internalGetMutableSkipFloorGrantedRewardItemMap().getMutableMap()
             .remove(key);
         return this;
       }
@@ -2713,42 +2633,38 @@ public final class TowerAllDataRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableFloorOpenTimeMap() {
-        return internalGetMutableFloorOpenTimeMap().getMutableMap();
+      getMutableSkipFloorGrantedRewardItemMap() {
+        return internalGetMutableSkipFloorGrantedRewardItemMap().getMutableMap();
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
-      public Builder putFloorOpenTimeMap(
+      public Builder putSkipFloorGrantedRewardItemMap(
           int key,
           int value) {
         
         
-        internalGetMutableFloorOpenTimeMap().getMutableMap()
+        internalGetMutableSkipFloorGrantedRewardItemMap().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <pre>
-       * OJGBCIONMOL
-       * </pre>
-       *
-       * <code>map&lt;uint32, uint32&gt; floor_open_time_map = 3;</code>
+       * <code>map&lt;uint32, uint32&gt; skip_floor_granted_reward_item_map = 3;</code>
        */
 
-      public Builder putAllFloorOpenTimeMap(
+      public Builder putAllSkipFloorGrantedRewardItemMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableFloorOpenTimeMap().getMutableMap()
+        internalGetMutableSkipFloorGrantedRewardItemMap().getMutableMap()
             .putAll(values);
         return this;
       }
 
       private int gMMJNDFMHAM_ ;
       /**
+       * <pre>
+       * GMMJNDFMHAM
+       * </pre>
+       *
        * <code>uint32 GMMJNDFMHAM = 9;</code>
        * @return The gMMJNDFMHAM.
        */
@@ -2757,6 +2673,10 @@ public final class TowerAllDataRspOuterClass {
         return gMMJNDFMHAM_;
       }
       /**
+       * <pre>
+       * GMMJNDFMHAM
+       * </pre>
+       *
        * <code>uint32 GMMJNDFMHAM = 9;</code>
        * @param value The gMMJNDFMHAM to set.
        * @return This builder for chaining.
@@ -2768,6 +2688,10 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * GMMJNDFMHAM
+       * </pre>
+       *
        * <code>uint32 GMMJNDFMHAM = 9;</code>
        * @return This builder for chaining.
        */
@@ -2780,10 +2704,6 @@ public final class TowerAllDataRspOuterClass {
 
       private int scheduleStartTime_ ;
       /**
-       * <pre>
-       * MDANKJCGMIN
-       * </pre>
-       *
        * <code>uint32 schedule_start_time = 1783;</code>
        * @return The scheduleStartTime.
        */
@@ -2792,10 +2712,6 @@ public final class TowerAllDataRspOuterClass {
         return scheduleStartTime_;
       }
       /**
-       * <pre>
-       * MDANKJCGMIN
-       * </pre>
-       *
        * <code>uint32 schedule_start_time = 1783;</code>
        * @param value The scheduleStartTime to set.
        * @return This builder for chaining.
@@ -2807,10 +2723,6 @@ public final class TowerAllDataRspOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * MDANKJCGMIN
-       * </pre>
-       *
        * <code>uint32 schedule_start_time = 1783;</code>
        * @return This builder for chaining.
        */
@@ -2998,15 +2910,15 @@ public final class TowerAllDataRspOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TowerAllDataRsp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3018,26 +2930,28 @@ public final class TowerAllDataRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025TowerAllDataRsp.proto\032\031TowerCurLevelRe" +
       "cord.proto\032\026TowerFloorRecord.proto\032\027Towe" +
-      "rMonthlyBrief.proto\"\331\005\n\017TowerAllDataRsp\022" +
-      "\023\n\013DPKOCIDIHEI\030\n \001(\r\022\"\n\032is_finished_entr" +
-      "ance_floor\030\004 \001(\010\0226\n\013OAFKGDGFFEO\030\001 \003(\0132!." +
-      "TowerAllDataRsp.OAFKGDGFFEOEntry\022\023\n\013AJKN" +
-      "POGBLDG\030\006 \001(\r\022\031\n\021is_first_interact\030\013 \001(\010" +
-      "\022\023\n\013EDGJPPKNHJE\030\005 \001(\r\022\017\n\007retcode\030\r \001(\005\022!" +
-      "\n\031next_schedule_change_time\030\010 \001(\r\022\023\n\013KPJ" +
-      "MJMPPPGK\030\014 \001(\r\022\031\n\021tower_schedule_id\030\017 \001(" +
-      "\r\0228\n\033last_schedule_monthly_brief\030\342\016 \001(\0132" +
-      "\022.TowerMonthlyBrief\0222\n\027tower_floor_recor" +
-      "d_list\030\002 \003(\0132\021.TowerFloorRecord\022)\n\rmonth" +
-      "ly_brief\030\007 \001(\0132\022.TowerMonthlyBrief\022C\n\023fl" +
-      "oor_open_time_map\030\003 \003(\0132&.TowerAllDataRs" +
-      "p.FloorOpenTimeMapEntry\022\023\n\013GMMJNDFMHAM\030\t" +
-      " \001(\r\022\034\n\023schedule_start_time\030\367\r \001(\r\022.\n\020cu" +
-      "r_level_record\030\016 \001(\0132\024.TowerCurLevelReco" +
-      "rd\0322\n\020OAFKGDGFFEOEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v" +
-      "alue\030\002 \001(\r:\0028\001\0327\n\025FloorOpenTimeMapEntry\022" +
-      "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "rMonthlyBrief.proto\"\237\006\n\017TowerAllDataRsp\022" +
+      "\031\n\021tower_schedule_id\030\n \001(\r\022\"\n\032is_finishe" +
+      "d_entrance_floor\030\004 \001(\010\022C\n\023floor_open_tim" +
+      "e_map\030\001 \003(\0132&.TowerAllDataRsp.FloorOpenT" +
+      "imeMapEntry\022\023\n\013AJKNPOGBLDG\030\006 \001(\r\022\031\n\021is_f" +
+      "irst_interact\030\013 \001(\010\022!\n\031next_schedule_cha" +
+      "nge_time\030\005 \001(\r\022\017\n\007retcode\030\r \001(\005\022\023\n\013PHCNC" +
+      "LHJFBM\030\010 \001(\r\022\023\n\013KPJMJMPPPGK\030\014 \001(\r\022\036\n\026val" +
+      "id_tower_record_num\030\017 \001(\r\0228\n\033last_schedu" +
+      "le_monthly_brief\030\342\016 \001(\0132\022.TowerMonthlyBr" +
+      "ief\0222\n\027tower_floor_record_list\030\002 \003(\0132\021.T" +
+      "owerFloorRecord\022)\n\rmonthly_brief\030\007 \001(\0132\022" +
+      ".TowerMonthlyBrief\022_\n\"skip_floor_granted" +
+      "_reward_item_map\030\003 \003(\01323.TowerAllDataRsp" +
+      ".SkipFloorGrantedRewardItemMapEntry\022\023\n\013G" +
+      "MMJNDFMHAM\030\t \001(\r\022\034\n\023schedule_start_time\030" +
+      "\367\r \001(\r\022.\n\020cur_level_record\030\016 \001(\0132\024.Tower" +
+      "CurLevelRecord\0327\n\025FloorOpenTimeMapEntry\022" +
+      "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\032D\n\"SkipF" +
+      "loorGrantedRewardItemMapEntry\022\013\n\003key\030\001 \001" +
+      "(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3051,18 +2965,18 @@ public final class TowerAllDataRspOuterClass {
     internal_static_TowerAllDataRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerAllDataRsp_descriptor,
-        new java.lang.String[] { "DPKOCIDIHEI", "IsFinishedEntranceFloor", "OAFKGDGFFEO", "AJKNPOGBLDG", "IsFirstInteract", "EDGJPPKNHJE", "Retcode", "NextScheduleChangeTime", "KPJMJMPPPGK", "TowerScheduleId", "LastScheduleMonthlyBrief", "TowerFloorRecordList", "MonthlyBrief", "FloorOpenTimeMap", "GMMJNDFMHAM", "ScheduleStartTime", "CurLevelRecord", });
-    internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_descriptor =
-      internal_static_TowerAllDataRsp_descriptor.getNestedTypes().get(0);
-    internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TowerAllDataRsp_OAFKGDGFFEOEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "TowerScheduleId", "IsFinishedEntranceFloor", "FloorOpenTimeMap", "AJKNPOGBLDG", "IsFirstInteract", "NextScheduleChangeTime", "Retcode", "PHCNCLHJFBM", "KPJMJMPPPGK", "ValidTowerRecordNum", "LastScheduleMonthlyBrief", "TowerFloorRecordList", "MonthlyBrief", "SkipFloorGrantedRewardItemMap", "GMMJNDFMHAM", "ScheduleStartTime", "CurLevelRecord", });
     internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_descriptor =
-      internal_static_TowerAllDataRsp_descriptor.getNestedTypes().get(1);
+      internal_static_TowerAllDataRsp_descriptor.getNestedTypes().get(0);
     internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerAllDataRsp_FloorOpenTimeMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_descriptor =
+      internal_static_TowerAllDataRsp_descriptor.getNestedTypes().get(1);
+    internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TowerAllDataRsp_SkipFloorGrantedRewardItemMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.getDescriptor();
     emu.grasscutter.net.proto.TowerFloorRecordOuterClass.getDescriptor();

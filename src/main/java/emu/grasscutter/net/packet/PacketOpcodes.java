@@ -1903,6 +1903,9 @@ public class PacketOpcodes {
   public static final int WidgetSlotChangeNotify = 4257;
   public static final int WidgetUseAttachAbilityGroupChangeNotify = 4252;
   public static final int WindSeedClientNotify = 1163;
+  public static final int WindSeedType1Notify = 23435;
+  public static final int WindSeedType2Notify = 24656;
+  public static final int WindSeedType3Notify = 22438;
   public static final int WorktopOptionNotify = 876;
   public static final int WorldAllRoutineTypeNotify = 3516;
   public static final int WorldDataNotify = 3017;
@@ -1918,6 +1921,6 @@ public class PacketOpcodes {
   public static final int WorldRoutineChangeNotify = 3549;
   public static final int WorldRoutineTypeCloseNotify = 3515;
   public static final int WorldRoutineTypeRefreshNotify = 3517;
-  public static final int SkipPlayerGameTimeReq = 163;
-  public static final int SkipPlayerGameTimeRsp = 196;
+  public static final int SkipPlayerGameTimeReq = 123;
+  public static final int SkipPlayerGameTimeRsp = 130;
 }

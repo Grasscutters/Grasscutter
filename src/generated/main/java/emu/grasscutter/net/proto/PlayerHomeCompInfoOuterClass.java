@@ -36,28 +36,16 @@ public final class PlayerHomeCompInfoOuterClass {
     int getSeenModuleIdList(int index);
 
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @return A list containing the unlockedModuleIdList.
      */
     java.util.List<java.lang.Integer> getUnlockedModuleIdListList();
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @return The count of unlockedModuleIdList.
      */
     int getUnlockedModuleIdListCount();
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The unlockedModuleIdList at the given index.
@@ -65,28 +53,16 @@ public final class PlayerHomeCompInfoOuterClass {
     int getUnlockedModuleIdList(int index);
 
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @return A list containing the levelupRewardGotLevelList.
      */
     java.util.List<java.lang.Integer> getLevelupRewardGotLevelListList();
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @return The count of levelupRewardGotLevelList.
      */
     int getLevelupRewardGotLevelListCount();
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @param index The index of the element to return.
      * @return The levelupRewardGotLevelList at the given index.
@@ -299,10 +275,6 @@ public final class PlayerHomeCompInfoOuterClass {
     public static final int UNLOCKED_MODULE_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList unlockedModuleIdList_;
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @return A list containing the unlockedModuleIdList.
      */
@@ -312,10 +284,6 @@ public final class PlayerHomeCompInfoOuterClass {
       return unlockedModuleIdList_;
     }
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @return The count of unlockedModuleIdList.
      */
@@ -323,10 +291,6 @@ public final class PlayerHomeCompInfoOuterClass {
       return unlockedModuleIdList_.size();
     }
     /**
-     * <pre>
-     * BPAOEFJJFPI
-     * </pre>
-     *
      * <code>repeated uint32 unlocked_module_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The unlockedModuleIdList at the given index.
@@ -339,10 +303,6 @@ public final class PlayerHomeCompInfoOuterClass {
     public static final int LEVELUP_REWARD_GOT_LEVEL_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList levelupRewardGotLevelList_;
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @return A list containing the levelupRewardGotLevelList.
      */
@@ -352,10 +312,6 @@ public final class PlayerHomeCompInfoOuterClass {
       return levelupRewardGotLevelList_;
     }
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @return The count of levelupRewardGotLevelList.
      */
@@ -363,10 +319,6 @@ public final class PlayerHomeCompInfoOuterClass {
       return levelupRewardGotLevelList_.size();
     }
     /**
-     * <pre>
-     * CKMGNKPLJPI
-     * </pre>
-     *
      * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
      * @param index The index of the element to return.
      * @return The levelupRewardGotLevelList at the given index.
@@ -922,10 +874,6 @@ public final class PlayerHomeCompInfoOuterClass {
          }
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @return A list containing the unlockedModuleIdList.
        */
@@ -935,10 +883,6 @@ public final class PlayerHomeCompInfoOuterClass {
                  java.util.Collections.unmodifiableList(unlockedModuleIdList_) : unlockedModuleIdList_;
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @return The count of unlockedModuleIdList.
        */
@@ -946,10 +890,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return unlockedModuleIdList_.size();
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @param index The index of the element to return.
        * @return The unlockedModuleIdList at the given index.
@@ -958,10 +898,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return unlockedModuleIdList_.getInt(index);
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The unlockedModuleIdList to set.
@@ -975,10 +911,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @param value The unlockedModuleIdList to add.
        * @return This builder for chaining.
@@ -990,10 +922,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @param values The unlockedModuleIdList to add.
        * @return This builder for chaining.
@@ -1007,10 +935,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * BPAOEFJJFPI
-       * </pre>
-       *
        * <code>repeated uint32 unlocked_module_id_list = 5;</code>
        * @return This builder for chaining.
        */
@@ -1029,10 +953,6 @@ public final class PlayerHomeCompInfoOuterClass {
          }
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @return A list containing the levelupRewardGotLevelList.
        */
@@ -1042,10 +962,6 @@ public final class PlayerHomeCompInfoOuterClass {
                  java.util.Collections.unmodifiableList(levelupRewardGotLevelList_) : levelupRewardGotLevelList_;
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @return The count of levelupRewardGotLevelList.
        */
@@ -1053,10 +969,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return levelupRewardGotLevelList_.size();
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @param index The index of the element to return.
        * @return The levelupRewardGotLevelList at the given index.
@@ -1065,10 +977,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return levelupRewardGotLevelList_.getInt(index);
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The levelupRewardGotLevelList to set.
@@ -1082,10 +990,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @param value The levelupRewardGotLevelList to add.
        * @return This builder for chaining.
@@ -1097,10 +1001,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @param values The levelupRewardGotLevelList to add.
        * @return This builder for chaining.
@@ -1114,10 +1014,6 @@ public final class PlayerHomeCompInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * CKMGNKPLJPI
-       * </pre>
-       *
        * <code>repeated uint32 levelup_reward_got_level_list = 2;</code>
        * @return This builder for chaining.
        */

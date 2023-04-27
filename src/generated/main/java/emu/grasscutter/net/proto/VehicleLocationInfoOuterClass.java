@@ -84,16 +84,24 @@ public final class VehicleLocationInfoOuterClass {
     int getOwnerUid();
 
     /**
-     * <code>float KCCDNGMKBOB = 11;</code>
-     * @return The kCCDNGMKBOB.
+     * <pre>
+     *KCCDNGMKBOB
+     * </pre>
+     *
+     * <code>float cur_hp = 11;</code>
+     * @return The curHp.
      */
-    float getKCCDNGMKBOB();
+    float getCurHp();
 
     /**
-     * <code>float MILGENBLEAK = 7;</code>
-     * @return The mILGENBLEAK.
+     * <pre>
+     *MILGENBLEAK
+     * </pre>
+     *
+     * <code>float max_hp = 7;</code>
+     * @return The maxHp.
      */
-    float getMILGENBLEAK();
+    float getMaxHp();
   }
   /**
    * <pre>
@@ -158,7 +166,7 @@ public final class VehicleLocationInfoOuterClass {
             }
             case 61: {
 
-              mILGENBLEAK_ = input.readFloat();
+              maxHp_ = input.readFloat();
               break;
             }
             case 80: {
@@ -184,7 +192,7 @@ public final class VehicleLocationInfoOuterClass {
             }
             case 93: {
 
-              kCCDNGMKBOB_ = input.readFloat();
+              curHp_ = input.readFloat();
               break;
             }
             case 96: {
@@ -366,26 +374,34 @@ public final class VehicleLocationInfoOuterClass {
       return ownerUid_;
     }
 
-    public static final int KCCDNGMKBOB_FIELD_NUMBER = 11;
-    private float kCCDNGMKBOB_;
+    public static final int CUR_HP_FIELD_NUMBER = 11;
+    private float curHp_;
     /**
-     * <code>float KCCDNGMKBOB = 11;</code>
-     * @return The kCCDNGMKBOB.
+     * <pre>
+     *KCCDNGMKBOB
+     * </pre>
+     *
+     * <code>float cur_hp = 11;</code>
+     * @return The curHp.
      */
     @java.lang.Override
-    public float getKCCDNGMKBOB() {
-      return kCCDNGMKBOB_;
+    public float getCurHp() {
+      return curHp_;
     }
 
-    public static final int MILGENBLEAK_FIELD_NUMBER = 7;
-    private float mILGENBLEAK_;
+    public static final int MAX_HP_FIELD_NUMBER = 7;
+    private float maxHp_;
     /**
-     * <code>float MILGENBLEAK = 7;</code>
-     * @return The mILGENBLEAK.
+     * <pre>
+     *MILGENBLEAK
+     * </pre>
+     *
+     * <code>float max_hp = 7;</code>
+     * @return The maxHp.
      */
     @java.lang.Override
-    public float getMILGENBLEAK() {
-      return mILGENBLEAK_;
+    public float getMaxHp() {
+      return maxHp_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -409,8 +425,8 @@ public final class VehicleLocationInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(5, entityId_);
       }
-      if (mILGENBLEAK_ != 0F) {
-        output.writeFloat(7, mILGENBLEAK_);
+      if (maxHp_ != 0F) {
+        output.writeFloat(7, maxHp_);
       }
       if (getUidListList().size() > 0) {
         output.writeUInt32NoTag(82);
@@ -419,8 +435,8 @@ public final class VehicleLocationInfoOuterClass {
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
       }
-      if (kCCDNGMKBOB_ != 0F) {
-        output.writeFloat(11, kCCDNGMKBOB_);
+      if (curHp_ != 0F) {
+        output.writeFloat(11, curHp_);
       }
       if (gadgetId_ != 0) {
         output.writeUInt32(12, gadgetId_);
@@ -448,9 +464,9 @@ public final class VehicleLocationInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, entityId_);
       }
-      if (mILGENBLEAK_ != 0F) {
+      if (maxHp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, mILGENBLEAK_);
+          .computeFloatSize(7, maxHp_);
       }
       {
         int dataSize = 0;
@@ -466,9 +482,9 @@ public final class VehicleLocationInfoOuterClass {
         }
         uidListMemoizedSerializedSize = dataSize;
       }
-      if (kCCDNGMKBOB_ != 0F) {
+      if (curHp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, kCCDNGMKBOB_);
+          .computeFloatSize(11, curHp_);
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -515,12 +531,12 @@ public final class VehicleLocationInfoOuterClass {
       }
       if (getOwnerUid()
           != other.getOwnerUid()) return false;
-      if (java.lang.Float.floatToIntBits(getKCCDNGMKBOB())
+      if (java.lang.Float.floatToIntBits(getCurHp())
           != java.lang.Float.floatToIntBits(
-              other.getKCCDNGMKBOB())) return false;
-      if (java.lang.Float.floatToIntBits(getMILGENBLEAK())
+              other.getCurHp())) return false;
+      if (java.lang.Float.floatToIntBits(getMaxHp())
           != java.lang.Float.floatToIntBits(
-              other.getMILGENBLEAK())) return false;
+              other.getMaxHp())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -550,12 +566,12 @@ public final class VehicleLocationInfoOuterClass {
       }
       hash = (37 * hash) + OWNER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerUid();
-      hash = (37 * hash) + KCCDNGMKBOB_FIELD_NUMBER;
+      hash = (37 * hash) + CUR_HP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getKCCDNGMKBOB());
-      hash = (37 * hash) + MILGENBLEAK_FIELD_NUMBER;
+          getCurHp());
+      hash = (37 * hash) + MAX_HP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMILGENBLEAK());
+          getMaxHp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -713,9 +729,9 @@ public final class VehicleLocationInfoOuterClass {
         }
         ownerUid_ = 0;
 
-        kCCDNGMKBOB_ = 0F;
+        curHp_ = 0F;
 
-        mILGENBLEAK_ = 0F;
+        maxHp_ = 0F;
 
         return this;
       }
@@ -762,8 +778,8 @@ public final class VehicleLocationInfoOuterClass {
           result.rot_ = rotBuilder_.build();
         }
         result.ownerUid_ = ownerUid_;
-        result.kCCDNGMKBOB_ = kCCDNGMKBOB_;
-        result.mILGENBLEAK_ = mILGENBLEAK_;
+        result.curHp_ = curHp_;
+        result.maxHp_ = maxHp_;
         onBuilt();
         return result;
       }
@@ -837,11 +853,11 @@ public final class VehicleLocationInfoOuterClass {
         if (other.getOwnerUid() != 0) {
           setOwnerUid(other.getOwnerUid());
         }
-        if (other.getKCCDNGMKBOB() != 0F) {
-          setKCCDNGMKBOB(other.getKCCDNGMKBOB());
+        if (other.getCurHp() != 0F) {
+          setCurHp(other.getCurHp());
         }
-        if (other.getMILGENBLEAK() != 0F) {
-          setMILGENBLEAK(other.getMILGENBLEAK());
+        if (other.getMaxHp() != 0F) {
+          setMaxHp(other.getMaxHp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1283,64 +1299,88 @@ public final class VehicleLocationInfoOuterClass {
         return this;
       }
 
-      private float kCCDNGMKBOB_ ;
+      private float curHp_ ;
       /**
-       * <code>float KCCDNGMKBOB = 11;</code>
-       * @return The kCCDNGMKBOB.
+       * <pre>
+       *KCCDNGMKBOB
+       * </pre>
+       *
+       * <code>float cur_hp = 11;</code>
+       * @return The curHp.
        */
       @java.lang.Override
-      public float getKCCDNGMKBOB() {
-        return kCCDNGMKBOB_;
+      public float getCurHp() {
+        return curHp_;
       }
       /**
-       * <code>float KCCDNGMKBOB = 11;</code>
-       * @param value The kCCDNGMKBOB to set.
+       * <pre>
+       *KCCDNGMKBOB
+       * </pre>
+       *
+       * <code>float cur_hp = 11;</code>
+       * @param value The curHp to set.
        * @return This builder for chaining.
        */
-      public Builder setKCCDNGMKBOB(float value) {
+      public Builder setCurHp(float value) {
         
-        kCCDNGMKBOB_ = value;
+        curHp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float KCCDNGMKBOB = 11;</code>
+       * <pre>
+       *KCCDNGMKBOB
+       * </pre>
+       *
+       * <code>float cur_hp = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKCCDNGMKBOB() {
+      public Builder clearCurHp() {
         
-        kCCDNGMKBOB_ = 0F;
+        curHp_ = 0F;
         onChanged();
         return this;
       }
 
-      private float mILGENBLEAK_ ;
+      private float maxHp_ ;
       /**
-       * <code>float MILGENBLEAK = 7;</code>
-       * @return The mILGENBLEAK.
+       * <pre>
+       *MILGENBLEAK
+       * </pre>
+       *
+       * <code>float max_hp = 7;</code>
+       * @return The maxHp.
        */
       @java.lang.Override
-      public float getMILGENBLEAK() {
-        return mILGENBLEAK_;
+      public float getMaxHp() {
+        return maxHp_;
       }
       /**
-       * <code>float MILGENBLEAK = 7;</code>
-       * @param value The mILGENBLEAK to set.
+       * <pre>
+       *MILGENBLEAK
+       * </pre>
+       *
+       * <code>float max_hp = 7;</code>
+       * @param value The maxHp to set.
        * @return This builder for chaining.
        */
-      public Builder setMILGENBLEAK(float value) {
+      public Builder setMaxHp(float value) {
         
-        mILGENBLEAK_ = value;
+        maxHp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float MILGENBLEAK = 7;</code>
+       * <pre>
+       *MILGENBLEAK
+       * </pre>
+       *
+       * <code>float max_hp = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMILGENBLEAK() {
+      public Builder clearMaxHp() {
         
-        mILGENBLEAK_ = 0F;
+        maxHp_ = 0F;
         onChanged();
         return this;
       }
@@ -1412,12 +1452,12 @@ public final class VehicleLocationInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031VehicleLocationInfo.proto\032\014Vector.prot" +
-      "o\"\266\001\n\023VehicleLocationInfo\022\020\n\010uid_list\030\n " +
+      "o\"\254\001\n\023VehicleLocationInfo\022\020\n\010uid_list\030\n " +
       "\003(\r\022\021\n\tentity_id\030\005 \001(\r\022\021\n\tgadget_id\030\014 \001(" +
       "\r\022\024\n\003pos\030\r \001(\0132\007.Vector\022\024\n\003rot\030\016 \001(\0132\007.V" +
-      "ector\022\021\n\towner_uid\030\001 \001(\r\022\023\n\013KCCDNGMKBOB\030" +
-      "\013 \001(\002\022\023\n\013MILGENBLEAK\030\007 \001(\002B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ector\022\021\n\towner_uid\030\001 \001(\r\022\016\n\006cur_hp\030\013 \001(\002" +
+      "\022\016\n\006max_hp\030\007 \001(\002B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1429,7 +1469,7 @@ public final class VehicleLocationInfoOuterClass {
     internal_static_VehicleLocationInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VehicleLocationInfo_descriptor,
-        new java.lang.String[] { "UidList", "EntityId", "GadgetId", "Pos", "Rot", "OwnerUid", "KCCDNGMKBOB", "MILGENBLEAK", });
+        new java.lang.String[] { "UidList", "EntityId", "GadgetId", "Pos", "Rot", "OwnerUid", "CurHp", "MaxHp", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

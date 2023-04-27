@@ -84,10 +84,6 @@ public final class InvestigationMonsterOuterClass {
     int getBossChestNum();
 
     /**
-     * <pre>
-     * DHMMIBILNEE
-     * </pre>
-     *
      * <code>uint32 DHMMIBILNEE = 11;</code>
      * @return The dHMMIBILNEE.
      */
@@ -150,10 +146,6 @@ public final class InvestigationMonsterOuterClass {
     emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState getLockState();
 
     /**
-     * <pre>
-     * HKBNEBOAMDI
-     * </pre>
-     *
      * <code>uint32 max_boss_chest_num = 15;</code>
      * @return The maxBossChestNum.
      */
@@ -345,7 +337,7 @@ public final class InvestigationMonsterOuterClass {
 
     /**
      * <pre>
-     * Name: ENEAGILHBCC &gt; LockState
+     * Name: ENEAGILHBCC
      * </pre>
      *
      * Protobuf enum {@code InvestigationMonster.LockState}
@@ -353,24 +345,24 @@ public final class InvestigationMonsterOuterClass {
     public enum LockState
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>LOCK_STATE_NONE = 0;</code>
+       * <code>LOCK_NONE = 0;</code>
        */
-      LOCK_STATE_NONE(0),
+      LOCK_NONE(0),
       /**
-       * <code>LOCK_STATE_QUEST = 1;</code>
+       * <code>LOCK_QUEST = 1;</code>
        */
-      LOCK_STATE_QUEST(1),
+      LOCK_QUEST(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>LOCK_STATE_NONE = 0;</code>
+       * <code>LOCK_NONE = 0;</code>
        */
-      public static final int LOCK_STATE_NONE_VALUE = 0;
+      public static final int LOCK_NONE_VALUE = 0;
       /**
-       * <code>LOCK_STATE_QUEST = 1;</code>
+       * <code>LOCK_QUEST = 1;</code>
        */
-      public static final int LOCK_STATE_QUEST_VALUE = 1;
+      public static final int LOCK_QUEST_VALUE = 1;
 
 
       public final int getNumber() {
@@ -397,8 +389,8 @@ public final class InvestigationMonsterOuterClass {
        */
       public static LockState forNumber(int value) {
         switch (value) {
-          case 0: return LOCK_STATE_NONE;
-          case 1: return LOCK_STATE_QUEST;
+          case 0: return LOCK_NONE;
+          case 1: return LOCK_QUEST;
           default: return null;
         }
       }
@@ -569,10 +561,6 @@ public final class InvestigationMonsterOuterClass {
     public static final int DHMMIBILNEE_FIELD_NUMBER = 11;
     private int dHMMIBILNEE_;
     /**
-     * <pre>
-     * DHMMIBILNEE
-     * </pre>
-     *
      * <code>uint32 DHMMIBILNEE = 11;</code>
      * @return The dHMMIBILNEE.
      */
@@ -684,10 +672,6 @@ public final class InvestigationMonsterOuterClass {
     public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 15;
     private int maxBossChestNum_;
     /**
-     * <pre>
-     * HKBNEBOAMDI
-     * </pre>
-     *
      * <code>uint32 max_boss_chest_num = 15;</code>
      * @return The maxBossChestNum.
      */
@@ -719,7 +703,7 @@ public final class InvestigationMonsterOuterClass {
       if (resin_ != 0) {
         output.writeUInt32(3, resin_);
       }
-      if (lockState_ != emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.LOCK_STATE_NONE.getNumber()) {
+      if (lockState_ != emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.LOCK_NONE.getNumber()) {
         output.writeEnum(4, lockState_);
       }
       if (cityId_ != 0) {
@@ -782,7 +766,7 @@ public final class InvestigationMonsterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, resin_);
       }
-      if (lockState_ != emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.LOCK_STATE_NONE.getNumber()) {
+      if (lockState_ != emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.LOCK_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, lockState_);
       }
@@ -1663,10 +1647,6 @@ public final class InvestigationMonsterOuterClass {
 
       private int dHMMIBILNEE_ ;
       /**
-       * <pre>
-       * DHMMIBILNEE
-       * </pre>
-       *
        * <code>uint32 DHMMIBILNEE = 11;</code>
        * @return The dHMMIBILNEE.
        */
@@ -1675,10 +1655,6 @@ public final class InvestigationMonsterOuterClass {
         return dHMMIBILNEE_;
       }
       /**
-       * <pre>
-       * DHMMIBILNEE
-       * </pre>
-       *
        * <code>uint32 DHMMIBILNEE = 11;</code>
        * @param value The dHMMIBILNEE to set.
        * @return This builder for chaining.
@@ -1690,10 +1666,6 @@ public final class InvestigationMonsterOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DHMMIBILNEE
-       * </pre>
-       *
        * <code>uint32 DHMMIBILNEE = 11;</code>
        * @return This builder for chaining.
        */
@@ -2034,10 +2006,6 @@ public final class InvestigationMonsterOuterClass {
 
       private int maxBossChestNum_ ;
       /**
-       * <pre>
-       * HKBNEBOAMDI
-       * </pre>
-       *
        * <code>uint32 max_boss_chest_num = 15;</code>
        * @return The maxBossChestNum.
        */
@@ -2046,10 +2014,6 @@ public final class InvestigationMonsterOuterClass {
         return maxBossChestNum_;
       }
       /**
-       * <pre>
-       * HKBNEBOAMDI
-       * </pre>
-       *
        * <code>uint32 max_boss_chest_num = 15;</code>
        * @param value The maxBossChestNum to set.
        * @return This builder for chaining.
@@ -2061,10 +2025,6 @@ public final class InvestigationMonsterOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * HKBNEBOAMDI
-       * </pre>
-       *
        * <code>uint32 max_boss_chest_num = 15;</code>
        * @return This builder for chaining.
        */
@@ -2142,7 +2102,7 @@ public final class InvestigationMonsterOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032InvestigationMonster.proto\032\014Vector.pro" +
-      "to\032!WeeklyBossResinDiscountInfo.proto\"\375\003" +
+      "to\032!WeeklyBossResinDiscountInfo.proto\"\361\003" +
       "\n\024InvestigationMonster\022\026\n\016is_area_locked" +
       "\030\010 \001(\010\022\017\n\007city_id\030\005 \001(\r\022\030\n\020refresh_inter" +
       "val\030\n \001(\r\022\031\n\021next_refresh_time\030\001 \001(\r\022E\n\037" +
@@ -2154,9 +2114,9 @@ public final class InvestigationMonsterOuterClass {
       "\n\010scene_id\030\006 \001(\r\022\r\n\005resin\030\003 \001(\r\022\023\n\nmonst" +
       "er_id\030\206\004 \001(\r\0223\n\nlock_state\030\004 \001(\0162\037.Inves" +
       "tigationMonster.LockState\022\032\n\022max_boss_ch" +
-      "est_num\030\017 \001(\r\"6\n\tLockState\022\023\n\017LOCK_STATE" +
-      "_NONE\020\000\022\024\n\020LOCK_STATE_QUEST\020\001B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "est_num\030\017 \001(\r\"*\n\tLockState\022\r\n\tLOCK_NONE\020" +
+      "\000\022\016\n\nLOCK_QUEST\020\001B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

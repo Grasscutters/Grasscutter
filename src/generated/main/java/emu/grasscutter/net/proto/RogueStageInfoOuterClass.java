@@ -37,10 +37,10 @@ public final class RogueStageInfoOuterClass {
     int getNFAGHAIMDKI();
 
     /**
-     * <code>bool AJFBLDPHGDD = 12;</code>
-     * @return The aJFBLDPHGDD.
+     * <code>bool isExplored = 12;</code>
+     * @return The isExplored.
      */
-    boolean getAJFBLDPHGDD();
+    boolean getIsExplored();
 
     /**
      * <code>uint32 NILFBNCBADF = 658;</code>
@@ -237,7 +237,7 @@ public final class RogueStageInfoOuterClass {
             }
             case 96: {
 
-              aJFBLDPHGDD_ = input.readBool();
+              isExplored_ = input.readBool();
               break;
             }
             case 106: {
@@ -341,15 +341,15 @@ public final class RogueStageInfoOuterClass {
       return nFAGHAIMDKI_;
     }
 
-    public static final int AJFBLDPHGDD_FIELD_NUMBER = 12;
-    private boolean aJFBLDPHGDD_;
+    public static final int ISEXPLORED_FIELD_NUMBER = 12;
+    private boolean isExplored_;
     /**
-     * <code>bool AJFBLDPHGDD = 12;</code>
-     * @return The aJFBLDPHGDD.
+     * <code>bool isExplored = 12;</code>
+     * @return The isExplored.
      */
     @java.lang.Override
-    public boolean getAJFBLDPHGDD() {
-      return aJFBLDPHGDD_;
+    public boolean getIsExplored() {
+      return isExplored_;
     }
 
     public static final int NILFBNCBADF_FIELD_NUMBER = 658;
@@ -558,8 +558,8 @@ public final class RogueStageInfoOuterClass {
       if (lOJJNAJBAFO_ != 0) {
         output.writeUInt32(11, lOJJNAJBAFO_);
       }
-      if (aJFBLDPHGDD_ != false) {
-        output.writeBool(12, aJFBLDPHGDD_);
+      if (isExplored_ != false) {
+        output.writeBool(12, isExplored_);
       }
       if (avatarTeam_ != null) {
         output.writeMessage(13, getAvatarTeam());
@@ -621,9 +621,9 @@ public final class RogueStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, lOJJNAJBAFO_);
       }
-      if (aJFBLDPHGDD_ != false) {
+      if (isExplored_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, aJFBLDPHGDD_);
+          .computeBoolSize(12, isExplored_);
       }
       if (avatarTeam_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -666,8 +666,8 @@ public final class RogueStageInfoOuterClass {
           != other.getIPDPBFFPPBG()) return false;
       if (getNFAGHAIMDKI()
           != other.getNFAGHAIMDKI()) return false;
-      if (getAJFBLDPHGDD()
-          != other.getAJFBLDPHGDD()) return false;
+      if (getIsExplored()
+          != other.getIsExplored()) return false;
       if (getNILFBNCBADF()
           != other.getNILFBNCBADF()) return false;
       if (getNHKJHKLOPDP()
@@ -710,9 +710,9 @@ public final class RogueStageInfoOuterClass {
       hash = (53 * hash) + getIPDPBFFPPBG();
       hash = (37 * hash) + NFAGHAIMDKI_FIELD_NUMBER;
       hash = (53 * hash) + getNFAGHAIMDKI();
-      hash = (37 * hash) + AJFBLDPHGDD_FIELD_NUMBER;
+      hash = (37 * hash) + ISEXPLORED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getAJFBLDPHGDD());
+          getIsExplored());
       hash = (37 * hash) + NILFBNCBADF_FIELD_NUMBER;
       hash = (53 * hash) + getNILFBNCBADF();
       hash = (37 * hash) + NHKJHKLOPDP_FIELD_NUMBER;
@@ -887,7 +887,7 @@ public final class RogueStageInfoOuterClass {
 
         nFAGHAIMDKI_ = 0;
 
-        aJFBLDPHGDD_ = false;
+        isExplored_ = false;
 
         nILFBNCBADF_ = 0;
 
@@ -949,7 +949,7 @@ public final class RogueStageInfoOuterClass {
         result.eIMBKPHMPEH_ = eIMBKPHMPEH_;
         result.iPDPBFFPPBG_ = iPDPBFFPPBG_;
         result.nFAGHAIMDKI_ = nFAGHAIMDKI_;
-        result.aJFBLDPHGDD_ = aJFBLDPHGDD_;
+        result.isExplored_ = isExplored_;
         result.nILFBNCBADF_ = nILFBNCBADF_;
         result.nHKJHKLOPDP_ = nHKJHKLOPDP_;
         result.curLevel_ = curLevel_;
@@ -1030,8 +1030,8 @@ public final class RogueStageInfoOuterClass {
         if (other.getNFAGHAIMDKI() != 0) {
           setNFAGHAIMDKI(other.getNFAGHAIMDKI());
         }
-        if (other.getAJFBLDPHGDD() != false) {
-          setAJFBLDPHGDD(other.getAJFBLDPHGDD());
+        if (other.getIsExplored() != false) {
+          setIsExplored(other.getIsExplored());
         }
         if (other.getNILFBNCBADF() != 0) {
           setNILFBNCBADF(other.getNILFBNCBADF());
@@ -1212,33 +1212,33 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
 
-      private boolean aJFBLDPHGDD_ ;
+      private boolean isExplored_ ;
       /**
-       * <code>bool AJFBLDPHGDD = 12;</code>
-       * @return The aJFBLDPHGDD.
+       * <code>bool isExplored = 12;</code>
+       * @return The isExplored.
        */
       @java.lang.Override
-      public boolean getAJFBLDPHGDD() {
-        return aJFBLDPHGDD_;
+      public boolean getIsExplored() {
+        return isExplored_;
       }
       /**
-       * <code>bool AJFBLDPHGDD = 12;</code>
-       * @param value The aJFBLDPHGDD to set.
+       * <code>bool isExplored = 12;</code>
+       * @param value The isExplored to set.
        * @return This builder for chaining.
        */
-      public Builder setAJFBLDPHGDD(boolean value) {
+      public Builder setIsExplored(boolean value) {
         
-        aJFBLDPHGDD_ = value;
+        isExplored_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool AJFBLDPHGDD = 12;</code>
+       * <code>bool isExplored = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAJFBLDPHGDD() {
+      public Builder clearIsExplored() {
         
-        aJFBLDPHGDD_ = false;
+        isExplored_ = false;
         onChanged();
         return this;
       }
@@ -1949,17 +1949,17 @@ public final class RogueStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024RogueStageInfo.proto\032\031RoguelikeRuneRec" +
       "ord.proto\032\035RogueShowAvatarTeamInfo.proto" +
-      "\"\373\002\n\016RogueStageInfo\022\023\n\013EIMBKPHMPEH\030\003 \001(\r" +
+      "\"\372\002\n\016RogueStageInfo\022\023\n\013EIMBKPHMPEH\030\003 \001(\r" +
       "\022\024\n\013IPDPBFFPPBG\030\321\013 \001(\r\022\023\n\013NFAGHAIMDKI\030\017 " +
-      "\001(\r\022\023\n\013AJFBLDPHGDD\030\014 \001(\010\022\024\n\013NILFBNCBADF\030" +
-      "\222\005 \001(\r\022\023\n\013NHKJHKLOPDP\030\016 \001(\010\022\021\n\tcur_level" +
-      "\030\n \001(\r\022-\n\013avatar_team\030\r \001(\0132\030.RogueShowA" +
-      "vatarTeamInfo\022\027\n\017is_taken_reward\030\001 \001(\010\022\021" +
-      "\n\tis_passed\030\004 \001(\010\022.\n\020rune_record_list\030\010 " +
-      "\003(\0132\024.RoguelikeRuneRecord\022\023\n\013LOJJNAJBAFO" +
-      "\030\013 \001(\r\022\017\n\007is_open\030\t \001(\010\022\020\n\010stage_id\030\005 \001(" +
-      "\r\022\023\n\013DFAFANNFGMG\030\002 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\001(\r\022\022\n\nisExplored\030\014 \001(\010\022\024\n\013NILFBNCBADF\030\222" +
+      "\005 \001(\r\022\023\n\013NHKJHKLOPDP\030\016 \001(\010\022\021\n\tcur_level\030" +
+      "\n \001(\r\022-\n\013avatar_team\030\r \001(\0132\030.RogueShowAv" +
+      "atarTeamInfo\022\027\n\017is_taken_reward\030\001 \001(\010\022\021\n" +
+      "\tis_passed\030\004 \001(\010\022.\n\020rune_record_list\030\010 \003" +
+      "(\0132\024.RoguelikeRuneRecord\022\023\n\013LOJJNAJBAFO\030" +
+      "\013 \001(\r\022\017\n\007is_open\030\t \001(\010\022\020\n\010stage_id\030\005 \001(\r" +
+      "\022\023\n\013DFAFANNFGMG\030\002 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1972,7 +1972,7 @@ public final class RogueStageInfoOuterClass {
     internal_static_RogueStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueStageInfo_descriptor,
-        new java.lang.String[] { "EIMBKPHMPEH", "IPDPBFFPPBG", "NFAGHAIMDKI", "AJFBLDPHGDD", "NILFBNCBADF", "NHKJHKLOPDP", "CurLevel", "AvatarTeam", "IsTakenReward", "IsPassed", "RuneRecordList", "LOJJNAJBAFO", "IsOpen", "StageId", "DFAFANNFGMG", });
+        new java.lang.String[] { "EIMBKPHMPEH", "IPDPBFFPPBG", "NFAGHAIMDKI", "IsExplored", "NILFBNCBADF", "NHKJHKLOPDP", "CurLevel", "AvatarTeam", "IsTakenReward", "IsPassed", "RuneRecordList", "LOJJNAJBAFO", "IsOpen", "StageId", "DFAFANNFGMG", });
     emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.getDescriptor();
     emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.getDescriptor();
   }

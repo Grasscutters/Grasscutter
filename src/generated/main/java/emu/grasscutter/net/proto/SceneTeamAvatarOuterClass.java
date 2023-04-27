@@ -67,10 +67,10 @@ public final class SceneTeamAvatarOuterClass {
         int index);
 
     /**
-     * <code>bool FMFEBGBJAMB = 11;</code>
-     * @return The fMFEBGBJAMB.
+     * <code>bool is_reconnect = 11;</code>
+     * @return The isReconnect.
      */
-    boolean getFMFEBGBJAMB();
+    boolean getIsReconnect();
 
     /**
      * <code>uint32 entity_id = 13;</code>
@@ -325,7 +325,7 @@ public final class SceneTeamAvatarOuterClass {
             }
             case 88: {
 
-              fMFEBGBJAMB_ = input.readBool();
+              isReconnect_ = input.readBool();
               break;
             }
             case 98: {
@@ -488,15 +488,15 @@ public final class SceneTeamAvatarOuterClass {
       return serverBuffList_.get(index);
     }
 
-    public static final int FMFEBGBJAMB_FIELD_NUMBER = 11;
-    private boolean fMFEBGBJAMB_;
+    public static final int IS_RECONNECT_FIELD_NUMBER = 11;
+    private boolean isReconnect_;
     /**
-     * <code>bool FMFEBGBJAMB = 11;</code>
-     * @return The fMFEBGBJAMB.
+     * <code>bool is_reconnect = 11;</code>
+     * @return The isReconnect.
      */
     @java.lang.Override
-    public boolean getFMFEBGBJAMB() {
-      return fMFEBGBJAMB_;
+    public boolean getIsReconnect() {
+      return isReconnect_;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 13;
@@ -743,8 +743,8 @@ public final class SceneTeamAvatarOuterClass {
       if (isOnScene_ != false) {
         output.writeBool(10, isOnScene_);
       }
-      if (fMFEBGBJAMB_ != false) {
-        output.writeBool(11, fMFEBGBJAMB_);
+      if (isReconnect_ != false) {
+        output.writeBool(11, isReconnect_);
       }
       if (sceneEntityInfo_ != null) {
         output.writeMessage(12, getSceneEntityInfo());
@@ -810,9 +810,9 @@ public final class SceneTeamAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, isOnScene_);
       }
-      if (fMFEBGBJAMB_ != false) {
+      if (isReconnect_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, fMFEBGBJAMB_);
+          .computeBoolSize(11, isReconnect_);
       }
       if (sceneEntityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -859,8 +859,8 @@ public final class SceneTeamAvatarOuterClass {
           != other.getWeaponGuid()) return false;
       if (!getServerBuffListList()
           .equals(other.getServerBuffListList())) return false;
-      if (getFMFEBGBJAMB()
-          != other.getFMFEBGBJAMB()) return false;
+      if (getIsReconnect()
+          != other.getIsReconnect()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
       if (hasWeaponAbilityInfo() != other.hasWeaponAbilityInfo()) return false;
@@ -924,9 +924,9 @@ public final class SceneTeamAvatarOuterClass {
         hash = (37 * hash) + SERVER_BUFF_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getServerBuffListList().hashCode();
       }
-      hash = (37 * hash) + FMFEBGBJAMB_FIELD_NUMBER;
+      hash = (37 * hash) + IS_RECONNECT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFMFEBGBJAMB());
+          getIsReconnect());
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       if (hasWeaponAbilityInfo()) {
@@ -1113,7 +1113,7 @@ public final class SceneTeamAvatarOuterClass {
         } else {
           serverBuffListBuilder_.clear();
         }
-        fMFEBGBJAMB_ = false;
+        isReconnect_ = false;
 
         entityId_ = 0;
 
@@ -1199,7 +1199,7 @@ public final class SceneTeamAvatarOuterClass {
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-        result.fMFEBGBJAMB_ = fMFEBGBJAMB_;
+        result.isReconnect_ = isReconnect_;
         result.entityId_ = entityId_;
         if (weaponAbilityInfoBuilder_ == null) {
           result.weaponAbilityInfo_ = weaponAbilityInfo_;
@@ -1320,8 +1320,8 @@ public final class SceneTeamAvatarOuterClass {
             }
           }
         }
-        if (other.getFMFEBGBJAMB() != false) {
-          setFMFEBGBJAMB(other.getFMFEBGBJAMB());
+        if (other.getIsReconnect() != false) {
+          setIsReconnect(other.getIsReconnect());
         }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
@@ -1747,33 +1747,33 @@ public final class SceneTeamAvatarOuterClass {
         return serverBuffListBuilder_;
       }
 
-      private boolean fMFEBGBJAMB_ ;
+      private boolean isReconnect_ ;
       /**
-       * <code>bool FMFEBGBJAMB = 11;</code>
-       * @return The fMFEBGBJAMB.
+       * <code>bool is_reconnect = 11;</code>
+       * @return The isReconnect.
        */
       @java.lang.Override
-      public boolean getFMFEBGBJAMB() {
-        return fMFEBGBJAMB_;
+      public boolean getIsReconnect() {
+        return isReconnect_;
       }
       /**
-       * <code>bool FMFEBGBJAMB = 11;</code>
-       * @param value The fMFEBGBJAMB to set.
+       * <code>bool is_reconnect = 11;</code>
+       * @param value The isReconnect to set.
        * @return This builder for chaining.
        */
-      public Builder setFMFEBGBJAMB(boolean value) {
+      public Builder setIsReconnect(boolean value) {
         
-        fMFEBGBJAMB_ = value;
+        isReconnect_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool FMFEBGBJAMB = 11;</code>
+       * <code>bool is_reconnect = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFMFEBGBJAMB() {
+      public Builder clearIsReconnect() {
         
-        fMFEBGBJAMB_ = false;
+        isReconnect_ = false;
         onChanged();
         return this;
       }
@@ -2686,21 +2686,21 @@ public final class SceneTeamAvatarOuterClass {
       "lock.proto\032\032AbilitySyncStateInfo.proto\032\020" +
       "AvatarInfo.proto\032\025SceneAvatarInfo.proto\032" +
       "\025SceneEntityInfo.proto\032\020ServerBuff.proto" +
-      "\"\227\004\n\017SceneTeamAvatar\022\030\n\020weapon_entity_id" +
+      "\"\230\004\n\017SceneTeamAvatar\022\030\n\020weapon_entity_id" +
       "\030\010 \001(\r\022\022\n\nplayer_uid\030\006 \001(\r\022\023\n\013is_on_scen" +
       "e\030\n \001(\010\022\023\n\013weapon_guid\030\001 \001(\004\022%\n\020server_b" +
-      "uff_list\030\007 \003(\0132\013.ServerBuff\022\023\n\013FMFEBGBJA" +
-      "MB\030\013 \001(\010\022\021\n\tentity_id\030\r \001(\r\0222\n\023weapon_ab" +
-      "ility_info\030\003 \001(\0132\025.AbilitySyncStateInfo\022" +
-      "3\n\025ability_control_block\030\t \001(\0132\024.Ability" +
-      "ControlBlock\022 \n\013avatar_info\030\005 \001(\0132\013.Avat" +
-      "arInfo\0222\n\023avatar_ability_info\030\016 \001(\0132\025.Ab" +
-      "ilitySyncStateInfo\022\035\n\024is_player_cur_avat" +
-      "ar\030\321\004 \001(\010\022+\n\021scene_avatar_info\030\002 \001(\0132\020.S" +
-      "ceneAvatarInfo\022+\n\021scene_entity_info\030\014 \001(" +
-      "\0132\020.SceneEntityInfo\022\020\n\010scene_id\030\017 \001(\r\022\023\n" +
-      "\013avatar_guid\030\004 \001(\004B\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "uff_list\030\007 \003(\0132\013.ServerBuff\022\024\n\014is_reconn" +
+      "ect\030\013 \001(\010\022\021\n\tentity_id\030\r \001(\r\0222\n\023weapon_a" +
+      "bility_info\030\003 \001(\0132\025.AbilitySyncStateInfo" +
+      "\0223\n\025ability_control_block\030\t \001(\0132\024.Abilit" +
+      "yControlBlock\022 \n\013avatar_info\030\005 \001(\0132\013.Ava" +
+      "tarInfo\0222\n\023avatar_ability_info\030\016 \001(\0132\025.A" +
+      "bilitySyncStateInfo\022\035\n\024is_player_cur_ava" +
+      "tar\030\321\004 \001(\010\022+\n\021scene_avatar_info\030\002 \001(\0132\020." +
+      "SceneAvatarInfo\022+\n\021scene_entity_info\030\014 \001" +
+      "(\0132\020.SceneEntityInfo\022\020\n\010scene_id\030\017 \001(\r\022\023" +
+      "\n\013avatar_guid\030\004 \001(\004B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2717,7 +2717,7 @@ public final class SceneTeamAvatarOuterClass {
     internal_static_SceneTeamAvatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneTeamAvatar_descriptor,
-        new java.lang.String[] { "WeaponEntityId", "PlayerUid", "IsOnScene", "WeaponGuid", "ServerBuffList", "FMFEBGBJAMB", "EntityId", "WeaponAbilityInfo", "AbilityControlBlock", "AvatarInfo", "AvatarAbilityInfo", "IsPlayerCurAvatar", "SceneAvatarInfo", "SceneEntityInfo", "SceneId", "AvatarGuid", });
+        new java.lang.String[] { "WeaponEntityId", "PlayerUid", "IsOnScene", "WeaponGuid", "ServerBuffList", "IsReconnect", "EntityId", "WeaponAbilityInfo", "AbilityControlBlock", "AvatarInfo", "AvatarAbilityInfo", "IsPlayerCurAvatar", "SceneAvatarInfo", "SceneEntityInfo", "SceneId", "AvatarGuid", });
     emu.grasscutter.net.proto.AbilityControlBlockOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AvatarInfoOuterClass.getDescriptor();

@@ -134,24 +134,16 @@ public final class ParentQuestOuterClass {
         int index);
 
     /**
-     * <pre>
-     * PGAAFEALHLK
-     * </pre>
-     *
-     * <code>uint32 parent_quest_state = 9;</code>
-     * @return The parentQuestState.
-     */
-    int getParentQuestState();
-
-    /**
-     * <pre>
-     * NJNBCLGFCIN
-     * </pre>
-     *
-     * <code>uint32 quest_var_seq = 12;</code>
+     * <code>uint32 quest_var_seq = 9;</code>
      * @return The questVarSeq.
      */
     int getQuestVarSeq();
+
+    /**
+     * <code>uint32 parent_quest_state = 12;</code>
+     * @return The parentQuestState.
+     */
+    int getParentQuestState();
 
     /**
      * <code>repeated int32 quest_var = 8;</code>
@@ -290,7 +282,7 @@ public final class ParentQuestOuterClass {
             }
             case 72: {
 
-              parentQuestState_ = input.readUInt32();
+              questVarSeq_ = input.readUInt32();
               break;
             }
             case 80: {
@@ -305,7 +297,7 @@ public final class ParentQuestOuterClass {
             }
             case 96: {
 
-              questVarSeq_ = input.readUInt32();
+              parentQuestState_ = input.readUInt32();
               break;
             }
             case 106: {
@@ -608,34 +600,26 @@ public final class ParentQuestOuterClass {
       return inferencePageList_.get(index);
     }
 
-    public static final int PARENT_QUEST_STATE_FIELD_NUMBER = 9;
-    private int parentQuestState_;
-    /**
-     * <pre>
-     * PGAAFEALHLK
-     * </pre>
-     *
-     * <code>uint32 parent_quest_state = 9;</code>
-     * @return The parentQuestState.
-     */
-    @java.lang.Override
-    public int getParentQuestState() {
-      return parentQuestState_;
-    }
-
-    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 12;
+    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 9;
     private int questVarSeq_;
     /**
-     * <pre>
-     * NJNBCLGFCIN
-     * </pre>
-     *
-     * <code>uint32 quest_var_seq = 12;</code>
+     * <code>uint32 quest_var_seq = 9;</code>
      * @return The questVarSeq.
      */
     @java.lang.Override
     public int getQuestVarSeq() {
       return questVarSeq_;
+    }
+
+    public static final int PARENT_QUEST_STATE_FIELD_NUMBER = 12;
+    private int parentQuestState_;
+    /**
+     * <code>uint32 parent_quest_state = 12;</code>
+     * @return The parentQuestState.
+     */
+    @java.lang.Override
+    public int getParentQuestState() {
+      return parentQuestState_;
     }
 
     public static final int QUEST_VAR_FIELD_NUMBER = 8;
@@ -725,8 +709,8 @@ public final class ParentQuestOuterClass {
       for (int i = 0; i < questVar_.size(); i++) {
         output.writeInt32NoTag(questVar_.getInt(i));
       }
-      if (parentQuestState_ != 0) {
-        output.writeUInt32(9, parentQuestState_);
+      if (questVarSeq_ != 0) {
+        output.writeUInt32(9, questVarSeq_);
       }
       if (acceptTime_ != 0) {
         output.writeUInt32(10, acceptTime_);
@@ -734,8 +718,8 @@ public final class ParentQuestOuterClass {
       if (isFinished_ != false) {
         output.writeBool(11, isFinished_);
       }
-      if (questVarSeq_ != 0) {
-        output.writeUInt32(12, questVarSeq_);
+      if (parentQuestState_ != 0) {
+        output.writeUInt32(12, parentQuestState_);
       }
       for (int i = 0; i < inferencePageList_.size(); i++) {
         output.writeMessage(13, inferencePageList_.get(i));
@@ -791,9 +775,9 @@ public final class ParentQuestOuterClass {
         }
         questVarMemoizedSerializedSize = dataSize;
       }
-      if (parentQuestState_ != 0) {
+      if (questVarSeq_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, parentQuestState_);
+          .computeUInt32Size(9, questVarSeq_);
       }
       if (acceptTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -803,9 +787,9 @@ public final class ParentQuestOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isFinished_);
       }
-      if (questVarSeq_ != 0) {
+      if (parentQuestState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, questVarSeq_);
+          .computeUInt32Size(12, parentQuestState_);
       }
       for (int i = 0; i < inferencePageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -851,10 +835,10 @@ public final class ParentQuestOuterClass {
           other.internalGetTimeVarMap())) return false;
       if (!getInferencePageListList()
           .equals(other.getInferencePageListList())) return false;
-      if (getParentQuestState()
-          != other.getParentQuestState()) return false;
       if (getQuestVarSeq()
           != other.getQuestVarSeq()) return false;
+      if (getParentQuestState()
+          != other.getParentQuestState()) return false;
       if (!getQuestVarList()
           .equals(other.getQuestVarList())) return false;
       if (getIsFinished()
@@ -896,10 +880,10 @@ public final class ParentQuestOuterClass {
         hash = (37 * hash) + INFERENCE_PAGE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInferencePageListList().hashCode();
       }
-      hash = (37 * hash) + PARENT_QUEST_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getParentQuestState();
       hash = (37 * hash) + QUEST_VAR_SEQ_FIELD_NUMBER;
       hash = (53 * hash) + getQuestVarSeq();
+      hash = (37 * hash) + PARENT_QUEST_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getParentQuestState();
       if (getQuestVarCount() > 0) {
         hash = (37 * hash) + QUEST_VAR_FIELD_NUMBER;
         hash = (53 * hash) + getQuestVarList().hashCode();
@@ -1095,9 +1079,9 @@ public final class ParentQuestOuterClass {
         } else {
           inferencePageListBuilder_.clear();
         }
-        parentQuestState_ = 0;
-
         questVarSeq_ = 0;
+
+        parentQuestState_ = 0;
 
         questVar_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1160,8 +1144,8 @@ public final class ParentQuestOuterClass {
         } else {
           result.inferencePageList_ = inferencePageListBuilder_.build();
         }
-        result.parentQuestState_ = parentQuestState_;
         result.questVarSeq_ = questVarSeq_;
+        result.parentQuestState_ = parentQuestState_;
         if (((bitField0_ & 0x00000008) != 0)) {
           questVar_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000008);
@@ -1283,11 +1267,11 @@ public final class ParentQuestOuterClass {
             }
           }
         }
-        if (other.getParentQuestState() != 0) {
-          setParentQuestState(other.getParentQuestState());
-        }
         if (other.getQuestVarSeq() != 0) {
           setQuestVarSeq(other.getQuestVarSeq());
+        }
+        if (other.getParentQuestState() != 0) {
+          setParentQuestState(other.getParentQuestState());
         }
         if (!other.questVar_.isEmpty()) {
           if (questVar_.isEmpty()) {
@@ -2155,56 +2139,9 @@ public final class ParentQuestOuterClass {
         return inferencePageListBuilder_;
       }
 
-      private int parentQuestState_ ;
-      /**
-       * <pre>
-       * PGAAFEALHLK
-       * </pre>
-       *
-       * <code>uint32 parent_quest_state = 9;</code>
-       * @return The parentQuestState.
-       */
-      @java.lang.Override
-      public int getParentQuestState() {
-        return parentQuestState_;
-      }
-      /**
-       * <pre>
-       * PGAAFEALHLK
-       * </pre>
-       *
-       * <code>uint32 parent_quest_state = 9;</code>
-       * @param value The parentQuestState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentQuestState(int value) {
-        
-        parentQuestState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * PGAAFEALHLK
-       * </pre>
-       *
-       * <code>uint32 parent_quest_state = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentQuestState() {
-        
-        parentQuestState_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int questVarSeq_ ;
       /**
-       * <pre>
-       * NJNBCLGFCIN
-       * </pre>
-       *
-       * <code>uint32 quest_var_seq = 12;</code>
+       * <code>uint32 quest_var_seq = 9;</code>
        * @return The questVarSeq.
        */
       @java.lang.Override
@@ -2212,11 +2149,7 @@ public final class ParentQuestOuterClass {
         return questVarSeq_;
       }
       /**
-       * <pre>
-       * NJNBCLGFCIN
-       * </pre>
-       *
-       * <code>uint32 quest_var_seq = 12;</code>
+       * <code>uint32 quest_var_seq = 9;</code>
        * @param value The questVarSeq to set.
        * @return This builder for chaining.
        */
@@ -2227,16 +2160,43 @@ public final class ParentQuestOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * NJNBCLGFCIN
-       * </pre>
-       *
-       * <code>uint32 quest_var_seq = 12;</code>
+       * <code>uint32 quest_var_seq = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuestVarSeq() {
         
         questVarSeq_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int parentQuestState_ ;
+      /**
+       * <code>uint32 parent_quest_state = 12;</code>
+       * @return The parentQuestState.
+       */
+      @java.lang.Override
+      public int getParentQuestState() {
+        return parentQuestState_;
+      }
+      /**
+       * <code>uint32 parent_quest_state = 12;</code>
+       * @param value The parentQuestState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentQuestState(int value) {
+        
+        parentQuestState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 parent_quest_state = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParentQuestState() {
+        
+        parentQuestState_ = 0;
         onChanged();
         return this;
       }
@@ -2461,8 +2421,8 @@ public final class ParentQuestOuterClass {
       "\017 \001(\004\022+\n\013random_info\030\016 \001(\0132\026.ParentQuest" +
       "RandomInfo\0222\n\014time_var_map\030\005 \003(\0132\034.Paren" +
       "tQuest.TimeVarMapEntry\022/\n\023inference_page" +
-      "_list\030\r \003(\0132\022.InferencePageInfo\022\032\n\022paren" +
-      "t_quest_state\030\t \001(\r\022\025\n\rquest_var_seq\030\014 \001" +
+      "_list\030\r \003(\0132\022.InferencePageInfo\022\025\n\rquest" +
+      "_var_seq\030\t \001(\r\022\032\n\022parent_quest_state\030\014 \001" +
       "(\r\022\021\n\tquest_var\030\010 \003(\005\022\023\n\013is_finished\030\013 \001" +
       "(\010\022\027\n\017parent_quest_id\030\007 \001(\r\0321\n\017TimeVarMa" +
       "pEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033" +
@@ -2480,7 +2440,7 @@ public final class ParentQuestOuterClass {
     internal_static_ParentQuest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ParentQuest_descriptor,
-        new java.lang.String[] { "AcceptTime", "IsRandom", "ChildQuestList", "VideoKey", "RandomInfo", "TimeVarMap", "InferencePageList", "ParentQuestState", "QuestVarSeq", "QuestVar", "IsFinished", "ParentQuestId", });
+        new java.lang.String[] { "AcceptTime", "IsRandom", "ChildQuestList", "VideoKey", "RandomInfo", "TimeVarMap", "InferencePageList", "QuestVarSeq", "ParentQuestState", "QuestVar", "IsFinished", "ParentQuestId", });
     internal_static_ParentQuest_TimeVarMapEntry_descriptor =
       internal_static_ParentQuest_descriptor.getNestedTypes().get(0);
     internal_static_ParentQuest_TimeVarMapEntry_fieldAccessorTable = new

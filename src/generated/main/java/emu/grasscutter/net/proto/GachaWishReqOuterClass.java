@@ -25,20 +25,12 @@ public final class GachaWishReqOuterClass {
     int getItemId();
 
     /**
-     * <pre>
-     * KJPOJHMDBNE
-     * </pre>
-     *
      * <code>uint32 gachaScheduleId = 14;</code>
      * @return The gachaScheduleId.
      */
     int getGachaScheduleId();
 
     /**
-     * <pre>
-     * AOLMBNPLFEO
-     * </pre>
-     *
      * <code>uint32 gachaType = 3;</code>
      * @return The gachaType.
      */
@@ -155,10 +147,6 @@ public final class GachaWishReqOuterClass {
     public static final int GACHASCHEDULEID_FIELD_NUMBER = 14;
     private int gachaScheduleId_;
     /**
-     * <pre>
-     * KJPOJHMDBNE
-     * </pre>
-     *
      * <code>uint32 gachaScheduleId = 14;</code>
      * @return The gachaScheduleId.
      */
@@ -170,10 +158,6 @@ public final class GachaWishReqOuterClass {
     public static final int GACHATYPE_FIELD_NUMBER = 3;
     private int gachaType_;
     /**
-     * <pre>
-     * AOLMBNPLFEO
-     * </pre>
-     *
      * <code>uint32 gachaType = 3;</code>
      * @return The gachaType.
      */
@@ -556,10 +540,6 @@ public final class GachaWishReqOuterClass {
 
       private int gachaScheduleId_ ;
       /**
-       * <pre>
-       * KJPOJHMDBNE
-       * </pre>
-       *
        * <code>uint32 gachaScheduleId = 14;</code>
        * @return The gachaScheduleId.
        */
@@ -568,10 +548,6 @@ public final class GachaWishReqOuterClass {
         return gachaScheduleId_;
       }
       /**
-       * <pre>
-       * KJPOJHMDBNE
-       * </pre>
-       *
        * <code>uint32 gachaScheduleId = 14;</code>
        * @param value The gachaScheduleId to set.
        * @return This builder for chaining.
@@ -583,10 +559,6 @@ public final class GachaWishReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * KJPOJHMDBNE
-       * </pre>
-       *
        * <code>uint32 gachaScheduleId = 14;</code>
        * @return This builder for chaining.
        */
@@ -599,10 +571,6 @@ public final class GachaWishReqOuterClass {
 
       private int gachaType_ ;
       /**
-       * <pre>
-       * AOLMBNPLFEO
-       * </pre>
-       *
        * <code>uint32 gachaType = 3;</code>
        * @return The gachaType.
        */
@@ -611,10 +579,6 @@ public final class GachaWishReqOuterClass {
         return gachaType_;
       }
       /**
-       * <pre>
-       * AOLMBNPLFEO
-       * </pre>
-       *
        * <code>uint32 gachaType = 3;</code>
        * @param value The gachaType to set.
        * @return This builder for chaining.
@@ -626,10 +590,6 @@ public final class GachaWishReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * AOLMBNPLFEO
-       * </pre>
-       *
        * <code>uint32 gachaType = 3;</code>
        * @return This builder for chaining.
        */

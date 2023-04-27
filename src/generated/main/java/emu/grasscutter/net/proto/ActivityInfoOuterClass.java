@@ -19,33 +19,21 @@ public final class ActivityInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return A list containing the expireCondList.
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+     * @return A list containing the iMFFKIMJDJH.
      */
-    java.util.List<java.lang.Integer> getExpireCondListList();
+    java.util.List<java.lang.Integer> getIMFFKIMJDJHList();
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return The count of expireCondList.
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+     * @return The count of iMFFKIMJDJH.
      */
-    int getExpireCondListCount();
+    int getIMFFKIMJDJHCount();
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
      * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
+     * @return The iMFFKIMJDJH at the given index.
      */
-    int getExpireCondList(int index);
+    int getIMFFKIMJDJH(int index);
 
     /**
      * <code>uint32 OIBEDADECFB = 238;</code>
@@ -149,10 +137,6 @@ public final class ActivityInfoOuterClass {
     int getCurScore();
 
     /**
-     * <pre>
-     * OIPEAKGOPDE
-     * </pre>
-     *
      * <code>uint32 activity_type = 11;</code>
      * @return The activityType.
      */
@@ -1338,7 +1322,7 @@ public final class ActivityInfoOuterClass {
       super(builder);
     }
     private ActivityInfo() {
-      expireCondList_ = emptyIntList();
+      iMFFKIMJDJH_ = emptyIntList();
       activityPushTipsDataList_ = java.util.Collections.emptyList();
       meetCondList_ = emptyIntList();
       watcherInfoList_ = java.util.Collections.emptyList();
@@ -1484,21 +1468,21 @@ public final class ActivityInfoOuterClass {
             }
             case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                expireCondList_ = newIntList();
+                iMFFKIMJDJH_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              expireCondList_.addInt(input.readUInt32());
+              iMFFKIMJDJH_.addInt(input.readUInt32());
               break;
             }
             case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                expireCondList_ = newIntList();
+                iMFFKIMJDJH_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                expireCondList_.addInt(input.readUInt32());
+                iMFFKIMJDJH_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -2559,7 +2543,7 @@ public final class ActivityInfoOuterClass {
           meetCondList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          expireCondList_.makeImmutable(); // C
+          iMFFKIMJDJH_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
@@ -2764,45 +2748,33 @@ public final class ActivityInfoOuterClass {
           detailCase_);
     }
 
-    public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList expireCondList_;
+    public static final int IMFFKIMJDJH_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList iMFFKIMJDJH_;
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return A list containing the expireCondList.
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+     * @return A list containing the iMFFKIMJDJH.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getExpireCondListList() {
-      return expireCondList_;
+        getIMFFKIMJDJHList() {
+      return iMFFKIMJDJH_;
     }
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
-     * @return The count of expireCondList.
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+     * @return The count of iMFFKIMJDJH.
      */
-    public int getExpireCondListCount() {
-      return expireCondList_.size();
+    public int getIMFFKIMJDJHCount() {
+      return iMFFKIMJDJH_.size();
     }
     /**
-     * <pre>
-     * IMFFKIMJDJH
-     * </pre>
-     *
-     * <code>repeated uint32 expire_cond_list = 13;</code>
+     * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
      * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
+     * @return The iMFFKIMJDJH at the given index.
      */
-    public int getExpireCondList(int index) {
-      return expireCondList_.getInt(index);
+    public int getIMFFKIMJDJH(int index) {
+      return iMFFKIMJDJH_.getInt(index);
     }
-    private int expireCondListMemoizedSerializedSize = -1;
+    private int iMFFKIMJDJHMemoizedSerializedSize = -1;
 
     public static final int OIBEDADECFB_FIELD_NUMBER = 238;
     private int oIBEDADECFB_;
@@ -2975,10 +2947,6 @@ public final class ActivityInfoOuterClass {
     public static final int ACTIVITY_TYPE_FIELD_NUMBER = 11;
     private int activityType_;
     /**
-     * <pre>
-     * OIPEAKGOPDE
-     * </pre>
-     *
      * <code>uint32 activity_type = 11;</code>
      * @return The activityType.
      */
@@ -5422,12 +5390,12 @@ public final class ActivityInfoOuterClass {
       if (isFinished_ != false) {
         output.writeBool(12, isFinished_);
       }
-      if (getExpireCondListList().size() > 0) {
+      if (getIMFFKIMJDJHList().size() > 0) {
         output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(expireCondListMemoizedSerializedSize);
+        output.writeUInt32NoTag(iMFFKIMJDJHMemoizedSerializedSize);
       }
-      for (int i = 0; i < expireCondList_.size(); i++) {
-        output.writeUInt32NoTag(expireCondList_.getInt(i));
+      for (int i = 0; i < iMFFKIMJDJH_.size(); i++) {
+        output.writeUInt32NoTag(iMFFKIMJDJH_.getInt(i));
       }
       if (detailCase_ == 14) {
         output.writeMessage(14, (emu.grasscutter.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo) detail_);
@@ -5738,17 +5706,17 @@ public final class ActivityInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < expireCondList_.size(); i++) {
+        for (int i = 0; i < iMFFKIMJDJH_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(expireCondList_.getInt(i));
+            .computeUInt32SizeNoTag(iMFFKIMJDJH_.getInt(i));
         }
         size += dataSize;
-        if (!getExpireCondListList().isEmpty()) {
+        if (!getIMFFKIMJDJHList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        expireCondListMemoizedSerializedSize = dataSize;
+        iMFFKIMJDJHMemoizedSerializedSize = dataSize;
       }
       if (detailCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
@@ -6085,8 +6053,8 @@ public final class ActivityInfoOuterClass {
       }
       emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other = (emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo) obj;
 
-      if (!getExpireCondListList()
-          .equals(other.getExpireCondListList())) return false;
+      if (!getIMFFKIMJDJHList()
+          .equals(other.getIMFFKIMJDJHList())) return false;
       if (getOIBEDADECFB()
           != other.getOIBEDADECFB()) return false;
       if (getEndTime()
@@ -6433,9 +6401,9 @@ public final class ActivityInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getExpireCondListCount() > 0) {
-        hash = (37 * hash) + EXPIRE_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getExpireCondListList().hashCode();
+      if (getIMFFKIMJDJHCount() > 0) {
+        hash = (37 * hash) + IMFFKIMJDJH_FIELD_NUMBER;
+        hash = (53 * hash) + getIMFFKIMJDJHList().hashCode();
       }
       hash = (37 * hash) + OIBEDADECFB_FIELD_NUMBER;
       hash = (53 * hash) + getOIBEDADECFB();
@@ -6923,7 +6891,7 @@ public final class ActivityInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        expireCondList_ = emptyIntList();
+        iMFFKIMJDJH_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         oIBEDADECFB_ = 0;
 
@@ -7001,10 +6969,10 @@ public final class ActivityInfoOuterClass {
         emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo result = new emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          expireCondList_.makeImmutable();
+          iMFFKIMJDJH_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.expireCondList_ = expireCondList_;
+        result.iMFFKIMJDJH_ = iMFFKIMJDJH_;
         result.oIBEDADECFB_ = oIBEDADECFB_;
         result.endTime_ = endTime_;
         result.activityId_ = activityId_;
@@ -7604,13 +7572,13 @@ public final class ActivityInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo other) {
         if (other == emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance()) return this;
-        if (!other.expireCondList_.isEmpty()) {
-          if (expireCondList_.isEmpty()) {
-            expireCondList_ = other.expireCondList_;
+        if (!other.iMFFKIMJDJH_.isEmpty()) {
+          if (iMFFKIMJDJH_.isEmpty()) {
+            iMFFKIMJDJH_ = other.iMFFKIMJDJH_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureExpireCondListIsMutable();
-            expireCondList_.addAll(other.expireCondList_);
+            ensureIMFFKIMJDJHIsMutable();
+            iMFFKIMJDJH_.addAll(other.iMFFKIMJDJH_);
           }
           onChanged();
         }
@@ -8066,108 +8034,80 @@ public final class ActivityInfoOuterClass {
 
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList expireCondList_ = emptyIntList();
-      private void ensureExpireCondListIsMutable() {
+      private com.google.protobuf.Internal.IntList iMFFKIMJDJH_ = emptyIntList();
+      private void ensureIMFFKIMJDJHIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          expireCondList_ = mutableCopy(expireCondList_);
+          iMFFKIMJDJH_ = mutableCopy(iMFFKIMJDJH_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @return A list containing the expireCondList.
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+       * @return A list containing the iMFFKIMJDJH.
        */
       public java.util.List<java.lang.Integer>
-          getExpireCondListList() {
+          getIMFFKIMJDJHList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(expireCondList_) : expireCondList_;
+                 java.util.Collections.unmodifiableList(iMFFKIMJDJH_) : iMFFKIMJDJH_;
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @return The count of expireCondList.
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+       * @return The count of iMFFKIMJDJH.
        */
-      public int getExpireCondListCount() {
-        return expireCondList_.size();
+      public int getIMFFKIMJDJHCount() {
+        return iMFFKIMJDJH_.size();
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
        * @param index The index of the element to return.
-       * @return The expireCondList at the given index.
+       * @return The iMFFKIMJDJH at the given index.
        */
-      public int getExpireCondList(int index) {
-        return expireCondList_.getInt(index);
+      public int getIMFFKIMJDJH(int index) {
+        return iMFFKIMJDJH_.getInt(index);
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
        * @param index The index to set the value at.
-       * @param value The expireCondList to set.
+       * @param value The iMFFKIMJDJH to set.
        * @return This builder for chaining.
        */
-      public Builder setExpireCondList(
+      public Builder setIMFFKIMJDJH(
           int index, int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.setInt(index, value);
+        ensureIMFFKIMJDJHIsMutable();
+        iMFFKIMJDJH_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param value The expireCondList to add.
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+       * @param value The iMFFKIMJDJH to add.
        * @return This builder for chaining.
        */
-      public Builder addExpireCondList(int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.addInt(value);
+      public Builder addIMFFKIMJDJH(int value) {
+        ensureIMFFKIMJDJHIsMutable();
+        iMFFKIMJDJH_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
-       * @param values The expireCondList to add.
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
+       * @param values The iMFFKIMJDJH to add.
        * @return This builder for chaining.
        */
-      public Builder addAllExpireCondList(
+      public Builder addAllIMFFKIMJDJH(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureExpireCondListIsMutable();
+        ensureIMFFKIMJDJHIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, expireCondList_);
+            values, iMFFKIMJDJH_);
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * IMFFKIMJDJH
-       * </pre>
-       *
-       * <code>repeated uint32 expire_cond_list = 13;</code>
+       * <code>repeated uint32 IMFFKIMJDJH = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearExpireCondList() {
-        expireCondList_ = emptyIntList();
+      public Builder clearIMFFKIMJDJH() {
+        iMFFKIMJDJH_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -8770,10 +8710,6 @@ public final class ActivityInfoOuterClass {
 
       private int activityType_ ;
       /**
-       * <pre>
-       * OIPEAKGOPDE
-       * </pre>
-       *
        * <code>uint32 activity_type = 11;</code>
        * @return The activityType.
        */
@@ -8782,10 +8718,6 @@ public final class ActivityInfoOuterClass {
         return activityType_;
       }
       /**
-       * <pre>
-       * OIPEAKGOPDE
-       * </pre>
-       *
        * <code>uint32 activity_type = 11;</code>
        * @param value The activityType to set.
        * @return This builder for chaining.
@@ -8797,10 +8729,6 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * OIPEAKGOPDE
-       * </pre>
-       *
        * <code>uint32 activity_type = 11;</code>
        * @return This builder for chaining.
        */
@@ -19689,126 +19617,126 @@ public final class ActivityInfoOuterClass {
       "fo.proto\032\037VintageActivityDetailInfo.prot" +
       "o\032#WaterSpiritActivityDetailInfo.proto\032\031" +
       "WindFieldDetailInfo.proto\032\"WinterCampAct" +
-      "ivityDetailInfo.proto\"\373$\n\014ActivityInfo\022\030" +
-      "\n\020expire_cond_list\030\r \003(\r\022\024\n\013OIBEDADECFB\030" +
-      "\356\001 \001(\r\022\020\n\010end_time\030\n \001(\r\022\023\n\013activity_id\030" +
-      "\001 \001(\r\022<\n\034activity_push_tips_data_list\030\302\017" +
-      " \003(\0132\025.ActivityPushTipsData\022\024\n\013DCENNBKGO" +
-      "AH\030\313\t \001(\010\022\026\n\016meet_cond_list\030\005 \003(\r\022\023\n\013sch" +
-      "edule_id\030\002 \001(\r\022\023\n\013DNKBDEJAOMC\030\006 \001(\010\022\024\n\013M" +
-      "PCDIKMJOAC\030\371\017 \001(\010\022\022\n\tcur_score\030\362\006 \001(\r\022\025\n" +
-      "\ractivity_type\030\013 \001(\r\022\023\n\013GODELKHIPDE\030\003 \001(" +
-      "\010\022\024\n\013DLNNGPNHBFB\030\375\r \001(\010\022\035\n\024first_day_sta" +
-      "rt_time\030\351\004 \001(\r\022\022\n\nbegin_time\030\017 \001(\r\022\024\n\013JA" +
-      "FIBAJIAFF\030\234\004 \001(\r\022\023\n\013is_finished\030\014 \001(\010\022\024\n" +
-      "\013DMCFNBNECAN\030\312\001 \001(\010\022/\n\021watcher_info_list" +
-      "\030\004 \003(\0132\024.ActivityWatcherInfo\0223\n\rsam_lamp" +
-      "_info\030\t \001(\0132\032.SeaLampActivityDetailInfoH" +
-      "\000\0224\n\rcrucible_info\030\016 \001(\0132\033.CrucibleActiv" +
-      "ityDetailInfoH\000\0224\n\rsalesman_info\030\010 \001(\0132\033" +
-      ".SalesmanActivityDetailInfoH\000\022;\n\021trial_a" +
-      "vatar_info\030\007 \001(\0132\036.TrialAvatarActivityDe" +
-      "tailInfoH\000\0225\n\rdelivery_info\030\320\t \001(\0132\033.Del" +
-      "iveryActivityDetailInfoH\000\022/\n\naster_info\030" +
-      "\273\013 \001(\0132\030.AsterActivityDetailInfoH\000\0221\n\013fl" +
-      "ight_info\030\251\006 \001(\0132\031.FlightActivityDetailI" +
-      "nfoH\000\022<\n\021dragon_spine_info\030\247\n \001(\0132\036.Drag" +
-      "onSpineActivityDetailInfoH\000\0221\n\013effigy_in" +
-      "fo\030\215\010 \001(\0132\031.EffigyActivityDetailInfoH\000\022<" +
-      "\n\021treasure_map_info\030\303\010 \001(\0132\036.TreasureMap" +
-      "ActivityDetailInfoH\000\0224\n\rblessing_info\030d " +
-      "\001(\0132\033.BlessingActivityDetailInfoH\000\022.\n\rse" +
-      "a_lamp_info\030\373\001 \001(\0132\024.SeaLampActivityInfo" +
-      "H\000\0229\n\017expedition_info\030\204\r \001(\0132\035.Expeditio" +
-      "nActivityDetailInfoH\000\022B\n\024arena_challenge" +
-      "_info\030\217\003 \001(\0132!.ArenaChallengeActivityDet" +
-      "ailInfoH\000\0227\n\017fleur_fair_info\030\033 \001(\0132\034.Fle" +
-      "urFairActivityDetailInfoH\000\022<\n\021water_spir" +
-      "it_info\030\307\001 \001(\0132\036.WaterSpiritActivityDeta" +
-      "ilInfoH\000\022A\n\024challneler_slab_info\030\254\010 \001(\0132" +
-      " .ChannelerSlabActivityDetailInfoH\000\022A\n\030m" +
-      "ist_trial_activity_info\030\303\005 \001(\0132\034.MistTri" +
-      "alActivityDetailInfoH\000\022=\n\022hide_and_seek_" +
-      "info\030\207\002 \001(\0132\036.HideAndSeekActivityDetailI" +
-      "nfoH\000\0228\n\023find_hilichurl_info\030\234\t \001(\0132\030.Fi" +
-      "ndHilichurlDetailInfoH\000\0222\n\020summer_time_i" +
-      "nfo\030\207\017 \001(\0132\025.SummerTimeDetailInfoH\000\0228\n\023b" +
-      "uoyant_combat_info\030\363\004 \001(\0132\030.BuoyantComba" +
-      "tDetailInfoH\000\022/\n\017echo_shell_info\030/ \001(\0132\024" +
-      ".EchoShellDetailInfoH\000\022D\n\025bounce_conjuri" +
-      "ng_info\030\364\006 \001(\0132\".BounceConjuringActivity" +
-      "DetailInfoH\000\0228\n\017blitz_rush_info\030\264\016 \001(\0132\034" +
-      ".BlitzRushActivityDetailInfoH\000\022/\n\nchess_" +
-      "info\030\234\003 \001(\0132\030.ChessActivityDetailInfoH\000\022" +
-      "-\n\tsumo_info\030\363\001 \001(\0132\027.SumoActivityDetail" +
-      "InfoH\000\022>\n\022moonfin_trial_info\030\245\014 \001(\0132\037.Mo" +
-      "onfinTrialActivityDetailInfoH\000\022.\n\016luna_r" +
-      "ite_info\030\265\013 \001(\0132\023.LunaRiteDetailInfoH\000\022<" +
-      "\n\021plant_flower_info\030\217\014 \001(\0132\036.PlantFlower" +
-      "ActivityDetailInfoH\000\0228\n\017music_game_info\030" +
-      "\353\014 \001(\0132\034.MusicGameActivityDetailInfoH\000\022E" +
-      "\n\026roguelike_dungoen_info\030\022 \001(\0132#.Rogueli" +
-      "keDungeonActivityDetailInfoH\000\022+\n\010dig_inf" +
-      "o\030\340\n \001(\0132\026.DigActivityDetailInfoH\000\022.\n\nha" +
-      "chi_info\030k \001(\0132\030.HachiActivityDetailInfo" +
-      "H\000\022:\n\020winter_camp_info\030\222\t \001(\0132\035.WinterCa" +
-      "mpActivityDetailInfoH\000\0221\n\013potion_info\030\213\017" +
-      " \001(\0132\031.PotionActivityDetailInfoH\000\022G\n\033tan" +
-      "uki_travel_activity_info\030\235\014 \001(\0132\037.Tanuki" +
-      "TravelActivityDetailInfoH\000\022E\n\032lantern_ri" +
-      "te_activity_info\030\311\007 \001(\0132\036.LanternRiteAct" +
-      "ivityDetailInfoH\000\022B\n\024michiae_matsuri_inf" +
-      "o\030\265\n \001(\0132!.MichiaeMatsuriActivityDetailI" +
-      "nfoH\000\0227\n\016bartender_info\030\260\n \001(\0132\034.Bartend" +
-      "erActivityDetailInfoH\000\022+\n\010ugc_info\030\325\004 \001(" +
-      "\0132\026.UgcActivityDetailInfoH\000\022<\n\021crystal_l" +
-      "ink_info\030\360\002 \001(\0132\036.CrystalLinkActivityDet" +
-      "ailInfoH\000\0223\n\014irodori_info\030\375\t \001(\0132\032.Irodo" +
-      "riActivityDetailInfoH\000\022.\n\nphoto_info\030> \001" +
-      "(\0132\030.PhotoActivityDetailInfoH\000\022/\n\nspice_" +
-      "info\030\203\010 \001(\0132\030.SpiceActivityDetailInfoH\000\022" +
-      "/\n\ngacha_info\030\224\017 \001(\0132\030.GachaActivityDeta" +
-      "ilInfoH\000\022U\n\036luminance_stone_challenge_in" +
-      "fo\030\366\002 \001(\0132*.LuminanceStoneChallengeActiv" +
-      "ityDetailInfoH\000\022:\n\020rogue_diary_info\030\235\007 \001" +
-      "(\0132\035.RogueDiaryActivityDetailInfoH\000\0227\n\023s" +
-      "ummer_time_v2_info\030\304\016 \001(\0132\027.SummerTimeV2" +
-      "DetailInfoH\000\0224\n\021island_party_info\030\232\010 \001(\013" +
-      "2\026.IslandPartyDetailInfoH\000\022-\n\tgear_info\030" +
-      "\204\005 \001(\0132\027.GearActivityDetailInfoH\000\022<\n\025gra" +
-      "ven_innocence_info\030\322\n \001(\0132\032.GravenInnoce" +
-      "nceDetailInfoH\000\0228\n\023instable_spray_info\030\332" +
-      "\003 \001(\0132\030.InstableSprayDetailInfoH\000\022@\n\023muq" +
-      "adas_potion_info\030\370\014 \001(\0132 .MuqadasPotionA" +
-      "ctivityDetailInfoH\000\022B\n\024treasure_seelie_i" +
-      "nfo\030\275\t \001(\0132!.TreasureSeelieActivityDetai" +
-      "lInfoH\000\022?\n\027rock_board_explore_info\030\266\005 \001(" +
-      "\0132\033.RockBoardExploreDetailInfoH\000\0223\n\014vint" +
-      "age_info\030\355\001 \001(\0132\032.VintageActivityDetailI" +
-      "nfoH\000\0220\n\017wind_field_info\030\345\007 \001(\0132\024.WindFi" +
-      "eldDetailInfoH\000\0228\n\023fungus_fighter_info\030\207" +
-      "\n \001(\0132\030.FungusFighterDetailInfoH\000\0228\n\023cha" +
-      "r_amusement_info\030\302\016 \001(\0132\030.CharAmusementD" +
-      "etailInfoH\000\022=\n\025effigy_challenge_info\030  \001" +
-      "(\0132\034.EffigyChallengeV2DetailInfoH\000\0223\n\021co" +
-      "in_collect_info\030U \001(\0132\026.CoinCollectDetai" +
-      "lInfoH\000\0226\n\022brick_breaker_info\030\232\n \001(\0132\027.B" +
-      "rickBreakerDetailInfoH\000\0220\n\017duel_heart_in" +
-      "fo\030\271\002 \001(\0132\024.DuelHeartDetailInfoH\000\0221\n\020sea" +
-      "_lamp_v3_info\030\220\007 \001(\0132\024.SeaLampV3DetailIn" +
-      "foH\000\0220\n\017team_chain_info\030\224\002 \001(\0132\024.TeamCha" +
-      "inDetailInfoH\000\022H\n\033electrohercules_battle" +
-      "_info\030\327\002 \001(\0132 .ElectroherculesBattleDeta" +
-      "ilInfoH\000\0224\n\021gcg_festival_info\030\210\014 \001(\0132\026.G" +
-      "CGFestivalDetailInfoH\000\0225\n\022fleur_fair_v2_" +
-      "info\030\330\017 \001(\0132\026.FleurFairV2DetailInfoH\000\022=\n" +
-      "\026fungus_fighter_v2_info\030\275\010 \001(\0132\032.FungusF" +
-      "ighterV2DetailInfoH\000\022*\n\014aka_fes_info\030\344\017 " +
-      "\001(\0132\021.AkaFesDetailInfoH\000\022A\n\033sandworm_can" +
-      "non_detail_info\030\201\003 \001(\0132\031.SandwormCannonD" +
-      "etailInfoH\000\0224\n\021sorush_trial_info\030\310\n \001(\0132" +
-      "\026.SorushTrialDetailInfoH\000B\010\n\006detailB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "ivityDetailInfo.proto\"\366$\n\014ActivityInfo\022\023" +
+      "\n\013IMFFKIMJDJH\030\r \003(\r\022\024\n\013OIBEDADECFB\030\356\001 \001(" +
+      "\r\022\020\n\010end_time\030\n \001(\r\022\023\n\013activity_id\030\001 \001(\r" +
+      "\022<\n\034activity_push_tips_data_list\030\302\017 \003(\0132" +
+      "\025.ActivityPushTipsData\022\024\n\013DCENNBKGOAH\030\313\t" +
+      " \001(\010\022\026\n\016meet_cond_list\030\005 \003(\r\022\023\n\013schedule" +
+      "_id\030\002 \001(\r\022\023\n\013DNKBDEJAOMC\030\006 \001(\010\022\024\n\013MPCDIK" +
+      "MJOAC\030\371\017 \001(\010\022\022\n\tcur_score\030\362\006 \001(\r\022\025\n\racti" +
+      "vity_type\030\013 \001(\r\022\023\n\013GODELKHIPDE\030\003 \001(\010\022\024\n\013" +
+      "DLNNGPNHBFB\030\375\r \001(\010\022\035\n\024first_day_start_ti" +
+      "me\030\351\004 \001(\r\022\022\n\nbegin_time\030\017 \001(\r\022\024\n\013JAFIBAJ" +
+      "IAFF\030\234\004 \001(\r\022\023\n\013is_finished\030\014 \001(\010\022\024\n\013DMCF" +
+      "NBNECAN\030\312\001 \001(\010\022/\n\021watcher_info_list\030\004 \003(" +
+      "\0132\024.ActivityWatcherInfo\0223\n\rsam_lamp_info" +
+      "\030\t \001(\0132\032.SeaLampActivityDetailInfoH\000\0224\n\r" +
+      "crucible_info\030\016 \001(\0132\033.CrucibleActivityDe" +
+      "tailInfoH\000\0224\n\rsalesman_info\030\010 \001(\0132\033.Sale" +
+      "smanActivityDetailInfoH\000\022;\n\021trial_avatar" +
+      "_info\030\007 \001(\0132\036.TrialAvatarActivityDetailI" +
+      "nfoH\000\0225\n\rdelivery_info\030\320\t \001(\0132\033.Delivery" +
+      "ActivityDetailInfoH\000\022/\n\naster_info\030\273\013 \001(" +
+      "\0132\030.AsterActivityDetailInfoH\000\0221\n\013flight_" +
+      "info\030\251\006 \001(\0132\031.FlightActivityDetailInfoH\000" +
+      "\022<\n\021dragon_spine_info\030\247\n \001(\0132\036.DragonSpi" +
+      "neActivityDetailInfoH\000\0221\n\013effigy_info\030\215\010" +
+      " \001(\0132\031.EffigyActivityDetailInfoH\000\022<\n\021tre" +
+      "asure_map_info\030\303\010 \001(\0132\036.TreasureMapActiv" +
+      "ityDetailInfoH\000\0224\n\rblessing_info\030d \001(\0132\033" +
+      ".BlessingActivityDetailInfoH\000\022.\n\rsea_lam" +
+      "p_info\030\373\001 \001(\0132\024.SeaLampActivityInfoH\000\0229\n" +
+      "\017expedition_info\030\204\r \001(\0132\035.ExpeditionActi" +
+      "vityDetailInfoH\000\022B\n\024arena_challenge_info" +
+      "\030\217\003 \001(\0132!.ArenaChallengeActivityDetailIn" +
+      "foH\000\0227\n\017fleur_fair_info\030\033 \001(\0132\034.FleurFai" +
+      "rActivityDetailInfoH\000\022<\n\021water_spirit_in" +
+      "fo\030\307\001 \001(\0132\036.WaterSpiritActivityDetailInf" +
+      "oH\000\022A\n\024challneler_slab_info\030\254\010 \001(\0132 .Cha" +
+      "nnelerSlabActivityDetailInfoH\000\022A\n\030mist_t" +
+      "rial_activity_info\030\303\005 \001(\0132\034.MistTrialAct" +
+      "ivityDetailInfoH\000\022=\n\022hide_and_seek_info\030" +
+      "\207\002 \001(\0132\036.HideAndSeekActivityDetailInfoH\000" +
+      "\0228\n\023find_hilichurl_info\030\234\t \001(\0132\030.FindHil" +
+      "ichurlDetailInfoH\000\0222\n\020summer_time_info\030\207" +
+      "\017 \001(\0132\025.SummerTimeDetailInfoH\000\0228\n\023buoyan" +
+      "t_combat_info\030\363\004 \001(\0132\030.BuoyantCombatDeta" +
+      "ilInfoH\000\022/\n\017echo_shell_info\030/ \001(\0132\024.Echo" +
+      "ShellDetailInfoH\000\022D\n\025bounce_conjuring_in" +
+      "fo\030\364\006 \001(\0132\".BounceConjuringActivityDetai" +
+      "lInfoH\000\0228\n\017blitz_rush_info\030\264\016 \001(\0132\034.Blit" +
+      "zRushActivityDetailInfoH\000\022/\n\nchess_info\030" +
+      "\234\003 \001(\0132\030.ChessActivityDetailInfoH\000\022-\n\tsu" +
+      "mo_info\030\363\001 \001(\0132\027.SumoActivityDetailInfoH" +
+      "\000\022>\n\022moonfin_trial_info\030\245\014 \001(\0132\037.Moonfin" +
+      "TrialActivityDetailInfoH\000\022.\n\016luna_rite_i" +
+      "nfo\030\265\013 \001(\0132\023.LunaRiteDetailInfoH\000\022<\n\021pla" +
+      "nt_flower_info\030\217\014 \001(\0132\036.PlantFlowerActiv" +
+      "ityDetailInfoH\000\0228\n\017music_game_info\030\353\014 \001(" +
+      "\0132\034.MusicGameActivityDetailInfoH\000\022E\n\026rog" +
+      "uelike_dungoen_info\030\022 \001(\0132#.RoguelikeDun" +
+      "geonActivityDetailInfoH\000\022+\n\010dig_info\030\340\n " +
+      "\001(\0132\026.DigActivityDetailInfoH\000\022.\n\nhachi_i" +
+      "nfo\030k \001(\0132\030.HachiActivityDetailInfoH\000\022:\n" +
+      "\020winter_camp_info\030\222\t \001(\0132\035.WinterCampAct" +
+      "ivityDetailInfoH\000\0221\n\013potion_info\030\213\017 \001(\0132" +
+      "\031.PotionActivityDetailInfoH\000\022G\n\033tanuki_t" +
+      "ravel_activity_info\030\235\014 \001(\0132\037.TanukiTrave" +
+      "lActivityDetailInfoH\000\022E\n\032lantern_rite_ac" +
+      "tivity_info\030\311\007 \001(\0132\036.LanternRiteActivity" +
+      "DetailInfoH\000\022B\n\024michiae_matsuri_info\030\265\n " +
+      "\001(\0132!.MichiaeMatsuriActivityDetailInfoH\000" +
+      "\0227\n\016bartender_info\030\260\n \001(\0132\034.BartenderAct" +
+      "ivityDetailInfoH\000\022+\n\010ugc_info\030\325\004 \001(\0132\026.U" +
+      "gcActivityDetailInfoH\000\022<\n\021crystal_link_i" +
+      "nfo\030\360\002 \001(\0132\036.CrystalLinkActivityDetailIn" +
+      "foH\000\0223\n\014irodori_info\030\375\t \001(\0132\032.IrodoriAct" +
+      "ivityDetailInfoH\000\022.\n\nphoto_info\030> \001(\0132\030." +
+      "PhotoActivityDetailInfoH\000\022/\n\nspice_info\030" +
+      "\203\010 \001(\0132\030.SpiceActivityDetailInfoH\000\022/\n\nga" +
+      "cha_info\030\224\017 \001(\0132\030.GachaActivityDetailInf" +
+      "oH\000\022U\n\036luminance_stone_challenge_info\030\366\002" +
+      " \001(\0132*.LuminanceStoneChallengeActivityDe" +
+      "tailInfoH\000\022:\n\020rogue_diary_info\030\235\007 \001(\0132\035." +
+      "RogueDiaryActivityDetailInfoH\000\0227\n\023summer" +
+      "_time_v2_info\030\304\016 \001(\0132\027.SummerTimeV2Detai" +
+      "lInfoH\000\0224\n\021island_party_info\030\232\010 \001(\0132\026.Is" +
+      "landPartyDetailInfoH\000\022-\n\tgear_info\030\204\005 \001(" +
+      "\0132\027.GearActivityDetailInfoH\000\022<\n\025graven_i" +
+      "nnocence_info\030\322\n \001(\0132\032.GravenInnocenceDe" +
+      "tailInfoH\000\0228\n\023instable_spray_info\030\332\003 \001(\013" +
+      "2\030.InstableSprayDetailInfoH\000\022@\n\023muqadas_" +
+      "potion_info\030\370\014 \001(\0132 .MuqadasPotionActivi" +
+      "tyDetailInfoH\000\022B\n\024treasure_seelie_info\030\275" +
+      "\t \001(\0132!.TreasureSeelieActivityDetailInfo" +
+      "H\000\022?\n\027rock_board_explore_info\030\266\005 \001(\0132\033.R" +
+      "ockBoardExploreDetailInfoH\000\0223\n\014vintage_i" +
+      "nfo\030\355\001 \001(\0132\032.VintageActivityDetailInfoH\000" +
+      "\0220\n\017wind_field_info\030\345\007 \001(\0132\024.WindFieldDe" +
+      "tailInfoH\000\0228\n\023fungus_fighter_info\030\207\n \001(\013" +
+      "2\030.FungusFighterDetailInfoH\000\0228\n\023char_amu" +
+      "sement_info\030\302\016 \001(\0132\030.CharAmusementDetail" +
+      "InfoH\000\022=\n\025effigy_challenge_info\030  \001(\0132\034." +
+      "EffigyChallengeV2DetailInfoH\000\0223\n\021coin_co" +
+      "llect_info\030U \001(\0132\026.CoinCollectDetailInfo" +
+      "H\000\0226\n\022brick_breaker_info\030\232\n \001(\0132\027.BrickB" +
+      "reakerDetailInfoH\000\0220\n\017duel_heart_info\030\271\002" +
+      " \001(\0132\024.DuelHeartDetailInfoH\000\0221\n\020sea_lamp" +
+      "_v3_info\030\220\007 \001(\0132\024.SeaLampV3DetailInfoH\000\022" +
+      "0\n\017team_chain_info\030\224\002 \001(\0132\024.TeamChainDet" +
+      "ailInfoH\000\022H\n\033electrohercules_battle_info" +
+      "\030\327\002 \001(\0132 .ElectroherculesBattleDetailInf" +
+      "oH\000\0224\n\021gcg_festival_info\030\210\014 \001(\0132\026.GCGFes" +
+      "tivalDetailInfoH\000\0225\n\022fleur_fair_v2_info\030" +
+      "\330\017 \001(\0132\026.FleurFairV2DetailInfoH\000\022=\n\026fung" +
+      "us_fighter_v2_info\030\275\010 \001(\0132\032.FungusFighte" +
+      "rV2DetailInfoH\000\022*\n\014aka_fes_info\030\344\017 \001(\0132\021" +
+      ".AkaFesDetailInfoH\000\022A\n\033sandworm_cannon_d" +
+      "etail_info\030\201\003 \001(\0132\031.SandwormCannonDetail" +
+      "InfoH\000\0224\n\021sorush_trial_info\030\310\n \001(\0132\026.Sor" +
+      "ushTrialDetailInfoH\000B\010\n\006detailB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19894,7 +19822,7 @@ public final class ActivityInfoOuterClass {
     internal_static_ActivityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityInfo_descriptor,
-        new java.lang.String[] { "ExpireCondList", "OIBEDADECFB", "EndTime", "ActivityId", "ActivityPushTipsDataList", "DCENNBKGOAH", "MeetCondList", "ScheduleId", "DNKBDEJAOMC", "MPCDIKMJOAC", "CurScore", "ActivityType", "GODELKHIPDE", "DLNNGPNHBFB", "FirstDayStartTime", "BeginTime", "JAFIBAJIAFF", "IsFinished", "DMCFNBNECAN", "WatcherInfoList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChallnelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungoenInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "DuelHeartInfo", "SeaLampV3Info", "TeamChainInfo", "ElectroherculesBattleInfo", "GcgFestivalInfo", "FleurFairV2Info", "FungusFighterV2Info", "AkaFesInfo", "SandwormCannonDetailInfo", "SorushTrialInfo", "Detail", });
+        new java.lang.String[] { "IMFFKIMJDJH", "OIBEDADECFB", "EndTime", "ActivityId", "ActivityPushTipsDataList", "DCENNBKGOAH", "MeetCondList", "ScheduleId", "DNKBDEJAOMC", "MPCDIKMJOAC", "CurScore", "ActivityType", "GODELKHIPDE", "DLNNGPNHBFB", "FirstDayStartTime", "BeginTime", "JAFIBAJIAFF", "IsFinished", "DMCFNBNECAN", "WatcherInfoList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChallnelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungoenInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "DuelHeartInfo", "SeaLampV3Info", "TeamChainInfo", "ElectroherculesBattleInfo", "GcgFestivalInfo", "FleurFairV2Info", "FungusFighterV2Info", "AkaFesInfo", "SandwormCannonDetailInfo", "SorushTrialInfo", "Detail", });
     emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AkaFesDetailInfoOuterClass.getDescriptor();
