@@ -216,7 +216,7 @@ public class World implements Iterable<Player> {
         this.getScenes().put(scene.getId(), scene);
     }
 
-    public void deregisterScene(Scene scene) {
+    public synchronized void deregisterScene(Scene scene) {
         scene.saveGroups();
         this.getScenes().remove(scene.getId());
     }
