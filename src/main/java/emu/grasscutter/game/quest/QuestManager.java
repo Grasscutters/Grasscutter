@@ -137,6 +137,8 @@ public class QuestManager extends BasePlayerManager {
     }
 
     private void checkTimeVars() {
+        if (this.player.getWorld() == null) return;
+
         val currentDays = player.getWorld().getTotalGameTimeDays();
         val currentHours = player.getWorld().getTotalGameTimeHours();
         boolean checkDays =  currentDays != lastDayCheck;
@@ -150,13 +152,13 @@ public class QuestManager extends BasePlayerManager {
         this.lastHourCheck = currentHours;
 
         player.getActiveQuestTimers().forEach(mainQuestId -> {
-            if(checkHours) {
-                queueEvent(QuestCond.QUEST_COND_TIME_VAR_GT_EQ, mainQuestId);
-                queueEvent(QuestContent.QUEST_CONTENT_TIME_VAR_GT_EQ, mainQuestId);
+            if (checkHours) {
+                this.queueEvent(QuestCond.QUEST_COND_TIME_VAR_GT_EQ, mainQuestId);
+                this.queueEvent(QuestContent.QUEST_CONTENT_TIME_VAR_GT_EQ, mainQuestId);
             }
-            if(checkDays) {
-                queueEvent(QuestCond.QUEST_COND_TIME_VAR_PASS_DAY, mainQuestId);
-                queueEvent(QuestContent.QUEST_CONTENT_TIME_VAR_PASS_DAY, mainQuestId);
+            if (checkDays) {
+                this.queueEvent(QuestCond.QUEST_COND_TIME_VAR_PASS_DAY, mainQuestId);
+                this.queueEvent(QuestContent.QUEST_CONTENT_TIME_VAR_PASS_DAY, mainQuestId);
             }
         });
     }
