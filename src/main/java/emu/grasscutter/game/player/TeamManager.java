@@ -488,7 +488,13 @@ public final class TeamManager extends BasePlayerDataManager {
 
     /** Rollback changes from using a trial avatar team. */
     public void unsetTrialAvatarTeam() {
-        this.trialAvatarTeamPostUpdate(this.getPreviousIndex());
+        // Get the previous index.
+        var index = this.getPreviousIndex();
+        if (index < 0) index = 0;
+
+        // Remove the trial avatars.
+        this.trialAvatarTeamPostUpdate(index);
+        // Reset the index.
         this.setPreviousIndex(-1);
     }
 
@@ -554,10 +560,14 @@ public final class TeamManager extends BasePlayerDataManager {
                     .toList()
                     .contains(avatar)) continue;
 
+                // Check if the player owns the avatar.
+                var avatarData = player.getAvatars().getAvatarById(avatar);
+                if (avatarData == null) continue;
+
                 this.getActiveTeam()
                     .add(
                         index++,
-                        new EntityAvatar(scene, player.getAvatars().getAvatarById(avatar)));
+                        new EntityAvatar(scene, avatarData));
             }
         }
 
@@ -1081,8 +1091,6 @@ public final class TeamManager extends BasePlayerDataManager {
      * @param trialAvatarIds List of trial avatar IDs.
      */
     public void removeTrialAvatar(List<Integer> trialAvatarIds) {
-        if (!this.isUsingTrialTeam()) throw new RuntimeException("Player is not using a trial team.");
-
         this.getPlayer()
             .sendPacket(
                 new PacketAvatarDelNotify(
