@@ -15,6 +15,8 @@ import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -85,6 +87,7 @@ public class WorldChallenge {
         this.finish(true);
 
         var scene = this.getScene();
+        var scriptManager = scene.getScriptManager();
         var dungeonManager = scene.getDungeonManager();
         if (dungeonManager != null && dungeonManager.getDungeonData() != null) {
             scene
@@ -99,12 +102,22 @@ public class WorldChallenge {
                                                     String.valueOf(this.getChallengeId())));
         }
 
-        scene
-                .getScriptManager()
-                .callEvent(
-                        // TODO record the time in PARAM2 and used in action
-                        new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
-                                .setParam2(finishedTime));
+        // TODO: record the time in PARAM2 and used in action
+        // TODO: Set 'eventSource' in script arguments.
+        // Event source should be set to '1' for timer challenges.
+
+        var eventSource = new AtomicReference<>("");
+        // TODO: This is a hack to get the event source.
+        // This should be properly implemented.
+        scriptManager.getTriggersByEvent(EventType.EVENT_CHALLENGE_SUCCESS)
+            .forEach(trigger -> {
+                if (trigger.currentGroup.id == this.getGroup().id) {
+                    eventSource.set(trigger.getSource());
+                }
+            });
+        scriptManager.callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
+            .setParam2(finishedTime).setEventSource(eventSource.get()));
+
         this.getScene()
                 .triggerDungeonEvent(
                         DungeonPassConditionType.DUNGEON_COND_FINISH_CHALLENGE,
@@ -118,9 +131,21 @@ public class WorldChallenge {
         if (!this.inProgress()) return;
         this.finish(false);
 
-        this.getScene()
-                .getScriptManager()
-                .callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL));
+        // TODO: Set 'eventSource' in script arguments.
+        // Event source should be set to '1' for timer challenges.
+        var eventSource = new AtomicReference<>("");
+        // TODO: This is a hack to get the event source.
+        // This should be properly implemented.
+        var scriptManager = this.getScene().getScriptManager();
+        scriptManager.getTriggersByEvent(EventType.EVENT_CHALLENGE_FAIL)
+            .forEach(trigger -> {
+                if (trigger.currentGroup.id == this.getGroup().id) {
+                    eventSource.set(trigger.getSource());
+                }
+            });
+
+        scriptManager.callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL)
+            .setEventSource(eventSource.get()));
         challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
