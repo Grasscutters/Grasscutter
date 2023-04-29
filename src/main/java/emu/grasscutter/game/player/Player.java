@@ -205,7 +205,7 @@ public class Player {
     @Getter @Setter private int resinBuyCount;
     @Getter @Setter private int lastDailyReset;
     @Getter private transient MpSettingType mpSetting = MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY;
-    @Getter private long playerGameTime = 540; // 9 in-game hours. Present at the start of the game.
+    @Getter private long playerGameTime = 540000; // 9 in-game hours. Present at the start of the game.
 
     @Getter private PlayerProgress playerProgress;
     @Getter private Set<Integer> activeQuestTimers;
