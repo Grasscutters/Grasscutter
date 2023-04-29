@@ -16,7 +16,8 @@ public class ExecRemoveTrialAvatar extends QuestExecHandler {
             Grasscutter.getLogger()
                     .debug("Removed trial avatar from team for quest {}", quest.getSubQuestId());
             return true;
-        } catch (RuntimeException ignored) {
+        } catch (RuntimeException exception) {
+            exception.printStackTrace();
             return false;
         }
     }

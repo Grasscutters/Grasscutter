@@ -18,9 +18,9 @@ public class ExecGrantTrialAvatar extends QuestExecHandler {
                     .addTrialAvatar(Integer.parseInt(paramStr[0]), quest.getMainQuestId());
             Grasscutter.getLogger()
                     .debug("Added trial avatar to team for quest {}", quest.getSubQuestId());
-
             return true;
-        } catch (RuntimeException ignored) {
+        } catch (RuntimeException exception) {
+            exception.printStackTrace();
             return false;
         }
     }

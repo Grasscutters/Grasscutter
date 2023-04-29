@@ -514,36 +514,49 @@ public final class TeamManager extends BasePlayerDataManager {
      */
     public void removeTrialAvatarTeam(List<Integer> trialAvatarIds) {
         var player = this.getPlayer();
+        var scene = player.getScene();
 
         // Disable the trial team.
         this.usingTrialTeam = false;
         this.trialAvatarTeam = new TeamInfo();
 
         // Remove the avatars from the team.
-        trialAvatarIds.forEach(
+        this.getActiveTeam().forEach(avatarEntity -> scene
+            .removeEntity(avatarEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
+
+        if (trialAvatarIds.size() == 4) {
+            this.getActiveTeam().clear();
+            this.getTrialAvatars().clear();
+        } else {
+            trialAvatarIds.forEach(
                 trialAvatarId -> {
-                    this.getActiveTeam()
-                            .forEach(
-                                    x ->
-                                            player
-                                                    .getScene()
-                                                    .removeEntity(x, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
                     this.getActiveTeam().removeIf(x -> x.getAvatar().getTrialAvatarId() == trialAvatarId);
                     this.getTrialAvatars().values().removeIf(x -> x.getTrialAvatarId() == trialAvatarId);
                 });
+        }
 
         // Re-add the avatars to the team.
-        var index = 0;
-        for (var avatar : this.getCurrentTeamInfo().getAvatars()) {
-            if (this.getActiveTeam().stream()
+        if (trialAvatarIds.size() == 4) {
+            // Restores all avatars from the player's avatar storage.
+            this.getCurrentTeamInfo().getAvatars().forEach(avatarId ->
+                this.getActiveTeam().add(new EntityAvatar(
+                    scene, player.getAvatars().getAvatarById(avatarId)
+                )));
+        } else {
+            var index = 0;
+            // Restores all avatars from the player's avatar storage.
+            // If the avatar is already in the team, it will not be added.
+            for (var avatar : this.getCurrentTeamInfo().getAvatars()) {
+                if (this.getActiveTeam().stream()
                     .map(entity -> entity.getAvatar().getAvatarId())
                     .toList()
-                    .contains(avatar)) return;
+                    .contains(avatar)) continue;
 
-            this.getActiveTeam()
+                this.getActiveTeam()
                     .add(
-                            index++,
-                            new EntityAvatar(player.getScene(), player.getAvatars().getAvatarById(avatar)));
+                        index++,
+                        new EntityAvatar(scene, player.getAvatars().getAvatarById(avatar)));
+            }
         }
 
         this.unsetTrialAvatarTeam();
@@ -1046,7 +1059,7 @@ public final class TeamManager extends BasePlayerDataManager {
         this.removeTrialAvatar(
                 this.getActiveTeam().stream()
                         .map(EntityAvatar::getAvatar)
-                        .map(Avatar::getAvatarId)
+                        .map(Avatar::getTrialAvatarId)
                         .toList());
     }
 
@@ -1068,11 +1081,11 @@ public final class TeamManager extends BasePlayerDataManager {
     public void removeTrialAvatar(List<Integer> trialAvatarIds) {
         if (!this.isUsingTrialTeam()) throw new RuntimeException("Player is not using a trial team.");
 
-        this.removeTrialAvatarTeam(trialAvatarIds);
         this.getPlayer()
-                .sendPacket(
-                        new PacketAvatarDelNotify(
-                                trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
+            .sendPacket(
+                new PacketAvatarDelNotify(
+                    trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
+        this.removeTrialAvatarTeam(trialAvatarIds);
 
         // Update the team.
         if (trialAvatarIds.size() == 1) this.getPlayer().sendPacket(new PacketAvatarTeamUpdateNotify());
