@@ -513,6 +513,8 @@ public final class TeamManager extends BasePlayerDataManager {
      * @param trialAvatarIds The avatar IDs to remove.
      */
     public void removeTrialAvatarTeam(List<Integer> trialAvatarIds) {
+        var isTeam = trialAvatarIds.size() == this.getActiveTeam().size();
+
         var player = this.getPlayer();
         var scene = player.getScene();
 
@@ -524,7 +526,7 @@ public final class TeamManager extends BasePlayerDataManager {
         this.getActiveTeam().forEach(avatarEntity -> scene
             .removeEntity(avatarEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
 
-        if (trialAvatarIds.size() == 4) {
+        if (isTeam) {
             this.getActiveTeam().clear();
             this.getTrialAvatars().clear();
         } else {
@@ -536,7 +538,7 @@ public final class TeamManager extends BasePlayerDataManager {
         }
 
         // Re-add the avatars to the team.
-        if (trialAvatarIds.size() == 4) {
+        if (isTeam) {
             // Restores all avatars from the player's avatar storage.
             this.getCurrentTeamInfo().getAvatars().forEach(avatarId ->
                 this.getActiveTeam().add(new EntityAvatar(
