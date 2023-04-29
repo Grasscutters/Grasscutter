@@ -1124,6 +1124,10 @@ public class ScriptLib {
 
     public int BeginCameraSceneLook(LuaTable sceneLookParams){
         logger.debug("[LUA] Call BeginCameraSceneLook with {}", printTable(sceneLookParams));
+
+        // INVESTIGATE: Sniff the content for 'BeginCameraSceneLookNotify'.
+        // This packet is known as 260 (3.5) or 215 (3.6).
+        // Compare data to ones found in Lua, then de-obfuscate.
 //        var luaLookPos = sceneLookParams.get("look_pos");
 //        var luaFollowPos = sceneLookParams.get("follow_pos");
 //        var luaDuration = sceneLookParams.get("duration");

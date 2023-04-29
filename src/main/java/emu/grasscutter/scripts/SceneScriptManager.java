@@ -1116,14 +1116,14 @@ public class SceneScriptManager {
         var group = getGroupById(groupID);
         if (group == null || group.triggers == null) {
             Grasscutter.getLogger()
-                    .warn(
+                    .debug(
                             "trying to create a timer for unknown group with id {} and source {}",
                             groupID,
                             source);
             return 1;
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "creating group timer event for group {} with source {} and time {}",
                         groupID,
                         source,
@@ -1131,7 +1131,7 @@ public class SceneScriptManager {
         for (SceneTrigger trigger : group.triggers.values()) {
             if (trigger.getEvent() == EVENT_TIMER_EVENT && trigger.getSource().equals(source)) {
                 Grasscutter.getLogger()
-                        .warn(
+                        .debug(
                                 "[LUA] Found timer trigger with source {} for group {} : {}",
                                 source,
                                 groupID,

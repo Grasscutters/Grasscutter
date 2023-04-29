@@ -440,10 +440,10 @@ public final class AbilityManager extends BasePlayerManager {
         var abilityName = ability.getAbilityName();
         if (abilityName.getHash() != 0)
             Grasscutter.getLogger()
-                    .warn("Instancing {} in to {}", abilityName.getHash(), ability.getInstancedAbilityId());
+                    .trace("Instancing {} in to {}", abilityName.getHash(), ability.getInstancedAbilityId());
         else
             Grasscutter.getLogger()
-                    .warn("Instancing {} in to {}", abilityName.getStr(), ability.getInstancedAbilityId());
+                    .trace("Instancing {} in to {}", abilityName.getStr(), ability.getInstancedAbilityId());
 
         var target = this.player.getScene().getEntityById(invoke.getEntityId());
         if (target == null) {
