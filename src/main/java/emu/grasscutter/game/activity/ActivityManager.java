@@ -79,9 +79,9 @@ public class ActivityManager extends BasePlayerManager {
                                 scheduleActivityConfigMap.putIfAbsent(item.getScheduleId(), item);
                             });
 
-            Grasscutter.getLogger().info("Enable {} activities.", activityConfigItemMap.size());
+            Grasscutter.getLogger().debug("Enable {} activities.", activityConfigItemMap.size());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to load activities config.", e);
+            Grasscutter.getLogger().warn("Unable to load activities config.", e);
         }
     }
 
