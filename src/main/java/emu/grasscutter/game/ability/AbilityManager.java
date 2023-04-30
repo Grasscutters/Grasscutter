@@ -189,7 +189,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         var head = invoke.getHead();
         Grasscutter.getLogger()
-                .debug(
+                .trace(
                         "{} {} {}",
                         head.getInstancedAbilityId(),
                         entity.getInstanceToHash(),

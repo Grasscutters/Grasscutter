@@ -356,7 +356,7 @@ public class QuestManager extends BasePlayerManager {
     //QUEST_EXEC are handled directly by each subQuest
 
     public void triggerEvent(QuestCond condType, String paramStr, int... params) {
-        Grasscutter.getLogger().debug("Trigger Event {}, {}, {}", condType, paramStr, params);
+        Grasscutter.getLogger().trace("Trigger Event {}, {}, {}", condType, paramStr, params);
         var potentialQuests = GameData.getQuestDataByConditions(condType, params[0], paramStr);
         if(potentialQuests == null){
             return;
@@ -394,9 +394,7 @@ public class QuestManager extends BasePlayerManager {
     }
 
     public void triggerEvent(QuestContent condType, String paramStr, int... params) {
-        if (condType != QuestContent.QUEST_CONTENT_GAME_TIME_TICK)
-            Grasscutter.getLogger().debug("Trigger Event {}, {}, {}", condType, paramStr, params);
-        else Grasscutter.getLogger().trace("Trigger Event {}, {}, {}", condType, paramStr, params);
+        Grasscutter.getLogger().trace("Trigger Event {}, {}, {}", condType, paramStr, params);
 
         List<GameMainQuest> checkMainQuests = this.getMainQuests().values().stream()
             .filter(i -> i.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED)

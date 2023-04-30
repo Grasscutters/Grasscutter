@@ -134,9 +134,9 @@ public class SceneScriptManager {
     }
 
     public void registerTrigger(SceneTrigger trigger) {
-        triggerInvocations.put(trigger.getName(), new AtomicInteger(0));
-        getTriggersByEvent(trigger.getEvent()).add(trigger);
-        Grasscutter.getLogger().debug("Registered trigger {}", trigger.getName());
+        this.triggerInvocations.put(trigger.getName(), new AtomicInteger(0));
+        this.getTriggersByEvent(trigger.getEvent()).add(trigger);
+        Grasscutter.getLogger().trace("Registered trigger {}", trigger.getName());
     }
 
     public void deregisterTrigger(List<SceneTrigger> triggers) {
@@ -144,8 +144,8 @@ public class SceneScriptManager {
     }
 
     public void deregisterTrigger(SceneTrigger trigger) {
-        getTriggersByEvent(trigger.getEvent()).remove(trigger);
-        Grasscutter.getLogger().debug("deregistered trigger {}", trigger.getName());
+        this.getTriggersByEvent(trigger.getEvent()).remove(trigger);
+        Grasscutter.getLogger().trace("deregistered trigger {}", trigger.getName());
     }
 
     public void resetTriggers(int eventId) {
@@ -843,7 +843,7 @@ public class SceneScriptManager {
 
     private boolean handleEventForTrigger(ScriptArgs params, SceneTrigger trigger) {
         Grasscutter.getLogger()
-                .debug("checking trigger {} for event {}", trigger.getName(), params.type);
+                .trace("checking trigger {} for event {}", trigger.getName(), params.type);
         try {
             // setup execution
             ScriptLoader.getScriptLib().setCurrentGroup(trigger.currentGroup);
