@@ -132,6 +132,10 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     public EntityAvatar getCurrentAvatarEntity() {
+        if (this.currentCharacterIndex >= this.getActiveTeam().size()) {
+            this.currentCharacterIndex = 0; // Reset to the first character.
+        }
+
         return this.getActiveTeam().get(this.currentCharacterIndex);
     }
 
