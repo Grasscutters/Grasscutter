@@ -78,8 +78,16 @@ public class GameMainQuest {
                 Arrays.stream(GameData.getMainQuestDataMap().get(this.parentQuestId).getSubQuests())
                         .map(SubQuestData::getSubId)
                         .toList();
-        for (Integer subQuestId : subQuestIds) {
-            QuestData questConfig = GameData.getQuestDataMap().get(subQuestId);
+        for (var subQuestId : subQuestIds) {
+            QuestData questConfig = GameData.getQuestDataMap().get((int) subQuestId);
+            if (questConfig == null) {
+                Grasscutter.getLogger()
+                        .error(
+                                "Quest {} not found in QuestData. Please check MainQuestData and QuestData.",
+                                subQuestId);
+                continue;
+            }
+
             this.childQuests.put(subQuestId, new GameQuest(this, questConfig));
         }
     }
