@@ -513,7 +513,7 @@ public class Player {
      * Applies the properties to the player.
      */
     private void applyProperties() {
-        var withQuesting = GAME_OPTIONS.questing;
+        var withQuesting = GAME_OPTIONS.questing.enabled;
 
         this.setOrFetch(PlayerProperty.PROP_PLAYER_LEVEL, 1);
         this.setOrFetch(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);

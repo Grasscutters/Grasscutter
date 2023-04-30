@@ -53,7 +53,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             Avatar mainCharacter = new Avatar(avatarId);
 
             // Check if the default Anemo skill should be given.
-            if (!GAME_OPTIONS.questing) {
+            if (!GAME_OPTIONS.questing.enabled) {
                 mainCharacter.setSkillDepotData(
                         GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
             }

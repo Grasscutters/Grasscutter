@@ -26,6 +26,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 public class QuestManager extends BasePlayerManager {
 
     @Getter private final Player player;
@@ -39,6 +41,26 @@ public class QuestManager extends BasePlayerManager {
         eventExecutor = new ThreadPoolExecutor(4, 4,
             60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
             FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
+
+        var options = GAME_OPTIONS.questing;
+        if (options.enabled) {
+            if (options.legacyResources) {
+                Grasscutter.getLogger().debug("You have 'legacyResources' enabled.");
+                Grasscutter.getLogger().debug("This assumes you are using older (3.2) QuestExcelConfigData and MainQuestExcelConfigData.");
+                Grasscutter.getLogger().debug("The game will *break* if you are not using these older excels.");
+                Grasscutter.getLogger().debug("Questing should feel more natural in this mode.");
+            } else {
+                Grasscutter.getLogger().debug("You have 'legacyResources' disabled.");
+                Grasscutter.getLogger().debug("This should be enabled if you are using 3.3 or newer resources.");
+                Grasscutter.getLogger().debug("The game can potentially encounter issues in this mode.");
+            }
+        }
+
+        //noinspection removal
+        if (GAME_OPTIONS.questingEnabled) {
+            Grasscutter.getLogger().warn("Please upgrade your configuration. 'questing' is being deprecated in favor of 'questOptions'.");
+            Grasscutter.getLogger().info("To remove this message until removal, use 'questingEnabled' instead of 'questOptions.enabled'.");
+        }
     }
     /*
         On SetPlayerBornDataReq, the server sends FinishedParentQuestNotify, with this exact
@@ -79,30 +101,37 @@ public class QuestManager extends BasePlayerManager {
         QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
         return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
     }
-    public QuestManager(Player player) {
 
+    public QuestManager(Player player) {
         super(player);
+
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
     }
 
     // TODO store user value set on enable
     public boolean isQuestingEnabled() {
-        return Grasscutter.getConfig().server.game.gameOptions.questing;
+        return GAME_OPTIONS.questing.enabled;
     }
 
     public void onPlayerBorn() {
         // TODO scan the quest and start the quest with acceptCond fulfilled
-        // The off send 3 request in that order: 1. FinishedParentQuestNotify, 2. QuestListNotify, 3. ServerCondMeetQuestListUpdateNotify
+        // The off send 3 request in that order:
+        // 1. FinishedParentQuestNotify
+        // 2. QuestListNotify
+        // 3. ServerCondMeetQuestListUpdateNotify
 
         if (this.isQuestingEnabled()) {
-            // this.enableQuests();
-            this.addQuest(35104);
+            if (GAME_OPTIONS.questing.legacyResources) {
+                this.enableQuests(); // This assumes 3.2 resources, where all conditions are known.
+            } else {
+                this.addQuest(35104); // This assumes resources greater than 3.2, where quests might have unknown conditions.
+            }
         }
 
-        //getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
-        //getPlayer().sendPacket(new PacketQuestListNotify(subQuests));
-        //getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(newPlayerServerCondMeetQuestListUpdateNotify));
+        // this.getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
+        // this.getPlayer().sendPacket(new PacketQuestListNotify(subQuests));
+        // this.getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(newPlayerServerCondMeetQuestListUpdateNotify));
     }
 
     public void onLogin() {

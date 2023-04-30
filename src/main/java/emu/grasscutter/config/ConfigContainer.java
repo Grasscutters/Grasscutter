@@ -2,6 +2,7 @@ package emu.grasscutter.config;
 
 import ch.qos.logback.classic.Level;
 import com.google.gson.JsonObject;
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -20,8 +21,14 @@ import static emu.grasscutter.Grasscutter.config;
  * *when your JVM fails*
  */
 public class ConfigContainer {
+    /*
+     * Configuration changes:
+     * Version 5 - 'questing' has been changed from a boolean
+     *             to a container of options ('questOptions').
+     *             This field will be removed in future versions.
+     */
     private static int version() {
-        return 4;
+        return 5;
     }
 
     /**
@@ -238,7 +245,11 @@ public class ConfigContainer {
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
-        public boolean questing = true;
+        @SerializedName("questOptions")
+        public Questing questing = new Questing();
+        @Deprecated(forRemoval = true)
+        @SerializedName("questing")
+        public boolean questingEnabled = true;
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
@@ -265,6 +276,13 @@ public class ConfigContainer {
             public boolean resinUsage = false;
             public int cap = 160;
             public int rechargeTime = 480;
+        }
+
+        public static class Questing {
+            /* Should questing behavior be used? */
+            public boolean enabled = true;
+            /* Are older resources being used? */
+            public boolean legacyResources = false;
         }
     }
 

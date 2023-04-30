@@ -77,7 +77,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         // Add statue quests if necessary.
         this.addStatueQuestsOnLogin();
 
-        if (!GAME_OPTIONS.questing) {
+        if (!GAME_OPTIONS.questing.enabled) {
             // Auto-unlock the first statue and map area.
             this.player.getUnlockedScenePoints(3).add(7);
             this.player.getUnlockedSceneAreas(3).add(1);
