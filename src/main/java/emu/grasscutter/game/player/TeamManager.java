@@ -64,7 +64,7 @@ public final class TeamManager extends BasePlayerDataManager {
 
     public TeamManager() {
         this.mpTeam = new TeamInfo();
-        this.avatars = new ArrayList<>();
+        this.avatars = Collections.synchronizedList(new ArrayList<>());
         this.gadgets = new HashSet<>();
         this.teamResonances = new IntOpenHashSet();
         this.teamResonancesConfig = new IntOpenHashSet();
@@ -551,10 +551,13 @@ public final class TeamManager extends BasePlayerDataManager {
                     scene, player.getAvatars().getAvatarById(avatarId)
                 )));
         } else {
-            var index = 0;
             // Restores all avatars from the player's avatar storage.
             // If the avatar is already in the team, it will not be added.
-            for (var avatar : this.getCurrentTeamInfo().getAvatars()) {
+            // TODO: Fix order in which avatars are added.
+            // Currently, they are added from last to first.
+            var avatars = this.getCurrentTeamInfo().getAvatars();
+            for (var index = 0; index < avatars.size(); index++) {
+                var avatar = avatars.get(index);
                 if (this.getActiveTeam().stream()
                     .map(entity -> entity.getAvatar().getAvatarId())
                     .toList()
@@ -564,10 +567,7 @@ public final class TeamManager extends BasePlayerDataManager {
                 var avatarData = player.getAvatars().getAvatarById(avatar);
                 if (avatarData == null) continue;
 
-                this.getActiveTeam()
-                    .add(
-                        index++,
-                        new EntityAvatar(scene, avatarData));
+                this.getActiveTeam().add(index, new EntityAvatar(scene, avatarData));
             }
         }
 
@@ -1091,6 +1091,10 @@ public final class TeamManager extends BasePlayerDataManager {
      * @param trialAvatarIds List of trial avatar IDs.
      */
     public void removeTrialAvatar(List<Integer> trialAvatarIds) {
+        // Check if the player is using a trial team.
+        if (!this.isUsingTrialTeam())
+            throw new IllegalStateException("Player is not using trial team.");
+
         this.getPlayer()
             .sendPacket(
                 new PacketAvatarDelNotify(
