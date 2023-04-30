@@ -1,6 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
@@ -55,11 +56,17 @@ public class EntityAvatar extends GameEntity {
 
         this.avatar = avatar;
         this.avatar.setCurrentEnergy();
-        if (scene != null) this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 
-        GameItem weapon = this.getAvatar().getWeapon();
-        if (weapon != null) {
-            weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
+        if (scene != null) {
+            var world = scene.getWorld();
+            this.id = world.getNextEntityId(EntityIdType.AVATAR);
+
+            var weapon = this.getAvatar().getWeapon();
+            if (weapon != null) {
+                weapon.setWeaponEntityId(world.getNextEntityId(EntityIdType.WEAPON));
+            }
+        } else {
+            Grasscutter.getLogger().error("Unable to create EntityAvatar instance; provided scene is null.");
         }
     }
 
