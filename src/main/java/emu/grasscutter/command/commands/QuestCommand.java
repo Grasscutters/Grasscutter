@@ -71,7 +71,7 @@ public final class QuestCommand implements CommandHandler {
                         case QUEST_STATE_UNFINISHED, UNFINISHED -> "commands.quest.state.unfinished";
                         case QUEST_STATE_FINISHED, FINISHED -> "commands.quest.state.finished";
                         case QUEST_STATE_FAILED, FAILED -> "commands.quest.state.failed";
-                    }, quest.getState().getValue()))
+                    }), quest.getState().getValue())
                 );
             }
             case "talking" -> {
