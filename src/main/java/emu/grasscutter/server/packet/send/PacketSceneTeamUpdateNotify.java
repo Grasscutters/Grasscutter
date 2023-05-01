@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar;
 import emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotify;
 
 public class PacketSceneTeamUpdateNotify extends BasePacket {
-
     public PacketSceneTeamUpdateNotify(Player player) {
         super(PacketOpcodes.SceneTeamUpdateNotify);
 
@@ -16,7 +15,7 @@ public class PacketSceneTeamUpdateNotify extends BasePacket {
             .setIsInMp(player.getWorld().isMultiplayer());
 
         for (var p : player.getWorld().getPlayers()) {
-            for (var entityAvatar : p.getTeamManager().getActiveTeam()) {
+            for (var entityAvatar : p.getTeamManager().getActiveTeam(true)) {
                 var avatarProto =
                     SceneTeamAvatar.newBuilder()
                         .setPlayerUid(p.getUid())
