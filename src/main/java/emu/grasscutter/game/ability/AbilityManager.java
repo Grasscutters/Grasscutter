@@ -83,7 +83,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         if (handler == null || ability == null) {
             Grasscutter.getLogger()
-                    .debug("Could not execute ability action {} at {}", action.type, ability);
+                    .trace("Could not execute ability action {} at {}", action.type, ability);
             return;
         }
 
