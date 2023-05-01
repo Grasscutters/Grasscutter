@@ -795,7 +795,7 @@ public final class Scene {
         return true;
     }
 
-    public synchronized void checkGroups() {
+    public void checkGroups() {
         Set<Integer> visible =
                 this.players.stream()
                         .map(player -> this.getPlayerActiveGroups(player))
