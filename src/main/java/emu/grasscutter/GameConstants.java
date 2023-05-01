@@ -6,6 +6,8 @@ import emu.grasscutter.utils.Utils;
 import java.util.Arrays;
 
 public final class GameConstants {
+    public static String VERSION = "3.6.0";
+
     public static final int DEFAULT_TEAMS = 4;
     public static final int MAX_TEAMS = 10;
     public static final int MAIN_CHARACTER_MALE = 10000005;
@@ -44,5 +46,4 @@ public final class GameConstants {
     public static final int[] DEFAULT_ABILITY_HASHES =
             Arrays.stream(DEFAULT_ABILITY_STRINGS).mapToInt(Utils::abilityHash).toArray();
     public static final int DEFAULT_ABILITY_NAME = Utils.abilityHash("Default");
-    public static String VERSION = "3.5.0";
 }

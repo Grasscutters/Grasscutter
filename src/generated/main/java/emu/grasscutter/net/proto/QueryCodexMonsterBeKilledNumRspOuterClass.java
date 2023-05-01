@@ -4,1415 +4,1233 @@
 package emu.grasscutter.net.proto;
 
 public final class QueryCodexMonsterBeKilledNumRspOuterClass {
-    private QueryCodexMonsterBeKilledNumRspOuterClass() {}
+  private QueryCodexMonsterBeKilledNumRspOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface QueryCodexMonsterBeKilledNumRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:QueryCodexMonsterBeKilledNumRsp)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <pre>
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @return A list containing the beKilledNumList.
+     */
+    java.util.List<java.lang.Integer> getBeKilledNumListList();
+    /**
+     * <pre>
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @return The count of beKilledNumList.
+     */
+    int getBeKilledNumListCount();
+    /**
+     * <pre>
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @param index The index of the element to return.
+     * @return The beKilledNumList at the given index.
+     */
+    int getBeKilledNumList(int index);
+
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @return A list containing the beCapturedNumList.
+     */
+    java.util.List<java.lang.Integer> getBeCapturedNumListList();
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @return The count of beCapturedNumList.
+     */
+    int getBeCapturedNumListCount();
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The beCapturedNumList at the given index.
+     */
+    int getBeCapturedNumList(int index);
+
+    /**
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @return A list containing the codexIdList.
+     */
+    java.util.List<java.lang.Integer> getCodexIdListList();
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @return The count of codexIdList.
+     */
+    int getCodexIdListCount();
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @param index The index of the element to return.
+     * @return The codexIdList at the given index.
+     */
+    int getCodexIdList(int index);
+  }
+  /**
+   * <pre>
+   * CmdId: 4208
+   * Name: GEEINFDPFHF
+   * </pre>
+   *
+   * Protobuf type {@code QueryCodexMonsterBeKilledNumRsp}
+   */
+  public static final class QueryCodexMonsterBeKilledNumRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:QueryCodexMonsterBeKilledNumRsp)
+      QueryCodexMonsterBeKilledNumRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryCodexMonsterBeKilledNumRsp.newBuilder() to construct.
+    private QueryCodexMonsterBeKilledNumRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryCodexMonsterBeKilledNumRsp() {
+      beKilledNumList_ = emptyIntList();
+      beCapturedNumList_ = emptyIntList();
+      codexIdList_ = emptyIntList();
     }
 
-    public interface QueryCodexMonsterBeKilledNumRspOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:QueryCodexMonsterBeKilledNumRsp)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryCodexMonsterBeKilledNumRsp();
+    }
 
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @return A list containing the beCapturedNumList.
-         */
-        java.util.List<java.lang.Integer> getBeCapturedNumListList();
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @return The count of beCapturedNumList.
-         */
-        int getBeCapturedNumListCount();
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The beCapturedNumList at the given index.
-         */
-        int getBeCapturedNumList(int index);
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryCodexMonsterBeKilledNumRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
 
-        /**
-         * <code>int32 retcode = 11;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                beCapturedNumList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              beCapturedNumList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                beCapturedNumList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                beCapturedNumList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                beKilledNumList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              beKilledNumList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                beKilledNumList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                beKilledNumList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                codexIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              codexIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                codexIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                codexIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          beCapturedNumList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          beKilledNumList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          codexIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
+    }
 
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @return A list containing the beKilledNumList.
-         */
-        java.util.List<java.lang.Integer> getBeKilledNumListList();
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @return The count of beKilledNumList.
-         */
-        int getBeKilledNumListCount();
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The beKilledNumList at the given index.
-         */
-        int getBeKilledNumList(int index);
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.class, emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.Builder.class);
+    }
 
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @return A list containing the codexIdList.
-         */
-        java.util.List<java.lang.Integer> getCodexIdListList();
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @return The count of codexIdList.
-         */
-        int getCodexIdListCount();
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The codexIdList at the given index.
-         */
-        int getCodexIdList(int index);
+    public static final int BE_KILLED_NUM_LIST_FIELD_NUMBER = 12;
+    private com.google.protobuf.Internal.IntList beKilledNumList_;
+    /**
+     * <pre>
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @return A list containing the beKilledNumList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getBeKilledNumListList() {
+      return beKilledNumList_;
     }
     /**
-     *
-     *
      * <pre>
-     * Name: LGANMLHFGID
-     * CmdId: 4201
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @return The count of beKilledNumList.
+     */
+    public int getBeKilledNumListCount() {
+      return beKilledNumList_.size();
+    }
+    /**
+     * <pre>
+     * EKCLLDCMJLB
+     * </pre>
+     *
+     * <code>repeated uint32 be_killed_num_list = 12;</code>
+     * @param index The index of the element to return.
+     * @return The beKilledNumList at the given index.
+     */
+    public int getBeKilledNumList(int index) {
+      return beKilledNumList_.getInt(index);
+    }
+    private int beKilledNumListMemoizedSerializedSize = -1;
+
+    public static final int BE_CAPTURED_NUM_LIST_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList beCapturedNumList_;
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @return A list containing the beCapturedNumList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getBeCapturedNumListList() {
+      return beCapturedNumList_;
+    }
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @return The count of beCapturedNumList.
+     */
+    public int getBeCapturedNumListCount() {
+      return beCapturedNumList_.size();
+    }
+    /**
+     * <pre>
+     * CJFGLJIGKNL
+     * </pre>
+     *
+     * <code>repeated uint32 be_captured_num_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The beCapturedNumList at the given index.
+     */
+    public int getBeCapturedNumList(int index) {
+      return beCapturedNumList_.getInt(index);
+    }
+    private int beCapturedNumListMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 4;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int CODEX_ID_LIST_FIELD_NUMBER = 15;
+    private com.google.protobuf.Internal.IntList codexIdList_;
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @return A list containing the codexIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getCodexIdListList() {
+      return codexIdList_;
+    }
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @return The count of codexIdList.
+     */
+    public int getCodexIdListCount() {
+      return codexIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 codex_id_list = 15;</code>
+     * @param index The index of the element to return.
+     * @return The codexIdList at the given index.
+     */
+    public int getCodexIdList(int index) {
+      return codexIdList_.getInt(index);
+    }
+    private int codexIdListMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (retcode_ != 0) {
+        output.writeInt32(4, retcode_);
+      }
+      if (getBeCapturedNumListList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(beCapturedNumListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < beCapturedNumList_.size(); i++) {
+        output.writeUInt32NoTag(beCapturedNumList_.getInt(i));
+      }
+      if (getBeKilledNumListList().size() > 0) {
+        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(beKilledNumListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < beKilledNumList_.size(); i++) {
+        output.writeUInt32NoTag(beKilledNumList_.getInt(i));
+      }
+      if (getCodexIdListList().size() > 0) {
+        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(codexIdListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < codexIdList_.size(); i++) {
+        output.writeUInt32NoTag(codexIdList_.getInt(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, retcode_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < beCapturedNumList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(beCapturedNumList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getBeCapturedNumListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        beCapturedNumListMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < beKilledNumList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(beKilledNumList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getBeKilledNumListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        beKilledNumListMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < codexIdList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(codexIdList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getCodexIdListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        codexIdListMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp other = (emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp) obj;
+
+      if (!getBeKilledNumListList()
+          .equals(other.getBeKilledNumListList())) return false;
+      if (!getBeCapturedNumListList()
+          .equals(other.getBeCapturedNumListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!getCodexIdListList()
+          .equals(other.getCodexIdListList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBeKilledNumListCount() > 0) {
+        hash = (37 * hash) + BE_KILLED_NUM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getBeKilledNumListList().hashCode();
+      }
+      if (getBeCapturedNumListCount() > 0) {
+        hash = (37 * hash) + BE_CAPTURED_NUM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getBeCapturedNumListList().hashCode();
+      }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      if (getCodexIdListCount() > 0) {
+        hash = (37 * hash) + CODEX_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCodexIdListList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CmdId: 4208
+     * Name: GEEINFDPFHF
      * </pre>
      *
      * Protobuf type {@code QueryCodexMonsterBeKilledNumRsp}
      */
-    public static final class QueryCodexMonsterBeKilledNumRsp
-            extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:QueryCodexMonsterBeKilledNumRsp)
-            QueryCodexMonsterBeKilledNumRspOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use QueryCodexMonsterBeKilledNumRsp.newBuilder() to construct.
-        private QueryCodexMonsterBeKilledNumRsp(
-                com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:QueryCodexMonsterBeKilledNumRsp)
+        emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.class, emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        beKilledNumList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        beCapturedNumList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        retcode_ = 0;
 
-        private QueryCodexMonsterBeKilledNumRsp() {
-            beCapturedNumList_ = emptyIntList();
-            beKilledNumList_ = emptyIntList();
-            codexIdList_ = emptyIntList();
+        codexIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp build() {
+        emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new QueryCodexMonsterBeKilledNumRsp();
+      @java.lang.Override
+      public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp buildPartial() {
+        emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp result = new emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          beKilledNumList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+        result.beKilledNumList_ = beKilledNumList_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          beCapturedNumList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
-
-        private QueryCodexMonsterBeKilledNumRsp(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                                    beKilledNumList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000002;
-                                }
-                                beKilledNumList_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 10:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                                    beKilledNumList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000002;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    beKilledNumList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 64:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                                    codexIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000004;
-                                }
-                                codexIdList_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 66:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                                    codexIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000004;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    codexIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 88:
-                            {
-                                retcode_ = input.readInt32();
-                                break;
-                            }
-                        case 112:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                                    beCapturedNumList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                beCapturedNumList_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 114:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                                    beCapturedNumList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    beCapturedNumList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000002) != 0)) {
-                    beKilledNumList_.makeImmutable(); // C
-                }
-                if (((mutable_bitField0_ & 0x00000004) != 0)) {
-                    codexIdList_.makeImmutable(); // C
-                }
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
-                    beCapturedNumList_.makeImmutable(); // C
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+        result.beCapturedNumList_ = beCapturedNumList_;
+        result.retcode_ = retcode_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          codexIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
+        result.codexIdList_ = codexIdList_;
+        onBuilt();
+        return result;
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                    .internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp) {
+          return mergeFrom((emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                    .internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                    .QueryCodexMonsterBeKilledNumRsp.class,
-                            emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                    .QueryCodexMonsterBeKilledNumRsp.Builder.class);
+      public Builder mergeFrom(emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp other) {
+        if (other == emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.getDefaultInstance()) return this;
+        if (!other.beKilledNumList_.isEmpty()) {
+          if (beKilledNumList_.isEmpty()) {
+            beKilledNumList_ = other.beKilledNumList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureBeKilledNumListIsMutable();
+            beKilledNumList_.addAll(other.beKilledNumList_);
+          }
+          onChanged();
         }
-
-        public static final int BE_CAPTURED_NUM_LIST_FIELD_NUMBER = 14;
-        private com.google.protobuf.Internal.IntList beCapturedNumList_;
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @return A list containing the beCapturedNumList.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getBeCapturedNumListList() {
-            return beCapturedNumList_;
+        if (!other.beCapturedNumList_.isEmpty()) {
+          if (beCapturedNumList_.isEmpty()) {
+            beCapturedNumList_ = other.beCapturedNumList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureBeCapturedNumListIsMutable();
+            beCapturedNumList_.addAll(other.beCapturedNumList_);
+          }
+          onChanged();
         }
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @return The count of beCapturedNumList.
-         */
-        public int getBeCapturedNumListCount() {
-            return beCapturedNumList_.size();
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
-        /**
-         *
-         *
-         * <pre>
-         * EHOHFHEOKHJ
-         * </pre>
-         *
-         * <code>repeated uint32 be_captured_num_list = 14;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The beCapturedNumList at the given index.
-         */
-        public int getBeCapturedNumList(int index) {
-            return beCapturedNumList_.getInt(index);
+        if (!other.codexIdList_.isEmpty()) {
+          if (codexIdList_.isEmpty()) {
+            codexIdList_ = other.codexIdList_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureCodexIdListIsMutable();
+            codexIdList_.addAll(other.codexIdList_);
+          }
+          onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        private int beCapturedNumListMemoizedSerializedSize = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
 
-        public static final int RETCODE_FIELD_NUMBER = 11;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 11;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static final int BE_KILLED_NUM_LIST_FIELD_NUMBER = 1;
-        private com.google.protobuf.Internal.IntList beKilledNumList_;
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @return A list containing the beKilledNumList.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getBeKilledNumListList() {
-            return beKilledNumList_;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @return The count of beKilledNumList.
-         */
-        public int getBeKilledNumListCount() {
-            return beKilledNumList_.size();
-        }
-        /**
-         *
-         *
-         * <pre>
-         * KHEHMPJHELM
-         * </pre>
-         *
-         * <code>repeated uint32 be_killed_num_list = 1;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The beKilledNumList at the given index.
-         */
-        public int getBeKilledNumList(int index) {
-            return beKilledNumList_.getInt(index);
-        }
-
-        private int beKilledNumListMemoizedSerializedSize = -1;
-
-        public static final int CODEX_ID_LIST_FIELD_NUMBER = 8;
-        private com.google.protobuf.Internal.IntList codexIdList_;
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @return A list containing the codexIdList.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getCodexIdListList() {
-            return codexIdList_;
-        }
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @return The count of codexIdList.
-         */
-        public int getCodexIdListCount() {
-            return codexIdList_.size();
-        }
-        /**
-         * <code>repeated uint32 codex_id_list = 8;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The codexIdList at the given index.
-         */
-        public int getCodexIdList(int index) {
-            return codexIdList_.getInt(index);
-        }
-
-        private int codexIdListMemoizedSerializedSize = -1;
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            getSerializedSize();
-            if (getBeKilledNumListList().size() > 0) {
-                output.writeUInt32NoTag(10);
-                output.writeUInt32NoTag(beKilledNumListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < beKilledNumList_.size(); i++) {
-                output.writeUInt32NoTag(beKilledNumList_.getInt(i));
-            }
-            if (getCodexIdListList().size() > 0) {
-                output.writeUInt32NoTag(66);
-                output.writeUInt32NoTag(codexIdListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < codexIdList_.size(); i++) {
-                output.writeUInt32NoTag(codexIdList_.getInt(i));
-            }
-            if (retcode_ != 0) {
-                output.writeInt32(11, retcode_);
-            }
-            if (getBeCapturedNumListList().size() > 0) {
-                output.writeUInt32NoTag(114);
-                output.writeUInt32NoTag(beCapturedNumListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < beCapturedNumList_.size(); i++) {
-                output.writeUInt32NoTag(beCapturedNumList_.getInt(i));
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            {
-                int dataSize = 0;
-                for (int i = 0; i < beKilledNumList_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
-                                    beKilledNumList_.getInt(i));
-                }
-                size += dataSize;
-                if (!getBeKilledNumListList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                beKilledNumListMemoizedSerializedSize = dataSize;
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < codexIdList_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(codexIdList_.getInt(i));
-                }
-                size += dataSize;
-                if (!getCodexIdListList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                codexIdListMemoizedSerializedSize = dataSize;
-            }
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, retcode_);
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < beCapturedNumList_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
-                                    beCapturedNumList_.getInt(i));
-                }
-                size += dataSize;
-                if (!getBeCapturedNumListList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                beCapturedNumListMemoizedSerializedSize = dataSize;
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp
-                    other =
-                            (emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                            .QueryCodexMonsterBeKilledNumRsp)
-                                    obj;
-
-            if (!getBeCapturedNumListList().equals(other.getBeCapturedNumListList())) return false;
-            if (getRetcode() != other.getRetcode()) return false;
-            if (!getBeKilledNumListList().equals(other.getBeKilledNumListList())) return false;
-            if (!getCodexIdListList().equals(other.getCodexIdListList())) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (getBeCapturedNumListCount() > 0) {
-                hash = (37 * hash) + BE_CAPTURED_NUM_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getBeCapturedNumListList().hashCode();
-            }
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
-            if (getBeKilledNumListCount() > 0) {
-                hash = (37 * hash) + BE_KILLED_NUM_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getBeKilledNumListList().hashCode();
-            }
-            if (getCodexIdListCount() > 0) {
-                hash = (37 * hash) + CODEX_ID_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getCodexIdListList().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp
-                        prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Name: LGANMLHFGID
-         * CmdId: 4201
-         * </pre>
-         *
-         * Protobuf type {@code QueryCodexMonsterBeKilledNumRsp}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:QueryCodexMonsterBeKilledNumRsp)
-                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRspOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                        .QueryCodexMonsterBeKilledNumRsp.class,
-                                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                        .QueryCodexMonsterBeKilledNumRsp.Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                beCapturedNumList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                retcode_ = 0;
-
-                beKilledNumList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000002);
-                codexIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp
-                    build() {
-                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp
-                        result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp
-                    buildPartial() {
-                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp
-                        result =
-                                new emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                        .QueryCodexMonsterBeKilledNumRsp(this);
-                int from_bitField0_ = bitField0_;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                    beCapturedNumList_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                }
-                result.beCapturedNumList_ = beCapturedNumList_;
-                result.retcode_ = retcode_;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                    beKilledNumList_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000002);
-                }
-                result.beKilledNumList_ = beKilledNumList_;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                    codexIdList_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000004);
-                }
-                result.codexIdList_ = codexIdList_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                            .QueryCodexMonsterBeKilledNumRsp)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                    .QueryCodexMonsterBeKilledNumRsp
-                            other) {
-                if (other
-                        == emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp.getDefaultInstance()) return this;
-                if (!other.beCapturedNumList_.isEmpty()) {
-                    if (beCapturedNumList_.isEmpty()) {
-                        beCapturedNumList_ = other.beCapturedNumList_;
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    } else {
-                        ensureBeCapturedNumListIsMutable();
-                        beCapturedNumList_.addAll(other.beCapturedNumList_);
-                    }
-                    onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
-                if (!other.beKilledNumList_.isEmpty()) {
-                    if (beKilledNumList_.isEmpty()) {
-                        beKilledNumList_ = other.beKilledNumList_;
-                        bitField0_ = (bitField0_ & ~0x00000002);
-                    } else {
-                        ensureBeKilledNumListIsMutable();
-                        beKilledNumList_.addAll(other.beKilledNumList_);
-                    }
-                    onChanged();
-                }
-                if (!other.codexIdList_.isEmpty()) {
-                    if (codexIdList_.isEmpty()) {
-                        codexIdList_ = other.codexIdList_;
-                        bitField0_ = (bitField0_ & ~0x00000004);
-                    } else {
-                        ensureCodexIdListIsMutable();
-                        codexIdList_.addAll(other.codexIdList_);
-                    }
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                .QueryCodexMonsterBeKilledNumRsp
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                                            .QueryCodexMonsterBeKilledNumRsp)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private com.google.protobuf.Internal.IntList beCapturedNumList_ = emptyIntList();
-
-            private void ensureBeCapturedNumListIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    beCapturedNumList_ = mutableCopy(beCapturedNumList_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @return A list containing the beCapturedNumList.
-             */
-            public java.util.List<java.lang.Integer> getBeCapturedNumListList() {
-                return ((bitField0_ & 0x00000001) != 0)
-                        ? java.util.Collections.unmodifiableList(beCapturedNumList_)
-                        : beCapturedNumList_;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @return The count of beCapturedNumList.
-             */
-            public int getBeCapturedNumListCount() {
-                return beCapturedNumList_.size();
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The beCapturedNumList at the given index.
-             */
-            public int getBeCapturedNumList(int index) {
-                return beCapturedNumList_.getInt(index);
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The beCapturedNumList to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBeCapturedNumList(int index, int value) {
-                ensureBeCapturedNumListIsMutable();
-                beCapturedNumList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @param value The beCapturedNumList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addBeCapturedNumList(int value) {
-                ensureBeCapturedNumListIsMutable();
-                beCapturedNumList_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @param values The beCapturedNumList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllBeCapturedNumList(
-                    java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureBeCapturedNumListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, beCapturedNumList_);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * EHOHFHEOKHJ
-             * </pre>
-             *
-             * <code>repeated uint32 be_captured_num_list = 14;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBeCapturedNumList() {
-                beCapturedNumList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                onChanged();
-                return this;
-            }
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 11;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 11;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 11;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.Internal.IntList beKilledNumList_ = emptyIntList();
-
-            private void ensureBeKilledNumListIsMutable() {
-                if (!((bitField0_ & 0x00000002) != 0)) {
-                    beKilledNumList_ = mutableCopy(beKilledNumList_);
-                    bitField0_ |= 0x00000002;
-                }
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @return A list containing the beKilledNumList.
-             */
-            public java.util.List<java.lang.Integer> getBeKilledNumListList() {
-                return ((bitField0_ & 0x00000002) != 0)
-                        ? java.util.Collections.unmodifiableList(beKilledNumList_)
-                        : beKilledNumList_;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @return The count of beKilledNumList.
-             */
-            public int getBeKilledNumListCount() {
-                return beKilledNumList_.size();
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The beKilledNumList at the given index.
-             */
-            public int getBeKilledNumList(int index) {
-                return beKilledNumList_.getInt(index);
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The beKilledNumList to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBeKilledNumList(int index, int value) {
-                ensureBeKilledNumListIsMutable();
-                beKilledNumList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @param value The beKilledNumList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addBeKilledNumList(int value) {
-                ensureBeKilledNumListIsMutable();
-                beKilledNumList_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @param values The beKilledNumList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllBeKilledNumList(java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureBeKilledNumListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, beKilledNumList_);
-                onChanged();
-                return this;
-            }
-            /**
-             *
-             *
-             * <pre>
-             * KHEHMPJHELM
-             * </pre>
-             *
-             * <code>repeated uint32 be_killed_num_list = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBeKilledNumList() {
-                beKilledNumList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000002);
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.Internal.IntList codexIdList_ = emptyIntList();
-
-            private void ensureCodexIdListIsMutable() {
-                if (!((bitField0_ & 0x00000004) != 0)) {
-                    codexIdList_ = mutableCopy(codexIdList_);
-                    bitField0_ |= 0x00000004;
-                }
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @return A list containing the codexIdList.
-             */
-            public java.util.List<java.lang.Integer> getCodexIdListList() {
-                return ((bitField0_ & 0x00000004) != 0)
-                        ? java.util.Collections.unmodifiableList(codexIdList_)
-                        : codexIdList_;
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @return The count of codexIdList.
-             */
-            public int getCodexIdListCount() {
-                return codexIdList_.size();
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The codexIdList at the given index.
-             */
-            public int getCodexIdList(int index) {
-                return codexIdList_.getInt(index);
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The codexIdList to set.
-             * @return This builder for chaining.
-             */
-            public Builder setCodexIdList(int index, int value) {
-                ensureCodexIdListIsMutable();
-                codexIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @param value The codexIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addCodexIdList(int value) {
-                ensureCodexIdListIsMutable();
-                codexIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @param values The codexIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllCodexIdList(java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureCodexIdListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, codexIdList_);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 codex_id_list = 8;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearCodexIdList() {
-                codexIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000004);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:QueryCodexMonsterBeKilledNumRsp)
-        }
-
-        // @@protoc_insertion_point(class_scope:QueryCodexMonsterBeKilledNumRsp)
-        private static final emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                            .QueryCodexMonsterBeKilledNumRsp();
-        }
-
-        public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp> PARSER =
-                new com.google.protobuf.AbstractParser<QueryCodexMonsterBeKilledNumRsp>() {
-                    @java.lang.Override
-                    public QueryCodexMonsterBeKilledNumRsp parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new QueryCodexMonsterBeKilledNumRsp(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass
-                        .QueryCodexMonsterBeKilledNumRsp
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.IntList beKilledNumList_ = emptyIntList();
+      private void ensureBeKilledNumListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          beKilledNumList_ = mutableCopy(beKilledNumList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @return A list containing the beKilledNumList.
+       */
+      public java.util.List<java.lang.Integer>
+          getBeKilledNumListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(beKilledNumList_) : beKilledNumList_;
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @return The count of beKilledNumList.
+       */
+      public int getBeKilledNumListCount() {
+        return beKilledNumList_.size();
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @param index The index of the element to return.
+       * @return The beKilledNumList at the given index.
+       */
+      public int getBeKilledNumList(int index) {
+        return beKilledNumList_.getInt(index);
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The beKilledNumList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeKilledNumList(
+          int index, int value) {
+        ensureBeKilledNumListIsMutable();
+        beKilledNumList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @param value The beKilledNumList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBeKilledNumList(int value) {
+        ensureBeKilledNumListIsMutable();
+        beKilledNumList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @param values The beKilledNumList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBeKilledNumList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureBeKilledNumListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, beKilledNumList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * EKCLLDCMJLB
+       * </pre>
+       *
+       * <code>repeated uint32 be_killed_num_list = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBeKilledNumList() {
+        beKilledNumList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList beCapturedNumList_ = emptyIntList();
+      private void ensureBeCapturedNumListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          beCapturedNumList_ = mutableCopy(beCapturedNumList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @return A list containing the beCapturedNumList.
+       */
+      public java.util.List<java.lang.Integer>
+          getBeCapturedNumListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(beCapturedNumList_) : beCapturedNumList_;
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @return The count of beCapturedNumList.
+       */
+      public int getBeCapturedNumListCount() {
+        return beCapturedNumList_.size();
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @param index The index of the element to return.
+       * @return The beCapturedNumList at the given index.
+       */
+      public int getBeCapturedNumList(int index) {
+        return beCapturedNumList_.getInt(index);
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The beCapturedNumList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeCapturedNumList(
+          int index, int value) {
+        ensureBeCapturedNumListIsMutable();
+        beCapturedNumList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @param value The beCapturedNumList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBeCapturedNumList(int value) {
+        ensureBeCapturedNumListIsMutable();
+        beCapturedNumList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @param values The beCapturedNumList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBeCapturedNumList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureBeCapturedNumListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, beCapturedNumList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CJFGLJIGKNL
+       * </pre>
+       *
+       * <code>repeated uint32 be_captured_num_list = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBeCapturedNumList() {
+        beCapturedNumList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList codexIdList_ = emptyIntList();
+      private void ensureCodexIdListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          codexIdList_ = mutableCopy(codexIdList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @return A list containing the codexIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getCodexIdListList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(codexIdList_) : codexIdList_;
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @return The count of codexIdList.
+       */
+      public int getCodexIdListCount() {
+        return codexIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @param index The index of the element to return.
+       * @return The codexIdList at the given index.
+       */
+      public int getCodexIdList(int index) {
+        return codexIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @param index The index to set the value at.
+       * @param value The codexIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodexIdList(
+          int index, int value) {
+        ensureCodexIdListIsMutable();
+        codexIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @param value The codexIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCodexIdList(int value) {
+        ensureCodexIdListIsMutable();
+        codexIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @param values The codexIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCodexIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCodexIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, codexIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 codex_id_list = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCodexIdList() {
+        codexIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:QueryCodexMonsterBeKilledNumRsp)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:QueryCodexMonsterBeKilledNumRsp)
+    private static final emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n%QueryCodexMonsterBeKilledNumRsp.proto\""
-                    + "\203\001\n\037QueryCodexMonsterBeKilledNumRsp\022\034\n\024b"
-                    + "e_captured_num_list\030\016 \003(\r\022\017\n\007retcode\030\013 \001"
-                    + "(\005\022\032\n\022be_killed_num_list\030\001 \003(\r\022\025\n\rcodex_"
-                    + "id_list\030\010 \003(\rB\033\n\031emu.grasscutter.net.pro"
-                    + "tob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor,
-                        new java.lang.String[] {
-                            "BeCapturedNumList", "Retcode", "BeKilledNumList", "CodexIdList",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp>
+        PARSER = new com.google.protobuf.AbstractParser<QueryCodexMonsterBeKilledNumRsp>() {
+      @java.lang.Override
+      public QueryCodexMonsterBeKilledNumRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryCodexMonsterBeKilledNumRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryCodexMonsterBeKilledNumRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumRspOuterClass.QueryCodexMonsterBeKilledNumRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n%QueryCodexMonsterBeKilledNumRsp.proto\"" +
+      "\203\001\n\037QueryCodexMonsterBeKilledNumRsp\022\032\n\022b" +
+      "e_killed_num_list\030\014 \003(\r\022\034\n\024be_captured_n" +
+      "um_list\030\007 \003(\r\022\017\n\007retcode\030\004 \001(\005\022\025\n\rcodex_" +
+      "id_list\030\017 \003(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_QueryCodexMonsterBeKilledNumRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QueryCodexMonsterBeKilledNumRsp_descriptor,
+        new java.lang.String[] { "BeKilledNumList", "BeCapturedNumList", "Retcode", "CodexIdList", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

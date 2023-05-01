@@ -4,1283 +4,1207 @@
 package emu.grasscutter.net.proto;
 
 public final class HitCollisionOuterClass {
-    private HitCollisionOuterClass() {}
+  private HitCollisionOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface HitCollisionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:HitCollision)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>float FEKCJAKMKFP = 5;</code>
+     * @return The fEKCJAKMKFP.
+     */
+    float getFEKCJAKMKFP();
+
+    /**
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     * @return Whether the gJHIABHJFAL field is set.
+     */
+    boolean hasGJHIABHJFAL();
+    /**
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     * @return The gJHIABHJFAL.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getGJHIABHJFAL();
+    /**
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getGJHIABHJFALOrBuilder();
+
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     * @return Whether the hMFHFOBAMHL field is set.
+     */
+    boolean hasHMFHFOBAMHL();
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     * @return The hMFHFOBAMHL.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getHMFHFOBAMHL();
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHMFHFOBAMHLOrBuilder();
+
+    /**
+     * <code>int32 hit_box_index = 14;</code>
+     * @return The hitBoxIndex.
+     */
+    int getHitBoxIndex();
+
+    /**
+     * <code>.HitColliderType hit_collider_type = 10;</code>
+     * @return The enum numeric value on the wire for hitColliderType.
+     */
+    int getHitColliderTypeValue();
+    /**
+     * <code>.HitColliderType hit_collider_type = 10;</code>
+     * @return The hitColliderType.
+     */
+    emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType();
+
+    /**
+     * <code>float JNGOHDMOBPJ = 8;</code>
+     * @return The jNGOHDMOBPJ.
+     */
+    float getJNGOHDMOBPJ();
+  }
+  /**
+   * <pre>
+   * Name: CNPANIAGIPH
+   * </pre>
+   *
+   * Protobuf type {@code HitCollision}
+   */
+  public static final class HitCollision extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:HitCollision)
+      HitCollisionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HitCollision.newBuilder() to construct.
+    private HitCollision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HitCollision() {
+      hitColliderType_ = 0;
     }
 
-    public interface HitCollisionOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:HitCollision)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HitCollision();
+    }
 
-        /**
-         * <code>float attackeeHitForceAngle = 7;</code>
-         *
-         * @return The attackeeHitForceAngle.
-         */
-        float getAttackeeHitForceAngle();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HitCollision(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (gJHIABHJFAL_ != null) {
+                subBuilder = gJHIABHJFAL_.toBuilder();
+              }
+              gJHIABHJFAL_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gJHIABHJFAL_);
+                gJHIABHJFAL_ = subBuilder.buildPartial();
+              }
 
-        /**
-         * <code>.Vector hit_point = 5;</code>
-         *
-         * @return Whether the hitPoint field is set.
-         */
-        boolean hasHitPoint();
-        /**
-         * <code>.Vector hit_point = 5;</code>
-         *
-         * @return The hitPoint.
-         */
-        emu.grasscutter.net.proto.VectorOuterClass.Vector getHitPoint();
-        /** <code>.Vector hit_point = 5;</code> */
-        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder();
+              break;
+            }
+            case 45: {
 
-        /**
-         * <code>float attackeeHitEntityAngle = 9;</code>
-         *
-         * @return The attackeeHitEntityAngle.
-         */
-        float getAttackeeHitEntityAngle();
+              fEKCJAKMKFP_ = input.readFloat();
+              break;
+            }
+            case 69: {
 
-        /**
-         * <code>int32 hit_box_index = 2;</code>
-         *
-         * @return The hitBoxIndex.
-         */
-        int getHitBoxIndex();
+              jNGOHDMOBPJ_ = input.readFloat();
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
 
-        /**
-         * <code>.Vector hit_dir = 4;</code>
-         *
-         * @return Whether the hitDir field is set.
-         */
-        boolean hasHitDir();
-        /**
-         * <code>.Vector hit_dir = 4;</code>
-         *
-         * @return The hitDir.
-         */
-        emu.grasscutter.net.proto.VectorOuterClass.Vector getHitDir();
-        /** <code>.Vector hit_dir = 4;</code> */
-        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitDirOrBuilder();
+              hitColliderType_ = rawValue;
+              break;
+            }
+            case 98: {
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (hMFHFOBAMHL_ != null) {
+                subBuilder = hMFHFOBAMHL_.toBuilder();
+              }
+              hMFHFOBAMHL_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hMFHFOBAMHL_);
+                hMFHFOBAMHL_ = subBuilder.buildPartial();
+              }
 
-        /**
-         * <code>.HitColliderType hit_collider_type = 8;</code>
-         *
-         * @return The enum numeric value on the wire for hitColliderType.
-         */
-        int getHitColliderTypeValue();
-        /**
-         * <code>.HitColliderType hit_collider_type = 8;</code>
-         *
-         * @return The hitColliderType.
-         */
-        emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType();
+              break;
+            }
+            case 112: {
+
+              hitBoxIndex_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.HitCollisionOuterClass.internal_static_HitCollision_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.HitCollisionOuterClass.internal_static_HitCollision_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.class, emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.Builder.class);
+    }
+
+    public static final int FEKCJAKMKFP_FIELD_NUMBER = 5;
+    private float fEKCJAKMKFP_;
+    /**
+     * <code>float FEKCJAKMKFP = 5;</code>
+     * @return The fEKCJAKMKFP.
+     */
+    @java.lang.Override
+    public float getFEKCJAKMKFP() {
+      return fEKCJAKMKFP_;
+    }
+
+    public static final int GJHIABHJFAL_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector gJHIABHJFAL_;
+    /**
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     * @return Whether the gJHIABHJFAL field is set.
+     */
+    @java.lang.Override
+    public boolean hasGJHIABHJFAL() {
+      return gJHIABHJFAL_ != null;
     }
     /**
-     *
-     *
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     * @return The gJHIABHJFAL.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getGJHIABHJFAL() {
+      return gJHIABHJFAL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : gJHIABHJFAL_;
+    }
+    /**
+     * <code>.Vector GJHIABHJFAL = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getGJHIABHJFALOrBuilder() {
+      return getGJHIABHJFAL();
+    }
+
+    public static final int HMFHFOBAMHL_FIELD_NUMBER = 12;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector hMFHFOBAMHL_;
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     * @return Whether the hMFHFOBAMHL field is set.
+     */
+    @java.lang.Override
+    public boolean hasHMFHFOBAMHL() {
+      return hMFHFOBAMHL_ != null;
+    }
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     * @return The hMFHFOBAMHL.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getHMFHFOBAMHL() {
+      return hMFHFOBAMHL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hMFHFOBAMHL_;
+    }
+    /**
+     * <code>.Vector HMFHFOBAMHL = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHMFHFOBAMHLOrBuilder() {
+      return getHMFHFOBAMHL();
+    }
+
+    public static final int HIT_BOX_INDEX_FIELD_NUMBER = 14;
+    private int hitBoxIndex_;
+    /**
+     * <code>int32 hit_box_index = 14;</code>
+     * @return The hitBoxIndex.
+     */
+    @java.lang.Override
+    public int getHitBoxIndex() {
+      return hitBoxIndex_;
+    }
+
+    public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 10;
+    private int hitColliderType_;
+    /**
+     * <code>.HitColliderType hit_collider_type = 10;</code>
+     * @return The enum numeric value on the wire for hitColliderType.
+     */
+    @java.lang.Override public int getHitColliderTypeValue() {
+      return hitColliderType_;
+    }
+    /**
+     * <code>.HitColliderType hit_collider_type = 10;</code>
+     * @return The hitColliderType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
+      return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
+    }
+
+    public static final int JNGOHDMOBPJ_FIELD_NUMBER = 8;
+    private float jNGOHDMOBPJ_;
+    /**
+     * <code>float JNGOHDMOBPJ = 8;</code>
+     * @return The jNGOHDMOBPJ.
+     */
+    @java.lang.Override
+    public float getJNGOHDMOBPJ() {
+      return jNGOHDMOBPJ_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (gJHIABHJFAL_ != null) {
+        output.writeMessage(4, getGJHIABHJFAL());
+      }
+      if (fEKCJAKMKFP_ != 0F) {
+        output.writeFloat(5, fEKCJAKMKFP_);
+      }
+      if (jNGOHDMOBPJ_ != 0F) {
+        output.writeFloat(8, jNGOHDMOBPJ_);
+      }
+      if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_INVALID.getNumber()) {
+        output.writeEnum(10, hitColliderType_);
+      }
+      if (hMFHFOBAMHL_ != null) {
+        output.writeMessage(12, getHMFHFOBAMHL());
+      }
+      if (hitBoxIndex_ != 0) {
+        output.writeInt32(14, hitBoxIndex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (gJHIABHJFAL_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getGJHIABHJFAL());
+      }
+      if (fEKCJAKMKFP_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, fEKCJAKMKFP_);
+      }
+      if (jNGOHDMOBPJ_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(8, jNGOHDMOBPJ_);
+      }
+      if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_INVALID.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, hitColliderType_);
+      }
+      if (hMFHFOBAMHL_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getHMFHFOBAMHL());
+      }
+      if (hitBoxIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, hitBoxIndex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision other = (emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) obj;
+
+      if (java.lang.Float.floatToIntBits(getFEKCJAKMKFP())
+          != java.lang.Float.floatToIntBits(
+              other.getFEKCJAKMKFP())) return false;
+      if (hasGJHIABHJFAL() != other.hasGJHIABHJFAL()) return false;
+      if (hasGJHIABHJFAL()) {
+        if (!getGJHIABHJFAL()
+            .equals(other.getGJHIABHJFAL())) return false;
+      }
+      if (hasHMFHFOBAMHL() != other.hasHMFHFOBAMHL()) return false;
+      if (hasHMFHFOBAMHL()) {
+        if (!getHMFHFOBAMHL()
+            .equals(other.getHMFHFOBAMHL())) return false;
+      }
+      if (getHitBoxIndex()
+          != other.getHitBoxIndex()) return false;
+      if (hitColliderType_ != other.hitColliderType_) return false;
+      if (java.lang.Float.floatToIntBits(getJNGOHDMOBPJ())
+          != java.lang.Float.floatToIntBits(
+              other.getJNGOHDMOBPJ())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEKCJAKMKFP_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getFEKCJAKMKFP());
+      if (hasGJHIABHJFAL()) {
+        hash = (37 * hash) + GJHIABHJFAL_FIELD_NUMBER;
+        hash = (53 * hash) + getGJHIABHJFAL().hashCode();
+      }
+      if (hasHMFHFOBAMHL()) {
+        hash = (37 * hash) + HMFHFOBAMHL_FIELD_NUMBER;
+        hash = (53 * hash) + getHMFHFOBAMHL().hashCode();
+      }
+      hash = (37 * hash) + HIT_BOX_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getHitBoxIndex();
+      hash = (37 * hash) + HIT_COLLIDER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + hitColliderType_;
+      hash = (37 * hash) + JNGOHDMOBPJ_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getJNGOHDMOBPJ());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
      * <pre>
-     * Name: CPAKHCFDGLO
+     * Name: CNPANIAGIPH
      * </pre>
      *
      * Protobuf type {@code HitCollision}
      */
-    public static final class HitCollision extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:HitCollision)
-            HitCollisionOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use HitCollision.newBuilder() to construct.
-        private HitCollision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:HitCollision)
+        emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.HitCollisionOuterClass.internal_static_HitCollision_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.HitCollisionOuterClass.internal_static_HitCollision_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.class, emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        fEKCJAKMKFP_ = 0F;
+
+        if (gJHIABHJFALBuilder_ == null) {
+          gJHIABHJFAL_ = null;
+        } else {
+          gJHIABHJFAL_ = null;
+          gJHIABHJFALBuilder_ = null;
+        }
+        if (hMFHFOBAMHLBuilder_ == null) {
+          hMFHFOBAMHL_ = null;
+        } else {
+          hMFHFOBAMHL_ = null;
+          hMFHFOBAMHLBuilder_ = null;
+        }
+        hitBoxIndex_ = 0;
+
+        hitColliderType_ = 0;
+
+        jNGOHDMOBPJ_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.HitCollisionOuterClass.internal_static_HitCollision_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision build() {
+        emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision buildPartial() {
+        emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision result = new emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision(this);
+        result.fEKCJAKMKFP_ = fEKCJAKMKFP_;
+        if (gJHIABHJFALBuilder_ == null) {
+          result.gJHIABHJFAL_ = gJHIABHJFAL_;
+        } else {
+          result.gJHIABHJFAL_ = gJHIABHJFALBuilder_.build();
+        }
+        if (hMFHFOBAMHLBuilder_ == null) {
+          result.hMFHFOBAMHL_ = hMFHFOBAMHL_;
+        } else {
+          result.hMFHFOBAMHL_ = hMFHFOBAMHLBuilder_.build();
+        }
+        result.hitBoxIndex_ = hitBoxIndex_;
+        result.hitColliderType_ = hitColliderType_;
+        result.jNGOHDMOBPJ_ = jNGOHDMOBPJ_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) {
+          return mergeFrom((emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision other) {
+        if (other == emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.getDefaultInstance()) return this;
+        if (other.getFEKCJAKMKFP() != 0F) {
+          setFEKCJAKMKFP(other.getFEKCJAKMKFP());
+        }
+        if (other.hasGJHIABHJFAL()) {
+          mergeGJHIABHJFAL(other.getGJHIABHJFAL());
+        }
+        if (other.hasHMFHFOBAMHL()) {
+          mergeHMFHFOBAMHL(other.getHMFHFOBAMHL());
+        }
+        if (other.getHitBoxIndex() != 0) {
+          setHitBoxIndex(other.getHitBoxIndex());
+        }
+        if (other.hitColliderType_ != 0) {
+          setHitColliderTypeValue(other.getHitColliderTypeValue());
+        }
+        if (other.getJNGOHDMOBPJ() != 0F) {
+          setJNGOHDMOBPJ(other.getJNGOHDMOBPJ());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private float fEKCJAKMKFP_ ;
+      /**
+       * <code>float FEKCJAKMKFP = 5;</code>
+       * @return The fEKCJAKMKFP.
+       */
+      @java.lang.Override
+      public float getFEKCJAKMKFP() {
+        return fEKCJAKMKFP_;
+      }
+      /**
+       * <code>float FEKCJAKMKFP = 5;</code>
+       * @param value The fEKCJAKMKFP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFEKCJAKMKFP(float value) {
+        
+        fEKCJAKMKFP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float FEKCJAKMKFP = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFEKCJAKMKFP() {
+        
+        fEKCJAKMKFP_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector gJHIABHJFAL_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> gJHIABHJFALBuilder_;
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       * @return Whether the gJHIABHJFAL field is set.
+       */
+      public boolean hasGJHIABHJFAL() {
+        return gJHIABHJFALBuilder_ != null || gJHIABHJFAL_ != null;
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       * @return The gJHIABHJFAL.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getGJHIABHJFAL() {
+        if (gJHIABHJFALBuilder_ == null) {
+          return gJHIABHJFAL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : gJHIABHJFAL_;
+        } else {
+          return gJHIABHJFALBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public Builder setGJHIABHJFAL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (gJHIABHJFALBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gJHIABHJFAL_ = value;
+          onChanged();
+        } else {
+          gJHIABHJFALBuilder_.setMessage(value);
         }
 
-        private HitCollision() {
-            hitColliderType_ = 0;
+        return this;
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public Builder setGJHIABHJFAL(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (gJHIABHJFALBuilder_ == null) {
+          gJHIABHJFAL_ = builderForValue.build();
+          onChanged();
+        } else {
+          gJHIABHJFALBuilder_.setMessage(builderForValue.build());
         }
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new HitCollision();
+        return this;
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public Builder mergeGJHIABHJFAL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (gJHIABHJFALBuilder_ == null) {
+          if (gJHIABHJFAL_ != null) {
+            gJHIABHJFAL_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(gJHIABHJFAL_).mergeFrom(value).buildPartial();
+          } else {
+            gJHIABHJFAL_ = value;
+          }
+          onChanged();
+        } else {
+          gJHIABHJFALBuilder_.mergeFrom(value);
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+        return this;
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public Builder clearGJHIABHJFAL() {
+        if (gJHIABHJFALBuilder_ == null) {
+          gJHIABHJFAL_ = null;
+          onChanged();
+        } else {
+          gJHIABHJFAL_ = null;
+          gJHIABHJFALBuilder_ = null;
         }
 
-        private HitCollision(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 16:
-                            {
-                                hitBoxIndex_ = input.readInt32();
-                                break;
-                            }
-                        case 34:
-                            {
-                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-                                if (hitDir_ != null) {
-                                    subBuilder = hitDir_.toBuilder();
-                                }
-                                hitDir_ =
-                                        input.readMessage(
-                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
-                                                extensionRegistry);
-                                if (subBuilder != null) {
-                                    subBuilder.mergeFrom(hitDir_);
-                                    hitDir_ = subBuilder.buildPartial();
-                                }
+        return this;
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getGJHIABHJFALBuilder() {
+        
+        onChanged();
+        return getGJHIABHJFALFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getGJHIABHJFALOrBuilder() {
+        if (gJHIABHJFALBuilder_ != null) {
+          return gJHIABHJFALBuilder_.getMessageOrBuilder();
+        } else {
+          return gJHIABHJFAL_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : gJHIABHJFAL_;
+        }
+      }
+      /**
+       * <code>.Vector GJHIABHJFAL = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getGJHIABHJFALFieldBuilder() {
+        if (gJHIABHJFALBuilder_ == null) {
+          gJHIABHJFALBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getGJHIABHJFAL(),
+                  getParentForChildren(),
+                  isClean());
+          gJHIABHJFAL_ = null;
+        }
+        return gJHIABHJFALBuilder_;
+      }
 
-                                break;
-                            }
-                        case 42:
-                            {
-                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-                                if (hitPoint_ != null) {
-                                    subBuilder = hitPoint_.toBuilder();
-                                }
-                                hitPoint_ =
-                                        input.readMessage(
-                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
-                                                extensionRegistry);
-                                if (subBuilder != null) {
-                                    subBuilder.mergeFrom(hitPoint_);
-                                    hitPoint_ = subBuilder.buildPartial();
-                                }
-
-                                break;
-                            }
-                        case 61:
-                            {
-                                attackeeHitForceAngle_ = input.readFloat();
-                                break;
-                            }
-                        case 64:
-                            {
-                                int rawValue = input.readEnum();
-
-                                hitColliderType_ = rawValue;
-                                break;
-                            }
-                        case 77:
-                            {
-                                attackeeHitEntityAngle_ = input.readFloat();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector hMFHFOBAMHL_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> hMFHFOBAMHLBuilder_;
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       * @return Whether the hMFHFOBAMHL field is set.
+       */
+      public boolean hasHMFHFOBAMHL() {
+        return hMFHFOBAMHLBuilder_ != null || hMFHFOBAMHL_ != null;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       * @return The hMFHFOBAMHL.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getHMFHFOBAMHL() {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          return hMFHFOBAMHL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hMFHFOBAMHL_;
+        } else {
+          return hMFHFOBAMHLBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public Builder setHMFHFOBAMHL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hMFHFOBAMHL_ = value;
+          onChanged();
+        } else {
+          hMFHFOBAMHLBuilder_.setMessage(value);
         }
 
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.HitCollisionOuterClass
-                    .internal_static_HitCollision_descriptor;
+        return this;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public Builder setHMFHFOBAMHL(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          hMFHFOBAMHL_ = builderForValue.build();
+          onChanged();
+        } else {
+          hMFHFOBAMHLBuilder_.setMessage(builderForValue.build());
         }
 
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.HitCollisionOuterClass
-                    .internal_static_HitCollision_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.class,
-                            emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.Builder.class);
+        return this;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public Builder mergeHMFHFOBAMHL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          if (hMFHFOBAMHL_ != null) {
+            hMFHFOBAMHL_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(hMFHFOBAMHL_).mergeFrom(value).buildPartial();
+          } else {
+            hMFHFOBAMHL_ = value;
+          }
+          onChanged();
+        } else {
+          hMFHFOBAMHLBuilder_.mergeFrom(value);
         }
 
-        public static final int ATTACKEEHITFORCEANGLE_FIELD_NUMBER = 7;
-        private float attackeeHitForceAngle_;
-        /**
-         * <code>float attackeeHitForceAngle = 7;</code>
-         *
-         * @return The attackeeHitForceAngle.
-         */
-        @java.lang.Override
-        public float getAttackeeHitForceAngle() {
-            return attackeeHitForceAngle_;
+        return this;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public Builder clearHMFHFOBAMHL() {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          hMFHFOBAMHL_ = null;
+          onChanged();
+        } else {
+          hMFHFOBAMHL_ = null;
+          hMFHFOBAMHLBuilder_ = null;
         }
 
-        public static final int HIT_POINT_FIELD_NUMBER = 5;
-        private emu.grasscutter.net.proto.VectorOuterClass.Vector hitPoint_;
-        /**
-         * <code>.Vector hit_point = 5;</code>
-         *
-         * @return Whether the hitPoint field is set.
-         */
-        @java.lang.Override
-        public boolean hasHitPoint() {
-            return hitPoint_ != null;
+        return this;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHMFHFOBAMHLBuilder() {
+        
+        onChanged();
+        return getHMFHFOBAMHLFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHMFHFOBAMHLOrBuilder() {
+        if (hMFHFOBAMHLBuilder_ != null) {
+          return hMFHFOBAMHLBuilder_.getMessageOrBuilder();
+        } else {
+          return hMFHFOBAMHL_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hMFHFOBAMHL_;
         }
-        /**
-         * <code>.Vector hit_point = 5;</code>
-         *
-         * @return The hitPoint.
-         */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitPoint() {
-            return hitPoint_ == null
-                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                    : hitPoint_;
+      }
+      /**
+       * <code>.Vector HMFHFOBAMHL = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getHMFHFOBAMHLFieldBuilder() {
+        if (hMFHFOBAMHLBuilder_ == null) {
+          hMFHFOBAMHLBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getHMFHFOBAMHL(),
+                  getParentForChildren(),
+                  isClean());
+          hMFHFOBAMHL_ = null;
         }
-        /** <code>.Vector hit_point = 5;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder() {
-            return getHitPoint();
+        return hMFHFOBAMHLBuilder_;
+      }
+
+      private int hitBoxIndex_ ;
+      /**
+       * <code>int32 hit_box_index = 14;</code>
+       * @return The hitBoxIndex.
+       */
+      @java.lang.Override
+      public int getHitBoxIndex() {
+        return hitBoxIndex_;
+      }
+      /**
+       * <code>int32 hit_box_index = 14;</code>
+       * @param value The hitBoxIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHitBoxIndex(int value) {
+        
+        hitBoxIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 hit_box_index = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHitBoxIndex() {
+        
+        hitBoxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hitColliderType_ = 0;
+      /**
+       * <code>.HitColliderType hit_collider_type = 10;</code>
+       * @return The enum numeric value on the wire for hitColliderType.
+       */
+      @java.lang.Override public int getHitColliderTypeValue() {
+        return hitColliderType_;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 10;</code>
+       * @param value The enum numeric value on the wire for hitColliderType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHitColliderTypeValue(int value) {
+        
+        hitColliderType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 10;</code>
+       * @return The hitColliderType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
+        return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 10;</code>
+       * @param value The hitColliderType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHitColliderType(emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-
-        public static final int ATTACKEEHITENTITYANGLE_FIELD_NUMBER = 9;
-        private float attackeeHitEntityAngle_;
-        /**
-         * <code>float attackeeHitEntityAngle = 9;</code>
-         *
-         * @return The attackeeHitEntityAngle.
-         */
-        @java.lang.Override
-        public float getAttackeeHitEntityAngle() {
-            return attackeeHitEntityAngle_;
-        }
-
-        public static final int HIT_BOX_INDEX_FIELD_NUMBER = 2;
-        private int hitBoxIndex_;
-        /**
-         * <code>int32 hit_box_index = 2;</code>
-         *
-         * @return The hitBoxIndex.
-         */
-        @java.lang.Override
-        public int getHitBoxIndex() {
-            return hitBoxIndex_;
-        }
-
-        public static final int HIT_DIR_FIELD_NUMBER = 4;
-        private emu.grasscutter.net.proto.VectorOuterClass.Vector hitDir_;
-        /**
-         * <code>.Vector hit_dir = 4;</code>
-         *
-         * @return Whether the hitDir field is set.
-         */
-        @java.lang.Override
-        public boolean hasHitDir() {
-            return hitDir_ != null;
-        }
-        /**
-         * <code>.Vector hit_dir = 4;</code>
-         *
-         * @return The hitDir.
-         */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitDir() {
-            return hitDir_ == null
-                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                    : hitDir_;
-        }
-        /** <code>.Vector hit_dir = 4;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitDirOrBuilder() {
-            return getHitDir();
-        }
-
-        public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 8;
-        private int hitColliderType_;
-        /**
-         * <code>.HitColliderType hit_collider_type = 8;</code>
-         *
-         * @return The enum numeric value on the wire for hitColliderType.
-         */
-        @java.lang.Override
-        public int getHitColliderTypeValue() {
-            return hitColliderType_;
-        }
-        /**
-         * <code>.HitColliderType hit_collider_type = 8;</code>
-         *
-         * @return The hitColliderType.
-         */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType
-                getHitColliderType() {
-            @SuppressWarnings("deprecation")
-            emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result =
-                    emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(
-                            hitColliderType_);
-            return result == null
-                    ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED
-                    : result;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (hitBoxIndex_ != 0) {
-                output.writeInt32(2, hitBoxIndex_);
-            }
-            if (hitDir_ != null) {
-                output.writeMessage(4, getHitDir());
-            }
-            if (hitPoint_ != null) {
-                output.writeMessage(5, getHitPoint());
-            }
-            if (attackeeHitForceAngle_ != 0F) {
-                output.writeFloat(7, attackeeHitForceAngle_);
-            }
-            if (hitColliderType_
-                    != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType
-                            .HIT_COLLIDER_INVALID
-                            .getNumber()) {
-                output.writeEnum(8, hitColliderType_);
-            }
-            if (attackeeHitEntityAngle_ != 0F) {
-                output.writeFloat(9, attackeeHitEntityAngle_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (hitBoxIndex_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, hitBoxIndex_);
-            }
-            if (hitDir_ != null) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getHitDir());
-            }
-            if (hitPoint_ != null) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getHitPoint());
-            }
-            if (attackeeHitForceAngle_ != 0F) {
-                size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, attackeeHitForceAngle_);
-            }
-            if (hitColliderType_
-                    != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType
-                            .HIT_COLLIDER_INVALID
-                            .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, hitColliderType_);
-            }
-            if (attackeeHitEntityAngle_ != 0F) {
-                size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, attackeeHitEntityAngle_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision other =
-                    (emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) obj;
-
-            if (java.lang.Float.floatToIntBits(getAttackeeHitForceAngle())
-                    != java.lang.Float.floatToIntBits(other.getAttackeeHitForceAngle())) return false;
-            if (hasHitPoint() != other.hasHitPoint()) return false;
-            if (hasHitPoint()) {
-                if (!getHitPoint().equals(other.getHitPoint())) return false;
-            }
-            if (java.lang.Float.floatToIntBits(getAttackeeHitEntityAngle())
-                    != java.lang.Float.floatToIntBits(other.getAttackeeHitEntityAngle())) return false;
-            if (getHitBoxIndex() != other.getHitBoxIndex()) return false;
-            if (hasHitDir() != other.hasHitDir()) return false;
-            if (hasHitDir()) {
-                if (!getHitDir().equals(other.getHitDir())) return false;
-            }
-            if (hitColliderType_ != other.hitColliderType_) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + ATTACKEEHITFORCEANGLE_FIELD_NUMBER;
-            hash = (53 * hash) + java.lang.Float.floatToIntBits(getAttackeeHitForceAngle());
-            if (hasHitPoint()) {
-                hash = (37 * hash) + HIT_POINT_FIELD_NUMBER;
-                hash = (53 * hash) + getHitPoint().hashCode();
-            }
-            hash = (37 * hash) + ATTACKEEHITENTITYANGLE_FIELD_NUMBER;
-            hash = (53 * hash) + java.lang.Float.floatToIntBits(getAttackeeHitEntityAngle());
-            hash = (37 * hash) + HIT_BOX_INDEX_FIELD_NUMBER;
-            hash = (53 * hash) + getHitBoxIndex();
-            if (hasHitDir()) {
-                hash = (37 * hash) + HIT_DIR_FIELD_NUMBER;
-                hash = (53 * hash) + getHitDir().hashCode();
-            }
-            hash = (37 * hash) + HIT_COLLIDER_TYPE_FIELD_NUMBER;
-            hash = (53 * hash) + hitColliderType_;
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseDelimitedFrom(
-                java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseDelimitedFrom(
-                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Name: CPAKHCFDGLO
-         * </pre>
-         *
-         * Protobuf type {@code HitCollision}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:HitCollision)
-                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.HitCollisionOuterClass
-                        .internal_static_HitCollision_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.HitCollisionOuterClass
-                        .internal_static_HitCollision_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.class,
-                                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.Builder.class);
-            }
-
-            // Construct using emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                attackeeHitForceAngle_ = 0F;
-
-                if (hitPointBuilder_ == null) {
-                    hitPoint_ = null;
-                } else {
-                    hitPoint_ = null;
-                    hitPointBuilder_ = null;
-                }
-                attackeeHitEntityAngle_ = 0F;
-
-                hitBoxIndex_ = 0;
-
-                if (hitDirBuilder_ == null) {
-                    hitDir_ = null;
-                } else {
-                    hitDir_ = null;
-                    hitDirBuilder_ = null;
-                }
-                hitColliderType_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.HitCollisionOuterClass
-                        .internal_static_HitCollision_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision build() {
-                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision buildPartial() {
-                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision result =
-                        new emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision(this);
-                result.attackeeHitForceAngle_ = attackeeHitForceAngle_;
-                if (hitPointBuilder_ == null) {
-                    result.hitPoint_ = hitPoint_;
-                } else {
-                    result.hitPoint_ = hitPointBuilder_.build();
-                }
-                result.attackeeHitEntityAngle_ = attackeeHitEntityAngle_;
-                result.hitBoxIndex_ = hitBoxIndex_;
-                if (hitDirBuilder_ == null) {
-                    result.hitDir_ = hitDir_;
-                } else {
-                    result.hitDir_ = hitDirBuilder_.build();
-                }
-                result.hitColliderType_ = hitColliderType_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) {
-                    return mergeFrom((emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision other) {
-                if (other
-                        == emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.getDefaultInstance())
-                    return this;
-                if (other.getAttackeeHitForceAngle() != 0F) {
-                    setAttackeeHitForceAngle(other.getAttackeeHitForceAngle());
-                }
-                if (other.hasHitPoint()) {
-                    mergeHitPoint(other.getHitPoint());
-                }
-                if (other.getAttackeeHitEntityAngle() != 0F) {
-                    setAttackeeHitEntityAngle(other.getAttackeeHitEntityAngle());
-                }
-                if (other.getHitBoxIndex() != 0) {
-                    setHitBoxIndex(other.getHitBoxIndex());
-                }
-                if (other.hasHitDir()) {
-                    mergeHitDir(other.getHitDir());
-                }
-                if (other.hitColliderType_ != 0) {
-                    setHitColliderTypeValue(other.getHitColliderTypeValue());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private float attackeeHitForceAngle_;
-            /**
-             * <code>float attackeeHitForceAngle = 7;</code>
-             *
-             * @return The attackeeHitForceAngle.
-             */
-            @java.lang.Override
-            public float getAttackeeHitForceAngle() {
-                return attackeeHitForceAngle_;
-            }
-            /**
-             * <code>float attackeeHitForceAngle = 7;</code>
-             *
-             * @param value The attackeeHitForceAngle to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAttackeeHitForceAngle(float value) {
-
-                attackeeHitForceAngle_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>float attackeeHitForceAngle = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAttackeeHitForceAngle() {
-
-                attackeeHitForceAngle_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            private emu.grasscutter.net.proto.VectorOuterClass.Vector hitPoint_;
-            private com.google.protobuf.SingleFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    hitPointBuilder_;
-            /**
-             * <code>.Vector hit_point = 5;</code>
-             *
-             * @return Whether the hitPoint field is set.
-             */
-            public boolean hasHitPoint() {
-                return hitPointBuilder_ != null || hitPoint_ != null;
-            }
-            /**
-             * <code>.Vector hit_point = 5;</code>
-             *
-             * @return The hitPoint.
-             */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitPoint() {
-                if (hitPointBuilder_ == null) {
-                    return hitPoint_ == null
-                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                            : hitPoint_;
-                } else {
-                    return hitPointBuilder_.getMessage();
-                }
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public Builder setHitPoint(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (hitPointBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    hitPoint_ = value;
-                    onChanged();
-                } else {
-                    hitPointBuilder_.setMessage(value);
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public Builder setHitPoint(
-                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-                if (hitPointBuilder_ == null) {
-                    hitPoint_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    hitPointBuilder_.setMessage(builderForValue.build());
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public Builder mergeHitPoint(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (hitPointBuilder_ == null) {
-                    if (hitPoint_ != null) {
-                        hitPoint_ =
-                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(hitPoint_)
-                                        .mergeFrom(value)
-                                        .buildPartial();
-                    } else {
-                        hitPoint_ = value;
-                    }
-                    onChanged();
-                } else {
-                    hitPointBuilder_.mergeFrom(value);
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public Builder clearHitPoint() {
-                if (hitPointBuilder_ == null) {
-                    hitPoint_ = null;
-                    onChanged();
-                } else {
-                    hitPoint_ = null;
-                    hitPointBuilder_ = null;
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHitPointBuilder() {
-
-                onChanged();
-                return getHitPointFieldBuilder().getBuilder();
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder() {
-                if (hitPointBuilder_ != null) {
-                    return hitPointBuilder_.getMessageOrBuilder();
-                } else {
-                    return hitPoint_ == null
-                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                            : hitPoint_;
-                }
-            }
-            /** <code>.Vector hit_point = 5;</code> */
-            private com.google.protobuf.SingleFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    getHitPointFieldBuilder() {
-                if (hitPointBuilder_ == null) {
-                    hitPointBuilder_ =
-                            new com.google.protobuf.SingleFieldBuilderV3<
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                                    getHitPoint(), getParentForChildren(), isClean());
-                    hitPoint_ = null;
-                }
-                return hitPointBuilder_;
-            }
-
-            private float attackeeHitEntityAngle_;
-            /**
-             * <code>float attackeeHitEntityAngle = 9;</code>
-             *
-             * @return The attackeeHitEntityAngle.
-             */
-            @java.lang.Override
-            public float getAttackeeHitEntityAngle() {
-                return attackeeHitEntityAngle_;
-            }
-            /**
-             * <code>float attackeeHitEntityAngle = 9;</code>
-             *
-             * @param value The attackeeHitEntityAngle to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAttackeeHitEntityAngle(float value) {
-
-                attackeeHitEntityAngle_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>float attackeeHitEntityAngle = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAttackeeHitEntityAngle() {
-
-                attackeeHitEntityAngle_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            private int hitBoxIndex_;
-            /**
-             * <code>int32 hit_box_index = 2;</code>
-             *
-             * @return The hitBoxIndex.
-             */
-            @java.lang.Override
-            public int getHitBoxIndex() {
-                return hitBoxIndex_;
-            }
-            /**
-             * <code>int32 hit_box_index = 2;</code>
-             *
-             * @param value The hitBoxIndex to set.
-             * @return This builder for chaining.
-             */
-            public Builder setHitBoxIndex(int value) {
-
-                hitBoxIndex_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 hit_box_index = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearHitBoxIndex() {
-
-                hitBoxIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private emu.grasscutter.net.proto.VectorOuterClass.Vector hitDir_;
-            private com.google.protobuf.SingleFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    hitDirBuilder_;
-            /**
-             * <code>.Vector hit_dir = 4;</code>
-             *
-             * @return Whether the hitDir field is set.
-             */
-            public boolean hasHitDir() {
-                return hitDirBuilder_ != null || hitDir_ != null;
-            }
-            /**
-             * <code>.Vector hit_dir = 4;</code>
-             *
-             * @return The hitDir.
-             */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitDir() {
-                if (hitDirBuilder_ == null) {
-                    return hitDir_ == null
-                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                            : hitDir_;
-                } else {
-                    return hitDirBuilder_.getMessage();
-                }
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public Builder setHitDir(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (hitDirBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    hitDir_ = value;
-                    onChanged();
-                } else {
-                    hitDirBuilder_.setMessage(value);
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public Builder setHitDir(
-                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-                if (hitDirBuilder_ == null) {
-                    hitDir_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    hitDirBuilder_.setMessage(builderForValue.build());
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public Builder mergeHitDir(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (hitDirBuilder_ == null) {
-                    if (hitDir_ != null) {
-                        hitDir_ =
-                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(hitDir_)
-                                        .mergeFrom(value)
-                                        .buildPartial();
-                    } else {
-                        hitDir_ = value;
-                    }
-                    onChanged();
-                } else {
-                    hitDirBuilder_.mergeFrom(value);
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public Builder clearHitDir() {
-                if (hitDirBuilder_ == null) {
-                    hitDir_ = null;
-                    onChanged();
-                } else {
-                    hitDir_ = null;
-                    hitDirBuilder_ = null;
-                }
-
-                return this;
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHitDirBuilder() {
-
-                onChanged();
-                return getHitDirFieldBuilder().getBuilder();
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitDirOrBuilder() {
-                if (hitDirBuilder_ != null) {
-                    return hitDirBuilder_.getMessageOrBuilder();
-                } else {
-                    return hitDir_ == null
-                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
-                            : hitDir_;
-                }
-            }
-            /** <code>.Vector hit_dir = 4;</code> */
-            private com.google.protobuf.SingleFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    getHitDirFieldBuilder() {
-                if (hitDirBuilder_ == null) {
-                    hitDirBuilder_ =
-                            new com.google.protobuf.SingleFieldBuilderV3<
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                                    getHitDir(), getParentForChildren(), isClean());
-                    hitDir_ = null;
-                }
-                return hitDirBuilder_;
-            }
-
-            private int hitColliderType_ = 0;
-            /**
-             * <code>.HitColliderType hit_collider_type = 8;</code>
-             *
-             * @return The enum numeric value on the wire for hitColliderType.
-             */
-            @java.lang.Override
-            public int getHitColliderTypeValue() {
-                return hitColliderType_;
-            }
-            /**
-             * <code>.HitColliderType hit_collider_type = 8;</code>
-             *
-             * @param value The enum numeric value on the wire for hitColliderType to set.
-             * @return This builder for chaining.
-             */
-            public Builder setHitColliderTypeValue(int value) {
-
-                hitColliderType_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>.HitColliderType hit_collider_type = 8;</code>
-             *
-             * @return The hitColliderType.
-             */
-            @java.lang.Override
-            public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType
-                    getHitColliderType() {
-                @SuppressWarnings("deprecation")
-                emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result =
-                        emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(
-                                hitColliderType_);
-                return result == null
-                        ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED
-                        : result;
-            }
-            /**
-             * <code>.HitColliderType hit_collider_type = 8;</code>
-             *
-             * @param value The hitColliderType to set.
-             * @return This builder for chaining.
-             */
-            public Builder setHitColliderType(
-                    emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                hitColliderType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>.HitColliderType hit_collider_type = 8;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearHitColliderType() {
-
-                hitColliderType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:HitCollision)
-        }
-
-        // @@protoc_insertion_point(class_scope:HitCollision)
-        private static final emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision();
-        }
-
-        public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<HitCollision> PARSER =
-                new com.google.protobuf.AbstractParser<HitCollision>() {
-                    @java.lang.Override
-                    public HitCollision parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new HitCollision(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<HitCollision> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<HitCollision> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        
+        hitColliderType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHitColliderType() {
+        
+        hitColliderType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float jNGOHDMOBPJ_ ;
+      /**
+       * <code>float JNGOHDMOBPJ = 8;</code>
+       * @return The jNGOHDMOBPJ.
+       */
+      @java.lang.Override
+      public float getJNGOHDMOBPJ() {
+        return jNGOHDMOBPJ_;
+      }
+      /**
+       * <code>float JNGOHDMOBPJ = 8;</code>
+       * @param value The jNGOHDMOBPJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJNGOHDMOBPJ(float value) {
+        
+        jNGOHDMOBPJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float JNGOHDMOBPJ = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJNGOHDMOBPJ() {
+        
+        jNGOHDMOBPJ_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:HitCollision)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_HitCollision_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_HitCollision_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:HitCollision)
+    private static final emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\022HitCollision.proto\032\014Vector.proto\032\025HitC"
-                    + "olliderType.proto\"\307\001\n\014HitCollision\022\035\n\025at"
-                    + "tackeeHitForceAngle\030\007 \001(\002\022\032\n\thit_point\030\005"
-                    + " \001(\0132\007.Vector\022\036\n\026attackeeHitEntityAngle\030"
-                    + "\t \001(\002\022\025\n\rhit_box_index\030\002 \001(\005\022\030\n\007hit_dir\030"
-                    + "\004 \001(\0132\007.Vector\022+\n\021hit_collider_type\030\010 \001("
-                    + "\0162\020.HitColliderTypeB\033\n\031emu.grasscutter.n"
-                    + "et.protob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor(),
-                        });
-        internal_static_HitCollision_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_HitCollision_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_HitCollision_descriptor,
-                        new java.lang.String[] {
-                            "AttackeeHitForceAngle",
-                            "HitPoint",
-                            "AttackeeHitEntityAngle",
-                            "HitBoxIndex",
-                            "HitDir",
-                            "HitColliderType",
-                        });
-        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HitCollision>
+        PARSER = new com.google.protobuf.AbstractParser<HitCollision>() {
+      @java.lang.Override
+      public HitCollision parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HitCollision(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HitCollision> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HitCollision> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_HitCollision_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_HitCollision_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\022HitCollision.proto\032\025HitColliderType.pr" +
+      "oto\032\014Vector.proto\"\270\001\n\014HitCollision\022\023\n\013FE" +
+      "KCJAKMKFP\030\005 \001(\002\022\034\n\013GJHIABHJFAL\030\004 \001(\0132\007.V" +
+      "ector\022\034\n\013HMFHFOBAMHL\030\014 \001(\0132\007.Vector\022\025\n\rh" +
+      "it_box_index\030\016 \001(\005\022+\n\021hit_collider_type\030" +
+      "\n \001(\0162\020.HitColliderType\022\023\n\013JNGOHDMOBPJ\030\010" +
+      " \001(\002B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+        });
+    internal_static_HitCollision_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_HitCollision_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_HitCollision_descriptor,
+        new java.lang.String[] { "FEKCJAKMKFP", "GJHIABHJFAL", "HMFHFOBAMHL", "HitBoxIndex", "HitColliderType", "JNGOHDMOBPJ", });
+    emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

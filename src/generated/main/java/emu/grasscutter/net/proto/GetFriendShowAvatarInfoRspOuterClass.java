@@ -4,1071 +4,993 @@
 package emu.grasscutter.net.proto;
 
 public final class GetFriendShowAvatarInfoRspOuterClass {
-    private GetFriendShowAvatarInfoRspOuterClass() {}
+  private GetFriendShowAvatarInfoRspOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface GetFriendShowAvatarInfoRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetFriendShowAvatarInfoRsp)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> 
+        getShowAvatarInfoListList();
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getShowAvatarInfoList(int index);
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    int getShowAvatarInfoListCount();
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
+        getShowAvatarInfoListOrBuilderList();
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 uid = 3;</code>
+     * @return The uid.
+     */
+    int getUid();
+
+    /**
+     * <code>int32 retcode = 15;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+  }
+  /**
+   * <pre>
+   * CmdId: 4026
+   * Name: MAIBFBAOOEK
+   * </pre>
+   *
+   * Protobuf type {@code GetFriendShowAvatarInfoRsp}
+   */
+  public static final class GetFriendShowAvatarInfoRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetFriendShowAvatarInfoRsp)
+      GetFriendShowAvatarInfoRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetFriendShowAvatarInfoRsp.newBuilder() to construct.
+    private GetFriendShowAvatarInfoRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetFriendShowAvatarInfoRsp() {
+      showAvatarInfoList_ = java.util.Collections.emptyList();
     }
 
-    public interface GetFriendShowAvatarInfoRspOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:GetFriendShowAvatarInfoRsp)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetFriendShowAvatarInfoRsp();
+    }
 
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                getShowAvatarInfoListList();
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getShowAvatarInfoList(
-                int index);
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        int getShowAvatarInfoListCount();
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        java.util.List<
-                        ? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>
-                getShowAvatarInfoListOrBuilderList();
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder
-                getShowAvatarInfoListOrBuilder(int index);
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetFriendShowAvatarInfoRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24: {
 
-        /**
-         * <code>uint32 uid = 12;</code>
-         *
-         * @return The uid.
-         */
-        int getUid();
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                showAvatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              showAvatarInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
 
-        /**
-         * <code>int32 retcode = 9;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
+              retcode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.internal_static_GetFriendShowAvatarInfoRsp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.class, emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.Builder.class);
+    }
+
+    public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> showAvatarInfoList_;
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> getShowAvatarInfoListList() {
+      return showAvatarInfoList_;
     }
     /**
-     *
-     *
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
+        getShowAvatarInfoListOrBuilderList() {
+      return showAvatarInfoList_;
+    }
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public int getShowAvatarInfoListCount() {
+      return showAvatarInfoList_.size();
+    }
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getShowAvatarInfoList(int index) {
+      return showAvatarInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
+        int index) {
+      return showAvatarInfoList_.get(index);
+    }
+
+    public static final int UID_FIELD_NUMBER = 3;
+    private int uid_;
+    /**
+     * <code>uint32 uid = 3;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 15;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 15;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (uid_ != 0) {
+        output.writeUInt32(3, uid_);
+      }
+      for (int i = 0; i < showAvatarInfoList_.size(); i++) {
+        output.writeMessage(10, showAvatarInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, uid_);
+      }
+      for (int i = 0; i < showAvatarInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, showAvatarInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, retcode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp other = (emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp) obj;
+
+      if (!getShowAvatarInfoListList()
+          .equals(other.getShowAvatarInfoListList())) return false;
+      if (getUid()
+          != other.getUid()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getShowAvatarInfoListCount() > 0) {
+        hash = (37 * hash) + SHOW_AVATAR_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getShowAvatarInfoListList().hashCode();
+      }
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
      * <pre>
-     * Name: FPNKDNOFKEI
-     * CmdId: 4093
+     * CmdId: 4026
+     * Name: MAIBFBAOOEK
      * </pre>
      *
      * Protobuf type {@code GetFriendShowAvatarInfoRsp}
      */
-    public static final class GetFriendShowAvatarInfoRsp
-            extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:GetFriendShowAvatarInfoRsp)
-            GetFriendShowAvatarInfoRspOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use GetFriendShowAvatarInfoRsp.newBuilder() to construct.
-        private GetFriendShowAvatarInfoRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetFriendShowAvatarInfoRsp)
+        emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.internal_static_GetFriendShowAvatarInfoRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.class, emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getShowAvatarInfoListFieldBuilder();
         }
-
-        private GetFriendShowAvatarInfoRsp() {
-            showAvatarInfoList_ = java.util.Collections.emptyList();
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (showAvatarInfoListBuilder_ == null) {
+          showAvatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          showAvatarInfoListBuilder_.clear();
         }
+        uid_ = 0;
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new GetFriendShowAvatarInfoRsp();
+        retcode_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.internal_static_GetFriendShowAvatarInfoRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp build() {
+        emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp buildPartial() {
+        emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp result = new emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (showAvatarInfoListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.showAvatarInfoList_ = showAvatarInfoList_;
+        } else {
+          result.showAvatarInfoList_ = showAvatarInfoListBuilder_.build();
         }
+        result.uid_ = uid_;
+        result.retcode_ = retcode_;
+        onBuilt();
+        return result;
+      }
 
-        private GetFriendShowAvatarInfoRsp(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                                    showAvatarInfoList_ =
-                                            new java.util.ArrayList<
-                                                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                showAvatarInfoList_.add(
-                                        input.readMessage(
-                                                emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.parser(),
-                                                extensionRegistry));
-                                break;
-                            }
-                        case 72:
-                            {
-                                retcode_ = input.readInt32();
-                                break;
-                            }
-                        case 96:
-                            {
-                                uid_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
-                    showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp) {
+          return mergeFrom((emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                    .internal_static_GetFriendShowAvatarInfoRsp_descriptor;
+      public Builder mergeFrom(emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp other) {
+        if (other == emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.getDefaultInstance()) return this;
+        if (showAvatarInfoListBuilder_ == null) {
+          if (!other.showAvatarInfoList_.isEmpty()) {
+            if (showAvatarInfoList_.isEmpty()) {
+              showAvatarInfoList_ = other.showAvatarInfoList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureShowAvatarInfoListIsMutable();
+              showAvatarInfoList_.addAll(other.showAvatarInfoList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.showAvatarInfoList_.isEmpty()) {
+            if (showAvatarInfoListBuilder_.isEmpty()) {
+              showAvatarInfoListBuilder_.dispose();
+              showAvatarInfoListBuilder_ = null;
+              showAvatarInfoList_ = other.showAvatarInfoList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              showAvatarInfoListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getShowAvatarInfoListFieldBuilder() : null;
+            } else {
+              showAvatarInfoListBuilder_.addAllMessages(other.showAvatarInfoList_);
+            }
+          }
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                    .internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                    .GetFriendShowAvatarInfoRsp.class,
-                            emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                    .GetFriendShowAvatarInfoRsp.Builder.class);
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
-
-        public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 1;
-        private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                showAvatarInfoList_;
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        @java.lang.Override
-        public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                getShowAvatarInfoListList() {
-            return showAvatarInfoList_;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        @java.lang.Override
-        public java.util.List<
-                        ? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>
-                getShowAvatarInfoListOrBuilderList() {
-            return showAvatarInfoList_;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        @java.lang.Override
-        public int getShowAvatarInfoListCount() {
-            return showAvatarInfoList_.size();
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> showAvatarInfoList_ =
+        java.util.Collections.emptyList();
+      private void ensureShowAvatarInfoListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          showAvatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>(showAvatarInfoList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> showAvatarInfoListBuilder_;
+
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> getShowAvatarInfoListList() {
+        if (showAvatarInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(showAvatarInfoList_);
+        } else {
+          return showAvatarInfoListBuilder_.getMessageList();
         }
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getShowAvatarInfoList(
-                int index) {
-            return showAvatarInfoList_.get(index);
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public int getShowAvatarInfoListCount() {
+        if (showAvatarInfoListBuilder_ == null) {
+          return showAvatarInfoList_.size();
+        } else {
+          return showAvatarInfoListBuilder_.getCount();
         }
-        /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder
-                getShowAvatarInfoListOrBuilder(int index) {
-            return showAvatarInfoList_.get(index);
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getShowAvatarInfoList(int index) {
+        if (showAvatarInfoListBuilder_ == null) {
+          return showAvatarInfoList_.get(index);
+        } else {
+          return showAvatarInfoListBuilder_.getMessage(index);
         }
-
-        public static final int UID_FIELD_NUMBER = 12;
-        private int uid_;
-        /**
-         * <code>uint32 uid = 12;</code>
-         *
-         * @return The uid.
-         */
-        @java.lang.Override
-        public int getUid() {
-            return uid_;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder setShowAvatarInfoList(
+          int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
+        if (showAvatarInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.set(index, value);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.setMessage(index, value);
         }
-
-        public static final int RETCODE_FIELD_NUMBER = 9;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 9;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder setShowAvatarInfoList(
+          int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
+        if (showAvatarInfoListBuilder_ == null) {
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.setMessage(index, builderForValue.build());
         }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder addShowAvatarInfoList(emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
+        if (showAvatarInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.add(value);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.addMessage(value);
         }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            for (int i = 0; i < showAvatarInfoList_.size(); i++) {
-                output.writeMessage(1, showAvatarInfoList_.get(i));
-            }
-            if (retcode_ != 0) {
-                output.writeInt32(9, retcode_);
-            }
-            if (uid_ != 0) {
-                output.writeUInt32(12, uid_);
-            }
-            unknownFields.writeTo(output);
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder addShowAvatarInfoList(
+          int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
+        if (showAvatarInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.add(index, value);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.addMessage(index, value);
         }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            for (int i = 0; i < showAvatarInfoList_.size(); i++) {
-                size +=
-                        com.google.protobuf.CodedOutputStream.computeMessageSize(1, showAvatarInfoList_.get(i));
-            }
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, retcode_);
-            }
-            if (uid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, uid_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder addShowAvatarInfoList(
+          emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
+        if (showAvatarInfoListBuilder_ == null) {
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.addMessage(builderForValue.build());
         }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                            .GetFriendShowAvatarInfoRsp)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                    other =
-                            (emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                            .GetFriendShowAvatarInfoRsp)
-                                    obj;
-
-            if (!getShowAvatarInfoListList().equals(other.getShowAvatarInfoListList())) return false;
-            if (getUid() != other.getUid()) return false;
-            if (getRetcode() != other.getRetcode()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder addShowAvatarInfoList(
+          int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
+        if (showAvatarInfoListBuilder_ == null) {
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.addMessage(index, builderForValue.build());
         }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (getShowAvatarInfoListCount() > 0) {
-                hash = (37 * hash) + SHOW_AVATAR_INFO_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getShowAvatarInfoListList().hashCode();
-            }
-            hash = (37 * hash) + UID_FIELD_NUMBER;
-            hash = (53 * hash) + getUid();
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder addAllShowAvatarInfoList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> values) {
+        if (showAvatarInfoListBuilder_ == null) {
+          ensureShowAvatarInfoListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, showAvatarInfoList_);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.addAllMessages(values);
         }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder clearShowAvatarInfoList() {
+        if (showAvatarInfoListBuilder_ == null) {
+          showAvatarInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.clear();
         }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public Builder removeShowAvatarInfoList(int index) {
+        if (showAvatarInfoListBuilder_ == null) {
+          ensureShowAvatarInfoListIsMutable();
+          showAvatarInfoList_.remove(index);
+          onChanged();
+        } else {
+          showAvatarInfoListBuilder_.remove(index);
         }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        return this;
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder getShowAvatarInfoListBuilder(
+          int index) {
+        return getShowAvatarInfoListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getShowAvatarInfoListOrBuilder(
+          int index) {
+        if (showAvatarInfoListBuilder_ == null) {
+          return showAvatarInfoList_.get(index);  } else {
+          return showAvatarInfoListBuilder_.getMessageOrBuilder(index);
         }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
+           getShowAvatarInfoListOrBuilderList() {
+        if (showAvatarInfoListBuilder_ != null) {
+          return showAvatarInfoListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(showAvatarInfoList_);
         }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder addShowAvatarInfoListBuilder() {
+        return getShowAvatarInfoListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder addShowAvatarInfoListBuilder(
+          int index) {
+        return getShowAvatarInfoListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ShowAvatarInfo show_avatar_info_list = 10;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder> 
+           getShowAvatarInfoListBuilderList() {
+        return getShowAvatarInfoListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
+          getShowAvatarInfoListFieldBuilder() {
+        if (showAvatarInfoListBuilder_ == null) {
+          showAvatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>(
+                  showAvatarInfoList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          showAvatarInfoList_ = null;
         }
+        return showAvatarInfoListBuilder_;
+      }
 
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 3;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 3;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
 
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
 
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
 
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
 
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                        prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Name: FPNKDNOFKEI
-         * CmdId: 4093
-         * </pre>
-         *
-         * Protobuf type {@code GetFriendShowAvatarInfoRsp}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:GetFriendShowAvatarInfoRsp)
-                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRspOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .internal_static_GetFriendShowAvatarInfoRsp_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                        .GetFriendShowAvatarInfoRsp.class,
-                                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                        .GetFriendShowAvatarInfoRsp.Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-                    getShowAvatarInfoListFieldBuilder();
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                if (showAvatarInfoListBuilder_ == null) {
-                    showAvatarInfoList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                } else {
-                    showAvatarInfoListBuilder_.clear();
-                }
-                uid_ = 0;
-
-                retcode_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .internal_static_GetFriendShowAvatarInfoRsp_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                            .GetFriendShowAvatarInfoRsp
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                            .GetFriendShowAvatarInfoRsp
-                    build() {
-                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                        result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                            .GetFriendShowAvatarInfoRsp
-                    buildPartial() {
-                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                        result =
-                                new emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                        .GetFriendShowAvatarInfoRsp(this);
-                int from_bitField0_ = bitField0_;
-                if (showAvatarInfoListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) != 0)) {
-                        showAvatarInfoList_ = java.util.Collections.unmodifiableList(showAvatarInfoList_);
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    }
-                    result.showAvatarInfoList_ = showAvatarInfoList_;
-                } else {
-                    result.showAvatarInfoList_ = showAvatarInfoListBuilder_.build();
-                }
-                result.uid_ = uid_;
-                result.retcode_ = retcode_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                .GetFriendShowAvatarInfoRsp) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                            .GetFriendShowAvatarInfoRsp)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                            other) {
-                if (other
-                        == emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                .GetFriendShowAvatarInfoRsp.getDefaultInstance()) return this;
-                if (showAvatarInfoListBuilder_ == null) {
-                    if (!other.showAvatarInfoList_.isEmpty()) {
-                        if (showAvatarInfoList_.isEmpty()) {
-                            showAvatarInfoList_ = other.showAvatarInfoList_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                        } else {
-                            ensureShowAvatarInfoListIsMutable();
-                            showAvatarInfoList_.addAll(other.showAvatarInfoList_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.showAvatarInfoList_.isEmpty()) {
-                        if (showAvatarInfoListBuilder_.isEmpty()) {
-                            showAvatarInfoListBuilder_.dispose();
-                            showAvatarInfoListBuilder_ = null;
-                            showAvatarInfoList_ = other.showAvatarInfoList_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                            showAvatarInfoListBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                                            ? getShowAvatarInfoListFieldBuilder()
-                                            : null;
-                        } else {
-                            showAvatarInfoListBuilder_.addAllMessages(other.showAvatarInfoList_);
-                        }
-                    }
-                }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                                            .GetFriendShowAvatarInfoRsp)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                    showAvatarInfoList_ = java.util.Collections.emptyList();
-
-            private void ensureShowAvatarInfoListIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    showAvatarInfoList_ =
-                            new java.util.ArrayList<
-                                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>(
-                                    showAvatarInfoList_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo,
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder,
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>
-                    showAvatarInfoListBuilder_;
-
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                    getShowAvatarInfoListList() {
-                if (showAvatarInfoListBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(showAvatarInfoList_);
-                } else {
-                    return showAvatarInfoListBuilder_.getMessageList();
-                }
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public int getShowAvatarInfoListCount() {
-                if (showAvatarInfoListBuilder_ == null) {
-                    return showAvatarInfoList_.size();
-                } else {
-                    return showAvatarInfoListBuilder_.getCount();
-                }
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo
-                    getShowAvatarInfoList(int index) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    return showAvatarInfoList_.get(index);
-                } else {
-                    return showAvatarInfoListBuilder_.getMessage(index);
-                }
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder setShowAvatarInfoList(
-                    int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.set(index, value);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder setShowAvatarInfoList(
-                    int index,
-                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                            builderForValue) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder addShowAvatarInfoList(
-                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.add(value);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.addMessage(value);
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder addShowAvatarInfoList(
-                    int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.add(index, value);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder addShowAvatarInfoList(
-                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                            builderForValue) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder addShowAvatarInfoList(
-                    int index,
-                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                            builderForValue) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder addAllShowAvatarInfoList(
-                    java.lang.Iterable<
-                                    ? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>
-                            values) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    ensureShowAvatarInfoListIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, showAvatarInfoList_);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder clearShowAvatarInfoList() {
-                if (showAvatarInfoListBuilder_ == null) {
-                    showAvatarInfoList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.clear();
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public Builder removeShowAvatarInfoList(int index) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    ensureShowAvatarInfoListIsMutable();
-                    showAvatarInfoList_.remove(index);
-                    onChanged();
-                } else {
-                    showAvatarInfoListBuilder_.remove(index);
-                }
-                return this;
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                    getShowAvatarInfoListBuilder(int index) {
-                return getShowAvatarInfoListFieldBuilder().getBuilder(index);
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder
-                    getShowAvatarInfoListOrBuilder(int index) {
-                if (showAvatarInfoListBuilder_ == null) {
-                    return showAvatarInfoList_.get(index);
-                } else {
-                    return showAvatarInfoListBuilder_.getMessageOrBuilder(index);
-                }
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public java.util.List<
-                            ? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>
-                    getShowAvatarInfoListOrBuilderList() {
-                if (showAvatarInfoListBuilder_ != null) {
-                    return showAvatarInfoListBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(showAvatarInfoList_);
-                }
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                    addShowAvatarInfoListBuilder() {
-                return getShowAvatarInfoListFieldBuilder()
-                        .addBuilder(
-                                emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo
-                                        .getDefaultInstance());
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder
-                    addShowAvatarInfoListBuilder(int index) {
-                return getShowAvatarInfoListFieldBuilder()
-                        .addBuilder(
-                                index,
-                                emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo
-                                        .getDefaultInstance());
-            }
-            /** <code>repeated .ShowAvatarInfo show_avatar_info_list = 1;</code> */
-            public java.util.List<
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder>
-                    getShowAvatarInfoListBuilderList() {
-                return getShowAvatarInfoListFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo,
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder,
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>
-                    getShowAvatarInfoListFieldBuilder() {
-                if (showAvatarInfoListBuilder_ == null) {
-                    showAvatarInfoListBuilder_ =
-                            new com.google.protobuf.RepeatedFieldBuilderV3<
-                                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo,
-                                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder,
-                                    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder>(
-                                    showAvatarInfoList_,
-                                    ((bitField0_ & 0x00000001) != 0),
-                                    getParentForChildren(),
-                                    isClean());
-                    showAvatarInfoList_ = null;
-                }
-                return showAvatarInfoListBuilder_;
-            }
-
-            private int uid_;
-            /**
-             * <code>uint32 uid = 12;</code>
-             *
-             * @return The uid.
-             */
-            @java.lang.Override
-            public int getUid() {
-                return uid_;
-            }
-            /**
-             * <code>uint32 uid = 12;</code>
-             *
-             * @param value The uid to set.
-             * @return This builder for chaining.
-             */
-            public Builder setUid(int value) {
-
-                uid_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 uid = 12;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearUid() {
-
-                uid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 9;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 9;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:GetFriendShowAvatarInfoRsp)
-        }
-
-        // @@protoc_insertion_point(class_scope:GetFriendShowAvatarInfoRsp)
-        private static final emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                            .GetFriendShowAvatarInfoRsp();
-        }
-
-        public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass
-                        .GetFriendShowAvatarInfoRsp
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp> PARSER =
-                new com.google.protobuf.AbstractParser<GetFriendShowAvatarInfoRsp>() {
-                    @java.lang.Override
-                    public GetFriendShowAvatarInfoRsp parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new GetFriendShowAvatarInfoRsp(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+      // @@protoc_insertion_point(builder_scope:GetFriendShowAvatarInfoRsp)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_GetFriendShowAvatarInfoRsp_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:GetFriendShowAvatarInfoRsp)
+    private static final emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n GetFriendShowAvatarInfoRsp.proto\032\024Show"
-                    + "AvatarInfo.proto\"j\n\032GetFriendShowAvatarI"
-                    + "nfoRsp\022.\n\025show_avatar_info_list\030\001 \003(\0132\017."
-                    + "ShowAvatarInfo\022\013\n\003uid\030\014 \001(\r\022\017\n\007retcode\030\t"
-                    + " \001(\005B\033\n\031emu.grasscutter.net.protob\006proto"
-                    + "3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.getDescriptor(),
-                        });
-        internal_static_GetFriendShowAvatarInfoRsp_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_GetFriendShowAvatarInfoRsp_descriptor,
-                        new java.lang.String[] {
-                            "ShowAvatarInfoList", "Uid", "Retcode",
-                        });
-        emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.getDescriptor();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp>
+        PARSER = new com.google.protobuf.AbstractParser<GetFriendShowAvatarInfoRsp>() {
+      @java.lang.Override
+      public GetFriendShowAvatarInfoRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetFriendShowAvatarInfoRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetFriendShowAvatarInfoRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetFriendShowAvatarInfoRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n GetFriendShowAvatarInfoRsp.proto\032\024Show" +
+      "AvatarInfo.proto\"j\n\032GetFriendShowAvatarI" +
+      "nfoRsp\022.\n\025show_avatar_info_list\030\n \003(\0132\017." +
+      "ShowAvatarInfo\022\013\n\003uid\030\003 \001(\r\022\017\n\007retcode\030\017" +
+      " \001(\005B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.getDescriptor(),
+        });
+    internal_static_GetFriendShowAvatarInfoRsp_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_GetFriendShowAvatarInfoRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetFriendShowAvatarInfoRsp_descriptor,
+        new java.lang.String[] { "ShowAvatarInfoList", "Uid", "Retcode", });
+    emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.getDescriptor();
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }
