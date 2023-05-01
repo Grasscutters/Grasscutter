@@ -1,6 +1,9 @@
 package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.Map;
@@ -14,6 +17,8 @@ import lombok.val;
 /** Tracks progress the player made in the world, like obtained items, seen characters and more */
 @Entity
 public class PlayerProgress {
+    @Getter @Transient private final Player player;
+
     @Getter private Map<Integer, ItemEntry> itemHistory;
 
     /*
@@ -27,10 +32,33 @@ public class PlayerProgress {
     // it will be hard to loop and compare
     private Map<Integer, Integer> questProgressCountMap;
 
-    public PlayerProgress() {
+    public PlayerProgress(Player player) {
+        this.player = player;
+
         this.questProgressCountMap = new Int2IntOpenHashMap();
         this.completedDungeons = new IntArrayList();
         this.itemHistory = new Int2ObjectOpenHashMap<>();
+    }
+
+    /**
+     * Marks a dungeon as completed.
+     * Triggers the quest event.
+     *
+     * @param dungeonId The dungeon which was completed.
+     */
+    public void markDungeonAsComplete(int dungeonId) {
+        if (this.getCompletedDungeons().contains(dungeonId))
+            return;
+
+        // Mark the dungeon as completed.
+        this.getCompletedDungeons().add(dungeonId);
+        // Trigger the completion event.
+        this.getPlayer().getQuestManager().queueEvent(
+            QuestContent.QUEST_CONTENT_FINISH_DUNGEON, dungeonId
+        );
+
+        Grasscutter.getLogger().debug("Dungeon {} has been marked complete for {}.",
+            dungeonId, this.getPlayer().getUid());
     }
 
     public boolean hasPlayerObtainedItemHistorically(int itemId) {

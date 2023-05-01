@@ -255,7 +255,7 @@ public class Player {
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
         this.chatEmojiIdList = new ArrayList<>();
-        this.playerProgress = new PlayerProgress();
+        this.playerProgress = new PlayerProgress(this);
         this.activeQuestTimers = new HashSet<>();
 
         this.attackResults = new LinkedBlockingQueue<>();
