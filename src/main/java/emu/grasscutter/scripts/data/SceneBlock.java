@@ -77,7 +77,7 @@ public class SceneBlock {
                             "An error occurred while loading block " + this.id + " in scene " + sceneId,
                             exception);
         }
-        Grasscutter.getLogger().debug("Successfully loaded block {} in scene {}.", this.id, sceneId);
+        Grasscutter.getLogger().trace("Successfully loaded block {} in scene {}.", this.id, sceneId);
         return this;
     }
 

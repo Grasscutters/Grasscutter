@@ -329,7 +329,7 @@ public class StaminaManager extends BasePlayerManager {
         if (!player.isPaused() && sustainedStaminaHandlerTimer == null) {
             sustainedStaminaHandlerTimer = new Timer();
             sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
-            logger.debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            logger.trace("[MovementManager] SustainedStaminaHandlerTimer started");
         }
     }
 
@@ -337,7 +337,7 @@ public class StaminaManager extends BasePlayerManager {
         if (sustainedStaminaHandlerTimer != null) {
             sustainedStaminaHandlerTimer.cancel();
             sustainedStaminaHandlerTimer = null;
-            logger.debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
+            logger.trace("[MovementManager] SustainedStaminaHandlerTimer stopped");
         }
     }
 

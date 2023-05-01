@@ -175,7 +175,7 @@ public final class SceneGroup {
                 .formatted(this.id, sceneId), luaError);
         }
 
-        Grasscutter.getLogger().debug("Successfully loaded group {} in scene {}.", this.id, sceneId);
+        Grasscutter.getLogger().trace("Successfully loaded group {} in scene {}.", this.id, sceneId);
         return this;
     }
 
