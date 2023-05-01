@@ -6,7 +6,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.Map;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +20,7 @@ public class PlayerProgress {
      * A list of dungeon IDs which have been completed.
      * This only applies to one-time dungeons.
      */
-    @Getter private IntList completedDungeons;
+    @Getter private IntArrayList completedDungeons;
 
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
