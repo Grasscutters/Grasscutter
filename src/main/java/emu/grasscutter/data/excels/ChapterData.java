@@ -4,26 +4,21 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import java.util.HashMap;
 import java.util.Map;
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
-@ResourceType(name = "ChapterExcelConfigData.json")
 @Getter
-@Setter // TODO: remove on next API break
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@ResourceType(name = "ChapterExcelConfigData.json")
 public class ChapterData extends GameResource {
-    // Why public? TODO: privatise next API break
-    public static final Map<Integer, ChapterData> beginQuestChapterMap = new HashMap<>();
-    public static final Map<Integer, ChapterData> endQuestChapterMap = new HashMap<>();
+    @Getter private static final Map<Integer, ChapterData> beginQuestChapterMap
+        = new HashMap<>();
+    @Getter private static final Map<Integer, ChapterData> endQuestChapterMap
+        = new HashMap<>();
 
     @Getter(onMethod_ = @Override)
-    int id;
-
-    int beginQuestId;
-    int endQuestId;
-    int needPlayerLevel;
+    private int id;
+    private int beginQuestId;
+    private int endQuestId;
+    private int needPlayerLevel;
 
     @Override
     public void onLoad() {
