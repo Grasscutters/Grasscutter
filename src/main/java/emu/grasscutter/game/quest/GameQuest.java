@@ -178,14 +178,16 @@ public class GameQuest {
         return true;
     }
 
-    public synchronized void finish() {
+    public void finish() {
         // Check if the quest has been finished.
-        if (this.state == QuestState.QUEST_STATE_FINISHED) {
-            Grasscutter.getLogger().debug("Quest {} was already finished.", this.getSubQuestId());
-            return;
-        }
+        synchronized (this) {
+            if (this.state == QuestState.QUEST_STATE_FINISHED) {
+                Grasscutter.getLogger().debug("Quest {} was already finished.", this.getSubQuestId());
+                return;
+            }
 
-        this.state = QuestState.QUEST_STATE_FINISHED;
+            this.state = QuestState.QUEST_STATE_FINISHED;
+        }
         this.finishTime = Utils.getCurrentSeconds();
 
         this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
