@@ -94,6 +94,16 @@ public final class QuestCommand implements CommandHandler {
                     String.join(", ", dungeons.intStream()
                         .mapToObj(String::valueOf).toList()));
             }
+            case "debug" -> {
+                var loggedQuests = targetPlayer.getQuestManager().getLoggedQuests();
+                var shouldAdd = !loggedQuests.contains(questId);
+
+                if (shouldAdd) loggedQuests.add(questId);
+                else loggedQuests.removeInt(questId);
+
+                CommandHandler.sendMessage(sender, "Quest %s will %s."
+                    .formatted(questId, shouldAdd ? "now be logged" : "no longer be logged"));
+            }
             default -> this.sendUsageMessage(sender);
         }
     }
