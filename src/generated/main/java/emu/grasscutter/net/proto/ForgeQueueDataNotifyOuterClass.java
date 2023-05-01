@@ -19,40 +19,6 @@ public final class ForgeQueueDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    int getForgeQueueMapCount();
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    boolean containsForgeQueueMap(
-        int key);
-    /**
-     * Use {@link #getForgeQueueMapMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-    getForgeQueueMap();
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-    getForgeQueueMapMap();
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-
-    emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue);
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-
-    emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
-        int key);
-
-    /**
      * <code>repeated uint32 removed_forge_queue_list = 14;</code>
      * @return A list containing the removedForgeQueueList.
      */
@@ -68,11 +34,45 @@ public final class ForgeQueueDataNotifyOuterClass {
      * @return The removedForgeQueueList at the given index.
      */
     int getRemovedForgeQueueList(int index);
+
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    int getForgeQueueMapCount();
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    boolean containsForgeQueueMap(
+        int key);
+    /**
+     * Use {@link #getForgeQueueMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+    getForgeQueueMap();
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+    getForgeQueueMapMap();
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+
+    emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+        int key,
+        emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue);
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+
+    emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
+        int key);
   }
   /**
    * <pre>
-   * Name: BAOPLDFMMIC
-   * CmdId: 625
+   * CmdId: 604
+   * Name: EHCLDJBNPPB
    * </pre>
    *
    * Protobuf type {@code ForgeQueueDataNotify}
@@ -121,11 +121,11 @@ public final class ForgeQueueDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
                     ForgeQueueMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
               forgeQueueMap__ = input.readMessage(
@@ -135,9 +135,9 @@ public final class ForgeQueueDataNotifyOuterClass {
               break;
             }
             case 112: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 removedForgeQueueList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               removedForgeQueueList_.addInt(input.readUInt32());
               break;
@@ -145,9 +145,9 @@ public final class ForgeQueueDataNotifyOuterClass {
             case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 removedForgeQueueList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 removedForgeQueueList_.addInt(input.readUInt32());
@@ -170,7 +170,7 @@ public final class ForgeQueueDataNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           removedForgeQueueList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -187,7 +187,7 @@ public final class ForgeQueueDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 9:
+        case 10:
           return internalGetForgeQueueMap();
         default:
           throw new RuntimeException(
@@ -200,87 +200,6 @@ public final class ForgeQueueDataNotifyOuterClass {
       return emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.internal_static_ForgeQueueDataNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.class, emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.Builder.class);
-    }
-
-    public static final int FORGE_QUEUE_MAP_FIELD_NUMBER = 9;
-    private static final class ForgeQueueMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>newDefaultInstance(
-                  emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-    internalGetForgeQueueMap() {
-      if (forgeQueueMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ForgeQueueMapDefaultEntryHolder.defaultEntry);
-      }
-      return forgeQueueMap_;
-    }
-
-    public int getForgeQueueMapCount() {
-      return internalGetForgeQueueMap().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsForgeQueueMap(
-        int key) {
-      
-      return internalGetForgeQueueMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getForgeQueueMapMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMap() {
-      return getForgeQueueMapMap();
-    }
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
-      return internalGetForgeQueueMap().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
-          internalGetForgeQueueMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
-          internalGetForgeQueueMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
     }
 
     public static final int REMOVED_FORGE_QUEUE_LIST_FIELD_NUMBER = 14;
@@ -311,6 +230,87 @@ public final class ForgeQueueDataNotifyOuterClass {
     }
     private int removedForgeQueueListMemoizedSerializedSize = -1;
 
+    public static final int FORGE_QUEUE_MAP_FIELD_NUMBER = 10;
+    private static final class ForgeQueueMapDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>newDefaultInstance(
+                  emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
+    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+    internalGetForgeQueueMap() {
+      if (forgeQueueMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ForgeQueueMapDefaultEntryHolder.defaultEntry);
+      }
+      return forgeQueueMap_;
+    }
+
+    public int getForgeQueueMapCount() {
+      return internalGetForgeQueueMap().getMap().size();
+    }
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsForgeQueueMap(
+        int key) {
+      
+      return internalGetForgeQueueMap().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getForgeQueueMapMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMap() {
+      return getForgeQueueMapMap();
+    }
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
+      return internalGetForgeQueueMap().getMap();
+    }
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    @java.lang.Override
+
+    public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+        int key,
+        emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
+      
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
+          internalGetForgeQueueMap().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+     */
+    @java.lang.Override
+
+    public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
+          internalGetForgeQueueMap().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -331,7 +331,7 @@ public final class ForgeQueueDataNotifyOuterClass {
           output,
           internalGetForgeQueueMap(),
           ForgeQueueMapDefaultEntryHolder.defaultEntry,
-          9);
+          10);
       if (getRemovedForgeQueueListList().size() > 0) {
         output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(removedForgeQueueListMemoizedSerializedSize);
@@ -356,7 +356,7 @@ public final class ForgeQueueDataNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, forgeQueueMap__);
+            .computeMessageSize(10, forgeQueueMap__);
       }
       {
         int dataSize = 0;
@@ -387,10 +387,10 @@ public final class ForgeQueueDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify other = (emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify) obj;
 
-      if (!internalGetForgeQueueMap().equals(
-          other.internalGetForgeQueueMap())) return false;
       if (!getRemovedForgeQueueListList()
           .equals(other.getRemovedForgeQueueListList())) return false;
+      if (!internalGetForgeQueueMap().equals(
+          other.internalGetForgeQueueMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -402,13 +402,13 @@ public final class ForgeQueueDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetForgeQueueMap().getMap().isEmpty()) {
-        hash = (37 * hash) + FORGE_QUEUE_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetForgeQueueMap().hashCode();
-      }
       if (getRemovedForgeQueueListCount() > 0) {
         hash = (37 * hash) + REMOVED_FORGE_QUEUE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRemovedForgeQueueListList().hashCode();
+      }
+      if (!internalGetForgeQueueMap().getMap().isEmpty()) {
+        hash = (37 * hash) + FORGE_QUEUE_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetForgeQueueMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -507,8 +507,8 @@ public final class ForgeQueueDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: BAOPLDFMMIC
-     * CmdId: 625
+     * CmdId: 604
+     * Name: EHCLDJBNPPB
      * </pre>
      *
      * Protobuf type {@code ForgeQueueDataNotify}
@@ -526,7 +526,7 @@ public final class ForgeQueueDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 9:
+          case 10:
             return internalGetForgeQueueMap();
           default:
             throw new RuntimeException(
@@ -537,7 +537,7 @@ public final class ForgeQueueDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 9:
+          case 10:
             return internalGetMutableForgeQueueMap();
           default:
             throw new RuntimeException(
@@ -570,9 +570,9 @@ public final class ForgeQueueDataNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableForgeQueueMap().clear();
         removedForgeQueueList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableForgeQueueMap().clear();
         return this;
       }
 
@@ -600,13 +600,13 @@ public final class ForgeQueueDataNotifyOuterClass {
       public emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify buildPartial() {
         emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify result = new emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify(this);
         int from_bitField0_ = bitField0_;
-        result.forgeQueueMap_ = internalGetForgeQueueMap();
-        result.forgeQueueMap_.makeImmutable();
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           removedForgeQueueList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.removedForgeQueueList_ = removedForgeQueueList_;
+        result.forgeQueueMap_ = internalGetForgeQueueMap();
+        result.forgeQueueMap_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -655,18 +655,18 @@ public final class ForgeQueueDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify other) {
         if (other == emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.getDefaultInstance()) return this;
-        internalGetMutableForgeQueueMap().mergeFrom(
-            other.internalGetForgeQueueMap());
         if (!other.removedForgeQueueList_.isEmpty()) {
           if (removedForgeQueueList_.isEmpty()) {
             removedForgeQueueList_ = other.removedForgeQueueList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRemovedForgeQueueListIsMutable();
             removedForgeQueueList_.addAll(other.removedForgeQueueList_);
           }
           onChanged();
         }
+        internalGetMutableForgeQueueMap().mergeFrom(
+            other.internalGetForgeQueueMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -697,139 +697,11 @@ public final class ForgeQueueDataNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      internalGetForgeQueueMap() {
-        if (forgeQueueMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ForgeQueueMapDefaultEntryHolder.defaultEntry);
-        }
-        return forgeQueueMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      internalGetMutableForgeQueueMap() {
-        onChanged();;
-        if (forgeQueueMap_ == null) {
-          forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
-              ForgeQueueMapDefaultEntryHolder.defaultEntry);
-        }
-        if (!forgeQueueMap_.isMutable()) {
-          forgeQueueMap_ = forgeQueueMap_.copy();
-        }
-        return forgeQueueMap_;
-      }
-
-      public int getForgeQueueMapCount() {
-        return internalGetForgeQueueMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsForgeQueueMap(
-          int key) {
-        
-        return internalGetForgeQueueMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getForgeQueueMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMap() {
-        return getForgeQueueMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
-        return internalGetForgeQueueMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
-          int key,
-          emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
-            internalGetForgeQueueMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
-            internalGetForgeQueueMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearForgeQueueMap() {
-        internalGetMutableForgeQueueMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-
-      public Builder removeForgeQueueMap(
-          int key) {
-        
-        internalGetMutableForgeQueueMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      getMutableForgeQueueMap() {
-        return internalGetMutableForgeQueueMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-      public Builder putForgeQueueMap(
-          int key,
-          emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableForgeQueueMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
-       */
-
-      public Builder putAllForgeQueueMap(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> values) {
-        internalGetMutableForgeQueueMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList removedForgeQueueList_ = emptyIntList();
       private void ensureRemovedForgeQueueListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           removedForgeQueueList_ = mutableCopy(removedForgeQueueList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -838,7 +710,7 @@ public final class ForgeQueueDataNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRemovedForgeQueueListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(removedForgeQueueList_) : removedForgeQueueList_;
       }
       /**
@@ -899,8 +771,136 @@ public final class ForgeQueueDataNotifyOuterClass {
        */
       public Builder clearRemovedForgeQueueList() {
         removedForgeQueueList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+      internalGetForgeQueueMap() {
+        if (forgeQueueMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ForgeQueueMapDefaultEntryHolder.defaultEntry);
+        }
+        return forgeQueueMap_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+      internalGetMutableForgeQueueMap() {
+        onChanged();;
+        if (forgeQueueMap_ == null) {
+          forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
+              ForgeQueueMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!forgeQueueMap_.isMutable()) {
+          forgeQueueMap_ = forgeQueueMap_.copy();
+        }
+        return forgeQueueMap_;
+      }
+
+      public int getForgeQueueMapCount() {
+        return internalGetForgeQueueMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsForgeQueueMap(
+          int key) {
+        
+        return internalGetForgeQueueMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getForgeQueueMapMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMap() {
+        return getForgeQueueMapMap();
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
+        return internalGetForgeQueueMap().getMap();
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+      @java.lang.Override
+
+      public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+          int key,
+          emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
+        
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
+            internalGetForgeQueueMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+      @java.lang.Override
+
+      public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
+            internalGetForgeQueueMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearForgeQueueMap() {
+        internalGetMutableForgeQueueMap().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+
+      public Builder removeForgeQueueMap(
+          int key) {
+        
+        internalGetMutableForgeQueueMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+      getMutableForgeQueueMap() {
+        return internalGetMutableForgeQueueMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+      public Builder putForgeQueueMap(
+          int key,
+          emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData value) {
+        
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableForgeQueueMap().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 10;</code>
+       */
+
+      public Builder putAllForgeQueueMap(
+          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> values) {
+        internalGetMutableForgeQueueMap().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -976,10 +976,10 @@ public final class ForgeQueueDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ForgeQueueDataNotify.proto\032\024ForgeQueue" +
-      "Data.proto\"\302\001\n\024ForgeQueueDataNotify\022A\n\017f" +
-      "orge_queue_map\030\t \003(\0132(.ForgeQueueDataNot" +
-      "ify.ForgeQueueMapEntry\022 \n\030removed_forge_" +
-      "queue_list\030\016 \003(\r\032E\n\022ForgeQueueMapEntry\022\013" +
+      "Data.proto\"\302\001\n\024ForgeQueueDataNotify\022 \n\030r" +
+      "emoved_forge_queue_list\030\016 \003(\r\022A\n\017forge_q" +
+      "ueue_map\030\n \003(\0132(.ForgeQueueDataNotify.Fo" +
+      "rgeQueueMapEntry\032E\n\022ForgeQueueMapEntry\022\013" +
       "\n\003key\030\001 \001(\r\022\036\n\005value\030\002 \001(\0132\017.ForgeQueueD" +
       "ata:\0028\001B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
@@ -994,7 +994,7 @@ public final class ForgeQueueDataNotifyOuterClass {
     internal_static_ForgeQueueDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ForgeQueueDataNotify_descriptor,
-        new java.lang.String[] { "ForgeQueueMap", "RemovedForgeQueueList", });
+        new java.lang.String[] { "RemovedForgeQueueList", "ForgeQueueMap", });
     internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_descriptor =
       internal_static_ForgeQueueDataNotify_descriptor.getNestedTypes().get(0);
     internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_fieldAccessorTable = new

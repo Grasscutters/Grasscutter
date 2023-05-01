@@ -19,15 +19,15 @@ public final class GetShopReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 shop_type = 8;</code>
+     * <code>uint32 shop_type = 11;</code>
      * @return The shopType.
      */
     int getShopType();
   }
   /**
    * <pre>
-   * Name: PCIGEBHJCDG
-   * CmdId: 767
+   * CmdId: 790
+   * Name: ACJLEMECHMH
    * </pre>
    *
    * Protobuf type {@code GetShopReq}
@@ -74,7 +74,7 @@ public final class GetShopReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 88: {
 
               shopType_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetShopReqOuterClass {
               emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.class, emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.Builder.class);
     }
 
-    public static final int SHOP_TYPE_FIELD_NUMBER = 8;
+    public static final int SHOP_TYPE_FIELD_NUMBER = 11;
     private int shopType_;
     /**
-     * <code>uint32 shop_type = 8;</code>
+     * <code>uint32 shop_type = 11;</code>
      * @return The shopType.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetShopReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shopType_ != 0) {
-        output.writeUInt32(8, shopType_);
+        output.writeUInt32(11, shopType_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetShopReqOuterClass {
       size = 0;
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, shopType_);
+          .computeUInt32Size(11, shopType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetShopReqOuterClass {
     }
     /**
      * <pre>
-     * Name: PCIGEBHJCDG
-     * CmdId: 767
+     * CmdId: 790
+     * Name: ACJLEMECHMH
      * </pre>
      *
      * Protobuf type {@code GetShopReq}
@@ -431,7 +431,7 @@ public final class GetShopReqOuterClass {
 
       private int shopType_ ;
       /**
-       * <code>uint32 shop_type = 8;</code>
+       * <code>uint32 shop_type = 11;</code>
        * @return The shopType.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetShopReqOuterClass {
         return shopType_;
       }
       /**
-       * <code>uint32 shop_type = 8;</code>
+       * <code>uint32 shop_type = 11;</code>
        * @param value The shopType to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetShopReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 shop_type = 8;</code>
+       * <code>uint32 shop_type = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
@@ -527,7 +527,7 @@ public final class GetShopReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020GetShopReq.proto\"\037\n\nGetShopReq\022\021\n\tshop" +
-      "_type\030\010 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "_type\030\013 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

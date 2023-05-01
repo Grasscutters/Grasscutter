@@ -41,7 +41,7 @@ public final class MaterialOuterClass {
   }
   /**
    * <pre>
-   * Name: ADCHONLBKMH
+   * Name: GPJLHPAJOKK
    * </pre>
    *
    * Protobuf type {@code Material}
@@ -348,7 +348,7 @@ public final class MaterialOuterClass {
     }
     /**
      * <pre>
-     * Name: ADCHONLBKMH
+     * Name: GPJLHPAJOKK
      * </pre>
      *
      * Protobuf type {@code Material}

@@ -19,21 +19,21 @@ public final class PlayerPropChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 prop_delta = 9;</code>
-     * @return The propDelta.
-     */
-    int getPropDelta();
-
-    /**
-     * <code>uint32 prop_type = 4;</code>
+     * <code>uint32 prop_type = 13;</code>
      * @return The propType.
      */
     int getPropType();
+
+    /**
+     * <code>uint32 prop_delta = 2;</code>
+     * @return The propDelta.
+     */
+    int getPropDelta();
   }
   /**
    * <pre>
-   * Name: CKDGLFFGEAA
-   * CmdId: 156
+   * CmdId: 142
+   * Name: AEIAGGMHFIO
    * </pre>
    *
    * Protobuf type {@code PlayerPropChangeNotify}
@@ -80,14 +80,14 @@ public final class PlayerPropChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              propType_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 16: {
 
               propDelta_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              propType_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class PlayerPropChangeNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify.class, emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify.Builder.class);
     }
 
-    public static final int PROP_DELTA_FIELD_NUMBER = 9;
-    private int propDelta_;
-    /**
-     * <code>uint32 prop_delta = 9;</code>
-     * @return The propDelta.
-     */
-    @java.lang.Override
-    public int getPropDelta() {
-      return propDelta_;
-    }
-
-    public static final int PROP_TYPE_FIELD_NUMBER = 4;
+    public static final int PROP_TYPE_FIELD_NUMBER = 13;
     private int propType_;
     /**
-     * <code>uint32 prop_type = 4;</code>
+     * <code>uint32 prop_type = 13;</code>
      * @return The propType.
      */
     @java.lang.Override
     public int getPropType() {
       return propType_;
+    }
+
+    public static final int PROP_DELTA_FIELD_NUMBER = 2;
+    private int propDelta_;
+    /**
+     * <code>uint32 prop_delta = 2;</code>
+     * @return The propDelta.
+     */
+    @java.lang.Override
+    public int getPropDelta() {
+      return propDelta_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class PlayerPropChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (propType_ != 0) {
-        output.writeUInt32(4, propType_);
-      }
       if (propDelta_ != 0) {
-        output.writeUInt32(9, propDelta_);
+        output.writeUInt32(2, propDelta_);
+      }
+      if (propType_ != 0) {
+        output.writeUInt32(13, propType_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class PlayerPropChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (propType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, propType_);
-      }
       if (propDelta_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, propDelta_);
+          .computeUInt32Size(2, propDelta_);
+      }
+      if (propType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, propType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class PlayerPropChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify other = (emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify) obj;
 
-      if (getPropDelta()
-          != other.getPropDelta()) return false;
       if (getPropType()
           != other.getPropType()) return false;
+      if (getPropDelta()
+          != other.getPropDelta()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class PlayerPropChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PROP_DELTA_FIELD_NUMBER;
-      hash = (53 * hash) + getPropDelta();
       hash = (37 * hash) + PROP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPropType();
+      hash = (37 * hash) + PROP_DELTA_FIELD_NUMBER;
+      hash = (53 * hash) + getPropDelta();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class PlayerPropChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: CKDGLFFGEAA
-     * CmdId: 156
+     * CmdId: 142
+     * Name: AEIAGGMHFIO
      * </pre>
      *
      * Protobuf type {@code PlayerPropChangeNotify}
@@ -353,9 +353,9 @@ public final class PlayerPropChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        propDelta_ = 0;
-
         propType_ = 0;
+
+        propDelta_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class PlayerPropChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify buildPartial() {
         emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify result = new emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify(this);
-        result.propDelta_ = propDelta_;
         result.propType_ = propType_;
+        result.propDelta_ = propDelta_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class PlayerPropChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify other) {
         if (other == emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify.getDefaultInstance()) return this;
-        if (other.getPropDelta() != 0) {
-          setPropDelta(other.getPropDelta());
-        }
         if (other.getPropType() != 0) {
           setPropType(other.getPropType());
+        }
+        if (other.getPropDelta() != 0) {
+          setPropDelta(other.getPropDelta());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class PlayerPropChangeNotifyOuterClass {
         return this;
       }
 
-      private int propDelta_ ;
-      /**
-       * <code>uint32 prop_delta = 9;</code>
-       * @return The propDelta.
-       */
-      @java.lang.Override
-      public int getPropDelta() {
-        return propDelta_;
-      }
-      /**
-       * <code>uint32 prop_delta = 9;</code>
-       * @param value The propDelta to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPropDelta(int value) {
-        
-        propDelta_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 prop_delta = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPropDelta() {
-        
-        propDelta_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int propType_ ;
       /**
-       * <code>uint32 prop_type = 4;</code>
+       * <code>uint32 prop_type = 13;</code>
        * @return The propType.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class PlayerPropChangeNotifyOuterClass {
         return propType_;
       }
       /**
-       * <code>uint32 prop_type = 4;</code>
+       * <code>uint32 prop_type = 13;</code>
        * @param value The propType to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class PlayerPropChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 prop_type = 4;</code>
+       * <code>uint32 prop_type = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPropType() {
         
         propType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int propDelta_ ;
+      /**
+       * <code>uint32 prop_delta = 2;</code>
+       * @return The propDelta.
+       */
+      @java.lang.Override
+      public int getPropDelta() {
+        return propDelta_;
+      }
+      /**
+       * <code>uint32 prop_delta = 2;</code>
+       * @param value The propDelta to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPropDelta(int value) {
+        
+        propDelta_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 prop_delta = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPropDelta() {
+        
+        propDelta_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class PlayerPropChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034PlayerPropChangeNotify.proto\"?\n\026Player" +
-      "PropChangeNotify\022\022\n\nprop_delta\030\t \001(\r\022\021\n\t" +
-      "prop_type\030\004 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "PropChangeNotify\022\021\n\tprop_type\030\r \001(\r\022\022\n\np" +
+      "rop_delta\030\002 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class PlayerPropChangeNotifyOuterClass {
     internal_static_PlayerPropChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerPropChangeNotify_descriptor,
-        new java.lang.String[] { "PropDelta", "PropType", });
+        new java.lang.String[] { "PropType", "PropDelta", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

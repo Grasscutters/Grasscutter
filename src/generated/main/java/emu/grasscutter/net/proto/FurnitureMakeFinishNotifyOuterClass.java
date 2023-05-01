@@ -20,8 +20,8 @@ public final class FurnitureMakeFinishNotifyOuterClass {
   }
   /**
    * <pre>
-   * Name: MLDLJMCEPGD
-   * CmdId: 4658
+   * CmdId: 4753
+   * Name: CAAEENHGNLG
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeFinishNotify}
@@ -246,8 +246,8 @@ public final class FurnitureMakeFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: MLDLJMCEPGD
-     * CmdId: 4658
+     * CmdId: 4753
+     * Name: CAAEENHGNLG
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeFinishNotify}

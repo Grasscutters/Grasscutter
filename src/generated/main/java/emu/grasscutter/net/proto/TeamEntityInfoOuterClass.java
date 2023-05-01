@@ -19,35 +19,35 @@ public final class TeamEntityInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 team_entity_id = 9;</code>
+     * <code>uint32 team_entity_id = 6;</code>
      * @return The teamEntityId.
      */
     int getTeamEntityId();
 
     /**
-     * <code>uint32 authority_peer_id = 14;</code>
-     * @return The authorityPeerId.
-     */
-    int getAuthorityPeerId();
-
-    /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      * @return Whether the teamAbilityInfo field is set.
      */
     boolean hasTeamAbilityInfo();
     /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      * @return The teamAbilityInfo.
      */
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo();
     /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      */
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder();
+
+    /**
+     * <code>uint32 authority_peer_id = 9;</code>
+     * @return The authorityPeerId.
+     */
+    int getAuthorityPeerId();
   }
   /**
    * <pre>
-   * Name: IKPBBMJIKDP
+   * Name: AKBGENMICHJ
    * </pre>
    *
    * Protobuf type {@code TeamEntityInfo}
@@ -94,7 +94,17 @@ public final class TeamEntityInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 48: {
+
+              teamEntityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              authorityPeerId_ = input.readUInt32();
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
               if (teamAbilityInfo_ != null) {
                 subBuilder = teamAbilityInfo_.toBuilder();
@@ -105,16 +115,6 @@ public final class TeamEntityInfoOuterClass {
                 teamAbilityInfo_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 72: {
-
-              teamEntityId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              authorityPeerId_ = input.readUInt32();
               break;
             }
             default: {
@@ -149,10 +149,10 @@ public final class TeamEntityInfoOuterClass {
               emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo.class, emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo.Builder.class);
     }
 
-    public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 9;
+    public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 6;
     private int teamEntityId_;
     /**
-     * <code>uint32 team_entity_id = 9;</code>
+     * <code>uint32 team_entity_id = 6;</code>
      * @return The teamEntityId.
      */
     @java.lang.Override
@@ -160,21 +160,10 @@ public final class TeamEntityInfoOuterClass {
       return teamEntityId_;
     }
 
-    public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 14;
-    private int authorityPeerId_;
-    /**
-     * <code>uint32 authority_peer_id = 14;</code>
-     * @return The authorityPeerId.
-     */
-    @java.lang.Override
-    public int getAuthorityPeerId() {
-      return authorityPeerId_;
-    }
-
-    public static final int TEAM_ABILITY_INFO_FIELD_NUMBER = 6;
+    public static final int TEAM_ABILITY_INFO_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
     /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      * @return Whether the teamAbilityInfo field is set.
      */
     @java.lang.Override
@@ -182,7 +171,7 @@ public final class TeamEntityInfoOuterClass {
       return teamAbilityInfo_ != null;
     }
     /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      * @return The teamAbilityInfo.
      */
     @java.lang.Override
@@ -190,11 +179,22 @@ public final class TeamEntityInfoOuterClass {
       return teamAbilityInfo_ == null ? emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : teamAbilityInfo_;
     }
     /**
-     * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+     * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
       return getTeamAbilityInfo();
+    }
+
+    public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 9;
+    private int authorityPeerId_;
+    /**
+     * <code>uint32 authority_peer_id = 9;</code>
+     * @return The authorityPeerId.
+     */
+    @java.lang.Override
+    public int getAuthorityPeerId() {
+      return authorityPeerId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -211,14 +211,14 @@ public final class TeamEntityInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (teamAbilityInfo_ != null) {
-        output.writeMessage(6, getTeamAbilityInfo());
-      }
       if (teamEntityId_ != 0) {
-        output.writeUInt32(9, teamEntityId_);
+        output.writeUInt32(6, teamEntityId_);
       }
       if (authorityPeerId_ != 0) {
-        output.writeUInt32(14, authorityPeerId_);
+        output.writeUInt32(9, authorityPeerId_);
+      }
+      if (teamAbilityInfo_ != null) {
+        output.writeMessage(13, getTeamAbilityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -229,17 +229,17 @@ public final class TeamEntityInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (teamAbilityInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getTeamAbilityInfo());
-      }
       if (teamEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, teamEntityId_);
+          .computeUInt32Size(6, teamEntityId_);
       }
       if (authorityPeerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, authorityPeerId_);
+          .computeUInt32Size(9, authorityPeerId_);
+      }
+      if (teamAbilityInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getTeamAbilityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -258,13 +258,13 @@ public final class TeamEntityInfoOuterClass {
 
       if (getTeamEntityId()
           != other.getTeamEntityId()) return false;
-      if (getAuthorityPeerId()
-          != other.getAuthorityPeerId()) return false;
       if (hasTeamAbilityInfo() != other.hasTeamAbilityInfo()) return false;
       if (hasTeamAbilityInfo()) {
         if (!getTeamAbilityInfo()
             .equals(other.getTeamAbilityInfo())) return false;
       }
+      if (getAuthorityPeerId()
+          != other.getAuthorityPeerId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -278,12 +278,12 @@ public final class TeamEntityInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TEAM_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTeamEntityId();
-      hash = (37 * hash) + AUTHORITY_PEER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthorityPeerId();
       if (hasTeamAbilityInfo()) {
         hash = (37 * hash) + TEAM_ABILITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getTeamAbilityInfo().hashCode();
       }
+      hash = (37 * hash) + AUTHORITY_PEER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthorityPeerId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -381,7 +381,7 @@ public final class TeamEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: IKPBBMJIKDP
+     * Name: AKBGENMICHJ
      * </pre>
      *
      * Protobuf type {@code TeamEntityInfo}
@@ -423,14 +423,14 @@ public final class TeamEntityInfoOuterClass {
         super.clear();
         teamEntityId_ = 0;
 
-        authorityPeerId_ = 0;
-
         if (teamAbilityInfoBuilder_ == null) {
           teamAbilityInfo_ = null;
         } else {
           teamAbilityInfo_ = null;
           teamAbilityInfoBuilder_ = null;
         }
+        authorityPeerId_ = 0;
+
         return this;
       }
 
@@ -458,12 +458,12 @@ public final class TeamEntityInfoOuterClass {
       public emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo buildPartial() {
         emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo result = new emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo(this);
         result.teamEntityId_ = teamEntityId_;
-        result.authorityPeerId_ = authorityPeerId_;
         if (teamAbilityInfoBuilder_ == null) {
           result.teamAbilityInfo_ = teamAbilityInfo_;
         } else {
           result.teamAbilityInfo_ = teamAbilityInfoBuilder_.build();
         }
+        result.authorityPeerId_ = authorityPeerId_;
         onBuilt();
         return result;
       }
@@ -515,11 +515,11 @@ public final class TeamEntityInfoOuterClass {
         if (other.getTeamEntityId() != 0) {
           setTeamEntityId(other.getTeamEntityId());
         }
-        if (other.getAuthorityPeerId() != 0) {
-          setAuthorityPeerId(other.getAuthorityPeerId());
-        }
         if (other.hasTeamAbilityInfo()) {
           mergeTeamAbilityInfo(other.getTeamAbilityInfo());
+        }
+        if (other.getAuthorityPeerId() != 0) {
+          setAuthorityPeerId(other.getAuthorityPeerId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -552,7 +552,7 @@ public final class TeamEntityInfoOuterClass {
 
       private int teamEntityId_ ;
       /**
-       * <code>uint32 team_entity_id = 9;</code>
+       * <code>uint32 team_entity_id = 6;</code>
        * @return The teamEntityId.
        */
       @java.lang.Override
@@ -560,7 +560,7 @@ public final class TeamEntityInfoOuterClass {
         return teamEntityId_;
       }
       /**
-       * <code>uint32 team_entity_id = 9;</code>
+       * <code>uint32 team_entity_id = 6;</code>
        * @param value The teamEntityId to set.
        * @return This builder for chaining.
        */
@@ -571,7 +571,7 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 team_entity_id = 9;</code>
+       * <code>uint32 team_entity_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTeamEntityId() {
@@ -581,49 +581,18 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
 
-      private int authorityPeerId_ ;
-      /**
-       * <code>uint32 authority_peer_id = 14;</code>
-       * @return The authorityPeerId.
-       */
-      @java.lang.Override
-      public int getAuthorityPeerId() {
-        return authorityPeerId_;
-      }
-      /**
-       * <code>uint32 authority_peer_id = 14;</code>
-       * @param value The authorityPeerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthorityPeerId(int value) {
-        
-        authorityPeerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 authority_peer_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAuthorityPeerId() {
-        
-        authorityPeerId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> teamAbilityInfoBuilder_;
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        * @return Whether the teamAbilityInfo field is set.
        */
       public boolean hasTeamAbilityInfo() {
         return teamAbilityInfoBuilder_ != null || teamAbilityInfo_ != null;
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        * @return The teamAbilityInfo.
        */
       public emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo() {
@@ -634,7 +603,7 @@ public final class TeamEntityInfoOuterClass {
         }
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public Builder setTeamAbilityInfo(emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (teamAbilityInfoBuilder_ == null) {
@@ -650,7 +619,7 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public Builder setTeamAbilityInfo(
           emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
@@ -664,7 +633,7 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public Builder mergeTeamAbilityInfo(emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (teamAbilityInfoBuilder_ == null) {
@@ -682,7 +651,7 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public Builder clearTeamAbilityInfo() {
         if (teamAbilityInfoBuilder_ == null) {
@@ -696,7 +665,7 @@ public final class TeamEntityInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getTeamAbilityInfoBuilder() {
         
@@ -704,7 +673,7 @@ public final class TeamEntityInfoOuterClass {
         return getTeamAbilityInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       public emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
         if (teamAbilityInfoBuilder_ != null) {
@@ -715,7 +684,7 @@ public final class TeamEntityInfoOuterClass {
         }
       }
       /**
-       * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
+       * <code>.AbilitySyncStateInfo team_ability_info = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> 
@@ -729,6 +698,37 @@ public final class TeamEntityInfoOuterClass {
           teamAbilityInfo_ = null;
         }
         return teamAbilityInfoBuilder_;
+      }
+
+      private int authorityPeerId_ ;
+      /**
+       * <code>uint32 authority_peer_id = 9;</code>
+       * @return The authorityPeerId.
+       */
+      @java.lang.Override
+      public int getAuthorityPeerId() {
+        return authorityPeerId_;
+      }
+      /**
+       * <code>uint32 authority_peer_id = 9;</code>
+       * @param value The authorityPeerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityPeerId(int value) {
+        
+        authorityPeerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 authority_peer_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthorityPeerId() {
+        
+        authorityPeerId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -799,9 +799,9 @@ public final class TeamEntityInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024TeamEntityInfo.proto\032\032AbilitySyncState" +
       "Info.proto\"u\n\016TeamEntityInfo\022\026\n\016team_ent" +
-      "ity_id\030\t \001(\r\022\031\n\021authority_peer_id\030\016 \001(\r\022" +
-      "0\n\021team_ability_info\030\006 \001(\0132\025.AbilitySync" +
-      "StateInfoB\033\n\031emu.grasscutter.net.protob\006" +
+      "ity_id\030\006 \001(\r\0220\n\021team_ability_info\030\r \001(\0132" +
+      "\025.AbilitySyncStateInfo\022\031\n\021authority_peer" +
+      "_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -814,7 +814,7 @@ public final class TeamEntityInfoOuterClass {
     internal_static_TeamEntityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TeamEntityInfo_descriptor,
-        new java.lang.String[] { "TeamEntityId", "AuthorityPeerId", "TeamAbilityInfo", });
+        new java.lang.String[] { "TeamEntityId", "TeamAbilityInfo", "AuthorityPeerId", });
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
   }
 

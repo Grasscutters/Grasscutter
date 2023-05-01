@@ -19,69 +19,77 @@ public final class GetAllMailResultNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 packet_be_sent_num = 1;</code>
+     * <pre>
+     * CDLABECFBPJ
+     * </pre>
+     *
+     * <code>uint32 packet_be_sent_num = 7;</code>
      * @return The packetBeSentNum.
      */
     int getPacketBeSentNum();
 
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> 
         getMailListList();
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     emu.grasscutter.net.proto.MailDataOuterClass.MailData getMailList(int index);
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     int getMailListCount();
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder> 
         getMailListOrBuilderList();
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder getMailListOrBuilder(
         int index);
 
     /**
-     * <code>string transaction = 5;</code>
-     * @return The transaction.
-     */
-    java.lang.String getTransaction();
-    /**
-     * <code>string transaction = 5;</code>
-     * @return The bytes for transaction.
-     */
-    com.google.protobuf.ByteString
-        getTransactionBytes();
-
-    /**
-     * <code>bool is_collected = 8;</code>
+     * <code>bool is_collected = 12;</code>
      * @return The isCollected.
      */
     boolean getIsCollected();
 
     /**
-     * <code>uint32 packet_num = 13;</code>
+     * <pre>
+     *GAAHHONLFPA
+     * </pre>
+     *
+     * <code>uint32 packet_num = 8;</code>
      * @return The packetNum.
      */
     int getPacketNum();
+
+    /**
+     * <code>int32 retcode = 2;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>string transaction = 10;</code>
+     * @return The transaction.
+     */
+    java.lang.String getTransaction();
+    /**
+     * <code>string transaction = 10;</code>
+     * @return The bytes for transaction.
+     */
+    com.google.protobuf.ByteString
+        getTransactionBytes();
   }
   /**
    * <pre>
-   * Name: ILFMLLOCKFB
-   * CmdId: 1429
+   * CmdId: 1499
+   * Name: GOLFMOPNENJ
    * </pre>
    *
    * Protobuf type {@code GetAllMailResultNotify}
@@ -131,28 +139,12 @@ public final class GetAllMailResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              packetBeSentNum_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              transaction_ = s;
-              break;
-            }
-            case 48: {
+            case 16: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
-
-              isCollected_ = input.readBool();
-              break;
-            }
-            case 82: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MailDataOuterClass.MailData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -161,9 +153,25 @@ public final class GetAllMailResultNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.MailDataOuterClass.MailData.parser(), extensionRegistry));
               break;
             }
-            case 104: {
+            case 56: {
+
+              packetBeSentNum_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
               packetNum_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              transaction_ = s;
+              break;
+            }
+            case 96: {
+
+              isCollected_ = input.readBool();
               break;
             }
             default: {
@@ -201,21 +209,14 @@ public final class GetAllMailResultNotifyOuterClass {
               emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify.class, emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int PACKET_BE_SENT_NUM_FIELD_NUMBER = 1;
+    public static final int PACKET_BE_SENT_NUM_FIELD_NUMBER = 7;
     private int packetBeSentNum_;
     /**
-     * <code>uint32 packet_be_sent_num = 1;</code>
+     * <pre>
+     * CDLABECFBPJ
+     * </pre>
+     *
+     * <code>uint32 packet_be_sent_num = 7;</code>
      * @return The packetBeSentNum.
      */
     @java.lang.Override
@@ -223,17 +224,17 @@ public final class GetAllMailResultNotifyOuterClass {
       return packetBeSentNum_;
     }
 
-    public static final int MAIL_LIST_FIELD_NUMBER = 10;
+    public static final int MAIL_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> mailList_;
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> getMailListList() {
       return mailList_;
     }
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder> 
@@ -241,21 +242,21 @@ public final class GetAllMailResultNotifyOuterClass {
       return mailList_;
     }
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     @java.lang.Override
     public int getMailListCount() {
       return mailList_.size();
     }
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MailDataOuterClass.MailData getMailList(int index) {
       return mailList_.get(index);
     }
     /**
-     * <code>repeated .MailData mail_list = 10;</code>
+     * <code>repeated .MailData mail_list = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder getMailListOrBuilder(
@@ -263,10 +264,47 @@ public final class GetAllMailResultNotifyOuterClass {
       return mailList_.get(index);
     }
 
-    public static final int TRANSACTION_FIELD_NUMBER = 5;
+    public static final int IS_COLLECTED_FIELD_NUMBER = 12;
+    private boolean isCollected_;
+    /**
+     * <code>bool is_collected = 12;</code>
+     * @return The isCollected.
+     */
+    @java.lang.Override
+    public boolean getIsCollected() {
+      return isCollected_;
+    }
+
+    public static final int PACKET_NUM_FIELD_NUMBER = 8;
+    private int packetNum_;
+    /**
+     * <pre>
+     *GAAHHONLFPA
+     * </pre>
+     *
+     * <code>uint32 packet_num = 8;</code>
+     * @return The packetNum.
+     */
+    @java.lang.Override
+    public int getPacketNum() {
+      return packetNum_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 2;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 2;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int TRANSACTION_FIELD_NUMBER = 10;
     private volatile java.lang.Object transaction_;
     /**
-     * <code>string transaction = 5;</code>
+     * <code>string transaction = 10;</code>
      * @return The transaction.
      */
     @java.lang.Override
@@ -283,7 +321,7 @@ public final class GetAllMailResultNotifyOuterClass {
       }
     }
     /**
-     * <code>string transaction = 5;</code>
+     * <code>string transaction = 10;</code>
      * @return The bytes for transaction.
      */
     @java.lang.Override
@@ -301,28 +339,6 @@ public final class GetAllMailResultNotifyOuterClass {
       }
     }
 
-    public static final int IS_COLLECTED_FIELD_NUMBER = 8;
-    private boolean isCollected_;
-    /**
-     * <code>bool is_collected = 8;</code>
-     * @return The isCollected.
-     */
-    @java.lang.Override
-    public boolean getIsCollected() {
-      return isCollected_;
-    }
-
-    public static final int PACKET_NUM_FIELD_NUMBER = 13;
-    private int packetNum_;
-    /**
-     * <code>uint32 packet_num = 13;</code>
-     * @return The packetNum.
-     */
-    @java.lang.Override
-    public int getPacketNum() {
-      return packetNum_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -337,23 +353,23 @@ public final class GetAllMailResultNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (packetBeSentNum_ != 0) {
-        output.writeUInt32(1, packetBeSentNum_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transaction_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, transaction_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
-      if (isCollected_ != false) {
-        output.writeBool(8, isCollected_);
+        output.writeInt32(2, retcode_);
       }
       for (int i = 0; i < mailList_.size(); i++) {
-        output.writeMessage(10, mailList_.get(i));
+        output.writeMessage(5, mailList_.get(i));
+      }
+      if (packetBeSentNum_ != 0) {
+        output.writeUInt32(7, packetBeSentNum_);
       }
       if (packetNum_ != 0) {
-        output.writeUInt32(13, packetNum_);
+        output.writeUInt32(8, packetNum_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transaction_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, transaction_);
+      }
+      if (isCollected_ != false) {
+        output.writeBool(12, isCollected_);
       }
       unknownFields.writeTo(output);
     }
@@ -364,28 +380,28 @@ public final class GetAllMailResultNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (packetBeSentNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, packetBeSentNum_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transaction_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, transaction_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
-      if (isCollected_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isCollected_);
+          .computeInt32Size(2, retcode_);
       }
       for (int i = 0; i < mailList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, mailList_.get(i));
+          .computeMessageSize(5, mailList_.get(i));
+      }
+      if (packetBeSentNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, packetBeSentNum_);
       }
       if (packetNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, packetNum_);
+          .computeUInt32Size(8, packetNum_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transaction_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, transaction_);
+      }
+      if (isCollected_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isCollected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -402,18 +418,18 @@ public final class GetAllMailResultNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify other = (emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getPacketBeSentNum()
           != other.getPacketBeSentNum()) return false;
       if (!getMailListList()
           .equals(other.getMailListList())) return false;
-      if (!getTransaction()
-          .equals(other.getTransaction())) return false;
       if (getIsCollected()
           != other.getIsCollected()) return false;
       if (getPacketNum()
           != other.getPacketNum()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!getTransaction()
+          .equals(other.getTransaction())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -425,21 +441,21 @@ public final class GetAllMailResultNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + PACKET_BE_SENT_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getPacketBeSentNum();
       if (getMailListCount() > 0) {
         hash = (37 * hash) + MAIL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMailListList().hashCode();
       }
-      hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
-      hash = (53 * hash) + getTransaction().hashCode();
       hash = (37 * hash) + IS_COLLECTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCollected());
       hash = (37 * hash) + PACKET_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getPacketNum();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getTransaction().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -537,8 +553,8 @@ public final class GetAllMailResultNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: ILFMLLOCKFB
-     * CmdId: 1429
+     * CmdId: 1499
+     * Name: GOLFMOPNENJ
      * </pre>
      *
      * Protobuf type {@code GetAllMailResultNotify}
@@ -579,8 +595,6 @@ public final class GetAllMailResultNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         packetBeSentNum_ = 0;
 
         if (mailListBuilder_ == null) {
@@ -589,11 +603,13 @@ public final class GetAllMailResultNotifyOuterClass {
         } else {
           mailListBuilder_.clear();
         }
-        transaction_ = "";
-
         isCollected_ = false;
 
         packetNum_ = 0;
+
+        retcode_ = 0;
+
+        transaction_ = "";
 
         return this;
       }
@@ -622,7 +638,6 @@ public final class GetAllMailResultNotifyOuterClass {
       public emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify buildPartial() {
         emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify result = new emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         result.packetBeSentNum_ = packetBeSentNum_;
         if (mailListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -633,9 +648,10 @@ public final class GetAllMailResultNotifyOuterClass {
         } else {
           result.mailList_ = mailListBuilder_.build();
         }
-        result.transaction_ = transaction_;
         result.isCollected_ = isCollected_;
         result.packetNum_ = packetNum_;
+        result.retcode_ = retcode_;
+        result.transaction_ = transaction_;
         onBuilt();
         return result;
       }
@@ -684,9 +700,6 @@ public final class GetAllMailResultNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify other) {
         if (other == emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getPacketBeSentNum() != 0) {
           setPacketBeSentNum(other.getPacketBeSentNum());
         }
@@ -716,15 +729,18 @@ public final class GetAllMailResultNotifyOuterClass {
             }
           }
         }
-        if (!other.getTransaction().isEmpty()) {
-          transaction_ = other.transaction_;
-          onChanged();
-        }
         if (other.getIsCollected() != false) {
           setIsCollected(other.getIsCollected());
         }
         if (other.getPacketNum() != 0) {
           setPacketNum(other.getPacketNum());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (!other.getTransaction().isEmpty()) {
+          transaction_ = other.transaction_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -756,40 +772,13 @@ public final class GetAllMailResultNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int packetBeSentNum_ ;
       /**
-       * <code>uint32 packet_be_sent_num = 1;</code>
+       * <pre>
+       * CDLABECFBPJ
+       * </pre>
+       *
+       * <code>uint32 packet_be_sent_num = 7;</code>
        * @return The packetBeSentNum.
        */
       @java.lang.Override
@@ -797,7 +786,11 @@ public final class GetAllMailResultNotifyOuterClass {
         return packetBeSentNum_;
       }
       /**
-       * <code>uint32 packet_be_sent_num = 1;</code>
+       * <pre>
+       * CDLABECFBPJ
+       * </pre>
+       *
+       * <code>uint32 packet_be_sent_num = 7;</code>
        * @param value The packetBeSentNum to set.
        * @return This builder for chaining.
        */
@@ -808,7 +801,11 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 packet_be_sent_num = 1;</code>
+       * <pre>
+       * CDLABECFBPJ
+       * </pre>
+       *
+       * <code>uint32 packet_be_sent_num = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPacketBeSentNum() {
@@ -831,7 +828,7 @@ public final class GetAllMailResultNotifyOuterClass {
           emu.grasscutter.net.proto.MailDataOuterClass.MailData, emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder, emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder> mailListBuilder_;
 
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> getMailListList() {
         if (mailListBuilder_ == null) {
@@ -841,7 +838,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public int getMailListCount() {
         if (mailListBuilder_ == null) {
@@ -851,7 +848,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public emu.grasscutter.net.proto.MailDataOuterClass.MailData getMailList(int index) {
         if (mailListBuilder_ == null) {
@@ -861,7 +858,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder setMailList(
           int index, emu.grasscutter.net.proto.MailDataOuterClass.MailData value) {
@@ -878,7 +875,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder setMailList(
           int index, emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder builderForValue) {
@@ -892,7 +889,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder addMailList(emu.grasscutter.net.proto.MailDataOuterClass.MailData value) {
         if (mailListBuilder_ == null) {
@@ -908,7 +905,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder addMailList(
           int index, emu.grasscutter.net.proto.MailDataOuterClass.MailData value) {
@@ -925,7 +922,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder addMailList(
           emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder builderForValue) {
@@ -939,7 +936,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder addMailList(
           int index, emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder builderForValue) {
@@ -953,7 +950,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder addAllMailList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MailDataOuterClass.MailData> values) {
@@ -968,7 +965,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder clearMailList() {
         if (mailListBuilder_ == null) {
@@ -981,7 +978,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public Builder removeMailList(int index) {
         if (mailListBuilder_ == null) {
@@ -994,14 +991,14 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder getMailListBuilder(
           int index) {
         return getMailListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder getMailListOrBuilder(
           int index) {
@@ -1011,7 +1008,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MailDataOuterClass.MailDataOrBuilder> 
            getMailListOrBuilderList() {
@@ -1022,14 +1019,14 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder addMailListBuilder() {
         return getMailListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MailDataOuterClass.MailData.getDefaultInstance());
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder addMailListBuilder(
           int index) {
@@ -1037,7 +1034,7 @@ public final class GetAllMailResultNotifyOuterClass {
             index, emu.grasscutter.net.proto.MailDataOuterClass.MailData.getDefaultInstance());
       }
       /**
-       * <code>repeated .MailData mail_list = 10;</code>
+       * <code>repeated .MailData mail_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData.Builder> 
            getMailListBuilderList() {
@@ -1058,9 +1055,114 @@ public final class GetAllMailResultNotifyOuterClass {
         return mailListBuilder_;
       }
 
+      private boolean isCollected_ ;
+      /**
+       * <code>bool is_collected = 12;</code>
+       * @return The isCollected.
+       */
+      @java.lang.Override
+      public boolean getIsCollected() {
+        return isCollected_;
+      }
+      /**
+       * <code>bool is_collected = 12;</code>
+       * @param value The isCollected to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsCollected(boolean value) {
+        
+        isCollected_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_collected = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsCollected() {
+        
+        isCollected_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int packetNum_ ;
+      /**
+       * <pre>
+       *GAAHHONLFPA
+       * </pre>
+       *
+       * <code>uint32 packet_num = 8;</code>
+       * @return The packetNum.
+       */
+      @java.lang.Override
+      public int getPacketNum() {
+        return packetNum_;
+      }
+      /**
+       * <pre>
+       *GAAHHONLFPA
+       * </pre>
+       *
+       * <code>uint32 packet_num = 8;</code>
+       * @param value The packetNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPacketNum(int value) {
+        
+        packetNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *GAAHHONLFPA
+       * </pre>
+       *
+       * <code>uint32 packet_num = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPacketNum() {
+        
+        packetNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object transaction_ = "";
       /**
-       * <code>string transaction = 5;</code>
+       * <code>string transaction = 10;</code>
        * @return The transaction.
        */
       public java.lang.String getTransaction() {
@@ -1076,7 +1178,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>string transaction = 5;</code>
+       * <code>string transaction = 10;</code>
        * @return The bytes for transaction.
        */
       public com.google.protobuf.ByteString
@@ -1093,7 +1195,7 @@ public final class GetAllMailResultNotifyOuterClass {
         }
       }
       /**
-       * <code>string transaction = 5;</code>
+       * <code>string transaction = 10;</code>
        * @param value The transaction to set.
        * @return This builder for chaining.
        */
@@ -1108,7 +1210,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string transaction = 5;</code>
+       * <code>string transaction = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransaction() {
@@ -1118,7 +1220,7 @@ public final class GetAllMailResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string transaction = 5;</code>
+       * <code>string transaction = 10;</code>
        * @param value The bytes for transaction to set.
        * @return This builder for chaining.
        */
@@ -1130,68 +1232,6 @@ public final class GetAllMailResultNotifyOuterClass {
   checkByteStringIsUtf8(value);
         
         transaction_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean isCollected_ ;
-      /**
-       * <code>bool is_collected = 8;</code>
-       * @return The isCollected.
-       */
-      @java.lang.Override
-      public boolean getIsCollected() {
-        return isCollected_;
-      }
-      /**
-       * <code>bool is_collected = 8;</code>
-       * @param value The isCollected to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsCollected(boolean value) {
-        
-        isCollected_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_collected = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsCollected() {
-        
-        isCollected_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int packetNum_ ;
-      /**
-       * <code>uint32 packet_num = 13;</code>
-       * @return The packetNum.
-       */
-      @java.lang.Override
-      public int getPacketNum() {
-        return packetNum_;
-      }
-      /**
-       * <code>uint32 packet_num = 13;</code>
-       * @param value The packetNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPacketNum(int value) {
-        
-        packetNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 packet_num = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPacketNum() {
-        
-        packetNum_ = 0;
         onChanged();
         return this;
       }
@@ -1263,11 +1303,11 @@ public final class GetAllMailResultNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GetAllMailResultNotify.proto\032\016MailData" +
-      ".proto\"\242\001\n\026GetAllMailResultNotify\022\017\n\007ret" +
-      "code\030\006 \001(\005\022\032\n\022packet_be_sent_num\030\001 \001(\r\022\034" +
-      "\n\tmail_list\030\n \003(\0132\t.MailData\022\023\n\013transact" +
-      "ion\030\005 \001(\t\022\024\n\014is_collected\030\010 \001(\010\022\022\n\npacke" +
-      "t_num\030\r \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      ".proto\"\242\001\n\026GetAllMailResultNotify\022\032\n\022pac" +
+      "ket_be_sent_num\030\007 \001(\r\022\034\n\tmail_list\030\005 \003(\013" +
+      "2\t.MailData\022\024\n\014is_collected\030\014 \001(\010\022\022\n\npac" +
+      "ket_num\030\010 \001(\r\022\017\n\007retcode\030\002 \001(\005\022\023\n\013transa" +
+      "ction\030\n \001(\tB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1280,7 +1320,7 @@ public final class GetAllMailResultNotifyOuterClass {
     internal_static_GetAllMailResultNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAllMailResultNotify_descriptor,
-        new java.lang.String[] { "Retcode", "PacketBeSentNum", "MailList", "Transaction", "IsCollected", "PacketNum", });
+        new java.lang.String[] { "PacketBeSentNum", "MailList", "IsCollected", "PacketNum", "Retcode", "Transaction", });
     emu.grasscutter.net.proto.MailDataOuterClass.getDescriptor();
   }
 

@@ -16,7 +16,7 @@ public final class BattlePassUnlockStatusOuterClass {
   }
   /**
    * <pre>
-   * Name: LMPDFNFNKKI
+   * Name: LPJODIDIFIL
    * </pre>
    *
    * Protobuf enum {@code BattlePassUnlockStatus}

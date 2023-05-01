@@ -70,16 +70,16 @@ public final class QueryCurrRegionHttpRspOuterClass {
     com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted();
 
     /**
-     * <code>string HHDIBBJDLAN = 14;</code>
-     * @return The hHDIBBJDLAN.
+     * <code>string FPLPGEGEJJM = 14;</code>
+     * @return The fPLPGEGEJJM.
      */
-    java.lang.String getHHDIBBJDLAN();
+    java.lang.String getFPLPGEGEJJM();
     /**
-     * <code>string HHDIBBJDLAN = 14;</code>
-     * @return The bytes for hHDIBBJDLAN.
+     * <code>string FPLPGEGEJJM = 14;</code>
+     * @return The bytes for fPLPGEGEJJM.
      */
     com.google.protobuf.ByteString
-        getHHDIBBJDLANBytes();
+        getFPLPGEGEJJMBytes();
 
     /**
      * <code>.ForceUpdateInfo force_update = 4;</code>
@@ -115,7 +115,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
   }
   /**
    * <pre>
-   * Name: AHMNLAOFJBB
+   * Name: KDAEKECNJGG
    * </pre>
    *
    * Protobuf type {@code QueryCurrRegionHttpRsp}
@@ -134,7 +134,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
       clientSecretKey_ = com.google.protobuf.ByteString.EMPTY;
       regionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
       clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
-      hHDIBBJDLAN_ = "";
+      fPLPGEGEJJM_ = "";
     }
 
     @java.lang.Override
@@ -237,7 +237,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hHDIBBJDLAN_ = s;
+              fPLPGEGEJJM_ = s;
               break;
             }
             default: {
@@ -421,38 +421,38 @@ public final class QueryCurrRegionHttpRspOuterClass {
       return clientRegionCustomConfigEncrypted_;
     }
 
-    public static final int HHDIBBJDLAN_FIELD_NUMBER = 14;
-    private volatile java.lang.Object hHDIBBJDLAN_;
+    public static final int FPLPGEGEJJM_FIELD_NUMBER = 14;
+    private volatile java.lang.Object fPLPGEGEJJM_;
     /**
-     * <code>string HHDIBBJDLAN = 14;</code>
-     * @return The hHDIBBJDLAN.
+     * <code>string FPLPGEGEJJM = 14;</code>
+     * @return The fPLPGEGEJJM.
      */
     @java.lang.Override
-    public java.lang.String getHHDIBBJDLAN() {
-      java.lang.Object ref = hHDIBBJDLAN_;
+    public java.lang.String getFPLPGEGEJJM() {
+      java.lang.Object ref = fPLPGEGEJJM_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hHDIBBJDLAN_ = s;
+        fPLPGEGEJJM_ = s;
         return s;
       }
     }
     /**
-     * <code>string HHDIBBJDLAN = 14;</code>
-     * @return The bytes for hHDIBBJDLAN.
+     * <code>string FPLPGEGEJJM = 14;</code>
+     * @return The bytes for fPLPGEGEJJM.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHHDIBBJDLANBytes() {
-      java.lang.Object ref = hHDIBBJDLAN_;
+        getFPLPGEGEJJMBytes() {
+      java.lang.Object ref = fPLPGEGEJJM_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hHDIBBJDLAN_ = b;
+        fPLPGEGEJJM_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -559,8 +559,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
       if (!clientRegionCustomConfigEncrypted_.isEmpty()) {
         output.writeBytes(13, clientRegionCustomConfigEncrypted_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hHDIBBJDLAN_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, hHDIBBJDLAN_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fPLPGEGEJJM_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, fPLPGEGEJJM_);
       }
       unknownFields.writeTo(output);
     }
@@ -602,8 +602,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, clientRegionCustomConfigEncrypted_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hHDIBBJDLAN_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, hHDIBBJDLAN_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fPLPGEGEJJM_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, fPLPGEGEJJM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -635,8 +635,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
           .equals(other.getRegionCustomConfigEncrypted())) return false;
       if (!getClientRegionCustomConfigEncrypted()
           .equals(other.getClientRegionCustomConfigEncrypted())) return false;
-      if (!getHHDIBBJDLAN()
-          .equals(other.getHHDIBBJDLAN())) return false;
+      if (!getFPLPGEGEJJM()
+          .equals(other.getFPLPGEGEJJM())) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
         case 4:
@@ -675,8 +675,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
       hash = (53 * hash) + getRegionCustomConfigEncrypted().hashCode();
       hash = (37 * hash) + CLIENT_REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER;
       hash = (53 * hash) + getClientRegionCustomConfigEncrypted().hashCode();
-      hash = (37 * hash) + HHDIBBJDLAN_FIELD_NUMBER;
-      hash = (53 * hash) + getHHDIBBJDLAN().hashCode();
+      hash = (37 * hash) + FPLPGEGEJJM_FIELD_NUMBER;
+      hash = (53 * hash) + getFPLPGEGEJJM().hashCode();
       switch (detailCase_) {
         case 4:
           hash = (37 * hash) + FORCE_UPDATE_FIELD_NUMBER;
@@ -786,7 +786,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
     }
     /**
      * <pre>
-     * Name: AHMNLAOFJBB
+     * Name: KDAEKECNJGG
      * </pre>
      *
      * Protobuf type {@code QueryCurrRegionHttpRsp}
@@ -842,7 +842,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
 
         clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
 
-        hHDIBBJDLAN_ = "";
+        fPLPGEGEJJM_ = "";
 
         detailCase_ = 0;
         detail_ = null;
@@ -882,7 +882,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
         result.clientSecretKey_ = clientSecretKey_;
         result.regionCustomConfigEncrypted_ = regionCustomConfigEncrypted_;
         result.clientRegionCustomConfigEncrypted_ = clientRegionCustomConfigEncrypted_;
-        result.hHDIBBJDLAN_ = hHDIBBJDLAN_;
+        result.fPLPGEGEJJM_ = fPLPGEGEJJM_;
         if (detailCase_ == 4) {
           if (forceUpdateBuilder_ == null) {
             result.detail_ = detail_;
@@ -965,8 +965,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
         if (other.getClientRegionCustomConfigEncrypted() != com.google.protobuf.ByteString.EMPTY) {
           setClientRegionCustomConfigEncrypted(other.getClientRegionCustomConfigEncrypted());
         }
-        if (!other.getHHDIBBJDLAN().isEmpty()) {
-          hHDIBBJDLAN_ = other.hHDIBBJDLAN_;
+        if (!other.getFPLPGEGEJJM().isEmpty()) {
+          fPLPGEGEJJM_ = other.fPLPGEGEJJM_;
           onChanged();
         }
         switch (other.getDetailCase()) {
@@ -1354,78 +1354,78 @@ public final class QueryCurrRegionHttpRspOuterClass {
         return this;
       }
 
-      private java.lang.Object hHDIBBJDLAN_ = "";
+      private java.lang.Object fPLPGEGEJJM_ = "";
       /**
-       * <code>string HHDIBBJDLAN = 14;</code>
-       * @return The hHDIBBJDLAN.
+       * <code>string FPLPGEGEJJM = 14;</code>
+       * @return The fPLPGEGEJJM.
        */
-      public java.lang.String getHHDIBBJDLAN() {
-        java.lang.Object ref = hHDIBBJDLAN_;
+      public java.lang.String getFPLPGEGEJJM() {
+        java.lang.Object ref = fPLPGEGEJJM_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hHDIBBJDLAN_ = s;
+          fPLPGEGEJJM_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string HHDIBBJDLAN = 14;</code>
-       * @return The bytes for hHDIBBJDLAN.
+       * <code>string FPLPGEGEJJM = 14;</code>
+       * @return The bytes for fPLPGEGEJJM.
        */
       public com.google.protobuf.ByteString
-          getHHDIBBJDLANBytes() {
-        java.lang.Object ref = hHDIBBJDLAN_;
+          getFPLPGEGEJJMBytes() {
+        java.lang.Object ref = fPLPGEGEJJM_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hHDIBBJDLAN_ = b;
+          fPLPGEGEJJM_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string HHDIBBJDLAN = 14;</code>
-       * @param value The hHDIBBJDLAN to set.
+       * <code>string FPLPGEGEJJM = 14;</code>
+       * @param value The fPLPGEGEJJM to set.
        * @return This builder for chaining.
        */
-      public Builder setHHDIBBJDLAN(
+      public Builder setFPLPGEGEJJM(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        hHDIBBJDLAN_ = value;
+        fPLPGEGEJJM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string HHDIBBJDLAN = 14;</code>
+       * <code>string FPLPGEGEJJM = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHHDIBBJDLAN() {
+      public Builder clearFPLPGEGEJJM() {
         
-        hHDIBBJDLAN_ = getDefaultInstance().getHHDIBBJDLAN();
+        fPLPGEGEJJM_ = getDefaultInstance().getFPLPGEGEJJM();
         onChanged();
         return this;
       }
       /**
-       * <code>string HHDIBBJDLAN = 14;</code>
-       * @param value The bytes for hHDIBBJDLAN to set.
+       * <code>string FPLPGEGEJJM = 14;</code>
+       * @param value The bytes for fPLPGEGEJJM to set.
        * @return This builder for chaining.
        */
-      public Builder setHHDIBBJDLANBytes(
+      public Builder setFPLPGEGEJJMBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        hHDIBBJDLAN_ = value;
+        fPLPGEGEJJM_ = value;
         onChanged();
         return this;
       }
@@ -1785,7 +1785,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
       "_info\030\003 \001(\0132\013.RegionInfo\022\031\n\021client_secre" +
       "t_key\030\013 \001(\014\022&\n\036region_custom_config_encr" +
       "ypted\030\014 \001(\014\022-\n%client_region_custom_conf" +
-      "ig_encrypted\030\r \001(\014\022\023\n\013HHDIBBJDLAN\030\016 \001(\t\022" +
+      "ig_encrypted\030\r \001(\014\022\023\n\013FPLPGEGEJJM\030\016 \001(\t\022" +
       "(\n\014force_update\030\004 \001(\0132\020.ForceUpdateInfoH" +
       "\000\022&\n\013stop_server\030\005 \001(\0132\017.StopServerInfoH" +
       "\000B\010\n\006detailB\033\n\031emu.grasscutter.net.proto" +
@@ -1803,7 +1803,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
     internal_static_QueryCurrRegionHttpRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryCurrRegionHttpRsp_descriptor,
-        new java.lang.String[] { "Retcode", "Msg", "RegionInfo", "ClientSecretKey", "RegionCustomConfigEncrypted", "ClientRegionCustomConfigEncrypted", "HHDIBBJDLAN", "ForceUpdate", "StopServer", "Detail", });
+        new java.lang.String[] { "Retcode", "Msg", "RegionInfo", "ClientSecretKey", "RegionCustomConfigEncrypted", "ClientRegionCustomConfigEncrypted", "FPLPGEGEJJM", "ForceUpdate", "StopServer", "Detail", });
     emu.grasscutter.net.proto.ForceUpdateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.RegionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.StopServerInfoOuterClass.getDescriptor();

@@ -16,7 +16,7 @@ public final class GalleryStopReasonOuterClass {
   }
   /**
    * <pre>
-   * Name: LLJAMLLPIIF
+   * Name: HFPGMAKDKLF
    * </pre>
    *
    * Protobuf enum {@code GalleryStopReason}
@@ -72,9 +72,13 @@ public final class GalleryStopReasonOuterClass {
      */
     GALLERY_STOP_LIFE_COUNT_ZERO(11),
     /**
-     * <code>GALLERY_STOP_REASON_PALOHPNAIMF = 12;</code>
+     * <code>GALLERY_STOP_ACTIVITY_CLOSED = 12;</code>
      */
-    GALLERY_STOP_REASON_PALOHPNAIMF(12),
+    GALLERY_STOP_ACTIVITY_CLOSED(12),
+    /**
+     * <code>GALLERY_STOP_LEAVE_REGION_FAIL = 13;</code>
+     */
+    GALLERY_STOP_LEAVE_REGION_FAIL(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -127,9 +131,13 @@ public final class GalleryStopReasonOuterClass {
      */
     public static final int GALLERY_STOP_LIFE_COUNT_ZERO_VALUE = 11;
     /**
-     * <code>GALLERY_STOP_REASON_PALOHPNAIMF = 12;</code>
+     * <code>GALLERY_STOP_ACTIVITY_CLOSED = 12;</code>
      */
-    public static final int GALLERY_STOP_REASON_PALOHPNAIMF_VALUE = 12;
+    public static final int GALLERY_STOP_ACTIVITY_CLOSED_VALUE = 12;
+    /**
+     * <code>GALLERY_STOP_LEAVE_REGION_FAIL = 13;</code>
+     */
+    public static final int GALLERY_STOP_LEAVE_REGION_FAIL_VALUE = 13;
 
 
     public final int getNumber() {
@@ -168,7 +176,8 @@ public final class GalleryStopReasonOuterClass {
         case 9: return GALLERY_STOP_FINISHED;
         case 10: return GALLERY_STOP_FUNGUS_ALL_DIE;
         case 11: return GALLERY_STOP_LIFE_COUNT_ZERO;
-        case 12: return GALLERY_STOP_REASON_PALOHPNAIMF;
+        case 12: return GALLERY_STOP_ACTIVITY_CLOSED;
+        case 13: return GALLERY_STOP_LEAVE_REGION_FAIL;
         default: return null;
       }
     }
@@ -234,7 +243,7 @@ public final class GalleryStopReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027GalleryStopReason.proto*\277\003\n\021GallerySto" +
+      "\n\027GalleryStopReason.proto*\340\003\n\021GallerySto" +
       "pReason\022\025\n\021GALLERY_STOP_NONE\020\000\022\027\n\023GALLER" +
       "Y_STOP_TIMEUP\020\001\022!\n\035GALLERY_STOP_CLIENT_I" +
       "NTERRUPT\020\002\022&\n\"GALLERY_STOP_LUA_INTERRUPT" +
@@ -244,9 +253,10 @@ public final class GalleryStopReasonOuterClass {
       "\n\037GALLERY_STOP_OTHER_PLAYER_ENTER\020\007\022\033\n\027G" +
       "ALLERY_STOP_AVATAR_DIE\020\010\022\031\n\025GALLERY_STOP" +
       "_FINISHED\020\t\022\037\n\033GALLERY_STOP_FUNGUS_ALL_D" +
-      "IE\020\n\022 \n\034GALLERY_STOP_LIFE_COUNT_ZERO\020\013\022#" +
-      "\n\037GALLERY_STOP_REASON_PALOHPNAIMF\020\014B\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "IE\020\n\022 \n\034GALLERY_STOP_LIFE_COUNT_ZERO\020\013\022 " +
+      "\n\034GALLERY_STOP_ACTIVITY_CLOSED\020\014\022\"\n\036GALL" +
+      "ERY_STOP_LEAVE_REGION_FAIL\020\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

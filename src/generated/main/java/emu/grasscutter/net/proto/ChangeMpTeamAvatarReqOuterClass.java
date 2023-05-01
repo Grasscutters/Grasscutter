@@ -19,7 +19,7 @@ public final class ChangeMpTeamAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 cur_avatar_guid = 8;</code>
+     * <code>uint64 cur_avatar_guid = 12;</code>
      * @return The curAvatarGuid.
      */
     long getCurAvatarGuid();
@@ -43,8 +43,8 @@ public final class ChangeMpTeamAvatarReqOuterClass {
   }
   /**
    * <pre>
-   * Name: EAACBMFACOK
-   * CmdId: 1660
+   * CmdId: 1698
+   * Name: HCJFKLALPGP
    * </pre>
    *
    * Protobuf type {@code ChangeMpTeamAvatarReq}
@@ -93,11 +93,6 @@ public final class ChangeMpTeamAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              curAvatarGuid_ = input.readUInt64();
-              break;
-            }
             case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
@@ -117,6 +112,11 @@ public final class ChangeMpTeamAvatarReqOuterClass {
                 avatarGuidList_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              curAvatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -154,10 +154,10 @@ public final class ChangeMpTeamAvatarReqOuterClass {
               emu.grasscutter.net.proto.ChangeMpTeamAvatarReqOuterClass.ChangeMpTeamAvatarReq.class, emu.grasscutter.net.proto.ChangeMpTeamAvatarReqOuterClass.ChangeMpTeamAvatarReq.Builder.class);
     }
 
-    public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 8;
+    public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 12;
     private long curAvatarGuid_;
     /**
-     * <code>uint64 cur_avatar_guid = 8;</code>
+     * <code>uint64 cur_avatar_guid = 12;</code>
      * @return The curAvatarGuid.
      */
     @java.lang.Override
@@ -208,15 +208,15 @@ public final class ChangeMpTeamAvatarReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (curAvatarGuid_ != 0L) {
-        output.writeUInt64(8, curAvatarGuid_);
-      }
       if (getAvatarGuidListList().size() > 0) {
         output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(avatarGuidList_.getLong(i));
+      }
+      if (curAvatarGuid_ != 0L) {
+        output.writeUInt64(12, curAvatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,10 +227,6 @@ public final class ChangeMpTeamAvatarReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (curAvatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, curAvatarGuid_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -244,6 +240,10 @@ public final class ChangeMpTeamAvatarReqOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         avatarGuidListMemoizedSerializedSize = dataSize;
+      }
+      if (curAvatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(12, curAvatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,8 +379,8 @@ public final class ChangeMpTeamAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * Name: EAACBMFACOK
-     * CmdId: 1660
+     * CmdId: 1698
+     * Name: HCJFKLALPGP
      * </pre>
      *
      * Protobuf type {@code ChangeMpTeamAvatarReq}
@@ -550,7 +550,7 @@ public final class ChangeMpTeamAvatarReqOuterClass {
 
       private long curAvatarGuid_ ;
       /**
-       * <code>uint64 cur_avatar_guid = 8;</code>
+       * <code>uint64 cur_avatar_guid = 12;</code>
        * @return The curAvatarGuid.
        */
       @java.lang.Override
@@ -558,7 +558,7 @@ public final class ChangeMpTeamAvatarReqOuterClass {
         return curAvatarGuid_;
       }
       /**
-       * <code>uint64 cur_avatar_guid = 8;</code>
+       * <code>uint64 cur_avatar_guid = 12;</code>
        * @param value The curAvatarGuid to set.
        * @return This builder for chaining.
        */
@@ -569,7 +569,7 @@ public final class ChangeMpTeamAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 cur_avatar_guid = 8;</code>
+       * <code>uint64 cur_avatar_guid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarGuid() {
@@ -725,7 +725,7 @@ public final class ChangeMpTeamAvatarReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ChangeMpTeamAvatarReq.proto\"J\n\025ChangeM" +
-      "pTeamAvatarReq\022\027\n\017cur_avatar_guid\030\010 \001(\004\022" +
+      "pTeamAvatarReq\022\027\n\017cur_avatar_guid\030\014 \001(\004\022" +
       "\030\n\020avatar_guid_list\030\t \003(\004B\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };

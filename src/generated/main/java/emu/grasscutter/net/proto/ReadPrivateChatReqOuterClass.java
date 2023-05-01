@@ -19,15 +19,15 @@ public final class ReadPrivateChatReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 3;</code>
+     * <code>uint32 target_uid = 7;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * Name: HIGDNBBNAMP
-   * CmdId: 5000
+   * CmdId: 5013
+   * Name: AFMNLNAKKBN
    * </pre>
    *
    * Protobuf type {@code ReadPrivateChatReq}
@@ -74,7 +74,7 @@ public final class ReadPrivateChatReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ReadPrivateChatReqOuterClass {
               emu.grasscutter.net.proto.ReadPrivateChatReqOuterClass.ReadPrivateChatReq.class, emu.grasscutter.net.proto.ReadPrivateChatReqOuterClass.ReadPrivateChatReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 3;
+    public static final int TARGET_UID_FIELD_NUMBER = 7;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 3;</code>
+     * <code>uint32 target_uid = 7;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ReadPrivateChatReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(3, targetUid_);
+        output.writeUInt32(7, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ReadPrivateChatReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, targetUid_);
+          .computeUInt32Size(7, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ReadPrivateChatReqOuterClass {
     }
     /**
      * <pre>
-     * Name: HIGDNBBNAMP
-     * CmdId: 5000
+     * CmdId: 5013
+     * Name: AFMNLNAKKBN
      * </pre>
      *
      * Protobuf type {@code ReadPrivateChatReq}
@@ -431,7 +431,7 @@ public final class ReadPrivateChatReqOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 3;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ReadPrivateChatReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 3;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ReadPrivateChatReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 3;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -527,7 +527,7 @@ public final class ReadPrivateChatReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ReadPrivateChatReq.proto\"(\n\022ReadPrivat" +
-      "eChatReq\022\022\n\ntarget_uid\030\003 \001(\rB\033\n\031emu.gras" +
+      "eChatReq\022\022\n\ntarget_uid\030\007 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

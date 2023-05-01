@@ -137,7 +137,7 @@ public final class CreateEntityInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: PDPKPDBANCA
+   * Name: KKJAKFLICEJ
    * </pre>
    *
    * Protobuf type {@code CreateEntityInfo}
@@ -914,7 +914,7 @@ public final class CreateEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: PDPKPDBANCA
+     * Name: KKJAKFLICEJ
      * </pre>
      *
      * Protobuf type {@code CreateEntityInfo}

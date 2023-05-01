@@ -84,7 +84,7 @@ public final class GadgetPlayInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: FOENOMBFLMO
+   * Name: OJOGHGHFEEP
    * </pre>
    *
    * Protobuf type {@code GadgetPlayInfo}
@@ -634,7 +634,7 @@ public final class GadgetPlayInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: FOENOMBFLMO
+     * Name: OJOGHGHFEEP
      * </pre>
      *
      * Protobuf type {@code GadgetPlayInfo}

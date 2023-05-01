@@ -50,7 +50,7 @@ public final class AvatarExcelInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: NEFCHPHBGAP
+   * Name: FFDCKFPNAHP
    * </pre>
    *
    * Protobuf type {@code AvatarExcelInfo}
@@ -415,7 +415,7 @@ public final class AvatarExcelInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: NEFCHPHBGAP
+     * Name: FFDCKFPNAHP
      * </pre>
      *
      * Protobuf type {@code AvatarExcelInfo}

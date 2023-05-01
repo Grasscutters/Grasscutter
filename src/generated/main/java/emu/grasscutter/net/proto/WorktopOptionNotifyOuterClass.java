@@ -19,32 +19,32 @@ public final class WorktopOptionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @return A list containing the optionList.
      */
     java.util.List<java.lang.Integer> getOptionListList();
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @return The count of optionList.
      */
     int getOptionListCount();
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
     int getOptionList(int index);
 
     /**
-     * <code>uint32 gadget_entity_id = 14;</code>
+     * <code>uint32 gadget_entity_id = 11;</code>
      * @return The gadgetEntityId.
      */
     int getGadgetEntityId();
   }
   /**
    * <pre>
-   * Name: HBOAACEFDIO
-   * CmdId: 864
+   * CmdId: 876
+   * Name: JABPJDGCCLD
    * </pre>
    *
    * Protobuf type {@code WorktopOptionNotify}
@@ -93,7 +93,7 @@ public final class WorktopOptionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 optionList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +101,7 @@ public final class WorktopOptionNotifyOuterClass {
               optionList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -114,7 +114,7 @@ public final class WorktopOptionNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 88: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
@@ -154,10 +154,10 @@ public final class WorktopOptionNotifyOuterClass {
               emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.class, emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.Builder.class);
     }
 
-    public static final int OPTION_LIST_FIELD_NUMBER = 5;
+    public static final int OPTION_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList optionList_;
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @return A list containing the optionList.
      */
     @java.lang.Override
@@ -166,14 +166,14 @@ public final class WorktopOptionNotifyOuterClass {
       return optionList_;
     }
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @return The count of optionList.
      */
     public int getOptionListCount() {
       return optionList_.size();
     }
     /**
-     * <code>repeated uint32 option_list = 5;</code>
+     * <code>repeated uint32 option_list = 2;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
@@ -182,10 +182,10 @@ public final class WorktopOptionNotifyOuterClass {
     }
     private int optionListMemoizedSerializedSize = -1;
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 14;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 11;
     private int gadgetEntityId_;
     /**
-     * <code>uint32 gadget_entity_id = 14;</code>
+     * <code>uint32 gadget_entity_id = 11;</code>
      * @return The gadgetEntityId.
      */
     @java.lang.Override
@@ -209,14 +209,14 @@ public final class WorktopOptionNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getOptionListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(optionListMemoizedSerializedSize);
       }
       for (int i = 0; i < optionList_.size(); i++) {
         output.writeUInt32NoTag(optionList_.getInt(i));
       }
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(14, gadgetEntityId_);
+        output.writeUInt32(11, gadgetEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,7 +243,7 @@ public final class WorktopOptionNotifyOuterClass {
       }
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gadgetEntityId_);
+          .computeUInt32Size(11, gadgetEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,8 +378,8 @@ public final class WorktopOptionNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: HBOAACEFDIO
-     * CmdId: 864
+     * CmdId: 876
+     * Name: JABPJDGCCLD
      * </pre>
      *
      * Protobuf type {@code WorktopOptionNotify}
@@ -555,7 +555,7 @@ public final class WorktopOptionNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @return A list containing the optionList.
        */
       public java.util.List<java.lang.Integer>
@@ -564,14 +564,14 @@ public final class WorktopOptionNotifyOuterClass {
                  java.util.Collections.unmodifiableList(optionList_) : optionList_;
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @return The count of optionList.
        */
       public int getOptionListCount() {
         return optionList_.size();
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @param index The index of the element to return.
        * @return The optionList at the given index.
        */
@@ -579,7 +579,7 @@ public final class WorktopOptionNotifyOuterClass {
         return optionList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The optionList to set.
        * @return This builder for chaining.
@@ -592,7 +592,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @param value The optionList to add.
        * @return This builder for chaining.
        */
@@ -603,7 +603,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @param values The optionList to add.
        * @return This builder for chaining.
        */
@@ -616,7 +616,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 5;</code>
+       * <code>repeated uint32 option_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOptionList() {
@@ -628,7 +628,7 @@ public final class WorktopOptionNotifyOuterClass {
 
       private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @return The gadgetEntityId.
        */
       @java.lang.Override
@@ -636,7 +636,7 @@ public final class WorktopOptionNotifyOuterClass {
         return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
@@ -647,7 +647,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
@@ -724,8 +724,8 @@ public final class WorktopOptionNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031WorktopOptionNotify.proto\"D\n\023WorktopOp" +
-      "tionNotify\022\023\n\013option_list\030\005 \003(\r\022\030\n\020gadge" +
-      "t_entity_id\030\016 \001(\rB\033\n\031emu.grasscutter.net" +
+      "tionNotify\022\023\n\013option_list\030\002 \003(\r\022\030\n\020gadge" +
+      "t_entity_id\030\013 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

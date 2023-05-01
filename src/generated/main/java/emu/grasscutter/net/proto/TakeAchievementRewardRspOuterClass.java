@@ -19,47 +19,47 @@ public final class TakeAchievementRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @return A list containing the idList.
      */
     java.util.List<java.lang.Integer> getIdListList();
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @return The count of idList.
      */
     int getIdListCount();
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The idList at the given index.
      */
@@ -67,8 +67,8 @@ public final class TakeAchievementRewardRspOuterClass {
   }
   /**
    * <pre>
-   * Name: LNFPECLLAJF
-   * CmdId: 2696
+   * CmdId: 2699
+   * Name: HKJFMELKBDM
    * </pre>
    *
    * Protobuf type {@code TakeAchievementRewardRsp}
@@ -118,7 +118,21 @@ public final class TakeAchievementRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 idList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -126,7 +140,7 @@ public final class TakeAchievementRewardRspOuterClass {
               idList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -137,20 +151,6 @@ public final class TakeAchievementRewardRspOuterClass {
                 idList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -168,11 +168,11 @@ public final class TakeAchievementRewardRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          idList_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           itemList_ = java.util.Collections.unmodifiableList(itemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          idList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -191,17 +191,17 @@ public final class TakeAchievementRewardRspOuterClass {
               emu.grasscutter.net.proto.TakeAchievementRewardRspOuterClass.TakeAchievementRewardRsp.class, emu.grasscutter.net.proto.TakeAchievementRewardRspOuterClass.TakeAchievementRewardRsp.Builder.class);
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 5;
+    public static final int ITEM_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -209,21 +209,21 @@ public final class TakeAchievementRewardRspOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 5;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
@@ -231,10 +231,10 @@ public final class TakeAchievementRewardRspOuterClass {
       return itemList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -242,10 +242,10 @@ public final class TakeAchievementRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int ID_LIST_FIELD_NUMBER = 1;
+    public static final int ID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList idList_;
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @return A list containing the idList.
      */
     @java.lang.Override
@@ -254,14 +254,14 @@ public final class TakeAchievementRewardRspOuterClass {
       return idList_;
     }
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @return The count of idList.
      */
     public int getIdListCount() {
       return idList_.size();
     }
     /**
-     * <code>repeated uint32 id_list = 1;</code>
+     * <code>repeated uint32 id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The idList at the given index.
      */
@@ -285,18 +285,18 @@ public final class TakeAchievementRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (retcode_ != 0) {
+        output.writeInt32(5, retcode_);
+      }
+      for (int i = 0; i < itemList_.size(); i++) {
+        output.writeMessage(10, itemList_.get(i));
+      }
       if (getIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(idListMemoizedSerializedSize);
       }
       for (int i = 0; i < idList_.size(); i++) {
         output.writeUInt32NoTag(idList_.getInt(i));
-      }
-      for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(5, itemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -307,6 +307,14 @@ public final class TakeAchievementRewardRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, retcode_);
+      }
+      for (int i = 0; i < itemList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, itemList_.get(i));
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < idList_.size(); i++) {
@@ -320,14 +328,6 @@ public final class TakeAchievementRewardRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         idListMemoizedSerializedSize = dataSize;
-      }
-      for (int i = 0; i < itemList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, itemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -468,8 +468,8 @@ public final class TakeAchievementRewardRspOuterClass {
     }
     /**
      * <pre>
-     * Name: LNFPECLLAJF
-     * CmdId: 2696
+     * CmdId: 2699
+     * Name: HKJFMELKBDM
      * </pre>
      *
      * Protobuf type {@code TakeAchievementRewardRsp}
@@ -692,7 +692,7 @@ public final class TakeAchievementRewardRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -702,7 +702,7 @@ public final class TakeAchievementRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -712,7 +712,7 @@ public final class TakeAchievementRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -722,7 +722,7 @@ public final class TakeAchievementRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -739,7 +739,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -753,7 +753,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -769,7 +769,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -786,7 +786,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -800,7 +800,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -814,7 +814,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -829,7 +829,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
@@ -842,7 +842,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -855,14 +855,14 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -872,7 +872,7 @@ public final class TakeAchievementRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -883,14 +883,14 @@ public final class TakeAchievementRewardRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -898,7 +898,7 @@ public final class TakeAchievementRewardRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 5;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -921,7 +921,7 @@ public final class TakeAchievementRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -929,7 +929,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -940,7 +940,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -958,7 +958,7 @@ public final class TakeAchievementRewardRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @return A list containing the idList.
        */
       public java.util.List<java.lang.Integer>
@@ -967,14 +967,14 @@ public final class TakeAchievementRewardRspOuterClass {
                  java.util.Collections.unmodifiableList(idList_) : idList_;
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @return The count of idList.
        */
       public int getIdListCount() {
         return idList_.size();
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @param index The index of the element to return.
        * @return The idList at the given index.
        */
@@ -982,7 +982,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return idList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The idList to set.
        * @return This builder for chaining.
@@ -995,7 +995,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @param value The idList to add.
        * @return This builder for chaining.
        */
@@ -1006,7 +1006,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @param values The idList to add.
        * @return This builder for chaining.
        */
@@ -1019,7 +1019,7 @@ public final class TakeAchievementRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 id_list = 1;</code>
+       * <code>repeated uint32 id_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIdList() {
@@ -1097,8 +1097,8 @@ public final class TakeAchievementRewardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036TakeAchievementRewardRsp.proto\032\017ItemPa" +
       "ram.proto\"[\n\030TakeAchievementRewardRsp\022\035\n" +
-      "\titem_list\030\005 \003(\0132\n.ItemParam\022\017\n\007retcode\030" +
-      "\006 \001(\005\022\017\n\007id_list\030\001 \003(\rB\033\n\031emu.grasscutte" +
+      "\titem_list\030\n \003(\0132\n.ItemParam\022\017\n\007retcode\030" +
+      "\005 \001(\005\022\017\n\007id_list\030\016 \003(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

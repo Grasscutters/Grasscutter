@@ -26,8 +26,8 @@ public final class PlayerForceExitRspOuterClass {
   }
   /**
    * <pre>
-   * Name: MGJOAEHDAIC
-   * CmdId: 190
+   * CmdId: 144
+   * Name: HBIGNFGKKDJ
    * </pre>
    *
    * Protobuf type {@code PlayerForceExitRsp}
@@ -279,8 +279,8 @@ public final class PlayerForceExitRspOuterClass {
     }
     /**
      * <pre>
-     * Name: MGJOAEHDAIC
-     * CmdId: 190
+     * CmdId: 144
+     * Name: HBIGNFGKKDJ
      * </pre>
      *
      * Protobuf type {@code PlayerForceExitRsp}

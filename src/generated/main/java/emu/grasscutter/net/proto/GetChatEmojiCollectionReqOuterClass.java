@@ -20,8 +20,8 @@ public final class GetChatEmojiCollectionReqOuterClass {
   }
   /**
    * <pre>
-   * Name: OOACLKMOEFE
-   * CmdId: 4021
+   * CmdId: 4019
+   * Name: JNHHBEBKNFO
    * </pre>
    *
    * Protobuf type {@code GetChatEmojiCollectionReq}
@@ -246,8 +246,8 @@ public final class GetChatEmojiCollectionReqOuterClass {
     }
     /**
      * <pre>
-     * Name: OOACLKMOEFE
-     * CmdId: 4021
+     * CmdId: 4019
+     * Name: JNHHBEBKNFO
      * </pre>
      *
      * Protobuf type {@code GetChatEmojiCollectionReq}

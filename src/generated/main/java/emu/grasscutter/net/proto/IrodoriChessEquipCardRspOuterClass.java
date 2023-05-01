@@ -19,33 +19,33 @@ public final class IrodoriChessEquipCardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 6;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_hard_map = 11;</code>
-     * @return The isHardMap.
-     */
-    boolean getIsHardMap();
-
-    /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 card_id = 9;</code>
+     * <code>bool is_hard_map = 13;</code>
+     * @return The isHardMap.
+     */
+    boolean getIsHardMap();
+
+    /**
+     * <code>uint32 card_id = 6;</code>
      * @return The cardId.
      */
     int getCardId();
+
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
    * <pre>
-   * Name: NFNLEIPBPFE
-   * CmdId: 8145
+   * CmdId: 8650
+   * Name: FEGOKDNDBCO
    * </pre>
    *
    * Protobuf type {@code IrodoriChessEquipCardRsp}
@@ -92,22 +92,22 @@ public final class IrodoriChessEquipCardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 48: {
 
               cardId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 88: {
+            case 104: {
 
               isHardMap_ = input.readBool();
               break;
@@ -144,32 +144,10 @@ public final class IrodoriChessEquipCardRspOuterClass {
               emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp.class, emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 6;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 6;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_HARD_MAP_FIELD_NUMBER = 11;
-    private boolean isHardMap_;
-    /**
-     * <code>bool is_hard_map = 11;</code>
-     * @return The isHardMap.
-     */
-    @java.lang.Override
-    public boolean getIsHardMap() {
-      return isHardMap_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -177,15 +155,37 @@ public final class IrodoriChessEquipCardRspOuterClass {
       return retcode_;
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 9;
+    public static final int IS_HARD_MAP_FIELD_NUMBER = 13;
+    private boolean isHardMap_;
+    /**
+     * <code>bool is_hard_map = 13;</code>
+     * @return The isHardMap.
+     */
+    @java.lang.Override
+    public boolean getIsHardMap() {
+      return isHardMap_;
+    }
+
+    public static final int CARD_ID_FIELD_NUMBER = 6;
     private int cardId_;
     /**
-     * <code>uint32 card_id = 9;</code>
+     * <code>uint32 card_id = 6;</code>
      * @return The cardId.
      */
     @java.lang.Override
     public int getCardId() {
       return cardId_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -203,16 +203,16 @@ public final class IrodoriChessEquipCardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
-        output.writeUInt32(6, levelId_);
+        output.writeUInt32(3, levelId_);
       }
       if (cardId_ != 0) {
-        output.writeUInt32(9, cardId_);
+        output.writeUInt32(6, cardId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(9, retcode_);
       }
       if (isHardMap_ != false) {
-        output.writeBool(11, isHardMap_);
+        output.writeBool(13, isHardMap_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,19 +225,19 @@ public final class IrodoriChessEquipCardRspOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, levelId_);
+          .computeUInt32Size(3, levelId_);
       }
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, cardId_);
+          .computeUInt32Size(6, cardId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       if (isHardMap_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isHardMap_);
+          .computeBoolSize(13, isHardMap_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class IrodoriChessEquipCardRspOuterClass {
       }
       emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp other = (emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getIsHardMap()
-          != other.getIsHardMap()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getIsHardMap()
+          != other.getIsHardMap()) return false;
       if (getCardId()
           != other.getCardId()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,15 +273,15 @@ public final class IrodoriChessEquipCardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + IS_HARD_MAP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHardMap());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,8 +379,8 @@ public final class IrodoriChessEquipCardRspOuterClass {
     }
     /**
      * <pre>
-     * Name: NFNLEIPBPFE
-     * CmdId: 8145
+     * CmdId: 8650
+     * Name: FEGOKDNDBCO
      * </pre>
      *
      * Protobuf type {@code IrodoriChessEquipCardRsp}
@@ -420,13 +420,13 @@ public final class IrodoriChessEquipCardRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
+        retcode_ = 0;
 
         isHardMap_ = false;
 
-        retcode_ = 0;
-
         cardId_ = 0;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -454,10 +454,10 @@ public final class IrodoriChessEquipCardRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp buildPartial() {
         emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp result = new emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp(this);
-        result.levelId_ = levelId_;
-        result.isHardMap_ = isHardMap_;
         result.retcode_ = retcode_;
+        result.isHardMap_ = isHardMap_;
         result.cardId_ = cardId_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -506,17 +506,17 @@ public final class IrodoriChessEquipCardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp other) {
         if (other == emu.grasscutter.net.proto.IrodoriChessEquipCardRspOuterClass.IrodoriChessEquipCardRsp.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getIsHardMap() != false) {
           setIsHardMap(other.getIsHardMap());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -547,71 +547,9 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 6;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 6;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isHardMap_ ;
-      /**
-       * <code>bool is_hard_map = 11;</code>
-       * @return The isHardMap.
-       */
-      @java.lang.Override
-      public boolean getIsHardMap() {
-        return isHardMap_;
-      }
-      /**
-       * <code>bool is_hard_map = 11;</code>
-       * @param value The isHardMap to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsHardMap(boolean value) {
-        
-        isHardMap_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_hard_map = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsHardMap() {
-        
-        isHardMap_ = false;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -619,7 +557,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -630,7 +568,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -640,9 +578,40 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return this;
       }
 
+      private boolean isHardMap_ ;
+      /**
+       * <code>bool is_hard_map = 13;</code>
+       * @return The isHardMap.
+       */
+      @java.lang.Override
+      public boolean getIsHardMap() {
+        return isHardMap_;
+      }
+      /**
+       * <code>bool is_hard_map = 13;</code>
+       * @param value The isHardMap to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsHardMap(boolean value) {
+        
+        isHardMap_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_hard_map = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsHardMap() {
+        
+        isHardMap_ = false;
+        onChanged();
+        return this;
+      }
+
       private int cardId_ ;
       /**
-       * <code>uint32 card_id = 9;</code>
+       * <code>uint32 card_id = 6;</code>
        * @return The cardId.
        */
       @java.lang.Override
@@ -650,7 +619,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return cardId_;
       }
       /**
-       * <code>uint32 card_id = 9;</code>
+       * <code>uint32 card_id = 6;</code>
        * @param value The cardId to set.
        * @return This builder for chaining.
        */
@@ -661,12 +630,43 @@ public final class IrodoriChessEquipCardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_id = 9;</code>
+       * <code>uint32 card_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
         
         cardId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -738,9 +738,9 @@ public final class IrodoriChessEquipCardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036IrodoriChessEquipCardRsp.proto\"c\n\030Irod" +
-      "oriChessEquipCardRsp\022\020\n\010level_id\030\006 \001(\r\022\023" +
-      "\n\013is_hard_map\030\013 \001(\010\022\017\n\007retcode\030\n \001(\005\022\017\n\007" +
-      "card_id\030\t \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "oriChessEquipCardRsp\022\017\n\007retcode\030\t \001(\005\022\023\n" +
+      "\013is_hard_map\030\r \001(\010\022\017\n\007card_id\030\006 \001(\r\022\020\n\010l" +
+      "evel_id\030\003 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -752,7 +752,7 @@ public final class IrodoriChessEquipCardRspOuterClass {
     internal_static_IrodoriChessEquipCardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IrodoriChessEquipCardRsp_descriptor,
-        new java.lang.String[] { "LevelId", "IsHardMap", "Retcode", "CardId", });
+        new java.lang.String[] { "Retcode", "IsHardMap", "CardId", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

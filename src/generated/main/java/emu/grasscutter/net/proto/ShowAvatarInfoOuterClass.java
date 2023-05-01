@@ -268,7 +268,7 @@ public final class ShowAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LFKBPFHPKCN
+   * Name: MLOIGBMELIF
    * </pre>
    *
    * Protobuf type {@code ShowAvatarInfo}
@@ -1421,7 +1421,7 @@ public final class ShowAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LFKBPFHPKCN
+     * Name: MLOIGBMELIF
      * </pre>
      *
      * Protobuf type {@code ShowAvatarInfo}

@@ -16,7 +16,7 @@ public final class MpSettingTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: FEEEMGFIGBG
+   * Name: CEBEGOKNPHM
    * </pre>
    *
    * Protobuf enum {@code MpSettingType}

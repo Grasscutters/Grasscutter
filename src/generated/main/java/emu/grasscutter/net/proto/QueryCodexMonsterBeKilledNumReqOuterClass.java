@@ -37,8 +37,8 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
   }
   /**
    * <pre>
-   * Name: JNDHCGKOCNI
-   * CmdId: 4208
+   * CmdId: 4203
+   * Name: NBJNBHODKPN
    * </pre>
    *
    * Protobuf type {@code QueryCodexMonsterBeKilledNumReq}
@@ -345,8 +345,8 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
     }
     /**
      * <pre>
-     * Name: JNDHCGKOCNI
-     * CmdId: 4208
+     * CmdId: 4203
+     * Name: NBJNBHODKPN
      * </pre>
      *
      * Protobuf type {@code QueryCodexMonsterBeKilledNumReq}

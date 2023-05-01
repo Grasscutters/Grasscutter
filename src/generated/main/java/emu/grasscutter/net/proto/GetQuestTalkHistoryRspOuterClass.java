@@ -19,38 +19,38 @@ public final class GetQuestTalkHistoryRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
+     * <code>repeated uint32 talk_id_list = 3;</code>
+     * @return A list containing the talkIdList.
      */
-    int getRetcode();
+    java.util.List<java.lang.Integer> getTalkIdListList();
+    /**
+     * <code>repeated uint32 talk_id_list = 3;</code>
+     * @return The count of talkIdList.
+     */
+    int getTalkIdListCount();
+    /**
+     * <code>repeated uint32 talk_id_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The talkIdList at the given index.
+     */
+    int getTalkIdList(int index);
 
     /**
-     * <code>uint32 parent_quest_id = 9;</code>
+     * <code>uint32 parent_quest_id = 5;</code>
      * @return The parentQuestId.
      */
     int getParentQuestId();
 
     /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
-     * @return A list containing the talkIdList.
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
      */
-    java.util.List<java.lang.Integer> getTalkIdListList();
-    /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
-     * @return The count of talkIdList.
-     */
-    int getTalkIdListCount();
-    /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
-     * @param index The index of the element to return.
-     * @return The talkIdList at the given index.
-     */
-    int getTalkIdList(int index);
+    int getRetcode();
   }
   /**
    * <pre>
-   * Name: MMOIOJJOHGJ
-   * CmdId: 465
+   * CmdId: 492
+   * Name: DNJJKDAHJEL
    * </pre>
    *
    * Protobuf type {@code GetQuestTalkHistoryRsp}
@@ -99,7 +99,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 talkIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -107,7 +107,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
               talkIdList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -120,12 +120,12 @@ public final class GetQuestTalkHistoryRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 40: {
 
               parentQuestId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -165,32 +165,10 @@ public final class GetQuestTalkHistoryRspOuterClass {
               emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp.class, emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 9;
-    private int parentQuestId_;
-    /**
-     * <code>uint32 parent_quest_id = 9;</code>
-     * @return The parentQuestId.
-     */
-    @java.lang.Override
-    public int getParentQuestId() {
-      return parentQuestId_;
-    }
-
-    public static final int TALK_ID_LIST_FIELD_NUMBER = 5;
+    public static final int TALK_ID_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList talkIdList_;
     /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
+     * <code>repeated uint32 talk_id_list = 3;</code>
      * @return A list containing the talkIdList.
      */
     @java.lang.Override
@@ -199,14 +177,14 @@ public final class GetQuestTalkHistoryRspOuterClass {
       return talkIdList_;
     }
     /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
+     * <code>repeated uint32 talk_id_list = 3;</code>
      * @return The count of talkIdList.
      */
     public int getTalkIdListCount() {
       return talkIdList_.size();
     }
     /**
-     * <code>repeated uint32 talk_id_list = 5;</code>
+     * <code>repeated uint32 talk_id_list = 3;</code>
      * @param index The index of the element to return.
      * @return The talkIdList at the given index.
      */
@@ -214,6 +192,28 @@ public final class GetQuestTalkHistoryRspOuterClass {
       return talkIdList_.getInt(index);
     }
     private int talkIdListMemoizedSerializedSize = -1;
+
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 5;
+    private int parentQuestId_;
+    /**
+     * <code>uint32 parent_quest_id = 5;</code>
+     * @return The parentQuestId.
+     */
+    @java.lang.Override
+    public int getParentQuestId() {
+      return parentQuestId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -231,17 +231,17 @@ public final class GetQuestTalkHistoryRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getTalkIdListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(talkIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < talkIdList_.size(); i++) {
         output.writeUInt32NoTag(talkIdList_.getInt(i));
       }
       if (parentQuestId_ != 0) {
-        output.writeUInt32(9, parentQuestId_);
+        output.writeUInt32(5, parentQuestId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,11 +268,11 @@ public final class GetQuestTalkHistoryRspOuterClass {
       }
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, parentQuestId_);
+          .computeUInt32Size(5, parentQuestId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,12 +289,12 @@ public final class GetQuestTalkHistoryRspOuterClass {
       }
       emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp other = (emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getParentQuestId()
-          != other.getParentQuestId()) return false;
       if (!getTalkIdListList()
           .equals(other.getTalkIdListList())) return false;
+      if (getParentQuestId()
+          != other.getParentQuestId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -306,14 +306,14 @@ public final class GetQuestTalkHistoryRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentQuestId();
       if (getTalkIdListCount() > 0) {
         hash = (37 * hash) + TALK_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTalkIdListList().hashCode();
       }
+      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentQuestId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -411,8 +411,8 @@ public final class GetQuestTalkHistoryRspOuterClass {
     }
     /**
      * <pre>
-     * Name: MMOIOJJOHGJ
-     * CmdId: 465
+     * CmdId: 492
+     * Name: DNJJKDAHJEL
      * </pre>
      *
      * Protobuf type {@code GetQuestTalkHistoryRsp}
@@ -452,12 +452,12 @@ public final class GetQuestTalkHistoryRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
-        parentQuestId_ = 0;
-
         talkIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        parentQuestId_ = 0;
+
+        retcode_ = 0;
+
         return this;
       }
 
@@ -485,13 +485,13 @@ public final class GetQuestTalkHistoryRspOuterClass {
       public emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp buildPartial() {
         emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp result = new emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.parentQuestId_ = parentQuestId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           talkIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.talkIdList_ = talkIdList_;
+        result.parentQuestId_ = parentQuestId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -540,12 +540,6 @@ public final class GetQuestTalkHistoryRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp other) {
         if (other == emu.grasscutter.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (other.getParentQuestId() != 0) {
-          setParentQuestId(other.getParentQuestId());
-        }
         if (!other.talkIdList_.isEmpty()) {
           if (talkIdList_.isEmpty()) {
             talkIdList_ = other.talkIdList_;
@@ -555,6 +549,12 @@ public final class GetQuestTalkHistoryRspOuterClass {
             talkIdList_.addAll(other.talkIdList_);
           }
           onChanged();
+        }
+        if (other.getParentQuestId() != 0) {
+          setParentQuestId(other.getParentQuestId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -586,68 +586,6 @@ public final class GetQuestTalkHistoryRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int parentQuestId_ ;
-      /**
-       * <code>uint32 parent_quest_id = 9;</code>
-       * @return The parentQuestId.
-       */
-      @java.lang.Override
-      public int getParentQuestId() {
-        return parentQuestId_;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 9;</code>
-       * @param value The parentQuestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentQuestId(int value) {
-        
-        parentQuestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentQuestId() {
-        
-        parentQuestId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList talkIdList_ = emptyIntList();
       private void ensureTalkIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -656,7 +594,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @return A list containing the talkIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -665,14 +603,14 @@ public final class GetQuestTalkHistoryRspOuterClass {
                  java.util.Collections.unmodifiableList(talkIdList_) : talkIdList_;
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @return The count of talkIdList.
        */
       public int getTalkIdListCount() {
         return talkIdList_.size();
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @param index The index of the element to return.
        * @return The talkIdList at the given index.
        */
@@ -680,7 +618,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
         return talkIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The talkIdList to set.
        * @return This builder for chaining.
@@ -693,7 +631,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @param value The talkIdList to add.
        * @return This builder for chaining.
        */
@@ -704,7 +642,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @param values The talkIdList to add.
        * @return This builder for chaining.
        */
@@ -717,12 +655,74 @@ public final class GetQuestTalkHistoryRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 talk_id_list = 5;</code>
+       * <code>repeated uint32 talk_id_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTalkIdList() {
         talkIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int parentQuestId_ ;
+      /**
+       * <code>uint32 parent_quest_id = 5;</code>
+       * @return The parentQuestId.
+       */
+      @java.lang.Override
+      public int getParentQuestId() {
+        return parentQuestId_;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 5;</code>
+       * @param value The parentQuestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentQuestId(int value) {
+        
+        parentQuestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParentQuestId() {
+        
+        parentQuestId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -794,8 +794,8 @@ public final class GetQuestTalkHistoryRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GetQuestTalkHistoryRsp.proto\"X\n\026GetQue" +
-      "stTalkHistoryRsp\022\017\n\007retcode\030\016 \001(\005\022\027\n\017par" +
-      "ent_quest_id\030\t \001(\r\022\024\n\014talk_id_list\030\005 \003(\r" +
+      "stTalkHistoryRsp\022\024\n\014talk_id_list\030\003 \003(\r\022\027" +
+      "\n\017parent_quest_id\030\005 \001(\r\022\017\n\007retcode\030\r \001(\005" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -807,7 +807,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
     internal_static_GetQuestTalkHistoryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetQuestTalkHistoryRsp_descriptor,
-        new java.lang.String[] { "Retcode", "ParentQuestId", "TalkIdList", });
+        new java.lang.String[] { "TalkIdList", "ParentQuestId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

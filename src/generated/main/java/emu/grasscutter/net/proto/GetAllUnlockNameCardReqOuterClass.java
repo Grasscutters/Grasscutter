@@ -20,8 +20,8 @@ public final class GetAllUnlockNameCardReqOuterClass {
   }
   /**
    * <pre>
-   * Name: LENJFAJPJBB
-   * CmdId: 4046
+   * CmdId: 4095
+   * Name: LNGOAPEFMHH
    * </pre>
    *
    * Protobuf type {@code GetAllUnlockNameCardReq}
@@ -246,8 +246,8 @@ public final class GetAllUnlockNameCardReqOuterClass {
     }
     /**
      * <pre>
-     * Name: LENJFAJPJBB
-     * CmdId: 4046
+     * CmdId: 4095
+     * Name: LNGOAPEFMHH
      * </pre>
      *
      * Protobuf type {@code GetAllUnlockNameCardReq}

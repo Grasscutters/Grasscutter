@@ -261,7 +261,7 @@ public final class SceneMonsterInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: AJPMIFGBPCH
+   * Name: CIBJHBFKKAN
    * </pre>
    *
    * Protobuf type {@code SceneMonsterInfo}
@@ -1511,7 +1511,7 @@ public final class SceneMonsterInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: AJPMIFGBPCH
+     * Name: CIBJHBFKKAN
      * </pre>
      *
      * Protobuf type {@code SceneMonsterInfo}

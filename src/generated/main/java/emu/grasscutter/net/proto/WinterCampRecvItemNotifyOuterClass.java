@@ -19,24 +19,24 @@ public final class WinterCampRecvItemNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      * @return Whether the recvItemData field is set.
      */
     boolean hasRecvItemData();
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      * @return The recvItemData.
      */
     emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData getRecvItemData();
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      */
     emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder getRecvItemDataOrBuilder();
   }
   /**
    * <pre>
-   * Name: OAGALFMPOHL
-   * CmdId: 8740
+   * CmdId: 8869
+   * Name: BFFJAMBLFHI
    * </pre>
    *
    * Protobuf type {@code WinterCampRecvItemNotify}
@@ -83,7 +83,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 58: {
               emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder subBuilder = null;
               if (recvItemData_ != null) {
                 subBuilder = recvItemData_.toBuilder();
@@ -128,10 +128,10 @@ public final class WinterCampRecvItemNotifyOuterClass {
               emu.grasscutter.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify.class, emu.grasscutter.net.proto.WinterCampRecvItemNotifyOuterClass.WinterCampRecvItemNotify.Builder.class);
     }
 
-    public static final int RECV_ITEM_DATA_FIELD_NUMBER = 9;
+    public static final int RECV_ITEM_DATA_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData recvItemData_;
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      * @return Whether the recvItemData field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
       return recvItemData_ != null;
     }
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      * @return The recvItemData.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
       return recvItemData_ == null ? emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.getDefaultInstance() : recvItemData_;
     }
     /**
-     * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+     * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder getRecvItemDataOrBuilder() {
@@ -169,7 +169,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (recvItemData_ != null) {
-        output.writeMessage(9, getRecvItemData());
+        output.writeMessage(7, getRecvItemData());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
       size = 0;
       if (recvItemData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getRecvItemData());
+          .computeMessageSize(7, getRecvItemData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class WinterCampRecvItemNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: OAGALFMPOHL
-     * CmdId: 8740
+     * CmdId: 8869
+     * Name: BFFJAMBLFHI
      * </pre>
      *
      * Protobuf type {@code WinterCampRecvItemNotify}
@@ -478,14 +478,14 @@ public final class WinterCampRecvItemNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData, emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder, emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder> recvItemDataBuilder_;
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        * @return Whether the recvItemData field is set.
        */
       public boolean hasRecvItemData() {
         return recvItemDataBuilder_ != null || recvItemData_ != null;
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        * @return The recvItemData.
        */
       public emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData getRecvItemData() {
@@ -496,7 +496,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         }
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public Builder setRecvItemData(emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData value) {
         if (recvItemDataBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public Builder setRecvItemData(
           emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public Builder mergeRecvItemData(emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData value) {
         if (recvItemDataBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public Builder clearRecvItemData() {
         if (recvItemDataBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder getRecvItemDataBuilder() {
         
@@ -566,7 +566,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         return getRecvItemDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       public emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder getRecvItemDataOrBuilder() {
         if (recvItemDataBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         }
       }
       /**
-       * <code>.WinterCampRecvItemData recv_item_data = 9;</code>
+       * <code>.WinterCampRecvItemData recv_item_data = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData, emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder, emu.grasscutter.net.proto.WinterCampRecvItemDataOuterClass.WinterCampRecvItemDataOrBuilder> 
@@ -661,7 +661,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036WinterCampRecvItemNotify.proto\032\034Winter" +
       "CampRecvItemData.proto\"K\n\030WinterCampRecv" +
-      "ItemNotify\022/\n\016recv_item_data\030\t \001(\0132\027.Win" +
+      "ItemNotify\022/\n\016recv_item_data\030\007 \001(\0132\027.Win" +
       "terCampRecvItemDataB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };

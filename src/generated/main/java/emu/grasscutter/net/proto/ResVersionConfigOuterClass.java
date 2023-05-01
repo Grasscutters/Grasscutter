@@ -92,7 +92,7 @@ public final class ResVersionConfigOuterClass {
   }
   /**
    * <pre>
-   * Name: KJGMEKEGPNF
+   * Name: HCBPECOJPEI
    * </pre>
    *
    * Protobuf type {@code ResVersionConfig}
@@ -647,7 +647,7 @@ public final class ResVersionConfigOuterClass {
     }
     /**
      * <pre>
-     * Name: KJGMEKEGPNF
+     * Name: HCBPECOJPEI
      * </pre>
      *
      * Protobuf type {@code ResVersionConfig}

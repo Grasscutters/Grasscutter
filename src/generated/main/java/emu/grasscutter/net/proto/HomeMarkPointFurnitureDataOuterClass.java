@@ -85,7 +85,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
   }
   /**
    * <pre>
-   * Name: BEAHFDOKHFA
+   * Name: HNCPFKLDBIF
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -616,7 +616,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
     }
     /**
      * <pre>
-     * Name: BEAHFDOKHFA
+     * Name: HNCPFKLDBIF
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointFurnitureData}

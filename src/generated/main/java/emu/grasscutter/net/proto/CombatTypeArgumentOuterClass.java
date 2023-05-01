@@ -16,7 +16,7 @@ public final class CombatTypeArgumentOuterClass {
   }
   /**
    * <pre>
-   * Name: BPJGLKPJAPE
+   * Name: DHGBKMMCECM
    * </pre>
    *
    * Protobuf enum {@code CombatTypeArgument}

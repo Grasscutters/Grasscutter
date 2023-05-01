@@ -19,15 +19,15 @@ public final class SceneEntityDrownReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 12;</code>
+     * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * Name: PLAPOIKJPOD
-   * CmdId: 246
+   * CmdId: 295
+   * Name: ONKAKAHPGHO
    * </pre>
    *
    * Protobuf type {@code SceneEntityDrownReq}
@@ -74,7 +74,7 @@ public final class SceneEntityDrownReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 64: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class SceneEntityDrownReqOuterClass {
               emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.class, emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 12;
+    public static final int ENTITY_ID_FIELD_NUMBER = 8;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 12;</code>
+     * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SceneEntityDrownReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(12, entityId_);
+        output.writeUInt32(8, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SceneEntityDrownReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, entityId_);
+          .computeUInt32Size(8, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SceneEntityDrownReqOuterClass {
     }
     /**
      * <pre>
-     * Name: PLAPOIKJPOD
-     * CmdId: 246
+     * CmdId: 295
+     * Name: ONKAKAHPGHO
      * </pre>
      *
      * Protobuf type {@code SceneEntityDrownReq}
@@ -431,7 +431,7 @@ public final class SceneEntityDrownReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entity_id = 8;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SceneEntityDrownReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entity_id = 8;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SceneEntityDrownReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 12;</code>
+       * <code>uint32 entity_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -527,7 +527,7 @@ public final class SceneEntityDrownReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031SceneEntityDrownReq.proto\"(\n\023SceneEnti" +
-      "tyDrownReq\022\021\n\tentity_id\030\014 \001(\rB\033\n\031emu.gra" +
+      "tyDrownReq\022\021\n\tentity_id\030\010 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

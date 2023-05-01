@@ -19,13 +19,13 @@ public final class NpcTalkReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 npc_entity_id = 8;</code>
+     * <code>uint32 npc_entity_id = 7;</code>
      * @return The npcEntityId.
      */
     int getNpcEntityId();
 
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     int getEntityId();
@@ -38,8 +38,8 @@ public final class NpcTalkReqOuterClass {
   }
   /**
    * <pre>
-   * Name: CFBCJPNBGAI
-   * CmdId: 567
+   * CmdId: 590
+   * Name: LPCLBLKFNPB
    * </pre>
    *
    * Protobuf type {@code NpcTalkReq}
@@ -86,12 +86,7 @@ public final class NpcTalkReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+            case 56: {
 
               npcEntityId_ = input.readUInt32();
               break;
@@ -99,6 +94,11 @@ public final class NpcTalkReqOuterClass {
             case 88: {
 
               talkId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class NpcTalkReqOuterClass {
               emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReq.class, emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReq.Builder.class);
     }
 
-    public static final int NPC_ENTITY_ID_FIELD_NUMBER = 8;
+    public static final int NPC_ENTITY_ID_FIELD_NUMBER = 7;
     private int npcEntityId_;
     /**
-     * <code>uint32 npc_entity_id = 8;</code>
+     * <code>uint32 npc_entity_id = 7;</code>
      * @return The npcEntityId.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class NpcTalkReqOuterClass {
       return npcEntityId_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 14;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class NpcTalkReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
-      }
       if (npcEntityId_ != 0) {
-        output.writeUInt32(8, npcEntityId_);
+        output.writeUInt32(7, npcEntityId_);
       }
       if (talkId_ != 0) {
         output.writeUInt32(11, talkId_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(14, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class NpcTalkReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
-      }
       if (npcEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, npcEntityId_);
+          .computeUInt32Size(7, npcEntityId_);
       }
       if (talkId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, talkId_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,8 +345,8 @@ public final class NpcTalkReqOuterClass {
     }
     /**
      * <pre>
-     * Name: CFBCJPNBGAI
-     * CmdId: 567
+     * CmdId: 590
+     * Name: LPCLBLKFNPB
      * </pre>
      *
      * Protobuf type {@code NpcTalkReq}
@@ -509,7 +509,7 @@ public final class NpcTalkReqOuterClass {
 
       private int npcEntityId_ ;
       /**
-       * <code>uint32 npc_entity_id = 8;</code>
+       * <code>uint32 npc_entity_id = 7;</code>
        * @return The npcEntityId.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class NpcTalkReqOuterClass {
         return npcEntityId_;
       }
       /**
-       * <code>uint32 npc_entity_id = 8;</code>
+       * <code>uint32 npc_entity_id = 7;</code>
        * @param value The npcEntityId to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class NpcTalkReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 npc_entity_id = 8;</code>
+       * <code>uint32 npc_entity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearNpcEntityId() {
@@ -540,7 +540,7 @@ public final class NpcTalkReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class NpcTalkReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class NpcTalkReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -667,7 +667,7 @@ public final class NpcTalkReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020NpcTalkReq.proto\"G\n\nNpcTalkReq\022\025\n\rnpc_" +
-      "entity_id\030\010 \001(\r\022\021\n\tentity_id\030\003 \001(\r\022\017\n\007ta" +
+      "entity_id\030\007 \001(\r\022\021\n\tentity_id\030\016 \001(\r\022\017\n\007ta" +
       "lk_id\030\013 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };

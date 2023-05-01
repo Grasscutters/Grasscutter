@@ -16,7 +16,7 @@ public final class MonsterBornTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: COJKOLLOBJB
+   * Name: PKKAPIFAEHB
    * </pre>
    *
    * Protobuf enum {@code MonsterBornType}

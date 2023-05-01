@@ -19,6 +19,29 @@ public final class ObstacleModifyNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 scene_id = 2;</code>
+     * @return The sceneId.
+     */
+    int getSceneId();
+
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @return A list containing the removeObstacleIds.
+     */
+    java.util.List<java.lang.Integer> getRemoveObstacleIdsList();
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @return The count of removeObstacleIds.
+     */
+    int getRemoveObstacleIdsCount();
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @param index The index of the element to return.
+     * @return The removeObstacleIds at the given index.
+     */
+    int getRemoveObstacleIds(int index);
+
+    /**
      * <code>repeated .ObstacleInfo add_obstacles = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> 
@@ -41,34 +64,11 @@ public final class ObstacleModifyNotifyOuterClass {
      */
     emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder getAddObstaclesOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 scene_id = 8;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @return A list containing the removeObstacleIds.
-     */
-    java.util.List<java.lang.Integer> getRemoveObstacleIdsList();
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @return The count of removeObstacleIds.
-     */
-    int getRemoveObstacleIdsCount();
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @param index The index of the element to return.
-     * @return The removeObstacleIds at the given index.
-     */
-    int getRemoveObstacleIds(int index);
   }
   /**
    * <pre>
-   * Name: BMCJDFCFMBO
-   * CmdId: 2354
+   * CmdId: 2389
+   * Name: BEDOODLKBLH
    * </pre>
    *
    * Protobuf type {@code ObstacleModifyNotify}
@@ -83,8 +83,8 @@ public final class ObstacleModifyNotifyOuterClass {
       super(builder);
     }
     private ObstacleModifyNotify() {
-      addObstacles_ = java.util.Collections.emptyList();
       removeObstacleIds_ = emptyIntList();
+      addObstacles_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -119,38 +119,38 @@ public final class ObstacleModifyNotifyOuterClass {
               done = true;
               break;
             case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                removeObstacleIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              removeObstacleIds_.addInt(input.readInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                removeObstacleIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                removeObstacleIds_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
+
+              sceneId_ = input.readUInt32();
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 addObstacles_ = new java.util.ArrayList<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               addObstacles_.add(
                   input.readMessage(emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.parser(), extensionRegistry));
               break;
             }
-            case 64: {
-
-              sceneId_ = input.readUInt32();
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                removeObstacleIds_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              removeObstacleIds_.addInt(input.readInt32());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                removeObstacleIds_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                removeObstacleIds_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             default: {
@@ -169,10 +169,10 @@ public final class ObstacleModifyNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          removeObstacleIds_.makeImmutable(); // C
+          addObstacles_ = java.util.Collections.unmodifiableList(addObstacles_);
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          addObstacles_ = java.util.Collections.unmodifiableList(addObstacles_);
+          removeObstacleIds_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -190,6 +190,45 @@ public final class ObstacleModifyNotifyOuterClass {
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify.class, emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify.Builder.class);
     }
+
+    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    private int sceneId_;
+    /**
+     * <code>uint32 scene_id = 2;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
+    }
+
+    public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList removeObstacleIds_;
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @return A list containing the removeObstacleIds.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getRemoveObstacleIdsList() {
+      return removeObstacleIds_;
+    }
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @return The count of removeObstacleIds.
+     */
+    public int getRemoveObstacleIdsCount() {
+      return removeObstacleIds_.size();
+    }
+    /**
+     * <code>repeated int32 remove_obstacle_ids = 13;</code>
+     * @param index The index of the element to return.
+     * @return The removeObstacleIds at the given index.
+     */
+    public int getRemoveObstacleIds(int index) {
+      return removeObstacleIds_.getInt(index);
+    }
+    private int removeObstacleIdsMemoizedSerializedSize = -1;
 
     public static final int ADD_OBSTACLES_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> addObstacles_;
@@ -231,45 +270,6 @@ public final class ObstacleModifyNotifyOuterClass {
       return addObstacles_.get(index);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 8;
-    private int sceneId_;
-    /**
-     * <code>uint32 scene_id = 8;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
-    public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.IntList removeObstacleIds_;
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @return A list containing the removeObstacleIds.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getRemoveObstacleIdsList() {
-      return removeObstacleIds_;
-    }
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @return The count of removeObstacleIds.
-     */
-    public int getRemoveObstacleIdsCount() {
-      return removeObstacleIds_.size();
-    }
-    /**
-     * <code>repeated int32 remove_obstacle_ids = 2;</code>
-     * @param index The index of the element to return.
-     * @return The removeObstacleIds at the given index.
-     */
-    public int getRemoveObstacleIds(int index) {
-      return removeObstacleIds_.getInt(index);
-    }
-    private int removeObstacleIdsMemoizedSerializedSize = -1;
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -285,18 +285,18 @@ public final class ObstacleModifyNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getRemoveObstacleIdsList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(removeObstacleIdsMemoizedSerializedSize);
-      }
-      for (int i = 0; i < removeObstacleIds_.size(); i++) {
-        output.writeInt32NoTag(removeObstacleIds_.getInt(i));
+      if (sceneId_ != 0) {
+        output.writeUInt32(2, sceneId_);
       }
       for (int i = 0; i < addObstacles_.size(); i++) {
         output.writeMessage(5, addObstacles_.get(i));
       }
-      if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+      if (getRemoveObstacleIdsList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(removeObstacleIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < removeObstacleIds_.size(); i++) {
+        output.writeInt32NoTag(removeObstacleIds_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -307,6 +307,14 @@ public final class ObstacleModifyNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (sceneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, sceneId_);
+      }
+      for (int i = 0; i < addObstacles_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, addObstacles_.get(i));
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < removeObstacleIds_.size(); i++) {
@@ -320,14 +328,6 @@ public final class ObstacleModifyNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         removeObstacleIdsMemoizedSerializedSize = dataSize;
-      }
-      for (int i = 0; i < addObstacles_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, addObstacles_.get(i));
-      }
-      if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -344,12 +344,12 @@ public final class ObstacleModifyNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify other = (emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify) obj;
 
-      if (!getAddObstaclesList()
-          .equals(other.getAddObstaclesList())) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
       if (!getRemoveObstacleIdsList()
           .equals(other.getRemoveObstacleIdsList())) return false;
+      if (!getAddObstaclesList()
+          .equals(other.getAddObstaclesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -361,15 +361,15 @@ public final class ObstacleModifyNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getAddObstaclesCount() > 0) {
-        hash = (37 * hash) + ADD_OBSTACLES_FIELD_NUMBER;
-        hash = (53 * hash) + getAddObstaclesList().hashCode();
-      }
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       if (getRemoveObstacleIdsCount() > 0) {
         hash = (37 * hash) + REMOVE_OBSTACLE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getRemoveObstacleIdsList().hashCode();
+      }
+      if (getAddObstaclesCount() > 0) {
+        hash = (37 * hash) + ADD_OBSTACLES_FIELD_NUMBER;
+        hash = (53 * hash) + getAddObstaclesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -468,8 +468,8 @@ public final class ObstacleModifyNotifyOuterClass {
     }
     /**
      * <pre>
-     * Name: BMCJDFCFMBO
-     * CmdId: 2354
+     * CmdId: 2389
+     * Name: BEDOODLKBLH
      * </pre>
      *
      * Protobuf type {@code ObstacleModifyNotify}
@@ -510,16 +510,16 @@ public final class ObstacleModifyNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (addObstaclesBuilder_ == null) {
-          addObstacles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          addObstaclesBuilder_.clear();
-        }
         sceneId_ = 0;
 
         removeObstacleIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (addObstaclesBuilder_ == null) {
+          addObstacles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          addObstaclesBuilder_.clear();
+        }
         return this;
       }
 
@@ -547,21 +547,21 @@ public final class ObstacleModifyNotifyOuterClass {
       public emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify buildPartial() {
         emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify result = new emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify(this);
         int from_bitField0_ = bitField0_;
+        result.sceneId_ = sceneId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          removeObstacleIds_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.removeObstacleIds_ = removeObstacleIds_;
         if (addObstaclesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             addObstacles_ = java.util.Collections.unmodifiableList(addObstacles_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.addObstacles_ = addObstacles_;
         } else {
           result.addObstacles_ = addObstaclesBuilder_.build();
         }
-        result.sceneId_ = sceneId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          removeObstacleIds_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.removeObstacleIds_ = removeObstacleIds_;
         onBuilt();
         return result;
       }
@@ -610,11 +610,24 @@ public final class ObstacleModifyNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify other) {
         if (other == emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify.getDefaultInstance()) return this;
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
+        }
+        if (!other.removeObstacleIds_.isEmpty()) {
+          if (removeObstacleIds_.isEmpty()) {
+            removeObstacleIds_ = other.removeObstacleIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRemoveObstacleIdsIsMutable();
+            removeObstacleIds_.addAll(other.removeObstacleIds_);
+          }
+          onChanged();
+        }
         if (addObstaclesBuilder_ == null) {
           if (!other.addObstacles_.isEmpty()) {
             if (addObstacles_.isEmpty()) {
               addObstacles_ = other.addObstacles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAddObstaclesIsMutable();
               addObstacles_.addAll(other.addObstacles_);
@@ -627,7 +640,7 @@ public final class ObstacleModifyNotifyOuterClass {
               addObstaclesBuilder_.dispose();
               addObstaclesBuilder_ = null;
               addObstacles_ = other.addObstacles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               addObstaclesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAddObstaclesFieldBuilder() : null;
@@ -635,19 +648,6 @@ public final class ObstacleModifyNotifyOuterClass {
               addObstaclesBuilder_.addAllMessages(other.addObstacles_);
             }
           }
-        }
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
-        if (!other.removeObstacleIds_.isEmpty()) {
-          if (removeObstacleIds_.isEmpty()) {
-            removeObstacleIds_ = other.removeObstacleIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureRemoveObstacleIdsIsMutable();
-            removeObstacleIds_.addAll(other.removeObstacleIds_);
-          }
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -679,12 +679,122 @@ public final class ObstacleModifyNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int sceneId_ ;
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 scene_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList removeObstacleIds_ = emptyIntList();
+      private void ensureRemoveObstacleIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          removeObstacleIds_ = mutableCopy(removeObstacleIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @return A list containing the removeObstacleIds.
+       */
+      public java.util.List<java.lang.Integer>
+          getRemoveObstacleIdsList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(removeObstacleIds_) : removeObstacleIds_;
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @return The count of removeObstacleIds.
+       */
+      public int getRemoveObstacleIdsCount() {
+        return removeObstacleIds_.size();
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @param index The index of the element to return.
+       * @return The removeObstacleIds at the given index.
+       */
+      public int getRemoveObstacleIds(int index) {
+        return removeObstacleIds_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @param index The index to set the value at.
+       * @param value The removeObstacleIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemoveObstacleIds(
+          int index, int value) {
+        ensureRemoveObstacleIdsIsMutable();
+        removeObstacleIds_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @param value The removeObstacleIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRemoveObstacleIds(int value) {
+        ensureRemoveObstacleIdsIsMutable();
+        removeObstacleIds_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @param values The removeObstacleIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRemoveObstacleIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureRemoveObstacleIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, removeObstacleIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 remove_obstacle_ids = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemoveObstacleIds() {
+        removeObstacleIds_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> addObstacles_ =
         java.util.Collections.emptyList();
       private void ensureAddObstaclesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           addObstacles_ = new java.util.ArrayList<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo>(addObstacles_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -834,7 +944,7 @@ public final class ObstacleModifyNotifyOuterClass {
       public Builder clearAddObstacles() {
         if (addObstaclesBuilder_ == null) {
           addObstacles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           addObstaclesBuilder_.clear();
@@ -911,122 +1021,12 @@ public final class ObstacleModifyNotifyOuterClass {
           addObstaclesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder>(
                   addObstacles_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           addObstacles_ = null;
         }
         return addObstaclesBuilder_;
-      }
-
-      private int sceneId_ ;
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList removeObstacleIds_ = emptyIntList();
-      private void ensureRemoveObstacleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          removeObstacleIds_ = mutableCopy(removeObstacleIds_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @return A list containing the removeObstacleIds.
-       */
-      public java.util.List<java.lang.Integer>
-          getRemoveObstacleIdsList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(removeObstacleIds_) : removeObstacleIds_;
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @return The count of removeObstacleIds.
-       */
-      public int getRemoveObstacleIdsCount() {
-        return removeObstacleIds_.size();
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @param index The index of the element to return.
-       * @return The removeObstacleIds at the given index.
-       */
-      public int getRemoveObstacleIds(int index) {
-        return removeObstacleIds_.getInt(index);
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The removeObstacleIds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRemoveObstacleIds(
-          int index, int value) {
-        ensureRemoveObstacleIdsIsMutable();
-        removeObstacleIds_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @param value The removeObstacleIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRemoveObstacleIds(int value) {
-        ensureRemoveObstacleIdsIsMutable();
-        removeObstacleIds_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @param values The removeObstacleIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllRemoveObstacleIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureRemoveObstacleIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, removeObstacleIds_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 remove_obstacle_ids = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRemoveObstacleIds() {
-        removeObstacleIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1096,9 +1096,9 @@ public final class ObstacleModifyNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ObstacleModifyNotify.proto\032\022ObstacleIn" +
-      "fo.proto\"k\n\024ObstacleModifyNotify\022$\n\radd_" +
-      "obstacles\030\005 \003(\0132\r.ObstacleInfo\022\020\n\010scene_" +
-      "id\030\010 \001(\r\022\033\n\023remove_obstacle_ids\030\002 \003(\005B\033\n" +
+      "fo.proto\"k\n\024ObstacleModifyNotify\022\020\n\010scen" +
+      "e_id\030\002 \001(\r\022\033\n\023remove_obstacle_ids\030\r \003(\005\022" +
+      "$\n\radd_obstacles\030\005 \003(\0132\r.ObstacleInfoB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1111,7 +1111,7 @@ public final class ObstacleModifyNotifyOuterClass {
     internal_static_ObstacleModifyNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ObstacleModifyNotify_descriptor,
-        new java.lang.String[] { "AddObstacles", "SceneId", "RemoveObstacleIds", });
+        new java.lang.String[] { "SceneId", "RemoveObstacleIds", "AddObstacles", });
     emu.grasscutter.net.proto.ObstacleInfoOuterClass.getDescriptor();
   }
 

@@ -16,7 +16,7 @@ public final class ActivityPushTipsStateOuterClass {
   }
   /**
    * <pre>
-   * Name: POKOFBAJMFO
+   * Name: FHPBGAOJEJH
    * </pre>
    *
    * Protobuf enum {@code ActivityPushTipsState}

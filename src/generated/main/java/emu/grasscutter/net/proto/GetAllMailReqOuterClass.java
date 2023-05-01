@@ -19,15 +19,15 @@ public final class GetAllMailReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_collected = 12;</code>
+     * <code>bool is_collected = 15;</code>
      * @return The isCollected.
      */
     boolean getIsCollected();
   }
   /**
    * <pre>
-   * Name: KHEEFEIBONK
    * CmdId: 1459
+   * Name: OMGMJPFOPFD
    * </pre>
    *
    * Protobuf type {@code GetAllMailReq}
@@ -74,7 +74,7 @@ public final class GetAllMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 120: {
 
               isCollected_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class GetAllMailReqOuterClass {
               emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.class, emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.Builder.class);
     }
 
-    public static final int IS_COLLECTED_FIELD_NUMBER = 12;
+    public static final int IS_COLLECTED_FIELD_NUMBER = 15;
     private boolean isCollected_;
     /**
-     * <code>bool is_collected = 12;</code>
+     * <code>bool is_collected = 15;</code>
      * @return The isCollected.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetAllMailReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isCollected_ != false) {
-        output.writeBool(12, isCollected_);
+        output.writeBool(15, isCollected_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetAllMailReqOuterClass {
       size = 0;
       if (isCollected_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isCollected_);
+          .computeBoolSize(15, isCollected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class GetAllMailReqOuterClass {
     }
     /**
      * <pre>
-     * Name: KHEEFEIBONK
      * CmdId: 1459
+     * Name: OMGMJPFOPFD
      * </pre>
      *
      * Protobuf type {@code GetAllMailReq}
@@ -432,7 +432,7 @@ public final class GetAllMailReqOuterClass {
 
       private boolean isCollected_ ;
       /**
-       * <code>bool is_collected = 12;</code>
+       * <code>bool is_collected = 15;</code>
        * @return The isCollected.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class GetAllMailReqOuterClass {
         return isCollected_;
       }
       /**
-       * <code>bool is_collected = 12;</code>
+       * <code>bool is_collected = 15;</code>
        * @param value The isCollected to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class GetAllMailReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_collected = 12;</code>
+       * <code>bool is_collected = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCollected() {
@@ -528,7 +528,7 @@ public final class GetAllMailReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023GetAllMailReq.proto\"%\n\rGetAllMailReq\022\024" +
-      "\n\014is_collected\030\014 \001(\010B\033\n\031emu.grasscutter." +
+      "\n\014is_collected\030\017 \001(\010B\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

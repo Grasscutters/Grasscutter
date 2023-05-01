@@ -44,7 +44,7 @@ public final class BlockInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: DLMEBOALIGP
+   * Name: ECMFGGGDFGN
    * </pre>
    *
    * Protobuf type {@code BlockInfo}
@@ -379,7 +379,7 @@ public final class BlockInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: DLMEBOALIGP
+     * Name: ECMFGGGDFGN
      * </pre>
      *
      * Protobuf type {@code BlockInfo}

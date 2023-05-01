@@ -146,7 +146,7 @@ public final class AbilitySyncStateInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: ONHDINIKADE
+   * Name: OIEKIGIJIFH
    * </pre>
    *
    * Protobuf type {@code AbilitySyncStateInfo}
@@ -730,7 +730,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: ONHDINIKADE
+     * Name: OIEKIGIJIFH
      * </pre>
      *
      * Protobuf type {@code AbilitySyncStateInfo}

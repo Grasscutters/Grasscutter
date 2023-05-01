@@ -16,7 +16,7 @@ public final class ForgeQueueManipulateTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: ENLCMOEBCFN
+   * Name: EOMPENELAEF
    * </pre>
    *
    * Protobuf enum {@code ForgeQueueManipulateType}

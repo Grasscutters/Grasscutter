@@ -19,15 +19,15 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_auto_unlock_specific_equip = 5;</code>
+     * <code>bool is_auto_unlock_specific_equip = 14;</code>
      * @return The isAutoUnlockSpecificEquip.
      */
     boolean getIsAutoUnlockSpecificEquip();
   }
   /**
    * <pre>
-   * Name: LCLIIAEAFNG
-   * CmdId: 673
+   * CmdId: 636
+   * Name: OBLLFNIAALA
    * </pre>
    *
    * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}
@@ -74,7 +74,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 112: {
 
               isAutoUnlockSpecificEquip_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
               emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipReqOuterClass.SetIsAutoUnlockSpecificEquipReq.class, emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipReqOuterClass.SetIsAutoUnlockSpecificEquipReq.Builder.class);
     }
 
-    public static final int IS_AUTO_UNLOCK_SPECIFIC_EQUIP_FIELD_NUMBER = 5;
+    public static final int IS_AUTO_UNLOCK_SPECIFIC_EQUIP_FIELD_NUMBER = 14;
     private boolean isAutoUnlockSpecificEquip_;
     /**
-     * <code>bool is_auto_unlock_specific_equip = 5;</code>
+     * <code>bool is_auto_unlock_specific_equip = 14;</code>
      * @return The isAutoUnlockSpecificEquip.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAutoUnlockSpecificEquip_ != false) {
-        output.writeBool(5, isAutoUnlockSpecificEquip_);
+        output.writeBool(14, isAutoUnlockSpecificEquip_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
       size = 0;
       if (isAutoUnlockSpecificEquip_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isAutoUnlockSpecificEquip_);
+          .computeBoolSize(14, isAutoUnlockSpecificEquip_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     }
     /**
      * <pre>
-     * Name: LCLIIAEAFNG
-     * CmdId: 673
+     * CmdId: 636
+     * Name: OBLLFNIAALA
      * </pre>
      *
      * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}
@@ -432,7 +432,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
 
       private boolean isAutoUnlockSpecificEquip_ ;
       /**
-       * <code>bool is_auto_unlock_specific_equip = 5;</code>
+       * <code>bool is_auto_unlock_specific_equip = 14;</code>
        * @return The isAutoUnlockSpecificEquip.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
         return isAutoUnlockSpecificEquip_;
       }
       /**
-       * <code>bool is_auto_unlock_specific_equip = 5;</code>
+       * <code>bool is_auto_unlock_specific_equip = 14;</code>
        * @param value The isAutoUnlockSpecificEquip to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_auto_unlock_specific_equip = 5;</code>
+       * <code>bool is_auto_unlock_specific_equip = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAutoUnlockSpecificEquip() {
@@ -529,7 +529,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n%SetIsAutoUnlockSpecificEquipReq.proto\"" +
       "H\n\037SetIsAutoUnlockSpecificEquipReq\022%\n\035is" +
-      "_auto_unlock_specific_equip\030\005 \001(\010B\033\n\031emu" +
+      "_auto_unlock_specific_equip\030\016 \001(\010B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

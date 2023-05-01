@@ -62,7 +62,7 @@ public final class MonsterRouteOuterClass {
   }
   /**
    * <pre>
-   * Name: LHFDFKFLLDA
+   * Name: IHCFDBEPNMD
    * </pre>
    *
    * Protobuf type {@code MonsterRoute}
@@ -437,7 +437,7 @@ public final class MonsterRouteOuterClass {
     }
     /**
      * <pre>
-     * Name: LHFDFKFLLDA
+     * Name: IHCFDBEPNMD
      * </pre>
      *
      * Protobuf type {@code MonsterRoute}

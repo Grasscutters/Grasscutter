@@ -19,7 +19,7 @@ public final class ItemGivingRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 giving_group_id = 12;</code>
+     * <code>uint32 giving_group_id = 9;</code>
      * @return The givingGroupId.
      */
     int getGivingGroupId();
@@ -31,15 +31,15 @@ public final class ItemGivingRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>uint32 giving_id = 7;</code>
+     * <code>uint32 giving_id = 2;</code>
      * @return The givingId.
      */
     int getGivingId();
   }
   /**
    * <pre>
-   * Name: LKOBNFEHAFB
-   * CmdId: 179
+   * CmdId: 169
+   * Name: IOFEFMEPAFP
    * </pre>
    *
    * Protobuf type {@code ItemGivingRsp}
@@ -86,17 +86,17 @@ public final class ItemGivingRspOuterClass {
             case 0:
               done = true;
               break;
+            case 16: {
+
+              givingId_ = input.readUInt32();
+              break;
+            }
             case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 56: {
-
-              givingId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 72: {
 
               givingGroupId_ = input.readUInt32();
               break;
@@ -133,10 +133,10 @@ public final class ItemGivingRspOuterClass {
               emu.grasscutter.net.proto.ItemGivingRspOuterClass.ItemGivingRsp.class, emu.grasscutter.net.proto.ItemGivingRspOuterClass.ItemGivingRsp.Builder.class);
     }
 
-    public static final int GIVING_GROUP_ID_FIELD_NUMBER = 12;
+    public static final int GIVING_GROUP_ID_FIELD_NUMBER = 9;
     private int givingGroupId_;
     /**
-     * <code>uint32 giving_group_id = 12;</code>
+     * <code>uint32 giving_group_id = 9;</code>
      * @return The givingGroupId.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class ItemGivingRspOuterClass {
       return retcode_;
     }
 
-    public static final int GIVING_ID_FIELD_NUMBER = 7;
+    public static final int GIVING_ID_FIELD_NUMBER = 2;
     private int givingId_;
     /**
-     * <code>uint32 giving_id = 7;</code>
+     * <code>uint32 giving_id = 2;</code>
      * @return The givingId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class ItemGivingRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (givingId_ != 0) {
+        output.writeUInt32(2, givingId_);
+      }
       if (retcode_ != 0) {
         output.writeInt32(6, retcode_);
       }
-      if (givingId_ != 0) {
-        output.writeUInt32(7, givingId_);
-      }
       if (givingGroupId_ != 0) {
-        output.writeUInt32(12, givingGroupId_);
+        output.writeUInt32(9, givingGroupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class ItemGivingRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (givingId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, givingId_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, retcode_);
       }
-      if (givingId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, givingId_);
-      }
       if (givingGroupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, givingGroupId_);
+          .computeUInt32Size(9, givingGroupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,8 +345,8 @@ public final class ItemGivingRspOuterClass {
     }
     /**
      * <pre>
-     * Name: LKOBNFEHAFB
-     * CmdId: 179
+     * CmdId: 169
+     * Name: IOFEFMEPAFP
      * </pre>
      *
      * Protobuf type {@code ItemGivingRsp}
@@ -509,7 +509,7 @@ public final class ItemGivingRspOuterClass {
 
       private int givingGroupId_ ;
       /**
-       * <code>uint32 giving_group_id = 12;</code>
+       * <code>uint32 giving_group_id = 9;</code>
        * @return The givingGroupId.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class ItemGivingRspOuterClass {
         return givingGroupId_;
       }
       /**
-       * <code>uint32 giving_group_id = 12;</code>
+       * <code>uint32 giving_group_id = 9;</code>
        * @param value The givingGroupId to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class ItemGivingRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 giving_group_id = 12;</code>
+       * <code>uint32 giving_group_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearGivingGroupId() {
@@ -571,7 +571,7 @@ public final class ItemGivingRspOuterClass {
 
       private int givingId_ ;
       /**
-       * <code>uint32 giving_id = 7;</code>
+       * <code>uint32 giving_id = 2;</code>
        * @return The givingId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class ItemGivingRspOuterClass {
         return givingId_;
       }
       /**
-       * <code>uint32 giving_id = 7;</code>
+       * <code>uint32 giving_id = 2;</code>
        * @param value The givingId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class ItemGivingRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 giving_id = 7;</code>
+       * <code>uint32 giving_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGivingId() {
@@ -667,8 +667,8 @@ public final class ItemGivingRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023ItemGivingRsp.proto\"L\n\rItemGivingRsp\022\027" +
-      "\n\017giving_group_id\030\014 \001(\r\022\017\n\007retcode\030\006 \001(\005" +
-      "\022\021\n\tgiving_id\030\007 \001(\rB\033\n\031emu.grasscutter.n" +
+      "\n\017giving_group_id\030\t \001(\r\022\017\n\007retcode\030\006 \001(\005" +
+      "\022\021\n\tgiving_id\030\002 \001(\rB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

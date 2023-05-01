@@ -218,7 +218,7 @@ public final class FriendBriefOuterClass {
   }
   /**
    * <pre>
-   * Name: CCNCLHGNBFP
+   * Name: FIBFPHIAJHG
    * </pre>
    *
    * Protobuf type {@code FriendBrief}
@@ -1248,7 +1248,7 @@ public final class FriendBriefOuterClass {
     }
     /**
      * <pre>
-     * Name: CCNCLHGNBFP
+     * Name: FIBFPHIAJHG
      * </pre>
      *
      * Protobuf type {@code FriendBrief}

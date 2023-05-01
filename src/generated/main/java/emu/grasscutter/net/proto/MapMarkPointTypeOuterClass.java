@@ -16,7 +16,7 @@ public final class MapMarkPointTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: KCEHIDGIEEF
+   * Name: IPLKIIFIDJK
    * </pre>
    *
    * Protobuf enum {@code MapMarkPointType}

@@ -19,27 +19,27 @@ public final class GetScenePointReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 9;</code>
+     * <code>uint32 scene_id = 1;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>bool PGBKOMBKBKG = 1;</code>
-     * @return The pGBKOMBKBKG.
-     */
-    boolean getPGBKOMBKBKG();
-
-    /**
-     * <code>uint32 belong_uid = 3;</code>
+     * <code>uint32 belong_uid = 2;</code>
      * @return The belongUid.
      */
     int getBelongUid();
+
+    /**
+     * <code>bool BJLCFHHIGJD = 15;</code>
+     * @return The bJLCFHHIGJD.
+     */
+    boolean getBJLCFHHIGJD();
   }
   /**
    * <pre>
-   * Name: NGFIIOEAKAD
-   * CmdId: 242
+   * CmdId: 265
+   * Name: KAFMIMOBKKE
    * </pre>
    *
    * Protobuf type {@code GetScenePointReq}
@@ -88,17 +88,17 @@ public final class GetScenePointReqOuterClass {
               break;
             case 8: {
 
-              pGBKOMBKBKG_ = input.readBool();
+              sceneId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 16: {
 
               belongUid_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 120: {
 
-              sceneId_ = input.readUInt32();
+              bJLCFHHIGJD_ = input.readBool();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class GetScenePointReqOuterClass {
               emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq.class, emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 9;
+    public static final int SCENE_ID_FIELD_NUMBER = 1;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 9;</code>
+     * <code>uint32 scene_id = 1;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -144,26 +144,26 @@ public final class GetScenePointReqOuterClass {
       return sceneId_;
     }
 
-    public static final int PGBKOMBKBKG_FIELD_NUMBER = 1;
-    private boolean pGBKOMBKBKG_;
-    /**
-     * <code>bool PGBKOMBKBKG = 1;</code>
-     * @return The pGBKOMBKBKG.
-     */
-    @java.lang.Override
-    public boolean getPGBKOMBKBKG() {
-      return pGBKOMBKBKG_;
-    }
-
-    public static final int BELONG_UID_FIELD_NUMBER = 3;
+    public static final int BELONG_UID_FIELD_NUMBER = 2;
     private int belongUid_;
     /**
-     * <code>uint32 belong_uid = 3;</code>
+     * <code>uint32 belong_uid = 2;</code>
      * @return The belongUid.
      */
     @java.lang.Override
     public int getBelongUid() {
       return belongUid_;
+    }
+
+    public static final int BJLCFHHIGJD_FIELD_NUMBER = 15;
+    private boolean bJLCFHHIGJD_;
+    /**
+     * <code>bool BJLCFHHIGJD = 15;</code>
+     * @return The bJLCFHHIGJD.
+     */
+    @java.lang.Override
+    public boolean getBJLCFHHIGJD() {
+      return bJLCFHHIGJD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class GetScenePointReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pGBKOMBKBKG_ != false) {
-        output.writeBool(1, pGBKOMBKBKG_);
+      if (sceneId_ != 0) {
+        output.writeUInt32(1, sceneId_);
       }
       if (belongUid_ != 0) {
-        output.writeUInt32(3, belongUid_);
+        output.writeUInt32(2, belongUid_);
       }
-      if (sceneId_ != 0) {
-        output.writeUInt32(9, sceneId_);
+      if (bJLCFHHIGJD_ != false) {
+        output.writeBool(15, bJLCFHHIGJD_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class GetScenePointReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pGBKOMBKBKG_ != false) {
+      if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, pGBKOMBKBKG_);
+          .computeUInt32Size(1, sceneId_);
       }
       if (belongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, belongUid_);
+          .computeUInt32Size(2, belongUid_);
       }
-      if (sceneId_ != 0) {
+      if (bJLCFHHIGJD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, sceneId_);
+          .computeBoolSize(15, bJLCFHHIGJD_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,10 +227,10 @@ public final class GetScenePointReqOuterClass {
 
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (getPGBKOMBKBKG()
-          != other.getPGBKOMBKBKG()) return false;
       if (getBelongUid()
           != other.getBelongUid()) return false;
+      if (getBJLCFHHIGJD()
+          != other.getBJLCFHHIGJD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -244,11 +244,11 @@ public final class GetScenePointReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + PGBKOMBKBKG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPGBKOMBKBKG());
       hash = (37 * hash) + BELONG_UID_FIELD_NUMBER;
       hash = (53 * hash) + getBelongUid();
+      hash = (37 * hash) + BJLCFHHIGJD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBJLCFHHIGJD());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class GetScenePointReqOuterClass {
     }
     /**
      * <pre>
-     * Name: NGFIIOEAKAD
-     * CmdId: 242
+     * CmdId: 265
+     * Name: KAFMIMOBKKE
      * </pre>
      *
      * Protobuf type {@code GetScenePointReq}
@@ -389,9 +389,9 @@ public final class GetScenePointReqOuterClass {
         super.clear();
         sceneId_ = 0;
 
-        pGBKOMBKBKG_ = false;
-
         belongUid_ = 0;
+
+        bJLCFHHIGJD_ = false;
 
         return this;
       }
@@ -420,8 +420,8 @@ public final class GetScenePointReqOuterClass {
       public emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq buildPartial() {
         emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq result = new emu.grasscutter.net.proto.GetScenePointReqOuterClass.GetScenePointReq(this);
         result.sceneId_ = sceneId_;
-        result.pGBKOMBKBKG_ = pGBKOMBKBKG_;
         result.belongUid_ = belongUid_;
+        result.bJLCFHHIGJD_ = bJLCFHHIGJD_;
         onBuilt();
         return result;
       }
@@ -473,11 +473,11 @@ public final class GetScenePointReqOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        if (other.getPGBKOMBKBKG() != false) {
-          setPGBKOMBKBKG(other.getPGBKOMBKBKG());
-        }
         if (other.getBelongUid() != 0) {
           setBelongUid(other.getBelongUid());
+        }
+        if (other.getBJLCFHHIGJD() != false) {
+          setBJLCFHHIGJD(other.getBJLCFHHIGJD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -510,7 +510,7 @@ public final class GetScenePointReqOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 9;</code>
+       * <code>uint32 scene_id = 1;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class GetScenePointReqOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 9;</code>
+       * <code>uint32 scene_id = 1;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -529,7 +529,7 @@ public final class GetScenePointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 9;</code>
+       * <code>uint32 scene_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -539,40 +539,9 @@ public final class GetScenePointReqOuterClass {
         return this;
       }
 
-      private boolean pGBKOMBKBKG_ ;
-      /**
-       * <code>bool PGBKOMBKBKG = 1;</code>
-       * @return The pGBKOMBKBKG.
-       */
-      @java.lang.Override
-      public boolean getPGBKOMBKBKG() {
-        return pGBKOMBKBKG_;
-      }
-      /**
-       * <code>bool PGBKOMBKBKG = 1;</code>
-       * @param value The pGBKOMBKBKG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPGBKOMBKBKG(boolean value) {
-        
-        pGBKOMBKBKG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool PGBKOMBKBKG = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPGBKOMBKBKG() {
-        
-        pGBKOMBKBKG_ = false;
-        onChanged();
-        return this;
-      }
-
       private int belongUid_ ;
       /**
-       * <code>uint32 belong_uid = 3;</code>
+       * <code>uint32 belong_uid = 2;</code>
        * @return The belongUid.
        */
       @java.lang.Override
@@ -580,7 +549,7 @@ public final class GetScenePointReqOuterClass {
         return belongUid_;
       }
       /**
-       * <code>uint32 belong_uid = 3;</code>
+       * <code>uint32 belong_uid = 2;</code>
        * @param value The belongUid to set.
        * @return This builder for chaining.
        */
@@ -591,12 +560,43 @@ public final class GetScenePointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 belong_uid = 3;</code>
+       * <code>uint32 belong_uid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBelongUid() {
         
         belongUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean bJLCFHHIGJD_ ;
+      /**
+       * <code>bool BJLCFHHIGJD = 15;</code>
+       * @return The bJLCFHHIGJD.
+       */
+      @java.lang.Override
+      public boolean getBJLCFHHIGJD() {
+        return bJLCFHHIGJD_;
+      }
+      /**
+       * <code>bool BJLCFHHIGJD = 15;</code>
+       * @param value The bJLCFHHIGJD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBJLCFHHIGJD(boolean value) {
+        
+        bJLCFHHIGJD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool BJLCFHHIGJD = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBJLCFHHIGJD() {
+        
+        bJLCFHHIGJD_ = false;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class GetScenePointReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GetScenePointReq.proto\"M\n\020GetScenePoin" +
-      "tReq\022\020\n\010scene_id\030\t \001(\r\022\023\n\013PGBKOMBKBKG\030\001 " +
-      "\001(\010\022\022\n\nbelong_uid\030\003 \001(\rB\033\n\031emu.grasscutt" +
+      "tReq\022\020\n\010scene_id\030\001 \001(\r\022\022\n\nbelong_uid\030\002 \001" +
+      "(\r\022\023\n\013BJLCFHHIGJD\030\017 \001(\010B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class GetScenePointReqOuterClass {
     internal_static_GetScenePointReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetScenePointReq_descriptor,
-        new java.lang.String[] { "SceneId", "PGBKOMBKBKG", "BelongUid", });
+        new java.lang.String[] { "SceneId", "BelongUid", "BJLCFHHIGJD", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

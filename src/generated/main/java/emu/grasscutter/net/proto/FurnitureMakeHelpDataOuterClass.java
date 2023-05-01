@@ -19,20 +19,20 @@ public final class FurnitureMakeHelpDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 times = 3;</code>
-     * @return The times.
-     */
-    int getTimes();
-
-    /**
-     * <code>uint32 uid = 2;</code>
+     * <code>uint32 uid = 1;</code>
      * @return The uid.
      */
     int getUid();
+
+    /**
+     * <code>uint32 times = 15;</code>
+     * @return The times.
+     */
+    int getTimes();
   }
   /**
    * <pre>
-   * Name: DLNFNGEEJLG
+   * Name: CGBMNFJOEMP
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeHelpData}
@@ -79,12 +79,12 @@ public final class FurnitureMakeHelpDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 120: {
 
               times_ = input.readUInt32();
               break;
@@ -121,26 +121,26 @@ public final class FurnitureMakeHelpDataOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.class, emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.Builder.class);
     }
 
-    public static final int TIMES_FIELD_NUMBER = 3;
-    private int times_;
-    /**
-     * <code>uint32 times = 3;</code>
-     * @return The times.
-     */
-    @java.lang.Override
-    public int getTimes() {
-      return times_;
-    }
-
-    public static final int UID_FIELD_NUMBER = 2;
+    public static final int UID_FIELD_NUMBER = 1;
     private int uid_;
     /**
-     * <code>uint32 uid = 2;</code>
+     * <code>uint32 uid = 1;</code>
      * @return The uid.
      */
     @java.lang.Override
     public int getUid() {
       return uid_;
+    }
+
+    public static final int TIMES_FIELD_NUMBER = 15;
+    private int times_;
+    /**
+     * <code>uint32 times = 15;</code>
+     * @return The times.
+     */
+    @java.lang.Override
+    public int getTimes() {
+      return times_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,10 +158,10 @@ public final class FurnitureMakeHelpDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(2, uid_);
+        output.writeUInt32(1, uid_);
       }
       if (times_ != 0) {
-        output.writeUInt32(3, times_);
+        output.writeUInt32(15, times_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class FurnitureMakeHelpDataOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, uid_);
+          .computeUInt32Size(1, uid_);
       }
       if (times_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, times_);
+          .computeUInt32Size(15, times_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class FurnitureMakeHelpDataOuterClass {
       }
       emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData other = (emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData) obj;
 
-      if (getTimes()
-          != other.getTimes()) return false;
       if (getUid()
           != other.getUid()) return false;
+      if (getTimes()
+          != other.getTimes()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class FurnitureMakeHelpDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TIMES_FIELD_NUMBER;
-      hash = (53 * hash) + getTimes();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
+      hash = (37 * hash) + TIMES_FIELD_NUMBER;
+      hash = (53 * hash) + getTimes();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class FurnitureMakeHelpDataOuterClass {
     }
     /**
      * <pre>
-     * Name: DLNFNGEEJLG
+     * Name: CGBMNFJOEMP
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeHelpData}
@@ -351,9 +351,9 @@ public final class FurnitureMakeHelpDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        times_ = 0;
-
         uid_ = 0;
+
+        times_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class FurnitureMakeHelpDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData buildPartial() {
         emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData result = new emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData(this);
-        result.times_ = times_;
         result.uid_ = uid_;
+        result.times_ = times_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class FurnitureMakeHelpDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData other) {
         if (other == emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.getDefaultInstance()) return this;
-        if (other.getTimes() != 0) {
-          setTimes(other.getTimes());
-        }
         if (other.getUid() != 0) {
           setUid(other.getUid());
+        }
+        if (other.getTimes() != 0) {
+          setTimes(other.getTimes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,40 +466,9 @@ public final class FurnitureMakeHelpDataOuterClass {
         return this;
       }
 
-      private int times_ ;
-      /**
-       * <code>uint32 times = 3;</code>
-       * @return The times.
-       */
-      @java.lang.Override
-      public int getTimes() {
-        return times_;
-      }
-      /**
-       * <code>uint32 times = 3;</code>
-       * @param value The times to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimes(int value) {
-        
-        times_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 times = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimes() {
-        
-        times_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int uid_ ;
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 1;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -507,7 +476,7 @@ public final class FurnitureMakeHelpDataOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 1;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -518,12 +487,43 @@ public final class FurnitureMakeHelpDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
         
         uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int times_ ;
+      /**
+       * <code>uint32 times = 15;</code>
+       * @return The times.
+       */
+      @java.lang.Override
+      public int getTimes() {
+        return times_;
+      }
+      /**
+       * <code>uint32 times = 15;</code>
+       * @param value The times to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimes(int value) {
+        
+        times_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 times = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimes() {
+        
+        times_ = 0;
         onChanged();
         return this;
       }
@@ -595,7 +595,7 @@ public final class FurnitureMakeHelpDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033FurnitureMakeHelpData.proto\"3\n\025Furnitu" +
-      "reMakeHelpData\022\r\n\005times\030\003 \001(\r\022\013\n\003uid\030\002 \001" +
+      "reMakeHelpData\022\013\n\003uid\030\001 \001(\r\022\r\n\005times\030\017 \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -607,7 +607,7 @@ public final class FurnitureMakeHelpDataOuterClass {
     internal_static_FurnitureMakeHelpData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FurnitureMakeHelpData_descriptor,
-        new java.lang.String[] { "Times", "Uid", });
+        new java.lang.String[] { "Uid", "Times", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -16,7 +16,7 @@ public final class MotionStateOuterClass {
   }
   /**
    * <pre>
-   * Name: KKAMMHDBPKH
+   * Name: CKBDHMCNIFJ
    * </pre>
    *
    * Protobuf enum {@code MotionState}
@@ -248,9 +248,13 @@ public final class MotionStateOuterClass {
      */
     MOTION_STATE_AIR_COMPENSATION(55),
     /**
-     * <code>MOTION_STATE_NUM = 56;</code>
+     * <code>MOTION_STATE_SORUSH_NORMAL = 56;</code>
      */
-    MOTION_STATE_NUM(56),
+    MOTION_STATE_SORUSH_NORMAL(56),
+    /**
+     * <code>MOTION_STATE_NUM = 57;</code>
+     */
+    MOTION_STATE_NUM(57),
     UNRECOGNIZED(-1),
     ;
 
@@ -479,9 +483,13 @@ public final class MotionStateOuterClass {
      */
     public static final int MOTION_STATE_AIR_COMPENSATION_VALUE = 55;
     /**
-     * <code>MOTION_STATE_NUM = 56;</code>
+     * <code>MOTION_STATE_SORUSH_NORMAL = 56;</code>
      */
-    public static final int MOTION_STATE_NUM_VALUE = 56;
+    public static final int MOTION_STATE_SORUSH_NORMAL_VALUE = 56;
+    /**
+     * <code>MOTION_STATE_NUM = 57;</code>
+     */
+    public static final int MOTION_STATE_NUM_VALUE = 57;
 
 
     public final int getNumber() {
@@ -564,7 +572,8 @@ public final class MotionStateOuterClass {
         case 53: return MOTION_STATE_FLY_FAST;
         case 54: return MOTION_STATE_AIM_MOVE;
         case 55: return MOTION_STATE_AIR_COMPENSATION;
-        case 56: return MOTION_STATE_NUM;
+        case 56: return MOTION_STATE_SORUSH_NORMAL;
+        case 57: return MOTION_STATE_NUM;
         default: return null;
       }
     }
@@ -630,7 +639,7 @@ public final class MotionStateOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MotionState.proto*\224\r\n\013MotionState\022\025\n\021M" +
+      "\n\021MotionState.proto*\264\r\n\013MotionState\022\025\n\021M" +
       "OTION_STATE_NONE\020\000\022\026\n\022MOTION_STATE_RESET" +
       "\020\001\022\030\n\024MOTION_STATE_STANDBY\020\002\022\035\n\031MOTION_S" +
       "TATE_STANDBY_MOVE\020\003\022\025\n\021MOTION_STATE_WALK" +
@@ -672,8 +681,9 @@ public final class MotionStateOuterClass {
       "Y_IDLE\0203\022\031\n\025MOTION_STATE_FLY_SLOW\0204\022\031\n\025M" +
       "OTION_STATE_FLY_FAST\0205\022\031\n\025MOTION_STATE_A" +
       "IM_MOVE\0206\022!\n\035MOTION_STATE_AIR_COMPENSATI" +
-      "ON\0207\022\024\n\020MOTION_STATE_NUM\0208B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ON\0207\022\036\n\032MOTION_STATE_SORUSH_NORMAL\0208\022\024\n\020" +
+      "MOTION_STATE_NUM\0209B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -44,8 +44,8 @@ public final class SetPlayerPropReqOuterClass {
   }
   /**
    * <pre>
-   * Name: KOEIKPHNEHA
-   * CmdId: 142
+   * CmdId: 165
+   * Name: BBDFLDLMAFA
    * </pre>
    *
    * Protobuf type {@code SetPlayerPropReq}
@@ -337,8 +337,8 @@ public final class SetPlayerPropReqOuterClass {
     }
     /**
      * <pre>
-     * Name: KOEIKPHNEHA
-     * CmdId: 142
+     * CmdId: 165
+     * Name: BBDFLDLMAFA
      * </pre>
      *
      * Protobuf type {@code SetPlayerPropReq}

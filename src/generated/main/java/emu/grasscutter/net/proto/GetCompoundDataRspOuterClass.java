@@ -43,32 +43,32 @@ public final class GetCompoundDataRspOuterClass {
         int index);
 
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @return A list containing the unlockCompoundList.
      */
     java.util.List<java.lang.Integer> getUnlockCompoundListList();
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @return The count of unlockCompoundList.
      */
     int getUnlockCompoundListCount();
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @param index The index of the element to return.
      * @return The unlockCompoundList at the given index.
      */
     int getUnlockCompoundList(int index);
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: KFNFMKJEDPG
-   * CmdId: 105
+   * CmdId: 129
+   * Name: DNLABMJAOMI
    * </pre>
    *
    * Protobuf type {@code GetCompoundDataRsp}
@@ -118,12 +118,12 @@ public final class GetCompoundDataRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unlockCompoundList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -131,7 +131,7 @@ public final class GetCompoundDataRspOuterClass {
               unlockCompoundList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -231,10 +231,10 @@ public final class GetCompoundDataRspOuterClass {
       return compoundQueueDataList_.get(index);
     }
 
-    public static final int UNLOCKCOMPOUNDLIST_FIELD_NUMBER = 13;
+    public static final int UNLOCKCOMPOUNDLIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList unlockCompoundList_;
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @return A list containing the unlockCompoundList.
      */
     @java.lang.Override
@@ -243,14 +243,14 @@ public final class GetCompoundDataRspOuterClass {
       return unlockCompoundList_;
     }
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @return The count of unlockCompoundList.
      */
     public int getUnlockCompoundListCount() {
       return unlockCompoundList_.size();
     }
     /**
-     * <code>repeated uint32 unlockCompoundList = 13;</code>
+     * <code>repeated uint32 unlockCompoundList = 2;</code>
      * @param index The index of the element to return.
      * @return The unlockCompoundList at the given index.
      */
@@ -259,10 +259,10 @@ public final class GetCompoundDataRspOuterClass {
     }
     private int unlockCompoundListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -286,10 +286,10 @@ public final class GetCompoundDataRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(1, retcode_);
       }
       if (getUnlockCompoundListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(unlockCompoundListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockCompoundList_.size(); i++) {
@@ -309,7 +309,7 @@ public final class GetCompoundDataRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       {
         int dataSize = 0;
@@ -468,8 +468,8 @@ public final class GetCompoundDataRspOuterClass {
     }
     /**
      * <pre>
-     * Name: KFNFMKJEDPG
-     * CmdId: 105
+     * CmdId: 129
+     * Name: DNLABMJAOMI
      * </pre>
      *
      * Protobuf type {@code GetCompoundDataRsp}
@@ -927,7 +927,7 @@ public final class GetCompoundDataRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @return A list containing the unlockCompoundList.
        */
       public java.util.List<java.lang.Integer>
@@ -936,14 +936,14 @@ public final class GetCompoundDataRspOuterClass {
                  java.util.Collections.unmodifiableList(unlockCompoundList_) : unlockCompoundList_;
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @return The count of unlockCompoundList.
        */
       public int getUnlockCompoundListCount() {
         return unlockCompoundList_.size();
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @param index The index of the element to return.
        * @return The unlockCompoundList at the given index.
        */
@@ -951,7 +951,7 @@ public final class GetCompoundDataRspOuterClass {
         return unlockCompoundList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @param index The index to set the value at.
        * @param value The unlockCompoundList to set.
        * @return This builder for chaining.
@@ -964,7 +964,7 @@ public final class GetCompoundDataRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @param value The unlockCompoundList to add.
        * @return This builder for chaining.
        */
@@ -975,7 +975,7 @@ public final class GetCompoundDataRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @param values The unlockCompoundList to add.
        * @return This builder for chaining.
        */
@@ -988,7 +988,7 @@ public final class GetCompoundDataRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlockCompoundList = 13;</code>
+       * <code>repeated uint32 unlockCompoundList = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnlockCompoundList() {
@@ -1000,7 +1000,7 @@ public final class GetCompoundDataRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -1008,7 +1008,7 @@ public final class GetCompoundDataRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -1019,7 +1019,7 @@ public final class GetCompoundDataRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -1098,8 +1098,8 @@ public final class GetCompoundDataRspOuterClass {
       "\n\030GetCompoundDataRsp.proto\032\027CompoundQueu" +
       "eData.proto\"t\n\022GetCompoundDataRsp\0221\n\025com" +
       "poundQueueDataList\030\016 \003(\0132\022.CompoundQueue" +
-      "Data\022\032\n\022unlockCompoundList\030\r \003(\r\022\017\n\007retc" +
-      "ode\030\002 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
+      "Data\022\032\n\022unlockCompoundList\030\002 \003(\r\022\017\n\007retc" +
+      "ode\030\001 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -20,8 +20,8 @@ public final class HomeGetBasicInfoReqOuterClass {
   }
   /**
    * <pre>
-   * Name: PPGOICBCPFP
-   * CmdId: 4817
+   * CmdId: 4858
+   * Name: GPLCKBLHPND
    * </pre>
    *
    * Protobuf type {@code HomeGetBasicInfoReq}
@@ -246,8 +246,8 @@ public final class HomeGetBasicInfoReqOuterClass {
     }
     /**
      * <pre>
-     * Name: PPGOICBCPFP
-     * CmdId: 4817
+     * CmdId: 4858
+     * Name: GPLCKBLHPND
      * </pre>
      *
      * Protobuf type {@code HomeGetBasicInfoReq}

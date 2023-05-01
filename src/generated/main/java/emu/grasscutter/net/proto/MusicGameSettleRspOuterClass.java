@@ -19,39 +19,39 @@ public final class MusicGameSettleRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 ugc_guid = 9;</code>
-     * @return The ugcGuid.
-     */
-    long getUgcGuid();
-
-    /**
-     * <code>bool is_unlock_next_level = 5;</code>
+     * <code>bool is_unlock_next_level = 6;</code>
      * @return The isUnlockNextLevel.
      */
     boolean getIsUnlockNextLevel();
 
     /**
-     * <code>uint32 music_basic_id = 14;</code>
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 music_basic_id = 13;</code>
      * @return The musicBasicId.
      */
     int getMusicBasicId();
 
     /**
-     * <code>bool is_new_record = 7;</code>
+     * <code>bool is_new_record = 4;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>uint64 ugc_guid = 2;</code>
+     * @return The ugcGuid.
      */
-    int getRetcode();
+    long getUgcGuid();
   }
   /**
    * <pre>
-   * Name: ANDLNOABFII
-   * CmdId: 8542
+   * CmdId: 8156
+   * Name: DIFCABEKCFF
    * </pre>
    *
    * Protobuf type {@code MusicGameSettleRsp}
@@ -98,27 +98,27 @@ public final class MusicGameSettleRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              isUnlockNextLevel_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 72: {
+            case 16: {
 
               ugcGuid_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 32: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              isUnlockNextLevel_ = input.readBool();
+              break;
+            }
+            case 104: {
 
               musicBasicId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -155,21 +155,10 @@ public final class MusicGameSettleRspOuterClass {
               emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp.class, emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp.Builder.class);
     }
 
-    public static final int UGC_GUID_FIELD_NUMBER = 9;
-    private long ugcGuid_;
-    /**
-     * <code>uint64 ugc_guid = 9;</code>
-     * @return The ugcGuid.
-     */
-    @java.lang.Override
-    public long getUgcGuid() {
-      return ugcGuid_;
-    }
-
-    public static final int IS_UNLOCK_NEXT_LEVEL_FIELD_NUMBER = 5;
+    public static final int IS_UNLOCK_NEXT_LEVEL_FIELD_NUMBER = 6;
     private boolean isUnlockNextLevel_;
     /**
-     * <code>bool is_unlock_next_level = 5;</code>
+     * <code>bool is_unlock_next_level = 6;</code>
      * @return The isUnlockNextLevel.
      */
     @java.lang.Override
@@ -177,10 +166,21 @@ public final class MusicGameSettleRspOuterClass {
       return isUnlockNextLevel_;
     }
 
-    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 14;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 13;
     private int musicBasicId_;
     /**
-     * <code>uint32 music_basic_id = 14;</code>
+     * <code>uint32 music_basic_id = 13;</code>
      * @return The musicBasicId.
      */
     @java.lang.Override
@@ -188,10 +188,10 @@ public final class MusicGameSettleRspOuterClass {
       return musicBasicId_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 4;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 7;</code>
+     * <code>bool is_new_record = 4;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -199,15 +199,15 @@ public final class MusicGameSettleRspOuterClass {
       return isNewRecord_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
+    public static final int UGC_GUID_FIELD_NUMBER = 2;
+    private long ugcGuid_;
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
+     * <code>uint64 ugc_guid = 2;</code>
+     * @return The ugcGuid.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public long getUgcGuid() {
+      return ugcGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -224,20 +224,20 @@ public final class MusicGameSettleRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isUnlockNextLevel_ != false) {
-        output.writeBool(5, isUnlockNextLevel_);
+      if (ugcGuid_ != 0L) {
+        output.writeUInt64(2, ugcGuid_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(7, isNewRecord_);
+        output.writeBool(4, isNewRecord_);
       }
-      if (ugcGuid_ != 0L) {
-        output.writeUInt64(9, ugcGuid_);
+      if (isUnlockNextLevel_ != false) {
+        output.writeBool(6, isUnlockNextLevel_);
       }
       if (musicBasicId_ != 0) {
-        output.writeUInt32(14, musicBasicId_);
+        output.writeUInt32(13, musicBasicId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -248,25 +248,25 @@ public final class MusicGameSettleRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isUnlockNextLevel_ != false) {
+      if (ugcGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isUnlockNextLevel_);
+          .computeUInt64Size(2, ugcGuid_);
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isNewRecord_);
+          .computeBoolSize(4, isNewRecord_);
       }
-      if (ugcGuid_ != 0L) {
+      if (isUnlockNextLevel_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, ugcGuid_);
+          .computeBoolSize(6, isUnlockNextLevel_);
       }
       if (musicBasicId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, musicBasicId_);
+          .computeUInt32Size(13, musicBasicId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -283,16 +283,16 @@ public final class MusicGameSettleRspOuterClass {
       }
       emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp other = (emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp) obj;
 
-      if (getUgcGuid()
-          != other.getUgcGuid()) return false;
       if (getIsUnlockNextLevel()
           != other.getIsUnlockNextLevel()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getMusicBasicId()
           != other.getMusicBasicId()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
+      if (getUgcGuid()
+          != other.getUgcGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -304,19 +304,19 @@ public final class MusicGameSettleRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UGC_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUgcGuid());
       hash = (37 * hash) + IS_UNLOCK_NEXT_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsUnlockNextLevel());
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMusicBasicId();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + UGC_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUgcGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,8 +414,8 @@ public final class MusicGameSettleRspOuterClass {
     }
     /**
      * <pre>
-     * Name: ANDLNOABFII
-     * CmdId: 8542
+     * CmdId: 8156
+     * Name: DIFCABEKCFF
      * </pre>
      *
      * Protobuf type {@code MusicGameSettleRsp}
@@ -455,15 +455,15 @@ public final class MusicGameSettleRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        ugcGuid_ = 0L;
-
         isUnlockNextLevel_ = false;
+
+        retcode_ = 0;
 
         musicBasicId_ = 0;
 
         isNewRecord_ = false;
 
-        retcode_ = 0;
+        ugcGuid_ = 0L;
 
         return this;
       }
@@ -491,11 +491,11 @@ public final class MusicGameSettleRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp buildPartial() {
         emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp result = new emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp(this);
-        result.ugcGuid_ = ugcGuid_;
         result.isUnlockNextLevel_ = isUnlockNextLevel_;
+        result.retcode_ = retcode_;
         result.musicBasicId_ = musicBasicId_;
         result.isNewRecord_ = isNewRecord_;
-        result.retcode_ = retcode_;
+        result.ugcGuid_ = ugcGuid_;
         onBuilt();
         return result;
       }
@@ -544,11 +544,11 @@ public final class MusicGameSettleRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp other) {
         if (other == emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp.getDefaultInstance()) return this;
-        if (other.getUgcGuid() != 0L) {
-          setUgcGuid(other.getUgcGuid());
-        }
         if (other.getIsUnlockNextLevel() != false) {
           setIsUnlockNextLevel(other.getIsUnlockNextLevel());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getMusicBasicId() != 0) {
           setMusicBasicId(other.getMusicBasicId());
@@ -556,8 +556,8 @@ public final class MusicGameSettleRspOuterClass {
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getUgcGuid() != 0L) {
+          setUgcGuid(other.getUgcGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -588,40 +588,9 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
 
-      private long ugcGuid_ ;
-      /**
-       * <code>uint64 ugc_guid = 9;</code>
-       * @return The ugcGuid.
-       */
-      @java.lang.Override
-      public long getUgcGuid() {
-        return ugcGuid_;
-      }
-      /**
-       * <code>uint64 ugc_guid = 9;</code>
-       * @param value The ugcGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUgcGuid(long value) {
-        
-        ugcGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ugc_guid = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUgcGuid() {
-        
-        ugcGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private boolean isUnlockNextLevel_ ;
       /**
-       * <code>bool is_unlock_next_level = 5;</code>
+       * <code>bool is_unlock_next_level = 6;</code>
        * @return The isUnlockNextLevel.
        */
       @java.lang.Override
@@ -629,7 +598,7 @@ public final class MusicGameSettleRspOuterClass {
         return isUnlockNextLevel_;
       }
       /**
-       * <code>bool is_unlock_next_level = 5;</code>
+       * <code>bool is_unlock_next_level = 6;</code>
        * @param value The isUnlockNextLevel to set.
        * @return This builder for chaining.
        */
@@ -640,7 +609,7 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_unlock_next_level = 5;</code>
+       * <code>bool is_unlock_next_level = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsUnlockNextLevel() {
@@ -650,9 +619,40 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int musicBasicId_ ;
       /**
-       * <code>uint32 music_basic_id = 14;</code>
+       * <code>uint32 music_basic_id = 13;</code>
        * @return The musicBasicId.
        */
       @java.lang.Override
@@ -660,7 +660,7 @@ public final class MusicGameSettleRspOuterClass {
         return musicBasicId_;
       }
       /**
-       * <code>uint32 music_basic_id = 14;</code>
+       * <code>uint32 music_basic_id = 13;</code>
        * @param value The musicBasicId to set.
        * @return This builder for chaining.
        */
@@ -671,7 +671,7 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 music_basic_id = 14;</code>
+       * <code>uint32 music_basic_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearMusicBasicId() {
@@ -683,7 +683,7 @@ public final class MusicGameSettleRspOuterClass {
 
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -691,7 +691,7 @@ public final class MusicGameSettleRspOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -702,7 +702,7 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -712,33 +712,33 @@ public final class MusicGameSettleRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
+      private long ugcGuid_ ;
       /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
+       * <code>uint64 ugc_guid = 2;</code>
+       * @return The ugcGuid.
        */
       @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      public long getUgcGuid() {
+        return ugcGuid_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
+       * <code>uint64 ugc_guid = 2;</code>
+       * @param value The ugcGuid to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder setUgcGuid(long value) {
         
-        retcode_ = value;
+        ugcGuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>uint64 ugc_guid = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder clearUgcGuid() {
         
-        retcode_ = 0;
+        ugcGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -810,10 +810,10 @@ public final class MusicGameSettleRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030MusicGameSettleRsp.proto\"\204\001\n\022MusicGame" +
-      "SettleRsp\022\020\n\010ugc_guid\030\t \001(\004\022\034\n\024is_unlock" +
-      "_next_level\030\005 \001(\010\022\026\n\016music_basic_id\030\016 \001(" +
-      "\r\022\025\n\ris_new_record\030\007 \001(\010\022\017\n\007retcode\030\017 \001(" +
-      "\005B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "SettleRsp\022\034\n\024is_unlock_next_level\030\006 \001(\010\022" +
+      "\017\n\007retcode\030\016 \001(\005\022\026\n\016music_basic_id\030\r \001(\r" +
+      "\022\025\n\ris_new_record\030\004 \001(\010\022\020\n\010ugc_guid\030\002 \001(" +
+      "\004B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -824,7 +824,7 @@ public final class MusicGameSettleRspOuterClass {
     internal_static_MusicGameSettleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MusicGameSettleRsp_descriptor,
-        new java.lang.String[] { "UgcGuid", "IsUnlockNextLevel", "MusicBasicId", "IsNewRecord", "Retcode", });
+        new java.lang.String[] { "IsUnlockNextLevel", "Retcode", "MusicBasicId", "IsNewRecord", "UgcGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

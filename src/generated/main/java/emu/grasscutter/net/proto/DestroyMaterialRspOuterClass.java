@@ -19,12 +19,6 @@ public final class DestroyMaterialRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
      * <code>repeated uint32 item_id_list = 3;</code>
      * @return A list containing the itemIdList.
      */
@@ -42,26 +36,32 @@ public final class DestroyMaterialRspOuterClass {
     int getItemIdList(int index);
 
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @return A list containing the itemCountList.
      */
     java.util.List<java.lang.Integer> getItemCountListList();
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @return The count of itemCountList.
      */
     int getItemCountListCount();
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @param index The index of the element to return.
      * @return The itemCountList at the given index.
      */
     int getItemCountList(int index);
+
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * Name: JFDLBMJGCDD
-   * CmdId: 679
+   * CmdId: 669
+   * Name: DCKDKJNEPCN
    * </pre>
    *
    * Protobuf type {@code DestroyMaterialRsp}
@@ -132,7 +132,7 @@ public final class DestroyMaterialRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 itemCountList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -140,7 +140,7 @@ public final class DestroyMaterialRspOuterClass {
               itemCountList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -153,7 +153,7 @@ public final class DestroyMaterialRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -196,17 +196,6 @@ public final class DestroyMaterialRspOuterClass {
               emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp.class, emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
     public static final int ITEM_ID_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList itemIdList_;
     /**
@@ -235,10 +224,10 @@ public final class DestroyMaterialRspOuterClass {
     }
     private int itemIdListMemoizedSerializedSize = -1;
 
-    public static final int ITEM_COUNT_LIST_FIELD_NUMBER = 13;
+    public static final int ITEM_COUNT_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList itemCountList_;
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @return A list containing the itemCountList.
      */
     @java.lang.Override
@@ -247,14 +236,14 @@ public final class DestroyMaterialRspOuterClass {
       return itemCountList_;
     }
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @return The count of itemCountList.
      */
     public int getItemCountListCount() {
       return itemCountList_.size();
     }
     /**
-     * <code>repeated uint32 item_count_list = 13;</code>
+     * <code>repeated uint32 item_count_list = 7;</code>
      * @param index The index of the element to return.
      * @return The itemCountList at the given index.
      */
@@ -262,6 +251,17 @@ public final class DestroyMaterialRspOuterClass {
       return itemCountList_.getInt(index);
     }
     private int itemCountListMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 14;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 14;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -286,14 +286,14 @@ public final class DestroyMaterialRspOuterClass {
         output.writeUInt32NoTag(itemIdList_.getInt(i));
       }
       if (getItemCountListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(itemCountListMemoizedSerializedSize);
       }
       for (int i = 0; i < itemCountList_.size(); i++) {
         output.writeUInt32NoTag(itemCountList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -334,7 +334,7 @@ public final class DestroyMaterialRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,12 +351,12 @@ public final class DestroyMaterialRspOuterClass {
       }
       emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp other = (emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getItemIdListList()
           .equals(other.getItemIdListList())) return false;
       if (!getItemCountListList()
           .equals(other.getItemCountListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,8 +368,6 @@ public final class DestroyMaterialRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getItemIdListCount() > 0) {
         hash = (37 * hash) + ITEM_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemIdListList().hashCode();
@@ -378,6 +376,8 @@ public final class DestroyMaterialRspOuterClass {
         hash = (37 * hash) + ITEM_COUNT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemCountListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -475,8 +475,8 @@ public final class DestroyMaterialRspOuterClass {
     }
     /**
      * <pre>
-     * Name: JFDLBMJGCDD
-     * CmdId: 679
+     * CmdId: 669
+     * Name: DCKDKJNEPCN
      * </pre>
      *
      * Protobuf type {@code DestroyMaterialRsp}
@@ -516,12 +516,12 @@ public final class DestroyMaterialRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         itemIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         itemCountList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        retcode_ = 0;
+
         return this;
       }
 
@@ -549,7 +549,6 @@ public final class DestroyMaterialRspOuterClass {
       public emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp buildPartial() {
         emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp result = new emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           itemIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -560,6 +559,7 @@ public final class DestroyMaterialRspOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.itemCountList_ = itemCountList_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -608,9 +608,6 @@ public final class DestroyMaterialRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp other) {
         if (other == emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.itemIdList_.isEmpty()) {
           if (itemIdList_.isEmpty()) {
             itemIdList_ = other.itemIdList_;
@@ -630,6 +627,9 @@ public final class DestroyMaterialRspOuterClass {
             itemCountList_.addAll(other.itemCountList_);
           }
           onChanged();
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -660,37 +660,6 @@ public final class DestroyMaterialRspOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList itemIdList_ = emptyIntList();
       private void ensureItemIdListIsMutable() {
@@ -779,7 +748,7 @@ public final class DestroyMaterialRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @return A list containing the itemCountList.
        */
       public java.util.List<java.lang.Integer>
@@ -788,14 +757,14 @@ public final class DestroyMaterialRspOuterClass {
                  java.util.Collections.unmodifiableList(itemCountList_) : itemCountList_;
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @return The count of itemCountList.
        */
       public int getItemCountListCount() {
         return itemCountList_.size();
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @param index The index of the element to return.
        * @return The itemCountList at the given index.
        */
@@ -803,7 +772,7 @@ public final class DestroyMaterialRspOuterClass {
         return itemCountList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The itemCountList to set.
        * @return This builder for chaining.
@@ -816,7 +785,7 @@ public final class DestroyMaterialRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @param value The itemCountList to add.
        * @return This builder for chaining.
        */
@@ -827,7 +796,7 @@ public final class DestroyMaterialRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @param values The itemCountList to add.
        * @return This builder for chaining.
        */
@@ -840,12 +809,43 @@ public final class DestroyMaterialRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 item_count_list = 13;</code>
+       * <code>repeated uint32 item_count_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemCountList() {
         itemCountList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -917,8 +917,8 @@ public final class DestroyMaterialRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030DestroyMaterialRsp.proto\"T\n\022DestroyMat" +
-      "erialRsp\022\017\n\007retcode\030\017 \001(\005\022\024\n\014item_id_lis" +
-      "t\030\003 \003(\r\022\027\n\017item_count_list\030\r \003(\rB\033\n\031emu." +
+      "erialRsp\022\024\n\014item_id_list\030\003 \003(\r\022\027\n\017item_c" +
+      "ount_list\030\007 \003(\r\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -930,7 +930,7 @@ public final class DestroyMaterialRspOuterClass {
     internal_static_DestroyMaterialRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DestroyMaterialRsp_descriptor,
-        new java.lang.String[] { "Retcode", "ItemIdList", "ItemCountList", });
+        new java.lang.String[] { "ItemIdList", "ItemCountList", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -20,8 +20,8 @@ public final class BuyResinReqOuterClass {
   }
   /**
    * <pre>
-   * Name: NIBFJEFHMIM
-   * CmdId: 630
+   * CmdId: 640
+   * Name: EFDHMIEGAJA
    * </pre>
    *
    * Protobuf type {@code BuyResinReq}
@@ -246,8 +246,8 @@ public final class BuyResinReqOuterClass {
     }
     /**
      * <pre>
-     * Name: NIBFJEFHMIM
-     * CmdId: 630
+     * CmdId: 640
+     * Name: EFDHMIEGAJA
      * </pre>
      *
      * Protobuf type {@code BuyResinReq}

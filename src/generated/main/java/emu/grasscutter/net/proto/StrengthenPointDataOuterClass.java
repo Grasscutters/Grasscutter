@@ -19,20 +19,20 @@ public final class StrengthenPointDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OBOMOEJEDHL = 6;</code>
-     * @return The oBOMOEJEDHL.
+     * <code>uint32 LGCKEPNPDJK = 15;</code>
+     * @return The lGCKEPNPDJK.
      */
-    int getOBOMOEJEDHL();
+    int getLGCKEPNPDJK();
 
     /**
-     * <code>uint32 NHOPNOMIDEF = 2;</code>
-     * @return The nHOPNOMIDEF.
+     * <code>uint32 ILBMGBIEENL = 8;</code>
+     * @return The iLBMGBIEENL.
      */
-    int getNHOPNOMIDEF();
+    int getILBMGBIEENL();
   }
   /**
    * <pre>
-   * Name: FGMDHBOGAHG
+   * Name: BMCLBPGLLAJ
    * </pre>
    *
    * Protobuf type {@code StrengthenPointData}
@@ -79,14 +79,14 @@ public final class StrengthenPointDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 64: {
 
-              nHOPNOMIDEF_ = input.readUInt32();
+              iLBMGBIEENL_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 120: {
 
-              oBOMOEJEDHL_ = input.readUInt32();
+              lGCKEPNPDJK_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class StrengthenPointDataOuterClass {
               emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.class, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.Builder.class);
     }
 
-    public static final int OBOMOEJEDHL_FIELD_NUMBER = 6;
-    private int oBOMOEJEDHL_;
+    public static final int LGCKEPNPDJK_FIELD_NUMBER = 15;
+    private int lGCKEPNPDJK_;
     /**
-     * <code>uint32 OBOMOEJEDHL = 6;</code>
-     * @return The oBOMOEJEDHL.
+     * <code>uint32 LGCKEPNPDJK = 15;</code>
+     * @return The lGCKEPNPDJK.
      */
     @java.lang.Override
-    public int getOBOMOEJEDHL() {
-      return oBOMOEJEDHL_;
+    public int getLGCKEPNPDJK() {
+      return lGCKEPNPDJK_;
     }
 
-    public static final int NHOPNOMIDEF_FIELD_NUMBER = 2;
-    private int nHOPNOMIDEF_;
+    public static final int ILBMGBIEENL_FIELD_NUMBER = 8;
+    private int iLBMGBIEENL_;
     /**
-     * <code>uint32 NHOPNOMIDEF = 2;</code>
-     * @return The nHOPNOMIDEF.
+     * <code>uint32 ILBMGBIEENL = 8;</code>
+     * @return The iLBMGBIEENL.
      */
     @java.lang.Override
-    public int getNHOPNOMIDEF() {
-      return nHOPNOMIDEF_;
+    public int getILBMGBIEENL() {
+      return iLBMGBIEENL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class StrengthenPointDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (nHOPNOMIDEF_ != 0) {
-        output.writeUInt32(2, nHOPNOMIDEF_);
+      if (iLBMGBIEENL_ != 0) {
+        output.writeUInt32(8, iLBMGBIEENL_);
       }
-      if (oBOMOEJEDHL_ != 0) {
-        output.writeUInt32(6, oBOMOEJEDHL_);
+      if (lGCKEPNPDJK_ != 0) {
+        output.writeUInt32(15, lGCKEPNPDJK_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class StrengthenPointDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (nHOPNOMIDEF_ != 0) {
+      if (iLBMGBIEENL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, nHOPNOMIDEF_);
+          .computeUInt32Size(8, iLBMGBIEENL_);
       }
-      if (oBOMOEJEDHL_ != 0) {
+      if (lGCKEPNPDJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, oBOMOEJEDHL_);
+          .computeUInt32Size(15, lGCKEPNPDJK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class StrengthenPointDataOuterClass {
       }
       emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData other = (emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData) obj;
 
-      if (getOBOMOEJEDHL()
-          != other.getOBOMOEJEDHL()) return false;
-      if (getNHOPNOMIDEF()
-          != other.getNHOPNOMIDEF()) return false;
+      if (getLGCKEPNPDJK()
+          != other.getLGCKEPNPDJK()) return false;
+      if (getILBMGBIEENL()
+          != other.getILBMGBIEENL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class StrengthenPointDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OBOMOEJEDHL_FIELD_NUMBER;
-      hash = (53 * hash) + getOBOMOEJEDHL();
-      hash = (37 * hash) + NHOPNOMIDEF_FIELD_NUMBER;
-      hash = (53 * hash) + getNHOPNOMIDEF();
+      hash = (37 * hash) + LGCKEPNPDJK_FIELD_NUMBER;
+      hash = (53 * hash) + getLGCKEPNPDJK();
+      hash = (37 * hash) + ILBMGBIEENL_FIELD_NUMBER;
+      hash = (53 * hash) + getILBMGBIEENL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class StrengthenPointDataOuterClass {
     }
     /**
      * <pre>
-     * Name: FGMDHBOGAHG
+     * Name: BMCLBPGLLAJ
      * </pre>
      *
      * Protobuf type {@code StrengthenPointData}
@@ -351,9 +351,9 @@ public final class StrengthenPointDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oBOMOEJEDHL_ = 0;
+        lGCKEPNPDJK_ = 0;
 
-        nHOPNOMIDEF_ = 0;
+        iLBMGBIEENL_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class StrengthenPointDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData buildPartial() {
         emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData result = new emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData(this);
-        result.oBOMOEJEDHL_ = oBOMOEJEDHL_;
-        result.nHOPNOMIDEF_ = nHOPNOMIDEF_;
+        result.lGCKEPNPDJK_ = lGCKEPNPDJK_;
+        result.iLBMGBIEENL_ = iLBMGBIEENL_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class StrengthenPointDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData other) {
         if (other == emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance()) return this;
-        if (other.getOBOMOEJEDHL() != 0) {
-          setOBOMOEJEDHL(other.getOBOMOEJEDHL());
+        if (other.getLGCKEPNPDJK() != 0) {
+          setLGCKEPNPDJK(other.getLGCKEPNPDJK());
         }
-        if (other.getNHOPNOMIDEF() != 0) {
-          setNHOPNOMIDEF(other.getNHOPNOMIDEF());
+        if (other.getILBMGBIEENL() != 0) {
+          setILBMGBIEENL(other.getILBMGBIEENL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class StrengthenPointDataOuterClass {
         return this;
       }
 
-      private int oBOMOEJEDHL_ ;
+      private int lGCKEPNPDJK_ ;
       /**
-       * <code>uint32 OBOMOEJEDHL = 6;</code>
-       * @return The oBOMOEJEDHL.
+       * <code>uint32 LGCKEPNPDJK = 15;</code>
+       * @return The lGCKEPNPDJK.
        */
       @java.lang.Override
-      public int getOBOMOEJEDHL() {
-        return oBOMOEJEDHL_;
+      public int getLGCKEPNPDJK() {
+        return lGCKEPNPDJK_;
       }
       /**
-       * <code>uint32 OBOMOEJEDHL = 6;</code>
-       * @param value The oBOMOEJEDHL to set.
+       * <code>uint32 LGCKEPNPDJK = 15;</code>
+       * @param value The lGCKEPNPDJK to set.
        * @return This builder for chaining.
        */
-      public Builder setOBOMOEJEDHL(int value) {
+      public Builder setLGCKEPNPDJK(int value) {
         
-        oBOMOEJEDHL_ = value;
+        lGCKEPNPDJK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OBOMOEJEDHL = 6;</code>
+       * <code>uint32 LGCKEPNPDJK = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOBOMOEJEDHL() {
+      public Builder clearLGCKEPNPDJK() {
         
-        oBOMOEJEDHL_ = 0;
+        lGCKEPNPDJK_ = 0;
         onChanged();
         return this;
       }
 
-      private int nHOPNOMIDEF_ ;
+      private int iLBMGBIEENL_ ;
       /**
-       * <code>uint32 NHOPNOMIDEF = 2;</code>
-       * @return The nHOPNOMIDEF.
+       * <code>uint32 ILBMGBIEENL = 8;</code>
+       * @return The iLBMGBIEENL.
        */
       @java.lang.Override
-      public int getNHOPNOMIDEF() {
-        return nHOPNOMIDEF_;
+      public int getILBMGBIEENL() {
+        return iLBMGBIEENL_;
       }
       /**
-       * <code>uint32 NHOPNOMIDEF = 2;</code>
-       * @param value The nHOPNOMIDEF to set.
+       * <code>uint32 ILBMGBIEENL = 8;</code>
+       * @param value The iLBMGBIEENL to set.
        * @return This builder for chaining.
        */
-      public Builder setNHOPNOMIDEF(int value) {
+      public Builder setILBMGBIEENL(int value) {
         
-        nHOPNOMIDEF_ = value;
+        iLBMGBIEENL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NHOPNOMIDEF = 2;</code>
+       * <code>uint32 ILBMGBIEENL = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHOPNOMIDEF() {
+      public Builder clearILBMGBIEENL() {
         
-        nHOPNOMIDEF_ = 0;
+        iLBMGBIEENL_ = 0;
         onChanged();
         return this;
       }
@@ -595,8 +595,8 @@ public final class StrengthenPointDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031StrengthenPointData.proto\"?\n\023Strengthe" +
-      "nPointData\022\023\n\013OBOMOEJEDHL\030\006 \001(\r\022\023\n\013NHOPN" +
-      "OMIDEF\030\002 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "nPointData\022\023\n\013LGCKEPNPDJK\030\017 \001(\r\022\023\n\013ILBMG" +
+      "BIEENL\030\010 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class StrengthenPointDataOuterClass {
     internal_static_StrengthenPointData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StrengthenPointData_descriptor,
-        new java.lang.String[] { "OBOMOEJEDHL", "NHOPNOMIDEF", });
+        new java.lang.String[] { "LGCKEPNPDJK", "ILBMGBIEENL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

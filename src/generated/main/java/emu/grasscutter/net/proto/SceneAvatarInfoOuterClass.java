@@ -43,21 +43,21 @@ public final class SceneAvatarInfoOuterClass {
     int getPeerId();
 
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
-     * @return A list containing the equipIdList.
+     * <code>repeated uint32 team_resonance_list = 5;</code>
+     * @return A list containing the teamResonanceList.
      */
-    java.util.List<java.lang.Integer> getEquipIdListList();
+    java.util.List<java.lang.Integer> getTeamResonanceListList();
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
-     * @return The count of equipIdList.
+     * <code>repeated uint32 team_resonance_list = 5;</code>
+     * @return The count of teamResonanceList.
      */
-    int getEquipIdListCount();
+    int getTeamResonanceListCount();
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
+     * <code>repeated uint32 team_resonance_list = 5;</code>
      * @param index The index of the element to return.
-     * @return The equipIdList at the given index.
+     * @return The teamResonanceList at the given index.
      */
-    int getEquipIdList(int index);
+    int getTeamResonanceList(int index);
 
     /**
      * <code>uint32 skill_depot_id = 6;</code>
@@ -237,21 +237,21 @@ public final class SceneAvatarInfoOuterClass {
         int index);
 
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
-     * @return A list containing the teamResonanceList.
+     * <code>repeated uint32 equip_id_list = 16;</code>
+     * @return A list containing the equipIdList.
      */
-    java.util.List<java.lang.Integer> getTeamResonanceListList();
+    java.util.List<java.lang.Integer> getEquipIdListList();
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
-     * @return The count of teamResonanceList.
+     * <code>repeated uint32 equip_id_list = 16;</code>
+     * @return The count of equipIdList.
      */
-    int getTeamResonanceListCount();
+    int getEquipIdListCount();
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
+     * <code>repeated uint32 equip_id_list = 16;</code>
      * @param index The index of the element to return.
-     * @return The teamResonanceList at the given index.
+     * @return The equipIdList at the given index.
      */
-    int getTeamResonanceList(int index);
+    int getEquipIdList(int index);
 
     /**
      * <code>uint32 wearing_flycloak_id = 17;</code>
@@ -309,7 +309,7 @@ public final class SceneAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: JIKGNBFBIGC
+   * Name: LJEDENNPCCI
    * </pre>
    *
    * Protobuf type {@code SceneAvatarInfo}
@@ -324,12 +324,12 @@ public final class SceneAvatarInfoOuterClass {
       super(builder);
     }
     private SceneAvatarInfo() {
-      equipIdList_ = emptyIntList();
+      teamResonanceList_ = emptyIntList();
       talentIdList_ = emptyIntList();
       reliquaryList_ = java.util.Collections.emptyList();
       inherentProudSkillList_ = emptyIntList();
       serverBuffList_ = java.util.Collections.emptyList();
-      teamResonanceList_ = emptyIntList();
+      equipIdList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -385,21 +385,21 @@ public final class SceneAvatarInfoOuterClass {
             }
             case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                equipIdList_ = newIntList();
+                teamResonanceList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              equipIdList_.addInt(input.readUInt32());
+              teamResonanceList_.addInt(input.readUInt32());
               break;
             }
             case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                equipIdList_ = newIntList();
+                teamResonanceList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                equipIdList_.addInt(input.readUInt32());
+                teamResonanceList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -515,21 +515,21 @@ public final class SceneAvatarInfoOuterClass {
             }
             case 128: {
               if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                teamResonanceList_ = newIntList();
+                equipIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000080;
               }
-              teamResonanceList_.addInt(input.readUInt32());
+              equipIdList_.addInt(input.readUInt32());
               break;
             }
             case 130: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
-                teamResonanceList_ = newIntList();
+                equipIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000080;
               }
               while (input.getBytesUntilLimit() > 0) {
-                teamResonanceList_.addInt(input.readUInt32());
+                equipIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -596,7 +596,7 @@ public final class SceneAvatarInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          equipIdList_.makeImmutable(); // C
+          teamResonanceList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           talentIdList_.makeImmutable(); // C
@@ -611,7 +611,7 @@ public final class SceneAvatarInfoOuterClass {
           serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
         }
         if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          teamResonanceList_.makeImmutable(); // C
+          equipIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -688,33 +688,33 @@ public final class SceneAvatarInfoOuterClass {
       return peerId_;
     }
 
-    public static final int EQUIP_ID_LIST_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.IntList equipIdList_;
+    public static final int TEAM_RESONANCE_LIST_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList teamResonanceList_;
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
-     * @return A list containing the equipIdList.
+     * <code>repeated uint32 team_resonance_list = 5;</code>
+     * @return A list containing the teamResonanceList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getEquipIdListList() {
-      return equipIdList_;
+        getTeamResonanceListList() {
+      return teamResonanceList_;
     }
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
-     * @return The count of equipIdList.
+     * <code>repeated uint32 team_resonance_list = 5;</code>
+     * @return The count of teamResonanceList.
      */
-    public int getEquipIdListCount() {
-      return equipIdList_.size();
+    public int getTeamResonanceListCount() {
+      return teamResonanceList_.size();
     }
     /**
-     * <code>repeated uint32 equip_id_list = 5;</code>
+     * <code>repeated uint32 team_resonance_list = 5;</code>
      * @param index The index of the element to return.
-     * @return The equipIdList at the given index.
+     * @return The teamResonanceList at the given index.
      */
-    public int getEquipIdList(int index) {
-      return equipIdList_.getInt(index);
+    public int getTeamResonanceList(int index) {
+      return teamResonanceList_.getInt(index);
     }
-    private int equipIdListMemoizedSerializedSize = -1;
+    private int teamResonanceListMemoizedSerializedSize = -1;
 
     public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 6;
     private int skillDepotId_;
@@ -1062,33 +1062,33 @@ public final class SceneAvatarInfoOuterClass {
       return serverBuffList_.get(index);
     }
 
-    public static final int TEAM_RESONANCE_LIST_FIELD_NUMBER = 16;
-    private com.google.protobuf.Internal.IntList teamResonanceList_;
+    public static final int EQUIP_ID_LIST_FIELD_NUMBER = 16;
+    private com.google.protobuf.Internal.IntList equipIdList_;
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
-     * @return A list containing the teamResonanceList.
+     * <code>repeated uint32 equip_id_list = 16;</code>
+     * @return A list containing the equipIdList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getTeamResonanceListList() {
-      return teamResonanceList_;
+        getEquipIdListList() {
+      return equipIdList_;
     }
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
-     * @return The count of teamResonanceList.
+     * <code>repeated uint32 equip_id_list = 16;</code>
+     * @return The count of equipIdList.
      */
-    public int getTeamResonanceListCount() {
-      return teamResonanceList_.size();
+    public int getEquipIdListCount() {
+      return equipIdList_.size();
     }
     /**
-     * <code>repeated uint32 team_resonance_list = 16;</code>
+     * <code>repeated uint32 equip_id_list = 16;</code>
      * @param index The index of the element to return.
-     * @return The teamResonanceList at the given index.
+     * @return The equipIdList at the given index.
      */
-    public int getTeamResonanceList(int index) {
-      return teamResonanceList_.getInt(index);
+    public int getEquipIdList(int index) {
+      return equipIdList_.getInt(index);
     }
-    private int teamResonanceListMemoizedSerializedSize = -1;
+    private int equipIdListMemoizedSerializedSize = -1;
 
     public static final int WEARING_FLYCLOAK_ID_FIELD_NUMBER = 17;
     private int wearingFlycloakId_;
@@ -1213,12 +1213,12 @@ public final class SceneAvatarInfoOuterClass {
       if (peerId_ != 0) {
         output.writeUInt32(4, peerId_);
       }
-      if (getEquipIdListList().size() > 0) {
+      if (getTeamResonanceListList().size() > 0) {
         output.writeUInt32NoTag(42);
-        output.writeUInt32NoTag(equipIdListMemoizedSerializedSize);
+        output.writeUInt32NoTag(teamResonanceListMemoizedSerializedSize);
       }
-      for (int i = 0; i < equipIdList_.size(); i++) {
-        output.writeUInt32NoTag(equipIdList_.getInt(i));
+      for (int i = 0; i < teamResonanceList_.size(); i++) {
+        output.writeUInt32NoTag(teamResonanceList_.getInt(i));
       }
       if (skillDepotId_ != 0) {
         output.writeUInt32(6, skillDepotId_);
@@ -1261,12 +1261,12 @@ public final class SceneAvatarInfoOuterClass {
       for (int i = 0; i < serverBuffList_.size(); i++) {
         output.writeMessage(15, serverBuffList_.get(i));
       }
-      if (getTeamResonanceListList().size() > 0) {
+      if (getEquipIdListList().size() > 0) {
         output.writeUInt32NoTag(130);
-        output.writeUInt32NoTag(teamResonanceListMemoizedSerializedSize);
+        output.writeUInt32NoTag(equipIdListMemoizedSerializedSize);
       }
-      for (int i = 0; i < teamResonanceList_.size(); i++) {
-        output.writeUInt32NoTag(teamResonanceList_.getInt(i));
+      for (int i = 0; i < equipIdList_.size(); i++) {
+        output.writeUInt32NoTag(equipIdList_.getInt(i));
       }
       if (wearingFlycloakId_ != 0) {
         output.writeUInt32(17, wearingFlycloakId_);
@@ -1313,17 +1313,17 @@ public final class SceneAvatarInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < equipIdList_.size(); i++) {
+        for (int i = 0; i < teamResonanceList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(equipIdList_.getInt(i));
+            .computeUInt32SizeNoTag(teamResonanceList_.getInt(i));
         }
         size += dataSize;
-        if (!getEquipIdListList().isEmpty()) {
+        if (!getTeamResonanceListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        equipIdListMemoizedSerializedSize = dataSize;
+        teamResonanceListMemoizedSerializedSize = dataSize;
       }
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1395,17 +1395,17 @@ public final class SceneAvatarInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < teamResonanceList_.size(); i++) {
+        for (int i = 0; i < equipIdList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(teamResonanceList_.getInt(i));
+            .computeUInt32SizeNoTag(equipIdList_.getInt(i));
         }
         size += dataSize;
-        if (!getTeamResonanceListList().isEmpty()) {
+        if (!getEquipIdListList().isEmpty()) {
           size += 2;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        teamResonanceListMemoizedSerializedSize = dataSize;
+        equipIdListMemoizedSerializedSize = dataSize;
       }
       if (wearingFlycloakId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1454,8 +1454,8 @@ public final class SceneAvatarInfoOuterClass {
           != other.getGuid()) return false;
       if (getPeerId()
           != other.getPeerId()) return false;
-      if (!getEquipIdListList()
-          .equals(other.getEquipIdListList())) return false;
+      if (!getTeamResonanceListList()
+          .equals(other.getTeamResonanceListList())) return false;
       if (getSkillDepotId()
           != other.getSkillDepotId()) return false;
       if (!getTalentIdListList()
@@ -1477,8 +1477,8 @@ public final class SceneAvatarInfoOuterClass {
           other.internalGetProudSkillExtraLevelMap())) return false;
       if (!getServerBuffListList()
           .equals(other.getServerBuffListList())) return false;
-      if (!getTeamResonanceListList()
-          .equals(other.getTeamResonanceListList())) return false;
+      if (!getEquipIdListList()
+          .equals(other.getEquipIdListList())) return false;
       if (getWearingFlycloakId()
           != other.getWearingFlycloakId()) return false;
       if (getBornTime()
@@ -1517,9 +1517,9 @@ public final class SceneAvatarInfoOuterClass {
           getGuid());
       hash = (37 * hash) + PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPeerId();
-      if (getEquipIdListCount() > 0) {
-        hash = (37 * hash) + EQUIP_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getEquipIdListList().hashCode();
+      if (getTeamResonanceListCount() > 0) {
+        hash = (37 * hash) + TEAM_RESONANCE_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTeamResonanceListList().hashCode();
       }
       hash = (37 * hash) + SKILL_DEPOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillDepotId();
@@ -1553,9 +1553,9 @@ public final class SceneAvatarInfoOuterClass {
         hash = (37 * hash) + SERVER_BUFF_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getServerBuffListList().hashCode();
       }
-      if (getTeamResonanceListCount() > 0) {
-        hash = (37 * hash) + TEAM_RESONANCE_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTeamResonanceListList().hashCode();
+      if (getEquipIdListCount() > 0) {
+        hash = (37 * hash) + EQUIP_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getEquipIdListList().hashCode();
       }
       hash = (37 * hash) + WEARING_FLYCLOAK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWearingFlycloakId();
@@ -1670,7 +1670,7 @@ public final class SceneAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: JIKGNBFBIGC
+     * Name: LJEDENNPCCI
      * </pre>
      *
      * Protobuf type {@code SceneAvatarInfo}
@@ -1746,7 +1746,7 @@ public final class SceneAvatarInfoOuterClass {
 
         peerId_ = 0;
 
-        equipIdList_ = emptyIntList();
+        teamResonanceList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         skillDepotId_ = 0;
 
@@ -1776,7 +1776,7 @@ public final class SceneAvatarInfoOuterClass {
         } else {
           serverBuffListBuilder_.clear();
         }
-        teamResonanceList_ = emptyIntList();
+        equipIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000080);
         wearingFlycloakId_ = 0;
 
@@ -1830,10 +1830,10 @@ public final class SceneAvatarInfoOuterClass {
         result.guid_ = guid_;
         result.peerId_ = peerId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          equipIdList_.makeImmutable();
+          teamResonanceList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.equipIdList_ = equipIdList_;
+        result.teamResonanceList_ = teamResonanceList_;
         result.skillDepotId_ = skillDepotId_;
         if (((bitField0_ & 0x00000002) != 0)) {
           talentIdList_.makeImmutable();
@@ -1874,10 +1874,10 @@ public final class SceneAvatarInfoOuterClass {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
         if (((bitField0_ & 0x00000080) != 0)) {
-          teamResonanceList_.makeImmutable();
+          equipIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000080);
         }
-        result.teamResonanceList_ = teamResonanceList_;
+        result.equipIdList_ = equipIdList_;
         result.wearingFlycloakId_ = wearingFlycloakId_;
         result.bornTime_ = bornTime_;
         result.costumeId_ = costumeId_;
@@ -1952,13 +1952,13 @@ public final class SceneAvatarInfoOuterClass {
         if (other.getPeerId() != 0) {
           setPeerId(other.getPeerId());
         }
-        if (!other.equipIdList_.isEmpty()) {
-          if (equipIdList_.isEmpty()) {
-            equipIdList_ = other.equipIdList_;
+        if (!other.teamResonanceList_.isEmpty()) {
+          if (teamResonanceList_.isEmpty()) {
+            teamResonanceList_ = other.teamResonanceList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureEquipIdListIsMutable();
-            equipIdList_.addAll(other.equipIdList_);
+            ensureTeamResonanceListIsMutable();
+            teamResonanceList_.addAll(other.teamResonanceList_);
           }
           onChanged();
         }
@@ -2047,13 +2047,13 @@ public final class SceneAvatarInfoOuterClass {
             }
           }
         }
-        if (!other.teamResonanceList_.isEmpty()) {
-          if (teamResonanceList_.isEmpty()) {
-            teamResonanceList_ = other.teamResonanceList_;
+        if (!other.equipIdList_.isEmpty()) {
+          if (equipIdList_.isEmpty()) {
+            equipIdList_ = other.equipIdList_;
             bitField0_ = (bitField0_ & ~0x00000080);
           } else {
-            ensureTeamResonanceListIsMutable();
-            teamResonanceList_.addAll(other.teamResonanceList_);
+            ensureEquipIdListIsMutable();
+            equipIdList_.addAll(other.equipIdList_);
           }
           onChanged();
         }
@@ -2229,80 +2229,80 @@ public final class SceneAvatarInfoOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList equipIdList_ = emptyIntList();
-      private void ensureEquipIdListIsMutable() {
+      private com.google.protobuf.Internal.IntList teamResonanceList_ = emptyIntList();
+      private void ensureTeamResonanceListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          equipIdList_ = mutableCopy(equipIdList_);
+          teamResonanceList_ = mutableCopy(teamResonanceList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
-       * @return A list containing the equipIdList.
+       * <code>repeated uint32 team_resonance_list = 5;</code>
+       * @return A list containing the teamResonanceList.
        */
       public java.util.List<java.lang.Integer>
-          getEquipIdListList() {
+          getTeamResonanceListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(equipIdList_) : equipIdList_;
+                 java.util.Collections.unmodifiableList(teamResonanceList_) : teamResonanceList_;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
-       * @return The count of equipIdList.
+       * <code>repeated uint32 team_resonance_list = 5;</code>
+       * @return The count of teamResonanceList.
        */
-      public int getEquipIdListCount() {
-        return equipIdList_.size();
+      public int getTeamResonanceListCount() {
+        return teamResonanceList_.size();
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
+       * <code>repeated uint32 team_resonance_list = 5;</code>
        * @param index The index of the element to return.
-       * @return The equipIdList at the given index.
+       * @return The teamResonanceList at the given index.
        */
-      public int getEquipIdList(int index) {
-        return equipIdList_.getInt(index);
+      public int getTeamResonanceList(int index) {
+        return teamResonanceList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
+       * <code>repeated uint32 team_resonance_list = 5;</code>
        * @param index The index to set the value at.
-       * @param value The equipIdList to set.
+       * @param value The teamResonanceList to set.
        * @return This builder for chaining.
        */
-      public Builder setEquipIdList(
+      public Builder setTeamResonanceList(
           int index, int value) {
-        ensureEquipIdListIsMutable();
-        equipIdList_.setInt(index, value);
+        ensureTeamResonanceListIsMutable();
+        teamResonanceList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
-       * @param value The equipIdList to add.
+       * <code>repeated uint32 team_resonance_list = 5;</code>
+       * @param value The teamResonanceList to add.
        * @return This builder for chaining.
        */
-      public Builder addEquipIdList(int value) {
-        ensureEquipIdListIsMutable();
-        equipIdList_.addInt(value);
+      public Builder addTeamResonanceList(int value) {
+        ensureTeamResonanceListIsMutable();
+        teamResonanceList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
-       * @param values The equipIdList to add.
+       * <code>repeated uint32 team_resonance_list = 5;</code>
+       * @param values The teamResonanceList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllEquipIdList(
+      public Builder addAllTeamResonanceList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureEquipIdListIsMutable();
+        ensureTeamResonanceListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, equipIdList_);
+            values, teamResonanceList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 5;</code>
+       * <code>repeated uint32 team_resonance_list = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEquipIdList() {
-        equipIdList_ = emptyIntList();
+      public Builder clearTeamResonanceList() {
+        teamResonanceList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -3383,80 +3383,80 @@ public final class SceneAvatarInfoOuterClass {
         return serverBuffListBuilder_;
       }
 
-      private com.google.protobuf.Internal.IntList teamResonanceList_ = emptyIntList();
-      private void ensureTeamResonanceListIsMutable() {
+      private com.google.protobuf.Internal.IntList equipIdList_ = emptyIntList();
+      private void ensureEquipIdListIsMutable() {
         if (!((bitField0_ & 0x00000080) != 0)) {
-          teamResonanceList_ = mutableCopy(teamResonanceList_);
+          equipIdList_ = mutableCopy(equipIdList_);
           bitField0_ |= 0x00000080;
          }
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
-       * @return A list containing the teamResonanceList.
+       * <code>repeated uint32 equip_id_list = 16;</code>
+       * @return A list containing the equipIdList.
        */
       public java.util.List<java.lang.Integer>
-          getTeamResonanceListList() {
+          getEquipIdListList() {
         return ((bitField0_ & 0x00000080) != 0) ?
-                 java.util.Collections.unmodifiableList(teamResonanceList_) : teamResonanceList_;
+                 java.util.Collections.unmodifiableList(equipIdList_) : equipIdList_;
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
-       * @return The count of teamResonanceList.
+       * <code>repeated uint32 equip_id_list = 16;</code>
+       * @return The count of equipIdList.
        */
-      public int getTeamResonanceListCount() {
-        return teamResonanceList_.size();
+      public int getEquipIdListCount() {
+        return equipIdList_.size();
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
+       * <code>repeated uint32 equip_id_list = 16;</code>
        * @param index The index of the element to return.
-       * @return The teamResonanceList at the given index.
+       * @return The equipIdList at the given index.
        */
-      public int getTeamResonanceList(int index) {
-        return teamResonanceList_.getInt(index);
+      public int getEquipIdList(int index) {
+        return equipIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
+       * <code>repeated uint32 equip_id_list = 16;</code>
        * @param index The index to set the value at.
-       * @param value The teamResonanceList to set.
+       * @param value The equipIdList to set.
        * @return This builder for chaining.
        */
-      public Builder setTeamResonanceList(
+      public Builder setEquipIdList(
           int index, int value) {
-        ensureTeamResonanceListIsMutable();
-        teamResonanceList_.setInt(index, value);
+        ensureEquipIdListIsMutable();
+        equipIdList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
-       * @param value The teamResonanceList to add.
+       * <code>repeated uint32 equip_id_list = 16;</code>
+       * @param value The equipIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addTeamResonanceList(int value) {
-        ensureTeamResonanceListIsMutable();
-        teamResonanceList_.addInt(value);
+      public Builder addEquipIdList(int value) {
+        ensureEquipIdListIsMutable();
+        equipIdList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
-       * @param values The teamResonanceList to add.
+       * <code>repeated uint32 equip_id_list = 16;</code>
+       * @param values The equipIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllTeamResonanceList(
+      public Builder addAllEquipIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureTeamResonanceListIsMutable();
+        ensureEquipIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, teamResonanceList_);
+            values, equipIdList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 team_resonance_list = 16;</code>
+       * <code>repeated uint32 equip_id_list = 16;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTeamResonanceList() {
-        teamResonanceList_ = emptyIntList();
+      public Builder clearEquipIdList() {
+        equipIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
@@ -3905,17 +3905,17 @@ public final class SceneAvatarInfoOuterClass {
       "uaryInfo.proto\032\025SceneWeaponInfo.proto\032\020S" +
       "erverBuff.proto\"\235\006\n\017SceneAvatarInfo\022\013\n\003u" +
       "id\030\001 \001(\r\022\021\n\tavatar_id\030\002 \001(\r\022\014\n\004guid\030\003 \001(" +
-      "\004\022\017\n\007peer_id\030\004 \001(\r\022\025\n\requip_id_list\030\005 \003(" +
-      "\r\022\026\n\016skill_depot_id\030\006 \001(\r\022\026\n\016talent_id_l" +
-      "ist\030\007 \003(\r\022 \n\006weapon\030\010 \001(\0132\020.SceneWeaponI" +
-      "nfo\022+\n\016reliquary_list\030\t \003(\0132\023.SceneReliq" +
-      "uaryInfo\022\036\n\026core_proud_skill_level\030\013 \001(\r" +
-      "\022!\n\031inherent_proud_skill_list\030\014 \003(\r\022<\n\017s" +
-      "kill_level_map\030\r \003(\0132#.SceneAvatarInfo.S" +
-      "killLevelMapEntry\022R\n\033proud_skill_extra_l" +
-      "evel_map\030\016 \003(\0132-.SceneAvatarInfo.ProudSk" +
-      "illExtraLevelMapEntry\022%\n\020server_buff_lis" +
-      "t\030\017 \003(\0132\013.ServerBuff\022\033\n\023team_resonance_l" +
+      "\004\022\017\n\007peer_id\030\004 \001(\r\022\033\n\023team_resonance_lis" +
+      "t\030\005 \003(\r\022\026\n\016skill_depot_id\030\006 \001(\r\022\026\n\016talen" +
+      "t_id_list\030\007 \003(\r\022 \n\006weapon\030\010 \001(\0132\020.SceneW" +
+      "eaponInfo\022+\n\016reliquary_list\030\t \003(\0132\023.Scen" +
+      "eReliquaryInfo\022\036\n\026core_proud_skill_level" +
+      "\030\013 \001(\r\022!\n\031inherent_proud_skill_list\030\014 \003(" +
+      "\r\022<\n\017skill_level_map\030\r \003(\0132#.SceneAvatar" +
+      "Info.SkillLevelMapEntry\022R\n\033proud_skill_e" +
+      "xtra_level_map\030\016 \003(\0132-.SceneAvatarInfo.P" +
+      "roudSkillExtraLevelMapEntry\022%\n\020server_bu" +
+      "ff_list\030\017 \003(\0132\013.ServerBuff\022\025\n\requip_id_l" +
       "ist\030\020 \003(\r\022\033\n\023wearing_flycloak_id\030\021 \001(\r\022\021" +
       "\n\tborn_time\030\022 \001(\r\022\022\n\ncostume_id\030\023 \001(\r\022)\n" +
       "\020cur_vehicle_info\030\024 \001(\0132\017.CurVehicleInfo" +
@@ -3940,7 +3940,7 @@ public final class SceneAvatarInfoOuterClass {
     internal_static_SceneAvatarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneAvatarInfo_descriptor,
-        new java.lang.String[] { "Uid", "AvatarId", "Guid", "PeerId", "EquipIdList", "SkillDepotId", "TalentIdList", "Weapon", "ReliquaryList", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ProudSkillExtraLevelMap", "ServerBuffList", "TeamResonanceList", "WearingFlycloakId", "BornTime", "CostumeId", "CurVehicleInfo", "ExcelInfo", "AnimHash", });
+        new java.lang.String[] { "Uid", "AvatarId", "Guid", "PeerId", "TeamResonanceList", "SkillDepotId", "TalentIdList", "Weapon", "ReliquaryList", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ProudSkillExtraLevelMap", "ServerBuffList", "EquipIdList", "WearingFlycloakId", "BornTime", "CostumeId", "CurVehicleInfo", "ExcelInfo", "AnimHash", });
     internal_static_SceneAvatarInfo_SkillLevelMapEntry_descriptor =
       internal_static_SceneAvatarInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneAvatarInfo_SkillLevelMapEntry_fieldAccessorTable = new

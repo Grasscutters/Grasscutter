@@ -58,7 +58,7 @@ public final class ShowEquipOuterClass {
   }
   /**
    * <pre>
-   * Name: BBBEJBEBBLD
+   * Name: KPPGCJMONCN
    * </pre>
    *
    * Protobuf type {@code ShowEquip}
@@ -480,7 +480,7 @@ public final class ShowEquipOuterClass {
     }
     /**
      * <pre>
-     * Name: BBBEJBEBBLD
+     * Name: KPPGCJMONCN
      * </pre>
      *
      * Protobuf type {@code ShowEquip}

@@ -25,15 +25,15 @@ public final class HomeChangeModuleRspOuterClass {
     int getTargetModuleId();
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * Name: LJDNAIPLEIG
-   * CmdId: 4876
+   * CmdId: 4516
+   * Name: OOEKDEHCHAE
    * </pre>
    *
    * Protobuf type {@code HomeChangeModuleRsp}
@@ -85,7 +85,7 @@ public final class HomeChangeModuleRspOuterClass {
               targetModuleId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -133,10 +133,10 @@ public final class HomeChangeModuleRspOuterClass {
       return targetModuleId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class HomeChangeModuleRspOuterClass {
         output.writeUInt32(8, targetModuleId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class HomeChangeModuleRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class HomeChangeModuleRspOuterClass {
     }
     /**
      * <pre>
-     * Name: LJDNAIPLEIG
-     * CmdId: 4876
+     * CmdId: 4516
+     * Name: OOEKDEHCHAE
      * </pre>
      *
      * Protobuf type {@code HomeChangeModuleRsp}
@@ -501,7 +501,7 @@ public final class HomeChangeModuleRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class HomeChangeModuleRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class HomeChangeModuleRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -598,7 +598,7 @@ public final class HomeChangeModuleRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031HomeChangeModuleRsp.proto\"@\n\023HomeChang" +
       "eModuleRsp\022\030\n\020target_module_id\030\010 \001(\r\022\017\n\007" +
-      "retcode\030\t \001(\005B\033\n\031emu.grasscutter.net.pro" +
+      "retcode\030\016 \001(\005B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

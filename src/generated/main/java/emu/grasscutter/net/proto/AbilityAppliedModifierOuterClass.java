@@ -134,7 +134,7 @@ public final class AbilityAppliedModifierOuterClass {
   }
   /**
    * <pre>
-   * Name: PAECICKHAKH
+   * Name: IMAGPOMIMAG
    * </pre>
    *
    * Protobuf type {@code AbilityAppliedModifier}
@@ -826,7 +826,7 @@ public final class AbilityAppliedModifierOuterClass {
     }
     /**
      * <pre>
-     * Name: PAECICKHAKH
+     * Name: IMAGPOMIMAG
      * </pre>
      *
      * Protobuf type {@code AbilityAppliedModifier}

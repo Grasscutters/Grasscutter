@@ -319,7 +319,7 @@ public final class SceneEntityInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: HGJKEMEBOKC
+   * Name: HLAAMJAKIEJ
    * </pre>
    *
    * Protobuf type {@code SceneEntityInfo}
@@ -1598,7 +1598,7 @@ public final class SceneEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: HGJKEMEBOKC
+     * Name: HLAAMJAKIEJ
      * </pre>
      *
      * Protobuf type {@code SceneEntityInfo}

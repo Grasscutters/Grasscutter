@@ -19,15 +19,15 @@ public final class TowerEnterLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 enter_point_id = 3;</code>
+     * <code>uint32 enter_point_id = 13;</code>
      * @return The enterPointId.
      */
     int getEnterPointId();
   }
   /**
    * <pre>
-   * Name: DFMIGMBANII
    * CmdId: 2459
+   * Name: PBGNHCLPLIN
    * </pre>
    *
    * Protobuf type {@code TowerEnterLevelReq}
@@ -74,7 +74,7 @@ public final class TowerEnterLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 104: {
 
               enterPointId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TowerEnterLevelReqOuterClass {
               emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.class, emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.Builder.class);
     }
 
-    public static final int ENTER_POINT_ID_FIELD_NUMBER = 3;
+    public static final int ENTER_POINT_ID_FIELD_NUMBER = 13;
     private int enterPointId_;
     /**
-     * <code>uint32 enter_point_id = 3;</code>
+     * <code>uint32 enter_point_id = 13;</code>
      * @return The enterPointId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TowerEnterLevelReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (enterPointId_ != 0) {
-        output.writeUInt32(3, enterPointId_);
+        output.writeUInt32(13, enterPointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TowerEnterLevelReqOuterClass {
       size = 0;
       if (enterPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, enterPointId_);
+          .computeUInt32Size(13, enterPointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TowerEnterLevelReqOuterClass {
     }
     /**
      * <pre>
-     * Name: DFMIGMBANII
      * CmdId: 2459
+     * Name: PBGNHCLPLIN
      * </pre>
      *
      * Protobuf type {@code TowerEnterLevelReq}
@@ -431,7 +431,7 @@ public final class TowerEnterLevelReqOuterClass {
 
       private int enterPointId_ ;
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enter_point_id = 13;</code>
        * @return The enterPointId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TowerEnterLevelReqOuterClass {
         return enterPointId_;
       }
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enter_point_id = 13;</code>
        * @param value The enterPointId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TowerEnterLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 enter_point_id = 3;</code>
+       * <code>uint32 enter_point_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnterPointId() {
@@ -527,7 +527,7 @@ public final class TowerEnterLevelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030TowerEnterLevelReq.proto\",\n\022TowerEnter" +
-      "LevelReq\022\026\n\016enter_point_id\030\003 \001(\rB\033\n\031emu." +
+      "LevelReq\022\026\n\016enter_point_id\030\r \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

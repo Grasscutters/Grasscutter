@@ -112,7 +112,7 @@ public final class AbilityMixinRecoverInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LMMFGNIDKME
+   * Name: AACFCFOGCMC
    * </pre>
    *
    * Protobuf type {@code AbilityMixinRecoverInfo}
@@ -731,7 +731,7 @@ public final class AbilityMixinRecoverInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LMMFGNIDKME
+     * Name: AACFCFOGCMC
      * </pre>
      *
      * Protobuf type {@code AbilityMixinRecoverInfo}
@@ -1654,7 +1654,7 @@ public final class AbilityMixinRecoverInfoOuterClass {
       "\030\006 \003(\0132\024.MassivePropSyncInfo\022-\n\022breakout" +
       "_snap_shot\030\007 \001(\0132\021.BreakoutSnapShot\022\036\n\024i" +
       "nstanced_ability_id\030\001 \001(\rH\000\022\037\n\025instanced" +
-      "_modifier_id\030\002 \001(\rH\000B\010\n\006sourceB\033\n\031emu.gr" +
+      "_modifier_id\030\002 \001(\rH\000B\010\n\006SourceB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

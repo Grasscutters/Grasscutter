@@ -76,10 +76,27 @@ public final class ClientGadgetInfoOuterClass {
      * @return The targetEntityIdList at the given index.
      */
     int getTargetEntityIdList(int index);
+
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @return A list containing the targetLockPointIndexList.
+     */
+    java.util.List<java.lang.Integer> getTargetLockPointIndexListList();
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @return The count of targetLockPointIndexList.
+     */
+    int getTargetLockPointIndexListCount();
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @param index The index of the element to return.
+     * @return The targetLockPointIndexList at the given index.
+     */
+    int getTargetLockPointIndexList(int index);
   }
   /**
    * <pre>
-   * Name: ANHIPICCPMI
+   * Name: OKBKAFDHDFA
    * </pre>
    *
    * Protobuf type {@code ClientGadgetInfo}
@@ -95,6 +112,7 @@ public final class ClientGadgetInfoOuterClass {
     }
     private ClientGadgetInfo() {
       targetEntityIdList_ = emptyIntList();
+      targetLockPointIndexList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -184,6 +202,27 @@ public final class ClientGadgetInfoOuterClass {
               input.popLimit(limit);
               break;
             }
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                targetLockPointIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              targetLockPointIndexList_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                targetLockPointIndexList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                targetLockPointIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -201,6 +240,9 @@ public final class ClientGadgetInfoOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           targetEntityIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          targetLockPointIndexList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -324,6 +366,34 @@ public final class ClientGadgetInfoOuterClass {
     }
     private int targetEntityIdListMemoizedSerializedSize = -1;
 
+    public static final int TARGET_LOCK_POINT_INDEX_LIST_FIELD_NUMBER = 9;
+    private com.google.protobuf.Internal.IntList targetLockPointIndexList_;
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @return A list containing the targetLockPointIndexList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getTargetLockPointIndexListList() {
+      return targetLockPointIndexList_;
+    }
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @return The count of targetLockPointIndexList.
+     */
+    public int getTargetLockPointIndexListCount() {
+      return targetLockPointIndexList_.size();
+    }
+    /**
+     * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+     * @param index The index of the element to return.
+     * @return The targetLockPointIndexList at the given index.
+     */
+    public int getTargetLockPointIndexList(int index) {
+      return targetLockPointIndexList_.getInt(index);
+    }
+    private int targetLockPointIndexListMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -366,6 +436,13 @@ public final class ClientGadgetInfoOuterClass {
       }
       for (int i = 0; i < targetEntityIdList_.size(); i++) {
         output.writeUInt32NoTag(targetEntityIdList_.getInt(i));
+      }
+      if (getTargetLockPointIndexListList().size() > 0) {
+        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(targetLockPointIndexListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < targetLockPointIndexList_.size(); i++) {
+        output.writeUInt32NoTag(targetLockPointIndexList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -418,6 +495,20 @@ public final class ClientGadgetInfoOuterClass {
         }
         targetEntityIdListMemoizedSerializedSize = dataSize;
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < targetLockPointIndexList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(targetLockPointIndexList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getTargetLockPointIndexListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        targetLockPointIndexListMemoizedSerializedSize = dataSize;
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -449,6 +540,8 @@ public final class ClientGadgetInfoOuterClass {
           != other.getIsPeerIdFromPlayer()) return false;
       if (!getTargetEntityIdListList()
           .equals(other.getTargetEntityIdListList())) return false;
+      if (!getTargetLockPointIndexListList()
+          .equals(other.getTargetLockPointIndexListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -480,6 +573,10 @@ public final class ClientGadgetInfoOuterClass {
       if (getTargetEntityIdListCount() > 0) {
         hash = (37 * hash) + TARGET_ENTITY_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTargetEntityIdListList().hashCode();
+      }
+      if (getTargetLockPointIndexListCount() > 0) {
+        hash = (37 * hash) + TARGET_LOCK_POINT_INDEX_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetLockPointIndexListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -578,7 +675,7 @@ public final class ClientGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: ANHIPICCPMI
+     * Name: OKBKAFDHDFA
      * </pre>
      *
      * Protobuf type {@code ClientGadgetInfo}
@@ -634,6 +731,8 @@ public final class ClientGadgetInfoOuterClass {
 
         targetEntityIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        targetLockPointIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -673,6 +772,11 @@ public final class ClientGadgetInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.targetEntityIdList_ = targetEntityIdList_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          targetLockPointIndexList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.targetLockPointIndexList_ = targetLockPointIndexList_;
         onBuilt();
         return result;
       }
@@ -749,6 +853,16 @@ public final class ClientGadgetInfoOuterClass {
           } else {
             ensureTargetEntityIdListIsMutable();
             targetEntityIdList_.addAll(other.targetEntityIdList_);
+          }
+          onChanged();
+        }
+        if (!other.targetLockPointIndexList_.isEmpty()) {
+          if (targetLockPointIndexList_.isEmpty()) {
+            targetLockPointIndexList_ = other.targetLockPointIndexList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTargetLockPointIndexListIsMutable();
+            targetLockPointIndexList_.addAll(other.targetLockPointIndexList_);
           }
           onChanged();
         }
@@ -1077,6 +1191,85 @@ public final class ClientGadgetInfoOuterClass {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.Internal.IntList targetLockPointIndexList_ = emptyIntList();
+      private void ensureTargetLockPointIndexListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          targetLockPointIndexList_ = mutableCopy(targetLockPointIndexList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @return A list containing the targetLockPointIndexList.
+       */
+      public java.util.List<java.lang.Integer>
+          getTargetLockPointIndexListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(targetLockPointIndexList_) : targetLockPointIndexList_;
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @return The count of targetLockPointIndexList.
+       */
+      public int getTargetLockPointIndexListCount() {
+        return targetLockPointIndexList_.size();
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @param index The index of the element to return.
+       * @return The targetLockPointIndexList at the given index.
+       */
+      public int getTargetLockPointIndexList(int index) {
+        return targetLockPointIndexList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The targetLockPointIndexList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetLockPointIndexList(
+          int index, int value) {
+        ensureTargetLockPointIndexListIsMutable();
+        targetLockPointIndexList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @param value The targetLockPointIndexList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTargetLockPointIndexList(int value) {
+        ensureTargetLockPointIndexListIsMutable();
+        targetLockPointIndexList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @param values The targetLockPointIndexList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTargetLockPointIndexList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureTargetLockPointIndexListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, targetLockPointIndexList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 target_lock_point_index_list = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetLockPointIndexList() {
+        targetLockPointIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1144,13 +1337,14 @@ public final class ClientGadgetInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ClientGadgetInfo.proto\"\312\001\n\020ClientGadge" +
+      "\n\026ClientGadgetInfo.proto\"\360\001\n\020ClientGadge" +
       "tInfo\022\017\n\007camp_id\030\001 \001(\r\022\021\n\tcamp_type\030\002 \001(" +
       "\r\022\014\n\004guid\030\003 \001(\004\022\027\n\017owner_entity_id\030\004 \001(\r" +
       "\022\030\n\020target_entity_id\030\005 \001(\r\022\022\n\nasync_load" +
       "\030\006 \001(\010\022\036\n\026is_peer_id_from_player\030\007 \001(\010\022\035" +
-      "\n\025target_entity_id_list\030\010 \003(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\025target_entity_id_list\030\010 \003(\r\022$\n\034target_" +
+      "lock_point_index_list\030\t \003(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1161,7 +1355,7 @@ public final class ClientGadgetInfoOuterClass {
     internal_static_ClientGadgetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientGadgetInfo_descriptor,
-        new java.lang.String[] { "CampId", "CampType", "Guid", "OwnerEntityId", "TargetEntityId", "AsyncLoad", "IsPeerIdFromPlayer", "TargetEntityIdList", });
+        new java.lang.String[] { "CampId", "CampType", "Guid", "OwnerEntityId", "TargetEntityId", "AsyncLoad", "IsPeerIdFromPlayer", "TargetEntityIdList", "TargetLockPointIndexList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

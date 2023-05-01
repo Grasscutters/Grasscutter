@@ -19,15 +19,15 @@ public final class TakeBackGivingItemReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 giving_id = 2;</code>
+     * <code>uint32 giving_id = 9;</code>
      * @return The givingId.
      */
     int getGivingId();
   }
   /**
    * <pre>
-   * Name: BFIJDKCMHDM
-   * CmdId: 152
+   * CmdId: 111
+   * Name: LEIKEGJEGAP
    * </pre>
    *
    * Protobuf type {@code TakeBackGivingItemReq}
@@ -74,7 +74,7 @@ public final class TakeBackGivingItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 72: {
 
               givingId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TakeBackGivingItemReqOuterClass {
               emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.class, emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.Builder.class);
     }
 
-    public static final int GIVING_ID_FIELD_NUMBER = 2;
+    public static final int GIVING_ID_FIELD_NUMBER = 9;
     private int givingId_;
     /**
-     * <code>uint32 giving_id = 2;</code>
+     * <code>uint32 giving_id = 9;</code>
      * @return The givingId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TakeBackGivingItemReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (givingId_ != 0) {
-        output.writeUInt32(2, givingId_);
+        output.writeUInt32(9, givingId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TakeBackGivingItemReqOuterClass {
       size = 0;
       if (givingId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, givingId_);
+          .computeUInt32Size(9, givingId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TakeBackGivingItemReqOuterClass {
     }
     /**
      * <pre>
-     * Name: BFIJDKCMHDM
-     * CmdId: 152
+     * CmdId: 111
+     * Name: LEIKEGJEGAP
      * </pre>
      *
      * Protobuf type {@code TakeBackGivingItemReq}
@@ -431,7 +431,7 @@ public final class TakeBackGivingItemReqOuterClass {
 
       private int givingId_ ;
       /**
-       * <code>uint32 giving_id = 2;</code>
+       * <code>uint32 giving_id = 9;</code>
        * @return The givingId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TakeBackGivingItemReqOuterClass {
         return givingId_;
       }
       /**
-       * <code>uint32 giving_id = 2;</code>
+       * <code>uint32 giving_id = 9;</code>
        * @param value The givingId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TakeBackGivingItemReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 giving_id = 2;</code>
+       * <code>uint32 giving_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearGivingId() {
@@ -527,7 +527,7 @@ public final class TakeBackGivingItemReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033TakeBackGivingItemReq.proto\"*\n\025TakeBac" +
-      "kGivingItemReq\022\021\n\tgiving_id\030\002 \001(\rB\033\n\031emu" +
+      "kGivingItemReq\022\021\n\tgiving_id\030\t \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

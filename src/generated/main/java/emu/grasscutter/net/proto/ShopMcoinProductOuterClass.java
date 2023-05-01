@@ -74,7 +74,7 @@ public final class ShopMcoinProductOuterClass {
   }
   /**
    * <pre>
-   * Name: LIJKGGFCHOB
+   * Name: JFMBGGFOPJO
    * </pre>
    *
    * Protobuf type {@code ShopMcoinProduct}
@@ -545,7 +545,7 @@ public final class ShopMcoinProductOuterClass {
     }
     /**
      * <pre>
-     * Name: LIJKGGFCHOB
+     * Name: JFMBGGFOPJO
      * </pre>
      *
      * Protobuf type {@code ShopMcoinProduct}

@@ -19,33 +19,33 @@ public final class TryEnterHomeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_point = 15;</code>
+     * <code>uint32 target_point = 7;</code>
      * @return The targetPoint.
      */
     int getTargetPoint();
 
     /**
-     * <code>bool MPAJHMEOAPK = 1;</code>
-     * @return The mPAJHMEOAPK.
+     * <code>bool EIEPKFHNILM = 2;</code>
+     * @return The eIEPKFHNILM.
      */
-    boolean getMPAJHMEOAPK();
+    boolean getEIEPKFHNILM();
 
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>bool OJAFECKPAJE = 14;</code>
+     * @return The oJAFECKPAJE.
+     */
+    boolean getOJAFECKPAJE();
+
+    /**
+     * <code>uint32 target_uid = 13;</code>
      * @return The targetUid.
      */
     int getTargetUid();
-
-    /**
-     * <code>bool NBNNPNAGOEA = 7;</code>
-     * @return The nBNNPNAGOEA.
-     */
-    boolean getNBNNPNAGOEA();
   }
   /**
    * <pre>
-   * Name: JBKOBACLLKE
-   * CmdId: 4729
+   * CmdId: 4504
+   * Name: MBLNFDMHCMM
    * </pre>
    *
    * Protobuf type {@code TryEnterHomeReq}
@@ -92,24 +92,24 @@ public final class TryEnterHomeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
-              mPAJHMEOAPK_ = input.readBool();
+              eIEPKFHNILM_ = input.readBool();
               break;
             }
             case 56: {
 
-              nBNNPNAGOEA_ = input.readBool();
+              targetPoint_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 104: {
 
               targetUid_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
-              targetPoint_ = input.readUInt32();
+              oJAFECKPAJE_ = input.readBool();
               break;
             }
             default: {
@@ -144,10 +144,10 @@ public final class TryEnterHomeReqOuterClass {
               emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReq.class, emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReq.Builder.class);
     }
 
-    public static final int TARGET_POINT_FIELD_NUMBER = 15;
+    public static final int TARGET_POINT_FIELD_NUMBER = 7;
     private int targetPoint_;
     /**
-     * <code>uint32 target_point = 15;</code>
+     * <code>uint32 target_point = 7;</code>
      * @return The targetPoint.
      */
     @java.lang.Override
@@ -155,37 +155,37 @@ public final class TryEnterHomeReqOuterClass {
       return targetPoint_;
     }
 
-    public static final int MPAJHMEOAPK_FIELD_NUMBER = 1;
-    private boolean mPAJHMEOAPK_;
+    public static final int EIEPKFHNILM_FIELD_NUMBER = 2;
+    private boolean eIEPKFHNILM_;
     /**
-     * <code>bool MPAJHMEOAPK = 1;</code>
-     * @return The mPAJHMEOAPK.
+     * <code>bool EIEPKFHNILM = 2;</code>
+     * @return The eIEPKFHNILM.
      */
     @java.lang.Override
-    public boolean getMPAJHMEOAPK() {
-      return mPAJHMEOAPK_;
+    public boolean getEIEPKFHNILM() {
+      return eIEPKFHNILM_;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 8;
+    public static final int OJAFECKPAJE_FIELD_NUMBER = 14;
+    private boolean oJAFECKPAJE_;
+    /**
+     * <code>bool OJAFECKPAJE = 14;</code>
+     * @return The oJAFECKPAJE.
+     */
+    @java.lang.Override
+    public boolean getOJAFECKPAJE() {
+      return oJAFECKPAJE_;
+    }
+
+    public static final int TARGET_UID_FIELD_NUMBER = 13;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>uint32 target_uid = 13;</code>
      * @return The targetUid.
      */
     @java.lang.Override
     public int getTargetUid() {
       return targetUid_;
-    }
-
-    public static final int NBNNPNAGOEA_FIELD_NUMBER = 7;
-    private boolean nBNNPNAGOEA_;
-    /**
-     * <code>bool NBNNPNAGOEA = 7;</code>
-     * @return The nBNNPNAGOEA.
-     */
-    @java.lang.Override
-    public boolean getNBNNPNAGOEA() {
-      return nBNNPNAGOEA_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class TryEnterHomeReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mPAJHMEOAPK_ != false) {
-        output.writeBool(1, mPAJHMEOAPK_);
-      }
-      if (nBNNPNAGOEA_ != false) {
-        output.writeBool(7, nBNNPNAGOEA_);
-      }
-      if (targetUid_ != 0) {
-        output.writeUInt32(8, targetUid_);
+      if (eIEPKFHNILM_ != false) {
+        output.writeBool(2, eIEPKFHNILM_);
       }
       if (targetPoint_ != 0) {
-        output.writeUInt32(15, targetPoint_);
+        output.writeUInt32(7, targetPoint_);
+      }
+      if (targetUid_ != 0) {
+        output.writeUInt32(13, targetUid_);
+      }
+      if (oJAFECKPAJE_ != false) {
+        output.writeBool(14, oJAFECKPAJE_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class TryEnterHomeReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (mPAJHMEOAPK_ != false) {
+      if (eIEPKFHNILM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, mPAJHMEOAPK_);
-      }
-      if (nBNNPNAGOEA_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, nBNNPNAGOEA_);
-      }
-      if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, targetUid_);
+          .computeBoolSize(2, eIEPKFHNILM_);
       }
       if (targetPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, targetPoint_);
+          .computeUInt32Size(7, targetPoint_);
+      }
+      if (targetUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, targetUid_);
+      }
+      if (oJAFECKPAJE_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, oJAFECKPAJE_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,12 +256,12 @@ public final class TryEnterHomeReqOuterClass {
 
       if (getTargetPoint()
           != other.getTargetPoint()) return false;
-      if (getMPAJHMEOAPK()
-          != other.getMPAJHMEOAPK()) return false;
+      if (getEIEPKFHNILM()
+          != other.getEIEPKFHNILM()) return false;
+      if (getOJAFECKPAJE()
+          != other.getOJAFECKPAJE()) return false;
       if (getTargetUid()
           != other.getTargetUid()) return false;
-      if (getNBNNPNAGOEA()
-          != other.getNBNNPNAGOEA()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,14 +275,14 @@ public final class TryEnterHomeReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TARGET_POINT_FIELD_NUMBER;
       hash = (53 * hash) + getTargetPoint();
-      hash = (37 * hash) + MPAJHMEOAPK_FIELD_NUMBER;
+      hash = (37 * hash) + EIEPKFHNILM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMPAJHMEOAPK());
+          getEIEPKFHNILM());
+      hash = (37 * hash) + OJAFECKPAJE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOJAFECKPAJE());
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
-      hash = (37 * hash) + NBNNPNAGOEA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNBNNPNAGOEA());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,8 +380,8 @@ public final class TryEnterHomeReqOuterClass {
     }
     /**
      * <pre>
-     * Name: JBKOBACLLKE
-     * CmdId: 4729
+     * CmdId: 4504
+     * Name: MBLNFDMHCMM
      * </pre>
      *
      * Protobuf type {@code TryEnterHomeReq}
@@ -423,11 +423,11 @@ public final class TryEnterHomeReqOuterClass {
         super.clear();
         targetPoint_ = 0;
 
-        mPAJHMEOAPK_ = false;
+        eIEPKFHNILM_ = false;
+
+        oJAFECKPAJE_ = false;
 
         targetUid_ = 0;
-
-        nBNNPNAGOEA_ = false;
 
         return this;
       }
@@ -456,9 +456,9 @@ public final class TryEnterHomeReqOuterClass {
       public emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReq buildPartial() {
         emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReq result = new emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReq(this);
         result.targetPoint_ = targetPoint_;
-        result.mPAJHMEOAPK_ = mPAJHMEOAPK_;
+        result.eIEPKFHNILM_ = eIEPKFHNILM_;
+        result.oJAFECKPAJE_ = oJAFECKPAJE_;
         result.targetUid_ = targetUid_;
-        result.nBNNPNAGOEA_ = nBNNPNAGOEA_;
         onBuilt();
         return result;
       }
@@ -510,14 +510,14 @@ public final class TryEnterHomeReqOuterClass {
         if (other.getTargetPoint() != 0) {
           setTargetPoint(other.getTargetPoint());
         }
-        if (other.getMPAJHMEOAPK() != false) {
-          setMPAJHMEOAPK(other.getMPAJHMEOAPK());
+        if (other.getEIEPKFHNILM() != false) {
+          setEIEPKFHNILM(other.getEIEPKFHNILM());
+        }
+        if (other.getOJAFECKPAJE() != false) {
+          setOJAFECKPAJE(other.getOJAFECKPAJE());
         }
         if (other.getTargetUid() != 0) {
           setTargetUid(other.getTargetUid());
-        }
-        if (other.getNBNNPNAGOEA() != false) {
-          setNBNNPNAGOEA(other.getNBNNPNAGOEA());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -550,7 +550,7 @@ public final class TryEnterHomeReqOuterClass {
 
       private int targetPoint_ ;
       /**
-       * <code>uint32 target_point = 15;</code>
+       * <code>uint32 target_point = 7;</code>
        * @return The targetPoint.
        */
       @java.lang.Override
@@ -558,7 +558,7 @@ public final class TryEnterHomeReqOuterClass {
         return targetPoint_;
       }
       /**
-       * <code>uint32 target_point = 15;</code>
+       * <code>uint32 target_point = 7;</code>
        * @param value The targetPoint to set.
        * @return This builder for chaining.
        */
@@ -569,7 +569,7 @@ public final class TryEnterHomeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_point = 15;</code>
+       * <code>uint32 target_point = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetPoint() {
@@ -579,40 +579,71 @@ public final class TryEnterHomeReqOuterClass {
         return this;
       }
 
-      private boolean mPAJHMEOAPK_ ;
+      private boolean eIEPKFHNILM_ ;
       /**
-       * <code>bool MPAJHMEOAPK = 1;</code>
-       * @return The mPAJHMEOAPK.
+       * <code>bool EIEPKFHNILM = 2;</code>
+       * @return The eIEPKFHNILM.
        */
       @java.lang.Override
-      public boolean getMPAJHMEOAPK() {
-        return mPAJHMEOAPK_;
+      public boolean getEIEPKFHNILM() {
+        return eIEPKFHNILM_;
       }
       /**
-       * <code>bool MPAJHMEOAPK = 1;</code>
-       * @param value The mPAJHMEOAPK to set.
+       * <code>bool EIEPKFHNILM = 2;</code>
+       * @param value The eIEPKFHNILM to set.
        * @return This builder for chaining.
        */
-      public Builder setMPAJHMEOAPK(boolean value) {
+      public Builder setEIEPKFHNILM(boolean value) {
         
-        mPAJHMEOAPK_ = value;
+        eIEPKFHNILM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool MPAJHMEOAPK = 1;</code>
+       * <code>bool EIEPKFHNILM = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMPAJHMEOAPK() {
+      public Builder clearEIEPKFHNILM() {
         
-        mPAJHMEOAPK_ = false;
+        eIEPKFHNILM_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean oJAFECKPAJE_ ;
+      /**
+       * <code>bool OJAFECKPAJE = 14;</code>
+       * @return The oJAFECKPAJE.
+       */
+      @java.lang.Override
+      public boolean getOJAFECKPAJE() {
+        return oJAFECKPAJE_;
+      }
+      /**
+       * <code>bool OJAFECKPAJE = 14;</code>
+       * @param value The oJAFECKPAJE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOJAFECKPAJE(boolean value) {
+        
+        oJAFECKPAJE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool OJAFECKPAJE = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOJAFECKPAJE() {
+        
+        oJAFECKPAJE_ = false;
         onChanged();
         return this;
       }
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -620,7 +651,7 @@ public final class TryEnterHomeReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -631,43 +662,12 @@ public final class TryEnterHomeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
         
         targetUid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean nBNNPNAGOEA_ ;
-      /**
-       * <code>bool NBNNPNAGOEA = 7;</code>
-       * @return The nBNNPNAGOEA.
-       */
-      @java.lang.Override
-      public boolean getNBNNPNAGOEA() {
-        return nBNNPNAGOEA_;
-      }
-      /**
-       * <code>bool NBNNPNAGOEA = 7;</code>
-       * @param value The nBNNPNAGOEA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNBNNPNAGOEA(boolean value) {
-        
-        nBNNPNAGOEA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool NBNNPNAGOEA = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNBNNPNAGOEA() {
-        
-        nBNNPNAGOEA_ = false;
         onChanged();
         return this;
       }
@@ -739,9 +739,9 @@ public final class TryEnterHomeReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025TryEnterHomeReq.proto\"e\n\017TryEnterHomeR" +
-      "eq\022\024\n\014target_point\030\017 \001(\r\022\023\n\013MPAJHMEOAPK\030" +
-      "\001 \001(\010\022\022\n\ntarget_uid\030\010 \001(\r\022\023\n\013NBNNPNAGOEA" +
-      "\030\007 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "eq\022\024\n\014target_point\030\007 \001(\r\022\023\n\013EIEPKFHNILM\030" +
+      "\002 \001(\010\022\023\n\013OJAFECKPAJE\030\016 \001(\010\022\022\n\ntarget_uid" +
+      "\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -753,7 +753,7 @@ public final class TryEnterHomeReqOuterClass {
     internal_static_TryEnterHomeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TryEnterHomeReq_descriptor,
-        new java.lang.String[] { "TargetPoint", "MPAJHMEOAPK", "TargetUid", "NBNNPNAGOEA", });
+        new java.lang.String[] { "TargetPoint", "EIEPKFHNILM", "OJAFECKPAJE", "TargetUid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

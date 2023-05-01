@@ -19,33 +19,33 @@ public final class SeaLampContributeItemRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HNGMFPDIFCG = 7;</code>
-     * @return The hNGMFPDIFCG.
-     */
-    int getHNGMFPDIFCG();
-
-    /**
-     * <code>uint32 NAOHGOGJGGM = 6;</code>
-     * @return The nAOHGOGJGGM.
-     */
-    int getNAOHGOGJGGM();
-
-    /**
-     * <code>uint32 add_progress = 2;</code>
+     * <code>uint32 add_progress = 14;</code>
      * @return The addProgress.
      */
     int getAddProgress();
 
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 LHEFDGPEFPN = 4;</code>
+     * @return The lHEFDGPEFPN.
+     */
+    int getLHEFDGPEFPN();
+
+    /**
+     * <code>uint32 LCMDALFODMC = 7;</code>
+     * @return The lCMDALFODMC.
+     */
+    int getLCMDALFODMC();
   }
   /**
    * <pre>
-   * Name: ADCIPKGKANK
-   * CmdId: 2138
+   * CmdId: 2198
+   * Name: NJCLGLANLMO
    * </pre>
    *
    * Protobuf type {@code SeaLampContributeItemRsp}
@@ -94,22 +94,22 @@ public final class SeaLampContributeItemRspOuterClass {
               break;
             case 16: {
 
-              addProgress_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 32: {
 
-              nAOHGOGJGGM_ = input.readUInt32();
+              lHEFDGPEFPN_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              hNGMFPDIFCG_ = input.readUInt32();
+              lCMDALFODMC_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 112: {
 
-              retcode_ = input.readInt32();
+              addProgress_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,32 +144,10 @@ public final class SeaLampContributeItemRspOuterClass {
               emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.class, emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.Builder.class);
     }
 
-    public static final int HNGMFPDIFCG_FIELD_NUMBER = 7;
-    private int hNGMFPDIFCG_;
-    /**
-     * <code>uint32 HNGMFPDIFCG = 7;</code>
-     * @return The hNGMFPDIFCG.
-     */
-    @java.lang.Override
-    public int getHNGMFPDIFCG() {
-      return hNGMFPDIFCG_;
-    }
-
-    public static final int NAOHGOGJGGM_FIELD_NUMBER = 6;
-    private int nAOHGOGJGGM_;
-    /**
-     * <code>uint32 NAOHGOGJGGM = 6;</code>
-     * @return The nAOHGOGJGGM.
-     */
-    @java.lang.Override
-    public int getNAOHGOGJGGM() {
-      return nAOHGOGJGGM_;
-    }
-
-    public static final int ADD_PROGRESS_FIELD_NUMBER = 2;
+    public static final int ADD_PROGRESS_FIELD_NUMBER = 14;
     private int addProgress_;
     /**
-     * <code>uint32 add_progress = 2;</code>
+     * <code>uint32 add_progress = 14;</code>
      * @return The addProgress.
      */
     @java.lang.Override
@@ -177,15 +155,37 @@ public final class SeaLampContributeItemRspOuterClass {
       return addProgress_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 8;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int LHEFDGPEFPN_FIELD_NUMBER = 4;
+    private int lHEFDGPEFPN_;
+    /**
+     * <code>uint32 LHEFDGPEFPN = 4;</code>
+     * @return The lHEFDGPEFPN.
+     */
+    @java.lang.Override
+    public int getLHEFDGPEFPN() {
+      return lHEFDGPEFPN_;
+    }
+
+    public static final int LCMDALFODMC_FIELD_NUMBER = 7;
+    private int lCMDALFODMC_;
+    /**
+     * <code>uint32 LCMDALFODMC = 7;</code>
+     * @return The lCMDALFODMC.
+     */
+    @java.lang.Override
+    public int getLCMDALFODMC() {
+      return lCMDALFODMC_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class SeaLampContributeItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (addProgress_ != 0) {
-        output.writeUInt32(2, addProgress_);
-      }
-      if (nAOHGOGJGGM_ != 0) {
-        output.writeUInt32(6, nAOHGOGJGGM_);
-      }
-      if (hNGMFPDIFCG_ != 0) {
-        output.writeUInt32(7, hNGMFPDIFCG_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (lHEFDGPEFPN_ != 0) {
+        output.writeUInt32(4, lHEFDGPEFPN_);
+      }
+      if (lCMDALFODMC_ != 0) {
+        output.writeUInt32(7, lCMDALFODMC_);
+      }
+      if (addProgress_ != 0) {
+        output.writeUInt32(14, addProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class SeaLampContributeItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (addProgress_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, addProgress_);
-      }
-      if (nAOHGOGJGGM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, nAOHGOGJGGM_);
-      }
-      if (hNGMFPDIFCG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, hNGMFPDIFCG_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (lHEFDGPEFPN_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, lHEFDGPEFPN_);
+      }
+      if (lCMDALFODMC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, lCMDALFODMC_);
+      }
+      if (addProgress_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, addProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class SeaLampContributeItemRspOuterClass {
       }
       emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp other = (emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp) obj;
 
-      if (getHNGMFPDIFCG()
-          != other.getHNGMFPDIFCG()) return false;
-      if (getNAOHGOGJGGM()
-          != other.getNAOHGOGJGGM()) return false;
       if (getAddProgress()
           != other.getAddProgress()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getLHEFDGPEFPN()
+          != other.getLHEFDGPEFPN()) return false;
+      if (getLCMDALFODMC()
+          != other.getLCMDALFODMC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class SeaLampContributeItemRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HNGMFPDIFCG_FIELD_NUMBER;
-      hash = (53 * hash) + getHNGMFPDIFCG();
-      hash = (37 * hash) + NAOHGOGJGGM_FIELD_NUMBER;
-      hash = (53 * hash) + getNAOHGOGJGGM();
       hash = (37 * hash) + ADD_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddProgress();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + LHEFDGPEFPN_FIELD_NUMBER;
+      hash = (53 * hash) + getLHEFDGPEFPN();
+      hash = (37 * hash) + LCMDALFODMC_FIELD_NUMBER;
+      hash = (53 * hash) + getLCMDALFODMC();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class SeaLampContributeItemRspOuterClass {
     }
     /**
      * <pre>
-     * Name: ADCIPKGKANK
-     * CmdId: 2138
+     * CmdId: 2198
+     * Name: NJCLGLANLMO
      * </pre>
      *
      * Protobuf type {@code SeaLampContributeItemRsp}
@@ -419,13 +419,13 @@ public final class SeaLampContributeItemRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hNGMFPDIFCG_ = 0;
-
-        nAOHGOGJGGM_ = 0;
-
         addProgress_ = 0;
 
         retcode_ = 0;
+
+        lHEFDGPEFPN_ = 0;
+
+        lCMDALFODMC_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class SeaLampContributeItemRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp buildPartial() {
         emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp result = new emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp(this);
-        result.hNGMFPDIFCG_ = hNGMFPDIFCG_;
-        result.nAOHGOGJGGM_ = nAOHGOGJGGM_;
         result.addProgress_ = addProgress_;
         result.retcode_ = retcode_;
+        result.lHEFDGPEFPN_ = lHEFDGPEFPN_;
+        result.lCMDALFODMC_ = lCMDALFODMC_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class SeaLampContributeItemRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp other) {
         if (other == emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRsp.getDefaultInstance()) return this;
-        if (other.getHNGMFPDIFCG() != 0) {
-          setHNGMFPDIFCG(other.getHNGMFPDIFCG());
-        }
-        if (other.getNAOHGOGJGGM() != 0) {
-          setNAOHGOGJGGM(other.getNAOHGOGJGGM());
-        }
         if (other.getAddProgress() != 0) {
           setAddProgress(other.getAddProgress());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getLHEFDGPEFPN() != 0) {
+          setLHEFDGPEFPN(other.getLHEFDGPEFPN());
+        }
+        if (other.getLCMDALFODMC() != 0) {
+          setLCMDALFODMC(other.getLCMDALFODMC());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,71 +546,9 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
 
-      private int hNGMFPDIFCG_ ;
-      /**
-       * <code>uint32 HNGMFPDIFCG = 7;</code>
-       * @return The hNGMFPDIFCG.
-       */
-      @java.lang.Override
-      public int getHNGMFPDIFCG() {
-        return hNGMFPDIFCG_;
-      }
-      /**
-       * <code>uint32 HNGMFPDIFCG = 7;</code>
-       * @param value The hNGMFPDIFCG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHNGMFPDIFCG(int value) {
-        
-        hNGMFPDIFCG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HNGMFPDIFCG = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHNGMFPDIFCG() {
-        
-        hNGMFPDIFCG_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nAOHGOGJGGM_ ;
-      /**
-       * <code>uint32 NAOHGOGJGGM = 6;</code>
-       * @return The nAOHGOGJGGM.
-       */
-      @java.lang.Override
-      public int getNAOHGOGJGGM() {
-        return nAOHGOGJGGM_;
-      }
-      /**
-       * <code>uint32 NAOHGOGJGGM = 6;</code>
-       * @param value The nAOHGOGJGGM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNAOHGOGJGGM(int value) {
-        
-        nAOHGOGJGGM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NAOHGOGJGGM = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNAOHGOGJGGM() {
-        
-        nAOHGOGJGGM_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int addProgress_ ;
       /**
-       * <code>uint32 add_progress = 2;</code>
+       * <code>uint32 add_progress = 14;</code>
        * @return The addProgress.
        */
       @java.lang.Override
@@ -618,7 +556,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return addProgress_;
       }
       /**
-       * <code>uint32 add_progress = 2;</code>
+       * <code>uint32 add_progress = 14;</code>
        * @param value The addProgress to set.
        * @return This builder for chaining.
        */
@@ -629,7 +567,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 add_progress = 2;</code>
+       * <code>uint32 add_progress = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddProgress() {
@@ -641,7 +579,7 @@ public final class SeaLampContributeItemRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -649,7 +587,7 @@ public final class SeaLampContributeItemRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -660,12 +598,74 @@ public final class SeaLampContributeItemRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lHEFDGPEFPN_ ;
+      /**
+       * <code>uint32 LHEFDGPEFPN = 4;</code>
+       * @return The lHEFDGPEFPN.
+       */
+      @java.lang.Override
+      public int getLHEFDGPEFPN() {
+        return lHEFDGPEFPN_;
+      }
+      /**
+       * <code>uint32 LHEFDGPEFPN = 4;</code>
+       * @param value The lHEFDGPEFPN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLHEFDGPEFPN(int value) {
+        
+        lHEFDGPEFPN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LHEFDGPEFPN = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLHEFDGPEFPN() {
+        
+        lHEFDGPEFPN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lCMDALFODMC_ ;
+      /**
+       * <code>uint32 LCMDALFODMC = 7;</code>
+       * @return The lCMDALFODMC.
+       */
+      @java.lang.Override
+      public int getLCMDALFODMC() {
+        return lCMDALFODMC_;
+      }
+      /**
+       * <code>uint32 LCMDALFODMC = 7;</code>
+       * @param value The lCMDALFODMC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLCMDALFODMC(int value) {
+        
+        lCMDALFODMC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LCMDALFODMC = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLCMDALFODMC() {
+        
+        lCMDALFODMC_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +737,9 @@ public final class SeaLampContributeItemRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036SeaLampContributeItemRsp.proto\"k\n\030SeaL" +
-      "ampContributeItemRsp\022\023\n\013HNGMFPDIFCG\030\007 \001(" +
-      "\r\022\023\n\013NAOHGOGJGGM\030\006 \001(\r\022\024\n\014add_progress\030\002" +
-      " \001(\r\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grasscutter" +
+      "ampContributeItemRsp\022\024\n\014add_progress\030\016 \001" +
+      "(\r\022\017\n\007retcode\030\002 \001(\005\022\023\n\013LHEFDGPEFPN\030\004 \001(\r" +
+      "\022\023\n\013LCMDALFODMC\030\007 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -751,7 +751,7 @@ public final class SeaLampContributeItemRspOuterClass {
     internal_static_SeaLampContributeItemRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SeaLampContributeItemRsp_descriptor,
-        new java.lang.String[] { "HNGMFPDIFCG", "NAOHGOGJGGM", "AddProgress", "Retcode", });
+        new java.lang.String[] { "AddProgress", "Retcode", "LHEFDGPEFPN", "LCMDALFODMC", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

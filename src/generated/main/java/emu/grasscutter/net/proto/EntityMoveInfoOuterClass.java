@@ -59,7 +59,7 @@ public final class EntityMoveInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: FJCIDHDHCBD
+   * Name: DNFJKJBPHLE
    * </pre>
    *
    * Protobuf type {@code EntityMoveInfo}
@@ -448,7 +448,7 @@ public final class EntityMoveInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: FJCIDHDHCBD
+     * Name: DNFJKJBPHLE
      * </pre>
      *
      * Protobuf type {@code EntityMoveInfo}

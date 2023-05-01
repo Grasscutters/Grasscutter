@@ -26,7 +26,7 @@ public final class OfferingInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: FCKEMAGNIFF
+   * Name: APJFIICJMBD
    * </pre>
    *
    * Protobuf type {@code OfferingInfo}
@@ -278,7 +278,7 @@ public final class OfferingInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: FCKEMAGNIFF
+     * Name: APJFIICJMBD
      * </pre>
      *
      * Protobuf type {@code OfferingInfo}

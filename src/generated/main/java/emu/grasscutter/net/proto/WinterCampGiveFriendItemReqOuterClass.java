@@ -19,39 +19,39 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 1;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 uid = 12;</code>
+     * @return The uid.
+     */
+    int getUid();
   }
   /**
    * <pre>
-   * Name: ADDFLBOGEHN
-   * CmdId: 8187
+   * CmdId: 8673
+   * Name: DEABICNFMEE
    * </pre>
    *
    * Protobuf type {@code WinterCampGiveFriendItemReq}
@@ -100,12 +100,12 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 96: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 34: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -149,28 +149,17 @@ public final class WinterCampGiveFriendItemReqOuterClass {
               emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq.class, emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 1;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
-    public static final int ITEM_LIST_FIELD_NUMBER = 4;
+    public static final int ITEM_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -178,26 +167,37 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 4;</code>
+     * <code>repeated .ItemParam item_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index) {
       return itemList_.get(index);
+    }
+
+    public static final int UID_FIELD_NUMBER = 12;
+    private int uid_;
+    /**
+     * <code>uint32 uid = 12;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -215,10 +215,10 @@ public final class WinterCampGiveFriendItemReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(1, uid_);
+        output.writeUInt32(12, uid_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(4, itemList_.get(i));
+        output.writeMessage(13, itemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, uid_);
+          .computeUInt32Size(12, uid_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, itemList_.get(i));
+          .computeMessageSize(13, itemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       }
       emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq other = (emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq) obj;
 
-      if (getUid()
-          != other.getUid()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class WinterCampGiveFriendItemReqOuterClass {
     }
     /**
      * <pre>
-     * Name: ADDFLBOGEHN
-     * CmdId: 8187
+     * CmdId: 8673
+     * Name: DEABICNFMEE
      * </pre>
      *
      * Protobuf type {@code WinterCampGiveFriendItemReq}
@@ -412,14 +412,14 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uid_ = 0;
-
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           itemListBuilder_.clear();
         }
+        uid_ = 0;
+
         return this;
       }
 
@@ -447,7 +447,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       public emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq buildPartial() {
         emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq result = new emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq(this);
         int from_bitField0_ = bitField0_;
-        result.uid_ = uid_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -457,6 +456,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
+        result.uid_ = uid_;
         onBuilt();
         return result;
       }
@@ -505,9 +505,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq other) {
         if (other == emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq.getDefaultInstance()) return this;
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
-        }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
@@ -533,6 +530,9 @@ public final class WinterCampGiveFriendItemReqOuterClass {
               itemListBuilder_.addAllMessages(other.itemList_);
             }
           }
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,37 +564,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
       }
       private int bitField0_;
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
@@ -608,7 +577,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -618,7 +587,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -628,7 +597,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -638,7 +607,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -655,7 +624,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -669,7 +638,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -685,7 +654,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -702,7 +671,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -716,7 +685,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -730,7 +699,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -745,7 +714,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
@@ -758,7 +727,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -771,14 +740,14 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -788,7 +757,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -799,14 +768,14 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -814,7 +783,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 4;</code>
+       * <code>repeated .ItemParam item_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -833,6 +802,37 @@ public final class WinterCampGiveFriendItemReqOuterClass {
           itemList_ = null;
         }
         return itemListBuilder_;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 12;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 12;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -903,8 +903,8 @@ public final class WinterCampGiveFriendItemReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!WinterCampGiveFriendItemReq.proto\032\017Ite" +
       "mParam.proto\"I\n\033WinterCampGiveFriendItem" +
-      "Req\022\013\n\003uid\030\001 \001(\r\022\035\n\titem_list\030\004 \003(\0132\n.It" +
-      "emParamB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "Req\022\035\n\titem_list\030\r \003(\0132\n.ItemParam\022\013\n\003ui" +
+      "d\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -917,7 +917,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
     internal_static_WinterCampGiveFriendItemReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WinterCampGiveFriendItemReq_descriptor,
-        new java.lang.String[] { "Uid", "ItemList", });
+        new java.lang.String[] { "ItemList", "Uid", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

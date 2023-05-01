@@ -26,7 +26,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
   }
   /**
    * <pre>
-   * Name: AJBIHJGCCPM
+   * Name: CCLIIIOLMDN
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointSuiteData}
@@ -278,7 +278,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
     }
     /**
      * <pre>
-     * Name: AJBIHJGCCPM
+     * Name: CCLIIIOLMDN
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointSuiteData}

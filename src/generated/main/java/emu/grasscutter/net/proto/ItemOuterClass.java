@@ -79,7 +79,7 @@ public final class ItemOuterClass {
   }
   /**
    * <pre>
-   * Name: FOPGOIJCICK
+   * Name: FKONGMBBBAN
    * </pre>
    *
    * Protobuf type {@code Item}
@@ -591,7 +591,7 @@ public final class ItemOuterClass {
     }
     /**
      * <pre>
-     * Name: FOPGOIJCICK
+     * Name: FKONGMBBBAN
      * </pre>
      *
      * Protobuf type {@code Item}

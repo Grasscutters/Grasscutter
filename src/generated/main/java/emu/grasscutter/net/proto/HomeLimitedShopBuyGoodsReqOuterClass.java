@@ -19,7 +19,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 buy_count = 14;</code>
+     * <code>uint32 buy_count = 1;</code>
      * @return The buyCount.
      */
     int getBuyCount();
@@ -41,8 +41,8 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
   }
   /**
    * <pre>
-   * Name: KIJPELEMEPN
-   * CmdId: 4471
+   * CmdId: 4867
+   * Name: AMGABHMJHCA
    * </pre>
    *
    * Protobuf type {@code HomeLimitedShopBuyGoodsReq}
@@ -89,6 +89,11 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              buyCount_ = input.readUInt32();
+              break;
+            }
             case 106: {
               emu.grasscutter.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder subBuilder = null;
               if (goods_ != null) {
@@ -100,11 +105,6 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
                 goods_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 112: {
-
-              buyCount_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,10 +139,10 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
               emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq.class, emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq.Builder.class);
     }
 
-    public static final int BUY_COUNT_FIELD_NUMBER = 14;
+    public static final int BUY_COUNT_FIELD_NUMBER = 1;
     private int buyCount_;
     /**
-     * <code>uint32 buy_count = 14;</code>
+     * <code>uint32 buy_count = 1;</code>
      * @return The buyCount.
      */
     @java.lang.Override
@@ -190,11 +190,11 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (buyCount_ != 0) {
+        output.writeUInt32(1, buyCount_);
+      }
       if (goods_ != null) {
         output.writeMessage(13, getGoods());
-      }
-      if (buyCount_ != 0) {
-        output.writeUInt32(14, buyCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (buyCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, buyCount_);
+      }
       if (goods_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getGoods());
-      }
-      if (buyCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, buyCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
     }
     /**
      * <pre>
-     * Name: KIJPELEMEPN
-     * CmdId: 4471
+     * CmdId: 4867
+     * Name: AMGABHMJHCA
      * </pre>
      *
      * Protobuf type {@code HomeLimitedShopBuyGoodsReq}
@@ -515,7 +515,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
 
       private int buyCount_ ;
       /**
-       * <code>uint32 buy_count = 14;</code>
+       * <code>uint32 buy_count = 1;</code>
        * @return The buyCount.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
         return buyCount_;
       }
       /**
-       * <code>uint32 buy_count = 14;</code>
+       * <code>uint32 buy_count = 1;</code>
        * @param value The buyCount to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buy_count = 14;</code>
+       * <code>uint32 buy_count = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuyCount() {
@@ -731,7 +731,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n HomeLimitedShopBuyGoodsReq.proto\032\032Home" +
       "LimitedShopGoods.proto\"U\n\032HomeLimitedSho" +
-      "pBuyGoodsReq\022\021\n\tbuy_count\030\016 \001(\r\022$\n\005goods" +
+      "pBuyGoodsReq\022\021\n\tbuy_count\030\001 \001(\r\022$\n\005goods" +
       "\030\r \001(\0132\025.HomeLimitedShopGoodsB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };

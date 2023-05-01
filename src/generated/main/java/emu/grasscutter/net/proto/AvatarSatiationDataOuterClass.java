@@ -19,26 +19,26 @@ public final class AvatarSatiationDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 3;</code>
-     * @return The avatarGuid.
+     * <code>float finish_time = 12;</code>
+     * @return The finishTime.
      */
-    long getAvatarGuid();
+    float getFinishTime();
 
     /**
-     * <code>float penalty_finish_time = 13;</code>
+     * <code>float penalty_finish_time = 8;</code>
      * @return The penaltyFinishTime.
      */
     float getPenaltyFinishTime();
 
     /**
-     * <code>float finish_time = 5;</code>
-     * @return The finishTime.
+     * <code>uint64 avatar_guid = 5;</code>
+     * @return The avatarGuid.
      */
-    float getFinishTime();
+    long getAvatarGuid();
   }
   /**
    * <pre>
-   * Name: IPIDLJAAEGM
+   * Name: JCDFMFJACEH
    * </pre>
    *
    * Protobuf type {@code AvatarSatiationData}
@@ -85,19 +85,19 @@ public final class AvatarSatiationDataOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 40: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 45: {
-
-              finishTime_ = input.readFloat();
-              break;
-            }
-            case 109: {
+            case 69: {
 
               penaltyFinishTime_ = input.readFloat();
+              break;
+            }
+            case 101: {
+
+              finishTime_ = input.readFloat();
               break;
             }
             default: {
@@ -132,21 +132,21 @@ public final class AvatarSatiationDataOuterClass {
               emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.class, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
-    private long avatarGuid_;
+    public static final int FINISH_TIME_FIELD_NUMBER = 12;
+    private float finishTime_;
     /**
-     * <code>uint64 avatar_guid = 3;</code>
-     * @return The avatarGuid.
+     * <code>float finish_time = 12;</code>
+     * @return The finishTime.
      */
     @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
+    public float getFinishTime() {
+      return finishTime_;
     }
 
-    public static final int PENALTY_FINISH_TIME_FIELD_NUMBER = 13;
+    public static final int PENALTY_FINISH_TIME_FIELD_NUMBER = 8;
     private float penaltyFinishTime_;
     /**
-     * <code>float penalty_finish_time = 13;</code>
+     * <code>float penalty_finish_time = 8;</code>
      * @return The penaltyFinishTime.
      */
     @java.lang.Override
@@ -154,15 +154,15 @@ public final class AvatarSatiationDataOuterClass {
       return penaltyFinishTime_;
     }
 
-    public static final int FINISH_TIME_FIELD_NUMBER = 5;
-    private float finishTime_;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 5;
+    private long avatarGuid_;
     /**
-     * <code>float finish_time = 5;</code>
-     * @return The finishTime.
+     * <code>uint64 avatar_guid = 5;</code>
+     * @return The avatarGuid.
      */
     @java.lang.Override
-    public float getFinishTime() {
-      return finishTime_;
+    public long getAvatarGuid() {
+      return avatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,13 +180,13 @@ public final class AvatarSatiationDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(3, avatarGuid_);
-      }
-      if (finishTime_ != 0F) {
-        output.writeFloat(5, finishTime_);
+        output.writeUInt64(5, avatarGuid_);
       }
       if (penaltyFinishTime_ != 0F) {
-        output.writeFloat(13, penaltyFinishTime_);
+        output.writeFloat(8, penaltyFinishTime_);
+      }
+      if (finishTime_ != 0F) {
+        output.writeFloat(12, finishTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class AvatarSatiationDataOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, avatarGuid_);
-      }
-      if (finishTime_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, finishTime_);
+          .computeUInt64Size(5, avatarGuid_);
       }
       if (penaltyFinishTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(13, penaltyFinishTime_);
+          .computeFloatSize(8, penaltyFinishTime_);
+      }
+      if (finishTime_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(12, finishTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,14 +224,14 @@ public final class AvatarSatiationDataOuterClass {
       }
       emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData other = (emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData) obj;
 
-      if (getAvatarGuid()
-          != other.getAvatarGuid()) return false;
-      if (java.lang.Float.floatToIntBits(getPenaltyFinishTime())
-          != java.lang.Float.floatToIntBits(
-              other.getPenaltyFinishTime())) return false;
       if (java.lang.Float.floatToIntBits(getFinishTime())
           != java.lang.Float.floatToIntBits(
               other.getFinishTime())) return false;
+      if (java.lang.Float.floatToIntBits(getPenaltyFinishTime())
+          != java.lang.Float.floatToIntBits(
+              other.getPenaltyFinishTime())) return false;
+      if (getAvatarGuid()
+          != other.getAvatarGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -243,15 +243,15 @@ public final class AvatarSatiationDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAvatarGuid());
-      hash = (37 * hash) + PENALTY_FINISH_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getPenaltyFinishTime());
       hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getFinishTime());
+      hash = (37 * hash) + PENALTY_FINISH_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getPenaltyFinishTime());
+      hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAvatarGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -349,7 +349,7 @@ public final class AvatarSatiationDataOuterClass {
     }
     /**
      * <pre>
-     * Name: IPIDLJAAEGM
+     * Name: JCDFMFJACEH
      * </pre>
      *
      * Protobuf type {@code AvatarSatiationData}
@@ -389,11 +389,11 @@ public final class AvatarSatiationDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarGuid_ = 0L;
+        finishTime_ = 0F;
 
         penaltyFinishTime_ = 0F;
 
-        finishTime_ = 0F;
+        avatarGuid_ = 0L;
 
         return this;
       }
@@ -421,9 +421,9 @@ public final class AvatarSatiationDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData buildPartial() {
         emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData result = new emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData(this);
-        result.avatarGuid_ = avatarGuid_;
-        result.penaltyFinishTime_ = penaltyFinishTime_;
         result.finishTime_ = finishTime_;
+        result.penaltyFinishTime_ = penaltyFinishTime_;
+        result.avatarGuid_ = avatarGuid_;
         onBuilt();
         return result;
       }
@@ -472,14 +472,14 @@ public final class AvatarSatiationDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData other) {
         if (other == emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.getDefaultInstance()) return this;
-        if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
+        if (other.getFinishTime() != 0F) {
+          setFinishTime(other.getFinishTime());
         }
         if (other.getPenaltyFinishTime() != 0F) {
           setPenaltyFinishTime(other.getPenaltyFinishTime());
         }
-        if (other.getFinishTime() != 0F) {
-          setFinishTime(other.getFinishTime());
+        if (other.getAvatarGuid() != 0L) {
+          setAvatarGuid(other.getAvatarGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -510,71 +510,9 @@ public final class AvatarSatiationDataOuterClass {
         return this;
       }
 
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatar_guid = 3;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatar_guid = 3;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatar_guid = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private float penaltyFinishTime_ ;
-      /**
-       * <code>float penalty_finish_time = 13;</code>
-       * @return The penaltyFinishTime.
-       */
-      @java.lang.Override
-      public float getPenaltyFinishTime() {
-        return penaltyFinishTime_;
-      }
-      /**
-       * <code>float penalty_finish_time = 13;</code>
-       * @param value The penaltyFinishTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPenaltyFinishTime(float value) {
-        
-        penaltyFinishTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float penalty_finish_time = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPenaltyFinishTime() {
-        
-        penaltyFinishTime_ = 0F;
-        onChanged();
-        return this;
-      }
-
       private float finishTime_ ;
       /**
-       * <code>float finish_time = 5;</code>
+       * <code>float finish_time = 12;</code>
        * @return The finishTime.
        */
       @java.lang.Override
@@ -582,7 +520,7 @@ public final class AvatarSatiationDataOuterClass {
         return finishTime_;
       }
       /**
-       * <code>float finish_time = 5;</code>
+       * <code>float finish_time = 12;</code>
        * @param value The finishTime to set.
        * @return This builder for chaining.
        */
@@ -593,12 +531,74 @@ public final class AvatarSatiationDataOuterClass {
         return this;
       }
       /**
-       * <code>float finish_time = 5;</code>
+       * <code>float finish_time = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishTime() {
         
         finishTime_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float penaltyFinishTime_ ;
+      /**
+       * <code>float penalty_finish_time = 8;</code>
+       * @return The penaltyFinishTime.
+       */
+      @java.lang.Override
+      public float getPenaltyFinishTime() {
+        return penaltyFinishTime_;
+      }
+      /**
+       * <code>float penalty_finish_time = 8;</code>
+       * @param value The penaltyFinishTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPenaltyFinishTime(float value) {
+        
+        penaltyFinishTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float penalty_finish_time = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPenaltyFinishTime() {
+        
+        penaltyFinishTime_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 5;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 5;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        
+        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -670,9 +670,9 @@ public final class AvatarSatiationDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031AvatarSatiationData.proto\"\\\n\023AvatarSat" +
-      "iationData\022\023\n\013avatar_guid\030\003 \001(\004\022\033\n\023penal" +
-      "ty_finish_time\030\r \001(\002\022\023\n\013finish_time\030\005 \001(" +
-      "\002B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "iationData\022\023\n\013finish_time\030\014 \001(\002\022\033\n\023penal" +
+      "ty_finish_time\030\010 \001(\002\022\023\n\013avatar_guid\030\005 \001(" +
+      "\004B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -683,7 +683,7 @@ public final class AvatarSatiationDataOuterClass {
     internal_static_AvatarSatiationData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarSatiationData_descriptor,
-        new java.lang.String[] { "AvatarGuid", "PenaltyFinishTime", "FinishTime", });
+        new java.lang.String[] { "FinishTime", "PenaltyFinishTime", "AvatarGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -55,7 +55,7 @@ public final class AvatarExpeditionInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: ANJOMJAFKNK
+   * Name: FHMCMLOIGJB
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionInfo}
@@ -426,7 +426,7 @@ public final class AvatarExpeditionInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: ANJOMJAFKNK
+     * Name: FHMCMLOIGJB
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionInfo}
