@@ -271,6 +271,20 @@ public final class DungeonManager {
     }
 
     public void finishDungeon() {
+        // Mark the dungeon has completed for the players.
+        var dungeonId = this.getDungeonData().getId();
+        this.getScene().getPlayers().forEach(player -> {
+            var dungeons = player.getPlayerProgress().getCompletedDungeons();
+            if (!dungeons.contains(dungeonId)) {
+                dungeons.add(dungeonId);
+                Grasscutter.getLogger().debug("Dungeon {} has been marked completed for {}.",
+                    dungeonId, player.getUid());
+            } else {
+                Grasscutter.getLogger().trace("Player {} already has dungeon {} completed.",
+                    player.getUid(), dungeonId);
+            }
+        });
+
         notifyEndDungeon(true);
         endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
     }

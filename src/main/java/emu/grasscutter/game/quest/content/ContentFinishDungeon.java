@@ -6,13 +6,17 @@ import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValueContent;
 
+import java.util.stream.Collectors;
+
 @QuestValueContent(QUEST_CONTENT_FINISH_DUNGEON)
 public class ContentFinishDungeon extends BaseContent {
-
     // params[0] dungeon ID, params[1] unknown
+
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        return condition.getParam()[0] == params[0];
+        var dungeonId = condition.getParam()[0];
+        return quest.getOwner().getPlayerProgress()
+            .getCompletedDungeons().contains(dungeonId);
     }
 }
