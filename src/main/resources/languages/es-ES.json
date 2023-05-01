@@ -239,6 +239,17 @@
       "not_found": "Misión no encontrada.",
       "invalid_id": "ID de misión inválido.",
       "description": "Añade o finaliza misiones",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
       "enabled": "🇺🇸Questing enabled."
     },
     "group": {

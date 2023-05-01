@@ -239,6 +239,17 @@
       "not_found": "Квест не найден.",
       "invalid_id": "Некорректный ID квеста.",
       "description": "Добавляет (add) или завершает (finish) квесты",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
       "enabled": "🇺🇸Questing enabled."
     },
     "group": {

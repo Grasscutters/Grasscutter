@@ -239,6 +239,17 @@
       "not_found": "퀘스트를 찾을 수 없습니다.",
       "invalid_id": "퀘스트ID를 찾을 수 없습니다.",
       "description": "퀘스트를 추가하거나 완료합니다.",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
       "enabled": "🇺🇸Questing enabled."
     },
     "group": {

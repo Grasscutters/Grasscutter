@@ -239,6 +239,17 @@
       "not_found": "Quest not found.",
       "invalid_id": "Invalid quest ID.",
       "description": "Add or finish quests",
+      "running": "Quest %s is %s (%s).",
+      "talking": "Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "unknown (none)",
+        "unstarted": "unfinished (not started, not completed)",
+        "unfinished": "unfinished (started, not completed)",
+        "finished": "finished (completed)",
+        "failed": "finished (completed, but failed)",
+        "exists": "found",
+        "not_exists": "not found"
+      },
       "enabled": "Questing enabled."
     },
     "group": {
