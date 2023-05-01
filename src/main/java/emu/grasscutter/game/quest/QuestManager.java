@@ -1,5 +1,6 @@
 package emu.grasscutter.game.quest;
 
+import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
@@ -12,9 +13,7 @@ import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
 import emu.grasscutter.utils.Position;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
 import lombok.val;
 
@@ -25,13 +24,15 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
+import static emu.grasscutter.GameConstants.DEBUG;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class QuestManager extends BasePlayerManager {
-
     @Getter private final Player player;
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
+    @Transient @Getter private final IntList loggedQuests;
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
@@ -107,6 +108,24 @@ public class QuestManager extends BasePlayerManager {
 
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
+        this.loggedQuests = new IntArrayList();
+
+        if (DEBUG) {
+            this.loggedQuests.addAll(List.of(
+                31101, // Quest which holds talks 30902 and 30904.
+                35001, // Quest which unlocks world border & starts act 2.
+                30901, // Quest which is completed upon finishing all 3 initial dungeons.
+                30903, // Quest which is finished when re-entering scene 3. (home world)
+                30904, // Quest which unlocks the Adventurers' Guild
+
+                46904, // Quest which is required to be started, but not completed for 31101's talks to begin.
+                       // This quest is related to obtaining your first Anemoculus.
+
+                35104  // Quest which is required to be finished for 46904 to begin.
+                       // This quest requires 31101 not be finished.
+                       // This quest should be accepted when the account is created.
+            ));
+        }
     }
 
     // TODO store user value set on enable
@@ -378,10 +397,15 @@ public class QuestManager extends BasePlayerManager {
             }
 
             boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
+            if (this.loggedQuests.contains(questData.getId())) {
+                Grasscutter.getLogger().debug("Quest {} will be {} as a result of event trigger {} ({}, {}).",
+                    questData.getId(), shouldAccept ? "accepted" : "not accepted", condType.name(), paramStr,
+                    Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+            }
 
-            if (shouldAccept){
+            if (shouldAccept) {
                 GameQuest quest = owner.getQuestManager().addQuest(questData);
-                Grasscutter.getLogger().debug("Added quest {} result {}", questData.getSubId(), quest !=null);
+                Grasscutter.getLogger().debug("Added quest {} result {}", questData.getSubId(), quest != null);
             }
         });
     }

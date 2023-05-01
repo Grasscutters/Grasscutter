@@ -24,6 +24,8 @@ import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.utils.ConversionUtils;
 import emu.grasscutter.utils.Position;
 import java.util.*;
+import java.util.stream.Collectors;
+
 import lombok.Getter;
 import lombok.val;
 import org.bson.types.ObjectId;
@@ -475,7 +477,7 @@ public class GameMainQuest {
                                         .getServer()
                                         .getQuestSystem()
                                         .triggerContent(subQuestWithCond, condition, paramStr, params);
-                        subQuestWithCond.getFinishProgressList()[i] = result ? 1 : 0;
+                        subQuestWithCond.setFinishProgress(i, result ? 1 : 0);
                         if (result) {
                             getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
                         }
@@ -486,6 +488,12 @@ public class GameMainQuest {
                         LogicType.calculate(
                                 subQuestWithCond.getQuestData().getFinishCondComb(),
                                 subQuestWithCond.getFinishProgressList());
+
+                if (this.getQuestManager().getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
+                    Grasscutter.getLogger().debug("Quest {} will be {} as a result of content trigger {} ({}, {}).",
+                        subQuestWithCond.getSubQuestId(), shouldFinish ? "finished" : "not finished", condType.name(), paramStr,
+                        Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+                }
 
                 if (shouldFinish) subQuestWithCond.finish();
             }
@@ -531,7 +539,7 @@ public class GameMainQuest {
         return proto.build();
     }
 
-    // TimeVar handling TODO check if ingame or irl time
+    // TimeVar handling TODO check if in-game or irl time
     public boolean initTimeVar(int index) {
         if (index >= this.timeVar.length) {
             Grasscutter.getLogger()
