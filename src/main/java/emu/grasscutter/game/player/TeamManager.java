@@ -582,7 +582,7 @@ public final class TeamManager extends BasePlayerDataManager {
             // Restores all avatars from the player's avatar storage.
             // If the avatar is already in the team, it will not be added.
             var avatars = this.getCurrentTeamInfo().getAvatars();
-            for (var index = 0; index < avatars.size(); index++) {
+            for (var index = 0; index < avatars.size() - 1; index++) {
                 var avatar = avatars.get(index);
                 if (this.getActiveTeam().stream()
                     .map(entity -> entity.getAvatar().getAvatarId())
