@@ -83,7 +83,9 @@ public final class QuestCommand implements CommandHandler {
 
                 var talk = mainQuest.getTalks().get(questId);
                 CommandHandler.sendMessage(sender, translate(sender, "commands.quest.talking",
-                    questId, translate(sender, "commands.quest.state." + (talk == null ? "not_exists" : "exists")),
+                    questId, talk == null ?
+                        translate(sender, "commands.quest.state.not_exists") :
+                        translate(sender, "commands.quest.state.exists"),
                     mainQuest.getParentQuestId(), mainQuest.getState().getValue()));
             }
             default -> this.sendUsageMessage(sender);
