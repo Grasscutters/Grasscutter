@@ -88,6 +88,12 @@ public final class QuestCommand implements CommandHandler {
                         translate(sender, "commands.quest.state.exists"),
                     mainQuest.getParentQuestId(), mainQuest.getState().getValue()));
             }
+            case "dungeons" -> {
+                var dungeons = targetPlayer.getPlayerProgress().getCompletedDungeons();
+                CommandHandler.sendMessage(sender, "Dungeons completed: " +
+                    String.join(", ", dungeons.intStream()
+                        .mapToObj(String::valueOf).toList()));
+            }
             default -> this.sendUsageMessage(sender);
         }
     }
