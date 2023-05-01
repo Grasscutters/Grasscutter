@@ -144,7 +144,7 @@ public class GameMainQuest {
     public void finish() {
         // Avoid recursion from child finish() in GameQuest
         // when auto finishing all child quests with QUEST_STATE_UNFINISHED (below)
-        if (this.isFinished) {
+        if (this.isFinished || this.state == ParentQuestState.PARENT_QUEST_STATE_FINISHED) {
             Grasscutter.getLogger().debug("Skip main quest finishing because it's already finished");
             return;
         }
@@ -153,17 +153,17 @@ public class GameMainQuest {
         this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
 
         /*
-        We also need to check for unfinished childQuests in this MainQuest
-        force them to complete and send a packet about this to the user,
-        because at some points there are special "invisible" child quests that control
-        some situations.
-
-        For example, subQuest 35312 is responsible for the event of leaving the territory
-        of the island with a statue and automatically returns the character back,
-        quest 35311 completes the main quest line 353 and starts 35501 from
-        new MainQuest 355 but if 35312 is not completed after the completion
-        of the main quest 353 - the character will not be able to leave place
-        (return again and again)
+         * We also need to check for unfinished childQuests in this MainQuest
+         * force them to complete and send a packet about this to the user,
+         * because at some points there are special "invisible" child quests that control
+         * some situations.
+         *
+         * For example, subQuest 35312 is responsible for the event of leaving the territory
+         * of the island with a statue and automatically returns the character back,
+         * quest 35311 completes the main quest line 353 and starts 35501 from
+         * new MainQuest 355 but if 35312 is not completed after the completion
+         * of the main quest 353 - the character will not be able to leave place
+         * (return again and again)
         */
         this.getChildQuests().values().stream()
                 .filter(p -> p.state != QuestState.QUEST_STATE_FINISHED)
@@ -179,12 +179,11 @@ public class GameMainQuest {
         if (mainQuestData.getRewardIdList() != null) {
             for (int rewardId : mainQuestData.getRewardIdList()) {
                 RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
-
                 if (rewardData == null) {
                     continue;
                 }
 
-                getOwner()
+                this.getOwner()
                         .getInventory()
                         .addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
             }
