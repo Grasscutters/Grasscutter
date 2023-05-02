@@ -398,7 +398,7 @@ public class QuestManager extends BasePlayerManager {
 
             boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
             if (this.loggedQuests.contains(questData.getId())) {
-                Grasscutter.getLogger().debug("Quest {} will be {} as a result of event trigger {} ({}, {}).",
+                Grasscutter.getLogger().debug(">>> Quest {} will be {} as a result of event trigger {} ({}, {}).",
                     questData.getId(), shouldAccept ? "accepted" : "not accepted", condType.name(), paramStr,
                     Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
                 for (var i = 0; i < accept.length; i++) {

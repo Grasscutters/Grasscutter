@@ -490,7 +490,7 @@ public class GameMainQuest {
                                 subQuestWithCond.getFinishProgressList());
 
                 if (this.getQuestManager().getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
-                    Grasscutter.getLogger().debug("Quest {} will be {} as a result of content trigger {} ({}, {}).",
+                    Grasscutter.getLogger().debug(">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",
                         subQuestWithCond.getSubQuestId(), shouldFinish ? "finished" : "not finished", condType.name(), paramStr,
                         Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
                 }
