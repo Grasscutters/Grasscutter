@@ -17,7 +17,7 @@ import lombok.val;
 /** Tracks progress the player made in the world, like obtained items, seen characters and more */
 @Entity
 public class PlayerProgress {
-    @Getter @Transient private final Player player;
+    @Getter @Setter @Transient private Player player;
 
     @Getter private Map<Integer, ItemEntry> itemHistory;
 
@@ -32,9 +32,7 @@ public class PlayerProgress {
     // it will be hard to loop and compare
     private Map<Integer, Integer> questProgressCountMap;
 
-    public PlayerProgress(Player player) {
-        this.player = player;
-
+    public PlayerProgress() {
         this.questProgressCountMap = new Int2IntOpenHashMap();
         this.completedDungeons = new IntArrayList();
         this.itemHistory = new Int2ObjectOpenHashMap<>();
@@ -53,9 +51,13 @@ public class PlayerProgress {
         // Mark the dungeon as completed.
         this.getCompletedDungeons().add(dungeonId);
         // Trigger the completion event.
-        this.getPlayer().getQuestManager().queueEvent(
-            QuestContent.QUEST_CONTENT_FINISH_DUNGEON, dungeonId
-        );
+        if (this.getPlayer() != null) {
+            this.getPlayer().getQuestManager().queueEvent(
+                QuestContent.QUEST_CONTENT_FINISH_DUNGEON, dungeonId
+            );
+        } else {
+            Grasscutter.getLogger().warn("Unable to execute 'QUEST_CONTENT_FINISH_DUNGEON'. The player is null.");
+        }
 
         Grasscutter.getLogger().debug("Dungeon {} has been marked complete for {}.",
             dungeonId, this.getPlayer().getUid());

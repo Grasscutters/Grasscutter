@@ -475,7 +475,8 @@ public final class TeamManager extends BasePlayerDataManager {
         this.setCurrentCharacterIndex(Math.min(newCharacterIndex, this.getActiveTeam().size() - 1));
 
         this.updateTeamProperties();
-        this.getPlayer().getScene().addEntity(this.getCurrentAvatarEntity());
+        if (this.getPlayer().getScene() != null)
+            this.getPlayer().getScene().addEntity(this.getCurrentAvatarEntity());
     }
 
     /**

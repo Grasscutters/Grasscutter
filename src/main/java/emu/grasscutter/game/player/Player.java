@@ -255,7 +255,7 @@ public class Player {
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
         this.chatEmojiIdList = new ArrayList<>();
-        this.playerProgress = new PlayerProgress(this);
+        this.playerProgress = new PlayerProgress();
         this.activeQuestTimers = new HashSet<>();
 
         this.attackResults = new LinkedBlockingQueue<>();
@@ -1296,6 +1296,8 @@ public class Player {
 
         this.loadBattlePassManager();
         this.getAvatars().postLoad(); // Needs to be called after inventory is handled
+
+        this.getPlayerProgress().setPlayer(this); // Add reference to the player.
     }
 
     public void onPlayerBorn() {
