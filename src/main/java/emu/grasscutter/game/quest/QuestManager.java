@@ -401,6 +401,16 @@ public class QuestManager extends BasePlayerManager {
                 Grasscutter.getLogger().debug("Quest {} will be {} as a result of event trigger {} ({}, {}).",
                     questData.getId(), shouldAccept ? "accepted" : "not accepted", condType.name(), paramStr,
                     Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+                for (var i = 0; i < accept.length; i++) {
+                    var condition = acceptCond.get(i);
+                    Grasscutter.getLogger().debug("^ Condition {} has params {} with result {}.",
+                        condition.getType().name(),
+                        Arrays.stream(condition.getParam())
+                            .filter(value -> value > 0)
+                            .mapToObj(String::valueOf)
+                            .collect(Collectors.joining(", ")),
+                        accept[i] == 1 ? "success" : "failure");
+                }
             }
 
             if (shouldAccept) {
