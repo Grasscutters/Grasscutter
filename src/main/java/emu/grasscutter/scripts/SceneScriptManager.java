@@ -338,7 +338,7 @@ public class SceneScriptManager {
     public void registerRegion(EntityRegion region) {
         regions.put(region.getId(), region);
         Grasscutter.getLogger()
-                .debug(
+                .trace(
                         "Registered region {} from group {}",
                         region.getMetaRegion().config_id,
                         region.getGroupId());
@@ -854,7 +854,7 @@ public class SceneScriptManager {
                 return true;
             } else {
                 Grasscutter.getLogger()
-                        .debug("Condition Trigger {} returned false", trigger.getCondition());
+                        .trace("Condition Trigger {} returned false", trigger.getCondition());
             }
             // TODO some ret do not bool
             return false;
