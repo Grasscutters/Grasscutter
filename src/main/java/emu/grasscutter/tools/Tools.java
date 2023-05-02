@@ -85,13 +85,14 @@ public final class Tools {
                     void newTranslatedLine(String template, TextStrings... textstrings) {
                         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
                             String s = template;
-                            for (int j = 0; j < textstrings.length; j++) try {
-                                s = s.replace("{" + j + "}", textstrings[j].strings[i]);
-                            } catch (NullPointerException ignored) {
-                                // TextMap cache is outdated.
-                                j--; // Retry the action.
-                                Language.loadTextMaps(true);
-                            }
+                            for (int j = 0; j < textstrings.length; j++)
+                                try {
+                                    s = s.replace("{" + j + "}", textstrings[j].strings[i]);
+                                } catch (NullPointerException ignored) {
+                                    // TextMap cache is outdated.
+                                    j--; // Retry the action.
+                                    Language.loadTextMaps(true);
+                                }
                             handbookBuilders.get(i).append(s + "\n");
                         }
                     }

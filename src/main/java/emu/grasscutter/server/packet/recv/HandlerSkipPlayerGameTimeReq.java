@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.SkipPlayerGameTimeReqOuterClass;
 import emu.grasscutter.net.proto.SkipPlayerGameTimeReqOuterClass.SkipPlayerGameTimeReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
@@ -16,7 +15,10 @@ public class HandlerSkipPlayerGameTimeReq extends PacketHandler {
         var req = SkipPlayerGameTimeReq.parseFrom(payload);
         var player = session.getPlayer();
 
-        var newTime = req.getGameTime() * 1000L + player.getPlayerGameTime() - (player.getPlayerGameTime() % 1440000);
+        var newTime =
+                req.getGameTime() * 1000L
+                        + player.getPlayerGameTime()
+                        - (player.getPlayerGameTime() % 1440000);
         player.updatePlayerGameTime(newTime);
         player.getScene().broadcastPacket(new PacketPlayerGameTimeNotify(player));
         player.sendPacket(new PacketSkipPlayerGameTimeRsp(req));

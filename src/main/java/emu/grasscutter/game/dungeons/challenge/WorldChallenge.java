@@ -16,7 +16,6 @@ import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,6 +36,16 @@ public class WorldChallenge {
     private long startedAt;
     private int finishedTime;
 
+    /**
+     * @param scene The scene the challenge is in.
+     * @param group The group the challenge is in.
+     * @param challengeId The challenge's id.
+     * @param challengeIndex The challenge's index.
+     * @param paramList The challenge's parameters.
+     * @param timeLimit The challenge's time limit.
+     * @param goal The challenge's goal.
+     * @param challengeTriggers The challenge's triggers.
+     */
     public WorldChallenge(
             Scene scene,
             SceneGroup group,
@@ -109,14 +118,18 @@ public class WorldChallenge {
         var eventSource = new AtomicReference<>("");
         // TODO: This is a hack to get the event source.
         // This should be properly implemented.
-        scriptManager.getTriggersByEvent(EventType.EVENT_CHALLENGE_SUCCESS)
-            .forEach(trigger -> {
-                if (trigger.currentGroup.id == this.getGroup().id) {
-                    eventSource.set(trigger.getSource());
-                }
-            });
-        scriptManager.callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
-            .setParam2(finishedTime).setEventSource(eventSource.get()));
+        scriptManager
+                .getTriggersByEvent(EventType.EVENT_CHALLENGE_SUCCESS)
+                .forEach(
+                        trigger -> {
+                            if (trigger.currentGroup.id == this.getGroup().id) {
+                                eventSource.set(trigger.getSource());
+                            }
+                        });
+        scriptManager.callEvent(
+                new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
+                        .setParam2(finishedTime)
+                        .setEventSource(eventSource.get()));
 
         this.getScene()
                 .triggerDungeonEvent(
@@ -137,15 +150,18 @@ public class WorldChallenge {
         // TODO: This is a hack to get the event source.
         // This should be properly implemented.
         var scriptManager = this.getScene().getScriptManager();
-        scriptManager.getTriggersByEvent(EventType.EVENT_CHALLENGE_FAIL)
-            .forEach(trigger -> {
-                if (trigger.currentGroup.id == this.getGroup().id) {
-                    eventSource.set(trigger.getSource());
-                }
-            });
+        scriptManager
+                .getTriggersByEvent(EventType.EVENT_CHALLENGE_FAIL)
+                .forEach(
+                        trigger -> {
+                            if (trigger.currentGroup.id == this.getGroup().id) {
+                                eventSource.set(trigger.getSource());
+                            }
+                        });
 
-        scriptManager.callEvent(new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL)
-            .setEventSource(eventSource.get()));
+        scriptManager.callEvent(
+                new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL)
+                        .setEventSource(eventSource.get()));
         challengeTriggers.forEach(t -> t.onFinish(this));
     }
 

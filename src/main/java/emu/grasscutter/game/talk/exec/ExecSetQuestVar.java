@@ -3,7 +3,6 @@ package emu.grasscutter.game.talk.exec;
 import emu.grasscutter.data.excels.TalkConfigData;
 import emu.grasscutter.data.excels.TalkConfigData.TalkExecParam;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.talk.TalkExec;
 import emu.grasscutter.game.talk.TalkExecHandler;
 import emu.grasscutter.game.talk.TalkValueExec;
@@ -14,14 +13,11 @@ public final class ExecSetQuestVar extends TalkExecHandler {
     public void execute(Player player, TalkConfigData talkData, TalkExecParam execParam) {
         if (execParam.getParam().length < 3) return;
 
-        var mainQuest = player.getQuestManager().getMainQuestById(
-            Integer.parseInt(execParam.getParam()[2])
-        );
+        var mainQuest =
+                player.getQuestManager().getMainQuestById(Integer.parseInt(execParam.getParam()[2]));
         if (mainQuest == null) return;
 
         mainQuest.setQuestVar(
-            Integer.parseInt(execParam.getParam()[0]),
-            Integer.parseInt(execParam.getParam()[1])
-        );
+                Integer.parseInt(execParam.getParam()[0]), Integer.parseInt(execParam.getParam()[1]));
     }
 }

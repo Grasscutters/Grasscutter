@@ -4,380 +4,50 @@
 package emu.grasscutter.net.proto;
 
 public final class PlayerCompoundMaterialBoostReqOuterClass {
-  private PlayerCompoundMaterialBoostReqOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private PlayerCompoundMaterialBoostReqOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface PlayerCompoundMaterialBoostReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PlayerCompoundMaterialBoostReq)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 GHBDKDMBGEH = 5;</code>
-     * @return The gHBDKDMBGEH.
-     */
-    int getGHBDKDMBGEH();
-
-    /**
-     * <code>uint32 OBIJFFPNJCH = 13;</code>
-     * @return The oBIJFFPNJCH.
-     */
-    int getOBIJFFPNJCH();
-
-    /**
-     * <code>bool is_boost_all = 3;</code>
-     * @return The isBoostAll.
-     */
-    boolean getIsBoostAll();
-
-    /**
-     * <code>uint32 MOOPCNDDCEP = 14;</code>
-     * @return The mOOPCNDDCEP.
-     */
-    int getMOOPCNDDCEP();
-  }
-  /**
-   * <pre>
-   * CmdId: 179
-   * Name: MEAHPANFPHD
-   * </pre>
-   *
-   * Protobuf type {@code PlayerCompoundMaterialBoostReq}
-   */
-  public static final class PlayerCompoundMaterialBoostReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:PlayerCompoundMaterialBoostReq)
-      PlayerCompoundMaterialBoostReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PlayerCompoundMaterialBoostReq.newBuilder() to construct.
-    private PlayerCompoundMaterialBoostReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PlayerCompoundMaterialBoostReq() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PlayerCompoundMaterialBoostReq();
-    }
+    public interface PlayerCompoundMaterialBoostReqOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:PlayerCompoundMaterialBoostReq)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PlayerCompoundMaterialBoostReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
+        /**
+         * <code>uint32 GHBDKDMBGEH = 5;</code>
+         *
+         * @return The gHBDKDMBGEH.
+         */
+        int getGHBDKDMBGEH();
 
-              isBoostAll_ = input.readBool();
-              break;
-            }
-            case 40: {
+        /**
+         * <code>uint32 OBIJFFPNJCH = 13;</code>
+         *
+         * @return The oBIJFFPNJCH.
+         */
+        int getOBIJFFPNJCH();
 
-              gHBDKDMBGEH_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+        /**
+         * <code>bool is_boost_all = 3;</code>
+         *
+         * @return The isBoostAll.
+         */
+        boolean getIsBoostAll();
 
-              oBIJFFPNJCH_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              mOOPCNDDCEP_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.internal_static_PlayerCompoundMaterialBoostReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.class, emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.Builder.class);
-    }
-
-    public static final int GHBDKDMBGEH_FIELD_NUMBER = 5;
-    private int gHBDKDMBGEH_;
-    /**
-     * <code>uint32 GHBDKDMBGEH = 5;</code>
-     * @return The gHBDKDMBGEH.
-     */
-    @java.lang.Override
-    public int getGHBDKDMBGEH() {
-      return gHBDKDMBGEH_;
-    }
-
-    public static final int OBIJFFPNJCH_FIELD_NUMBER = 13;
-    private int oBIJFFPNJCH_;
-    /**
-     * <code>uint32 OBIJFFPNJCH = 13;</code>
-     * @return The oBIJFFPNJCH.
-     */
-    @java.lang.Override
-    public int getOBIJFFPNJCH() {
-      return oBIJFFPNJCH_;
-    }
-
-    public static final int IS_BOOST_ALL_FIELD_NUMBER = 3;
-    private boolean isBoostAll_;
-    /**
-     * <code>bool is_boost_all = 3;</code>
-     * @return The isBoostAll.
-     */
-    @java.lang.Override
-    public boolean getIsBoostAll() {
-      return isBoostAll_;
-    }
-
-    public static final int MOOPCNDDCEP_FIELD_NUMBER = 14;
-    private int mOOPCNDDCEP_;
-    /**
-     * <code>uint32 MOOPCNDDCEP = 14;</code>
-     * @return The mOOPCNDDCEP.
-     */
-    @java.lang.Override
-    public int getMOOPCNDDCEP() {
-      return mOOPCNDDCEP_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (isBoostAll_ != false) {
-        output.writeBool(3, isBoostAll_);
-      }
-      if (gHBDKDMBGEH_ != 0) {
-        output.writeUInt32(5, gHBDKDMBGEH_);
-      }
-      if (oBIJFFPNJCH_ != 0) {
-        output.writeUInt32(13, oBIJFFPNJCH_);
-      }
-      if (mOOPCNDDCEP_ != 0) {
-        output.writeUInt32(14, mOOPCNDDCEP_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (isBoostAll_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isBoostAll_);
-      }
-      if (gHBDKDMBGEH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, gHBDKDMBGEH_);
-      }
-      if (oBIJFFPNJCH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, oBIJFFPNJCH_);
-      }
-      if (mOOPCNDDCEP_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, mOOPCNDDCEP_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq other = (emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq) obj;
-
-      if (getGHBDKDMBGEH()
-          != other.getGHBDKDMBGEH()) return false;
-      if (getOBIJFFPNJCH()
-          != other.getOBIJFFPNJCH()) return false;
-      if (getIsBoostAll()
-          != other.getIsBoostAll()) return false;
-      if (getMOOPCNDDCEP()
-          != other.getMOOPCNDDCEP()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GHBDKDMBGEH_FIELD_NUMBER;
-      hash = (53 * hash) + getGHBDKDMBGEH();
-      hash = (37 * hash) + OBIJFFPNJCH_FIELD_NUMBER;
-      hash = (53 * hash) + getOBIJFFPNJCH();
-      hash = (37 * hash) + IS_BOOST_ALL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsBoostAll());
-      hash = (37 * hash) + MOOPCNDDCEP_FIELD_NUMBER;
-      hash = (53 * hash) + getMOOPCNDDCEP();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>uint32 MOOPCNDDCEP = 14;</code>
+         *
+         * @return The mOOPCNDDCEP.
+         */
+        int getMOOPCNDDCEP();
     }
     /**
+     *
+     *
      * <pre>
      * CmdId: 179
      * Name: MEAHPANFPHD
@@ -385,375 +55,805 @@ public final class PlayerCompoundMaterialBoostReqOuterClass {
      *
      * Protobuf type {@code PlayerCompoundMaterialBoostReq}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:PlayerCompoundMaterialBoostReq)
-        emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.internal_static_PlayerCompoundMaterialBoostReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.class, emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class PlayerCompoundMaterialBoostReq
+            extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:PlayerCompoundMaterialBoostReq)
+            PlayerCompoundMaterialBoostReqOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use PlayerCompoundMaterialBoostReq.newBuilder() to construct.
+        private PlayerCompoundMaterialBoostReq(
+                com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        gHBDKDMBGEH_ = 0;
 
-        oBIJFFPNJCH_ = 0;
+        private PlayerCompoundMaterialBoostReq() {}
 
-        isBoostAll_ = false;
-
-        mOOPCNDDCEP_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.internal_static_PlayerCompoundMaterialBoostReq_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq build() {
-        emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new PlayerCompoundMaterialBoostReq();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq buildPartial() {
-        emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq result = new emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq(this);
-        result.gHBDKDMBGEH_ = gHBDKDMBGEH_;
-        result.oBIJFFPNJCH_ = oBIJFFPNJCH_;
-        result.isBoostAll_ = isBoostAll_;
-        result.mOOPCNDDCEP_ = mOOPCNDDCEP_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq) {
-          return mergeFrom((emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq other) {
-        if (other == emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.getDefaultInstance()) return this;
-        if (other.getGHBDKDMBGEH() != 0) {
-          setGHBDKDMBGEH(other.getGHBDKDMBGEH());
+        private PlayerCompoundMaterialBoostReq(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 24:
+                            {
+                                isBoostAll_ = input.readBool();
+                                break;
+                            }
+                        case 40:
+                            {
+                                gHBDKDMBGEH_ = input.readUInt32();
+                                break;
+                            }
+                        case 104:
+                            {
+                                oBIJFFPNJCH_ = input.readUInt32();
+                                break;
+                            }
+                        case 112:
+                            {
+                                mOOPCNDDCEP_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getOBIJFFPNJCH() != 0) {
-          setOBIJFFPNJCH(other.getOBIJFFPNJCH());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                    .internal_static_PlayerCompoundMaterialBoostReq_descriptor;
         }
-        if (other.getIsBoostAll() != false) {
-          setIsBoostAll(other.getIsBoostAll());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                    .internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                    .PlayerCompoundMaterialBoostReq.class,
+                            emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                    .PlayerCompoundMaterialBoostReq.Builder.class);
         }
-        if (other.getMOOPCNDDCEP() != 0) {
-          setMOOPCNDDCEP(other.getMOOPCNDDCEP());
+
+        public static final int GHBDKDMBGEH_FIELD_NUMBER = 5;
+        private int gHBDKDMBGEH_;
+        /**
+         * <code>uint32 GHBDKDMBGEH = 5;</code>
+         *
+         * @return The gHBDKDMBGEH.
+         */
+        @java.lang.Override
+        public int getGHBDKDMBGEH() {
+            return gHBDKDMBGEH_;
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int OBIJFFPNJCH_FIELD_NUMBER = 13;
+        private int oBIJFFPNJCH_;
+        /**
+         * <code>uint32 OBIJFFPNJCH = 13;</code>
+         *
+         * @return The oBIJFFPNJCH.
+         */
+        @java.lang.Override
+        public int getOBIJFFPNJCH() {
+            return oBIJFFPNJCH_;
         }
-        return this;
-      }
 
-      private int gHBDKDMBGEH_ ;
-      /**
-       * <code>uint32 GHBDKDMBGEH = 5;</code>
-       * @return The gHBDKDMBGEH.
-       */
-      @java.lang.Override
-      public int getGHBDKDMBGEH() {
-        return gHBDKDMBGEH_;
-      }
-      /**
-       * <code>uint32 GHBDKDMBGEH = 5;</code>
-       * @param value The gHBDKDMBGEH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGHBDKDMBGEH(int value) {
-        
-        gHBDKDMBGEH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GHBDKDMBGEH = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGHBDKDMBGEH() {
-        
-        gHBDKDMBGEH_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int IS_BOOST_ALL_FIELD_NUMBER = 3;
+        private boolean isBoostAll_;
+        /**
+         * <code>bool is_boost_all = 3;</code>
+         *
+         * @return The isBoostAll.
+         */
+        @java.lang.Override
+        public boolean getIsBoostAll() {
+            return isBoostAll_;
+        }
 
-      private int oBIJFFPNJCH_ ;
-      /**
-       * <code>uint32 OBIJFFPNJCH = 13;</code>
-       * @return The oBIJFFPNJCH.
-       */
-      @java.lang.Override
-      public int getOBIJFFPNJCH() {
-        return oBIJFFPNJCH_;
-      }
-      /**
-       * <code>uint32 OBIJFFPNJCH = 13;</code>
-       * @param value The oBIJFFPNJCH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOBIJFFPNJCH(int value) {
-        
-        oBIJFFPNJCH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OBIJFFPNJCH = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOBIJFFPNJCH() {
-        
-        oBIJFFPNJCH_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int MOOPCNDDCEP_FIELD_NUMBER = 14;
+        private int mOOPCNDDCEP_;
+        /**
+         * <code>uint32 MOOPCNDDCEP = 14;</code>
+         *
+         * @return The mOOPCNDDCEP.
+         */
+        @java.lang.Override
+        public int getMOOPCNDDCEP() {
+            return mOOPCNDDCEP_;
+        }
 
-      private boolean isBoostAll_ ;
-      /**
-       * <code>bool is_boost_all = 3;</code>
-       * @return The isBoostAll.
-       */
-      @java.lang.Override
-      public boolean getIsBoostAll() {
-        return isBoostAll_;
-      }
-      /**
-       * <code>bool is_boost_all = 3;</code>
-       * @param value The isBoostAll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsBoostAll(boolean value) {
-        
-        isBoostAll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_boost_all = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsBoostAll() {
-        
-        isBoostAll_ = false;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int mOOPCNDDCEP_ ;
-      /**
-       * <code>uint32 MOOPCNDDCEP = 14;</code>
-       * @return The mOOPCNDDCEP.
-       */
-      @java.lang.Override
-      public int getMOOPCNDDCEP() {
-        return mOOPCNDDCEP_;
-      }
-      /**
-       * <code>uint32 MOOPCNDDCEP = 14;</code>
-       * @param value The mOOPCNDDCEP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMOOPCNDDCEP(int value) {
-        
-        mOOPCNDDCEP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MOOPCNDDCEP = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMOOPCNDDCEP() {
-        
-        mOOPCNDDCEP_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (isBoostAll_ != false) {
+                output.writeBool(3, isBoostAll_);
+            }
+            if (gHBDKDMBGEH_ != 0) {
+                output.writeUInt32(5, gHBDKDMBGEH_);
+            }
+            if (oBIJFFPNJCH_ != 0) {
+                output.writeUInt32(13, oBIJFFPNJCH_);
+            }
+            if (mOOPCNDDCEP_ != 0) {
+                output.writeUInt32(14, mOOPCNDDCEP_);
+            }
+            unknownFields.writeTo(output);
+        }
 
-      // @@protoc_insertion_point(builder_scope:PlayerCompoundMaterialBoostReq)
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (isBoostAll_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isBoostAll_);
+            }
+            if (gHBDKDMBGEH_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, gHBDKDMBGEH_);
+            }
+            if (oBIJFFPNJCH_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, oBIJFFPNJCH_);
+            }
+            if (mOOPCNDDCEP_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, mOOPCNDDCEP_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq
+                    other =
+                            (emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                            .PlayerCompoundMaterialBoostReq)
+                                    obj;
+
+            if (getGHBDKDMBGEH() != other.getGHBDKDMBGEH()) return false;
+            if (getOBIJFFPNJCH() != other.getOBIJFFPNJCH()) return false;
+            if (getIsBoostAll() != other.getIsBoostAll()) return false;
+            if (getMOOPCNDDCEP() != other.getMOOPCNDDCEP()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + GHBDKDMBGEH_FIELD_NUMBER;
+            hash = (53 * hash) + getGHBDKDMBGEH();
+            hash = (37 * hash) + OBIJFFPNJCH_FIELD_NUMBER;
+            hash = (53 * hash) + getOBIJFFPNJCH();
+            hash = (37 * hash) + IS_BOOST_ALL_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsBoostAll());
+            hash = (37 * hash) + MOOPCNDDCEP_FIELD_NUMBER;
+            hash = (53 * hash) + getMOOPCNDDCEP();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq
+                        prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CmdId: 179
+         * Name: MEAHPANFPHD
+         * </pre>
+         *
+         * Protobuf type {@code PlayerCompoundMaterialBoostReq}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:PlayerCompoundMaterialBoostReq)
+                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReqOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .internal_static_PlayerCompoundMaterialBoostReq_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                        .PlayerCompoundMaterialBoostReq.class,
+                                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                        .PlayerCompoundMaterialBoostReq.Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                gHBDKDMBGEH_ = 0;
+
+                oBIJFFPNJCH_ = 0;
+
+                isBoostAll_ = false;
+
+                mOOPCNDDCEP_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .internal_static_PlayerCompoundMaterialBoostReq_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq
+                    build() {
+                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq
+                        result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq
+                    buildPartial() {
+                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq
+                        result =
+                                new emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                        .PlayerCompoundMaterialBoostReq(this);
+                result.gHBDKDMBGEH_ = gHBDKDMBGEH_;
+                result.oBIJFFPNJCH_ = oBIJFFPNJCH_;
+                result.isBoostAll_ = isBoostAll_;
+                result.mOOPCNDDCEP_ = mOOPCNDDCEP_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                            .PlayerCompoundMaterialBoostReq)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                    .PlayerCompoundMaterialBoostReq
+                            other) {
+                if (other
+                        == emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq.getDefaultInstance()) return this;
+                if (other.getGHBDKDMBGEH() != 0) {
+                    setGHBDKDMBGEH(other.getGHBDKDMBGEH());
+                }
+                if (other.getOBIJFFPNJCH() != 0) {
+                    setOBIJFFPNJCH(other.getOBIJFFPNJCH());
+                }
+                if (other.getIsBoostAll() != false) {
+                    setIsBoostAll(other.getIsBoostAll());
+                }
+                if (other.getMOOPCNDDCEP() != 0) {
+                    setMOOPCNDDCEP(other.getMOOPCNDDCEP());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                .PlayerCompoundMaterialBoostReq
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                                            .PlayerCompoundMaterialBoostReq)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int gHBDKDMBGEH_;
+            /**
+             * <code>uint32 GHBDKDMBGEH = 5;</code>
+             *
+             * @return The gHBDKDMBGEH.
+             */
+            @java.lang.Override
+            public int getGHBDKDMBGEH() {
+                return gHBDKDMBGEH_;
+            }
+            /**
+             * <code>uint32 GHBDKDMBGEH = 5;</code>
+             *
+             * @param value The gHBDKDMBGEH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGHBDKDMBGEH(int value) {
+
+                gHBDKDMBGEH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 GHBDKDMBGEH = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearGHBDKDMBGEH() {
+
+                gHBDKDMBGEH_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int oBIJFFPNJCH_;
+            /**
+             * <code>uint32 OBIJFFPNJCH = 13;</code>
+             *
+             * @return The oBIJFFPNJCH.
+             */
+            @java.lang.Override
+            public int getOBIJFFPNJCH() {
+                return oBIJFFPNJCH_;
+            }
+            /**
+             * <code>uint32 OBIJFFPNJCH = 13;</code>
+             *
+             * @param value The oBIJFFPNJCH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOBIJFFPNJCH(int value) {
+
+                oBIJFFPNJCH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 OBIJFFPNJCH = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearOBIJFFPNJCH() {
+
+                oBIJFFPNJCH_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean isBoostAll_;
+            /**
+             * <code>bool is_boost_all = 3;</code>
+             *
+             * @return The isBoostAll.
+             */
+            @java.lang.Override
+            public boolean getIsBoostAll() {
+                return isBoostAll_;
+            }
+            /**
+             * <code>bool is_boost_all = 3;</code>
+             *
+             * @param value The isBoostAll to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsBoostAll(boolean value) {
+
+                isBoostAll_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_boost_all = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsBoostAll() {
+
+                isBoostAll_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int mOOPCNDDCEP_;
+            /**
+             * <code>uint32 MOOPCNDDCEP = 14;</code>
+             *
+             * @return The mOOPCNDDCEP.
+             */
+            @java.lang.Override
+            public int getMOOPCNDDCEP() {
+                return mOOPCNDDCEP_;
+            }
+            /**
+             * <code>uint32 MOOPCNDDCEP = 14;</code>
+             *
+             * @param value The mOOPCNDDCEP to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMOOPCNDDCEP(int value) {
+
+                mOOPCNDDCEP_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 MOOPCNDDCEP = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMOOPCNDDCEP() {
+
+                mOOPCNDDCEP_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:PlayerCompoundMaterialBoostReq)
+        }
+
+        // @@protoc_insertion_point(class_scope:PlayerCompoundMaterialBoostReq)
+        private static final emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                            .PlayerCompoundMaterialBoostReq();
+        }
+
+        public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq> PARSER =
+                new com.google.protobuf.AbstractParser<PlayerCompoundMaterialBoostReq>() {
+                    @java.lang.Override
+                    public PlayerCompoundMaterialBoostReq parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new PlayerCompoundMaterialBoostReq(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass
+                        .PlayerCompoundMaterialBoostReq
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:PlayerCompoundMaterialBoostReq)
-    private static final emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_PlayerCompoundMaterialBoostReq_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq();
+        java.lang.String[] descriptorData = {
+            "\n$PlayerCompoundMaterialBoostReq.proto\"u"
+                    + "\n\036PlayerCompoundMaterialBoostReq\022\023\n\013GHBD"
+                    + "KDMBGEH\030\005 \001(\r\022\023\n\013OBIJFFPNJCH\030\r \001(\r\022\024\n\014is"
+                    + "_boost_all\030\003 \001(\010\022\023\n\013MOOPCNDDCEP\030\016 \001(\rB!\n"
+                    + "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_PlayerCompoundMaterialBoostReq_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_PlayerCompoundMaterialBoostReq_descriptor,
+                        new java.lang.String[] {
+                            "GHBDKDMBGEH", "OBIJFFPNJCH", "IsBoostAll", "MOOPCNDDCEP",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerCompoundMaterialBoostReq>() {
-      @java.lang.Override
-      public PlayerCompoundMaterialBoostReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerCompoundMaterialBoostReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PlayerCompoundMaterialBoostReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PlayerCompoundMaterialBoostReqOuterClass.PlayerCompoundMaterialBoostReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_PlayerCompoundMaterialBoostReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n$PlayerCompoundMaterialBoostReq.proto\"u" +
-      "\n\036PlayerCompoundMaterialBoostReq\022\023\n\013GHBD" +
-      "KDMBGEH\030\005 \001(\r\022\023\n\013OBIJFFPNJCH\030\r \001(\r\022\024\n\014is" +
-      "_boost_all\030\003 \001(\010\022\023\n\013MOOPCNDDCEP\030\016 \001(\rB!\n" +
-      "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_PlayerCompoundMaterialBoostReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_PlayerCompoundMaterialBoostReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PlayerCompoundMaterialBoostReq_descriptor,
-        new java.lang.String[] { "GHBDKDMBGEH", "OBIJFFPNJCH", "IsBoostAll", "MOOPCNDDCEP", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

@@ -9,6 +9,7 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.utils.Position;
 
 public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
+    @SuppressWarnings("removal")
     public EntitySolarIsotomaElevatorPlatform(
             EntitySolarIsotomaClientGadget isotoma,
             Scene scene,

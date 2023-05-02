@@ -90,20 +90,14 @@ public class JsonAdapters {
 
             // GridPosition follows the format of: (x, y, z).
             // Flatten to (x,y,z) for easier parsing.
-            var str = in.nextString()
-                .replace("(", "")
-                .replace(")", "")
-                .replace(" ", "");
+            var str = in.nextString().replace("(", "").replace(")", "").replace(" ", "");
             var split = str.split(",");
 
             if (split.length != 3)
                 throw new IOException("Invalid GridPosition definition - " + in.peek().name());
 
             return new GridPosition(
-                Integer.parseInt(split[0]),
-                Integer.parseInt(split[1]),
-                Integer.parseInt(split[2])
-            );
+                    Integer.parseInt(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]));
         }
     }
 

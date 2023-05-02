@@ -72,7 +72,7 @@ public enum QuestCond implements QuestTrigger {
     QUEST_COND_NEW_HOMEWORLD_LEVEL_REWARD(62), // missing, only Gadget groups
     QUEST_COND_NEW_HOMEWORLD_MAKE_FINISH(63), // missing, only Gadget groups
     QUEST_COND_HOMEWORLD_NPC_EVENT(64), // missing, only NPC groups
-    QUEST_COND_TIME_VAR_GT_EQ(65), // currently unused
+    QUEST_COND_TIME_VAR_GT_EQ(65),
     QUEST_COND_TIME_VAR_PASS_DAY(66),
     QUEST_COND_HOMEWORLD_NPC_NEW_TALK(67), // missing, only NPC groups
     QUEST_COND_PLAYER_CHOOSE_MALE(68), // missing, only talks

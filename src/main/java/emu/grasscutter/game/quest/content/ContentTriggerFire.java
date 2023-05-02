@@ -17,8 +17,7 @@ public class ContentTriggerFire extends BaseContent {
             return quest.getTriggers().get(quest.getTriggerNameById(params[0]));
         } else {
             Grasscutter.getLogger()
-                    .debug("Quest {} doesn't have trigger {} registered.",
-                        quest.getSubQuestId(), params[0]);
+                    .debug("Quest {} doesn't have trigger {} registered.", quest.getSubQuestId(), params[0]);
             return false;
         }
     }

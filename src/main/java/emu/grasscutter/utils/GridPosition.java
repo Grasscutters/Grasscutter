@@ -41,11 +41,7 @@ public final class GridPosition implements Serializable {
 
     @SneakyThrows
     public GridPosition(String str) {
-        var listOfParams = str
-            .replace(" ", "")
-            .replace("(", "")
-            .replace(")", "")
-            .split(",");
+        var listOfParams = str.replace(" ", "").replace("(", "").replace(")", "").split(",");
         if (listOfParams.length != 3)
             throw new IOException("invalid size on GridPosition definition - ");
         try {

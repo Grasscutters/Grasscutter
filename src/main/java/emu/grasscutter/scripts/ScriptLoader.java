@@ -39,8 +39,7 @@ public class ScriptLoader {
     private static Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
-    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache =
-            new ConcurrentHashMap<>();
+    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
 
     public static synchronized void init() throws Exception {
         if (sm != null) {

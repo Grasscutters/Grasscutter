@@ -110,13 +110,19 @@ public class QuestData extends GameResource {
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class QuestExecParam {
-        @SerializedName(value = "_type", alternate = {"type"})
+        @SerializedName(
+                value = "_type",
+                alternate = {"type"})
         QuestExec type;
 
-        @SerializedName(value = "_param", alternate = {"param"})
+        @SerializedName(
+                value = "_param",
+                alternate = {"param"})
         String[] param;
 
-        @SerializedName(value = "_count", alternate = {"count"})
+        @SerializedName(
+                value = "_count",
+                alternate = {"count"})
         String count;
     }
 
@@ -126,16 +132,24 @@ public class QuestData extends GameResource {
 
     @Data
     public static class QuestCondition<TYPE extends Enum<?> & QuestTrigger> {
-        @SerializedName(value = "_type", alternate = {"type"})
+        @SerializedName(
+                value = "_type",
+                alternate = {"type"})
         private TYPE type;
 
-        @SerializedName(value = "_param", alternate = {"param"})
+        @SerializedName(
+                value = "_param",
+                alternate = {"param"})
         private int[] param;
 
-        @SerializedName(value = "_param_str", alternate = {"param_str"})
+        @SerializedName(
+                value = "_param_str",
+                alternate = {"param_str"})
         private String paramStr = "";
 
-        @SerializedName(value = "_count", alternate = {"count"})
+        @SerializedName(
+                value = "_count",
+                alternate = {"count"})
         private int count;
 
         public String asKey() {

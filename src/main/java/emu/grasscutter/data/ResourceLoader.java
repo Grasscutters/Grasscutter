@@ -490,14 +490,16 @@ public final class ResourceLoader {
 
     private static void loadQuests() {
         try (var files = Files.list(getResourcePath("BinOutput/Quest/"))) {
-            files.forEach(path -> {
-                try {
-                    val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
-                    GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
+            files.forEach(
+                    path -> {
+                        try {
+                            val mainQuest = JsonUtils.loadToClass(path, MainQuestData.class);
+                            GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
 
-                    mainQuest.onLoad(); // Load the quest data.
-                } catch (IOException ignored) { }
-            });
+                            mainQuest.onLoad(); // Load the quest data.
+                        } catch (IOException ignored) {
+                        }
+                    });
         } catch (IOException e) {
             Grasscutter.getLogger().error("Quest data missing");
             return;

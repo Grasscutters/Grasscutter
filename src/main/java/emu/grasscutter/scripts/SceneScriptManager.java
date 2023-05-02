@@ -661,8 +661,7 @@ public class SceneScriptManager {
 
             for (var entityId : region.getEntities()) {
                 var entity = this.getScene().getEntityById(entityId);
-                if (entity == null || !region.getMetaRegion()
-                    .contains(entity.getPosition())) {
+                if (entity == null || !region.getMetaRegion().contains(entity.getPosition())) {
                     region.removeEntity(entityId);
                 }
             }

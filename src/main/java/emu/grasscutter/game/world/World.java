@@ -282,9 +282,7 @@ public class World implements Iterable<Player> {
             teleportProps
                     .teleportTo(dungeonData.getStartPosition())
                     .teleportRot(dungeonData.getStartRotation());
-            teleportProps
-                .enterType(EnterType.ENTER_TYPE_DUNGEON)
-                .enterReason(EnterReason.DungeonEnter);
+            teleportProps.enterType(EnterType.ENTER_TYPE_DUNGEON).enterReason(EnterReason.DungeonEnter);
             teleportProps.dungeonId(dungeonData.getId());
         } else if (player.getSceneId() == sceneId) {
             teleportProps.enterType(EnterType.ENTER_TYPE_GOTO);
@@ -504,10 +502,7 @@ public class World implements Iterable<Player> {
 
         // Trigger script events.
         this.players.forEach(
-            player ->
-                player
-                    .getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
+                player -> player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
     }
 
     /**
@@ -528,10 +523,7 @@ public class World implements Iterable<Player> {
         // Update all players.
         this.host.updatePlayerGameTime(currentWorldTime);
         this.players.forEach(
-                player ->
-                        player
-                                .getQuestManager()
-                                .queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
+                player -> player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
     }
 
     @Override

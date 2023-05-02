@@ -923,46 +923,6 @@ public class Player {
         this.getServer().getChatSystem().sendPrivateMessageFromServer(getUid(), message.toString());
     }
 
-    public void setAvatarsAbilityForScene(Scene scene) {
-        try {
-            var levelEntityConfig = scene.getSceneData().getLevelEntityConfig();
-            var config = GameData.getConfigLevelEntityDataMap().get(levelEntityConfig);
-            if (config == null){
-                return;
-            }
-
-            List<Integer> avatarIds = scene.getSceneData().getSpecifiedAvatarList();
-            List<EntityAvatar> specifiedAvatarList = getTeamManager().getActiveTeam();
-
-            if (avatarIds != null && avatarIds.size() > 0){
-                // certain scene could limit a specific avatar's entry
-                specifiedAvatarList.clear();
-                for (int id : avatarIds){
-                    var avatar = getAvatars().getAvatarById(id);
-                    if (avatar == null){
-                        continue;
-                    }
-                    specifiedAvatarList.add(new EntityAvatar(scene, avatar));
-                }
-            }
-
-            for (EntityAvatar entityAvatar : specifiedAvatarList){
-                var avatarData = entityAvatar.getAvatar().getAvatarData();
-                if (avatarData == null){
-                    continue;
-                }
-                avatarData.buildEmbryo();
-                if (config.getAvatarAbilities() == null){
-                    continue; // continue and not break because has to rebuild ability for the next avatar if any
-                }
-                for (var abilities : config.getAvatarAbilities()){
-                    avatarData.getAbilities().add(Utils.abilityHash(abilities.getAbilityName()));
-                }
-            }
-        } catch (Exception e){
-            Grasscutter.getLogger().error("Error applying level entity config for scene {}", scene.getSceneData().getId(), e);
-        }
-    }
     /**
      * Sends a message to another player.
      *

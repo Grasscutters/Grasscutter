@@ -93,9 +93,8 @@ public final class SceneGroup {
 
         this.bindings = ScriptLoader.getEngine().createBindings();
 
-        CompiledScript cs =
-                ScriptLoader.getScript(
-                        "Scene/" + sceneId + "/scene" + sceneId + "_group" + this.id + ".lua");
+        var cs =
+                ScriptLoader.getScript("Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
 
         if (cs == null) {
             return this;
@@ -171,8 +170,10 @@ public final class SceneGroup {
                     .error(
                             "An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
         } catch (LuaError luaError) {
-            Grasscutter.getLogger().error("An error occurred while loading group %s in scene %s."
-                .formatted(this.id, sceneId), luaError);
+            Grasscutter.getLogger()
+                    .error(
+                            "An error occurred while loading group %s in scene %s.".formatted(this.id, sceneId),
+                            luaError);
         }
 
         Grasscutter.getLogger().trace("Successfully loaded group {} in scene {}.", this.id, sceneId);

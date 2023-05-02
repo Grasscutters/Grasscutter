@@ -5,8 +5,8 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ChapterData;
-import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.excels.TriggerExcelConfigData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
@@ -76,8 +76,7 @@ public class GameQuest {
                         .toList();
         if (triggerCond.size() > 0) {
             for (val cond : triggerCond) {
-                var newTrigger = GameData.getTriggerExcelConfigDataMap()
-                    .get(cond.getParam()[0]);
+                var newTrigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
                 if (newTrigger != null) {
                     if (this.triggerData == null) {
                         this.triggerData = new HashMap<>();
@@ -85,8 +84,7 @@ public class GameQuest {
 
                     triggerData.put(newTrigger.getTriggerName(), newTrigger);
                     triggers.put(newTrigger.getTriggerName(), false);
-                    var group = SceneGroup.of(newTrigger.getGroupId())
-                        .load(newTrigger.getSceneId());
+                    var group = SceneGroup.of(newTrigger.getGroupId()).load(newTrigger.getSceneId());
                     this.getOwner()
                             .getWorld()
                             .getSceneById(newTrigger.getSceneId())
@@ -111,8 +109,7 @@ public class GameQuest {
 
         this.getQuestData()
                 .getBeginExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem()
-                    .triggerExec(this, e, e.getParam()));
+                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
         this.getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
@@ -120,11 +117,8 @@ public class GameQuest {
     }
 
     /**
-     * Triggers events:
-     * 'QUEST_COND_STATE_EQUAL',
-     * 'QUEST_COND_STATE_NOT_EQUAL',
-     * 'QUEST_CONTENT_QUEST_STATE_EQUAL',
-     * 'QUEST_CONTENT_QUEST_STATE_NOT_EQUAL'
+     * Triggers events: 'QUEST_COND_STATE_EQUAL', 'QUEST_COND_STATE_NOT_EQUAL',
+     * 'QUEST_CONTENT_QUEST_STATE_EQUAL', 'QUEST_CONTENT_QUEST_STATE_NOT_EQUAL'
      */
     public void triggerStateEvents() {
         var questManager = this.getOwner().getQuestManager();
@@ -134,7 +128,8 @@ public class GameQuest {
         questManager.queueEvent(QuestCond.QUEST_COND_STATE_EQUAL, questId, state, 0, 0, 0);
         questManager.queueEvent(QuestCond.QUEST_COND_STATE_NOT_EQUAL, questId, state, 0, 0, 0);
         questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_STATE_EQUAL, questId, state, 0, 0, 0);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_STATE_NOT_EQUAL, questId, state, 0, 0, 0);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_STATE_NOT_EQUAL, questId, state, 0, 0, 0);
     }
 
     public String getTriggerNameById(int id) {

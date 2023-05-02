@@ -795,7 +795,7 @@ public final class Scene {
         return true;
     }
 
-    public void checkGroups() {
+    public synchronized void checkGroups() {
         Set<Integer> visible =
                 this.players.stream()
                         .map(player -> this.getPlayerActiveGroups(player))
@@ -833,7 +833,7 @@ public final class Scene {
         this.getScriptManager().loadBlockFromScript(block);
         scriptManager.getLoadedGroupSetPerBlock().put(block.id, new HashSet<>());
 
-        Grasscutter.getLogger().trace("Scene {} Block {} loaded.", this.getId(), block.id);
+        Grasscutter.getLogger().debug("Scene {} Block {} loaded.", this.getId(), block.id);
     }
 
     public int loadDynamicGroup(int group_id) {
@@ -963,7 +963,7 @@ public final class Scene {
                 groupInstance = cachedInstance;
             }
 
-            /* Don't load garbages
+            // Load garbages
             var garbageGadgets = group.getGarbageGadgets();
 
             if (garbageGadgets != null) {
@@ -973,7 +973,7 @@ public final class Scene {
                                 .filter(Objects::nonNull)
                                 .toList());
             }
-            */
+
             // Load suites
             // int suite = group.findInitSuiteIndex(0);
             this.getScriptManager()
@@ -1014,7 +1014,7 @@ public final class Scene {
 
         if (this.scriptManager.getLoadedGroupSetPerBlock().get(block.id).isEmpty()) {
             this.scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
-            Grasscutter.getLogger().trace("Scene {} Block {} is unloaded.", this.getId(), block.id);
+            Grasscutter.getLogger().debug("Scene {} Block {} is unloaded.", this.getId(), block.id);
         }
 
         this.broadcastPacket(new PacketGroupUnloadNotify(List.of(group_id)));

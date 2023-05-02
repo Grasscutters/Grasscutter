@@ -11,15 +11,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.reflections.Reflections;
 
 public final class TalkSystem extends BaseGameSystem {
-    private final Int2ObjectMap<TalkExecHandler> execHandlers
-        = new Int2ObjectOpenHashMap<>();
+    private final Int2ObjectMap<TalkExecHandler> execHandlers = new Int2ObjectOpenHashMap<>();
 
     public TalkSystem(GameServer server) {
         super(server);
 
-        this.registerHandlers(this.execHandlers,
-            "emu.grasscutter.game.talk.exec",
-            TalkExecHandler.class);
+        this.registerHandlers(
+                this.execHandlers, "emu.grasscutter.game.talk.exec", TalkExecHandler.class);
     }
 
     /**
@@ -46,7 +44,8 @@ public final class TalkSystem extends BaseGameSystem {
      */
     public <T> void registerTalkHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
         try {
-            var value = 0; if (handlerClass.isAnnotationPresent(TalkValueExec.class)) {
+            var value = 0;
+            if (handlerClass.isAnnotationPresent(TalkValueExec.class)) {
                 TalkValueExec opcode = handlerClass.getAnnotation(TalkValueExec.class);
                 value = opcode.value().getValue();
             } else {
@@ -70,8 +69,11 @@ public final class TalkSystem extends BaseGameSystem {
     public void triggerExec(Player player, TalkConfigData talkData, TalkExecParam execParam) {
         var handler = this.execHandlers.get(execParam.getType().getValue());
         if (handler == null) {
-            Grasscutter.getLogger().debug("Could not execute talk handlers for {} ({}).",
-                talkData.getId(), execParam.getType().getValue());
+            Grasscutter.getLogger()
+                    .debug(
+                            "Could not execute talk handlers for {} ({}).",
+                            talkData.getId(),
+                            execParam.getType().getValue());
             return;
         }
 

@@ -13,9 +13,9 @@ public final class ExecSetQuestGlobalVar extends TalkExecHandler {
     public void execute(Player player, TalkConfigData talkData, TalkExecParam execParam) {
         if (execParam.getParam().length < 2) return;
 
-        player.getQuestManager().setQuestGlobalVarValue(
-            Integer.parseInt(execParam.getParam()[0]),
-            Integer.parseInt(execParam.getParam()[1])
-        );
+        player
+                .getQuestManager()
+                .setQuestGlobalVarValue(
+                        Integer.parseInt(execParam.getParam()[0]), Integer.parseInt(execParam.getParam()[1]));
     }
 }
