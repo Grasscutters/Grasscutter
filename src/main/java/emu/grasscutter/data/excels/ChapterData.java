@@ -23,6 +23,6 @@ public class ChapterData extends GameResource {
     @Override
     public void onLoad() {
         beginQuestChapterMap.put(beginQuestId, this);
-        beginQuestChapterMap.put(endQuestId, this);
+        endQuestChapterMap.put(endQuestId, this);
     }
 }
