@@ -4,9 +4,7 @@ import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_STATE_NOT_EQ
 
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValueCond;
-import lombok.val;
 
 @QuestValueCond(QUEST_COND_STATE_NOT_EQUAL)
 public class ConditionStateNotEqual extends BaseCondition {
@@ -18,18 +16,11 @@ public class ConditionStateNotEqual extends BaseCondition {
             QuestData.QuestAcceptCondition condition,
             String paramStr,
             int... params) {
-        val questId = condition.getParam()[0];
-        val questStateValue = condition.getParam()[1];
-        GameQuest checkQuest = owner.getQuestManager().getQuestById(questId);
-        if (checkQuest == null) {
-            /*
-            Will spam the console
-            */
-            // Grasscutter.getLogger().debug("Warning: quest {} hasn't been started yet!",
-            // condition.getParam()[0]);
+        var questId = condition.getParam()[0];
+        var questStateValue = condition.getParam()[1];
+        var checkQuest = owner.getQuestManager().getQuestById(questId);
 
-            return false;
-        }
-        return checkQuest.getState().getValue() != questStateValue;
+        return checkQuest != null &&
+            checkQuest.getState().getValue() != questStateValue;
     }
 }
