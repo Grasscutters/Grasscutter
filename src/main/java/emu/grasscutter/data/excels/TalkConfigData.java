@@ -19,6 +19,14 @@ public final class TalkConfigData extends GameResource {
     @SerializedName(value="questId", alternate={"_questId"})
     private int questId;
 
+    @Override
+    public void onLoad() {
+        this.finishExec = this.finishExec == null ? List.of() :
+            this.finishExec.stream()
+                .filter(x -> x.getType() != null)
+                .toList();
+    }
+
     @Data
     public static class TalkExecParam {
         @SerializedName(value="type", alternate={"_type"})
