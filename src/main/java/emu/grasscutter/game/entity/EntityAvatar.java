@@ -66,7 +66,8 @@ public class EntityAvatar extends GameEntity {
                 weapon.setWeaponEntityId(world.getNextEntityId(EntityIdType.WEAPON));
             }
         } else {
-            Grasscutter.getLogger().error("Unable to create EntityAvatar instance; provided scene is null.");
+            Grasscutter.getLogger()
+                    .error("Unable to create EntityAvatar instance; provided scene is null.");
         }
     }
 

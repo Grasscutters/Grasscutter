@@ -20,7 +20,6 @@ public class ConditionStateNotEqual extends BaseCondition {
         var questStateValue = condition.getParam()[1];
         var checkQuest = owner.getQuestManager().getQuestById(questId);
 
-        return checkQuest != null &&
-            checkQuest.getState().getValue() != questStateValue;
+        return checkQuest != null && checkQuest.getState().getValue() != questStateValue;
     }
 }

@@ -18,7 +18,8 @@ public class ExecRemoveTrialAvatar extends QuestExecHandler {
             return true;
         } catch (IllegalStateException ignored) {
             // The player does not have any trial avatars equipped.
-            Grasscutter.getLogger().warn("Attempted to remove trial avatars from player with none equipped.");
+            Grasscutter.getLogger()
+                    .warn("Attempted to remove trial avatars from player with none equipped.");
             return true;
         } catch (RuntimeException exception) {
             exception.printStackTrace();

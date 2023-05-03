@@ -273,8 +273,9 @@ public final class DungeonManager {
     public void finishDungeon() {
         // Mark the dungeon has completed for the players.
         var dungeonId = this.getDungeonData().getId();
-        this.getScene().getPlayers().forEach(player -> player
-            .getPlayerProgress().markDungeonAsComplete(dungeonId));
+        this.getScene()
+                .getPlayers()
+                .forEach(player -> player.getPlayerProgress().markDungeonAsComplete(dungeonId));
 
         notifyEndDungeon(true);
         endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
@@ -287,8 +288,8 @@ public final class DungeonManager {
                         p -> {
                             // Trigger the fail event if needed.
                             if (!successfully) {
-                                p.getQuestManager().queueEvent(
-                                    QuestContent.QUEST_CONTENT_FAIL_DUNGEON, dungeonData.getId());
+                                p.getQuestManager()
+                                        .queueEvent(QuestContent.QUEST_CONTENT_FAIL_DUNGEON, dungeonData.getId());
                             }
 
                             // Battle pass trigger

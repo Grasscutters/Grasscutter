@@ -14,14 +14,11 @@ public final class ExecIncQuestVar extends TalkExecHandler {
     public void execute(Player player, TalkConfigData talkData, TalkExecParam execParam) {
         if (execParam.getParam().length < 3) return;
 
-        GameMainQuest mainQuest = player.getQuestManager().getMainQuestById(
-            Integer.parseInt(execParam.getParam()[2])
-        );
+        GameMainQuest mainQuest =
+                player.getQuestManager().getMainQuestById(Integer.parseInt(execParam.getParam()[2]));
         if (mainQuest == null) return;
 
         mainQuest.incQuestVar(
-            Integer.parseInt(execParam.getParam()[0]),
-            Integer.parseInt(execParam.getParam()[1])
-        );
+                Integer.parseInt(execParam.getParam()[0]), Integer.parseInt(execParam.getParam()[1]));
     }
 }

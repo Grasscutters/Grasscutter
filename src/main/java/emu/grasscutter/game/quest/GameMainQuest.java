@@ -10,8 +10,8 @@ import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.SubQuestData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.data.binout.ScriptSceneData;
-import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.excels.RewardData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
@@ -26,7 +26,6 @@ import emu.grasscutter.utils.ConversionUtils;
 import emu.grasscutter.utils.Position;
 import java.util.*;
 import java.util.stream.Collectors;
-
 import lombok.Getter;
 import lombok.val;
 import org.bson.types.ObjectId;
@@ -139,7 +138,8 @@ public class GameMainQuest {
         questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
         questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
 
-        this.getOwner().sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
+        this.getOwner()
+                .sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
     }
 
     public GameQuest getChildQuestById(int id) {
@@ -158,7 +158,10 @@ public class GameMainQuest {
         // when auto finishing all child quests with QUEST_STATE_UNFINISHED (below)
         synchronized (this) {
             if (this.isFinished || this.state == ParentQuestState.PARENT_QUEST_STATE_FINISHED) {
-                Grasscutter.getLogger().debug("Skip main quest {} finishing because it's already finished",this.getParentQuestId());
+                Grasscutter.getLogger()
+                        .debug(
+                                "Skip main quest {} finishing because it's already finished",
+                                this.getParentQuestId());
                 return;
             }
 
@@ -178,7 +181,7 @@ public class GameMainQuest {
          * new MainQuest 355 but if 35312 is not completed after the completion
          * of the main quest 353 - the character will not be able to leave place
          * (return again and again)
-        */
+         */
         this.getChildQuests().values().stream()
                 .filter(p -> p.state != QuestState.QUEST_STATE_FINISHED)
                 .forEach(GameQuest::finish);
@@ -500,9 +503,16 @@ public class GameMainQuest {
                                 subQuestWithCond.getFinishProgressList());
 
                 if (this.getQuestManager().getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
-                    Grasscutter.getLogger().debug(">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",
-                        subQuestWithCond.getSubQuestId(), shouldFinish ? "finished" : "not finished", condType.name(), paramStr,
-                        Arrays.stream(params).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+                    Grasscutter.getLogger()
+                            .debug(
+                                    ">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",
+                                    subQuestWithCond.getSubQuestId(),
+                                    shouldFinish ? "finished" : "not finished",
+                                    condType.name(),
+                                    paramStr,
+                                    Arrays.stream(params)
+                                            .mapToObj(String::valueOf)
+                                            .collect(Collectors.joining(", ")));
                 }
 
                 if (shouldFinish) subQuestWithCond.finish();

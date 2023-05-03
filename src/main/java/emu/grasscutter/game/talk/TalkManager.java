@@ -1,15 +1,14 @@
 package emu.grasscutter.game.talk;
 
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
-
 import lombok.NonNull;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
 
 public final class TalkManager extends BasePlayerManager {
     public TalkManager(@NonNull Player player) {
@@ -27,8 +26,11 @@ public final class TalkManager extends BasePlayerManager {
 
         var player = this.getPlayer();
         // Execute the talk action on associated handlers.
-        talkData.getFinishExec().forEach(e -> this.getPlayer().getServer()
-            .getTalkSystem().triggerExec(getPlayer(), talkData, e));
+        talkData
+                .getFinishExec()
+                .forEach(
+                        e ->
+                                this.getPlayer().getServer().getTalkSystem().triggerExec(getPlayer(), talkData, e));
 
         // Invoke the talking events for quests.
         var questManager = player.getQuestManager();
@@ -43,8 +45,7 @@ public final class TalkManager extends BasePlayerManager {
     public void saveTalkToQuest(int talkId, int mainQuestId) {
         // TODO, problem with this is that some talks for activity also have
         // quest id, which isn't present in QuestExcels
-        var mainQuest = this.getPlayer().getQuestManager()
-            .getMainQuestById(mainQuestId);
+        var mainQuest = this.getPlayer().getQuestManager().getMainQuestById(mainQuestId);
         if (mainQuest == null) return;
 
         mainQuest.getTalks().put(talkId, new TalkData(talkId, ""));

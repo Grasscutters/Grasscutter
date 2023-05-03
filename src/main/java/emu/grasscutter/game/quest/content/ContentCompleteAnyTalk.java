@@ -15,8 +15,9 @@ public class ContentCompleteAnyTalk extends BaseContent {
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         return Stream.of(condition.getParamStr().split(","))
-            .mapToInt(Integer::parseInt)
-            .anyMatch(talkId -> GameData.getTalkConfigDataMap()
-                .get(params[0]) != null && talkId == params[0]);
+                .mapToInt(Integer::parseInt)
+                .anyMatch(
+                        talkId ->
+                                GameData.getTalkConfigDataMap().get(params[0]) != null && talkId == params[0]);
     }
 }

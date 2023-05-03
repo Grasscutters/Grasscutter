@@ -132,8 +132,7 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     /**
-     * Returns the active team.
-     * If there are errors with the team, they can be fixed.
+     * Returns the active team. If there are errors with the team, they can be fixed.
      *
      * @param fix If true, the team will be fixed.
      * @return The active team.
@@ -558,27 +557,32 @@ public final class TeamManager extends BasePlayerDataManager {
         this.trialAvatarTeam = new TeamInfo();
 
         // Remove the avatars from the team.
-        this.getActiveTeam().forEach(avatarEntity -> scene
-            .removeEntity(avatarEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
+        this.getActiveTeam()
+                .forEach(
+                        avatarEntity ->
+                                scene.removeEntity(
+                                        avatarEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
 
         if (isTeam) {
             this.getActiveTeam().clear();
             this.getTrialAvatars().clear();
         } else {
             trialAvatarIds.forEach(
-                trialAvatarId -> {
-                    this.getActiveTeam().removeIf(x -> x.getAvatar().getTrialAvatarId() == trialAvatarId);
-                    this.getTrialAvatars().values().removeIf(x -> x.getTrialAvatarId() == trialAvatarId);
-                });
+                    trialAvatarId -> {
+                        this.getActiveTeam().removeIf(x -> x.getAvatar().getTrialAvatarId() == trialAvatarId);
+                        this.getTrialAvatars().values().removeIf(x -> x.getTrialAvatarId() == trialAvatarId);
+                    });
         }
 
         // Re-add the avatars to the team.
         if (isTeam) {
             // Restores all avatars from the player's avatar storage.
-            this.getCurrentTeamInfo().getAvatars().forEach(avatarId ->
-                this.getActiveTeam().add(new EntityAvatar(
-                    scene, player.getAvatars().getAvatarById(avatarId)
-                )));
+            this.getCurrentTeamInfo()
+                    .getAvatars()
+                    .forEach(
+                            avatarId ->
+                                    this.getActiveTeam()
+                                            .add(new EntityAvatar(scene, player.getAvatars().getAvatarById(avatarId))));
         } else {
             // Restores all avatars from the player's avatar storage.
             // If the avatar is already in the team, it will not be added.
@@ -586,9 +590,9 @@ public final class TeamManager extends BasePlayerDataManager {
             for (var index = 0; index < avatars.size() - 1; index++) {
                 var avatar = avatars.get(index);
                 if (this.getActiveTeam().stream()
-                    .map(entity -> entity.getAvatar().getAvatarId())
-                    .toList()
-                    .contains(avatar)) continue;
+                        .map(entity -> entity.getAvatar().getAvatarId())
+                        .toList()
+                        .contains(avatar)) continue;
 
                 // Check if the player owns the avatar.
                 var avatarData = player.getAvatars().getAvatarById(avatar);
@@ -1123,9 +1127,9 @@ public final class TeamManager extends BasePlayerDataManager {
             throw new IllegalStateException("Player is not using trial team.");
 
         this.getPlayer()
-            .sendPacket(
-                new PacketAvatarDelNotify(
-                    trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
+                .sendPacket(
+                        new PacketAvatarDelNotify(
+                                trialAvatarIds.stream().map(this::getTrialAvatarGuid).toList()));
         this.removeTrialAvatarTeam(trialAvatarIds);
 
         // Update the team.

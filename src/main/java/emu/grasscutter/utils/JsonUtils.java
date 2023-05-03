@@ -22,13 +22,13 @@ import java.util.Map;
 public final class JsonUtils {
     static final Gson gson =
             new GsonBuilder()
-                .setPrettyPrinting()
-                .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
-                .registerTypeAdapter(IntList.class, new IntListAdapter())
-                .registerTypeAdapter(Position.class, new PositionAdapter())
-                .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
-                .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
-                .create();
+                    .setPrettyPrinting()
+                    .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
+                    .registerTypeAdapter(IntList.class, new IntListAdapter())
+                    .registerTypeAdapter(Position.class, new PositionAdapter())
+                    .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
+                    .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
+                    .create();
 
     /*
      * Encode an object to a JSON string

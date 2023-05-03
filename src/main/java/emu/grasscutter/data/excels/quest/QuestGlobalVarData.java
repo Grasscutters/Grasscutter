@@ -6,7 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @ResourceType(name = "QuestGlobalVarConfigData.json")
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public final class QuestGlobalVarData extends GameResource {

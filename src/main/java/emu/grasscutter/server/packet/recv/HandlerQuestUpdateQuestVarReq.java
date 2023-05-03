@@ -5,11 +5,9 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq;
-import emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarRsp;
-import java.util.List;
 
 @Opcodes(PacketOpcodes.QuestUpdateQuestVarReq)
 public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
