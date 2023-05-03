@@ -31,6 +31,6 @@ public final class GameConstants {
     public static final int[] DEFAULT_ABILITY_HASHES =
             Arrays.stream(DEFAULT_ABILITY_STRINGS).mapToInt(Utils::abilityHash).toArray();
     public static final int DEFAULT_ABILITY_NAME = Utils.abilityHash("Default");
-    public static String VERSION = "3.5.0";
+    public static String VERSION = "3.6.0";
     public static final boolean DEBUG = true;
 }
