@@ -1,4 +1,4 @@
-package emu.grasscutter.data.excels;
+package emu.grasscutter.data.excels.quest;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;

@@ -5,7 +5,7 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ChapterData;
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.excels.TriggerExcelConfigData;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.player.Player;

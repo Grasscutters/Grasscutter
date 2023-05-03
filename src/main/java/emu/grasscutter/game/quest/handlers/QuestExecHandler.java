@@ -1,6 +1,6 @@
 package emu.grasscutter.game.quest.handlers;
 
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
 
 public abstract class QuestExecHandler {

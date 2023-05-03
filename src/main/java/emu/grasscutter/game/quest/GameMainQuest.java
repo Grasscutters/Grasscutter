@@ -10,7 +10,7 @@ import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.SubQuestData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.data.binout.ScriptSceneData;
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
@@ -21,6 +21,7 @@ import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarNotify;
 import emu.grasscutter.utils.ConversionUtils;
 import emu.grasscutter.utils.Position;
 import java.util.*;
@@ -40,8 +41,6 @@ public class GameMainQuest {
     @Getter private int parentQuestId;
     @Getter private int[] questVars;
     @Getter private long[] timeVar;
-    // QuestUpdateQuestVarReq is sent in two stages...
-    private List<Integer> questVarsUpdate;
     @Getter private ParentQuestState state;
     @Getter private boolean isFinished;
     @Getter List<QuestGroupSuite> questGroupSuites;
@@ -66,13 +65,6 @@ public class GameMainQuest {
         this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
         this.questGroupSuites = new ArrayList<>();
         addAllChildQuests();
-    }
-
-    public List<Integer> getQuestVarsUpdate() {
-        if (questVarsUpdate == null) {
-            questVarsUpdate = new ArrayList<>();
-        }
-        return questVarsUpdate;
     }
 
     private void addAllChildQuests() {
@@ -114,6 +106,8 @@ public class GameMainQuest {
         this.questVars[i] = value;
         Grasscutter.getLogger()
                 .debug("questVar {} value changed from {} to {}", i, previousValue, value);
+
+        this.triggerQuestVarAction(i, this.questVars[i]);
     }
 
     public void incQuestVar(int i, int inc) {
@@ -122,6 +116,8 @@ public class GameMainQuest {
         Grasscutter.getLogger()
                 .debug(
                         "questVar {} value incremented from {} to {}", i, previousValue, previousValue + inc);
+
+        this.triggerQuestVarAction(i, this.questVars[i]);
     }
 
     public void decQuestVar(int i, int dec) {
@@ -130,6 +126,20 @@ public class GameMainQuest {
         Grasscutter.getLogger()
                 .debug(
                         "questVar {} value decremented from {} to {}", i, previousValue, previousValue - dec);
+
+        this.triggerQuestVarAction(i, this.questVars[i]);
+    }
+
+    public void triggerQuestVarAction(int index, int value) {
+        var questManager = this.getQuestManager();
+        questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_EQUAL, index, value);
+        questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_GREATER, index, value);
+        questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_LESS, index, value);
+        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value);
+        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
+        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
+
+        this.getOwner().sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
     }
 
     public GameQuest getChildQuestById(int id) {

@@ -3,7 +3,7 @@ package emu.grasscutter.game.quest.content;
 import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_FINISH_PLOT;
 
 import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValueContent;
 

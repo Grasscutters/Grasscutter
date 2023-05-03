@@ -4,7 +4,7 @@ import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TAL
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestValueCond;
 import lombok.val;

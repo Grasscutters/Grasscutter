@@ -35,27 +35,20 @@ public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
                             req.getParentQuestId());
             return;
         }
-        List<QuestVarOp> questVars = req.getQuestVarOpListList();
-        var questVarUpdate = mainQuest.getQuestVarsUpdate();
-        if (questVarUpdate.size() == 0) {
-            for (var questVar : questVars) {
-                questVarUpdate.add(questVar.getValue());
-            }
-        } else {
-            for (QuestVarOp questVar : questVars) {
-                if (questVar.getIsAdd()) {
-                    if (questVar.getValue() >= 0) {
-                        mainQuest.incQuestVar(questVar.getIndex(), questVar.getValue());
-                    } else {
-                        mainQuest.decQuestVar(questVar.getIndex(), questVar.getValue());
-                    }
+
+        for (var questVar : req.getQuestVarOpListList()) {
+            var value = questVar.getValue();
+            if (questVar.getIsAdd()) {
+                if (value >= 0) {
+                    mainQuest.incQuestVar(questVar.getIndex(), value);
                 } else {
-                    mainQuest.setQuestVar(questVar.getIndex(), questVarUpdate.get(0));
+                    mainQuest.decQuestVar(questVar.getIndex(), value);
                 }
-                // remove the first element from the update list
-                questVarUpdate.remove(0);
+            } else {
+                mainQuest.setQuestVar(questVar.getIndex(), value);
             }
         }
+
         session.send(new PacketQuestUpdateQuestVarRsp(req));
     }
 }

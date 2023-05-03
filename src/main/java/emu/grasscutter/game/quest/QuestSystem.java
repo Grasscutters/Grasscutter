@@ -1,10 +1,10 @@
 package emu.grasscutter.game.quest;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.excels.QuestData;
-import emu.grasscutter.data.excels.QuestData.QuestAcceptCondition;
-import emu.grasscutter.data.excels.QuestData.QuestContentCondition;
-import emu.grasscutter.data.excels.QuestData.QuestExecParam;
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.data.excels.quest.QuestData.QuestAcceptCondition;
+import emu.grasscutter.data.excels.quest.QuestData.QuestContentCondition;
+import emu.grasscutter.data.excels.quest.QuestData.QuestExecParam;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.conditions.BaseCondition;
 import emu.grasscutter.game.quest.content.BaseContent;

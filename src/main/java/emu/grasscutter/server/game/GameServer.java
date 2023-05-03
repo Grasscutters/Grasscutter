@@ -26,6 +26,7 @@ import emu.grasscutter.game.shop.ShopSystem;
 import emu.grasscutter.game.systems.AnnouncementSystem;
 import emu.grasscutter.game.systems.InventorySystem;
 import emu.grasscutter.game.systems.MultiplayerSystem;
+import emu.grasscutter.game.talk.TalkSystem;
 import emu.grasscutter.game.tower.TowerSystem;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataSystem;
@@ -69,6 +70,7 @@ public final class GameServer extends KcpServer {
     private final TowerSystem towerSystem;
     private final AnnouncementSystem announcementSystem;
     private final QuestSystem questSystem;
+    private final TalkSystem talkSystem;
 
     // Extra
     private final ServerTaskScheduler scheduler;
@@ -123,6 +125,7 @@ public final class GameServer extends KcpServer {
         this.battlePassSystem = new BattlePassSystem(this);
         this.announcementSystem = new AnnouncementSystem(this);
         this.questSystem = new QuestSystem(this);
+        this.talkSystem = new TalkSystem(this);
 
         // Chata manager
         this.chatManager = new ChatSystem(this);
