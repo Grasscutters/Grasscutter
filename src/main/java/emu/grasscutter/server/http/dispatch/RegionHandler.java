@@ -2,6 +2,8 @@ package emu.grasscutter.server.http.dispatch;
 
 import static emu.grasscutter.config.Configuration.*;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.protobuf.ByteString;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -17,6 +19,7 @@ import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -30,7 +33,7 @@ import org.slf4j.Logger;
 public final class RegionHandler implements Router {
     private static final Map<String, RegionData> regions = new ConcurrentHashMap<>();
     private static String regionListResponse;
-    private static String regionListResponsecn;
+    private static String regionListResponseCN;
 
     public RegionHandler() {
         try { // Read & initialize region data.
@@ -42,7 +45,7 @@ public final class RegionHandler implements Router {
 
     /** Configures region data according to configuration. */
     private void initialize() {
-        String dispatchDomain =
+        var dispatchDomain =
                 "http"
                         + (HTTP_ENCRYPTION.useInRouting ? "s" : "")
                         + "://"
@@ -51,8 +54,8 @@ public final class RegionHandler implements Router {
                         + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort);
 
         // Create regions.
-        List<RegionSimpleInfo> servers = new ArrayList<>();
-        List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
+        var servers = new ArrayList<RegionSimpleInfo>();
+        var usedNames = new ArrayList<String>(); // List to check for potential naming conflicts.
 
         var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
         if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
@@ -101,18 +104,32 @@ public final class RegionHandler implements Router {
                                     updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
                 });
 
+        // Determine config settings.
+        var hiddenIcons = new JsonArray();
+        hiddenIcons.add(40);
+        var showExceptions = GameConstants.DEBUG;
+
         // Create a config object.
-        byte[] customConfig =
-                "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}"
-                        .getBytes();
-        Crypto.xor(customConfig, Crypto.DISPATCH_KEY); // XOR the config with the key.
+        var customConfig = new JsonObject();
+        customConfig.addProperty("sdkenv", "2");
+        customConfig.addProperty("checkdevice", "false");
+        customConfig.addProperty("loadPatch", "false");
+        customConfig.addProperty("showexception",
+            String.valueOf(showExceptions));
+        customConfig.addProperty("regionConfig", "pm|fk|add");
+        customConfig.addProperty("downloadMode", "0");
+        customConfig.add("coverSwitch", hiddenIcons);
+
+        // XOR the config with the key.
+        var encodedConfig = JsonUtils.encode(customConfig).getBytes();
+        Crypto.xor(encodedConfig, Crypto.DISPATCH_KEY);
 
         // Create an updated region list.
-        QueryRegionListHttpRsp updatedRegionList =
+        var updatedRegionList =
                 QueryRegionListHttpRsp.newBuilder()
                         .addAllRegionList(servers)
                         .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
-                        .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
+                        .setClientCustomConfigEncrypted(ByteString.copyFrom(encodedConfig))
                         .setEnableLoginPc(true)
                         .build();
 
@@ -120,23 +137,23 @@ public final class RegionHandler implements Router {
         regionListResponse = Utils.base64Encode(updatedRegionList.toByteString().toByteArray());
 
         // CN
-        // Create a config object.
-        byte[] customConfigcn =
-                "{\"sdkenv\":\"0\",\"checkdevice\":\"true\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}"
-                        .getBytes();
-        Crypto.xor(customConfigcn, Crypto.DISPATCH_KEY); // XOR the config with the key.
+        // Modify the existing config option.
+        customConfig.addProperty("sdkenv", "0");
+        // XOR the config with the key.
+        encodedConfig = JsonUtils.encode(customConfig).getBytes();
+        Crypto.xor(encodedConfig, Crypto.DISPATCH_KEY);
 
         // Create an updated region list.
-        QueryRegionListHttpRsp updatedRegionListcn =
+        var updatedRegionListCN =
                 QueryRegionListHttpRsp.newBuilder()
                         .addAllRegionList(servers)
                         .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
-                        .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfigcn))
+                        .setClientCustomConfigEncrypted(ByteString.copyFrom(encodedConfig))
                         .setEnableLoginPc(true)
                         .build();
 
         // Set the region list response.
-        regionListResponsecn = Utils.base64Encode(updatedRegionListcn.toByteString().toByteArray());
+        regionListResponseCN = Utils.base64Encode(updatedRegionListCN.toByteString().toByteArray());
     }
 
     @Override
@@ -164,7 +181,7 @@ public final class RegionHandler implements Router {
                     || "CNRELWin".equals(versionCode)
                     || "CNRELAndroid".equals(versionCode)) {
                 // Use the CN region list.
-                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponseCN);
                 event.call();
 
                 // Respond with the event result.
