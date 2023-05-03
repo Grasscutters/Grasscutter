@@ -6,6 +6,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValueContent;
+import lombok.val;
 
 @QuestValueContent(QUEST_CONTENT_COMPLETE_TALK)
 public class ContentCompleteTalk extends BaseContent {
@@ -13,7 +14,7 @@ public class ContentCompleteTalk extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        return condition.getParam()[0] == params[0]
-                && GameData.getTalkConfigDataMap().get(condition.getParam()[0]) != null;
+        return condition.getParam()[0] == params[0] &&
+            GameData.getTalkConfigDataMap().get(condition.getParam()[0]) != null;
     }
 }

@@ -114,7 +114,8 @@ public final class RegionHandler implements Router {
         customConfig.addProperty("sdkenv", "2");
         customConfig.addProperty("checkdevice", "false");
         customConfig.addProperty("loadPatch", "false");
-        customConfig.addProperty("showexception", String.valueOf(showExceptions));
+        customConfig.addProperty("showexception",
+            String.valueOf(showExceptions));
         customConfig.addProperty("regionConfig", "pm|fk|add");
         customConfig.addProperty("downloadMode", "0");
         customConfig.add("coverSwitch", hiddenIcons);

@@ -171,10 +171,8 @@ public final class SceneGroup {
                     .error(
                             "An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
         } catch (LuaError luaError) {
-            Grasscutter.getLogger()
-                    .error(
-                            "An error occurred while loading group %s in scene %s.".formatted(this.id, sceneId),
-                            luaError);
+            Grasscutter.getLogger().error("An error occurred while loading group %s in scene %s."
+                .formatted(this.id, sceneId), luaError);
         }
 
         Grasscutter.getLogger().trace("Successfully loaded group {} in scene {}.", this.id, sceneId);

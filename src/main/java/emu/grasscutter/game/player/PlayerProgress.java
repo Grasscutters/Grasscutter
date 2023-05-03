@@ -6,8 +6,9 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
 import java.util.Map;
+
+import it.unimi.dsi.fastutil.ints.IntArrayList;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -38,27 +39,28 @@ public class PlayerProgress {
     }
 
     /**
-     * Marks a dungeon as completed. Triggers the quest event.
+     * Marks a dungeon as completed.
+     * Triggers the quest event.
      *
      * @param dungeonId The dungeon which was completed.
      */
     public void markDungeonAsComplete(int dungeonId) {
-        if (this.getCompletedDungeons().contains(dungeonId)) return;
+        if (this.getCompletedDungeons().contains(dungeonId))
+            return;
 
         // Mark the dungeon as completed.
         this.getCompletedDungeons().add(dungeonId);
         // Trigger the completion event.
         if (this.getPlayer() != null) {
-            this.getPlayer()
-                    .getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_FINISH_DUNGEON, dungeonId);
+            this.getPlayer().getQuestManager().queueEvent(
+                QuestContent.QUEST_CONTENT_FINISH_DUNGEON, dungeonId
+            );
         } else {
-            Grasscutter.getLogger()
-                    .warn("Unable to execute 'QUEST_CONTENT_FINISH_DUNGEON'. The player is null.");
+            Grasscutter.getLogger().warn("Unable to execute 'QUEST_CONTENT_FINISH_DUNGEON'. The player is null.");
         }
 
-        Grasscutter.getLogger()
-                .debug("Dungeon {} has been marked complete for {}.", dungeonId, this.getPlayer().getUid());
+        Grasscutter.getLogger().debug("Dungeon {} has been marked complete for {}.",
+            dungeonId, this.getPlayer().getUid());
     }
 
     public boolean hasPlayerObtainedItemHistorically(int itemId) {

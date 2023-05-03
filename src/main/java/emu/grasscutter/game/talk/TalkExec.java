@@ -2,11 +2,12 @@ package emu.grasscutter.game.talk;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 @AllArgsConstructor
 public enum TalkExec {
@@ -31,12 +32,11 @@ public enum TalkExec {
 
     static {
         Stream.of(TalkExec.values())
-                .filter(e -> e.name().startsWith("TALK_EXEC_"))
-                .forEach(
-                        entry -> {
-                            execMap.put(entry.getValue(), entry);
-                            execStringMap.put(entry.name(), entry);
-                        });
+            .filter(e -> e.name().startsWith("TALK_EXEC_"))
+            .forEach(entry -> {
+                execMap.put(entry.getValue(), entry);
+                execStringMap.put(entry.name(), entry);
+            });
     }
 
     /**

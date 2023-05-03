@@ -51,12 +51,13 @@ public final class GadgetWorktop extends GadgetContent {
         if (options == null) return;
 
         try {
-            var worktop = WorktopInfo.newBuilder().addAllOptionList(options).build();
+            var worktop = WorktopInfo.newBuilder()
+                .addAllOptionList(options).build();
             gadgetInfo.setWorktop(worktop);
         } catch (NullPointerException ignored) {
             // "this.wrapped" is null.
-            gadgetInfo.setWorktop(
-                    WorktopInfo.newBuilder().addAllOptionList(Collections.emptyList()).build());
+            gadgetInfo.setWorktop(WorktopInfo.newBuilder()
+                .addAllOptionList(Collections.emptyList()).build());
             Grasscutter.getLogger().warn("GadgetWorktop.onBuildProto: this.wrapped is null");
         }
     }

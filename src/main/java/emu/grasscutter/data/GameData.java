@@ -297,11 +297,12 @@ public final class GameData {
             new Int2ObjectOpenHashMap<>();
 
     @Getter
-    private static final Int2ObjectMap<QuestData> questDataMap = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<QuestData> questDataMap =
+        new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<QuestGlobalVarData> questGlobalVarDataMap =
-            new Int2ObjectOpenHashMap<>();
+        new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<ReliquaryAffixData> reliquaryAffixDataMap =
@@ -323,11 +324,12 @@ public final class GameData {
             new Int2ObjectOpenHashMap<>();
 
     @Getter
-    private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
+    private static final Int2ObjectMap<SceneData> sceneDataMap =
+        new Int2ObjectLinkedOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<TalkConfigData> talkConfigDataMap =
-            new Int2ObjectOpenHashMap<>();
+        new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap =

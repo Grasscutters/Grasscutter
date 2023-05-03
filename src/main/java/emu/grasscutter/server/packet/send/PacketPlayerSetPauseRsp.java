@@ -10,6 +10,7 @@ public class PacketPlayerSetPauseRsp extends BasePacket {
     public PacketPlayerSetPauseRsp() {
         super(PacketOpcodes.PlayerSetPauseRsp);
 
-        this.setData(PlayerSetPauseRsp.newBuilder().setRetcode(Retcode.RET_SUCC_VALUE));
+        this.setData(PlayerSetPauseRsp.newBuilder()
+            .setRetcode(Retcode.RET_SUCC_VALUE));
     }
 }
