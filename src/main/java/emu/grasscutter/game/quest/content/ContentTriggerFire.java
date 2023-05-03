@@ -9,7 +9,6 @@ import emu.grasscutter.game.quest.QuestValueContent;
 
 @QuestValueContent(QUEST_CONTENT_TRIGGER_FIRE)
 public class ContentTriggerFire extends BaseContent {
-
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
@@ -18,7 +17,8 @@ public class ContentTriggerFire extends BaseContent {
             return quest.getTriggers().get(quest.getTriggerNameById(params[0]));
         } else {
             Grasscutter.getLogger()
-                    .error("quest {} doesn't have trigger {}", quest.getSubQuestId(), params[0]);
+                    .debug("Quest {} doesn't have trigger {} registered.",
+                        quest.getSubQuestId(), params[0]);
             return false;
         }
     }
