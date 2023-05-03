@@ -9,7 +9,7 @@ import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import lombok.val;
 
-/** Changes the main avatar's element. First parameter is the elementType id */
+/** Changes the main avatar's element. First parameter is the elementType ID. */
 @QuestValueExec(QuestExec.QUEST_EXEC_CHANGE_AVATAR_ELEMET)
 public class ExecChangeAvatarElemet extends QuestExecHandler {
     @Override
@@ -25,8 +25,8 @@ public class ExecChangeAvatarElemet extends QuestExecHandler {
         }
 
         Grasscutter.getLogger()
-                .info(
-                        "Changing avatar element to {} for quest {}",
+                .debug(
+                        "Changing avatar element to {} for quest {}.",
                         targetElement.name(),
                         quest.getSubQuestId());
         return mainAvatar.changeElement(targetElement);

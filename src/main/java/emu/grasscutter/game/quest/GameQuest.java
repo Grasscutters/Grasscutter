@@ -64,27 +64,30 @@ public class GameQuest {
     }
 
     public void start() {
-        clearProgress(false);
+        this.clearProgress(false);
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
         this.state = QuestState.QUEST_STATE_UNFINISHED;
+
         val triggerCond =
                 questData.getFinishCond().stream()
                         .filter(p -> p.getType() == QuestContent.QUEST_CONTENT_TRIGGER_FIRE)
                         .toList();
         if (triggerCond.size() > 0) {
             for (val cond : triggerCond) {
-                TriggerExcelConfigData newTrigger =
-                        GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
+                var newTrigger = GameData.getTriggerExcelConfigDataMap()
+                    .get(cond.getParam()[0]);
                 if (newTrigger != null) {
                     if (this.triggerData == null) {
                         this.triggerData = new HashMap<>();
                     }
+
                     triggerData.put(newTrigger.getTriggerName(), newTrigger);
                     triggers.put(newTrigger.getTriggerName(), false);
-                    SceneGroup group = SceneGroup.of(newTrigger.getGroupId()).load(newTrigger.getSceneId());
-                    getOwner()
+                    var group = SceneGroup.of(newTrigger.getGroupId())
+                        .load(newTrigger.getSceneId());
+                    this.getOwner()
                             .getWorld()
                             .getSceneById(newTrigger.getSceneId())
                             .loadTriggerFromGroup(group, newTrigger.getTriggerName());
@@ -92,10 +95,10 @@ public class GameQuest {
             }
         }
 
-        getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
+        this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
 
         if (ChapterData.getBeginQuestChapterMap().containsKey(subQuestId)) {
-            getOwner()
+            this.getOwner()
                     .sendPacket(
                             new PacketChapterStateNotify(
                                     ChapterData.getBeginQuestChapterMap().get(subQuestId).getId(),
@@ -106,10 +109,11 @@ public class GameQuest {
         // different MainQuests)
         this.triggerStateEvents();
 
-        getQuestData()
+        this.getQuestData()
                 .getBeginExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
-        getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
+                .forEach(e -> getOwner().getServer().getQuestSystem()
+                    .triggerExec(this, e, e.getParam()));
+        this.getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
         this.save();

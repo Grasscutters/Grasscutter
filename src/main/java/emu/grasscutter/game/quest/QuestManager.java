@@ -33,7 +33,7 @@ import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 public class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
-    @Transient @Getter private final IntList loggedQuests;
+    @Transient @Getter private final List<Integer> loggedQuests;
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
@@ -109,7 +109,7 @@ public class QuestManager extends BasePlayerManager {
 
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
-        this.loggedQuests = new IntArrayList();
+        this.loggedQuests = new ArrayList<>();
 
         if (DEBUG) {
             this.loggedQuests.addAll(List.of(
@@ -122,9 +122,13 @@ public class QuestManager extends BasePlayerManager {
                 46904, // Quest which is required to be started, but not completed for 31101's talks to begin.
                        // This quest is related to obtaining your first Anemoculus.
 
-                35104  // Quest which is required to be finished for 46904 to begin.
+                35104, // Quest which is required to be finished for 46904 to begin.
                        // This quest requires 31101 not be finished.
                        // This quest should be accepted when the account is created.
+
+                       // These quests currently have bugged triggers.
+                30700, // Quest which is responsible for unlocking Crash Course.
+                30800  // Quest which is responsible for unlocking Sparks Amongst the Pages.
             ));
         }
     }
@@ -396,6 +400,7 @@ public class QuestManager extends BasePlayerManager {
     public void queueEvent(QuestContent condType, String paramStr, int... params) {
         eventExecutor.submit(() -> triggerEvent(condType, paramStr, params));
     }
+
     public void queueEvent(QuestCond condType, String paramStr, int... params) {
         eventExecutor.submit(() -> triggerEvent(condType, paramStr, params));
     }
