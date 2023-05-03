@@ -23,7 +23,7 @@ public final class TalkManager extends BasePlayerManager {
      */
     public void triggerTalkAction(int talkId) {
         var talkData = GameData.getTalkConfigDataMap().get(talkId);
-        if (talkData == null || talkData.getFinishExec().isEmpty()) return;
+        if (talkData == null) return;
 
         var player = this.getPlayer();
         // Execute the talk action on associated handlers.
