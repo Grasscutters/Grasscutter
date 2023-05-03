@@ -9,6 +9,8 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.common.ItemUseData;
+import emu.grasscutter.data.excels.HomeWorldBgmData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
@@ -141,12 +143,12 @@ public final class Tools {
                             val bgmName =
                                     Optional.ofNullable(data.getItemUse())
                                             .map(u -> u.get(0))
-                                            .map(u -> u.getUseParam())
+                                            .map(ItemUseData::getUseParam)
                                             .filter(u -> u.length > 0)
                                             .map(u -> Integer.parseInt(u[0]))
-                                            .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
-                                            .map(bgm -> bgm.getBgmNameTextMapHash())
-                                            .map(hash -> getTextMapKey(hash));
+                                            .map(bgmId -> GameData.getHomeWorldBgmDataMap().get((int) bgmId))
+                                            .map(HomeWorldBgmData::getBgmNameTextMapHash)
+                                            .map(Language::getTextMapKey);
                             if (bgmName.isPresent()) {
                                 h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
                                 return;
