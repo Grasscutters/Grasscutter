@@ -99,10 +99,20 @@ public final class QuestCommand implements CommandHandler {
                 var shouldAdd = !loggedQuests.contains(questId);
 
                 if (shouldAdd) loggedQuests.add(questId);
-                else loggedQuests.removeInt(questId);
+                else loggedQuests.remove(questId);
 
                 CommandHandler.sendMessage(sender, "Quest %s will %s."
                     .formatted(questId, shouldAdd ? "now be logged" : "no longer be logged"));
+            }
+            case "triggers" -> {
+                var quest = targetPlayer.getQuestManager().getQuestById(questId);
+                if (quest == null) {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.quest.not_found"));
+                    return;
+                }
+
+                CommandHandler.sendMessage(sender, "Triggers registered for %s: %s."
+                    .formatted(questId, String.join(", ", quest.getTriggers().keySet())));
             }
             default -> this.sendUsageMessage(sender);
         }
