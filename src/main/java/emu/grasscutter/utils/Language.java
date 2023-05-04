@@ -314,38 +314,49 @@ public final class Language {
         return getTextMapKey((int) hash);
     }
 
+    /**
+     * Loads game text maps with caching.
+     */
     public static void loadTextMaps() {
-        // Check system timestamps on cache and resources
-        try {
-            long cacheModified = Files.getLastModifiedTime(TEXTMAP_CACHE_PATH).toMillis();
+        Language.loadTextMaps(false);
+    }
 
+    /**
+     * Loads game language data (text maps).
+     *
+     * @param bypassCache Should the cache be bypassed?
+     */
+    public static void loadTextMaps(boolean bypassCache) {
+        // Check system timestamps on cache and resources
+        if (!bypassCache) try {
+            long cacheModified = Files.getLastModifiedTime(TEXTMAP_CACHE_PATH).toMillis();
             long textmapsModified =
-                    Files.list(getResourcePath("TextMap"))
-                            .filter(path -> path.toString().endsWith(".json"))
-                            .map(
-                                    path -> {
-                                        try {
-                                            return Files.getLastModifiedTime(path).toMillis();
-                                        } catch (Exception ignored) {
-                                            Grasscutter.getLogger()
-                                                    .debug("Exception while checking modified time: ", path);
-                                            return Long.MAX_VALUE; // Don't use cache, something has gone wrong
-                                        }
-                                    })
-                            .max(Long::compare)
-                            .get();
+                Files.list(getResourcePath("TextMap"))
+                    .filter(path -> path.toString().endsWith(".json"))
+                    .map(
+                        path -> {
+                            try {
+                                return Files.getLastModifiedTime(path).toMillis();
+                            } catch (Exception ignored) {
+                                Grasscutter.getLogger()
+                                    .debug("Exception while checking modified time: ", path);
+                                return Long.MAX_VALUE; // Don't use cache, something has gone wrong
+                            }
+                        })
+                    .max(Long::compare)
+                    .get();
 
             Grasscutter.getLogger()
-                    .debug(
-                            "Cache modified %d, textmap modified %d".formatted(cacheModified, textmapsModified));
+                .debug(
+                    "Cache modified %d, textmap modified %d".formatted(cacheModified, textmapsModified));
             if (textmapsModified < cacheModified) {
                 // Try loading from cache
                 Grasscutter.getLogger().debug("Loading cached 'TextMaps'...");
                 textMapStrings = loadTextMapsCache();
                 return;
             }
-        } catch (Exception e) {
-            Grasscutter.getLogger().debug("Exception while checking cache: ", e);
+        } catch (Exception exception) {
+            Grasscutter.getLogger().error("Error loading textmaps cache: " + exception.toString());
         }
 
         // Regenerate cache
