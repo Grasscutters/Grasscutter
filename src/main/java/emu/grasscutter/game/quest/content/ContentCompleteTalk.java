@@ -10,11 +10,16 @@ import lombok.val;
 
 @QuestValueContent(QUEST_CONTENT_COMPLETE_TALK)
 public class ContentCompleteTalk extends BaseContent {
-
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        return condition.getParam()[0] == params[0] &&
-            GameData.getTalkConfigDataMap().get(condition.getParam()[0]) != null;
+        val talkId = condition.getParam()[0];
+        val checkMainQuest = quest.getOwner().getQuestManager().getMainQuestByTalkId(talkId);
+        if (checkMainQuest == null) {
+            return false;
+        }
+
+        val talkData = checkMainQuest.getTalks().get(talkId);
+        return talkData != null;
     }
 }
