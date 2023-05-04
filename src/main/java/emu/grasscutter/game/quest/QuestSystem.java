@@ -45,11 +45,11 @@ public class QuestSystem extends BaseGameSystem {
         var handlerClasses = reflections.getSubTypesOf(clazz);
 
         for (var obj : handlerClasses) {
-            this.registerPacketHandler(map, obj);
+            this.registerHandler(map, obj);
         }
     }
 
-    public <T> void registerPacketHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
+    public <T> void registerHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
         try {
             int value = 0;
             if (handlerClass.isAnnotationPresent(QuestValueExec.class)) {

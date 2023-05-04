@@ -26,9 +26,11 @@ public class ConfigContainer {
      * Version 5 - 'questing' has been changed from a boolean
      *             to a container of options ('questOptions').
      *             This field will be removed in future versions.
+     * Version 6 - 'questing' has been fully replaced with 'questOptions'.
+     *             The field for 'legacyResources' has been removed.
      */
     private static int version() {
-        return 5;
+        return 6;
     }
 
     /**
@@ -245,11 +247,8 @@ public class ConfigContainer {
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
-        @SerializedName("questOptions")
+        @SerializedName(value = "questing", alternate = "questOptions")
         public Questing questing = new Questing();
-        @Deprecated(forRemoval = true)
-        @SerializedName("questing")
-        public boolean questingEnabled = true;
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
@@ -281,8 +280,6 @@ public class ConfigContainer {
         public static class Questing {
             /* Should questing behavior be used? */
             public boolean enabled = true;
-            /* Are older resources being used? */
-            public boolean legacyResources = false;
         }
     }
 

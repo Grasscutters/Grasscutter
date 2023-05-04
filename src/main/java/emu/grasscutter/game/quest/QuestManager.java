@@ -43,26 +43,6 @@ public class QuestManager extends BasePlayerManager {
         eventExecutor = new ThreadPoolExecutor(4, 4,
             60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
             FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
-
-        var options = GAME_OPTIONS.questing;
-        if (options.enabled) {
-            if (options.legacyResources) {
-                Grasscutter.getLogger().debug("You have 'legacyResources' enabled.");
-                Grasscutter.getLogger().debug("This assumes you are using older (3.2) QuestExcelConfigData and MainQuestExcelConfigData.");
-                Grasscutter.getLogger().debug("The game will *break* if you are not using these older excels.");
-                Grasscutter.getLogger().debug("Questing should feel more natural in this mode.");
-            } else {
-                Grasscutter.getLogger().debug("You have 'legacyResources' disabled.");
-                Grasscutter.getLogger().debug("This should be enabled if you are using 3.3 or newer resources.");
-                Grasscutter.getLogger().debug("The game can potentially encounter issues in this mode.");
-            }
-        }
-
-        //noinspection removal
-        if (GAME_OPTIONS.questingEnabled) {
-            Grasscutter.getLogger().warn("Please upgrade your configuration. 'questing' is being deprecated in favor of 'questOptions'.");
-            Grasscutter.getLogger().info("To remove this message until removal, use 'questingEnabled' instead of 'questOptions.enabled'.");
-        }
     }
     /*
         On SetPlayerBornDataReq, the server sends FinishedParentQuestNotify, with this exact
@@ -128,7 +108,9 @@ public class QuestManager extends BasePlayerManager {
 
                        // These quests currently have bugged triggers.
                 30700, // Quest which is responsible for unlocking Crash Course.
-                30800  // Quest which is responsible for unlocking Sparks Amongst the Pages.
+                30800, // Quest which is responsible for unlocking Sparks Amongst the Pages.
+
+                47001, 47002, 47003, 47004
             ));
         }
     }
@@ -146,11 +128,7 @@ public class QuestManager extends BasePlayerManager {
         // 3. ServerCondMeetQuestListUpdateNotify
 
         if (this.isQuestingEnabled()) {
-            if (GAME_OPTIONS.questing.legacyResources) {
-                this.enableQuests(); // This assumes 3.2 resources, where all conditions are known.
-            } else {
-                this.addQuest(35104); // This assumes resources greater than 3.2, where quests might have unknown conditions.
-            }
+            this.enableQuests();
         }
 
         // this.getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
@@ -447,6 +425,14 @@ public class QuestManager extends BasePlayerManager {
             }
 
             if (shouldAccept) {
+                Grasscutter.getLogger().debug("Quest {} was accepted because {} {} met.",
+                    questData.getId(),
+                    questData.getAcceptCond().stream()
+                        .map(p -> p.getType().name())
+                        .collect(Collectors.joining(", ")),
+                    questData.getAcceptCond()
+                        .size() > 1 ? "were" : "was");
+
                 GameQuest quest = owner.getQuestManager().addQuest(questData);
                 Grasscutter.getLogger().debug("Added quest {} result {}", questData.getSubId(), quest != null);
             }
