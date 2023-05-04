@@ -9,22 +9,24 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq;
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public final class GadgetWorktop extends GadgetContent {
-    private IntSet worktopOptions;
+    private Set<Integer> worktopOptions;
     private WorktopWorktopOptionHandler handler;
 
     public GadgetWorktop(EntityGadget gadget) {
         super(gadget);
     }
 
-    public IntSet getWorktopOptions() {
+    public Set<Integer> getWorktopOptions() {
         if (this.worktopOptions == null) {
-            this.worktopOptions = new IntOpenHashSet();
+            this.worktopOptions = new HashSet<>();
         }
+
         return worktopOptions;
     }
 
