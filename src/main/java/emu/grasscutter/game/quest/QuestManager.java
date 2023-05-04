@@ -425,14 +425,6 @@ public class QuestManager extends BasePlayerManager {
             }
 
             if (shouldAccept) {
-                Grasscutter.getLogger().debug("Quest {} was accepted because {} {} met.",
-                    questData.getId(),
-                    questData.getAcceptCond().stream()
-                        .map(p -> p.getType().name())
-                        .collect(Collectors.joining(", ")),
-                    questData.getAcceptCond()
-                        .size() > 1 ? "were" : "was");
-
                 GameQuest quest = owner.getQuestManager().addQuest(questData);
                 Grasscutter.getLogger().debug("Added quest {} result {}", questData.getSubId(), quest != null);
             }
