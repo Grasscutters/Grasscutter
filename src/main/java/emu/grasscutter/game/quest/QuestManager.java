@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 
 import static emu.grasscutter.GameConstants.DEBUG;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.SERVER;
 
 public class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
@@ -115,8 +116,16 @@ public class QuestManager extends BasePlayerManager {
         }
     }
 
-    // TODO store user value set on enable
+    /**
+     * Checks if questing can be enabled.
+     */
     public boolean isQuestingEnabled() {
+        // Check if scripts are enabled.
+        if (!SERVER.game.enableScriptInBigWorld) {
+            Grasscutter.getLogger().warn("Questing is disabled without scripts enabled.");
+            return false;
+        }
+
         return GAME_OPTIONS.questing.enabled;
     }
 
