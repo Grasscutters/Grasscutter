@@ -331,6 +331,12 @@ public class Player {
         if (this.playerGameTime == gameTime) return;
         this.playerGameTime = gameTime;
 
+        // Trigger the script event for game time update.
+        var questManager = this.getQuestManager();
+        questManager.queueEvent(QuestCond.QUEST_COND_IS_DAYTIME);
+        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_GT_EQ);
+        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_PASS_DAY);
+
         this.save();
     }
 
