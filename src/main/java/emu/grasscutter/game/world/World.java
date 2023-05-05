@@ -446,7 +446,7 @@ public class World implements Iterable<Player> {
         return currentWorldTime;
     }
 
-    /** Returns the current in game days world time in ingame minutes (0-1439) */
+    /** Returns the current in game days world time in in-game minutes (0-1439) */
     public int getGameTime() {
         return (int) (getTotalGameTimeMinutes() % 1440);
     }
@@ -492,6 +492,22 @@ public class World implements Iterable<Player> {
     }
 
     /**
+     * Changes the game time of the world.
+     *
+     * @param gameTime The time in game minutes.
+     */
+    public void changeTime(long gameTime) {
+        this.currentWorldTime = gameTime;
+
+        // Trigger script events.
+        this.players.forEach(
+            player ->
+                player
+                    .getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
+    }
+
+    /**
      * Changes the time of the world.
      *
      * @param time The new time in minutes.
@@ -512,8 +528,7 @@ public class World implements Iterable<Player> {
                 player ->
                         player
                                 .getQuestManager()
-                                .queueEvent(
-                                        QuestContent.QUEST_CONTENT_GAME_TIME_TICK, this.getGameTimeHours(), days));
+                                .queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
     }
 
     @Override

@@ -9,7 +9,6 @@ import lombok.val;
 
 @QuestValueContent(QUEST_CONTENT_GAME_TIME_TICK)
 public class ContentGameTimeTick extends BaseContent {
-
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {

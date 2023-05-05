@@ -171,17 +171,15 @@ public class QuestManager extends BasePlayerManager {
         var world = this.getPlayer().getWorld();
         if (world == null) return;
 
-        checkTimeVars();
+        this.checkTimeVars();
         // trigger game time tick for quests
-        queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK,
-            world.getGameTimeHours() , // hours
-            0);
+        this.queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK);
     }
 
     private void checkTimeVars() {
         val currentDays = player.getWorld().getTotalGameTimeDays();
         val currentHours = player.getWorld().getTotalGameTimeHours();
-        boolean checkDays =  currentDays != lastDayCheck;
+        boolean checkDays = currentDays != lastDayCheck;
         boolean checkHours = currentHours != lastHourCheck;
 
         if(!checkDays && !checkHours){

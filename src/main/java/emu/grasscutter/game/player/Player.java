@@ -331,6 +331,11 @@ public class Player {
         if (this.playerGameTime == gameTime) return;
         this.playerGameTime = gameTime;
 
+        // If the player is the host of the world, update the game time as well.
+        if (this.getWorld().getHost() == this) {
+            this.getWorld().changeTime(gameTime);
+        }
+
         // Trigger the script event for game time update.
         var questManager = this.getQuestManager();
         questManager.queueEvent(QuestCond.QUEST_COND_IS_DAYTIME);
