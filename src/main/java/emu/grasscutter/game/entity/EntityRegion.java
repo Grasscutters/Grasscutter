@@ -15,7 +15,7 @@ public class EntityRegion extends GameEntity {
     private final Position position;
     private final Set<Integer> entities; // Ids of entities inside this region
     private final SceneRegion metaRegion;
-    private boolean hasNewEntities;
+    private boolean entityEnter;
     private boolean entityLeave;
 
     public EntityRegion(Scene scene, SceneRegion region) {
@@ -35,20 +35,18 @@ public class EntityRegion extends GameEntity {
         return this.metaRegion.config_id;
     }
 
+    public void resetNewEntities() {
+        this.entityEnter = false;
+        this.entityLeave = false;
+    }
+
     public void addEntity(GameEntity entity) {
         if (this.getEntities().contains(entity.getId())) {
             return;
         }
+
         this.getEntities().add(entity.getId());
-        this.hasNewEntities = true;
-    }
-
-    public boolean hasNewEntities() {
-        return hasNewEntities;
-    }
-
-    public void resetNewEntities() {
-        hasNewEntities = false;
+        this.entityEnter = true;
     }
 
     public void removeEntity(int entityId) {
@@ -57,16 +55,15 @@ public class EntityRegion extends GameEntity {
     }
 
     public void removeEntity(GameEntity entity) {
-        this.getEntities().remove(entity.getId());
-        this.entityLeave = true;
+        this.removeEntity(entity.getId());
     }
 
-    public boolean entityLeave() {
+    public boolean entityHasEntered() {
+        return this.entityEnter;
+    }
+
+    public boolean entityHasLeft() {
         return this.entityLeave;
-    }
-
-    public void resetEntityLeave() {
-        this.entityLeave = false;
     }
 
     @Override
