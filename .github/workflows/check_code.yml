@@ -1,27 +1,23 @@
-name: "Build"
+name: "Lint & Format Code"
+
 on:
   workflow_dispatch: ~
   push:
     paths:
-      - "**.java"
+      - "src/main/**.java"
+      - "**.json"
     branches:
-      - "stable"
-      - "development"
       - "unstable"
       - "unstable-quests"
-  pull_request:
-    paths:
-      - "**.java"
-    types:
-      - opened
-      - synchronize
-      - reopened
+
 jobs:
-  Build-Server-Jar:
+  Format-Code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
@@ -37,10 +33,16 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Run Gradle
-        run: ./gradlew && ./gradlew jar
-      - name: Upload build
-        uses: actions/upload-artifact@v3
-        with:
-          name: Grasscutter
-          path: grasscutter-*.jar
+      - name: Format Code
+        run: ./gradlew && ./gradlew spotlessApply
+
+      - run: git config --global user.name "github-actions"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git stash
+      - run: git checkout development
+      - run: git stash pop || true
+
+      - name: Commit Code Changes
+        run: git add -u && git commit -m 'Format code [skip actions]' || true
+      - name: Push Code Changes
+        run: git push --set-upstream --force origin development
