@@ -69,9 +69,7 @@ public final class GadgetWorktop extends GadgetContent {
     }
 
     public boolean onSelectWorktopOption(SelectWorktopOptionReq req) {
-        if (this.handler != null) {
-            this.handler.onSelectWorktopOption(this, req.getOptionId());
-        }
-        return false;
+        return this.handler != null && this.handler
+            .onSelectWorktopOption(this, req.getOptionId());
     }
 }
