@@ -3,7 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseAddCurHp extends ItemUseInt {
-    private String icon;
+    private final String icon;
 
     public ItemUseAddCurHp(String[] useParam) {
         super(useParam);

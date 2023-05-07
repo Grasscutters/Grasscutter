@@ -61,12 +61,12 @@ public final class Scene {
     @Getter private final BlossomManager blossomManager;
     private final HashSet<Integer> unlockedForces;
     private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
-    private long startWorldTime;
+    private final long startWorldTime;
     @Getter @Setter DungeonManager dungeonManager;
     @Getter Int2ObjectMap<Route> sceneRoutes;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
     @Getter @Setter private boolean dontDestroyWhenEmpty;
-    @Getter private SceneScriptManager scriptManager;
+    @Getter private final SceneScriptManager scriptManager;
     @Getter @Setter private WorldChallenge challenge;
     @Getter private List<DungeonSettleListener> dungeonSettleListeners;
     @Getter @Setter private int prevScene; // Id of the previous scene

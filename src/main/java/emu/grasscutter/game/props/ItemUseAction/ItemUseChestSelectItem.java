@@ -3,7 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseChestSelectItem extends ItemUseSelectItems {
-    private int[] optionItemCounts;
+    private final int[] optionItemCounts;
 
     public ItemUseChestSelectItem(String[] useParam) {
         String[] options = useParam[0].split(",");

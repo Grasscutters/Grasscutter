@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OpenConfigEntry {
-    private String name;
+    private final String name;
     private String[] addAbilities;
     private int extraTalentIndex;
     private SkillPointModifier[] skillPointModifiers;
