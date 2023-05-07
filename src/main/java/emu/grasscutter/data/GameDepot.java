@@ -19,17 +19,17 @@ import lombok.Setter;
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[] {50, 500}; // Scales
 
-    private static final Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot =
+    private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot =
             new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot =
+    private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot =
             new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot =
+    private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot =
             new Int2ObjectOpenHashMap<>();
 
     @Getter @Setter private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
 
     @Getter
-    private static final HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists =
+    private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists =
             new HashMap<>();
 
     @Getter @Setter private static BlossomConfig blossomConfig;

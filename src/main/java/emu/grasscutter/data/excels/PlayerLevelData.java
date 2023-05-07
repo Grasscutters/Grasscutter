@@ -10,7 +10,7 @@ public class PlayerLevelData extends GameResource {
     private int level;
     private int exp;
     private int rewardId;
-    private final int expeditionLimitAdd = 0;
+    private int expeditionLimitAdd = 0;
     private int unlockWorldLevel;
     private long unlockDescTextMapHash;
 

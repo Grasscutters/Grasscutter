@@ -36,10 +36,10 @@ public class SpawnDataEntry {
     }
 
     public static class GridBlockId {
-        @Getter private final int sceneId;
-        @Getter private final int scale;
-        @Getter private final int x;
-        @Getter private final int z;
+        @Getter private int sceneId;
+        @Getter private int scale;
+        @Getter private int x;
+        @Getter private int z;
 
         public GridBlockId(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;

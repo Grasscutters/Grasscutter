@@ -36,10 +36,10 @@ public class ScriptLoader {
     @Getter private static ScriptLib scriptLib;
     @Getter private static LuaValue scriptLibLua;
     /** suggest GC to remove it if the memory is less */
-    private static final Map<String, SoftReference<CompiledScript>> scriptsCache =
+    private static Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
-    private static final Map<Integer, SoftReference<SceneMeta>> sceneMetaCache =
+    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache =
             new ConcurrentHashMap<>();
 
     public static synchronized void init() throws Exception {

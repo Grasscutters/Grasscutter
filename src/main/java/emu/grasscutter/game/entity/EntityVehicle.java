@@ -42,7 +42,7 @@ public class EntityVehicle extends EntityBaseGadget {
     @Getter private final int gadgetId;
 
     @Getter @Setter private float curStamina;
-    @Getter private final List<VehicleMember> vehicleMembers;
+    @Getter private List<VehicleMember> vehicleMembers;
     @Nullable @Getter private ConfigEntityGadget configGadget;
 
     public EntityVehicle(

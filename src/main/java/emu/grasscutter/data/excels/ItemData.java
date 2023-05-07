@@ -31,7 +31,7 @@ public class ItemData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
 
-    private final int stackLimit = 1;
+    private int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
     private String effectName;
@@ -43,7 +43,7 @@ public class ItemData extends GameResource {
     private int[] destroyReturnMaterialCount;
 
     // Enums
-    private final ItemType itemType = ItemType.ITEM_NONE;
+    private ItemType itemType = ItemType.ITEM_NONE;
     private MaterialType materialType = MaterialType.MATERIAL_NONE;
     private EquipType equipType = EquipType.EQUIP_NONE;
     private String effectType;
