@@ -9,7 +9,7 @@ import io.javalin.http.Context;
 import java.util.List;
 
 final class GachaMappingRequestHandler implements DocumentationHandler {
-    private final List<String> gachaJsons;
+    private List<String> gachaJsons;
 
     GachaMappingRequestHandler() {
         this.gachaJsons = Tools.createGachaMappingJsons();

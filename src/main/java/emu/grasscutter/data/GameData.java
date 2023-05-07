@@ -477,8 +477,8 @@ public final class GameData {
     private static final Int2IntMap trialAvatarIndexIdTrialActivityDataDataMap =
             new Int2IntOpenHashMap();
 
-    private static final Map<Integer, List<Integer>> fetters = new HashMap<>();
-    private static final Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+    private static Map<Integer, List<Integer>> fetters = new HashMap<>();
+    private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
 
     // Getters with different names that stay for now
     public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {

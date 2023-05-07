@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify;
 
 public class PacketPrivateChatNotify extends BasePacket {
-    private final ChatInfo info;
+    private ChatInfo info;
 
     public PacketPrivateChatNotify(int senderId, int recvId, String message) {
         super(PacketOpcodes.PrivateChatNotify);

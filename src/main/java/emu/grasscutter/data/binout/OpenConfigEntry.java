@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OpenConfigEntry {
-    private final String name;
+    private String name;
     private String[] addAbilities;
     private int extraTalentIndex;
     private SkillPointModifier[] skillPointModifiers;
@@ -52,8 +52,8 @@ public class OpenConfigEntry {
     }
 
     public static class SkillPointModifier {
-        private final int skillId;
-        private final int delta;
+        private int skillId;
+        private int delta;
 
         public SkillPointModifier(int skillId, int delta) {
             this.skillId = skillId;

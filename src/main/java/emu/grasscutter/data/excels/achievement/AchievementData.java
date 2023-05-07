@@ -18,7 +18,7 @@ public class AchievementData extends GameResource {
     private static final AtomicBoolean isDivided = new AtomicBoolean();
     private int goalId;
     private int preStageAchievementId;
-    private final Set<Integer> groupAchievementIdList = new HashSet<>();
+    private Set<Integer> groupAchievementIdList = new HashSet<>();
     private boolean isParent;
     private long titleTextMapHash;
     private long descTextMapHash;

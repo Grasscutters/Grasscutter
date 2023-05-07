@@ -177,7 +177,7 @@ public enum FightProperty {
                     FIGHT_PROP_MAX_HP,
                     FIGHT_PROP_CUR_ATTACK,
                     FIGHT_PROP_CUR_DEFENSE);
-    private static final Map<FightProperty, CompoundProperty> compoundProperties =
+    private static Map<FightProperty, CompoundProperty> compoundProperties =
             Map.ofEntries(
                     entry(
                             FIGHT_PROP_MAX_HP,
@@ -247,10 +247,10 @@ public enum FightProperty {
 
     @Getter
     public static class CompoundProperty {
-        private final FightProperty result;
-        private final FightProperty base;
-        private final FightProperty percent;
-        private final FightProperty flat;
+        private FightProperty result;
+        private FightProperty base;
+        private FightProperty percent;
+        private FightProperty flat;
 
         public CompoundProperty(
                 FightProperty result, FightProperty base, FightProperty percent, FightProperty flat) {

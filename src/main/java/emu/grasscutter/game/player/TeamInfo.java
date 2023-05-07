@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 public final class TeamInfo {
     private String name;
-    private final List<Integer> avatars;
+    private List<Integer> avatars;
 
     public TeamInfo() {
         this.name = "";

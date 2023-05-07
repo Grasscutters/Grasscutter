@@ -22,7 +22,7 @@ import java.util.Map;
         permission = "player.setstats",
         permissionTargeted = "player.setstats.others")
 public final class SetStatsCommand implements CommandHandler {
-    private final Map<String, Stat> stats;
+    private Map<String, Stat> stats;
 
     public SetStatsCommand() {
         this.stats = new HashMap<>();

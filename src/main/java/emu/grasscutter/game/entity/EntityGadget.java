@@ -66,7 +66,7 @@ public class EntityGadget extends EntityBaseGadget {
     private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
 
     @Getter @Setter private SceneGadget metaGadget;
-    @Nullable @Getter private ConfigEntityGadget configGadget;
+    @Nullable @Getter ConfigEntityGadget configGadget;
     @Getter @Setter private BaseRoute routeConfig;
 
     @Getter @Setter private int stopValue = 0; // Controller related, inited to zero

@@ -17,14 +17,14 @@ public class PlayerCodex {
     @Transient private Player player;
 
     // itemId is not codexId!
-    @Getter private final Set<Integer> unlockedWeapon;
-    @Getter private final Map<Integer, Integer> unlockedAnimal;
-    @Getter private final Set<Integer> unlockedMaterial;
-    @Getter private final Set<Integer> unlockedBook;
-    @Getter private final Set<Integer> unlockedTip;
-    @Getter private final Set<Integer> unlockedView;
+    @Getter private Set<Integer> unlockedWeapon;
+    @Getter private Map<Integer, Integer> unlockedAnimal;
+    @Getter private Set<Integer> unlockedMaterial;
+    @Getter private Set<Integer> unlockedBook;
+    @Getter private Set<Integer> unlockedTip;
+    @Getter private Set<Integer> unlockedView;
     @Getter private Set<Integer> unlockedReliquary;
-    @Getter private final Set<Integer> unlockedReliquarySuitCodex;
+    @Getter private Set<Integer> unlockedReliquarySuitCodex;
 
     public PlayerCodex() {
         this.unlockedWeapon = new HashSet<>();

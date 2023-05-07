@@ -13,12 +13,12 @@ import emu.grasscutter.server.http.objects.LoginResultJson;
  * The default Grasscutter authentication implementation. Allows all users to access any account.
  */
 public final class DefaultAuthentication implements AuthenticationSystem {
-    private final Authenticator<LoginResultJson> passwordAuthenticator;
-    private final Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
-    private final Authenticator<ComboTokenResJson> sessionKeyAuthenticator =
+    private Authenticator<LoginResultJson> passwordAuthenticator;
+    private Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
+    private Authenticator<ComboTokenResJson> sessionKeyAuthenticator =
             new SessionKeyAuthenticator();
-    private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
-    private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
+    private ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
+    private OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
 
     public DefaultAuthentication() {
         if (ACCOUNT.EXPERIMENTAL_RealPassword) {

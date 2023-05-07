@@ -28,7 +28,7 @@ public class PacketOpcodesUtils {
                     PacketOpcodes.PlayerGameTimeNotify,
                     PacketOpcodes.AvatarPropNotify,
                     PacketOpcodes.AvatarSatiationDataNotify);
-    private static final Int2ObjectMap<String> opcodeMap;
+    private static Int2ObjectMap<String> opcodeMap;
 
     static {
         opcodeMap = new Int2ObjectOpenHashMap<>();

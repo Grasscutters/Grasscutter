@@ -57,7 +57,7 @@ public class TsvUtils {
     private static final Function<String, Object> parseLong =
             value -> (long) Double.parseDouble(value); // Long::parseLong;
     private static final Map<Class<?>, Function<String, Object>> enumTypeParsers = new HashMap<>();
-    private static final Map<Type, Function<String, Object>> primitiveTypeParsers =
+    private static Map<Type, Function<String, Object>> primitiveTypeParsers =
             Map.ofEntries(
                     Map.entry(String.class, parseString),
                     Map.entry(Integer.class, parseInt),
@@ -72,7 +72,7 @@ public class TsvUtils {
                     Map.entry(boolean.class, Boolean::parseBoolean));
     private static final Map<Type, Function<String, Object>> typeParsers =
             new HashMap<>(primitiveTypeParsers);
-    private static final Map<Class<?>, Map<String, FieldParser>> cachedClassFieldMaps =
+    private static Map<Class<?>, Map<String, FieldParser>> cachedClassFieldMaps =
             new HashMap<>();
 
     @SuppressWarnings("unchecked")

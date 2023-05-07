@@ -37,12 +37,12 @@ public class World implements Iterable<Player> {
     @Getter private final List<Player> players;
     @Getter private final Int2ObjectMap<Scene> scenes;
 
-    @Getter private final int levelEntityId;
+    @Getter private int levelEntityId;
     private int nextEntityId = 0;
     private int nextPeerId = 0;
     private int worldLevel;
 
-    private final boolean isMultiplayer;
+    private boolean isMultiplayer;
 
     private long lastUpdateTime;
     @Getter private int tickCount = 0;
