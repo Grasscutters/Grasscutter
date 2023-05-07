@@ -100,6 +100,10 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
                                         + "-"
                                         + 18402);
 
+        if (teleportProperties.getDungeonId() != 0) {
+            proto.setDungeonId(teleportProperties.getDungeonId());
+        }
+
         this.setData(proto);
     }
 }

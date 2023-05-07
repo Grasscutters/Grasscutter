@@ -11,6 +11,7 @@ import lombok.Data;
 @Builder
 public class TeleportProperties {
     private final int sceneId;
+    @Builder.Default private final int dungeonId = 0;
     private final PlayerTeleportEvent.TeleportType teleportType;
     private final EnterReason enterReason;
     private Position teleportTo;

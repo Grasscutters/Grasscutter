@@ -275,14 +275,17 @@ public class World implements Iterable<Player> {
                         .teleportType(teleportType)
                         .enterReason(enterReason)
                         .teleportTo(teleportTo)
-                        .enterType(EnterType.ENTER_TYPE_JUMP);
+                        .enterType(EnterType.ENTER_TYPE_GOTO);
 
         val sceneData = GameData.getSceneDataMap().get(sceneId);
         if (dungeonData != null) {
             teleportProps
                     .teleportTo(dungeonData.getStartPosition())
                     .teleportRot(dungeonData.getStartRotation());
-            teleportProps.enterType(EnterType.ENTER_TYPE_DUNGEON).enterReason(EnterReason.DungeonEnter);
+            teleportProps
+                .enterType(EnterType.ENTER_TYPE_DUNGEON)
+                .enterReason(EnterReason.DungeonEnter);
+            teleportProps.dungeonId(dungeonData.getId());
         } else if (player.getSceneId() == sceneId) {
             teleportProps.enterType(EnterType.ENTER_TYPE_GOTO);
         } else if (sceneData != null && sceneData.getSceneType() == SceneType.SCENE_HOME_WORLD) {
@@ -326,7 +329,7 @@ public class World implements Iterable<Player> {
 
         var newScene = this.getSceneById(teleportProperties.getSceneId());
         newScene.addPlayer(player);
-        player.setAvatarsAbilityForScene(newScene);
+        player.getTeamManager().applyAbilities(newScene);
 
         // Dungeon
         // Dungeon system is handling this already
