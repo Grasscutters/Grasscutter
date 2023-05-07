@@ -10,8 +10,8 @@ import lombok.Setter;
 @Getter
 public class Achievement {
     @Setter private StatusOuterClass.Status status;
-    private final int id;
-    private final int totalProgress;
+    private int id;
+    private int totalProgress;
     @Setter private int curProgress;
     @Setter private int finishTimestampSec;
 
