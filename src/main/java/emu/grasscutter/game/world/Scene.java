@@ -510,7 +510,8 @@ public final class Scene {
 
         this.finishLoading();
         this.checkPlayerRespawn();
-        if (this.tickCount++ % 10 == 0) broadcastPacket(new PacketSceneTimeNotify(this));
+        if (this.tickCount++ % 10 == 0)
+            this.broadcastPacket(new PacketSceneTimeNotify(this));
     }
 
     /** Validates a player's current position. Teleports the player if the player is out of bounds. */
