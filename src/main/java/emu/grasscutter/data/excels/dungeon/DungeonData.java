@@ -13,7 +13,7 @@ import lombok.Getter;
 @ResourceType(name = "DungeonExcelConfigData.json")
 public class DungeonData extends GameResource {
 
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private int id;
 
     @Getter private int sceneId;

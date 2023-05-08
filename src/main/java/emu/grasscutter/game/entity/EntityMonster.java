@@ -40,12 +40,12 @@ import java.util.Optional;
 import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_MONSTER_HP_CHANGE;
 
 public class EntityMonster extends GameEntity {
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Int2FloatOpenHashMap fightProperties;
 
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position position;
-    @Getter(onMethod = @__(@Override))
+    @Getter(onMethod_ = @Override)
     private final Position rotation;
     @Getter private final MonsterData monsterData;
     @Getter private final Position bornPos;
