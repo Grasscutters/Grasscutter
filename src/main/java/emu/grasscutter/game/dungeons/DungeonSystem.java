@@ -10,6 +10,8 @@ import emu.grasscutter.game.dungeons.handlers.DungeonBaseHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
@@ -43,11 +45,11 @@ public class DungeonSystem extends BaseGameSystem {
         var handlerClasses = reflections.getSubTypesOf(clazz);
 
         for (var obj : handlerClasses) {
-            this.registerPacketHandler(map, obj);
+            this.registerHandler(map, obj);
         }
     }
 
-    public <T> void registerPacketHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
+    public <T> void registerHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
         try {
             DungeonValue opcode = handlerClass.getAnnotation(DungeonValue.class);
 
@@ -178,5 +180,6 @@ public class DungeonSystem extends BaseGameSystem {
 
         // Transfer player back to world
         player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
+        player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
     }
 }

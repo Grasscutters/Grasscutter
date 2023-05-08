@@ -1,0 +1,30 @@
+.CommandsPage {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--background-color);
+    flex-direction: column;
+
+    padding: 24px;
+}
+
+.CommandsPage_Title {
+    max-width: 275px;
+    max-height: 60px;
+
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.CommandsPage_List {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    margin-bottom: 28px;
+    overflow-y: scroll;
+}

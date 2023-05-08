@@ -1,0 +1,29 @@
+.HomeButton {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    max-width: 256px;
+    max-height: 256px;
+
+    background-color: var(--secondary-color);
+
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 10px;
+}
+
+.HomeButton_Icon {
+    max-width: 128px;
+    max-height: 128px;
+}
+
+.HomeButton_Label {
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;
+    font-style: normal;
+}

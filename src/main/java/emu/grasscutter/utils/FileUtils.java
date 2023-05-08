@@ -209,7 +209,7 @@ public final class FileUtils {
             return is.readAllBytes();
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to read resource: " + resourcePath);
-            exception.printStackTrace();
+            Grasscutter.getLogger().debug("Failed to load resource: " + resourcePath, exception);
         }
 
         return new byte[0];

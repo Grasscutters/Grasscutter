@@ -73,6 +73,9 @@ mongod.exe
 gacha-mapping.js
 mappings.js
 BuildConfig.java
+data/hk4e/announcement/
+
+src/main/resources/handbook.html
 
 # lombok
 /.apt_generated/
@@ -80,7 +83,6 @@ BuildConfig.java
 # macOS
 .DS_Store
 .directory
-data/hk4e/announcement/
 
 # Hotswap Agent
 hotswap-agent.properties

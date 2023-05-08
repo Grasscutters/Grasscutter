@@ -1,10 +1,14 @@
 package emu.grasscutter;
 
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.SparseSet;
 import emu.grasscutter.utils.Utils;
 import java.util.Arrays;
 
 public final class GameConstants {
+    public static String VERSION = "3.6.0";
+    public static final boolean DEBUG = true;
+
     public static final int DEFAULT_TEAMS = 4;
     public static final int MAX_TEAMS = 10;
     public static final int MAIN_CHARACTER_MALE = 10000005;
@@ -28,9 +32,19 @@ public final class GameConstants {
         "Avatar_Component_Initializer",
         "Avatar_FallAnthem_Achievement_Listener"
     };
+    public static final SparseSet ILLEGAL_WEAPONS = new SparseSet("""
+        10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
+        13503, 13506, 14411, 14503, 14505, 14508, 15504-15506
+        """);
+    public static final SparseSet ILLEGAL_RELICS = new SparseSet("""
+        20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554
+        """);
+    public static final SparseSet ILLEGAL_ITEMS = new SparseSet("""
+        100086, 100087, 100100-101000, 101106-101110, 101306, 101500-104000,
+        105001, 105004, 106000-107000, 107011, 108000, 109000-110000,
+        115000-130000, 200200-200899, 220050, 220054
+        """);
     public static final int[] DEFAULT_ABILITY_HASHES =
             Arrays.stream(DEFAULT_ABILITY_STRINGS).mapToInt(Utils::abilityHash).toArray();
     public static final int DEFAULT_ABILITY_NAME = Utils.abilityHash("Default");
-    public static String VERSION = "3.6.0";
-    public static final boolean DEBUG = true;
 }

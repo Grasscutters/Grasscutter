@@ -21,6 +21,7 @@ import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
+import emu.grasscutter.server.http.documentation.HandbookHandler;
 import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.handlers.GenericHandler;
@@ -136,6 +137,7 @@ public final class Grasscutter {
         httpServer.addRouter(DispatchHandler.class);
         httpServer.addRouter(GachaHandler.class);
         httpServer.addRouter(DocumentationServerHandler.class);
+        httpServer.addRouter(HandbookHandler.class);
 
         // Start servers.
         var runMode = Grasscutter.getRunMode();

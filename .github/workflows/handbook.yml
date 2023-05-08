@@ -1,0 +1,82 @@
+name: "Handbook"
+
+on:
+  workflow_dispatch: ~
+  push:
+    paths:
+      - "src/handbook/**.tsx"
+    branches:
+      - "development"
+      - "unstable"
+  pull_request:
+    paths:
+      - "src/handbook/**.tsx"
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  Lint-Code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        working-directory: src/handbook
+        run: npm install --force
+      - name: Run linter
+        working-directory: src/handbook
+        run: npm run lint
+
+      - run: git config --global user.name "github-actions"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Commit changes
+        if: ${{ github.event_name == 'push' }}
+        run: git add -u && git commit -m "Lint Code [skip actions]" || true
+      - name: Push changes
+        if: ${{ github.event_name == 'push' }}
+        run: git push --set-upstream --force origin ${{ github.ref }}
+
+  Build-Handbook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        working-directory: src/handbook
+        run: npm install --force
+      - name: Build handbook
+        working-directory: src/handbook
+        run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: Handbook
+          path: src/handbook/dist/*.html

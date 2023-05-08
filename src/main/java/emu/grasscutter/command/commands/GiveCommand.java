@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 
+import static emu.grasscutter.GameConstants.*;
 import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
@@ -42,18 +43,6 @@ public final class GiveCommand implements CommandHandler {
         Map.entry(constellationRegex, GiveItemParameters::setConstellation),
         Map.entry(skillLevelRegex, GiveItemParameters::setSkillLevel)
     );
-    private static final SparseSet illegalWeaponIds = new SparseSet("""
-        10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
-        13503, 13506, 14411, 14503, 14505, 14508, 15504-15506
-        """);
-    private static final SparseSet illegalRelicIds = new SparseSet("""
-        20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554
-        """);
-    private static final SparseSet illegalItemIds = new SparseSet("""
-        100086, 100087, 100100-101000, 101106-101110, 101306, 101500-104000,
-        105001, 105004, 106000-107000, 107011, 108000, 109000-110000,
-        115000-130000, 200200-200899, 220050, 220054
-        """);
 
     private static Avatar makeAvatar(GiveItemParameters param) {
         return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation, param.skillLevel);
@@ -231,7 +220,7 @@ public final class GiveCommand implements CommandHandler {
         for (ItemData itemdata : GameData.getItemDataMap().values()) {
             int id = itemdata.getId();
             if (id < 100_000) continue;  // Nothing meaningful below this
-            if (illegalItemIds.contains(id)) continue;
+            if (ILLEGAL_ITEMS.contains(id)) continue;
             if (itemdata.isEquip()) continue;
 
             GameItem item = new GameItem(itemdata);
@@ -251,7 +240,7 @@ public final class GiveCommand implements CommandHandler {
         for (ItemData itemdata : GameData.getItemDataMap().values()) {
             int id = itemdata.getId();
             if (id < 11100 || id > 16000) continue;  // All extant weapons are within this range
-            if (illegalWeaponIds.contains(id)) continue;
+            if (ILLEGAL_WEAPONS.contains(id)) continue;
             if (!itemdata.isEquip()) continue;
             if (itemdata.getItemType() != ItemType.ITEM_WEAPON) continue;
 
@@ -333,7 +322,7 @@ public final class GiveCommand implements CommandHandler {
             if (param.lvl < 0) param.lvl = 0;
             if (param.lvl > 20) param.lvl = 20;
             param.lvl += 1;
-            if (illegalRelicIds.contains(param.id))
+            if (ILLEGAL_RELICS.contains(param.id))
                 CommandHandler.sendTranslatedMessage(sender, "commands.give.illegal_relic");
         } else {
             // Suitable for Avatars and Weapons

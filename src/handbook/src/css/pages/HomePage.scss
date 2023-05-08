@@ -1,0 +1,151 @@
+.HomePage {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--background-color);
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+    }
+}
+
+.HomePage_Top {
+    display: flex;
+    width: 100%;
+    height: 80%;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.HomePage_Title {
+    margin-top: 31px;
+    margin-bottom: 15px;
+}
+
+.HomePage_Buttons {
+    width: 100%;
+    height: 40%;
+
+    max-width: 1376px;
+    max-height: 256px;
+
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.HomePage_Bottom {
+    display: flex;
+
+    height: 50%;
+    max-height: 125px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.HomePage_Box {
+    display: flex;
+    background-color: var(--secondary-color);
+}
+
+.HomePage_Disclaimer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+
+    width: 50%;
+    height: 100%;
+    max-width: 630px;
+    max-height: 93px;
+
+    margin: 0 0 0 60px;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding: 11px;
+
+    :nth-child(1) {
+        font-size: 24px;
+        max-height: 30px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    p {
+        font-size: 18px;
+        max-height: 40px;
+    }
+}
+
+.HomePage_Discord {
+    max-height: 40px;
+    max-width: 150px;
+
+    gap: 8px;
+    align-self: center;
+    align-items: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        max-width: 44px;
+        max-height: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.HomePage_Text {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+
+    max-width: 300px;
+    max-height: 80px;
+
+    margin: 13px 60px 0 0;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding: 11px;
+}
+
+.HomePage_Credits {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    max-height: 18px;
+    padding-bottom: 5px;
+
+    :nth-child(1) {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    :nth-child(2) {
+        font-size: 10px;
+        align-self: center;
+    }
+}
+
+.HomePage_Links {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        color: var(--text-primary-color);
+        text-decoration: none;
+        padding-right: 10px;
+    }
+}

@@ -1,0 +1,54 @@
+html {
+    --background-color: #346b77;
+    --secondary-color: #418493;
+    --accent-color: #5abcb9;
+
+    --text-primary-color: #FFFFFF;
+
+    --legendary-color: #926d45;
+    --epic-color: #7b5c90;
+
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    #root {
+        height: 100%;
+        width: 100%;
+    }
+
+    * {
+        font-family: 'SDK_SC_Web', 'SDK_JP_Web', 'Poppins', sans-serif;
+    }
+
+    svg:focus {
+        outline: none;
+    }
+}
+
+.App {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
