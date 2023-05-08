@@ -422,7 +422,7 @@ public final class World implements Iterable<Player> {
         }
 
         // store updated world time every 60 seconds. (in-game hour)
-        if (this.tickCount % 60 == 0 && !this.timeLocked) {
+        if (this.tickCount % 60 == 0) {
             this.getHost().updatePlayerGameTime(this.currentWorldTime);
         }
 
@@ -494,7 +494,7 @@ public final class World implements Iterable<Player> {
      * @param gameTime The time in game minutes.
      */
     public void changeTime(long gameTime) {
-        this.currentWorldTime = gameTime;
+        if (!this.timeLocked) this.currentWorldTime = gameTime;
 
         // Trigger script events.
         this.players.forEach(
