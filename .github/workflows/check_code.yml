@@ -45,4 +45,4 @@ jobs:
       - name: Commit Code Changes
         run: git add -u && git commit -m 'Format code [skip actions]' || true
       - name: Push Code Changes
-        run: git push --set-upstream --force origin development
+        run: git push --set-upstream --force ${{ github.event.pull_request.base.ref }}
