@@ -36,6 +36,8 @@ public final class Configuration extends ConfigContainer {
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS =
             config.server.game.gameOptions.inventoryLimits;
+    public static final GameOptions.HandbookOptions HANDBOOK =
+            config.server.game.gameOptions.handbook;
     private static final String DATA_FOLDER = config.folderStructure.data;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;

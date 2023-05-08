@@ -252,6 +252,8 @@ public class ConfigContainer {
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
+        public HandbookOptions handbook = new HandbookOptions();
+
         public static class InventoryLimits {
             public int weapons = 2000;
             public int relics = 2000;
@@ -280,6 +282,13 @@ public class ConfigContainer {
         public static class Questing {
             /* Should questing behavior be used? */
             public boolean enabled = true;
+        }
+
+        public static class HandbookOptions {
+            public boolean enable = false;
+            public boolean allowCommands = true;
+            public int maxRequests = 10;
+            public int maxEntities = 100;
         }
     }
 
