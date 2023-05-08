@@ -38,6 +38,7 @@ public class ItemData extends GameResource {
     private int rank;
     private int weight;
     private int gadgetId;
+    private String icon;
 
     private int[] destroyReturnMaterial;
     private int[] destroyReturnMaterialCount;
