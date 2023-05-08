@@ -8,7 +8,6 @@ on:
       - "**.json"
     branches:
       - "unstable"
-      - "unstable-quests"
 
 jobs:
   Format-Code:
@@ -39,10 +38,10 @@ jobs:
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git stash
-      - run: git checkout development
+      - run: git checkout unstable
       - run: git stash pop || true
 
       - name: Commit Code Changes
         run: git add -u && git commit -m 'Format code [skip actions]' || true
       - name: Push Code Changes
-        run: git push --set-upstream --force ${{ github.event.pull_request.base.ref }}
+        run: git push --set-upstream --force origin unstable
