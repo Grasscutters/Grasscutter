@@ -17,7 +17,7 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_REFRESH_GROUP_MONSTER(7),
     QUEST_EXEC_SET_IS_FLYABLE(8),
     QUEST_EXEC_SET_IS_WEATHER_LOCKED(9), // missing
-    QUEST_EXEC_SET_IS_GAME_TIME_LOCKED(10), // missing
+    QUEST_EXEC_SET_IS_GAME_TIME_LOCKED(10),
     QUEST_EXEC_SET_IS_TRANSFERABLE(11), // missing, currently unused
     QUEST_EXEC_GRANT_TRIAL_AVATAR(12),
     QUEST_EXEC_OPEN_BORED(13), // missing, currently unused
