@@ -532,9 +532,6 @@ public final class World implements Iterable<Player> {
      */
     public void lockTime(boolean locked) {
         this.timeLocked = locked;
-
-        // Broadcast the state change.
-        this.broadcastPacket(new PacketClientLockGameTimeNotify(this));
     }
 
     @Override
