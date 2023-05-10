@@ -964,17 +964,6 @@ public final class Scene {
                 groupInstance = cachedInstance;
             }
 
-            // Load garbages
-            var garbageGadgets = group.getGarbageGadgets();
-
-            if (garbageGadgets != null) {
-                entities.addAll(
-                        garbageGadgets.stream()
-                                .map(g -> scriptManager.createGadget(group.id, group.block_id, g))
-                                .filter(Objects::nonNull)
-                                .toList());
-            }
-
             // Load suites
             // int suite = group.findInitSuiteIndex(0);
             this.getScriptManager()
