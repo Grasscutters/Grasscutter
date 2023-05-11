@@ -10,9 +10,12 @@ public final class PacketWindSeedClientNotify extends BasePacket {
     public PacketWindSeedClientNotify(byte[] compiledLua) {
         super(PacketOpcodes.WindSeedClientNotify);
 
-        this.setData(WindSeedClientNotify.newBuilder()
-            .setAreaNotify(AreaNotify.newBuilder()
-                .setAreaId(1).setAreaType(1)
-                .setAreaCode(ByteString.copyFrom(compiledLua))));
+        this.setData(
+                WindSeedClientNotify.newBuilder()
+                        .setAreaNotify(
+                                AreaNotify.newBuilder()
+                                        .setAreaId(1)
+                                        .setAreaType(1)
+                                        .setAreaCode(ByteString.copyFrom(compiledLua))));
     }
 }

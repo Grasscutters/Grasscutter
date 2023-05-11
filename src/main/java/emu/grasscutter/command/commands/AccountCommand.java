@@ -47,7 +47,7 @@ public final class AccountCommand implements CommandHandler {
                 if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     if (args.size() < 3) {
                         CommandHandler.sendMessage(
-                            sender, "EXPERIMENTAL_RealPassword requires a password argument");
+                                sender, "EXPERIMENTAL_RealPassword requires a password argument");
                         CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
                         return;
                     }
@@ -60,10 +60,10 @@ public final class AccountCommand implements CommandHandler {
                             CommandHandler.sendMessage(sender, translate(sender, "commands.account.invalid"));
                             if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                                 CommandHandler.sendMessage(
-                                    sender,
-                                    "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
+                                        sender,
+                                        "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
                                 CommandHandler.sendMessage(
-                                    sender, "Usage: account create <username> <password> [uid]");
+                                        sender, "Usage: account create <username> <password> [uid]");
                             }
                             return;
                         }
@@ -90,7 +90,7 @@ public final class AccountCommand implements CommandHandler {
                     account.save(); // Save account to database.
 
                     CommandHandler.sendMessage(
-                        sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));
+                            sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));
                 }
             }
             case "delete" -> {
@@ -106,7 +106,7 @@ public final class AccountCommand implements CommandHandler {
             case "resetpass" -> {
                 if (!Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     CommandHandler.sendMessage(
-                        sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
+                            sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
                     return;
                 }
                 if (args.size() != 3) {
@@ -128,23 +128,27 @@ public final class AccountCommand implements CommandHandler {
             }
             case "list" -> {
                 CommandHandler.sendMessage(sender, "Note: This command might take a while to complete.");
-                CommandHandler.sendMessage(sender,
-                    "Accounts: \n" + DatabaseManager.getAccountDatastore()
-                        .find(Account.class).stream()
-                        .map(acc -> "%s: %s (%s)".formatted(
-                            acc.getId(), acc.getUsername(),
-                            acc.getReservedPlayerUid() == 0 ?
-                                this.getPlayerUid(acc) :
-                                acc.getReservedPlayerUid()))
-                        .collect(Collectors.joining("\n"))
-                );
+                CommandHandler.sendMessage(
+                        sender,
+                        "Accounts: \n"
+                                + DatabaseManager.getAccountDatastore().find(Account.class).stream()
+                                        .map(
+                                                acc ->
+                                                        "%s: %s (%s)"
+                                                                .formatted(
+                                                                        acc.getId(),
+                                                                        acc.getUsername(),
+                                                                        acc.getReservedPlayerUid() == 0
+                                                                                ? this.getPlayerUid(acc)
+                                                                                : acc.getReservedPlayerUid()))
+                                        .collect(Collectors.joining("\n")));
             }
         }
     }
 
     /**
-     * Returns the UID of the player associated with the given account.
-     * If the player is not found, returns "no UID".
+     * Returns the UID of the player associated with the given account. If the player is not found,
+     * returns "no UID".
      *
      * @param account The account to get the UID of.
      * @return The UID of the player associated with the given account.

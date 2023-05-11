@@ -8,10 +8,9 @@ import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import emu.grasscutter.tools.Dumpers;
 import java.util.Map;
 import java.util.function.Function;
-
-import emu.grasscutter.tools.Dumpers;
 import org.slf4j.LoggerFactory;
 
 /** A parser for start-up arguments. */

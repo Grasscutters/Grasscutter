@@ -9,8 +9,6 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
-import lombok.AllArgsConstructor;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
 
 public interface Dumpers {
     // See `src/handbook/data/README.md` for attributions.
@@ -50,8 +49,8 @@ public interface Dumpers {
      */
     private static String miniEncode(Map<Integer, ?> dump) {
         return dump.entrySet().stream()
-            .map(entry -> entry.getKey() + "," + entry.getValue().toString())
-            .collect(Collectors.joining("\n"));
+                .map(entry -> entry.getKey() + "," + entry.getValue().toString())
+                .collect(Collectors.joining("\n"));
     }
 
     /**
@@ -66,25 +65,34 @@ public interface Dumpers {
 
         // Convert all registered commands to an info map.
         var dump = new HashMap<String, CommandInfo>();
-        commandMap.getAnnotationsAsList().forEach(command -> {
-            var description = Dumpers.commandDescription(locale, command);
-            var labels = new ArrayList<String>(){{
-                this.add(command.label());
-                this.addAll(List.of(command.aliases()));
-            }};
+        commandMap
+                .getAnnotationsAsList()
+                .forEach(
+                        command -> {
+                            var description = Dumpers.commandDescription(locale, command);
+                            var labels =
+                                    new ArrayList<String>() {
+                                        {
+                                            this.add(command.label());
+                                            this.addAll(List.of(command.aliases()));
+                                        }
+                                    };
 
-            // Add the command info to the list.
-            dump.put(command.label(), new CommandInfo(
-                labels, description, List.of(command.usage()), List.of(
-                command.permission(), command.permissionTargeted()),
-                command.targetRequirement()));
-        });
+                            // Add the command info to the list.
+                            dump.put(
+                                    command.label(),
+                                    new CommandInfo(
+                                            labels,
+                                            description,
+                                            List.of(command.usage()),
+                                            List.of(command.permission(), command.permissionTargeted()),
+                                            command.targetRequirement()));
+                        });
 
         try {
             // Create a file for the dump.
             var file = new File("commands.json");
-            if (file.exists() && !file.delete())
-                throw new RuntimeException("Failed to delete file.");
+            if (file.exists() && !file.delete()) throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
@@ -107,19 +115,25 @@ public interface Dumpers {
 
         // Convert all known avatars to an avatar map.
         var dump = new HashMap<Integer, AvatarInfo>();
-        GameData.getAvatarDataMap().forEach((id, avatar) -> {
-            var langHash = avatar.getNameTextMapHash();
-            dump.put(id, new AvatarInfo(
-                langHash == 0 ? avatar.getName() : Language.getTextMapKey(langHash).get(locale),
-                avatar.getQualityType().equals("QUALITY_PURPLE") ? Quality.EPIC : Quality.LEGENDARY
-            ));
-        });
+        GameData.getAvatarDataMap()
+                .forEach(
+                        (id, avatar) -> {
+                            var langHash = avatar.getNameTextMapHash();
+                            dump.put(
+                                    id,
+                                    new AvatarInfo(
+                                            langHash == 0
+                                                    ? avatar.getName()
+                                                    : Language.getTextMapKey(langHash).get(locale),
+                                            avatar.getQualityType().equals("QUALITY_PURPLE")
+                                                    ? Quality.EPIC
+                                                    : Quality.LEGENDARY));
+                        });
 
         try {
             // Create a file for the dump.
             var file = new File("avatars.csv");
-            if (file.exists() && !file.delete())
-                throw new RuntimeException("Failed to delete file.");
+            if (file.exists() && !file.delete()) throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
@@ -142,30 +156,35 @@ public interface Dumpers {
 
         // Convert all known items to an item map.
         var originalDump = new ArrayList<ItemInfo>();
-        GameData.getItemDataMap().forEach((id, item) -> originalDump.add(new ItemInfo(id,
-            Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
-            Quality.from(item.getRankLevel()), item.getItemType(),
-            item.getIcon().length() > 0 ? item.getIcon().substring(3) : ""
-        )));
+        GameData.getItemDataMap()
+                .forEach(
+                        (id, item) ->
+                                originalDump.add(
+                                        new ItemInfo(
+                                                id,
+                                                Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
+                                                Quality.from(item.getRankLevel()),
+                                                item.getItemType(),
+                                                item.getIcon().length() > 0 ? item.getIcon().substring(3) : "")));
 
         // Create a new dump with filtered duplicates.
         var names = new ArrayList<String>();
         var dump = new HashMap<Integer, ItemInfo>();
-        originalDump.forEach(item -> {
-            // Validate the item.
-            if (item.name.contains("[CHS]")) return;
-            if (names.contains(item.name)) return;
-            if (dump.containsKey(item.id)) return;
-            // Add the item to the dump.
-            names.add(item.name);
-            dump.put(item.id, item);
-        });
+        originalDump.forEach(
+                item -> {
+                    // Validate the item.
+                    if (item.name.contains("[CHS]")) return;
+                    if (names.contains(item.name)) return;
+                    if (dump.containsKey(item.id)) return;
+                    // Add the item to the dump.
+                    names.add(item.name);
+                    dump.put(item.id, item);
+                });
 
         try {
             // Create a file for the dump.
             var file = new File("items.csv");
-            if (file.exists() && !file.delete())
-                throw new RuntimeException("Failed to delete file.");
+            if (file.exists() && !file.delete()) throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
@@ -176,9 +195,7 @@ public interface Dumpers {
         }
     }
 
-    /**
-     * Dumps all scenes to a JSON file.
-     */
+    /** Dumps all scenes to a JSON file. */
     static void dumpScenes() {
         // Reload resources.
         ResourceLoader.loadAll();
@@ -186,14 +203,15 @@ public interface Dumpers {
 
         // Convert all known scenes to a scene map.
         var dump = new HashMap<Integer, SceneInfo>();
-        GameData.getSceneDataMap().forEach((id, scene) ->
-            dump.put(id, new SceneInfo(scene.getScriptData(), scene.getSceneType())));
+        GameData.getSceneDataMap()
+                .forEach(
+                        (id, scene) ->
+                                dump.put(id, new SceneInfo(scene.getScriptData(), scene.getSceneType())));
 
         try {
             // Create a file for the dump.
             var file = new File("scenes.csv");
-            if (file.exists() && !file.delete())
-                throw new RuntimeException("Failed to delete file.");
+            if (file.exists() && !file.delete()) throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
@@ -216,20 +234,23 @@ public interface Dumpers {
 
         // Convert all known avatars to an avatar map.
         var dump = new HashMap<Integer, EntityInfo>();
-        GameData.getMonsterDataMap().forEach((id, monster) -> {
-            var langHash = monster.getNameTextMapHash();
-            dump.put(id, new EntityInfo(
-                langHash == 0 ? monster.getMonsterName() :
-                    Language.getTextMapKey(langHash).get(locale),
-                monster.getMonsterName()
-            ));
-        });
+        GameData.getMonsterDataMap()
+                .forEach(
+                        (id, monster) -> {
+                            var langHash = monster.getNameTextMapHash();
+                            dump.put(
+                                    id,
+                                    new EntityInfo(
+                                            langHash == 0
+                                                    ? monster.getMonsterName()
+                                                    : Language.getTextMapKey(langHash).get(locale),
+                                            monster.getMonsterName()));
+                        });
 
         try {
             // Create a file for the dump.
             var file = new File("entities.csv");
-            if (file.exists() && !file.delete())
-                throw new RuntimeException("Failed to delete file.");
+            if (file.exists() && !file.delete()) throw new RuntimeException("Failed to delete file.");
             if (!file.exists() && !file.createNewFile())
                 throw new RuntimeException("Failed to create file.");
 
@@ -256,8 +277,7 @@ public interface Dumpers {
 
         @Override
         public String toString() {
-            return this.name + ","
-                + this.quality;
+            return this.name + "," + this.quality;
         }
     }
 
@@ -271,10 +291,7 @@ public interface Dumpers {
 
         @Override
         public String toString() {
-            return this.name + ","
-                + this.quality + ","
-                + this.type + ","
-                + this.icon;
+            return this.name + "," + this.quality + "," + this.type + "," + this.icon;
         }
     }
 
@@ -285,8 +302,7 @@ public interface Dumpers {
 
         @Override
         public String toString() {
-            return this.identifier + ","
-                + this.type;
+            return this.identifier + "," + this.type;
         }
     }
 
@@ -297,13 +313,17 @@ public interface Dumpers {
 
         @Override
         public String toString() {
-            return this.name + ","
-                + this.internal;
+            return this.name + "," + this.internal;
         }
     }
 
     enum Quality {
-        LEGENDARY, EPIC, RARE, UNCOMMON, COMMON, UNKNOWN;
+        LEGENDARY,
+        EPIC,
+        RARE,
+        UNCOMMON,
+        COMMON,
+        UNKNOWN;
 
         /**
          * Convert a rank level to a quality.

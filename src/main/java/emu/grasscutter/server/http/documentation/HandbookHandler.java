@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.HANDBOOK;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.data.GameData;
@@ -12,16 +14,14 @@ import emu.grasscutter.utils.objects.HandbookBody;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
-import static emu.grasscutter.config.Configuration.HANDBOOK;
-
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
     private final byte[] handbook;
     private final boolean serve;
 
     /**
-     * Constructor for the handbook router.
-     * Enables serving the handbook if the handbook file is found.
+     * Constructor for the handbook router. Enables serving the handbook if the handbook file is
+     * found.
      */
     public HandbookHandler() {
         this.handbook = FileUtils.readResource("/handbook.html");
@@ -44,8 +44,7 @@ public final class HandbookHandler implements Router {
      * @return True if the server can execute handbook commands.
      */
     private boolean controlSupported() {
-        return HANDBOOK.enable &&
-            Grasscutter.getRunMode() == ServerRunMode.HYBRID;
+        return HANDBOOK.enable && Grasscutter.getRunMode() == ServerRunMode.HYBRID;
     }
 
     /**
@@ -101,16 +100,16 @@ public final class HandbookHandler implements Router {
             var avatar = new Avatar(avatarData);
             avatar.setLevel(request.getLevel());
             avatar.setPromoteLevel(Avatar.getMinPromoteLevel(avatar.getLevel()));
-            avatar.getSkillDepot().getSkillsAndEnergySkill().forEach(id ->
-                avatar.setSkillLevel(id, request.getTalentLevels()));
+            avatar
+                    .getSkillDepot()
+                    .getSkillsAndEnergySkill()
+                    .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
             avatar.forceConstellationLevel(request.getConstellations());
-            avatar.recalcStats(true); avatar.save();
+            avatar.recalcStats(true);
+            avatar.save();
 
             player.addAvatar(avatar); // Add the avatar.
-            ctx.json(HandbookBody.Response.builder()
-                .status(200)
-                .message("Avatar granted.")
-                .build());
+            ctx.json(HandbookBody.Response.builder().status(200).message("Avatar granted.").build());
         } catch (NumberFormatException ignored) {
             ctx.status(500).result("Invalid player UID or avatar ID.");
         } catch (Exception exception) {
@@ -159,10 +158,7 @@ public final class HandbookHandler implements Router {
             // Add the item to the inventory.
             player.getInventory().addItem(itemStack, ActionReason.Gm);
 
-            ctx.json(HandbookBody.Response.builder()
-                .status(200)
-                .message("Item granted.")
-                .build());
+            ctx.json(HandbookBody.Response.builder().status(200).message("Item granted.").build());
         } catch (NumberFormatException ignored) {
             ctx.status(500).result("Invalid player UID or item ID.");
         } catch (Exception exception) {
