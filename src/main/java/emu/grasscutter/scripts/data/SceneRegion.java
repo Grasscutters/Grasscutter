@@ -2,9 +2,8 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
-import lombok.Setter;
-
 import java.util.List;
+import lombok.Setter;
 
 @Setter
 public class SceneRegion {
