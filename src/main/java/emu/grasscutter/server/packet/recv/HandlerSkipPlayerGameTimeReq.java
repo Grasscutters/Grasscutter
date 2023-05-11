@@ -16,6 +16,7 @@ public class HandlerSkipPlayerGameTimeReq extends PacketHandler {
         var player = session.getPlayer();
 
         var newTime = req.getGameTime() * 1000L;
+        player.updatePlayerGameTime(newTime);
         player.getScene().broadcastPacket(new PacketPlayerGameTimeNotify(player));
         player.sendPacket(new PacketSkipPlayerGameTimeRsp(req));
     }
