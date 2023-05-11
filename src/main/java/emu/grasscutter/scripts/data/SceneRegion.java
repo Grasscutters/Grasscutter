@@ -2,12 +2,12 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
+import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
-import java.util.List;
-
-@Setter @EqualsAndHashCode
+@Setter
+@EqualsAndHashCode
 public class SceneRegion {
     public int config_id;
     public int shape;
@@ -20,8 +20,7 @@ public class SceneRegion {
     public float height;
     public List<Position> point_array;
 
-    @EqualsAndHashCode.Exclude
-    public transient SceneGroup group;
+    @EqualsAndHashCode.Exclude public transient SceneGroup group;
 
     /**
      * @return The group ID for this region.
