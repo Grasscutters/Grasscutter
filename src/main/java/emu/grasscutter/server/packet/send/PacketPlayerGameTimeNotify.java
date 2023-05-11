@@ -12,7 +12,7 @@ public class PacketPlayerGameTimeNotify extends BasePacket {
 
         PlayerGameTimeNotify proto =
                 PlayerGameTimeNotify.newBuilder()
-                        .setGameTime((int)player.getWorld().getTotalGameTimeMinutes())
+                        .setGameTime((int) player.getWorld().getTotalGameTimeMinutes())
                         .setUid(player.getUid())
                         .build();
 
