@@ -1,8 +1,5 @@
 package emu.grasscutter;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.Language.translate;
-
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.auth.AuthenticationSystem;
@@ -15,7 +12,6 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
-import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
@@ -28,12 +24,6 @@ import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.util.Calendar;
-import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;
@@ -44,6 +34,16 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
+
+import javax.annotation.Nullable;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
+import java.util.Calendar;
+
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.Language.translate;
 
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
@@ -106,7 +106,6 @@ public final class Grasscutter {
 
         // Load all resources.
         Grasscutter.updateDayOfWeek();
-        ScriptLoader.init();
         ResourceLoader.loadAll();
 
         // Generate handbooks.

@@ -3,7 +3,6 @@ package io.grasscutter;
 import com.mchange.util.AssertException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.Configuration;
-import java.io.IOException;
 import lombok.Getter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -11,6 +10,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
 
 /** Testing entrypoint for {@link Grasscutter}. */
 public final class GrasscutterTest {
@@ -30,7 +31,7 @@ public final class GrasscutterTest {
     }
 
     @BeforeAll
-    public static void main() {
+    public static void entry() {
         try {
             // Start Grasscutter.
             Grasscutter.main(new String[] {"-test"});
