@@ -328,7 +328,10 @@ public class Player {
      * @param gameTime The new game time.
      */
     public void updatePlayerGameTime(long gameTime) {
+        if (this.getWorld().isTimeLocked()) return;
         if (this.playerGameTime == gameTime) return;
+
+        // Update the game time.
         this.playerGameTime = gameTime;
 
         // If the player is the host of the world, update the game time as well.
