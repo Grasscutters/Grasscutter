@@ -44,8 +44,7 @@ public final class ServerTask implements Runnable {
             if (shouldRun) this.considerDelay = false;
 
             return shouldRun; // Return the result.
-        } else if (this.period != -1)
-            return ticks % this.period == 0;
+        } else if (this.period != -1) return ticks % this.period == 0;
         else return true;
     }
 
