@@ -2,10 +2,12 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
-import java.util.List;
+import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
-@Setter
+import java.util.List;
+
+@Setter @EqualsAndHashCode
 public class SceneRegion {
     public int config_id;
     public int shape;
@@ -18,6 +20,7 @@ public class SceneRegion {
     public float height;
     public List<Position> point_array;
 
+    @EqualsAndHashCode.Exclude
     public transient SceneGroup group;
 
     /**
@@ -41,22 +44,5 @@ public class SceneRegion {
                 return x + y + z <= (radius * radius);
         }
         return false;
-    }
-
-    /**
-     * Checks if two regions are the same.
-     *
-     * @param region The region to compare to.
-     * @return True if the regions are the same, false otherwise.
-     */
-    public boolean equals(SceneRegion region) {
-        return this.config_id == region.config_id
-                && this.shape == region.shape
-                && this.pos.equals(region.pos)
-                && this.size.equals(region.size)
-                && this.radius == region.radius
-                && this.area_id == region.area_id
-                && this.height == region.height
-                && this.point_array.equals(region.point_array);
     }
 }
