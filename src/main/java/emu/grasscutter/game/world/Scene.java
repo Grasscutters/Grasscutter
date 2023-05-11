@@ -663,7 +663,7 @@ public final class Scene {
         this.npcBornEntrySet = npcBornEntries;
     }
 
-    public synchronized void checkSpawns() {
+    public void checkSpawns() {
         Set<SpawnDataEntry.GridBlockId> loadedGridBlocks = new HashSet<>();
         for (Player player : this.getPlayers()) {
             Collections.addAll(
@@ -788,7 +788,7 @@ public final class Scene {
         return activeGroups;
     }
 
-    public synchronized boolean loadBlock(SceneBlock block) {
+    public boolean loadBlock(SceneBlock block) {
         if (this.loadedBlocks.contains(block)) return false;
 
         this.onLoadBlock(block, this.players);
