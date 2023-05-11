@@ -373,7 +373,7 @@ public final class Scene {
         }
     }
 
-    public synchronized void removeEntities(List<GameEntity> entity, VisionType visionType) {
+    public void removeEntities(List<GameEntity> entity, VisionType visionType) {
         var toRemove =
                 entity.stream()
                         .filter(Objects::nonNull)

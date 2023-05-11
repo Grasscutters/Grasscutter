@@ -7,7 +7,6 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -980,7 +979,7 @@ public final class TeamManager extends BasePlayerDataManager {
                     // any
                 }
 
-                for (ConfigAbilityData abilities : config.getAvatarAbilities()) {
+                for (var abilities : config.getAvatarAbilities()) {
                     avatarData.getAbilities().add(Utils.abilityHash(abilities.getAbilityName()));
                 }
             }
@@ -1123,8 +1122,7 @@ public final class TeamManager extends BasePlayerDataManager {
      */
     public void removeTrialAvatar(List<Integer> trialAvatarIds) {
         // Check if the player is using a trial team.
-        if (!this.isUsingTrialTeam())
-            throw new IllegalStateException("Player is not using trial team.");
+        if (!this.isUsingTrialTeam()) return;
 
         this.getPlayer()
                 .sendPacket(

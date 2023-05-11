@@ -100,10 +100,10 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
                                         + "-"
                                         + 18402);
 
-        // INVESTIGATE: The brokenness of scene reloading.
-        // if (teleportProperties.getDungeonId() != 0) {
-        //     proto.setDungeonId(teleportProperties.getDungeonId());
-        // }
+        // Apply the dungeon ID to the packet if it's a dungeon.
+        if (teleportProperties.getDungeonId() != 0) {
+            proto.setDungeonId(teleportProperties.getDungeonId());
+        }
 
         this.setData(proto);
     }

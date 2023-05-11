@@ -86,3 +86,6 @@ src/main/resources/handbook.html
 
 # Hotswap Agent
 hotswap-agent.properties
+
+# Debug patches
+patches/*.patch

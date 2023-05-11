@@ -271,7 +271,7 @@ public final class World implements Iterable<Player> {
                         .teleportType(teleportType)
                         .enterReason(enterReason)
                         .teleportTo(teleportTo)
-                        .enterType(EnterType.ENTER_TYPE_GOTO);
+                        .enterType(EnterType.ENTER_TYPE_JUMP);
 
         val sceneData = GameData.getSceneDataMap().get(sceneId);
         if (dungeonData != null) {
@@ -301,29 +301,37 @@ public final class World implements Iterable<Player> {
         // Call event & check if it was canceled.
         event.call();
         if (event.isCanceled()) {
+            System.out.println("Teleport was canceled");
             return false; // Teleport was canceled.
         }
 
         if (GameData.getSceneDataMap().get(teleportProperties.getSceneId()) == null) {
+            System.out.println("Scene data is null");
             return false;
         }
 
         Scene oldScene = null;
-
         if (player.getScene() != null) {
             oldScene = player.getScene();
+            System.out.println("Old scene is not null");
 
             // Don't deregister scenes if the player is going to tp back into them
             if (oldScene.getId() == teleportProperties.getSceneId()) {
                 oldScene.setDontDestroyWhenEmpty(true);
+                System.out.println("don't destroy when empty is set");
             }
 
             oldScene.removePlayer(player);
+            System.out.println("remove player was called");
         }
 
         var newScene = this.getSceneById(teleportProperties.getSceneId());
+        System.out.printf("new scene is %s%n", newScene.getId());
         newScene.addPlayer(player);
+        System.out.println("player was added to new scene");
+
         player.getTeamManager().applyAbilities(newScene);
+        System.out.println("new abilities applied");
 
         // Dungeon
         // Dungeon system is handling this already
@@ -336,31 +344,39 @@ public final class World implements Iterable<Player> {
         if (teleportProperties.getTeleportTo() == null && config != null) {
             if (config.born_pos != null) {
                 teleportProperties.setTeleportTo(config.born_pos);
+                System.out.printf("setting pos to %s%n", config.born_pos);
             }
             if (config.born_rot != null) {
                 teleportProperties.setTeleportRot(config.born_rot);
+                System.out.printf("setting rot to %s%n", config.born_rot);
             }
         }
 
         // Set player position and rotation
         if (teleportProperties.getTeleportTo() != null) {
             player.getPosition().set(teleportProperties.getTeleportTo());
+            System.out.printf("moving player to %s%n", teleportProperties.getTeleportTo());
         }
         if (teleportProperties.getTeleportRot() != null) {
             player.getRotation().set(teleportProperties.getTeleportRot());
+            System.out.printf("rotating player to %s%n", teleportProperties.getTeleportRot());
         }
 
         if (oldScene != null && newScene != oldScene) {
             newScene.setPrevScene(oldScene.getId());
+            System.out.printf("new scene's prev is %s%n", newScene.getPrevScene());
             oldScene.setDontDestroyWhenEmpty(false);
+            System.out.println("old scene's dont destroy when empty is false");
         }
 
         // Teleport packet
         player.sendPacket(new PacketPlayerEnterSceneNotify(player, teleportProperties));
+        System.out.println("packet was sent to player");
 
         if (teleportProperties.getTeleportType() != TeleportType.INTERNAL
                 && teleportProperties.getTeleportType() != SCRIPT) {
             player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ANY_MANUAL_TRANSPORT);
+            System.out.println("transport event called");
         }
 
         return true;
