@@ -271,7 +271,7 @@ public final class World implements Iterable<Player> {
                         .teleportType(teleportType)
                         .enterReason(enterReason)
                         .teleportTo(teleportTo)
-                        .enterType(EnterType.ENTER_TYPE_GOTO);
+                        .enterType(EnterType.ENTER_TYPE_JUMP);
 
         val sceneData = GameData.getSceneDataMap().get(sceneId);
         if (dungeonData != null) {
