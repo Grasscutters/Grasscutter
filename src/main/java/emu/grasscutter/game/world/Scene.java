@@ -510,6 +510,10 @@ public final class Scene {
 
         this.finishLoading();
         this.checkPlayerRespawn();
+        if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {
+            this.getScriptManager().onDestroy();
+            this.getWorld().deregisterScene(this);
+        }
         if (this.tickCount++ % 10 == 0) this.broadcastPacket(new PacketSceneTimeNotify(this));
     }
 
