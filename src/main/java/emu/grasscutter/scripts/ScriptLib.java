@@ -141,7 +141,8 @@ public class ScriptLib {
         }
 
         worktop.addWorktopOptions(options);
-        getSceneScriptManager().getScene().broadcastPacket(new PacketWorktopOptionNotify(gadget));
+        this.getSceneScriptManager().getScene()
+            .broadcastPacket(new PacketWorktopOptionNotify(gadget));
 
         return 0;
     }
@@ -170,10 +171,9 @@ public class ScriptLib {
         }
 
         worktop.addWorktopOptions(worktopOptions);
+
         var scene = getSceneScriptManager().getScene();
-        Grasscutter.getGameServer().getScheduler().scheduleDelayedTask(() -> {
-            scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
-        },1);
+        scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
         return 0;
     }
 
