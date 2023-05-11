@@ -6,9 +6,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.MonsterData.HpDrops;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.monster.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.BasePlayerManager;
@@ -33,6 +33,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import lombok.Getter;
 
 public class EnergyManager extends BasePlayerManager {
     private static final Int2ObjectMap<List<EnergyDropInfo>> energyDropData =
@@ -40,7 +41,7 @@ public class EnergyManager extends BasePlayerManager {
     private static final Int2ObjectMap<List<SkillParticleGenerationInfo>>
             skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
     private final Object2IntMap<EntityAvatar> avatarNormalProbabilities;
-    private boolean energyUsage; // Should energy usage be enabled for this player?
+    @Getter private boolean energyUsage; // Should energy usage be enabled for this player?
 
     public EnergyManager(Player player) {
         super(player);
@@ -381,16 +382,37 @@ public class EnergyManager extends BasePlayerManager {
                 .findFirst();
     }
 
-    public boolean getEnergyUsage() {
-        return this.energyUsage;
+    /**
+     * Refills the energy of the active avatar.
+     *
+     * @return True if the energy was refilled, false otherwise.
+     */
+    public boolean refillActiveEnergy() {
+        var activeEntity = this.player.getTeamManager().getCurrentAvatarEntity();
+        return activeEntity.addEnergy(
+                activeEntity.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal());
+    }
+
+    /**
+     * Refills the energy of the entire team.
+     *
+     * @param changeReason The reason for the energy change.
+     * @param isFlat Whether the energy should be added as a flat value.
+     */
+    public void refillTeamEnergy(PropChangeReason changeReason, boolean isFlat) {
+        for (var entityAvatar : this.player.getTeamManager().getActiveTeam()) {
+            // giving the exact amount read off the AvatarSkillData.json
+            entityAvatar.addEnergy(
+                    entityAvatar.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal(),
+                    changeReason,
+                    isFlat);
+        }
     }
 
     public void setEnergyUsage(boolean energyUsage) {
         this.energyUsage = energyUsage;
         if (!energyUsage) { // Refill team energy if usage is disabled
-            for (EntityAvatar entityAvatar : this.player.getTeamManager().getActiveTeam()) {
-                entityAvatar.addEnergy(1000, PropChangeReason.PROP_CHANGE_REASON_GM, true);
-            }
+            this.refillTeamEnergy(PropChangeReason.PROP_CHANGE_REASON_GM, true);
         }
     }
 }

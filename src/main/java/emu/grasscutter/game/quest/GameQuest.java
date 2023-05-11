@@ -5,22 +5,29 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ChapterData;
-import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.data.excels.TriggerExcelConfigData;
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.enums.QuestCond;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.PacketChapterStateNotify;
+import emu.grasscutter.server.packet.send.PacketDelQuestNotify;
+import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.script.Bindings;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.val;
 
 @Entity
 public class GameQuest {
@@ -29,11 +36,13 @@ public class GameQuest {
 
     @Getter private int subQuestId;
     @Getter private int mainQuestId;
-    @Getter @Setter private QuestState state;
+    @Getter @Setter public QuestState state;
 
     @Getter @Setter private int startTime;
     @Getter @Setter private int acceptTime;
     @Getter @Setter private int finishTime;
+
+    @Getter @Setter private long startGameDay;
 
     @Getter private int[] finishProgressList;
     @Getter private int[] failProgressList;
@@ -55,25 +64,28 @@ public class GameQuest {
     }
 
     public void start() {
+        this.clearProgress(false);
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
+        this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
         this.state = QuestState.QUEST_STATE_UNFINISHED;
-        List<QuestData.QuestCondition> triggerCond =
+
+        val triggerCond =
                 questData.getFinishCond().stream()
-                        .filter(p -> p.getType() == QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE)
+                        .filter(p -> p.getType() == QuestContent.QUEST_CONTENT_TRIGGER_FIRE)
                         .toList();
         if (triggerCond.size() > 0) {
-            for (QuestData.QuestCondition cond : triggerCond) {
-                TriggerExcelConfigData newTrigger =
-                        GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
+            for (val cond : triggerCond) {
+                var newTrigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
                 if (newTrigger != null) {
                     if (this.triggerData == null) {
                         this.triggerData = new HashMap<>();
                     }
+
                     triggerData.put(newTrigger.getTriggerName(), newTrigger);
                     triggers.put(newTrigger.getTriggerName(), false);
-                    SceneGroup group = SceneGroup.of(newTrigger.getGroupId()).load(newTrigger.getSceneId());
-                    getOwner()
+                    var group = SceneGroup.of(newTrigger.getGroupId()).load(newTrigger.getSceneId());
+                    this.getOwner()
                             .getWorld()
                             .getSceneById(newTrigger.getSceneId())
                             .loadTriggerFromGroup(group, newTrigger.getTriggerName());
@@ -81,49 +93,43 @@ public class GameQuest {
             }
         }
 
-        if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
-            this.finishProgressList = new int[questData.getFinishCond().size()];
-        }
+        this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
 
-        if (questData.getFailCond() != null && questData.getFailCond().size() != 0) {
-            this.failProgressList = new int[questData.getFailCond().size()];
-        }
-
-        getQuestData()
-                .getBeginExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
-
-        if (ChapterData.beginQuestChapterMap.containsKey(subQuestId)) {
-            mainQuest
-                    .getOwner()
+        if (ChapterData.getBeginQuestChapterMap().containsKey(subQuestId)) {
+            this.getOwner()
                     .sendPacket(
                             new PacketChapterStateNotify(
-                                    ChapterData.beginQuestChapterMap.get(subQuestId).getId(),
+                                    ChapterData.getBeginQuestChapterMap().get(subQuestId).getId(),
                                     ChapterStateOuterClass.ChapterState.CHAPTER_STATE_BEGIN));
         }
 
         // Some subQuests and talks become active when some other subQuests are unfinished (even from
         // different MainQuests)
-        this.getOwner()
-                .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_CONTENT_QUEST_STATE_EQUAL,
-                        this.getSubQuestId(),
-                        this.getState().getValue(),
-                        0,
-                        0,
-                        0);
-        this.getOwner()
-                .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_COND_STATE_EQUAL,
-                        this.getSubQuestId(),
-                        this.getState().getValue(),
-                        0,
-                        0,
-                        0);
+        this.triggerStateEvents();
+
+        this.getQuestData()
+                .getBeginExec()
+                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
+        this.getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
+        this.save();
+    }
+
+    /**
+     * Triggers events: 'QUEST_COND_STATE_EQUAL', 'QUEST_COND_STATE_NOT_EQUAL',
+     * 'QUEST_CONTENT_QUEST_STATE_EQUAL', 'QUEST_CONTENT_QUEST_STATE_NOT_EQUAL'
+     */
+    public void triggerStateEvents() {
+        var questManager = this.getOwner().getQuestManager();
+        var questId = this.getSubQuestId();
+        var state = this.getState().getValue();
+
+        questManager.queueEvent(QuestCond.QUEST_COND_STATE_EQUAL, questId, state, 0, 0, 0);
+        questManager.queueEvent(QuestCond.QUEST_COND_STATE_NOT_EQUAL, questId, state, 0, 0, 0);
+        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_STATE_EQUAL, questId, state, 0, 0, 0);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_STATE_NOT_EQUAL, questId, state, 0, 0, 0);
     }
 
     public String getTriggerNameById(int id) {
@@ -141,7 +147,7 @@ public class GameQuest {
     }
 
     public void setConfig(QuestData config) {
-        if (getSubQuestId() != config.getId()) return;
+        if (config == null || getSubQuestId() != config.getId()) return;
         this.questData = config;
     }
 
@@ -153,44 +159,89 @@ public class GameQuest {
         failProgressList[index] = value;
     }
 
-    public void finish() {
-        this.state = QuestState.QUEST_STATE_FINISHED;
-        this.finishTime = Utils.getCurrentSeconds();
-
-        if (getQuestData().finishParent()) {
-            // This quest finishes the questline - the main quest will also save the quest to db, so we
-            // don't have to call save() here
-            getMainQuest().finish();
+    public boolean clearProgress(boolean notifyDelete) {
+        // TODO improve
+        var oldState = state;
+        if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
+            this.finishProgressList = new int[questData.getFinishCond().size()];
         }
 
-        getQuestData()
+        if (questData.getFailCond() != null && questData.getFailCond().size() != 0) {
+            this.failProgressList = new int[questData.getFailCond().size()];
+        }
+        setState(QuestState.QUEST_STATE_UNSTARTED);
+        finishTime = 0;
+        acceptTime = 0;
+        startTime = 0;
+        if (oldState == QuestState.QUEST_STATE_UNSTARTED) {
+            return false;
+        }
+        if (notifyDelete) {
+            getOwner().sendPacket(new PacketDelQuestNotify(getSubQuestId()));
+        }
+        save();
+        return true;
+    }
+
+    public void finish() {
+        // Check if the quest has been finished.
+        synchronized (this) {
+            if (this.state == QuestState.QUEST_STATE_FINISHED) {
+                Grasscutter.getLogger().debug("Quest {} was already finished.", this.getSubQuestId());
+                return;
+            }
+
+            this.state = QuestState.QUEST_STATE_FINISHED;
+        }
+        this.finishTime = Utils.getCurrentSeconds();
+
+        this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
+
+        if (this.getQuestData().isFinishParent()) {
+            // This quest finishes the questline - the main quest will also save the quest to db, so we
+            // don't have to call save() here
+            this.getMainQuest().finish();
+        }
+
+        this.getQuestData()
                 .getFinishExec()
                 .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
         // Some subQuests have conditions that subQuests are finished (even from different MainQuests)
-        getOwner()
+        this.getOwner()
                 .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_CONTENT_QUEST_STATE_EQUAL,
+                .queueEvent(
+                        QuestContent.QUEST_CONTENT_QUEST_STATE_EQUAL,
                         this.subQuestId,
                         this.state.getValue(),
                         0,
                         0,
                         0);
-        getOwner()
+        this.getOwner()
                 .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_COND_STATE_EQUAL, this.subQuestId, this.state.getValue(), 0, 0, 0);
+                .queueEvent(QuestContent.QUEST_CONTENT_FINISH_PLOT, this.subQuestId, 0);
+        this.triggerStateEvents();
+        this.getOwner()
+                .getScene()
+                .triggerDungeonEvent(DungeonPassConditionType.DUNGEON_COND_FINISH_QUEST, getSubQuestId());
 
-        if (ChapterData.endQuestChapterMap.containsKey(subQuestId)) {
-            mainQuest
+        this.getOwner().getProgressManager().tryUnlockOpenStates();
+
+        if (ChapterData.getEndQuestChapterMap().containsKey(subQuestId)) {
+            this.getMainQuest()
                     .getOwner()
                     .sendPacket(
                             new PacketChapterStateNotify(
-                                    ChapterData.endQuestChapterMap.get(subQuestId).getId(),
+                                    ChapterData.getEndQuestChapterMap().get(subQuestId).getId(),
                                     ChapterStateOuterClass.ChapterState.CHAPTER_STATE_END));
         }
 
-        Grasscutter.getLogger().debug("Quest {} is finished", subQuestId);
+        // Give items for completing the quest.
+        this.getQuestData()
+                .getGainItems()
+                .forEach(item -> this.getOwner().getInventory().addItem(item, ActionReason.QuestItem));
+
+        this.save();
+        Grasscutter.getLogger().debug("Quest {} was completed.", subQuestId);
     }
 
     // TODO
@@ -198,43 +249,57 @@ public class GameQuest {
         this.state = QuestState.QUEST_STATE_FAILED;
         this.finishTime = Utils.getCurrentSeconds();
 
-        getQuestData()
+        this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
+
+        // Some subQuests have conditions that subQuests fail (even from different MainQuests)
+        this.triggerStateEvents();
+
+        this.getQuestData()
                 .getFailExec()
                 .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
-        // Some subQuests have conditions that subQuests fail (even from different MainQuests)
-        getOwner()
-                .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_CONTENT_QUEST_STATE_EQUAL,
-                        this.subQuestId,
-                        this.state.getValue(),
-                        0,
-                        0,
-                        0);
-        getOwner()
-                .getQuestManager()
-                .triggerEvent(
-                        QuestTrigger.QUEST_COND_STATE_EQUAL, this.subQuestId, this.state.getValue(), 0, 0, 0);
+
+        if (this.getQuestData().getTrialAvatarList() != null) {
+            this.getQuestData()
+                    .getTrialAvatarList()
+                    .forEach(t -> this.getOwner().getTeamManager().removeTrialAvatar(t));
+        }
+
+        Grasscutter.getLogger().debug("Quest {} is failed", subQuestId);
     }
 
-    // Return true if ParentQuest should rewind to this childQuest
-    public boolean rewind(GameQuest nextRewind) {
-        if (questData.isRewind()) {
-            if (nextRewind == null) {
-                return true;
-            }
-            // if the next isRewind subQuest is none or unstarted, reset all subQuests with order higher
-            // than this one, and restart this quest
-            if (nextRewind.getState() == QuestState.QUEST_STATE_NONE
-                    || nextRewind.getState() == QuestState.QUEST_STATE_UNSTARTED) {
-                getMainQuest().getChildQuests().values().stream()
-                        .filter(p -> p.getQuestData().getOrder() > this.getQuestData().getOrder())
-                        .forEach(q -> q.setState(QuestState.QUEST_STATE_UNSTARTED));
-                this.start();
-                return true;
-            }
-        }
-        return false;
+    // Return true if it did the rewind
+    public boolean rewind(boolean notifyDelete) {
+        getMainQuest().getChildQuests().values().stream()
+                .filter(p -> p.getQuestData().getOrder() > this.getQuestData().getOrder())
+                .forEach(
+                        q -> {
+                            q.clearProgress(notifyDelete);
+                        });
+        clearProgress(notifyDelete);
+        this.start();
+        return true;
+    }
+
+    /**
+     * @return A list of dungeon IDs associated with the quest's 'QUEST_CONTENT_ENTER_DUNGEON'
+     *     triggers. The first element of the pair is the dungeon ID. The second element of the pair
+     *     is the dungeon's scene point.
+     */
+    public List<IntIntImmutablePair> getDungeonIds() {
+        // Check if this quest is active.
+        if (this.state != QuestState.QUEST_STATE_UNFINISHED) return List.of();
+
+        return this.getQuestData().getFinishCond().stream()
+                .filter(cond -> cond.getType() == QuestContent.QUEST_CONTENT_ENTER_DUNGEON)
+                .map(
+                        condition -> {
+                            var params = condition.getParam();
+                            // The first parameter is the ID of the dungeon.
+                            // The second parameter is the dungeon entry's scene point.
+                            // ex. [1, 1] = dungeon ID 1, scene point 1 or 'KaeyaDungeon'.
+                            return new IntIntImmutablePair(params[0], params[1]);
+                        })
+                .toList();
     }
 
     public void save() {

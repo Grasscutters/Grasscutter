@@ -3,17 +3,20 @@ package emu.grasscutter.data.common;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.DailyDungeonData;
+import emu.grasscutter.data.excels.dungeon.DailyDungeonData;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 import lombok.Setter;
 
-public class PointData {
+public final class PointData {
     @Getter @Setter private int id;
     private String $type;
     @Getter private Position tranPos;
+    @Getter private Position pos;
+    @Getter private Position rot;
+    @Getter private Position size;
 
     @SerializedName(
             value = "dungeonIds",
@@ -26,6 +29,12 @@ public class PointData {
             alternate = {"OIBKFJNBLHO"})
     @Getter
     private int[] dungeonRandomList;
+
+    @SerializedName(
+            value = "groupIDs",
+            alternate = {"HFOBOOHKBGF"})
+    @Getter
+    private int[] groupIDs;
 
     @SerializedName(
             value = "tranSceneId",

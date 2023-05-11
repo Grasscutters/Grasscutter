@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum ItemQuality {
     QUALITY_NONE(0),
@@ -27,7 +28,7 @@ public enum ItemQuality {
                         });
     }
 
-    private final int value;
+    @Getter private final int value;
 
     ItemQuality(int value) {
         this.value = value;
@@ -39,9 +40,5 @@ public enum ItemQuality {
 
     public static ItemQuality getTypeByName(String name) {
         return stringMap.getOrDefault(name, QUALITY_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

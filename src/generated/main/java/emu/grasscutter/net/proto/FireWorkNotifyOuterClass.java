@@ -844,8 +844,8 @@ public final class FireWorkNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\024FireWorkNotify.proto\032\022FireWorkData.pro"
                     + "to\"5\n\016FireWorkNotify\022#\n\014fireWorkData\030\001 \003"
-                    + "(\0132\r.FireWorkDataB\033\n\031emu.grasscutter.net"
-                    + ".protob\006proto3"
+                    + "(\0132\r.FireWorkDataB!\n\031emu.grasscutter.net"
+                    + ".protoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -3,6 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
@@ -19,7 +20,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         player.setSceneLoadState(SceneLoadState.LOADING);
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
-        PlayerEnterSceneNotify.Builder proto =
+        var proto =
                 PlayerEnterSceneNotify.newBuilder()
                         .setSceneId(player.getSceneId())
                         .setPos(player.getPosition().toProto())
@@ -47,7 +48,10 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         this(player, player, type, reason, newScene, newPos);
     }
 
-    // Teleport or go somewhere
+    public PacketPlayerEnterSceneNotify(Player player, TeleportProperties teleportProperties) {
+        this(player, player, teleportProperties);
+    }
+
     public PacketPlayerEnterSceneNotify(
             Player player,
             Player target,
@@ -55,40 +59,51 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
             EnterReason reason,
             int newScene,
             Position newPos) {
-        super(PacketOpcodes.PlayerEnterSceneNotify);
+        this(
+                player,
+                target,
+                TeleportProperties.builder()
+                        .enterType(type)
+                        .enterReason(reason)
+                        .sceneId(newScene)
+                        .teleportTo(newPos)
+                        .build());
+    }
 
-        // Set previous position
-        if (!(newScene == 3)) { // Hardcoded for now else weird positions will occur
-            // Don't update position within same scene or teapot
-        } else {
-            // Only used for exiting teapot currently
-            player.setPrevPos(player.getPosition());
-        }
+    // Teleport or go somewhere
+    public PacketPlayerEnterSceneNotify(
+            Player player, Player target, TeleportProperties teleportProperties) {
+        super(PacketOpcodes.PlayerEnterSceneNotify);
 
         player.setSceneLoadState(SceneLoadState.LOADING);
         player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
-        PlayerEnterSceneNotify.Builder proto =
+        var proto =
                 PlayerEnterSceneNotify.newBuilder()
                         .setPrevSceneId(player.getSceneId())
                         .setPrevPos(player.getPosition().toProto())
-                        .setSceneId(newScene)
-                        .setPos(newPos.toProto())
+                        .setSceneId(teleportProperties.getSceneId())
+                        .setPos(teleportProperties.getTeleportTo().toProto())
                         .setSceneBeginTime(System.currentTimeMillis())
-                        .setType(type)
+                        .setType(teleportProperties.getEnterType())
                         .setTargetUid(target.getUid())
                         .setEnterSceneToken(player.getEnterSceneToken())
                         .setWorldLevel(target.getWorld().getWorldLevel())
-                        .setEnterReason(reason.getValue())
+                        .setEnterReason(teleportProperties.getEnterReason().getValue())
                         .setWorldType(1)
                         .setSceneTransaction(
-                                newScene
+                                teleportProperties.getSceneId()
                                         + "-"
                                         + target.getUid()
                                         + "-"
                                         + (int) (System.currentTimeMillis() / 1000)
                                         + "-"
                                         + 18402);
+
+        // Apply the dungeon ID to the packet if it's a dungeon.
+        if (teleportProperties.getDungeonId() != 0) {
+            proto.setDungeonId(teleportProperties.getDungeonId());
+        }
 
         this.setData(proto);
     }

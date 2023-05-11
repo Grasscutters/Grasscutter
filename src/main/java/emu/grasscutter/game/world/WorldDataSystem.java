@@ -5,7 +5,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.InvestigationMonsterData;
 import emu.grasscutter.data.excels.RewardPreviewData;
-import emu.grasscutter.data.excels.WorldLevelData;
+import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.ChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.NormalChestInteractHandler;
@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
+import org.luaj.vm2.LuaError;
 
 public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
@@ -56,6 +57,7 @@ public class WorldDataSystem extends BaseGameSystem {
         return chestInteractHandlerMap;
     }
 
+    @Deprecated
     public RewardPreviewData getRewardByBossId(int monsterId) {
         var investigationMonsterData =
                 GameData.getInvestigationMonsterDataMap().values().parallelStream()
@@ -73,9 +75,14 @@ public class WorldDataSystem extends BaseGameSystem {
     private SceneGroup getInvestigationGroup(int sceneId, int groupId) {
         var key = sceneId + "_" + groupId;
         if (!sceneInvestigationGroupMap.containsKey(key)) {
-            var group = SceneGroup.of(groupId).load(sceneId);
-            sceneInvestigationGroupMap.putIfAbsent(key, group);
-            return group;
+            try {
+                var group = SceneGroup.of(groupId).load(sceneId);
+                sceneInvestigationGroupMap.putIfAbsent(key, group);
+                return group;
+            } catch (LuaError luaError) {
+                Grasscutter.getLogger()
+                        .error("failed to get investigationGroup {} in scene{}:", groupId, sceneId, luaError);
+            }
         }
         return sceneInvestigationGroupMap.get(key);
     }
@@ -86,7 +93,7 @@ public class WorldDataSystem extends BaseGameSystem {
         WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(world.getWorldLevel());
 
         if (worldLevelData != null) {
-            level = worldLevelData.getMonsterLevel();
+            level = Math.max(level, worldLevelData.getMonsterLevel());
         }
         return level;
     }

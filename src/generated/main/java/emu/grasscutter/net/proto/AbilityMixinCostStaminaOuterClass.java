@@ -579,8 +579,8 @@ public final class AbilityMixinCostStaminaOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035AbilityMixinCostStamina.proto\"*\n\027Abili"
-                    + "tyMixinCostStamina\022\017\n\007is_swim\030\007 \001(\010B\033\n\031e"
-                    + "mu.grasscutter.net.protob\006proto3"
+                    + "tyMixinCostStamina\022\017\n\007is_swim\030\007 \001(\010B!\n\031e"
+                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

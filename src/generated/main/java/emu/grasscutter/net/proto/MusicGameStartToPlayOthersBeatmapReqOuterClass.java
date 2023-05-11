@@ -690,7 +690,8 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
                     + "roto\032\033MusicGameUnknown1Enum.proto\"U\n$Mus"
                     + "icGameStartToPlayOthersBeatmapReq\022-\n\runk"
                     + "nown_enum1\030\014 \001(\0162\026.MusicGameUnknown1Enum"
-                    + "B\033\n\031emu.grasscutter.net.protob\006proto3"
+                    + "B!\n\031emu.grasscutter.net.protoZ\004/genb\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

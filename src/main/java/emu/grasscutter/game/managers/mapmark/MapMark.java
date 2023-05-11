@@ -11,9 +11,9 @@ public class MapMark {
     private int sceneId;
     private String name;
     private Position position;
-    private final MapMarkPointType mapMarkPointType;
+    private MapMarkPointType mapMarkPointType;
     private int monsterId;
-    private final MapMarkFromType mapMarkFromType;
+    private MapMarkFromType mapMarkFromType;
     private int questId;
 
     @Deprecated // Morhpia

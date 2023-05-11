@@ -9,10 +9,11 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.excels.AchievementData;
-import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.common.ItemUseData;
+import emu.grasscutter.data.excels.HomeWorldBgmData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.game.inventory.MaterialType;
+import emu.grasscutter.data.excels.achievement.AchievementData;
+import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
@@ -85,7 +86,13 @@ public final class Tools {
                         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
                             String s = template;
                             for (int j = 0; j < textstrings.length; j++)
-                                s = s.replace("{" + j + "}", textstrings[j].strings[i]);
+                                try {
+                                    s = s.replace("{" + j + "}", textstrings[j].strings[i]);
+                                } catch (NullPointerException ignored) {
+                                    // TextMap cache is outdated.
+                                    j--; // Retry the action.
+                                    Language.loadTextMaps(true);
+                                }
                             handbookBuilders.get(i).append(s + "\n");
                         }
                     }
@@ -137,22 +144,25 @@ public final class Tools {
         itemDataMap.forEach(
                 (id, data) -> {
                     val name = getTextMapKey(data.getNameTextMapHash());
-                    if (Objects.requireNonNull(data.getMaterialType()) == MaterialType.MATERIAL_BGM) {
-                        val bgmName =
-                                Optional.ofNullable(data.getItemUse())
-                                        .map(u -> u.get(0))
-                                        .map(u -> u.getUseParam())
-                                        .filter(u -> u.length > 0)
-                                        .map(u -> Integer.parseInt(u[0]))
-                                        .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
-                                        .map(bgm -> bgm.getBgmNameTextMapHash())
-                                        .map(hash -> getTextMapKey(hash));
-                        if (bgmName.isPresent()) {
-                            h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
+                    switch (data.getMaterialType()) {
+                        case MATERIAL_BGM:
+                            val bgmName =
+                                    Optional.ofNullable(data.getItemUse())
+                                            .map(u -> u.get(0))
+                                            .map(ItemUseData::getUseParam)
+                                            .filter(u -> u.length > 0)
+                                            .map(u -> Integer.parseInt(u[0]))
+                                            .map(bgmId -> GameData.getHomeWorldBgmDataMap().get((int) bgmId))
+                                            .map(HomeWorldBgmData::getBgmNameTextMapHash)
+                                            .map(Language::getTextMapKey);
+                            if (bgmName.isPresent()) {
+                                h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
+                                return;
+                            } // Fall-through
+                        default:
+                            h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
                             return;
-                        } // Fall-through
                     }
-                    h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
                 });
         // Monsters
         h.newSection("Monsters");

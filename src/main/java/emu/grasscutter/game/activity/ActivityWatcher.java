@@ -1,6 +1,6 @@
 package emu.grasscutter.game.activity;
 
-import emu.grasscutter.data.excels.ActivityWatcherData;
+import emu.grasscutter.data.excels.activity.ActivityWatcherData;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

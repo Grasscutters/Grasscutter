@@ -15,11 +15,9 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
-import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
-import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
-import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
-import emu.grasscutter.server.packet.send.PacketStoreItemDelNotify;
+import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
@@ -96,12 +94,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         GameItem result = putItem(item);
 
         if (result != null) {
-            getPlayer()
-                    .getBattlePassManager()
-                    .triggerMission(
-                            WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM,
-                            result.getItemId(),
-                            result.getCount());
+            this.triggerAddItemEvents(result);
             getPlayer().sendPacket(new PacketStoreItemChangeNotify(result));
             return true;
         }
@@ -110,17 +103,18 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     public boolean addItem(GameItem item, ActionReason reason) {
-        boolean result = addItem(item);
-
-        if (result && reason != null) {
-            getPlayer().sendPacket(new PacketItemAddHintNotify(item, reason));
-        }
-
-        return result;
+        return addItem(item, reason, false);
     }
 
     public boolean addItem(GameItem item, ActionReason reason, boolean forceNotify) {
         boolean result = addItem(item);
+
+        if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
+            getPlayer()
+                    .sendPacket(
+                            new PacketAddNoGachaAvatarCardNotify(
+                                    (item.getItemId() % 1000) + 10000000, reason, item));
+        }
 
         if (reason != null && (forceNotify || result)) {
             getPlayer().sendPacket(new PacketItemAddHintNotify(item, reason));
@@ -148,19 +142,14 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             if (item.getItemId() == 0) continue;
             GameItem result = null;
             try {
-                // putItem might throws exception
+                // putItem might throw exception
                 // ignore that exception and continue
                 result = putItem(item);
             } catch (Exception e) {
                 e.printStackTrace();
             }
             if (result != null) {
-                getPlayer()
-                        .getBattlePassManager()
-                        .triggerMission(
-                                WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM,
-                                result.getItemId(),
-                                result.getCount());
+                this.triggerAddItemEvents(result);
                 changedItems.add(result);
             }
         }
@@ -168,9 +157,28 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             return;
         }
         if (reason != null) {
-            getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
+            getPlayer().sendPacket(new PacketItemAddHintNotify(items, reason));
         }
         getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+    }
+
+    private void triggerAddItemEvents(GameItem result) {
+        getPlayer()
+                .getBattlePassManager()
+                .triggerMission(
+                        WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
+        getPlayer()
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+    }
+
+    private void triggerRemItemEvents(GameItem item, int removeCount) {
+        getPlayer()
+                .getBattlePassManager()
+                .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
+        getPlayer()
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
     }
 
     public void addItemParams(Collection<ItemParam> items) {
@@ -193,6 +201,8 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         // Dont add items that dont have a valid item definition.
         var data = item.getItemData();
         if (data == null) return null;
+
+        this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
 
         if (data.isUseOnGain()) {
             var params = new UseItemParams(this.player, data.getUseTarget());
@@ -267,6 +277,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.player.getCodex().checkAddedItem(item);
         // Set owner and guid FIRST!
         item.setOwner(this.player);
+        item.checkIsNew(this);
         // Put in item store
         getItems().put(item.getGuid(), item);
         if (tab != null) {
@@ -467,9 +478,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
         // Battle pass trigger
         int removeCount = Math.min(count, item.getCount());
-        getPlayer()
-                .getBattlePassManager()
-                .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
+        this.triggerRemItemEvents(item, removeCount);
 
         // Update in db
         item.save();

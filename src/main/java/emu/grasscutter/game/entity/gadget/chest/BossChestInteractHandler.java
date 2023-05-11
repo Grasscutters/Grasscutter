@@ -44,6 +44,12 @@ public class BossChestInteractHandler implements ChestInteractHandler {
         var reward = worldDataManager.getRewardByBossId(monster.monster_id);
 
         if (reward == null) {
+            var dungeonManager = player.getScene().getDungeonManager();
+
+            if (dungeonManager != null) {
+                return dungeonManager.getStatueDrops(
+                        player, useCondensedResin, chest.getGadget().getGroupId());
+            }
             Grasscutter.getLogger()
                     .warn("Could not found the reward of boss monster {}", monster.monster_id);
             return false;

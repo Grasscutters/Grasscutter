@@ -1,10 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.IntStream;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -14,6 +9,10 @@ import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
 
 @Command(
         label = "setProp",
@@ -24,7 +23,8 @@ import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 public final class SetPropCommand implements CommandHandler {
     // List of map areas. Unfortunately, there is no readily available source for them in excels or
     // bins.
-    private static final List<Integer> sceneAreas = IntStream.range(1, 1000).boxed().toList();Map<String, Prop> props;
+    private static final List<Integer> sceneAreas = IntStream.range(1, 1000).boxed().toList();
+    private final Map<String, Prop> props;
 
     public SetPropCommand() {
         this.props = new HashMap<>();
@@ -79,6 +79,12 @@ public final class SetPropCommand implements CommandHandler {
         Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
         this.props.put("unlockmap", unlockmap);
         this.props.put("um", unlockmap);
+
+        Prop flyable = new Prop("IsFlyable", PlayerProperty.PROP_IS_FLYABLE, PseudoProp.IS_FLYABLE);
+        this.props.put("canfly", flyable);
+        this.props.put("fly", flyable);
+        this.props.put("glider", flyable);
+        this.props.put("canglide", flyable);
     }
 
     @Override
@@ -178,9 +184,9 @@ public final class SetPropCommand implements CommandHandler {
     private boolean setBool(Player sender, Player targetPlayer, PseudoProp pseudoProp, int value) {
         boolean enabled =
                 switch (pseudoProp) {
-                    case GOD_MODE -> targetPlayer.inGodmode();
-                    case UNLIMITED_STAMINA -> targetPlayer.getUnlimitedStamina();
-                    case UNLIMITED_ENERGY -> !targetPlayer.getEnergyManager().getEnergyUsage();
+                    case GOD_MODE -> targetPlayer.isInGodMode();
+                    case UNLIMITED_STAMINA -> targetPlayer.isUnlimitedStamina();
+                    case UNLIMITED_ENERGY -> !targetPlayer.getEnergyManager().isEnergyUsage();
                     default -> false;
                 };
         enabled =
@@ -192,7 +198,7 @@ public final class SetPropCommand implements CommandHandler {
 
         switch (pseudoProp) {
             case GOD_MODE:
-                targetPlayer.setGodmode(enabled);
+                targetPlayer.setInGodMode(enabled);
                 break;
             case UNLIMITED_STAMINA:
                 targetPlayer.setUnlimitedStamina(enabled);
@@ -244,7 +250,8 @@ public final class SetPropCommand implements CommandHandler {
         UNLIMITED_ENERGY,
         SET_OPENSTATE,
         UNSET_OPENSTATE,
-        UNLOCK_MAP
+        UNLOCK_MAP,
+        IS_FLYABLE
     }
 
     static class Prop {

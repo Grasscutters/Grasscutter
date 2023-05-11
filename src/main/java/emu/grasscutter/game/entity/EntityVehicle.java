@@ -1,7 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.ConfigGadget;
+import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
@@ -42,8 +42,8 @@ public class EntityVehicle extends EntityBaseGadget {
     @Getter private final int gadgetId;
 
     @Getter @Setter private float curStamina;
-    @Getter private final List<VehicleMember> vehicleMembers;
-    @Nullable @Getter private ConfigGadget configGadget;
+    @Getter private List<VehicleMember> vehicleMembers;
+    @Nullable @Getter private ConfigEntityGadget configGadget;
 
     public EntityVehicle(
             Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
@@ -64,7 +64,7 @@ public class EntityVehicle extends EntityBaseGadget {
     }
 
     @Override
-    protected void fillFightProps(ConfigGadget configGadget) {
+    protected void fillFightProps(ConfigEntityGadget configGadget) {
         super.fillFightProps(configGadget);
         this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
         this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);

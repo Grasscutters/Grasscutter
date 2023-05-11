@@ -2291,8 +2291,8 @@ public final class MusicBriefInfoOuterClass {
                     + "(\r\022\027\n\017creatorNickname\030\003 \001(\t\022\033\n\023Unk3300_G"
                     + "DNAPNAINBA\030\013 \001(\010\022\020\n\010maxScore\030\014 \001(\r\022\033\n\023Un"
                     + "k3300_KMMBLIMKJCM\030\n \001(\r\022\025\n\risPsnPlatform"
-                    + "\030\r \001(\010B\033\n\031emu.grasscutter.net.protob\006pro"
-                    + "to3"
+                    + "\030\r \001(\010B!\n\031emu.grasscutter.net.protoZ\004/ge"
+                    + "nb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

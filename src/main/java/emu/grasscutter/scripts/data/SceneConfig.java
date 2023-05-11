@@ -12,4 +12,5 @@ public class SceneConfig {
     public Position born_rot;
     public Position begin_pos;
     public Position size;
+    public float die_y;
 }

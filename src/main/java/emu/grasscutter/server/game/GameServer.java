@@ -12,8 +12,8 @@ import emu.grasscutter.game.chat.ChatSystem;
 import emu.grasscutter.game.chat.ChatSystemHandler;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropSystem;
+import emu.grasscutter.game.drop.DropSystemLegacy;
 import emu.grasscutter.game.dungeons.DungeonSystem;
-import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionSystem;
 import emu.grasscutter.game.gacha.GachaSystem;
 import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
@@ -26,6 +26,7 @@ import emu.grasscutter.game.shop.ShopSystem;
 import emu.grasscutter.game.systems.AnnouncementSystem;
 import emu.grasscutter.game.systems.InventorySystem;
 import emu.grasscutter.game.systems.MultiplayerSystem;
+import emu.grasscutter.game.talk.TalkSystem;
 import emu.grasscutter.game.tower.TowerSystem;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataSystem;
@@ -62,12 +63,14 @@ public final class GameServer extends KcpServer {
     private final DungeonSystem dungeonSystem;
     private final ExpeditionSystem expeditionSystem;
     private final DropSystem dropSystem;
+    private final DropSystemLegacy dropSystemLegacy;
     private final WorldDataSystem worldDataSystem;
     private final BattlePassSystem battlePassSystem;
     private final CombineManger combineSystem;
     private final TowerSystem towerSystem;
     private final AnnouncementSystem announcementSystem;
     private final QuestSystem questSystem;
+    private final TalkSystem talkSystem;
 
     // Extra
     private final ServerTaskScheduler scheduler;
@@ -91,7 +94,6 @@ public final class GameServer extends KcpServer {
 
         this.init(GameSessionManager.getListener(), channelConfig, address);
 
-        DungeonChallenge.initialize();
         EnergyManager.initialize();
         StaminaManager.initialize();
         CookingManager.initialize();
@@ -115,6 +117,7 @@ public final class GameServer extends KcpServer {
         this.multiplayerSystem = new MultiplayerSystem(this);
         this.dungeonSystem = new DungeonSystem(this);
         this.dropSystem = new DropSystem(this);
+        this.dropSystemLegacy = new DropSystemLegacy(this);
         this.expeditionSystem = new ExpeditionSystem(this);
         this.combineSystem = new CombineManger(this);
         this.towerSystem = new TowerSystem(this);
@@ -122,6 +125,7 @@ public final class GameServer extends KcpServer {
         this.battlePassSystem = new BattlePassSystem(this);
         this.announcementSystem = new AnnouncementSystem(this);
         this.questSystem = new QuestSystem(this);
+        this.talkSystem = new TalkSystem(this);
 
         // Chata manager
         this.chatManager = new ChatSystem(this);
@@ -240,7 +244,7 @@ public final class GameServer extends KcpServer {
 
     public void deregisterWorld(World world) {
         // TODO Auto-generated method stub
-
+        world.save(); // Save the player's world
     }
 
     public void start() {
@@ -277,5 +281,7 @@ public final class GameServer extends KcpServer {
         for (Player player : list) {
             player.getSession().close();
         }
+
+        getWorlds().forEach(World::save);
     }
 }

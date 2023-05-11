@@ -1604,8 +1604,8 @@ public final class MusicGameGetBeatmapRspOuterClass {
                     + "GetBeatmapReqType\022%\n\014music_record\030\t \001(\0132"
                     + "\r.MusicBeatmapH\000\022,\n\020music_brief_info\030\271\007 "
                     + "\001(\0132\017.MusicBriefInfoH\001B\t\n\007beatmapB\014\n\nbri"
-                    + "ef_infoB\033\n\031emu.grasscutter.net.protob\006pr"
-                    + "oto3"
+                    + "ef_infoB!\n\031emu.grasscutter.net.protoZ\004/g"
+                    + "enb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

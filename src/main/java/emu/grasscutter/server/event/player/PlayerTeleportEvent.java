@@ -1,25 +1,24 @@
 package emu.grasscutter.server.event.player;
 
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
 import emu.grasscutter.utils.Position;
 
 public final class PlayerTeleportEvent extends PlayerEvent implements Cancellable {
-    private final TeleportType type;
+    private final TeleportProperties properties;
     private final Position from;
-    private Position to;
 
-    public PlayerTeleportEvent(Player player, TeleportType type, Position from, Position to) {
+    public PlayerTeleportEvent(Player player, TeleportProperties properties, Position from) {
         super(player);
 
-        this.type = type;
+        this.properties = properties;
         this.from = from;
-        this.to = to;
     }
 
     public TeleportType getTeleportType() {
-        return this.type;
+        return this.properties.getTeleportType();
     }
 
     public Position getSource() {
@@ -27,11 +26,11 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
     }
 
     public Position getDestination() {
-        return this.to;
+        return this.properties.getTeleportTo();
     }
 
     public void setDestination(Position to) {
-        this.to = to;
+        this.properties.setTeleportTo(to);
     }
 
     public enum TeleportType {
@@ -48,6 +47,12 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
         DUNGEON,
 
         /** The player has asked to teleport using the command. */
-        COMMAND
+        COMMAND,
+
+        /** A script has teleported the player. */
+        SCRIPT,
+
+        /** The client has requested to teleport. (script) */
+        CLIENT
     }
 }

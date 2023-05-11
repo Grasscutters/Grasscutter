@@ -5,7 +5,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
-import emu.grasscutter.data.excels.WeatherData;
+import emu.grasscutter.data.excels.world.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
@@ -15,6 +15,7 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
@@ -39,32 +40,28 @@ import emu.grasscutter.game.managers.forging.ForgingManager;
 import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.game.managers.mapmark.MapMarksManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ClimateType;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.game.quest.enums.QuestCond;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.shop.ShopLimit;
+import emu.grasscutter.game.talk.TalkManager;
 import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
-import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
@@ -93,238 +90,129 @@ import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
-    private transient final Int2ObjectMap<CoopRequest> coopRequests;  // Synchronized getter
-    @Getter
-    private transient final Queue<AttackResult> attackResults;
-    @Getter
-    private transient final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
-    @Getter
-    private transient final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
-    @Getter
-    private transient final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
-    @Id
-    private int id;
-    @Indexed(options = @IndexOptions(unique = true))
-    private String accountId;
-    @Setter
-    private transient Account account;
-    @Getter
-    @Setter
-    private transient GameSession session;
-    @Getter
-    private String nickname;
-    @Getter
-    private String signature;
-    @Getter
-    private int headImage;
-    @Getter
-    private int nameCardId = 210001;
-    @Getter
-    private final Position position;
-    @Getter
-    @Setter
-    private Position prevPos;
-    @Getter
-    private final Position rotation;
-    @Getter
-    private PlayerBirthday birthday;
-    @Getter
-    private PlayerCodex codex;
-    @Getter
-    @Setter
-    private boolean showAvatars;
-    @Getter
-    @Setter
-    private List<Integer> showAvatarList;
-    @Getter
-    @Setter
-    private List<Integer> showNameCardList;
-    @Getter
-    private final Map<Integer, Integer> properties;
-    @Getter
-    @Setter
-    private int currentRealmId;
-    @Getter
-    @Setter
-    private int widgetId;
-    @Getter
-    @Setter
-    private int sceneId;
-    @Getter
-    @Setter
-    private int regionId;
-    @Getter
-    private int mainCharacterId;
-    @Setter
-    private boolean godmode;  // Getter is inGodmode
-    private boolean stamina;  // Getter is getUnlimitedStamina, Setter is setUnlimitedStamina
-    @Getter
-    private final Set<Integer> nameCardList;
-    @Getter
-    private final Set<Integer> flyCloakList;
-    @Getter
-    private final Set<Integer> costumeList;
-    @Getter
-    @Setter
-    private Set<Integer> rewardedLevels;
-    @Getter
-    @Setter
-    private Set<Integer> homeRewardedLevels;
-    @Getter
-    @Setter
-    private Set<Integer> realmList;
-    @Getter
-    @Setter
-    private Set<Integer> seenRealmList;
-    @Getter
-    private final Set<Integer> unlockedForgingBlueprints;
-    @Getter
-    private final Set<Integer> unlockedCombines;
-    @Getter
-    private final Set<Integer> unlockedFurniture;
-    @Getter
-    private final Set<Integer> unlockedFurnitureSuite;
-    @Getter
-    private final Map<Long, ExpeditionInfo> expeditionInfo;
-    @Getter
-    private final Map<Integer, Integer> unlockedRecipies;
-    @Getter
-    private final List<ActiveForgeData> activeForges;
-    @Getter
-    private final Map<Integer, ActiveCookCompoundData> activeCookCompounds;
-    @Getter
-    private final Map<Integer, Integer> questGlobalVariables;
-    @Getter
-    private final Map<Integer, Integer> openStates;
-    @Getter
-    @Setter
-    private Map<Integer, Set<Integer>> unlockedSceneAreas;
-    @Getter
-    @Setter
-    private Map<Integer, Set<Integer>> unlockedScenePoints;
-    @Getter
-    @Setter
-    private List<Integer> chatEmojiIdList;
-    @Transient
-    private long nextGuid = 0;
-    @Transient
-    @Getter
-    @Setter
-    private int peerId;
-    @Transient
-    private World world;  // Synchronized getter and setter
-    @Transient
-    private Scene scene;  // Synchronized getter and setter
-    @Transient
-    @Getter
-    private int weatherId = 0;
-    @Transient
-    @Getter
-    private ClimateType climate = ClimateType.CLIMATE_SUNNY;
+    @Id private int id;
+    @Indexed(options = @IndexOptions(unique = true)) private String accountId;
+    @Setter private transient Account account;
+    @Getter @Setter private transient GameSession session;
+
+    @Getter private String nickname;
+    @Getter private String signature;
+    @Getter private int headImage;
+    @Getter private int nameCardId = 210001;
+    @Getter private Position position;
+    @Getter @Setter private Position prevPos;
+    @Getter private Position rotation;
+    @Getter private PlayerBirthday birthday;
+    @Getter private PlayerCodex codex;
+    @Getter @Setter private boolean showAvatars;
+    @Getter @Setter private List<Integer> showAvatarList;
+    @Getter @Setter private List<Integer> showNameCardList;
+    @Getter private Map<Integer, Integer> properties;
+    @Getter @Setter private int currentRealmId;
+    @Getter @Setter private int widgetId;
+    @Getter @Setter private int sceneId;
+    @Getter @Setter private int regionId;
+    @Getter private int mainCharacterId;
+    @Getter @Setter private boolean inGodMode;
+    @Getter @Setter private boolean unlimitedStamina;
+
+    @Getter private Set<Integer> nameCardList;
+    @Getter private Set<Integer> flyCloakList;
+    @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> personalLineList;
+    @Getter @Setter private Set<Integer> rewardedLevels;
+    @Getter @Setter private Set<Integer> homeRewardedLevels;
+    @Getter @Setter private Set<Integer> realmList;
+    @Getter @Setter private Set<Integer> seenRealmList;
+    @Getter private Set<Integer> unlockedForgingBlueprints;
+    @Getter private Set<Integer> unlockedCombines;
+    @Getter private Set<Integer> unlockedFurniture;
+    @Getter private Set<Integer> unlockedFurnitureSuite;
+    @Getter private Map<Long, ExpeditionInfo> expeditionInfo;
+    @Getter private Map<Integer, Integer> unlockedRecipies;
+    @Getter private List<ActiveForgeData> activeForges;
+    @Getter private Map<Integer, ActiveCookCompoundData> activeCookCompounds;
+    @Getter private Map<Integer, Integer> questGlobalVariables;
+    @Getter private Map<Integer, Integer> openStates;
+    @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
+    @Getter @Setter private Map<Integer, Set<Integer>> unlockedScenePoints;
+    @Getter @Setter private List<Integer> chatEmojiIdList;
+
+    @Transient private long nextGuid = 0;
+    @Transient @Getter @Setter private int peerId;
+    @Transient private World world;  // Synchronized getter and setter
+    @Transient private Scene scene;  // Synchronized getter and setter
+    @Transient @Getter private int weatherId = 0;
+    @Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
+
     // Player managers go here
-    @Getter
-    private final transient AvatarStorage avatars;
-    @Getter
-    private final transient Inventory inventory;
-    @Getter
-    private final transient FriendsList friendsList;
-    @Getter
-    private final transient MailHandler mailHandler;
-    @Getter
-    @Setter
-    private transient MessageHandler messageHandler;
-    @Getter
-    private final transient AbilityManager abilityManager;
-    @Getter
-    @Setter
-    private transient QuestManager questManager;
-    @Getter
-    private final transient TowerManager towerManager;
-    @Getter
-    private transient SotSManager sotsManager;
-    @Getter
-    private transient MapMarksManager mapMarksManager;
-    @Getter
-    private transient StaminaManager staminaManager;
-    @Getter
-    private transient EnergyManager energyManager;
-    @Getter
-    private transient ResinManager resinManager;
-    @Getter
-    private transient ForgingManager forgingManager;
-    @Getter
-    private transient DeforestationManager deforestationManager;
-    @Getter
-    private transient FurnitureManager furnitureManager;
-    @Getter
-    private transient BattlePassManager battlePassManager;
-    @Getter
-    private transient CookingManager cookingManager;
-    @Getter
-    private transient CookingCompoundManager cookingCompoundManager;
-    @Getter
-    private transient ActivityManager activityManager;
-    @Getter
-    private final transient PlayerBuffManager buffManager;
-    @Getter
-    private transient PlayerProgressManager progressManager;
-    @Getter
-    private transient SatiationManager satiationManager;
+    @Getter private transient AvatarStorage avatars;
+    @Getter private transient Inventory inventory;
+    @Getter private transient FriendsList friendsList;
+    @Getter private transient MailHandler mailHandler;
+    @Getter @Setter private transient MessageHandler messageHandler;
+    @Getter private transient AbilityManager abilityManager;
+    @Getter @Setter private transient QuestManager questManager;
+    @Getter private transient TowerManager towerManager;
+    @Getter private transient SotSManager sotsManager;
+    @Getter private transient MapMarksManager mapMarksManager;
+    @Getter private transient StaminaManager staminaManager;
+    @Getter private transient EnergyManager energyManager;
+    @Getter private transient ResinManager resinManager;
+    @Getter private transient ForgingManager forgingManager;
+    @Getter private transient DeforestationManager deforestationManager;
+    @Getter private transient FurnitureManager furnitureManager;
+    @Getter private transient BattlePassManager battlePassManager;
+    @Getter private transient CookingManager cookingManager;
+    @Getter private transient CookingCompoundManager cookingCompoundManager;
+    @Getter private transient ActivityManager activityManager;
+    @Getter private transient PlayerBuffManager buffManager;
+    @Getter private transient PlayerProgressManager progressManager;
+    @Getter private transient SatiationManager satiationManager;
+    @Getter private transient TalkManager talkManager;
+
+    @Getter @Setter private transient Position lastCheckedPosition = null;
+
     // Manager data (Save-able to the database)
-    @Getter
-    private transient Achievements achievements;
+    @Getter private transient Achievements achievements;
     private PlayerProfile playerProfile;  // Getter has null-check
-    @Getter
-    private TeamManager teamManager;
+    @Getter private TeamManager teamManager;
     private TowerData towerData;  // Getter has null-check
-    @Getter
-    private final PlayerGachaInfo gachaInfo;
+    @Getter private PlayerGachaInfo gachaInfo;
     private PlayerCollectionRecords collectionRecordStore;  // Getter has null-check
-    @Getter
-    private final ArrayList<ShopLimit> shopLimit;
-    @Getter
-    private transient GameHome home;
-    @Setter
-    private boolean moonCard;  // Getter is inMoonCard
-    @Getter
-    @Setter
-    private Date moonCardStartTime;
-    @Getter
-    @Setter
-    private int moonCardDuration;
-    @Getter
-    @Setter
-    private Set<Date> moonCardGetTimes;
-    @Transient
-    @Getter
-    private boolean paused;
-    @Transient
-    @Getter
-    @Setter
-    private int enterSceneToken;
-    @Transient
-    @Getter
-    @Setter
-    private SceneLoadState sceneLoadState = SceneLoadState.NONE;
-    @Transient
-    private boolean hasSentLoginPackets;
-    @Transient
-    private long nextSendPlayerLocTime = 0;
-    @Getter
-    @Setter
-    private long springLastUsed;
+    @Getter private ArrayList<ShopLimit> shopLimit;
+
+    @Getter private transient GameHome home;
+
+    @Setter private boolean moonCard;  // Getter is inMoonCard
+    @Getter @Setter private Date moonCardStartTime;
+    @Getter @Setter private int moonCardDuration;
+    @Getter @Setter private Set<Date> moonCardGetTimes;
+
+    @Transient @Getter private boolean paused;
+    @Transient @Getter @Setter private int enterSceneToken;
+    @Transient @Getter @Setter private SceneLoadState sceneLoadState = SceneLoadState.NONE;
+    @Transient private boolean hasSentLoginPackets;
+    @Transient private long nextSendPlayerLocTime = 0;
+
+    private transient final Int2ObjectMap<CoopRequest> coopRequests;  // Synchronized getter
+    @Getter private transient final Queue<AttackResult> attackResults;
+    @Getter private transient final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
+    @Getter private transient final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
+    @Getter private transient final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
+
+    @Getter @Setter private long springLastUsed;
     private HashMap<String, MapMark> mapMarks;  // Getter makes an empty hashmap - maybe do this elsewhere?
-    @Getter
-    @Setter
-    private int nextResinRefresh;
-    @Getter
-    @Setter
-    private int resinBuyCount;
-    @Getter
-    @Setter
-    private int lastDailyReset;
-    @Getter
-    private transient MpSettingType mpSetting = MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY;  // TODO
+    @Getter @Setter private int nextResinRefresh;
+    @Getter @Setter private int resinBuyCount;
+    @Getter @Setter private int lastDailyReset;
+    @Getter private transient MpSettingType mpSetting = MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY;
+    @Getter private long playerGameTime = 540000; // 9 in-game hours. Present at the start of the game.
+
+    @Getter private PlayerProgress playerProgress;
+    @Getter private Set<Integer> activeQuestTimers;
+
+    @Getter @Setter private ElementType mainCharacterElement = ElementType.None;
 
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -369,6 +257,8 @@ public class Player {
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
         this.chatEmojiIdList = new ArrayList<>();
+        this.playerProgress = new PlayerProgress();
+        this.activeQuestTimers = new HashSet<>();
 
         this.attackResults = new LinkedBlockingQueue<>();
         this.coopRequests = new Int2ObjectOpenHashMap<>();
@@ -397,11 +287,13 @@ public class Player {
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
+        this.talkManager = new TalkManager(this);
     }
 
     // On player creation
     public Player(GameSession session) {
         this();
+
         this.account = session.getAccount();
         this.accountId = this.getAccount().getId();
         this.session = session;
@@ -410,16 +302,11 @@ public class Player {
         this.teamManager = new TeamManager(this);
         this.birthday = new PlayerBirthday();
         this.codex = new PlayerCodex(this);
-        this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1, false);
-        this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1, false);
-        this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50, false);
-        this.setProperty(PlayerProperty.PROP_IS_FLYABLE, 1, false);
-        this.setProperty(PlayerProperty.PROP_IS_TRANSFERABLE, 1, false);
-        this.setProperty(PlayerProperty.PROP_MAX_STAMINA, 24000, false);
-        this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, 24000, false);
-        this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160, false);
+
+        this.applyProperties();
         this.getFlyCloakList().add(140001);
         this.getNameCardList().add(210001);
+
         this.messageHandler = null;
         this.mapMarksManager = new MapMarksManager(this);
         this.staminaManager = new StaminaManager(this);
@@ -433,6 +320,29 @@ public class Player {
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
+    }
+
+    /**
+     * Updates the player's game time if it has changed.
+     *
+     * @param gameTime The new game time.
+     */
+    public void updatePlayerGameTime(long gameTime) {
+        if (this.playerGameTime == gameTime) return;
+        this.playerGameTime = gameTime;
+
+        // If the player is the host of the world, update the game time as well.
+        if (this.getWorld().getHost() == this) {
+            this.getWorld().changeTime(gameTime);
+        }
+
+        // Trigger the script event for game time update.
+        var questManager = this.getQuestManager();
+        questManager.queueEvent(QuestCond.QUEST_COND_IS_DAYTIME);
+        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_GT_EQ);
+        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_PASS_DAY);
+
+        this.save();
     }
 
     public int getUid() {
@@ -575,6 +485,8 @@ public class Player {
 
             // Handle open state unlocks from level-up.
             this.getProgressManager().tryUnlockOpenStates();
+            this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_PLAYER_LEVEL_UP, level);
+            this.getQuestManager().queueEvent(QuestCond.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER, level);
 
             return true;
         }
@@ -609,6 +521,40 @@ public class Player {
         }
 
         return this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
+    }
+
+    /**
+     * Applies the properties to the player.
+     */
+    private void applyProperties() {
+        var withQuesting = GAME_OPTIONS.questing.enabled;
+
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_LEVEL, 1);
+        this.setOrFetch(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
+        this.setOrFetch(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
+        this.setOrFetch(PlayerProperty.PROP_IS_FLYABLE,
+            withQuesting ? 0 : 1);
+        this.setOrFetch(PlayerProperty.PROP_IS_TRANSFERABLE, 1);
+        this.setOrFetch(PlayerProperty.PROP_MAX_STAMINA,
+            withQuesting ? 10000 : 24000);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 160);
+
+        // The player's current stamina is always their max stamina.
+        this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
+            this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
+    }
+
+    /**
+     * Applies a property to the player if it doesn't exist in the database.
+     *
+     * @param property The property to apply.
+     * @param defaultValue The value to apply if the property doesn't exist.
+     */
+    private void setOrFetch(PlayerProperty property, int defaultValue) {
+        var exists = this.properties.containsKey(property.getId());
+        if (exists) exists = this.getProperty(property) != 0;
+        this.setProperty(property, exists ? this.getProperty(property)
+            : defaultValue, false);
     }
 
     public int getPrimogems() {
@@ -715,12 +661,14 @@ public class Player {
     }
 
     public void onEnterRegion(SceneRegion region) {
-        getQuestManager().forEachActiveQuest(quest -> {
-            if (quest.getTriggers().containsKey("ENTER_REGION_" + region.config_id)) {
+        this.getQuestManager().forEachActiveQuest(quest -> {
+            if (quest.getTriggerData() != null &&
+                quest.getTriggers().containsKey("ENTER_REGION_"+ region.config_id)) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_" + region.config_id, true))) {
-                    //getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
-                    getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getId(), 0);
+                    this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
+                        quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getId(), 0);
                 }
             }
         });
@@ -728,12 +676,13 @@ public class Player {
     }
 
     public void onLeaveRegion(SceneRegion region) {
-        getQuestManager().forEachActiveQuest(quest -> {
+        this.getQuestManager().forEachActiveQuest(quest -> {
             if (quest.getTriggers().containsKey("LEAVE_REGION_" + region.config_id)) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_" + region.config_id, true))) {
-                    getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
-                    getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("LEAVE_REGION_" + region.config_id).getId(), 0);
+                    this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
+                        quest.getTriggerData().get("LEAVE_REGION_" + region.config_id).getId(), 0);
                 }
             }
         });
@@ -894,18 +843,6 @@ public class Player {
         this.save();
     }
 
-    public boolean getUnlimitedStamina() {
-        return stamina;
-    }
-
-    public void setUnlimitedStamina(boolean stamina) {
-        this.stamina = stamina;
-    }
-
-    public boolean inGodmode() {
-        return godmode;
-    }
-
     public boolean hasSentLoginPackets() {
         return hasSentLoginPackets;
     }
@@ -937,6 +874,11 @@ public class Player {
         addAvatar(avatar, true);
     }
 
+    public void addAvatar(int avatarId) {
+        // I dont see why we cant do this lolz
+        addAvatar(new Avatar(avatarId), true);
+    }
+
     public void addFlycloak(int flycloakId) {
         this.getFlyCloakList().add(flycloakId);
         this.sendPacket(new PacketAvatarGainFlycloakNotify(flycloakId));
@@ -945,6 +887,11 @@ public class Player {
     public void addCostume(int costumeId) {
         this.getCostumeList().add(costumeId);
         this.sendPacket(new PacketAvatarGainCostumeNotify(costumeId));
+    }
+
+    public void addPersonalLine(int personalLineId) {
+        this.getPersonalLineList().add(personalLineId);
+        session.getPlayer().getQuestManager().queueEvent(QuestCond.QUEST_COND_PERSONAL_LINE_UNLOCK, personalLineId);
     }
 
     public void addNameCard(int nameCardId) {
@@ -962,6 +909,11 @@ public class Player {
         this.sendPacket(new PacketSetNameCardRsp(nameCardId));
     }
 
+    /**
+     * Sends a message to this player.
+     *
+     * @param message The message to send.
+     */
     public void dropMessage(Object message) {
         if (this.messageHandler != null) {
             this.messageHandler.append(message.toString());
@@ -1090,7 +1042,7 @@ public class Player {
             }
         }
 
-        SocialDetail.Builder social = SocialDetail.newBuilder()
+        return SocialDetail.newBuilder()
             .setUid(this.getUid())
             .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
             .setNickname(this.getNickname())
@@ -1104,7 +1056,6 @@ public class Player {
             .addAllShowNameCardIdList(this.getShowNameCardInfoList())
             .setFinishAchievementNum(this.getFinishedAchievementNum())
             .setFriendEnterHomeOptionValue(this.getHome() == null ? 0 : this.getHome().getEnterHomeOption());
-        return social;
     }
 
     public int getFinishedAchievementNum() {
@@ -1243,6 +1194,8 @@ public class Player {
 
         // Home resources
         this.getHome().updateHourlyResources(this);
+
+        this.getQuestManager().onTick();
     }
 
     private synchronized void doDailyReset() {
@@ -1311,12 +1264,19 @@ public class Player {
         this.achievements = Achievements.getByPlayer(this);
         this.getAvatars().loadFromDatabase();
         this.getInventory().loadFromDatabase();
-        this.loadBattlePassManager(); // Call before avatar postLoad to avoid null pointer
-        this.getAvatars().postLoad(); // Needs to be called after inventory is handled
 
         this.getFriendsList().loadFromDatabase();
         this.getMailHandler().loadFromDatabase();
         this.getQuestManager().loadFromDatabase();
+
+        this.loadBattlePassManager();
+        this.getAvatars().postLoad(); // Needs to be called after inventory is handled
+
+        this.getPlayerProgress().setPlayer(this); // Add reference to the player.
+    }
+
+    public void onPlayerBorn() {
+        getQuestManager().onPlayerBorn();
     }
 
     public void onLogin() {
@@ -1359,6 +1319,7 @@ public class Player {
         session.send(new PacketFinishedParentQuestNotify(this));
         session.send(new PacketBattlePassAllDataNotify(this));
         session.send(new PacketQuestListNotify(this));
+        session.send(new PacketQuestGlobalVarNotify(this));
         session.send(new PacketCodexDataFullNotify(this));
         session.send(new PacketAllWidgetDataNotify(this));
 

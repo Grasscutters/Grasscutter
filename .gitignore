@@ -83,3 +83,9 @@ src/main/resources/handbook.html
 # macOS
 .DS_Store
 .directory
+
+# Hotswap Agent
+hotswap-agent.properties
+
+# Debug patches
+patches/*.patch

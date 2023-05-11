@@ -26,7 +26,7 @@ public class Account {
 
     private String token;
     private String sessionKey; // Session token for dispatch server
-    private final List<String> permissions;
+    private List<String> permissions;
     private Locale locale;
 
     private String banReason;
@@ -110,7 +110,8 @@ public class Account {
         if (email != null && !email.isEmpty()) {
             return email;
         } else {
-            return "";
+            // As of game version 3.5+, only the email is displayed to a user.
+            return this.getUsername() + "@grasscutter.io";
         }
     }
 

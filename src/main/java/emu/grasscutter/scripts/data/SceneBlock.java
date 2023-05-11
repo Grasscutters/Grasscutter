@@ -37,10 +37,11 @@ public class SceneBlock {
     }
 
     public boolean contains(Position pos) {
-        return pos.getX() <= this.max.getX()
-                && pos.getX() >= this.min.getX()
-                && pos.getZ() <= this.max.getZ()
-                && pos.getZ() >= this.min.getZ();
+        int range = Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange;
+        return pos.getX() <= (this.max.getX() + range)
+                && pos.getX() >= (this.min.getX() - range)
+                && pos.getZ() <= (this.max.getZ() + range)
+                && pos.getZ() >= (this.min.getZ() - range);
     }
 
     public SceneBlock load(int sceneId, Bindings bindings) {
@@ -76,7 +77,7 @@ public class SceneBlock {
                             "An error occurred while loading block " + this.id + " in scene " + sceneId,
                             exception);
         }
-        Grasscutter.getLogger().debug("Successfully loaded block {} in scene {}.", this.id, sceneId);
+        Grasscutter.getLogger().trace("Successfully loaded block {} in scene {}.", this.id, sceneId);
         return this;
     }
 

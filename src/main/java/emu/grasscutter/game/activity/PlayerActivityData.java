@@ -5,7 +5,7 @@ import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.ActivityWatcherData;
+import emu.grasscutter.data.excels.activity.ActivityWatcherData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
@@ -102,6 +102,13 @@ public class PlayerActivityData {
         int totalProgress;
         int curProgress;
         boolean isTakenReward;
+
+        /**
+         * @return True when the progress of this watcher has reached the total progress.
+         */
+        public boolean isFinished() {
+            return this.curProgress >= this.totalProgress;
+        }
 
         public static WatcherInfo init(ActivityWatcher watcher) {
             return WatcherInfo.of()

@@ -8,14 +8,15 @@ import emu.grasscutter.net.proto.ResinChangeNotifyOuterClass.ResinChangeNotify;
 
 public class PacketResinChangeNotify extends BasePacket {
 
-	public PacketResinChangeNotify(Player player) {
+    public PacketResinChangeNotify(Player player) {
         super(PacketOpcodes.ResinChangeNotify);
 
-        ResinChangeNotify proto = ResinChangeNotify.newBuilder()
-            .setCurValue(player.getProperty(PlayerProperty.PROP_PLAYER_RESIN))
-            .setNextAddTimestamp(player.getNextResinRefresh())
-            .setCurBuyCount(player.getResinBuyCount())
-            .build();
+        ResinChangeNotify proto =
+                ResinChangeNotify.newBuilder()
+                        .setCurValue(player.getProperty(PlayerProperty.PROP_PLAYER_RESIN))
+                        .setNextAddTimestamp(player.getNextResinRefresh())
+                        .setCurBuyCount(player.getResinBuyCount())
+                        .build();
 
         this.setData(proto);
     }

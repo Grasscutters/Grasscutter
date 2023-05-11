@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class TeamInfo {
+public final class TeamInfo {
     private String name;
-    private final List<Integer> avatars;
+    private List<Integer> avatars;
 
     public TeamInfo() {
         this.name = "";

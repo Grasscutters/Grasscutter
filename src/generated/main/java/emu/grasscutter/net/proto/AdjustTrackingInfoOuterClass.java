@@ -4,1374 +4,1423 @@
 package emu.grasscutter.net.proto;
 
 public final class AdjustTrackingInfoOuterClass {
-  private AdjustTrackingInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private AdjustTrackingInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface AdjustTrackingInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AdjustTrackingInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>string MPAIFPMBIHP = 14;</code>
-     * @return The mPAIFPMBIHP.
-     */
-    java.lang.String getMPAIFPMBIHP();
-    /**
-     * <code>string MPAIFPMBIHP = 14;</code>
-     * @return The bytes for mPAIFPMBIHP.
-     */
-    com.google.protobuf.ByteString
-        getMPAIFPMBIHPBytes();
-
-    /**
-     * <code>string PPNIOHNCLMI = 9;</code>
-     * @return The pPNIOHNCLMI.
-     */
-    java.lang.String getPPNIOHNCLMI();
-    /**
-     * <code>string PPNIOHNCLMI = 9;</code>
-     * @return The bytes for pPNIOHNCLMI.
-     */
-    com.google.protobuf.ByteString
-        getPPNIOHNCLMIBytes();
-
-    /**
-     * <code>string OFJCBCLDMGC = 15;</code>
-     * @return The oFJCBCLDMGC.
-     */
-    java.lang.String getOFJCBCLDMGC();
-    /**
-     * <code>string OFJCBCLDMGC = 15;</code>
-     * @return The bytes for oFJCBCLDMGC.
-     */
-    com.google.protobuf.ByteString
-        getOFJCBCLDMGCBytes();
-
-    /**
-     * <code>string FNHDMMNNDOH = 11;</code>
-     * @return The fNHDMMNNDOH.
-     */
-    java.lang.String getFNHDMMNNDOH();
-    /**
-     * <code>string FNHDMMNNDOH = 11;</code>
-     * @return The bytes for fNHDMMNNDOH.
-     */
-    com.google.protobuf.ByteString
-        getFNHDMMNNDOHBytes();
-
-    /**
-     * <code>string BJNLPFHJNMB = 12;</code>
-     * @return The bJNLPFHJNMB.
-     */
-    java.lang.String getBJNLPFHJNMB();
-    /**
-     * <code>string BJNLPFHJNMB = 12;</code>
-     * @return The bytes for bJNLPFHJNMB.
-     */
-    com.google.protobuf.ByteString
-        getBJNLPFHJNMBBytes();
-
-    /**
-     * <code>string ENHBOKJDKDD = 2;</code>
-     * @return The eNHBOKJDKDD.
-     */
-    java.lang.String getENHBOKJDKDD();
-    /**
-     * <code>string ENHBOKJDKDD = 2;</code>
-     * @return The bytes for eNHBOKJDKDD.
-     */
-    com.google.protobuf.ByteString
-        getENHBOKJDKDDBytes();
-  }
-  /**
-   * <pre>
-   * Name: IOEAFDEDGHH
-   * </pre>
-   *
-   * Protobuf type {@code AdjustTrackingInfo}
-   */
-  public static final class AdjustTrackingInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AdjustTrackingInfo)
-      AdjustTrackingInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use AdjustTrackingInfo.newBuilder() to construct.
-    private AdjustTrackingInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AdjustTrackingInfo() {
-      mPAIFPMBIHP_ = "";
-      pPNIOHNCLMI_ = "";
-      oFJCBCLDMGC_ = "";
-      fNHDMMNNDOH_ = "";
-      bJNLPFHJNMB_ = "";
-      eNHBOKJDKDD_ = "";
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AdjustTrackingInfo();
-    }
+    public interface AdjustTrackingInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:AdjustTrackingInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private AdjustTrackingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>string MPAIFPMBIHP = 14;</code>
+         *
+         * @return The mPAIFPMBIHP.
+         */
+        java.lang.String getMPAIFPMBIHP();
+        /**
+         * <code>string MPAIFPMBIHP = 14;</code>
+         *
+         * @return The bytes for mPAIFPMBIHP.
+         */
+        com.google.protobuf.ByteString getMPAIFPMBIHPBytes();
 
-              eNHBOKJDKDD_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>string PPNIOHNCLMI = 9;</code>
+         *
+         * @return The pPNIOHNCLMI.
+         */
+        java.lang.String getPPNIOHNCLMI();
+        /**
+         * <code>string PPNIOHNCLMI = 9;</code>
+         *
+         * @return The bytes for pPNIOHNCLMI.
+         */
+        com.google.protobuf.ByteString getPPNIOHNCLMIBytes();
 
-              pPNIOHNCLMI_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>string OFJCBCLDMGC = 15;</code>
+         *
+         * @return The oFJCBCLDMGC.
+         */
+        java.lang.String getOFJCBCLDMGC();
+        /**
+         * <code>string OFJCBCLDMGC = 15;</code>
+         *
+         * @return The bytes for oFJCBCLDMGC.
+         */
+        com.google.protobuf.ByteString getOFJCBCLDMGCBytes();
 
-              fNHDMMNNDOH_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>string FNHDMMNNDOH = 11;</code>
+         *
+         * @return The fNHDMMNNDOH.
+         */
+        java.lang.String getFNHDMMNNDOH();
+        /**
+         * <code>string FNHDMMNNDOH = 11;</code>
+         *
+         * @return The bytes for fNHDMMNNDOH.
+         */
+        com.google.protobuf.ByteString getFNHDMMNNDOHBytes();
 
-              bJNLPFHJNMB_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>string BJNLPFHJNMB = 12;</code>
+         *
+         * @return The bJNLPFHJNMB.
+         */
+        java.lang.String getBJNLPFHJNMB();
+        /**
+         * <code>string BJNLPFHJNMB = 12;</code>
+         *
+         * @return The bytes for bJNLPFHJNMB.
+         */
+        com.google.protobuf.ByteString getBJNLPFHJNMBBytes();
 
-              mPAIFPMBIHP_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              oFJCBCLDMGC_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.class, emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder.class);
-    }
-
-    public static final int MPAIFPMBIHP_FIELD_NUMBER = 14;
-    private volatile java.lang.Object mPAIFPMBIHP_;
-    /**
-     * <code>string MPAIFPMBIHP = 14;</code>
-     * @return The mPAIFPMBIHP.
-     */
-    @java.lang.Override
-    public java.lang.String getMPAIFPMBIHP() {
-      java.lang.Object ref = mPAIFPMBIHP_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mPAIFPMBIHP_ = s;
-        return s;
-      }
+        /**
+         * <code>string ENHBOKJDKDD = 2;</code>
+         *
+         * @return The eNHBOKJDKDD.
+         */
+        java.lang.String getENHBOKJDKDD();
+        /**
+         * <code>string ENHBOKJDKDD = 2;</code>
+         *
+         * @return The bytes for eNHBOKJDKDD.
+         */
+        com.google.protobuf.ByteString getENHBOKJDKDDBytes();
     }
     /**
-     * <code>string MPAIFPMBIHP = 14;</code>
-     * @return The bytes for mPAIFPMBIHP.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMPAIFPMBIHPBytes() {
-      java.lang.Object ref = mPAIFPMBIHP_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mPAIFPMBIHP_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PPNIOHNCLMI_FIELD_NUMBER = 9;
-    private volatile java.lang.Object pPNIOHNCLMI_;
-    /**
-     * <code>string PPNIOHNCLMI = 9;</code>
-     * @return The pPNIOHNCLMI.
-     */
-    @java.lang.Override
-    public java.lang.String getPPNIOHNCLMI() {
-      java.lang.Object ref = pPNIOHNCLMI_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pPNIOHNCLMI_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string PPNIOHNCLMI = 9;</code>
-     * @return The bytes for pPNIOHNCLMI.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPPNIOHNCLMIBytes() {
-      java.lang.Object ref = pPNIOHNCLMI_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pPNIOHNCLMI_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OFJCBCLDMGC_FIELD_NUMBER = 15;
-    private volatile java.lang.Object oFJCBCLDMGC_;
-    /**
-     * <code>string OFJCBCLDMGC = 15;</code>
-     * @return The oFJCBCLDMGC.
-     */
-    @java.lang.Override
-    public java.lang.String getOFJCBCLDMGC() {
-      java.lang.Object ref = oFJCBCLDMGC_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        oFJCBCLDMGC_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string OFJCBCLDMGC = 15;</code>
-     * @return The bytes for oFJCBCLDMGC.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOFJCBCLDMGCBytes() {
-      java.lang.Object ref = oFJCBCLDMGC_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oFJCBCLDMGC_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FNHDMMNNDOH_FIELD_NUMBER = 11;
-    private volatile java.lang.Object fNHDMMNNDOH_;
-    /**
-     * <code>string FNHDMMNNDOH = 11;</code>
-     * @return The fNHDMMNNDOH.
-     */
-    @java.lang.Override
-    public java.lang.String getFNHDMMNNDOH() {
-      java.lang.Object ref = fNHDMMNNDOH_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fNHDMMNNDOH_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string FNHDMMNNDOH = 11;</code>
-     * @return The bytes for fNHDMMNNDOH.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFNHDMMNNDOHBytes() {
-      java.lang.Object ref = fNHDMMNNDOH_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fNHDMMNNDOH_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BJNLPFHJNMB_FIELD_NUMBER = 12;
-    private volatile java.lang.Object bJNLPFHJNMB_;
-    /**
-     * <code>string BJNLPFHJNMB = 12;</code>
-     * @return The bJNLPFHJNMB.
-     */
-    @java.lang.Override
-    public java.lang.String getBJNLPFHJNMB() {
-      java.lang.Object ref = bJNLPFHJNMB_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bJNLPFHJNMB_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string BJNLPFHJNMB = 12;</code>
-     * @return The bytes for bJNLPFHJNMB.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBJNLPFHJNMBBytes() {
-      java.lang.Object ref = bJNLPFHJNMB_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bJNLPFHJNMB_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENHBOKJDKDD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object eNHBOKJDKDD_;
-    /**
-     * <code>string ENHBOKJDKDD = 2;</code>
-     * @return The eNHBOKJDKDD.
-     */
-    @java.lang.Override
-    public java.lang.String getENHBOKJDKDD() {
-      java.lang.Object ref = eNHBOKJDKDD_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eNHBOKJDKDD_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ENHBOKJDKDD = 2;</code>
-     * @return The bytes for eNHBOKJDKDD.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getENHBOKJDKDDBytes() {
-      java.lang.Object ref = eNHBOKJDKDD_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        eNHBOKJDKDD_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eNHBOKJDKDD_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, eNHBOKJDKDD_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pPNIOHNCLMI_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pPNIOHNCLMI_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fNHDMMNNDOH_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, fNHDMMNNDOH_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bJNLPFHJNMB_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, bJNLPFHJNMB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mPAIFPMBIHP_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, mPAIFPMBIHP_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oFJCBCLDMGC_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, oFJCBCLDMGC_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eNHBOKJDKDD_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, eNHBOKJDKDD_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pPNIOHNCLMI_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pPNIOHNCLMI_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fNHDMMNNDOH_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, fNHDMMNNDOH_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bJNLPFHJNMB_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, bJNLPFHJNMB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mPAIFPMBIHP_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, mPAIFPMBIHP_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oFJCBCLDMGC_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, oFJCBCLDMGC_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other = (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) obj;
-
-      if (!getMPAIFPMBIHP()
-          .equals(other.getMPAIFPMBIHP())) return false;
-      if (!getPPNIOHNCLMI()
-          .equals(other.getPPNIOHNCLMI())) return false;
-      if (!getOFJCBCLDMGC()
-          .equals(other.getOFJCBCLDMGC())) return false;
-      if (!getFNHDMMNNDOH()
-          .equals(other.getFNHDMMNNDOH())) return false;
-      if (!getBJNLPFHJNMB()
-          .equals(other.getBJNLPFHJNMB())) return false;
-      if (!getENHBOKJDKDD()
-          .equals(other.getENHBOKJDKDD())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MPAIFPMBIHP_FIELD_NUMBER;
-      hash = (53 * hash) + getMPAIFPMBIHP().hashCode();
-      hash = (37 * hash) + PPNIOHNCLMI_FIELD_NUMBER;
-      hash = (53 * hash) + getPPNIOHNCLMI().hashCode();
-      hash = (37 * hash) + OFJCBCLDMGC_FIELD_NUMBER;
-      hash = (53 * hash) + getOFJCBCLDMGC().hashCode();
-      hash = (37 * hash) + FNHDMMNNDOH_FIELD_NUMBER;
-      hash = (53 * hash) + getFNHDMMNNDOH().hashCode();
-      hash = (37 * hash) + BJNLPFHJNMB_FIELD_NUMBER;
-      hash = (53 * hash) + getBJNLPFHJNMB().hashCode();
-      hash = (37 * hash) + ENHBOKJDKDD_FIELD_NUMBER;
-      hash = (53 * hash) + getENHBOKJDKDD().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Name: IOEAFDEDGHH
      * </pre>
      *
      * Protobuf type {@code AdjustTrackingInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AdjustTrackingInfo)
-        emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.class, emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class AdjustTrackingInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:AdjustTrackingInfo)
+            AdjustTrackingInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use AdjustTrackingInfo.newBuilder() to construct.
+        private AdjustTrackingInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        mPAIFPMBIHP_ = "";
 
-        pPNIOHNCLMI_ = "";
-
-        oFJCBCLDMGC_ = "";
-
-        fNHDMMNNDOH_ = "";
-
-        bJNLPFHJNMB_ = "";
-
-        eNHBOKJDKDD_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo build() {
-        emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private AdjustTrackingInfo() {
+            mPAIFPMBIHP_ = "";
+            pPNIOHNCLMI_ = "";
+            oFJCBCLDMGC_ = "";
+            fNHDMMNNDOH_ = "";
+            bJNLPFHJNMB_ = "";
+            eNHBOKJDKDD_ = "";
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo buildPartial() {
-        emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo result = new emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo(this);
-        result.mPAIFPMBIHP_ = mPAIFPMBIHP_;
-        result.pPNIOHNCLMI_ = pPNIOHNCLMI_;
-        result.oFJCBCLDMGC_ = oFJCBCLDMGC_;
-        result.fNHDMMNNDOH_ = fNHDMMNNDOH_;
-        result.bJNLPFHJNMB_ = bJNLPFHJNMB_;
-        result.eNHBOKJDKDD_ = eNHBOKJDKDD_;
-        onBuilt();
-        return result;
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new AdjustTrackingInfo();
+        }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other) {
-        if (other == emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.getDefaultInstance()) return this;
-        if (!other.getMPAIFPMBIHP().isEmpty()) {
-          mPAIFPMBIHP_ = other.mPAIFPMBIHP_;
-          onChanged();
-        }
-        if (!other.getPPNIOHNCLMI().isEmpty()) {
-          pPNIOHNCLMI_ = other.pPNIOHNCLMI_;
-          onChanged();
-        }
-        if (!other.getOFJCBCLDMGC().isEmpty()) {
-          oFJCBCLDMGC_ = other.oFJCBCLDMGC_;
-          onChanged();
-        }
-        if (!other.getFNHDMMNNDOH().isEmpty()) {
-          fNHDMMNNDOH_ = other.fNHDMMNNDOH_;
-          onChanged();
-        }
-        if (!other.getBJNLPFHJNMB().isEmpty()) {
-          bJNLPFHJNMB_ = other.bJNLPFHJNMB_;
-          onChanged();
-        }
-        if (!other.getENHBOKJDKDD().isEmpty()) {
-          eNHBOKJDKDD_ = other.eNHBOKJDKDD_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
+        private AdjustTrackingInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 18:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+                                eNHBOKJDKDD_ = s;
+                                break;
+                            }
+                        case 74:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                                pPNIOHNCLMI_ = s;
+                                break;
+                            }
+                        case 90:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      private java.lang.Object mPAIFPMBIHP_ = "";
-      /**
-       * <code>string MPAIFPMBIHP = 14;</code>
-       * @return The mPAIFPMBIHP.
-       */
-      public java.lang.String getMPAIFPMBIHP() {
-        java.lang.Object ref = mPAIFPMBIHP_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mPAIFPMBIHP_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string MPAIFPMBIHP = 14;</code>
-       * @return The bytes for mPAIFPMBIHP.
-       */
-      public com.google.protobuf.ByteString
-          getMPAIFPMBIHPBytes() {
-        java.lang.Object ref = mPAIFPMBIHP_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mPAIFPMBIHP_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string MPAIFPMBIHP = 14;</code>
-       * @param value The mPAIFPMBIHP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMPAIFPMBIHP(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        mPAIFPMBIHP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MPAIFPMBIHP = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMPAIFPMBIHP() {
-        
-        mPAIFPMBIHP_ = getDefaultInstance().getMPAIFPMBIHP();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MPAIFPMBIHP = 14;</code>
-       * @param value The bytes for mPAIFPMBIHP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMPAIFPMBIHPBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        mPAIFPMBIHP_ = value;
-        onChanged();
-        return this;
-      }
+                                fNHDMMNNDOH_ = s;
+                                break;
+                            }
+                        case 98:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      private java.lang.Object pPNIOHNCLMI_ = "";
-      /**
-       * <code>string PPNIOHNCLMI = 9;</code>
-       * @return The pPNIOHNCLMI.
-       */
-      public java.lang.String getPPNIOHNCLMI() {
-        java.lang.Object ref = pPNIOHNCLMI_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pPNIOHNCLMI_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string PPNIOHNCLMI = 9;</code>
-       * @return The bytes for pPNIOHNCLMI.
-       */
-      public com.google.protobuf.ByteString
-          getPPNIOHNCLMIBytes() {
-        java.lang.Object ref = pPNIOHNCLMI_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pPNIOHNCLMI_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string PPNIOHNCLMI = 9;</code>
-       * @param value The pPNIOHNCLMI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPPNIOHNCLMI(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        pPNIOHNCLMI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string PPNIOHNCLMI = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPPNIOHNCLMI() {
-        
-        pPNIOHNCLMI_ = getDefaultInstance().getPPNIOHNCLMI();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string PPNIOHNCLMI = 9;</code>
-       * @param value The bytes for pPNIOHNCLMI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPPNIOHNCLMIBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pPNIOHNCLMI_ = value;
-        onChanged();
-        return this;
-      }
+                                bJNLPFHJNMB_ = s;
+                                break;
+                            }
+                        case 114:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      private java.lang.Object oFJCBCLDMGC_ = "";
-      /**
-       * <code>string OFJCBCLDMGC = 15;</code>
-       * @return The oFJCBCLDMGC.
-       */
-      public java.lang.String getOFJCBCLDMGC() {
-        java.lang.Object ref = oFJCBCLDMGC_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          oFJCBCLDMGC_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string OFJCBCLDMGC = 15;</code>
-       * @return The bytes for oFJCBCLDMGC.
-       */
-      public com.google.protobuf.ByteString
-          getOFJCBCLDMGCBytes() {
-        java.lang.Object ref = oFJCBCLDMGC_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oFJCBCLDMGC_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string OFJCBCLDMGC = 15;</code>
-       * @param value The oFJCBCLDMGC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOFJCBCLDMGC(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        oFJCBCLDMGC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string OFJCBCLDMGC = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOFJCBCLDMGC() {
-        
-        oFJCBCLDMGC_ = getDefaultInstance().getOFJCBCLDMGC();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string OFJCBCLDMGC = 15;</code>
-       * @param value The bytes for oFJCBCLDMGC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOFJCBCLDMGCBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        oFJCBCLDMGC_ = value;
-        onChanged();
-        return this;
-      }
+                                mPAIFPMBIHP_ = s;
+                                break;
+                            }
+                        case 122:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
 
-      private java.lang.Object fNHDMMNNDOH_ = "";
-      /**
-       * <code>string FNHDMMNNDOH = 11;</code>
-       * @return The fNHDMMNNDOH.
-       */
-      public java.lang.String getFNHDMMNNDOH() {
-        java.lang.Object ref = fNHDMMNNDOH_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fNHDMMNNDOH_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+                                oFJCBCLDMGC_ = s;
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-      }
-      /**
-       * <code>string FNHDMMNNDOH = 11;</code>
-       * @return The bytes for fNHDMMNNDOH.
-       */
-      public com.google.protobuf.ByteString
-          getFNHDMMNNDOHBytes() {
-        java.lang.Object ref = fNHDMMNNDOH_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fNHDMMNNDOH_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string FNHDMMNNDOH = 11;</code>
-       * @param value The fNHDMMNNDOH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFNHDMMNNDOH(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fNHDMMNNDOH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string FNHDMMNNDOH = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFNHDMMNNDOH() {
-        
-        fNHDMMNNDOH_ = getDefaultInstance().getFNHDMMNNDOH();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string FNHDMMNNDOH = 11;</code>
-       * @param value The bytes for fNHDMMNNDOH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFNHDMMNNDOHBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fNHDMMNNDOH_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object bJNLPFHJNMB_ = "";
-      /**
-       * <code>string BJNLPFHJNMB = 12;</code>
-       * @return The bJNLPFHJNMB.
-       */
-      public java.lang.String getBJNLPFHJNMB() {
-        java.lang.Object ref = bJNLPFHJNMB_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          bJNLPFHJNMB_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass
+                    .internal_static_AdjustTrackingInfo_descriptor;
         }
-      }
-      /**
-       * <code>string BJNLPFHJNMB = 12;</code>
-       * @return The bytes for bJNLPFHJNMB.
-       */
-      public com.google.protobuf.ByteString
-          getBJNLPFHJNMBBytes() {
-        java.lang.Object ref = bJNLPFHJNMB_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          bJNLPFHJNMB_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass
+                    .internal_static_AdjustTrackingInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.class,
+                            emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder
+                                    .class);
         }
-      }
-      /**
-       * <code>string BJNLPFHJNMB = 12;</code>
-       * @param value The bJNLPFHJNMB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBJNLPFHJNMB(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        bJNLPFHJNMB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string BJNLPFHJNMB = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBJNLPFHJNMB() {
-        
-        bJNLPFHJNMB_ = getDefaultInstance().getBJNLPFHJNMB();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string BJNLPFHJNMB = 12;</code>
-       * @param value The bytes for bJNLPFHJNMB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBJNLPFHJNMBBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        bJNLPFHJNMB_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object eNHBOKJDKDD_ = "";
-      /**
-       * <code>string ENHBOKJDKDD = 2;</code>
-       * @return The eNHBOKJDKDD.
-       */
-      public java.lang.String getENHBOKJDKDD() {
-        java.lang.Object ref = eNHBOKJDKDD_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          eNHBOKJDKDD_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int MPAIFPMBIHP_FIELD_NUMBER = 14;
+        private volatile java.lang.Object mPAIFPMBIHP_;
+        /**
+         * <code>string MPAIFPMBIHP = 14;</code>
+         *
+         * @return The mPAIFPMBIHP.
+         */
+        @java.lang.Override
+        public java.lang.String getMPAIFPMBIHP() {
+            java.lang.Object ref = mPAIFPMBIHP_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                mPAIFPMBIHP_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>string ENHBOKJDKDD = 2;</code>
-       * @return The bytes for eNHBOKJDKDD.
-       */
-      public com.google.protobuf.ByteString
-          getENHBOKJDKDDBytes() {
-        java.lang.Object ref = eNHBOKJDKDD_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          eNHBOKJDKDD_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+        /**
+         * <code>string MPAIFPMBIHP = 14;</code>
+         *
+         * @return The bytes for mPAIFPMBIHP.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getMPAIFPMBIHPBytes() {
+            java.lang.Object ref = mPAIFPMBIHP_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                mPAIFPMBIHP_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>string ENHBOKJDKDD = 2;</code>
-       * @param value The eNHBOKJDKDD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setENHBOKJDKDD(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        eNHBOKJDKDD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ENHBOKJDKDD = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearENHBOKJDKDD() {
-        
-        eNHBOKJDKDD_ = getDefaultInstance().getENHBOKJDKDD();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ENHBOKJDKDD = 2;</code>
-       * @param value The bytes for eNHBOKJDKDD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setENHBOKJDKDDBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        eNHBOKJDKDD_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int PPNIOHNCLMI_FIELD_NUMBER = 9;
+        private volatile java.lang.Object pPNIOHNCLMI_;
+        /**
+         * <code>string PPNIOHNCLMI = 9;</code>
+         *
+         * @return The pPNIOHNCLMI.
+         */
+        @java.lang.Override
+        public java.lang.String getPPNIOHNCLMI() {
+            java.lang.Object ref = pPNIOHNCLMI_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                pPNIOHNCLMI_ = s;
+                return s;
+            }
+        }
+        /**
+         * <code>string PPNIOHNCLMI = 9;</code>
+         *
+         * @return The bytes for pPNIOHNCLMI.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getPPNIOHNCLMIBytes() {
+            java.lang.Object ref = pPNIOHNCLMI_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                pPNIOHNCLMI_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
+        public static final int OFJCBCLDMGC_FIELD_NUMBER = 15;
+        private volatile java.lang.Object oFJCBCLDMGC_;
+        /**
+         * <code>string OFJCBCLDMGC = 15;</code>
+         *
+         * @return The oFJCBCLDMGC.
+         */
+        @java.lang.Override
+        public java.lang.String getOFJCBCLDMGC() {
+            java.lang.Object ref = oFJCBCLDMGC_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                oFJCBCLDMGC_ = s;
+                return s;
+            }
+        }
+        /**
+         * <code>string OFJCBCLDMGC = 15;</code>
+         *
+         * @return The bytes for oFJCBCLDMGC.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getOFJCBCLDMGCBytes() {
+            java.lang.Object ref = oFJCBCLDMGC_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                oFJCBCLDMGC_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-      // @@protoc_insertion_point(builder_scope:AdjustTrackingInfo)
+        public static final int FNHDMMNNDOH_FIELD_NUMBER = 11;
+        private volatile java.lang.Object fNHDMMNNDOH_;
+        /**
+         * <code>string FNHDMMNNDOH = 11;</code>
+         *
+         * @return The fNHDMMNNDOH.
+         */
+        @java.lang.Override
+        public java.lang.String getFNHDMMNNDOH() {
+            java.lang.Object ref = fNHDMMNNDOH_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                fNHDMMNNDOH_ = s;
+                return s;
+            }
+        }
+        /**
+         * <code>string FNHDMMNNDOH = 11;</code>
+         *
+         * @return The bytes for fNHDMMNNDOH.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFNHDMMNNDOHBytes() {
+            java.lang.Object ref = fNHDMMNNDOH_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                fNHDMMNNDOH_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int BJNLPFHJNMB_FIELD_NUMBER = 12;
+        private volatile java.lang.Object bJNLPFHJNMB_;
+        /**
+         * <code>string BJNLPFHJNMB = 12;</code>
+         *
+         * @return The bJNLPFHJNMB.
+         */
+        @java.lang.Override
+        public java.lang.String getBJNLPFHJNMB() {
+            java.lang.Object ref = bJNLPFHJNMB_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                bJNLPFHJNMB_ = s;
+                return s;
+            }
+        }
+        /**
+         * <code>string BJNLPFHJNMB = 12;</code>
+         *
+         * @return The bytes for bJNLPFHJNMB.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getBJNLPFHJNMBBytes() {
+            java.lang.Object ref = bJNLPFHJNMB_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                bJNLPFHJNMB_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int ENHBOKJDKDD_FIELD_NUMBER = 2;
+        private volatile java.lang.Object eNHBOKJDKDD_;
+        /**
+         * <code>string ENHBOKJDKDD = 2;</code>
+         *
+         * @return The eNHBOKJDKDD.
+         */
+        @java.lang.Override
+        public java.lang.String getENHBOKJDKDD() {
+            java.lang.Object ref = eNHBOKJDKDD_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                eNHBOKJDKDD_ = s;
+                return s;
+            }
+        }
+        /**
+         * <code>string ENHBOKJDKDD = 2;</code>
+         *
+         * @return The bytes for eNHBOKJDKDD.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getENHBOKJDKDDBytes() {
+            java.lang.Object ref = eNHBOKJDKDD_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                eNHBOKJDKDD_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eNHBOKJDKDD_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, eNHBOKJDKDD_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pPNIOHNCLMI_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pPNIOHNCLMI_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fNHDMMNNDOH_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 11, fNHDMMNNDOH_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bJNLPFHJNMB_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 12, bJNLPFHJNMB_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mPAIFPMBIHP_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 14, mPAIFPMBIHP_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oFJCBCLDMGC_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 15, oFJCBCLDMGC_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eNHBOKJDKDD_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, eNHBOKJDKDD_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pPNIOHNCLMI_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pPNIOHNCLMI_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fNHDMMNNDOH_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, fNHDMMNNDOH_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bJNLPFHJNMB_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, bJNLPFHJNMB_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mPAIFPMBIHP_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, mPAIFPMBIHP_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oFJCBCLDMGC_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, oFJCBCLDMGC_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other =
+                    (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) obj;
+
+            if (!getMPAIFPMBIHP().equals(other.getMPAIFPMBIHP())) return false;
+            if (!getPPNIOHNCLMI().equals(other.getPPNIOHNCLMI())) return false;
+            if (!getOFJCBCLDMGC().equals(other.getOFJCBCLDMGC())) return false;
+            if (!getFNHDMMNNDOH().equals(other.getFNHDMMNNDOH())) return false;
+            if (!getBJNLPFHJNMB().equals(other.getBJNLPFHJNMB())) return false;
+            if (!getENHBOKJDKDD().equals(other.getENHBOKJDKDD())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + MPAIFPMBIHP_FIELD_NUMBER;
+            hash = (53 * hash) + getMPAIFPMBIHP().hashCode();
+            hash = (37 * hash) + PPNIOHNCLMI_FIELD_NUMBER;
+            hash = (53 * hash) + getPPNIOHNCLMI().hashCode();
+            hash = (37 * hash) + OFJCBCLDMGC_FIELD_NUMBER;
+            hash = (53 * hash) + getOFJCBCLDMGC().hashCode();
+            hash = (37 * hash) + FNHDMMNNDOH_FIELD_NUMBER;
+            hash = (53 * hash) + getFNHDMMNNDOH().hashCode();
+            hash = (37 * hash) + BJNLPFHJNMB_FIELD_NUMBER;
+            hash = (53 * hash) + getBJNLPFHJNMB().hashCode();
+            hash = (37 * hash) + ENHBOKJDKDD_FIELD_NUMBER;
+            hash = (53 * hash) + getENHBOKJDKDD().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name: IOEAFDEDGHH
+         * </pre>
+         *
+         * Protobuf type {@code AdjustTrackingInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:AdjustTrackingInfo)
+                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass
+                        .internal_static_AdjustTrackingInfo_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass
+                        .internal_static_AdjustTrackingInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.class,
+                                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                mPAIFPMBIHP_ = "";
+
+                pPNIOHNCLMI_ = "";
+
+                oFJCBCLDMGC_ = "";
+
+                fNHDMMNNDOH_ = "";
+
+                bJNLPFHJNMB_ = "";
+
+                eNHBOKJDKDD_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass
+                        .internal_static_AdjustTrackingInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo build() {
+                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                    buildPartial() {
+                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo result =
+                        new emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo(this);
+                result.mPAIFPMBIHP_ = mPAIFPMBIHP_;
+                result.pPNIOHNCLMI_ = pPNIOHNCLMI_;
+                result.oFJCBCLDMGC_ = oFJCBCLDMGC_;
+                result.fNHDMMNNDOH_ = fNHDMMNNDOH_;
+                result.bJNLPFHJNMB_ = bJNLPFHJNMB_;
+                result.eNHBOKJDKDD_ = eNHBOKJDKDD_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo other) {
+                if (other
+                        == emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                                .getDefaultInstance()) return this;
+                if (!other.getMPAIFPMBIHP().isEmpty()) {
+                    mPAIFPMBIHP_ = other.mPAIFPMBIHP_;
+                    onChanged();
+                }
+                if (!other.getPPNIOHNCLMI().isEmpty()) {
+                    pPNIOHNCLMI_ = other.pPNIOHNCLMI_;
+                    onChanged();
+                }
+                if (!other.getOFJCBCLDMGC().isEmpty()) {
+                    oFJCBCLDMGC_ = other.oFJCBCLDMGC_;
+                    onChanged();
+                }
+                if (!other.getFNHDMMNNDOH().isEmpty()) {
+                    fNHDMMNNDOH_ = other.fNHDMMNNDOH_;
+                    onChanged();
+                }
+                if (!other.getBJNLPFHJNMB().isEmpty()) {
+                    bJNLPFHJNMB_ = other.bJNLPFHJNMB_;
+                    onChanged();
+                }
+                if (!other.getENHBOKJDKDD().isEmpty()) {
+                    eNHBOKJDKDD_ = other.eNHBOKJDKDD_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object mPAIFPMBIHP_ = "";
+            /**
+             * <code>string MPAIFPMBIHP = 14;</code>
+             *
+             * @return The mPAIFPMBIHP.
+             */
+            public java.lang.String getMPAIFPMBIHP() {
+                java.lang.Object ref = mPAIFPMBIHP_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    mPAIFPMBIHP_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string MPAIFPMBIHP = 14;</code>
+             *
+             * @return The bytes for mPAIFPMBIHP.
+             */
+            public com.google.protobuf.ByteString getMPAIFPMBIHPBytes() {
+                java.lang.Object ref = mPAIFPMBIHP_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    mPAIFPMBIHP_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string MPAIFPMBIHP = 14;</code>
+             *
+             * @param value The mPAIFPMBIHP to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMPAIFPMBIHP(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                mPAIFPMBIHP_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string MPAIFPMBIHP = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMPAIFPMBIHP() {
+
+                mPAIFPMBIHP_ = getDefaultInstance().getMPAIFPMBIHP();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string MPAIFPMBIHP = 14;</code>
+             *
+             * @param value The bytes for mPAIFPMBIHP to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMPAIFPMBIHPBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                mPAIFPMBIHP_ = value;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object pPNIOHNCLMI_ = "";
+            /**
+             * <code>string PPNIOHNCLMI = 9;</code>
+             *
+             * @return The pPNIOHNCLMI.
+             */
+            public java.lang.String getPPNIOHNCLMI() {
+                java.lang.Object ref = pPNIOHNCLMI_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    pPNIOHNCLMI_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string PPNIOHNCLMI = 9;</code>
+             *
+             * @return The bytes for pPNIOHNCLMI.
+             */
+            public com.google.protobuf.ByteString getPPNIOHNCLMIBytes() {
+                java.lang.Object ref = pPNIOHNCLMI_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    pPNIOHNCLMI_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string PPNIOHNCLMI = 9;</code>
+             *
+             * @param value The pPNIOHNCLMI to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPPNIOHNCLMI(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                pPNIOHNCLMI_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string PPNIOHNCLMI = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPPNIOHNCLMI() {
+
+                pPNIOHNCLMI_ = getDefaultInstance().getPPNIOHNCLMI();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string PPNIOHNCLMI = 9;</code>
+             *
+             * @param value The bytes for pPNIOHNCLMI to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPPNIOHNCLMIBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                pPNIOHNCLMI_ = value;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object oFJCBCLDMGC_ = "";
+            /**
+             * <code>string OFJCBCLDMGC = 15;</code>
+             *
+             * @return The oFJCBCLDMGC.
+             */
+            public java.lang.String getOFJCBCLDMGC() {
+                java.lang.Object ref = oFJCBCLDMGC_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    oFJCBCLDMGC_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string OFJCBCLDMGC = 15;</code>
+             *
+             * @return The bytes for oFJCBCLDMGC.
+             */
+            public com.google.protobuf.ByteString getOFJCBCLDMGCBytes() {
+                java.lang.Object ref = oFJCBCLDMGC_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    oFJCBCLDMGC_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string OFJCBCLDMGC = 15;</code>
+             *
+             * @param value The oFJCBCLDMGC to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOFJCBCLDMGC(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                oFJCBCLDMGC_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string OFJCBCLDMGC = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearOFJCBCLDMGC() {
+
+                oFJCBCLDMGC_ = getDefaultInstance().getOFJCBCLDMGC();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string OFJCBCLDMGC = 15;</code>
+             *
+             * @param value The bytes for oFJCBCLDMGC to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOFJCBCLDMGCBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                oFJCBCLDMGC_ = value;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object fNHDMMNNDOH_ = "";
+            /**
+             * <code>string FNHDMMNNDOH = 11;</code>
+             *
+             * @return The fNHDMMNNDOH.
+             */
+            public java.lang.String getFNHDMMNNDOH() {
+                java.lang.Object ref = fNHDMMNNDOH_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    fNHDMMNNDOH_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string FNHDMMNNDOH = 11;</code>
+             *
+             * @return The bytes for fNHDMMNNDOH.
+             */
+            public com.google.protobuf.ByteString getFNHDMMNNDOHBytes() {
+                java.lang.Object ref = fNHDMMNNDOH_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    fNHDMMNNDOH_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string FNHDMMNNDOH = 11;</code>
+             *
+             * @param value The fNHDMMNNDOH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFNHDMMNNDOH(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                fNHDMMNNDOH_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string FNHDMMNNDOH = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFNHDMMNNDOH() {
+
+                fNHDMMNNDOH_ = getDefaultInstance().getFNHDMMNNDOH();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string FNHDMMNNDOH = 11;</code>
+             *
+             * @param value The bytes for fNHDMMNNDOH to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFNHDMMNNDOHBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                fNHDMMNNDOH_ = value;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object bJNLPFHJNMB_ = "";
+            /**
+             * <code>string BJNLPFHJNMB = 12;</code>
+             *
+             * @return The bJNLPFHJNMB.
+             */
+            public java.lang.String getBJNLPFHJNMB() {
+                java.lang.Object ref = bJNLPFHJNMB_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    bJNLPFHJNMB_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string BJNLPFHJNMB = 12;</code>
+             *
+             * @return The bytes for bJNLPFHJNMB.
+             */
+            public com.google.protobuf.ByteString getBJNLPFHJNMBBytes() {
+                java.lang.Object ref = bJNLPFHJNMB_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    bJNLPFHJNMB_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string BJNLPFHJNMB = 12;</code>
+             *
+             * @param value The bJNLPFHJNMB to set.
+             * @return This builder for chaining.
+             */
+            public Builder setBJNLPFHJNMB(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                bJNLPFHJNMB_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string BJNLPFHJNMB = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearBJNLPFHJNMB() {
+
+                bJNLPFHJNMB_ = getDefaultInstance().getBJNLPFHJNMB();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string BJNLPFHJNMB = 12;</code>
+             *
+             * @param value The bytes for bJNLPFHJNMB to set.
+             * @return This builder for chaining.
+             */
+            public Builder setBJNLPFHJNMBBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                bJNLPFHJNMB_ = value;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object eNHBOKJDKDD_ = "";
+            /**
+             * <code>string ENHBOKJDKDD = 2;</code>
+             *
+             * @return The eNHBOKJDKDD.
+             */
+            public java.lang.String getENHBOKJDKDD() {
+                java.lang.Object ref = eNHBOKJDKDD_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    eNHBOKJDKDD_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string ENHBOKJDKDD = 2;</code>
+             *
+             * @return The bytes for eNHBOKJDKDD.
+             */
+            public com.google.protobuf.ByteString getENHBOKJDKDDBytes() {
+                java.lang.Object ref = eNHBOKJDKDD_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    eNHBOKJDKDD_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string ENHBOKJDKDD = 2;</code>
+             *
+             * @param value The eNHBOKJDKDD to set.
+             * @return This builder for chaining.
+             */
+            public Builder setENHBOKJDKDD(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                eNHBOKJDKDD_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string ENHBOKJDKDD = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearENHBOKJDKDD() {
+
+                eNHBOKJDKDD_ = getDefaultInstance().getENHBOKJDKDD();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string ENHBOKJDKDD = 2;</code>
+             *
+             * @param value The bytes for eNHBOKJDKDD to set.
+             * @return This builder for chaining.
+             */
+            public Builder setENHBOKJDKDDBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                eNHBOKJDKDD_ = value;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:AdjustTrackingInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:AdjustTrackingInfo)
+        private static final emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo();
+        }
+
+        public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<AdjustTrackingInfo> PARSER =
+                new com.google.protobuf.AbstractParser<AdjustTrackingInfo>() {
+                    @java.lang.Override
+                    public AdjustTrackingInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new AdjustTrackingInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<AdjustTrackingInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AdjustTrackingInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:AdjustTrackingInfo)
-    private static final emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_AdjustTrackingInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_AdjustTrackingInfo_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo();
+        java.lang.String[] descriptorData = {
+            "\n\030AdjustTrackingInfo.proto\"\222\001\n\022AdjustTra"
+                    + "ckingInfo\022\023\n\013MPAIFPMBIHP\030\016 \001(\t\022\023\n\013PPNIOH"
+                    + "NCLMI\030\t \001(\t\022\023\n\013OFJCBCLDMGC\030\017 \001(\t\022\023\n\013FNHD"
+                    + "MMNNDOH\030\013 \001(\t\022\023\n\013BJNLPFHJNMB\030\014 \001(\t\022\023\n\013EN"
+                    + "HBOKJDKDD\030\002 \001(\tB!\n\031emu.grasscutter.net.p"
+                    + "rotoZ\004/genb\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_AdjustTrackingInfo_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_AdjustTrackingInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_AdjustTrackingInfo_descriptor,
+                        new java.lang.String[] {
+                            "MPAIFPMBIHP",
+                            "PPNIOHNCLMI",
+                            "OFJCBCLDMGC",
+                            "FNHDMMNNDOH",
+                            "BJNLPFHJNMB",
+                            "ENHBOKJDKDD",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AdjustTrackingInfo>
-        PARSER = new com.google.protobuf.AbstractParser<AdjustTrackingInfo>() {
-      @java.lang.Override
-      public AdjustTrackingInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AdjustTrackingInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AdjustTrackingInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AdjustTrackingInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AdjustTrackingInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AdjustTrackingInfo_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\030AdjustTrackingInfo.proto\"\222\001\n\022AdjustTra" +
-      "ckingInfo\022\023\n\013MPAIFPMBIHP\030\016 \001(\t\022\023\n\013PPNIOH" +
-      "NCLMI\030\t \001(\t\022\023\n\013OFJCBCLDMGC\030\017 \001(\t\022\023\n\013FNHD" +
-      "MMNNDOH\030\013 \001(\t\022\023\n\013BJNLPFHJNMB\030\014 \001(\t\022\023\n\013EN" +
-      "HBOKJDKDD\030\002 \001(\tB\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_AdjustTrackingInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_AdjustTrackingInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AdjustTrackingInfo_descriptor,
-        new java.lang.String[] { "MPAIFPMBIHP", "PPNIOHNCLMI", "OFJCBCLDMGC", "FNHDMMNNDOH", "BJNLPFHJNMB", "ENHBOKJDKDD", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

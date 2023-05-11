@@ -6,10 +6,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.data.common.DynamicFloat;
-import emu.grasscutter.utils.JsonAdapters.DynamicFloatAdapter;
-import emu.grasscutter.utils.JsonAdapters.EnumTypeAdapterFactory;
-import emu.grasscutter.utils.JsonAdapters.IntListAdapter;
-import emu.grasscutter.utils.JsonAdapters.PositionAdapter;
+import emu.grasscutter.utils.JsonAdapters.*;
 import it.unimi.dsi.fastutil.ints.IntList;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,6 +26,7 @@ public final class JsonUtils {
                     .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
                     .registerTypeAdapter(IntList.class, new IntListAdapter())
                     .registerTypeAdapter(Position.class, new PositionAdapter())
+                    .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
                     .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
                     .create();
 

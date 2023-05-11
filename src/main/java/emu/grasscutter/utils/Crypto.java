@@ -2,7 +2,6 @@ package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
-
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.security.KeyFactory;
@@ -13,12 +12,13 @@ import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Arrays;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 import javax.crypto.Cipher;
 
 public final class Crypto {
+
     private static final SecureRandom secureRandom = new SecureRandom();
 
     public static byte[] DISPATCH_KEY;
@@ -81,7 +81,8 @@ public final class Crypto {
         return bytes;
     }
 
-    public static QueryCurRegionRspJson encryptAndSignRegionData(byte[] regionInfo, String key_id) throws Exception {
+    public static QueryCurRegionRspJson encryptAndSignRegionData(byte[] regionInfo, String key_id)
+            throws Exception {
         if (key_id == null) {
             throw new Exception("Key ID was not set");
         }
@@ -90,7 +91,7 @@ public final class Crypto {
         cipher.init(Cipher.ENCRYPT_MODE, EncryptionKeys.get(Integer.valueOf(key_id)));
 
         // Encrypt regionInfo in chunks
-        var encryptedRegionInfoStream = new ByteArrayOutputStream();
+        ByteArrayOutputStream encryptedRegionInfoStream = new ByteArrayOutputStream();
 
         // Thank you so much GH Copilot
         int chunkSize = 256 - 11;
@@ -98,8 +99,9 @@ public final class Crypto {
         int numChunks = (int) Math.ceil(regionInfoLength / (double) chunkSize);
 
         for (int i = 0; i < numChunks; i++) {
-            byte[] chunk = Arrays.copyOfRange(regionInfo, i * chunkSize,
-                Math.min((i + 1) * chunkSize, regionInfoLength));
+            byte[] chunk =
+                    Arrays.copyOfRange(
+                            regionInfo, i * chunkSize, Math.min((i + 1) * chunkSize, regionInfoLength));
             byte[] encryptedChunk = cipher.doFinal(chunk);
             encryptedRegionInfoStream.write(encryptedChunk);
         }

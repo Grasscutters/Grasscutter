@@ -907,8 +907,8 @@ public final class FireWorkDataOuterClass {
         java.lang.String[] descriptorData = {
             "\n\022FireWorkData.proto\032\026FireWorkInstance.p"
                     + "roto\"G\n\014FireWorkData\022\n\n\002id\030\001 \001(\r\022+\n\020fire"
-                    + "WorkInstance\030\002 \003(\0132\021.FireWorkInstanceB\033\n"
-                    + "\031emu.grasscutter.net.protob\006proto3"
+                    + "WorkInstance\030\002 \003(\0132\021.FireWorkInstanceB!\n"
+                    + "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

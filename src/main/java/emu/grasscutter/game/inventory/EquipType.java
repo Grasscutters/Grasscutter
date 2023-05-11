@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum EquipType {
     EQUIP_NONE(0),
@@ -27,7 +28,7 @@ public enum EquipType {
                         });
     }
 
-    private final int value;
+    @Getter private final int value;
 
     EquipType(int value) {
         this.value = value;
@@ -39,9 +40,5 @@ public enum EquipType {
 
     public static EquipType getTypeByName(String name) {
         return stringMap.getOrDefault(name, EQUIP_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

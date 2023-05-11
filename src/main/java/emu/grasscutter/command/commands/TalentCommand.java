@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Language;

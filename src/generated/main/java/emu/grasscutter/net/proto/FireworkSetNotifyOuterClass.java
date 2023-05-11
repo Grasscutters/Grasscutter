@@ -930,8 +930,8 @@ public final class FireworkSetNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\027FireworkSetNotify.proto\032\025FireworkSetDa"
                     + "ta.proto\"A\n\021FireworkSetNotify\022\014\n\004code\030\001 "
-                    + "\001(\r\022\036\n\004data\030\t \003(\0132\020.FireworkSetDataB\033\n\031e"
-                    + "mu.grasscutter.net.protob\006proto3"
+                    + "\001(\r\022\036\n\004data\030\t \003(\0132\020.FireworkSetDataB!\n\031e"
+                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

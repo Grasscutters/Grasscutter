@@ -2,6 +2,7 @@ package emu.grasscutter.data.binout;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
+import emu.grasscutter.game.props.ElementType;
 import java.io.Serializable;
 
 public class AbilityModifier implements Serializable {
@@ -18,29 +19,28 @@ public class AbilityModifier implements Serializable {
     public AbilityModifierAction[] onThinkInterval;
 
     public AbilityModifierAction[] onRemoved;
+    public AbilityModifierAction[] onBeingHit;
+    public AbilityModifierAction[] onAttackLanded;
+    public AbilityModifierAction[] onHittingOther;
+    public AbilityModifierAction[] onKill;
+    public AbilityModifierAction[] onCrash;
+    public AbilityModifierAction[] onAvatarIn;
+    public AbilityModifierAction[] onAvatarOut;
+    public AbilityModifierAction[] onReconnect;
+    public AbilityModifierAction[] onChangeAuthority;
+    public AbilityModifierAction[] onVehicleIn;
+    public AbilityModifierAction[] onVehicleOut;
+    public AbilityModifierAction[] onZoneEnter;
+    public AbilityModifierAction[] onZoneExit;
+    public AbilityModifierAction[] onHeal;
+    public AbilityModifierAction[] onBeingHealed;
     public DynamicFloat duration = DynamicFloat.ZERO;
+    public String stacking;
 
-    public static class AbilityModifierAction {
-        @SerializedName("$type")
-        public Type type;
+    public ElementType elementType;
+    public DynamicFloat elementDurability = DynamicFloat.ZERO;
 
-        public String target;
-
-        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
-        public DynamicFloat amount = DynamicFloat.ZERO;
-
-        public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
-        public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
-        public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
-
-        @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
-        public boolean ignoreAbilityProperty;
-
-        public String modifierName;
-
+    public static class AbilityModifierAction implements Serializable {
         public enum Type {
             ActCameraRadialBlur,
             ActCameraShake,
@@ -256,8 +256,32 @@ public class AbilityModifier implements Serializable {
             TurnDirectionToPos,
             UpdateReactionDamage,
             UseSkillEliteSet,
-            WidgetSkillStart
+            WidgetSkillStart;
         }
+
+        @SerializedName("$type")
+        public Type type;
+
+        public String target;
+
+        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
+        public DynamicFloat amount = DynamicFloat.ZERO;
+
+        public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
+        public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
+        public boolean ignoreAbilityProperty;
+
+        public String modifierName;
+
+        public int param1;
+        public int param2;
+        public int param3;
     }
 
     // The following should be implemented into DynamicFloat if older resource formats need to be

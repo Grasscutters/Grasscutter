@@ -1,6 +1,5 @@
 package emu.grasscutter.game.player;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.excels.BuffData;
@@ -17,13 +16,14 @@ import java.util.Objects;
 import java.util.Optional;
 import lombok.Getter;
 
-public class PlayerBuffManager extends BasePlayerManager {
+public final class PlayerBuffManager extends BasePlayerManager {
     private final List<PlayerBuff> pendingBuffs;
     private final Int2ObjectMap<PlayerBuff> buffs; // Server buffs
     private int nextBuffUid;
 
     public PlayerBuffManager(Player player) {
         super(player);
+
         this.buffs = new Int2ObjectOpenHashMap<>();
         this.pendingBuffs = new ArrayList<>();
     }
@@ -92,42 +92,40 @@ public class PlayerBuffManager extends BasePlayerManager {
      */
     public synchronized boolean addBuff(int buffId, float duration, Avatar target) {
         // Get buff excel data
-        BuffData buffData = GameData.getBuffDataMap().get(buffId);
+        var buffData = GameData.getBuffDataMap().get(buffId);
         if (buffData == null) return false;
 
-        boolean success = false;
-
         // Perform onAdded actions
-        success |=
+        var success =
                 Optional.ofNullable(GameData.getAbilityData(buffData.getAbilityName()))
                         .map(data -> data.modifiers.get(buffData.getModifierName()))
                         .map(modifier -> modifier.onAdded)
                         .map(
                                 onAdded -> {
-                                    var s = false;
-                                    for (var a : onAdded) {
-                                        Grasscutter.getLogger().debug("onAdded exists");
-                                        if (Objects.requireNonNull(a.type) == AbilityModifierAction.Type.HealHP) {
-                                            Grasscutter.getLogger().debug("Attempting heal");
+                                    var shouldHeal = false;
+                                    for (var ability : onAdded) {
+                                        if (Objects.requireNonNull(ability.type) == AbilityModifierAction.Type.HealHP) {
                                             if (target == null) continue;
+
                                             var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                                            var amount = a.amount.get() + a.amountByTargetMaxHPRatio.get() * maxHp;
+                                            var amount =
+                                                    ability.amount.get() + ability.amountByTargetMaxHPRatio.get() * maxHp;
+
                                             target.getAsEntity().heal(amount);
-                                            s = true;
-                                            Grasscutter.getLogger().debug("Healed {}", amount);
+                                            shouldHeal = true;
                                         }
                                     }
-                                    return s;
+
+                                    return shouldHeal;
                                 })
                         .orElse(false);
-        Grasscutter.getLogger().debug("Oh no");
 
         // Set duration
         if (duration < 0f) {
             duration = buffData.getTime();
         }
 
-        // Dont add buff if duration is equal or less than 0
+        // Don't add buff if duration is equal or less than 0
         if (duration <= 0) {
             return success;
         }

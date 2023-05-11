@@ -26,15 +26,15 @@ public class EntityClientGadget extends EntityBaseGadget {
     @Getter private final Player owner;
 
     @Getter(onMethod_ = @Override)
-    private final int gadgetId;
+    private int gadgetId;
 
-    @Getter private final int campId;
-    @Getter private final int campType;
-    @Getter private final int ownerEntityId;
-    @Getter private final int targetEntityId;
-    @Getter private final boolean asyncLoad;
+    @Getter private int campId;
+    @Getter private int campType;
+    @Getter private int ownerEntityId;
+    @Getter private int targetEntityId;
+    @Getter private boolean asyncLoad;
 
-    @Getter private final int originalOwnerEntityId;
+    @Getter private int originalOwnerEntityId;
 
     public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
         super(scene, new Position(notify.getInitPos()), new Position(notify.getInitEulerAngles()));

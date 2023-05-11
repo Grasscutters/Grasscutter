@@ -1,6 +1,8 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.world.Scene;
@@ -12,6 +14,7 @@ import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.server.event.entity.EntityDeathEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -21,6 +24,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,9 +44,17 @@ public abstract class GameEntity {
 
     @Getter @Setter private boolean lockHP;
 
+    // Lua controller for specific actions
+    @Getter @Setter private EntityController entityController;
+    @Getter private ElementType lastAttackType = ElementType.None;
+
     // Abilities
     private Object2FloatMap<String> metaOverrideMap;
     private Int2ObjectMap<String> metaModifiers;
+    private Map<Integer, Integer> instanceToHash;
+    private Int2ObjectMap<String> instanceToName;
+
+    @Getter private Map<String, Ability> abilities = new HashMap<>();
 
     public GameEntity(Scene scene) {
         this.scene = scene;
@@ -51,6 +64,8 @@ public abstract class GameEntity {
     public int getEntityType() {
         return this.getId() >> 24;
     }
+
+    public abstract int getEntityTypeId();
 
     public World getWorld() {
         return this.getScene().getWorld();
@@ -76,6 +91,22 @@ public abstract class GameEntity {
             this.metaModifiers = new Int2ObjectOpenHashMap<>();
         }
         return this.metaModifiers;
+    }
+
+    public Map<Integer, Integer> getInstanceToHash() {
+        if (this.instanceToHash == null) {
+            this.instanceToHash = new HashMap<>();
+        }
+
+        return this.instanceToHash;
+    }
+
+    public Int2ObjectMap<String> getInstanceToName() {
+        if (this.instanceToName == null) {
+            this.instanceToName = new Int2ObjectOpenHashMap<>();
+        }
+
+        return this.instanceToName;
     }
 
     public abstract Int2FloatMap getFightProperties();
@@ -115,15 +146,12 @@ public abstract class GameEntity {
     }
 
     protected MotionInfo getMotionInfo() {
-        MotionInfo proto =
-                MotionInfo.newBuilder()
-                        .setPos(this.getPosition().toProto())
-                        .setRot(this.getRotation().toProto())
-                        .setSpeed(Vector.newBuilder())
-                        .setState(this.getMotionState())
-                        .build();
-
-        return proto;
+        return MotionInfo.newBuilder()
+                .setPos(this.getPosition().toProto())
+                .setRot(this.getRotation().toProto())
+                .setSpeed(Vector.newBuilder())
+                .setState(this.getMotionState())
+                .build();
     }
 
     public float heal(float amount) {
@@ -149,10 +177,14 @@ public abstract class GameEntity {
     }
 
     public void damage(float amount) {
-        this.damage(amount, 0);
+        this.damage(amount, 0, ElementType.None);
     }
 
-    public void damage(float amount, int killerId) {
+    public void damage(float amount, ElementType attackType) {
+        this.damage(amount, 0, attackType);
+    }
+
+    public void damage(float amount, int killerId, ElementType attackType) {
         // Check if the entity has properties.
         if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
             return;
@@ -160,7 +192,7 @@ public abstract class GameEntity {
 
         // Invoke entity damage event.
         EntityDamageEvent event =
-                new EntityDamageEvent(this, amount, this.getScene().getEntityById(killerId));
+                new EntityDamageEvent(this, amount, attackType, this.getScene().getEntityById(killerId));
         event.call();
         if (event.isCanceled()) {
             return; // If the event is canceled, do not damage the entity.
@@ -172,12 +204,17 @@ public abstract class GameEntity {
             this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
         }
 
+        this.lastAttackType = attackType;
+
         // Check if dead
         boolean isDead = false;
         if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
             this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
             isDead = true;
         }
+
+        this.runLuaCallbacks(event);
+        this.runAbilityCallbacks(event);
 
         // Packets
         this.getScene()
@@ -188,6 +225,26 @@ public abstract class GameEntity {
         if (isDead) {
             this.getScene().killEntity(this, killerId);
         }
+    }
+
+    /**
+     * Runs the Lua callbacks for {@link EntityDamageEvent}.
+     *
+     * @param event The damage event.
+     */
+    public void runLuaCallbacks(EntityDamageEvent event) {
+        if (entityController != null) {
+            entityController.onBeHurt(this, event.getAttackElementType(), true); // todo is host handling
+        }
+    }
+
+    /**
+     * Runs the ability callbacks for {@link EntityDamageEvent}.
+     *
+     * @param event The damage event.
+     */
+    public void runAbilityCallbacks(EntityDamageEvent event) {
+        this.abilities.values().forEach(ability -> ability.onBeingHit(event));
     }
 
     /**
@@ -215,6 +272,19 @@ public abstract class GameEntity {
 
     public void onRemoved() {}
 
+    public void onTick(int sceneTime) {
+        if (entityController != null) {
+            entityController.onTimer(this, sceneTime);
+        }
+    }
+
+    public int onClientExecuteRequest(int param1, int param2, int param3) {
+        if (entityController != null) {
+            return entityController.onClientExecuteRequest(this, param1, param2, param3);
+        }
+        return 0;
+    }
+
     /**
      * Called when this entity dies
      *
@@ -224,6 +294,11 @@ public abstract class GameEntity {
         // Invoke entity death event.
         EntityDeathEvent event = new EntityDeathEvent(this, killerId);
         event.call();
+
+        // Run Lua callbacks.
+        if (entityController != null) {
+            entityController.onDie(this, getLastAttackType());
+        }
     }
 
     public abstract SceneEntityInfo toProto();

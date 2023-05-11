@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.DungeonEntryData;
+import emu.grasscutter.data.excels.dungeon.DungeonEntryData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass;

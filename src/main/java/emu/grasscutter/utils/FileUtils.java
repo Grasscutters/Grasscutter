@@ -21,6 +21,7 @@ public final class FileUtils {
     private static final Path DATA_USER_PATH = Path.of(Grasscutter.config.folderStructure.data);
     private static final Path PACKETS_PATH = Path.of(Grasscutter.config.folderStructure.packets);
     private static final Path PLUGINS_PATH = Path.of(Grasscutter.config.folderStructure.plugins);
+    private static final Path CACHE_PATH = Path.of(Grasscutter.config.folderStructure.cache);
     private static final Path RESOURCES_PATH;
     private static final Path SCRIPTS_PATH;
     private static final String[] TSJ_JSON_TSV = {"tsj", "json", "tsv"};
@@ -138,6 +139,10 @@ public final class FileUtils {
         return DATA_USER_PATH.resolve(path);
     }
 
+    public static Path getCachePath(String path) {
+        return CACHE_PATH.resolve(path);
+    }
+
     public static Path getPacketPath(String path) {
         return PACKETS_PATH.resolve(path);
     }
@@ -151,7 +156,8 @@ public final class FileUtils {
     }
 
     public static Path getExcelPath(String filename) {
-        return getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
+        Path p = getTsjJsonTsv(RESOURCES_PATH.resolve("Server"), filename);
+        return Files.exists(p) ? p : getTsjJsonTsv(RESOURCES_PATH.resolve("ExcelBinOutput"), filename);
     }
 
     // Gets path of a resource.

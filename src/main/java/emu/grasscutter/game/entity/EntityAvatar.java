@@ -1,9 +1,10 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
@@ -52,16 +53,27 @@ public class EntityAvatar extends GameEntity {
 
     public EntityAvatar(Scene scene, Avatar avatar) {
         super(scene);
+
         this.avatar = avatar;
         this.avatar.setCurrentEnergy();
-        if (getScene() != null) {
-            this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 
-            GameItem weapon = getAvatar().getWeapon();
+        if (scene != null) {
+            var world = scene.getWorld();
+            this.id = world.getNextEntityId(EntityIdType.AVATAR);
+
+            var weapon = this.getAvatar().getWeapon();
             if (weapon != null) {
-                weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
+                weapon.setWeaponEntityId(world.getNextEntityId(EntityIdType.WEAPON));
             }
+        } else {
+            Grasscutter.getLogger()
+                    .error("Unable to create EntityAvatar instance; provided scene is null.");
         }
+    }
+
+    @Override
+    public int getEntityTypeId() {
+        return this.getAvatar().getAvatarId();
     }
 
     public Player getPlayer() {
@@ -151,6 +163,22 @@ public class EntityAvatar extends GameEntity {
                     .broadcastPacket(
                             new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, -curEnergy, reason));
         }
+    }
+
+    /**
+     * Adds a fixed amount of energy to the current avatar.
+     *
+     * @param amount The amount of energy to add.
+     * @return True if the energy was added, false if the energy was not added.
+     */
+    public boolean addEnergy(float amount) {
+        var curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
+        var curEnergy = this.getFightProperty(curEnergyProp);
+        if (curEnergy == amount) return false;
+
+        this.getAvatar().setCurrentEnergy(curEnergyProp, amount);
+        this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
+        return true;
     }
 
     public void addEnergy(float amount, PropChangeReason reason) {

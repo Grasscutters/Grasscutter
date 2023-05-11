@@ -751,7 +751,8 @@ public final class MusicGameSearchBeatmapReqOuterClass {
                     + "GameUnknown1Enum.proto\"b\n\031MusicGameSearc"
                     + "hBeatmapReq\022-\n\runknown_enum1\030\n \001(\0162\026.Mus"
                     + "icGameUnknown1Enum\022\026\n\016music_share_id\030\006 \001"
-                    + "(\004B\033\n\031emu.grasscutter.net.protob\006proto3"
+                    + "(\004B!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
+                    + "roto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

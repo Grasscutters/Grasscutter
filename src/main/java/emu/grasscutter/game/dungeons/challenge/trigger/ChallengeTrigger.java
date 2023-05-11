@@ -3,6 +3,7 @@ package emu.grasscutter.game.dungeons.challenge.trigger;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.scripts.data.SceneTrigger;
 
 public abstract class ChallengeTrigger {
     public void onBegin(WorldChallenge challenge) {}
@@ -16,4 +17,6 @@ public abstract class ChallengeTrigger {
     public void onCheckTimeout(WorldChallenge challenge) {}
 
     public void onGadgetDamage(WorldChallenge challenge, EntityGadget gadget) {}
+
+    public void onGroupTrigger(WorldChallenge challenge, SceneTrigger trigger) {}
 }

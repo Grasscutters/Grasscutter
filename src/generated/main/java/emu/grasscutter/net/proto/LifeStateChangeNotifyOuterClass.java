@@ -4,584 +4,90 @@
 package emu.grasscutter.net.proto;
 
 public final class LifeStateChangeNotifyOuterClass {
-  private LifeStateChangeNotifyOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private LifeStateChangeNotifyOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface LifeStateChangeNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LifeStateChangeNotify)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> 
-        getServerBuffListList();
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index);
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    int getServerBuffListCount();
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
-        getServerBuffListOrBuilderList();
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 life_state = 3;</code>
-     * @return The lifeState.
-     */
-    int getLifeState();
-
-    /**
-     * <code>string attack_tag = 10;</code>
-     * @return The attackTag.
-     */
-    java.lang.String getAttackTag();
-    /**
-     * <code>string attack_tag = 10;</code>
-     * @return The bytes for attackTag.
-     */
-    com.google.protobuf.ByteString
-        getAttackTagBytes();
-
-    /**
-     * <code>.PlayerDieType die_type = 15;</code>
-     * @return The enum numeric value on the wire for dieType.
-     */
-    int getDieTypeValue();
-    /**
-     * <code>.PlayerDieType die_type = 15;</code>
-     * @return The dieType.
-     */
-    emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType();
-
-    /**
-     * <code>uint32 entity_id = 5;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 source_entity_id = 8;</code>
-     * @return The sourceEntityId.
-     */
-    int getSourceEntityId();
-
-    /**
-     * <code>uint32 move_reliable_seq = 2;</code>
-     * @return The moveReliableSeq.
-     */
-    int getMoveReliableSeq();
-  }
-  /**
-   * <pre>
-   * CmdId: 1296
-   * Name: JAIDICBLKEP
-   * </pre>
-   *
-   * Protobuf type {@code LifeStateChangeNotify}
-   */
-  public static final class LifeStateChangeNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LifeStateChangeNotify)
-      LifeStateChangeNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LifeStateChangeNotify.newBuilder() to construct.
-    private LifeStateChangeNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LifeStateChangeNotify() {
-      serverBuffList_ = java.util.Collections.emptyList();
-      attackTag_ = "";
-      dieType_ = 0;
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new LifeStateChangeNotify();
-    }
+    public interface LifeStateChangeNotifyOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:LifeStateChangeNotify)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LifeStateChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                getServerBuffListList();
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index);
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        int getServerBuffListCount();
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>
+                getServerBuffListOrBuilderList();
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
+                int index);
 
-              moveReliableSeq_ = input.readUInt32();
-              break;
-            }
-            case 24: {
+        /**
+         * <code>uint32 life_state = 3;</code>
+         *
+         * @return The lifeState.
+         */
+        int getLifeState();
 
-              lifeState_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+        /**
+         * <code>string attack_tag = 10;</code>
+         *
+         * @return The attackTag.
+         */
+        java.lang.String getAttackTag();
+        /**
+         * <code>string attack_tag = 10;</code>
+         *
+         * @return The bytes for attackTag.
+         */
+        com.google.protobuf.ByteString getAttackTagBytes();
 
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>.PlayerDieType die_type = 15;</code>
+         *
+         * @return The enum numeric value on the wire for dieType.
+         */
+        int getDieTypeValue();
+        /**
+         * <code>.PlayerDieType die_type = 15;</code>
+         *
+         * @return The dieType.
+         */
+        emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType();
 
-              sourceEntityId_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
+        /**
+         * <code>uint32 entity_id = 5;</code>
+         *
+         * @return The entityId.
+         */
+        int getEntityId();
 
-              attackTag_ = s;
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                serverBuffList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              serverBuffList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
+        /**
+         * <code>uint32 source_entity_id = 8;</code>
+         *
+         * @return The sourceEntityId.
+         */
+        int getSourceEntityId();
 
-              dieType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.class, emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.Builder.class);
-    }
-
-    public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 13;
-    private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> getServerBuffListList() {
-      return serverBuffList_;
+        /**
+         * <code>uint32 move_reliable_seq = 2;</code>
+         *
+         * @return The moveReliableSeq.
+         */
+        int getMoveReliableSeq();
     }
     /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
-        getServerBuffListOrBuilderList() {
-      return serverBuffList_;
-    }
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    @java.lang.Override
-    public int getServerBuffListCount() {
-      return serverBuffList_.size();
-    }
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index) {
-      return serverBuffList_.get(index);
-    }
-    /**
-     * <code>repeated .ServerBuff server_buff_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
-        int index) {
-      return serverBuffList_.get(index);
-    }
-
-    public static final int LIFE_STATE_FIELD_NUMBER = 3;
-    private int lifeState_;
-    /**
-     * <code>uint32 life_state = 3;</code>
-     * @return The lifeState.
-     */
-    @java.lang.Override
-    public int getLifeState() {
-      return lifeState_;
-    }
-
-    public static final int ATTACK_TAG_FIELD_NUMBER = 10;
-    private volatile java.lang.Object attackTag_;
-    /**
-     * <code>string attack_tag = 10;</code>
-     * @return The attackTag.
-     */
-    @java.lang.Override
-    public java.lang.String getAttackTag() {
-      java.lang.Object ref = attackTag_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        attackTag_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string attack_tag = 10;</code>
-     * @return The bytes for attackTag.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAttackTagBytes() {
-      java.lang.Object ref = attackTag_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        attackTag_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DIE_TYPE_FIELD_NUMBER = 15;
-    private int dieType_;
-    /**
-     * <code>.PlayerDieType die_type = 15;</code>
-     * @return The enum numeric value on the wire for dieType.
-     */
-    @java.lang.Override public int getDieTypeValue() {
-      return dieType_;
-    }
-    /**
-     * <code>.PlayerDieType die_type = 15;</code>
-     * @return The dieType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
-      return result == null ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 5;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 5;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 8;
-    private int sourceEntityId_;
-    /**
-     * <code>uint32 source_entity_id = 8;</code>
-     * @return The sourceEntityId.
-     */
-    @java.lang.Override
-    public int getSourceEntityId() {
-      return sourceEntityId_;
-    }
-
-    public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 2;
-    private int moveReliableSeq_;
-    /**
-     * <code>uint32 move_reliable_seq = 2;</code>
-     * @return The moveReliableSeq.
-     */
-    @java.lang.Override
-    public int getMoveReliableSeq() {
-      return moveReliableSeq_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (moveReliableSeq_ != 0) {
-        output.writeUInt32(2, moveReliableSeq_);
-      }
-      if (lifeState_ != 0) {
-        output.writeUInt32(3, lifeState_);
-      }
-      if (entityId_ != 0) {
-        output.writeUInt32(5, entityId_);
-      }
-      if (sourceEntityId_ != 0) {
-        output.writeUInt32(8, sourceEntityId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, attackTag_);
-      }
-      for (int i = 0; i < serverBuffList_.size(); i++) {
-        output.writeMessage(13, serverBuffList_.get(i));
-      }
-      if (dieType_ != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-        output.writeEnum(15, dieType_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (moveReliableSeq_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, moveReliableSeq_);
-      }
-      if (lifeState_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, lifeState_);
-      }
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, entityId_);
-      }
-      if (sourceEntityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sourceEntityId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, attackTag_);
-      }
-      for (int i = 0; i < serverBuffList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, serverBuffList_.get(i));
-      }
-      if (dieType_ != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, dieType_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify other = (emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) obj;
-
-      if (!getServerBuffListList()
-          .equals(other.getServerBuffListList())) return false;
-      if (getLifeState()
-          != other.getLifeState()) return false;
-      if (!getAttackTag()
-          .equals(other.getAttackTag())) return false;
-      if (dieType_ != other.dieType_) return false;
-      if (getEntityId()
-          != other.getEntityId()) return false;
-      if (getSourceEntityId()
-          != other.getSourceEntityId()) return false;
-      if (getMoveReliableSeq()
-          != other.getMoveReliableSeq()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getServerBuffListCount() > 0) {
-        hash = (37 * hash) + SERVER_BUFF_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getServerBuffListList().hashCode();
-      }
-      hash = (37 * hash) + LIFE_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getLifeState();
-      hash = (37 * hash) + ATTACK_TAG_FIELD_NUMBER;
-      hash = (53 * hash) + getAttackTag().hashCode();
-      hash = (37 * hash) + DIE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + dieType_;
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + SOURCE_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceEntityId();
-      hash = (37 * hash) + MOVE_RELIABLE_SEQ_FIELD_NUMBER;
-      hash = (53 * hash) + getMoveReliableSeq();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * CmdId: 1296
      * Name: JAIDICBLKEP
@@ -589,809 +95,1375 @@ public final class LifeStateChangeNotifyOuterClass {
      *
      * Protobuf type {@code LifeStateChangeNotify}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LifeStateChangeNotify)
-        emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.class, emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getServerBuffListFieldBuilder();
+    public static final class LifeStateChangeNotify extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:LifeStateChangeNotify)
+            LifeStateChangeNotifyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LifeStateChangeNotify.newBuilder() to construct.
+        private LifeStateChangeNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (serverBuffListBuilder_ == null) {
-          serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          serverBuffListBuilder_.clear();
+
+        private LifeStateChangeNotify() {
+            serverBuffList_ = java.util.Collections.emptyList();
+            attackTag_ = "";
+            dieType_ = 0;
         }
-        lifeState_ = 0;
 
-        attackTag_ = "";
-
-        dieType_ = 0;
-
-        entityId_ = 0;
-
-        sourceEntityId_ = 0;
-
-        moveReliableSeq_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify build() {
-        emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new LifeStateChangeNotify();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify buildPartial() {
-        emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result = new emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.serverBuffList_ = serverBuffList_;
-        } else {
-          result.serverBuffList_ = serverBuffListBuilder_.build();
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        result.lifeState_ = lifeState_;
-        result.attackTag_ = attackTag_;
-        result.dieType_ = dieType_;
-        result.entityId_ = entityId_;
-        result.sourceEntityId_ = sourceEntityId_;
-        result.moveReliableSeq_ = moveReliableSeq_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify other) {
-        if (other == emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.getDefaultInstance()) return this;
-        if (serverBuffListBuilder_ == null) {
-          if (!other.serverBuffList_.isEmpty()) {
-            if (serverBuffList_.isEmpty()) {
-              serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureServerBuffListIsMutable();
-              serverBuffList_.addAll(other.serverBuffList_);
+        private LifeStateChangeNotify(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.serverBuffList_.isEmpty()) {
-            if (serverBuffListBuilder_.isEmpty()) {
-              serverBuffListBuilder_.dispose();
-              serverBuffListBuilder_ = null;
-              serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              serverBuffListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getServerBuffListFieldBuilder() : null;
-            } else {
-              serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 16:
+                            {
+                                moveReliableSeq_ = input.readUInt32();
+                                break;
+                            }
+                        case 24:
+                            {
+                                lifeState_ = input.readUInt32();
+                                break;
+                            }
+                        case 40:
+                            {
+                                entityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 64:
+                            {
+                                sourceEntityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 82:
+                            {
+                                java.lang.String s = input.readStringRequireUtf8();
+
+                                attackTag_ = s;
+                                break;
+                            }
+                        case 106:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    serverBuffList_ =
+                                            new java.util.ArrayList<
+                                                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                serverBuffList_.add(
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
+                                                extensionRegistry));
+                                break;
+                            }
+                        case 120:
+                            {
+                                int rawValue = input.readEnum();
+
+                                dieType_ = rawValue;
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-        if (other.getLifeState() != 0) {
-          setLifeState(other.getLifeState());
-        }
-        if (!other.getAttackTag().isEmpty()) {
-          attackTag_ = other.attackTag_;
-          onChanged();
-        }
-        if (other.dieType_ != 0) {
-          setDieTypeValue(other.getDieTypeValue());
-        }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
-        if (other.getSourceEntityId() != 0) {
-          setSourceEntityId(other.getSourceEntityId());
-        }
-        if (other.getMoveReliableSeq() != 0) {
-          setMoveReliableSeq(other.getMoveReliableSeq());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                    .internal_static_LifeStateChangeNotify_descriptor;
+        }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                    .internal_static_LifeStateChangeNotify_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.class,
+                            emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                                    .Builder.class);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
-        java.util.Collections.emptyList();
-      private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          serverBuffList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 13;
+        private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                serverBuffList_;
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        @java.lang.Override
+        public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                getServerBuffListList() {
+            return serverBuffList_;
+        }
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>
+                getServerBuffListOrBuilderList() {
+            return serverBuffList_;
+        }
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        @java.lang.Override
+        public int getServerBuffListCount() {
+            return serverBuffList_.size();
+        }
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index) {
+            return serverBuffList_.get(index);
+        }
+        /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder
+                getServerBuffListOrBuilder(int index) {
+            return serverBuffList_.get(index);
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
+        public static final int LIFE_STATE_FIELD_NUMBER = 3;
+        private int lifeState_;
+        /**
+         * <code>uint32 life_state = 3;</code>
+         *
+         * @return The lifeState.
+         */
+        @java.lang.Override
+        public int getLifeState() {
+            return lifeState_;
+        }
 
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> getServerBuffListList() {
-        if (serverBuffListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(serverBuffList_);
-        } else {
-          return serverBuffListBuilder_.getMessageList();
+        public static final int ATTACK_TAG_FIELD_NUMBER = 10;
+        private volatile java.lang.Object attackTag_;
+        /**
+         * <code>string attack_tag = 10;</code>
+         *
+         * @return The attackTag.
+         */
+        @java.lang.Override
+        public java.lang.String getAttackTag() {
+            java.lang.Object ref = attackTag_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                attackTag_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public int getServerBuffListCount() {
-        if (serverBuffListBuilder_ == null) {
-          return serverBuffList_.size();
-        } else {
-          return serverBuffListBuilder_.getCount();
+        /**
+         * <code>string attack_tag = 10;</code>
+         *
+         * @return The bytes for attackTag.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getAttackTagBytes() {
+            java.lang.Object ref = attackTag_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                attackTag_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index) {
-        if (serverBuffListBuilder_ == null) {
-          return serverBuffList_.get(index);
-        } else {
-          return serverBuffListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder setServerBuffList(
-          int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
-        if (serverBuffListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureServerBuffListIsMutable();
-          serverBuffList_.set(index, value);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder setServerBuffList(
-          int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
-        if (serverBuffListBuilder_ == null) {
-          ensureServerBuffListIsMutable();
-          serverBuffList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          serverBuffListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder addServerBuffList(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
-        if (serverBuffListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureServerBuffListIsMutable();
-          serverBuffList_.add(value);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder addServerBuffList(
-          int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
-        if (serverBuffListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureServerBuffListIsMutable();
-          serverBuffList_.add(index, value);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder addServerBuffList(
-          emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
-        if (serverBuffListBuilder_ == null) {
-          ensureServerBuffListIsMutable();
-          serverBuffList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          serverBuffListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder addServerBuffList(
-          int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
-        if (serverBuffListBuilder_ == null) {
-          ensureServerBuffListIsMutable();
-          serverBuffList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          serverBuffListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder addAllServerBuffList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> values) {
-        if (serverBuffListBuilder_ == null) {
-          ensureServerBuffListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, serverBuffList_);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder clearServerBuffList() {
-        if (serverBuffListBuilder_ == null) {
-          serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public Builder removeServerBuffList(int index) {
-        if (serverBuffListBuilder_ == null) {
-          ensureServerBuffListIsMutable();
-          serverBuffList_.remove(index);
-          onChanged();
-        } else {
-          serverBuffListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder getServerBuffListBuilder(
-          int index) {
-        return getServerBuffListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
-          int index) {
-        if (serverBuffListBuilder_ == null) {
-          return serverBuffList_.get(index);  } else {
-          return serverBuffListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
-           getServerBuffListOrBuilderList() {
-        if (serverBuffListBuilder_ != null) {
-          return serverBuffListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(serverBuffList_);
-        }
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder addServerBuffListBuilder() {
-        return getServerBuffListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder addServerBuffListBuilder(
-          int index) {
-        return getServerBuffListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ServerBuff server_buff_list = 13;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder> 
-           getServerBuffListBuilderList() {
-        return getServerBuffListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
-          getServerBuffListFieldBuilder() {
-        if (serverBuffListBuilder_ == null) {
-          serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
-                  serverBuffList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          serverBuffList_ = null;
-        }
-        return serverBuffListBuilder_;
-      }
 
-      private int lifeState_ ;
-      /**
-       * <code>uint32 life_state = 3;</code>
-       * @return The lifeState.
-       */
-      @java.lang.Override
-      public int getLifeState() {
-        return lifeState_;
-      }
-      /**
-       * <code>uint32 life_state = 3;</code>
-       * @param value The lifeState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLifeState(int value) {
-        
-        lifeState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 life_state = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLifeState() {
-        
-        lifeState_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object attackTag_ = "";
-      /**
-       * <code>string attack_tag = 10;</code>
-       * @return The attackTag.
-       */
-      public java.lang.String getAttackTag() {
-        java.lang.Object ref = attackTag_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          attackTag_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int DIE_TYPE_FIELD_NUMBER = 15;
+        private int dieType_;
+        /**
+         * <code>.PlayerDieType die_type = 15;</code>
+         *
+         * @return The enum numeric value on the wire for dieType.
+         */
+        @java.lang.Override
+        public int getDieTypeValue() {
+            return dieType_;
         }
-      }
-      /**
-       * <code>string attack_tag = 10;</code>
-       * @return The bytes for attackTag.
-       */
-      public com.google.protobuf.ByteString
-          getAttackTagBytes() {
-        java.lang.Object ref = attackTag_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          attackTag_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+        /**
+         * <code>.PlayerDieType die_type = 15;</code>
+         *
+         * @return The dieType.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
+            @SuppressWarnings("deprecation")
+            emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result =
+                    emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+            return result == null
+                    ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED
+                    : result;
         }
-      }
-      /**
-       * <code>string attack_tag = 10;</code>
-       * @param value The attackTag to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAttackTag(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        attackTag_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string attack_tag = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAttackTag() {
-        
-        attackTag_ = getDefaultInstance().getAttackTag();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string attack_tag = 10;</code>
-       * @param value The bytes for attackTag to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAttackTagBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        attackTag_ = value;
-        onChanged();
-        return this;
-      }
 
-      private int dieType_ = 0;
-      /**
-       * <code>.PlayerDieType die_type = 15;</code>
-       * @return The enum numeric value on the wire for dieType.
-       */
-      @java.lang.Override public int getDieTypeValue() {
-        return dieType_;
-      }
-      /**
-       * <code>.PlayerDieType die_type = 15;</code>
-       * @param value The enum numeric value on the wire for dieType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDieTypeValue(int value) {
-        
-        dieType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.PlayerDieType die_type = 15;</code>
-       * @return The dieType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
-        return result == null ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.PlayerDieType die_type = 15;</code>
-       * @param value The dieType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDieType(emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType value) {
-        if (value == null) {
-          throw new NullPointerException();
+        public static final int ENTITY_ID_FIELD_NUMBER = 5;
+        private int entityId_;
+        /**
+         * <code>uint32 entity_id = 5;</code>
+         *
+         * @return The entityId.
+         */
+        @java.lang.Override
+        public int getEntityId() {
+            return entityId_;
         }
-        
-        dieType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.PlayerDieType die_type = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDieType() {
-        
-        dieType_ = 0;
-        onChanged();
-        return this;
-      }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 8;
+        private int sourceEntityId_;
+        /**
+         * <code>uint32 source_entity_id = 8;</code>
+         *
+         * @return The sourceEntityId.
+         */
+        @java.lang.Override
+        public int getSourceEntityId() {
+            return sourceEntityId_;
+        }
 
-      private int sourceEntityId_ ;
-      /**
-       * <code>uint32 source_entity_id = 8;</code>
-       * @return The sourceEntityId.
-       */
-      @java.lang.Override
-      public int getSourceEntityId() {
-        return sourceEntityId_;
-      }
-      /**
-       * <code>uint32 source_entity_id = 8;</code>
-       * @param value The sourceEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceEntityId(int value) {
-        
-        sourceEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 source_entity_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceEntityId() {
-        
-        sourceEntityId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 2;
+        private int moveReliableSeq_;
+        /**
+         * <code>uint32 move_reliable_seq = 2;</code>
+         *
+         * @return The moveReliableSeq.
+         */
+        @java.lang.Override
+        public int getMoveReliableSeq() {
+            return moveReliableSeq_;
+        }
 
-      private int moveReliableSeq_ ;
-      /**
-       * <code>uint32 move_reliable_seq = 2;</code>
-       * @return The moveReliableSeq.
-       */
-      @java.lang.Override
-      public int getMoveReliableSeq() {
-        return moveReliableSeq_;
-      }
-      /**
-       * <code>uint32 move_reliable_seq = 2;</code>
-       * @param value The moveReliableSeq to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMoveReliableSeq(int value) {
-        
-        moveReliableSeq_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 move_reliable_seq = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMoveReliableSeq() {
-        
-        moveReliableSeq_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:LifeStateChangeNotify)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (moveReliableSeq_ != 0) {
+                output.writeUInt32(2, moveReliableSeq_);
+            }
+            if (lifeState_ != 0) {
+                output.writeUInt32(3, lifeState_);
+            }
+            if (entityId_ != 0) {
+                output.writeUInt32(5, entityId_);
+            }
+            if (sourceEntityId_ != 0) {
+                output.writeUInt32(8, sourceEntityId_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 10, attackTag_);
+            }
+            for (int i = 0; i < serverBuffList_.size(); i++) {
+                output.writeMessage(13, serverBuffList_.get(i));
+            }
+            if (dieType_
+                    != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE
+                            .getNumber()) {
+                output.writeEnum(15, dieType_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (moveReliableSeq_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, moveReliableSeq_);
+            }
+            if (lifeState_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, lifeState_);
+            }
+            if (entityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, entityId_);
+            }
+            if (sourceEntityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, sourceEntityId_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, attackTag_);
+            }
+            for (int i = 0; i < serverBuffList_.size(); i++) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(13, serverBuffList_.get(i));
+            }
+            if (dieType_
+                    != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE
+                            .getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, dieType_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify other =
+                    (emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) obj;
+
+            if (!getServerBuffListList().equals(other.getServerBuffListList())) return false;
+            if (getLifeState() != other.getLifeState()) return false;
+            if (!getAttackTag().equals(other.getAttackTag())) return false;
+            if (dieType_ != other.dieType_) return false;
+            if (getEntityId() != other.getEntityId()) return false;
+            if (getSourceEntityId() != other.getSourceEntityId()) return false;
+            if (getMoveReliableSeq() != other.getMoveReliableSeq()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (getServerBuffListCount() > 0) {
+                hash = (37 * hash) + SERVER_BUFF_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getServerBuffListList().hashCode();
+            }
+            hash = (37 * hash) + LIFE_STATE_FIELD_NUMBER;
+            hash = (53 * hash) + getLifeState();
+            hash = (37 * hash) + ATTACK_TAG_FIELD_NUMBER;
+            hash = (53 * hash) + getAttackTag().hashCode();
+            hash = (37 * hash) + DIE_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + dieType_;
+            hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getEntityId();
+            hash = (37 * hash) + SOURCE_ENTITY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSourceEntityId();
+            hash = (37 * hash) + MOVE_RELIABLE_SEQ_FIELD_NUMBER;
+            hash = (53 * hash) + getMoveReliableSeq();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CmdId: 1296
+         * Name: JAIDICBLKEP
+         * </pre>
+         *
+         * Protobuf type {@code LifeStateChangeNotify}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:LifeStateChangeNotify)
+                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                        .internal_static_LifeStateChangeNotify_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                        .internal_static_LifeStateChangeNotify_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                                        .class,
+                                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                                        .Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getServerBuffListFieldBuilder();
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                if (serverBuffListBuilder_ == null) {
+                    serverBuffList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    serverBuffListBuilder_.clear();
+                }
+                lifeState_ = 0;
+
+                attackTag_ = "";
+
+                dieType_ = 0;
+
+                entityId_ = 0;
+
+                sourceEntityId_ = 0;
+
+                moveReliableSeq_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                        .internal_static_LifeStateChangeNotify_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                    build() {
+                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                    buildPartial() {
+                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result =
+                        new emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify(
+                                this);
+                int from_bitField0_ = bitField0_;
+                if (serverBuffListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
+                        serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.serverBuffList_ = serverBuffList_;
+                } else {
+                    result.serverBuffList_ = serverBuffListBuilder_.build();
+                }
+                result.lifeState_ = lifeState_;
+                result.attackTag_ = attackTag_;
+                result.dieType_ = dieType_;
+                result.entityId_ = entityId_;
+                result.sourceEntityId_ = sourceEntityId_;
+                result.moveReliableSeq_ = moveReliableSeq_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify other) {
+                if (other
+                        == emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                                .getDefaultInstance()) return this;
+                if (serverBuffListBuilder_ == null) {
+                    if (!other.serverBuffList_.isEmpty()) {
+                        if (serverBuffList_.isEmpty()) {
+                            serverBuffList_ = other.serverBuffList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureServerBuffListIsMutable();
+                            serverBuffList_.addAll(other.serverBuffList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.serverBuffList_.isEmpty()) {
+                        if (serverBuffListBuilder_.isEmpty()) {
+                            serverBuffListBuilder_.dispose();
+                            serverBuffListBuilder_ = null;
+                            serverBuffList_ = other.serverBuffList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            serverBuffListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                            ? getServerBuffListFieldBuilder()
+                                            : null;
+                        } else {
+                            serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
+                        }
+                    }
+                }
+                if (other.getLifeState() != 0) {
+                    setLifeState(other.getLifeState());
+                }
+                if (!other.getAttackTag().isEmpty()) {
+                    attackTag_ = other.attackTag_;
+                    onChanged();
+                }
+                if (other.dieType_ != 0) {
+                    setDieTypeValue(other.getDieTypeValue());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
+                }
+                if (other.getSourceEntityId() != 0) {
+                    setSourceEntityId(other.getSourceEntityId());
+                }
+                if (other.getMoveReliableSeq() != 0) {
+                    setMoveReliableSeq(other.getMoveReliableSeq());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                    serverBuffList_ = java.util.Collections.emptyList();
+
+            private void ensureServerBuffListIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    serverBuffList_ =
+                            new java.util.ArrayList<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>(
+                                    serverBuffList_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff,
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder,
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>
+                    serverBuffListBuilder_;
+
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                    getServerBuffListList() {
+                if (serverBuffListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(serverBuffList_);
+                } else {
+                    return serverBuffListBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public int getServerBuffListCount() {
+                if (serverBuffListBuilder_ == null) {
+                    return serverBuffList_.size();
+                } else {
+                    return serverBuffListBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(
+                    int index) {
+                if (serverBuffListBuilder_ == null) {
+                    return serverBuffList_.get(index);
+                } else {
+                    return serverBuffListBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder setServerBuffList(
+                    int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
+                if (serverBuffListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.set(index, value);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder setServerBuffList(
+                    int index,
+                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
+                if (serverBuffListBuilder_ == null) {
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder addServerBuffList(
+                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
+                if (serverBuffListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.add(value);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder addServerBuffList(
+                    int index, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
+                if (serverBuffListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.add(index, value);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder addServerBuffList(
+                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
+                if (serverBuffListBuilder_ == null) {
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder addServerBuffList(
+                    int index,
+                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
+                if (serverBuffListBuilder_ == null) {
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder addAllServerBuffList(
+                    java.lang.Iterable<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>
+                            values) {
+                if (serverBuffListBuilder_ == null) {
+                    ensureServerBuffListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serverBuffList_);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder clearServerBuffList() {
+                if (serverBuffListBuilder_ == null) {
+                    serverBuffList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public Builder removeServerBuffList(int index) {
+                if (serverBuffListBuilder_ == null) {
+                    ensureServerBuffListIsMutable();
+                    serverBuffList_.remove(index);
+                    onChanged();
+                } else {
+                    serverBuffListBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder
+                    getServerBuffListBuilder(int index) {
+                return getServerBuffListFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder
+                    getServerBuffListOrBuilder(int index) {
+                if (serverBuffListBuilder_ == null) {
+                    return serverBuffList_.get(index);
+                } else {
+                    return serverBuffListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public java.util.List<
+                            ? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>
+                    getServerBuffListOrBuilderList() {
+                if (serverBuffListBuilder_ != null) {
+                    return serverBuffListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(serverBuffList_);
+                }
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder
+                    addServerBuffListBuilder() {
+                return getServerBuffListFieldBuilder()
+                        .addBuilder(
+                                emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.getDefaultInstance());
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder
+                    addServerBuffListBuilder(int index) {
+                return getServerBuffListFieldBuilder()
+                        .addBuilder(
+                                index,
+                                emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.getDefaultInstance());
+            }
+            /** <code>repeated .ServerBuff server_buff_list = 13;</code> */
+            public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder>
+                    getServerBuffListBuilderList() {
+                return getServerBuffListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff,
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder,
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>
+                    getServerBuffListFieldBuilder() {
+                if (serverBuffListBuilder_ == null) {
+                    serverBuffListBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff,
+                                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder,
+                                    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
+                                    serverBuffList_,
+                                    ((bitField0_ & 0x00000001) != 0),
+                                    getParentForChildren(),
+                                    isClean());
+                    serverBuffList_ = null;
+                }
+                return serverBuffListBuilder_;
+            }
+
+            private int lifeState_;
+            /**
+             * <code>uint32 life_state = 3;</code>
+             *
+             * @return The lifeState.
+             */
+            @java.lang.Override
+            public int getLifeState() {
+                return lifeState_;
+            }
+            /**
+             * <code>uint32 life_state = 3;</code>
+             *
+             * @param value The lifeState to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLifeState(int value) {
+
+                lifeState_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 life_state = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLifeState() {
+
+                lifeState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object attackTag_ = "";
+            /**
+             * <code>string attack_tag = 10;</code>
+             *
+             * @return The attackTag.
+             */
+            public java.lang.String getAttackTag() {
+                java.lang.Object ref = attackTag_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    attackTag_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>string attack_tag = 10;</code>
+             *
+             * @return The bytes for attackTag.
+             */
+            public com.google.protobuf.ByteString getAttackTagBytes() {
+                java.lang.Object ref = attackTag_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    attackTag_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string attack_tag = 10;</code>
+             *
+             * @param value The attackTag to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAttackTag(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                attackTag_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string attack_tag = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAttackTag() {
+
+                attackTag_ = getDefaultInstance().getAttackTag();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string attack_tag = 10;</code>
+             *
+             * @param value The bytes for attackTag to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAttackTagBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                attackTag_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int dieType_ = 0;
+            /**
+             * <code>.PlayerDieType die_type = 15;</code>
+             *
+             * @return The enum numeric value on the wire for dieType.
+             */
+            @java.lang.Override
+            public int getDieTypeValue() {
+                return dieType_;
+            }
+            /**
+             * <code>.PlayerDieType die_type = 15;</code>
+             *
+             * @param value The enum numeric value on the wire for dieType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDieTypeValue(int value) {
+
+                dieType_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.PlayerDieType die_type = 15;</code>
+             *
+             * @return The dieType.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result =
+                        emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+                return result == null
+                        ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED
+                        : result;
+            }
+            /**
+             * <code>.PlayerDieType die_type = 15;</code>
+             *
+             * @param value The dieType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDieType(
+                    emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                dieType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.PlayerDieType die_type = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDieType() {
+
+                dieType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int entityId_;
+            /**
+             * <code>uint32 entity_id = 5;</code>
+             *
+             * @return The entityId.
+             */
+            @java.lang.Override
+            public int getEntityId() {
+                return entityId_;
+            }
+            /**
+             * <code>uint32 entity_id = 5;</code>
+             *
+             * @param value The entityId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEntityId(int value) {
+
+                entityId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 entity_id = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEntityId() {
+
+                entityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int sourceEntityId_;
+            /**
+             * <code>uint32 source_entity_id = 8;</code>
+             *
+             * @return The sourceEntityId.
+             */
+            @java.lang.Override
+            public int getSourceEntityId() {
+                return sourceEntityId_;
+            }
+            /**
+             * <code>uint32 source_entity_id = 8;</code>
+             *
+             * @param value The sourceEntityId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSourceEntityId(int value) {
+
+                sourceEntityId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 source_entity_id = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSourceEntityId() {
+
+                sourceEntityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int moveReliableSeq_;
+            /**
+             * <code>uint32 move_reliable_seq = 2;</code>
+             *
+             * @return The moveReliableSeq.
+             */
+            @java.lang.Override
+            public int getMoveReliableSeq() {
+                return moveReliableSeq_;
+            }
+            /**
+             * <code>uint32 move_reliable_seq = 2;</code>
+             *
+             * @param value The moveReliableSeq to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMoveReliableSeq(int value) {
+
+                moveReliableSeq_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 move_reliable_seq = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMoveReliableSeq() {
+
+                moveReliableSeq_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:LifeStateChangeNotify)
+        }
+
+        // @@protoc_insertion_point(class_scope:LifeStateChangeNotify)
+        private static final emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass
+                        .LifeStateChangeNotify
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify();
+        }
+
+        public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LifeStateChangeNotify> PARSER =
+                new com.google.protobuf.AbstractParser<LifeStateChangeNotify>() {
+                    @java.lang.Override
+                    public LifeStateChangeNotify parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new LifeStateChangeNotify(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<LifeStateChangeNotify> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LifeStateChangeNotify> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:LifeStateChangeNotify)
-    private static final emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_LifeStateChangeNotify_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_LifeStateChangeNotify_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify();
+        java.lang.String[] descriptorData = {
+            "\n\033LifeStateChangeNotify.proto\032\023PlayerDie"
+                    + "Type.proto\032\020ServerBuff.proto\"\320\001\n\025LifeSta"
+                    + "teChangeNotify\022%\n\020server_buff_list\030\r \003(\013"
+                    + "2\013.ServerBuff\022\022\n\nlife_state\030\003 \001(\r\022\022\n\natt"
+                    + "ack_tag\030\n \001(\t\022 \n\010die_type\030\017 \001(\0162\016.Player"
+                    + "DieType\022\021\n\tentity_id\030\005 \001(\r\022\030\n\020source_ent"
+                    + "ity_id\030\010 \001(\r\022\031\n\021move_reliable_seq\030\002 \001(\rB"
+                    + "!\n\031emu.grasscutter.net.protoZ\004/genb\006prot"
+                    + "o3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.PlayerDieTypeOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
+                        });
+        internal_static_LifeStateChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_LifeStateChangeNotify_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_LifeStateChangeNotify_descriptor,
+                        new java.lang.String[] {
+                            "ServerBuffList",
+                            "LifeState",
+                            "AttackTag",
+                            "DieType",
+                            "EntityId",
+                            "SourceEntityId",
+                            "MoveReliableSeq",
+                        });
+        emu.grasscutter.net.proto.PlayerDieTypeOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LifeStateChangeNotify>
-        PARSER = new com.google.protobuf.AbstractParser<LifeStateChangeNotify>() {
-      @java.lang.Override
-      public LifeStateChangeNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LifeStateChangeNotify(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LifeStateChangeNotify> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LifeStateChangeNotify> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LifeStateChangeNotify_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LifeStateChangeNotify_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\033LifeStateChangeNotify.proto\032\023PlayerDie" +
-      "Type.proto\032\020ServerBuff.proto\"\320\001\n\025LifeSta" +
-      "teChangeNotify\022%\n\020server_buff_list\030\r \003(\013" +
-      "2\013.ServerBuff\022\022\n\nlife_state\030\003 \001(\r\022\022\n\natt" +
-      "ack_tag\030\n \001(\t\022 \n\010die_type\030\017 \001(\0162\016.Player" +
-      "DieType\022\021\n\tentity_id\030\005 \001(\r\022\030\n\020source_ent" +
-      "ity_id\030\010 \001(\r\022\031\n\021move_reliable_seq\030\002 \001(\rB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.PlayerDieTypeOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
-        });
-    internal_static_LifeStateChangeNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_LifeStateChangeNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LifeStateChangeNotify_descriptor,
-        new java.lang.String[] { "ServerBuffList", "LifeState", "AttackTag", "DieType", "EntityId", "SourceEntityId", "MoveReliableSeq", });
-    emu.grasscutter.net.proto.PlayerDieTypeOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

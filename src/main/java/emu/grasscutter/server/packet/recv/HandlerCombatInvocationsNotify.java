@@ -5,6 +5,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
@@ -12,7 +13,6 @@ import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
 import emu.grasscutter.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
@@ -94,14 +94,16 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             }
                         }
 
-                        // as long as one of these two packets be forwarded to client, the animation of avatar will be interrupted
-                        if (motionState == MotionState.MOTION_STATE_NOTIFY || motionState == MotionState.MOTION_STATE_FIGHT) {
+                        // as long as one of these two packets be forwarded to client, the animation of avatar
+                        // will be interrupted
+                        if (motionState == MotionState.MOTION_STATE_NOTIFY
+                                || motionState == MotionState.MOTION_STATE_FIGHT) {
                             continue;
                         }
                     }
                 }
                 case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED -> {
-                    var paramInfo =
+                    EvtAnimatorParameterInfo paramInfo =
                             EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
                     if (paramInfo.getIsServerCache()) {
                         paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
@@ -116,7 +118,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
     }
 
     private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
-        if (session.getPlayer().inGodmode()) {
+        if (session.getPlayer().isInGodMode()) {
             return;
         }
         // People have reported that after plunge attack (client sends a FIGHT instead of

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class HealAbilityManager {
     ArrayList<HealDataAvatar> healDataAvatarList;
-    private final Player player;
+    private Player player;
 
     public HealAbilityManager(Player player) {
         this.player = player;

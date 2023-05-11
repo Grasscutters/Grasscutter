@@ -1117,8 +1117,8 @@ public final class FireworkSetDataOuterClass {
             "\n\025FireworkSetData.proto\032\026FireWorkInstanc"
                     + "e.proto\"c\n\017FireworkSetData\022\n\n\002id\030\001 \001(\r\022\027"
                     + "\n\017_unknown_field_\030\002 \003(\r\022+\n\020fireWorkInsta"
-                    + "nce\030\003 \003(\0132\021.FireWorkInstanceB\033\n\031emu.gras"
-                    + "scutter.net.protob\006proto3"
+                    + "nce\030\003 \003(\0132\021.FireWorkInstanceB!\n\031emu.gras"
+                    + "scutter.net.protoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

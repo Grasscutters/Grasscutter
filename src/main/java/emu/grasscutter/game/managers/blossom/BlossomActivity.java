@@ -1,11 +1,9 @@
 package emu.grasscutter.game.managers.blossom;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.data.excels.WorldLevelData;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
-import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterTrigger;
+import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterCountTrigger;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.props.FightProperty;
@@ -20,20 +18,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class BlossomActivity {
+public final class BlossomActivity {
 
-    private static final int BLOOMING_GADGET_ID = 70210109;
     private final SceneGroup tempSceneGroup;
     private final WorldChallenge challenge;
     private final EntityGadget gadget;
-    private final int goal;
-    private final int worldLevel;
-    private final List<EntityMonster> activeMonsters = new ArrayList<>();
-    private final Queue<Integer> candidateMonsters = new ArrayDeque<>();
     private EntityGadget chest;
     private int step;
+    private final int goal;
     private int generatedCount;
+    private final int worldLevel;
     private boolean pass = false;
+    private final List<EntityMonster> activeMonsters = new ArrayList<>();
+    private final Queue<Integer> candidateMonsters = new ArrayDeque<>();
+    private static final int BLOOMING_GADGET_ID = 70210109;
 
     public BlossomActivity(
             EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
@@ -55,7 +53,7 @@ public class BlossomActivity {
                         timeout,
                         goal,
                         challengeTriggers);
-        challengeTriggers.add(new KillMonsterTrigger());
+        challengeTriggers.add(new KillMonsterCountTrigger());
         // this.challengeTriggers.add(new InTimeTrigger());
     }
 
@@ -96,7 +94,7 @@ public class BlossomActivity {
             if (generatedCount < goal) {
                 step++;
 
-                WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
+                var worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
                 int worldLevelOverride = 0;
                 if (worldLevelData != null) {
                     worldLevelOverride = worldLevelData.getMonsterLevel();
@@ -109,7 +107,7 @@ public class BlossomActivity {
                 }
                 generatedCount += willSpawn;
                 for (int i = 0; i < willSpawn; i++) {
-                    MonsterData monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
+                    var monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
                     int level = scene.getEntityLevel(1, worldLevelOverride);
                     EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(4f), level);
                     scene.addEntity(entity);

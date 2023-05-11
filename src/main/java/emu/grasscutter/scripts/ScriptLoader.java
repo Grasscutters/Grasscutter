@@ -1,11 +1,12 @@
 package emu.grasscutter.scripts;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.dungeons.challenge.enums.ChallengeEventMarkType;
+import emu.grasscutter.game.dungeons.challenge.enums.FatherChallengeProperty;
+import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.scripts.constants.EventType;
-import emu.grasscutter.scripts.constants.ScriptGadgetState;
-import emu.grasscutter.scripts.constants.ScriptRegionShape;
+import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
@@ -35,11 +36,10 @@ public class ScriptLoader {
     @Getter private static ScriptLib scriptLib;
     @Getter private static LuaValue scriptLibLua;
     /** suggest GC to remove it if the memory is less */
-    private static final Map<String, SoftReference<CompiledScript>> scriptsCache =
+    private static Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
-    private static final Map<Integer, SoftReference<SceneMeta>> sceneMetaCache =
-            new ConcurrentHashMap<>();
+    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
 
     public static synchronized void init() throws Exception {
         if (sm != null) {
@@ -65,15 +65,14 @@ public class ScriptLoader {
                     }
                 });
 
-        LuaTable table = new LuaTable();
-        Arrays.stream(EntityType.values())
-                .forEach(e -> table.set(e.name().toUpperCase(), e.getValue()));
-        ctx.globals.set("EntityType", table);
+        addEnumByIntValue(ctx, EntityType.values(), "EntityType");
+        addEnumByIntValue(ctx, QuestState.values(), "QuestState");
+        addEnumByIntValue(ctx, ElementType.values(), "ElementType");
 
-        LuaTable table1 = new LuaTable();
-        Arrays.stream(QuestState.values())
-                .forEach(e -> table1.set(e.name().toUpperCase(), e.getValue()));
-        ctx.globals.set("QuestState", table1);
+        addEnumByOrdinal(ctx, GroupKillPolicy.values(), "GroupKillPolicy");
+        addEnumByOrdinal(ctx, SealBattleType.values(), "SealBattleType");
+        addEnumByOrdinal(ctx, FatherChallengeProperty.values(), "FatherChallengeProperty");
+        addEnumByOrdinal(ctx, ChallengeEventMarkType.values(), "ChallengeEventMarkType");
 
         ctx.globals.set(
                 "EventType",
@@ -86,6 +85,30 @@ public class ScriptLoader {
         scriptLib = new ScriptLib();
         scriptLibLua = CoerceJavaToLua.coerce(scriptLib);
         ctx.globals.set("ScriptLib", scriptLibLua);
+    }
+
+    private static <T extends Enum<T>> void addEnumByOrdinal(
+            LuajContext ctx, T[] enumArray, String name) {
+        LuaTable table = new LuaTable();
+        Arrays.stream(enumArray)
+                .forEach(
+                        e -> {
+                            table.set(e.name(), e.ordinal());
+                            table.set(e.name().toUpperCase(), e.ordinal());
+                        });
+        ctx.globals.set(name, table);
+    }
+
+    private static <T extends Enum<T> & IntValueEnum> void addEnumByIntValue(
+            LuajContext ctx, T[] enumArray, String name) {
+        LuaTable table = new LuaTable();
+        Arrays.stream(enumArray)
+                .forEach(
+                        e -> {
+                            table.set(e.name(), e.getValue());
+                            table.set(e.name().toUpperCase(), e.getValue());
+                        });
+        ctx.globals.set(name, table);
     }
 
     public static <T> Optional<T> tryGet(SoftReference<T> softReference) {
@@ -103,7 +126,7 @@ public class ScriptLoader {
             return sc.get();
         }
 
-        Grasscutter.getLogger().debug("Loading script " + path);
+        // Grasscutter.getLogger().debug("Loading script " + path);
 
         File file = new File(path);
 
@@ -125,7 +148,7 @@ public class ScriptLoader {
             return sc.get();
         }
 
-        Grasscutter.getLogger().debug("Loading script " + path);
+        // Grasscutter.getLogger().debug("Loading script " + path);
         final Path scriptPath = FileUtils.getScriptPath(path);
         if (!Files.exists(scriptPath)) return null;
 

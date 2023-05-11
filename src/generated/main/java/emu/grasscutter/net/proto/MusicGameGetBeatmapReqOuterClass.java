@@ -1082,8 +1082,8 @@ public final class MusicGameGetBeatmapReqOuterClass {
                     + "music_share_id\030\n \001(\004\022-\n\runknown_enum2\030\014 "
                     + "\001(\0162\026.MusicGameUnknown2Enum\022\023\n\013CDFOGGDLK"
                     + "NA\030\017 \001(\010\022-\n\010req_type\030\013 \001(\0162\033.MusicGameGe"
-                    + "tBeatmapReqTypeB\033\n\031emu.grasscutter.net.p"
-                    + "rotob\006proto3"
+                    + "tBeatmapReqTypeB!\n\031emu.grasscutter.net.p"
+                    + "rotoZ\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

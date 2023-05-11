@@ -83,7 +83,7 @@ public class DataLoader {
     }
 
     public static <T> List<T> loadList(String resourcePath, Class<T> classType) throws IOException {
-        try (InputStreamReader reader = loadReader(resourcePath)) {
+        try (var reader = loadReader(resourcePath)) {
             return JsonUtils.loadToList(reader, classType);
         }
     }

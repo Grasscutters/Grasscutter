@@ -35,10 +35,12 @@ public final class ServerTask implements Runnable {
      * @return True if the task should run, false otherwise.
      */
     public boolean shouldRun() {
+        // Increase tick count.
+        var ticks = this.ticks++;
         if (this.delay != -1 && this.considerDelay) {
             this.considerDelay = false;
-            return this.ticks == this.delay;
-        } else if (this.period != -1) return this.ticks % this.period == 0;
+            return ticks == this.delay;
+        } else if (this.period != -1) return ticks % this.period == 0;
         else return true;
     }
 
@@ -48,15 +50,17 @@ public final class ServerTask implements Runnable {
      * @return True if the task should be canceled, false otherwise.
      */
     public boolean shouldCancel() {
-        return this.period == -1;
+        return this.period == -1 && ticks >= delay;
     }
 
     /** Runs the task. */
     @Override
     public void run() {
         // Run the runnable.
-        this.runnable.run();
-        // Increase tick count.
-        this.ticks++;
+        try {
+            this.runnable.run();
+        } catch (Exception ex) {
+            Grasscutter.getLogger().error("Exception during task: ", ex);
+        }
     }
 }

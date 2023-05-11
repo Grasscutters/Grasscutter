@@ -1,7 +1,7 @@
 {
   "messages": {
     "game": {
-      "address_bind": "Server di gioco avviato su \u001B[1m\u001B[33m%s:%s\u001B[0m",
+      "address_bind": "Server di gioco avviato su \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Server di gioco avviato sulla porta %s",
       "connect": "Client connesso da %s",
       "disconnect": "Client disconnesso da %s",
@@ -9,7 +9,7 @@
       "command_error": "Errore comando:"
     },
     "dispatch": {
-      "address_bind": "[Dispatch] Dispatch server avviato su \u001B[1m\u001B[33m%s:%s\u001B[0m",
+      "address_bind": "[Dispatch] Dispatch server avviato su \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Dispatch server avviato sulla porta %s",
       "request": "[Dispatch] Client %s %s richiesta: %s",
       "keystore": {
@@ -63,7 +63,10 @@
       "game_version": "Versione del gioco: %s",
       "resources": {
         "loading": "Caricamento risorse...",
-        "finish": "Terminato il caricamento delle risorse."
+        "finish": "Terminato il caricamento delle risorse.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "ID artefatto non valido.",
         "avatarId": "ID avatar non valido.",
         "avatarLevel": "Livello avatar non valido.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "ID entità non valido.",
         "itemId": "ID articolo non valido.",
         "itemLevel": "ItemLevel non valido.",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "Sei già in quel dungeon.",
       "description": "Entra in un dungeon"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "Utilizzo: fornire <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<livello 0-20>]",
       "illegal_relic": "Questo ID artefatto appartiene a un intervallo nella blacklist, potrebbe non essere quello che volevi.",
@@ -230,7 +238,32 @@
       "finished": "Missione completata %s.",
       "not_found": "Missione non trovata.",
       "invalid_id": "ID missione non valido.",
-      "description": "Aggiungi o completa missioni"
+      "description": "Aggiungi o completa missioni",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Riproduce un filmato"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Ricarica configurazione.",
@@ -343,6 +376,17 @@
       "success": "Teletrasportato %s in %s, %s, %s nella scena %s.",
       "description": "Cambia la posizione del giocatore"
     },
+    "trialAvatarActivity": {
+      "description": "Manipolare le funzionalità dell'attività Avatar di prova. Ciò include la commutazione degli stati dei sotterranei e delle ricompense.",
+      "not_found": "Dati giocatore attività avatar di prova non trovati. Forse l'attività non è abilitata.",
+      "invalid_param": "Parametro non valido.",
+      "schedule_not_found": "Programma %s non trovato.",
+      "success_schedule": "ID programma modificato in %s.",
+      "success_dungeon": "Stato del dungeon dell'avatar %s attivato.",
+      "success_dungeon_all": "Modificato lo stato dei dungeon di tutti gli avatar.",
+      "success_reward": "Stato della ricompensa dell'avatar %s attivato/disattivato.",
+      "success_reward_all": "Attivato/disattivato lo stato di ricompensa di tutti gli avatar."
+    },
     "weather": {
       "success": "Imposta l'ID meteo su %s con il tipo di clima %s.",
       "status": "L'ID meteo attuale è %s con il tipo di clima %s.",
@@ -372,7 +416,7 @@
       "available_three_stars": "Articoli a 3 stelle disponibili"
     },
     "records": {
-      "title": "Gacha Records",
+      "title": "🇺🇸Gacha Records",
       "date": "Data",
       "item": "oggetto"
     }
@@ -388,7 +432,7 @@
       "header_id": "ID",
       "header_command": "Comando",
       "header_description": "Descrizione",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Articolo",
       "header_scene": "Scena",
       "header_monster": "Mostro"

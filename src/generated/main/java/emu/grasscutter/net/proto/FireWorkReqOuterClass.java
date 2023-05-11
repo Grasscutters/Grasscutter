@@ -698,8 +698,8 @@ public final class FireWorkReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n\021FireWorkReq.proto\032\022FireWorkData.proto\""
                     + "2\n\013FireWorkReq\022#\n\014fireWorkData\030\007 \001(\0132\r.F"
-                    + "ireWorkDataB\033\n\031emu.grasscutter.net.proto"
-                    + "b\006proto3"
+                    + "ireWorkDataB!\n\031emu.grasscutter.net.proto"
+                    + "Z\004/genb\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -6,7 +6,7 @@ import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AchievementData;
+import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
