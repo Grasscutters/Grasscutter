@@ -20,9 +20,6 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
     private final Int2ObjectMap<PlayerActivityData> playerActivityDataByActivityCondId;
     private final Map<ActivityConditions, ActivityConditionBaseHandler> activityConditionsHandlers;
 
-    private static final UnknownActivityConditionHandler UNKNOWN_CONDITION_HANDLER =
-            new UnknownActivityConditionHandler();
-
     public BasicActivityConditionExecutor(
             Map<Integer, ActivityConfigItem> activityConfigItemMap,
             Int2ObjectMap<ActivityCondExcelConfigData> activityConditions,
@@ -66,7 +63,7 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
                                         (BooleanSupplier)
                                                 () ->
                                                         activityConditionsHandlers
-                                                                .getOrDefault(c.getType(), UNKNOWN_CONDITION_HANDLER)
+                                                                .getOrDefault(c.getType(), new UnknownActivityConditionHandler(c.getType()))
                                                                 .execute(activity, activityConfig, c.paramArray()))
                         .collect(Collectors.toList());
 
