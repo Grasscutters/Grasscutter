@@ -1,14 +1,14 @@
 package emu.grasscutter.game.talk;
 
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import lombok.NonNull;
+
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
 
 public final class TalkManager extends BasePlayerManager {
     public TalkManager(@NonNull Player player) {
@@ -19,12 +19,21 @@ public final class TalkManager extends BasePlayerManager {
      * Invoked when a talk is triggered.
      *
      * @param talkId The ID of the talk.
+     * @param npcEntityId The entity ID of the NPC being talked to.
      */
-    public void triggerTalkAction(int talkId) {
+    public void triggerTalkAction(int talkId, int npcEntityId) {
         var talkData = GameData.getTalkConfigDataMap().get(talkId);
         if (talkData == null) return;
 
         var player = this.getPlayer();
+        // Check if the NPC id is valid.
+        var entity = player.getScene().getEntityById(npcEntityId);
+        if (entity == null) return;
+
+        // The config ID of the entity is the NPC's ID.
+        if (!talkData.getNpcId().contains(entity.getConfigId()))
+            return;
+
         // Execute the talk action on associated handlers.
         talkData
                 .getFinishExec()
