@@ -30,8 +30,7 @@ public final class TalkManager extends BasePlayerManager {
         var entity = player.getScene().getEntityById(npcEntityId);
         if (entity != null) {
             // The config ID of the entity is the NPC's ID.
-            if (!talkData.getNpcId().contains(entity.getConfigId()))
-                return;
+            if (!talkData.getNpcId().contains(entity.getConfigId())) return;
         }
 
         // Execute the talk action on associated handlers.
