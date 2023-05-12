@@ -35,7 +35,7 @@ public final class GadgetGatherObject extends GadgetContent {
             this.itemId = gatherData.getItemId();
             this.isForbidGuest = gatherData.isForbidGuest();
         } else {
-            Grasscutter.getLogger().error("invalid gather object: {}", gadget.getConfigId());
+            Grasscutter.getLogger().trace("invalid gather object: {}", gadget.getConfigId());
         }
     }
 
