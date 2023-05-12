@@ -510,11 +510,11 @@ public final class Scene {
 
         this.finishLoading();
         this.checkPlayerRespawn();
+        if (this.tickCount++ % 10 == 0) this.broadcastPacket(new PacketSceneTimeNotify(this));
         if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {
             this.getScriptManager().onDestroy();
             this.getWorld().deregisterScene(this);
         }
-        if (this.tickCount++ % 10 == 0) this.broadcastPacket(new PacketSceneTimeNotify(this));
     }
 
     /** Validates a player's current position. Teleports the player if the player is out of bounds. */
