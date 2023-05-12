@@ -12,8 +12,7 @@ function invalid(value: number): boolean {
  */
 function basicGive(item: number, amount = 1): string {
     // Validate the numbers.
-    if (invalid(item) || invalid(amount))
-        return "Invalid arguments.";
+    if (invalid(item) || invalid(amount)) return "Invalid arguments.";
 
     return `/give ${item} x${amount}`;
 }
