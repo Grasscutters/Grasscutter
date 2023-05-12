@@ -86,15 +86,12 @@ class ItemCard extends React.Component<IProps, IState> {
      */
     private async addToInventory(): Promise<void> {
         const item = this.props.item?.id ?? 102;
-        const amount = typeof this.state.count == "string" ?
-            parseInt(this.state.count) :
-            this.state.count;
+        const amount = typeof this.state.count == "string" ? parseInt(this.state.count) : this.state.count;
 
         if (connected) {
             await giveItem(item, amount);
         } else {
-            await copyToClipboard(
-                give.basic(item, amount));
+            await copyToClipboard(give.basic(item, amount));
         }
     }
 
@@ -165,14 +162,8 @@ class ItemCard extends React.Component<IProps, IState> {
                         </div>
                     </div>
 
-                    <button className={"ItemCard_Submit"}
-                            onClick={this.addToInventory.bind(this)}
-                    >
-                        <TextState
-                            event={"connected"}
-                            text1={"Copy Command"}
-                            text2={"Add to Inventory"}
-                        />
+                    <button className={"ItemCard_Submit"} onClick={this.addToInventory.bind(this)}>
+                        <TextState event={"connected"} text1={"Copy Command"} text2={"Add to Inventory"} />
                     </button>
                 </div>
             </div>

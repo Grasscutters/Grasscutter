@@ -38,9 +38,7 @@ class TextState extends React.Component<IProps, IState> {
     }
 
     render() {
-        return this.state.state ?
-            this.props.text2 :
-            this.props.text1;
+        return this.state.state ? this.props.text2 : this.props.text1;
     }
 }
 
