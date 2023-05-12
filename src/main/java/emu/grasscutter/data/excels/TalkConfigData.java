@@ -4,10 +4,9 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.talk.TalkExec;
+import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 @ResourceType(name = "TalkExcelConfigData.json")
 @EqualsAndHashCode(callSuper = false)
@@ -29,8 +28,8 @@ public final class TalkConfigData extends GameResource {
     private int questId;
 
     @SerializedName(
-        value = "npcId",
-        alternate = {"_npcId"})
+            value = "npcId",
+            alternate = {"_npcId"})
     private List<Integer> npcId;
 
     @Override

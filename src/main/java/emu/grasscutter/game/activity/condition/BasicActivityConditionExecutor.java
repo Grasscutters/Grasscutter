@@ -63,7 +63,8 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
                                         (BooleanSupplier)
                                                 () ->
                                                         activityConditionsHandlers
-                                                                .getOrDefault(c.getType(), new UnknownActivityConditionHandler(c.getType()))
+                                                                .getOrDefault(
+                                                                        c.getType(), new UnknownActivityConditionHandler(c.getType()))
                                                                 .execute(activity, activityConfig, c.paramArray()))
                         .collect(Collectors.toList());
 

@@ -1,14 +1,14 @@
 package emu.grasscutter.game.talk;
 
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import lombok.NonNull;
-
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_ANY_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLETE_TALK;
 
 public final class TalkManager extends BasePlayerManager {
     public TalkManager(@NonNull Player player) {
@@ -31,8 +31,7 @@ public final class TalkManager extends BasePlayerManager {
         if (entity == null) return;
 
         // The config ID of the entity is the NPC's ID.
-        if (!talkData.getNpcId().contains(entity.getConfigId()))
-            return;
+        if (!talkData.getNpcId().contains(entity.getConfigId())) return;
 
         // Execute the talk action on associated handlers.
         talkData
