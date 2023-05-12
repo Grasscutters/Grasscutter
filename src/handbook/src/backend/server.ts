@@ -1,6 +1,8 @@
 import type { CommandResponse } from "@backend/types";
+import emitter from "@backend/events";
 
 let targetPlayer = 0; // The UID of the target player.
+export let connected = false; // Whether the server is connected.
 
 /**
  * Sets the target player.
@@ -9,7 +11,10 @@ let targetPlayer = 0; // The UID of the target player.
  */
 export function setTargetPlayer(player: number): void {
     targetPlayer = player;
-    console.log(`Target Player is now: ${targetPlayer}`);
+    connected = !isNaN(player) && player > 0;
+
+    // Emit the connected event.
+    emitter.emit("connected", connected);
 }
 
 /**

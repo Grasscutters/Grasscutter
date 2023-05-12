@@ -134,3 +134,13 @@ export async function fetchEntityData(entity: Entity): Promise<EntityInfo> {
         .then((res) => res.json())
         .catch(() => {});
 }
+
+/**
+ * Attempts to copy text to the clipboard.
+ * Uses the Clipboard API.
+ *
+ * @param text The text to copy.
+ */
+export async function copyToClipboard(text: string): Promise<void> {
+    await navigator.clipboard.writeText(text);
+}

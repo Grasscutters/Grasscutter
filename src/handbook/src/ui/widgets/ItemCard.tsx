@@ -1,9 +1,12 @@
 import React from "react";
 
+import TextState from "@components/TextState";
+
 import type { Item as ItemType, ItemInfo } from "@backend/types";
 import { itemTypeToString } from "@backend/types";
-import { itemIcon } from "@app/utils";
-import { giveItem } from "@backend/server";
+import { copyToClipboard, itemIcon } from "@app/utils";
+import { connected, giveItem } from "@backend/server";
+import { give } from "@backend/commands";
 
 import "@css/widgets/ItemCard.scss";
 
@@ -82,10 +85,17 @@ class ItemCard extends React.Component<IProps, IState> {
      * @private
      */
     private async addToInventory(): Promise<void> {
-        await giveItem(
-            this.props.item?.id ?? 102,
-            typeof this.state.count == "string" ? parseInt(this.state.count) : this.state.count
-        );
+        const item = this.props.item?.id ?? 102;
+        const amount = typeof this.state.count == "string" ?
+            parseInt(this.state.count) :
+            this.state.count;
+
+        if (connected) {
+            await giveItem(item, amount);
+        } else {
+            await copyToClipboard(
+                give.basic(item, amount));
+        }
     }
 
     componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: any) {
@@ -155,8 +165,14 @@ class ItemCard extends React.Component<IProps, IState> {
                         </div>
                     </div>
 
-                    <button className={"ItemCard_Submit"} onClick={this.addToInventory.bind(this)}>
-                        Add to Inventory
+                    <button className={"ItemCard_Submit"}
+                            onClick={this.addToInventory.bind(this)}
+                    >
+                        <TextState
+                            event={"connected"}
+                            text1={"Copy Command"}
+                            text2={"Add to Inventory"}
+                        />
                     </button>
                 </div>
             </div>
