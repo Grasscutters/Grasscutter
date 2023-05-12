@@ -21,14 +21,15 @@ import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinC
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import lombok.Getter;
+import org.reflections.Reflections;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import lombok.Getter;
-import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     public static final ExecutorService eventExecutor;
@@ -201,7 +202,7 @@ public final class AbilityManager extends BasePlayerManager {
 
             if (head.getInstancedAbilityId() <= abilities.length) {
                 var ability = abilities[head.getInstancedAbilityId() - 1];
-                Grasscutter.getLogger().warn("-> {}", ability.getData().localIdToAction);
+                Grasscutter.getLogger().trace("-> {}", ability.getData().localIdToAction);
                 var action = ability.getData().localIdToAction.get(head.getLocalId());
                 if (action != null) ability.getManager().executeAction(ability, action);
             }
