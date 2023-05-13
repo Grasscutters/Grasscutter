@@ -76,15 +76,6 @@
     overflow-y: scroll;
 }
 
-.ItemsPage_Item {
-    transition: 0.1s ease-in-out all;
-
-    &:hover {
-        cursor: pointer;
-        filter: brightness(0.9);
-    }
-}
-
 .ItemsPage_Card {
     display: flex;
 
