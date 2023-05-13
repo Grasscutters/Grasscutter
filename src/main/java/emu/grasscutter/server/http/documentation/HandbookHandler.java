@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.HANDBOOK;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.data.GameData;
@@ -12,10 +14,7 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
 import java.util.Objects;
-
-import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -272,8 +271,7 @@ public final class HandbookHandler implements Router {
 
             // Create the entity.
             for (var i = 1; i <= request.getAmount(); i++) {
-                var entity = new EntityMonster(scene, entityData,
-                    player.getPosition(), level);
+                var entity = new EntityMonster(scene, entityData, player.getPosition(), level);
                 scene.addEntity(entity);
             }
 
