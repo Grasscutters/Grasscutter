@@ -14,6 +14,11 @@
     gap: 20px;
 
     border-radius: 10px;
+    user-select: none;
+}
+
+.HomeButton:hover {
+    cursor: pointer;
 }
 
 .HomeButton_Icon {
