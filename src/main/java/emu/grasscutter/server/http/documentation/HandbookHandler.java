@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.HANDBOOK;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.data.GameData;
@@ -11,10 +13,7 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
 import java.util.Objects;
-
-import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -103,8 +102,7 @@ public final class HandbookHandler implements Router {
             var avatar = new Avatar(avatarData);
             avatar.setLevel(request.getLevel());
             avatar.setPromoteLevel(Avatar.getMinPromoteLevel(avatar.getLevel()));
-            Objects.requireNonNull(avatar
-                    .getSkillDepot())
+            Objects.requireNonNull(avatar.getSkillDepot())
                     .getSkillsAndEnergySkill()
                     .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
             avatar.forceConstellationLevel(request.getConstellations());
@@ -215,8 +213,7 @@ public final class HandbookHandler implements Router {
             var position = scene.getDefaultLocation(player);
             var rotation = scene.getDefaultRotation(player);
             // Teleport the player.
-            scene.getWorld().transferPlayerToScene(
-                player, scene.getId(), position);
+            scene.getWorld().transferPlayerToScene(player, scene.getId(), position);
             player.getRotation().set(rotation);
 
             ctx.json(HandbookBody.Response.builder().status(200).message("Player teleported.").build());

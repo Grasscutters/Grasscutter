@@ -1,15 +1,13 @@
 package emu.grasscutter.plugin;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -20,8 +18,9 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-
-import static emu.grasscutter.utils.Language.translate;
+import javax.annotation.Nullable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
