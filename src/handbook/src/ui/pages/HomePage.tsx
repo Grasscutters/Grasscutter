@@ -41,10 +41,7 @@ class HomePage extends React.Component<any, any> {
                             <p>trademarks and copyrights of HoYoverse.</p>
                         </div>
 
-                        <div
-                            className={"HomePage_Discord"}
-                            onClick={() => openUrl("https://discord.gg/grasscutter")}
-                        >
+                        <div className={"HomePage_Discord"} onClick={() => openUrl("https://discord.gg/grasscutter")}>
                             <DiscordLogo />
                             <p>Join the Community!</p>
                         </div>

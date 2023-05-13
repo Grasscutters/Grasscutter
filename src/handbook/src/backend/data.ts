@@ -70,9 +70,7 @@ export function getCommands(): CommandDump {
  * Fetches and lists all the commands in the file.
  */
 export function listCommands(): Command[] {
-    return Object.values(getCommands())
-        .sort((a, b) =>
-            a.name[0].localeCompare(b.name[0]));
+    return Object.values(getCommands()).sort((a, b) => a.name[0].localeCompare(b.name[0]));
 }
 
 /**
@@ -115,9 +113,7 @@ export function getAvatars(): AvatarDump {
  * Fetches and lists all the avatars in the file.
  */
 export function listAvatars(): Avatar[] {
-    return Object.values(getAvatars())
-        .sort((a, b) =>
-            a.name.localeCompare(b.name));
+    return Object.values(getAvatars()).sort((a, b) => a.name.localeCompare(b.name));
 }
 
 /**

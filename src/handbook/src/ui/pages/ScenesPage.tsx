@@ -45,7 +45,7 @@ class ScenesPage extends React.PureComponent {
         if (connected) {
             await teleportTo(scene);
         } else {
-            await copyToClipboard(action.teleport(scene))
+            await copyToClipboard(action.teleport(scene));
         }
     }
 
@@ -61,9 +61,7 @@ class ScenesPage extends React.PureComponent {
                             title={scene.identifier}
                             alternate={`ID: ${scene.id} | ${sceneTypeToString(scene.type)}`}
                             button={
-                                <button className={"ScenesPage_Button"}
-                                        onClick={() => this.teleport(scene.id)}
-                                >
+                                <button className={"ScenesPage_Button"} onClick={() => this.teleport(scene.id)}>
                                     Teleport
                                 </button>
                             }
