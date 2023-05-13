@@ -59,6 +59,7 @@
 .ObjectCard_Description {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 
     max-width: 250px;
     max-height: 460px;
