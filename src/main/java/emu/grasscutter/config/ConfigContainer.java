@@ -9,11 +9,10 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.utils.JsonUtils;
 import lombok.NoArgsConstructor;
 
-import java.net.URI;
-import java.util.Set;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Set;
 
 import static emu.grasscutter.Grasscutter.config;
 
@@ -204,7 +203,7 @@ public class ConfigContainer {
         public Level serverLoggerLevel = Level.DEBUG;
 
         /* Log level of the third-party services (works only with -debug arg):
-           javalin, quartz, reflections, jetty, mongodb.driver*/
+           javalin, quartz, reflections, jetty, mongodb.driver */
         public Level servicesLoggersLevel = Level.INFO;
 
         /* Controls whether packets should be logged in console or not */

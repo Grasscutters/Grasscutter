@@ -4,6 +4,8 @@ import HomeButton from "@widgets/HomeButton";
 
 import { ReactComponent as DiscordLogo } from "@icons/discord.svg";
 
+import { openUrl } from "@app/utils";
+
 import "@css/pages/HomePage.scss";
 
 class HomePage extends React.Component<any, any> {
@@ -23,9 +25,6 @@ class HomePage extends React.Component<any, any> {
                         <HomeButton name={"Items"} anchor={"Items"} />
                         <HomeButton name={"Entities"} anchor={"Entities"} />
                         <HomeButton name={"Scenes"} anchor={"Scenes"} />
-                    </div>
-
-                    <div className={"HomePage_Buttons"}>
                         <HomeButton name={"Quests"} anchor={"Home"} />
                         <HomeButton name={"Achievements"} anchor={"Home"} />
                     </div>
@@ -33,13 +32,11 @@ class HomePage extends React.Component<any, any> {
 
                 <div className={"HomePage_Bottom"}>
                     <div className={"HomePage_Box HomePage_Disclaimer"}>
-                        <div>
-                            <p>This tool is not affiliated with HoYoverse.</p>
-                            <p>Genshin Impact, game content and materials are</p>
-                            <p>trademarks and copyrights of HoYoverse.</p>
-                        </div>
+                        <p><b>This tool is not affiliated with HoYoverse.</b><br />
+                            Genshin Impact, game content and materials are<br />
+                            trademarks and copyrights of HoYoverse.</p>
 
-                        <div className={"HomePage_Discord"}>
+                        <div className={"HomePage_Discord"} onClick={() => openUrl("https://discord.gg/grasscutter")}>
                             <DiscordLogo />
                             <p>Join the Community!</p>
                         </div>

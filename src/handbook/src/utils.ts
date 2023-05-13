@@ -144,3 +144,13 @@ export async function fetchEntityData(entity: Entity): Promise<EntityInfo> {
 export async function copyToClipboard(text: string): Promise<void> {
     await navigator.clipboard.writeText(text);
 }
+
+/**
+ * Opens a URL in a new tab.
+ * Uses the window.open() method.
+ *
+ * @param url The URL to open.
+ */
+export function openUrl(url: string): void {
+    window.open(url, "_blank");
+}

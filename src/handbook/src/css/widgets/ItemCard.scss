@@ -111,6 +111,10 @@
     background-color: var(--background-color);
 }
 
+.ItemCard_Operation:hover {
+    cursor: pointer;
+}
+
 .ItemCard_Count {
     max-width: 105px;
     height: 48px;
@@ -140,4 +144,10 @@
 
     color: var(--text-primary-color);
     background-color: var(--secondary-color);
+
+    user-select: none;
+}
+
+.ItemCard_Submit:hover {
+    cursor: pointer;
 }

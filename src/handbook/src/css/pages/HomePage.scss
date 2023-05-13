@@ -1,11 +1,14 @@
 .HomePage {
-    display: flex;
     height: 100%;
     width: 100%;
+    overflow: scroll;
 
-    background-color: var(--background-color);
+    display:flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 50px;
+
+    background-color: var(--background-color);
 
     div {
         display: flex;
@@ -15,7 +18,6 @@
 .HomePage_Top {
     display: flex;
     width: 100%;
-    height: 80%;
 
     flex-direction: column;
     align-items: center;
@@ -30,10 +32,8 @@
 
 .HomePage_Buttons {
     width: 100%;
-    height: 40%;
 
     max-width: 1376px;
-    max-height: 256px;
 
     gap: 24px;
     justify-content: center;
@@ -42,11 +42,9 @@
 
 .HomePage_Bottom {
     display: flex;
-
-    height: 50%;
-    max-height: 125px;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .HomePage_Box {
@@ -57,13 +55,11 @@
 .HomePage_Disclaimer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 30px;
     background-color: var(--secondary-color);
 
-    width: 50%;
-    height: 100%;
-    max-width: 630px;
-    max-height: 93px;
+    height: 100px;
+    align-self: end;
 
     margin: 0 0 0 60px;
     border-radius: 10px;
@@ -71,22 +67,12 @@
     box-sizing: border-box;
     padding: 11px;
 
-    :nth-child(1) {
-        font-size: 24px;
-        max-height: 30px;
-
-        display: flex;
-        flex-direction: column;
-    }
-
     p {
-        font-size: 18px;
-        max-height: 40px;
+        font-size: 16px;
     }
 }
 
 .HomePage_Discord {
-    max-height: 40px;
     max-width: 150px;
 
     gap: 8px;
@@ -103,15 +89,23 @@
     p {
         font-size: 16px;
     }
+
+    &:hover {
+        cursor: pointer;
+
+        p {
+            text-decoration: underline;
+        }
+    }
 }
 
 .HomePage_Text {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     background-color: var(--secondary-color);
 
     max-width: 300px;
-    max-height: 80px;
 
     margin: 13px 60px 0 0;
     border-radius: 10px;
@@ -141,11 +135,15 @@
 
 .HomePage_Links {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
     a {
         color: var(--text-primary-color);
         text-decoration: none;
         padding-right: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

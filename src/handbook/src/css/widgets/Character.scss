@@ -2,13 +2,19 @@
     display: flex;
     flex-direction: column;
 
-    max-width: 100px;
+    max-width: 96px;
     max-height: 125px;
     border-radius: 15px;
 
     height: 100%;
+    width: 100%;
 
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.Character :hover {
+    cursor: pointer;
 }
 
 .Character_Icon {
@@ -17,6 +23,8 @@
 
     max-width: 96px;
     max-height: 96px;
+
+    align-self: center;
 }
 
 .Character_Label {
@@ -30,7 +38,7 @@
     height: 30px;
 
     p {
-        font-size: 18px;
         text-align: center;
+        margin: 4px;
     }
 }

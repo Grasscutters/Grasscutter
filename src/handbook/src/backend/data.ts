@@ -70,22 +70,25 @@ export function getCommands(): CommandDump {
  * Fetches and lists all the commands in the file.
  */
 export function listCommands(): Command[] {
-    return Object.values(getCommands());
+    return Object.values(getCommands()).sort((a, b) => a.name[0].localeCompare(b.name[0]));
 }
 
 /**
  * Fetches and casts all entities in the file.
  */
 export function getEntities(): Entity[] {
-    return entities.map((entry) => {
-        const values = Object.values(entry) as string[];
-        const id = parseInt(values[0]);
-        return {
-            id,
-            name: values[1],
-            internal: values[2]
-        };
-    });
+    return entities
+        .map((entry) => {
+            const values = Object.values(entry) as string[];
+            const id = parseInt(values[0]);
+            return {
+                id,
+                name: values[1],
+                internal: values[2]
+            };
+        })
+        .filter((entity) =>
+            !entity.name.includes("Mechanicus"));
 }
 
 /**
@@ -110,22 +113,24 @@ export function getAvatars(): AvatarDump {
  * Fetches and lists all the avatars in the file.
  */
 export function listAvatars(): Avatar[] {
-    return Object.values(getAvatars());
+    return Object.values(getAvatars()).sort((a, b) => a.name.localeCompare(b.name));
 }
 
 /**
  * Fetches and casts all scenes in the file.
  */
 export function getScenes(): Scene[] {
-    return scenes.map((entry) => {
-        const values = Object.values(entry) as string[];
-        const id = parseInt(values[0]);
-        return {
-            id,
-            identifier: values[1],
-            type: values[2] as SceneType
-        };
-    });
+    return scenes
+        .map((entry) => {
+            const values = Object.values(entry) as string[];
+            const id = parseInt(values[0]);
+            return {
+                id,
+                identifier: values[1],
+                type: values[2] as SceneType
+            };
+        })
+        .sort((a, b) => a.id - b.id);
 }
 
 /**

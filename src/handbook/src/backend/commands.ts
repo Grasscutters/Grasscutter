@@ -17,6 +17,21 @@ function basicGive(item: number, amount = 1): string {
     return `/give ${item} x${amount}`;
 }
 
+/**
+ * Generates a basic teleport command.
+ * This creates a relative teleport command.
+ */
+function teleport(scene: number): string {
+    // Validate the number.
+    if (invalid(scene)) return "Invalid arguments.";
+
+    return `/teleport ~ ~ ~ ${scene}`;
+}
+
 export const give = {
     basic: basicGive
+};
+
+export const action = {
+    teleport: teleport
 };

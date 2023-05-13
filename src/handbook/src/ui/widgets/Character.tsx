@@ -34,6 +34,8 @@ class Character extends React.PureComponent<IProps> {
         // Check if the avatar is blacklisted.
         if (ignored.includes(id)) return undefined;
 
+        const characterName = nameSwitch[id] ?? name;
+
         return (
             <div
                 className={"Character"}
@@ -47,7 +49,7 @@ class Character extends React.PureComponent<IProps> {
                 />
 
                 <div className={"Character_Label"}>
-                    <p>{nameSwitch[id] ?? name}</p>
+                    <p style={{ fontSize: characterName.length >= 12 ? 13 : 17 }}>{characterName}</p>
                 </div>
             </div>
         );

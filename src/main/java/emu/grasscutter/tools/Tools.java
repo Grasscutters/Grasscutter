@@ -1,8 +1,5 @@
 package emu.grasscutter.tools;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.getTextMapKey;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandHandler;
@@ -14,10 +11,16 @@ import emu.grasscutter.data.excels.HomeWorldBgmData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.val;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -29,7 +32,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import lombok.val;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.getTextMapKey;
 
 public final class Tools {
     /**
@@ -397,5 +402,64 @@ public final class Tools {
 
         Grasscutter.getLogger().info("Invalid option. Will use EN (English) as fallback.");
         return "EN";
+    }
+
+    /**
+     * Parses the 'resources.info' file found in resources.
+     *
+     * @return A {@link ResourceInfo} object containing the parsed data.
+     */
+    public static ResourceInfo resourcesInfo() {
+        var file = FileUtils.getResourcePath("resources.info");
+        try (var reader = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+            var resourceInfo = ResourceInfo.builder();
+            reader.lines().forEach(line -> {
+                var split = line.split(":");
+                if (split.length != 2) return;
+
+                var key = split[0].trim();
+                var value = split[1].trim();
+
+                // Apply the value to the correct field.
+                switch (key) {
+                    case "repo" -> resourceInfo.repository(value);
+                    case "ver" -> resourceInfo.version(value);
+                    case "patches" -> resourceInfo.patches(value);
+                    case "scripts" -> resourceInfo.scripts(
+                        ScriptsType.valueOf(value.toUpperCase()));
+                    case "hasserverres" -> resourceInfo.hasServerResources(
+                        Boolean.parseBoolean(value));
+                    case "hasscenescriptdata" -> resourceInfo.hasSceneScriptData(
+                        Boolean.parseBoolean(value));
+                }
+            });
+
+            return resourceInfo.build();
+        } catch (Exception ignored) {
+            return new ResourceInfo(
+                null, null, null,
+                ScriptsType.UNKNOWN, false, false);
+        }
+    }
+
+    @AllArgsConstructor @Builder
+    public static class ResourceInfo {
+        private final String repository;
+        private final String version;
+        private final String patches;
+        private final ScriptsType scripts;
+        private final boolean hasServerResources;
+        private final boolean hasSceneScriptData;
+
+        @Override
+        public String toString() {
+            return JsonUtils.encode(this);
+        }
+    }
+
+    public enum ScriptsType {
+        OFFICIAL,
+        DUMPED,
+        UNKNOWN
     }
 }

@@ -20,6 +20,12 @@
     max-height: 128px;
     text-align: center;
     align-self: center;
+
+    user-select: none;
+}
+
+.SideBar_Title:hover {
+    cursor: pointer;
 }
 
 .SideBar_Buttons {
@@ -28,6 +34,8 @@
 
     padding-left: 27px;
     gap: 15px;
+
+    user-select: none;
 }
 
 .SideBar_Enter {
