@@ -146,8 +146,8 @@ public final class GachaHandler implements Router {
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
 
         javalin.cfg.staticFiles.add(cfg -> {
-            cfg.hostedPath = gachaMappingsPath.toString();
-            cfg.directory = "/gacha/mappings";
+            cfg.hostedPath = "/gacha/mappings";
+            cfg.directory = gachaMappingsPath.toString();
             cfg.location = Location.EXTERNAL;
         });
     }
