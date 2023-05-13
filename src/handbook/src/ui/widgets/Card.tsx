@@ -28,7 +28,10 @@ class Card extends React.PureComponent<IProps> {
                 onClick={this.props.onClick}
                 onMouseOver={this.props.onOver}
                 onMouseOut={this.props.onOut}
-                style={{ height: this.props.height }}
+                style={{
+                    height: this.props.height,
+                    cursor: this.props.onClick ? "pointer" : undefined
+                }}
             >
                 <div className={"Card_Content"}>
                     <div className={"Card_Header"}>

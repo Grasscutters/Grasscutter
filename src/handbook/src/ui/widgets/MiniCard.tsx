@@ -7,6 +7,7 @@ import "@css/widgets/MiniCard.scss";
 interface IProps {
     data: { name: string };
     icon: string;
+    className?: string;
 
     onClick?: () => void;
 }
@@ -53,7 +54,7 @@ class MiniCard extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={"MiniCard"} onClick={this.props.onClick}>
+            <div className={`MiniCard ${this.props.className ?? ""}`} onClick={this.props.onClick}>
                 <div className={"MiniCard_Background"}>
                     {this.state.icon && (
                         <img

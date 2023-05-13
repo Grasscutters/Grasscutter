@@ -136,6 +136,7 @@ class ItemsPage extends React.Component<{}, IState> {
                             itemGap={5}
                             render={(item) => (
                                 <MiniCard
+                                    className={"ItemsPage_Item"}
                                     key={item.id}
                                     data={item}
                                     icon={itemIcon(item)}
