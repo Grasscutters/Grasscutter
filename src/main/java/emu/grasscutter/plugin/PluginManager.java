@@ -1,13 +1,15 @@
 package emu.grasscutter.plugin;
 
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -18,9 +20,8 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import javax.annotation.Nullable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+
+import static emu.grasscutter.utils.Language.translate;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
@@ -245,7 +246,8 @@ public final class PluginManager {
      */
     private void checkAndFilter(Event event, HandlerPriority priority) {
         // Add all listeners from every plugin.
-        this.listeners.values().stream()
+        var listeners = new ArrayList<>(this.listeners.values());
+        listeners.stream()
                 .flatMap(Collection::stream)
                 // Filter the listeners by priority.
                 .filter(handler -> handler.handles().isInstance(event))
