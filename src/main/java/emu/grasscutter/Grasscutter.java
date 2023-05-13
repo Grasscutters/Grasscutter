@@ -15,6 +15,7 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHelper;
+import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
@@ -122,6 +123,8 @@ public final class Grasscutter {
         gameServer = new GameServer();
         // Create a server hook instance with both servers.
         new ServerHelper(gameServer, httpServer);
+        // noinspection removal
+        new ServerHook(gameServer, httpServer);
 
         // Create plugin manager instance.
         pluginManager = new PluginManager();

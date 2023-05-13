@@ -107,9 +107,12 @@ public final class BlossomActivity {
                 }
                 generatedCount += willSpawn;
                 for (int i = 0; i < willSpawn; i++) {
-                    var monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
-                    int level = scene.getEntityLevel(1, worldLevelOverride);
-                    EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(4f), level);
+                    var entry = candidateMonsters.poll();
+                    if (entry == null) continue;
+
+                    var monsterData = GameData.getMonsterDataMap().get((int) entry);
+                    var level = scene.getEntityLevel(1, worldLevelOverride);
+                    var entity = new EntityMonster(scene, monsterData, pos.nearby2d(4f), level);
                     scene.addEntity(entity);
                     newMonsters.add(entity);
                 }

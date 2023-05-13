@@ -54,6 +54,7 @@ public final class DatabaseHelper {
         }
 
         // Account
+        @SuppressWarnings("deprecation")
         Account account = new Account();
         account.setUsername(username);
         account.setId(Integer.toString(DatabaseManager.getNextId(account)));

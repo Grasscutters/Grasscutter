@@ -144,10 +144,11 @@ public final class GachaHandler implements Router {
         javalin.get("/gacha", GachaHandler::gachaRecords);
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
 
-        javalin._conf.addSinglePageRoot(
-                "/gacha/mappings",
-                gachaMappingsPath.toString(),
-                Location.EXTERNAL); // TODO: This ***must*** be changed to take the Path not a String. This
-        // might involve upgrading Javalin.
+        javalin.cfg.staticFiles.add(
+                cfg -> {
+                    cfg.hostedPath = "/gacha/mappings";
+                    cfg.directory = gachaMappingsPath.toString();
+                    cfg.location = Location.EXTERNAL;
+                });
     }
 }

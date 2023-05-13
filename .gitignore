@@ -89,3 +89,6 @@ hotswap-agent.properties
 
 # Debug patches
 patches/*.patch
+
+# Artifact Signatures
+*.asc
