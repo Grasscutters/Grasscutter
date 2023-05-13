@@ -79,15 +79,18 @@ export function listCommands(): Command[] {
  * Fetches and casts all entities in the file.
  */
 export function getEntities(): Entity[] {
-    return entities.map((entry) => {
-        const values = Object.values(entry) as string[];
-        const id = parseInt(values[0]);
-        return {
-            id,
-            name: values[1],
-            internal: values[2]
-        };
-    });
+    return entities
+        .map((entry) => {
+            const values = Object.values(entry) as string[];
+            const id = parseInt(values[0]);
+            return {
+                id,
+                name: values[1],
+                internal: values[2]
+            };
+        })
+        .filter((entity) =>
+            !entity.name.includes("Mechanicus"));
 }
 
 /**
