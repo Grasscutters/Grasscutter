@@ -1,11 +1,10 @@
 package emu.grasscutter.config;
 
-import emu.grasscutter.utils.FileUtils;
+import static emu.grasscutter.Grasscutter.config;
 
+import emu.grasscutter.utils.FileUtils;
 import java.nio.file.Path;
 import java.util.Locale;
-
-import static emu.grasscutter.Grasscutter.config;
 
 /**
  * A data container for the server's configuration.
