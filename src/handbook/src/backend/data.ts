@@ -87,8 +87,7 @@ export function getEntities(): Entity[] {
                 internal: values[2]
             };
         })
-        .filter((entity) =>
-            !entity.name.includes("Mechanicus"));
+        .filter((entity) => !entity.name.includes("Mechanicus"));
 }
 
 /**

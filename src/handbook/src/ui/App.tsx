@@ -44,11 +44,7 @@ class App extends React.Component<{}, IState> {
         return (
             <div className={"App"}>
                 <SideBar />
-                {
-                    this.state.plain ?
-                        <PlainText /> :
-                        <Content initial={this.state.initial} />
-                }
+                {this.state.plain ? <PlainText /> : <Content initial={this.state.initial} />}
             </div>
         );
     }

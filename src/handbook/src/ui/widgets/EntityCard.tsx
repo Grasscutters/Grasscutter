@@ -62,11 +62,9 @@ class EntityCard extends React.Component<IProps, IState> {
         if (isNaN(numeric) && value.length > 1) return;
 
         // Check if the value should be a level.
-        if (!this.state.showingCount && numeric > 200)
-            numeric = 200;
+        if (!this.state.showingCount && numeric > 200) numeric = 200;
 
-        const updated: any = this.state.showingCount ?
-            { count: numeric } : { level: numeric };
+        const updated: any = this.state.showingCount ? { count: numeric } : { level: numeric };
         this.setState(updated);
     }
 
@@ -78,8 +76,7 @@ class EntityCard extends React.Component<IProps, IState> {
      * @private
      */
     private addCount(positive: boolean, multiple: boolean) {
-        let value = this.state.showingCount ?
-            this.state.count : this.state.level;
+        let value = this.state.showingCount ? this.state.count : this.state.level;
         if (value === "") value = 1;
         if (typeof value == "string") value = parseInt(value);
         if (value < 1) value = 1;
@@ -90,11 +87,9 @@ class EntityCard extends React.Component<IProps, IState> {
 
         value = Math.max(1, value + increment);
         // Check if the value should be a level.
-        if (!this.state.showingCount && value > 200)
-            value = 200;
+        if (!this.state.showingCount && value > 200) value = 200;
 
-        const updated: any = this.state.showingCount ?
-            { count: value } : { level: value };
+        const updated: any = this.state.showingCount ? { count: value } : { level: value };
         this.setState(updated);
     }
 
@@ -160,8 +155,11 @@ class EntityCard extends React.Component<IProps, IState> {
                         </div>
                         <input
                             type={"text"}
-                            value={this.state.showingCount ?
-                                `x${notNaN(this.state.count)}` : `Lv${notNaN(this.state.level)}`}
+                            value={
+                                this.state.showingCount
+                                    ? `x${notNaN(this.state.count)}`
+                                    : `Lv${notNaN(this.state.level)}`
+                            }
                             className={"ObjectCard_Count"}
                             onChange={this.updateCount.bind(this)}
                             onBlur={() => {

@@ -103,11 +103,7 @@ export async function teleportTo(scene: number): Promise<CommandResponse> {
  * @param amount The amount of the entity to spawn.
  * @param level The level of the entity to spawn.
  */
-export async function spawnEntity(
-    entity: number,
-    amount = 1,
-    level = 1
-): Promise<CommandResponse> {
+export async function spawnEntity(entity: number, amount = 1, level = 1): Promise<CommandResponse> {
     // Validate the numbers.
     if (isNaN(entity) || isNaN(amount) || isNaN(level) || amount < 1 || level < 1 || level > 200)
         return { status: -1, message: "Invalid arguments." };
