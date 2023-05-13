@@ -10,11 +10,11 @@
     width: 100%;
 
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .Character :hover {
     cursor: pointer;
-    box-shadow: 1px 1px black;
 }
 
 .Character_Icon {

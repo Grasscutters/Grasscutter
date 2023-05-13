@@ -5,7 +5,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.binout.routes.Route;
-import emu.grasscutter.data.excels.*;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.data.excels.codex.CodexAnimalData;
 import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
@@ -40,14 +41,15 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.KahnsSort;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -555,7 +557,7 @@ public final class Scene {
     /**
      * @return The script's default rotation, or the player's rotation.
      */
-    private Position getDefaultRot(Player player) {
+    public Position getDefaultRotation(Player player) {
         var defaultRotation = this.getScriptManager().getConfig().born_rot;
         return defaultRotation != null ? defaultRotation : player.getRotation();
     }
@@ -581,7 +583,7 @@ public final class Scene {
     private Position getRespawnRotation(Player player) {
         var lastCheckpointRot =
                 this.dungeonManager != null ? this.dungeonManager.getRespawnRotation() : null;
-        return lastCheckpointRot != null ? lastCheckpointRot : this.getDefaultRot(player);
+        return lastCheckpointRot != null ? lastCheckpointRot : this.getDefaultRotation(player);
     }
 
     /**

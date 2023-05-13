@@ -77,3 +77,21 @@ export async function giveItem(item: number, amount = 1): Promise<CommandRespons
         })
     }).then((res) => res.json());
 }
+
+/**
+ * Teleports the player to a new scene.
+ *
+ * @param scene The scene's ID.
+ */
+export async function teleportTo(scene: number): Promise<CommandResponse> {
+    // Validate the number.
+    if (isNaN(scene) || scene < 1) return { status: -1, message: "Invalid scene." };
+
+    return await fetch(`https://localhost:443/handbook/teleport`, {
+        method: "POST",
+        body: JSON.stringify({
+            player: targetPlayer.toString(),
+            scene: scene.toString()
+        })
+    }).then((res) => res.json());
+}

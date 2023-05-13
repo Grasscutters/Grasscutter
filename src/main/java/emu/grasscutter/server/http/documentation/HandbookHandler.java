@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.HANDBOOK;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.data.GameData;
@@ -13,6 +11,10 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
+import java.util.Objects;
+
+import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -38,6 +40,7 @@ public final class HandbookHandler implements Router {
         // Handbook control routes.
         javalin.post("/handbook/avatar", this::grantAvatar);
         javalin.post("/handbook/item", this::giveItem);
+        javalin.post("/handbook/teleport", this::teleportTo);
     }
 
     /**
@@ -100,8 +103,8 @@ public final class HandbookHandler implements Router {
             var avatar = new Avatar(avatarData);
             avatar.setLevel(request.getLevel());
             avatar.setPromoteLevel(Avatar.getMinPromoteLevel(avatar.getLevel()));
-            avatar
-                    .getSkillDepot()
+            Objects.requireNonNull(avatar
+                    .getSkillDepot())
                     .getSkillsAndEnergySkill()
                     .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
             avatar.forceConstellationLevel(request.getConstellations());
@@ -163,6 +166,64 @@ public final class HandbookHandler implements Router {
             ctx.status(500).result("Invalid player UID or item ID.");
         } catch (Exception exception) {
             ctx.status(500).result("An error occurred while granting the item.");
+            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
+        }
+    }
+
+    /**
+     * Teleports the user to a location.
+     *
+     * @route POST /handbook/teleport
+     * @param ctx The Javalin request context.
+     */
+    private void teleportTo(Context ctx) {
+        if (!this.controlSupported()) {
+            ctx.status(500).result("Handbook control not supported.");
+            return;
+        }
+
+        // Parse the request body into a class.
+        var request = ctx.bodyAsClass(HandbookBody.TeleportTo.class);
+        // Validate the request.
+        if (request.getPlayer() == null || request.getScene() == null) {
+            ctx.status(400).result("Invalid request.");
+            return;
+        }
+
+        try {
+            // Parse the requested player.
+            var playerId = Integer.parseInt(request.getPlayer());
+            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
+
+            // Parse the requested scene.
+            var sceneId = Integer.parseInt(request.getScene());
+
+            // Validate the request.
+            if (player == null) {
+                ctx.status(400).result("Invalid player UID.");
+                return;
+            }
+
+            // Find the scene in the player's world.
+            var scene = player.getWorld().getSceneById(sceneId);
+            if (scene == null) {
+                ctx.status(400).result("Invalid scene ID.");
+                return;
+            }
+
+            // Resolve the correct teleport position.
+            var position = scene.getDefaultLocation(player);
+            var rotation = scene.getDefaultRotation(player);
+            // Teleport the player.
+            scene.getWorld().transferPlayerToScene(
+                player, scene.getId(), position);
+            player.getRotation().set(rotation);
+
+            ctx.json(HandbookBody.Response.builder().status(200).message("Player teleported.").build());
+        } catch (NumberFormatException ignored) {
+            ctx.status(400).result("Invalid scene ID.");
+        } catch (Exception exception) {
+            ctx.status(500).result("An error occurred while teleporting to the scene.");
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
         }
     }

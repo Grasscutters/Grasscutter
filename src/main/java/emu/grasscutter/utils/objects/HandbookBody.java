@@ -29,4 +29,10 @@ public interface HandbookBody {
 
         private int amount = 1; // Range between 1 - Long.MAX_VALUE.
     }
+
+    @Getter
+    class TeleportTo {
+        private String player; // Parse into online player ID.
+        private String scene; // Parse into a scene ID.
+    }
 }
