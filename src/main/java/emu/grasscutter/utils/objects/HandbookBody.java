@@ -35,4 +35,13 @@ public interface HandbookBody {
         private String player; // Parse into online player ID.
         private String scene; // Parse into a scene ID.
     }
+
+    @Getter
+    class SpawnEntity {
+        private String player; // Parse into online player ID.
+        private String entity; // Parse into entity ID.
+
+        private int amount = 1; // Range between 1 - Long.MAX_VALUE.
+        private int level = 1; // Range between 1 - 200.
+    }
 }

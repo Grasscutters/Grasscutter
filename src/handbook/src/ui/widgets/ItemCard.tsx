@@ -8,7 +8,7 @@ import { copyToClipboard, itemIcon } from "@app/utils";
 import { connected, giveItem } from "@backend/server";
 import { give } from "@backend/commands";
 
-import "@css/widgets/ItemCard.scss";
+import "@css/widgets/ObjectCard.scss";
 
 /**
  * Converts a description string into a list of paragraphs.
@@ -106,17 +106,17 @@ class ItemCard extends React.Component<IProps, IState> {
         const data = info?.data;
 
         return item ? (
-            <div className={"ItemCard"}>
-                <div className={"ItemCard_Content"}>
-                    <div className={"ItemCard_Header"}>
-                        <div className={"ItemCard_Info"}>
+            <div className={"ObjectCard"}>
+                <div className={"ObjectCard_Content"}>
+                    <div className={"ObjectCard_Header"}>
+                        <div className={"ObjectCard_Info"}>
                             <p>{data?.name ?? item.name}</p>
                             <p>{data?.type ?? itemTypeToString(item.type)}</p>
                         </div>
 
                         {this.state.icon && (
                             <img
-                                className={"ItemCard_Icon"}
+                                className={"ObjectCard_Icon"}
                                 alt={item.name}
                                 src={itemIcon(item)}
                                 onError={() => this.setState({ icon: false })}
@@ -124,25 +124,25 @@ class ItemCard extends React.Component<IProps, IState> {
                         )}
                     </div>
 
-                    <div className={"ItemCard_Description"}>{toDescription(data?.description)}</div>
+                    <div className={"ObjectCard_Description"}>{toDescription(data?.description)}</div>
                 </div>
 
-                <div className={"ItemCard_Actions"}>
-                    <div className={"ItemCard_Counter"}>
+                <div className={"ObjectCard_Actions"}>
+                    <div className={"ObjectCard_Counter"}>
                         <div
                             onClick={() => this.addCount(false, false)}
                             onContextMenu={(e) => {
                                 e.preventDefault();
                                 this.addCount(false, true);
                             }}
-                            className={"ItemCard_Operation"}
+                            className={"ObjectCard_Operation"}
                         >
                             -
                         </div>
                         <input
                             type={"text"}
                             value={this.state.count}
-                            className={"ItemCard_Count"}
+                            className={"ObjectCard_Count"}
                             onChange={this.updateCount.bind(this)}
                             onBlur={() => {
                                 if (this.state.count == "") {
@@ -156,13 +156,13 @@ class ItemCard extends React.Component<IProps, IState> {
                                 e.preventDefault();
                                 this.addCount(true, true);
                             }}
-                            className={"ItemCard_Operation"}
+                            className={"ObjectCard_Operation"}
                         >
                             +
                         </div>
                     </div>
 
-                    <button className={"ItemCard_Submit"} onClick={this.addToInventory.bind(this)}>
+                    <button className={"ObjectCard_Submit"} onClick={this.addToInventory.bind(this)}>
                         <TextState event={"connected"} text1={"Copy Command"} text2={"Add to Inventory"} />
                     </button>
                 </div>

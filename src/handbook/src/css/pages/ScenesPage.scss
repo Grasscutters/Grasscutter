@@ -41,4 +41,10 @@
 
     color: var(--text-primary-color);
     background-color: var(--background-color);
+
+    user-select: none;
+}
+
+.ScenesPage_Button:hover {
+    cursor: pointer;
 }

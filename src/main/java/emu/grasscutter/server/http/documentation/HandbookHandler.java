@@ -1,11 +1,10 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.HANDBOOK;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.http.Router;
@@ -13,7 +12,10 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
 import java.util.Objects;
+
+import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -218,7 +220,66 @@ public final class HandbookHandler implements Router {
 
             ctx.json(HandbookBody.Response.builder().status(200).message("Player teleported.").build());
         } catch (NumberFormatException ignored) {
-            ctx.status(400).result("Invalid scene ID.");
+            ctx.status(400).result("Invalid player UID or scene ID.");
+        } catch (Exception exception) {
+            ctx.status(500).result("An error occurred while teleporting to the scene.");
+            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
+        }
+    }
+
+    /**
+     * Spawns an entity in the world.
+     *
+     * @route POST /handbook/spawn
+     * @param ctx The Javalin request context.
+     */
+    private void spawnEntity(Context ctx) {
+        if (!this.controlSupported()) {
+            ctx.status(500).result("Handbook control not supported.");
+            return;
+        }
+
+        // Parse the request body into a class.
+        var request = ctx.bodyAsClass(HandbookBody.SpawnEntity.class);
+        // Validate the request.
+        if (request.getPlayer() == null || request.getEntity() == null) {
+            ctx.status(400).result("Invalid request.");
+            return;
+        }
+
+        try {
+            // Parse the requested player.
+            var playerId = Integer.parseInt(request.getPlayer());
+            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
+
+            // Parse the requested entity.
+            var entityId = Integer.parseInt(request.getEntity());
+            var entityData = GameData.getMonsterDataMap().get(entityId);
+
+            // Validate the request.
+            if (player == null || entityData == null) {
+                ctx.status(400).result("Invalid player UID or entity ID.");
+                return;
+            }
+
+            // Validate request properties.
+            var scene = player.getScene();
+            var level = request.getLevel();
+            if (scene == null || level > 200 || level < 1) {
+                ctx.status(400).result("Invalid scene or level.");
+                return;
+            }
+
+            // Create the entity.
+            for (var i = 1; i <= request.getAmount(); i++) {
+                var entity = new EntityMonster(scene, entityData,
+                    player.getPosition(), level);
+                scene.addEntity(entity);
+            }
+
+            ctx.json(HandbookBody.Response.builder().status(200).message("Entity(s) spawned.").build());
+        } catch (NumberFormatException ignored) {
+            ctx.status(400).result("Invalid player UID or entity ID.");
         } catch (Exception exception) {
             ctx.status(500).result("An error occurred while teleporting to the scene.");
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
