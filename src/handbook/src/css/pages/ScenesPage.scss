@@ -43,8 +43,14 @@
     background-color: var(--background-color);
 
     user-select: none;
+
+    transition: 0.1s ease-in-out all;
 }
 
 .ScenesPage_Button:hover {
     cursor: pointer;
+}
+
+.ScenesPage_Button:active {
+    scale: 0.9;
 }
