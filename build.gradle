@@ -69,9 +69,9 @@ dependencies {
     implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.8'
 
     // Logging libraries.
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.11'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.7'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.4.7'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.7'
 
     // Line reading libraries.
     implementation group: 'org.jline', name: 'jline', version: '3.21.0'
