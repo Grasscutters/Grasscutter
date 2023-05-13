@@ -30,7 +30,9 @@ public interface PlayerHook {
      * @param sceneId The scene to send the player to.
      */
     default void changeScenes(int sceneId) {
-        this.getPlayer().getWorld().transferPlayerToScene(this.getPlayer(), sceneId, this.getPlayer().getPosition());
+        this.getPlayer()
+                .getWorld()
+                .transferPlayerToScene(this.getPlayer(), sceneId, this.getPlayer().getPosition());
     }
 
     /**
@@ -78,13 +80,14 @@ public interface PlayerHook {
      */
     default void teleport(Position position) {
         this.getPlayer().getPosition().set(position);
-        this.getPlayer().sendPacket(
-                new PacketPlayerEnterSceneNotify(
-                        this.getPlayer(),
-                        EnterType.ENTER_TYPE_JUMP,
-                        EnterReason.TransPoint,
-                        this.getPlayer().getSceneId(),
-                        position));
+        this.getPlayer()
+                .sendPacket(
+                        new PacketPlayerEnterSceneNotify(
+                                this.getPlayer(),
+                                EnterType.ENTER_TYPE_JUMP,
+                                EnterReason.TransPoint,
+                                this.getPlayer().getSceneId(),
+                                position));
     }
 
     /**

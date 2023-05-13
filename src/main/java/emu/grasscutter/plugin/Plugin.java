@@ -4,12 +4,11 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.InputStream;
 import java.net.URLClassLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** The base class for all plugins to extend. */
 public abstract class Plugin {
