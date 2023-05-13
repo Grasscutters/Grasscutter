@@ -1,9 +1,11 @@
 import React from "react";
 
 import type { Entity as EntityType, EntityInfo } from "@backend/types";
-import { entityIcon } from "@app/utils";
+import { copyToClipboard, entityIcon, notNaN } from "@app/utils";
 
-import "@css/widgets/ItemCard.scss";
+import "@css/widgets/ObjectCard.scss";
+import { connected, spawnEntity } from "@backend/server";
+import { spawn } from "@backend/commands";
 
 /**
  * Converts a description string into a list of paragraphs.
@@ -26,11 +28,16 @@ interface IProps {
 interface IState {
     icon: boolean;
     count: number | string;
+    level: number | string;
+
+    showingCount: boolean;
 }
 
 const defaultState = {
     icon: true,
-    count: 1
+    count: 1,
+    level: 1,
+    showingCount: true
 };
 
 class EntityCard extends React.Component<IProps, IState> {
@@ -47,10 +54,18 @@ class EntityCard extends React.Component<IProps, IState> {
      * @private
      */
     private updateCount(event: React.ChangeEvent<HTMLInputElement>) {
-        const value = event.target.value;
-        if (isNaN(parseInt(value)) && value.length > 1) return;
+        let value = event.target.value;
+        // Remove non-numeric characters.
+        value = value.replace(/[^0-9]/g, "");
 
-        this.setState({ count: value });
+        let numeric = parseInt(value);
+        if (isNaN(numeric) && value.length > 1) return;
+
+        // Check if the value should be a level.
+        if (!this.state.showingCount && numeric > 200) numeric = 200;
+
+        const updated: any = this.state.showingCount ? { count: numeric } : { level: numeric };
+        this.setState(updated);
     }
 
     /**
@@ -61,18 +76,21 @@ class EntityCard extends React.Component<IProps, IState> {
      * @private
      */
     private addCount(positive: boolean, multiple: boolean) {
-        let { count } = this.state;
-        if (count === "") count = 1;
-        if (typeof count == "string") count = parseInt(count);
-        if (count < 1) count = 1;
+        let value = this.state.showingCount ? this.state.count : this.state.level;
+        if (value === "") value = 1;
+        if (typeof value == "string") value = parseInt(value);
+        if (value < 1) value = 1;
 
         let increment = 1;
         if (!positive) increment = -1;
         if (multiple) increment *= 10;
 
-        count = Math.max(1, count + increment);
+        value = Math.max(1, value + increment);
+        // Check if the value should be a level.
+        if (!this.state.showingCount && value > 200) value = 200;
 
-        this.setState({ count });
+        const updated: any = this.state.showingCount ? { count: value } : { level: value };
+        this.setState(updated);
     }
 
     /**
@@ -80,7 +98,15 @@ class EntityCard extends React.Component<IProps, IState> {
      * @private
      */
     private async summonAtPlayer(): Promise<void> {
-        // TODO: Implement server access.
+        const entity = this.props.entity?.id ?? 21010101;
+        const amount = typeof this.state.count == "string" ? parseInt(this.state.count) : this.state.count;
+        const level = typeof this.state.level == "string" ? parseInt(this.state.level) : this.state.level;
+
+        if (connected) {
+            await spawnEntity(entity, amount, level);
+        } else {
+            await copyToClipboard(spawn.monster(entity, amount, level));
+        }
     }
 
     componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: any) {
@@ -94,17 +120,17 @@ class EntityCard extends React.Component<IProps, IState> {
         const data = info?.data;
 
         return entity ? (
-            <div className={"ItemCard"}>
-                <div className={"ItemCard_Content"}>
-                    <div className={"ItemCard_Header"}>
-                        <div className={"ItemCard_Info"}>
+            <div className={"ObjectCard"}>
+                <div className={"ObjectCard_Content"}>
+                    <div className={"ObjectCard_Header"}>
+                        <div className={"ObjectCard_Info"}>
                             <p>{data?.name ?? entity.name}</p>
                             <p>{data?.type ?? ""}</p>
                         </div>
 
                         {this.state.icon && (
                             <img
-                                className={"ItemCard_Icon"}
+                                className={"ObjectCard_Icon"}
                                 alt={entity.name}
                                 src={entityIcon(entity)}
                                 onError={() => this.setState({ icon: false })}
@@ -112,25 +138,29 @@ class EntityCard extends React.Component<IProps, IState> {
                         )}
                     </div>
 
-                    <div className={"ItemCard_Description"}>{toDescription(data?.description)}</div>
+                    <div className={"ObjectCard_Description"}>{toDescription(data?.description)}</div>
                 </div>
 
-                <div className={"ItemCard_Actions"}>
-                    <div className={"ItemCard_Counter"}>
+                <div className={"ObjectCard_Actions"}>
+                    <div className={"ObjectCard_Counter"}>
                         <div
                             onClick={() => this.addCount(false, false)}
                             onContextMenu={(e) => {
                                 e.preventDefault();
                                 this.addCount(false, true);
                             }}
-                            className={"ItemCard_Operation"}
+                            className={"ObjectCard_Operation"}
                         >
                             -
                         </div>
                         <input
                             type={"text"}
-                            value={this.state.count}
-                            className={"ItemCard_Count"}
+                            value={
+                                this.state.showingCount
+                                    ? `x${notNaN(this.state.count)}`
+                                    : `Lv${notNaN(this.state.level)}`
+                            }
+                            className={"ObjectCard_Count"}
                             onChange={this.updateCount.bind(this)}
                             onBlur={() => {
                                 if (this.state.count == "") {
@@ -144,13 +174,20 @@ class EntityCard extends React.Component<IProps, IState> {
                                 e.preventDefault();
                                 this.addCount(true, true);
                             }}
-                            className={"ItemCard_Operation"}
+                            className={"ObjectCard_Operation"}
                         >
                             +
                         </div>
                     </div>
 
-                    <button className={"ItemCard_Submit"} onClick={this.summonAtPlayer.bind(this)}>
+                    <button
+                        className={"ObjectCard_Submit"}
+                        onClick={this.summonAtPlayer.bind(this)}
+                        onContextMenu={(e) => {
+                            e.preventDefault();
+                            this.setState({ showingCount: !this.state.showingCount });
+                        }}
+                    >
                         Summon
                     </button>
                 </div>

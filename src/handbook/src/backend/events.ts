@@ -57,6 +57,9 @@ export function removeNavListener(listener: (page: Page) => void) {
  * @param update Whether to update the state or not.
  */
 export function navigate(page: Page, update: boolean = true): Page | null {
+    // Check the page.
+    if (page == undefined) page = "Home";
+
     // Navigate to the new page.
     const lastPage = currentPage;
     navigation.emit("navigate", page);

@@ -1,7 +1,7 @@
 package emu.grasscutter.plugin;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.plugin.api.ServerHook;
+import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
 import java.io.File;
@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 /** The base class for all plugins to extend. */
 public abstract class Plugin {
-    private final ServerHook server = ServerHook.getInstance();
+    private final ServerHelper server = ServerHelper.getInstance();
 
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
@@ -100,7 +100,7 @@ public abstract class Plugin {
      *
      * @return A server hook singleton.
      */
-    public final ServerHook getHandle() {
+    public final ServerHelper getHandle() {
         return this.server;
     }
 

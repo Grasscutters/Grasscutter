@@ -15,7 +15,6 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
-import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
@@ -51,17 +50,21 @@ import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
+import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
+import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
+import emu.grasscutter.plugin.api.PlayerHook;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
@@ -89,7 +92,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "players", useDiscriminator = false)
-public class Player {
+public class Player implements PlayerHook {
     @Id private int id;
     @Indexed(options = @IndexOptions(unique = true)) private String accountId;
     @Setter private transient Account account;
@@ -320,6 +323,11 @@ public class Player {
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
+    }
+
+    @Override
+    public Player getPlayer() {
+        return this;
     }
 
     /**

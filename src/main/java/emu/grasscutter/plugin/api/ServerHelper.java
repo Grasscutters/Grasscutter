@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /** Hooks into the {@link GameServer} class, adding convenient ways to do certain things. */
-public final class ServerHook {
-    private static ServerHook instance;
+public final class ServerHelper {
+    private static ServerHelper instance;
     private final GameServer gameServer;
     private final HttpServer httpServer;
 
@@ -26,7 +26,7 @@ public final class ServerHook {
      * @param gameServer The game server to hook into.
      * @param httpServer The HTTP server to hook into.
      */
-    public ServerHook(GameServer gameServer, HttpServer httpServer) {
+    public ServerHelper(GameServer gameServer, HttpServer httpServer) {
         this.gameServer = gameServer;
         this.httpServer = httpServer;
 
@@ -36,9 +36,9 @@ public final class ServerHook {
     /**
      * Gets the server hook instance.
      *
-     * @return A {@link ServerHook} singleton.
+     * @return A {@link ServerHelper} singleton.
      */
-    public static ServerHook getInstance() {
+    public static ServerHelper getInstance() {
         return instance;
     }
 

@@ -13,21 +13,15 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.utils.Position;
 
 /** Hooks into the {@link Player} class, adding convenient ways to do certain things. */
-public final class PlayerHook {
-    private final Player player;
-
+public interface PlayerHook {
     /**
-     * Hooks into the player.
-     *
-     * @param player The player to hook into.
+     * @return The player that this hook is attached to.
      */
-    public PlayerHook(Player player) {
-        this.player = player;
-    }
+    Player getPlayer();
 
     /** Kicks a player from the server. TODO: Refactor to kick using a packet. */
-    public void kick() {
-        this.player.getSession().close();
+    default void kick() {
+        this.getPlayer().getSession().close();
     }
 
     /**
@@ -35,8 +29,10 @@ public final class PlayerHook {
      *
      * @param sceneId The scene to send the player to.
      */
-    public void changeScenes(int sceneId) {
-        this.player.getWorld().transferPlayerToScene(this.player, sceneId, this.player.getPosition());
+    default void changeScenes(int sceneId) {
+        this.getPlayer()
+                .getWorld()
+                .transferPlayerToScene(this.getPlayer(), sceneId, this.getPlayer().getPosition());
     }
 
     /**
@@ -44,7 +40,7 @@ public final class PlayerHook {
      *
      * @param property The property that was updated.
      */
-    public void updateFightProperty(FightProperty property) {
+    default void updateFightProperty(FightProperty property) {
         this.broadcastPacketToWorld(
                 new PacketAvatarFightPropUpdateNotify(this.getCurrentAvatar(), property));
     }
@@ -54,8 +50,8 @@ public final class PlayerHook {
      *
      * @param packet The packet to send.
      */
-    public void broadcastPacketToWorld(BasePacket packet) {
-        this.player.getWorld().broadcastPacket(packet);
+    default void broadcastPacketToWorld(BasePacket packet) {
+        this.getPlayer().getWorld().broadcastPacket(packet);
     }
 
     /**
@@ -63,7 +59,7 @@ public final class PlayerHook {
      *
      * @param health The health to set the avatar to.
      */
-    public void setHealth(float health) {
+    default void setHealth(float health) {
         this.getCurrentAvatarEntity().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
         this.updateFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
     }
@@ -73,7 +69,7 @@ public final class PlayerHook {
      *
      * @param avatar The avatar to revive.
      */
-    public void reviveAvatar(Avatar avatar) {
+    default void reviveAvatar(Avatar avatar) {
         this.broadcastPacketToWorld(new PacketAvatarLifeStateChangeNotify(avatar));
     }
 
@@ -82,15 +78,16 @@ public final class PlayerHook {
      *
      * @param position The position to teleport the player to.
      */
-    public void teleport(Position position) {
-        this.player.getPosition().set(position);
-        this.player.sendPacket(
-                new PacketPlayerEnterSceneNotify(
-                        this.player,
-                        EnterType.ENTER_TYPE_JUMP,
-                        EnterReason.TransPoint,
-                        this.player.getSceneId(),
-                        position));
+    default void teleport(Position position) {
+        this.getPlayer().getPosition().set(position);
+        this.getPlayer()
+                .sendPacket(
+                        new PacketPlayerEnterSceneNotify(
+                                this.getPlayer(),
+                                EnterType.ENTER_TYPE_JUMP,
+                                EnterReason.TransPoint,
+                                this.getPlayer().getSceneId(),
+                                position));
     }
 
     /**
@@ -98,7 +95,7 @@ public final class PlayerHook {
      *
      * @return The max health as a float.
      */
-    public float getMaxHealth() {
+    default float getMaxHealth() {
         return this.getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
     }
 
@@ -107,8 +104,8 @@ public final class PlayerHook {
      *
      * @return The avatar as an {@link EntityAvatar}.
      */
-    public EntityAvatar getCurrentAvatarEntity() {
-        return this.player.getTeamManager().getCurrentAvatarEntity();
+    default EntityAvatar getCurrentAvatarEntity() {
+        return this.getPlayer().getTeamManager().getCurrentAvatarEntity();
     }
 
     /**
@@ -116,7 +113,7 @@ public final class PlayerHook {
      *
      * @return The avatar as an {@link Avatar}.
      */
-    public Avatar getCurrentAvatar() {
+    default Avatar getCurrentAvatar() {
         return this.getCurrentAvatarEntity().getAvatar();
     }
 }

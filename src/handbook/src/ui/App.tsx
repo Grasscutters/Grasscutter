@@ -2,6 +2,7 @@ import React from "react";
 
 import SideBar from "@views/SideBar";
 import Content from "@views/Content";
+import PlainText from "@views/PlainText";
 
 import type { Page } from "@backend/types";
 import { isPage } from "@backend/types";
@@ -14,6 +15,7 @@ import "@css/Text.scss";
 
 interface IState {
     initial: Page | null;
+    plain: boolean;
 }
 
 class App extends React.Component<{}, IState> {
@@ -33,7 +35,8 @@ class App extends React.Component<{}, IState> {
         }
 
         this.state = {
-            initial: targetPage as Page | null
+            initial: targetPage as Page | null,
+            plain: false
         };
     }
 
@@ -41,7 +44,7 @@ class App extends React.Component<{}, IState> {
         return (
             <div className={"App"}>
                 <SideBar />
-                <Content initial={this.state.initial} />
+                {this.state.plain ? <PlainText /> : <Content initial={this.state.initial} />}
             </div>
         );
     }

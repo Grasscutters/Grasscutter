@@ -28,8 +28,26 @@ function teleport(scene: number): string {
     return `/teleport ~ ~ ~ ${scene}`;
 }
 
+/**
+ * Generates a basic spawn monster command.
+ *
+ * @param monster The monster's ID.
+ * @param amount The amount of the monster to spawn.
+ * @param level The level of the monster to spawn.
+ */
+function spawnMonster(monster: number, amount = 1, level = 1): string {
+    // Validate the numbers.
+    if (invalid(monster) || invalid(amount)) return "Invalid arguments.";
+
+    return `/spawn ${monster} x${amount} lv${level}`;
+}
+
 export const give = {
     basic: basicGive
+};
+
+export const spawn = {
+    monster: spawnMonster
 };
 
 export const action = {
