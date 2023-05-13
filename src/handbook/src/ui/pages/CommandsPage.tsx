@@ -21,7 +21,6 @@ class CommandsPage extends React.PureComponent {
                                 command.name.length == 1 ? undefined : `(aka /${command.name.slice(1).join(", /")})`
                             }
                             description={command.description}
-                            height={75}
                         />
                     ))}
                 </div>
