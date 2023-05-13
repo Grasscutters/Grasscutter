@@ -32,9 +32,13 @@ class HomePage extends React.Component<any, any> {
 
                 <div className={"HomePage_Bottom"}>
                     <div className={"HomePage_Box HomePage_Disclaimer"}>
-                        <p><b>This tool is not affiliated with HoYoverse.</b><br />
-                            Genshin Impact, game content and materials are<br />
-                            trademarks and copyrights of HoYoverse.</p>
+                        <p>
+                            <b>This tool is not affiliated with HoYoverse.</b>
+                            <br />
+                            Genshin Impact, game content and materials are
+                            <br />
+                            trademarks and copyrights of HoYoverse.
+                        </p>
 
                         <div className={"HomePage_Discord"} onClick={() => openUrl("https://discord.gg/grasscutter")}>
                             <DiscordLogo />
