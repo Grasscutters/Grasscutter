@@ -247,10 +247,10 @@ public final class ResourceLoader {
                                 config.points.forEach(
                                         (pointId, pointData) -> {
                                             val scenePoint = new ScenePointEntry(sceneId, pointData);
-                                            scenePoints.add(pointId);
+                                            scenePoints.add((int) pointId);
                                             pointData.setId(pointId);
 
-                                            GameData.getScenePointIdList().add(pointId);
+                                            GameData.getScenePointIdList().add((int) pointId);
                                             GameData.getScenePointEntryMap().put((sceneId << 16) + pointId, scenePoint);
 
                                             pointData.updateDailyDungeon();

@@ -8,8 +8,9 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.excels.*;
+import emu.grasscutter.data.excels.EquipAffixData;
 import emu.grasscutter.data.excels.ItemData.WeaponProperty;
+import emu.grasscutter.data.excels.ProudSkillData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
@@ -316,7 +317,7 @@ public class Avatar {
         var candSkillDepotId = candSkillDepotIdsList.get(candSkillDepotIndex);
 
         // Sanity checks for skill depots
-        val skillDepot = GameData.getAvatarSkillDepotDataMap().get(candSkillDepotId);
+        val skillDepot = GameData.getAvatarSkillDepotDataMap().get((int) candSkillDepotId);
         if (skillDepot == null || skillDepot.getId() == skillDepotId) {
             return false;
         }

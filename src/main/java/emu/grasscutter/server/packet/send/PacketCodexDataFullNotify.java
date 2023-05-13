@@ -56,7 +56,7 @@ public class PacketCodexDataFullNotify extends BasePacket {
                 .getUnlockedWeapon()
                 .forEach(
                         weapon -> {
-                            var codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon);
+                            var codexWeapon = GameData.getCodexWeaponDataIdMap().get((int) weapon);
                             if (codexWeapon != null) {
                                 weaponTypeData
                                         .addCodexIdList(codexWeapon.getId())
@@ -69,7 +69,7 @@ public class PacketCodexDataFullNotify extends BasePacket {
                 .getUnlockedAnimal()
                 .forEach(
                         (animal, amount) -> {
-                            var codexAnimal = GameData.getCodexAnimalDataMap().get(animal);
+                            var codexAnimal = GameData.getCodexAnimalDataMap().get((int) animal);
                             if (codexAnimal != null) {
                                 animalTypeData
                                         .addCodexIdList(codexAnimal.getId())
@@ -82,7 +82,7 @@ public class PacketCodexDataFullNotify extends BasePacket {
                 .getUnlockedMaterial()
                 .forEach(
                         material -> {
-                            var codexMaterial = GameData.getCodexMaterialDataIdMap().get(material);
+                            var codexMaterial = GameData.getCodexMaterialDataIdMap().get((int) material);
                             if (codexMaterial != null) {
                                 materialTypeData
                                         .addCodexIdList(codexMaterial.getId())

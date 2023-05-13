@@ -37,7 +37,7 @@ public final class CommandMap {
         } catch (NumberFormatException ignored) {
             var account = DatabaseHelper.getAccountByName(input);
             if (account == null) return INVALID_UID;
-            var player = DatabaseHelper.getPlayerByAccount(account);
+            var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
             if (player == null) return INVALID_UID;
             // We will be immediately fetching the player again after this,
             // but offline vs online Player safety is more important than saving a lookup
