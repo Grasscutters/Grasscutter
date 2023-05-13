@@ -1,9 +1,5 @@
 package emu.grasscutter.data;
 
-import static emu.grasscutter.utils.FileUtils.getDataPath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.translate;
-
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
@@ -33,6 +29,12 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
+import lombok.SneakyThrows;
+import lombok.val;
+import org.reflections.Reflections;
+
+import javax.script.Bindings;
+import javax.script.CompiledScript;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -44,11 +46,10 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import lombok.SneakyThrows;
-import lombok.val;
-import org.reflections.Reflections;
+
+import static emu.grasscutter.utils.FileUtils.getDataPath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.translate;
 
 public final class ResourceLoader {
 
@@ -247,10 +248,10 @@ public final class ResourceLoader {
                                 config.points.forEach(
                                         (pointId, pointData) -> {
                                             val scenePoint = new ScenePointEntry(sceneId, pointData);
-                                            scenePoints.add(pointId);
+                                            scenePoints.add((int) pointId);
                                             pointData.setId(pointId);
 
-                                            GameData.getScenePointIdList().add(pointId);
+                                            GameData.getScenePointIdList().add((int) pointId);
                                             GameData.getScenePointEntryMap().put((sceneId << 16) + pointId, scenePoint);
 
                                             pointData.updateDailyDungeon();

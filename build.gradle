@@ -79,10 +79,10 @@ dependencies {
     implementation group: 'net.java.dev.jna', name: 'jna', version: '5.10.0'
 
     // Java Netty for networking.
-    implementation group: 'io.netty', name: 'netty-common', version: '4.1.79.Final'
-    implementation group: 'io.netty', name: 'netty-handler', version: '4.1.79.Final'
-    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.79.Final'
-    implementation group: 'io.netty', name: 'netty-transport-native-kqueue', version: '4.1.79.Final'
+    implementation group: 'io.netty', name: 'netty-common', version: '4.1.86.Final'
+    implementation group: 'io.netty', name: 'netty-handler', version: '4.1.86.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.86.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-kqueue', version: '4.1.86.Final'
 
     // Serialization.
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
@@ -112,7 +112,7 @@ dependencies {
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
     // Java HTTP server library.
-    implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
+    implementation group: 'io.javalin', name: 'javalin', version: '5.5.0'
 
     // Google Protocol Buffer definitions.
     // These are the raw '.proto' files.

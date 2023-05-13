@@ -1,14 +1,15 @@
 package emu.grasscutter.command;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import java.util.*;
 import org.reflections.Reflections;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
@@ -37,7 +38,7 @@ public final class CommandMap {
         } catch (NumberFormatException ignored) {
             var account = DatabaseHelper.getAccountByName(input);
             if (account == null) return INVALID_UID;
-            var player = DatabaseHelper.getPlayerByAccount(account);
+            var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
             if (player == null) return INVALID_UID;
             // We will be immediately fetching the player again after this,
             // but offline vs online Player safety is more important than saving a lookup

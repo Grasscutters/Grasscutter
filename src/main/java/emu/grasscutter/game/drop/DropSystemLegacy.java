@@ -19,6 +19,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class DropSystemLegacy extends BaseGameSystem {
     private final Int2ObjectMap<List<DropData>> dropData;
 

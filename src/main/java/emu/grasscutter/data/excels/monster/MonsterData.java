@@ -9,10 +9,10 @@ import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.MonsterType;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
 import lombok.Getter;
+
+import java.util.List;
+import java.util.Set;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter
@@ -99,10 +99,9 @@ public class MonsterData extends GameResource {
         if (this.describeData == null) {
             return;
         }
-        for (Entry<Integer, MonsterSpecialNameData> entry :
-                GameData.getMonsterSpecialNameDataMap().entrySet()) {
+        for (var entry : GameData.getMonsterSpecialNameDataMap().int2ObjectEntrySet()) {
             if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()) {
-                this.specialNameId = entry.getKey();
+                this.specialNameId = entry.getIntKey();
                 break;
             }
         }

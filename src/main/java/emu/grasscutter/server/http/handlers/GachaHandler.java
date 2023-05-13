@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -15,6 +13,8 @@ import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -22,7 +22,8 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import lombok.Getter;
+
+import static emu.grasscutter.utils.Language.translate;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {
@@ -144,10 +145,10 @@ public final class GachaHandler implements Router {
         javalin.get("/gacha", GachaHandler::gachaRecords);
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
 
-        javalin._conf.addSinglePageRoot(
-                "/gacha/mappings",
-                gachaMappingsPath.toString(),
-                Location.EXTERNAL); // TODO: This ***must*** be changed to take the Path not a String. This
-        // might involve upgrading Javalin.
+        javalin.cfg.staticFiles.add(cfg -> {
+            cfg.hostedPath = gachaMappingsPath.toString();
+            cfg.directory = "/gacha/mappings";
+            cfg.location = Location.EXTERNAL;
+        });
     }
 }

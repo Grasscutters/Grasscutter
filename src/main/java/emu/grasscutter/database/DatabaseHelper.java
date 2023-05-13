@@ -1,7 +1,5 @@
 package emu.grasscutter.database;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
@@ -22,8 +20,11 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
+
 import java.util.List;
 import java.util.stream.Stream;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
     public static Account createAccount(String username) {
@@ -54,6 +55,7 @@ public final class DatabaseHelper {
         }
 
         // Account
+        @SuppressWarnings("deprecation")
         Account account = new Account();
         account.setUsername(username);
         account.setId(Integer.toString(DatabaseManager.getNextId(account)));
