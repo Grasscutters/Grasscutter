@@ -154,3 +154,14 @@ export async function copyToClipboard(text: string): Promise<void> {
 export function openUrl(url: string): void {
     window.open(url, "_blank");
 }
+
+/**
+ * Checks if a value is NaN.
+ * Returns an empty string if it is.
+ *
+ * @param value The value to check.
+ */
+export function notNaN(value: number | string): string {
+    const number = parseInt(value.toString());
+    return isNaN(number) ? "" : number.toString();
+}
