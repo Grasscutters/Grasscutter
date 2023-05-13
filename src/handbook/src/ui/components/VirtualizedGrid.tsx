@@ -75,7 +75,6 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
             this.setState({
                 itemsPerRow: Math.floor((window.innerWidth - 650) / (this.props.itemHeight + (this.props.gap ?? 0)))
             });
-            console.log(window.innerWidth)
         });
     }
 
