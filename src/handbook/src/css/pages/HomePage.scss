@@ -86,8 +86,14 @@
 }
 
 .HomePage_Discord {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+
     max-height: 40px;
     max-width: 150px;
+    height: 100%;
+    width: 100%;
 
     gap: 8px;
     align-self: center;
@@ -98,11 +104,25 @@
         height: 100%;
         max-width: 44px;
         max-height: 30px;
+
+        fill: #5865F2;
     }
 
     p {
         font-size: 16px;
+        max-width: 90px;
     }
+}
+
+.HomePage_Discord:hover {
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    max-height: 50px;
+    max-width: 160px;
+
+    background-color: #5865F2;
 }
 
 .HomePage_Text {

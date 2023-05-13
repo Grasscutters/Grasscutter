@@ -4,6 +4,8 @@ import HomeButton from "@widgets/HomeButton";
 
 import { ReactComponent as DiscordLogo } from "@icons/discord.svg";
 
+import { openUrl } from "@app/utils";
+
 import "@css/pages/HomePage.scss";
 
 class HomePage extends React.Component<any, any> {
@@ -39,7 +41,10 @@ class HomePage extends React.Component<any, any> {
                             <p>trademarks and copyrights of HoYoverse.</p>
                         </div>
 
-                        <div className={"HomePage_Discord"}>
+                        <div
+                            className={"HomePage_Discord"}
+                            onClick={() => openUrl("https://discord.gg/grasscutter")}
+                        >
                             <DiscordLogo />
                             <p>Join the Community!</p>
                         </div>
