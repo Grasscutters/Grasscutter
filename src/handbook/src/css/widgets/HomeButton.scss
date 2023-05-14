@@ -1,10 +1,10 @@
 .HomeButton {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
 
-    width: 256px;
-    height: 256px;
+    width: 200px;
+    height: 200px;
 
     background-color: var(--secondary-color);
 
@@ -41,4 +41,9 @@
 
 .HomeButton_Label {
     font-size: 30px;
+    width: 200px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
