@@ -75,7 +75,8 @@
 
 .HomePage_Discord {
     max-width: 150px;
-    padding-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
 
     gap: 8px;
     align-self: center;
@@ -94,10 +95,8 @@
 
     &:hover {
         cursor: pointer;
-
-        p {
-            text-decoration: underline;
-        }
+        background-color: #5865F2;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
     }
 }
 
