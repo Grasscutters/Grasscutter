@@ -35,7 +35,10 @@ public class AbilityModifier implements Serializable {
     public AbilityModifierAction[] onHeal;
     public AbilityModifierAction[] onBeingHealed;
     public DynamicFloat duration = DynamicFloat.ZERO;
+    public DynamicFloat thinkInterval = DynamicFloat.ZERO;
     public String stacking;
+
+    public AbilityMixinData[] modifierMixins;
 
     public ElementType elementType;
     public DynamicFloat elementDurability = DynamicFloat.ZERO;
@@ -278,6 +281,13 @@ public class AbilityModifier implements Serializable {
         public boolean ignoreAbilityProperty;
 
         public String modifierName;
+
+        public boolean byServer;
+        public boolean lifeByOwnerIsAlive;
+        public String campTargetType;
+        public int campID;
+        public int gadgetID;
+        public boolean ownerIsTarget;
 
         public int param1;
         public int param2;

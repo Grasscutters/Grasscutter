@@ -114,6 +114,12 @@ public final class JsonUtils {
         }
     }
 
+    public static <T1,T2> Map<T1,T2> loadToMap(Path filename, Class<T1> keyType, Type valueType) throws IOException {
+        try (var fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+            return gson.fromJson(fileReader, TypeToken.getParameterized(Map.class, keyType, valueType).getType());
+        }
+    }
+
     /**
      * Safely JSON decodes a given string.
      *

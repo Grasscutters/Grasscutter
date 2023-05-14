@@ -1,7 +1,5 @@
 package emu.grasscutter.game.avatar;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
@@ -24,6 +22,7 @@ import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
 import emu.grasscutter.data.excels.weapon.WeaponCurveData;
 import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
@@ -42,15 +41,18 @@ import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
-import java.util.stream.Stream;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 import org.bson.types.ObjectId;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.stream.Stream;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -247,6 +249,8 @@ public class Avatar {
     protected void setSkillDepot(AvatarSkillDepotData skillDepot) {
         if (this.skillDepot != null) return;
         this.skillDepot = skillDepot; // Used while loading this from the database
+
+        skillDepot.getSkills().forEach(skillId -> this.onSetSkillLevel(skillId, level));
     }
 
     /**
@@ -281,6 +285,8 @@ public class Avatar {
                 .filter(proudSkillId -> GameData.getProudSkillDataMap().containsKey(proudSkillId))
                 .forEach(proudSkillId -> this.proudSkillList.add(proudSkillId));
         this.recalcStats();
+
+        skillDepot.getSkills().forEach(skillId -> this.onSetSkillLevel(skillId, level));
 
         // Send the depot change notification.
         if (notify) this.owner.sendPacket(new PacketAvatarSkillDepotChangeNotify(this));
@@ -685,6 +691,12 @@ public class Avatar {
 
             // Add any embryos from this proud skill
             this.addToExtraAbilityEmbryos(proudSkillData.getOpenConfig());
+
+            var openConfig = proudSkillData.getOpenConfig();
+            if (GameData.getTalents().containsKey(openConfig)) {
+                Ability.executeTalent(GameData.getTalents()
+                    .get(openConfig), proudSkillData);
+            }
         }
 
         // Constellations
@@ -871,6 +883,22 @@ public class Avatar {
         return true;
     }
 
+    private void onSetSkillLevel(int skillId, int level) {
+        var skillData = GameData.getAvatarSkillDataMap().get(skillId);
+        if (skillData == null) return;
+
+        // Add talent
+        var proudSkillId = (skillData.getProudSkillGroupId() * 100) + level;
+        var proudSkill = GameData.getProudSkillDataMap().get(proudSkillId);
+        if (proudSkill != null) {
+            var openConfig = proudSkill.getOpenConfig();
+            if(GameData.getTalents().containsKey(openConfig)) {
+                Ability.executeTalent(GameData.getTalents()
+                    .get(openConfig), proudSkill);
+            }
+        }
+    }
+
     public boolean setSkillLevel(int skillId, int level) {
         if (level < 0 || level > 15) return false;
         var validLevels = GameData.getAvatarSkillLevels(skillId);
@@ -880,6 +908,8 @@ public class Avatar {
                         skillId, 0); // just taking the return value of put would have null concerns
         this.skillLevelMap.put(skillId, level);
         this.save();
+
+        this.onSetSkillLevel(skillId, level);
 
         // Packet
         val player = this.getPlayer();

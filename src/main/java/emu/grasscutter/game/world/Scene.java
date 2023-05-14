@@ -78,6 +78,8 @@ public final class Scene {
     @Getter private int tickCount = 0;
     @Getter private boolean isPaused = false;
 
+    @Getter private GameEntity sceneEntity;
+
     public Scene(World world, SceneData sceneData) {
         this.world = world;
         this.sceneData = sceneData;
@@ -98,6 +100,7 @@ public final class Scene {
         this.scriptManager = new SceneScriptManager(this);
         this.blossomManager = new BlossomManager(this);
         this.unlockedForces = new HashSet<>();
+        this.sceneEntity = new EntityScene(this);
     }
 
     public int getId() {
@@ -113,7 +116,19 @@ public final class Scene {
     }
 
     public GameEntity getEntityById(int id) {
-        return this.entities.get(id);
+        // Check if the scene's entity ID is referenced.
+        if (id == 0x13800001) return this.sceneEntity;
+
+        var entity = this.entities.get(id);
+        if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {
+            for (var player : this.getPlayers()) {
+                for (var avatar : player.getTeamManager().getActiveTeam()) {
+                    if(avatar.getId() == id) return avatar;
+                }
+            }
+        }
+
+        return entity;
     }
 
     public GameEntity getEntityByConfigId(int configId) {

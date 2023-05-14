@@ -69,6 +69,8 @@ public class EntityAvatar extends GameEntity {
             Grasscutter.getLogger()
                     .error("Unable to create EntityAvatar instance; provided scene is null.");
         }
+
+        this.initAbilities();
     }
 
     @Override
@@ -100,11 +102,13 @@ public class EntityAvatar extends GameEntity {
         return getAvatar().getFightProperties();
     }
 
+    /**
+     * @return The entity ID of the avatar's equipped weapon.
+     */
     public int getWeaponEntityId() {
-        if (getAvatar().getWeapon() != null) {
-            return getAvatar().getWeapon().getWeaponEntityId();
-        }
-        return 0;
+        var avatar = this.getAvatar();
+        return avatar.getWeapon() == null ? 0 :
+            avatar.getWeapon().getWeaponEntityId();
     }
 
     @Override
@@ -122,6 +126,16 @@ public class EntityAvatar extends GameEntity {
         this.killedType = dieType;
         this.killedBy = killerId;
         clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE);
+    }
+
+    @Override
+    public void initAbilities() {
+    }
+
+    private void addConfigAbility(String abilityName){
+        var data = GameData.getAbilityData(abilityName);
+        if (data != null) this.getScene().getWorld()
+            .getHost().getAbilityManager().addAbilityToEntity(this, data);
     }
 
     @Override

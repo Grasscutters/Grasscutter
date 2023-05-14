@@ -1,6 +1,8 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.AbilityData;
+import emu.grasscutter.data.binout.config.ConfigEntityMonster;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.EnvAnimalGatherConfigData;
 import emu.grasscutter.data.excels.monster.MonsterCurveData;
@@ -48,6 +50,7 @@ public class EntityMonster extends GameEntity {
     @Getter(onMethod_ = @Override)
     private final Position rotation;
     @Getter private final MonsterData monsterData;
+    @Getter private final ConfigEntityMonster configEntityMonster;
     @Getter private final Position bornPos;
     @Getter private final int level;
     @Getter private int weaponEntityId;
@@ -66,12 +69,42 @@ public class EntityMonster extends GameEntity {
         this.bornPos = getPosition().clone();
         this.level = level;
 
+        if(GameData.getMonsterMappingMap().containsKey(getMonsterId())) {
+            this.configEntityMonster = GameData.getMonsterConfigData().get(GameData.getMonsterMappingMap().get(getMonsterId()).getMonsterJson());
+        } else {
+            this.configEntityMonster = null;
+        }
+
         // Monster weapon
         if (getMonsterWeaponId() > 0) {
             this.weaponEntityId = getWorld().getNextEntityId(EntityIdType.WEAPON);
         }
 
         this.recalcStats();
+
+        initAbilities();
+    }
+
+    private void addConfigAbility(String name){
+        AbilityData data =  GameData.getAbilityData(name);
+        if(data != null)
+            getScene().getWorld().getHost().getAbilityManager().addAbilityToEntity(
+                this, data);
+    }
+
+    @Override
+    public void initAbilities() {
+        if(configEntityMonster != null) {
+            //TODO: Research if any monster is non humanoid
+            for(var ability : GameData.getConfigGlobalCombat().getDefaultAbilities().getNonHumanoidMoveAbilities()) {
+                addConfigAbility(ability);
+            }
+
+            if(configEntityMonster.getAbilities() != null)
+                for(var configAbilityData : configEntityMonster.getAbilities()) {
+                    addConfigAbility(configAbilityData.abilityName);
+                }
+        }
     }
 
     @Override

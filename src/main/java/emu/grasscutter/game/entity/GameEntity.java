@@ -1,6 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.ability.Ability;
+import emu.grasscutter.game.ability.AbilityModifierController;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
@@ -24,10 +25,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -48,18 +52,15 @@ public abstract class GameEntity {
     @Getter @Setter private EntityController entityController;
     @Getter private ElementType lastAttackType = ElementType.None;
 
-    // Abilities
-    private Object2FloatMap<String> metaOverrideMap;
-    private Int2ObjectMap<String> metaModifiers;
-    private Map<Integer, Integer> instanceToHash;
-    private Int2ObjectMap<String> instanceToName;
-
-    @Getter private Map<String, Ability> abilities = new HashMap<>();
+    @Getter private List<Ability> instancedAbilities = new ArrayList<>();
+    @Getter private Int2ObjectMap<AbilityModifierController> instancedModifiers = new Int2ObjectOpenHashMap<>();
 
     public GameEntity(Scene scene) {
         this.scene = scene;
         this.motionState = MotionState.MOTION_STATE_NONE;
     }
+
+    public abstract void initAbilities();
 
     public int getEntityType() {
         return this.getId() >> 24;
@@ -77,36 +78,6 @@ public abstract class GameEntity {
 
     public LifeState getLifeState() {
         return this.isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
-    }
-
-    public Object2FloatMap<String> getMetaOverrideMap() {
-        if (this.metaOverrideMap == null) {
-            this.metaOverrideMap = new Object2FloatOpenHashMap<>();
-        }
-        return this.metaOverrideMap;
-    }
-
-    public Int2ObjectMap<String> getMetaModifiers() {
-        if (this.metaModifiers == null) {
-            this.metaModifiers = new Int2ObjectOpenHashMap<>();
-        }
-        return this.metaModifiers;
-    }
-
-    public Map<Integer, Integer> getInstanceToHash() {
-        if (this.instanceToHash == null) {
-            this.instanceToHash = new HashMap<>();
-        }
-
-        return this.instanceToHash;
-    }
-
-    public Int2ObjectMap<String> getInstanceToName() {
-        if (this.instanceToName == null) {
-            this.instanceToName = new Int2ObjectOpenHashMap<>();
-        }
-
-        return this.instanceToName;
     }
 
     public abstract Int2FloatMap getFightProperties();
@@ -214,7 +185,6 @@ public abstract class GameEntity {
         }
 
         this.runLuaCallbacks(event);
-        this.runAbilityCallbacks(event);
 
         // Packets
         this.getScene()
@@ -236,15 +206,6 @@ public abstract class GameEntity {
         if (entityController != null) {
             entityController.onBeHurt(this, event.getAttackElementType(), true); // todo is host handling
         }
-    }
-
-    /**
-     * Runs the ability callbacks for {@link EntityDamageEvent}.
-     *
-     * @param event The damage event.
-     */
-    public void runAbilityCallbacks(EntityDamageEvent event) {
-        this.abilities.values().forEach(ability -> ability.onBeingHit(event));
     }
 
     /**

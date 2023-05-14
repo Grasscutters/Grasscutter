@@ -81,9 +81,16 @@ public class EntityGadget extends EntityBaseGadget {
         this(scene, gadgetId, pos, rot, null);
     }
 
-    public EntityGadget(
-            Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
-        super(scene, pos, rot);
+    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, int campId, int campType) {
+        this(scene, gadgetId, pos, rot, null, campId, campType);
+    }
+
+    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+        this(scene, gadgetId, pos, rot, content, 0, 0);
+    }
+
+    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content, int campId, int campType) {
+        super(scene, pos, rot, campId, campType);
 
         this.gadgetData = GameData.getGadgetDataMap().get(gadgetId);
         if (gadgetData != null && gadgetData.getJsonName() != null) {
@@ -102,25 +109,23 @@ public class EntityGadget extends EntityBaseGadget {
             this.setEntityController(EntityControllerScriptManager.getGadgetController(controllerName));
         }
 
-        this.addConfigAbilities();
+        this.initAbilities(); //TODO: move this
     }
 
-    private void addConfigAbilities() {
+    private void addConfigAbility(ConfigAbilityData abilityData){
+        var data =  GameData.getAbilityData(abilityData.getAbilityName());
+        if(data != null) this.getScene().getWorld().getHost()
+            .getAbilityManager().addAbilityToEntity(this, data);
+    }
+
+    @Override
+    public void initAbilities() {
+        //TODO: handle pre-dynamic, static and dynamic here
         if (this.configGadget != null && this.configGadget.getAbilities() != null) {
             for (var ability : this.configGadget.getAbilities()) {
                 this.addConfigAbility(ability);
             }
         }
-    }
-
-    private void addConfigAbility(ConfigAbilityData abilityData) {
-        var data = GameData.getAbilityData(abilityData.getAbilityName());
-        if (data != null)
-            getScene()
-                    .getWorld()
-                    .getHost()
-                    .getAbilityManager()
-                    .addAbilityToEntity(this, data, abilityData.getAbilityID());
     }
 
     public void setState(int state) {
