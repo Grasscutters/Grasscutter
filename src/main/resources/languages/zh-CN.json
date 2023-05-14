@@ -31,7 +31,7 @@
         "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
         "login_password_error": "[Dispatch] 客户端 %s 无法通过密码登录",
-        "login_password_storage_error": "[Dispatch] 客户端 %s 无法登录！因为数据库中没有密码",
+        "login_password_storage_error": "[Dispatch] 客户端 %s 因数据库中没有密码而无法登录",
         "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
@@ -141,7 +141,7 @@
         "already_achieved": "%s 已经达成了成就",
         "not_yet_achieved": "%s 还未达成成就"
       },
-      "description": "达成、撤销或设置成就进度"
+      "description": "达成、撤销成就或设置成就进度"
     },
     "announce": {
       "send_success": "成功发送了一则公告，你可以通过 /a revoke %s 撤销",
