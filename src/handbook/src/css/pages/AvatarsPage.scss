@@ -1,6 +1,6 @@
 .AvatarsPage {
     display: flex;
-    width: 100%;
+    width: calc(100% - 352px);
 
     background-color: var(--background-color);
     flex-direction: column;
