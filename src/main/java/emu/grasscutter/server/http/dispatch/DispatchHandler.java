@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.dispatch;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.OAuthAuthenticator.ClientType;
@@ -11,8 +13,6 @@ import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.JsonUtils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
-import static emu.grasscutter.utils.Language.translate;
 
 /** Handles requests related to authentication. (aka dispatch) */
 public final class DispatchHandler implements Router {
