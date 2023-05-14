@@ -1,7 +1,4 @@
-@font-face {
-    font-family: Poppins;
-    src: url('data/Poppins-Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 html {
     --background-color: #346b77;
@@ -30,7 +27,7 @@ body {
     }
 
     * {
-        font-family: 'SDK_SC_Web', 'SDK_JP_Web', Poppins, sans-serif;
+        font-family: 'SDK_SC_Web', 'SDK_JP_Web', 'Poppins', sans-serif;
     }
 
     svg:focus {
