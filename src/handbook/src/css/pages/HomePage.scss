@@ -74,6 +74,7 @@
 
 .HomePage_Discord {
     max-width: 150px;
+    padding-right: 10px;
 
     gap: 8px;
     align-self: center;
@@ -118,9 +119,6 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
-
-    max-height: 18px;
-    padding-bottom: 5px;
 
     :nth-child(1) {
         font-size: 18px;
