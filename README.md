@@ -80,7 +80,7 @@ Grasscutter uses Gradle to handle dependencies & building.
 ##### Windows
 
 ```shell
-git clone https://github.com/Grasscutters/Grasscutter.git
+git clone --recurse-submodules -b unstable https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 .\gradlew.bat # Setting up environments
 .\gradlew jar # Compile
@@ -89,7 +89,7 @@ cd Grasscutter
 ##### Linux (GNU)
 
 ```bash
-git clone https://github.com/Grasscutters/Grasscutter.git
+git clone --recurse-submodules -b unstable https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 chmod +x gradlew
 ./gradlew jar # Compile
