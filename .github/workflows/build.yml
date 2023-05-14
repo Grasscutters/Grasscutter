@@ -37,6 +37,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Download Handbook
+        run: wget https://api.grasscutter.io/static/handbook.html -O src/main/resources/handbook.html
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build
