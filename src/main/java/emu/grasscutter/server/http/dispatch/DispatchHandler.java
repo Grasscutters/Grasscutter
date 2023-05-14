@@ -143,6 +143,13 @@ public final class DispatchHandler implements Router {
                                 .getOAuthAuthenticator()
                                 .handleTokenProcess(AuthenticationSystem.fromExternalRequest(ctx)));
         javalin.get(
+                "/sdkFacebookLogin.html",
+                ctx ->
+                        Grasscutter.getAuthenticationSystem()
+                                .getOAuthAuthenticator()
+                                .handleRedirection(
+                                        AuthenticationSystem.fromExternalRequest(ctx), ClientType.DESKTOP));
+        javalin.get(
                 "/Api/twitter_login",
                 ctx ->
                         Grasscutter.getAuthenticationSystem()
