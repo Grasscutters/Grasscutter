@@ -1,5 +1,5 @@
 [submodule "src/handbook/data"]
-	path = src/handbook/data
+	path = src/handbook/data/assets
 	url = https://github.com/genshitters/gm-handbook-assets.git
 
 [submodule "docs/wiki"]
