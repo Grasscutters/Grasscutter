@@ -406,6 +406,9 @@
       "success": "成功取消玩家的封禁",
       "failure": "取消玩家的封禁失败，因为玩家不存在",
       "description": "取消玩家的封禁"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

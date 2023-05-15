@@ -406,6 +406,9 @@
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
       "description": "Разблокировывает доступ к серверу (\"разбанивает\")"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
