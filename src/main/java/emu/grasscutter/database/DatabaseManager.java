@@ -1,5 +1,7 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -16,8 +18,6 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import org.reflections.Reflections;
 
-import static emu.grasscutter.config.Configuration.DATABASE;
-
 public final class DatabaseManager {
     private static Datastore gameDatastore;
     private static Datastore dispatchDatastore;
@@ -27,8 +27,7 @@ public final class DatabaseManager {
     }
 
     public static Datastore getAccountDatastore() {
-        if (Grasscutter.getRunMode() == ServerRunMode.HYBRID)
-            return gameDatastore;
+        if (Grasscutter.getRunMode() == ServerRunMode.HYBRID) return gameDatastore;
         else return dispatchDatastore;
     }
 

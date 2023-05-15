@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -12,16 +14,13 @@ import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
-import lombok.Getter;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
-
-import static emu.grasscutter.utils.Language.translate;
+import lombok.Getter;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {
@@ -49,8 +48,7 @@ public final class GachaHandler implements Router {
         if (gachaTypeStr != null) gachaType = Integer.parseInt(gachaTypeStr);
 
         // Make request to dispatch server.
-        var data = DispatchUtils.fetchGachaRecords(
-            account.getId(), page, gachaType);
+        var data = DispatchUtils.fetchGachaRecords(account.getId(), page, gachaType);
         var records = data.get("records").getAsString();
         var maxPage = data.get("maxPage").getAsLong();
 
@@ -77,7 +75,8 @@ public final class GachaHandler implements Router {
             return;
         }
 
-        String template;try {
+        String template;
+        try {
             template = Files.readString(detailsTemplate);
         } catch (IOException e) {
             Grasscutter.getLogger().warn("Failed to read data/gacha/details.html");
@@ -113,8 +112,7 @@ public final class GachaHandler implements Router {
         // Add 5-star items.
         var fiveStarItems = new LinkedHashSet<String>();
 
-        Arrays.stream(banner.getRateUpItems5())
-                .forEach(i -> fiveStarItems.add(Integer.toString(i)));
+        Arrays.stream(banner.getRateUpItems5()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
         Arrays.stream(banner.getFallbackItems5Pool1())
                 .forEach(i -> fiveStarItems.add(Integer.toString(i)));
         Arrays.stream(banner.getFallbackItems5Pool2())
@@ -125,8 +123,7 @@ public final class GachaHandler implements Router {
         // Add 4-star items.
         var fourStarItems = new LinkedHashSet<String>();
 
-        Arrays.stream(banner.getRateUpItems4())
-                .forEach(i -> fourStarItems.add(Integer.toString(i)));
+        Arrays.stream(banner.getRateUpItems4()).forEach(i -> fourStarItems.add(Integer.toString(i)));
         Arrays.stream(banner.getFallbackItems4Pool1())
                 .forEach(i -> fourStarItems.add(Integer.toString(i)));
         Arrays.stream(banner.getFallbackItems4Pool2())
@@ -136,8 +133,7 @@ public final class GachaHandler implements Router {
 
         // Add 3-star items.
         var threeStarItems = new LinkedHashSet<String>();
-        Arrays.stream(banner.getFallbackItems3())
-                .forEach(i -> threeStarItems.add(Integer.toString(i)));
+        Arrays.stream(banner.getFallbackItems3()).forEach(i -> threeStarItems.add(Integer.toString(i)));
         template = template.replace("{{THREE_STARS}}", "[" + String.join(",", threeStarItems) + "]");
 
         // Done.
@@ -153,15 +149,10 @@ public final class GachaHandler implements Router {
      * @param page The page to fetch.
      * @param type The gacha type to fetch.
      */
-    public static void fetchGachaRecords(
-        Player player, JsonObject response,
-        int page, int type
-    ) {
+    public static void fetchGachaRecords(Player player, JsonObject response, int page, int type) {
         var playerId = player.getUid();
-        var records = DatabaseHelper.getGachaRecords(
-            playerId, page, type).toString();
-        var maxPage = DatabaseHelper.getGachaRecordsMaxPage(
-            playerId, page, type);
+        var records = DatabaseHelper.getGachaRecords(playerId, page, type).toString();
+        var maxPage = DatabaseHelper.getGachaRecordsMaxPage(playerId, page, type);
 
         // Finish the response.
         response.addProperty("retcode", 0);

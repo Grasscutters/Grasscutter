@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -9,20 +11,18 @@ import emu.grasscutter.server.dispatch.IDispatcher;
 import emu.grasscutter.server.dispatch.PacketIds;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
-
-import javax.annotation.Nullable;
 import java.net.http.HttpClient;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import javax.annotation.Nullable;
 
 public interface DispatchUtils {
     /** HTTP client used for dispatch queries. */
-    HttpClient HTTP_CLIENT = HttpClient.newBuilder()
-        .version(HttpClient.Version.HTTP_2)
-        .followRedirects(HttpClient.Redirect.ALWAYS)
-        .build();
+    HttpClient HTTP_CLIENT =
+            HttpClient.newBuilder()
+                    .version(HttpClient.Version.HTTP_2)
+                    .followRedirects(HttpClient.Redirect.ALWAYS)
+                    .build();
 
     /**
      * @return The dispatch URL.
@@ -38,22 +38,16 @@ public interface DispatchUtils {
      * @param token The token.
      * @return {@code true} if the authentication request is valid, otherwise {@code false}.
      */
-    @Nullable
-    static Account authenticate(String accountId, String token) {
+    @Nullable static Account authenticate(String accountId, String token) {
         return switch (Grasscutter.getRunMode()) {
             case GAME_ONLY ->
-                // Use the authentication system to validate the token.
-                Grasscutter.getAuthenticationSystem()
+            // Use the authentication system to validate the token.
+            Grasscutter.getAuthenticationSystem()
                     .getSessionTokenValidator()
                     .authenticate(
-                        AuthenticationRequest.builder()
-                            .tokenRequest(
-                                LoginTokenRequestJson.builder()
-                                    .uid(accountId)
-                                    .token(token)
-                                .build()
-                            ).build()
-                    );
+                            AuthenticationRequest.builder()
+                                    .tokenRequest(LoginTokenRequestJson.builder().uid(accountId).token(token).build())
+                                    .build());
             case HYBRID, DISPATCH_ONLY -> {
                 // Fetch the account from the database.
                 var account = DatabaseHelper.getAccountById(accountId);
@@ -86,8 +80,9 @@ public interface DispatchUtils {
                 var future = new CompletableFuture<JsonObject>();
                 // Listen for the response.
                 var server = Grasscutter.getDispatchServer();
-                server.registerCallback(PacketIds.GachaHistoryRsp, packet ->
-                    future.complete(IDispatcher.decode(packet, JsonObject.class)));
+                server.registerCallback(
+                        PacketIds.GachaHistoryRsp,
+                        packet -> future.complete(IDispatcher.decode(packet, JsonObject.class)));
 
                 // Broadcast the request.
                 server.sendMessage(PacketIds.GachaHistoryReq, request);
@@ -104,16 +99,14 @@ public interface DispatchUtils {
                 var response = new JsonObject();
 
                 // Get the player's ID from the account.
-                var player = Grasscutter.getGameServer()
-                    .getPlayerByAccountId(accountId);
+                var player = Grasscutter.getGameServer().getPlayerByAccountId(accountId);
                 if (player == null) {
                     response.addProperty("retcode", 1);
                     yield response;
                 }
 
                 // Fetch the gacha records.
-                GachaHandler.fetchGachaRecords(
-                    player, response, page, gachaType);
+                GachaHandler.fetchGachaRecords(player, response, page, gachaType);
 
                 yield response;
             }

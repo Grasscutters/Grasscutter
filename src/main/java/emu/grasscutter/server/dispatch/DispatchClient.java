@@ -1,17 +1,13 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.utils.Crypto;
-import lombok.Getter;
-import org.java_websocket.WebSocket;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
-import org.slf4j.Logger;
-
 import java.net.ConnectException;
 import java.net.URI;
 import java.nio.ByteBuffer;
@@ -21,17 +17,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import lombok.Getter;
+import org.java_websocket.WebSocket;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+import org.slf4j.Logger;
 
 public final class DispatchClient extends WebSocketClient implements IDispatcher {
-    @Getter private final Logger logger
-        = Grasscutter.getLogger();
-    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers
-        = new HashMap<>();
+    @Getter private final Logger logger = Grasscutter.getLogger();
+    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
 
-    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks
-        = new HashMap<>();
+    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
 
     public DispatchClient(URI serverUri) {
         super(serverUri);
@@ -58,8 +54,7 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
         var response = new JsonObject();
 
         // Find a player with the specified account ID.
-        var player = Grasscutter.getGameServer()
-            .getPlayerByAccountId(accountId);
+        var player = Grasscutter.getGameServer().getPlayerByAccountId(accountId);
         if (player == null) {
             response.addProperty("retcode", 1);
             this.sendMessage(PacketIds.GachaHistoryRsp, response);
@@ -67,8 +62,7 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
         }
 
         // Fetch the gacha records.
-        GachaHandler.fetchGachaRecords(
-            player, response, page, type);
+        GachaHandler.fetchGachaRecords(player, response, page, type);
 
         // Send the response.
         this.sendMessage(PacketIds.GachaHistoryRsp, response);
@@ -82,8 +76,7 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
     public void sendMessage(int packetId, Object message) {
         var serverMessage = this.encodeMessage(packetId, message);
         // Serialize the message into JSON.
-        var serialized = JSON.toJson(serverMessage)
-            .getBytes(StandardCharsets.UTF_8);
+        var serialized = JSON.toJson(serverMessage).getBytes(StandardCharsets.UTF_8);
         // Encrypt the message.
         Crypto.xor(serialized, DISPATCH_INFO.encryptionKey);
         // Send the message.
@@ -100,8 +93,7 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
 
     @Override
     public void onMessage(String message) {
-        this.getLogger().debug("Received dispatch message from server:\n{}",
-            message);
+        this.getLogger().debug("Received dispatch message from server:\n{}", message);
     }
 
     @Override
@@ -114,17 +106,20 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
         this.getLogger().info("Dispatch connection closed.");
 
         // Attempt to reconnect.
-        new Thread(() -> {
-            try {
-                // Wait 5 seconds before reconnecting.
-                Thread.sleep(5000L);
-            } catch (Exception ignored) { }
+        new Thread(
+                        () -> {
+                            try {
+                                // Wait 5 seconds before reconnecting.
+                                Thread.sleep(5000L);
+                            } catch (Exception ignored) {
+                            }
 
-            // Attempt to reconnect.
-            Grasscutter.getGameServer().setDispatchClient(
-                new DispatchClient(GameServer.getDispatchUrl()));
-            Grasscutter.getGameServer().getDispatchClient().connect();
-        }).start();
+                            // Attempt to reconnect.
+                            Grasscutter.getGameServer()
+                                    .setDispatchClient(new DispatchClient(GameServer.getDispatchUrl()));
+                            Grasscutter.getGameServer().getDispatchClient().connect();
+                        })
+                .start();
     }
 
     @Override

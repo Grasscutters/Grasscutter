@@ -1,16 +1,12 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
-import lombok.Getter;
-import org.java_websocket.WebSocket;
-import org.java_websocket.handshake.ClientHandshake;
-import org.java_websocket.server.WebSocketServer;
-import org.slf4j.Logger;
-
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -19,18 +15,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import lombok.Getter;
+import org.java_websocket.WebSocket;
+import org.java_websocket.handshake.ClientHandshake;
+import org.java_websocket.server.WebSocketServer;
+import org.slf4j.Logger;
 
 /* Internal communications server. */
 public final class DispatchServer extends WebSocketServer implements IDispatcher {
-    @Getter private final Logger logger
-        = Grasscutter.getLogger();
-    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers
-        = new HashMap<>();
+    @Getter private final Logger logger = Grasscutter.getLogger();
+    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
 
-    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks
-        = new HashMap<>();
+    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
 
     /**
      * Constructs a new {@code DispatchServer} instance.
@@ -52,15 +48,13 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
      * @param object The packet data.
      */
     private void handleLogin(WebSocket socket, JsonElement object) {
-        var dispatchKey = object.getAsString()
-            .replaceAll("\"", "");
+        var dispatchKey = object.getAsString().replaceAll("\"", "");
 
         // Check if the dispatch key is valid.
         if (!dispatchKey.equals(DISPATCH_INFO.dispatchKey)) {
-            this.getLogger().warn("Invalid dispatch key received from {}.",
-                socket.getRemoteSocketAddress());
-            this.getLogger().debug("Expected: {}, Received: {}",
-                DISPATCH_INFO.dispatchKey, dispatchKey);
+            this.getLogger()
+                    .warn("Invalid dispatch key received from {}.", socket.getRemoteSocketAddress());
+            this.getLogger().debug("Expected: {}, Received: {}", DISPATCH_INFO.dispatchKey, dispatchKey);
             socket.close();
         } else {
             socket.setAttachment(true);
@@ -84,8 +78,7 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
         // Create the response message.
         var response = new JsonObject();
         response.addProperty("valid", valid);
-        if (valid) response.add("account",
-            JSON.toJsonTree(account));
+        if (valid) response.add("account", JSON.toJsonTree(account));
 
         // Send the response.
         this.sendMessage(socket, PacketIds.TokenValidateRsp, response);
@@ -98,8 +91,7 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
      */
     public void sendMessage(int packetId, Object message) {
         var serverMessage = this.encodeMessage(packetId, message);
-        this.getConnections().forEach(
-            socket -> this.sendMessage(socket, serverMessage));
+        this.getConnections().forEach(socket -> this.sendMessage(socket, serverMessage));
     }
 
     /**
@@ -110,8 +102,7 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
      */
     public void sendMessage(WebSocket socket, Object message) {
         // Serialize the message into JSON.
-        var serialized = JSON.toJson(message)
-            .getBytes(StandardCharsets.UTF_8);
+        var serialized = JSON.toJson(message).getBytes(StandardCharsets.UTF_8);
         // Encrypt the message.
         Crypto.xor(serialized, DISPATCH_INFO.encryptionKey);
         // Send the message.
@@ -131,20 +122,18 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
 
     @Override
     public void onStart() {
-        this.getLogger().info("Dispatch server started on port {}.",
-            this.getPort());
+        this.getLogger().info("Dispatch server started on port {}.", this.getPort());
     }
 
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
-        this.getLogger().debug("Dispatch client connected from {}.",
-            conn.getRemoteSocketAddress());
+        this.getLogger().debug("Dispatch client connected from {}.", conn.getRemoteSocketAddress());
     }
 
     @Override
     public void onMessage(WebSocket conn, String message) {
-        this.getLogger().debug("Received dispatch message from {}:\n{}",
-            conn.getRemoteSocketAddress(), message);
+        this.getLogger()
+                .debug("Received dispatch message from {}:\n{}", conn.getRemoteSocketAddress(), message);
     }
 
     @Override
@@ -154,8 +143,7 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-        this.getLogger().debug("Dispatch client disconnected from {}.",
-            conn.getRemoteSocketAddress());
+        this.getLogger().debug("Dispatch client disconnected from {}.", conn.getRemoteSocketAddress());
     }
 
     @Override

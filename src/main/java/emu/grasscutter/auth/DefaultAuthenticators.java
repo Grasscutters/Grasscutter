@@ -1,5 +1,8 @@
 package emu.grasscutter.auth;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.Language.translate;
+
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -11,17 +14,13 @@ import emu.grasscutter.server.http.objects.ComboTokenResJson;
 import emu.grasscutter.server.http.objects.LoginResultJson;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
-
-import javax.crypto.Cipher;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.utils.Language.translate;
+import javax.crypto.Cipher;
 
 /** A class containing default authenticators. */
 public final class DefaultAuthenticators {
@@ -51,18 +50,18 @@ public final class DefaultAuthenticators {
                 if (account == null) {
                     responseMessage = translate("messages.dispatch.account.username_create_error");
                     Grasscutter.getLogger()
-                        .info(translate("messages.dispatch.account.account_login_create_error", address));
+                            .info(translate("messages.dispatch.account.account_login_create_error", address));
                 } else {
                     // Continue with login.
                     successfulLogin = true;
 
                     // Log the creation.
                     Grasscutter.getLogger()
-                        .info(
-                            translate(
-                                "messages.dispatch.account.account_login_create_success",
-                                address,
-                                response.data.account.uid));
+                            .info(
+                                    translate(
+                                            "messages.dispatch.account.account_login_create_success",
+                                            address,
+                                            response.data.account.uid));
                 }
             } else if (account != null) successfulLogin = true;
             else
@@ -132,25 +131,25 @@ public final class DefaultAuthenticators {
                 if (decryptedPassword.length() >= 8) {
                     account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
                     account.setPassword(
-                        BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
+                            BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
                     account.save();
 
                     // Check if the account was created successfully.
                     if (account == null) {
                         responseMessage = translate("messages.dispatch.account.username_create_error");
                         loggerMessage =
-                            translate("messages.dispatch.account.account_login_create_error", address);
+                                translate("messages.dispatch.account.account_login_create_error", address);
                     } else {
                         // Continue with login.
                         successfulLogin = true;
 
                         // Log the creation.
                         Grasscutter.getLogger()
-                            .info(
-                                translate(
-                                    "messages.dispatch.account.account_login_create_success",
-                                    address,
-                                    response.data.account.uid));
+                                .info(
+                                        translate(
+                                                "messages.dispatch.account.account_login_create_success",
+                                                address,
+                                                response.data.account.uid));
                     }
                 } else {
                     successfulLogin = false;
@@ -160,8 +159,8 @@ public final class DefaultAuthenticators {
             } else if (account != null) {
                 if (account.getPassword() != null && !account.getPassword().isEmpty()) {
                     if (BCrypt.verifyer()
-                        .verify(decryptedPassword.toCharArray(), account.getPassword())
-                        .verified) {
+                            .verify(decryptedPassword.toCharArray(), account.getPassword())
+                            .verified) {
                         successfulLogin = true;
                     } else {
                         successfulLogin = false;
@@ -171,7 +170,7 @@ public final class DefaultAuthenticators {
                 } else {
                     successfulLogin = false;
                     loggerMessage =
-                        translate("messages.dispatch.account.login_password_storage_error", address);
+                            translate("messages.dispatch.account.login_password_storage_error", address);
                     responseMessage = translate("messages.dispatch.account.password_storage_error");
                 }
             } else {
@@ -229,7 +228,7 @@ public final class DefaultAuthenticators {
 
                 // Log the login.
                 loggerMessage =
-                    translate("messages.dispatch.account.login_token_success", address, requestData.uid);
+                        translate("messages.dispatch.account.login_token_success", address, requestData.uid);
             } else {
                 response.retcode = -201;
                 response.message = translate("messages.dispatch.account.account_cache_error");
@@ -349,20 +348,21 @@ public final class DefaultAuthenticators {
             var client = Grasscutter.getGameServer().getDispatchClient();
             var future = new CompletableFuture<Account>();
 
-            client.registerCallback(PacketIds.TokenValidateRsp, packet -> {
-                var data = IDispatcher.decode(packet);
+            client.registerCallback(
+                    PacketIds.TokenValidateRsp,
+                    packet -> {
+                        var data = IDispatcher.decode(packet);
 
-                // Check if the token is valid.
-                var valid = data.get("valid").getAsBoolean();
-                if (!valid) {
-                    future.complete(null);
-                    return;
-                }
+                        // Check if the token is valid.
+                        var valid = data.get("valid").getAsBoolean();
+                        if (!valid) {
+                            future.complete(null);
+                            return;
+                        }
 
-                // Return the account data.
-                future.complete(IDispatcher.decode(
-                    data.get("account"), Account.class));
-            });
+                        // Return the account data.
+                        future.complete(IDispatcher.decode(data.get("account"), Account.class));
+                    });
             client.sendMessage(PacketIds.TokenValidateReq, tokenRequest);
 
             try {

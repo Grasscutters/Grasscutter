@@ -1,28 +1,28 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonAdapters.ByteArrayAdapter;
-import org.java_websocket.WebSocket;
-import org.slf4j.Logger;
-
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import org.java_websocket.WebSocket;
+import org.slf4j.Logger;
 
 public interface IDispatcher {
-    Gson JSON = new GsonBuilder()
-        .disableHtmlEscaping()
-        .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
-        .create();
+    Gson JSON =
+            new GsonBuilder()
+                    .disableHtmlEscaping()
+                    .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
+                    .create();
 
     /**
      * Decodes an escaped JSON message.
@@ -47,8 +47,7 @@ public interface IDispatcher {
             var data = element.getAsString();
 
             // Check if the element starts and ends with quotes.
-            if (data.startsWith("\"")
-                && data.endsWith("\"")) {
+            if (data.startsWith("\"") && data.endsWith("\"")) {
                 // Remove the quotes.
                 data = data.substring(1, data.length() - 1);
             }
@@ -72,8 +71,7 @@ public interface IDispatcher {
         // Decrypt the message.
         Crypto.xor(message, DISPATCH_INFO.encryptionKey);
         // Deserialize the message.
-        return JSON.fromJson(new String(
-            message, StandardCharsets.UTF_8), JsonObject.class);
+        return JSON.fromJson(new String(message, StandardCharsets.UTF_8), JsonObject.class);
     }
 
     /**
@@ -116,8 +114,7 @@ public interface IDispatcher {
         if (packetId != PacketIds.LoginNotify) {
             if (socket.getAttachment() instanceof Boolean authenticated) {
                 if (!authenticated) {
-                    this.getLogger().warn("Received packet ID {} from unauthenticated client.",
-                        packetId);
+                    this.getLogger().warn("Received packet ID {} from unauthenticated client.", packetId);
                     socket.close();
                     return;
                 }
@@ -138,13 +135,11 @@ public interface IDispatcher {
                 // Get the callbacks.
                 var callbacks = this.getCallbacks().get(packetId);
                 // Call the callbacks.
-                callbacks.forEach(callback ->
-                    callback.accept(packetData));
+                callbacks.forEach(callback -> callback.accept(packetData));
                 callbacks.clear();
             }
         } catch (Exception exception) {
-            this.getLogger().warn("Exception occurred while handling packet {}.",
-                packetId);
+            this.getLogger().warn("Exception occurred while handling packet {}.", packetId);
             exception.printStackTrace();
         }
     }

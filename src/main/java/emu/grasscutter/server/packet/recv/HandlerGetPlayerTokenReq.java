@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
@@ -15,12 +17,9 @@ import emu.grasscutter.utils.ByteHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.Utils;
-
-import javax.crypto.Cipher;
 import java.nio.ByteBuffer;
 import java.security.Signature;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
+import javax.crypto.Cipher;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {
@@ -30,8 +29,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
         // Fetch the account from the ID and token.
         var accountId = req.getAccountUid();
-        var account = DispatchUtils.authenticate(
-            accountId, req.getAccountToken());
+        var account = DispatchUtils.authenticate(accountId, req.getAccountToken());
 
         // Check the account.
         if (account == null) {
@@ -47,8 +45,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         // secondly !!!
         // TODO - optimize
         boolean kicked = false;
-        var exists = Grasscutter.getGameServer()
-            .getPlayerByAccountId(accountId);
+        var exists = Grasscutter.getGameServer().getPlayerByAccountId(accountId);
         if (exists != null) {
             var existsSession = exists.getSession();
             if (existsSession != session) { // No self-kicking

@@ -4,11 +4,10 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
 import emu.grasscutter.utils.DispatchUtils;
 import io.javalin.http.Context;
+import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-
-import javax.annotation.Nullable;
 
 /** Defines an authenticator for the server. Can be changed by plugins. */
 public interface AuthenticationSystem {
@@ -107,11 +106,11 @@ public interface AuthenticationSystem {
     Authenticator<ComboTokenResJson> getSessionKeyAuthenticator();
 
     /**
-     * This is the authenticator used for validating session tokens.
-     * This is a part of the logic in {@link DispatchUtils#authenticate(String, String)}.
-     * <p>
-     * Plugins can override this authenticator to add
-     * support for alternate session authentication methods.
+     * This is the authenticator used for validating session tokens. This is a part of the logic in
+     * {@link DispatchUtils#authenticate(String, String)}.
+     *
+     * <p>Plugins can override this authenticator to add support for alternate session authentication
+     * methods.
      *
      * @return {@code true} if the session token is valid, {@code false} otherwise.
      */
