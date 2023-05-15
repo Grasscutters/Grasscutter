@@ -3,8 +3,8 @@
     flex-direction: column;
     padding: 20px;
 
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
 
     background-color: var(--secondary-color);
 
@@ -41,9 +41,5 @@
 
 .HomeButton_Label {
     font-size: 30px;
-    width: 200px;
     text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }

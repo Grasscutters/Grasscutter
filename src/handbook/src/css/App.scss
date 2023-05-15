@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Poppins;
-    src: url('data/Poppins-Regular.ttf');
+    font-family: 'Poppins';
+    src: url('/data/assets/Poppins-Regular.ttf')
 }
 
 html {
@@ -22,6 +22,7 @@ body {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background-color: var(--background-color);
 
     #root {
         height: 100%;
@@ -29,7 +30,7 @@ body {
     }
 
     * {
-        font-family: 'SDK_SC_Web', 'SDK_JP_Web', Poppins, sans-serif;
+        font-family: 'SDK_SC_Web', 'SDK_JP_Web', 'Poppins', sans-serif;
     }
 
     svg:focus {

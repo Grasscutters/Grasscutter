@@ -20,7 +20,7 @@ class HomePage extends React.Component<any, any> {
                     <h1 className={"HomePage_Title"}>Welcome back, Traveler~</h1>
 
                     <div className={"HomePage_Buttons"}>
-                        <HomeButton name={"Commands"} anchor={"Commands"} icon={"Icon_Community"} />
+                        <HomeButton name={"Commands"} anchor={"Commands"} icon={"Icon_Version_Highlights"} />
                         <HomeButton name={"Characters"} anchor={"Avatars"} icon={"Icon_Character_Lumine"} />
                         <HomeButton name={"Items"} anchor={"Items"} icon={"Icon_Inventory"} />
                         <HomeButton name={"Entities"} anchor={"Entities"} icon={"Icon_Tutorial_Monster"} />

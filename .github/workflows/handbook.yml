@@ -42,6 +42,22 @@ jobs:
         working-directory: src/handbook
         run: npm run lint
 
+      - name: Download Avatar Data
+        working-directory: src/handbook
+        run: wget https://api.grasscutter.io/static/avatars.csv -O data/avatars.csv
+      - name: Download Command Data
+        working-directory: src/handbook
+        run: wget https://api.grasscutter.io/static/commands.json -O data/commands.json
+      - name: Download Entity Data
+        working-directory: src/handbook
+        run: wget https://api.grasscutter.io/static/entities.csv -O data/entities.csv
+      - name: Download Item Data
+        working-directory: src/handbook
+        run: wget https://api.grasscutter.io/static/items.csv -O data/items.csv
+      - name: Download Scene Data
+        working-directory: src/handbook
+        run: wget https://api.grasscutter.io/static/scenes.csv -O data/scenes.csv
+
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Commit changes
