@@ -8,7 +8,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.packet.send.PacketAddNoGachaAvatarCardNotify;
 import emu.grasscutter.utils.objects.HandbookBody.*;
-
 import java.util.Objects;
 
 /** Commands executed by the handbook. */
@@ -22,8 +21,7 @@ public interface HandbookActions {
     static Response grantAvatar(GrantAvatar request) {
         // Validate the request.
         if (request.getPlayer() == null || request.getAvatar() == null) {
-            return Response.builder().status(400)
-                .message("Invalid request.").build();
+            return Response.builder().status(400).message("Invalid request.").build();
         }
 
         try {
@@ -37,12 +35,10 @@ public interface HandbookActions {
 
             // Validate the request.
             if (player == null) {
-                return Response.builder().status(1)
-                    .message("Player not found.").build();
+                return Response.builder().status(1).message("Player not found.").build();
             }
             if (avatarData == null) {
-                return Response.builder().status(400)
-                    .message("Invalid avatar ID.").build();
+                return Response.builder().status(400).message("Invalid avatar ID.").build();
             }
 
             // Create the new avatar.
@@ -50,25 +46,24 @@ public interface HandbookActions {
             avatar.setLevel(request.getLevel());
             avatar.setPromoteLevel(Avatar.getMinPromoteLevel(avatar.getLevel()));
             Objects.requireNonNull(avatar.getSkillDepot())
-                .getSkillsAndEnergySkill()
-                .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
+                    .getSkillsAndEnergySkill()
+                    .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
             avatar.forceConstellationLevel(request.getConstellations());
             avatar.recalcStats(true);
             avatar.save();
 
             // Add the avatar.
             player.addAvatar(avatar);
-            player.sendPacket(new PacketAddNoGachaAvatarCardNotify(
-                avatar, ActionReason.Gm));
-            return Response.builder().status(200)
-                .message("Avatar granted.").build();
+            player.sendPacket(new PacketAddNoGachaAvatarCardNotify(avatar, ActionReason.Gm));
+            return Response.builder().status(200).message("Avatar granted.").build();
         } catch (NumberFormatException ignored) {
-            return Response.builder().status(500)
-                .message("Invalid player UID or avatar ID.").build();
+            return Response.builder().status(500).message("Invalid player UID or avatar ID.").build();
         } catch (Exception exception) {
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-            return Response.builder().status(500)
-                .message("An error occurred while granting the avatar.").build();
+            return Response.builder()
+                    .status(500)
+                    .message("An error occurred while granting the avatar.")
+                    .build();
         }
     }
 
@@ -81,8 +76,7 @@ public interface HandbookActions {
     static Response giveItem(GiveItem request) {
         // Validate the request.
         if (request.getPlayer() == null || request.getItem() == null) {
-            return Response.builder().status(400)
-                .message("Invalid request.").build();
+            return Response.builder().status(400).message("Invalid request.").build();
         }
 
         try {
@@ -96,12 +90,10 @@ public interface HandbookActions {
 
             // Validate the request.
             if (player == null) {
-                return Response.builder().status(1)
-                    .message("Player not found.").build();
+                return Response.builder().status(1).message("Player not found.").build();
             }
             if (itemData == null) {
-                return Response.builder().status(400)
-                    .message("Invalid player UID or item ID.").build();
+                return Response.builder().status(400).message("Invalid player UID or item ID.").build();
             }
 
             // Add the item to the player's inventory.
@@ -122,15 +114,15 @@ public interface HandbookActions {
             var itemStack = new GameItem(itemData, (int) amount);
             player.getInventory().addItem(itemStack, ActionReason.Gm);
 
-            return Response.builder().status(200)
-                .message("Item granted.").build();
+            return Response.builder().status(200).message("Item granted.").build();
         } catch (NumberFormatException ignored) {
-            return Response.builder().status(500)
-                .message("Invalid player UID or item ID.").build();
+            return Response.builder().status(500).message("Invalid player UID or item ID.").build();
         } catch (Exception exception) {
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-            return Response.builder().status(500)
-                .message("An error occurred while granting the item.").build();
+            return Response.builder()
+                    .status(500)
+                    .message("An error occurred while granting the item.")
+                    .build();
         }
     }
 
@@ -143,8 +135,7 @@ public interface HandbookActions {
     static Response teleportTo(TeleportTo request) {
         // Validate the request.
         if (request.getPlayer() == null || request.getScene() == null) {
-            return Response.builder().status(400)
-                .message("Invalid request.").build();
+            return Response.builder().status(400).message("Invalid request.").build();
         }
 
         try {
@@ -157,15 +148,13 @@ public interface HandbookActions {
 
             // Validate the request.
             if (player == null) {
-                return Response.builder().status(1)
-                    .message("Player not found.").build();
+                return Response.builder().status(1).message("Player not found.").build();
             }
 
             // Find the scene in the player's world.
             var scene = player.getWorld().getSceneById(sceneId);
             if (scene == null) {
-                return Response.builder().status(400)
-                    .message("Invalid scene ID.").build();
+                return Response.builder().status(400).message("Invalid scene ID.").build();
             }
 
             // Resolve the correct teleport position.
@@ -175,15 +164,15 @@ public interface HandbookActions {
             scene.getWorld().transferPlayerToScene(player, scene.getId(), position);
             player.getRotation().set(rotation);
 
-            return Response.builder().status(200)
-                .message("Player teleported.").build();
+            return Response.builder().status(200).message("Player teleported.").build();
         } catch (NumberFormatException ignored) {
-            return Response.builder().status(400)
-                .message("Invalid player UID or scene ID.").build();
+            return Response.builder().status(400).message("Invalid player UID or scene ID.").build();
         } catch (Exception exception) {
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-            return Response.builder().status(500)
-                .message("An error occurred while teleporting to the scene.").build();
+            return Response.builder()
+                    .status(500)
+                    .message("An error occurred while teleporting to the scene.")
+                    .build();
         }
     }
 
@@ -196,8 +185,7 @@ public interface HandbookActions {
     static Response spawnEntity(SpawnEntity request) {
         // Validate the request.
         if (request.getPlayer() == null || request.getEntity() == null) {
-            return Response.builder().status(400)
-                .message("Invalid request.").build();
+            return Response.builder().status(400).message("Invalid request.").build();
         }
 
         try {
@@ -211,20 +199,17 @@ public interface HandbookActions {
 
             // Validate the request.
             if (player == null) {
-                return Response.builder().status(1)
-                    .message("Player not found.").build();
+                return Response.builder().status(1).message("Player not found.").build();
             }
             if (entityData == null) {
-                return Response.builder().status(400)
-                    .message("Invalid entity ID.").build();
+                return Response.builder().status(400).message("Invalid entity ID.").build();
             }
 
             // Validate request properties.
             var scene = player.getScene();
             var level = request.getLevel();
             if (scene == null || level > 200 || level < 1) {
-                return Response.builder().status(400)
-                    .message("Invalid scene or level.").build();
+                return Response.builder().status(400).message("Invalid scene or level.").build();
             }
 
             // Create the entity.
@@ -233,15 +218,15 @@ public interface HandbookActions {
                 scene.addEntity(entity);
             }
 
-            return Response.builder().status(200)
-                .message("Entity(s) spawned.").build();
+            return Response.builder().status(200).message("Entity(s) spawned.").build();
         } catch (NumberFormatException ignored) {
-            return Response.builder().status(400)
-                .message("Invalid player UID or entity ID.").build();
+            return Response.builder().status(400).message("Invalid player UID or entity ID.").build();
         } catch (Exception exception) {
             Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-            return Response.builder().status(500)
-                .message("An error occurred while teleporting to the scene.").build();
+            return Response.builder()
+                    .status(500)
+                    .message("An error occurred while teleporting to the scene.")
+                    .build();
         }
     }
 }
