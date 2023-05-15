@@ -72,11 +72,6 @@
 }
 
 .ItemsPage_List {
-    display: grid;
-    gap: 15px 15px;
-
-    grid-template-columns: repeat(15, 100px);
-
     margin-bottom: 28px;
     overflow-y: scroll;
 }

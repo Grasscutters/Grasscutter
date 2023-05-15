@@ -49,7 +49,7 @@ class Character extends React.PureComponent<IProps> {
                 />
 
                 <div className={"Character_Label"}>
-                    <p style={{ fontSize: characterName.length >= 12 ? 13 : 17 }}>{characterName}</p>
+                    <p style={{ fontSize: characterName.length >= 10 ? 13 : 17 }}>{characterName}</p>
                 </div>
             </div>
         );

@@ -7,6 +7,7 @@ import "@css/widgets/HomeButton.scss";
 
 interface IProps {
     name: string;
+    icon: string;
     anchor: Page;
 }
 
@@ -26,7 +27,7 @@ class HomeButton extends React.PureComponent<IProps> {
     render() {
         return (
             <div className={"HomeButton"} onClick={() => this.redirect()}>
-                <img className={"HomeButton_Icon"} src={"https://dummyimage.com/128x128"} alt={this.props.name} />
+                <img className={"HomeButton_Icon"} src={this.props.icon} alt={this.props.name} />
 
                 <p className={"HomeButton_Label"}>{this.props.name}</p>
             </div>

@@ -21,6 +21,7 @@ interface IProps<T> {
 
 interface IState {
     scrollTop: number;
+    itemsPerRow: number;
 }
 
 class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
@@ -28,7 +29,8 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
         super(props);
 
         this.state = {
-            scrollTop: 0
+            scrollTop: 0,
+            itemsPerRow: 10
         };
     }
 
@@ -39,7 +41,7 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
         const items: React.ReactNode[] = [];
 
         // Calculate the items to render.
-        const perRow = this.props.itemsPerRow ?? 10;
+        const perRow = this.state.itemsPerRow ?? 10;
         for (let i = 0; i < perRow; i++) {
             const itemIndex = props.index * perRow + i;
             if (itemIndex < this.props.list.length) {
@@ -64,8 +66,20 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
         );
     }
 
+    componentDidMount() {
+        this.setState({
+            itemsPerRow: Math.floor((window.innerWidth - 650) / (this.props.itemHeight + (this.props.gap ?? 0)))
+        });
+
+        window.addEventListener("resize", () => {
+            this.setState({
+                itemsPerRow: Math.floor((window.innerWidth - 650) / (this.props.itemHeight + (this.props.gap ?? 0)))
+            });
+        });
+    }
+
     render() {
-        const { list, itemHeight, itemsPerRow } = this.props;
+        const { list, itemHeight } = this.props;
 
         return (
             <AutoSizer>
@@ -74,7 +88,7 @@ class VirtualizedGrid<T> extends React.Component<IProps<T>, IState> {
                         height={height - 150}
                         width={width}
                         rowHeight={itemHeight + (this.props.gap ?? 0)}
-                        rowCount={Math.ceil(list.length / (itemsPerRow ?? 10))}
+                        rowCount={Math.ceil(list.length / (this.state.itemsPerRow ?? 10))}
                         rowRenderer={this.rowRender.bind(this)}
                         scrollTop={this.state.scrollTop}
                         onScroll={(e) => this.setState({ scrollTop: e.scrollTop })}

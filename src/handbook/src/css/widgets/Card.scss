@@ -5,7 +5,6 @@
 
     width: 100%;
     max-width: 1510px;
-    max-height: 100px;
 
     border-radius: 15px;
     padding: 10px;
@@ -42,9 +41,7 @@
 
 .Card_Description {
     color: var(--text-primary-color);
-
-    overflow-y: scroll;
-    max-height: 24px;
+    padding-bottom: 5px;
 }
 
 .Card_Button {

@@ -147,8 +147,14 @@
     background-color: var(--secondary-color);
 
     user-select: none;
+    transition: 0.1s ease-in-out all;
 }
 
 .ObjectCard_Submit:hover {
     cursor: pointer;
+    scale: 1.05;
+}
+
+.ObjectCard_Submit:active {
+    scale: 0.9;
 }

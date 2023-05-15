@@ -7,6 +7,7 @@ import "@css/widgets/SideBarButton.scss";
 
 interface IProps {
     name: string;
+    icon: string;
     anchor: Page;
 }
 
@@ -26,7 +27,7 @@ class SideBarButton extends React.PureComponent<IProps> {
     render() {
         return (
             <div className={"SideBarButton"} onClick={() => this.redirect()}>
-                <img className={"SideBarButton_Icon"} src={"https://dummyimage.com/128x128"} alt={this.props.name} />
+                <img className={"SideBarButton_Icon"} src={this.props.icon} alt={this.props.name} />
 
                 <p className={"SideBarButton_Label"}>{this.props.name}</p>
             </div>

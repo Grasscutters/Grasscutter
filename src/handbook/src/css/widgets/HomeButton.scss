@@ -1,11 +1,10 @@
 .HomeButton {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 
-    width: 100%;
-    height: 100%;
-    max-width: 256px;
-    max-height: 256px;
+    width: 196px;
+    height: 196px;
 
     background-color: var(--secondary-color);
 
@@ -15,10 +14,24 @@
 
     border-radius: 10px;
     user-select: none;
+
+    &:hover {
+        cursor: pointer;
+        transition: 0.1s ease-in-out all;
+        box-shadow: 0 0 10px 5px var(--accent-color);
+        scale: 1.01;
+    }
 }
 
 .HomeButton:hover {
     cursor: pointer;
+    transition: 0.1s ease-in-out all;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px 5px var(--accent-color);
+        scale: 1.01;
+    }
 }
 
 .HomeButton_Icon {
@@ -27,8 +40,6 @@
 }
 
 .HomeButton_Label {
-    font-size: 34px;
-    line-height: 44px;
+    font-size: 30px;
     text-align: center;
-    font-style: normal;
 }

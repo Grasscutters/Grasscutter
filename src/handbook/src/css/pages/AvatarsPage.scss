@@ -1,12 +1,13 @@
 .AvatarsPage {
     display: flex;
-    height: 100%;
-    width: 100%;
+    width: calc(100% - 352px);
 
     background-color: var(--background-color);
     flex-direction: column;
 
     padding: 24px;
+
+    overflow-y: scroll;
 }
 
 .AvatarsPage_Title {
@@ -21,13 +22,10 @@
 }
 
 .AvatarsPage_List {
-    display: grid;
-    gap: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
 
     max-width: 90%;
-
-    grid-template-columns: repeat(12, 100px);
-
-    margin-bottom: 28px;
-    overflow-y: scroll;
 }
